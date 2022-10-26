@@ -1,0 +1,39 @@
+{
+	"Objects": [
+		{
+			"Data": [
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock"
+			],
+			"Size": [ 3, 3, 3 ],
+			"Name": "10923StaticMapTemplate",
+			"Class": "StaticMapTemplate",
+			"Height": -1
+		}
+	]
+}
