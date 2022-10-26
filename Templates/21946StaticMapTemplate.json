@@ -1,0 +1,29 @@
+{
+	"Objects": [
+		{
+			"Data": [
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"",
+				"DarkBricksSingleStaticBlock",
+				"",
+				"DarkBricksSingleStaticBlock",
+				"",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock",
+				"",
+				"DarkBricksSingleStaticBlock",
+				"DarkBricksSingleStaticBlock"
+			],
+			"Size": [ 3, 3, 2 ],
+			"Name": "21946StaticMapTemplate",
+			"Class": "StaticMapTemplate"
+		}
+	]
+}
