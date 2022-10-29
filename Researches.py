@@ -2,7 +2,7 @@ from Common import *
 from Materials import *
 import copy
 from NuclearResearches import *
-from EquipmentResearcher import *
+from EquipmentResearches import *
 
 researches = []
 
