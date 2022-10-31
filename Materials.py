@@ -233,12 +233,16 @@ materials = [
 		"SmeltLevel": 4,
 		"IsExact": True,
 		"Tier": 5,
+        "Mesh":"Models/Ingot",
+        "Materials":["Materials/HotMetal"],
 	},{
 		"Name": "HotNeutroniumIngot",
 		"Label": "Hot Neutronium Ingot",
 		"SmeltLevel": 4,
 		"IsExact": True,
 		"Tier": 5,
+        "Mesh":"Models/Ingot",
+        "Materials":["Materials/VeryHotMetal"],
 	}
 	#,{
 	#	"Name": "Rubber",
