@@ -44,7 +44,7 @@ props = [
 		"Name": "LongGrass",
 		"ScaleMin": [2, 2, 2],
 		"ScaleMax": [4, 4, 4],
-		"Variations": 2,
+		"Variations": 1,
 		"ProjectToTerrainPower": 1,
 		"Drops": "Organics",
 		"CullBegin": 10000,
