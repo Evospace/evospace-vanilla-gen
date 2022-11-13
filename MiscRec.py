@@ -1410,6 +1410,10 @@ recipes_fission.append({
 			{
 				"Name": "Uranium233Cell" + static_item,
 				"Count": 3,
+			},
+			{
+				"Name": "DepletedUraniumCell" + static_item,
+				"Count": 1
 			}
 		]
 	},
@@ -1444,6 +1448,10 @@ recipes_fission.append({
 			{
 				"Name": "Uranium233Cell" + static_item,
 				"Count": 6,
+			},
+			{
+				"Name": "DepletedUraniumCell" + static_item,
+				"Count": 1
 			}
 		]
 	},
