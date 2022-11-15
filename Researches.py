@@ -22,10 +22,12 @@ def append_levels(research):
 	
 	CostSub = research["CostSub"] if "CostSub" in research else 0
 	CostMul = research["CostMul"] if "CostMul" in research else 1
+
+	offset = research["CostLevelOffset"] if "CostLevelOffset" in research else 0
 	
 	research["DataPoints"] = []
 	for i in range(research["Levels"][0] if "Levels" in research else 0, research["Levels"][1] + 1 if "Levels" in research else 1):
-		research["DataPoints"].append({"Items" : res_cost(i - CostSub, CostMul)})
+		research["DataPoints"].append({"Items" : res_cost(i - CostSub + offset, CostMul)})
 	
 	researches.append(research)
 
@@ -157,6 +159,7 @@ append_levels({
 	"RequiredResearches": ["Drying"+static_research],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%BlastFurnace"],["Constructor" + base_recipe, "%Material%BlastFurnace"]],
+	"AlsoUnlocks": [["Hand" + base_recipe, "SteelParts"],["Hand" + base_recipe, "SteelPlate"],["Hand" + base_recipe, "SteelPipe"]],
 	"Chapter":"Production"+static_chapter,
 	"Position": [3, 0],
 })
@@ -191,6 +194,7 @@ append_levels({
 	"Chapter": "Production" + static_chapter,
 	"Position": [5,-1],
 	"Levels": [3,3],
+	"CostLevelOffset": -1,
 })
 append_levels({
 	"Class": static_research,
@@ -231,7 +235,7 @@ append_levels({
 	"Name": "Metalwork" + static_research,
 	"LabelParts": [["Metalwork", "researches"]],
 	"RequiredResearches": ["Smelting"+static_research],
-	"Unlocks": [],
+	"Unlocks": [["Hand" + base_recipe, "CopperParts"],["Hand" + base_recipe, "CopperPlate"],["Hand" + base_recipe, "CopperPipe"]],
 	"Collect": { "Items": [
 		{
 			"Name": "CopperOre" + static_item,
@@ -734,10 +738,13 @@ append_levels({
 	"Name": "StainlessSteelProduction" + static_research,
 	"LabelParts": [["StainlessSteelProduction", "researches"]],
 	"RequiredResearches": ["Chemistry" + static_research, "AluminiumProduction" + static_research],
-	"Unlocks": [],
+	"Unlocks": [["Hand" + base_recipe, tier_material[4] + "Parts"],
+	["Hand" + base_recipe, tier_material[4] + "Plate"],
+	["Hand" + base_recipe, tier_material[4] + "Pipe"],["Constructor" + base_recipe, tier_material[4] + "Pipe"]],
 	"Chapter": "Production" + static_chapter,
 	"Position": [6,-2],
 	"Levels": [4,4],
+	"CostLevelOffset": -1,
 })
 append_levels({
 	"Class": static_research,
@@ -761,20 +768,23 @@ append_levels({
 })
 append_levels({
 	"Class": static_research,
-	"Name": "TitaniumSimulation" + static_research,
-	"LabelParts": [["TitaniumSimulation", "researches"]],
+	"Name": "TitaniumProduction" + static_research,
+	"LabelParts": [["TitaniumProduction", "researches"]],
 	"Chapter": "Production" + static_chapter,
 	"RequiredResearches": ["IndustrialSmelting" + static_research],
-	"Unlocks": [],
+	"Unlocks": [["Hand" + base_recipe, tier_material[5] + "Parts"],
+	["Hand" + base_recipe, tier_material[5] + "Plate"],
+	["Hand" + base_recipe, tier_material[5] + "Pipe"],["Constructor" + base_recipe, tier_material[5] + "Pipe"]],
 	"Position": [7,-4],
 	"Levels": [4,4],
+	"CostLevelOffset": -1,
 })
 append_levels({
 	"Class": static_research,
 	"Name": "IndustrialBoiler" + static_research,
 	"LabelParts": [["IndustrialBoiler", "machines"]],
 	"Chapter": "Production" + static_chapter,
-	"RequiredResearches": ["TitaniumSimulation" + static_research],
+	"RequiredResearches": ["TitaniumProduction" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%IndustrialBoiler"],["Connector" + base_recipe, "%Material%IndustrialBoiler"]],
 	"Position": [6,-4],
 	"Levels": [5,7],
@@ -793,7 +803,7 @@ append_levels({
 	"Class": static_research,
 	"Name": "Freezer" + static_research,
 	"LabelParts": [["Freezer", "machines"]],
-	"RequiredResearches": ["TitaniumSimulation" + static_research],
+	"RequiredResearches": ["TitaniumProduction" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%Freezer"],["Constructor" + base_recipe, "%Material%Freezer"]],
 	"Chapter": "Production"+static_chapter,
 	"Position": [8,-4],
@@ -801,10 +811,12 @@ append_levels({
 })
 append_levels({
 	"Class": static_research,
-	"Name": "HardMetalSimulation" + static_research,
-	"LabelParts": [["HardMetalSimulation", "researches"]],
+	"Name": "HardMetalProduction" + static_research,
+	"LabelParts": [["HardMetalProduction", "researches"]],
 	"RequiredResearches": ["Freezer" + static_research],
-	"Unlocks": [],
+	"Unlocks": [["Hand" + base_recipe, tier_material[6] + "Parts"],
+	["Hand" + base_recipe, tier_material[6] + "Plate"],
+	["Hand" + base_recipe, tier_material[6] + "Pipe"],["Constructor" + base_recipe, tier_material[6] + "Pipe"]],
 	"Chapter": "Production" + static_chapter,
 	"Position": [9,-4],
 	"Levels": [5,5],
@@ -813,7 +825,7 @@ append_levels({
 	"Class": static_research,
 	"Name": "FusionReactor" + static_research,
 	"LabelParts": [["FusionReactor", "machines"]],
-	"RequiredResearches": ["HardMetalSimulation" + static_research],
+	"RequiredResearches": ["HardMetalProduction" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%FusionReactor"],["Constructor" + base_recipe, "%Material%FusionReactor"]],
 	"Chapter":"Production"+static_chapter,
 	"Position": [10,-4],
@@ -821,10 +833,12 @@ append_levels({
 })
 append_levels({
 	"Class": static_research,
-	"Name": "NeutroniumSimulation" + static_research,
-	"LabelParts": [["NeutroniumSimulation", "researches"]],
+	"Name": "NeutroniumProduction" + static_research,
+	"LabelParts": [["NeutroniumProduction", "researches"]],
 	"RequiredResearches": ["FusionReactor" + static_research],
-	"Unlocks": [],
+	"Unlocks": [["Hand" + base_recipe, tier_material[7] + "Parts"],
+	["Hand" + base_recipe, tier_material[7] + "Plate"],
+	["Hand" + base_recipe, tier_material[7] + "Pipe"],["Constructor" + base_recipe, tier_material[7] + "Pipe"]],
 	"Chapter": "Production" + static_chapter,
 	"Position": [11,-4],
 	"Levels": [6,6],
@@ -833,7 +847,7 @@ append_levels({
 	 "Class": static_research,
 	 "Name": "Portal" + static_research,
 	 "LabelParts": [["Portal", "machines"]],
-	 "RequiredResearches": ["NeutroniumSimulation" + static_research],
+	 "RequiredResearches": ["NeutroniumProduction" + static_research],
 	 "Unlocks": [["Hand" + base_recipe, "%Material%Portal"],["Constructor" + base_recipe, "%Material%Portal"]],
 	 "Chapter": "Production" + static_chapter,
 	 "Position": [12,-4],
@@ -844,7 +858,7 @@ append_levels({
 	"Name": "FissionReactor" + static_research,
 	"LabelParts": [["FissionReactor", "machines"]],
 	"Chapter": "Production" + static_chapter,
-	"RequiredResearches": ["TitaniumSimulation" + static_research],
+	"RequiredResearches": ["TitaniumProduction" + static_research],
 	"Levels": [5,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%FissionReactor"],["Constructor" + base_recipe, "%Material%FissionReactor"]],
 	"Position": [7,-6],
@@ -1026,11 +1040,11 @@ csv.append(["AdvancedSmelting", "Advanced Smelting"])
 csv.append(["IndustrialSmelting", "Industrial Smelting"])
 csv.append(["Fermentation", "Fermentation"])
 csv.append(["AdvancedSeparation", "Advanced Separation"])
-csv.append(["NeutroniumSimulation", "Neutronium Production"])
+csv.append(["NeutroniumProduction", "Neutronium Production"])
 csv.append(["AluminiumProduction", "Aluminium Production"])
 csv.append(["StainlessSteelProduction", "Stainless Steel Production"])
-csv.append(["TitaniumSimulation", "Titanium Production"])
-csv.append(["HardMetalSimulation", "Hard Metal Production"])
+csv.append(["TitaniumProduction", "Titanium Production"])
+csv.append(["HardMetalProduction", "Hard Metal Production"])
 csv.append(["InitialScan", "Initial Scan"])
 csv.append(["MineralsScan", "Minerals Scan"])
 csv.append(["Electricity", "Electricity"])
