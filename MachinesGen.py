@@ -187,12 +187,7 @@ for machine in machines:
 				if logic["BlockCreation"].find("%Tier%") != -1:
 					logic["BlockCreation"] = logic["BlockCreation"].replace("%Tier%", str(tier))
 					
-			logic["ActorCreation"] = """
-			local mat = LoadAsset("/Game/Materials/%Material%")
-			
-			local obj = Object:Link(_internal_GetThis())
-			obj:SetFieldObject("HullMaterial", mat)
-			""".replace("%Material%", tier_material[tier])
+			logic["ActorCreation"] = ""
 			
 			block = {
 				"Name": block_name,
