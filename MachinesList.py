@@ -16,8 +16,8 @@ machines = [
 		kinetic_input = get_class("KineticInputAccessor")
 		
 		local a = crafter:create_accessor(kinetic_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -33,8 +33,8 @@ machines = [
 		kinetic_input = get_class("KineticInputAccessor")
 		
 		local a = crafter:create_accessor(kinetic_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["KineticInput"],
 	}
@@ -59,8 +59,8 @@ machines = [
 		electric_input = get_class("ElectricInputAccessor")
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 		"RequiredResearches":["Fermentation"+static_research],
 		"Description": ["ElectricInput"],
@@ -76,8 +76,8 @@ machines = [
 		electric_input = get_class("ElectricInputAccessor")
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["ElectricInput"],
 	},{
@@ -92,8 +92,8 @@ machines = [
 		kinetic_input = get_class("KineticInputAccessor")
 		
 		local a = crafter:create_accessor(kinetic_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -125,8 +125,8 @@ machines = [
 		kinetic_input = get_class("KineticInputAccessor")
 
 		local a = crafter:create_accessor(kinetic_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["KineticInput"],
 	}
@@ -155,16 +155,16 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(fluid_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(fluid_output))
-		a:SetSidePos(Vec3i:Up(), Vec3i:Zero())
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:up(), Vec3i:zero())
+		a:bind(crafter:get_output_container())
 		
 		local a = crafter:create_accessor(heat_input))
-		a:SetSidePos(Vec3i:Down(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:down(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["HeatInput", "FluidInput", "FluidOutput", "PowerOutput"],
 		"CustomData":{
@@ -274,8 +274,8 @@ machines = [
 		kinetic_input = get_class("KineticInputAccessor")
 		
 		local a = crafter:create_accessor(kinetic_input))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0,1,0))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:new(0,1,0))
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -328,8 +328,8 @@ machines = [
 		kinetic_input = get_class("KineticInputAccessor")
 		
 		local a = crafter:create_accessor(kinetic_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 	}
 	#,{
@@ -345,12 +345,12 @@ machines = [
 	#	local crafter = current_block_logic()
 	#	
 	#	local a = crafter:create_accessor(ElectricInputAccessor))
-	#	a:SetSidePos(Vec3i:Left(), Vec3i:Zero())
-	#	a:Bind(crafter:GetInputContainer())
+	#	a:set_side_pos(Vec3i:Left(), Vec3i:zero())
+	#	a:bind(crafter:get_input_container())
 	#	
 	#	local a = crafter:create_accessor(FluidOutputAccessor))
-	#	a:SetSidePos(Vec3i:Right(), Vec3i:Zero())
-	#	a:Bind(crafter:GetOutputContainer())
+	#	a:set_side_pos(Vec3i:Right(), Vec3i:zero())
+	#	a:bind(crafter:get_output_container())
 	#	""",
 	#	 
 	#}
@@ -366,13 +366,13 @@ machines = [
 		heat_input = get_class("HeatInputAccessor")
 		kinetic_output = get_class("KineticOutputAccessor")
 		
-		local a = crafter:CreateAccessor(heat_input)
-		a:SetSidePos(Vec3i:Down(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		local a = crafter:create_accessor(heat_input)
+		a:set_side_pos(Vec3i:down(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(kinetic_output)
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:zero())
+		a:bind(crafter:get_output_container())
 		""",
 		"Description": ["HeatInput", "KineticOutput","PowerOutput"],
 		"PowerOutput": 10,
@@ -400,8 +400,8 @@ machines = [
 		electric_output = get_class("ElectricOutputAccessor")
 		
 		local a = crafter:create_accessor(heat_input))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New( 0, 0, 0 ))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:down(), Vec3i:new( 0, 0, 0 ))
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["HeatInput"],
 	},{
@@ -418,12 +418,12 @@ machines = [
 		electric_output = get_class("ElectricOutputAccessor")
 		
 		local a = crafter:create_accessor(kinetic_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New( -1, 1, 0 ))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:new( -1, 1, 0 ))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(electric_output))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New( 0, 0, 0 ))
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:new( 0, 0, 0 ))
+		a:bind(crafter:get_output_container())
 		""",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
 		"PowerOutput": 243,
@@ -441,12 +441,12 @@ machines = [
 		electric_output = get_class("ElectricOutputAccessor")
 		
 		local a = crafter:create_accessor(kinetic_input))
-		a:SetSidePos(Vec3i:Front(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(electric_output))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:zero())
+		a:bind(crafter:get_output_container())
 		""",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
 		"PowerOutput": 18,
@@ -463,16 +463,16 @@ machines = [
 		electric_input = get_class("ElectricInputAccessor")
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(kinetic_output))
-		a:SetSidePos(Vec3i:Front(), Vec3i:Zero())
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:zero())
+		a:bind(crafter:get_output_container())
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Down(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:down(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
 		"PowerOutput": 55,
@@ -490,20 +490,20 @@ machines = [
 		electric_input = get_class("ElectricInputAccessor")
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(kinetic_output))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(1,0,0))
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:new(1,0,0))
+		a:bind(crafter:get_output_container())
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Down(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:down(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Right(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:Right(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
 		"PowerOutput": 55*50,
@@ -556,8 +556,8 @@ machines = [
 		heat_input = get_class("HeatInputAccessor")
 		
 		local a = crafter:create_accessor(heat_input))
-		a:SetSidePos(Vec3i:Down(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:down(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["HeatInput"],
 		"CustomData":{
@@ -577,12 +577,12 @@ machines = [
 		fluid_input = get_class("FluidInputAccessor")
 		
 		local a = crafter:create_accessor(fluid_input))
-		a:SetSidePos(Vec3i:Up(), Vec3i:New(0, 0, 1))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:up(), Vec3i:new(0, 0, 1))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(kinetic_output))
-		a:SetSidePos(Vec3i:Front(), Vec3i:Zero())
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:zero())
+		a:bind(crafter:get_output_container())
 		""",
 		"Description": ["FluidInput", "KineticOutput","PowerOutput"],
 		"PowerOutput": 270,
@@ -612,12 +612,12 @@ machines = [
 		electric_output = get_class("ElectricOutputAccessor")
 		
 		local a = crafter:create_accessor(fluid_input))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0, 0, 0))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:new(0, 0, 0))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(electric_output))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New(-5, -1, 0))
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:new(-5, -1, 0))
+		a:bind(crafter:get_output_container())
 		""",
 		"Description": ["FluidInput", "ElectricOutput","PowerOutput"],
 		"PowerOutput": fission_fullpower * 0.9 * 0.9,
@@ -641,16 +641,16 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(fluid_input))
-		a:SetSidePos(Vec3i:Up(), Vec3i:New( -2, 0, 1 ))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:up(), Vec3i:new( -2, 0, 1 ))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(fluid_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New( -1, -1, 1 ))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:new( -1, -1, 1 ))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(kinetic_output))
-		a:SetSidePos(Vec3i:Right(), Vec3i:New( -3, -1, 0 ))
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:Right(), Vec3i:new( -3, -1, 0 ))
+		a:bind(crafter:get_output_container())
 		""",
 		"Description": ["FluidInput", "KineticOutput"],
 	},{
@@ -681,12 +681,12 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(heat_output))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New( 0, 0, 0 ))
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:down(), Vec3i:new( 0, 0, 0 ))
+		a:bind(crafter:get_output_container())
 		
 		a = crafter:create_accessor(heat_output))
-		a:SetSidePos(Vec3i:Up(), Vec3i:New( 0, 0, 1 ))
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:up(), Vec3i:new( 0, 0, 1 ))
+		a:bind(crafter:get_output_container())
 		""",
 		"Description": ["HeatOutput", "PowerOutput"],
 		"PowerOutput": 500,
@@ -710,8 +710,8 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New( -1, 1, 0 ))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:new( -1, 1, 0 ))
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["ElectricInput"],
 	},{
@@ -727,8 +727,8 @@ machines = [
 		kinetic_input = get_class("KineticInputAccessor")
 		
 		local a = crafter:create_accessor(kinetic_input))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New( 0, 0, 0 ))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:new( 0, 0, 0 ))
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -751,8 +751,8 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(kinetic_input))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New( 0, 0, 0 ))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:new( 0, 0, 0 ))
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -775,8 +775,8 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(kinetic_input))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New( 0, 0, 0 ))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:new( 0, 0, 0 ))
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -798,8 +798,8 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(heat_output))
-		a:SetSidePos(Vec3i:Up(), Vec3i:Zero())
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:up(), Vec3i:zero())
+		a:bind(crafter:get_output_container())
 		""",
 		"Description": ["HeatOutput"],
 	},{
@@ -865,12 +865,12 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(fluid_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(heat_output))
-		a:SetSidePos(Vec3i:Up(), Vec3i:Zero())
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:up(), Vec3i:zero())
+		a:bind(crafter:get_output_container())
 		""",
 		"Description": ["FluidInput", "HeatOutput"],
 	},{
@@ -892,12 +892,12 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(heat_output))
-		a:SetSidePos(Vec3i:Up(), Vec3i:Zero())
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:up(), Vec3i:zero())
+		a:bind(crafter:get_output_container())
 		""",
 		"Description": ["ElectricInput", "HeatOutput", "PowerOutput"],
 		"PowerOutput": 40,
@@ -981,20 +981,20 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0,1,1))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:new(0,1,1))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Left(), Vec3i:New(0,1,1))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:Left(), Vec3i:new(0,1,1))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0,-5,1))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:new(0,-5,1))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Right(), Vec3i:New(0,-5,1))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:Right(), Vec3i:new(0,-5,1))
+		a:bind(crafter:get_input_container())
 		""",
 	},
 	#{
@@ -1057,8 +1057,8 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Front(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["ElectricInput"],
 	},{
@@ -1087,8 +1087,8 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Front(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["ElectricInput"],
 	},{
@@ -1117,8 +1117,8 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Front(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["ElectricInput"],
 	},
@@ -1148,8 +1148,8 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(fluid_input))
-		a:SetSidePos(Vec3i:Front(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["FluidInput"],
 	},{
@@ -1174,8 +1174,8 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(fluid_input))
-		a:SetSidePos(Vec3i:Down(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:down(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["FluidInput"],
 	},{
@@ -1257,8 +1257,8 @@ machines = [
 		electric_input = get_class("ElectricInputAccessor")
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["ElectricInput"],
 	},{
@@ -1274,8 +1274,8 @@ machines = [
 		kinetic_input = get_class("KineticInputAccessor")
 		
 		local a = crafter:create_accessor(kinetic_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New(-1,0,0))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:new(-1,0,0))
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -1291,8 +1291,8 @@ machines = [
 		kinetic_input = get_class("KineticInputAccessor")
 		
 		local a = crafter:create_accessor(kinetic_input))
-		a:SetSidePos(Vec3i:Left(), Vec3i:New(-1,0,0))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:Left(), Vec3i:new(-1,0,0))
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["KineticInput", "HeatOutput"],
 	},{
@@ -1323,8 +1323,8 @@ machines = [
 		fluid_input = get_class("FluidInputAccessor")
 		
 		local a = crafter:create_accessor(fluid_input))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0,0,0))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:new(0,0,0))
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["FluidInput"],
 	},{
@@ -1349,12 +1349,12 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(fluid_output))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0,0,0))
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:new(0,0,0))
+		a:bind(crafter:get_output_container())
 		
 		local a = crafter:create_accessor(kinetic_input))
-		a:SetSidePos(Vec3i:Right(), Vec3i:New(-1,-2,0))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:Right(), Vec3i:new(-1,-2,0))
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["KineticInput", "FluidOutput"],
 	},{
@@ -1446,8 +1446,8 @@ machines = [
 		kinetic_input = get_class("KineticInputAccessor")
 		
 		local a = crafter:create_accessor(kinetic_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New(-1,1,0))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:new(-1,1,0))
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -1460,8 +1460,8 @@ machines = [
 		local crafter = current_block_logic()
 		
 		local a = crafter:create_accessor(HeatInputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:down(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		""",
 		"Description": ["HeatInput"],
 	},{
@@ -1532,36 +1532,36 @@ machines = [
 		heat_output = get_class("HeatOutputAccessor")
 		
 		local a = crafter:create_accessor(heat_output))
-		a:SetSidePos(Vec3i:Left(), Vec3i:New(0, 1, 0))
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:Left(), Vec3i:new(0, 1, 0))
+		a:bind(crafter:get_output_container())
 		
 		local a = crafter:create_accessor(heat_output))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0, 1, 0))
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:new(0, 1, 0))
+		a:bind(crafter:get_output_container())
 		
 		local a = crafter:create_accessor(heat_output))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0, -2, 0))
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:new(0, -2, 0))
+		a:bind(crafter:get_output_container())
 		
 		local a = crafter:create_accessor(heat_output))
-		a:SetSidePos(Vec3i:Right(), Vec3i:New(0, -2, 0))
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:Right(), Vec3i:new(0, -2, 0))
+		a:bind(crafter:get_output_container())
 		
 		local a = crafter:create_accessor(heat_output))
-		a:SetSidePos(Vec3i:Left(), Vec3i:New(-3, 1, 0)) 
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:Left(), Vec3i:new(-3, 1, 0)) 
+		a:bind(crafter:get_output_container())
 		
 		local a = crafter:create_accessor(heat_output))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New(-3, 1, 0))
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:new(-3, 1, 0))
+		a:bind(crafter:get_output_container())
 		
 		local a = crafter:create_accessor(heat_output))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New(-3, -2, 0))
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:new(-3, -2, 0))
+		a:bind(crafter:get_output_container())
 		
 		local a = crafter:create_accessor(heat_output))
-		a:SetSidePos(Vec3i:Right(), Vec3i:New(-3, -2, 0))
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:Right(), Vec3i:new(-3, -2, 0))
+		a:bind(crafter:get_output_container())
 		""",
 		"CustomData":{
 			"LoadIndependent": True,
@@ -1606,20 +1606,20 @@ machines = [
 		electric_input = get_class("ElectricInputAccessor")
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0, 1, 0))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:new(0, 1, 0))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Left(), Vec3i:New(0, 1, 0))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:Left(), Vec3i:new(0, 1, 0))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0, -3, 0))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:new(0, -3, 0))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Right(), Vec3i:New(0, -3, 0))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:Right(), Vec3i:new(0, -3, 0))
+		a:bind(crafter:get_input_container())
 		""",
 	},{
 		"Name": "IndustrialBoiler",
@@ -1653,28 +1653,28 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(fluid_input))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0, 0, 0))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:new(0, 0, 0))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(heat_input))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(0, -1, 0))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:down(), Vec3i:new(0, -1, 0))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(heat_input))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(-1, -1, 0))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:down(), Vec3i:new(-1, -1, 0))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(heat_input))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(-2, -1, 0))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:down(), Vec3i:new(-2, -1, 0))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(heat_input))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(-3, -1, 0))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:down(), Vec3i:new(-3, -1, 0))
+		a:bind(crafter:get_input_container())
 		
 		a = crafter:create_accessor(fluid_output))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New(-3, 0, 0))
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:new(-3, 0, 0))
+		a:bind(crafter:get_output_container())
 		""",
 		"Description": ["FluidInput", "FluidOutput","PowerOutput"],
 		"PowerOutput": fission_fullpower * 0.9,
@@ -1705,18 +1705,12 @@ machines = [
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
-		heat_input = get_class("HeatInputAccessor")
-		heat_output = get_class("HeatOutputAccessor")
-		kinetic_input = get_class("KineticInputAccessor")
-		kinetic_output = get_class("KineticOutputAccessor")
-		electric_input = get_class("ElectricInputAccessor")
+
 		electric_output = get_class("ElectricOutputAccessor")
-		fluid_input = get_class("FluidInputAccessor")
-		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(electric_output))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(0,0,0))
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:down(), Vec3i:new(0,0,0))
+		a:bind(crafter:get_output_container())
 		""",
 		"Description": ["ElectricOutput", "PowerOutput"],
 		"PowerOutput": 50,
@@ -1784,16 +1778,16 @@ machines = [
 	#	local crafter = current_block_logic()
 	#	
 	#	local a = crafter:create_accessor(FluidInputAccessor))
-	#	a:SetSidePos(Vec3i:Left(), Vec3i:Zero())
-	#	a:Bind(crafter:GetInputContainer())
+	#	a:set_side_pos(Vec3i:Left(), Vec3i:zero())
+	#	a:bind(crafter:get_input_container())
 	#	
 	#	local a = crafter:create_accessor(FluidOutputAccessor))
-	#	a:SetSidePos(Vec3i:Right(), Vec3i:Zero())
-	#	a:Bind(crafter:GetOutputContainer())
+	#	a:set_side_pos(Vec3i:Right(), Vec3i:zero())
+	#	a:bind(crafter:get_output_container())
 	#	
 	#	local a = crafter:create_accessor(HeatOutputAccessor))
-	#	a:SetSidePos(Vec3i:Up(), Vec3i:Zero())
-	#	a:Bind(crafter:GetOutputContainer())
+	#	a:set_side_pos(Vec3i:up(), Vec3i:zero())
+	#	a:bind(crafter:get_output_container())
 	#	""",
 	#	"RequiredResearches":["HeatTransferring"+static_research],
 	#}
@@ -1807,16 +1801,16 @@ machines = [
 	#	local crafter = current_block_logic()
 	#	
 	#	local a = crafter:create_accessor(FluidInputAccessor))
-	#	a:SetSidePos(Vec3i:Left(), Vec3i:Zero())
-	#	a:Bind(crafter:GetInputContainer())
+	#	a:set_side_pos(Vec3i:Left(), Vec3i:zero())
+	#	a:bind(crafter:get_input_container())
 	#	
 	#	local a = crafter:create_accessor(FluidOutputAccessor))
-	#	a:SetSidePos(Vec3i:Right(), Vec3i:Zero())
-	#	a:Bind(crafter:GetOutputContainer())
+	#	a:set_side_pos(Vec3i:Right(), Vec3i:zero())
+	#	a:bind(crafter:get_output_container())
 	#	
 	#	local a = crafter:create_accessor(HeatInputAccessor))
-	#	a:SetSidePos(Vec3i:Down(), Vec3i:Zero())
-	#	a:Bind(crafter:GetInputContainer())
+	#	a:set_side_pos(Vec3i:down(), Vec3i:zero())
+	#	a:bind(crafter:get_input_container())
 	#	""",
 	#	"RequiredResearches":["HeatTransferring"+static_research],
 	#}
@@ -1868,28 +1862,28 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(fluid_input))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New(-1,0,2))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:new(-1,0,2))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(heat_input))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(0,0,2))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:down(), Vec3i:new(0,0,2))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(heat_input))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(-2,0,2))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:down(), Vec3i:new(-2,0,2))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(heat_input))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(-1,1,2))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:down(), Vec3i:new(-1,1,2))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(heat_input))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(-1,-1,2))
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:down(), Vec3i:new(-1,-1,2))
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(fluid_output))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New(-2,0,0))
-		a:Bind(crafter:GetOutputContainer())
+		a:set_side_pos(Vec3i:back(), Vec3i:new(-2,0,0))
+		a:bind(crafter:get_output_container())
 		""",
 		"Description": ["HeatInput"],
 	},{
@@ -1916,12 +1910,13 @@ machines = [
 		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(electric_input))
-		a:SetSidePos(Vec3i:Front(), Vec3i:Zero())
-		a:Bind(crafter:GetInputContainer())
+		a:set_side_pos(Vec3i:front(), Vec3i:zero())
+		a:bind(crafter:get_input_container())
 		
 		local a = crafter:create_accessor(heat_output))
-		a:SetSidePos(Vec3i:Up(), Vec3i:Zero())
-		a:Bind(crafter:GetOutputContainer())
+		
+		a:set_side_pos(Vec3i:up(), Vec3i:zero())
+		a:bind(crafter:get_output_container())
 		""",
 		"Description": ["ElectricInput", "HeatOutput"],
 	},{
