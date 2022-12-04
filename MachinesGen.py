@@ -195,6 +195,7 @@ for machine in machines:
 				"LogicJson": logic,
 				"Class": static_block,
 				"BlockLogic": machine["Name"] + "BlockLogic",
+				"ReplaceTag": machine["Name"],
 			}
 			
 			if "BlockLogic" in machine:
