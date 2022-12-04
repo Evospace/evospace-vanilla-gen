@@ -58,7 +58,7 @@ for machine in machines:
 			
 			level = tier - machine["StartTier"]
 			
-			item = { "Class": solid_static_item,
+			item = { "Class": static_item,
 				"Name": item_name,
 				
 				"Image": "T_" + tier_material[tier] + image,
