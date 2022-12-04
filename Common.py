@@ -181,10 +181,7 @@ fission_fullpower = 7100 * 3.3 * 2 * 1.1 * 2
 
 tiers_numlist = [0,1,2,3,4,5,6,7]
 
-static_item = "StaticItem" # это общее название, а ниже -- классы для задания типа предмета
-solid_static_item = "StaticItem"
-fluid_static_item = "StaticItem"
-abstract_static_item = "StaticItem"
+static_item = "StaticItem"
 
 int32max = 2147483647
 
@@ -195,7 +192,6 @@ static_research = "StaticResearch"
 static_chapter = "StaticChapter"
 static_block = "SingleStaticBlock"
 static_surface = "StaticSurface"
-static_big_block = "SingleStaticBlock"
 static_decoration = "StaticDecoration"
 static_prop = "SmallStaticProp"
 static_big_prop = "BigStaticProp"
@@ -207,14 +203,11 @@ building_cube_logic = "BuildingSurfaceBlockItemLogic"
 building_single_logic = "BuildingSingleBlockItemLogic"
 building_plane_logic = "BuildingPlaneBlockItemLogic"
 building_cover_logic = "BuildingSingleBlockRotatedItemLogic"
-building_big_logic = "BuildingSingleBlockItemLogic"
 building_decoration_logic = "BuildingDecorationItemLogic"
 building_prop_logic = "BuildingPropItemLogic"
-building_big_prop_logic = "BuildingPropItemLogic"
 
 building_brush_slot_logic = "BuildingBrushItemLogic"
-base_recipe = "BaseRecipeDictionary"
-breaking_recipe = "BaseRecipeDictionary"
+recipe_dictionary = "RecipeDictionary"
 ico_generator = "IcoGenerator"
 
 tesselator = "Tesselator"

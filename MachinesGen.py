@@ -161,7 +161,7 @@ for machine in machines:
 			})
 			
 			logic = {
-				"Recipes": machine["Recipes"] if "Recipes" in machine else machine["Name"] + base_recipe,
+				"Recipes": machine["Recipes"] if "Recipes" in machine else machine["Name"] + recipe_dictionary,
 				"Tier": tier,
 				"Level": level,
 			}
@@ -233,8 +233,8 @@ for machine in machines:
 			})
 			
 			objects_array.append({ 
-				"Class": base_recipe,
-				"Name": machine["Name"] + base_recipe,
+				"Class": recipe_dictionary,
+				"Name": machine["Name"] + recipe_dictionary,
 				"UsedIn": [{
 					"Item": tier_material[tier] + machine["Name"] + static_item,
 					"Tier": tier
@@ -2572,23 +2572,23 @@ write_file("Generated/Resources/machines.json", data);
 
 objects_array = []
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Hand" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Hand" + recipe_dictionary,
 	"Recipes": recipes_hand
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Deconstructor" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Deconstructor" + recipe_dictionary,
 	"Recipes": recipes_deconstructor
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Constructor" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Constructor" + recipe_dictionary,
 	"Recipes": recipes_constructor
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Multitool" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Multitool" + recipe_dictionary,
 	"Recipes": recipes_wrench
 })
 

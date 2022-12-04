@@ -160,7 +160,7 @@ pickaxe_recipes = []
 for object in mapgen_objects:
 	csv.append([object["Name"] + "Surface", CamelToSpaces(object["Name"])])
 
-	objects_array.append({ "Class": solid_static_item,
+	objects_array.append({ "Class": static_item,
 		"Name": object["Name"] + "Surface" + static_item,
 		"Image": "T_" + object["Name"],
 		
@@ -220,8 +220,8 @@ write_file("Generated/Mixed/mapgen_core.json", data);
 
 objects_array = []
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Multitool" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Multitool" + recipe_dictionary,
 	"Recipes": pickaxe_recipes
 })
 

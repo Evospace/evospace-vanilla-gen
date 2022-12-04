@@ -41,7 +41,7 @@ for part in parts:
 		if part["StartTier"] <= tier and part["EndTier"] >= tier:
 			cvs.append([material + part["Name"], CamelToSpaces(material) + " " + part["Label"]])
 			level = tier - part["StartTier"]
-			item = { "Class": solid_static_item,
+			item = { "Class": static_item,
 				"Name": material + part["Name"] + static_item,
 				"LabelParts": [[material + part["Name"], "parts"]],
 				"Image": "T_" + material + part["Name"],
@@ -238,7 +238,7 @@ for material in materials:
 	# abstract
 	if "IsAbstract" in material:
 		cvs.append([material["Name"], material["Label"]])
-		item = { "Class": abstract_static_item,
+		item = { "Class": static_item,
 			"Name": material["Name"] + static_item,
 			"Image": "T_" + material["Name"],
 			
@@ -267,7 +267,7 @@ for material in materials:
 	# exact
 	if "IsExact" in material:
 		cvs.append([material["Name"], material["Label"]])
-		item = { "Class": solid_static_item,
+		item = { "Class": static_item,
 			"Name": material["Name"] + static_item,
 			"Image": "T_" + material["Name"],
 			
@@ -338,7 +338,7 @@ for material in materials:
 	# ingot
 	if "IsIngot" in material:
 		cvs.append([material["Name"] + "Ingot", material["Label"] + " Ingot"])
-		item = { "Class": solid_static_item,
+		item = { "Class": static_item,
 			"Name": material["Name"] + "Ingot" + static_item,
 			"Image": "T_" + material["Name"] + "Ingot",
 			"MaxCount": 32,
@@ -419,7 +419,7 @@ for material in materials:
 			
 	if "IsBlock" in material:
 		cvs.append([material["Name"] + "Block", material["Label"] + " Block"])
-		item = { "Class": solid_static_item,
+		item = { "Class": static_item,
 			"Name": material["Name"] + "Block" + static_item,
 			"Image": "T_" + material["Name"] + "Block",
 			"MaxCount": 999,
@@ -510,7 +510,7 @@ for material in materials:
 	# fluid
 	if "IsFluid" in material:
 		cvs.append([material["Name"], material["Label"]])
-		item = { "Class": fluid_static_item,
+		item = { "Class": static_item,
 			"Name": material["Name"] + "" + static_item,
 			"Image": "T_" + material["Name"] + "",
 			
@@ -597,7 +597,7 @@ for material in materials:
 	# gas
 	if "IsGas" in material:
 		cvs.append([material["Name"], material["Label"]])
-		item = { "Class": fluid_static_item,
+		item = { "Class": static_item,
 			"Name": material["Name"] + "" + static_item,
 			"Image": "T_" + material["Name"] + "",
 			
@@ -684,7 +684,7 @@ for material in materials:
 	# dust
 	if "IsDust" in material:
 		cvs.append([material["Name"] + "Dust", material["Label"] + " Dust"])
-		item = { "Class": solid_static_item,
+		item = { "Class": static_item,
 			"Name": material["Name"] + "Dust" + static_item,
 			"Image": "T_" + material["Name"] + "Dust",
 			
@@ -745,12 +745,12 @@ for tool in tools:
 	for tier in tiers_numlist:
 		if tool["StartTier"] <= tier and tool["EndTier"] >= tier:
 			item_name = tier_material[tier] + tool["Name"] + static_item
-			item = { "Class": solid_static_item,
+			item = { "Class": static_item,
 				"Name": item_name,
 				"Image": "T_" + item_name,
 				"ItemLogic": tool["ItemLogic"],
 				"LogicJson": {
-					"RecipeDictionary": tool["Name"] + base_recipe,
+					"RecipeDictionary": tool["Name"] + recipe_dictionary,
 					"Tier": tier,
 				},
 				"MaxCount": 1,
@@ -882,39 +882,39 @@ write_file("Generated/Resources/parts.json", data);
 
 objects_array = []
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "CuttingMachine" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "CuttingMachine" + recipe_dictionary,
 	"Recipes": recipes_cutter
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "AutomaticHammer" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "AutomaticHammer" + recipe_dictionary,
 	"Recipes": recipes_hammer
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Macerator" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Macerator" + recipe_dictionary,
 	"Recipes": recipes_macerator
 })
 
 for r in recipes_hand:
 	r["Locked"] = True
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Hand" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Hand" + recipe_dictionary,
 	"Recipes": recipes_hand,
 	"UsedIn": [{
 		"Item": "Hand" + static_item,
 	}]
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Press" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Press" + recipe_dictionary,
 	"Recipes": recipes_press
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Furnace" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Furnace" + recipe_dictionary,
 	"Recipes": recipes_furnace
 })
 
@@ -925,34 +925,34 @@ for tier in range(tools[0]["StartTier"], tools[0]["EndTier"]):
 		"Item": tier_material[tier] + "Multitool" + static_item,
 	})
 	
-objects_array.append({ "Class": base_recipe,
-	"Name": "Multitool" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Multitool" + recipe_dictionary,
 	"Recipes": recipes_wrench,
 	"UsedIn": used_in
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Smelter" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Smelter" + recipe_dictionary,
 	"Recipes": recipes_smelt
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Assembler" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Assembler" + recipe_dictionary,
 	"Recipes": recipes_assembler
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "FluidDump" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "FluidDump" + recipe_dictionary,
 	"Recipes": recipes_liq_dump
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "GasDump" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "GasDump" + recipe_dictionary,
 	"Recipes": recipes_gas_dump
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "FluidFurnace" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "FluidFurnace" + recipe_dictionary,
 	"Recipes": recipes_gasfurn
 })
 
