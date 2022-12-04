@@ -26,7 +26,7 @@ recipes_gasturb = []
 cvs = []
 	
 def append_gas_burning(recipe):
-	gas2 = copy.deepcopy(recipe);
+	gas2 = copy.deepcopy(recipe)
 	gas2["Input"]["Items"].append({ "Name": "Oxygen" + static_item, "Count": gas2["Input"]["Items"][0]["Count"]})
 	gas2["Output"]["Items"][0]["Count"] = gas2["Output"]["Items"][0]["Count"] * 2
 	gas2["Output"]["Items"] = [gas2["Output"]["Items"][0]]
