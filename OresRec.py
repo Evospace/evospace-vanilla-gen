@@ -406,44 +406,44 @@ for ore_type in ore_types:
 		#	"Tier": extract_tier(ore_type),
 		#})
 	
-objects_array.append({ "Class": base_recipe,
-	"Name": "Macerator" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Macerator" + recipe_dictionary,
 	"Recipes": recipes_mac
 })
 	
-objects_array.append({ "Class": base_recipe,
-	"Name": "Smelter" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Smelter" + recipe_dictionary,
 	"Recipes": recipes_smelt
 })	
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "OreWasher" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "OreWasher" + recipe_dictionary,
 	"Recipes": recipes_ore_washer
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Separator" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Separator" + recipe_dictionary,
 	"Recipes": recipes_sep
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "IndustrialSeparator" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "IndustrialSeparator" + recipe_dictionary,
 	"Recipes": recipes_sep2
 })
 
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "AutomaticHammer" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "AutomaticHammer" + recipe_dictionary,
 	"Recipes": recipes_hammer
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "ArcSmelter" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "ArcSmelter" + recipe_dictionary,
 	"Recipes": recipes_arc
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Sifter" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Sifter" + recipe_dictionary,
 	"Recipes": recipes_sifter
 })
 
@@ -471,8 +471,8 @@ for ore_type in ore_types:
 		}
 	})
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Multitool" + base_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Multitool" + recipe_dictionary,
 	"Recipes": recipes_break,	
 	"UsedIn": [{
 		"Item": "Multitool" + static_item,

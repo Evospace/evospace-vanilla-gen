@@ -753,7 +753,7 @@ for prop in props:
 	for variation in range(0, prop["Variations"]):
 		prop_class = static_big_prop if "IsBig" in prop else static_prop
 		
-		objects_array.append({ "Class": solid_static_item,
+		objects_array.append({ "Class": static_item,
 			"Name": prop["Name"] + variation_helper[variation] + static_item,
 			
 			"MaxCount": 32,
@@ -761,7 +761,7 @@ for prop in props:
 			"LogicJson": {
 				"StaticBlock": prop["Name"] + variation_helper[variation] + prop_class
 			},
-			"ItemLogic": building_big_prop_logic if "IsBig" in prop else building_prop_logic,
+			"ItemLogic": building_prop_logic if "IsBig" in prop else building_prop_logic,
 			"Category": "Terrain",
 			
 			"LabelParts": [[prop["Name"], "props"]],
@@ -851,8 +851,8 @@ write_file("Generated/Mixed/props.json", data);
 
 objects_array = []
 
-objects_array.append({ "Class": breaking_recipe,
-	"Name": "Multitool" + breaking_recipe,
+objects_array.append({ "Class": recipe_dictionary,
+	"Name": "Multitool" + recipe_dictionary,
 	"Recipes": breaking_hand
 })
 
