@@ -179,7 +179,8 @@ for object in mapgen_objects:
 		
 		"Tag": "Misc",
 	})
-	objects_array.append({ "Class": "TesselatorMarching",
+	objects_array.append({ 
+		"Class": "TesselatorMarching",
 		"Name": object["Name"] + "Surface",
 		"Material": "Materials/Triplanar/" + object["Name"] + "Material"
 	})
