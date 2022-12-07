@@ -754,12 +754,12 @@ for prop in props:
 		prop_class = static_big_prop if "IsBig" in prop else static_prop
 		
 		objects_array.append({ "Class": static_item,
-			"Name": prop["Name"] + variation_helper[variation] + static_item,
+			"Name": prop["Name"] + variation_helper[variation],
 			
 			"MaxCount": 32,
 			"Image": "T_" + prop["Name"],
 			"LogicJson": {
-				"StaticBlock": prop["Name"] + variation_helper[variation] + prop_class
+				"StaticBlock": prop["Name"] + variation_helper[variation]
 			},
 			"ItemLogic": building_prop_logic if "IsBig" in prop else building_prop_logic,
 			"Category": "Terrain",
@@ -769,12 +769,12 @@ for prop in props:
 		})
 		
 		temp_prop = { "Class": prop_class,
-			"Name": prop["Name"] + variation_helper[variation] + prop_class,
+			"Name": prop["Name"] + variation_helper[variation],
 			"Mesh": "Props/" + prop["Name"] + "/" + prop["Name"] + variation_helper[variation],
 			"ScaleMin": prop["ScaleMin"],
 			"ScaleMax": prop["ScaleMax"],
 			"ProjectToTerrainPower": prop["ProjectToTerrainPower"],
-			"Item": prop["Name"] + static_item
+			"Item": prop["Name"]
 		}
 		
 		if "CullBegin" in prop:
@@ -804,7 +804,7 @@ for prop in props:
 				"Items":
 				[
 					{
-						"Name": prop["Name"] + variation_helper[variation] + static_item,
+						"Name": prop["Name"] + variation_helper[variation],
 						"Count": 1
 					}
 				]
@@ -814,7 +814,7 @@ for prop in props:
 				"Items":
 				[
 					{
-						"Name": prop["Drops"] + static_item,
+						"Name": prop["Drops"],
 						"Count": 1 if "DropCount" not in prop else prop["DropCount"]
 					}
 				]
@@ -830,10 +830,10 @@ for proplist in proplists:
 			for prop_name in subitem["Props"]:
 				for variation in range(0, named_prop(prop_name)["Variations"]):
 					prop_class = static_big_prop if "IsBig" in named_prop(prop_name) else static_prop
-					props_array.append(prop_name + variation_helper[variation] + prop_class)
+					props_array.append(prop_name + variation_helper[variation])
 		if "Attaches" in subitem:
 			for attach_name in subitem["Attaches"]:
-				props_array.append(attach_name + static_decoration)
+				props_array.append(attach_name)
 		proplist_datas.append({
 			"Props": props_array,
 			"Chance": subitem["Chance"] * 0.5
@@ -852,7 +852,7 @@ write_file("Generated/Mixed/props.json", data);
 objects_array = []
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Multitool" + recipe_dictionary,
+	"Name": "Multitool",
 	"Recipes": breaking_hand
 })
 

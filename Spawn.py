@@ -8,19 +8,19 @@ data = {
 	{
 		"Items": [
 			{
-				"Name": "CopperMultitool" + static_item,
+				"Name": "CopperMultitool",
 				"Count": 1
 			},
 			{
-				"Name": "StoneSurface" + static_item,
+				"Name": "StoneSurface",
 				"Count": 99
 			},
 			{
-				"Name": "Log" + static_item,
+				"Name": "Log",
 				"Count": 15
 			},
 			{
-				"Name": "BasicPlatform" + static_item,
+				"Name": "BasicPlatform",
 				"Count": 99
 			}
 		]

@@ -26,23 +26,23 @@ for ore_type in ore_types:
 			"Input":{
 				"Items":[
 					{
-						"Name": ore_type["Name"] + "Ore" + static_item,
+						"Name": ore_type["Name"] + "Ore",
 						"Count": 1
 					},
 				]
 			},
 			"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 8 * ore_type["Hardness"]
 			},
 			"Output":{
 				"Items": [
 					{
-						"Name": ore_type["Name"] + "ImpureOreGravel" + static_item,
+						"Name": ore_type["Name"] + "ImpureOreGravel",
 						"Count": 1
 					},
 					{
-						"Name": ore_type["Name"] + "ImpureOreGravel" + static_item,
+						"Name": ore_type["Name"] + "ImpureOreGravel",
 						"Count": 1,
 						"Probability": 0.5,
 					}
@@ -58,20 +58,20 @@ for ore_type in ore_types:
 				"Input":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + "Ore" + static_item,
+							"Name": ore_type["Name"] + "Ore",
 							"Count": 1
 						},
 						
 					]
 				},
 				"ResourceInput":{
-							"Name": "Heat" + static_item,
+							"Name": "Heat",
 							"Count": 10
 						},
 				"Output":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + "Ingot" + static_item,
+							"Name": ore_type["Name"] + "Ingot",
 							"Count": 1
 						}
 					]
@@ -82,11 +82,11 @@ for ore_type in ore_types:
 		
 		out_items = []
 		out_items.append({
-			"Name": ore_type["Name"] + "OreDust" + static_item,
+			"Name": ore_type["Name"] + "OreDust",
 			"Count": 1
 		})
 		out_items.append({
-			"Name": ore_type["Name"] + "OreDust" + static_item,
+			"Name": ore_type["Name"] + "OreDust",
 			"Count": 1,
 			"Probability": 0.5,
 		})
@@ -95,13 +95,13 @@ for ore_type in ore_types:
 			"Input":{
 				"Items":[
 					{
-						"Name": ore_type["Name"] + "ImpureOreGravel" + static_item,
+						"Name": ore_type["Name"] + "ImpureOreGravel",
 						"Count": 1
 					},
 				]
 			},
 			"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 10
 			},
 			"Output":{
@@ -116,23 +116,23 @@ for ore_type in ore_types:
 			"Input":{
 				"Items":[
 					{
-						"Name": ore_type["Name"] + "OreGravel" + static_item,
+						"Name": ore_type["Name"] + "OreGravel",
 						"Count": 1
 					},
 				]
 			},
 			"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 10
 			},
 			"Output":{
 				"Items": [
 					{
-						"Name": ore_type["Name"] + "OreDust" + static_item,
+						"Name": ore_type["Name"] + "OreDust",
 						"Count": 1
 					},
 					{
-						"Name": ore_type["Name"] + "OreDust" + static_item,
+						"Name": ore_type["Name"] + "OreDust",
 						"Count": 1,
 						"Probability": 0.5
 					}
@@ -148,19 +148,19 @@ for ore_type in ore_types:
 				"Input":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + "OreDust" + static_item,
+							"Name": ore_type["Name"] + "OreDust",
 							"Count": 1
 						},
 					]
 				},
 				"ResourceInput":{
-					"Name": "Heat" + static_item,
+					"Name": "Heat",
 					"Count": 10
 				},
 				"Output":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + "Ingot" + static_item,
+							"Name": ore_type["Name"] + "Ingot",
 							"Count": 1
 						}
 					]
@@ -173,19 +173,19 @@ for ore_type in ore_types:
 				"Input":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + "ImpureOreGravel" + static_item,
+							"Name": ore_type["Name"] + "ImpureOreGravel",
 							"Count": 1
 						},
 					]
 				},
 				"ResourceInput":{
-					"Name": "Heat" + static_item,
+					"Name": "Heat",
 					"Count": 10
 				},
 				"Output":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + "Ingot" + static_item,
+							"Name": ore_type["Name"] + "Ingot",
 							"Count": 1
 						}
 					]
@@ -198,19 +198,19 @@ for ore_type in ore_types:
 				"Input":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + "OreGravel" + static_item,
+							"Name": ore_type["Name"] + "OreGravel",
 							"Count": 1
 						},
 					]
 				},
 				"ResourceInput":{
-					"Name": "Heat" + static_item,
+					"Name": "Heat",
 					"Count": 10
 				},
 				"Output":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + "Ingot" + static_item,
+							"Name": ore_type["Name"] + "Ingot",
 							"Count": 1
 						}
 					]
@@ -221,12 +221,12 @@ for ore_type in ore_types:
 		
 		out_items = []
 		out_items.append({
-			"Name": ore_type["Name"] + "OreGravel" + static_item,
+			"Name": ore_type["Name"] + "OreGravel",
 			"Count": 1
 		})
 		if "Byproducts" in ore_type and len(ore_type["Byproducts"]) > 0:
 			oi = {
-				"Name": ore_type["Byproducts"][0] + static_item,
+				"Name": ore_type["Byproducts"][0],
 				"Count": 1,
 				"Probability": 0.1,
 			}
@@ -237,7 +237,7 @@ for ore_type in ore_types:
 			out_items.append(oi)
 				
 		out_items.append({
-			"Name": "OreWater" + static_item,
+			"Name": "OreWater",
 			"Count": 50,
 			"Capacity": 32000,
 		})
@@ -246,17 +246,17 @@ for ore_type in ore_types:
 			"Input":{
 				"Items":[
 					{
-						"Name": ore_type["Name"] + "ImpureOreGravel" + static_item,
+						"Name": ore_type["Name"] + "ImpureOreGravel",
 						"Count": 1
 					},
 					{
-						"Name": "Water" + static_item,
+						"Name": "Water",
 						"Count": 250
 					}
 				]
 			},
 			"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 10
 			},
 			"Output":{
@@ -268,12 +268,12 @@ for ore_type in ore_types:
 		
 		out_items = []
 		out_items.append({
-			"Name": (ore_type["Name"] + "Dust" + static_item) if "Oxide" not in ore_type else (ore_type["Name"] + "OxideDust" + static_item),
+			"Name": (ore_type["Name"] + "Dust") if "Oxide" not in ore_type else (ore_type["Name"] + "OxideDust"),
 			"Count": 1
 		})
 		if "Byproducts" in ore_type and len(ore_type["Byproducts"]) > 0:
 			oi = {
-				"Name": ore_type["Byproducts"][0] + static_item,
+				"Name": ore_type["Byproducts"][0],
 				"Count": 1,
 				"Probability":0.1,
 			}
@@ -287,13 +287,13 @@ for ore_type in ore_types:
 			"Input":{
 				"Items":[
 					{
-						"Name": ore_type["Name"] + "OreDust" + static_item,
+						"Name": ore_type["Name"] + "OreDust",
 						"Count": 1
 					},
 				]
 			},
 			"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 50*4
 			},
 			"Output":{
@@ -306,7 +306,7 @@ for ore_type in ore_types:
 		out_items = []
 		if "Byproducts" in ore_type and len(ore_type["Byproducts"]) > 0:
 			oi = {
-				"Name": (ore_type["Name"] + "Dust" + static_item) if "Oxide" not in ore_type else (ore_type["Name"] + "OxideDust" + static_item),
+				"Name": (ore_type["Name"] + "Dust") if "Oxide" not in ore_type else (ore_type["Name"] + "OxideDust"),
 				"Count": 1
 			}
 			
@@ -320,13 +320,13 @@ for ore_type in ore_types:
 			"Input":{
 				"Items":[
 					{
-						"Name": ore_type["Name"] + "OreDust" + static_item,
+						"Name": ore_type["Name"] + "OreDust",
 						"Count": 1
 					},
 				]
 			},
 			"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 20
 			},
 			"Output":{
@@ -342,29 +342,29 @@ for ore_type in ore_types:
 				"Input":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + i + static_item,
+							"Name": ore_type["Name"] + i,
 							"Count": 1
 						},
 					]
 				},
 				"ResourceInput":{
-					"Name": "Kinetic" + static_item,
+					"Name": "Kinetic",
 					"Count": 200
 				},
 				"Output":{
 					"Items": [
 						{
-							"Name": ore_type["Byproducts"][1][0] + static_item,
+							"Name": ore_type["Byproducts"][1][0],
 							"Count": 1,
 							"Probability": 0.8,
 						},
 						{
-							"Name": ore_type["Byproducts"][1][1] + static_item,
+							"Name": ore_type["Byproducts"][1][1],
 							"Count": 1,
 							"Probability": 0.2,
 						},
 						{
-							"Name": ore_type["Byproducts"][1][2] + static_item,
+							"Name": ore_type["Byproducts"][1][2],
 							"Count": 1,
 							"Probability": 0.02,
 						},
@@ -376,13 +376,13 @@ for ore_type in ore_types:
 		
 		#out_items = []
 		#out_items.append({
-		#	"Name": (ore_type["Name"] + "Dust" + static_item) if "Oxide" not in ore_type else (ore_type["Name"] + "OxideDust" + static_item),
+		#	"Name": (ore_type["Name"] + "Dust") if "Oxide" not in ore_type else (ore_type["Name"] + "OxideDust"),
 		#	"Count": 8
 		#})
 		#if "Byproducts" in ore_type and len(ore_type["Byproducts"]) > 0:
 		#	for byp in ore_type["Byproducts"]:
 		#		out_items.append({
-		#			"Name": byp + "Dust" + static_item,
+		#			"Name": byp + "Dust",
 		#			"Count": 1,
 		#		})
 		#recipes_sep2.append({
@@ -390,13 +390,13 @@ for ore_type in ore_types:
 		#	"Input":{
 		#		"Items":[
 		#			{
-		#				"Name": ore_type["Name"] + "OreDust" + static_item,
+		#				"Name": ore_type["Name"] + "OreDust",
 		#				"Count": 7
 		#			},
 		#		]
 		#	},
 		#	"ResourceInput":{
-		#		"Name": "Kinetic" + static_item,
+		#		"Name": "Kinetic",
 		#		"Count": 3000 * 8
 		#	},
 		#	"Output":{
@@ -407,43 +407,43 @@ for ore_type in ore_types:
 		#})
 	
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Macerator" + recipe_dictionary,
+	"Name": "Macerator",
 	"Recipes": recipes_mac
 })
 	
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Smelter" + recipe_dictionary,
+	"Name": "Smelter",
 	"Recipes": recipes_smelt
 })	
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "OreWasher" + recipe_dictionary,
+	"Name": "OreWasher",
 	"Recipes": recipes_ore_washer
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Separator" + recipe_dictionary,
+	"Name": "Separator",
 	"Recipes": recipes_sep
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "IndustrialSeparator" + recipe_dictionary,
+	"Name": "IndustrialSeparator",
 	"Recipes": recipes_sep2
 })
 
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "AutomaticHammer" + recipe_dictionary,
+	"Name": "AutomaticHammer",
 	"Recipes": recipes_hammer
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "ArcSmelter" + recipe_dictionary,
+	"Name": "ArcSmelter",
 	"Recipes": recipes_arc
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Sifter" + recipe_dictionary,
+	"Name": "Sifter",
 	"Recipes": recipes_sifter
 })
 
@@ -456,7 +456,7 @@ for ore_type in ore_types:
 		"Input":{
 			"Items":[
 				{
-					"Name": ore_type["Name"] + "Ore" + static_item,
+					"Name": ore_type["Name"] + "Ore",
 					"Count": 1
 				}
 			]
@@ -464,7 +464,7 @@ for ore_type in ore_types:
 		"Output":{
 			"Items":[
 				{
-					"Name": ore_type["Drops"] + static_item,
+					"Name": ore_type["Drops"],
 					"Count": 1
 				}
 			]
@@ -472,10 +472,10 @@ for ore_type in ore_types:
 	})
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Multitool" + recipe_dictionary,
+	"Name": "Multitool",
 	"Recipes": recipes_break,	
 	"UsedIn": [{
-		"Item": "Multitool" + static_item,
+		"Item": "Multitool",
 		"Tier": 0
 	}],
 	"Ticks" : 20,

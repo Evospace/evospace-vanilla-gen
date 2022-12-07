@@ -299,11 +299,11 @@ for one in wooden_misc:
 	cvs.append([one["Name"], "Wooden " + CamelToSpaces(one["Name"])])
 
 	item = { "Class": static_item,
-		"Name": one["Name"] + static_item,
+		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"LogicJson":
 		{
-			"StaticBlock": one["Name"] + static_block
+			"StaticBlock": one["Name"]
 		},
 		"MaxCount": 32,
 		"Tag": "Decoration",
@@ -314,8 +314,8 @@ for one in wooden_misc:
 	objects_array.append(item)
 	
 	block = {
-		"Name": one["Name"] + static_block,
-		"Item" : one["Name"] + static_item,
+		"Name": one["Name"],
+		"Item" : one["Name"],
 		"Actor" : "/Game/Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
 		"Class": static_block
@@ -330,12 +330,12 @@ for one in simple_single:
 	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
 	objects_array.append({ "Class": static_item,
-		"Name": one["Name"] + static_item,
+		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_single_logic,
 		"LogicJson":
 		{
-			"StaticBlock": one["Name"] + static_block
+			"StaticBlock": one["Name"]
 		},
 		"MaxCount": 32,
 		"Tag": "Decoration",
@@ -345,8 +345,8 @@ for one in simple_single:
 	
 	block = {
 		"Class": static_block,
-		"Name": one["Name"] + static_block,
-		"Item" : one["Name"] + static_item,
+		"Name": one["Name"],
+		"Item" : one["Name"],
 		"Actor" : "/Game/Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
 	}
@@ -360,12 +360,12 @@ for one in simple_deco:
 	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
 	deco = { "Class": static_item,
-		"Name": one["Name"] + static_item,
+		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_decoration_logic,
 		"LogicJson":
 		{
-			"StaticBlock": one["Name"] + static_decoration
+			"StaticBlock": one["Name"]
 		},
 		"MaxCount": 32,
 		"LabelParts":[[one["Name"],"misc"]],
@@ -377,8 +377,8 @@ for one in simple_deco:
 	objects_array.append(deco)
 	objects_array.append({
 		"Class": static_decoration,
-		"Name": one["Name"] + static_decoration,
-		"Item" : one["Name"] + static_item,
+		"Name": one["Name"],
+		"Item" : one["Name"],
 		"Actor" : "Decorations/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic",
 	})
@@ -387,12 +387,12 @@ for one in simple_blocks:
 	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
 	objects_array.append({ "Class": static_item,
-		"Name": one["Name"] + static_item,
+		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_plane_logic,
 		"LogicJson":
 		{
-			"StaticBlock": one["Name"] + static_block,
+			"StaticBlock": one["Name"],
 			"BuildingMode": "Plane"
 		},
 		"MaxCount": 999,
@@ -402,41 +402,41 @@ for one in simple_blocks:
 		"DescriptionParts": [["BuildingBlock", "common"]],
 	})
 	objects_array.append({ "Class": tesselator_cube,
-		"Name": one["Name"] + tesselator,
+		"Name": one["Name"],
 		"Material" : "Materials/" + one["Name"]
 	})
 	objects_array.append({ "Class": static_block,
-		"Name": one["Name"] + static_block,
-		"Item" : one["Name"] + static_item,
-		"Tesselator": one["Name"] + tesselator,
+		"Name": one["Name"],
+		"Item" : one["Name"],
+		"Tesselator": one["Name"],
 	})
 	
 for one in static_mesh_block:
 	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
 	objects_array.append({ "Class": static_item,
-		"Name": one["Name"] + static_item,
+		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_single_logic,
 		"LogicJson":
 		{
-			"StaticBlock": one["Name"] + static_block
+			"StaticBlock": one["Name"]
 		},
 		"MaxCount": 32,
 		"Tag": "Decoration",
 		"LabelParts":[[one["Name"],"misc"]],
 	})	
 	#objects_array.append({ "Class": tesselator_static_mesh,
-	#	"Name": one["Name"] + tesselator_static_mesh,
+	#	"Name": one["Name"]_static_mesh,
 	#	"Mesh": "Models/" + one["Name"],
 	#})
 	objects_array.append({
 		"Class": static_block,
-		"Name": one["Name"] + static_block,
-		"Item" : one["Name"] + static_item,
+		"Name": one["Name"],
+		"Item" : one["Name"],
 		"Actor" : "/Game/Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic",
-		#"Tesselator": one["Name"] + tesselator_static_mesh
+		#"Tesselator": one["Name"]_static_mesh
 	})
 
 images = []
@@ -457,11 +457,11 @@ for one in equipped:
 	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
 	equ = { "Class": static_item,
-		"Name": one["Name"] + static_item,
+		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"LogicJson":
 		{
-			"StaticBlock": one["Name"] + static_decoration
+			"StaticBlock": one["Name"]
 		},
 		"MaxCount": 32,
 		"Tag":"Misc",

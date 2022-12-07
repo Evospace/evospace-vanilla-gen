@@ -27,7 +27,7 @@ cvs = []
 	
 def append_gas_burning(recipe):
 	gas2 = copy.deepcopy(recipe);
-	gas2["Input"]["Items"].append({ "Name": "Oxygen" + static_item, "Count": gas2["Input"]["Items"][0]["Count"]})
+	gas2["Input"]["Items"].append({ "Name": "Oxygen", "Count": gas2["Input"]["Items"][0]["Count"]})
 	gas2["Output"]["Items"][0]["Count"] = gas2["Output"]["Items"][0]["Count"] * 2
 	gas2["Output"]["Items"] = [gas2["Output"]["Items"][0]]
 	recipes_gasturb.append(gas2) 
@@ -42,13 +42,13 @@ for part in parts:
 			cvs.append([material + part["Name"], CamelToSpaces(material) + " " + part["Label"]])
 			level = tier - part["StartTier"]
 			item = { "Class": static_item,
-				"Name": material + part["Name"] + static_item,
+				"Name": material + part["Name"],
 				"LabelParts": [[material + part["Name"], "parts"]],
 				"Image": "T_" + material + part["Name"],
 				"MaxCount": part["Stack"],
 				"LogicJson":
 				{
-					"StaticBlock": material + part["Name"] + static_block
+					"StaticBlock": material + part["Name"]
 				},
 				"Tag": "Misc",
 				"Materials" : [
@@ -88,19 +88,19 @@ for part in parts:
 					"Input":{
 						"Items":[
 							{
-								"Name": material + part["Name"] + static_item,
+								"Name": material + part["Name"],
 								"Count": 1
 							},
 						]
 					},
 					"ResourceInput":{
-						"Name": "Kinetic" + static_item,
+						"Name": "Kinetic",
 						"Count": 10  * 1.5**level
 					},
 					"Output":{
 						"Items":[
 							{
-								"Name": material + "Dust" + static_item,
+								"Name": material + "Dust",
 								"Count": part["Volume"]
 							}
 						]
@@ -115,7 +115,7 @@ for part in parts:
 					"Input":{
 						"Items":[
 							{
-								"Name": material + "Plate" + static_item,
+								"Name": material + "Plate",
 								"Count": 3
 							}
 						]
@@ -123,7 +123,7 @@ for part in parts:
 					"Output":{
 						"Items":[
 							{
-								"Name": material + "Casing" + static_item,
+								"Name": material + "Casing",
 								"Count": 1
 							}
 						]
@@ -135,8 +135,8 @@ for part in parts:
 					"Material" : "Materials/" + material + "Casing"
 				})
 				objects_array.append({ "Class": static_block,
-					"Name": material + "Casing" + static_block,
-					"Item" : material + "Casing" + static_item,
+					"Name": material + "Casing",
+					"Item" : material + "Casing",
 					"Tesselator": material + "Casing" + tesselator,
 				})
 			
@@ -146,19 +146,19 @@ for part in parts:
 					"Input":{
 						"Items":[
 							{
-								"Name": material + ("Ingot" if material is not "Stone" else "Surface") + static_item,
+								"Name": material + ("Ingot" if material is not "Stone" else "Surface"),
 								"Count": 1
 							},
 						]
 					},
 					"ResourceInput":{
-						"Name": "Kinetic" + static_item,
+						"Name": "Kinetic",
 						"Count": 10 * 1.5**level
 					},
 					"Output":{
 						"Items":[
 							{
-								"Name": material + "Plate" + static_item,
+								"Name": material + "Plate",
 								"Count": 1
 							}
 						]
@@ -170,7 +170,7 @@ for part in parts:
 					"Input":{
 						"Items":[
 							{
-								"Name": material + ("Ingot" if material is not "Stone" else "Surface") + static_item,
+								"Name": material + ("Ingot" if material is not "Stone" else "Surface"),
 								"Count": 1
 							}
 						]
@@ -178,7 +178,7 @@ for part in parts:
 					"Output":{
 						"Items":[
 							{
-								"Name": material + "Plate" + static_item,
+								"Name": material + "Plate",
 								"Count": 1
 							}
 						]
@@ -192,7 +192,7 @@ for part in parts:
 					"Input":{
 						"Items":[
 							{
-								"Name": material + "Plate" + static_item,
+								"Name": material + "Plate",
 								"Count": 1
 							}
 						]
@@ -200,7 +200,7 @@ for part in parts:
 					"Output":{
 						"Items":[
 							{
-								"Name": material + "Parts" + static_item,
+								"Name": material + "Parts",
 								"Count": 1
 							}
 						]
@@ -212,19 +212,19 @@ for part in parts:
 					"Input":{
 						"Items":[
 							{
-								"Name": material + "Plate" + static_item,
+								"Name": material + "Plate",
 								"Count": 1
 							},
 						]
 					},
 					"ResourceInput":{
-						"Name": "Kinetic" + static_item,
+						"Name": "Kinetic",
 						"Count": 10 * 1.5**level
 					},
 					"Output":{
 						"Items":[
 							{
-								"Name": material + "Parts" + static_item,
+								"Name": material + "Parts",
 								"Count": 1
 							}
 						]
@@ -239,7 +239,7 @@ for material in materials:
 	if "IsAbstract" in material:
 		cvs.append([material["Name"], material["Label"]])
 		item = { "Class": static_item,
-			"Name": material["Name"] + static_item,
+			"Name": material["Name"],
 			"Image": "T_" + material["Name"],
 			
 			"MaxCount": 1,
@@ -268,7 +268,7 @@ for material in materials:
 	if "IsExact" in material:
 		cvs.append([material["Name"], material["Label"]])
 		item = { "Class": static_item,
-			"Name": material["Name"] + static_item,
+			"Name": material["Name"],
 			"Image": "T_" + material["Name"],
 			
 			"MaxCount": 32 if material["Name"] != "Signal" else 214748364,
@@ -310,7 +310,7 @@ for material in materials:
 				"Input":{
 					"Items":[
 						{
-							"Name": material["Name"] + static_item,
+							"Name": material["Name"],
 							"Count": 1
 						}
 					]
@@ -318,14 +318,14 @@ for material in materials:
 				"Output":{
 					"Items":[
 						#{
-						#	"Name": "AshDust" + static_item,
+						#	"Name": "AshDust",
 						#	"Count": material["Burnable"]["TotalAsh"],
 						#}
 					],
 					
 				},
 				"ResourceOutput":{
-						"Name": "Heat" + static_item,
+						"Name": "Heat",
 						"Count": material["Burnable"]["HeatPerTick"],
 					},
 				"Ticks" : material["Burnable"]["BurnTime"],
@@ -339,7 +339,7 @@ for material in materials:
 	if "IsIngot" in material:
 		cvs.append([material["Name"] + "Ingot", material["Label"] + " Ingot"])
 		item = { "Class": static_item,
-			"Name": material["Name"] + "Ingot" + static_item,
+			"Name": material["Name"] + "Ingot",
 			"Image": "T_" + material["Name"] + "Ingot",
 			"MaxCount": 32,
 			"Mesh": "Models/Ingot",
@@ -371,20 +371,20 @@ for material in materials:
 				"Input":{
 					"Items":[
 						{
-							"Name": material["Name"] + "Dust" + static_item,
+							"Name": material["Name"] + "Dust",
 							"Count": 1
 						}
 					],
 					
 				},
 				"ResourceInput":{
-						"Name": "Heat" + static_item,
+						"Name": "Heat",
 						"Count": 10,
 					},
 				"Output":{
 					"Items":[
 						{
-							"Name": material["Name"] + "Ingot" + static_item,
+							"Name": material["Name"] + "Ingot",
 							"Count": 1
 						}
 					]
@@ -397,19 +397,19 @@ for material in materials:
 			"Input":{
 				"Items":[
 					{
-						"Name": material["Name"] + "Ingot" + static_item,
+						"Name": material["Name"] + "Ingot",
 						"Count": 1
 					},
 				]
 			},
 			"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 15
 			},
 			"Output":{
 				"Items":[
 					{
-						"Name": material["Name"] + "Dust" + static_item,
+						"Name": material["Name"] + "Dust",
 						"Count": 1
 					}
 				]
@@ -420,7 +420,7 @@ for material in materials:
 	if "IsBlock" in material:
 		cvs.append([material["Name"] + "Block", material["Label"] + " Block"])
 		item = { "Class": static_item,
-			"Name": material["Name"] + "Block" + static_item,
+			"Name": material["Name"] + "Block",
 			"Image": "T_" + material["Name"] + "Block",
 			"MaxCount": 999,
 			#"Mesh": "Models/Ingot",
@@ -433,7 +433,7 @@ for material in materials:
 			"ItemLogic": building_cube_logic,
 			"LogicJson":
 			{
-				"StaticBlock": material["Name"] + "Block" + static_block
+				"StaticBlock": material["Name"] + "Block"
 			},
 		}
 		
@@ -455,8 +455,8 @@ for material in materials:
 			"Material" : "Materials/" + material["Name"]
 		})
 		objects_array.append({ "Class": static_block,
-			"Name": material["Name"] + "Block" + static_block,
-			"Item" : material["Name"] + "Block" + static_item,
+			"Name": material["Name"] + "Block",
+			"Item" : material["Name"] + "Block",
 			"Tesselator": material["Name"] + "Block" + tesselator,
 		})
 		
@@ -465,20 +465,20 @@ for material in materials:
 			"Input":{
 				"Items":[
 					{
-						"Name": material["Name"] + "Dust" + static_item,
+						"Name": material["Name"] + "Dust",
 						"Count": 4
 					}
 				],
 				
 			},
 			"ResourceInput":{
-					"Name": "Kinetic" + static_item,
+					"Name": "Kinetic",
 					"Count": 10,
 				},
 			"Output":{
 				"Items":[
 					{
-						"Name": material["Name"] + "Block" + static_item,
+						"Name": material["Name"] + "Block",
 						"Count": 1
 					}
 				]
@@ -492,7 +492,7 @@ for material in materials:
 			"Input":{
 				"Items":[
 					{
-						"Name": material["Name"] + "Block" + static_item,
+						"Name": material["Name"] + "Block",
 						"Count": 1
 					}
 				]
@@ -500,7 +500,7 @@ for material in materials:
 			"Output":{
 				"Items":[
 					{
-						"Name": material["Name"] + "Block" + static_item,
+						"Name": material["Name"] + "Block",
 						"Count": 1
 					}
 				]
@@ -511,7 +511,7 @@ for material in materials:
 	if "IsFluid" in material:
 		cvs.append([material["Name"], material["Label"]])
 		item = { "Class": static_item,
-			"Name": material["Name"] + "" + static_item,
+			"Name": material["Name"] + "",
 			"Image": "T_" + material["Name"] + "",
 			
 			"MaxCount": 1,
@@ -558,7 +558,7 @@ for material in materials:
 				"Input":{
 					"Items":[
 						{
-							"Name": material["Name"] + "" + static_item,
+							"Name": material["Name"] + "",
 							"Count": 1000
 						}
 					]
@@ -569,7 +569,7 @@ for material in materials:
 					
 				},
 				"ResourceOutput":{
-						"Name": "Heat" + static_item,
+						"Name": "Heat",
 						"Count": material["Burnable"]["HeatPerTick"],
 					},
 				"Ticks" : material["Burnable"]["BurnTime"],
@@ -581,7 +581,7 @@ for material in materials:
 			"Input":{
 				"Items":[
 					{
-						"Name": material["Name"] + "" + static_item,
+						"Name": material["Name"] + "",
 						"Count": 1000 if material["Name"] != "Steam" else 10000
 					}
 				]
@@ -598,7 +598,7 @@ for material in materials:
 	if "IsGas" in material:
 		cvs.append([material["Name"], material["Label"]])
 		item = { "Class": static_item,
-			"Name": material["Name"] + "" + static_item,
+			"Name": material["Name"] + "",
 			"Image": "T_" + material["Name"] + "",
 			
 			"MaxCount": 1,
@@ -645,7 +645,7 @@ for material in materials:
 				"Input":{
 					"Items":[
 						{
-							"Name": material["Name"] + "" + static_item,
+							"Name": material["Name"] + "",
 							"Count": 1000
 						}
 					]
@@ -656,7 +656,7 @@ for material in materials:
 					
 				},
 				"ResourceOutput":{
-						"Name": "Heat" + static_item,
+						"Name": "Heat",
 						"Count": material["Burnable"]["HeatPerTick"],
 					},
 				"Ticks" : material["Burnable"]["BurnTime"],
@@ -668,7 +668,7 @@ for material in materials:
 			"Input":{
 				"Items":[
 					{
-						"Name": material["Name"] + "" + static_item,
+						"Name": material["Name"] + "",
 						"Count": 1000 if material["Name"] != "Steam" else 10000
 					}
 				]
@@ -685,7 +685,7 @@ for material in materials:
 	if "IsDust" in material:
 		cvs.append([material["Name"] + "Dust", material["Label"] + " Dust"])
 		item = { "Class": static_item,
-			"Name": material["Name"] + "Dust" + static_item,
+			"Name": material["Name"] + "Dust",
 			"Image": "T_" + material["Name"] + "Dust",
 			
 			"MaxCount": 32,
@@ -718,7 +718,7 @@ for material in materials:
 				"Input":{
 					"Items":[
 						{
-							"Name": material["Name"] + "Dust" + static_item,
+							"Name": material["Name"] + "Dust",
 							"Count": 1
 						}
 					]
@@ -726,13 +726,13 @@ for material in materials:
 				"Output":{
 					"Items":[
 						#{
-						#	"Name": "AshDust" + static_item,
+						#	"Name": "AshDust",
 						#	"Count": material["Burnable"]["TotalAsh"]
 						#},
 					],
 				},
 				"ResourceOutput":{
-						"Name": "Heat" + static_item,
+						"Name": "Heat",
 						"Count": material["Burnable"]["HeatPerTick"],
 					},
 				"Ticks" : material["Burnable"]["BurnTime"],
@@ -744,7 +744,7 @@ for tool in tools:
 	cvs.append([tool["Name"], tool["Label"]])
 	for tier in tiers_numlist:
 		if tool["StartTier"] <= tier and tool["EndTier"] >= tier:
-			item_name = tier_material[tier] + tool["Name"] + static_item
+			item_name = tier_material[tier] + tool["Name"]
 			item = { "Class": static_item,
 				"Name": item_name,
 				"Image": "T_" + item_name,
@@ -773,10 +773,10 @@ for tool in tools:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts",
 								"Count": 1
 							},{
-								"Name": "Plank" + static_item,
+								"Name": "Plank",
 								"Count": 1
 							},
 						]
@@ -784,7 +784,7 @@ for tool in tools:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Screwdriver" + static_item,
+								"Name": tier_material[tier] + "Screwdriver",
 								"Count": 1
 							}
 						]
@@ -798,15 +798,15 @@ for tool in tools:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe",
 								"Count": 2
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate",
 								"Count": 2
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts",
 								"Count": tier * 5 + 10
 							},
 							{
@@ -818,7 +818,7 @@ for tool in tools:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Multitool" + static_item,
+								"Name": tier_material[tier] + "Multitool",
 								"Count": 1
 							}
 						]
@@ -832,15 +832,15 @@ for tool in tools:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe",
 								"Count": 2
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate",
 								"Count": 2
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts",
 								"Count": tier * 5 + 10
 							},
 							{
@@ -852,7 +852,7 @@ for tool in tools:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "PaintTool" + static_item,
+								"Name": tier_material[tier] + "PaintTool",
 								"Count": 1
 							}
 						]
@@ -904,7 +904,7 @@ objects_array.append({ "Class": recipe_dictionary,
 	"Name": "Hand" + recipe_dictionary,
 	"Recipes": recipes_hand,
 	"UsedIn": [{
-		"Item": "Hand" + static_item,
+		"Item": "Hand",
 	}]
 })
 
@@ -922,7 +922,7 @@ objects_array.append({ "Class": recipe_dictionary,
 used_in = []
 for tier in range(tools[0]["StartTier"], tools[0]["EndTier"]):
 	used_in.append({
-		"Item": tier_material[tier] + "Multitool" + static_item,
+		"Item": tier_material[tier] + "Multitool",
 	})
 	
 objects_array.append({ "Class": recipe_dictionary,

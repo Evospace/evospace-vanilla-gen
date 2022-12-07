@@ -12,7 +12,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Clay" + static_item,
+				"Name": "Clay",
 				"Count": 1
 			}
 		]
@@ -20,7 +20,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "ClayBlock" + static_item,
+				"Name": "ClayBlock",
 				"Count": 1
 			}
 		]
@@ -33,7 +33,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "StoneSurface" + static_item,
+				"Name": "StoneSurface",
 				"Count": 1
 			}
 		]
@@ -41,7 +41,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Bricks" + static_item,
+				"Name": "Bricks",
 				"Count": 1
 			}
 		]
@@ -54,7 +54,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "RedStoneSurface" + static_item,
+				"Name": "RedStoneSurface",
 				"Count": 1
 			}
 		]
@@ -62,7 +62,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "RedBricks" + static_item,
+				"Name": "RedBricks",
 				"Count": 1
 			}
 		]
@@ -75,7 +75,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "DarkStoneSurface" + static_item,
+				"Name": "DarkStoneSurface",
 				"Count": 1
 			}
 		]
@@ -83,7 +83,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "DarkBricks" + static_item,
+				"Name": "DarkBricks",
 				"Count": 1
 			}
 		]
@@ -96,7 +96,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "GravelSurface" + static_item,
+				"Name": "GravelSurface",
 				"Count": 1
 			},
 		]
@@ -104,7 +104,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "SandSurface" + static_item,
+				"Name": "SandSurface",
 				"Count": 1
 			}
 		]
@@ -117,7 +117,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "StoneSurface" + static_item,
+				"Name": "StoneSurface",
 				"Count": 1
 			},
 		]
@@ -125,7 +125,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "GravelSurface" + static_item,
+				"Name": "GravelSurface",
 				"Count": 1
 			}
 		]
@@ -138,7 +138,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "StoneSurface" + static_item,
+				"Name": "StoneSurface",
 				"Count": 1
 			}
 		]
@@ -146,7 +146,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "StoneTiles" + static_item,
+				"Name": "StoneTiles",
 				"Count": 1
 			}
 		]
@@ -159,7 +159,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "DarkStoneSurface" + static_item,
+				"Name": "DarkStoneSurface",
 				"Count": 1
 			}
 		]
@@ -167,7 +167,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "DarkTiles" + static_item,
+				"Name": "DarkTiles",
 				"Count": 1
 			}
 		]
@@ -180,7 +180,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "RedStoneSurface" + static_item,
+				"Name": "RedStoneSurface",
 				"Count": 1
 			}
 		]
@@ -188,7 +188,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "RedTiles" + static_item,
+				"Name": "RedTiles",
 				"Count": 1
 			}
 		]
@@ -201,7 +201,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Terracotta" + static_item,
+				"Name": "Terracotta",
 				"Count": 1
 			}
 		]
@@ -209,7 +209,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "TerracottaTiles" + static_item,
+				"Name": "TerracottaTiles",
 				"Count": 1
 			}
 		]
@@ -222,7 +222,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "TerracottaTiles" + static_item,
+				"Name": "TerracottaTiles",
 				"Count": 1
 			}
 		]
@@ -230,7 +230,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "TerracottaBricks" + static_item,
+				"Name": "TerracottaBricks",
 				"Count": 1
 			}
 		]
@@ -243,7 +243,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank" + static_item,
+				"Name": "Plank",
 				"Count": 1
 			},
 		]
@@ -251,7 +251,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "CircuitBoard" + static_item,
+				"Name": "CircuitBoard",
 				"Count": 1
 			}
 		]
@@ -264,7 +264,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "GoldIngot" + static_item,
+				"Name": "GoldIngot",
 				"Count": 1
 			},	
 		]
@@ -272,7 +272,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "GoldWire" + static_item,
+				"Name": "GoldWire",
 				"Count": 2
 			}
 		]
@@ -285,7 +285,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "CopperIngot" + static_item,
+				"Name": "CopperIngot",
 				"Count": 1
 			},	
 		]
@@ -293,7 +293,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "CopperWire" + static_item,
+				"Name": "CopperWire",
 				"Count": 2
 			}
 		]
@@ -306,11 +306,11 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "CopperWire" + static_item,
+				"Name": "CopperWire",
 				"Count": 6
 			},	
 			{
-				"Name": "CircuitBoard" + static_item,
+				"Name": "CircuitBoard",
 				"Count": 1
 			}
 		]
@@ -318,7 +318,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Circuit" + static_item,
+				"Name": "Circuit",
 				"Count": 1
 			}
 		]
@@ -331,11 +331,11 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Silicon" + static_item,
+				"Name": "Silicon",
 				"Count": 1
 			},	
 			{
-				"Name": "Circuit" + static_item,
+				"Name": "Circuit",
 				"Count": 1
 			}
 		]
@@ -343,7 +343,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "AdvancedCircuit" + static_item,
+				"Name": "AdvancedCircuit",
 				"Count": 1
 			}
 		]
@@ -356,11 +356,11 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SiliconWafer" + static_item,
+				"Name": "SiliconWafer",
 				"Count": 1
 			},	
 			{
-				"Name": "AdvancedCircuit" + static_item,
+				"Name": "AdvancedCircuit",
 				"Count": 1
 			}
 		]
@@ -368,7 +368,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Processor" + static_item,
+				"Name": "Processor",
 				"Count": 1
 			}
 		]
@@ -381,11 +381,11 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "QuantumCore" + static_item,
+				"Name": "QuantumCore",
 				"Count": 2
 			},	
 			{
-				"Name": "Processor" + static_item,
+				"Name": "Processor",
 				"Count": 1
 			}
 		]
@@ -393,7 +393,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "QuantumCircuit" + static_item,
+				"Name": "QuantumCircuit",
 				"Count": 1
 			}
 		]
@@ -406,11 +406,11 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "QuantumCircuit" + static_item,
+				"Name": "QuantumCircuit",
 				"Count": 2
 			},	
 			{
-				"Name": "Processor" + static_item,
+				"Name": "Processor",
 				"Count": 1
 			}
 		]
@@ -418,7 +418,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "QuantumProcessor" + static_item,
+				"Name": "QuantumProcessor",
 				"Count": 1
 			}
 		]
@@ -431,7 +431,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank" + static_item,
+				"Name": "Plank",
 				"Count": 6
 			}
 		]
@@ -439,7 +439,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "WoodenChest" + static_item,
+				"Name": "WoodenChest",
 				"Count": 1
 			}
 		]
@@ -452,7 +452,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank" + static_item,
+				"Name": "Plank",
 				"Count": 1
 			}
 		]
@@ -460,7 +460,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "WoodenPlanks" + static_item,
+				"Name": "WoodenPlanks",
 				"Count": 1
 			}
 		]
@@ -473,19 +473,19 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "CopperParts" + static_item,
+				"Name": "CopperParts",
 				"Count": 6
 			},
 			{
-				"Name": "CopperPlate" + static_item,
+				"Name": "CopperPlate",
 				"Count": 2
 			},
 			{
-				"Name": "CopperPipe" + static_item,
+				"Name": "CopperPipe",
 				"Count": 4
 			},
 			{
-				"Name": "Circuit" + static_item,
+				"Name": "Circuit",
 				"Count": 10
 			}
 		]
@@ -493,7 +493,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Steampack" + static_item,
+				"Name": "Steampack",
 				"Count": 1
 			}
 		]
@@ -506,23 +506,23 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "AluminiumParts" + static_item,
+				"Name": "AluminiumParts",
 				"Count": 10
 			},
 			{
-				"Name": "AluminiumPlate" + static_item,
+				"Name": "AluminiumPlate",
 				"Count": 3
 			},
 			{
-				"Name": "AluminiumPipe" + static_item,
+				"Name": "AluminiumPipe",
 				"Count": 6
 			},
 			{
-				"Name": "AdvancedCircuit" + static_item,
+				"Name": "AdvancedCircuit",
 				"Count": 10
 			},
 			{
-				"Name": "AluminiumElectricEngine" + static_item,
+				"Name": "AluminiumElectricEngine",
 				"Count": 2
 			}
 		]
@@ -530,7 +530,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Jetpack" + static_item,
+				"Name": "Jetpack",
 				"Count": 1
 			}
 		]
@@ -543,11 +543,11 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank" + static_item,
+				"Name": "Plank",
 				"Count": 1
 			},
 			{
-				"Name": "Organics" + static_item,
+				"Name": "Organics",
 				"Count": 10
 			},
 		]
@@ -555,7 +555,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Torch" + static_item,
+				"Name": "Torch",
 				"Count": 1
 			}
 		]
@@ -568,23 +568,23 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "StainlessSteelParts" + static_item,
+				"Name": "StainlessSteelParts",
 				"Count": 10
 			},
 			{
-				"Name": "StainlessSteelPlate" + static_item,
+				"Name": "StainlessSteelPlate",
 				"Count": 3
 			},
 			{
-				"Name": "StainlessSteelPipe" + static_item,
+				"Name": "StainlessSteelPipe",
 				"Count": 6
 			},
 			{
-				"Name": "Processor" + static_item,
+				"Name": "Processor",
 				"Count": 10
 			},
 			{
-				"Name": "StainlessSteelEngine" + static_item,
+				"Name": "StainlessSteelEngine",
 				"Count": 2
 			}
 		]
@@ -592,7 +592,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "AdvancedJetpack" + static_item,
+				"Name": "AdvancedJetpack",
 				"Count": 1
 			}
 		]
@@ -605,15 +605,15 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SteelPlate" + static_item,
+				"Name": "SteelPlate",
 				"Count": 1
 			},
 			{
-				"Name": "AdvancedCircuit" + static_item,
+				"Name": "AdvancedCircuit",
 				"Count": 2
 			},
 			{
-				"Name": "CopperConnector" + static_item,
+				"Name": "CopperConnector",
 				"Count": 5
 			}
 		]
@@ -621,7 +621,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Scanner" + static_item,
+				"Name": "Scanner",
 				"Count": 1
 			}
 		]
@@ -634,27 +634,27 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "HardMetalParts" + static_item,
+				"Name": "HardMetalParts",
 				"Count": 20
 			},
 			{
-				"Name": "HardMetalPlate" + static_item,
+				"Name": "HardMetalPlate",
 				"Count": 2
 			},
 			{
-				"Name": "HardMetalPipe" + static_item,
+				"Name": "HardMetalPipe",
 				"Count": 6
 			},
 			{
-				"Name": "QuantumProcessor" + static_item,
+				"Name": "QuantumProcessor",
 				"Count": 10
 			},
 			{
-				"Name": "Catalyst" + static_item,
+				"Name": "Catalyst",
 				"Count": 4
 			},
 			{
-				"Name": "HardMetalElectricEngine" + static_item,
+				"Name": "HardMetalElectricEngine",
 				"Count": 8
 			}
 		]
@@ -662,7 +662,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "AntigravityUnit" + static_item,
+				"Name": "AntigravityUnit",
 				"Count": 1
 			}
 		]
@@ -675,7 +675,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Log" + static_item,
+				"Name": "Log",
 				"Count": 1
 			}
 		]
@@ -683,7 +683,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Plank" + static_item,
+				"Name": "Plank",
 				"Count": 2
 			}
 		]
@@ -696,7 +696,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank" + static_item,
+				"Name": "Plank",
 				"Count": 4
 			}
 		]
@@ -704,7 +704,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Chair" + static_item,
+				"Name": "Chair",
 				"Count": 1
 			}
 		]
@@ -717,11 +717,11 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Chair" + static_item,
+				"Name": "Chair",
 				"Count": 1
 			},
 			{
-				"Name": "CopperPlate" + static_item,
+				"Name": "CopperPlate",
 				"Count": 1
 			}
 		]
@@ -729,7 +729,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "CopperChair" + static_item,
+				"Name": "CopperChair",
 				"Count": 1
 			}
 		]
@@ -742,7 +742,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank" + static_item,
+				"Name": "Plank",
 				"Count": 4
 			}
 		]
@@ -750,7 +750,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Ladder" + static_item,
+				"Name": "Ladder",
 				"Count": 1
 			}
 		]
@@ -763,7 +763,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank" + static_item,
+				"Name": "Plank",
 				"Count": 8
 			}
 		]
@@ -771,7 +771,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Door" + static_item,
+				"Name": "Door",
 				"Count": 1
 			}
 		]
@@ -784,11 +784,11 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Glass" + static_item,
+				"Name": "Glass",
 				"Count": 2
 			},
 			{
-				"Name": "Plank" + static_item,
+				"Name": "Plank",
 				"Count": 2
 			}
 		]
@@ -796,7 +796,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Window" + static_item,
+				"Name": "Window",
 				"Count": 1
 			}
 		]
@@ -809,11 +809,11 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Glass" + static_item,
+				"Name": "Glass",
 				"Count": 2
 			},
 			{
-				"Name": "Plastic" + static_item,
+				"Name": "Plastic",
 				"Count": 2
 			}
 		]
@@ -821,7 +821,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "PlasticWindow" + static_item,
+				"Name": "PlasticWindow",
 				"Count": 1
 			}
 		]
@@ -834,7 +834,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank" + static_item,
+				"Name": "Plank",
 				"Count": 6
 			}
 		]
@@ -842,7 +842,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Table" + static_item,
+				"Name": "Table",
 				"Count": 1
 			}
 		]
@@ -855,7 +855,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank" + static_item,
+				"Name": "Plank",
 				"Count": 8
 			}
 		]
@@ -863,7 +863,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Bed" + static_item,
+				"Name": "Bed",
 				"Count": 1
 			}
 		]
@@ -876,7 +876,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank" + static_item,
+				"Name": "Plank",
 				"Count": 4
 			}
 		]
@@ -884,7 +884,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Rack" + static_item,
+				"Name": "Rack",
 				"Count": 1
 			}
 		]
@@ -897,7 +897,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "WoodenPlanks" + static_item,
+				"Name": "WoodenPlanks",
 				"Count": 1
 			}
 		]
@@ -905,7 +905,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "WoodenStairs" + static_item,
+				"Name": "WoodenStairs",
 				"Count": 1
 			}
 		]
@@ -918,7 +918,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Bricks" + static_item,
+				"Name": "Bricks",
 				"Count": 1
 			}
 		]
@@ -926,7 +926,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Stairs" + static_item,
+				"Name": "Stairs",
 				"Count": 1
 			}
 		]
@@ -939,7 +939,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank" + static_item,
+				"Name": "Plank",
 				"Count": 3
 			}
 		]
@@ -947,7 +947,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Fence" + static_item,
+				"Name": "Fence",
 				"Count": 1
 			}
 		]
@@ -960,7 +960,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SteelParts" + static_item,
+				"Name": "SteelParts",
 				"Count": 3
 			}
 		]
@@ -968,7 +968,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "SteelFence" + static_item,
+				"Name": "SteelFence",
 				"Count": 1
 			}
 		]
@@ -981,7 +981,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "StainlessSteelParts" + static_item,
+				"Name": "StainlessSteelParts",
 				"Count": 3
 			}
 		]
@@ -989,7 +989,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "StainlessSteelFence" + static_item,
+				"Name": "StainlessSteelFence",
 				"Count": 1
 			}
 		]
@@ -1002,11 +1002,11 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SteelPipe" + static_item,
+				"Name": "SteelPipe",
 				"Count": 1
 			},
 			{
-				"Name": "SteelLamp" + static_item,
+				"Name": "SteelLamp",
 				"Count": 1
 			}
 		]
@@ -1014,7 +1014,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Flashlight" + static_item,
+				"Name": "Flashlight",
 				"Count": 1
 			}
 		]
@@ -1027,7 +1027,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Concrete" + static_item,
+				"Name": "Concrete",
 				"Count": 1
 			},		
 		]
@@ -1035,7 +1035,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "ConcreteTiles" + static_item,
+				"Name": "ConcreteTiles",
 				"Count": 1
 			}
 		]
@@ -1048,7 +1048,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Concrete" + static_item,
+				"Name": "Concrete",
 				"Count": 1
 			},		
 		]
@@ -1056,7 +1056,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "ConcreteSmallTiles" + static_item,
+				"Name": "ConcreteSmallTiles",
 				"Count": 1
 			}
 		]
@@ -1069,7 +1069,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Concrete" + static_item,
+				"Name": "Concrete",
 				"Count": 1
 			},		
 		]
@@ -1077,7 +1077,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "ConcreteBricks" + static_item,
+				"Name": "ConcreteBricks",
 				"Count": 1
 			}
 		]
@@ -1090,7 +1090,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "ReinforcedConcrete" + static_item,
+				"Name": "ReinforcedConcrete",
 				"Count": 1
 			},		
 		]
@@ -1098,7 +1098,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "ReinforcedConcreteTiles" + static_item,
+				"Name": "ReinforcedConcreteTiles",
 				"Count": 1
 			}
 		]
@@ -1111,7 +1111,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "ReinforcedConcrete" + static_item,
+				"Name": "ReinforcedConcrete",
 				"Count": 1
 			},		
 		]
@@ -1119,7 +1119,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "ReinforcedConcreteSmallTiles" + static_item,
+				"Name": "ReinforcedConcreteSmallTiles",
 				"Count": 1
 			}
 		]
@@ -1132,7 +1132,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "ReinforcedConcrete" + static_item,
+				"Name": "ReinforcedConcrete",
 				"Count": 1
 			},		
 		]
@@ -1140,7 +1140,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "ReinforcedConcreteBricks" + static_item,
+				"Name": "ReinforcedConcreteBricks",
 				"Count": 1
 			}
 		]

@@ -93,7 +93,7 @@ def append_recipe(recipe):
 	output = copy.deepcopy(dec_recipe["Input"])
 	
 	dec_recipe["Ticks"] = max(min(item_count * 10, 400), 20);
-	dec_recipe["ResourceInput"] = { "Name": "Electricity" + static_item, "Count": 20 * level }
+	dec_recipe["ResourceInput"] = { "Name": "Electricity", "Count": 20 * level }
 	recipes_assembler.append(dec_recipe)
 
 def append_recipe_hand_press(recipe):
@@ -108,7 +108,7 @@ def append_recipe_hand_press(recipe):
 	output = copy.deepcopy(dec_recipe["Input"])
 	
 	dec_recipe["Ticks"] = 60;
-	dec_recipe["ResourceInput"] = { "Name": "Kinetic" + static_item, "Count": 100 }
+	dec_recipe["ResourceInput"] = { "Name": "Kinetic", "Count": 100 }
 	recipes_press.append(dec_recipe)		
 
 # wrenching
@@ -120,7 +120,7 @@ recipes_industrial_steam_turbine.append({
 		]
 	},
 	"ResourceInput":{
-		"Name": "Steam" + static_item,
+		"Name": "Steam",
 		"Count": fission_fullpower * 0.9
 	},
 	"Output":{
@@ -128,7 +128,7 @@ recipes_industrial_steam_turbine.append({
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": fission_fullpower * 0.9 * 0.9
 	},
 	
@@ -141,13 +141,13 @@ recipes_industrial_boiler.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Water" + static_item,
+				"Name": "Water",
 				"Count": 2000
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name":"Heat" + static_item,
+		"Name":"Heat",
 		"Count": fission_fullpower
 	},
 	"Output":{
@@ -155,7 +155,7 @@ recipes_industrial_boiler.append({
 		]
 	},
 	"ResourceOutput":{
-		"Name":"Steam" + static_item,
+		"Name":"Steam",
 		"Count": fission_fullpower * 0.9
 	},
 	"Ticks" : 200,
@@ -166,19 +166,19 @@ recipes_fusion_reactor.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "ProducerGas" + static_item,
+				"Name": "ProducerGas",
 				"Count": 1000
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": fission_fullpower*0.9*0.9
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "HotNeutroniumIngot" + static_item,
+				"Name": "HotNeutroniumIngot",
 				"Count": 1
 			}
 		]
@@ -191,19 +191,19 @@ recipes_fusion_reactor.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "ProducerGas" + static_item,
+				"Name": "ProducerGas",
 				"Count": 3000
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 2 * fission_fullpower*0.9*0.9
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "HotNeutroniumIngot" + static_item,
+				"Name": "HotNeutroniumIngot",
 				"Count": 1 * 3
 			}
 		]
@@ -216,20 +216,20 @@ recipes_fusion_reactor.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "UltimateCatalyst" + static_item,
+				"Name": "UltimateCatalyst",
 				"Count": 1,
 				"Probability":0
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": fission_fullpower*0.9*0.9
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "HotNeutroniumIngot" + static_item,
+				"Name": "HotNeutroniumIngot",
 				"Count": 1
 			}
 		]
@@ -242,20 +242,20 @@ recipes_fusion_reactor.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "UltimateCatalyst" + static_item,
+				"Name": "UltimateCatalyst",
 				"Count": 3,
 				"Probability":0
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 2 * fission_fullpower*0.9*0.9
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "HotNeutroniumIngot" + static_item,
+				"Name": "HotNeutroniumIngot",
 				"Count": 1 * 3
 			}
 		]
@@ -268,19 +268,19 @@ recipes_smelter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SandSurface" + static_item,
+				"Name": "SandSurface",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput": {
-		"Name": "Heat" + static_item,
+		"Name": "Heat",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Glass" + static_item,
+				"Name": "Glass",
 				"Count": 1
 			}
 		]
@@ -296,7 +296,7 @@ for list in (simple_deco, wooden_misc, simple_single, simple_blocks, static_mesh
 			"Input":{
 				"Items":[
 					{
-						"Name": one["Name"] + static_item,
+						"Name": one["Name"],
 						"Count": 1
 					}
 				]
@@ -304,7 +304,7 @@ for list in (simple_deco, wooden_misc, simple_single, simple_blocks, static_mesh
 			"Output":{
 				"Items":[
 					{
-						"Name": one["Name"] + static_item,
+						"Name": one["Name"],
 						"Count": 1
 					}
 				]
@@ -318,11 +318,11 @@ append_recipe({
 	"Input":{
 		"Items":[
 			{
-				"Name": "StainlessSteelPlate" + static_item,
+				"Name": "StainlessSteelPlate",
 				"Count": 1
 			},
 			{
-				"Name": "StainlessSteelParts" + static_item,
+				"Name": "StainlessSteelParts",
 				"Count": 1
 			},
 		]
@@ -330,7 +330,7 @@ append_recipe({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Cell" + static_item,
+				"Name": "Cell",
 				"Count": 1
 			}
 		]
@@ -344,7 +344,7 @@ append_recipe({
 	"Input":{
 		"Items":[
 			{
-				"Name": "DepletedUraniumCell" + static_item,
+				"Name": "DepletedUraniumCell",
 				"Count": 1
 			},
 		]
@@ -352,7 +352,7 @@ append_recipe({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Cell" + static_item,
+				"Name": "Cell",
 				"Count": 1
 			}
 		]
@@ -366,15 +366,15 @@ append_recipe({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Uranium235Dust" + static_item,
+				"Name": "Uranium235Dust",
 				"Count": 3
 			},
 			{
-				"Name": "UraniumDust" + static_item,
+				"Name": "UraniumDust",
 				"Count": 20
 			},
 			{
-				"Name": "Cell" + static_item,
+				"Name": "Cell",
 				"Count": 1
 			},
 		]
@@ -382,7 +382,7 @@ append_recipe({
 	"Output":{
 		"Items":[
 			{
-				"Name": "UraniumCell" + static_item,
+				"Name": "UraniumCell",
 				"Count": 1
 			}
 		]
@@ -396,11 +396,11 @@ append_recipe({
 	"Input":{
 		"Items":[
 			{
-				"Name": "ThoriumDust" + static_item,
+				"Name": "ThoriumDust",
 				"Count": 20
 			},
 			{
-				"Name": "Cell" + static_item,
+				"Name": "Cell",
 				"Count": 1
 			},
 		]
@@ -408,7 +408,7 @@ append_recipe({
 	"Output":{
 		"Items":[
 			{
-				"Name": "ThoriumCell" + static_item,
+				"Name": "ThoriumCell",
 				"Count": 1
 			}
 		]
@@ -422,11 +422,11 @@ append_recipe({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Uranium233Dust" + static_item,
+				"Name": "Uranium233Dust",
 				"Count": 3
 			},
 			{
-				"Name": "Cell" + static_item,
+				"Name": "Cell",
 				"Count": 1
 			},
 		]
@@ -434,7 +434,7 @@ append_recipe({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Uranium233Cell" + static_item,
+				"Name": "Uranium233Cell",
 				"Count": 1
 			}
 		]
@@ -448,11 +448,11 @@ append_recipe({
 	"Input":{
 		"Items":[
 			{
-				"Name": "PlutoniumDust" + static_item,
+				"Name": "PlutoniumDust",
 				"Count": 3
 			},
 			{
-				"Name": "Cell" + static_item,
+				"Name": "Cell",
 				"Count": 1
 			},
 		]
@@ -460,7 +460,7 @@ append_recipe({
 	"Output":{
 		"Items":[
 			{
-				"Name": "PlutoniumCell" + static_item,
+				"Name": "PlutoniumCell",
 				"Count": 1
 			}
 		]
@@ -474,11 +474,11 @@ append_recipe({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Coal" + static_item,
+				"Name": "Coal",
 				"Count": 10
 			},
 			{
-				"Name": "Cell" + static_item,
+				"Name": "Cell",
 				"Count": 1
 			},
 		]
@@ -486,7 +486,7 @@ append_recipe({
 	"Output":{
 		"Items":[
 			{
-				"Name": "FilteringCell" + static_item,
+				"Name": "FilteringCell",
 				"Count": 1
 			}
 		]
@@ -500,23 +500,23 @@ recipes_assembler.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "CircuitBoard" + static_item,
+				"Name": "CircuitBoard",
 				"Count": 1
 			},
 			{
-				"Name": "CopperWire" + static_item,
+				"Name": "CopperWire",
 				"Count": 6
 			}
 		]
 	},
 	"ResourceInput": {
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Circuit" + static_item,
+				"Name": "Circuit",
 				"Count": 1
 			}
 		]
@@ -530,23 +530,23 @@ recipes_assembler.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Silicon" + static_item,
+				"Name": "Silicon",
 				"Count": 1
 			},	
 			{
-				"Name": "Circuit" + static_item,
+				"Name": "Circuit",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceInput": {
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 30
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "AdvancedCircuit" + static_item,
+				"Name": "AdvancedCircuit",
 				"Count": 1
 			}
 		]
@@ -560,19 +560,19 @@ recipes_assembler.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Silicon" + static_item,
+				"Name": "Silicon",
 				"Count": 1
 			},	
 		]
 	},
 	"ResourceInput": {
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 100
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "SiliconWafer" + static_item,
+				"Name": "SiliconWafer",
 				"Count": 1
 			}
 		]
@@ -586,23 +586,23 @@ recipes_assembler.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SiliconWafer" + static_item,
+				"Name": "SiliconWafer",
 				"Count": 1
 			},	
 			{
-				"Name": "AdvancedCircuit" + static_item,
+				"Name": "AdvancedCircuit",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceInput": {
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 80
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Processor" + static_item,
+				"Name": "Processor",
 				"Count": 1
 			}
 		]
@@ -615,23 +615,23 @@ recipes_assembler.append({
 	"Input":{
 		"Items":[	
 			{
-				"Name": "QuantumProcessor" + static_item,
+				"Name": "QuantumProcessor",
 				"Count": 2
 			},
 			{
-				"Name": "UltimateCatalyst" + static_item,
+				"Name": "UltimateCatalyst",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceInput": {
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 1000
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "QuantumBrain" + static_item,
+				"Name": "QuantumBrain",
 				"Count": 1
 			}
 		]
@@ -644,15 +644,15 @@ append_recipe({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Cell" + static_item,
+				"Name": "Cell",
 				"Count": 1
 			},	
 			{
-				"Name": "GoldWire" + static_item,
+				"Name": "GoldWire",
 				"Count": 10
 			},	
 			{
-				"Name": "Coal" + static_item,
+				"Name": "Coal",
 				"Count": 4
 			}
 		]
@@ -660,7 +660,7 @@ append_recipe({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Catalyst" + static_item,
+				"Name": "Catalyst",
 				"Count": 1
 			}
 		]
@@ -674,15 +674,15 @@ append_recipe({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Cell" + static_item,
+				"Name": "Cell",
 				"Count": 1
 			},	
 			{
-				"Name": "NeutroniumParts" + static_item,
+				"Name": "NeutroniumParts",
 				"Count": 8
 			},	
 			{
-				"Name": "Coke" + static_item,
+				"Name": "Coke",
 				"Count": 10
 			}
 		]
@@ -690,7 +690,7 @@ append_recipe({
 	"Output":{
 		"Items":[
 			{
-				"Name": "UltimateCatalyst" + static_item,
+				"Name": "UltimateCatalyst",
 				"Count": 1
 			}
 		]
@@ -704,23 +704,23 @@ recipes_assembler.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plastic" + static_item,
+				"Name": "Plastic",
 				"Count": 1
 			},
 			{
-				"Name": "GoldWire" + static_item,
+				"Name": "GoldWire",
 				"Count": 3
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 20
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "AdvancedCircuitBoard" + static_item,
+				"Name": "AdvancedCircuitBoard",
 				"Count": 1
 			}
 		]
@@ -735,23 +735,23 @@ recipes_assembler.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SiliconWafer" + static_item,
+				"Name": "SiliconWafer",
 				"Count": 1
 			},	
 			{
-				"Name": "AdvancedCircuitBoard" + static_item,
+				"Name": "AdvancedCircuitBoard",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceInput": {
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 80
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Processor" + static_item,
+				"Name": "Processor",
 				"Count": 1
 			}
 		]
@@ -765,23 +765,23 @@ recipes_assembler.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "RareEarthElement" + static_item,
+				"Name": "RareEarthElement",
 				"Count": 1
 			},	
 			{
-				"Name": "CopperParts" + static_item,
+				"Name": "CopperParts",
 				"Count": 2
 			}
 		]
 	},
 	"ResourceInput": {
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 1000
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "QuantumCore" + static_item,
+				"Name": "QuantumCore",
 				"Count": 1
 			}
 		]
@@ -795,23 +795,23 @@ recipes_assembler.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "QuantumCore" + static_item,
+				"Name": "QuantumCore",
 				"Count": 2
 			},	
 			{
-				"Name": "AdvancedCircuitBoard" + static_item,
+				"Name": "AdvancedCircuitBoard",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceInput": {
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 1000 / 7
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "QuantumCircuit" + static_item,
+				"Name": "QuantumCircuit",
 				"Count": 1
 			}
 		]
@@ -825,23 +825,23 @@ recipes_assembler.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "QuantumCircuit" + static_item,
+				"Name": "QuantumCircuit",
 				"Count": 1
 			},	
 			{
-				"Name": "Processor" + static_item,
+				"Name": "Processor",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceInput": {
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 2000 / 13
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "QuantumProcessor" + static_item,
+				"Name": "QuantumProcessor",
 				"Count": 1
 			}
 		]
@@ -855,19 +855,19 @@ recipes_assembler.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "CopperIngot" + static_item,
+				"Name": "CopperIngot",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput": {
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "CopperWire" + static_item,
+				"Name": "CopperWire",
 				"Count": 2
 			}
 		]
@@ -880,19 +880,19 @@ recipes_assembler.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SuperconductorIngot" + static_item,
+				"Name": "SuperconductorIngot",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput": {
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 100
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "SuperconductorWire" + static_item,
+				"Name": "SuperconductorWire",
 				"Count": 2
 			}
 		]
@@ -905,27 +905,27 @@ recipes_assembler.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SulfuricAcid" + static_item,
+				"Name": "SulfuricAcid",
 				"Count": 100
 			},
 			{
-				"Name": "CopperParts" + static_item,
+				"Name": "CopperParts",
 				"Count": 1
 			},
 			{
-				"Name": "StainlessSteelPlate" + static_item,
+				"Name": "StainlessSteelPlate",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput": {
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Battery" + static_item,
+				"Name": "Battery",
 				"Count": 1
 			}
 		]
@@ -939,19 +939,19 @@ recipes_assembler.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "GoldIngot" + static_item,
+				"Name": "GoldIngot",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput": {
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "GoldWire" + static_item,
+				"Name": "GoldWire",
 				"Count": 2
 			}
 		]
@@ -964,11 +964,11 @@ append_recipe({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Cell" + static_item,
+				"Name": "Cell",
 				"Count": 1
 			},
 			{
-				"Name": "BerylliumDust" + static_item,
+				"Name": "BerylliumDust",
 				"Count": 3
 			},
 		]
@@ -976,7 +976,7 @@ append_recipe({
 	"Output":{
 		"Items":[
 			{
-				"Name": "ReflectorCell" + static_item,
+				"Name": "ReflectorCell",
 				"Count": 1
 			}
 		]
@@ -989,23 +989,23 @@ append_recipe({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Cell" + static_item,
+				"Name": "Cell",
 				"Count": 1
 			},
 			{
-				"Name": "BoronDust" + static_item,
+				"Name": "BoronDust",
 				"Count": 3
 			},
 		]
 	},
 	"ResourceInput": {
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 1000 / 9
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "ControlCell" + static_item,
+				"Name": "ControlCell",
 				"Count": 1
 			}
 		]
@@ -1022,7 +1022,7 @@ recipes_condens.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Water" + static_item,
+				"Name": "Water",
 				"Count": 250
 			}
 		]
@@ -1037,13 +1037,13 @@ recipes_condens.append({
 		]
 	},
 	"ResourceInput": {
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 20
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Oxygen" + static_item,
+				"Name": "Oxygen",
 				"Count": 250
 			}
 		]
@@ -1058,13 +1058,13 @@ recipes_condens.append({
 		]
 	},
 	"ResourceInput": {
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 20
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Nitrogen" + static_item,
+				"Name": "Nitrogen",
 				"Count": 1000
 			}
 		]
@@ -1079,13 +1079,13 @@ recipes_condens.append({
 		]
 	},
 	"ResourceInput": {
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 40
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Helium" + static_item,
+				"Name": "Helium",
 				"Count": 100
 			}
 		]
@@ -1100,13 +1100,13 @@ recipes_condens.append({
 		]
 	},
 	"ResourceInput": {
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 40
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Methane" + static_item,
+				"Name": "Methane",
 				"Count": 80
 			}
 		]
@@ -1121,13 +1121,13 @@ recipes_condens.append({
 		]
 	},
 	"ResourceInput": {
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 40
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Hydrogen" + static_item,
+				"Name": "Hydrogen",
 				"Count": 50
 			}
 		]
@@ -1140,7 +1140,7 @@ recipes_farm.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Water" + static_item,
+				"Name": "Water",
 				"Count": 625
 			}
 		]
@@ -1148,7 +1148,7 @@ recipes_farm.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Log" + static_item,
+				"Name": "Log",
 				"Count": 15
 			}
 		]
@@ -1161,7 +1161,7 @@ recipes_farm.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Water" + static_item,
+				"Name": "Water",
 				"Count": 625
 			}
 		]
@@ -1169,7 +1169,7 @@ recipes_farm.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Pumpkin" + static_item,
+				"Name": "Pumpkin",
 				"Count": 10
 			}
 		]
@@ -1182,7 +1182,7 @@ recipes_centrifuge.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "DepletedUraniumCell" + static_item,
+				"Name": "DepletedUraniumCell",
 				"Count": 1
 			}
 		]
@@ -1190,14 +1190,14 @@ recipes_centrifuge.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "PlutoniumDust" + static_item,
+				"Name": "PlutoniumDust",
 				"Count": 1,
 				"Probability": 0.1,
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 100
 	},
 	"Ticks" : 2000,
@@ -1208,7 +1208,7 @@ recipes_fission.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "UraniumCell" + static_item,
+				"Name": "UraniumCell",
 				"Count": 1
 			}
 		]
@@ -1216,13 +1216,13 @@ recipes_fission.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "DepletedUraniumCell" + static_item,
+				"Name": "DepletedUraniumCell",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Heat" + static_item,
+		"Name": "Heat",
 		"Count": 7100
 	},
 	"Ticks" : 2000,
@@ -1233,11 +1233,11 @@ recipes_fission.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "UraniumCell" + static_item,
+				"Name": "UraniumCell",
 				"Count": 2
 			},
 			{
-				"Name": "ControlCell" + static_item,
+				"Name": "ControlCell",
 				"Count": 1,
 				"Probability": 0,
 			}
@@ -1246,13 +1246,13 @@ recipes_fission.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "DepletedUraniumCell" + static_item,
+				"Name": "DepletedUraniumCell",
 				"Count": 2
 			}
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Heat" + static_item,
+		"Name": "Heat",
 		"Count": 7100 * 2.2
 	},
 	"Ticks" : 2000,
@@ -1263,11 +1263,11 @@ recipes_fission.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "UraniumCell" + static_item,
+				"Name": "UraniumCell",
 				"Count": 3
 			},
 			{
-				"Name": "ControlCell" + static_item,
+				"Name": "ControlCell",
 				"Count": 1,
 				"Probability": 0,
 			}
@@ -1276,13 +1276,13 @@ recipes_fission.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "DepletedUraniumCell" + static_item,
+				"Name": "DepletedUraniumCell",
 				"Count": 3
 			}
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Heat" + static_item,
+		"Name": "Heat",
 		"Count": 7100 * 3.3
 	},
 	"Ticks" : 2000,
@@ -1293,11 +1293,11 @@ recipes_fission.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "UraniumCell" + static_item,
+				"Name": "UraniumCell",
 				"Count": 3
 			},
 			{
-				"Name": "ControlCell" + static_item,
+				"Name": "ControlCell",
 				"Count": 5,
 				"Probability": 0,
 			}
@@ -1306,13 +1306,13 @@ recipes_fission.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "DepletedUraniumCell" + static_item,
+				"Name": "DepletedUraniumCell",
 				"Count": 3
 			}
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Heat" + static_item,
+		"Name": "Heat",
 		"Count": 7100 * 3.3 / 2
 	},
 	"Ticks" : 2000 * 2,
@@ -1323,11 +1323,11 @@ recipes_fission.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "UraniumCell" + static_item,
+				"Name": "UraniumCell",
 				"Count": 1
 			},
 			{
-				"Name": "ControlCell" + static_item,
+				"Name": "ControlCell",
 				"Count": 3,
 				"Probability": 0,
 			}
@@ -1336,13 +1336,13 @@ recipes_fission.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "DepletedUraniumCell" + static_item,
+				"Name": "DepletedUraniumCell",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Heat" + static_item,
+		"Name": "Heat",
 		"Count": 7100 / 4
 	},
 	"Ticks" : 8000 * .9 * .9,
@@ -1353,16 +1353,16 @@ recipes_fission.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "UraniumCell" + static_item,
+				"Name": "UraniumCell",
 				"Count": 3,
 			},
 			{
-				"Name": "ReflectorCell" + static_item,
+				"Name": "ReflectorCell",
 				"Count": 1,
 				"Probability": 0,
 			},
 			{
-				"Name": "ThoriumCell" + static_item,
+				"Name": "ThoriumCell",
 				"Count": 2,
 			}
 		]
@@ -1370,17 +1370,17 @@ recipes_fission.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "DepletedUraniumCell" + static_item,
+				"Name": "DepletedUraniumCell",
 				"Count": 3
 			},
 			{
-				"Name": "Uranium233Cell" + static_item,
+				"Name": "Uranium233Cell",
 				"Count": 2,
 			}
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Heat" + static_item,
+		"Name": "Heat",
 		"Count": 200
 	},
 	"Ticks" : 2000,
@@ -1391,16 +1391,16 @@ recipes_fission.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "PlutoniumCell" + static_item,
+				"Name": "PlutoniumCell",
 				"Count": 1,
 			},
 			{
-				"Name": "ReflectorCell" + static_item,
+				"Name": "ReflectorCell",
 				"Count": 1,
 				"Probability": 0,
 			},
 			{
-				"Name": "ThoriumCell" + static_item,
+				"Name": "ThoriumCell",
 				"Count": 3,
 			}
 		]
@@ -1408,17 +1408,17 @@ recipes_fission.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Uranium233Cell" + static_item,
+				"Name": "Uranium233Cell",
 				"Count": 3,
 			},
 			{
-				"Name": "DepletedUraniumCell" + static_item,
+				"Name": "DepletedUraniumCell",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Heat" + static_item,
+		"Name": "Heat",
 		"Count": 200
 	},
 	"Ticks" : 2000,
@@ -1429,16 +1429,16 @@ recipes_fission.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "PlutoniumCell" + static_item,
+				"Name": "PlutoniumCell",
 				"Count": 1,
 			},
 			{
-				"Name": "ReflectorCell" + static_item,
+				"Name": "ReflectorCell",
 				"Count": 2,
 				"Probability": 0,
 			},
 			{
-				"Name": "ThoriumCell" + static_item,
+				"Name": "ThoriumCell",
 				"Count": 6,
 			}
 		]
@@ -1446,17 +1446,17 @@ recipes_fission.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Uranium233Cell" + static_item,
+				"Name": "Uranium233Cell",
 				"Count": 6,
 			},
 			{
-				"Name": "DepletedUraniumCell" + static_item,
+				"Name": "DepletedUraniumCell",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Heat" + static_item,
+		"Name": "Heat",
 		"Count": 200
 	},
 	"Ticks" : 2000,
@@ -1467,11 +1467,11 @@ recipes_fission.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "UraniumCell" + static_item,
+				"Name": "UraniumCell",
 				"Count": 1
 			},
 			{
-				"Name": "ControlCell" + static_item,
+				"Name": "ControlCell",
 				"Count": 1,
 				"Probability": 0,
 			}
@@ -1480,13 +1480,13 @@ recipes_fission.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "DepletedUraniumCell" + static_item,
+				"Name": "DepletedUraniumCell",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Heat" + static_item,
+		"Name": "Heat",
 		"Count": 7100 / 2
 	},
 	"Ticks" : 4000 * 0.9,
@@ -1497,11 +1497,11 @@ recipes_fission.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Uranium233Cell" + static_item,
+				"Name": "Uranium233Cell",
 				"Count": 1,
 			},
 			{
-				"Name": "ControlCell" + static_item,
+				"Name": "ControlCell",
 				"Count": 1,
 				"Probability": 0,
 			},
@@ -1510,13 +1510,13 @@ recipes_fission.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "DepletedUraniumCell" + static_item,
+				"Name": "DepletedUraniumCell",
 				"Count": 1,
 			}
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Heat" + static_item,
+		"Name": "Heat",
 		"Count": 7100 * 3.3
 	},
 	"Ticks" : 2000,
@@ -1527,11 +1527,11 @@ recipes_fission.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Uranium233Cell" + static_item,
+				"Name": "Uranium233Cell",
 				"Count": 2,
 			},
 			{
-				"Name": "ControlCell" + static_item,
+				"Name": "ControlCell",
 				"Count": 1,
 				"Probability": 0,
 			},
@@ -1540,13 +1540,13 @@ recipes_fission.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "DepletedUraniumCell" + static_item,
+				"Name": "DepletedUraniumCell",
 				"Count": 2,
 			}
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Heat" + static_item,
+		"Name": "Heat",
 		"Count": fission_fullpower / 2
 	},
 	"Ticks" : 2000,
@@ -1557,11 +1557,11 @@ recipes_fission.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Uranium233Cell" + static_item,
+				"Name": "Uranium233Cell",
 				"Count": 4,
 			},
 			{
-				"Name": "ControlCell" + static_item,
+				"Name": "ControlCell",
 				"Count": 1,
 				"Probability": 0,
 			},
@@ -1570,13 +1570,13 @@ recipes_fission.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "DepletedUraniumCell" + static_item,
+				"Name": "DepletedUraniumCell",
 				"Count": 4,
 			}
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Heat" + static_item,
+		"Name": "Heat",
 		"Count": fission_fullpower
 	},
 	"Ticks" : 2000,
@@ -1587,11 +1587,11 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "AluminiumDust" + static_item,
+				"Name": "AluminiumDust",
 				"Count": 1
 			},
 			{
-				"Name": "ChromiumOxideDust" + static_item,
+				"Name": "ChromiumOxideDust",
 				"Count": 1
 			}
 		]
@@ -1599,14 +1599,14 @@ recipes_chem.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "ChromiumDust" + static_item,
+				"Name": "ChromiumDust",
 				"Count": 1
 			}
 		],
 		
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10,
 	},
 	"Ticks" : 200,
@@ -1617,7 +1617,7 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "CinnabarDust" + static_item,
+				"Name": "CinnabarDust",
 				"Count": 2
 			}
 		]
@@ -1625,18 +1625,18 @@ recipes_chem.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Mercury" + static_item,
+				"Name": "Mercury",
 				"Count": 1000
 			},
 			{
-				"Name": "Sulfur" + static_item,
+				"Name": "Sulfur",
 				"Count": 1
 			}
 		],
 		
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10,
 	},
 	"Ticks" : 200,
@@ -1647,14 +1647,14 @@ recipes_boiler.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Water" + static_item,
+				"Name": "Water",
 				"Count": 50
 			}
 		],
 		
 	},
 	"ResourceInput":{
-			"Name": "Heat" + static_item,
+			"Name": "Heat",
 			"Count": 110,
 		},
 	"Output":{
@@ -1662,7 +1662,7 @@ recipes_boiler.append({
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Steam" + static_item,
+		"Name": "Steam",
 		"Count": 100,
 		#"Capacity": 32000,
 	},
@@ -1678,7 +1678,7 @@ recipes_steam_turbine.append({
 		]
 	},
 	"ResourceInput":{
-		"Name": "Steam" + static_item,
+		"Name": "Steam",
 		"Count": 300
 	},
 	"Output":{
@@ -1686,7 +1686,7 @@ recipes_steam_turbine.append({
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 270
 	},
 	
@@ -1701,7 +1701,7 @@ recipes_generator.append({
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 270
 	},
 	"Output":{
@@ -1709,7 +1709,7 @@ recipes_generator.append({
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 243
 	},
 	
@@ -1724,7 +1724,7 @@ recipes_electric_engine.append({
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 55
 	},
 	"Output":{
@@ -1732,7 +1732,7 @@ recipes_electric_engine.append({
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 50
 	},
 	
@@ -1748,7 +1748,7 @@ recipes_industrial_electric_engine.append({
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 55*50
 	},
 	"Output":{
@@ -1756,7 +1756,7 @@ recipes_industrial_electric_engine.append({
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 50*50
 	},
 	
@@ -1772,7 +1772,7 @@ recipes_compact_generator.append({
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 20
 	},
 	"Output":{
@@ -1780,7 +1780,7 @@ recipes_compact_generator.append({
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 18
 	},
 	
@@ -1796,7 +1796,7 @@ recipes_steam_engine.append({
 		]
 	},
 	"ResourceInput":{
-		"Name": "Heat" + static_item,
+		"Name": "Heat",
 		"Count": 11
 	},
 	"Output":{
@@ -1804,7 +1804,7 @@ recipes_steam_engine.append({
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 10
 	},
 	
@@ -1817,7 +1817,7 @@ recipes_oven.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Coal" + static_item,
+				"Name": "Coal",
 				"Count": 10
 			}
 		]
@@ -1825,11 +1825,11 @@ recipes_oven.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Coke" + static_item,
+				"Name": "Coke",
 				"Count": 10
 			},
 			{
-				"Name": "Creosote" + static_item,
+				"Name": "Creosote",
 				"Count": 250,
 				"Capacity": 32000,
 			},
@@ -1844,7 +1844,7 @@ recipes_oven.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Log" + static_item,
+				"Name": "Log",
 				"Count": 10
 			}
 		]
@@ -1852,11 +1852,11 @@ recipes_oven.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Coal" + static_item,
+				"Name": "Coal",
 				"Count": 10
 			},
 			{
-				"Name": "Creosote" + static_item,
+				"Name": "Creosote",
 				"Count": 100,
 				"Capacity": 32000,
 			},
@@ -1871,7 +1871,7 @@ recipes_oven.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank" + static_item,
+				"Name": "Plank",
 				"Count": 10
 			}
 		]
@@ -1879,11 +1879,11 @@ recipes_oven.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Coal" + static_item,
+				"Name": "Coal",
 				"Count": 3
 			},
 			{
-				"Name": "Creosote" + static_item,
+				"Name": "Creosote",
 				"Count": 30,
 				"Capacity": 32000,
 			},
@@ -1898,7 +1898,7 @@ recipes_oven.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Organics" + static_item,
+				"Name": "Organics",
 				"Count": 10
 			}
 		]
@@ -1906,11 +1906,11 @@ recipes_oven.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Coal" + static_item,
+				"Name": "Coal",
 				"Count": 2
 			},
 			{
-				"Name": "Creosote" + static_item,
+				"Name": "Creosote",
 				"Count": 20,
 				"Capacity": 32000,
 			},
@@ -1925,7 +1925,7 @@ recipes_oven.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Clay" + static_item,
+				"Name": "Clay",
 				"Count": 10
 			}
 		]
@@ -1933,7 +1933,7 @@ recipes_oven.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Terracotta" + static_item,
+				"Name": "Terracotta",
 				"Count": 10
 			},
 		]
@@ -1948,11 +1948,11 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 		"Input":{
 			"Items":[
 				{
-					"Name": fuel_type + static_item,
+					"Name": fuel_type,
 					"Count": 15
 				},
 				{
-					"Name": "IronIngot" + static_item,
+					"Name": "IronIngot",
 					"Count": 10
 				},
 			]
@@ -1960,7 +1960,7 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 		"Output":{
 			"Items":[
 				{
-					"Name": "SteelIngot" + static_item,
+					"Name": "SteelIngot",
 					"Count": 10
 				}
 			]
@@ -1974,11 +1974,11 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 		"Input":{
 			"Items":[
 				{
-					"Name": fuel_type + static_item,
+					"Name": fuel_type,
 					"Count": 10
 				},
 				{
-					"Name": "IronDust" + static_item,
+					"Name": "IronDust",
 					"Count": 10
 				},
 			]
@@ -1986,7 +1986,7 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 		"Output":{
 			"Items":[
 				{
-					"Name": "SteelIngot" + static_item,
+					"Name": "SteelIngot",
 					"Count": 10
 				}
 			]
@@ -2000,11 +2000,11 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 		"Input":{
 			"Items":[
 				{
-					"Name": fuel_type + static_item,
+					"Name": fuel_type,
 					"Count": 20
 				},
 				{
-					"Name": "IronOreDust" + static_item,
+					"Name": "IronOreDust",
 					"Count": 10
 				},
 			]
@@ -2012,7 +2012,7 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 		"Output":{
 			"Items":[
 				{
-					"Name": "SteelIngot" + static_item,
+					"Name": "SteelIngot",
 					"Count": 10
 				}
 			]
@@ -2027,11 +2027,11 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 		"Input":{
 			"Items":[
 				{
-					"Name": fuel_type + static_item,
+					"Name": fuel_type,
 					"Count": 1
 				},
 				{
-					"Name": "SteelDust" + static_item,
+					"Name": "SteelDust",
 					"Count": 10
 				},
 			]
@@ -2039,7 +2039,7 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 		"Output":{
 			"Items":[
 				{
-					"Name": "SteelIngot" + static_item,
+					"Name": "SteelIngot",
 					"Count": 10
 				}
 			]
@@ -2053,28 +2053,28 @@ recipes_mixer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Concrete" + static_item,
+				"Name": "Concrete",
 				"Count": 10
 			},
 			{
-				"Name": "SteelParts" + static_item,
+				"Name": "SteelParts",
 				"Count": 8
 			},
 			{
-				"Name": "Water" + static_item,
+				"Name": "Water",
 				"Count": 100
 			},
 			
 		]
 	},
 	"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 10
 			},
 	"Output":{
 		"Items":[
 			{
-				"Name": "ReinforcedConcrete" + static_item,
+				"Name": "ReinforcedConcrete",
 				"Count": 5
 			}
 		]
@@ -2087,24 +2087,24 @@ recipes_mixer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "StoneSurface" + static_item,
+				"Name": "StoneSurface",
 				"Count": 5
 			},
 			{
-				"Name": "Water" + static_item,
+				"Name": "Water",
 				"Count": 100
 			},
 			
 		]
 	},
 	"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 10
 			},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Concrete" + static_item,
+				"Name": "Concrete",
 				"Count": 10
 			}
 		]
@@ -2117,23 +2117,23 @@ recipes_mixer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "IronDust" + static_item,
+				"Name": "IronDust",
 				"Count": 10
 			},
 			{
-				"Name": "ChromiumDust" + static_item,
+				"Name": "ChromiumDust",
 				"Count": 3
 			}
 		]
 	},
 	"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 10
 			},
 	"Output":{
 		"Items":[
 			{
-				"Name": "StainlessSteelDust" + static_item,
+				"Name": "StainlessSteelDust",
 				"Count": 10
 			}
 		]
@@ -2146,23 +2146,23 @@ recipes_mixer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "IronOreDust" + static_item,
+				"Name": "IronOreDust",
 				"Count": 10
 			},
 			{
-				"Name": "ChromiumDust" + static_item,
+				"Name": "ChromiumDust",
 				"Count": 3
 			}
 		]
 	},
 	"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 40
 			},
 	"Output":{
 		"Items":[
 			{
-				"Name": "StainlessSteelDust" + static_item,
+				"Name": "StainlessSteelDust",
 				"Count": 10
 			}
 		]
@@ -2176,24 +2176,24 @@ recipes_mixer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "TitaniumOxideDust" + static_item,
+				"Name": "TitaniumOxideDust",
 				"Count": 1
 			},
 			{
-				"Name": "Coke" + static_item,
+				"Name": "Coke",
 				"Count": 2
 			},
 		],
 		
 	},
 	"ResourceInput":{
-			"Name": "Kinetic" + static_item,
+			"Name": "Kinetic",
 			"Count": 10,
 		},
 	"Output":{
 		"Items":[
 			{
-				"Name": "PreparedTitaniumOxideDust" + static_item,
+				"Name": "PreparedTitaniumOxideDust",
 				"Count": 1
 			}
 		]
@@ -2208,32 +2208,32 @@ recipes_mixer.append({
 #	"Input":{
 #		"Items":[
 #			{
-#				"Name": "RareEarthDust" + static_item,
+#				"Name": "RareEarthDust",
 #				"Count": 10
 #			},
 #			
 #		]
 #	},
 #	"ResourceInput":{
-#		"Name": "Kinetic" + static_item,
+#		"Name": "Kinetic",
 #		"Count": 50000
 #	},
 #	"Output":{
 #		"Items": [
 #			{
-#				"Name": "RareMetalsDust" + static_item,
+#				"Name": "RareMetalsDust",
 #				"Count": 1
 #			},
 #			{
-#				"Name": "YttriumDust" + static_item,
+#				"Name": "YttriumDust",
 #				"Count": 1
 #			},
 #			{
-#				"Name": "LutetiumDust" + static_item,
+#				"Name": "LutetiumDust",
 #				"Count": 1
 #			},
 #			{
-#				"Name": "DysprosiumDust" + static_item,
+#				"Name": "DysprosiumDust",
 #				"Count": 1
 #			}
 #		]
@@ -2247,19 +2247,19 @@ recipes_mixer.append({
 	# "Input":{
 		# "Items":[
 			# {
-				# "Name": "OreWater" + static_item,
+				# "Name": "OreWater",
 				# "Count": 1000
 			# },
 		# ]
 	# },
 	# "ResourceInput":{
-		# "Name": "Kinetic" + static_item,
+		# "Name": "Kinetic",
 		# "Count": 30
 	# },
 	# "Output":{
 		# "Items": [
 			# {
-				# "Name": "Clay" + static_item,
+				# "Name": "Clay",
 				# "Count": 1
 			# },
 		# ]
@@ -2273,13 +2273,13 @@ recipes_sep2.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "DepletedUraniumCell" + static_item,
+				"Name": "DepletedUraniumCell",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 30*90
 	},
 	"Output":{
@@ -2289,7 +2289,7 @@ recipes_sep2.append({
 				"Count":1
 			},
 			{
-				"Name": "PlutoniumDust" + static_item,
+				"Name": "PlutoniumDust",
 				"Count": 1,
 				"Probability":0.5
 			}
@@ -2304,23 +2304,23 @@ recipes_sep2.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "GraniteSurface" + static_item,
+				"Name": "GraniteSurface",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 30*90
 	},
 	"Output":{
 		"Items": [
 			{
-				"Name": "SandSurface" + static_item,
+				"Name": "SandSurface",
 				"Count": 1
 			},
 			{
-				"Name": "TungstenOxideDust" + static_item,
+				"Name": "TungstenOxideDust",
 				"Count": 1,
 				"Probability":0.1,
 			},
@@ -2335,23 +2335,23 @@ recipes_sep2.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "StoneSurface" + static_item,
+				"Name": "StoneSurface",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 30
 	},
 	"Output":{
 		"Items": [
 			{
-				"Name": "SandSurface" + static_item,
+				"Name": "SandSurface",
 				"Count": 1
 			},
 			{
-				"Name": "AluminiumOxideDust" + static_item,
+				"Name": "AluminiumOxideDust",
 				"Count": 1,
 				"Probability":0.1,
 			},
@@ -2366,28 +2366,28 @@ recipes_sep2.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "BasaltSurface" + static_item,
+				"Name": "BasaltSurface",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 30*25
 	},
 	"Output":{
 		"Items": [
 			{
-				"Name": "SandSurface" + static_item,
+				"Name": "SandSurface",
 				"Count": 1
 			},
 			{
-				"Name": "AluminiumOxideDust" + static_item,
+				"Name": "AluminiumOxideDust",
 				"Count": 1,
 				"Probability": 0.2,
 			},
 			{
-				"Name": "TitaniumOxideDust" + static_item,
+				"Name": "TitaniumOxideDust",
 				"Count": 1,
 				"Probability": 0.1,
 			}
@@ -2402,19 +2402,19 @@ recipes_sep2.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SandSurface" + static_item,
+				"Name": "SandSurface",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 30
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "SiliconOxide" + static_item,
+				"Name": "SiliconOxide",
 				"Count": 1,
 				"Probability": 0.5,
 			}
@@ -2429,19 +2429,19 @@ recipes_arc_furnace.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "CopperOreDust" + static_item,
+				"Name": "CopperOreDust",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 20,
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "CopperIngot" + static_item,
+				"Name": "CopperIngot",
 				"Count": 1
 			}
 		]
@@ -2454,20 +2454,20 @@ recipes_arc_furnace.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SandSurface" + static_item,
+				"Name": "SandSurface",
 				"Count": 1
 			},
 		],
 		
 	},
 	"ResourceInput":{
-			"Name": "Electricity" + static_item,
+			"Name": "Electricity",
 			"Count": 20,
 		},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Glass" + static_item,
+				"Name": "Glass",
 				"Count": 1
 			}
 		]
@@ -2483,19 +2483,19 @@ for material in materials:
 				"Input":{
 					"Items":[
 						{
-							"Name": material["Name"] + "Dust" + static_item,
+							"Name": material["Name"] + "Dust",
 							"Count": 1
 						},
 					]
 				},
 				"ResourceInput":{
-					"Name": "Electricity" + static_item,
+					"Name": "Electricity",
 					"Count": 20 if material["Name"] is not "StainlessSteel" else 100,
 				},
 				"Output":{
 					"Items":[
 						{
-							"Name": material["Name"] + "Ingot" + static_item,
+							"Name": material["Name"] + "Ingot",
 							"Count": 1
 						}
 					]
@@ -2509,19 +2509,19 @@ recipes_macerator.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Pumpkin" + static_item,
+				"Name": "Pumpkin",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Organics" + static_item,
+				"Name": "Organics",
 				"Count": 1
 			}
 		]
@@ -2535,19 +2535,19 @@ recipes_macerator.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Emerald" + static_item,
+				"Name": "Emerald",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 50
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "EmeraldDust" + static_item,
+				"Name": "EmeraldDust",
 				"Count": 1
 			}
 		]
@@ -2561,19 +2561,19 @@ recipes_macerator.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "MalachiteCrystal" + static_item,
+				"Name": "MalachiteCrystal",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "CopperOreDust" + static_item,
+				"Name": "CopperOreDust",
 				"Count": 2
 			}
 		]
@@ -2587,19 +2587,19 @@ recipes_macerator.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "MalachiteCluster" + static_item,
+				"Name": "MalachiteCluster",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "CopperOreDust" + static_item,
+				"Name": "CopperOreDust",
 				"Count": 5
 			}
 		]
@@ -2613,19 +2613,19 @@ recipes_macerator.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "RutileCrystal" + static_item,
+				"Name": "RutileCrystal",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "TitaniumOxideDust" + static_item,
+				"Name": "TitaniumOxideDust",
 				"Count": 2
 			}
 		]
@@ -2639,19 +2639,19 @@ recipes_macerator.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "CinnabarCrystal" + static_item,
+				"Name": "CinnabarCrystal",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "CinnabarDust" + static_item,
+				"Name": "CinnabarDust",
 				"Count": 2
 			}
 		]
@@ -2665,19 +2665,19 @@ recipes_macerator.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "CinnabarCluster" + static_item,
+				"Name": "CinnabarCluster",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "CinnabarDust" + static_item,
+				"Name": "CinnabarDust",
 				"Count": 5
 			}
 		]
@@ -2691,19 +2691,19 @@ recipes_macerator.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "UraniniteCrystal" + static_item,
+				"Name": "UraniniteCrystal",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "UraniumDust" + static_item,
+				"Name": "UraniumDust",
 				"Count": 2
 			}
 		]
@@ -2717,23 +2717,23 @@ recipes_macerator.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "UraniniteCluster" + static_item,
+				"Name": "UraniniteCluster",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "UraniumDust" + static_item,
+				"Name": "UraniumDust",
 				"Count": 5
 			},
 			{
-				"Name": "Uranium235Dust" + static_item,
+				"Name": "Uranium235Dust",
 				"Count": 1
 			}
 		]
@@ -2747,19 +2747,19 @@ recipes_macerator.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "GravelSurface" + static_item,
+				"Name": "GravelSurface",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "SandSurface" + static_item,
+				"Name": "SandSurface",
 				"Count": 1
 			}
 		]
@@ -2773,19 +2773,19 @@ recipes_hammer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "StoneSurface" + static_item,
+				"Name": "StoneSurface",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "GravelSurface" + static_item,
+				"Name": "GravelSurface",
 				"Count": 1
 			}
 		]
@@ -2805,7 +2805,7 @@ recipes_pump.append({
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Water" + static_item,
+		"Name": "Water",
 		"Count": 600
 	},
 	"Ticks" : 6*20,
@@ -2816,20 +2816,20 @@ recipes_indu.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "TitaniumSponge" + static_item,
+				"Name": "TitaniumSponge",
 				"Count": 1
 			},
 		],
 		
 	},
 	"ResourceInput":{
-				"Name": "Heat" + static_item,
+				"Name": "Heat",
 				"Count": 350,
 			},
 	"Output":{
 		"Items":[
 			{
-				"Name": "TitaniumIngot" + static_item,
+				"Name": "TitaniumIngot",
 				"Count": 1
 			},
 		]
@@ -2843,20 +2843,20 @@ recipes_indu.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SuperconductorDust" + static_item,
+				"Name": "SuperconductorDust",
 				"Count": 1
 			},
 		],
 		
 	},
 	"ResourceInput":{
-				"Name": "Heat" + static_item,
+				"Name": "Heat",
 				"Count": 100,
 			},
 	"Output":{
 		"Items":[
 			{
-				"Name": "SuperconductorIngot" + static_item,
+				"Name": "SuperconductorIngot",
 				"Count": 1
 			},
 		]
@@ -2870,20 +2870,20 @@ recipes_indu.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "TitaniumDust" + static_item,
+				"Name": "TitaniumDust",
 				"Count": 1
 			},
 		],
 		
 	},
 	"ResourceInput":{
-				"Name": "Heat" + static_item,
+				"Name": "Heat",
 				"Count": 350,
 			},
 	"Output":{
 		"Items":[
 			{
-				"Name": "TitaniumIngot" + static_item,
+				"Name": "TitaniumIngot",
 				"Count": 1
 			},
 		]
@@ -2897,20 +2897,20 @@ recipes_indu.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "HardMetalDust" + static_item,
+				"Name": "HardMetalDust",
 				"Count": 1
 			},
 		],
 		
 	},
 	"ResourceInput":{
-			"Name": "Heat" + static_item,
+			"Name": "Heat",
 			"Count": 900,
 		},
 	"Output":{
 		"Items":[
 			{
-				"Name": "HotHardMetalIngot" + static_item,
+				"Name": "HotHardMetalIngot",
 				"Count": 1
 			},
 		]
@@ -2924,19 +2924,19 @@ recipes_sep.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SandSurface" + static_item,
+				"Name": "SandSurface",
 				"Count": 2
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "SiliconOxide" + static_item,
+				"Name": "SiliconOxide",
 				"Count": 1
 			}
 		]
@@ -2950,23 +2950,23 @@ recipes_mixer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Organics" + static_item,
+				"Name": "Organics",
 				"Count": 1
 			},
 			{
-				"Name": "Water" + static_item,
+				"Name": "Water",
 				"Count": 500
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Biomass" + static_item,
+				"Name": "Biomass",
 				"Count": 500
 			}
 		]
@@ -2980,23 +2980,23 @@ recipes_mixer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "TungstenCarbideDust" + static_item,
+				"Name": "TungstenCarbideDust",
 				"Count": 4
 			},
 			{
-				"Name": "CobaltDust" + static_item,
+				"Name": "CobaltDust",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 100
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "HardMetalDust" + static_item,
+				"Name": "HardMetalDust",
 				"Count": 5
 			}
 		]
@@ -3010,23 +3010,23 @@ recipes_mixer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "GoldDust" + static_item,
+				"Name": "GoldDust",
 				"Count": 3
 			},
 			{
-				"Name": "RareEarthElement" + static_item,
+				"Name": "RareEarthElement",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 100
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "SuperconductorDust" + static_item,
+				"Name": "SuperconductorDust",
 				"Count": 3
 			}
 		]
@@ -3040,19 +3040,19 @@ recipes_electrolyzer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "AluminiumOxideDust" + static_item,
+				"Name": "AluminiumOxideDust",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 50,
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "AluminiumDust" + static_item,
+				"Name": "AluminiumDust",
 				"Count": 1
 			}
 		]
@@ -3066,23 +3066,23 @@ recipes_electrolyzer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "EmeraldDust" + static_item,
+				"Name": "EmeraldDust",
 				"Count": 2
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 70,
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "BerylliumDust" + static_item,
+				"Name": "BerylliumDust",
 				"Count": 1
 			},
 			{
-				"Name": "AluminiumOxideDust" + static_item,
+				"Name": "AluminiumOxideDust",
 				"Count": 1
 			}
 		]
@@ -3096,19 +3096,19 @@ recipes_electrolyzer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "AluminiumOreDust" + static_item,
+				"Name": "AluminiumOreDust",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 30,
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "AluminiumDust" + static_item,
+				"Name": "AluminiumDust",
 				"Count": 1
 			}
 		]
@@ -3122,25 +3122,25 @@ recipes_electrolyzer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Clay" + static_item,
+				"Name": "Clay",
 				"Count": 6
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 1300,
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "SandSurface" + static_item,
+				"Name": "SandSurface",
 				"Count": 4
 			},{
-				"Name": "AluminiumOxideDust" + static_item,
+				"Name": "AluminiumOxideDust",
 				"Count": 1
 			},{
-				"Name": "SodiumDust" + static_item,
+				"Name": "SodiumDust",
 				"Count": 1
 			}
 		]
@@ -3154,20 +3154,20 @@ recipes_electrolyzer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SiliconOxide" + static_item,
+				"Name": "SiliconOxide",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceInput":
 	{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 60
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Silicon" + static_item,
+				"Name": "Silicon",
 				"Count": 1
 			}
 		]
@@ -3181,24 +3181,24 @@ recipes_electrolyzer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Water" + static_item,
+				"Name": "Water",
 				"Count": 100
 			}
 			
 		]
 	},
 	"ResourceInput":{
-				"Name": "Electricity" + static_item,
+				"Name": "Electricity",
 				"Count": 280 
 			},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Hydrogen" + static_item,
+				"Name": "Hydrogen",
 				"Count": 100
 			},
 			{
-				"Name": "Oxygen" + static_item,
+				"Name": "Oxygen",
 				"Count": 200
 			}
 		]
@@ -3211,23 +3211,23 @@ recipes_electrolyzer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SaltDust" + static_item,
+				"Name": "SaltDust",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10,
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "SodiumDust" + static_item,
+				"Name": "SodiumDust",
 				"Count": 1
 			},
 			{
-				"Name": "Chlorine" + static_item,
+				"Name": "Chlorine",
 				"Count": 1000
 			}
 			
@@ -3242,23 +3242,23 @@ recipes_electrolyzer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "PotassiumChlorideDust" + static_item,
+				"Name": "PotassiumChlorideDust",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10,
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "PotassiumDust" + static_item,
+				"Name": "PotassiumDust",
 				"Count": 1
 			},
 			{
-				"Name": "Chlorine" + static_item,
+				"Name": "Chlorine",
 				"Count": 1000
 			}
 			
@@ -3273,23 +3273,23 @@ recipes_electrolyzer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "BoraxDust" + static_item,
+				"Name": "BoraxDust",
 				"Count": 2
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 50,
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "SodiumDust" + static_item,
+				"Name": "SodiumDust",
 				"Count": 1
 			},
 			{
-				"Name": "BoronDust" + static_item,
+				"Name": "BoronDust",
 				"Count": 1
 			}
 			
@@ -3306,19 +3306,19 @@ recipes_cutter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Log" + static_item,
+				"Name": "Log",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Plank" + static_item,
+				"Name": "Plank",
 				"Count": 4
 			}
 		]
@@ -3331,19 +3331,19 @@ recipes_cutter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "StoneLog" + static_item,
+				"Name": "StoneLog",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Plank" + static_item,
+				"Name": "Plank",
 				"Count": 4
 			}
 		]
@@ -3356,19 +3356,19 @@ recipes_cutter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank" + static_item,
+				"Name": "Plank",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "CircuitBoard" + static_item,
+				"Name": "CircuitBoard",
 				"Count": 1
 			}
 		]
@@ -3381,19 +3381,19 @@ recipes_cutter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "StoneSurface" + static_item,
+				"Name": "StoneSurface",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 20
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "StoneTiles" + static_item,
+				"Name": "StoneTiles",
 				"Count": 1
 			}
 		]
@@ -3405,19 +3405,19 @@ recipes_cutter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "DarkStoneSurface" + static_item,
+				"Name": "DarkStoneSurface",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 20
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "DarkTiles" + static_item,
+				"Name": "DarkTiles",
 				"Count": 1
 			}
 		]
@@ -3429,19 +3429,19 @@ recipes_cutter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "RedStoneSurface" + static_item,
+				"Name": "RedStoneSurface",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 20
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "RedTiles" + static_item,
+				"Name": "RedTiles",
 				"Count": 1
 			}
 		]
@@ -3453,19 +3453,19 @@ recipes_cutter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "StoneTiles" + static_item,
+				"Name": "StoneTiles",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 20
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Bricks" + static_item,
+				"Name": "Bricks",
 				"Count": 1
 			}
 		]
@@ -3477,19 +3477,19 @@ recipes_cutter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "RedTiles" + static_item,
+				"Name": "RedTiles",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 20
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "RedBricks" + static_item,
+				"Name": "RedBricks",
 				"Count": 1
 			}
 		]
@@ -3501,19 +3501,19 @@ recipes_cutter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "DarkTiles" + static_item,
+				"Name": "DarkTiles",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 20
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "DarkBricks" + static_item,
+				"Name": "DarkBricks",
 				"Count": 1
 			}
 		]
@@ -3525,19 +3525,19 @@ recipes_cutter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Terracotta" + static_item,
+				"Name": "Terracotta",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 20
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "TerracottaTiles" + static_item,
+				"Name": "TerracottaTiles",
 				"Count": 1
 			}
 		]
@@ -3549,19 +3549,19 @@ recipes_cutter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "TerracottaTiles" + static_item,
+				"Name": "TerracottaTiles",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 20
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "TerracottaBricks" + static_item,
+				"Name": "TerracottaBricks",
 				"Count": 1
 			}
 		]
@@ -3573,19 +3573,19 @@ recipes_cutter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Concrete" + static_item,
+				"Name": "Concrete",
 				"Count": 1
 			},		
 		]
 	},
 	"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 10
 			},
 	"Output":{
 		"Items":[
 			{
-				"Name": "ConcreteTiles" + static_item,
+				"Name": "ConcreteTiles",
 				"Count": 1
 			}
 		]
@@ -3598,19 +3598,19 @@ recipes_cutter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "ConcreteTiles" + static_item,
+				"Name": "ConcreteTiles",
 				"Count": 1
 			},		
 		]
 	},
 	"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 10
 			},
 	"Output":{
 		"Items":[
 			{
-				"Name": "ConcreteSmallTiles" + static_item,
+				"Name": "ConcreteSmallTiles",
 				"Count": 1
 			}
 		]
@@ -3623,19 +3623,19 @@ recipes_cutter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "ConcreteSmallTiles" + static_item,
+				"Name": "ConcreteSmallTiles",
 				"Count": 1
 			},		
 		]
 	},
 	"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 10
 			},
 	"Output":{
 		"Items":[
 			{
-				"Name": "ConcreteBricks" + static_item,
+				"Name": "ConcreteBricks",
 				"Count": 1
 			}
 		]
@@ -3648,19 +3648,19 @@ recipes_cutter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "ReinforcedConcrete" + static_item,
+				"Name": "ReinforcedConcrete",
 				"Count": 1
 			},		
 		]
 	},
 	"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 10
 			},
 	"Output":{
 		"Items":[
 			{
-				"Name": "ReinforcedConcreteTiles" + static_item,
+				"Name": "ReinforcedConcreteTiles",
 				"Count": 1
 			}
 		]
@@ -3673,19 +3673,19 @@ recipes_cutter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "ReinforcedConcreteTiles" + static_item,
+				"Name": "ReinforcedConcreteTiles",
 				"Count": 1
 			},		
 		]
 	},
 	"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 10
 			},
 	"Output":{
 		"Items":[
 			{
-				"Name": "ReinforcedConcreteSmallTiles" + static_item,
+				"Name": "ReinforcedConcreteSmallTiles",
 				"Count": 1
 			}
 		]
@@ -3698,19 +3698,19 @@ recipes_cutter.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "ReinforcedConcreteSmallTiles" + static_item,
+				"Name": "ReinforcedConcreteSmallTiles",
 				"Count": 1
 			},		
 		]
 	},
 	"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 10
 			},
 	"Output":{
 		"Items":[
 			{
-				"Name": "ReinforcedConcreteBricks" + static_item,
+				"Name": "ReinforcedConcreteBricks",
 				"Count": 1
 			}
 		]
@@ -3728,7 +3728,7 @@ recipes_elfurn.append({
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 55,
 	},
 	"Output":{
@@ -3737,7 +3737,7 @@ recipes_elfurn.append({
 		
 	},
 	"ResourceOutput":{
-			"Name": "Heat" + static_item,
+			"Name": "Heat",
 			"Count": 50,
 		},
 	
@@ -3752,7 +3752,7 @@ recipes_coil.append({
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 380
 	},
 	"Output":{
@@ -3761,7 +3761,7 @@ recipes_coil.append({
 		
 	},
 	"ResourceOutput":{
-			"Name": "Heat" + static_item,
+			"Name": "Heat",
 			"Count": 342,
 		},
 	"Ticks" : 200,
@@ -3773,19 +3773,19 @@ recipes_ferm.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Biomass" + static_item,
+				"Name": "Biomass",
 				"Count": 500
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Methane" + static_item,
+				"Name": "Methane",
 				"Count": 500
 			}
 		]
@@ -3799,19 +3799,19 @@ recipes_ferm.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Pumpkin" + static_item,
+				"Name": "Pumpkin",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Methane" + static_item,
+				"Name": "Methane",
 				"Count": 200
 			}
 		]
@@ -3828,7 +3828,7 @@ recipes_radiator.append({
 		
 	},
 	"ResourceInput":{
-			"Name": "Heat" + static_item,
+			"Name": "Heat",
 			"Count": 500,
 		},
 	"Output":{
@@ -3849,7 +3849,7 @@ recipes_solar.append({
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 50,
 	},
 	"Ticks" : 60,
@@ -3866,7 +3866,7 @@ recipes_riteg.append({
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Heat" + static_item,
+		"Name": "Heat",
 		"Count": 500,
 	},
 	"Ticks" : 60,
@@ -3877,19 +3877,19 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "MineralWater" + static_item,
+				"Name": "MineralWater",
 				"Count": 1000
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "SaltDust" + static_item,
+				"Name": "SaltDust",
 				"Count": 1
 			}
 		]
@@ -3903,19 +3903,19 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "MineralWater" + static_item,
+				"Name": "MineralWater",
 				"Count": 1000
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 60
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "BoraxDust" + static_item,
+				"Name": "BoraxDust",
 				"Count": 1,
 				"Probability": 0.1
 			}
@@ -3930,19 +3930,19 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "MineralWater" + static_item,
+				"Name": "MineralWater",
 				"Count": 1000
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "PotassiumChlorideDust" + static_item,
+				"Name": "PotassiumChlorideDust",
 				"Count": 1
 			}
 		]
@@ -3956,23 +3956,23 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "TungstenDust" + static_item,
+				"Name": "TungstenDust",
 				"Count": 1
 			},
 			{
-				"Name": "Coke" + static_item,
+				"Name": "Coke",
 				"Count": 2
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "TungstenCarbideDust" + static_item,
+				"Name": "TungstenCarbideDust",
 				"Count": 1
 			}
 		]
@@ -3986,23 +3986,23 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "PreparedTitaniumOxideDust" + static_item,
+				"Name": "PreparedTitaniumOxideDust",
 				"Count": 1
 			},
 			{
-				"Name": "Chlorine" + static_item,
+				"Name": "Chlorine",
 				"Count": 1000
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "TitaniumTetrachloride" + static_item,
+				"Name": "TitaniumTetrachloride",
 				"Count": 1000
 			}
 		]
@@ -4017,23 +4017,23 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "TitaniumTetrachloride" + static_item,
+				"Name": "TitaniumTetrachloride",
 				"Count": 1000
 			},
 			{
-				"Name": "AluminiumDust" + static_item,
+				"Name": "AluminiumDust",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "TitaniumSponge" + static_item,
+				"Name": "TitaniumSponge",
 				"Count": 1
 			},
 		],
@@ -4048,23 +4048,23 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "TungstenOxideDust" + static_item,
+				"Name": "TungstenOxideDust",
 				"Count": 1
 			},
 			{
-				"Name": "Hydrogen" + static_item,
+				"Name": "Hydrogen",
 				"Count": 1000
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "TungstenDust" + static_item,
+				"Name": "TungstenDust",
 				"Count": 1
 			}
 		]
@@ -4078,23 +4078,23 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "CobaltOxideDust" + static_item,
+				"Name": "CobaltOxideDust",
 				"Count": 1
 			},
 			{
-				"Name": "Hydrogen" + static_item,
+				"Name": "Hydrogen",
 				"Count": 1000
 			},
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "CobaltDust" + static_item,
+				"Name": "CobaltDust",
 				"Count": 1
 			}
 		]
@@ -4109,7 +4109,7 @@ for i in {"ProducerGas", "Methane", "Hydrogen", "Gasoline"}:
 		"Input":{
 			"Items":[
 				{
-					"Name": i + static_item,
+					"Name": i,
 					"Count": 14 * 1000
 				}
 			]
@@ -4119,7 +4119,7 @@ for i in {"ProducerGas", "Methane", "Hydrogen", "Gasoline"}:
 			]
 		},
 		"ResourceOutput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": named_material(i)["Burnable"]["HeatPerTick"] * 14
 			},
 		"Ticks" : named_material(i)["Burnable"]["BurnTime"],
@@ -4131,7 +4131,7 @@ for i in {"ProducerGas", "Methane", "Hydrogen", "Gasoline"}:
 		"Input":{
 			"Items":[
 				{
-					"Name": i + static_item,
+					"Name": i,
 					"Count": 1000
 				}			
 			]
@@ -4141,7 +4141,7 @@ for i in {"ProducerGas", "Methane", "Hydrogen", "Gasoline"}:
 			]
 		},
 		"ResourceOutput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": named_material(i)["Burnable"]["HeatPerTick"]
 			},
 		
@@ -4153,28 +4153,28 @@ recipes_pyro.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Coal" + static_item,
+				"Name": "Coal",
 				"Count": 1
 			},
 			
 		]
 	},
 	"ResourceInput":{
-			"Name": "Heat" + static_item,
+			"Name": "Heat",
 			"Count": 10
 		},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Coke" + static_item,
+				"Name": "Coke",
 				"Count": 1
 			},
 			{
-				"Name": "RawOil" + static_item,
+				"Name": "RawOil",
 				"Count": 100
 			},
 			{
-				"Name": "ProducerGas" + static_item,
+				"Name": "ProducerGas",
 				"Count": 100
 			},
 			
@@ -4188,28 +4188,28 @@ recipes_pyro.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Coal" + static_item,
+				"Name": "Coal",
 				"Count": 1
 			},
 			{
-				"Name": "Steam" + static_item,
+				"Name": "Steam",
 				"Count": 200
 			},
 			
 		]
 	},
 	"ResourceInput":{
-			"Name": "Heat" + static_item,
+			"Name": "Heat",
 			"Count": 10
 		},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Coke" + static_item,
+				"Name": "Coke",
 				"Count": 1
 			},
 			{
-				"Name": "ProducerGas" + static_item,
+				"Name": "ProducerGas",
 				"Count": 500
 			},
 			
@@ -4223,28 +4223,28 @@ recipes_pyro.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "RawOil" + static_item,
+				"Name": "RawOil",
 				"Count": 2000
 			},
 			
 		]
 	},
 	"ResourceInput":{
-			"Name": "Heat" + static_item,
+			"Name": "Heat",
 			"Count": 15
 		},
 	"Output":{
 		"Items":[	
 			{
-				"Name": "HeavyOil" + static_item,
+				"Name": "HeavyOil",
 				"Count": 500
 			},
 			{
-				"Name": "Gasoline" + static_item,
+				"Name": "Gasoline",
 				"Count": 100
 			},
 {
-				"Name": "Methane" + static_item,
+				"Name": "Methane",
 				"Count": 500
 			},			
 		]
@@ -4258,32 +4258,32 @@ recipes_pyro.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "RawOil" + static_item,
+				"Name": "RawOil",
 				"Count": 1000*5
 			},
 			{
-				"Name": "Steam" + static_item,
+				"Name": "Steam",
 				"Count": 1000
 			},
 			
 		]
 	},
 	"ResourceInput":{
-			"Name": "Heat" + static_item,
+			"Name": "Heat",
 			"Count": 100
 		},
 	"Output":{
 		"Items":[	
 			{
-				"Name": "HeavyOil" + static_item,
+				"Name": "HeavyOil",
 				"Count": 150*2
 			},
 			{
-				"Name": "Gasoline" + static_item,
+				"Name": "Gasoline",
 				"Count": 400*2
 			},
 {
-				"Name": "Methane" + static_item,
+				"Name": "Methane",
 				"Count": 500*2
 			},			
 		]
@@ -4297,24 +4297,24 @@ recipes_pyro.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "HeavyOil" + static_item,
+				"Name": "HeavyOil",
 				"Count": 1000
 			},
 			{
-				"Name": "Steam" + static_item,
+				"Name": "Steam",
 				"Count": 200
 			},
 			
 		]
 	},
 	"ResourceInput":{
-			"Name": "Heat" + static_item,
+			"Name": "Heat",
 			"Count": 10
 		},
 	"Output":{
 		"Items":[	
 			{
-				"Name": "Gasoline" + static_item,
+				"Name": "Gasoline",
 				"Count": 750
 			},		
 		]
@@ -4328,24 +4328,24 @@ recipes_pyro.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Gasoline" + static_item,
+				"Name": "Gasoline",
 				"Count": 1000
 			},
 			{
-				"Name": "Steam" + static_item,
+				"Name": "Steam",
 				"Count": 200
 			},
 			
 		]
 	},
 	"ResourceInput":{
-			"Name": "Heat" + static_item,
+			"Name": "Heat",
 			"Count": 10
 		},
 	"Output":{
 		"Items":[	
 			{
-				"Name": "Methane" + static_item,
+				"Name": "Methane",
 				"Count": 750
 			},		
 		]
@@ -4359,24 +4359,24 @@ recipes_pyro.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Methane" + static_item,
+				"Name": "Methane",
 				"Count": 800*5
 			},
 			{
-				"Name": "Steam" + static_item,
+				"Name": "Steam",
 				"Count": 200*20
 			},
 			
 		]
 	},
 	"ResourceInput":{
-			"Name": "Heat" + static_item,
+			"Name": "Heat",
 			"Count": 100
 		},
 	"Output":{
 		"Items":[	
 			{
-				"Name": "ProducerGas" + static_item,
+				"Name": "ProducerGas",
 				"Count": 1000*5
 			},		
 		]
@@ -4390,19 +4390,19 @@ recipes_pyro.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Methane" + static_item,
+				"Name": "Methane",
 				"Count": 800*5
 			}
 		]
 	},
 	"ResourceInput":{
-			"Name": "Heat" + static_item,
+			"Name": "Heat",
 			"Count": 50
 		},
 	"Output":{
 		"Items":[	
 			{
-				"Name": "ProducerGas" + static_item,
+				"Name": "ProducerGas",
 				"Count": 500*5
 			},		
 		]
@@ -4416,24 +4416,24 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "ProducerGas" + static_item,
+				"Name": "ProducerGas",
 				"Count": 1000
 			},
 			{
-				"Name": "Catalyst" + static_item,
+				"Name": "Catalyst",
 				"Count": 1,
 				"Probability": 0,
 			},
 		]
 	},
 	"ResourceInput":{
-			"Name": "Electricity" + static_item,
+			"Name": "Electricity",
 			"Count": 10
 		},
 	"Output":{
 		"Items":[	
 			{
-				"Name": "Ethylene" + static_item,
+				"Name": "Ethylene",
 				"Count": 1000,
 			},		
 		]
@@ -4447,23 +4447,23 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "HeavyOil" + static_item,
+				"Name": "HeavyOil",
 				"Count": 150
 			},
 			{
-				"Name": "Water" + static_item,
+				"Name": "Water",
 				"Count": 250
 			},
 		]
 	},
 	"ResourceInput":{
-			"Name": "Electricity" + static_item,
+			"Name": "Electricity",
 			"Count": 10
 		},
 	"Output":{
 		"Items":[	
 			{
-				"Name": "Sulfur" + static_item,
+				"Name": "Sulfur",
 				"Count": 1
 			},		
 		]
@@ -4477,27 +4477,27 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Sulfur" + static_item,
+				"Name": "Sulfur",
 				"Count": 1
 			},
 			{
-				"Name": "Oxygen" + static_item,
+				"Name": "Oxygen",
 				"Count": 250
 			},
 			{
-				"Name": "Water" + static_item,
+				"Name": "Water",
 				"Count": 250
 			},
 		]
 	},
 	"ResourceInput":{
-			"Name": "Electricity" + static_item,
+			"Name": "Electricity",
 			"Count": 10
 		},
 	"Output":{
 		"Items":[	
 			{
-				"Name": "SulfuricAcid" + static_item,
+				"Name": "SulfuricAcid",
 				"Count": 1000
 			},		
 		]
@@ -4511,23 +4511,23 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Ethylene" + static_item,
+				"Name": "Ethylene",
 				"Count": 1000
 			},
 			{
-				"Name": "Coal" + static_item,
+				"Name": "Coal",
 				"Count": 1
 			},
 		]
 	},
 	"ResourceInput":{
-			"Name": "Electricity" + static_item,
+			"Name": "Electricity",
 			"Count": 10
 		},
 	"Output":{
 		"Items":[	
 			{
-				"Name": "Plastic" + static_item,
+				"Name": "Plastic",
 				"Count": 1
 			},		
 		]
@@ -4541,23 +4541,23 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Ethylene" + static_item,
+				"Name": "Ethylene",
 				"Count": 1000
 			},
 			{
-				"Name": "HeavyOil" + static_item,
+				"Name": "HeavyOil",
 				"Count": 150
 			},
 		]
 	},
 	"ResourceInput":{
-			"Name": "Electricity" + static_item,
+			"Name": "Electricity",
 			"Count": 10
 		},
 	"Output":{
 		"Items":[	
 			{
-				"Name": "Plastic" + static_item,
+				"Name": "Plastic",
 				"Count": 1
 			},		
 		]
@@ -4571,20 +4571,20 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "ProducerGas" + static_item,
+				"Name": "ProducerGas",
 				"Count": 1000
 			},
 			
 		]
 	},
 	"ResourceInput":{
-			"Name": "Electricity" + static_item,
+			"Name": "Electricity",
 			"Count": 10
 		},
 	"Output":{
 		"Items":[	
 			{
-				"Name": "Hydrogen" + static_item,
+				"Name": "Hydrogen",
 				"Count": 750
 			},		
 		]
@@ -4598,20 +4598,20 @@ recipes_filtering_unit.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "OreWater" + static_item,
+				"Name": "OreWater",
 				"Count": 500
 			},
 			
 		]
 	},
 	"ResourceInput":{
-			"Name": "Kinetic" + static_item,
+			"Name": "Kinetic",
 			"Count": 10
 		},
 	"Output":{
 		"Items":[	
 			{
-				"Name": "Clay" + static_item,
+				"Name": "Clay",
 				"Count": 1
 			},		
 		]
@@ -4625,24 +4625,24 @@ recipes_filtering_unit.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "OreWater" + static_item,
+				"Name": "OreWater",
 				"Count": 500
 			},
 			{
-				"Name": "FilteringCell" + static_item,
+				"Name": "FilteringCell",
 				"Count": 1,
 				"Probability": .1
 			},
 		]
 	},
 	"ResourceInput":{
-			"Name": "Kinetic" + static_item,
+			"Name": "Kinetic",
 			"Count": 10
 		},
 	"Output":{
 		"Items":[	
 			{
-				"Name": "AluminiumOreDust" + static_item,
+				"Name": "AluminiumOreDust",
 				"Count": 1,
 				"Probability": .5
 			},		
@@ -4657,24 +4657,24 @@ recipes_filtering_unit.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "OreWater" + static_item,
+				"Name": "OreWater",
 				"Count": 500
 			},
 			{
-				"Name": "FilteringCell" + static_item,
+				"Name": "FilteringCell",
 				"Count": 1,
 				"Probability": .1
 			},
 		]
 	},
 	"ResourceInput":{
-			"Name": "Kinetic" + static_item,
+			"Name": "Kinetic",
 			"Count": 10
 		},
 	"Output":{
 		"Items":[	
 			{
-				"Name": "CopperOreDust" + static_item,
+				"Name": "CopperOreDust",
 				"Count": 1,
 				"Probability": .5
 			},		
@@ -4689,24 +4689,24 @@ recipes_filtering_unit.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "OreWater" + static_item,
+				"Name": "OreWater",
 				"Count": 500
 			},
 			{
-				"Name": "FilteringCell" + static_item,
+				"Name": "FilteringCell",
 				"Count": 1,
 				"Probability": .1
 			},
 		]
 	},
 	"ResourceInput":{
-			"Name": "Kinetic" + static_item,
+			"Name": "Kinetic",
 			"Count": 10
 		},
 	"Output":{
 		"Items":[	
 			{
-				"Name": "UraniumOreDust" + static_item,
+				"Name": "UraniumOreDust",
 				"Count": 1,
 				"Probability": .5
 			},		
@@ -4721,24 +4721,24 @@ recipes_filtering_unit.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "OreWater" + static_item,
+				"Name": "OreWater",
 				"Count": 500
 			},
 			{
-				"Name": "FilteringCell" + static_item,
+				"Name": "FilteringCell",
 				"Count": 1,
 				"Probability": .1
 			},
 		]
 	},
 	"ResourceInput":{
-			"Name": "Kinetic" + static_item,
+			"Name": "Kinetic",
 			"Count": 10
 		},
 	"Output":{
 		"Items":[	
 			{
-				"Name": "IronOreDust" + static_item,
+				"Name": "IronOreDust",
 				"Count": 1,
 				"Probability": .5
 			},		
@@ -4754,23 +4754,23 @@ for i in {"IronOreDust", "CopperOreDust"}:
 		"Input":{
 			"Items":[
 				{
-					"Name": "Mercury" + static_item,
+					"Name": "Mercury",
 					"Count": 500
 				},
 				{
-					"Name": i + static_item,
+					"Name": i,
 					"Count": 2,
 				},
 			]
 		},
 		"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 10
 			},
 		"Output":{
 			"Items":[	
 				{
-					"Name": "GoldDust" + static_item,
+					"Name": "GoldDust",
 					"Count": 1,
 				},		
 			]
@@ -4784,23 +4784,23 @@ recipes_chemical_bath.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "AluminiumOreDust" + static_item,
+				"Name": "AluminiumOreDust",
 				"Count": 10
 			},
 			{
-				"Name": "SulfuricAcid" + static_item,
+				"Name": "SulfuricAcid",
 				"Count": 1000
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 30
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "RareEarthElement" + static_item,
+				"Name": "RareEarthElement",
 				"Count": 1
 			}
 		]
@@ -4814,23 +4814,23 @@ recipes_chemical_bath.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "IronOreDust" + static_item,
+				"Name": "IronOreDust",
 				"Count": 10
 			},
 			{
-				"Name": "SulfuricAcid" + static_item,
+				"Name": "SulfuricAcid",
 				"Count": 1000
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 30
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "CobaltOxideDust" + static_item,
+				"Name": "CobaltOxideDust",
 				"Count": 1
 			}
 		]
@@ -4844,19 +4844,19 @@ recipes_freezer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "HotHardMetalIngot" + static_item,
+				"Name": "HotHardMetalIngot",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 100
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "HardMetalIngot" + static_item,
+				"Name": "HardMetalIngot",
 				"Count": 1
 			}
 		]
@@ -4870,19 +4870,19 @@ recipes_freezer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "HotNeutroniumIngot" + static_item,
+				"Name": "HotNeutroniumIngot",
 				"Count": 1
 			}
 		]
 	},
 	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
+		"Name": "Kinetic",
 		"Count": 1000
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "NeutroniumIngot" + static_item,
+				"Name": "NeutroniumIngot",
 				"Count": 1
 			}
 		]
@@ -4898,13 +4898,13 @@ recipes_computer.append({
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 10
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Computations" + static_item,
+				"Name": "Computations",
 				"Count": 1
 			}
 		]
@@ -4920,13 +4920,13 @@ recipes_q_computer.append({
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 100
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "Computations" + static_item,
+				"Name": "Computations",
 				"Count": 40
 			}
 		]
@@ -4942,13 +4942,13 @@ recipes_portal.append({
 		]
 	},
 	"ResourceInput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Electricity",
 		"Count": 2 * fission_fullpower*0.9*0.9
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "MothershipPing" + static_item,
+				"Name": "MothershipPing",
 				"Count": 1
 			}
 		]
@@ -4962,7 +4962,7 @@ append_recipe_hand_press({
 	"Input":{
 		"Items":[
 			{
-				"Name": "StoneSurface" + static_item,
+				"Name": "StoneSurface",
 				"Count": 1
 			}
 		]
@@ -4970,7 +4970,7 @@ append_recipe_hand_press({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Column" + static_item,
+				"Name": "Column",
 				"Count": 1
 			}
 		]
@@ -4983,7 +4983,7 @@ append_recipe_hand_press({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Column" + static_item,
+				"Name": "Column",
 				"Count": 1
 			}
 		]
@@ -4991,7 +4991,7 @@ append_recipe_hand_press({
 	"Output":{
 		"Items":[
 			{
-				"Name": "FluetedColumn" + static_item,
+				"Name": "FluetedColumn",
 				"Count": 1
 			}
 		]
@@ -5004,7 +5004,7 @@ append_recipe_hand_press({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Glass" + static_item,
+				"Name": "Glass",
 				"Count": 1
 			}
 		]
@@ -5012,7 +5012,7 @@ append_recipe_hand_press({
 	"Output":{
 		"Items":[
 			{
-				"Name": "GlassBlock" + static_item,
+				"Name": "GlassBlock",
 				"Count": 1
 			}
 		]
@@ -5026,7 +5026,7 @@ append_recipe_hand_press({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plastic" + static_item,
+				"Name": "Plastic",
 				"Count": 1
 			}
 		]
@@ -5034,7 +5034,7 @@ append_recipe_hand_press({
 	"Output":{
 		"Items":[
 			{
-				"Name": "PlasticBlock" + static_item,
+				"Name": "PlasticBlock",
 				"Count": 1
 			}
 		]
@@ -5048,7 +5048,7 @@ append_recipe_hand_press({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Concrete" + static_item,
+				"Name": "Concrete",
 				"Count": 1
 			}
 		]
@@ -5056,7 +5056,7 @@ append_recipe_hand_press({
 	"Output":{
 		"Items":[
 			{
-				"Name": "DangerBlock" + static_item,
+				"Name": "DangerBlock",
 				"Count": 1
 			}
 		]
@@ -5069,7 +5069,7 @@ append_recipe_hand_press({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SandSurface" + static_item,
+				"Name": "SandSurface",
 				"Count": 1
 			}
 		]
@@ -5077,7 +5077,7 @@ append_recipe_hand_press({
 	"Output":{
 		"Items":[
 			{
-				"Name": "BasicPlatform" + static_item,
+				"Name": "BasicPlatform",
 				"Count": 1
 			}
 		]
@@ -5090,7 +5090,7 @@ append_recipe_hand_press({
 	"Input":{
 		"Items":[
 			{
-				"Name": "CopperCasing" + static_item,
+				"Name": "CopperCasing",
 				"Count": 1
 			}
 		]
@@ -5098,7 +5098,7 @@ append_recipe_hand_press({
 	"Output":{
 		"Items":[
 			{
-				"Name": "RustyCopperCasing" + static_item,
+				"Name": "RustyCopperCasing",
 				"Count": 1
 			}
 		]
@@ -5111,7 +5111,7 @@ append_recipe_hand_press({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SteelCasing" + static_item,
+				"Name": "SteelCasing",
 				"Count": 1
 			}
 		]
@@ -5119,7 +5119,7 @@ append_recipe_hand_press({
 	"Output":{
 		"Items":[
 			{
-				"Name": "RustyIronCasing" + static_item,
+				"Name": "RustyIronCasing",
 				"Count": 1
 			}
 		]
@@ -5134,19 +5134,19 @@ for i in ["Circuit", "AdvancedCircuit", "Processor", "QuantumCircuit", "QuantumP
 		"Input":{
 			"Items":[
 				{
-					"Name": i + static_item,
+					"Name": i,
 					"Count": 1
 				}
 			]
 		},
 		"ResourceInput":{
-			"Name": "Electricity" + static_item,
+			"Name": "Electricity",
 			"Count": 40
 		},
 		"Output":{
 			"Items":[
 				{
-					"Name": i + static_item,
+					"Name": i,
 					"Count": 1
 				}
 			]

@@ -6,7 +6,7 @@ csv = []
 
 # chapters.append({
 	# "Class": static_chapter,
-	# "Name": "Materials" + static_chapter,
+	# "Name": "Materials",
 	# "LabelParts": [["Materials", "chapters"]],
 	# "DescriptionParts": [["MaterialsDescription", "chapters"]],
 # })
@@ -15,7 +15,7 @@ csv = []
 
 chapters.append({
 	"Class": static_chapter,
-	"Name": "Production" + static_chapter,
+	"Name": "Production",
 	"LabelParts": [["Production", "chapters"]],
 	"DescriptionParts": [["ProductionDescription", "chapters"]],
 })
@@ -24,7 +24,7 @@ csv.append(["ProductionDescription", ""])
 
 chapters.append({
 	"Class": static_chapter,
-	"Name": "Decorations" + static_chapter,
+	"Name": "Decorations",
 	"LabelParts": [["Decorations", "chapters"]],
 	"DescriptionParts": [["DecorationsDescription", "chapters"]],
 })
