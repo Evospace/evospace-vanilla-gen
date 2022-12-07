@@ -6,14 +6,14 @@ qchapters = []
 # RoadToSteel
 
 qchapters.append({
-	"Name": "RoadToSteel" + qchapter,
+	"Name": "RoadToSteel",
 	"Class": qchapter,
 	"Key": "RoadToSteel",
 	"Sorter": 4,
 	"Reward": {
 		"Items" : [
 			{
-				"Name": "SteelIngot" + static_item,
+				"Name": "SteelIngot",
 				"Count": 5
 			}
 		]
@@ -22,139 +22,139 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "IronOre" + quest,
+	"Name": "IronOre",
 	"QuestTextKeys": [
 		"Collect",
 		"IronOre"
 	],
-	"Item": "IronOre" + static_item,
-	"Chapter": "RoadToSteel" + qchapter,
+	"Item": "IronOre",
+	"Chapter": "RoadToSteel",
 	"Sorter": 0
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "IronImpureOreGravel2" + quest,
+	"Name": "IronImpureOreGravel2",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "IronImpureOreGravel" + static_item,
-	"Chapter": "RoadToSteel" + qchapter,
+	"Item": "IronImpureOreGravel",
+	"Chapter": "RoadToSteel",
 	"Sorter": 0.1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "IronOreGravel2" + quest,
+	"Name": "IronOreGravel2",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "IronOreGravel" + static_item,
-	"Chapter": "RoadToSteel" + qchapter,
+	"Item": "IronOreGravel",
+	"Chapter": "RoadToSteel",
 	"Sorter": 0.1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "IronImpureOreDust2" + quest,
+	"Name": "IronImpureOreDust2",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "IronImpureOreDust" + static_item,
-	"Chapter": "RoadToSteel" + qchapter,
+	"Item": "IronImpureOreDust",
+	"Chapter": "RoadToSteel",
 	"Sorter": 0.1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CokeOven" + quest,
+	"Name": "CokeOven",
 	"QuestTextKeys": [
 		"Collect",
 		"CokeOven"
 	],
-	"Item": "CopperCokeOven" + static_item,
-	"Chapter": "RoadToSteel" + qchapter,
+	"Item": "CopperCokeOven",
+	"Chapter": "RoadToSteel",
 	"Sorter": 1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "BlastFurnace" + quest,
+	"Name": "BlastFurnace",
 	"QuestTextKeys": [
 		"Collect",
 		"BlastFurnace"
 	],
-	"Item": "CopperBlastFurnace" + static_item,
-	"Chapter": "RoadToSteel" + qchapter,
+	"Item": "CopperBlastFurnace",
+	"Chapter": "RoadToSteel",
 	"Sorter": 2
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CoalPiece" + quest,
+	"Name": "CoalPiece",
 	"QuestTextKeys": [
 		"Collect",
 		"Achievement",
 		"CoalPiece"
 	],
-	"Item": "CoalPiece" + static_item,
-	"Chapter": "RoadToSteel" + qchapter,
+	"Item": "CoalPiece",
+	"Chapter": "RoadToSteel",
 	"Sorter": 3
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CokePiece" + quest,
+	"Name": "CokePiece",
 	"QuestTextKeys": [
 		"Collect",
 		"CokePiece"
 	],
-	"Item": "CokePiece" + static_item,
-	"Chapter": "RoadToSteel" + qchapter,
+	"Item": "CokePiece",
+	"Chapter": "RoadToSteel",
 	"Sorter": 3.5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CoalDust" + quest,
+	"Name": "CoalDust",
 	"QuestTextKeys": [
 		"Collect",
 		"CoalDust"
 	],
-	"Item": "CoalDust" + static_item,
-	"Chapter": "RoadToSteel" + qchapter,
+	"Item": "CoalDust",
+	"Chapter": "RoadToSteel",
 	"Sorter": 4
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CokeDust" + quest,
+	"Name": "CokeDust",
 	"QuestTextKeys": [
 		"Collect",
 		"CokeDust"
 	],
-	"Item": "CokeDust" + static_item,
-	"Chapter": "RoadToSteel" + qchapter,
+	"Item": "CokeDust",
+	"Chapter": "RoadToSteel",
 	"Sorter": 4.5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "SteelAge" + quest,
+	"Name": "SteelAge",
 	"QuestTextKeys": [
 		"Collect",
 		"Achievement"
 	],
-	"Item": "SteelIngot" + static_item,
+	"Item": "SteelIngot",
 	"Achievement": "SteelAge",
-	"Chapter": "RoadToSteel" + qchapter,
+	"Chapter": "RoadToSteel",
 	"Sorter": 5
 })
 
 # Other
 
 qchapters.append({
-	"Name": "Other" + qchapter,
+	"Name": "Other",
 	"Class": qchapter,
 	"Key": "Other",
 	"Sorter": 1000,
@@ -166,123 +166,123 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumAge" + quest,
+	"Name": "AluminiumAge",
 	"QuestTextKeys": [
 		"Collect",
 		"Achievement"
 	],
-	"Item": "AluminiumIngot" + static_item,
+	"Item": "AluminiumIngot",
 	"Achievement": "AluminiumAge",
-	"Chapter": "Other" + qchapter
+	"Chapter": "Other"
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "TitaniumOre" + quest,
+	"Name": "TitaniumOre",
 	"QuestTextKeys": [
 		"Collect",
 		"Achievement"
 	],
-	"Item": "TitaniumOre" + static_item,
+	"Item": "TitaniumOre",
 	"Achievement": "TitaniumOre",
-	"Chapter": "Other" + qchapter
+	"Chapter": "Other"
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "TitaniumAge" + quest,
+	"Name": "TitaniumAge",
 	"QuestTextKeys": [
 		"Collect",
 		"Achievement"
 	],
-	"Item": "TitaniumIngot" + static_item,
+	"Item": "TitaniumIngot",
 	"Achievement": "TitaniumAge",
-	"Chapter": "Other" + qchapter
+	"Chapter": "Other"
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "StainlessSteelAge" + quest,
+	"Name": "StainlessSteelAge",
 	"QuestTextKeys": [
 		"Collect",
 		"Achievement"
 	],
-	"Item": "StainlessSteelIngot" + static_item,
+	"Item": "StainlessSteelIngot",
 	"Achievement": "StainlessSteelAge",
-	"Chapter": "Other" + qchapter
+	"Chapter": "Other"
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "IronOreAchievement" + quest,
+	"Name": "IronOreAchievement",
 	"QuestTextKeys": [
 		"Collect",
 		"Achievement"
 	],
-	"Item": "IronOre" + static_item,
+	"Item": "IronOre",
 	"Achievement": "IronOre",
-	"Chapter": "Other" + qchapter,
+	"Chapter": "Other",
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumOreAchievement" + quest,
+	"Name": "AluminiumOreAchievement",
 	"QuestTextKeys": [
 		"Collect",
 		"Achievement"
 	],
-	"Item": "AluminiumOre" + static_item,
+	"Item": "AluminiumOre",
 	"Achievement": "AluminiumOre",
-	"Chapter": "Other" + qchapter
+	"Chapter": "Other"
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "GoldOreAchievement" + quest,
+	"Name": "GoldOreAchievement",
 	"QuestTextKeys": [
 		"Collect",
 		"Achievement"
 	],
-	"Item": "GoldOre" + static_item,
+	"Item": "GoldOre",
 	"Achievement": "GoldOre",
-	"Chapter": "Other" + qchapter
+	"Chapter": "Other"
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "UraniumOreAchievement" + quest,
+	"Name": "UraniumOreAchievement",
 	"QuestTextKeys": [
 		"Collect",
 		"Achievement"
 	],
-	"Item": "UraniumOre" + static_item,
+	"Item": "UraniumOre",
 	"Achievement": "UraniumOre",
-	"Chapter": "Other" + qchapter
+	"Chapter": "Other"
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CoalOreAchievement" + quest,
+	"Name": "CoalOreAchievement",
 	"QuestTextKeys": [
 		"Collect",
 		"Achievement"
 	],
-	"Item": "CoalPiece" + static_item,
+	"Item": "CoalPiece",
 	"Achievement": "CoalOre",
-	"Chapter": "Other" + qchapter
+	"Chapter": "Other"
 })
 
 # FirstSteps
 
 qchapters.append({
-	"Name": "FirstSteps" + qchapter,
+	"Name": "FirstSteps",
 	"Class": qchapter,
 	"Key": "FirstSteps",
 	"Sorter": 0,
 	"Reward": {
 		"Items" : [
 			{
-				"Name": "CopperMultitool" + static_item,
+				"Name": "CopperMultitool",
 				"Count": 1
 			}
 		]
@@ -291,102 +291,102 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "Log" + quest,
+	"Name": "Log",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "Log" + static_item,
+	"Item": "Log",
 	"Achievement": "Log",
-	"Chapter": "FirstSteps" + qchapter,
+	"Chapter": "FirstSteps",
 	"Sorter": 0
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Furnace" + quest,
+	"Name": "Furnace",
 	"QuestTextKeys": [
 		"Collect",
 		"Furnace"
 	],
-	"Item": "StoneFurnace" + static_item,
-	"Chapter": "FirstSteps" + qchapter,
+	"Item": "StoneFurnace",
+	"Chapter": "FirstSteps",
 	"Sorter": 1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Dryer" + quest,
+	"Name": "Dryer",
 	"QuestTextKeys": [
 		"Collect",
 		"Dryer"
 	],
-	"Item": "StoneDryer" + static_item,
-	"Chapter": "FirstSteps" + qchapter,
+	"Item": "StoneDryer",
+	"Chapter": "FirstSteps",
 	"Sorter": 1.5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Smelter" + quest,
+	"Name": "Smelter",
 	"QuestTextKeys": [
 		"Collect",
 		"Smelter"
 	],
-	"Item": "StoneSmelter" + static_item,
-	"Chapter": "FirstSteps" + qchapter,
+	"Item": "StoneSmelter",
+	"Chapter": "FirstSteps",
 	"Sorter": 2
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Bed" + quest,
+	"Name": "Bed",
 	"QuestTextKeys": [
 		"Collect",
 		"Bed"
 	],
-	"Item": "Bed" + static_item,
-	"Chapter": "FirstSteps" + qchapter,
+	"Item": "Bed",
+	"Chapter": "FirstSteps",
 	"Sorter": 2.5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CopperOre" + quest,
+	"Name": "CopperOre",
 	"QuestTextKeys": [
 		"Collect",
 		"Achievement",
 		"CopperOre"
 	],
-	"Item": "CopperOre" + static_item,
+	"Item": "CopperOre",
 	"Achievement": "CopperOre",
-	"Chapter": "FirstSteps" + qchapter,
+	"Chapter": "FirstSteps",
 	"Sorter": 3
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CopperAge" + quest,
+	"Name": "CopperAge",
 	"QuestTextKeys": [
 		"Collect",
 		"Achievement"
 	],
-	"Item": "CopperIngot" + static_item,
+	"Item": "CopperIngot",
 	"Achievement": "CopperAge",
-	"Chapter": "FirstSteps" + qchapter,
+	"Chapter": "FirstSteps",
 	"Sorter": 4
 })
 
 # Farming
 
 qchapters.append({
-	"Name": "Farming" + qchapter,
+	"Name": "Farming",
 	"Class": qchapter,
 	"Key": "Farming",
 	"Sorter": 1,
 	"Reward": {
 		"Items" : [
 			{
-				"Name": "CopperMultitool" + static_item,
+				"Name": "CopperMultitool",
 				"Count": 1
 			}
 		]
@@ -395,42 +395,42 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "Organics" + quest,
+	"Name": "Organics",
 	"QuestTextKeys": [
 		"Collect",
 		"Organics"
 	],
-	"Item": "OrganicsPiece" + static_item,
-	"Chapter": "Farming" + qchapter,
+	"Item": "OrganicsPiece",
+	"Chapter": "Farming",
 	"Sorter": 0
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Farm" + quest,
+	"Name": "Farm",
 	"QuestTextKeys": [
 		"Collect",
 		"BambooFarm"
 	],
-	"Item": "CopperFarm" + static_item,
-	"Chapter": "Farming" + qchapter,
+	"Item": "CopperFarm",
+	"Chapter": "Farming",
 	"Sorter": 1
 })
 
 # Steam
 
 qchapters.append({
-	"Name": "Steam" + qchapter,
+	"Name": "Steam",
 	"Class": qchapter,
 	"Key": "Steam",
 	"Sorter": 2,
 	"Reward": {
 		"Items" : [
 			{
-				"Name": "CopperVent" + static_item,
+				"Name": "CopperVent",
 				"Count": 1
 			},{
-				"Name": "CopperPipe" + static_item,
+				"Name": "CopperPipe",
 				"Count": 10
 			}
 		]
@@ -439,55 +439,55 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "Boiler" + quest,
+	"Name": "Boiler",
 	"QuestTextKeys": [
 		"Collect",
 		"Boiler"
 	],
-	"Item": "SteelBoiler" + static_item,
-	"Chapter": "Steam" + qchapter,
+	"Item": "SteelBoiler",
+	"Chapter": "Steam",
 	"Sorter": .5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Pump" + quest,
+	"Name": "Pump",
 	"QuestTextKeys": [
 		"Collect",
 		"Pump"
 	],
-	"Item": "SteelPump" + static_item,
-	"Chapter": "Steam" + qchapter,
+	"Item": "SteelPump",
+	"Chapter": "Steam",
 	"Sorter": 1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Pipe" + quest,
+	"Name": "Pipe",
 	"QuestTextKeys": [
 		"Collect",
 		"Pipe"
 	],
-	"Item": "SteelPipe" + static_item,
-	"Chapter": "Steam" + qchapter,
+	"Item": "SteelPipe",
+	"Chapter": "Steam",
 	"Sorter": 2
 })
 
 # Refining
 
 qchapters.append({
-	"Name": "Refining" + qchapter,
+	"Name": "Refining",
 	"Class": qchapter,
 	"Key": "Refining",
 	"Sorter": 3,
 	"Reward": {
 		"Items" : [
 			{
-				"Name": "CopperFluidDump" + static_item,
+				"Name": "CopperFluidDump",
 				"Count": 1
 			},
 			{
-				"Name": "CopperVent" + static_item,
+				"Name": "CopperVent",
 				"Count": 2
 			}
 		]
@@ -496,102 +496,102 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "AutomaticHammer" + quest,
+	"Name": "AutomaticHammer",
 	"QuestTextKeys": [
 		"Collect",
 		"AutomaticHammer",
 		"RefiningMachine",
 	],
-	"Item": "CopperAutomaticHammer" + static_item,
-	"Chapter": "Refining" + qchapter,
+	"Item": "CopperAutomaticHammer",
+	"Chapter": "Refining",
 	"Sorter": 0
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CopperPlate" + quest,
+	"Name": "CopperPlate",
 	"QuestTextKeys": [
 		"Collect",
 		"Plate"
 	],
-	"Item": "CopperPlate" + static_item,
-	"Chapter": "Refining" + qchapter,
+	"Item": "CopperPlate",
+	"Chapter": "Refining",
 	"Sorter": 0.5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CopperImpureOreGravel" + quest,
+	"Name": "CopperImpureOreGravel",
 	"QuestTextKeys": [
 		"Collect",
 		"Refined"
 	],
-	"Item": "CopperImpureOreGravel" + static_item,
-	"Chapter": "Refining" + qchapter,
+	"Item": "CopperImpureOreGravel",
+	"Chapter": "Refining",
 	"Sorter": 0.5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Washer" + quest,
+	"Name": "Washer",
 	"QuestTextKeys": [
 		"Collect",
 		"OreWasher",
 		"RefiningMachine",
 	],
-	"Item": "SteelOreWasher" + static_item,
-	"Chapter": "Refining" + qchapter,
+	"Item": "SteelOreWasher",
+	"Chapter": "Refining",
 	"Sorter": 1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CopperOreGravel" + quest,
+	"Name": "CopperOreGravel",
 	"QuestTextKeys": [
 		"Collect",
 		"Refined"
 	],
-	"Item": "CopperOreGravel" + static_item,
-	"Chapter": "Refining" + qchapter,
+	"Item": "CopperOreGravel",
+	"Chapter": "Refining",
 	"Sorter": 1.5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Macerator" + quest,
+	"Name": "Macerator",
 	"QuestTextKeys": [
 		"Collect",
 		"Macerator",
 		"RefiningMachine",
 	],
-	"Item": "CopperMacerator" + static_item,
-	"Chapter": "Refining" + qchapter,
+	"Item": "CopperMacerator",
+	"Chapter": "Refining",
 	"Sorter": 2
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CopperImpureOreDust" + quest,
+	"Name": "CopperImpureOreDust",
 	"QuestTextKeys": [
 		"Collect",
 		"Refined"
 	],
-	"Item": "CopperImpureOreDust" + static_item,
-	"Chapter": "Refining" + qchapter,
+	"Item": "CopperImpureOreDust",
+	"Chapter": "Refining",
 	"Sorter": 2.5
 })
 
 # Fast travel
 
 qchapters.append({
-	"Name": "FastTravel" + qchapter,
+	"Name": "FastTravel",
 	"Class": qchapter,
 	"Key": "FastTravel",
 	"Sorter": 3.1,
 	"Reward": {
 		"Items" : [
 			{
-				"Name": "CopperIngot" + static_item,
+				"Name": "CopperIngot",
 				"Count": 20
 			}
 		]
@@ -600,63 +600,63 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "Steampack" + quest,
+	"Name": "Steampack",
 	"QuestTextKeys": [
 		"Collect",
 		"Jumppack",
 	],
-	"Item": "Steampack" + static_item,
-	"Chapter": "FastTravel" + qchapter,
+	"Item": "Steampack",
+	"Chapter": "FastTravel",
 	"Sorter": 0
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Jetpack" + quest,
+	"Name": "Jetpack",
 	"QuestTextKeys": [
 		"Collect",
 		"Jumppack",
 	],
-	"Item": "Jetpack" + static_item,
-	"Chapter": "FastTravel" + qchapter,
+	"Item": "Jetpack",
+	"Chapter": "FastTravel",
 	"Sorter": 1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AdvancedJetpack" + quest,
+	"Name": "AdvancedJetpack",
 	"QuestTextKeys": [
 		"Collect",
 		"Jumppack",
 	],
-	"Item": "AdvancedJetpack" + static_item,
-	"Chapter": "FastTravel" + qchapter,
+	"Item": "AdvancedJetpack",
+	"Chapter": "FastTravel",
 	"Sorter": 2
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AntigravityUnit" + quest,
+	"Name": "AntigravityUnit",
 	"QuestTextKeys": [
 		"Collect",
 		"Jumppack",
 	],
-	"Item": "AntigravityUnit" + static_item,
-	"Chapter": "FastTravel" + qchapter,
+	"Item": "AntigravityUnit",
+	"Chapter": "FastTravel",
 	"Sorter": 3
 })
 
 # Logistics
 
 qchapters.append({
-	"Name": "Logistics" + qchapter,
+	"Name": "Logistics",
 	"Class": qchapter,
 	"Key": "Logistics",
 	"Sorter": 4.1,
 	"Reward": {
 		"Items" : [
 			{
-				"Name": "SteelFilteringRobotArm" + static_item,
+				"Name": "SteelFilteringRobotArm",
 				"Count": 3
 			}
 		]
@@ -665,121 +665,121 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "CopperRobotArm" + quest,
+	"Name": "CopperRobotArm",
 	"QuestTextKeys": [
 		"Collect",
 		"RobotArm"
 	],
-	"Item": "CopperRobotArm" + static_item,
-	"Chapter": "Logistics" + qchapter,
+	"Item": "CopperRobotArm",
+	"Chapter": "Logistics",
 	"Sorter": 0
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "SteelRobotArm" + quest,
+	"Name": "SteelRobotArm",
 	"QuestTextKeys": [
 		"Collect",
 		"RobotArm"
 	],
-	"Item": "SteelRobotArm" + static_item,
-	"Chapter": "Logistics" + qchapter,
+	"Item": "SteelRobotArm",
+	"Chapter": "Logistics",
 	"Sorter": 1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "SteelFilteringRobotArm" + quest,
+	"Name": "SteelFilteringRobotArm",
 	"QuestTextKeys": [
 		"Collect",
 		"FilteringRobotArm"
 	],
-	"Item": "SteelFilteringRobotArm" + static_item,
-	"Chapter": "Logistics" + qchapter,
+	"Item": "SteelFilteringRobotArm",
+	"Chapter": "Logistics",
 	"Sorter": 2
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CopperConveyor" + quest,
+	"Name": "CopperConveyor",
 	"QuestTextKeys": [
 		"Collect",
 		"Conveyor"
 	],
-	"Item": "CopperConveyor" + static_item,
-	"Chapter": "Logistics" + qchapter,
+	"Item": "CopperConveyor",
+	"Chapter": "Logistics",
 	"Sorter": 3
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CopperConveyorSplitter" + quest,
+	"Name": "CopperConveyorSplitter",
 	"QuestTextKeys": [
 		"Collect",
 		"ConveyorSplitter"
 	],
-	"Item": "CopperConveyorSplitter" + static_item,
-	"Chapter": "Logistics" + qchapter,
+	"Item": "CopperConveyorSplitter",
+	"Chapter": "Logistics",
 	"Sorter": 4
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "SteelConveyor" + quest,
+	"Name": "SteelConveyor",
 	"QuestTextKeys": [
 		"Collect",
 		"Conveyor"
 	],
-	"Item": "SteelConveyor" + static_item,
-	"Chapter": "Logistics" + qchapter,
+	"Item": "SteelConveyor",
+	"Chapter": "Logistics",
 	"Sorter": 5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "SteelConveyorSplitter" + quest,
+	"Name": "SteelConveyorSplitter",
 	"QuestTextKeys": [
 		"Collect",
 		"ConveyorSplitter"
 	],
-	"Item": "SteelConveyorSplitter" + static_item,
-	"Chapter": "Logistics" + qchapter,
+	"Item": "SteelConveyorSplitter",
+	"Chapter": "Logistics",
 	"Sorter": 6
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CopperDeployer" + quest,
+	"Name": "CopperDeployer",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "CopperDeployer" + static_item,
-	"Chapter": "Logistics" + qchapter,
+	"Item": "CopperDeployer",
+	"Chapter": "Logistics",
 	"Sorter": 7
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "SteelDeployer" + quest,
+	"Name": "SteelDeployer",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "SteelDeployer" + static_item,
-	"Chapter": "Logistics" + qchapter,
+	"Item": "SteelDeployer",
+	"Chapter": "Logistics",
 	"Sorter": 8
 })
 
 # FasterSteel
 
 qchapters.append({
-	"Name": "FasterSteel" + qchapter,
+	"Name": "FasterSteel",
 	"Class": qchapter,
 	"Key": "FasterSteel",
 	"Sorter": 4.15,
 	"Reward": {
 		"Items" : [
 			{
-				"Name": "SteelIngot" + static_item,
+				"Name": "SteelIngot",
 				"Count": 10
 			}
 		]
@@ -788,100 +788,100 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "SteelCokeOven" + quest,
+	"Name": "SteelCokeOven",
 	"QuestTextKeys": [
 		"Collect",
 		"CokeOven"
 	],
-	"Item": "SteelCokeOven" + static_item,
-	"Chapter": "FasterSteel" + qchapter,
+	"Item": "SteelCokeOven",
+	"Chapter": "FasterSteel",
 	"Sorter": 1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CokeDustFasterS" + quest,
+	"Name": "CokeDustFasterS",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "CokeDust" + static_item,
-	"Chapter": "FasterSteel" + qchapter,
+	"Item": "CokeDust",
+	"Chapter": "FasterSteel",
 	"Sorter": 1.1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "IronDustFasterS" + quest,
+	"Name": "IronDustFasterS",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "IronDust" + static_item,
-	"Chapter": "FasterSteel" + qchapter,
+	"Item": "IronDust",
+	"Chapter": "FasterSteel",
 	"Sorter": 1.2
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "SteelAlloySmelter" + quest,
+	"Name": "SteelAlloySmelter",
 	"QuestTextKeys": [
 		"Collect",
 		"AlloySmelter"
 	],
-	"Item": "SteelAlloySmelter" + static_item,
-	"Chapter": "FasterSteel" + qchapter,
+	"Item": "SteelAlloySmelter",
+	"Chapter": "FasterSteel",
 	"Sorter": 2
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CastIronIngot" + quest,
+	"Name": "CastIronIngot",
 	"QuestTextKeys": [
 		"Collect",
 		"CastIron"
 	],
-	"Item": "CastIronIngot" + static_item,
-	"Chapter": "FasterSteel" + qchapter,
+	"Item": "CastIronIngot",
+	"Chapter": "FasterSteel",
 	"Sorter": 3
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CastIronDust" + quest,
+	"Name": "CastIronDust",
 	"QuestTextKeys": [
 		"Collect",
 		"CastIron"
 	],
-	"Item": "CastIronDust" + static_item,
-	"Chapter": "FasterSteel" + qchapter,
+	"Item": "CastIronDust",
+	"Chapter": "FasterSteel",
 	"Sorter": 3.1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "SteelArcFurnace" + quest,
+	"Name": "SteelArcFurnace",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "SteelArcFurnace" + static_item,
-	"Chapter": "FasterSteel" + qchapter,
+	"Item": "SteelArcFurnace",
+	"Chapter": "FasterSteel",
 	"Sorter": 4
 })
 
 # Faster Refining
 
 qchapters.append({
-	"Name": "FasterRefining" + qchapter,
+	"Name": "FasterRefining",
 	"Class": qchapter,
 	"Key": "FasterRefining",
 	"Sorter": 4.2,
 	"Reward": {
 		"Items" : [
 			{
-				"Name": "SteelPipe" + static_item,
+				"Name": "SteelPipe",
 				"Count": 5
 			},
 			{
-				"Name": "CopperVent" + static_item,
+				"Name": "CopperVent",
 				"Count": 2
 			}
 		]
@@ -890,99 +890,99 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "SteelAutomaticHammer" + quest,
+	"Name": "SteelAutomaticHammer",
 	"QuestTextKeys": [
 		"Collect",
 		"HigherLevel"
 	],
-	"Item": "SteelAutomaticHammer" + static_item,
-	"Chapter": "FasterRefining" + qchapter,
+	"Item": "SteelAutomaticHammer",
+	"Chapter": "FasterRefining",
 	"Sorter": 0
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "SteelPlate" + quest,
+	"Name": "SteelPlate",
 	"QuestTextKeys": [
 		"Collect",
 		"Plate"
 	],
-	"Item": "SteelPlate" + static_item,
-	"Chapter": "FasterRefining" + qchapter,
+	"Item": "SteelPlate",
+	"Chapter": "FasterRefining",
 	"Sorter": 0.5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "IronImpureOreGravel" + quest,
+	"Name": "IronImpureOreGravel",
 	"QuestTextKeys": [
 		"Collect",
 		"Refined"
 	],
-	"Item": "IronImpureOreGravel" + static_item,
-	"Chapter": "FasterRefining" + qchapter,
+	"Item": "IronImpureOreGravel",
+	"Chapter": "FasterRefining",
 	"Sorter": 0.5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "SteelWasher" + quest,
+	"Name": "SteelWasher",
 	"QuestTextKeys": [
 		"Collect",
 		"HigherLevel"
 	],
-	"Item": "SteelOreWasher" + static_item,
-	"Chapter": "FasterRefining" + qchapter,
+	"Item": "SteelOreWasher",
+	"Chapter": "FasterRefining",
 	"Sorter": 1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "IronOreGravel" + quest,
+	"Name": "IronOreGravel",
 	"QuestTextKeys": [
 		"Collect",
 		"Refined"
 	],
-	"Item": "IronOreGravel" + static_item,
-	"Chapter": "FasterRefining" + qchapter,
+	"Item": "IronOreGravel",
+	"Chapter": "FasterRefining",
 	"Sorter": 1.5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "SteelMacerator" + quest,
+	"Name": "SteelMacerator",
 	"QuestTextKeys": [
 		"Collect",
 		"HigherLevel"
 	],
-	"Item": "SteelMacerator" + static_item,
-	"Chapter": "FasterRefining" + qchapter,
+	"Item": "SteelMacerator",
+	"Chapter": "FasterRefining",
 	"Sorter": 2
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "IronImpureOreDust" + quest,
+	"Name": "IronImpureOreDust",
 	"QuestTextKeys": [
 		"Collect",
 		"Refined"
 	],
-	"Item": "IronImpureOreDust" + static_item,
-	"Chapter": "FasterRefining" + qchapter,
+	"Item": "IronImpureOreDust",
+	"Chapter": "FasterRefining",
 	"Sorter": 2.5
 })
 
 # RoadToAluminium
 
 qchapters.append({
-	"Name": "RoadToAluminium" + qchapter,
+	"Name": "RoadToAluminium",
 	"Class": qchapter,
 	"Key": "RoadToAluminium",
 	"Sorter": 4.25,
 	"Reward": {
 		"Items" : [
 			{
-				"Name": "AluminiumIngot" + static_item,
+				"Name": "AluminiumIngot",
 				"Count": 5
 			}
 		]
@@ -991,125 +991,125 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumOre" + quest,
+	"Name": "AluminiumOre",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "AluminiumOre" + static_item,
-	"Chapter": "RoadToAluminium" + qchapter,
+	"Item": "AluminiumOre",
+	"Chapter": "RoadToAluminium",
 	"Sorter": 0
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumImpureOreGravel" + quest,
+	"Name": "AluminiumImpureOreGravel",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "AluminiumImpureOreGravel" + static_item,
-	"Chapter": "RoadToAluminium" + qchapter,
+	"Item": "AluminiumImpureOreGravel",
+	"Chapter": "RoadToAluminium",
 	"Sorter": 0.1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumOreGravel" + quest,
+	"Name": "AluminiumOreGravel",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "AluminiumOreGravel" + static_item,
-	"Chapter": "RoadToAluminium" + qchapter,
+	"Item": "AluminiumOreGravel",
+	"Chapter": "RoadToAluminium",
 	"Sorter": 0.1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumImpureOreDust" + quest,
+	"Name": "AluminiumImpureOreDust",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "AluminiumImpureOreDust" + static_item,
-	"Chapter": "RoadToAluminium" + qchapter,
+	"Item": "AluminiumImpureOreDust",
+	"Chapter": "RoadToAluminium",
 	"Sorter": 0.1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumOxideDust" + quest,
+	"Name": "AluminiumOxideDust",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "AluminiumOxideDust" + static_item,
-	"Chapter": "RoadToAluminium" + qchapter,
+	"Item": "AluminiumOxideDust",
+	"Chapter": "RoadToAluminium",
 	"Sorter": 0.1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "SteelAlloySmelterAlum" + quest,
+	"Name": "SteelAlloySmelterAlum",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "SteelAlloySmelter" + static_item,
-	"Chapter": "RoadToAluminium" + qchapter,
+	"Item": "SteelAlloySmelter",
+	"Chapter": "RoadToAluminium",
 	"Sorter": 1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumCarbideIngot" + quest,
+	"Name": "AluminiumCarbideIngot",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "AluminiumCarbideIngot" + static_item,
-	"Chapter": "RoadToAluminium" + qchapter,
+	"Item": "AluminiumCarbideIngot",
+	"Chapter": "RoadToAluminium",
 	"Sorter": 1.5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumCarbideDust" + quest,
+	"Name": "AluminiumCarbideDust",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "AluminiumCarbideDust" + static_item,
-	"Chapter": "RoadToAluminium" + qchapter,
+	"Item": "AluminiumCarbideDust",
+	"Chapter": "RoadToAluminium",
 	"Sorter": 2.5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "SteelArcFurnaceAlum" + quest,
+	"Name": "SteelArcFurnaceAlum",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "SteelArcFurnace" + static_item,
-	"Chapter": "RoadToAluminium" + qchapter,
+	"Item": "SteelArcFurnace",
+	"Chapter": "RoadToAluminium",
 	"Sorter": 3
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumIngot" + quest,
+	"Name": "AluminiumIngot",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "AluminiumIngot" + static_item,
-	"Chapter": "RoadToAluminium" + qchapter,
+	"Item": "AluminiumIngot",
+	"Chapter": "RoadToAluminium",
 	"Sorter": 4
 })
 
 # AdvancedLogistics
 
 qchapters.append({
-	"Name": "AdvancedLogistics" + qchapter,
+	"Name": "AdvancedLogistics",
 	"Class": qchapter,
 	"Key": "AdvancedLogistics",
 	"Sorter": 4.3,
 	"Reward": {
 		"Items" : [
 			{
-				"Name": "AluminiumPneumaticPipe" + static_item,
+				"Name": "AluminiumPneumaticPipe",
 				"Count": 15
 			}
 		]
@@ -1118,127 +1118,127 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "CopperBufferChest" + quest,
+	"Name": "CopperBufferChest",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "CopperBufferChest" + static_item,
-	"Chapter": "AdvancedLogistics" + qchapter,
+	"Item": "CopperBufferChest",
+	"Chapter": "AdvancedLogistics",
 	"Sorter": 0
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "SteelBufferChest" + quest,
+	"Name": "SteelBufferChest",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "SteelBufferChest" + static_item,
-	"Chapter": "AdvancedLogistics" + qchapter,
+	"Item": "SteelBufferChest",
+	"Chapter": "AdvancedLogistics",
 	"Sorter": 1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumBufferChest" + quest,
+	"Name": "AluminiumBufferChest",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "AluminiumBufferChest" + static_item,
-	"Chapter": "AdvancedLogistics" + qchapter,
+	"Item": "AluminiumBufferChest",
+	"Chapter": "AdvancedLogistics",
 	"Sorter": 2
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumDeployer" + quest,
+	"Name": "AluminiumDeployer",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "AluminiumDeployer" + static_item,
-	"Chapter": "AdvancedLogistics" + qchapter,
+	"Item": "AluminiumDeployer",
+	"Chapter": "AdvancedLogistics",
 	"Sorter": 4
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumRobotArm" + quest,
+	"Name": "AluminiumRobotArm",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "AluminiumRobotArm" + static_item,
-	"Chapter": "AdvancedLogistics" + qchapter,
+	"Item": "AluminiumRobotArm",
+	"Chapter": "AdvancedLogistics",
 	"Sorter": 5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumFilteringRobotArm" + quest,
+	"Name": "AluminiumFilteringRobotArm",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "AluminiumFilteringRobotArm" + static_item,
-	"Chapter": "AdvancedLogistics" + qchapter,
+	"Item": "AluminiumFilteringRobotArm",
+	"Chapter": "AdvancedLogistics",
 	"Sorter": 6
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumPneumaticPipe" + quest,
+	"Name": "AluminiumPneumaticPipe",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "AluminiumPneumaticPipe" + static_item,
-	"Chapter": "AdvancedLogistics" + qchapter,
+	"Item": "AluminiumPneumaticPipe",
+	"Chapter": "AdvancedLogistics",
 	"Sorter": 7
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumPneumaticInput" + quest,
+	"Name": "AluminiumPneumaticInput",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "AluminiumPneumaticInput" + static_item,
-	"Chapter": "AdvancedLogistics" + qchapter,
+	"Item": "AluminiumPneumaticInput",
+	"Chapter": "AdvancedLogistics",
 	"Sorter": 8
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumConveyor" + quest,
+	"Name": "AluminiumConveyor",
 	"QuestTextKeys": [
 		"Collect",
 		"Conveyor"
 	],
-	"Item": "AluminiumConveyor" + static_item,
-	"Chapter": "AdvancedLogistics" + qchapter,
+	"Item": "AluminiumConveyor",
+	"Chapter": "AdvancedLogistics",
 	"Sorter": 9
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumConveyorSplitter" + quest,
+	"Name": "AluminiumConveyorSplitter",
 	"QuestTextKeys": [
 		"Collect",
 		"ConveyorSplitter"
 	],
-	"Item": "AluminiumConveyorSplitter" + static_item,
-	"Chapter": "AdvancedLogistics" + qchapter,
+	"Item": "AluminiumConveyorSplitter",
+	"Chapter": "AdvancedLogistics",
 	"Sorter": 10
 })
 
 # RoadToSS
 
 qchapters.append({
-	"Name": "RoadToSS" + qchapter,
+	"Name": "RoadToSS",
 	"Class": qchapter,
 	"Key": "RoadToSS",
 	"Sorter": 5,
 	"Reward": {
 		"Items" : [
 			{
-				"Name": "StainlessSteelIngot" + static_item,
+				"Name": "StainlessSteelIngot",
 				"Count": 5
 			}
 		]
@@ -1247,125 +1247,125 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "ChromeOxideDust" + quest,
+	"Name": "ChromeOxideDust",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "ChromeOxideDust" + static_item,
-	"Chapter": "RoadToSS" + qchapter,
+	"Item": "ChromeOxideDust",
+	"Chapter": "RoadToSS",
 	"Sorter": 9.6
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminothermicChromeDust" + quest,
+	"Name": "AluminothermicChromeDust",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "AluminothermicChromeDust" + static_item,
-	"Chapter": "RoadToSS" + qchapter,
+	"Item": "AluminothermicChromeDust",
+	"Chapter": "RoadToSS",
 	"Sorter": 9.7
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumSolidFurnace" + quest,
+	"Name": "AluminiumSolidFurnace",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "AluminiumSolidFurnace" + static_item,
-	"Chapter": "RoadToSS" + qchapter,
+	"Item": "AluminiumSolidFurnace",
+	"Chapter": "RoadToSS",
 	"Sorter": 9.8
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "ChromeDust" + quest,
+	"Name": "ChromeDust",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "ChromeDust" + static_item,
-	"Chapter": "RoadToSS" + qchapter,
+	"Item": "ChromeDust",
+	"Chapter": "RoadToSS",
 	"Sorter": 9.85
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "IronDustSS" + quest,
+	"Name": "IronDustSS",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "IronDust" + static_item,
-	"Chapter": "RoadToSS" + qchapter,
+	"Item": "IronDust",
+	"Chapter": "RoadToSS",
 	"Sorter": 9.9
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "NickelDust" + quest,
+	"Name": "NickelDust",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "NickelDust" + static_item,
-	"Chapter": "RoadToSS" + qchapter,
+	"Item": "NickelDust",
+	"Chapter": "RoadToSS",
 	"Sorter": 9.9
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumMixer" + quest,
+	"Name": "AluminiumMixer",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "AluminiumMixer" + static_item,
-	"Chapter": "RoadToSS" + qchapter,
+	"Item": "AluminiumMixer",
+	"Chapter": "RoadToSS",
 	"Sorter": 9.95
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "StainlessSteelDust" + quest,
+	"Name": "StainlessSteelDust",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "StainlessSteelDust" + static_item,
-	"Chapter": "RoadToSS" + qchapter,
+	"Item": "StainlessSteelDust",
+	"Chapter": "RoadToSS",
 	"Sorter": 10
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminiumArcFurnace" + quest,
+	"Name": "AluminiumArcFurnace",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "AluminiumArcFurnace" + static_item,
-	"Chapter": "RoadToSS" + qchapter,
+	"Item": "AluminiumArcFurnace",
+	"Chapter": "RoadToSS",
 	"Sorter": 11
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "StainlessSteelIngot" + quest,
+	"Name": "StainlessSteelIngot",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "StainlessSteelIngot" + static_item,
-	"Chapter": "RoadToSS" + qchapter,
+	"Item": "StainlessSteelIngot",
+	"Chapter": "RoadToSS",
 	"Sorter": 12
 })
 
 # HeatTransferring
 
 qchapters.append({
-	"Name": "HeatTransferring" + qchapter,
+	"Name": "HeatTransferring",
 	"Class": qchapter,
 	"Key": "HeatTransferring",
 	"Sorter": 5.5,
 	"Reward": {
 		"Items" : [
 			{
-				"Name": "NakCoolantDust" + static_item,
+				"Name": "NakCoolantDust",
 				"Count": 10
 			}
 		]
@@ -1374,59 +1374,59 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "StainlessSteelHeatExchanger" + quest,
+	"Name": "StainlessSteelHeatExchanger",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "StainlessSteelHeatExchanger" + static_item,
-	"Chapter": "HeatTransferring" + qchapter,
+	"Item": "StainlessSteelHeatExchanger",
+	"Chapter": "HeatTransferring",
 	"Sorter": 1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "StainlessSteelInverseHeatExchanger" + quest,
+	"Name": "StainlessSteelInverseHeatExchanger",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "StainlessSteelInverseHeatExchanger" + static_item,
-	"Chapter": "HeatTransferring" + qchapter,
+	"Item": "StainlessSteelInverseHeatExchanger",
+	"Chapter": "HeatTransferring",
 	"Sorter": 2
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "StainlessSteelRadiator" + quest,
+	"Name": "StainlessSteelRadiator",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "StainlessSteelRadiator" + static_item,
-	"Chapter": "HeatTransferring" + qchapter,
+	"Item": "StainlessSteelRadiator",
+	"Chapter": "HeatTransferring",
 	"Sorter": 3
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "NakCoolantDust" + quest,
+	"Name": "NakCoolantDust",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "NakCoolantDust" + static_item,
-	"Chapter": "HeatTransferring" + qchapter,
+	"Item": "NakCoolantDust",
+	"Chapter": "HeatTransferring",
 	"Sorter": 9.45
 })
 
 # RoadToTitanium
 
 qchapters.append({
-	"Name": "RoadToTitanium" + qchapter,
+	"Name": "RoadToTitanium",
 	"Class": qchapter,
 	"Key": "RoadToTitanium",
 	"Sorter": 6,
 	"Reward": {
 		"Items" : [
 			{
-				"Name": "TitaniumIngot" + static_item,
+				"Name": "TitaniumIngot",
 				"Count": 5
 			}
 		]
@@ -1435,158 +1435,158 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "CokeDustTit" + quest,
+	"Name": "CokeDustTit",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "CokeDust" + static_item,
-	"Chapter": "RoadToTitanium" + qchapter,
+	"Item": "CokeDust",
+	"Chapter": "RoadToTitanium",
 	"Sorter": 1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "TitaniumOxideDust" + quest,
+	"Name": "TitaniumOxideDust",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "TitaniumOxideDust" + static_item,
-	"Chapter": "RoadToTitanium" + qchapter,
+	"Item": "TitaniumOxideDust",
+	"Chapter": "RoadToTitanium",
 	"Sorter": 1.1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "StainlessSteelAlloySmelter" + quest,
+	"Name": "StainlessSteelAlloySmelter",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "StainlessSteelAlloySmelter" + static_item,
-	"Chapter": "RoadToTitanium" + qchapter,
+	"Item": "StainlessSteelAlloySmelter",
+	"Chapter": "RoadToTitanium",
 	"Sorter": 1.2
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "PreparedTitaniumOxideDust" + quest,
+	"Name": "PreparedTitaniumOxideDust",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "PreparedTitaniumOxideDust" + static_item,
-	"Chapter": "RoadToTitanium" + qchapter,
+	"Item": "PreparedTitaniumOxideDust",
+	"Chapter": "RoadToTitanium",
 	"Sorter": 1.3
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "ManganeseOxideDust" + quest,
+	"Name": "ManganeseOxideDust",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "ManganeseOxideDust" + static_item,
-	"Chapter": "RoadToTitanium" + qchapter,
+	"Item": "ManganeseOxideDust",
+	"Chapter": "RoadToTitanium",
 	"Sorter": 3
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "AluminothermicManganeseDust" + quest,
+	"Name": "AluminothermicManganeseDust",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "AluminothermicManganeseDust" + static_item,
-	"Chapter": "RoadToTitanium" + qchapter,
+	"Item": "AluminothermicManganeseDust",
+	"Chapter": "RoadToTitanium",
 	"Sorter": 3.1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "StainlessSteelSolidFurnace" + quest,
+	"Name": "StainlessSteelSolidFurnace",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "StainlessSteelSolidFurnace" + static_item,
-	"Chapter": "RoadToTitanium" + qchapter,
+	"Item": "StainlessSteelSolidFurnace",
+	"Chapter": "RoadToTitanium",
 	"Sorter": 3.2
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "ManganeseDust" + quest,
+	"Name": "ManganeseDust",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "ManganeseDust" + static_item,
-	"Chapter": "RoadToTitanium" + qchapter,
+	"Item": "ManganeseDust",
+	"Chapter": "RoadToTitanium",
 	"Sorter": 3.3
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "SaltDust" + quest,
+	"Name": "SaltDust",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "SaltDust" + static_item,
-	"Chapter": "RoadToTitanium" + qchapter,
+	"Item": "SaltDust",
+	"Chapter": "RoadToTitanium",
 	"Sorter": 7
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "StainlessSteelChemReactor" + quest,
+	"Name": "StainlessSteelChemReactor",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "StainlessSteelChemReactor" + static_item,
-	"Chapter": "RoadToTitanium" + qchapter,
+	"Item": "StainlessSteelChemReactor",
+	"Chapter": "RoadToTitanium",
 	"Sorter": 8
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "TitaniumSponge" + quest,
+	"Name": "TitaniumSponge",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "TitaniumSponge" + static_item,
-	"Chapter": "RoadToTitanium" + qchapter,
+	"Item": "TitaniumSponge",
+	"Chapter": "RoadToTitanium",
 	"Sorter": 9.4
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "StainlessSteelInductionFurnace" + quest,
+	"Name": "StainlessSteelInductionFurnace",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "StainlessSteelInductionFurnace" + static_item,
-	"Chapter": "RoadToTitanium" + qchapter,
+	"Item": "StainlessSteelInductionFurnace",
+	"Chapter": "RoadToTitanium",
 	"Sorter": 9.5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "TitaniumIngot" + quest,
+	"Name": "TitaniumIngot",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "TitaniumIngot" + static_item,
-	"Chapter": "RoadToTitanium" + qchapter,
+	"Item": "TitaniumIngot",
+	"Chapter": "RoadToTitanium",
 	"Sorter": 9.6
 })
 
 # RoadToHardMetal
 
 qchapters.append({
-	"Name": "RoadToHardMetal" + qchapter,
+	"Name": "RoadToHardMetal",
 	"Class": qchapter,
 	"Key": "RoadToHardMetal",
 	"Sorter": 7,
 	"Reward": {
 		"Items" : [
 			{
-				"Name": "HardMetalIngot" + static_item,
+				"Name": "HardMetalIngot",
 				"Count": 5
 			}
 		]
@@ -1595,180 +1595,180 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "TungstenOxideDust" + quest,
+	"Name": "TungstenOxideDust",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "TungstenOxideDust" + static_item,
-	"Chapter": "RoadToHardMetal" + qchapter,
+	"Item": "TungstenOxideDust",
+	"Chapter": "RoadToHardMetal",
 	"Sorter": 1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "TitaniumInductionFurnace2" + quest,
+	"Name": "TitaniumInductionFurnace2",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "TitaniumInductionFurnace" + static_item,
-	"Chapter": "RoadToHardMetal" + qchapter,
+	"Item": "TitaniumInductionFurnace",
+	"Chapter": "RoadToHardMetal",
 	"Sorter": 2
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "HotTungstenIngot" + quest,
+	"Name": "HotTungstenIngot",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "HotTungstenIngot" + static_item,
-	"Chapter": "RoadToHardMetal" + qchapter,
+	"Item": "HotTungstenIngot",
+	"Chapter": "RoadToHardMetal",
 	"Sorter": 3
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "TitaniumChemReactor" + quest,
+	"Name": "TitaniumChemReactor",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "TitaniumChemReactor" + static_item,
-	"Chapter": "RoadToHardMetal" + qchapter,
+	"Item": "TitaniumChemReactor",
+	"Chapter": "RoadToHardMetal",
 	"Sorter": 4
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "TungstenCarbideIngot" + quest,
+	"Name": "TungstenCarbideIngot",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "TungstenCarbideIngot" + static_item,
-	"Chapter": "RoadToHardMetal" + qchapter,
+	"Item": "TungstenCarbideIngot",
+	"Chapter": "RoadToHardMetal",
 	"Sorter": 5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "TungstenCarbideDust" + quest,
+	"Name": "TungstenCarbideDust",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "TungstenCarbideDust" + static_item,
-	"Chapter": "RoadToHardMetal" + qchapter,
+	"Item": "TungstenCarbideDust",
+	"Chapter": "RoadToHardMetal",
 	"Sorter": 6.5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CobaltOxideDust" + quest,
+	"Name": "CobaltOxideDust",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "CobaltOxideDust" + static_item,
-	"Chapter": "RoadToHardMetal" + qchapter,
+	"Item": "CobaltOxideDust",
+	"Chapter": "RoadToHardMetal",
 	"Sorter": 6.55
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "TitaniumChemReactor2" + quest,
+	"Name": "TitaniumChemReactor2",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "TitaniumChemReactor" + static_item,
-	"Chapter": "RoadToHardMetal" + qchapter,
+	"Item": "TitaniumChemReactor",
+	"Chapter": "RoadToHardMetal",
 	"Sorter": 6.555
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "CobaltDust" + quest,
+	"Name": "CobaltDust",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "CobaltDust" + static_item,
-	"Chapter": "RoadToHardMetal" + qchapter,
+	"Item": "CobaltDust",
+	"Chapter": "RoadToHardMetal",
 	"Sorter": 6.6
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "TitaniumMixer" + quest,
+	"Name": "TitaniumMixer",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "TitaniumMixer" + static_item,
-	"Chapter": "RoadToHardMetal" + qchapter,
+	"Item": "TitaniumMixer",
+	"Chapter": "RoadToHardMetal",
 	"Sorter": 6.9
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "HardMetalDust" + quest,
+	"Name": "HardMetalDust",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "HardMetalDust" + static_item,
-	"Chapter": "RoadToHardMetal" + qchapter,
+	"Item": "HardMetalDust",
+	"Chapter": "RoadToHardMetal",
 	"Sorter": 7
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "TitaniumInductionFurnace" + quest,
+	"Name": "TitaniumInductionFurnace",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "TitaniumInductionFurnace" + static_item,
-	"Chapter": "RoadToHardMetal" + qchapter,
+	"Item": "TitaniumInductionFurnace",
+	"Chapter": "RoadToHardMetal",
 	"Sorter": 7.5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "HotHardMetalIngot" + quest,
+	"Name": "HotHardMetalIngot",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "HotHardMetalIngot" + static_item,
-	"Chapter": "RoadToHardMetal" + qchapter,
+	"Item": "HotHardMetalIngot",
+	"Chapter": "RoadToHardMetal",
 	"Sorter": 8
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "TitaniumFreezer" + quest,
+	"Name": "TitaniumFreezer",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "TitaniumFreezer" + static_item,
-	"Chapter": "RoadToHardMetal" + qchapter,
+	"Item": "TitaniumFreezer",
+	"Chapter": "RoadToHardMetal",
 	"Sorter": 9
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "HardMetalIngot" + quest,
+	"Name": "HardMetalIngot",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "HardMetalIngot" + static_item,
-	"Chapter": "RoadToHardMetal" + qchapter,
+	"Item": "HardMetalIngot",
+	"Chapter": "RoadToHardMetal",
 	"Sorter": 10
 })
 
 # Wood work
 
 qchapters.append({
-	"Name": "Woodwork" + qchapter,
+	"Name": "Woodwork",
 	"Class": qchapter,
 	"Key": "Woodwork",
 	"Sorter": 998,
 	"Reward": {
 		"Items" : [
 			{
-				"Name": "WoodenPlanks" + static_item,
+				"Name": "WoodenPlanks",
 				"Count": 64
 			}
 		]
@@ -1778,142 +1778,142 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "Door" + quest,
+	"Name": "Door",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "Door" + static_item,
-	"Chapter": "Woodwork" + qchapter,
+	"Item": "Door",
+	"Chapter": "Woodwork",
 	"Sorter": 0
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Chair" + quest,
+	"Name": "Chair",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "Chair" + static_item,
-	"Chapter": "Woodwork" + qchapter,
+	"Item": "Chair",
+	"Chapter": "Woodwork",
 	"Sorter": 1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Fence" + quest,
+	"Name": "Fence",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "Fence" + static_item,
-	"Chapter": "Woodwork" + qchapter,
+	"Item": "Fence",
+	"Chapter": "Woodwork",
 	"Sorter": 2
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Ladder" + quest,
+	"Name": "Ladder",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "Ladder" + static_item,
-	"Chapter": "Woodwork" + qchapter,
+	"Item": "Ladder",
+	"Chapter": "Woodwork",
 	"Sorter": 3
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Rack" + quest,
+	"Name": "Rack",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "Rack" + static_item,
-	"Chapter": "Woodwork" + qchapter,
+	"Item": "Rack",
+	"Chapter": "Woodwork",
 	"Sorter": 4
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Table" + quest,
+	"Name": "Table",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "Table" + static_item,
-	"Chapter": "Woodwork" + qchapter,
+	"Item": "Table",
+	"Chapter": "Woodwork",
 	"Sorter": 5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Torch" + quest,
+	"Name": "Torch",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "Torch" + static_item,
-	"Chapter": "Woodwork" + qchapter,
+	"Item": "Torch",
+	"Chapter": "Woodwork",
 	"Sorter": 6
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "WoodenChest" + quest,
+	"Name": "WoodenChest",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "WoodenChest" + static_item,
-	"Chapter": "Woodwork" + qchapter,
+	"Item": "WoodenChest",
+	"Chapter": "Woodwork",
 	"Sorter": 7
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "WoodenStairs" + quest,
+	"Name": "WoodenStairs",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "WoodenStairs" + static_item,
-	"Chapter": "Woodwork" + qchapter,
+	"Item": "WoodenStairs",
+	"Chapter": "Woodwork",
 	"Sorter": 7
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Window" + quest,
+	"Name": "Window",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "Window" + static_item,
-	"Chapter": "Woodwork" + qchapter,
+	"Item": "Window",
+	"Chapter": "Woodwork",
 	"Sorter": 8
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "WoodenPlanks" + quest,
+	"Name": "WoodenPlanks",
 	"QuestTextKeys": [
 		"Collect",
 	],
-	"Item": "WoodenPlanks" + static_item,
-	"Chapter": "Woodwork" + qchapter,
+	"Item": "WoodenPlanks",
+	"Chapter": "Woodwork",
 	"Sorter": 9
 })
 
 # Decorative
 
 qchapters.append({
-	"Name": "Decorative" + qchapter,
+	"Name": "Decorative",
 	"Class": qchapter,
 	"Key": "Decorative",
 	"Sorter": 999,
 	"Reward": {
 		"Items" : [
 			{
-				"Name": "DarkStoneSurface" + static_item,
+				"Name": "DarkStoneSurface",
 				"Count": 50
 			},{
-				"Name": "StoneSurface" + static_item,
+				"Name": "StoneSurface",
 				"Count": 50
 			},{
-				"Name": "RedStoneSurface" + static_item,
+				"Name": "RedStoneSurface",
 				"Count": 50
 			}
 		]
@@ -1922,122 +1922,122 @@ qchapters.append({
 
 quests.append({
 	"Class": quest,
-	"Name": "DarkBricks" + quest,
+	"Name": "DarkBricks",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "DarkBricks" + static_item,
-	"Chapter": "Decorative" + qchapter,
+	"Item": "DarkBricks",
+	"Chapter": "Decorative",
 	"Sorter": 0
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Bricks" + quest,
+	"Name": "Bricks",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "Bricks" + static_item,
-	"Chapter": "Decorative" + qchapter,
+	"Item": "Bricks",
+	"Chapter": "Decorative",
 	"Sorter": 1
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "RedBricks" + quest,
+	"Name": "RedBricks",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "RedBricks" + static_item,
-	"Chapter": "Decorative" + qchapter,
+	"Item": "RedBricks",
+	"Chapter": "Decorative",
 	"Sorter": 2
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "RedStoneTiles" + quest,
+	"Name": "RedStoneTiles",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "RedStoneTiles" + static_item,
-	"Chapter": "Decorative" + qchapter,
+	"Item": "RedStoneTiles",
+	"Chapter": "Decorative",
 	"Sorter": 3
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Terracotta" + quest,
+	"Name": "Terracotta",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "Terracotta" + static_item,
-	"Chapter": "Decorative" + qchapter,
+	"Item": "Terracotta",
+	"Chapter": "Decorative",
 	"Sorter": 4
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "TerracottaTiles" + quest,
+	"Name": "TerracottaTiles",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "TerracottaTiles" + static_item,
-	"Chapter": "Decorative" + qchapter,
+	"Item": "TerracottaTiles",
+	"Chapter": "Decorative",
 	"Sorter": 5
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "DarkStoneTiles" + quest,
+	"Name": "DarkStoneTiles",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "DarkStoneTiles" + static_item,
-	"Chapter": "Decorative" + qchapter,
+	"Item": "DarkStoneTiles",
+	"Chapter": "Decorative",
 	"Sorter": 6
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Column" + quest,
+	"Name": "Column",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "Column" + static_item,
-	"Chapter": "Decorative" + qchapter,
+	"Item": "Column",
+	"Chapter": "Decorative",
 	"Sorter": 7
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "FluetedColumn" + quest,
+	"Name": "FluetedColumn",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "FluetedColumn" + static_item,
-	"Chapter": "Decorative" + qchapter,
+	"Item": "FluetedColumn",
+	"Chapter": "Decorative",
 	"Sorter": 8
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "Stairs" + quest,
+	"Name": "Stairs",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "Stairs" + static_item,
-	"Chapter": "Decorative" + qchapter,
+	"Item": "Stairs",
+	"Chapter": "Decorative",
 	"Sorter": 9
 })
 
 quests.append({
 	"Class": quest,
-	"Name": "StoneTiles" + quest,
+	"Name": "StoneTiles",
 	"QuestTextKeys": [
 		"Collect"
 	],
-	"Item": "StoneTiles" + static_item,
-	"Chapter": "Decorative" + qchapter,
+	"Item": "StoneTiles",
+	"Chapter": "Decorative",
 	"Sorter": 10
 })
 

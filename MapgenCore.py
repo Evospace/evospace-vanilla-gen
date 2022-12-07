@@ -161,7 +161,7 @@ for object in mapgen_objects:
 	csv.append([object["Name"] + "Surface", CamelToSpaces(object["Name"])])
 
 	objects_array.append({ "Class": static_item,
-		"Name": object["Name"] + "Surface" + static_item,
+		"Name": object["Name"] + "Surface",
 		"Image": "T_" + object["Name"],
 		
 		"ItemLogic": building_brush_slot_logic,
@@ -172,7 +172,7 @@ for object in mapgen_objects:
 		"Color": object["Item"],
 		"LogicJson":
 		{
-			"StaticBlock": object["Name"] + "Surface" + static_surface
+			"StaticBlock": object["Name"] + "Surface"
 		},
 		"MaxCount": 64,
 		"LabelParts": [[object["Name"]+ "Surface", "mapgen_core"]],
@@ -180,14 +180,14 @@ for object in mapgen_objects:
 		"Tag": "Misc",
 	})
 	objects_array.append({ "Class": "TesselatorMarching",
-		"Name": object["Name"] + "Surface" + tesselator,
+		"Name": object["Name"] + "Surface",
 		"Material": "Materials/Triplanar/" + object["Name"] + "Material"
 	})
 	objects_array.append({
 		"Class": static_surface,
-		"Name": object["Name"] + "Surface" + static_surface,
-		"Tesselator": object["Name"] + "Surface" + tesselator,
-		"Item" : object["Name"] + "Surface" + static_item,
+		"Name": object["Name"] + "Surface",
+		"Tesselator": object["Name"] + "Surface",
+		"Item" : object["Name"] + "Surface",
 		"ColorSide": object["Side"],
 		"ColorTop": object["Color"]
 	})
@@ -197,7 +197,7 @@ for object in mapgen_objects:
 		"Input":{
 			"Items":[
 				{
-					"Name": object["Name"] + "Surface" + static_item,
+					"Name": object["Name"] + "Surface",
 					"Count": 1
 				}
 			]
@@ -205,7 +205,7 @@ for object in mapgen_objects:
 		"Output":{
 			"Items":[
 				{
-					"Name": object["Drops"] + "Surface" + static_item,
+					"Name": object["Drops"] + "Surface",
 					"Count": 1
 				}
 			]

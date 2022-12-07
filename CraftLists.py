@@ -14,11 +14,11 @@ from Common import *
 # ]
 
 craft_component_logic = [
-	"CopperWire" + static_item,
-	"CopperTriod" + static_item,
-	"SteelTriodePlate" + static_item,
-	"AluminiumLogicPlate" + static_item,
-	"StainlessSteelLogicPlate" + static_item,
+	"CopperWire",
+	"CopperTriod",
+	"SteelTriodePlate",
+	"AluminiumLogicPlate",
+	"StainlessSteelLogicPlate",
 ]
 	
 	

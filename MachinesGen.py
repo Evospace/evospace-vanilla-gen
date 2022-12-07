@@ -17,7 +17,7 @@ desc_csv = []
 
 researches.append({
 	"Name": "Core" + static_research,
-	"UnlokedItems": [ "Core" + static_item ],
+	"UnlokedItems": [ "Core" ],
 })
 
 def append_recipe(recipe):
@@ -29,7 +29,7 @@ def append_recipe(recipe):
 
 	con_recipe = copy.deepcopy(recipe)
 	con_recipe["Ticks"] = max(min(item_count * 10, 1200), 20);
-	con_recipe["ResourceInput"] = { "Name": "Electricity" + static_item, "Count": 20 }
+	con_recipe["ResourceInput"] = { "Name": "Electricity", "Count": 20 }
 	recipes_constructor.append(con_recipe)
 
 	dec_recipe = copy.deepcopy(recipe)
@@ -39,8 +39,8 @@ def append_recipe(recipe):
 	output = copy.deepcopy(dec_recipe["Input"])
 	
 	dec_recipe["Input"] = copy.deepcopy(dec_recipe["Output"])
-	dec_recipe["Ticks"] = max(min(item_count * 10, 1200), 20);
-	dec_recipe["ResourceInput"] = { "Name": "Electricity" + static_item, "Count": 20 }
+	dec_recipe["Ticks"] = max(min(item_count * 10, 1200), 20)
+	dec_recipe["ResourceInput"] = { "Name": "Electricity", "Count": 20 }
 	dec_recipe["Output"] = copy.deepcopy(output)
 	recipes_deconstructor.append(dec_recipe)	
 
@@ -49,8 +49,8 @@ for machine in machines:
 	desc_csv.append([machine["Name"], ""])
 	for tier in tiers_numlist:
 		if machine["StartTier"] <= tier and machine["EndTier"] >= tier:
-			item_name = tier_material[tier] +  machine["Name"] + static_item
-			block_name = tier_material[tier] + machine["Name"] + static_block
+			item_name = tier_material[tier] +  machine["Name"]
+			block_name = tier_material[tier] + machine["Name"]
 			
 			our_dir = "Develop/" + machine["Name"] + "/"
 			
@@ -218,7 +218,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"],
 								"Count": 1
 							}
 						]
@@ -226,7 +226,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"],
 								"Count": 1
 							}
 						]
@@ -237,7 +237,7 @@ for machine in machines:
 				"Class": recipe_dictionary,
 				"Name": machine["Name"] + recipe_dictionary,
 				"UsedIn": [{
-					"Item": tier_material[tier] + machine["Name"] + static_item,
+					"Item": tier_material[tier] + machine["Name"],
 					"Tier": tier
 				}]
 			})
@@ -248,7 +248,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 3
 							}
 						]
@@ -256,7 +256,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Beam" + static_item,
+								"Name": tier_material[tier] + "Beam" ,
 								"Count": 1
 							}
 						]
@@ -271,7 +271,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate",
 								"Count": 1
 							}
 						]
@@ -279,7 +279,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Corner" + static_item,
+								"Name": tier_material[tier] + "Corner",
 								"Count": 1
 							}
 						]
@@ -294,7 +294,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item if tier != 0 else "StoneSurface" + static_item,
+								"Name": tier_material[tier] + "Plate" if tier != 0 else "StoneSurface",
 								"Count": 1
 							}
 						]
@@ -302,7 +302,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Sign" + static_item,
+								"Name": tier_material[tier] + "Sign",
 								"Count": 1
 							}
 						]
@@ -317,7 +317,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Sign" + static_item,
+								"Name": tier_material[tier] + "Sign",
 								"Count": 1
 							},
 							{
@@ -333,7 +333,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "AdvancedSign" + static_item,
+								"Name": tier_material[tier] + "AdvancedSign",
 								"Count": 1
 							}
 						]
@@ -356,7 +356,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "LogicWire" + static_item,
+								"Name": tier_material[tier] + "LogicWire",
 								"Count": 1
 							}
 						]
@@ -371,7 +371,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": "SteelPlate" + static_item,
+								"Name": "SteelPlate",
 								"Count": 2
 							},
 							{
@@ -379,7 +379,7 @@ for machine in machines:
 								"Count": 1
 							},
 							{
-								"Name": "SteelLogicWire" + static_item,
+								"Name": "SteelLogicWire" ,
 								"Count": 1
 							}
 						]
@@ -387,7 +387,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"],
 								"Count": 1
 							}
 						]
@@ -402,7 +402,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts",
 								"Count": 4
 							}
 						]
@@ -410,7 +410,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Scaffold" + static_item,
+								"Name": tier_material[tier] + "Scaffold",
 								"Count": 1
 							}
 						]
@@ -425,7 +425,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate",
 								"Count": 3
 							}
 						]
@@ -433,7 +433,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Container" + static_item,
+								"Name": tier_material[tier] + "Container",
 								"Count": 1
 							}
 						]
@@ -452,7 +452,7 @@ for machine in machines:
 								"Count": 32 + level * 16
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts",
 								"Count": 12
 							},
 							{
@@ -464,7 +464,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "IndustrialSmelter" + static_item,
+								"Name": tier_material[tier] + "IndustrialSmelter",
 								"Count": 1
 							}
 						]
@@ -479,15 +479,15 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 5
 							},
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe" ,
 								"Count": 5 + parts_ramp(level, 5)
 							},
 							{
-								"Name": tier_material[tier] + "Container" + static_item,
+								"Name": tier_material[tier] + "Container" ,
 								"Count": 3
 							}
 						]
@@ -495,7 +495,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "PyrolysisUnit" + static_item,
+								"Name": tier_material[tier] + "PyrolysisUnit" ,
 								"Count": 1
 							}
 						]
@@ -510,7 +510,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item if tier > 0 else "StoneSurface" + static_item,
+								"Name": tier_material[tier] + "Plate"  if tier > 0 else "StoneSurface" ,
 								"Count": 4
 							},
 						]
@@ -518,7 +518,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Smelter" + static_item,
+								"Name": tier_material[tier] + "Smelter" ,
 								"Count": 1
 							}
 						]
@@ -533,11 +533,11 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 3
 							},
 							{
-								"Name": "CopperPipe" + static_item,
+								"Name": "CopperPipe" ,
 								"Count": 15 + 15 * level
 							}
 						]
@@ -545,7 +545,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "InductionCoil" + static_item,
+								"Name": tier_material[tier] + "InductionCoil" ,
 								"Count": 1
 							}
 						]
@@ -560,23 +560,23 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 3
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 1
 							},
 							{
-								"Name": "Glass" + static_item,
+								"Name": "Glass" ,
 								"Count": 1
 							},
 							{
-								"Name": "BrassDetails" + static_item,
+								"Name": "BrassDetails" ,
 								"Count": 1
 							},
 							{
-								"Name": "BrassReductor" + static_item,
+								"Name": "BrassReductor" ,
 								"Count": 1
 							}
 						]
@@ -584,7 +584,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "PneumaticInput" + static_item,
+								"Name": tier_material[tier] + "PneumaticInput" ,
 								"Count": 1
 							}
 						]
@@ -599,11 +599,11 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 3
 							}, 
 							{
-								"Name": "Coal" + static_item,
+								"Name": "Coal" ,
 								"Count": 2
 							},
 							{
@@ -615,7 +615,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Electrolyzer" + static_item,
+								"Name": tier_material[tier] + "Electrolyzer" ,
 								"Count": 1
 							}
 						]
@@ -630,13 +630,13 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 3
 							},{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 4 + parts_ramp(level)
 							},{
-								"Name": tier_material[tier] + "ElectricEngine" + static_item,
+								"Name": tier_material[tier] + "ElectricEngine" ,
 								"Count": 1
 							}
 						]
@@ -644,7 +644,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "ChemReactor" + static_item,
+								"Name": tier_material[tier] + "ChemReactor" ,
 								"Count": 1
 							}
 						]
@@ -659,10 +659,10 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 6
 							},{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 6 + parts_ramp(level)
 							}
 						]
@@ -670,7 +670,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Mixer" + static_item,
+								"Name": tier_material[tier] + "Mixer" ,
 								"Count": 1
 							}
 						]
@@ -685,10 +685,10 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 4
 							},{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 1 + parts_ramp(level)
 							}
 						]
@@ -696,7 +696,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Press" + static_item,
+								"Name": tier_material[tier] + "Press" ,
 								"Count": 1
 							}
 						]
@@ -711,10 +711,10 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 1
 							},{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 1
 							},{
 								"Name": cables[tier],
@@ -725,7 +725,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "ElectricalSwitch" + static_item,
+								"Name": tier_material[tier] + "ElectricalSwitch" ,
 								"Count": 1
 							}
 						]
@@ -740,7 +740,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 12
 							}
 						]
@@ -748,7 +748,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Tank" + static_item,
+								"Name": tier_material[tier] + "Tank" ,
 								"Count": 1
 							}
 						]
@@ -763,7 +763,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 3
 							},
 							{
@@ -771,7 +771,7 @@ for machine in machines:
 								"Count": 4
 							},
 							{
-								"Name": "Glass" + static_item,
+								"Name": "Glass" ,
 								"Count": 1
 							}
 						]
@@ -779,7 +779,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Terminal" + static_item,
+								"Name": tier_material[tier] + "Terminal" ,
 								"Count": 1
 							}
 						]
@@ -794,7 +794,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Terminal" + static_item,
+								"Name": tier_material[tier] + "Terminal" ,
 								"Count": 1
 							}
 						]
@@ -802,7 +802,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "FlatTerminal" + static_item,
+								"Name": tier_material[tier] + "FlatTerminal" ,
 								"Count": 1
 							}
 						]
@@ -817,7 +817,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 6
 							},
 							{
@@ -825,7 +825,7 @@ for machine in machines:
 								"Count": 6
 							},
 							{
-								"Name": "Glass" + static_item,
+								"Name": "Glass" ,
 								"Count": 4
 							}
 						]
@@ -833,7 +833,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "BigTerminal" + static_item,
+								"Name": tier_material[tier] + "BigTerminal" ,
 								"Count": 1
 							}
 						]
@@ -848,7 +848,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "BigTerminal" + static_item,
+								"Name": tier_material[tier] + "BigTerminal" ,
 								"Count": 1
 							}
 						]
@@ -856,7 +856,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -871,7 +871,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 9
 							},
 							{
@@ -879,7 +879,7 @@ for machine in machines:
 								"Count": 8
 							},
 							{
-								"Name": "Glass" + static_item,
+								"Name": "Glass" ,
 								"Count": 9
 							}
 						]
@@ -887,7 +887,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -902,7 +902,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "HugeTerminal" + static_item,
+								"Name": tier_material[tier] + "HugeTerminal" ,
 								"Count": 1
 							}
 						]
@@ -910,7 +910,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -925,23 +925,23 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 4
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 6 + parts_ramp(level)
 							},
 							{
-								"Name": tier_material[tier] + "ElectricEngine" + static_item,
+								"Name": tier_material[tier] + "ElectricEngine" ,
 								"Count": 1
 							},
 							{
-								"Name": "Glass" + static_item,
+								"Name": "Glass" ,
 								"Count": 3
 							},
 							{
-								"Name": "Silicon" + static_item,
+								"Name": "Silicon" ,
 								"Count": 3
 								
 							}
@@ -950,7 +950,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -965,10 +965,10 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 2 + parts_ramp(level)
 							},{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe" ,
 								"Count": 2
 							}
 						]
@@ -976,7 +976,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -994,10 +994,10 @@ for machine in machines:
 								"Name": wires[tier],
 								"Count": 12 + level * 6
 							},{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 4
 							},{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 2 + parts_ramp(level)
 							}
 						]
@@ -1005,7 +1005,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1020,13 +1020,13 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": "CopperIngot" + static_item,
+								"Name": "CopperIngot" ,
 								"Count": 2 + parts_ramp(level)
 							},{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 1
 							},{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 2 + parts_ramp(level)
 							}
 						]
@@ -1034,7 +1034,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1049,10 +1049,10 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 1 + parts_ramp(level)
 							},{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 4
 							}
 						]
@@ -1060,7 +1060,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1075,10 +1075,10 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 3 + parts_ramp(level)
 							},{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 3
 							}
 						]
@@ -1086,7 +1086,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1101,7 +1101,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item if tier != 0 else "StoneSurface" + static_item,
+								"Name": tier_material[tier] + "Plate"  if tier != 0 else "StoneSurface" ,
 								"Count": 5
 							}
 						]
@@ -1109,7 +1109,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1124,10 +1124,10 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe" ,
 								"Count": 1 + parts_ramp(level)
 							},{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 3
 							}
 						]
@@ -1135,7 +1135,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1150,15 +1150,15 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe" ,
 								"Count": 25
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 30
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 10 + level * 5
 							},
 							{
@@ -1170,7 +1170,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1187,7 +1187,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": "StoneSurface" + static_item,
+								"Name": "StoneSurface" ,
 								"Count": 10
 							}
 						]
@@ -1195,7 +1195,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1205,7 +1205,7 @@ for machine in machines:
 				}
 				if tier != 0:
 					r["Input"]["Items"].append({
-						"Name": tier_material[tier] + "Pipe" + static_item,
+						"Name": tier_material[tier] + "Pipe" ,
 						"Count": 6 + parts_ramp(level)
 					})
 				append_recipe(r)
@@ -1216,10 +1216,10 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe" ,
 								"Count": 8 + parts_ramp(level)
 							},{
-								"Name": "StoneSurface" + static_item,
+								"Name": "StoneSurface" ,
 								"Count": 20
 							}
 						]
@@ -1227,7 +1227,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1242,7 +1242,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 3
 							},
 							{
@@ -1258,7 +1258,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1273,7 +1273,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate"+ static_item if tier > 0 else "StoneSurface" + static_item,
+								"Name": tier_material[tier] + "Plate" if tier > 0 else "StoneSurface" ,
 								"Count": 4
 							}
 						]
@@ -1281,7 +1281,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1291,7 +1291,7 @@ for machine in machines:
 				}
 				if tier > 0:
 					recipe["Input"]["Items"].append({
-							"Name": "StoneFurnace" + static_item,
+							"Name": "StoneFurnace" ,
 							"Count": 1
 						})
 				append_recipe(recipe)
@@ -1302,15 +1302,15 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 4 + level
 							},
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe" ,
 								"Count": 1 + level
 							},
 							{
-								"Name": tier_material[tier] + "RobotArm" + static_item,
+								"Name": tier_material[tier] + "RobotArm" ,
 								"Count": 1 + level
 							},
 						]
@@ -1318,7 +1318,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1333,11 +1333,11 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Furnace" + static_item,
+								"Name": tier_material[tier] + "Furnace" ,
 								"Count": 1
 							},
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe" ,
 								"Count": 2 + parts_ramp(level)
 							}
 						]
@@ -1345,7 +1345,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1360,15 +1360,15 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe" ,
 								"Count": 2
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 9
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 4 + parts_ramp(level)
 							}
 						]
@@ -1376,7 +1376,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1391,15 +1391,15 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe" ,
 								"Count": 6
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 6
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 10 + parts_ramp(level)*2
 							}
 						]
@@ -1407,7 +1407,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1422,11 +1422,11 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "RobotArm" + static_item,
+								"Name": tier_material[tier] + "RobotArm" ,
 								"Count": 4
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 3
 							},
 							{
@@ -1438,7 +1438,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1453,15 +1453,15 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 5
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 5 + parts_ramp(level)
 							},
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe" ,
 								"Count": 5
 							},
 							{
@@ -1473,7 +1473,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1488,11 +1488,11 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 1
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 4
 							}
 						]
@@ -1500,7 +1500,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1515,15 +1515,15 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "FilteringRobotArm" + static_item,
+								"Name": tier_material[tier] + "FilteringRobotArm" ,
 								"Count": 4
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 4
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 10 + parts_ramp(level, 10)
 							},
 							{
@@ -1535,7 +1535,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1550,15 +1550,15 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "FilteringRobotArm" + static_item,
+								"Name": tier_material[tier] + "FilteringRobotArm" ,
 								"Count": 4
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 4
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 10 + parts_ramp(level, 5)
 							},
 							{
@@ -1570,7 +1570,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1585,15 +1585,15 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": "CopperHeatPipe" + static_item,
+								"Name": "CopperHeatPipe" ,
 								"Count": 25
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 100
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 100
 							},
 							{
@@ -1609,7 +1609,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1624,15 +1624,15 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": "CopperHeatPipe" + static_item,
+								"Name": "CopperHeatPipe" ,
 								"Count": 25
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 40
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 100
 							},
 							{
@@ -1652,7 +1652,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1667,15 +1667,15 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": "UltimateCatalyst" + static_item,
+								"Name": "UltimateCatalyst" ,
 								"Count": 10
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 40
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 100
 							},
 							{
@@ -1695,7 +1695,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1710,15 +1710,15 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": "PlutoniumCell" + static_item,
+								"Name": "PlutoniumCell" ,
 								"Count": 1,
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 8,
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 20 + 5 * level,
 							},
 							{
@@ -1730,7 +1730,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1745,11 +1745,11 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 2 + parts_ramp(level, 3)
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 1
 							}
 						]
@@ -1757,7 +1757,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1776,7 +1776,7 @@ for machine in machines:
 								"Count": 1
 							},
 							{
-								"Name": tier_material[tier] + "RobotArm" + static_item,
+								"Name": tier_material[tier] + "RobotArm" ,
 								"Count": 1
 						}
 						]
@@ -1784,7 +1784,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1803,7 +1803,7 @@ for machine in machines:
 								"Count": 1
 							},
 							{
-								"Name": tier_material[tier] + "Pump" + static_item,
+								"Name": tier_material[tier] + "Pump" ,
 								"Count": 1
 						}
 						]
@@ -1811,7 +1811,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1826,11 +1826,11 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "RobotArm" + static_item,
+								"Name": tier_material[tier] + "RobotArm" ,
 								"Count": 1
 							},
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe" ,
 								"Count": 1
 							}
 						]
@@ -1838,7 +1838,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1853,11 +1853,11 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 4
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 1 + parts_ramp(level)
 							}
 						]
@@ -1865,7 +1865,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1880,15 +1880,15 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 7
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 10 + parts_ramp(level)
 							},
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe" ,
 								"Count": 2
 							}
 						]
@@ -1896,7 +1896,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1911,7 +1911,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 1
 							}
 						]
@@ -1919,7 +1919,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1934,11 +1934,11 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe" ,
 								"Count": 1
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 2
 							}
 						]
@@ -1946,7 +1946,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1961,11 +1961,11 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 2
 							},
 							{
-								"Name": "Glass" + static_item,
+								"Name": "Glass" ,
 								"Count": 1
 							},
 							{
@@ -1977,7 +1977,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -1992,7 +1992,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Computer" + static_item,
+								"Name": tier_material[tier] + "Computer" ,
 								"Count": 20
 							},
 							{
@@ -2004,7 +2004,7 @@ for machine in machines:
 								"Count": 20
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 20
 							}
 						]
@@ -2012,7 +2012,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -2027,11 +2027,11 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 1,
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 1 + parts_ramp(level, 2),
 							}
 						]
@@ -2039,7 +2039,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1,
 							}
 						]
@@ -2054,11 +2054,11 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Conveyor" + static_item,
+								"Name": tier_material[tier] + "Conveyor" ,
 								"Count": 4,
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 5 + parts_ramp(level, 5),
 							}
 						]
@@ -2066,7 +2066,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1,
 							}
 						]
@@ -2081,7 +2081,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Splitter" + static_item,
+								"Name": tier_material[tier] + "Splitter" ,
 								"Count": 1,
 							},
 							{
@@ -2093,7 +2093,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -2108,11 +2108,11 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 10
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 2 + parts_ramp(level)
 							}
 						]
@@ -2120,7 +2120,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -2139,7 +2139,7 @@ for machine in machines:
 								"Count": 6
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 4
 							},
 							{
@@ -2151,7 +2151,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -2166,7 +2166,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": "CopperIngot" + static_item,
+								"Name": "CopperIngot" ,
 								"Count": 1
 							}
 						]
@@ -2174,7 +2174,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": "CopperConnector" + static_item,
+								"Name": "CopperConnector" ,
 								"Count": 1
 							}
 						]
@@ -2193,11 +2193,11 @@ for machine in machines:
 								"Count": 5 + level * 3
 							},
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe" ,
 								"Count": 2
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 2
 							}
 						]
@@ -2205,7 +2205,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -2224,11 +2224,11 @@ for machine in machines:
 								"Count": 50
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 30
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 20 + level * 5
 							},
 							{
@@ -2240,7 +2240,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -2259,7 +2259,7 @@ for machine in machines:
 								"Count": 2
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 2
 							},
 							{
@@ -2267,7 +2267,7 @@ for machine in machines:
 								"Count": 1
 							},
 							{
-								"Name": "Battery" + static_item,
+								"Name": "Battery" ,
 								"Count": 5 * level + 10
 							}
 						]
@@ -2275,7 +2275,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -2294,11 +2294,11 @@ for machine in machines:
 								"Count": 2
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 2
 							},
 							{
-								"Name": "AluminiumParts" + static_item,
+								"Name": "AluminiumParts" ,
 								"Count": 5 * level + 10
 							}
 						]
@@ -2306,7 +2306,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -2325,11 +2325,11 @@ for machine in machines:
 								"Count": 2
 							},
 							{
-								"Name": "Silicon" + static_item,
+								"Name": "Silicon" ,
 								"Count": parts_ramp(level, 3),
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 1
 							}
 						]
@@ -2337,7 +2337,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -2352,15 +2352,15 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 8
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 4 + parts_ramp(level)
 							},
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe" ,
 								"Count": 4
 							}
 						]
@@ -2368,7 +2368,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -2383,15 +2383,15 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 50
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 50 + level * 10
 							},
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe" ,
 								"Count": 10
 							},
 							{
@@ -2403,7 +2403,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -2418,15 +2418,15 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 8
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 8 + parts_ramp(level)
 							},
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": tier_material[tier] + "Pipe" ,
 								"Count": 4
 							}
 						]
@@ -2434,7 +2434,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -2449,11 +2449,11 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 3
 							},
 							{
-								"Name": "CopperPipe" + static_item,
+								"Name": "CopperPipe" ,
 								"Count": 10
 							}
 						]
@@ -2461,7 +2461,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -2476,15 +2476,15 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": "DirtSurface" + static_item,
+								"Name": "DirtSurface" ,
 								"Count": 4
 							},
 							{
-								"Name": tier_material[tier] + "RobotArm" + static_item,
+								"Name": tier_material[tier] + "RobotArm" ,
 								"Count": 2
 							},
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 6
 							},
 						]
@@ -2492,7 +2492,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -2507,11 +2507,11 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": "Plank" + static_item,
+								"Name": "Plank" ,
 								"Count": 8
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": tier_material[tier] + "Parts" ,
 								"Count": 8
 							}
 						]
@@ -2519,7 +2519,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1
 							}
 						]
@@ -2528,13 +2528,13 @@ for machine in machines:
 					"Ticks" : 20
 				})
 			
-			if "Craftable" not in machine and not has_hand_recipe(recipes_hand, tier_material[tier] + machine["Name"] + static_item):
+			if "Craftable" not in machine and not has_hand_recipe(recipes_hand, tier_material[tier] + machine["Name"] ):
 				append_recipe({
 					"Name": tier_material[tier] + machine["Name"],
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Plate" + static_item,
+								"Name": tier_material[tier] + "Plate" ,
 								"Count": 4,
 							}
 						]
@@ -2542,7 +2542,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Name": tier_material[tier] + machine["Name"] ,
 								"Count": 1,
 							}
 						]

@@ -175,13 +175,13 @@ generators.extend([
 	{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "DryGrassLayering",
-		"Blocks": ["DryGrassSurface" + static_surface, "DirtSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["DryGrassSurface", "DirtSurface", "StoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
 	},
 	{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "GrassLayering",
-		"Blocks": ["GrassSurface" + static_surface, "DirtSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["GrassSurface", "DirtSurface", "StoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
 	},
 	
@@ -200,7 +200,7 @@ generators.extend([
 	{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "DipteroLayering",
-		"Blocks": ["GrassSurface" + static_surface, "DirtSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["GrassSurface", "DirtSurface", "StoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
 	},{
 		"Name":"DipteroProps",
@@ -212,7 +212,7 @@ generators.extend([
 	{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "SnowLayering",
-		"Blocks": ["SnowSurface" + static_surface, "DirtSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["SnowSurface", "DirtSurface", "StoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
 	},
 	
@@ -220,17 +220,17 @@ generators.extend([
 	{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "BogGrassLayeringGrass",
-		"Blocks": ["BogSurface" + static_surface, "DirtSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface],
+		"Blocks": ["BogSurface", "DirtSurface", "StoneSurface", "StoneSurface", "DarkStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface"],
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
 	},{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "PeatLayering",
-		"Blocks": ["PeatSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["PeatSurface", "StoneSurface", "StoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 2, 6, 9, 12, 16, 19, 23, 30]
 	},{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "ClayLayering",
-		"Blocks": ["ClayOre" + static_surface, "ClayOre" + static_surface, "DarkStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["ClayOre", "ClayOre", "DarkStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 2, 6, 9, 12, 16, 19, 23, 30]
 	},{
 		"Name":"BogPropsBase",
@@ -256,7 +256,7 @@ generators.extend([
 	{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "JustGrassLayeringPine",
-		"Blocks": ["PineForestSurface" + static_surface, "DirtSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["PineForestSurface", "DirtSurface", "StoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
 	},{
 		"Name":"GrasslandPropsBase",
@@ -318,27 +318,27 @@ generators.extend([
 	{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "SeaBottomLayeringSand",
-		"Blocks": ["SandSurface" + static_surface, "LimestoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["SandSurface", "LimestoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 3, 9, 12, 16, 19, 23, 30]
 	},{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "IslesLayeringSand",
-		"Blocks": ["SandSurface" + static_surface, "LimestoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["SandSurface", "LimestoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 3, 9, 12, 16, 19, 23, 30]
 	},{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "SeaBottomLayeringGravel",
-		"Blocks": ["GravelSurface" + static_surface, "LimestoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["GravelSurface", "LimestoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 3, 9, 12, 16, 19, 23, 30]
 	},{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "SeaBottomLayeringCopper",
-		"Blocks": ["CopperOre" + static_surface, "LimestoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["CopperOre", "LimestoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 2, 9, 12, 16, 19, 23, 30]
 	},{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "SeaBottomLayeringClay",
-		"Blocks": ["ClayOre" + static_surface, "LimestoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["ClayOre", "LimestoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 2, 9, 12, 16, 19, 23, 30]
 	},{
 		"Name": "IslesPropsBase",
@@ -364,13 +364,13 @@ generators.extend([
 	{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "VolcanicLayeringBasalt",
-		"Blocks": ["BasaltSurface" + static_surface, "LavaSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface],
+		"Blocks": ["BasaltSurface", "LavaSurface", "RedStoneSurface", "StoneSurface"],
 		"Starts": [0, 4, 9, 12, ]
 	},
 	{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "BrokenLandLayeringBasalt",
-		"Blocks": ["BasaltSurface" + static_surface, "LavaSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface],
+		"Blocks": ["BasaltSurface", "LavaSurface", "RedStoneSurface", "StoneSurface"],
 		"Starts": [0, 4, 9, 12, ]
 	},
 	{
@@ -391,7 +391,7 @@ generators.extend([
 	{
 		"Class":"SimpleLayeringGenerator",
 		"Name":"RiverLayeringSand",
-		"Blocks":["SandSurface" + static_surface, "SandstoneSurface" + static_surface, "LimestoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks":["SandSurface", "SandstoneSurface", "LimestoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
 	},
 	{
@@ -403,19 +403,19 @@ generators.extend([
 	{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "SandLayeringSand",
-		"Blocks": ["DesertSandSurface" + static_surface, "SandstoneSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["DesertSandSurface", "SandstoneSurface", "StoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
 	},
 	{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "SandDesertLayeringSand",
-		"Blocks": ["DesertSandSurface" + static_surface, "SandstoneSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["DesertSandSurface", "SandstoneSurface", "StoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
 	},
 	{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "MensaeMountainDesertLayeringSand",
-		"Blocks": ["DesertSandSurface" + static_surface, "SandstoneSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["DesertSandSurface", "SandstoneSurface", "StoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
 	},
 	{
