@@ -671,14 +671,7 @@ machines = [
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
-		heat_input = get_class("HeatInputAccessor")
 		heat_output = get_class("HeatOutputAccessor")
-		kinetic_input = get_class("KineticInputAccessor")
-		kinetic_output = get_class("KineticOutputAccessor")
-		electric_input = get_class("ElectricInputAccessor")
-		electric_output = get_class("ElectricOutputAccessor")
-		fluid_input = get_class("FluidInputAccessor")
-		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(heat_output)
 		a:set_side_pos(Vec3i.down(), Vec3i.new( 0, 0, 0 ))
@@ -741,14 +734,7 @@ machines = [
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
-		heat_input = get_class("HeatInputAccessor")
-		heat_output = get_class("HeatOutputAccessor")
 		kinetic_input = get_class("KineticInputAccessor")
-		kinetic_output = get_class("KineticOutputAccessor")
-		electric_input = get_class("ElectricInputAccessor")
-		electric_output = get_class("ElectricOutputAccessor")
-		fluid_input = get_class("FluidInputAccessor")
-		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(kinetic_input)
 		a:set_side_pos(Vec3i.front(), Vec3i.new( 0, 0, 0 ))
@@ -765,14 +751,7 @@ machines = [
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
-		heat_input = get_class("HeatInputAccessor")
-		heat_output = get_class("HeatOutputAccessor")
 		kinetic_input = get_class("KineticInputAccessor")
-		kinetic_output = get_class("KineticOutputAccessor")
-		electric_input = get_class("ElectricInputAccessor")
-		electric_output = get_class("ElectricOutputAccessor")
-		fluid_input = get_class("FluidInputAccessor")
-		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(kinetic_input)
 		a:set_side_pos(Vec3i.front(), Vec3i.new( 0, 0, 0 ))
@@ -788,14 +767,7 @@ machines = [
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
-		heat_input = get_class("HeatInputAccessor")
 		heat_output = get_class("HeatOutputAccessor")
-		kinetic_input = get_class("KineticInputAccessor")
-		kinetic_output = get_class("KineticOutputAccessor")
-		electric_input = get_class("ElectricInputAccessor")
-		electric_output = get_class("ElectricOutputAccessor")
-		fluid_input = get_class("FluidInputAccessor")
-		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(heat_output)
 		a:set_side_pos(Vec3i.up(), Vec3i.zero())
@@ -855,14 +827,8 @@ machines = [
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
-		heat_input = get_class("HeatInputAccessor")
 		heat_output = get_class("HeatOutputAccessor")
-		kinetic_input = get_class("KineticInputAccessor")
-		kinetic_output = get_class("KineticOutputAccessor")
-		electric_input = get_class("ElectricInputAccessor")
-		electric_output = get_class("ElectricOutputAccessor")
 		fluid_input = get_class("FluidInputAccessor")
-		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(fluid_input)
 		a:set_side_pos(Vec3i.back(), Vec3i.zero())
@@ -882,14 +848,8 @@ machines = [
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
-		heat_input = get_class("HeatInputAccessor")
 		heat_output = get_class("HeatOutputAccessor")
-		kinetic_input = get_class("KineticInputAccessor")
-		kinetic_output = get_class("KineticOutputAccessor")
 		electric_input = get_class("ElectricInputAccessor")
-		electric_output = get_class("ElectricOutputAccessor")
-		fluid_input = get_class("FluidInputAccessor")
-		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(electric_input)
 		a:set_side_pos(Vec3i.back(), Vec3i.zero())
@@ -971,14 +931,7 @@ machines = [
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
-		heat_input = get_class("HeatInputAccessor")
-		heat_output = get_class("HeatOutputAccessor")
-		kinetic_input = get_class("KineticInputAccessor")
-		kinetic_output = get_class("KineticOutputAccessor")
 		electric_input = get_class("ElectricInputAccessor")
-		electric_output = get_class("ElectricOutputAccessor")
-		fluid_input = get_class("FluidInputAccessor")
-		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(electric_input)
 		a:set_side_pos(Vec3i.front(), Vec3i.new(0,1,1))
@@ -1107,14 +1060,7 @@ machines = [
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
-		heat_input = get_class("HeatInputAccessor")
-		heat_output = get_class("HeatOutputAccessor")
-		kinetic_input = get_class("KineticInputAccessor")
-		kinetic_output = get_class("KineticOutputAccessor")
 		electric_input = get_class("ElectricInputAccessor")
-		electric_output = get_class("ElectricOutputAccessor")
-		fluid_input = get_class("FluidInputAccessor")
-		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(electric_input)
 		a:set_side_pos(Vec3i.front(), Vec3i.zero())
@@ -1138,14 +1084,7 @@ machines = [
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
-		heat_input = get_class("HeatInputAccessor")
-		heat_output = get_class("HeatOutputAccessor")
-		kinetic_input = get_class("KineticInputAccessor")
-		kinetic_output = get_class("KineticOutputAccessor")
-		electric_input = get_class("ElectricInputAccessor")
-		electric_output = get_class("ElectricOutputAccessor")
 		fluid_input = get_class("FluidInputAccessor")
-		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(fluid_input)
 		a:set_side_pos(Vec3i.front(), Vec3i.zero())
@@ -1163,15 +1102,8 @@ machines = [
 		"BlockLogic":"DumpCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
-		
-		heat_input = get_class("HeatInputAccessor")
-		heat_output = get_class("HeatOutputAccessor")
-		kinetic_input = get_class("KineticInputAccessor")
-		kinetic_output = get_class("KineticOutputAccessor")
-		electric_input = get_class("ElectricInputAccessor")
-		electric_output = get_class("ElectricOutputAccessor")
+
 		fluid_input = get_class("FluidInputAccessor")
-		fluid_output = get_class("FluidOutputAccessor")
 		
 		local a = crafter:create_accessor(fluid_input)
 		a:set_side_pos(Vec3i.down(), Vec3i.zero())

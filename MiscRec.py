@@ -5156,247 +5156,247 @@ for i in ["Circuit", "AdvancedCircuit", "Processor", "QuantumCircuit", "QuantumP
 	})
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Multitool" + recipe_dictionary,
+	"Name": "Multitool",
 	"Recipes": recipes_wrench
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "BlastFurnace" + recipe_dictionary,
+	"Name": "BlastFurnace",
 	"Recipes": recipes_blast_furnace
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Oven" + recipe_dictionary,
+	"Name": "Oven",
 	"Recipes": recipes_oven
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Smelter" + recipe_dictionary,
+	"Name": "Smelter",
 	"Recipes": recipes_smelter
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Macerator" + recipe_dictionary,
+	"Name": "Macerator",
 	"Recipes": recipes_macerator
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Boiler" + recipe_dictionary,
+	"Name": "Boiler",
 	"Recipes": recipes_boiler
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Generator" + recipe_dictionary,
+	"Name": "Generator",
 	"Recipes": recipes_generator
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "ElectricEngine" + recipe_dictionary,
+	"Name": "ElectricEngine",
 	"Recipes": recipes_electric_engine
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "StirlingEngine" + recipe_dictionary,
+	"Name": "StirlingEngine",
 	"Recipes": recipes_steam_engine
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Pump" + recipe_dictionary,
+	"Name": "Pump",
 	"Recipes": recipes_pump
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Separator" + recipe_dictionary,
+	"Name": "Separator",
 	"Recipes": recipes_sep
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "IndustrialSeparator" + recipe_dictionary,
+	"Name": "IndustrialSeparator",
 	"Recipes": recipes_sep2
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Press" + recipe_dictionary,
+	"Name": "Press",
 	"Recipes": recipes_press
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "ArcSmelter" + recipe_dictionary,
+	"Name": "ArcSmelter",
 	"Recipes": recipes_arc_furnace
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "SteamTurbine" + recipe_dictionary,
+	"Name": "SteamTurbine",
 	"Recipes": recipes_steam_turbine
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Electrolyzer" + recipe_dictionary,
+	"Name": "Electrolyzer",
 	"Recipes": recipes_electrolyzer
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "CuttingMachine" + recipe_dictionary,
+	"Name": "CuttingMachine",
 	"Recipes": recipes_cutter
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Furnace" + recipe_dictionary,
+	"Name": "Furnace",
 	"Recipes": recipes_furnace
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "ElectricFurnace" + recipe_dictionary,
+	"Name": "ElectricFurnace",
 	"Recipes": recipes_elfurn
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Fermenter" + recipe_dictionary,
+	"Name": "Fermenter",
 	"Recipes": recipes_ferm
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "MultitoolRobotArm" + recipe_dictionary,
+	"Name": "MultitoolRobotArm",
 	"Recipes": recipes_toolarm
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "AutomaticHammer" + recipe_dictionary,
+	"Name": "AutomaticHammer",
 	"Recipes": recipes_hammer
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Mixer" + recipe_dictionary,
+	"Name": "Mixer",
 	"Recipes": recipes_mixer
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Radiator" + recipe_dictionary,
+	"Name": "Radiator",
 	"Recipes": recipes_radiator
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "SolarPanel" + recipe_dictionary,
+	"Name": "SolarPanel",
 	"Recipes": recipes_solar
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "ChemReactor" + recipe_dictionary,
+	"Name": "ChemReactor",
 	"Recipes": recipes_chem
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "InductionCoil" + recipe_dictionary,
+	"Name": "InductionCoil",
 	"Recipes": recipes_coil
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "IndustrialSmelter" + recipe_dictionary,
+	"Name": "IndustrialSmelter",
 	"Recipes": recipes_indu
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "HeatExchanger" + recipe_dictionary,
+	"Name": "HeatExchanger",
 	"Recipes": recipes_exch
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "InverseHeatExchanger" + recipe_dictionary,
+	"Name": "InverseHeatExchanger",
 	"Recipes": recipes_iexch
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Freezer" + recipe_dictionary,
+	"Name": "Freezer",
 	"Recipes": recipes_freezer
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "CombustionEngine" + recipe_dictionary,
+	"Name": "CombustionEngine",
 	"Recipes": recipes_combustion
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "PyrolysisUnit" + recipe_dictionary,
+	"Name": "PyrolysisUnit",
 	"Recipes": recipes_pyro
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Computer" + recipe_dictionary,
+	"Name": "Computer",
 	"Recipes": recipes_computer
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "CompactGenerator" + recipe_dictionary,
+	"Name": "CompactGenerator",
 	"Recipes": recipes_compact_generator
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "FissionReactor" + recipe_dictionary,
+	"Name": "FissionReactor",
 	"Recipes": recipes_fission
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "AutomaticFarm" + recipe_dictionary,
+	"Name": "AutomaticFarm",
 	"Recipes": recipes_farm
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "AtmosphericCondenser" + recipe_dictionary,
+	"Name": "AtmosphericCondenser",
 	"Recipes": recipes_condens
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Assembler" + recipe_dictionary,
+	"Name": "Assembler",
 	"Recipes": recipes_assembler
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "GasTurbine" + recipe_dictionary,
+	"Name": "GasTurbine",
 	"Recipes": recipes_gasturb
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "FilteringUnit" + recipe_dictionary,
+	"Name": "FilteringUnit",
 	"Recipes": recipes_filtering_unit
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Portal" + recipe_dictionary,
+	"Name": "Portal",
 	"Recipes": recipes_portal
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "ChemicalBath" + recipe_dictionary,
+	"Name": "ChemicalBath",
 	"Recipes": recipes_chemical_bath
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Riteg" + recipe_dictionary,
+	"Name": "Riteg",
 	"Recipes": recipes_riteg
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "IndustrialSteamTurbine" + recipe_dictionary,
+	"Name": "IndustrialSteamTurbine",
 	"Recipes": recipes_industrial_steam_turbine
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "FusionReactor" + recipe_dictionary,
+	"Name": "FusionReactor",
 	"Recipes": recipes_fusion_reactor
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "IndustrialBoiler" + recipe_dictionary,
+	"Name": "IndustrialBoiler",
 	"Recipes": recipes_industrial_boiler
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "IndustrialElectricEngine" + recipe_dictionary,
+	"Name": "IndustrialElectricEngine",
 	"Recipes": recipes_industrial_electric_engine
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Hand" + recipe_dictionary,
+	"Name": "Hand",
 	"Recipes": recipes_hand
 })
 

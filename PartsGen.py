@@ -750,7 +750,7 @@ for tool in tools:
 				"Image": "T_" + item_name,
 				"ItemLogic": tool["ItemLogic"],
 				"LogicJson": {
-					"RecipeDictionary": tool["Name"] + recipe_dictionary,
+					"RecipeDictionary": tool["Name"],
 					"Tier": tier,
 				},
 				"MaxCount": 1,
@@ -883,17 +883,17 @@ write_file("Generated/Resources/parts.json", data);
 objects_array = []
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "CuttingMachine" + recipe_dictionary,
+	"Name": "CuttingMachine",
 	"Recipes": recipes_cutter
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "AutomaticHammer" + recipe_dictionary,
+	"Name": "AutomaticHammer",
 	"Recipes": recipes_hammer
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Macerator" + recipe_dictionary,
+	"Name": "Macerator",
 	"Recipes": recipes_macerator
 })
 
@@ -901,7 +901,7 @@ for r in recipes_hand:
 	r["Locked"] = True
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Hand" + recipe_dictionary,
+	"Name": "Hand",
 	"Recipes": recipes_hand,
 	"UsedIn": [{
 		"Item": "Hand",
@@ -909,12 +909,12 @@ objects_array.append({ "Class": recipe_dictionary,
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Press" + recipe_dictionary,
+	"Name": "Press",
 	"Recipes": recipes_press
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Furnace" + recipe_dictionary,
+	"Name": "Furnace",
 	"Recipes": recipes_furnace
 })
 
@@ -926,33 +926,33 @@ for tier in range(tools[0]["StartTier"], tools[0]["EndTier"]):
 	})
 	
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Multitool" + recipe_dictionary,
+	"Name": "Multitool",
 	"Recipes": recipes_wrench,
 	"UsedIn": used_in
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Smelter" + recipe_dictionary,
+	"Name": "Smelter",
 	"Recipes": recipes_smelt
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "Assembler" + recipe_dictionary,
+	"Name": "Assembler",
 	"Recipes": recipes_assembler
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "FluidDump" + recipe_dictionary,
+	"Name": "FluidDump",
 	"Recipes": recipes_liq_dump
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "GasDump" + recipe_dictionary,
+	"Name": "GasDump",
 	"Recipes": recipes_gas_dump
 })
 
 objects_array.append({ "Class": recipe_dictionary,
-	"Name": "FluidFurnace" + recipe_dictionary,
+	"Name": "FluidFurnace",
 	"Recipes": recipes_gasfurn
 })
 
