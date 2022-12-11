@@ -2490,7 +2490,7 @@ for material in materials:
 				},
 				"ResourceInput":{
 					"Name": "Electricity",
-					"Count": 20 if material["Name"] is not "StainlessSteel" else 100,
+					"Count": 20 if material["Name"] != "StainlessSteel" else 100,
 				},
 				"Output":{
 					"Items":[
