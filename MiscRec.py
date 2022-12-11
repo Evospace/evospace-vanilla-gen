@@ -2285,7 +2285,7 @@ recipes_sep2.append({
 	"Output":{
 		"Items": [
 			{
-				"Name":"Cell"+static_item,
+				"Name":"Cell",
 				"Count":1
 			},
 			{

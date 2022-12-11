@@ -72,7 +72,7 @@ def simple_in_out_recipe(name):
 		"Input":{
 			"Items":[
 				{
-					"Name": name + static_item,
+					"Name": name,
 					"Count": 1
 				}
 			]
@@ -80,7 +80,7 @@ def simple_in_out_recipe(name):
 		"Output":{
 			"Items":[
 				{
-					"Name": name + static_item,
+					"Name": name,
 					"Count": 1
 				}
 			]
