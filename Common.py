@@ -230,14 +230,14 @@ def parts_ramp(level, factor = 5):
 		return factor * 3
 
 tiers_res_item = [
-	"Computations" + static_item,
-	"Circuit" + static_item,
-	"AdvancedCircuit" + static_item,
-	"Processor" + static_item,
-	"QuantumCircuit" + static_item,
-	"QuantumProcessor" + static_item,
-	"QuantumBrain" + static_item,
-	"QuantumBrain" + static_item,
+	"Computations",
+	"Circuit",
+	"AdvancedCircuit",
+	"Processor",
+	"QuantumCircuit",
+	"QuantumProcessor",
+	"QuantumBrain",
+	"QuantumBrain",
 ]
 
 euler = 2.718281

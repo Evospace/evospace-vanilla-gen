@@ -66,7 +66,7 @@ for part in parts:
 			if "Materials" in part:
 				dict = copy.deepcopy(part["Materials"])
 				for i in range(0, len(dict)):
-					if dict[i].find("%Material%") is not -1:
+					if dict[i].find("%Material%") != -1:
 						dict[i] = dict[i].replace("%Material%", tier_material[tier])		
 				item["Materials"] = dict
 			
@@ -146,7 +146,7 @@ for part in parts:
 					"Input":{
 						"Items":[
 							{
-								"Name": material + ("Ingot" if material is not "Stone" else "Surface"),
+								"Name": material + ("Ingot" if material != "Stone" else "Surface"),
 								"Count": 1
 							},
 						]
@@ -170,7 +170,7 @@ for part in parts:
 					"Input":{
 						"Items":[
 							{
-								"Name": material + ("Ingot" if material is not "Stone" else "Surface"),
+								"Name": material + ("Ingot" if material != "Stone" else "Surface"),
 								"Count": 1
 							}
 						]
