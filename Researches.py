@@ -89,7 +89,7 @@ append_levels({
 	"Class": static_research,
 	"Name": "Electricity",
 	"LabelParts": [["Electricity", "researches"]],
-	"RequiredResearches": ["InitialScan"+static_research],
+	"RequiredResearches": ["InitialScan"],
 	"Unlocks": [["Hand", tier_material[1] + "Connector"], ["Constructor", tier_material[1] + "Connector"]],
 	"Collect": { "Items": [
 		{
@@ -156,7 +156,7 @@ append_levels({
 	"Class": static_research,
 	"Name": "SteelProduction",
 	"LabelParts": [["SteelProduction", "researches"]],
-	"RequiredResearches": ["Drying"+static_research],
+	"RequiredResearches": ["Drying"],
 	"Levels": [1,7],
 	"Unlocks": [["Hand", "%Material%BlastFurnace"],["Constructor", "%Material%BlastFurnace"]],
 	"AlsoUnlocks": [["Hand", "SteelParts"],["Hand", "SteelPlate"],["Hand", "SteelPipe"]],
@@ -222,7 +222,7 @@ append_levels({
 	"Class": static_research,
 	"Name": "Smelting",
 	"LabelParts": [["Smelting", "researches"]],
-	"RequiredResearches": ["MineralsScan"+static_research],
+	"RequiredResearches": ["MineralsScan"],
 	"Unlocks": [["Hand", "%Material%Smelter"], ["Constructor", "%Material%Smelter"]],
 	"Levels": [0,2],
 	"Position": [0,2],
@@ -234,7 +234,7 @@ append_levels({
 	"Class": static_research,
 	"Name": "Metalwork",
 	"LabelParts": [["Metalwork", "researches"]],
-	"RequiredResearches": ["Smelting"+static_research],
+	"RequiredResearches": ["Smelting"],
 	"Unlocks": [["Hand", "CopperParts"],["Hand", "CopperPlate"],["Hand", "CopperPipe"]],
 	"Collect": { "Items": [
 		{
@@ -454,7 +454,7 @@ append_levels({
 	"Class": static_research,
 	"Name": "StirlingEngine",
 	"LabelParts": [["StirlingEngine", "machines"]],
-	"RequiredResearches": ["MineralsScan"+static_research],
+	"RequiredResearches": ["MineralsScan"],
 	"Levels": [1,7],
 	"Unlocks": [["Hand", "%Material%StirlingEngine"],["Constructor", "%Material%StirlingEngine"]],
 	"Chapter":"Production",
@@ -1146,7 +1146,7 @@ append_levels({
 	"Class": static_research,
 	"Name": "DecorativeStone",
 	"LabelParts": [["DecorativeStone", "researches"]],
-	"RequiredResearches": ["BasicPlatform"+static_research], 
+	"RequiredResearches": ["BasicPlatform"], 
 	"Unlocks": [["Hand", "StoneTiles"], ["CuttingMachine", "StoneTiles"]],
 	"Chapter": "Decorations",
 	"Position": [1,0],

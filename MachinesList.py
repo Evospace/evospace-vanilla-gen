@@ -62,7 +62,7 @@ machines = [
 		a:set_side_pos(Vec3i.back(), Vec3i.zero())
 		a:bind(crafter:get_input_container())
 		""",
-		"RequiredResearches":["Fermentation"+static_research],
+		"RequiredResearches":["Fermentation"],
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "ChemReactor",
@@ -1419,7 +1419,7 @@ machines = [
 	#	"CommonTextKeys":[
 	#		"Container"
 	#	],
-	#	"RequiredResearches":["LiquidsScan"+static_research],
+	#	"RequiredResearches":["LiquidsScan"],
 	#},
 	{
 		"Name": "FissionReactor",
@@ -1716,7 +1716,7 @@ machines = [
 	#	a:set_side_pos(Vec3i.up(), Vec3i.zero())
 	#	a:bind(crafter:get_output_container())
 	#	""",
-	#	"RequiredResearches":["HeatTransferring"+static_research],
+	#	"RequiredResearches":["HeatTransferring"],
 	#}
 	#,{
 	#	"Name": "InverseHeatExchanger",
@@ -1739,7 +1739,7 @@ machines = [
 	#	a:set_side_pos(Vec3i.down(), Vec3i.zero())
 	#	a:bind(crafter:get_input_container())
 	#	""",
-	#	"RequiredResearches":["HeatTransferring"+static_research],
+	#	"RequiredResearches":["HeatTransferring"],
 	#}
 	#,{
 	#	"Name": "IndustrialOven",
