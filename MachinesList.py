@@ -9,7 +9,7 @@ machines = [
 		"Label": "Macerator",
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic": "UniversalCrafterBlockLogic",
+		"BlockLogic": "AutoCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -26,7 +26,7 @@ machines = [
 		
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -52,7 +52,7 @@ machines = [
 		"StartTier": 4,
 		"EndTier": 10,
 		"Positions": [[0,0,0],[0,0,1]],
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 
@@ -69,7 +69,7 @@ machines = [
 		"Label": "Chemical Reactor",
 		"StartTier": 2,
 		"EndTier": 10,		
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -85,7 +85,7 @@ machines = [
 		"Label": "Separator",
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -118,7 +118,7 @@ machines = [
 		"Positions": [[0,0,0],[0,0,1]],
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -267,7 +267,7 @@ machines = [
 		"Positions": [[0,0,0],[0,1,0],[-1,0,0],[-1,1,0],[-2,0,0],[-2,1,0],[0,0,1],[0,1,1],[-1,0,1],[-1,1,1],[-2,0,1],[-2,1,1]],
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -321,7 +321,7 @@ machines = [
 			"Press",
 			"Autocrafter"
 		],
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -340,7 +340,7 @@ machines = [
 	#	"CommonTextKeys":[
 	#		"Autocrafter"
 	#	],
-	#	"BlockLogic":"AutoCrafterBlockLogic",
+	#	"BlockLogic":"SelectCrafter",
 	#	"BlockCreation":"""
 	#	local crafter = current_block_logic()
 	#	
@@ -359,7 +359,7 @@ machines = [
 		"Label": "Stirling Engine",
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -388,7 +388,7 @@ machines = [
 		"Positions": [[0,0,0],[0,0,1],[0,0,2],[0,1,0],[0,2,0]],
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -410,7 +410,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -433,7 +433,7 @@ machines = [
 		"Label": "Compact Generator",
 		"StartTier": 1,
 		"EndTier": 1,
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -455,7 +455,7 @@ machines = [
 		"Label": "Electric Engine",
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -482,7 +482,7 @@ machines = [
 		"StartTier": 4,
 		"EndTier": 10,
 		"Positions": [[0,0,0],[1,0,0],[0,1,0],[1,1,0],[0,0,1],[1,0,1],[0,1,1],[1,1,1]],
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -549,7 +549,7 @@ machines = [
 		"Label": "Smelter",
 		"StartTier": 0,
 		"EndTier": 2,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -569,7 +569,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[-2,0,0],[0,-1,0],[-1,-1,0],[-2,-1,0],[0,0,1],[-1,0,1],[-2,0,1],[0,-1,1],[-1,-1,1],[-2,-1,1]],
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -604,7 +604,7 @@ machines = [
 		],
 		"StartTier": 5,
 		"EndTier": 10,
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -627,7 +627,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[-2,0,0],[-3,0,0],[0,-1,0],[-1,-1,0],[-2,-1,0],[-3,-1,0],[0,0,1],[-1,0,1],[-2,0,1],[-3,0,1],[0,-1,1],[-1,-1,1],[-2,-1,1],[-3,-1,1]],
 		"StartTier": 4,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -667,7 +667,7 @@ machines = [
 		],
 		"StartTier": 5,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -689,7 +689,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,0,2],[-1,0,2],[0,1,2],[-1,1,2]],
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -713,7 +713,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -730,7 +730,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -747,7 +747,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -763,7 +763,7 @@ machines = [
 		"Label": "Furnace",
 		"StartTier": 0,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -792,7 +792,7 @@ machines = [
 		],
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"Description": ["SpeedBonus"],
 	},{
 		"Name": "BlastFurnace",
@@ -816,14 +816,14 @@ machines = [
 		],
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"Description": ["SpeedBonus"],
 	},{
 		"Name": "FluidFurnace",
 		"Label": "Fluid Furnace",
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic": "UniversalCrafterBlockLogic",
+		"BlockLogic": "AutoCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -844,7 +844,7 @@ machines = [
 		"Label": "Electric Furnace",
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -996,7 +996,7 @@ machines = [
 			[0,-1,0],[-1,-1,0],
 			[0,-1,1],[-1,-1,1],
 		],
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -1026,7 +1026,7 @@ machines = [
 			[0,-1,0],[-1,-1,0],
 			[0,-1,1],[-1,-1,1],
 		],
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -1080,7 +1080,7 @@ machines = [
 		],
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -1182,7 +1182,7 @@ machines = [
 		"Label": "Electrolyzer",
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -1199,7 +1199,7 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 10,
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -1216,7 +1216,7 @@ machines = [
 		"StartTier": 5,
 		"EndTier": 10,
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -1248,7 +1248,7 @@ machines = [
 		],
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -1273,7 +1273,7 @@ machines = [
 		],
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -1368,7 +1368,7 @@ machines = [
 			"Separator",
 			"Autocrafter"
 		],
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -1382,7 +1382,7 @@ machines = [
 		"Label": "Radiator",
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -1628,7 +1628,7 @@ machines = [
 		],
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -1700,7 +1700,7 @@ machines = [
 	#	"Label": "Heat Exchanger",
 	#	"StartTier": 3,
 	#	"EndTier": 10,
-	#	"BlockLogic":"AutoCrafterBlockLogic",
+	#	"BlockLogic":"SelectCrafter",
 	#	"BlockCreation":"""
 	#	local crafter = current_block_logic()
 	#	
@@ -1723,7 +1723,7 @@ machines = [
 	#	"Label": "Inverse Heat Exchanger",
 	#	"StartTier": 1,
 	#	"EndTier": 10,
-	#	"BlockLogic":"AutoCrafterBlockLogic",
+	#	"BlockLogic":"SelectCrafter",
 	#	"BlockCreation":"""
 	#	local crafter = current_block_logic()
 	#	
@@ -1775,7 +1775,7 @@ machines = [
 			[0,1,2],[-1,1,2],[-2,1,2],
 			[0,-1,2],[-1,-1,2],[-2,-1,2],
 		],
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
@@ -1823,7 +1823,7 @@ machines = [
 			[0,1,0],[-1,1,0],[-2,1,0],
 			[-1,-1,0],[0,-1,0],[-2,-1,0],
 		],
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = current_block_logic()
 		
