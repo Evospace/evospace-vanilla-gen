@@ -172,7 +172,7 @@ for object in mapgen_objects:
 		"Color": object["Item"],
 		"LogicJson":
 		{
-			"StaticBlock": object["Name"] + "Surface"
+			"Block": object["Name"] + "Surface"
 		},
 		"MaxCount": 64,
 		"LabelParts": [[object["Name"]+ "Surface", "mapgen_core"]],

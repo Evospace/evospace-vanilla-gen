@@ -181,7 +181,7 @@ fission_fullpower = 7100 * 3.3 * 2 * 1.1 * 2
 
 tiers_numlist = [0,1,2,3,4,5,6,7]
 
-static_item = "StaticItem"
+static_item = "Item"
 
 int32max = 2147483647
 
@@ -190,7 +190,7 @@ qchapter = "StaticQuestChapter"
 
 static_research = "StaticResearch"
 static_chapter = "StaticChapter"
-static_block = "SingleStaticBlock"
+static_block = "SingleBlock"
 static_surface = "StaticSurface"
 static_decoration = "StaticDecoration"
 static_prop = "SmallStaticProp"

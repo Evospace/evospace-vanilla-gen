@@ -759,7 +759,7 @@ for prop in props:
 			"MaxCount": 32,
 			"Image": "T_" + prop["Name"],
 			"LogicJson": {
-				"StaticBlock": prop["Name"] + variation_helper[variation]
+				"Block": prop["Name"] + variation_helper[variation]
 			},
 			"ItemLogic": building_prop_logic if "IsBig" in prop else building_prop_logic,
 			"Category": "Terrain",
