@@ -64,7 +64,7 @@ for machine in machines:
 				"Image": "T_" + tier_material[tier] + image,
 				
 				"LogicJson": {
-					"StaticBlock": block_name,
+					"Block": block_name,
 				},
 				"MaxCount": 32,
 				"Tag": "Machines",

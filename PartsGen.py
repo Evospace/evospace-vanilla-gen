@@ -48,7 +48,7 @@ for part in parts:
 				"MaxCount": part["Stack"],
 				"LogicJson":
 				{
-					"StaticBlock": material + part["Name"]
+					"Block": material + part["Name"]
 				},
 				"Tag": "Misc",
 				"Materials" : [
@@ -433,7 +433,7 @@ for material in materials:
 			"ItemLogic": building_cube_logic,
 			"LogicJson":
 			{
-				"StaticBlock": material["Name"] + "Block"
+				"Block": material["Name"] + "Block"
 			},
 		}
 		

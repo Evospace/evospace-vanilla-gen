@@ -303,7 +303,7 @@ for one in wooden_misc:
 		"Image": "T_" + one["Name"],
 		"LogicJson":
 		{
-			"StaticBlock": one["Name"]
+			"Block": one["Name"]
 		},
 		"MaxCount": 32,
 		"Tag": "Decoration",
@@ -335,7 +335,7 @@ for one in simple_single:
 		"ItemLogic": building_single_logic,
 		"LogicJson":
 		{
-			"StaticBlock": one["Name"]
+			"Block": one["Name"]
 		},
 		"MaxCount": 32,
 		"Tag": "Decoration",
@@ -365,7 +365,7 @@ for one in simple_deco:
 		"ItemLogic": building_decoration_logic,
 		"LogicJson":
 		{
-			"StaticBlock": one["Name"]
+			"Block": one["Name"]
 		},
 		"MaxCount": 32,
 		"LabelParts":[[one["Name"],"misc"]],
@@ -392,7 +392,7 @@ for one in simple_blocks:
 		"ItemLogic": building_plane_logic,
 		"LogicJson":
 		{
-			"StaticBlock": one["Name"],
+			"Block": one["Name"],
 			"BuildingMode": "Plane"
 		},
 		"MaxCount": 999,
@@ -420,7 +420,7 @@ for one in static_mesh_block:
 		"ItemLogic": building_single_logic,
 		"LogicJson":
 		{
-			"StaticBlock": one["Name"]
+			"Block": one["Name"]
 		},
 		"MaxCount": 32,
 		"Tag": "Decoration",
@@ -461,7 +461,7 @@ for one in equipped:
 		"Image": "T_" + one["Name"],
 		"LogicJson":
 		{
-			"StaticBlock": one["Name"]
+			"Block": one["Name"]
 		},
 		"MaxCount": 32,
 		"Tag":"Misc",
