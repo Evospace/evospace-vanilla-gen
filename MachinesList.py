@@ -1375,6 +1375,7 @@ machines = [
 		local a = crafter:create_accessor(get_class("KineticInputAccessor"))
 		a:set_side_pos(Vec3i.back(), Vec3i.new(-1,1,0))
 		a:bind(crafter:get_input_container())
+		print('123123')
 		""",
 		"Description": ["KineticInput"],
 	},{
