@@ -190,7 +190,8 @@ for object in mapgen_objects:
 		"Tesselator": object["Name"] + "Surface",
 		"Item" : object["Name"] + "Surface",
 		"ColorSide": object["Side"],
-		"ColorTop": object["Color"]
+		"color_top": object["Color"],
+		"is_surface": True
 	})
 	pickaxe_recipes.append({
 		"Name": object["Name"] + "SurfaceBreaking",
