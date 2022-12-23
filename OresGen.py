@@ -121,7 +121,8 @@ for ore_type in ore_types:
 		"Tesselator": ore_type["Name"] + "Ore",
 		"Item": item_name,
 		"ColorSide": ore_type["Color"],
-		"ColorTop": ore_type["Color"]
+		"color_top": ore_type["Color"],
+		"is_surface": True
 	})
 	images.append({
 		"Base": "T_" + "Ore",
