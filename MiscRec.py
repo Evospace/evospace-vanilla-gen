@@ -218,7 +218,7 @@ recipes_fusion_reactor.append({
 			{
 				"Name": "UltimateCatalyst",
 				"Count": 1,
-				"Probability":0
+				"split":0
 			}
 		]
 	},
@@ -244,7 +244,7 @@ recipes_fusion_reactor.append({
 			{
 				"Name": "UltimateCatalyst",
 				"Count": 3,
-				"Probability":0
+				"split":0
 			}
 		]
 	},
@@ -1192,7 +1192,7 @@ recipes_centrifuge.append({
 			{
 				"Name": "PlutoniumDust",
 				"Count": 1,
-				"Probability": 0.1,
+				"split": 10,
 			}
 		]
 	},
@@ -1239,7 +1239,7 @@ recipes_fission.append({
 			{
 				"Name": "ControlCell",
 				"Count": 1,
-				"Probability": 0,
+				"split": 0,
 			}
 		]
 	},
@@ -1269,7 +1269,7 @@ recipes_fission.append({
 			{
 				"Name": "ControlCell",
 				"Count": 1,
-				"Probability": 0,
+				"split": 0,
 			}
 		]
 	},
@@ -1299,7 +1299,7 @@ recipes_fission.append({
 			{
 				"Name": "ControlCell",
 				"Count": 5,
-				"Probability": 0,
+				"split": 0,
 			}
 		]
 	},
@@ -1329,7 +1329,7 @@ recipes_fission.append({
 			{
 				"Name": "ControlCell",
 				"Count": 3,
-				"Probability": 0,
+				"split": 0,
 			}
 		]
 	},
@@ -1359,7 +1359,7 @@ recipes_fission.append({
 			{
 				"Name": "ReflectorCell",
 				"Count": 1,
-				"Probability": 0,
+				"split": 0,
 			},
 			{
 				"Name": "ThoriumCell",
@@ -1397,7 +1397,7 @@ recipes_fission.append({
 			{
 				"Name": "ReflectorCell",
 				"Count": 1,
-				"Probability": 0,
+				"split": 0,
 			},
 			{
 				"Name": "ThoriumCell",
@@ -1435,7 +1435,7 @@ recipes_fission.append({
 			{
 				"Name": "ReflectorCell",
 				"Count": 2,
-				"Probability": 0,
+				"split": 0,
 			},
 			{
 				"Name": "ThoriumCell",
@@ -1473,7 +1473,7 @@ recipes_fission.append({
 			{
 				"Name": "ControlCell",
 				"Count": 1,
-				"Probability": 0,
+				"split": 0,
 			}
 		]
 	},
@@ -1503,7 +1503,7 @@ recipes_fission.append({
 			{
 				"Name": "ControlCell",
 				"Count": 1,
-				"Probability": 0,
+				"split": 0,
 			},
 		]
 	},
@@ -1533,7 +1533,7 @@ recipes_fission.append({
 			{
 				"Name": "ControlCell",
 				"Count": 1,
-				"Probability": 0,
+				"split": 0,
 			},
 		]
 	},
@@ -1563,7 +1563,7 @@ recipes_fission.append({
 			{
 				"Name": "ControlCell",
 				"Count": 1,
-				"Probability": 0,
+				"split": 0,
 			},
 		]
 	},
@@ -2291,7 +2291,7 @@ recipes_sep2.append({
 			{
 				"Name": "PlutoniumDust",
 				"Count": 1,
-				"Probability":0.5
+				"split":2
 			}
 		]
 	},
@@ -2322,7 +2322,7 @@ recipes_sep2.append({
 			{
 				"Name": "TungstenOxideDust",
 				"Count": 1,
-				"Probability":0.1,
+				"split":10,
 			},
 		]
 	},
@@ -2353,7 +2353,7 @@ recipes_sep2.append({
 			{
 				"Name": "AluminiumOxideDust",
 				"Count": 1,
-				"Probability":0.1,
+				"split":10,
 			},
 		]
 	},
@@ -2384,12 +2384,12 @@ recipes_sep2.append({
 			{
 				"Name": "AluminiumOxideDust",
 				"Count": 1,
-				"Probability": 0.2,
+				"split": 5,
 			},
 			{
 				"Name": "TitaniumOxideDust",
 				"Count": 1,
-				"Probability": 0.1,
+				"split": 10,
 			}
 		]
 	},
@@ -2416,7 +2416,7 @@ recipes_sep2.append({
 			{
 				"Name": "SiliconOxide",
 				"Count": 1,
-				"Probability": 0.5,
+				"split": 2,
 			}
 		]
 	},
@@ -3917,7 +3917,7 @@ recipes_chem.append({
 			{
 				"Name": "BoraxDust",
 				"Count": 1,
-				"Probability": 0.1
+				"split": 10
 			}
 		]
 	},
@@ -4422,7 +4422,7 @@ recipes_chem.append({
 			{
 				"Name": "Catalyst",
 				"Count": 1,
-				"Probability": 0,
+				"split": 0,
 			},
 		]
 	},
@@ -4631,7 +4631,7 @@ recipes_filtering_unit.append({
 			{
 				"Name": "FilteringCell",
 				"Count": 1,
-				"Probability": .1
+				"split": 10
 			},
 		]
 	},
@@ -4644,7 +4644,7 @@ recipes_filtering_unit.append({
 			{
 				"Name": "AluminiumOreDust",
 				"Count": 1,
-				"Probability": .5
+				"split": 2
 			},		
 		]
 	},
@@ -4663,7 +4663,7 @@ recipes_filtering_unit.append({
 			{
 				"Name": "FilteringCell",
 				"Count": 1,
-				"Probability": .1
+				"split": 10
 			},
 		]
 	},
@@ -4676,7 +4676,7 @@ recipes_filtering_unit.append({
 			{
 				"Name": "CopperOreDust",
 				"Count": 1,
-				"Probability": .5
+				"split": 2
 			},		
 		]
 	},
@@ -4695,7 +4695,7 @@ recipes_filtering_unit.append({
 			{
 				"Name": "FilteringCell",
 				"Count": 1,
-				"Probability": .1
+				"split": 10
 			},
 		]
 	},
@@ -4708,7 +4708,7 @@ recipes_filtering_unit.append({
 			{
 				"Name": "UraniumOreDust",
 				"Count": 1,
-				"Probability": .5
+				"split": 2
 			},		
 		]
 	},
@@ -4727,7 +4727,7 @@ recipes_filtering_unit.append({
 			{
 				"Name": "FilteringCell",
 				"Count": 1,
-				"Probability": .1
+				"split": 10
 			},
 		]
 	},
@@ -4740,7 +4740,7 @@ recipes_filtering_unit.append({
 			{
 				"Name": "IronOreDust",
 				"Count": 1,
-				"Probability": .5
+				"split": 2
 			},		
 		]
 	},

@@ -38,7 +38,7 @@ ore_types = [
 			["ThoriumDust", "UraniniteCrystal", "UraniniteCluster"], #sifter
 		],
 		"ByproductChanse":[
-		0.05
+		20
 		],
 		"Color": [0, 1, 0],
 		"Hardness": 2,

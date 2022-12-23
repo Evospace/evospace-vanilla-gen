@@ -44,7 +44,7 @@ for ore_type in ore_types:
 					{
 						"Name": ore_type["Name"] + "ImpureOreGravel",
 						"Count": 1,
-						"Probability": 0.5,
+						"split": 2,
 					}
 				]
 			},
@@ -88,7 +88,7 @@ for ore_type in ore_types:
 		out_items.append({
 			"Name": ore_type["Name"] + "OreDust",
 			"Count": 1,
-			"Probability": 0.5,
+			"split": 2,
 		})
 		recipes_mac.append({
 			"Name": ore_type["Name"] + "ImpureOreGravel",
@@ -134,7 +134,7 @@ for ore_type in ore_types:
 					{
 						"Name": ore_type["Name"] + "OreDust",
 						"Count": 1,
-						"Probability": 0.5
+						"split": 2
 					}
 				]
 			},
@@ -228,11 +228,11 @@ for ore_type in ore_types:
 			oi = {
 				"Name": ore_type["Byproducts"][0],
 				"Count": 1,
-				"Probability": 0.1,
+				"split": 10,
 			}
 			
 			if "ByproductChanse" in ore_type:
-				oi["Probability"] = ore_type["ByproductChanse"][0]
+				oi["split"] = ore_type["ByproductChanse"][0]
 		
 			out_items.append(oi)
 				
@@ -275,10 +275,10 @@ for ore_type in ore_types:
 			oi = {
 				"Name": ore_type["Byproducts"][0],
 				"Count": 1,
-				"Probability":0.1,
+				"split": 10,
 			}
 			if "ByproductChanse" in ore_type:
-				oi["Probability"] = ore_type["ByproductChanse"][0]
+				oi["split"] = ore_type["ByproductChanse"][0]
 				
 			out_items.append(oi)
 			
@@ -311,7 +311,7 @@ for ore_type in ore_types:
 			}
 			
 			if "ByproductChanse" in ore_type:
-				oi["Probability"] = ore_type["ByproductChanse"][0]
+				oi["split"] = ore_type["ByproductChanse"][0]
 			
 			out_items.append(oi)
 				
@@ -356,17 +356,17 @@ for ore_type in ore_types:
 						{
 							"Name": ore_type["Byproducts"][1][0],
 							"Count": 1,
-							"Probability": 0.8,
+							"split": 2,
 						},
 						{
 							"Name": ore_type["Byproducts"][1][1],
 							"Count": 1,
-							"Probability": 0.2,
+							"split": 5,
 						},
 						{
 							"Name": ore_type["Byproducts"][1][2],
 							"Count": 1,
-							"Probability": 0.02,
+							"split": 40,
 						},
 					]
 				},
