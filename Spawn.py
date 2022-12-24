@@ -4,27 +4,14 @@
 from Common import *
 
 data = {
-	"PlayerStartInventory":
-	{
-		"Items": [
-			{
-				"Name": "CopperMultitool",
-				"Count": 1
-			},
-			{
-				"Name": "StoneSurface",
-				"Count": 99
-			},
-			{
-				"Name": "Log",
-				"Count": 15
-			},
-			{
-				"Name": "BasicPlatform",
-				"Count": 99
-			}
-		]
-	}
+    "PlayerStartInventory": {
+        "Items": [
+            {"Name": "CopperMultitool", "Count": 1},
+            {"Name": "StoneSurface", "Count": 99},
+            {"Name": "Log", "Count": 15},
+            {"Name": "BasicPlatform", "Count": 99},
+        ]
+    }
 }
 
-write_file("Generated/Spawn/player.json", data);
+write_file("Generated/Spawn/player.json", data)
