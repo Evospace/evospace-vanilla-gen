@@ -17,24 +17,24 @@ objects_array = []
 
 for ore_type in ore_types:
     if "NotOre" not in ore_type:
-        named_mat = named_material(ore_type["Name"])
+        named_mat = named_material(ore_type["name"])
 
         tier = extract_tier(ore_type)
 
         recipes_hammer.append(
             {
-                "Name": ore_type["Name"] + "Ore",
+                "name": ore_type["name"] + "Ore",
                 "Input": {
                     "Items": [
-                        {"Name": ore_type["Name"] + "Ore", "Count": 1},
+                        {"name": ore_type["name"] + "Ore", "Count": 1},
                     ]
                 },
-                "ResourceInput": {"Name": "Kinetic", "Count": 8 * ore_type["Hardness"]},
+                "ResourceInput": {"name": "Kinetic", "Count": 8 * ore_type["Hardness"]},
                 "Output": {
                     "Items": [
-                        {"Name": ore_type["Name"] + "ImpureOreGravel", "Count": 1},
+                        {"name": ore_type["name"] + "ImpureOreGravel", "Count": 1},
                         {
-                            "Name": ore_type["Name"] + "ImpureOreGravel",
+                            "name": ore_type["name"] + "ImpureOreGravel",
                             "Count": 1,
                             "split": 2,
                         },
@@ -48,15 +48,15 @@ for ore_type in ore_types:
         if "SmeltLevel" in named_mat and named_mat["SmeltLevel"] <= 0:
             recipes_smelt.append(
                 {
-                    "Name": ore_type["Name"] + "Ore",
+                    "name": ore_type["name"] + "Ore",
                     "Input": {
                         "Items": [
-                            {"Name": ore_type["Name"] + "Ore", "Count": 1},
+                            {"name": ore_type["name"] + "Ore", "Count": 1},
                         ]
                     },
-                    "ResourceInput": {"Name": "Heat", "Count": 10},
+                    "ResourceInput": {"name": "Heat", "Count": 10},
                     "Output": {
-                        "Items": [{"Name": ore_type["Name"] + "Ingot", "Count": 1}]
+                        "Items": [{"name": ore_type["name"] + "Ingot", "Count": 1}]
                     },
                     "Tier": extract_tier(ore_type) - 1,
                     "Ticks": 400,
@@ -64,23 +64,23 @@ for ore_type in ore_types:
             )
 
         out_items = []
-        out_items.append({"Name": ore_type["Name"] + "OreDust", "Count": 1})
+        out_items.append({"name": ore_type["name"] + "OreDust", "Count": 1})
         out_items.append(
             {
-                "Name": ore_type["Name"] + "OreDust",
+                "name": ore_type["name"] + "OreDust",
                 "Count": 1,
                 "split": 2,
             }
         )
         recipes_mac.append(
             {
-                "Name": ore_type["Name"] + "ImpureOreGravel",
+                "name": ore_type["name"] + "ImpureOreGravel",
                 "Input": {
                     "Items": [
-                        {"Name": ore_type["Name"] + "ImpureOreGravel", "Count": 1},
+                        {"name": ore_type["name"] + "ImpureOreGravel", "Count": 1},
                     ]
                 },
-                "ResourceInput": {"Name": "Kinetic", "Count": 10},
+                "ResourceInput": {"name": "Kinetic", "Count": 10},
                 "Output": {"Items": out_items},
                 "Tier": extract_tier(ore_type),
                 "Ticks": 200,
@@ -89,17 +89,17 @@ for ore_type in ore_types:
 
         recipes_mac.append(
             {
-                "Name": ore_type["Name"] + "OreGravel",
+                "name": ore_type["name"] + "OreGravel",
                 "Input": {
                     "Items": [
-                        {"Name": ore_type["Name"] + "OreGravel", "Count": 1},
+                        {"name": ore_type["name"] + "OreGravel", "Count": 1},
                     ]
                 },
-                "ResourceInput": {"Name": "Kinetic", "Count": 10},
+                "ResourceInput": {"name": "Kinetic", "Count": 10},
                 "Output": {
                     "Items": [
-                        {"Name": ore_type["Name"] + "OreDust", "Count": 1},
-                        {"Name": ore_type["Name"] + "OreDust", "Count": 1, "split": 2},
+                        {"name": ore_type["name"] + "OreDust", "Count": 1},
+                        {"name": ore_type["name"] + "OreDust", "Count": 1, "split": 2},
                     ]
                 },
                 "Tier": extract_tier(ore_type),
@@ -110,15 +110,15 @@ for ore_type in ore_types:
         if "SmeltLevel" in named_mat and named_mat["SmeltLevel"] <= 0:
             recipes_smelt.append(
                 {
-                    "Name": ore_type["Name"] + "OreDust",
+                    "name": ore_type["name"] + "OreDust",
                     "Input": {
                         "Items": [
-                            {"Name": ore_type["Name"] + "OreDust", "Count": 1},
+                            {"name": ore_type["name"] + "OreDust", "Count": 1},
                         ]
                     },
-                    "ResourceInput": {"Name": "Heat", "Count": 10},
+                    "ResourceInput": {"name": "Heat", "Count": 10},
                     "Output": {
-                        "Items": [{"Name": ore_type["Name"] + "Ingot", "Count": 1}]
+                        "Items": [{"name": ore_type["name"] + "Ingot", "Count": 1}]
                     },
                     "Ticks": 200,
                     "Tier": extract_tier(ore_type),
@@ -126,15 +126,15 @@ for ore_type in ore_types:
             )
             recipes_smelt.append(
                 {
-                    "Name": ore_type["Name"] + "ImpureOreGravel",
+                    "name": ore_type["name"] + "ImpureOreGravel",
                     "Input": {
                         "Items": [
-                            {"Name": ore_type["Name"] + "ImpureOreGravel", "Count": 1},
+                            {"name": ore_type["name"] + "ImpureOreGravel", "Count": 1},
                         ]
                     },
-                    "ResourceInput": {"Name": "Heat", "Count": 10},
+                    "ResourceInput": {"name": "Heat", "Count": 10},
                     "Output": {
-                        "Items": [{"Name": ore_type["Name"] + "Ingot", "Count": 1}]
+                        "Items": [{"name": ore_type["name"] + "Ingot", "Count": 1}]
                     },
                     "Ticks": 300,
                     "Tier": extract_tier(ore_type),
@@ -142,15 +142,15 @@ for ore_type in ore_types:
             )
             recipes_smelt.append(
                 {
-                    "Name": ore_type["Name"] + "OreGravel",
+                    "name": ore_type["name"] + "OreGravel",
                     "Input": {
                         "Items": [
-                            {"Name": ore_type["Name"] + "OreGravel", "Count": 1},
+                            {"name": ore_type["name"] + "OreGravel", "Count": 1},
                         ]
                     },
-                    "ResourceInput": {"Name": "Heat", "Count": 10},
+                    "ResourceInput": {"name": "Heat", "Count": 10},
                     "Output": {
-                        "Items": [{"Name": ore_type["Name"] + "Ingot", "Count": 1}]
+                        "Items": [{"name": ore_type["name"] + "Ingot", "Count": 1}]
                     },
                     "Ticks": 300,
                     "Tier": extract_tier(ore_type),
@@ -158,10 +158,10 @@ for ore_type in ore_types:
             )
 
         out_items = []
-        out_items.append({"Name": ore_type["Name"] + "OreGravel", "Count": 1})
+        out_items.append({"name": ore_type["name"] + "OreGravel", "Count": 1})
         if "Byproducts" in ore_type and len(ore_type["Byproducts"]) > 0:
             oi = {
-                "Name": ore_type["Byproducts"][0],
+                "name": ore_type["Byproducts"][0],
                 "Count": 1,
                 "split": 10,
             }
@@ -173,21 +173,21 @@ for ore_type in ore_types:
 
         out_items.append(
             {
-                "Name": "OreWater",
+                "name": "OreWater",
                 "Count": 50,
                 "Capacity": 32000,
             }
         )
         recipes_ore_washer.append(
             {
-                "Name": ore_type["Name"] + "ImpureOreGravel",
+                "name": ore_type["name"] + "ImpureOreGravel",
                 "Input": {
                     "Items": [
-                        {"Name": ore_type["Name"] + "ImpureOreGravel", "Count": 1},
-                        {"Name": "Water", "Count": 250},
+                        {"name": ore_type["name"] + "ImpureOreGravel", "Count": 1},
+                        {"name": "Water", "Count": 250},
                     ]
                 },
-                "ResourceInput": {"Name": "Kinetic", "Count": 10},
+                "ResourceInput": {"name": "Kinetic", "Count": 10},
                 "Output": {"Items": out_items},
                 "Tier": extract_tier(ore_type),
                 "Ticks": 130,
@@ -197,15 +197,15 @@ for ore_type in ore_types:
         out_items = []
         out_items.append(
             {
-                "Name": (ore_type["Name"] + "Dust")
+                "name": (ore_type["name"] + "Dust")
                 if "Oxide" not in ore_type
-                else (ore_type["Name"] + "OxideDust"),
+                else (ore_type["name"] + "OxideDust"),
                 "Count": 1,
             }
         )
         if "Byproducts" in ore_type and len(ore_type["Byproducts"]) > 0:
             oi = {
-                "Name": ore_type["Byproducts"][0],
+                "name": ore_type["Byproducts"][0],
                 "Count": 1,
                 "split": 10,
             }
@@ -216,13 +216,13 @@ for ore_type in ore_types:
 
         recipes_sep2.append(
             {
-                "Name": ore_type["Name"] + "OreDust",
+                "name": ore_type["name"] + "OreDust",
                 "Input": {
                     "Items": [
-                        {"Name": ore_type["Name"] + "OreDust", "Count": 1},
+                        {"name": ore_type["name"] + "OreDust", "Count": 1},
                     ]
                 },
-                "ResourceInput": {"Name": "Kinetic", "Count": 50 * 4},
+                "ResourceInput": {"name": "Kinetic", "Count": 50 * 4},
                 "Output": {"Items": out_items},
                 "Ticks": 200,
                 "Tier": extract_tier(ore_type),
@@ -232,9 +232,9 @@ for ore_type in ore_types:
         out_items = []
         if "Byproducts" in ore_type and len(ore_type["Byproducts"]) > 0:
             oi = {
-                "Name": (ore_type["Name"] + "Dust")
+                "name": (ore_type["name"] + "Dust")
                 if "Oxide" not in ore_type
-                else (ore_type["Name"] + "OxideDust"),
+                else (ore_type["name"] + "OxideDust"),
                 "Count": 1,
             }
 
@@ -245,13 +245,13 @@ for ore_type in ore_types:
 
         recipes_sep.append(
             {
-                "Name": ore_type["Name"] + "OreDust",
+                "name": ore_type["name"] + "OreDust",
                 "Input": {
                     "Items": [
-                        {"Name": ore_type["Name"] + "OreDust", "Count": 1},
+                        {"name": ore_type["name"] + "OreDust", "Count": 1},
                     ]
                 },
-                "ResourceInput": {"Name": "Kinetic", "Count": 20},
+                "ResourceInput": {"name": "Kinetic", "Count": 20},
                 "Output": {"Items": out_items},
                 "Ticks": 100,
                 "Tier": extract_tier(ore_type),
@@ -261,27 +261,27 @@ for ore_type in ore_types:
         for i in {"OreGravel", "ImpureOreGravel"}:
             recipes_sifter.append(
                 {
-                    "Name": ore_type["Name"] + i,
+                    "name": ore_type["name"] + i,
                     "Input": {
                         "Items": [
-                            {"Name": ore_type["Name"] + i, "Count": 1},
+                            {"name": ore_type["name"] + i, "Count": 1},
                         ]
                     },
-                    "ResourceInput": {"Name": "Kinetic", "Count": 200},
+                    "ResourceInput": {"name": "Kinetic", "Count": 200},
                     "Output": {
                         "Items": [
                             {
-                                "Name": ore_type["Byproducts"][1][0],
+                                "name": ore_type["Byproducts"][1][0],
                                 "Count": 1,
                                 "split": 2,
                             },
                             {
-                                "Name": ore_type["Byproducts"][1][1],
+                                "name": ore_type["Byproducts"][1][1],
                                 "Count": 1,
                                 "split": 5,
                             },
                             {
-                                "Name": ore_type["Byproducts"][1][2],
+                                "name": ore_type["Byproducts"][1][2],
                                 "Count": 1,
                                 "split": 40,
                             },
@@ -294,27 +294,27 @@ for ore_type in ore_types:
 
         # out_items = []
         # out_items.append({
-        # 	"Name": (ore_type["Name"] + "Dust") if "Oxide" not in ore_type else (ore_type["Name"] + "OxideDust"),
+        # 	"name": (ore_type["name"] + "Dust") if "Oxide" not in ore_type else (ore_type["name"] + "OxideDust"),
         # 	"Count": 8
         # })
         # if "Byproducts" in ore_type and len(ore_type["Byproducts"]) > 0:
         # 	for byp in ore_type["Byproducts"]:
         # 		out_items.append({
-        # 			"Name": byp + "Dust",
+        # 			"name": byp + "Dust",
         # 			"Count": 1,
         # 		})
         # recipes_sep2.append({
-        # 	"Name": ore_type["Name"] + "ImpureOreDustSeparating",
+        # 	"name": ore_type["name"] + "ImpureOreDustSeparating",
         # 	"Input":{
         # 		"Items":[
         # 			{
-        # 				"Name": ore_type["Name"] + "OreDust",
+        # 				"name": ore_type["name"] + "OreDust",
         # 				"Count": 7
         # 			},
         # 		]
         # 	},
         # 	"ResourceInput":{
-        # 		"Name": "Kinetic",
+        # 		"name": "Kinetic",
         # 		"Count": 3000 * 8
         # 	},
         # 	"Output":{
@@ -325,36 +325,36 @@ for ore_type in ore_types:
         # })
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "Macerator", "Recipes": recipes_mac}
+    {"class": recipe_dictionary, "name": "Macerator", "Recipes": recipes_mac}
 )
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "Smelter", "Recipes": recipes_smelt}
+    {"class": recipe_dictionary, "name": "Smelter", "Recipes": recipes_smelt}
 )
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "OreWasher", "Recipes": recipes_ore_washer}
+    {"class": recipe_dictionary, "name": "OreWasher", "Recipes": recipes_ore_washer}
 )
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "Separator", "Recipes": recipes_sep}
+    {"class": recipe_dictionary, "name": "Separator", "Recipes": recipes_sep}
 )
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "IndustrialSeparator", "Recipes": recipes_sep2}
+    {"class": recipe_dictionary, "name": "IndustrialSeparator", "Recipes": recipes_sep2}
 )
 
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "AutomaticHammer", "Recipes": recipes_hammer}
+    {"class": recipe_dictionary, "name": "AutomaticHammer", "Recipes": recipes_hammer}
 )
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "ArcSmelter", "Recipes": recipes_arc}
+    {"class": recipe_dictionary, "name": "ArcSmelter", "Recipes": recipes_arc}
 )
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "Sifter", "Recipes": recipes_sifter}
+    {"class": recipe_dictionary, "name": "Sifter", "Recipes": recipes_sifter}
 )
 
 recipes_break = []
@@ -362,17 +362,17 @@ recipes_break = []
 for ore_type in ore_types:
     recipes_break.append(
         {
-            "Name": ore_type["Name"] + "OreBreaking",
+            "name": ore_type["name"] + "OreBreaking",
             "Ticks": ore_type["Hardness"] * 20,
-            "Input": {"Items": [{"Name": ore_type["Name"] + "Ore", "Count": 1}]},
-            "Output": {"Items": [{"Name": ore_type["Drops"], "Count": 1}]},
+            "Input": {"Items": [{"name": ore_type["name"] + "Ore", "Count": 1}]},
+            "Output": {"Items": [{"name": ore_type["Drops"], "Count": 1}]},
         }
     )
 
 objects_array.append(
     {
-        "Class": recipe_dictionary,
-        "Name": "Multitool",
+        "class": recipe_dictionary,
+        "name": "Multitool",
         "Recipes": recipes_break,
         "UsedIn": [{"Item": "Multitool", "Tier": 0}],
         "Ticks": 20,

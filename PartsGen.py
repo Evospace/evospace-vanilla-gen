@@ -29,7 +29,7 @@ cvs = []
 def append_gas_burning(recipe):
     gas2 = copy.deepcopy(recipe)
     gas2["Input"]["Items"].append(
-        {"Name": "Oxygen", "Count": gas2["Input"]["Items"][0]["Count"]}
+        {"name": "Oxygen", "Count": gas2["Input"]["Items"][0]["Count"]}
     )
     gas2["Output"]["Items"][0]["Count"] = gas2["Output"]["Items"][0]["Count"] * 2
     gas2["Output"]["Items"] = [gas2["Output"]["Items"][0]]
@@ -44,22 +44,22 @@ for part in parts:
         material = tier_material[tier]
         if part["StartTier"] <= tier and part["EndTier"] >= tier:
             cvs.append(
-                [material + part["Name"], CamelToSpaces(material) + " " + part["Label"]]
+                [material + part["name"], CamelToSpaces(material) + " " + part["Label"]]
             )
             level = tier - part["StartTier"]
             item = {
-                "Class": static_item,
-                "Name": material + part["Name"],
-                "LabelParts": [[material + part["Name"], "parts"]],
-                "Image": "T_" + material + part["Name"],
-                "MaxCount": part["Stack"],
-                "LogicJson": {"Block": material + part["Name"]},
-                "Tag": "Misc",
+                "class": static_item,
+                "name": material + part["name"],
+                "label_parts": [[material + part["name"], "parts"]],
+                "image": "T_" + material + part["name"],
+                "max_count": part["Stack"],
+                "logic_json": {"Block": material + part["name"]},
+                "tag": "Misc",
                 "Materials": ["Materials/" + material],
-                "Category": "Parts",
+                "category": "Parts",
             }
-            if "ItemLogic" in part:
-                item["ItemLogic"] = part["ItemLogic"]
+            if "item_logic" in part:
+                item["item_logic"] = part["item_logic"]
 
             if "Mesh" in part:
                 item["Mesh"] = part["Mesh"]
@@ -71,134 +71,134 @@ for part in parts:
                         dict[i] = dict[i].replace("%Material%", tier_material[tier])
                 item["Materials"] = dict
 
-            if "Tag" in part:
-                item["Tag"] = part["Tag"]
+            if "tag" in part:
+                item["tag"] = part["tag"]
 
             objects_array.append(item)
 
             images.append(
                 {
-                    "NewName": "T_" + material + part["Name"],
-                    "Base": "T_" + part["Name"],
+                    "NewName": "T_" + material + part["name"],
+                    "Base": "T_" + part["name"],
                     "MulMask": "T_" + material,
-                    "AddMask": "T_" + part["Name"] + additive_ico,
+                    "AddMask": "T_" + part["name"] + additive_ico,
                 }
             )
 
             if "Volume" in part:
                 recipes_macerator.append(
                     {
-                        "Name": material + part["Name"],
+                        "name": material + part["name"],
                         "Input": {
                             "Items": [
-                                {"Name": material + part["Name"], "Count": 1},
+                                {"name": material + part["name"], "Count": 1},
                             ]
                         },
                         "ResourceInput": {
-                            "Name": "Kinetic",
+                            "name": "Kinetic",
                             "Count": 10 * 1.5**level,
                         },
                         "Output": {
                             "Items": [
-                                {"Name": material + "Dust", "Count": part["Volume"]}
+                                {"name": material + "Dust", "Count": part["Volume"]}
                             ]
                         },
                         "Ticks": 80 * part["Volume"] * 1.5**level,
                     }
                 )
-            recipes_wrench.append(simple_in_out_recipe(material + part["Name"]))
+            recipes_wrench.append(simple_in_out_recipe(material + part["name"]))
 
             if (
-                part["Name"] == "Casing"
+                part["name"] == "Casing"
                 and part["StartTier"] <= tier
                 and part["EndTier"] >= tier
             ):
                 recipes_hand.append(
                     {
-                        "Name": material + "Casing",
-                        "Input": {"Items": [{"Name": material + "Plate", "Count": 3}]},
+                        "name": material + "Casing",
+                        "Input": {"Items": [{"name": material + "Plate", "Count": 3}]},
                         "Output": {
-                            "Items": [{"Name": material + "Casing", "Count": 1}]
+                            "Items": [{"name": material + "Casing", "Count": 1}]
                         },
                         "Ticks": 40,
                     }
                 )
                 objects_array.append(
                     {
-                        "Class": tesselator_cube,
-                        "Name": material + "Casing" + tesselator,
+                        "class": tesselator_cube,
+                        "name": material + "Casing" + tesselator,
                         "Material": "Materials/" + material + "Casing",
                     }
                 )
                 objects_array.append(
                     {
-                        "Class": static_block,
-                        "Name": material + "Casing",
+                        "class": static_block,
+                        "name": material + "Casing",
                         "Item": material + "Casing",
                         "Tesselator": material + "Casing" + tesselator,
                     }
                 )
 
-            if part["Name"] == "Plate":
+            if part["name"] == "Plate":
                 recipes_hammer.append(
                     {
-                        "Name": material + "Plate",
+                        "name": material + "Plate",
                         "Input": {
                             "Items": [
                                 {
-                                    "Name": material
+                                    "name": material
                                     + ("Ingot" if material != "Stone" else "Surface"),
                                     "Count": 1,
                                 },
                             ]
                         },
                         "ResourceInput": {
-                            "Name": "Kinetic",
+                            "name": "Kinetic",
                             "Count": 10 * 1.5**level,
                         },
-                        "Output": {"Items": [{"Name": material + "Plate", "Count": 1}]},
+                        "Output": {"Items": [{"name": material + "Plate", "Count": 1}]},
                         "Ticks": 80 * 1.5**level,
                     }
                 )
                 recipes_hand.append(
                     {
-                        "Name": material + "Plate",
+                        "name": material + "Plate",
                         "Input": {
                             "Items": [
                                 {
-                                    "Name": material
+                                    "name": material
                                     + ("Ingot" if material != "Stone" else "Surface"),
                                     "Count": 1,
                                 }
                             ]
                         },
-                        "Output": {"Items": [{"Name": material + "Plate", "Count": 1}]},
+                        "Output": {"Items": [{"name": material + "Plate", "Count": 1}]},
                         "Ticks": 20,
                     }
                 )
 
-            if part["Name"] == "Parts":
+            if part["name"] == "Parts":
                 recipes_hand.append(
                     {  # parts recipe
-                        "Name": material + "Parts",
-                        "Input": {"Items": [{"Name": material + "Plate", "Count": 1}]},
-                        "Output": {"Items": [{"Name": material + "Parts", "Count": 1}]},
+                        "name": material + "Parts",
+                        "Input": {"Items": [{"name": material + "Plate", "Count": 1}]},
+                        "Output": {"Items": [{"name": material + "Parts", "Count": 1}]},
                         "Ticks": 20,
                     }
                 )
                 recipes_cutter.append(
                     {
-                        "Name": material + "Parts",
+                        "name": material + "Parts",
                         "Input": {
                             "Items": [
-                                {"Name": material + "Plate", "Count": 1},
+                                {"name": material + "Plate", "Count": 1},
                             ]
                         },
                         "ResourceInput": {
-                            "Name": "Kinetic",
+                            "name": "Kinetic",
                             "Count": 10 * 1.5**level,
                         },
-                        "Output": {"Items": [{"Name": material + "Parts", "Count": 1}]},
+                        "Output": {"Items": [{"name": material + "Parts", "Count": 1}]},
                         "Ticks": 80 * 1.5**level,
                     }
                 )
@@ -208,14 +208,14 @@ for material in materials:
 
     # abstract
     if "IsAbstract" in material:
-        cvs.append([material["Name"], material["Label"]])
+        cvs.append([material["name"], material["Label"]])
         item = {
-            "Class": static_item,
-            "Name": material["Name"],
-            "Image": "T_" + material["Name"],
-            "MaxCount": 1,
-            "Tag": "Misc",
-            "LabelParts": [[material["Name"], "parts"]],
+            "class": static_item,
+            "name": material["name"],
+            "image": "T_" + material["name"],
+            "max_count": 1,
+            "tag": "Misc",
+            "label_parts": [[material["name"], "parts"]],
         }
 
         if "Unit" in material:
@@ -224,50 +224,50 @@ for material in materials:
         if "UnitMul" in material:
             item["UnitMul"] = material["UnitMul"]
 
-        if "Category" in material:
-            item["Category"] = material["Category"]
+        if "category" in material:
+            item["category"] = material["category"]
 
-        if "Tag" in material:
-            item["Tag"] = material["Tag"]
+        if "tag" in material:
+            item["tag"] = material["tag"]
 
         if "Description" in material:
-            item["DescriptionParts"] = material["Description"]
+            item["description_parts"] = material["Description"]
 
         objects_array.append(item)
 
     # exact
     if "IsExact" in material:
-        cvs.append([material["Name"], material["Label"]])
+        cvs.append([material["name"], material["Label"]])
         item = {
-            "Class": static_item,
-            "Name": material["Name"],
-            "Image": "T_" + material["Name"],
-            "MaxCount": 32 if material["Name"] != "Signal" else 214748364,
-            "LabelParts": [[material["Name"], "parts"]],
-            "Tag": "Misc",
+            "class": static_item,
+            "name": material["name"],
+            "image": "T_" + material["name"],
+            "max_count": 32 if material["name"] != "Signal" else 214748364,
+            "label_parts": [[material["name"], "parts"]],
+            "tag": "Misc",
         }
 
         if "Craftable" in material:
             item["Craftable"] = False
 
-        if "Category" in material:
-            item["Category"] = material["Category"]
+        if "category" in material:
+            item["category"] = material["category"]
 
         if "Description" in material:
-            item["DescriptionParts"] = material["Description"]
+            item["description_parts"] = material["Description"]
 
-        if "Tag" in material:
-            item["Tag"] = material["Tag"]
+        if "tag" in material:
+            item["tag"] = material["tag"]
 
         if "Unit" in material:
             item["Unit"] = material["Unit"]
 
         if "Stack" in material:
-            item["MaxCount"] = material["Stack"]
+            item["max_count"] = material["Stack"]
 
         if "Mesh" in material:
             item["Mesh"] = material["Mesh"]
-            item["Materials"] = ["Materials/" + material["Name"]]
+            item["Materials"] = ["Materials/" + material["name"]]
 
         if "Materials" in material:
             item["Materials"] = material["Materials"]
@@ -275,24 +275,24 @@ for material in materials:
         if "Burnable" in material:
             recipes_furnace.append(
                 {
-                    "Name": material["Name"],
-                    "Input": {"Items": [{"Name": material["Name"], "Count": 1}]},
+                    "name": material["name"],
+                    "Input": {"Items": [{"name": material["name"], "Count": 1}]},
                     "Output": {
                         "Items": [
                             # {
-                            # 	"Name": "AshDust",
+                            # 	"name": "AshDust",
                             # 	"Count": material["Burnable"]["TotalAsh"],
                             # }
                         ],
                     },
                     "ResourceOutput": {
-                        "Name": "Heat",
+                        "name": "Heat",
                         "Count": material["Burnable"]["HeatPerTick"],
                     },
                     "Ticks": material["Burnable"]["BurnTime"],
                 }
             )
-            item["DescriptionParts"] = [
+            item["description_parts"] = [
                 [
                     "burnable",
                     "common",
@@ -306,32 +306,32 @@ for material in materials:
 
     # ingot
     if "IsIngot" in material:
-        cvs.append([material["Name"] + "Ingot", material["Label"] + " Ingot"])
+        cvs.append([material["name"] + "Ingot", material["Label"] + " Ingot"])
         item = {
-            "Class": static_item,
-            "Name": material["Name"] + "Ingot",
-            "Image": "T_" + material["Name"] + "Ingot",
-            "MaxCount": 32,
+            "class": static_item,
+            "name": material["name"] + "Ingot",
+            "image": "T_" + material["name"] + "Ingot",
+            "max_count": 32,
             "Mesh": "Models/Ingot",
-            "Materials": ["Materials/" + material["Name"]],
-            "LabelParts": [[material["Name"] + "Ingot", "parts"]],
-            "Tag": "Misc",
-            "Category": "Ingot",
+            "Materials": ["Materials/" + material["name"]],
+            "label_parts": [[material["name"] + "Ingot", "parts"]],
+            "tag": "Misc",
+            "category": "Ingot",
         }
 
-        if "Category" in material:
-            item["Category"] = material["Category"]
+        if "category" in material:
+            item["category"] = material["category"]
 
-        if "Tag" in material:
-            item["Tag"] = material["Tag"]
+        if "tag" in material:
+            item["tag"] = material["tag"]
 
         objects_array.append(item)
 
         images.append(
             {
-                "NewName": "T_" + material["Name"] + "Ingot",
+                "NewName": "T_" + material["name"] + "Ingot",
                 "Base": "T_" + "Ingot",
-                "MulMask": "T_" + material["Name"],
+                "MulMask": "T_" + material["name"],
                 "AddMask": "T_" + "Ingot" + additive_ico,
             }
         )
@@ -339,16 +339,16 @@ for material in materials:
         if "SmeltLevel" in material and material["SmeltLevel"] <= 0:
             recipes_smelt.append(
                 {
-                    "Name": material["Name"] + "Ingot",
+                    "name": material["name"] + "Ingot",
                     "Input": {
-                        "Items": [{"Name": material["Name"] + "Dust", "Count": 1}],
+                        "Items": [{"name": material["name"] + "Dust", "Count": 1}],
                     },
                     "ResourceInput": {
-                        "Name": "Heat",
+                        "name": "Heat",
                         "Count": 10,
                     },
                     "Output": {
-                        "Items": [{"Name": material["Name"] + "Ingot", "Count": 1}]
+                        "Items": [{"name": material["name"] + "Ingot", "Count": 1}]
                     },
                     "Ticks": 200,
                 }
@@ -356,118 +356,118 @@ for material in materials:
 
         recipes_macerator.append(
             {
-                "Name": material["Name"] + "Ingot",
+                "name": material["name"] + "Ingot",
                 "Input": {
                     "Items": [
-                        {"Name": material["Name"] + "Ingot", "Count": 1},
+                        {"name": material["name"] + "Ingot", "Count": 1},
                     ]
                 },
-                "ResourceInput": {"Name": "Kinetic", "Count": 15},
-                "Output": {"Items": [{"Name": material["Name"] + "Dust", "Count": 1}]},
+                "ResourceInput": {"name": "Kinetic", "Count": 15},
+                "Output": {"Items": [{"name": material["name"] + "Dust", "Count": 1}]},
                 "Ticks": 120,
             }
         )
 
     if "IsBlock" in material:
-        cvs.append([material["Name"] + "Block", material["Label"] + " Block"])
+        cvs.append([material["name"] + "Block", material["Label"] + " Block"])
         item = {
-            "Class": static_item,
-            "Name": material["Name"] + "Block",
-            "Image": "T_" + material["Name"] + "Block",
-            "MaxCount": 999,
+            "class": static_item,
+            "name": material["name"] + "Block",
+            "image": "T_" + material["name"] + "Block",
+            "max_count": 999,
             # "Mesh": "Models/Ingot",
-            "Materials": ["Materials/" + material["Name"]],
-            "LabelParts": [[material["Name"] + "Block", "parts"]],
-            "Tag": "Decoration",
-            "Category": "Block",
-            "ItemLogic": building_cube_logic,
-            "LogicJson": {"Block": material["Name"] + "Block"},
+            "Materials": ["Materials/" + material["name"]],
+            "label_parts": [[material["name"] + "Block", "parts"]],
+            "tag": "Decoration",
+            "category": "Block",
+            "item_logic": building_cube_logic,
+            "logic_json": {"Block": material["name"] + "Block"},
         }
 
-        if "Category" in material:
-            item["Category"] = material["Category"]
+        if "category" in material:
+            item["category"] = material["category"]
 
-        if "Tag" in material:
-            item["Tag"] = material["Tag"]
+        if "tag" in material:
+            item["tag"] = material["tag"]
 
         objects_array.append(item)
 
         images.append(
             {
-                "NewName": "T_" + material["Name"] + "Block",
+                "NewName": "T_" + material["name"] + "Block",
                 "Base": "T_" + "Block",
-                "MulMask": "T_" + material["Name"],
+                "MulMask": "T_" + material["name"],
                 "AddMask": "T_" + "Block" + additive_ico,
             }
         )
         objects_array.append(
             {
-                "Class": tesselator_cube,
-                "Name": material["Name"] + "Block" + tesselator,
-                "Material": "Materials/" + material["Name"],
+                "class": tesselator_cube,
+                "name": material["name"] + "Block" + tesselator,
+                "Material": "Materials/" + material["name"],
             }
         )
         objects_array.append(
             {
-                "Class": static_block,
-                "Name": material["Name"] + "Block",
-                "Item": material["Name"] + "Block",
-                "Tesselator": material["Name"] + "Block" + tesselator,
+                "class": static_block,
+                "name": material["name"] + "Block",
+                "Item": material["name"] + "Block",
+                "Tesselator": material["name"] + "Block" + tesselator,
             }
         )
 
         recipes_press.append(
             {
-                "Name": material["Name"] + "Block",
+                "name": material["name"] + "Block",
                 "Input": {
-                    "Items": [{"Name": material["Name"] + "Dust", "Count": 4}],
+                    "Items": [{"name": material["name"] + "Dust", "Count": 4}],
                 },
                 "ResourceInput": {
-                    "Name": "Kinetic",
+                    "name": "Kinetic",
                     "Count": 10,
                 },
-                "Output": {"Items": [{"Name": material["Name"] + "Block", "Count": 1}]},
+                "Output": {"Items": [{"name": material["name"] + "Block", "Count": 1}]},
                 "Ticks": 200,
             }
         )
 
         recipes_wrench.append(
             {
-                "Name": material["Name"] + "Block" + "Wrenching",
+                "name": material["name"] + "Block" + "Wrenching",
                 "Ticks": 20,
-                "Input": {"Items": [{"Name": material["Name"] + "Block", "Count": 1}]},
-                "Output": {"Items": [{"Name": material["Name"] + "Block", "Count": 1}]},
+                "Input": {"Items": [{"name": material["name"] + "Block", "Count": 1}]},
+                "Output": {"Items": [{"name": material["name"] + "Block", "Count": 1}]},
             }
         )
 
     # fluid
     if "IsFluid" in material:
-        cvs.append([material["Name"], material["Label"]])
+        cvs.append([material["name"], material["Label"]])
         item = {
-            "Class": static_item,
-            "Name": material["Name"] + "",
-            "Image": "T_" + material["Name"] + "",
-            "MaxCount": 1,
-            "Category": "",
-            "Tag": "Misc",
-            "LabelParts": [[material["Name"], "parts"]],
+            "class": static_item,
+            "name": material["name"] + "",
+            "image": "T_" + material["name"] + "",
+            "max_count": 1,
+            "category": "",
+            "tag": "Misc",
+            "label_parts": [[material["name"], "parts"]],
             "UnitMul": 1.0 / 1000.0,
-            "Category": "Fluid",
-            "DescriptionParts": [["Fluid", "common"], ["ByPipes", "common"]],
+            "category": "Fluid",
+            "description_parts": [["Fluid", "common"], ["ByPipes", "common"]],
             "Solid": False,
         }
 
-        if "Category" in material:
-            item["Category"] = material["Category"]
+        if "category" in material:
+            item["category"] = material["category"]
 
-        if "Tag" in material:
-            item["Tag"] = material["Tag"]
+        if "tag" in material:
+            item["tag"] = material["tag"]
 
         # if item["MaterialKey"] + " " + item["Key"] in explicites:
         # 	item["ExplicitKey"] = ex_cvs[explicites.index(item["MaterialKey"] + " " + item["Key"])][0]
 
         if "Burnable" in material:
-            item["DescriptionParts"].append(
+            item["description_parts"].append(
                 [
                     "burnable",
                     "common",
@@ -475,7 +475,7 @@ for material in materials:
                     * material["Burnable"]["HeatPerTick"],
                 ]
             )
-            item["DescriptionParts"].append(
+            item["description_parts"].append(
                 ["power_output", "common", material["Burnable"]["HeatPerTick"] * 20]
             )
 
@@ -483,9 +483,9 @@ for material in materials:
 
         images.append(
             {
-                "NewName": "T_" + material["Name"] + "",
+                "NewName": "T_" + material["name"] + "",
                 "Base": "T_" + "",
-                "MulMask": "T_" + material["Name"],
+                "MulMask": "T_" + material["name"],
                 "AddMask": "T_" + "" + additive_ico,
             }
         )
@@ -500,28 +500,28 @@ for material in materials:
             recipes_gasfurn.append(
                 {
                     "Input": {
-                        "Items": [{"Name": material["Name"] + "", "Count": 1000}]
+                        "Items": [{"name": material["name"] + "", "Count": 1000}]
                     },
                     "Output": {
                         "Items": [],
                     },
                     "ResourceOutput": {
-                        "Name": "Heat",
+                        "name": "Heat",
                         "Count": material["Burnable"]["HeatPerTick"],
                     },
                     "Ticks": material["Burnable"]["BurnTime"],
-                    "Name": material["Name"] + "",
+                    "name": material["name"] + "",
                 }
             )
 
         recipes_liq_dump.append(
             {
-                "Name": material["Name"] + "Dumping",
+                "name": material["name"] + "Dumping",
                 "Input": {
                     "Items": [
                         {
-                            "Name": material["Name"] + "",
-                            "Count": 1000 if material["Name"] != "Steam" else 10000,
+                            "name": material["name"] + "",
+                            "Count": 1000 if material["name"] != "Steam" else 10000,
                         }
                     ]
                 },
@@ -532,32 +532,32 @@ for material in materials:
 
     # gas
     if "IsGas" in material:
-        cvs.append([material["Name"], material["Label"]])
+        cvs.append([material["name"], material["Label"]])
         item = {
-            "Class": static_item,
-            "Name": material["Name"] + "",
-            "Image": "T_" + material["Name"] + "",
-            "MaxCount": 1,
-            "Category": "",
-            "Tag": "Misc",
-            "LabelParts": [[material["Name"], "parts"]],
+            "class": static_item,
+            "name": material["name"] + "",
+            "image": "T_" + material["name"] + "",
+            "max_count": 1,
+            "category": "",
+            "tag": "Misc",
+            "label_parts": [[material["name"], "parts"]],
             "UnitMul": 1.0 / 1000.0,
-            "Category": "Fluid",
-            "DescriptionParts": [["Gas", "common"], ["ByPipes", "common"]],
+            "category": "Fluid",
+            "description_parts": [["Gas", "common"], ["ByPipes", "common"]],
             "Solid": False,
         }
 
-        if "Category" in material:
-            item["Category"] = material["Category"]
+        if "category" in material:
+            item["category"] = material["category"]
 
-        if "Tag" in material:
-            item["Tag"] = material["Tag"]
+        if "tag" in material:
+            item["tag"] = material["tag"]
 
         # if item["MaterialKey"] + " " + item["Key"] in explicites:
         # 	item["ExplicitKey"] = ex_cvs[explicites.index(item["MaterialKey"] + " " + item["Key"])][0]
 
         if "Burnable" in material:
-            item["DescriptionParts"].append(
+            item["description_parts"].append(
                 [
                     "burnable",
                     "common",
@@ -565,7 +565,7 @@ for material in materials:
                     * material["Burnable"]["HeatPerTick"],
                 ]
             )
-            item["DescriptionParts"].append(
+            item["description_parts"].append(
                 ["power_output", "common", material["Burnable"]["HeatPerTick"] * 20]
             )
 
@@ -573,9 +573,9 @@ for material in materials:
 
         images.append(
             {
-                "NewName": "T_" + material["Name"] + "",
+                "NewName": "T_" + material["name"] + "",
                 "Base": "T_" + "",
-                "MulMask": "T_" + material["Name"],
+                "MulMask": "T_" + material["name"],
                 "AddMask": "T_" + "" + additive_ico,
             }
         )
@@ -590,28 +590,28 @@ for material in materials:
             recipes_gasfurn.append(
                 {
                     "Input": {
-                        "Items": [{"Name": material["Name"] + "", "Count": 1000}]
+                        "Items": [{"name": material["name"] + "", "Count": 1000}]
                     },
                     "Output": {
                         "Items": [],
                     },
                     "ResourceOutput": {
-                        "Name": "Heat",
+                        "name": "Heat",
                         "Count": material["Burnable"]["HeatPerTick"],
                     },
                     "Ticks": material["Burnable"]["BurnTime"],
-                    "Name": material["Name"],
+                    "name": material["name"],
                 }
             )
 
         recipes_gas_dump.append(
             {
-                "Name": material["Name"],
+                "name": material["name"],
                 "Input": {
                     "Items": [
                         {
-                            "Name": material["Name"] + "",
-                            "Count": 1000 if material["Name"] != "Steam" else 10000,
+                            "name": material["name"] + "",
+                            "Count": 1000 if material["name"] != "Steam" else 10000,
                         }
                     ]
                 },
@@ -622,33 +622,33 @@ for material in materials:
 
     # dust
     if "IsDust" in material:
-        cvs.append([material["Name"] + "Dust", material["Label"] + " Dust"])
+        cvs.append([material["name"] + "Dust", material["Label"] + " Dust"])
         item = {
-            "Class": static_item,
-            "Name": material["Name"] + "Dust",
-            "Image": "T_" + material["Name"] + "Dust",
-            "MaxCount": 32,
-            "LabelParts": [[material["Name"] + "Dust", "parts"]],
-            "Tag": "Misc",
+            "class": static_item,
+            "name": material["name"] + "Dust",
+            "image": "T_" + material["name"] + "Dust",
+            "max_count": 32,
+            "label_parts": [[material["name"] + "Dust", "parts"]],
+            "tag": "Misc",
             "Mesh": "Models/Dust",
-            "Materials": ["Materials/" + material["Name"] + "Dust"],
+            "Materials": ["Materials/" + material["name"] + "Dust"],
             "UnitMul": 1,
-            "Category": "Dust",
+            "category": "Dust",
         }
 
-        if "Category" in material:
-            item["Category"] = material["Category"]
+        if "category" in material:
+            item["category"] = material["category"]
 
-        if "Tag" in material:
-            item["Tag"] = material["Tag"]
+        if "tag" in material:
+            item["tag"] = material["tag"]
 
         objects_array.append(item)
 
         images.append(
             {
-                "NewName": "T_" + material["Name"] + "Dust",
+                "NewName": "T_" + material["name"] + "Dust",
                 "Base": "T_" + "Dust",
-                "MulMask": "T_" + material["Name"],
+                "MulMask": "T_" + material["name"],
                 "AddMask": "T_" + "Dust" + additive_ico,
             }
         )
@@ -656,47 +656,47 @@ for material in materials:
             recipes_furnace.append(
                 {
                     "Input": {
-                        "Items": [{"Name": material["Name"] + "Dust", "Count": 1}]
+                        "Items": [{"name": material["name"] + "Dust", "Count": 1}]
                     },
                     "Output": {
                         "Items": [
                             # {
-                            # 	"Name": "AshDust",
+                            # 	"name": "AshDust",
                             # 	"Count": material["Burnable"]["TotalAsh"]
                             # },
                         ],
                     },
                     "ResourceOutput": {
-                        "Name": "Heat",
+                        "name": "Heat",
                         "Count": material["Burnable"]["HeatPerTick"],
                     },
                     "Ticks": material["Burnable"]["BurnTime"],
-                    "Name": material["Name"] + "Dust",
+                    "name": material["name"] + "Dust",
                 }
             )
 
 # tools
 for tool in tools:
-    cvs.append([tool["Name"], tool["Label"]])
+    cvs.append([tool["name"], tool["Label"]])
     for tier in tiers_numlist:
         if tool["StartTier"] <= tier and tool["EndTier"] >= tier:
-            item_name = tier_material[tier] + tool["Name"]
+            item_name = tier_material[tier] + tool["name"]
             item = {
-                "Class": static_item,
-                "Name": item_name,
-                "Image": "T_" + item_name,
-                "ItemLogic": tool["ItemLogic"],
-                "LogicJson": {
-                    "RecipeDictionary": tool["Name"],
+                "class": static_item,
+                "name": item_name,
+                "image": "T_" + item_name,
+                "item_logic": tool["item_logic"],
+                "logic_json": {
+                    "RecipeDictionary": tool["name"],
                     "Tier": tier,
                 },
-                "MaxCount": 1,
-                "LabelParts": [
+                "max_count": 1,
+                "label_parts": [
                     [tier_material[tier], "common"],
-                    [tool["Name"], "parts"],
+                    [tool["name"], "parts"],
                 ],
-                "Tag": "Misc",
-                "LabelFormat": ["machines_label_format", "common"],
+                "tag": "Misc",
+                "label_format": ["machines_label_format", "common"],
             }
 
             objects_array.append(item)
@@ -704,28 +704,28 @@ for tool in tools:
             images.append(
                 {
                     "NewName": "T_" + item_name,
-                    "Base": "T_" + tool["Name"],
+                    "Base": "T_" + tool["name"],
                     "MulMask": "T_" + tier_material[tier],
-                    "AddMask": "T_" + tool["Name"] + additive_ico,
+                    "AddMask": "T_" + tool["name"] + additive_ico,
                 }
             )
 
-            if tool["Name"] == "Screwdriver" and "IsIngot" in named_material(
+            if tool["name"] == "Screwdriver" and "IsIngot" in named_material(
                 tier_material[tier]
             ):
                 recipes_hand.append(
                     {
-                        "Name": tier_material[tier] + "Screwdriver",
+                        "name": tier_material[tier] + "Screwdriver",
                         "Input": {
                             "Items": [
-                                {"Name": tier_material[tier] + "Parts", "Count": 1},
-                                {"Name": "Plank", "Count": 1},
+                                {"name": tier_material[tier] + "Parts", "Count": 1},
+                                {"name": "Plank", "Count": 1},
                             ]
                         },
                         "Output": {
                             "Items": [
                                 {
-                                    "Name": tier_material[tier] + "Screwdriver",
+                                    "name": tier_material[tier] + "Screwdriver",
                                     "Count": 1,
                                 }
                             ]
@@ -734,52 +734,52 @@ for tool in tools:
                     }
                 )
 
-            if tool["Name"] == "Multitool" and "IsIngot" in named_material(
+            if tool["name"] == "Multitool" and "IsIngot" in named_material(
                 tier_material[tier]
             ):
                 recipes_hand.append(
                     {
-                        "Name": tier_material[tier] + "Multitool",
+                        "name": tier_material[tier] + "Multitool",
                         "Input": {
                             "Items": [
-                                {"Name": tier_material[tier] + "Pipe", "Count": 2},
-                                {"Name": tier_material[tier] + "Plate", "Count": 2},
+                                {"name": tier_material[tier] + "Pipe", "Count": 2},
+                                {"name": tier_material[tier] + "Plate", "Count": 2},
                                 {
-                                    "Name": tier_material[tier] + "Parts",
+                                    "name": tier_material[tier] + "Parts",
                                     "Count": tier * 5 + 10,
                                 },
-                                {"Name": circuits[tier], "Count": 10},
+                                {"name": circuits[tier], "Count": 10},
                             ]
                         },
                         "Output": {
                             "Items": [
-                                {"Name": tier_material[tier] + "Multitool", "Count": 1}
+                                {"name": tier_material[tier] + "Multitool", "Count": 1}
                             ]
                         },
                         "Ticks": 40,
                     }
                 )
 
-            if tool["Name"] == "PaintTool" and "IsIngot" in named_material(
+            if tool["name"] == "PaintTool" and "IsIngot" in named_material(
                 tier_material[tier]
             ):
                 recipes_hand.append(
                     {
-                        "Name": tier_material[tier] + "PaintTool",
+                        "name": tier_material[tier] + "PaintTool",
                         "Input": {
                             "Items": [
-                                {"Name": tier_material[tier] + "Pipe", "Count": 2},
-                                {"Name": tier_material[tier] + "Plate", "Count": 2},
+                                {"name": tier_material[tier] + "Pipe", "Count": 2},
+                                {"name": tier_material[tier] + "Plate", "Count": 2},
                                 {
-                                    "Name": tier_material[tier] + "Parts",
+                                    "name": tier_material[tier] + "Parts",
                                     "Count": tier * 5 + 10,
                                 },
-                                {"Name": circuits[tier], "Count": 10},
+                                {"name": circuits[tier], "Count": 10},
                             ]
                         },
                         "Output": {
                             "Items": [
-                                {"Name": tier_material[tier] + "PaintTool", "Count": 1}
+                                {"name": tier_material[tier] + "PaintTool", "Count": 1}
                             ]
                         },
                         "Ticks": 40,
@@ -793,7 +793,7 @@ write_file("Generated/Mixed/parts.json", data)
 objects_array = []
 
 objects_array.append(
-    {"Class": ico_generator, "Name": "Parts" + ico_generator, "Images": images}
+    {"class": ico_generator, "name": "Parts" + ico_generator, "Images": images}
 )
 
 data = {"Objects": objects_array}
@@ -803,15 +803,15 @@ write_file("Generated/Resources/parts.json", data)
 objects_array = []
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "CuttingMachine", "Recipes": recipes_cutter}
+    {"class": recipe_dictionary, "name": "CuttingMachine", "Recipes": recipes_cutter}
 )
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "AutomaticHammer", "Recipes": recipes_hammer}
+    {"class": recipe_dictionary, "name": "AutomaticHammer", "Recipes": recipes_hammer}
 )
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "Macerator", "Recipes": recipes_macerator}
+    {"class": recipe_dictionary, "name": "Macerator", "Recipes": recipes_macerator}
 )
 
 for r in recipes_hand:
@@ -819,8 +819,8 @@ for r in recipes_hand:
 
 objects_array.append(
     {
-        "Class": recipe_dictionary,
-        "Name": "Hand",
+        "class": recipe_dictionary,
+        "name": "Hand",
         "Recipes": recipes_hand,
         "UsedIn": [
             {
@@ -831,11 +831,11 @@ objects_array.append(
 )
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "Press", "Recipes": recipes_press}
+    {"class": recipe_dictionary, "name": "Press", "Recipes": recipes_press}
 )
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "Furnace", "Recipes": recipes_furnace}
+    {"class": recipe_dictionary, "name": "Furnace", "Recipes": recipes_furnace}
 )
 
 
@@ -849,31 +849,31 @@ for tier in range(tools[0]["StartTier"], tools[0]["EndTier"]):
 
 objects_array.append(
     {
-        "Class": recipe_dictionary,
-        "Name": "Multitool",
+        "class": recipe_dictionary,
+        "name": "Multitool",
         "Recipes": recipes_wrench,
         "UsedIn": used_in,
     }
 )
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "Smelter", "Recipes": recipes_smelt}
+    {"class": recipe_dictionary, "name": "Smelter", "Recipes": recipes_smelt}
 )
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "Assembler", "Recipes": recipes_assembler}
+    {"class": recipe_dictionary, "name": "Assembler", "Recipes": recipes_assembler}
 )
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "FluidDump", "Recipes": recipes_liq_dump}
+    {"class": recipe_dictionary, "name": "FluidDump", "Recipes": recipes_liq_dump}
 )
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "GasDump", "Recipes": recipes_gas_dump}
+    {"class": recipe_dictionary, "name": "GasDump", "Recipes": recipes_gas_dump}
 )
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "FluidFurnace", "Recipes": recipes_gasfurn}
+    {"class": recipe_dictionary, "name": "FluidFurnace", "Recipes": recipes_gasfurn}
 )
 
 data = {"Objects": objects_array}
