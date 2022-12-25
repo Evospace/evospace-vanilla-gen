@@ -8,7 +8,7 @@ cvs = []
 ore_types = [
     {
         # https://en.wikipedia.org/wiki/List_of_copper_ores
-        "Name": "Copper",
+        "name": "Copper",
         "Byproducts": [
             "GoldDust",  # wash
             ["CopperOreDust", "MalachiteCrystal", "MalachiteCluster"],  # sifter
@@ -21,7 +21,7 @@ ore_types = [
     {
         # https://www.tf.uni-kiel.de/matwis/amat/iss/kap_a/advanced/aa_2_1.html
         # https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D0%BA%D0%B5%D0%BB%D1%8C#%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5
-        "Name": "Iron",
+        "name": "Iron",
         "Byproducts": [
             "ChromiumOxideDust",  # wash
             ["IronOreDust", "CinnabarCrystal", "CinnabarCluster"],  # sifter
@@ -32,7 +32,7 @@ ore_types = [
         "Remain": 1000,
     },
     {
-        "Name": "Uranium",
+        "name": "Uranium",
         "Byproducts": [
             "Uranium235Dust",  # wash
             ["ThoriumDust", "UraniniteCrystal", "UraniniteCluster"],  # sifter
@@ -46,7 +46,7 @@ ore_types = [
     },
     {
         # https://en.wikipedia.org/wiki/Cassiterite
-        "Name": "Aluminium",
+        "name": "Aluminium",
         "Byproducts": [
             "TitaniumOxideDust",  # wash
             ["AluminiumOreDust", "RutileCrystal", "Emerald"],  # sifter
@@ -58,7 +58,7 @@ ore_types = [
         "Remain": 1000,
     },
     {
-        "Name": "Coal",
+        "name": "Coal",
         "Color": [0.06, 0.06, 0.06],
         "Side": [0.06, 0.06, 0.06],
         "Item": [0.06, 0.06, 0.06],
@@ -69,7 +69,7 @@ ore_types = [
         "Remain": 1000,
     },
     {
-        "Name": "Clay",
+        "name": "Clay",
         "Color": [202 / 255.0, 115 / 255.0, 43 / 255.0],
         "Side": [202 / 255.0, 115 / 255.0, 43 / 255.0],
         "Item": [202 / 255.0, 115 / 255.0, 43 / 255.0],
@@ -84,21 +84,21 @@ ore_types = [
 images = []
 
 for ore_type in ore_types:
-    item_name = ore_type["Name"] + "Ore"
-    named_mat = named_material(ore_type["Name"])
+    item_name = ore_type["name"] + "Ore"
+    named_mat = named_material(ore_type["name"])
 
-    cvs.append([ore_type["Name"] + "Ore", ore_type["Name"] + " Ore"])
+    cvs.append([ore_type["name"] + "Ore", ore_type["name"] + " Ore"])
 
     item = {
-        "Class": static_item,
-        "Name": item_name,
+        "class": static_item,
+        "name": item_name,
         "Mesh": "Models/Ore",
-        "Image": "T_" + ore_type["Name"] + "Ore",
-        "MaxCount": 32,
-        "Category": "Ore",
-        "LabelParts": [[ore_type["Name"] + "Ore", "ores"]],
+        "image": "T_" + ore_type["name"] + "Ore",
+        "max_count": 32,
+        "category": "Ore",
+        "label_parts": [[ore_type["name"] + "Ore", "ores"]],
         "CommonTextKeys": [],
-        "Materials": ["Materials/" + ore_type["Name"] + "ImpureOreGravel"],
+        "Materials": ["Materials/" + ore_type["name"] + "ImpureOreGravel"],
     }
 
     if "SmeltLevel" in named_mat:
@@ -107,16 +107,16 @@ for ore_type in ore_types:
     objects_array.append(item)
     objects_array.append(
         {
-            "Class": "TesselatorMarching",
-            "Name": ore_type["Name"] + "Ore",
-            "Material": "Materials/Triplanar/" + ore_type["Name"] + "OreMaterial",
+            "class": "TesselatorMarching",
+            "name": ore_type["name"] + "Ore",
+            "Material": "Materials/Triplanar/" + ore_type["name"] + "OreMaterial",
         }
     )
     objects_array.append(
         {
-            "Class": static_surface,
-            "Name": ore_type["Name"] + "Ore",
-            "Tesselator": ore_type["Name"] + "Ore",
+            "class": static_surface,
+            "name": ore_type["name"] + "Ore",
+            "Tesselator": ore_type["name"] + "Ore",
             "Item": item_name,
             "ColorSide": ore_type["Color"],
             "color_top": ore_type["Color"],
@@ -126,8 +126,8 @@ for ore_type in ore_types:
     images.append(
         {
             "Base": "T_" + "Ore",
-            "NewName": "T_" + ore_type["Name"] + "Ore",
-            "MulMask": "T_" + ore_type["Name"],
+            "NewName": "T_" + ore_type["name"] + "Ore",
+            "MulMask": "T_" + ore_type["name"],
         }
     )
 
@@ -135,20 +135,20 @@ for ore_type in ore_types:
         # impur gravel
         cvs.append(
             [
-                ore_type["Name"] + "ImpureOreGravel",
-                ore_type["Name"] + " Impure Ore Gravel",
+                ore_type["name"] + "ImpureOreGravel",
+                ore_type["name"] + " Impure Ore Gravel",
             ]
         )
         item = {
-            "Class": static_item,
-            "Name": ore_type["Name"] + "ImpureOreGravel",
-            "Label": ore_type["Name"] + " Impure Ore Gravel",
+            "class": static_item,
+            "name": ore_type["name"] + "ImpureOreGravel",
+            "Label": ore_type["name"] + " Impure Ore Gravel",
             "Mesh": "Models/Gravel",
-            "Image": "T_" + ore_type["Name"] + "ImpureOreGravel",
-            "MaxCount": 32,
-            "Materials": ["Materials/" + ore_type["Name"] + "ImpureOreGravel"],
-            "Category": "Ore",
-            "LabelParts": [[ore_type["Name"] + "ImpureOreGravel", "ores"]],
+            "image": "T_" + ore_type["name"] + "ImpureOreGravel",
+            "max_count": 32,
+            "Materials": ["Materials/" + ore_type["name"] + "ImpureOreGravel"],
+            "category": "Ore",
+            "label_parts": [[ore_type["name"] + "ImpureOreGravel", "ores"]],
             "CommonTextKeys": [],
         }
 
@@ -161,17 +161,17 @@ for ore_type in ore_types:
         objects_array.append(item)
 
         # gravel
-        cvs.append([ore_type["Name"] + "OreGravel", ore_type["Name"] + " Ore Gravel"])
+        cvs.append([ore_type["name"] + "OreGravel", ore_type["name"] + " Ore Gravel"])
         item = {
-            "Class": static_item,
-            "Name": ore_type["Name"] + "OreGravel",
-            "Label": ore_type["Name"] + " Ore Gravel",
+            "class": static_item,
+            "name": ore_type["name"] + "OreGravel",
+            "Label": ore_type["name"] + " Ore Gravel",
             "Mesh": "Models/Gravel",
-            "Image": "T_" + ore_type["Name"] + "OreGravel",
-            "MaxCount": 32,
-            "Materials": ["Materials/" + ore_type["Name"] + "OreGravel"],
-            "Category": "Ore",
-            "LabelParts": [[ore_type["Name"] + "OreGravel", "ores"]],
+            "image": "T_" + ore_type["name"] + "OreGravel",
+            "max_count": 32,
+            "Materials": ["Materials/" + ore_type["name"] + "OreGravel"],
+            "category": "Ore",
+            "label_parts": [[ore_type["name"] + "OreGravel", "ores"]],
             "CommonTextKeys": [],
         }
 
@@ -182,20 +182,20 @@ for ore_type in ore_types:
 
         # impure dust
         cvs.append(
-            [ore_type["Name"] + "OreDust", ore_type["Name"] + " Impure Ore Dust"]
+            [ore_type["name"] + "OreDust", ore_type["name"] + " Impure Ore Dust"]
         )
         item = {
-            "Class": static_item,
-            "Name": ore_type["Name"] + "OreDust",
-            "Label": ore_type["Name"] + " Impure Ore Dust",
+            "class": static_item,
+            "name": ore_type["name"] + "OreDust",
+            "Label": ore_type["name"] + " Impure Ore Dust",
             "Mesh": "Models/Dust",
-            "Image": "T_" + ore_type["Name"] + "OreDust",
-            "MaxCount": 32,
+            "image": "T_" + ore_type["name"] + "OreDust",
+            "max_count": 32,
             "Materials": ["Materials/ImpureOreDust"],
-            "Category": "Ore",
-            "LabelParts": [[ore_type["Name"] + "OreDust", "ores"]],
+            "category": "Ore",
+            "label_parts": [[ore_type["name"] + "OreDust", "ores"]],
             "CommonTextKeys": [],
-            "Materials": ["Materials/" + ore_type["Name"] + "OreGravel"],
+            "Materials": ["Materials/" + ore_type["name"] + "OreGravel"],
         }
 
         if "SmeltLevel" in named_mat:
@@ -206,8 +206,8 @@ for ore_type in ore_types:
         images.append(
             {
                 "Base": "T_" + "Gravel",
-                "NewName": "T_" + ore_type["Name"] + "OreGravel",
-                "MulMask": "T_" + ore_type["Name"],
+                "NewName": "T_" + ore_type["name"] + "OreGravel",
+                "MulMask": "T_" + ore_type["name"],
                 "AddMask": "T_" + "Gravel" + additive_ico,
             }
         )
@@ -215,8 +215,8 @@ for ore_type in ore_types:
         images.append(
             {
                 "Base": "T_" + "Gravel",
-                "NewName": "T_" + ore_type["Name"] + "ImpureOreGravel",
-                "MulMask": "T_" + ore_type["Name"],
+                "NewName": "T_" + ore_type["name"] + "ImpureOreGravel",
+                "MulMask": "T_" + ore_type["name"],
                 "AddMask": ["T_" + "impure_gravel_add", "T_" + "Gravel" + additive_ico],
             }
         )
@@ -224,8 +224,8 @@ for ore_type in ore_types:
         images.append(
             {
                 "Base": "T_" + "Dust",
-                "NewName": "T_" + ore_type["Name"] + "OreDust",
-                "MulMask": "T_" + ore_type["Name"],
+                "NewName": "T_" + ore_type["name"] + "OreDust",
+                "MulMask": "T_" + ore_type["name"],
                 "AddMask": "T_" + "impure_dust_add",
             }
         )
@@ -239,7 +239,7 @@ write_file(filename, data)
 objects_array = []
 
 objects_array.append(
-    {"Class": ico_generator, "Name": "Ores" + ico_generator, "Images": images}
+    {"class": ico_generator, "name": "Ores" + ico_generator, "Images": images}
 )
 
 data = {"Objects": objects_array}

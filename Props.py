@@ -30,7 +30,7 @@ variation_helper = [
 
 props = [
     {
-        "Name": "Cactus",
+        "name": "Cactus",
         "ScaleMin": [0.5, 0.5, 0.5],
         "ScaleMax": [2, 2, 2],
         "Variations": 2,
@@ -41,7 +41,7 @@ props = [
         "TimeMul": 1,
     },
     {
-        "Name": "Dandaleon",
+        "name": "Dandaleon",
         "ScaleMin": [2, 2, 2],
         "ScaleMax": [4, 4, 4],
         "Variations": 3,
@@ -52,7 +52,7 @@ props = [
         "AdditiveElevation": 0,
     },
     {
-        "Name": "Fern",
+        "name": "Fern",
         "ScaleMin": [4, 4, 4],
         "ScaleMax": [6, 6, 6],
         "Variations": 3,
@@ -63,7 +63,7 @@ props = [
         "AdditiveElevation": 0,
     },
     {
-        "Name": "LongGrass",
+        "name": "LongGrass",
         "ScaleMin": [2, 2, 2],
         "ScaleMax": [4, 4, 4],
         "Variations": 1,
@@ -74,7 +74,7 @@ props = [
         "AdditiveElevation": 0,
     },
     {
-        "Name": "SeaPlant",
+        "name": "SeaPlant",
         "ScaleMin": [2, 2, 2],
         "ScaleMax": [4, 4, 4],
         "Variations": 22,
@@ -86,7 +86,7 @@ props = [
         "MaximumHeight": -1,
     },
     {
-        "Name": "SeaGrass",
+        "name": "SeaGrass",
         "ScaleMin": [2, 2, 2],
         "ScaleMax": [4, 4, 4],
         "Variations": 5,
@@ -98,7 +98,7 @@ props = [
         "MaximumHeight": -1,
     },
     {
-        "Name": "TallGrass",
+        "name": "TallGrass",
         "ScaleMin": [1, 1, 1],
         "ScaleMax": [3, 3, 3],
         "Variations": 1,
@@ -109,7 +109,7 @@ props = [
         "AdditiveElevation": 0,
     },
     {
-        "Name": "Broadleaf",
+        "name": "Broadleaf",
         "ScaleMin": [1, 1, 1],
         "ScaleMax": [3, 3, 3],
         "Variations": 3,
@@ -119,7 +119,7 @@ props = [
         "TimeMul": 1,
     },
     {
-        "Name": "Noleafes",
+        "name": "Noleafes",
         "ScaleMin": [1, 1, 1],
         "ScaleMax": [3, 3, 3],
         "Variations": 1,
@@ -129,7 +129,7 @@ props = [
         "TimeMul": 1,
     },
     {
-        "Name": "Shrub",
+        "name": "Shrub",
         "ScaleMin": [1.5, 1.5, 1.5],
         "ScaleMax": [2.5, 2.5, 2.5],
         "Variations": 1,
@@ -141,7 +141,7 @@ props = [
         "TimeMul": 1,
     },
     {
-        "Name": "Rock",
+        "name": "Rock",
         "ScaleMin": [0.6, 0.6, 0.6],
         "ScaleMax": [3, 3, 3],
         "Variations": 2,
@@ -153,7 +153,7 @@ props = [
         "TimeMul": 1,
     },
     {
-        "Name": "Pine",
+        "name": "Pine",
         "ScaleMin": [0.6, 0.6, 0.6],
         "ScaleMax": [1.4, 1.4, 1.4],
         "Variations": 3,
@@ -163,7 +163,7 @@ props = [
         "TimeMul": 1,
     },
     {
-        "Name": "SnowyPine",
+        "name": "SnowyPine",
         "ScaleMin": [0.6, 0.6, 0.6],
         "ScaleMax": [1.2, 1.2, 1.2],
         "Variations": 3,
@@ -173,7 +173,7 @@ props = [
         "TimeMul": 1,
     },
     {
-        "Name": "Birch",
+        "name": "Birch",
         "ScaleMin": [0.6, 0.6, 0.6],
         "ScaleMax": [1.4, 1.4, 1.4],
         "Variations": 2,
@@ -183,7 +183,7 @@ props = [
         "TimeMul": 1,
     },
     {
-        "Name": "Palm",
+        "name": "Palm",
         "ScaleMin": [0.6, 0.6, 0.6],
         "ScaleMax": [1.4, 1.4, 1.4],
         "Variations": 2,
@@ -193,7 +193,7 @@ props = [
         "TimeMul": 1,
     },
     {
-        "Name": "Rogoz",
+        "name": "Rogoz",
         "ScaleMin": [1, 1, 1],
         "ScaleMax": [3, 3, 3],
         "Variations": 5,
@@ -204,7 +204,7 @@ props = [
         "AdditiveElevation": 0,
     },
     {
-        "Name": "Lily",
+        "name": "Lily",
         "ScaleMin": [1, 1, 1],
         "ScaleMax": [3, 3, 3],
         "Variations": 1,
@@ -216,7 +216,7 @@ props = [
         "Floating": True,
     },
     {
-        "Name": "LilyFlower",
+        "name": "LilyFlower",
         "ScaleMin": [1, 1, 1],
         "ScaleMax": [3, 3, 3],
         "Variations": 2,
@@ -228,7 +228,7 @@ props = [
         "Floating": True,
     },
     {
-        "Name": "Shroom",
+        "name": "Shroom",
         "ScaleMin": [1, 1, 1],
         "ScaleMax": [2, 2, 2],
         "Variations": 6,
@@ -239,7 +239,7 @@ props = [
         "CullEnd": 12000,
     },
     {
-        "Name": "YellowFlower",
+        "name": "YellowFlower",
         "ScaleMin": [1, 1, 1],
         "ScaleMax": [2, 2, 2],
         "Variations": 1,
@@ -250,7 +250,7 @@ props = [
         "AdditiveElevation": 0,
     },
     {
-        "Name": "RedFlower",
+        "name": "RedFlower",
         "ScaleMin": [1, 1, 1],
         "ScaleMax": [2, 2, 2],
         "Variations": 1,
@@ -261,7 +261,7 @@ props = [
         "AdditiveElevation": 0,
     },
     {
-        "Name": "WhiteFlower",
+        "name": "WhiteFlower",
         "ScaleMin": [1, 1, 1],
         "ScaleMax": [2, 2, 2],
         "Variations": 1,
@@ -272,7 +272,7 @@ props = [
         "AdditiveElevation": 0,
     },
     {
-        "Name": "BigBush",
+        "name": "BigBush",
         "ScaleMin": [1.5, 1.5, 1.5],
         "ScaleMax": [3, 3, 3],
         "Variations": 1,
@@ -284,7 +284,7 @@ props = [
         "CullEnd": 12000,
     },
     {
-        "Name": "SmallRock",
+        "name": "SmallRock",
         "ScaleMin": [1, 1, 1],
         "ScaleMax": [3, 3, 3],
         "Variations": 1,
@@ -296,7 +296,7 @@ props = [
         "AdditiveElevation": 0,
     },
     {
-        "Name": "Diptero",
+        "name": "Diptero",
         "ScaleMin": [0.8, 0.8, 0.8],
         "ScaleMax": [1.3, 1.3, 1.3],
         "Variations": 2,
@@ -308,7 +308,7 @@ props = [
         "TimeMul": 6,
     },
     {
-        "Name": "DryGrass",
+        "name": "DryGrass",
         "ScaleMin": [1, 1, 1],
         "ScaleMax": [4, 4, 4],
         "Variations": 1,
@@ -320,7 +320,7 @@ props = [
         "AdditiveElevation": 0,
     },
     {
-        "Name": "VolcanicRock",
+        "name": "VolcanicRock",
         "ScaleMin": [0.5, 0.5, 0.5],
         "ScaleMax": [1, 1, 1],
         "Variations": 4,
@@ -333,7 +333,7 @@ props = [
         "TimeMul": 1,
     },
     {
-        "Name": "SnowyRock",
+        "name": "SnowyRock",
         "ScaleMin": [0.5, 0.5, 0.5],
         "ScaleMax": [1, 1, 1],
         "Variations": 4,
@@ -348,7 +348,7 @@ props = [
         "TimeMul": 1,
     },
     {
-        "Name": "SnowyGrass",
+        "name": "SnowyGrass",
         "ScaleMin": [2, 2, 2],
         "ScaleMax": [4, 4, 4],
         "Variations": 3,
@@ -363,12 +363,12 @@ props = [
 
 
 def named_prop(name):
-    return [x for x in props if x["Name"] == name][0]
+    return [x for x in props if x["name"] == name][0]
 
 
 proplists = [
     {
-        "Name": "PrairieDryPropList",
+        "name": "PrairieDryPropList",
         "Array": [
             {"Props": ["SmallRock"], "Chance": 0.01},
             {"Props": ["DryGrass"], "Chance": 0.5},
@@ -379,7 +379,7 @@ proplists = [
         ],
     },
     {
-        "Name": "PrairiePropList",
+        "name": "PrairiePropList",
         "Array": [
             {"Props": ["SmallRock"], "Chance": 0.01},
             {"Props": ["DryGrass"], "Chance": 0.35},
@@ -391,7 +391,7 @@ proplists = [
         ],
     },
     {
-        "Name": "DipteroPropList",
+        "name": "DipteroPropList",
         "Array": [
             {"Props": ["Diptero"], "Chance": 0.001},
             {
@@ -404,15 +404,15 @@ proplists = [
         ],
     },
     {
-        "Name": "SmallRocksProps",
+        "name": "SmallRocksProps",
         "Array": [
             {"Props": ["SmallRock"], "Chance": 0.06},
             {"Props": ["VolcanicRock"], "Chance": 0.01},
         ],
     },
-    {"Name": "SnowProps", "Array": [{"Props": ["SnowyRock"], "Chance": 0.01}]},
+    {"name": "SnowProps", "Array": [{"Props": ["SnowyRock"], "Chance": 0.01}]},
     {
-        "Name": "BushlandProps",
+        "name": "BushlandProps",
         "Array": [
             {"Props": ["Shrub", "BigBush"], "Chance": 0.05},
             {"Props": ["LongGrass"], "Chance": 0.5},
@@ -420,7 +420,7 @@ proplists = [
         ],
     },
     {
-        "Name": "GrasslandProps",
+        "name": "GrasslandProps",
         "Array": [
             {"Props": ["Rock"], "Chance": 0.005},
             {"Props": ["Dandaleon"], "Chance": 0.05},
@@ -429,7 +429,7 @@ proplists = [
         ],
     },
     {
-        "Name": "RedFlowersProps",
+        "name": "RedFlowersProps",
         "Array": [
             {"Props": ["RedFlower"], "Chance": 0.5},
             {"Props": ["LongGrass"], "Chance": 0.9},
@@ -438,7 +438,7 @@ proplists = [
         ],
     },
     {
-        "Name": "YellowFlowersProps",
+        "name": "YellowFlowersProps",
         "Array": [
             {"Props": ["YellowFlower"], "Chance": 0.5},
             {"Props": ["LongGrass"], "Chance": 0.9},
@@ -446,7 +446,7 @@ proplists = [
         ],
     },
     {
-        "Name": "WhiteFlowersProps",
+        "name": "WhiteFlowersProps",
         "Array": [
             {"Props": ["WhiteFlower"], "Chance": 0.5},
             {"Props": ["LongGrass"], "Chance": 0.9},
@@ -454,7 +454,7 @@ proplists = [
         ],
     },
     {
-        "Name": "DenseForestProps",
+        "name": "DenseForestProps",
         "Array": [
             {"Props": ["Noleafes"], "Chance": 0.001},
             {
@@ -471,7 +471,7 @@ proplists = [
         ],
     },
     {
-        "Name": "ForestProps",
+        "name": "ForestProps",
         "Array": [
             {"Props": ["Noleafes"], "Chance": 0.001},
             {
@@ -489,7 +489,7 @@ proplists = [
         ],
     },
     {
-        "Name": "DensePineForestProps",
+        "name": "DensePineForestProps",
         "Array": [
             {"Props": ["Rock"], "Chance": 0.001},
             {"Props": ["SmallRock"], "Chance": 0.01},
@@ -501,7 +501,7 @@ proplists = [
         ],
     },
     {
-        "Name": "PineForestProps",
+        "name": "PineForestProps",
         "Array": [
             {"Props": ["Rock"], "Chance": 0.002},
             {"Props": ["SmallRock"], "Chance": 0.01},
@@ -513,9 +513,9 @@ proplists = [
             {"Attaches": ["Flies"], "Chance": 0.001},
         ],
     },
-    {"Name": "UnimplementedProps", "Array": [{"Props": ["Rock"], "Chance": 0.01}]},
+    {"name": "UnimplementedProps", "Array": [{"Props": ["Rock"], "Chance": 0.01}]},
     {
-        "Name": "DesertProps",
+        "name": "DesertProps",
         "Array": [
             {"Props": ["Cactus"], "Chance": 0.01},
             {"Props": ["Palm"], "Chance": 0.002},
@@ -523,22 +523,22 @@ proplists = [
         ],
     },
     {
-        "Name": "IslandProps",
+        "name": "IslandProps",
         "Array": [
             {"Props": ["SmallRock"], "Chance": 0.01},
             {"Props": ["SeaPlant"], "Chance": 0.07},
         ],
     },
     {
-        "Name": "SeagrassProps",
+        "name": "SeagrassProps",
         "Array": [
             {"Props": ["SmallRock"], "Chance": 0.01},
             {"Props": ["SeaGrass"], "Chance": 0.15},
         ],
     },
-    {"Name": "EmptySeaProps", "Array": [{"Props": ["SmallRock"], "Chance": 0.05}]},
+    {"name": "EmptySeaProps", "Array": [{"Props": ["SmallRock"], "Chance": 0.05}]},
     {
-        "Name": "SwampProps",
+        "name": "SwampProps",
         "Array": [
             {"Props": ["SmallRock"], "Chance": 0.01},
             {"Props": ["LongGrass"], "Chance": 0.7},
@@ -551,7 +551,7 @@ proplists = [
         ],
     },
     {
-        "Name": "SwampForestProps",
+        "name": "SwampForestProps",
         "Array": [
             {"Props": ["LongGrass"], "Chance": 0.7},
             {"Props": ["Fern"], "Chance": 0.05},
@@ -561,7 +561,7 @@ proplists = [
         ],
     },
     {
-        "Name": "OreProps",
+        "name": "OreProps",
         "Array": [
             {"Props": ["LongGrass"], "Chance": 0.07},
             {"Props": ["Birch", "BigBush"], "Chance": 0.01},
@@ -569,14 +569,14 @@ proplists = [
         ],
     },
     {
-        "Name": "SnowGrassProps",
+        "name": "SnowGrassProps",
         "Array": [
             {"Props": ["SnowyGrass"], "Chance": 0.2},
             {"Props": ["SnowyRock"], "Chance": 0.01},
         ],
     },
     {
-        "Name": "SnowForestProps",
+        "name": "SnowForestProps",
         "Array": [
             {"Props": ["SnowyGrass"], "Chance": 0.2},
             {"Props": ["SnowyPine"], "Chance": 0.005},
@@ -588,38 +588,38 @@ objects_array = []
 breaking_hand = []
 
 for prop in props:
-    cvs.append([prop["Name"], CamelToSpaces(prop["Name"])])
+    cvs.append([prop["name"], CamelToSpaces(prop["name"])])
     for variation in range(0, prop["Variations"]):
         prop_class = static_big_prop if "IsBig" in prop else static_prop
 
         objects_array.append(
             {
-                "Class": static_item,
-                "Name": prop["Name"] + variation_helper[variation],
-                "MaxCount": 32,
-                "Image": "T_" + prop["Name"],
-                "LogicJson": {"Block": prop["Name"] + variation_helper[variation]},
-                "ItemLogic": building_prop_logic
+                "class": static_item,
+                "name": prop["name"] + variation_helper[variation],
+                "max_count": 32,
+                "image": "T_" + prop["name"],
+                "logic_json": {"Block": prop["name"] + variation_helper[variation]},
+                "item_logic": building_prop_logic
                 if "IsBig" in prop
                 else building_prop_logic,
-                "Category": "Terrain",
-                "LabelParts": [[prop["Name"], "props"]],
-                "DescriptionParts": [["WorldObject", "common"]],
+                "category": "Terrain",
+                "label_parts": [[prop["name"], "props"]],
+                "description_parts": [["WorldObject", "common"]],
             }
         )
 
         temp_prop = {
-            "Class": prop_class,
-            "Name": prop["Name"] + variation_helper[variation],
+            "class": prop_class,
+            "name": prop["name"] + variation_helper[variation],
             "Mesh": "Props/"
-            + prop["Name"]
+            + prop["name"]
             + "/"
-            + prop["Name"]
+            + prop["name"]
             + variation_helper[variation],
             "ScaleMin": prop["ScaleMin"],
             "ScaleMax": prop["ScaleMax"],
             "ProjectToTerrainPower": prop["ProjectToTerrainPower"],
-            "Item": prop["Name"],
+            "Item": prop["name"],
         }
 
         if "CullBegin" in prop:
@@ -643,17 +643,17 @@ for prop in props:
         objects_array.append(temp_prop)
         breaking_hand.append(
             {
-                "Name": prop["Name"] + variation_helper[variation],
+                "name": prop["name"] + variation_helper[variation],
                 "Ticks": 40,
                 "Input": {
                     "Items": [
-                        {"Name": prop["Name"] + variation_helper[variation], "Count": 1}
+                        {"name": prop["name"] + variation_helper[variation], "Count": 1}
                     ]
                 },
                 "Output": {
                     "Items": [
                         {
-                            "Name": prop["Drops"],
+                            "name": prop["Drops"],
                             "Count": 1
                             if "DropCount" not in prop
                             else prop["DropCount"],
@@ -682,7 +682,7 @@ for proplist in proplists:
                 props_array.append(attach_name)
         proplist_datas.append({"Props": props_array, "Chance": subitem["Chance"] * 0.5})
     objects_array.append(
-        {"Class": prop_list, "Name": proplist["Name"], "Array": proplist_datas}
+        {"class": prop_list, "name": proplist["name"], "Array": proplist_datas}
     )
 
 data = {"Objects": objects_array}
@@ -692,7 +692,7 @@ write_file("Generated/Mixed/props.json", data)
 objects_array = []
 
 objects_array.append(
-    {"Class": recipe_dictionary, "Name": "Multitool", "Recipes": breaking_hand}
+    {"class": recipe_dictionary, "name": "Multitool", "Recipes": breaking_hand}
 )
 
 data = {"Objects": objects_array}

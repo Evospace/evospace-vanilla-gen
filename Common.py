@@ -11,9 +11,9 @@ our_path = os.path.dirname(sys.argv[0])
 
 def res_cost(level, mul=1):
     arr = []
-    arr.append({"Name": tiers_res_item[0], "Count": tiers_base_cost[level] * mul})
+    arr.append({"name": tiers_res_item[0], "Count": tiers_base_cost[level] * mul})
     if level > 1:
-        arr.append({"Name": tiers_res_item[level - 1], "Count": tiers_adv_cost[level]})
+        arr.append({"name": tiers_res_item[level - 1], "Count": tiers_adv_cost[level]})
 
     return arr
 
@@ -76,9 +76,9 @@ def simple_in_out_recipe(name):
     simple_in_out_recipe.counter += 1
 
     return {
-        "Name": "SimpleInOutRecipe" + str(simple_in_out_recipe.counter),
-        "Input": {"Items": [{"Name": name, "Count": 1}]},
-        "Output": {"Items": [{"Name": name, "Count": 1}]},
+        "name": "SimpleInOutRecipe" + str(simple_in_out_recipe.counter),
+        "Input": {"Items": [{"name": name, "Count": 1}]},
+        "Output": {"Items": [{"name": name, "Count": 1}]},
         "Ticks": 20,
     }
 
@@ -113,7 +113,7 @@ def clamp(val, _min, _max):
 
 def has_hand_recipe(recipes_hand, result):
     for r in recipes_hand:
-        if not r["Output"]["Items"][0]["Name"].find(result) == -1:
+        if not r["Output"]["Items"][0]["name"].find(result) == -1:
             return True
 
     return False
@@ -121,7 +121,7 @@ def has_hand_recipe(recipes_hand, result):
 
 def get_hand_recipe(recipes_hand, result):
     for r in recipes_hand:
-        if not r["Output"]["Items"][0]["Name"].find(result) == -1:
+        if not r["Output"]["Items"][0]["name"].find(result) == -1:
             return r
 
     return None
@@ -149,7 +149,7 @@ static_prop = "SmallStaticProp"
 static_big_prop = "BigStaticProp"
 
 block_logic = "BlockLogic"
-slot_logic = "ItemLogic"
+slot_logic = "item_logic"
 
 building_cube_logic = "BuildingSurfaceBlockItemLogic"
 building_single_logic = "BuildingSingleBlockItemLogic"

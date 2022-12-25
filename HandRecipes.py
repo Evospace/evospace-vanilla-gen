@@ -9,559 +9,559 @@ recipes_hand = []
 
 recipes_hand.append(
     {
-        "Name": "ClayBlock",
-        "Input": {"Items": [{"Name": "Clay", "Count": 1}]},
-        "Output": {"Items": [{"Name": "ClayBlock", "Count": 1}]},
+        "name": "ClayBlock",
+        "Input": {"Items": [{"name": "Clay", "Count": 1}]},
+        "Output": {"Items": [{"name": "ClayBlock", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Bricks",
-        "Input": {"Items": [{"Name": "StoneSurface", "Count": 1}]},
-        "Output": {"Items": [{"Name": "Bricks", "Count": 1}]},
+        "name": "Bricks",
+        "Input": {"Items": [{"name": "StoneSurface", "Count": 1}]},
+        "Output": {"Items": [{"name": "Bricks", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "RedBricks",
-        "Input": {"Items": [{"Name": "RedStoneSurface", "Count": 1}]},
-        "Output": {"Items": [{"Name": "RedBricks", "Count": 1}]},
+        "name": "RedBricks",
+        "Input": {"Items": [{"name": "RedStoneSurface", "Count": 1}]},
+        "Output": {"Items": [{"name": "RedBricks", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "DarkBricks",
-        "Input": {"Items": [{"Name": "DarkStoneSurface", "Count": 1}]},
-        "Output": {"Items": [{"Name": "DarkBricks", "Count": 1}]},
+        "name": "DarkBricks",
+        "Input": {"Items": [{"name": "DarkStoneSurface", "Count": 1}]},
+        "Output": {"Items": [{"name": "DarkBricks", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "SandSurface",
+        "name": "SandSurface",
         "Input": {
             "Items": [
-                {"Name": "GravelSurface", "Count": 1},
+                {"name": "GravelSurface", "Count": 1},
             ]
         },
-        "Output": {"Items": [{"Name": "SandSurface", "Count": 1}]},
+        "Output": {"Items": [{"name": "SandSurface", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "GravelSurface",
+        "name": "GravelSurface",
         "Input": {
             "Items": [
-                {"Name": "StoneSurface", "Count": 1},
+                {"name": "StoneSurface", "Count": 1},
             ]
         },
-        "Output": {"Items": [{"Name": "GravelSurface", "Count": 1}]},
+        "Output": {"Items": [{"name": "GravelSurface", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "StoneTiles",
-        "Input": {"Items": [{"Name": "StoneSurface", "Count": 1}]},
-        "Output": {"Items": [{"Name": "StoneTiles", "Count": 1}]},
+        "name": "StoneTiles",
+        "Input": {"Items": [{"name": "StoneSurface", "Count": 1}]},
+        "Output": {"Items": [{"name": "StoneTiles", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "DarkTiles",
-        "Input": {"Items": [{"Name": "DarkStoneSurface", "Count": 1}]},
-        "Output": {"Items": [{"Name": "DarkTiles", "Count": 1}]},
+        "name": "DarkTiles",
+        "Input": {"Items": [{"name": "DarkStoneSurface", "Count": 1}]},
+        "Output": {"Items": [{"name": "DarkTiles", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "RedTiles",
-        "Input": {"Items": [{"Name": "RedStoneSurface", "Count": 1}]},
-        "Output": {"Items": [{"Name": "RedTiles", "Count": 1}]},
+        "name": "RedTiles",
+        "Input": {"Items": [{"name": "RedStoneSurface", "Count": 1}]},
+        "Output": {"Items": [{"name": "RedTiles", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "TerracottaTiles",
-        "Input": {"Items": [{"Name": "Terracotta", "Count": 1}]},
-        "Output": {"Items": [{"Name": "TerracottaTiles", "Count": 1}]},
+        "name": "TerracottaTiles",
+        "Input": {"Items": [{"name": "Terracotta", "Count": 1}]},
+        "Output": {"Items": [{"name": "TerracottaTiles", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "TerracottaBricks",
-        "Input": {"Items": [{"Name": "TerracottaTiles", "Count": 1}]},
-        "Output": {"Items": [{"Name": "TerracottaBricks", "Count": 1}]},
+        "name": "TerracottaBricks",
+        "Input": {"Items": [{"name": "TerracottaTiles", "Count": 1}]},
+        "Output": {"Items": [{"name": "TerracottaBricks", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "CircuitBoard",
+        "name": "CircuitBoard",
         "Input": {
             "Items": [
-                {"Name": "Plank", "Count": 1},
+                {"name": "Plank", "Count": 1},
             ]
         },
-        "Output": {"Items": [{"Name": "CircuitBoard", "Count": 1}]},
+        "Output": {"Items": [{"name": "CircuitBoard", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "GoldWire",
+        "name": "GoldWire",
         "Input": {
             "Items": [
-                {"Name": "GoldIngot", "Count": 1},
+                {"name": "GoldIngot", "Count": 1},
             ]
         },
-        "Output": {"Items": [{"Name": "GoldWire", "Count": 2}]},
+        "Output": {"Items": [{"name": "GoldWire", "Count": 2}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "CopperWire",
+        "name": "CopperWire",
         "Input": {
             "Items": [
-                {"Name": "CopperIngot", "Count": 1},
+                {"name": "CopperIngot", "Count": 1},
             ]
         },
-        "Output": {"Items": [{"Name": "CopperWire", "Count": 2}]},
+        "Output": {"Items": [{"name": "CopperWire", "Count": 2}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Circuit",
+        "name": "Circuit",
         "Input": {
             "Items": [
-                {"Name": "CopperWire", "Count": 6},
-                {"Name": "CircuitBoard", "Count": 1},
+                {"name": "CopperWire", "Count": 6},
+                {"name": "CircuitBoard", "Count": 1},
             ]
         },
-        "Output": {"Items": [{"Name": "Circuit", "Count": 1}]},
+        "Output": {"Items": [{"name": "Circuit", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "AdvancedCircuit",
+        "name": "AdvancedCircuit",
         "Input": {
-            "Items": [{"Name": "Silicon", "Count": 1}, {"Name": "Circuit", "Count": 1}]
+            "Items": [{"name": "Silicon", "Count": 1}, {"name": "Circuit", "Count": 1}]
         },
-        "Output": {"Items": [{"Name": "AdvancedCircuit", "Count": 1}]},
+        "Output": {"Items": [{"name": "AdvancedCircuit", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Processor",
+        "name": "Processor",
         "Input": {
             "Items": [
-                {"Name": "SiliconWafer", "Count": 1},
-                {"Name": "AdvancedCircuit", "Count": 1},
+                {"name": "SiliconWafer", "Count": 1},
+                {"name": "AdvancedCircuit", "Count": 1},
             ]
         },
-        "Output": {"Items": [{"Name": "Processor", "Count": 1}]},
+        "Output": {"Items": [{"name": "Processor", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "QuantumCircuit",
+        "name": "QuantumCircuit",
         "Input": {
             "Items": [
-                {"Name": "QuantumCore", "Count": 2},
-                {"Name": "Processor", "Count": 1},
+                {"name": "QuantumCore", "Count": 2},
+                {"name": "Processor", "Count": 1},
             ]
         },
-        "Output": {"Items": [{"Name": "QuantumCircuit", "Count": 1}]},
+        "Output": {"Items": [{"name": "QuantumCircuit", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "QuantumProcessor",
+        "name": "QuantumProcessor",
         "Input": {
             "Items": [
-                {"Name": "QuantumCircuit", "Count": 2},
-                {"Name": "Processor", "Count": 1},
+                {"name": "QuantumCircuit", "Count": 2},
+                {"name": "Processor", "Count": 1},
             ]
         },
-        "Output": {"Items": [{"Name": "QuantumProcessor", "Count": 1}]},
+        "Output": {"Items": [{"name": "QuantumProcessor", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "WoodenChest",
-        "Input": {"Items": [{"Name": "Plank", "Count": 6}]},
-        "Output": {"Items": [{"Name": "WoodenChest", "Count": 1}]},
+        "name": "WoodenChest",
+        "Input": {"Items": [{"name": "Plank", "Count": 6}]},
+        "Output": {"Items": [{"name": "WoodenChest", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "WoodenPlanks",
-        "Input": {"Items": [{"Name": "Plank", "Count": 1}]},
-        "Output": {"Items": [{"Name": "WoodenPlanks", "Count": 1}]},
+        "name": "WoodenPlanks",
+        "Input": {"Items": [{"name": "Plank", "Count": 1}]},
+        "Output": {"Items": [{"name": "WoodenPlanks", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Steampack",
+        "name": "Steampack",
         "Input": {
             "Items": [
-                {"Name": "CopperParts", "Count": 6},
-                {"Name": "CopperPlate", "Count": 2},
-                {"Name": "CopperPipe", "Count": 4},
-                {"Name": "Circuit", "Count": 10},
+                {"name": "CopperParts", "Count": 6},
+                {"name": "CopperPlate", "Count": 2},
+                {"name": "CopperPipe", "Count": 4},
+                {"name": "Circuit", "Count": 10},
             ]
         },
-        "Output": {"Items": [{"Name": "Steampack", "Count": 1}]},
+        "Output": {"Items": [{"name": "Steampack", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Jetpack",
+        "name": "Jetpack",
         "Input": {
             "Items": [
-                {"Name": "AluminiumParts", "Count": 10},
-                {"Name": "AluminiumPlate", "Count": 3},
-                {"Name": "AluminiumPipe", "Count": 6},
-                {"Name": "AdvancedCircuit", "Count": 10},
-                {"Name": "AluminiumElectricEngine", "Count": 2},
+                {"name": "AluminiumParts", "Count": 10},
+                {"name": "AluminiumPlate", "Count": 3},
+                {"name": "AluminiumPipe", "Count": 6},
+                {"name": "AdvancedCircuit", "Count": 10},
+                {"name": "AluminiumElectricEngine", "Count": 2},
             ]
         },
-        "Output": {"Items": [{"Name": "Jetpack", "Count": 1}]},
+        "Output": {"Items": [{"name": "Jetpack", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Torch",
+        "name": "Torch",
         "Input": {
             "Items": [
-                {"Name": "Plank", "Count": 1},
-                {"Name": "Organics", "Count": 10},
+                {"name": "Plank", "Count": 1},
+                {"name": "Organics", "Count": 10},
             ]
         },
-        "Output": {"Items": [{"Name": "Torch", "Count": 1}]},
+        "Output": {"Items": [{"name": "Torch", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "AdvancedJetpack",
+        "name": "AdvancedJetpack",
         "Input": {
             "Items": [
-                {"Name": "StainlessSteelParts", "Count": 10},
-                {"Name": "StainlessSteelPlate", "Count": 3},
-                {"Name": "StainlessSteelPipe", "Count": 6},
-                {"Name": "Processor", "Count": 10},
-                {"Name": "StainlessSteelEngine", "Count": 2},
+                {"name": "StainlessSteelParts", "Count": 10},
+                {"name": "StainlessSteelPlate", "Count": 3},
+                {"name": "StainlessSteelPipe", "Count": 6},
+                {"name": "Processor", "Count": 10},
+                {"name": "StainlessSteelEngine", "Count": 2},
             ]
         },
-        "Output": {"Items": [{"Name": "AdvancedJetpack", "Count": 1}]},
+        "Output": {"Items": [{"name": "AdvancedJetpack", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Scanner",
+        "name": "Scanner",
         "Input": {
             "Items": [
-                {"Name": "SteelPlate", "Count": 1},
-                {"Name": "AdvancedCircuit", "Count": 2},
-                {"Name": "CopperConnector", "Count": 5},
+                {"name": "SteelPlate", "Count": 1},
+                {"name": "AdvancedCircuit", "Count": 2},
+                {"name": "CopperConnector", "Count": 5},
             ]
         },
-        "Output": {"Items": [{"Name": "Scanner", "Count": 1}]},
+        "Output": {"Items": [{"name": "Scanner", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "AntigravityUnit",
+        "name": "AntigravityUnit",
         "Input": {
             "Items": [
-                {"Name": "HardMetalParts", "Count": 20},
-                {"Name": "HardMetalPlate", "Count": 2},
-                {"Name": "HardMetalPipe", "Count": 6},
-                {"Name": "QuantumProcessor", "Count": 10},
-                {"Name": "Catalyst", "Count": 4},
-                {"Name": "HardMetalElectricEngine", "Count": 8},
+                {"name": "HardMetalParts", "Count": 20},
+                {"name": "HardMetalPlate", "Count": 2},
+                {"name": "HardMetalPipe", "Count": 6},
+                {"name": "QuantumProcessor", "Count": 10},
+                {"name": "Catalyst", "Count": 4},
+                {"name": "HardMetalElectricEngine", "Count": 8},
             ]
         },
-        "Output": {"Items": [{"Name": "AntigravityUnit", "Count": 1}]},
+        "Output": {"Items": [{"name": "AntigravityUnit", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Plank",
-        "Input": {"Items": [{"Name": "Log", "Count": 1}]},
-        "Output": {"Items": [{"Name": "Plank", "Count": 2}]},
+        "name": "Plank",
+        "Input": {"Items": [{"name": "Log", "Count": 1}]},
+        "Output": {"Items": [{"name": "Plank", "Count": 2}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Chair",
-        "Input": {"Items": [{"Name": "Plank", "Count": 4}]},
-        "Output": {"Items": [{"Name": "Chair", "Count": 1}]},
+        "name": "Chair",
+        "Input": {"Items": [{"name": "Plank", "Count": 4}]},
+        "Output": {"Items": [{"name": "Chair", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "CopperChair",
+        "name": "CopperChair",
         "Input": {
             "Items": [
-                {"Name": "Chair", "Count": 1},
-                {"Name": "CopperPlate", "Count": 1},
+                {"name": "Chair", "Count": 1},
+                {"name": "CopperPlate", "Count": 1},
             ]
         },
-        "Output": {"Items": [{"Name": "CopperChair", "Count": 1}]},
+        "Output": {"Items": [{"name": "CopperChair", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Ladder",
-        "Input": {"Items": [{"Name": "Plank", "Count": 4}]},
-        "Output": {"Items": [{"Name": "Ladder", "Count": 1}]},
+        "name": "Ladder",
+        "Input": {"Items": [{"name": "Plank", "Count": 4}]},
+        "Output": {"Items": [{"name": "Ladder", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Door",
-        "Input": {"Items": [{"Name": "Plank", "Count": 8}]},
-        "Output": {"Items": [{"Name": "Door", "Count": 1}]},
+        "name": "Door",
+        "Input": {"Items": [{"name": "Plank", "Count": 8}]},
+        "Output": {"Items": [{"name": "Door", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Window",
+        "name": "Window",
         "Input": {
-            "Items": [{"Name": "Glass", "Count": 2}, {"Name": "Plank", "Count": 2}]
+            "Items": [{"name": "Glass", "Count": 2}, {"name": "Plank", "Count": 2}]
         },
-        "Output": {"Items": [{"Name": "Window", "Count": 1}]},
+        "Output": {"Items": [{"name": "Window", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "PlasticWindow",
+        "name": "PlasticWindow",
         "Input": {
-            "Items": [{"Name": "Glass", "Count": 2}, {"Name": "Plastic", "Count": 2}]
+            "Items": [{"name": "Glass", "Count": 2}, {"name": "Plastic", "Count": 2}]
         },
-        "Output": {"Items": [{"Name": "PlasticWindow", "Count": 1}]},
+        "Output": {"Items": [{"name": "PlasticWindow", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Table",
-        "Input": {"Items": [{"Name": "Plank", "Count": 6}]},
-        "Output": {"Items": [{"Name": "Table", "Count": 1}]},
+        "name": "Table",
+        "Input": {"Items": [{"name": "Plank", "Count": 6}]},
+        "Output": {"Items": [{"name": "Table", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Bed",
-        "Input": {"Items": [{"Name": "Plank", "Count": 8}]},
-        "Output": {"Items": [{"Name": "Bed", "Count": 1}]},
+        "name": "Bed",
+        "Input": {"Items": [{"name": "Plank", "Count": 8}]},
+        "Output": {"Items": [{"name": "Bed", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Rack",
-        "Input": {"Items": [{"Name": "Plank", "Count": 4}]},
-        "Output": {"Items": [{"Name": "Rack", "Count": 1}]},
+        "name": "Rack",
+        "Input": {"Items": [{"name": "Plank", "Count": 4}]},
+        "Output": {"Items": [{"name": "Rack", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "WoodenStairs",
-        "Input": {"Items": [{"Name": "WoodenPlanks", "Count": 1}]},
-        "Output": {"Items": [{"Name": "WoodenStairs", "Count": 1}]},
+        "name": "WoodenStairs",
+        "Input": {"Items": [{"name": "WoodenPlanks", "Count": 1}]},
+        "Output": {"Items": [{"name": "WoodenStairs", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Stairs",
-        "Input": {"Items": [{"Name": "Bricks", "Count": 1}]},
-        "Output": {"Items": [{"Name": "Stairs", "Count": 1}]},
+        "name": "Stairs",
+        "Input": {"Items": [{"name": "Bricks", "Count": 1}]},
+        "Output": {"Items": [{"name": "Stairs", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Fence",
-        "Input": {"Items": [{"Name": "Plank", "Count": 3}]},
-        "Output": {"Items": [{"Name": "Fence", "Count": 1}]},
+        "name": "Fence",
+        "Input": {"Items": [{"name": "Plank", "Count": 3}]},
+        "Output": {"Items": [{"name": "Fence", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "SteelFence",
-        "Input": {"Items": [{"Name": "SteelParts", "Count": 3}]},
-        "Output": {"Items": [{"Name": "SteelFence", "Count": 1}]},
+        "name": "SteelFence",
+        "Input": {"Items": [{"name": "SteelParts", "Count": 3}]},
+        "Output": {"Items": [{"name": "SteelFence", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "StainlessSteelFence",
-        "Input": {"Items": [{"Name": "StainlessSteelParts", "Count": 3}]},
-        "Output": {"Items": [{"Name": "StainlessSteelFence", "Count": 1}]},
+        "name": "StainlessSteelFence",
+        "Input": {"Items": [{"name": "StainlessSteelParts", "Count": 3}]},
+        "Output": {"Items": [{"name": "StainlessSteelFence", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "Flashlight",
+        "name": "Flashlight",
         "Input": {
             "Items": [
-                {"Name": "SteelPipe", "Count": 1},
-                {"Name": "SteelLamp", "Count": 1},
+                {"name": "SteelPipe", "Count": 1},
+                {"name": "SteelLamp", "Count": 1},
             ]
         },
-        "Output": {"Items": [{"Name": "Flashlight", "Count": 1}]},
+        "Output": {"Items": [{"name": "Flashlight", "Count": 1}]},
         "Ticks": 20,
     }
 )
 
 recipes_hand.append(
     {
-        "Name": "ConcreteTiles",
+        "name": "ConcreteTiles",
         "Input": {
             "Items": [
-                {"Name": "Concrete", "Count": 1},
+                {"name": "Concrete", "Count": 1},
             ]
         },
-        "Output": {"Items": [{"Name": "ConcreteTiles", "Count": 1}]},
+        "Output": {"Items": [{"name": "ConcreteTiles", "Count": 1}]},
         "Ticks": 20,
     }
 )
 recipes_hand.append(
     {
-        "Name": "ConcreteSmallTiles",
+        "name": "ConcreteSmallTiles",
         "Input": {
             "Items": [
-                {"Name": "Concrete", "Count": 1},
+                {"name": "Concrete", "Count": 1},
             ]
         },
-        "Output": {"Items": [{"Name": "ConcreteSmallTiles", "Count": 1}]},
+        "Output": {"Items": [{"name": "ConcreteSmallTiles", "Count": 1}]},
         "Ticks": 20,
     }
 )
 recipes_hand.append(
     {
-        "Name": "ConcreteBricks",
+        "name": "ConcreteBricks",
         "Input": {
             "Items": [
-                {"Name": "Concrete", "Count": 1},
+                {"name": "Concrete", "Count": 1},
             ]
         },
-        "Output": {"Items": [{"Name": "ConcreteBricks", "Count": 1}]},
+        "Output": {"Items": [{"name": "ConcreteBricks", "Count": 1}]},
         "Ticks": 20,
     }
 )
 recipes_hand.append(
     {
-        "Name": "ReinforcedConcreteTiles",
+        "name": "ReinforcedConcreteTiles",
         "Input": {
             "Items": [
-                {"Name": "ReinforcedConcrete", "Count": 1},
+                {"name": "ReinforcedConcrete", "Count": 1},
             ]
         },
-        "Output": {"Items": [{"Name": "ReinforcedConcreteTiles", "Count": 1}]},
+        "Output": {"Items": [{"name": "ReinforcedConcreteTiles", "Count": 1}]},
         "Ticks": 20,
     }
 )
 recipes_hand.append(
     {
-        "Name": "ReinforcedConcreteSmallTiles",
+        "name": "ReinforcedConcreteSmallTiles",
         "Input": {
             "Items": [
-                {"Name": "ReinforcedConcrete", "Count": 1},
+                {"name": "ReinforcedConcrete", "Count": 1},
             ]
         },
-        "Output": {"Items": [{"Name": "ReinforcedConcreteSmallTiles", "Count": 1}]},
+        "Output": {"Items": [{"name": "ReinforcedConcreteSmallTiles", "Count": 1}]},
         "Ticks": 20,
     }
 )
 recipes_hand.append(
     {
-        "Name": "ReinforcedConcreteBricks",
+        "name": "ReinforcedConcreteBricks",
         "Input": {
             "Items": [
-                {"Name": "ReinforcedConcrete", "Count": 1},
+                {"name": "ReinforcedConcrete", "Count": 1},
             ]
         },
-        "Output": {"Items": [{"Name": "ReinforcedConcreteBricks", "Count": 1}]},
+        "Output": {"Items": [{"name": "ReinforcedConcreteBricks", "Count": 1}]},
         "Ticks": 20,
     }
 )
@@ -571,8 +571,8 @@ for r in recipes_hand:
 
 objects_array.append(
     {
-        "Class": recipe_dictionary,
-        "Name": "Hand" + recipe_dictionary,
+        "class": recipe_dictionary,
+        "name": "Hand" + recipe_dictionary,
         "Recipes": recipes_hand,
     }
 )

@@ -6,177 +6,177 @@ objects_array = []
 cvs = []
 
 wooden_misc = [
-    {"Name": "Chair"},
-    {"Name": "Table", "Positions": [[0, 0, 0], [-1, 0, 0]]},
-    {"Name": "Rack"},
+    {"name": "Chair"},
+    {"name": "Table", "Positions": [[0, 0, 0], [-1, 0, 0]]},
+    {"name": "Rack"},
     {
-        "Name": "Bed",
+        "name": "Bed",
         "Positions": [[0, 0, 0], [-1, 0, 0]],
         "BlockLogic": "BedBlockLogic",
     },
-    {"Name": "Ladder"},
+    {"name": "Ladder"},
     {
-        "Name": "Door",
+        "name": "Door",
         "Positions": [[0, 0, 0], [0, 0, 1]],
-        "BlockLogic": "DoorBlockLogic",
+        "BlockLogic": "Door",
     },
-    {"Name": "Window", "Positions": [[0, 0, 0], [0, 0, 1]]},
+    {"name": "Window", "Positions": [[0, 0, 0], [0, 0, 1]]},
 ]
 
 simple_single = [
     {
-        "Name": "CeramicRoof",
+        "name": "CeramicRoof",
     },
     {
-        "Name": "Stairs",
+        "name": "Stairs",
     },
     {
-        "Name": "WoodenStairs",
+        "name": "WoodenStairs",
     },
     {
-        "Name": "CopperChair",
+        "name": "CopperChair",
     },
     {
-        "Name": "FireCup",
+        "name": "FireCup",
     },
-    {"Name": "PlasticWindow", "Positions": [[0, 0, 0], [0, 0, 1]]},
-    {"Name": "SteelFence", "BlockLogic": "FenceBlockLogic", "Tier": 1},
-    {"Name": "StainlessSteelFence", "BlockLogic": "FenceBlockLogic", "Tier": 2},
+    {"name": "PlasticWindow", "Positions": [[0, 0, 0], [0, 0, 1]]},
+    {"name": "SteelFence", "BlockLogic": "FenceBlockLogic", "Tier": 1},
+    {"name": "StainlessSteelFence", "BlockLogic": "FenceBlockLogic", "Tier": 2},
     {
-        "Name": "Fence",
+        "name": "Fence",
         "BlockLogic": "FenceBlockLogic",
     },
 ]
 
 # ,{
-# 		"Name": "Campfire",
+# 		"name": "Campfire",
 # 		"Tier": 0
 # 	}
 # 	{
-# 		"Name": "CeramicPlate",
+# 		"name": "CeramicPlate",
 # 		"Tier": 0
 # 	},{
-# 		"Name": "Candle",
+# 		"name": "Candle",
 # 		"Tier": 0
 # 	},{
-# 		"Name": "CeramicCup",
+# 		"name": "CeramicCup",
 # 		"Tier": 0
 # 	},{
-# 		"Name": "CeramicPot",
+# 		"name": "CeramicPot",
 # 		"Tier": 0
 # 	}
 
 simple_deco = [
-    {"Name": "Firefly"},
-    {"Name": "Flies"},
-    {"Name": "Birds"},
-    {"Name": "DesertSound"},
-    {"Name": "SwampSound"},
-    {"Name": "Butterfly"},
-    {"Name": "Leafes"},
-    {"Name": "Bugs"},
+    {"name": "Firefly"},
+    {"name": "Flies"},
+    {"name": "Birds"},
+    {"name": "DesertSound"},
+    {"name": "SwampSound"},
+    {"name": "Butterfly"},
+    {"name": "Leafes"},
+    {"name": "Bugs"},
 ]
 
 simple_blocks = [
-    {"Name": "WoodenPlanks", "Label": "Wooden Planks", "Tier": 0},
-    {"Name": "AdminBlocks", "Label": "Admin Blocks", "Tier": 0},
-    {"Name": "StoneTiles", "Label": "Stone Tiles", "Tier": 0},
-    {"Name": "RedTiles", "Label": "Red Tiles", "Tier": 0},
-    {"Name": "DarkTiles", "Label": "Dark Tiles", "Tier": 0},
-    {"Name": "Terracotta", "Label": "Terracotta", "Tier": 0},
-    {"Name": "TerracottaTiles", "Label": "Terracotta Tiles", "Tier": 0},
-    {"Name": "Bricks", "Label": "Bricks", "Tier": 0},
-    {"Name": "RedBricks", "Label": "Red Bricks", "Tier": 0},
-    {"Name": "DarkBricks", "Label": "Black Bricks", "Tier": 0},
-    {"Name": "TerracottaBricks", "Label": "Terracotta Bricks", "Tier": 0},
-    {"Name": "Concrete", "Label": "Concrete", "Tier": 2},
-    {"Name": "ConcreteBricks", "Label": "Concrete Bricks", "Tier": 2},
-    {"Name": "ConcreteTiles", "Label": "Concrete Tiles", "Tier": 2},
-    {"Name": "ConcreteSmallTiles", "Label": "Concrete Small Tiles", "Tier": 2},
-    {"Name": "ReinforcedConcrete", "Label": "Reinforced Concrete", "Tier": 2},
+    {"name": "WoodenPlanks", "Label": "Wooden Planks", "Tier": 0},
+    {"name": "AdminBlocks", "Label": "Admin Blocks", "Tier": 0},
+    {"name": "StoneTiles", "Label": "Stone Tiles", "Tier": 0},
+    {"name": "RedTiles", "Label": "Red Tiles", "Tier": 0},
+    {"name": "DarkTiles", "Label": "Dark Tiles", "Tier": 0},
+    {"name": "Terracotta", "Label": "Terracotta", "Tier": 0},
+    {"name": "TerracottaTiles", "Label": "Terracotta Tiles", "Tier": 0},
+    {"name": "Bricks", "Label": "Bricks", "Tier": 0},
+    {"name": "RedBricks", "Label": "Red Bricks", "Tier": 0},
+    {"name": "DarkBricks", "Label": "Black Bricks", "Tier": 0},
+    {"name": "TerracottaBricks", "Label": "Terracotta Bricks", "Tier": 0},
+    {"name": "Concrete", "Label": "Concrete", "Tier": 2},
+    {"name": "ConcreteBricks", "Label": "Concrete Bricks", "Tier": 2},
+    {"name": "ConcreteTiles", "Label": "Concrete Tiles", "Tier": 2},
+    {"name": "ConcreteSmallTiles", "Label": "Concrete Small Tiles", "Tier": 2},
+    {"name": "ReinforcedConcrete", "Label": "Reinforced Concrete", "Tier": 2},
     {
-        "Name": "ReinforcedConcreteTiles",
+        "name": "ReinforcedConcreteTiles",
         "Label": "Reinforced Concrete Tiles",
         "Tier": 2,
     },
     {
-        "Name": "ReinforcedConcreteSmallTiles",
+        "name": "ReinforcedConcreteSmallTiles",
         "Label": "Reinforced Concrete Small Tiles",
         "Tier": 2,
     },
     {
-        "Name": "ReinforcedConcreteBricks",
+        "name": "ReinforcedConcreteBricks",
         "Label": "Reinforced Concrete Bricks",
         "Tier": 2,
     },
-    {"Name": "DangerBlock", "Label": "Danger Block", "Tier": 2},
-    {"Name": "RustyCopperCasing", "Label": "Rusty Copper Casing", "Tier": 1},
-    {"Name": "RustyIronCasing", "Label": "Rusty Iron Casing", "Tier": 2},
-    {"Name": "BasicPlatform", "Label": "Basic Platform", "Tier": 0},
-    {"Name": "PlasticBlock", "Label": "Plastic Block", "Tier": 0},
-    {"Name": "GlassBlock", "Label": "Glass Block", "Tier": 0},
-    {"Name": "PaintWhite", "Label": "Paint White", "Tier": 0},
-    {"Name": "PaintGray", "Label": "Paint Gray", "Tier": 0},
-    {"Name": "PaintBlack", "Label": "Paint Black", "Tier": 0},
-    {"Name": "PaintGreen", "Label": "Paint Green", "Tier": 0},
-    {"Name": "PaintRed", "Label": "Paint Red", "Tier": 0},
-    {"Name": "PaintBlue", "Label": "Paint Blue", "Tier": 0},
-    {"Name": "PaintCopper", "Label": "Paint Copper", "Tier": 0},
-    {"Name": "PaintSteel", "Label": "Paint Steel", "Tier": 0},
-    {"Name": "PaintStainlessSteel", "Label": "Paint StainlessSteel", "Tier": 0},
-    {"Name": "PaintTitanium", "Label": "Paint Titanium", "Tier": 0},
-    {"Name": "PaintHardMetal", "Label": "Paint Hard Metal", "Tier": 0},
-    {"Name": "PaintGold", "Label": "Paint Gold", "Tier": 0},
-    {"Name": "PaintYellow", "Label": "Paint Yellow", "Tier": 0},
-    {"Name": "PaintMagenta", "Label": "Paint Magenta", "Tier": 0},
-    {"Name": "PaintCyan", "Label": "Paint Cyan", "Tier": 0},
+    {"name": "DangerBlock", "Label": "Danger Block", "Tier": 2},
+    {"name": "RustyCopperCasing", "Label": "Rusty Copper Casing", "Tier": 1},
+    {"name": "RustyIronCasing", "Label": "Rusty Iron Casing", "Tier": 2},
+    {"name": "BasicPlatform", "Label": "Basic Platform", "Tier": 0},
+    {"name": "PlasticBlock", "Label": "Plastic Block", "Tier": 0},
+    {"name": "GlassBlock", "Label": "Glass Block", "Tier": 0},
+    {"name": "PaintWhite", "Label": "Paint White", "Tier": 0},
+    {"name": "PaintGray", "Label": "Paint Gray", "Tier": 0},
+    {"name": "PaintBlack", "Label": "Paint Black", "Tier": 0},
+    {"name": "PaintGreen", "Label": "Paint Green", "Tier": 0},
+    {"name": "PaintRed", "Label": "Paint Red", "Tier": 0},
+    {"name": "PaintBlue", "Label": "Paint Blue", "Tier": 0},
+    {"name": "PaintCopper", "Label": "Paint Copper", "Tier": 0},
+    {"name": "PaintSteel", "Label": "Paint Steel", "Tier": 0},
+    {"name": "PaintStainlessSteel", "Label": "Paint StainlessSteel", "Tier": 0},
+    {"name": "PaintTitanium", "Label": "Paint Titanium", "Tier": 0},
+    {"name": "PaintHardMetal", "Label": "Paint Hard Metal", "Tier": 0},
+    {"name": "PaintGold", "Label": "Paint Gold", "Tier": 0},
+    {"name": "PaintYellow", "Label": "Paint Yellow", "Tier": 0},
+    {"name": "PaintMagenta", "Label": "Paint Magenta", "Tier": 0},
+    {"name": "PaintCyan", "Label": "Paint Cyan", "Tier": 0},
 ]
 
-static_mesh_block = [{"Name": "Column"}, {"Name": "FluetedColumn"}]
+static_mesh_block = [{"name": "Column"}, {"name": "FluetedColumn"}]
 
 equipped = [
-    {"Name": "Torch", "ItemLogic": "Equipped/TorchBP.TorchBP_C"},
-    {"Name": "Flashlight", "ItemLogic": "Equipped/FlashlightBP.FlashlightBP_C"},
-    {"Name": "NightVision", "ItemLogic": "Equipped/NightVisionBP.NightVisionBP_C"},
+    {"name": "Torch", "item_logic": "Equipped/TorchBP.TorchBP_C"},
+    {"name": "Flashlight", "item_logic": "Equipped/FlashlightBP.FlashlightBP_C"},
+    {"name": "NightVision", "item_logic": "Equipped/NightVisionBP.NightVisionBP_C"},
     {
-        "Name": "AdvancedNightVision",
-        "ItemLogic": "Equipped/AdvancedNightVisionBP.AdvancedNightVisionBP_C",
+        "name": "AdvancedNightVision",
+        "item_logic": "Equipped/AdvancedNightVisionBP.AdvancedNightVisionBP_C",
     },
-    {"Name": "Steampack", "ItemLogic": "Equipped/SteampackBP.SteampackBP_C"},
-    {"Name": "Jetpack", "ItemLogic": "Equipped/JetpackBP.JetpackBP_C"},
+    {"name": "Steampack", "item_logic": "Equipped/SteampackBP.SteampackBP_C"},
+    {"name": "Jetpack", "item_logic": "Equipped/JetpackBP.JetpackBP_C"},
     {
-        "Name": "AdvancedJetpack",
-        "ItemLogic": "Equipped/AdvancedJetpackBP.AdvancedJetpackBP_C",
+        "name": "AdvancedJetpack",
+        "item_logic": "Equipped/AdvancedJetpackBP.AdvancedJetpackBP_C",
     },
     {
-        "Name": "AntigravityUnit",
-        "ItemLogic": "Equipped/AntigravityUnitBP.AntigravityUnitBP_C",
+        "name": "AntigravityUnit",
+        "item_logic": "Equipped/AntigravityUnitBP.AntigravityUnitBP_C",
     },
-    {"Name": "Scanner", "ItemLogic": "Equipped/ScannerBP.ScannerBP_C"},
+    {"name": "Scanner", "item_logic": "Equipped/ScannerBP.ScannerBP_C"},
 ]
 
 for one in wooden_misc:
-    cvs.append([one["Name"], "Wooden " + CamelToSpaces(one["Name"])])
+    cvs.append([one["name"], "Wooden " + CamelToSpaces(one["name"])])
 
     item = {
-        "Class": static_item,
-        "Name": one["Name"],
-        "Image": "T_" + one["Name"],
-        "LogicJson": {"Block": one["Name"]},
-        "MaxCount": 32,
-        "Tag": "Decoration",
-        "LabelParts": [[one["Name"], "misc"]],
-        "ItemLogic": building_single_logic,
+        "class": static_item,
+        "name": one["name"],
+        "image": "T_" + one["name"],
+        "logic_json": {"Block": one["name"]},
+        "max_count": 32,
+        "tag": "Decoration",
+        "label_parts": [[one["name"], "misc"]],
+        "item_logic": building_single_logic,
     }
 
     objects_array.append(item)
 
     block = {
-        "Name": one["Name"],
-        "Item": one["Name"],
-        "Actor": "/Game/Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
+        "name": one["name"],
+        "Item": one["name"],
+        "Actor": "/Game/Blocks/" + one["name"] + "BP." + one["name"] + "BP_C",
         "BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
-        "Class": static_block,
+        "class": static_block,
     }
 
     if "Positions" in one:
@@ -185,27 +185,27 @@ for one in wooden_misc:
     objects_array.append(block)
 
 for one in simple_single:
-    cvs.append([one["Name"], CamelToSpaces(one["Name"])])
+    cvs.append([one["name"], CamelToSpaces(one["name"])])
 
     objects_array.append(
         {
-            "Class": static_item,
-            "Name": one["Name"],
-            "Image": "T_" + one["Name"],
-            "ItemLogic": building_single_logic,
-            "LogicJson": {"Block": one["Name"]},
-            "MaxCount": 32,
-            "Tag": "Decoration",
-            "LabelParts": [[one["Name"], "misc"]],
+            "class": static_item,
+            "name": one["name"],
+            "image": "T_" + one["name"],
+            "item_logic": building_single_logic,
+            "logic_json": {"Block": one["name"]},
+            "max_count": 32,
+            "tag": "Decoration",
+            "label_parts": [[one["name"], "misc"]],
             "Tier": one["Tier"] if "Tier" in one else 0,
         }
     )
 
     block = {
-        "Class": static_block,
-        "Name": one["Name"],
-        "Item": one["Name"],
-        "Actor": "/Game/Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
+        "class": static_block,
+        "name": one["name"],
+        "Item": one["name"],
+        "Actor": "/Game/Blocks/" + one["name"] + "BP." + one["name"] + "BP_C",
         "BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
     }
 
@@ -215,92 +215,92 @@ for one in simple_single:
     objects_array.append(block)
 
 for one in simple_deco:
-    cvs.append([one["Name"], CamelToSpaces(one["Name"])])
+    cvs.append([one["name"], CamelToSpaces(one["name"])])
 
     deco = {
-        "Class": static_item,
-        "Name": one["Name"],
-        "Image": "T_" + one["Name"],
-        "ItemLogic": building_decoration_logic,
-        "LogicJson": {"Block": one["Name"]},
-        "MaxCount": 32,
-        "LabelParts": [[one["Name"], "misc"]],
-        "Tag": "Decoration",
+        "class": static_item,
+        "name": one["name"],
+        "image": "T_" + one["name"],
+        "item_logic": building_decoration_logic,
+        "logic_json": {"Block": one["name"]},
+        "max_count": 32,
+        "label_parts": [[one["name"], "misc"]],
+        "tag": "Decoration",
     }
-    if "ItemLogic" in one:
-        deco["ItemLogic"] = one["ItemLogic"]
+    if "item_logic" in one:
+        deco["item_logic"] = one["item_logic"]
 
     objects_array.append(deco)
     objects_array.append(
         {
-            "Class": static_decoration,
-            "Name": one["Name"],
-            "Item": one["Name"],
-            "Actor": "Decorations/" + one["Name"] + "BP." + one["Name"] + "BP_C",
+            "class": static_decoration,
+            "name": one["name"],
+            "Item": one["name"],
+            "Actor": "Decorations/" + one["name"] + "BP." + one["name"] + "BP_C",
             "BlockLogic": "BlockLogic",
         }
     )
 
 for one in simple_blocks:
-    cvs.append([one["Name"], CamelToSpaces(one["Name"])])
+    cvs.append([one["name"], CamelToSpaces(one["name"])])
 
     objects_array.append(
         {
-            "Class": static_item,
-            "Name": one["Name"],
-            "Image": "T_" + one["Name"],
-            "ItemLogic": building_plane_logic,
-            "LogicJson": {"Block": one["Name"], "BuildingMode": "Plane"},
-            "MaxCount": 999,
-            "Tag": "Decoration",
-            "LabelParts": [[one["Name"], "misc"]],
-            "Category": "Block",
-            "DescriptionParts": [["BuildingBlock", "common"]],
+            "class": static_item,
+            "name": one["name"],
+            "image": "T_" + one["name"],
+            "item_logic": building_plane_logic,
+            "logic_json": {"Block": one["name"], "BuildingMode": "Plane"},
+            "max_count": 999,
+            "tag": "Decoration",
+            "label_parts": [[one["name"], "misc"]],
+            "category": "Block",
+            "description_parts": [["BuildingBlock", "common"]],
         }
     )
     objects_array.append(
         {
-            "Class": tesselator_cube,
-            "Name": one["Name"],
-            "Material": "Materials/" + one["Name"],
+            "class": tesselator_cube,
+            "name": one["name"],
+            "Material": "Materials/" + one["name"],
         }
     )
     objects_array.append(
         {
-            "Class": static_block,
-            "Name": one["Name"],
-            "Item": one["Name"],
-            "Tesselator": one["Name"],
+            "class": static_block,
+            "name": one["name"],
+            "Item": one["name"],
+            "Tesselator": one["name"],
         }
     )
 
 for one in static_mesh_block:
-    cvs.append([one["Name"], CamelToSpaces(one["Name"])])
+    cvs.append([one["name"], CamelToSpaces(one["name"])])
 
     objects_array.append(
         {
-            "Class": static_item,
-            "Name": one["Name"],
-            "Image": "T_" + one["Name"],
-            "ItemLogic": building_single_logic,
-            "LogicJson": {"Block": one["Name"]},
-            "MaxCount": 32,
-            "Tag": "Decoration",
-            "LabelParts": [[one["Name"], "misc"]],
+            "class": static_item,
+            "name": one["name"],
+            "image": "T_" + one["name"],
+            "item_logic": building_single_logic,
+            "logic_json": {"Block": one["name"]},
+            "max_count": 32,
+            "tag": "Decoration",
+            "label_parts": [[one["name"], "misc"]],
         }
     )
-    # objects_array.append({ "Class": tesselator_static_mesh,
-    # 	"Name": one["Name"]_static_mesh,
-    # 	"Mesh": "Models/" + one["Name"],
+    # objects_array.append({ "class": tesselator_static_mesh,
+    # 	"name": one["name"]_static_mesh,
+    # 	"Mesh": "Models/" + one["name"],
     # })
     objects_array.append(
         {
-            "Class": static_block,
-            "Name": one["Name"],
-            "Item": one["Name"],
-            "Actor": "/Game/Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
+            "class": static_block,
+            "name": one["name"],
+            "Item": one["name"],
+            "Actor": "/Game/Blocks/" + one["name"] + "BP." + one["name"] + "BP_C",
             "BlockLogic": "BlockLogic",
-            # "Tesselator": one["Name"]_static_mesh
+            # "Tesselator": one["name"]_static_mesh
         }
     )
 
@@ -323,19 +323,19 @@ images.append(
 )
 
 for one in equipped:
-    cvs.append([one["Name"], CamelToSpaces(one["Name"])])
+    cvs.append([one["name"], CamelToSpaces(one["name"])])
 
     equ = {
-        "Class": static_item,
-        "Name": one["Name"],
-        "Image": "T_" + one["Name"],
-        "LogicJson": {"Block": one["Name"]},
-        "MaxCount": 32,
-        "Tag": "Misc",
-        "LabelParts": [[one["Name"], "misc"]],
+        "class": static_item,
+        "name": one["name"],
+        "image": "T_" + one["name"],
+        "logic_json": {"Block": one["name"]},
+        "max_count": 32,
+        "tag": "Misc",
+        "label_parts": [[one["name"], "misc"]],
     }
-    if "ItemLogic" in one:
-        equ["ItemLogic"] = one["ItemLogic"]
+    if "item_logic" in one:
+        equ["item_logic"] = one["item_logic"]
 
     objects_array.append(equ)
 
@@ -349,7 +349,7 @@ write_file("Loc/source/misc.json", cvs)
 objects_array = []
 
 objects_array.append(
-    {"Class": ico_generator, "Name": "Misc" + ico_generator, "Images": images}
+    {"class": ico_generator, "name": "Misc" + ico_generator, "Images": images}
 )
 
 data = {"Objects": objects_array}

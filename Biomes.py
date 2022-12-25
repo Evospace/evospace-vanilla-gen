@@ -13,8 +13,8 @@ biome_family_size = 0.016
 
 global_family.append(
     {
-        "Name": "GlobalBiomeMegaFamily",
-        "Class": "GlobalBiomeFamily",
+        "name": "GlobalBiomeMegaFamily",
+        "class": "GlobalBiomeFamily",
         "Childs": [
             "SnowBiomeFamily",
             "SnowBiomeFamily",
@@ -31,8 +31,8 @@ global_family.append(
 )
 global_family.append(
     {
-        "Name": "GlobalBiomeMegaFamily2",
-        "Class": "GlobalBiomeFamily2",
+        "name": "GlobalBiomeMegaFamily2",
+        "class": "GlobalBiomeFamily2",
         "Childs": [
             "SnowBiomeFamily",
             "SnowBiomeFamily",
@@ -49,8 +49,8 @@ global_family.append(
 )
 global_family.append(
     {
-        "Name": "GlobalBiomeMegaFamily3",
-        "Class": "GlobalBiomeFamily3",
+        "name": "GlobalBiomeMegaFamily3",
+        "class": "GlobalBiomeFamily3",
         "Childs": [
             "SnowBiomeFamily",
             "SnowBiomeFamily",
@@ -81,8 +81,8 @@ global_family.append(
 families.extend(
     [
         {
-            "Name": "PrairieBiomeFamily",
-            "Class": "BiomeFamily",
+            "name": "PrairieBiomeFamily",
+            "class": "BiomeFamily",
             "Childs": [
                 "PrairieDryPlainsBiome",
                 "PrairieDryHillsBiome",
@@ -91,8 +91,8 @@ families.extend(
             "ChildFrequency": biome_family_size,
         },
         {
-            "Name": "SandBiomeFamily",
-            "Class": "BiomeFamily",
+            "name": "SandBiomeFamily",
+            "class": "BiomeFamily",
             "Childs": [
                 "DesertBiome",
                 "MensaeBiome",
@@ -100,8 +100,8 @@ families.extend(
             "ChildFrequency": biome_family_size,
         },
         {
-            "Name": "ForestBiomeFamily",
-            "Class": "BiomeFamily",
+            "name": "ForestBiomeFamily",
+            "class": "BiomeFamily",
             "Childs": [
                 "DenseForestBiome",
                 "PlainsBiome",
@@ -110,8 +110,8 @@ families.extend(
             "ChildFrequency": biome_family_size,
         },
         {
-            "Name": "PineForestBiomeFamily",
-            "Class": "BiomeFamily",
+            "name": "PineForestBiomeFamily",
+            "class": "BiomeFamily",
             "Childs": [
                 "PineForestBiome",
                 "DensePineForestBiome",
@@ -119,8 +119,8 @@ families.extend(
             "ChildFrequency": biome_family_size,
         },
         {
-            "Name": "SeaBiomeFamily",
-            "Class": "BiomeFamily",
+            "name": "SeaBiomeFamily",
+            "class": "BiomeFamily",
             "Childs": [
                 "SeaBiome",
                 "IslesBiome",
@@ -130,14 +130,14 @@ families.extend(
             "ChildFrequency": biome_family_size,
         },
         {
-            "Name": "VolcanicBiomeFamily",
-            "Class": "BiomeFamily",
+            "name": "VolcanicBiomeFamily",
+            "class": "BiomeFamily",
             "Childs": ["VolcanoBiome", "BrokenLandBiome"],
             "ChildFrequency": biome_family_size,
         },
         {
-            "Name": "SwampBiomeFamily",
-            "Class": "BiomeFamily",
+            "name": "SwampBiomeFamily",
+            "class": "BiomeFamily",
             "Childs": [
                 "PeatBiome",
                 "BogBiome",
@@ -147,8 +147,8 @@ families.extend(
             "ChildFrequency": biome_family_size,
         },
         {
-            "Name": "PlainBiomeFamily",
-            "Class": "BiomeFamily",
+            "name": "PlainBiomeFamily",
+            "class": "BiomeFamily",
             "Childs": [
                 "PlainsBiome",
                 "RedPlainsBiome",
@@ -158,8 +158,8 @@ families.extend(
             "ChildFrequency": biome_family_size,
         },
         {
-            "Name": "SnowBiomeFamily",
-            "Class": "BiomeFamily",
+            "name": "SnowBiomeFamily",
+            "class": "BiomeFamily",
             "Childs": ["SnowBiome", "SnowGrassBiome", "SnowForestBiome"],
             "ChildFrequency": biome_family_size,
         },
@@ -171,8 +171,8 @@ generators.extend(
     [
         # general
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "DryGrassLayering",
+            "class": "SimpleLayeringGenerator",
+            "name": "DryGrassLayering",
             "Blocks": [
                 "DryGrassSurface",
                 "DirtSurface",
@@ -187,8 +187,8 @@ generators.extend(
             "Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30],
         },
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "GrassLayering",
+            "class": "SimpleLayeringGenerator",
+            "name": "GrassLayering",
             "Blocks": [
                 "GrassSurface",
                 "DirtSurface",
@@ -204,19 +204,19 @@ generators.extend(
         },
         # prairie
         {
-            "Name": "PrairieDryProps",
-            "Class": "PropsGenerator",
+            "name": "PrairieDryProps",
+            "class": "PropsGenerator",
             "PropList": "PrairieDryPropList",
         },
         {
-            "Name": "PrairieProps",
-            "Class": "PropsGenerator",
+            "name": "PrairieProps",
+            "class": "PropsGenerator",
             "PropList": "PrairiePropList",
         },
         # jungle
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "DipteroLayering",
+            "class": "SimpleLayeringGenerator",
+            "name": "DipteroLayering",
             "Blocks": [
                 "GrassSurface",
                 "DirtSurface",
@@ -231,14 +231,14 @@ generators.extend(
             "Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30],
         },
         {
-            "Name": "DipteroProps",
-            "Class": "PropsGenerator",
+            "name": "DipteroProps",
+            "class": "PropsGenerator",
             "PropList": "DipteroPropList",
         },
         # snow
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "SnowLayering",
+            "class": "SimpleLayeringGenerator",
+            "name": "SnowLayering",
             "Blocks": [
                 "SnowSurface",
                 "DirtSurface",
@@ -254,8 +254,8 @@ generators.extend(
         },
         # swamp
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "BogGrassLayeringGrass",
+            "class": "SimpleLayeringGenerator",
+            "name": "BogGrassLayeringGrass",
             "Blocks": [
                 "BogSurface",
                 "DirtSurface",
@@ -270,8 +270,8 @@ generators.extend(
             "Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30],
         },
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "PeatLayering",
+            "class": "SimpleLayeringGenerator",
+            "name": "PeatLayering",
             "Blocks": [
                 "PeatSurface",
                 "StoneSurface",
@@ -286,8 +286,8 @@ generators.extend(
             "Starts": [0, 2, 6, 9, 12, 16, 19, 23, 30],
         },
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "ClayLayering",
+            "class": "SimpleLayeringGenerator",
+            "name": "ClayLayering",
             "Blocks": [
                 "ClayOre",
                 "ClayOre",
@@ -301,19 +301,19 @@ generators.extend(
             ],
             "Starts": [0, 2, 6, 9, 12, 16, 19, 23, 30],
         },
-        {"Name": "BogPropsBase", "Class": "PropsGenerator", "PropList": "SwampProps"},
+        {"name": "BogPropsBase", "class": "PropsGenerator", "PropList": "SwampProps"},
         {
-            "Name": "BogForestPropsBase",
-            "Class": "PropsGenerator",
+            "name": "BogForestPropsBase",
+            "class": "PropsGenerator",
             "PropList": "SwampForestProps",
         },
-        {"Name": "OrePropsBase", "Class": "PropsGenerator", "PropList": "OreProps"},
-        {"Name": "BogHeightMapBase", "Class": "BogHeightMap"},
-        {"Name": "BogForestHeightMapBase", "Class": "BogForestHeightMap"},
+        {"name": "OrePropsBase", "class": "PropsGenerator", "PropList": "OreProps"},
+        {"name": "BogHeightMapBase", "class": "BogHeightMap"},
+        {"name": "BogForestHeightMapBase", "class": "BogForestHeightMap"},
         # grass
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "JustGrassLayeringPine",
+            "class": "SimpleLayeringGenerator",
+            "name": "JustGrassLayeringPine",
             "Blocks": [
                 "PineForestSurface",
                 "DirtSurface",
@@ -328,60 +328,60 @@ generators.extend(
             "Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30],
         },
         {
-            "Name": "GrasslandPropsBase",
-            "Class": "PropsGenerator",
+            "name": "GrasslandPropsBase",
+            "class": "PropsGenerator",
             "PropList": "GrasslandProps",
         },
         {
-            "Name": "GrasslandPropsRed",
-            "Class": "PropsGenerator",
+            "name": "GrasslandPropsRed",
+            "class": "PropsGenerator",
             "PropList": "RedFlowersProps",
         },
         {
-            "Name": "GrasslandPropsWhite",
-            "Class": "PropsGenerator",
+            "name": "GrasslandPropsWhite",
+            "class": "PropsGenerator",
             "PropList": "WhiteFlowersProps",
         },
         {
-            "Name": "GrasslandPropsYellow",
-            "Class": "PropsGenerator",
+            "name": "GrasslandPropsYellow",
+            "class": "PropsGenerator",
             "PropList": "YellowFlowersProps",
         },
         {
-            "Name": "BushlandPropsBase",
-            "Class": "PropsGenerator",
+            "name": "BushlandPropsBase",
+            "class": "PropsGenerator",
             "PropList": "BushlandProps",
         },
         {
-            "Name": "ForestPropsBase",
-            "Class": "PropsGenerator",
+            "name": "ForestPropsBase",
+            "class": "PropsGenerator",
             "PropList": "ForestProps",
         },
         {
-            "Name": "PineForestPropsBase",
-            "Class": "PropsGenerator",
+            "name": "PineForestPropsBase",
+            "class": "PropsGenerator",
             "PropList": "PineForestProps",
         },
-        {"Name": "FieldsHeightMapBase", "Class": "FieldsHeightMap"},
-        {"Name": "HillsHeightMapBase", "Class": "HillsHeightMap"},
-        {"Name": "HillsSIMDHeightMapBase", "Class": "HillsSIMDHeightMap"},
-        {"Name": "MountainsHeightMapBase", "Class": "MountainsHeightMap"},
-        {"Name": "MountainDensityBase", "Class": "MountainDensity"},
+        {"name": "FieldsHeightMapBase", "class": "FieldsHeightMap"},
+        {"name": "HillsHeightMapBase", "class": "HillsHeightMap"},
+        {"name": "HillsSIMDHeightMapBase", "class": "HillsSIMDHeightMap"},
+        {"name": "MountainsHeightMapBase", "class": "MountainsHeightMap"},
+        {"name": "MountainDensityBase", "class": "MountainDensity"},
         # forest
         {
-            "Name": "DenseForestPropsBase",
-            "Class": "PropsGenerator",
+            "name": "DenseForestPropsBase",
+            "class": "PropsGenerator",
             "PropList": "DenseForestProps",
         },
         {
-            "Name": "DensePineForestPropsBase",
-            "Class": "PropsGenerator",
+            "name": "DensePineForestPropsBase",
+            "class": "PropsGenerator",
             "PropList": "DensePineForestProps",
         },
         # sea
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "SeaBottomLayeringSand",
+            "class": "SimpleLayeringGenerator",
+            "name": "SeaBottomLayeringSand",
             "Blocks": [
                 "SandSurface",
                 "LimestoneSurface",
@@ -395,8 +395,8 @@ generators.extend(
             "Starts": [0, 3, 9, 12, 16, 19, 23, 30],
         },
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "IslesLayeringSand",
+            "class": "SimpleLayeringGenerator",
+            "name": "IslesLayeringSand",
             "Blocks": [
                 "SandSurface",
                 "LimestoneSurface",
@@ -410,8 +410,8 @@ generators.extend(
             "Starts": [0, 3, 9, 12, 16, 19, 23, 30],
         },
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "SeaBottomLayeringGravel",
+            "class": "SimpleLayeringGenerator",
+            "name": "SeaBottomLayeringGravel",
             "Blocks": [
                 "GravelSurface",
                 "LimestoneSurface",
@@ -425,8 +425,8 @@ generators.extend(
             "Starts": [0, 3, 9, 12, 16, 19, 23, 30],
         },
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "SeaBottomLayeringCopper",
+            "class": "SimpleLayeringGenerator",
+            "name": "SeaBottomLayeringCopper",
             "Blocks": [
                 "CopperOre",
                 "LimestoneSurface",
@@ -440,8 +440,8 @@ generators.extend(
             "Starts": [0, 2, 9, 12, 16, 19, 23, 30],
         },
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "SeaBottomLayeringClay",
+            "class": "SimpleLayeringGenerator",
+            "name": "SeaBottomLayeringClay",
             "Blocks": [
                 "ClayOre",
                 "LimestoneSurface",
@@ -455,26 +455,26 @@ generators.extend(
             "Starts": [0, 2, 9, 12, 16, 19, 23, 30],
         },
         {
-            "Name": "IslesPropsBase",
-            "Class": "PropsGenerator",
+            "name": "IslesPropsBase",
+            "class": "PropsGenerator",
             "PropList": "IslandProps",
         },
         {
-            "Name": "SeaGrassPropsBase",
-            "Class": "PropsGenerator",
+            "name": "SeaGrassPropsBase",
+            "class": "PropsGenerator",
             "PropList": "SeagrassProps",
         },
         {
-            "Name": "EmptySeaPropsBase",
-            "Class": "PropsGenerator",
+            "name": "EmptySeaPropsBase",
+            "class": "PropsGenerator",
             "PropList": "EmptySeaProps",
         },
-        {"Class": "SeaBottomHeightMap", "Name": "SeaBottomHeightMapBase"},
-        {"Class": "IslesHeightMap", "Name": "IslesHeightMapBase"},
+        {"class": "SeaBottomHeightMap", "name": "SeaBottomHeightMapBase"},
+        {"class": "IslesHeightMap", "name": "IslesHeightMapBase"},
         # volcanic
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "VolcanicLayeringBasalt",
+            "class": "SimpleLayeringGenerator",
+            "name": "VolcanicLayeringBasalt",
             "Blocks": [
                 "BasaltSurface",
                 "LavaSurface",
@@ -489,8 +489,8 @@ generators.extend(
             ],
         },
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "BrokenLandLayeringBasalt",
+            "class": "SimpleLayeringGenerator",
+            "name": "BrokenLandLayeringBasalt",
             "Blocks": [
                 "BasaltSurface",
                 "LavaSurface",
@@ -504,17 +504,17 @@ generators.extend(
                 12,
             ],
         },
-        {"Class": "VolcanoHeightMap", "Name": "VolcanoHeightMapBase"},
-        {"Class": "BrokenLandHeightMap", "Name": "BrokenLandHeightMapBase"},
+        {"class": "VolcanoHeightMap", "name": "VolcanoHeightMapBase"},
+        {"class": "BrokenLandHeightMap", "name": "BrokenLandHeightMapBase"},
         {
-            "Name": "SmallRocksPropsBase",
-            "Class": "PropsGenerator",
+            "name": "SmallRocksPropsBase",
+            "class": "PropsGenerator",
             "PropList": "SmallRocksProps",
         },
         # river
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "RiverLayeringSand",
+            "class": "SimpleLayeringGenerator",
+            "name": "RiverLayeringSand",
             "Blocks": [
                 "SandSurface",
                 "SandstoneSurface",
@@ -528,11 +528,11 @@ generators.extend(
             ],
             "Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30],
         },
-        {"Class": "RiverHeightMap", "Name": "RiverHeightMapBase"},
+        {"class": "RiverHeightMap", "name": "RiverHeightMapBase"},
         # desert
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "SandLayeringSand",
+            "class": "SimpleLayeringGenerator",
+            "name": "SandLayeringSand",
             "Blocks": [
                 "DesertSandSurface",
                 "SandstoneSurface",
@@ -547,8 +547,8 @@ generators.extend(
             "Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30],
         },
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "SandDesertLayeringSand",
+            "class": "SimpleLayeringGenerator",
+            "name": "SandDesertLayeringSand",
             "Blocks": [
                 "DesertSandSurface",
                 "SandstoneSurface",
@@ -563,8 +563,8 @@ generators.extend(
             "Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30],
         },
         {
-            "Class": "SimpleLayeringGenerator",
-            "Name": "MensaeMountainDesertLayeringSand",
+            "class": "SimpleLayeringGenerator",
+            "name": "MensaeMountainDesertLayeringSand",
             "Blocks": [
                 "DesertSandSurface",
                 "SandstoneSurface",
@@ -579,30 +579,30 @@ generators.extend(
             "Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30],
         },
         {
-            "Name": "SandlandPropsBase",
-            "Class": "PropsGenerator",
+            "name": "SandlandPropsBase",
+            "class": "PropsGenerator",
             "PropList": "DesertProps",
         },
-        {"Class": "SandDesertHeightMap", "Name": "SandDesertHeightMapBase"},
+        {"class": "SandDesertHeightMap", "name": "SandDesertHeightMapBase"},
         {
-            "Class": "MensaeMountainDesertLayering",
-            "Name": "MensaeMountainDesertLayeringBase",
+            "class": "MensaeMountainDesertLayering",
+            "name": "MensaeMountainDesertLayeringBase",
         },
         {
-            "Class": "MensaeMountainDesertHeightMap",
-            "Name": "MensaeMountainDesertHeightMapBase",
+            "class": "MensaeMountainDesertHeightMap",
+            "name": "MensaeMountainDesertHeightMapBase",
         },
-        {"Class": "MensaeUMountainDensity", "Name": "MensaeUMountainDensityBase"},
+        {"class": "MensaeUMountainDensity", "name": "MensaeUMountainDensityBase"},
         # snow
-        {"Name": "SnowPropsBase", "Class": "PropsGenerator", "PropList": "SnowProps"},
+        {"name": "SnowPropsBase", "class": "PropsGenerator", "PropList": "SnowProps"},
         {
-            "Name": "SnowGrassGenerator",
-            "Class": "PropsGenerator",
+            "name": "SnowGrassGenerator",
+            "class": "PropsGenerator",
             "PropList": "SnowGrassProps",
         },
         {
-            "Name": "SnowForestGenerator",
-            "Class": "PropsGenerator",
+            "name": "SnowForestGenerator",
+            "class": "PropsGenerator",
             "PropList": "SnowForestProps",
         },
     ]
@@ -613,38 +613,38 @@ biomes.extend(
     [
         # prairie
         {
-            "Class": "Biome",
-            "Name": "PrairieDryPlainsBiome",
+            "class": "Biome",
+            "name": "PrairieDryPlainsBiome",
             "Height": "FieldsHeightMapBase",
             "Layering": "DryGrassLayering",
             "Props": "PrairieDryProps",
         },
         {
-            "Class": "Biome",
-            "Name": "PrairiePlainsBiome",
+            "class": "Biome",
+            "name": "PrairiePlainsBiome",
             "Height": "FieldsHeightMapBase",
             "Layering": "DryGrassLayering",
             "Props": "PrairieProps",
         },
         {
-            "Class": "Biome",
-            "Name": "PrairieDryHillsBiome",
+            "class": "Biome",
+            "name": "PrairieDryHillsBiome",
             "Height": "HillsSIMDHeightMapBase",
             "Layering": "DryGrassLayering",
             "Props": "PrairieDryProps",
         },
         # forest
         {
-            "Class": "Biome",
-            "Name": "DensePineForestBiome",
+            "class": "Biome",
+            "name": "DensePineForestBiome",
             "Height": "FieldsHeightMapBase",
             "Layering": "JustGrassLayeringPine",
             "Props": "DensePineForestPropsBase",
             "Color": [184 / 255.0, 255 / 255.0, 133 / 255.0],
         },
         {
-            "Class": "Biome",
-            "Name": "DenseForestBiome",
+            "class": "Biome",
+            "name": "DenseForestBiome",
             "Height": "FieldsHeightMapBase",
             "Layering": "GrassLayering",
             "Props": "DenseForestPropsBase",
@@ -652,38 +652,38 @@ biomes.extend(
         },
         # snow
         {
-            "Class": "Biome",
-            "Name": "SnowBiome",
+            "class": "Biome",
+            "name": "SnowBiome",
             "Height": "FieldsHeightMapBase",
             "Layering": "SnowLayering",
             "Props": "SnowPropsBase",
         },
         {
-            "Class": "Biome",
-            "Name": "SnowGrassBiome",
+            "class": "Biome",
+            "name": "SnowGrassBiome",
             "Height": "FieldsHeightMapBase",
             "Layering": "SnowLayering",
             "Props": "SnowGrassGenerator",
         },
         {
-            "Class": "Biome",
-            "Name": "SnowForestBiome",
+            "class": "Biome",
+            "name": "SnowForestBiome",
             "Height": "FieldsHeightMapBase",
             "Layering": "SnowLayering",
             "Props": "SnowForestGenerator",
         },
         # jungle
         {
-            "Class": "Biome",
-            "Name": "DipteroBiome",
+            "class": "Biome",
+            "name": "DipteroBiome",
             "Height": "HillsSIMDHeightMapBase",
             "Layering": "DipteroLayering",
             "Props": "DipteroProps",
             "Color": [204 / 255.0, 255 / 255.0, 153 / 255.0],
         },
         {
-            "Class": "Biome",
-            "Name": "BrokenLandBiome",
+            "class": "Biome",
+            "name": "BrokenLandBiome",
             "Height": "BrokenLandHeightMapBase",
             "Layering": "BrokenLandLayeringBasalt",
             "Props": "SmallRocksPropsBase",
@@ -691,62 +691,62 @@ biomes.extend(
         # volcano
         ,
         {
-            "Class": "Biome",
-            "Name": "VolcanoBiome",
+            "class": "Biome",
+            "name": "VolcanoBiome",
             "Height": "VolcanoHeightMapBase",
             "Layering": "VolcanicLayeringBasalt",
         }
         # sea
         ,
         {
-            "Class": "Biome",
-            "Name": "SeaBiome",
+            "class": "Biome",
+            "name": "SeaBiome",
             "Height": "SeaBottomHeightMapBase",
             "Layering": "SeaBottomLayeringSand",
             "Props": "IslesPropsBase",
         },
         {
-            "Class": "Biome",
-            "Name": "SeaGrassBiome",
+            "class": "Biome",
+            "name": "SeaGrassBiome",
             "Height": "SeaBottomHeightMapBase",
             "Layering": "SeaBottomLayeringSand",
             "Props": "SeaGrassPropsBase",
         },
         {
-            "Class": "Biome",
-            "Name": "EmptySeaBiome",
+            "class": "Biome",
+            "name": "EmptySeaBiome",
             "Height": "SeaBottomHeightMapBase",
             "Layering": "SeaBottomLayeringSand",
             "Props": "EmptySeaPropsBase",
         },
         {
-            "Class": "Biome",
-            "Name": "GravelSeaBiome",
+            "class": "Biome",
+            "name": "GravelSeaBiome",
             "Height": "IslesHeightMapBase",
             "Layering": "SeaBottomLayeringGravel",
         },
         {
-            "Class": "Biome",
-            "Name": "CopperSeaBiome",
+            "class": "Biome",
+            "name": "CopperSeaBiome",
             "Height": "IslesHeightMapBase",
             "Layering": "SeaBottomLayeringCopper",
         },
         {
-            "Class": "Biome",
-            "Name": "ClaySeaBiome",
+            "class": "Biome",
+            "name": "ClaySeaBiome",
             "Height": "IslesHeightMapBase",
             "Layering": "SeaBottomLayeringClay",
         },
         {
-            "Class": "Biome",
-            "Name": "IslesBiome",
+            "class": "Biome",
+            "name": "IslesBiome",
             "Height": "IslesHeightMapBase",
             "Layering": "IslesLayeringSand",
             "Props": "IslesPropsBase",
         },
         {
-            "Class": "Biome",
-            "Name": "SeaGrassBiome",
+            "class": "Biome",
+            "name": "SeaGrassBiome",
             "Height": "IslesHeightMapBase",
             "Layering": "IslesLayeringSand",
             "Props": "SeaGrassPropsBase",
@@ -754,66 +754,66 @@ biomes.extend(
         # grass
         ,
         {
-            "Class": "Biome",
-            "Name": "HillsBiome",
+            "class": "Biome",
+            "name": "HillsBiome",
             "Height": "HillsSIMDHeightMapBase",
             "Layering": "GrassLayering",
             "Props": "GrasslandPropsBase",
         },
         {
-            "Class": "Biome",
-            "Name": "MountainsBiome",
+            "class": "Biome",
+            "name": "MountainsBiome",
             "Height": "MountainsHeightMapBase",
             "Layering": "GrassLayering",
         },
         {
-            "Class": "Biome",
-            "Name": "BogBiome",
+            "class": "Biome",
+            "name": "BogBiome",
             "Height": "BogForestHeightMapBase",
             "Layering": "BogGrassLayeringGrass",
             "Props": "BogPropsBase",
             "Color": [204 / 255.0, 255 / 255.0, 153 / 255.0],
         },
         {
-            "Class": "Biome",
-            "Name": "PeatBiome",
+            "class": "Biome",
+            "name": "PeatBiome",
             "Height": "BogHeightMapBase",
             "Layering": "PeatLayering",
             "Props": "OrePropsBase",
         },
         {
-            "Class": "Biome",
-            "Name": "ClayBiome",
+            "class": "Biome",
+            "name": "ClayBiome",
             "Height": "BogHeightMapBase",
             "Layering": "ClayLayering",
             "Props": "OrePropsBase",
         },
         {
-            "Class": "Biome",
-            "Name": "BogForestBiome",
+            "class": "Biome",
+            "name": "BogForestBiome",
             "Height": "BogForestHeightMapBase",
             "Layering": "BogGrassLayeringGrass",
             "Props": "BogForestPropsBase",
             "Color": [204 / 255.0, 255 / 255.0, 153 / 255.0],
         },
         {
-            "Class": "Biome",
-            "Name": "PineForestBiome",
+            "class": "Biome",
+            "name": "PineForestBiome",
             "Height": "FieldsHeightMapBase",
             "Layering": "JustGrassLayeringPine",
             "Props": "PineForestPropsBase",
         },
         {
-            "Class": "Biome",
-            "Name": "ForestBiome",
+            "class": "Biome",
+            "name": "ForestBiome",
             "Height": "FieldsHeightMapBase",
             "Layering": "GrassLayering",
             "Props": "ForestPropsBase",
             "Color": [204 / 255.0, 255 / 255.0, 153 / 255.0],
         },
         {
-            "Class": "Biome",
-            "Name": "BushlandBiome",
+            "class": "Biome",
+            "name": "BushlandBiome",
             "Height": "FieldsHeightMapBase",
             "Layering": "GrassLayering",
             "Props": "BushlandPropsBase",
@@ -821,51 +821,51 @@ biomes.extend(
         },
         # plains
         {
-            "Class": "Biome",
-            "Name": "PlainsBiome",
+            "class": "Biome",
+            "name": "PlainsBiome",
             "Height": "FieldsHeightMapBase",
             "Layering": "GrassLayering",
             "Props": "GrasslandPropsBase",
         },
         {
-            "Class": "Biome",
-            "Name": "RedPlainsBiome",
+            "class": "Biome",
+            "name": "RedPlainsBiome",
             "Height": "FieldsHeightMapBase",
             "Layering": "GrassLayering",
             "Props": "GrasslandPropsRed",
         },
         {
-            "Class": "Biome",
-            "Name": "WhitePlainsBiome",
+            "class": "Biome",
+            "name": "WhitePlainsBiome",
             "Height": "FieldsHeightMapBase",
             "Layering": "GrassLayering",
             "Props": "GrasslandPropsWhite",
         },
         {
-            "Class": "Biome",
-            "Name": "YellowPlainsBiome",
+            "class": "Biome",
+            "name": "YellowPlainsBiome",
             "Height": "FieldsHeightMapBase",
             "Layering": "GrassLayering",
             "Props": "GrasslandPropsYellow",
         },
         # desert
         {
-            "Class": "Biome",
-            "Name": "DesertBiome",
+            "class": "Biome",
+            "name": "DesertBiome",
             "Height": "SandDesertHeightMapBase",
             "Layering": "SandDesertLayeringSand",
             "Props": "SandlandPropsBase",
         },
         {
-            "Class": "Biome",
-            "Name": "MensaeBiome",
+            "class": "Biome",
+            "name": "MensaeBiome",
             "Height": "MensaeMountainDesertHeightMapBase",
             "Layering": "MensaeMountainDesertLayeringSand",
         },
         # river
         {
-            "Class": "Biome",
-            "Name": "RiverBiome",
+            "class": "Biome",
+            "name": "RiverBiome",
             "Height": "RiverHeightMapBase",
             "Layering": "RiverLayeringSand",
         },
