@@ -63,7 +63,7 @@ machines = [
 		a:set_side_pos(Vec3i.back(), Vec3i.zero())
 		a:bind(crafter:get_input_container())
 		""",
-        "RequiredResearches": ["Fermentation"],
+        "required": ["Fermentation"],
         "Description": ["ElectricInput"],
     },
     {
@@ -1620,7 +1620,7 @@ machines = [
         "Label": "Creative Electric Generator",
         "StartTier": 7,
         "EndTier": 7,
-        "Craftable": False,
+        "craftable": False,
         "Description": ["ElectricOutput"],
     },
     {
@@ -1628,7 +1628,7 @@ machines = [
         "Label": "Creative Item Generator",
         "StartTier": 7,
         "EndTier": 7,
-        "Craftable": False,
+        "craftable": False,
         "Description": ["ItemOutput"],
     },
     {
@@ -1636,7 +1636,7 @@ machines = [
         "Label": "Creative Kinetic Generator",
         "StartTier": 7,
         "EndTier": 7,
-        "Craftable": False,
+        "craftable": False,
         "Description": ["KineticOutput"],
     },
     {
@@ -1644,7 +1644,7 @@ machines = [
         "Label": "Creative Heat Generator",
         "StartTier": 7,
         "EndTier": 7,
-        "Craftable": False,
+        "craftable": False,
         "Description": ["HeatOutput"],
     },
     {
@@ -1652,7 +1652,7 @@ machines = [
         "Label": "Creative Fluid Generator",
         "StartTier": 7,
         "EndTier": 7,
-        "Craftable": False,
+        "craftable": False,
         "Description": ["FluidOutput"],
     },
     {
@@ -1660,7 +1660,7 @@ machines = [
         "Label": "Creative Exterminator",
         "StartTier": 7,
         "EndTier": 7,
-        "Craftable": False,
+        "craftable": False,
         "Description": [
             "KineticInput",
             "HeatInput",
@@ -2017,7 +2017,7 @@ machines = [
     # 	"CommonTextKeys":[
     # 		"Container"
     # 	],
-    # 	"RequiredResearches":["LiquidsScan"],
+    # 	"required":["LiquidsScan"],
     # },
     {
         "name": "FissionReactor",
@@ -2532,7 +2532,7 @@ machines = [
     # 	a:set_side_pos(Vec3i.up(), Vec3i.zero())
     # 	a:bind(crafter:get_output_container())
     # 	""",
-    # 	"RequiredResearches":["HeatTransferring"],
+    # 	"required":["HeatTransferring"],
     # }
     # ,{
     # 	"name": "InverseHeatExchanger",
@@ -2555,7 +2555,7 @@ machines = [
     # 	a:set_side_pos(Vec3i.down(), Vec3i.zero())
     # 	a:bind(crafter:get_input_container())
     # 	""",
-    # 	"RequiredResearches":["HeatTransferring"],
+    # 	"required":["HeatTransferring"],
     # }
     # ,{
     # 	"name": "IndustrialOven",

@@ -13,9 +13,9 @@ ore_types = [
             "GoldDust",  # wash
             ["CopperOreDust", "MalachiteCrystal", "MalachiteCluster"],  # sifter
         ],
-        "Color": [1, 0.1, 0],
+        "color": [1, 0.1, 0],
         "Hardness": 1.5,
-        "Drops": "CopperOre",
+        "drops": "CopperOre",
         "Remain": 1000,
     },
     {
@@ -26,9 +26,9 @@ ore_types = [
             "ChromiumOxideDust",  # wash
             ["IronOreDust", "CinnabarCrystal", "CinnabarCluster"],  # sifter
         ],
-        "Color": [111 / 255.0, 106 / 255.0, 81 / 255.0],
+        "color": [111 / 255.0, 106 / 255.0, 81 / 255.0],
         "Hardness": 2,
-        "Drops": "IronOre",
+        "drops": "IronOre",
         "Remain": 1000,
     },
     {
@@ -38,10 +38,10 @@ ore_types = [
             ["ThoriumDust", "UraniniteCrystal", "UraniniteCluster"],  # sifter
         ],
         "ByproductChanse": [20],
-        "Color": [0, 1, 0],
+        "color": [0, 1, 0],
         "Hardness": 2,
-        "Tier": 5,
-        "Drops": "UraniumOre",
+        "tier": 5,
+        "drops": "UraniumOre",
         "Remain": 1000,
     },
     {
@@ -51,30 +51,30 @@ ore_types = [
             "TitaniumOxideDust",  # wash
             ["AluminiumOreDust", "RutileCrystal", "Emerald"],  # sifter
         ],
-        "Color": [0.5, 0.5, 1],
+        "color": [0.5, 0.5, 1],
         "Hardness": 2,
-        "Drops": "AluminiumOre",
+        "drops": "AluminiumOre",
         "Oxide": True,
         "Remain": 1000,
     },
     {
         "name": "Coal",
-        "Color": [0.06, 0.06, 0.06],
-        "Side": [0.06, 0.06, 0.06],
+        "color": [0.06, 0.06, 0.06],
+        "side": [0.06, 0.06, 0.06],
         "Item": [0.06, 0.06, 0.06],
-        "Drops": "Coal",
-        "Tier": 0,
+        "drops": "Coal",
+        "tier": 0,
         "Hardness": 1,
         "NotOre": True,
         "Remain": 1000,
     },
     {
         "name": "Clay",
-        "Color": [202 / 255.0, 115 / 255.0, 43 / 255.0],
-        "Side": [202 / 255.0, 115 / 255.0, 43 / 255.0],
+        "color": [202 / 255.0, 115 / 255.0, 43 / 255.0],
+        "side": [202 / 255.0, 115 / 255.0, 43 / 255.0],
         "Item": [202 / 255.0, 115 / 255.0, 43 / 255.0],
-        "Drops": "Clay",
-        "Tier": 0,
+        "drops": "Clay",
+        "tier": 0,
         "Hardness": 1,
         "NotOre": True,
         "Byproducts": ["RareEarthElement"],
@@ -92,7 +92,7 @@ for ore_type in ore_types:
     item = {
         "class": static_item,
         "name": item_name,
-        "Mesh": "Models/Ore",
+        "mesh": "Models/Ore",
         "image": "T_" + ore_type["name"] + "Ore",
         "max_count": 32,
         "category": "Ore",
@@ -118,16 +118,16 @@ for ore_type in ore_types:
             "name": ore_type["name"] + "Ore",
             "Tesselator": ore_type["name"] + "Ore",
             "Item": item_name,
-            "ColorSide": ore_type["Color"],
-            "color_top": ore_type["Color"],
+            "ColorSide": ore_type["color"],
+            "color_top": ore_type["color"],
             "is_surface": True,
         }
     )
     images.append(
         {
-            "Base": "T_" + "Ore",
-            "NewName": "T_" + ore_type["name"] + "Ore",
-            "MulMask": "T_" + ore_type["name"],
+            "base": "T_" + "Ore",
+            "new_name": "T_" + ore_type["name"] + "Ore",
+            "mul": "T_" + ore_type["name"],
         }
     )
 
@@ -143,7 +143,7 @@ for ore_type in ore_types:
             "class": static_item,
             "name": ore_type["name"] + "ImpureOreGravel",
             "Label": ore_type["name"] + " Impure Ore Gravel",
-            "Mesh": "Models/Gravel",
+            "mesh": "Models/Gravel",
             "image": "T_" + ore_type["name"] + "ImpureOreGravel",
             "max_count": 32,
             "Materials": ["Materials/" + ore_type["name"] + "ImpureOreGravel"],
@@ -155,8 +155,8 @@ for ore_type in ore_types:
         if "SmeltLevel" in named_mat:
             item["CommonTextKeys"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
 
-        if "Mesh" in named_mat:
-            item["Mesh"] = named_mat["Mesh"]
+        if "mesh" in named_mat:
+            item["mesh"] = named_mat["mesh"]
 
         objects_array.append(item)
 
@@ -166,7 +166,7 @@ for ore_type in ore_types:
             "class": static_item,
             "name": ore_type["name"] + "OreGravel",
             "Label": ore_type["name"] + " Ore Gravel",
-            "Mesh": "Models/Gravel",
+            "mesh": "Models/Gravel",
             "image": "T_" + ore_type["name"] + "OreGravel",
             "max_count": 32,
             "Materials": ["Materials/" + ore_type["name"] + "OreGravel"],
@@ -188,7 +188,7 @@ for ore_type in ore_types:
             "class": static_item,
             "name": ore_type["name"] + "OreDust",
             "Label": ore_type["name"] + " Impure Ore Dust",
-            "Mesh": "Models/Dust",
+            "mesh": "Models/Dust",
             "image": "T_" + ore_type["name"] + "OreDust",
             "max_count": 32,
             "Materials": ["Materials/ImpureOreDust"],
@@ -205,28 +205,28 @@ for ore_type in ore_types:
 
         images.append(
             {
-                "Base": "T_" + "Gravel",
-                "NewName": "T_" + ore_type["name"] + "OreGravel",
-                "MulMask": "T_" + ore_type["name"],
-                "AddMask": "T_" + "Gravel" + additive_ico,
+                "base": "T_" + "Gravel",
+                "new_name": "T_" + ore_type["name"] + "OreGravel",
+                "mul": "T_" + ore_type["name"],
+                "add": "T_" + "Gravel" + additive_ico,
             }
         )
 
         images.append(
             {
-                "Base": "T_" + "Gravel",
-                "NewName": "T_" + ore_type["name"] + "ImpureOreGravel",
-                "MulMask": "T_" + ore_type["name"],
-                "AddMask": ["T_" + "impure_gravel_add", "T_" + "Gravel" + additive_ico],
+                "base": "T_" + "Gravel",
+                "new_name": "T_" + ore_type["name"] + "ImpureOreGravel",
+                "mul": "T_" + ore_type["name"],
+                "add": ["T_" + "impure_gravel_add", "T_" + "Gravel" + additive_ico],
             }
         )
 
         images.append(
             {
-                "Base": "T_" + "Dust",
-                "NewName": "T_" + ore_type["name"] + "OreDust",
-                "MulMask": "T_" + ore_type["name"],
-                "AddMask": "T_" + "impure_dust_add",
+                "base": "T_" + "Dust",
+                "new_name": "T_" + ore_type["name"] + "OreDust",
+                "mul": "T_" + ore_type["name"],
+                "add": "T_" + "impure_dust_add",
             }
         )
 
@@ -239,7 +239,7 @@ write_file(filename, data)
 objects_array = []
 
 objects_array.append(
-    {"class": ico_generator, "name": "Ores" + ico_generator, "Images": images}
+    {"class": ico_generator, "name": "Ores" + ico_generator, "images": images}
 )
 
 data = {"Objects": objects_array}

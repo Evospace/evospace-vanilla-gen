@@ -5,11 +5,11 @@ from Common import *
 
 data = {
     "PlayerStartInventory": {
-        "Items": [
-            {"name": "CopperMultitool", "Count": 1},
-            {"name": "StoneSurface", "Count": 99},
-            {"name": "Log", "Count": 15},
-            {"name": "BasicPlatform", "Count": 99},
+        "items": [
+            {"name": "CopperMultitool", "count": 1},
+            {"name": "StoneSurface", "count": 99},
+            {"name": "Log", "count": 15},
+            {"name": "BasicPlatform", "count": 99},
         ]
     }
 }

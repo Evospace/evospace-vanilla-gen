@@ -4,8 +4,8 @@ cvs = []
 
 cvs.append(["ChapterCompleted", "Chapter complete."])
 cvs.append(["Completed", "Quest complete."])
-cvs.append(["Collect", "Collect this item."])
-cvs.append(["Achievement", "Achievement!"])
+cvs.append(["collect", "Collect this item."])
+cvs.append(["achievement", "Achievement!"])
 cvs.append(["RefiningMachine", "RefiningMachineDescription"])
 
 cvs.append(["FirstSteps", "First Steps"])

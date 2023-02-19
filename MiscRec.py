@@ -82,35 +82,35 @@ recipes_hand = []
 
 def append_recipe(recipe):
     item_count = 0
-    for item in recipe["Input"]["Items"]:
-        item_count = item_count + item["Count"]
+    for item in recipe["input"]["items"]:
+        item_count = item_count + item["count"]
 
-    level = extract_tier(recipe["Output"]["Items"][0]["name"]) + 1
+    level = extract_tier(recipe["output"]["items"][0]["name"]) + 1
 
     dec_recipe = copy.deepcopy(recipe)
 
     recipes_hand.append(recipe)
 
-    output = copy.deepcopy(dec_recipe["Input"])
+    output = copy.deepcopy(dec_recipe["input"])
 
-    dec_recipe["Ticks"] = max(min(item_count * 10, 400), 20)
-    dec_recipe["ResourceInput"] = {"name": "Electricity", "Count": 20 * level}
+    dec_recipe["ticks"] = max(min(item_count * 10, 400), 20)
+    dec_recipe["res_input"] = {"name": "Electricity", "count": 20 * level}
     recipes_assembler.append(dec_recipe)
 
 
 def append_recipe_hand_press(recipe):
     item_count = 0
-    for item in recipe["Input"]["Items"]:
-        item_count = item_count + item["Count"]
+    for item in recipe["input"]["items"]:
+        item_count = item_count + item["count"]
 
     dec_recipe = copy.deepcopy(recipe)
 
     recipes_hand.append(recipe)
 
-    output = copy.deepcopy(dec_recipe["Input"])
+    output = copy.deepcopy(dec_recipe["input"])
 
-    dec_recipe["Ticks"] = 60
-    dec_recipe["ResourceInput"] = {"name": "Kinetic", "Count": 100}
+    dec_recipe["ticks"] = 60
+    dec_recipe["res_input"] = {"name": "Kinetic", "count": 100}
     recipes_press.append(dec_recipe)
 
 
@@ -119,96 +119,96 @@ def append_recipe_hand_press(recipe):
 recipes_industrial_steam_turbine.append(
     {
         "name": "Rotating",
-        "Input": {"Items": []},
-        "ResourceInput": {"name": "Steam", "Count": fission_fullpower * 0.9},
-        "Output": {"Items": []},
-        "ResourceOutput": {
+        "input": {"items": []},
+        "res_input": {"name": "Steam", "count": fission_fullpower * 0.9},
+        "output": {"items": []},
+        "res_output": {
             "name": "Electricity",
-            "Count": fission_fullpower * 0.9 * 0.9,
+            "count": fission_fullpower * 0.9 * 0.9,
         },
-        "Ticks": 200,
-        "Loss": 10,
+        "ticks": 200,
+        "loss": 10,
     }
 )
 
 recipes_industrial_boiler.append(
     {
         "name": "Boiling",
-        "Input": {
-            "Items": [
-                {"name": "Water", "Count": 2000},
+        "input": {
+            "items": [
+                {"name": "Water", "count": 2000},
             ]
         },
-        "ResourceInput": {"name": "Heat", "Count": fission_fullpower},
-        "Output": {"Items": []},
-        "ResourceOutput": {"name": "Steam", "Count": fission_fullpower * 0.9},
-        "Ticks": 200,
+        "res_input": {"name": "Heat", "count": fission_fullpower},
+        "output": {"items": []},
+        "res_output": {"name": "Steam", "count": fission_fullpower * 0.9},
+        "ticks": 200,
     }
 )
 
 recipes_fusion_reactor.append(
     {
         "name": "HotNeutroniumIngot1",
-        "Input": {"Items": [{"name": "ProducerGas", "Count": 1000}]},
-        "ResourceInput": {
+        "input": {"items": [{"name": "ProducerGas", "count": 1000}]},
+        "res_input": {
             "name": "Electricity",
-            "Count": fission_fullpower * 0.9 * 0.9,
+            "count": fission_fullpower * 0.9 * 0.9,
         },
-        "Output": {"Items": [{"name": "HotNeutroniumIngot", "Count": 1}]},
-        "Ticks": 200,
+        "output": {"items": [{"name": "HotNeutroniumIngot", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_fusion_reactor.append(
     {
         "name": "HotNeutroniumIngot2",
-        "Input": {"Items": [{"name": "ProducerGas", "Count": 3000}]},
-        "ResourceInput": {
+        "input": {"items": [{"name": "ProducerGas", "count": 3000}]},
+        "res_input": {
             "name": "Electricity",
-            "Count": 2 * fission_fullpower * 0.9 * 0.9,
+            "count": 2 * fission_fullpower * 0.9 * 0.9,
         },
-        "Output": {"Items": [{"name": "HotNeutroniumIngot", "Count": 1 * 3}]},
-        "Ticks": 200 * 2,
+        "output": {"items": [{"name": "HotNeutroniumIngot", "count": 1 * 3}]},
+        "ticks": 200 * 2,
     }
 )
 
 recipes_fusion_reactor.append(
     {
         "name": "HotNeutroniumIngot4",
-        "Input": {"Items": [{"name": "UltimateCatalyst", "Count": 1, "split": 0}]},
-        "ResourceInput": {
+        "input": {"items": [{"name": "UltimateCatalyst", "count": 1, "split": 0}]},
+        "res_input": {
             "name": "Electricity",
-            "Count": fission_fullpower * 0.9 * 0.9,
+            "count": fission_fullpower * 0.9 * 0.9,
         },
-        "Output": {"Items": [{"name": "HotNeutroniumIngot", "Count": 1}]},
-        "Ticks": 200,
+        "output": {"items": [{"name": "HotNeutroniumIngot", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_fusion_reactor.append(
     {
         "name": "HotNeutroniumIngot3",
-        "Input": {"Items": [{"name": "UltimateCatalyst", "Count": 3, "split": 0}]},
-        "ResourceInput": {
+        "input": {"items": [{"name": "UltimateCatalyst", "count": 3, "split": 0}]},
+        "res_input": {
             "name": "Electricity",
-            "Count": 2 * fission_fullpower * 0.9 * 0.9,
+            "count": 2 * fission_fullpower * 0.9 * 0.9,
         },
-        "Output": {"Items": [{"name": "HotNeutroniumIngot", "Count": 1 * 3}]},
-        "Ticks": 200 * 2,
+        "output": {"items": [{"name": "HotNeutroniumIngot", "count": 1 * 3}]},
+        "ticks": 200 * 2,
     }
 )
 
 recipes_smelter.append(
     {
         "name": "Glass",
-        "Input": {
-            "Items": [
-                {"name": "SandSurface", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "SandSurface", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Heat", "Count": 10},
-        "Output": {"Items": [{"name": "Glass", "Count": 1}]},
-        "Ticks": 200,
+        "res_input": {"name": "Heat", "count": 10},
+        "output": {"items": [{"name": "Glass", "count": 1}]},
+        "ticks": 200,
     }
 )
 
@@ -217,9 +217,9 @@ for list in (simple_deco, wooden_misc, simple_single, simple_blocks, static_mesh
         recipes_wrench.append(
             {
                 "name": one["name"] + "Wrenching",
-                "Ticks": 20,
-                "Input": {"Items": [{"name": one["name"], "Count": 1}]},
-                "Output": {"Items": [{"name": one["name"], "Count": 1}]},
+                "ticks": 20,
+                "input": {"items": [{"name": one["name"], "count": 1}]},
+                "output": {"items": [{"name": one["name"], "count": 1}]},
             }
         )
 
@@ -228,966 +228,966 @@ for list in (simple_deco, wooden_misc, simple_single, simple_blocks, static_mesh
 append_recipe(
     {
         "name": "Cell",
-        "Input": {
-            "Items": [
-                {"name": "StainlessSteelPlate", "Count": 1},
-                {"name": "StainlessSteelParts", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "StainlessSteelPlate", "count": 1},
+                {"name": "StainlessSteelParts", "count": 1},
             ]
         },
-        "Output": {"Items": [{"name": "Cell", "Count": 1}]},
-        "Ticks": 200,
+        "output": {"items": [{"name": "Cell", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 append_recipe(
     {
         "name": "Cell2",
-        "Input": {
-            "Items": [
-                {"name": "DepletedUraniumCell", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "DepletedUraniumCell", "count": 1},
             ]
         },
-        "Output": {"Items": [{"name": "Cell", "Count": 1}]},
-        "Ticks": 200,
+        "output": {"items": [{"name": "Cell", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 append_recipe(
     {
         "name": "UraniumCell",
-        "Input": {
-            "Items": [
-                {"name": "Uranium235Dust", "Count": 3},
-                {"name": "UraniumDust", "Count": 20},
-                {"name": "Cell", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "Uranium235Dust", "count": 3},
+                {"name": "UraniumDust", "count": 20},
+                {"name": "Cell", "count": 1},
             ]
         },
-        "Output": {"Items": [{"name": "UraniumCell", "Count": 1}]},
-        "Ticks": 200,
+        "output": {"items": [{"name": "UraniumCell", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 append_recipe(
     {
         "name": "ThoriumCell",
-        "Input": {
-            "Items": [
-                {"name": "ThoriumDust", "Count": 20},
-                {"name": "Cell", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "ThoriumDust", "count": 20},
+                {"name": "Cell", "count": 1},
             ]
         },
-        "Output": {"Items": [{"name": "ThoriumCell", "Count": 1}]},
-        "Ticks": 200,
+        "output": {"items": [{"name": "ThoriumCell", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 append_recipe(
     {
         "name": "Uranium233Cell",
-        "Input": {
-            "Items": [
-                {"name": "Uranium233Dust", "Count": 3},
-                {"name": "Cell", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "Uranium233Dust", "count": 3},
+                {"name": "Cell", "count": 1},
             ]
         },
-        "Output": {"Items": [{"name": "Uranium233Cell", "Count": 1}]},
-        "Ticks": 200,
+        "output": {"items": [{"name": "Uranium233Cell", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 append_recipe(
     {
         "name": "PlutoniumCell",
-        "Input": {
-            "Items": [
-                {"name": "PlutoniumDust", "Count": 3},
-                {"name": "Cell", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "PlutoniumDust", "count": 3},
+                {"name": "Cell", "count": 1},
             ]
         },
-        "Output": {"Items": [{"name": "PlutoniumCell", "Count": 1}]},
-        "Ticks": 200,
+        "output": {"items": [{"name": "PlutoniumCell", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 append_recipe(
     {
         "name": "FilteringCell",
-        "Input": {
-            "Items": [
-                {"name": "Coal", "Count": 10},
-                {"name": "Cell", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "Coal", "count": 10},
+                {"name": "Cell", "count": 1},
             ]
         },
-        "Output": {"Items": [{"name": "FilteringCell", "Count": 1}]},
-        "Ticks": 200,
+        "output": {"items": [{"name": "FilteringCell", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_assembler.append(
     {
         "name": "Circuit",
-        "Input": {
-            "Items": [
-                {"name": "CircuitBoard", "Count": 1},
-                {"name": "CopperWire", "Count": 6},
+        "input": {
+            "items": [
+                {"name": "CircuitBoard", "count": 1},
+                {"name": "CopperWire", "count": 6},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {"Items": [{"name": "Circuit", "Count": 1}]},
-        "Ticks": 200,
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {"items": [{"name": "Circuit", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_assembler.append(
     {
         "name": "AdvancedCircuit",
-        "Input": {
-            "Items": [{"name": "Silicon", "Count": 1}, {"name": "Circuit", "Count": 1}]
+        "input": {
+            "items": [{"name": "Silicon", "count": 1}, {"name": "Circuit", "count": 1}]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 30},
-        "Output": {"Items": [{"name": "AdvancedCircuit", "Count": 1}]},
-        "Ticks": 200,
+        "res_input": {"name": "Electricity", "count": 30},
+        "output": {"items": [{"name": "AdvancedCircuit", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_assembler.append(
     {
         "name": "SiliconWafer",
-        "Input": {
-            "Items": [
-                {"name": "Silicon", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "Silicon", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 100},
-        "Output": {"Items": [{"name": "SiliconWafer", "Count": 1}]},
-        "Ticks": 200,
+        "res_input": {"name": "Electricity", "count": 100},
+        "output": {"items": [{"name": "SiliconWafer", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_assembler.append(
     {
         "name": "Processor",
-        "Input": {
-            "Items": [
-                {"name": "SiliconWafer", "Count": 1},
-                {"name": "AdvancedCircuit", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "SiliconWafer", "count": 1},
+                {"name": "AdvancedCircuit", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 80},
-        "Output": {"Items": [{"name": "Processor", "Count": 1}]},
-        "Ticks": 200,
+        "res_input": {"name": "Electricity", "count": 80},
+        "output": {"items": [{"name": "Processor", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_assembler.append(
     {
         "name": "QuantumBrain",
-        "Input": {
-            "Items": [
-                {"name": "QuantumProcessor", "Count": 2},
-                {"name": "UltimateCatalyst", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "QuantumProcessor", "count": 2},
+                {"name": "UltimateCatalyst", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 1000},
-        "Output": {"Items": [{"name": "QuantumBrain", "Count": 1}]},
-        "Ticks": 200,
+        "res_input": {"name": "Electricity", "count": 1000},
+        "output": {"items": [{"name": "QuantumBrain", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 append_recipe(
     {
         "name": "Catalyst",
-        "Input": {
-            "Items": [
-                {"name": "Cell", "Count": 1},
-                {"name": "GoldWire", "Count": 10},
-                {"name": "Coal", "Count": 4},
+        "input": {
+            "items": [
+                {"name": "Cell", "count": 1},
+                {"name": "GoldWire", "count": 10},
+                {"name": "Coal", "count": 4},
             ]
         },
-        "Output": {"Items": [{"name": "Catalyst", "Count": 1}]},
-        "Ticks": 200,
+        "output": {"items": [{"name": "Catalyst", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 append_recipe(
     {
         "name": "UltimateCatalyst",
-        "Input": {
-            "Items": [
-                {"name": "Cell", "Count": 1},
-                {"name": "NeutroniumParts", "Count": 8},
-                {"name": "Coke", "Count": 10},
+        "input": {
+            "items": [
+                {"name": "Cell", "count": 1},
+                {"name": "NeutroniumParts", "count": 8},
+                {"name": "Coke", "count": 10},
             ]
         },
-        "Output": {"Items": [{"name": "UltimateCatalyst", "Count": 1}]},
-        "Ticks": 200,
+        "output": {"items": [{"name": "UltimateCatalyst", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_assembler.append(
     {
         "name": "AdvancedCircuitBoard",
-        "Input": {
-            "Items": [
-                {"name": "Plastic", "Count": 1},
-                {"name": "GoldWire", "Count": 3},
+        "input": {
+            "items": [
+                {"name": "Plastic", "count": 1},
+                {"name": "GoldWire", "count": 3},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 20},
-        "Output": {"Items": [{"name": "AdvancedCircuitBoard", "Count": 1}]},
-        "Ticks": 80,
+        "res_input": {"name": "Electricity", "count": 20},
+        "output": {"items": [{"name": "AdvancedCircuitBoard", "count": 1}]},
+        "ticks": 80,
     }
 )
 
 recipes_assembler.append(
     {
         "name": "Processor2",
-        "Input": {
-            "Items": [
-                {"name": "SiliconWafer", "Count": 1},
-                {"name": "AdvancedCircuitBoard", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "SiliconWafer", "count": 1},
+                {"name": "AdvancedCircuitBoard", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 80},
-        "Output": {"Items": [{"name": "Processor", "Count": 1}]},
-        "Ticks": 200,
+        "res_input": {"name": "Electricity", "count": 80},
+        "output": {"items": [{"name": "Processor", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_assembler.append(
     {
         "name": "QuantumCore",
-        "Input": {
-            "Items": [
-                {"name": "RareEarthElement", "Count": 1},
-                {"name": "CopperParts", "Count": 2},
+        "input": {
+            "items": [
+                {"name": "RareEarthElement", "count": 1},
+                {"name": "CopperParts", "count": 2},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 1000},
-        "Output": {"Items": [{"name": "QuantumCore", "Count": 1}]},
-        "Ticks": 200,
+        "res_input": {"name": "Electricity", "count": 1000},
+        "output": {"items": [{"name": "QuantumCore", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_assembler.append(
     {
         "name": "QuantumCircuit",
-        "Input": {
-            "Items": [
-                {"name": "QuantumCore", "Count": 2},
-                {"name": "AdvancedCircuitBoard", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "QuantumCore", "count": 2},
+                {"name": "AdvancedCircuitBoard", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 1000 / 7},
-        "Output": {"Items": [{"name": "QuantumCircuit", "Count": 1}]},
-        "Ticks": 200,
+        "res_input": {"name": "Electricity", "count": 1000 / 7},
+        "output": {"items": [{"name": "QuantumCircuit", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_assembler.append(
     {
         "name": "QuantumProcessor",
-        "Input": {
-            "Items": [
-                {"name": "QuantumCircuit", "Count": 1},
-                {"name": "Processor", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "QuantumCircuit", "count": 1},
+                {"name": "Processor", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 2000 / 13},
-        "Output": {"Items": [{"name": "QuantumProcessor", "Count": 1}]},
-        "Ticks": 200,
+        "res_input": {"name": "Electricity", "count": 2000 / 13},
+        "output": {"items": [{"name": "QuantumProcessor", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_assembler.append(
     {
         "name": "CopperWire",
-        "Input": {
-            "Items": [
-                {"name": "CopperIngot", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "CopperIngot", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {"Items": [{"name": "CopperWire", "Count": 2}]},
-        "Ticks": 100,
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {"items": [{"name": "CopperWire", "count": 2}]},
+        "ticks": 100,
     }
 )
 
 recipes_assembler.append(
     {
         "name": "SuperconductorWire",
-        "Input": {
-            "Items": [
-                {"name": "SuperconductorIngot", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "SuperconductorIngot", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 100},
-        "Output": {"Items": [{"name": "SuperconductorWire", "Count": 2}]},
-        "Ticks": 100,
+        "res_input": {"name": "Electricity", "count": 100},
+        "output": {"items": [{"name": "SuperconductorWire", "count": 2}]},
+        "ticks": 100,
     }
 )
 
 recipes_assembler.append(
     {
         "name": "Battery",
-        "Input": {
-            "Items": [
-                {"name": "SulfuricAcid", "Count": 100},
-                {"name": "CopperParts", "Count": 1},
-                {"name": "StainlessSteelPlate", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "SulfuricAcid", "count": 100},
+                {"name": "CopperParts", "count": 1},
+                {"name": "StainlessSteelPlate", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {"Items": [{"name": "Battery", "Count": 1}]},
-        "Ticks": 200,
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {"items": [{"name": "Battery", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_assembler.append(
     {
         "name": "GoldWire",
-        "Input": {
-            "Items": [
-                {"name": "GoldIngot", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "GoldIngot", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {"Items": [{"name": "GoldWire", "Count": 2}]},
-        "Ticks": 100,
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {"items": [{"name": "GoldWire", "count": 2}]},
+        "ticks": 100,
     }
 )
 
 append_recipe(
     {
         "name": "ReflectorCell",
-        "Input": {
-            "Items": [
-                {"name": "Cell", "Count": 1},
-                {"name": "BerylliumDust", "Count": 3},
+        "input": {
+            "items": [
+                {"name": "Cell", "count": 1},
+                {"name": "BerylliumDust", "count": 3},
             ]
         },
-        "Output": {"Items": [{"name": "ReflectorCell", "Count": 1}]},
-        "Ticks": 100,
+        "output": {"items": [{"name": "ReflectorCell", "count": 1}]},
+        "ticks": 100,
     }
 )
 
 append_recipe(
     {
         "name": "ControlCell",
-        "Input": {
-            "Items": [
-                {"name": "Cell", "Count": 1},
-                {"name": "BoronDust", "Count": 3},
+        "input": {
+            "items": [
+                {"name": "Cell", "count": 1},
+                {"name": "BoronDust", "count": 3},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 1000 / 9},
-        "Output": {"Items": [{"name": "ControlCell", "Count": 1}]},
-        "Ticks": 100,
+        "res_input": {"name": "Electricity", "count": 1000 / 9},
+        "output": {"items": [{"name": "ControlCell", "count": 1}]},
+        "ticks": 100,
     }
 )
 
 recipes_condens.append(
     {
         "name": "Water",
-        "Input": {"Items": []},
-        "Output": {"Items": [{"name": "Water", "Count": 250}]},
-        "Ticks": 200,
+        "input": {"items": []},
+        "output": {"items": [{"name": "Water", "count": 250}]},
+        "ticks": 200,
     }
 )
 
 recipes_condens.append(
     {
         "name": "Oxygen",
-        "Input": {"Items": []},
-        "ResourceInput": {"name": "Kinetic", "Count": 20},
-        "Output": {"Items": [{"name": "Oxygen", "Count": 250}]},
-        "Ticks": 200,
+        "input": {"items": []},
+        "res_input": {"name": "Kinetic", "count": 20},
+        "output": {"items": [{"name": "Oxygen", "count": 250}]},
+        "ticks": 200,
     }
 )
 
 recipes_condens.append(
     {
         "name": "Nitrogen",
-        "Input": {"Items": []},
-        "ResourceInput": {"name": "Kinetic", "Count": 20},
-        "Output": {"Items": [{"name": "Nitrogen", "Count": 1000}]},
-        "Ticks": 200,
+        "input": {"items": []},
+        "res_input": {"name": "Kinetic", "count": 20},
+        "output": {"items": [{"name": "Nitrogen", "count": 1000}]},
+        "ticks": 200,
     }
 )
 
 recipes_condens.append(
     {
         "name": "Helium",
-        "Input": {"Items": []},
-        "ResourceInput": {"name": "Kinetic", "Count": 40},
-        "Output": {"Items": [{"name": "Helium", "Count": 100}]},
-        "Ticks": 200,
+        "input": {"items": []},
+        "res_input": {"name": "Kinetic", "count": 40},
+        "output": {"items": [{"name": "Helium", "count": 100}]},
+        "ticks": 200,
     }
 )
 
 recipes_condens.append(
     {
         "name": "Methane",
-        "Input": {"Items": []},
-        "ResourceInput": {"name": "Kinetic", "Count": 40},
-        "Output": {"Items": [{"name": "Methane", "Count": 80}]},
-        "Ticks": 200,
+        "input": {"items": []},
+        "res_input": {"name": "Kinetic", "count": 40},
+        "output": {"items": [{"name": "Methane", "count": 80}]},
+        "ticks": 200,
     }
 )
 
 recipes_condens.append(
     {
         "name": "Hydrogen",
-        "Input": {"Items": []},
-        "ResourceInput": {"name": "Kinetic", "Count": 40},
-        "Output": {"Items": [{"name": "Hydrogen", "Count": 50}]},
-        "Ticks": 200,
+        "input": {"items": []},
+        "res_input": {"name": "Kinetic", "count": 40},
+        "output": {"items": [{"name": "Hydrogen", "count": 50}]},
+        "ticks": 200,
     }
 )
 
 recipes_farm.append(
     {
         "name": "Logs",
-        "Input": {"Items": [{"name": "Water", "Count": 625}]},
-        "Output": {"Items": [{"name": "Log", "Count": 15}]},
-        "Ticks": 2000,
+        "input": {"items": [{"name": "Water", "count": 625}]},
+        "output": {"items": [{"name": "Log", "count": 15}]},
+        "ticks": 2000,
     }
 )
 
 recipes_farm.append(
     {
         "name": "Pumpkin",
-        "Input": {"Items": [{"name": "Water", "Count": 625}]},
-        "Output": {"Items": [{"name": "Pumpkin", "Count": 10}]},
-        "Ticks": 1000,
+        "input": {"items": [{"name": "Water", "count": 625}]},
+        "output": {"items": [{"name": "Pumpkin", "count": 10}]},
+        "ticks": 1000,
     }
 )
 
 recipes_centrifuge.append(
     {
         "name": "DepletedUraniumCell",
-        "Input": {"Items": [{"name": "DepletedUraniumCell", "Count": 1}]},
-        "Output": {
-            "Items": [
+        "input": {"items": [{"name": "DepletedUraniumCell", "count": 1}]},
+        "output": {
+            "items": [
                 {
                     "name": "PlutoniumDust",
-                    "Count": 1,
+                    "count": 1,
                     "split": 10,
                 }
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 100},
-        "Ticks": 2000,
+        "res_input": {"name": "Kinetic", "count": 100},
+        "ticks": 2000,
     }
 )
 
 recipes_fission.append(
     {
         "name": "UraniumCell",
-        "Input": {"Items": [{"name": "UraniumCell", "Count": 1}]},
-        "Output": {"Items": [{"name": "DepletedUraniumCell", "Count": 1}]},
-        "ResourceOutput": {"name": "Heat", "Count": 7100},
-        "Ticks": 2000,
+        "input": {"items": [{"name": "UraniumCell", "count": 1}]},
+        "output": {"items": [{"name": "DepletedUraniumCell", "count": 1}]},
+        "res_output": {"name": "Heat", "count": 7100},
+        "ticks": 2000,
     }
 )
 
 recipes_fission.append(
     {
         "name": "UraniumCell2",
-        "Input": {
-            "Items": [
-                {"name": "UraniumCell", "Count": 2},
+        "input": {
+            "items": [
+                {"name": "UraniumCell", "count": 2},
                 {
                     "name": "ControlCell",
-                    "Count": 1,
+                    "count": 1,
                     "split": 0,
                 },
             ]
         },
-        "Output": {"Items": [{"name": "DepletedUraniumCell", "Count": 2}]},
-        "ResourceOutput": {"name": "Heat", "Count": 7100 * 2.2},
-        "Ticks": 2000,
+        "output": {"items": [{"name": "DepletedUraniumCell", "count": 2}]},
+        "res_output": {"name": "Heat", "count": 7100 * 2.2},
+        "ticks": 2000,
     }
 )
 
 recipes_fission.append(
     {
         "name": "UraniumCell3",
-        "Input": {
-            "Items": [
-                {"name": "UraniumCell", "Count": 3},
+        "input": {
+            "items": [
+                {"name": "UraniumCell", "count": 3},
                 {
                     "name": "ControlCell",
-                    "Count": 1,
+                    "count": 1,
                     "split": 0,
                 },
             ]
         },
-        "Output": {"Items": [{"name": "DepletedUraniumCell", "Count": 3}]},
-        "ResourceOutput": {"name": "Heat", "Count": 7100 * 3.3},
-        "Ticks": 2000,
+        "output": {"items": [{"name": "DepletedUraniumCell", "count": 3}]},
+        "res_output": {"name": "Heat", "count": 7100 * 3.3},
+        "ticks": 2000,
     }
 )
 
 recipes_fission.append(
     {
         "name": "UraniumCell4",
-        "Input": {
-            "Items": [
-                {"name": "UraniumCell", "Count": 3},
+        "input": {
+            "items": [
+                {"name": "UraniumCell", "count": 3},
                 {
                     "name": "ControlCell",
-                    "Count": 5,
+                    "count": 5,
                     "split": 0,
                 },
             ]
         },
-        "Output": {"Items": [{"name": "DepletedUraniumCell", "Count": 3}]},
-        "ResourceOutput": {"name": "Heat", "Count": 7100 * 3.3 / 2},
-        "Ticks": 2000 * 2,
+        "output": {"items": [{"name": "DepletedUraniumCell", "count": 3}]},
+        "res_output": {"name": "Heat", "count": 7100 * 3.3 / 2},
+        "ticks": 2000 * 2,
     }
 )
 
 recipes_fission.append(
     {
         "name": "ControlCell3",
-        "Input": {
-            "Items": [
-                {"name": "UraniumCell", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "UraniumCell", "count": 1},
                 {
                     "name": "ControlCell",
-                    "Count": 3,
+                    "count": 3,
                     "split": 0,
                 },
             ]
         },
-        "Output": {"Items": [{"name": "DepletedUraniumCell", "Count": 1}]},
-        "ResourceOutput": {"name": "Heat", "Count": 7100 / 4},
-        "Ticks": 8000 * 0.9 * 0.9,
+        "output": {"items": [{"name": "DepletedUraniumCell", "count": 1}]},
+        "res_output": {"name": "Heat", "count": 7100 / 4},
+        "ticks": 8000 * 0.9 * 0.9,
     }
 )
 
 recipes_fission.append(
     {
         "name": "ThoriumCell",
-        "Input": {
-            "Items": [
+        "input": {
+            "items": [
                 {
                     "name": "UraniumCell",
-                    "Count": 3,
+                    "count": 3,
                 },
                 {
                     "name": "ReflectorCell",
-                    "Count": 1,
+                    "count": 1,
                     "split": 0,
                 },
                 {
                     "name": "ThoriumCell",
-                    "Count": 2,
+                    "count": 2,
                 },
             ]
         },
-        "Output": {
-            "Items": [
-                {"name": "DepletedUraniumCell", "Count": 3},
+        "output": {
+            "items": [
+                {"name": "DepletedUraniumCell", "count": 3},
                 {
                     "name": "Uranium233Cell",
-                    "Count": 2,
+                    "count": 2,
                 },
             ]
         },
-        "ResourceOutput": {"name": "Heat", "Count": 200},
-        "Ticks": 2000,
+        "res_output": {"name": "Heat", "count": 200},
+        "ticks": 2000,
     }
 )
 
 recipes_fission.append(
     {
         "name": "PlutoniumCell",
-        "Input": {
-            "Items": [
+        "input": {
+            "items": [
                 {
                     "name": "PlutoniumCell",
-                    "Count": 1,
+                    "count": 1,
                 },
                 {
                     "name": "ReflectorCell",
-                    "Count": 1,
+                    "count": 1,
                     "split": 0,
                 },
                 {
                     "name": "ThoriumCell",
-                    "Count": 3,
+                    "count": 3,
                 },
             ]
         },
-        "Output": {
-            "Items": [
+        "output": {
+            "items": [
                 {
                     "name": "Uranium233Cell",
-                    "Count": 3,
+                    "count": 3,
                 },
-                {"name": "DepletedUraniumCell", "Count": 1},
+                {"name": "DepletedUraniumCell", "count": 1},
             ]
         },
-        "ResourceOutput": {"name": "Heat", "Count": 200},
-        "Ticks": 2000,
+        "res_output": {"name": "Heat", "count": 200},
+        "ticks": 2000,
     }
 )
 
 recipes_fission.append(
     {
         "name": "PlutoniumCell2",
-        "Input": {
-            "Items": [
+        "input": {
+            "items": [
                 {
                     "name": "PlutoniumCell",
-                    "Count": 1,
+                    "count": 1,
                 },
                 {
                     "name": "ReflectorCell",
-                    "Count": 2,
+                    "count": 2,
                     "split": 0,
                 },
                 {
                     "name": "ThoriumCell",
-                    "Count": 6,
+                    "count": 6,
                 },
             ]
         },
-        "Output": {
-            "Items": [
+        "output": {
+            "items": [
                 {
                     "name": "Uranium233Cell",
-                    "Count": 6,
+                    "count": 6,
                 },
-                {"name": "DepletedUraniumCell", "Count": 1},
+                {"name": "DepletedUraniumCell", "count": 1},
             ]
         },
-        "ResourceOutput": {"name": "Heat", "Count": 200},
-        "Ticks": 2000,
+        "res_output": {"name": "Heat", "count": 200},
+        "ticks": 2000,
     }
 )
 
 recipes_fission.append(
     {
         "name": "ControlCell",
-        "Input": {
-            "Items": [
-                {"name": "UraniumCell", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "UraniumCell", "count": 1},
                 {
                     "name": "ControlCell",
-                    "Count": 1,
+                    "count": 1,
                     "split": 0,
                 },
             ]
         },
-        "Output": {"Items": [{"name": "DepletedUraniumCell", "Count": 1}]},
-        "ResourceOutput": {"name": "Heat", "Count": 7100 / 2},
-        "Ticks": 4000 * 0.9,
+        "output": {"items": [{"name": "DepletedUraniumCell", "count": 1}]},
+        "res_output": {"name": "Heat", "count": 7100 / 2},
+        "ticks": 4000 * 0.9,
     }
 )
 
 recipes_fission.append(
     {
         "name": "Uranium233Cell",
-        "Input": {
-            "Items": [
+        "input": {
+            "items": [
                 {
                     "name": "Uranium233Cell",
-                    "Count": 1,
+                    "count": 1,
                 },
                 {
                     "name": "ControlCell",
-                    "Count": 1,
+                    "count": 1,
                     "split": 0,
                 },
             ]
         },
-        "Output": {
-            "Items": [
+        "output": {
+            "items": [
                 {
                     "name": "DepletedUraniumCell",
-                    "Count": 1,
+                    "count": 1,
                 }
             ]
         },
-        "ResourceOutput": {"name": "Heat", "Count": 7100 * 3.3},
-        "Ticks": 2000,
+        "res_output": {"name": "Heat", "count": 7100 * 3.3},
+        "ticks": 2000,
     }
 )
 
 recipes_fission.append(
     {
         "name": "Uranium233Cell2",
-        "Input": {
-            "Items": [
+        "input": {
+            "items": [
                 {
                     "name": "Uranium233Cell",
-                    "Count": 2,
+                    "count": 2,
                 },
                 {
                     "name": "ControlCell",
-                    "Count": 1,
+                    "count": 1,
                     "split": 0,
                 },
             ]
         },
-        "Output": {
-            "Items": [
+        "output": {
+            "items": [
                 {
                     "name": "DepletedUraniumCell",
-                    "Count": 2,
+                    "count": 2,
                 }
             ]
         },
-        "ResourceOutput": {"name": "Heat", "Count": fission_fullpower / 2},
-        "Ticks": 2000,
+        "res_output": {"name": "Heat", "count": fission_fullpower / 2},
+        "ticks": 2000,
     }
 )
 
 recipes_fission.append(
     {
         "name": "Uranium233Cell3",
-        "Input": {
-            "Items": [
+        "input": {
+            "items": [
                 {
                     "name": "Uranium233Cell",
-                    "Count": 4,
+                    "count": 4,
                 },
                 {
                     "name": "ControlCell",
-                    "Count": 1,
+                    "count": 1,
                     "split": 0,
                 },
             ]
         },
-        "Output": {
-            "Items": [
+        "output": {
+            "items": [
                 {
                     "name": "DepletedUraniumCell",
-                    "Count": 4,
+                    "count": 4,
                 }
             ]
         },
-        "ResourceOutput": {"name": "Heat", "Count": fission_fullpower},
-        "Ticks": 2000,
+        "res_output": {"name": "Heat", "count": fission_fullpower},
+        "ticks": 2000,
     }
 )
 
 recipes_chem.append(
     {
         "name": "AluminothermicChromiumDust",
-        "Input": {
-            "Items": [
-                {"name": "AluminiumDust", "Count": 1},
-                {"name": "ChromiumOxideDust", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "AluminiumDust", "count": 1},
+                {"name": "ChromiumOxideDust", "count": 1},
             ]
         },
-        "Output": {
-            "Items": [{"name": "ChromiumDust", "Count": 1}],
+        "output": {
+            "items": [{"name": "ChromiumDust", "count": 1}],
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Electricity",
-            "Count": 10,
+            "count": 10,
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_chem.append(
     {
         "name": "CinnabarDust",
-        "Input": {"Items": [{"name": "CinnabarDust", "Count": 2}]},
-        "Output": {
-            "Items": [
-                {"name": "Mercury", "Count": 1000},
-                {"name": "Sulfur", "Count": 1},
+        "input": {"items": [{"name": "CinnabarDust", "count": 2}]},
+        "output": {
+            "items": [
+                {"name": "Mercury", "count": 1000},
+                {"name": "Sulfur", "count": 1},
             ],
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Electricity",
-            "Count": 10,
+            "count": 10,
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_boiler.append(
     {
         "name": "Boiling",
-        "Input": {
-            "Items": [{"name": "Water", "Count": 50}],
+        "input": {
+            "items": [{"name": "Water", "count": 50}],
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Heat",
-            "Count": 110,
+            "count": 110,
         },
-        "Output": {"Items": []},
-        "ResourceOutput": {
+        "output": {"items": []},
+        "res_output": {
             "name": "Steam",
-            "Count": 100,
+            "count": 100,
             # "Capacity": 32000,
         },
-        "Ticks": 200,
-        "Loss": 10,
+        "ticks": 200,
+        "loss": 10,
     }
 )
 
 recipes_steam_turbine.append(
     {
         "name": "Rotating",
-        "Input": {"Items": []},
-        "ResourceInput": {"name": "Steam", "Count": 300},
-        "Output": {"Items": []},
-        "ResourceOutput": {"name": "Kinetic", "Count": 270},
-        "Ticks": 200,
-        "Loss": 10,
+        "input": {"items": []},
+        "res_input": {"name": "Steam", "count": 300},
+        "output": {"items": []},
+        "res_output": {"name": "Kinetic", "count": 270},
+        "ticks": 200,
+        "loss": 10,
     }
 )
 
 recipes_generator.append(
     {
         "name": "Generating",
-        "Input": {"Items": []},
-        "ResourceInput": {"name": "Kinetic", "Count": 270},
-        "Output": {"Items": []},
-        "ResourceOutput": {"name": "Electricity", "Count": 243},
-        "Ticks": 200,
-        "Loss": 10,
+        "input": {"items": []},
+        "res_input": {"name": "Kinetic", "count": 270},
+        "output": {"items": []},
+        "res_output": {"name": "Electricity", "count": 243},
+        "ticks": 200,
+        "loss": 10,
     }
 )
 
 recipes_electric_engine.append(
     {
         "name": "Rotating",
-        "Input": {"Items": []},
-        "ResourceInput": {"name": "Electricity", "Count": 55},
-        "Output": {"Items": []},
-        "ResourceOutput": {"name": "Kinetic", "Count": 50},
-        "Loss": 10,
-        "Ticks": 200,
+        "input": {"items": []},
+        "res_input": {"name": "Electricity", "count": 55},
+        "output": {"items": []},
+        "res_output": {"name": "Kinetic", "count": 50},
+        "loss": 10,
+        "ticks": 200,
     }
 )
 
 recipes_industrial_electric_engine.append(
     {
         "name": "Rotating",
-        "Input": {"Items": []},
-        "ResourceInput": {"name": "Electricity", "Count": 55 * 50},
-        "Output": {"Items": []},
-        "ResourceOutput": {"name": "Kinetic", "Count": 50 * 50},
-        "Loss": 10,
-        "Ticks": 200,
+        "input": {"items": []},
+        "res_input": {"name": "Electricity", "count": 55 * 50},
+        "output": {"items": []},
+        "res_output": {"name": "Kinetic", "count": 50 * 50},
+        "loss": 10,
+        "ticks": 200,
     }
 )
 
 recipes_compact_generator.append(
     {
         "name": "Rotating",
-        "Input": {"Items": []},
-        "ResourceInput": {"name": "Kinetic", "Count": 20},
-        "Output": {"Items": []},
-        "ResourceOutput": {"name": "Electricity", "Count": 18},
-        "Loss": 10,
-        "Ticks": 200,
+        "input": {"items": []},
+        "res_input": {"name": "Kinetic", "count": 20},
+        "output": {"items": []},
+        "res_output": {"name": "Electricity", "count": 18},
+        "loss": 10,
+        "ticks": 200,
     }
 )
 
 recipes_steam_engine.append(
     {
         "name": "Rotating",
-        "Input": {"Items": []},
-        "ResourceInput": {"name": "Heat", "Count": 11},
-        "Output": {"Items": []},
-        "ResourceOutput": {"name": "Kinetic", "Count": 10},
-        "Ticks": 200,
-        "Loss": 10,
+        "input": {"items": []},
+        "res_input": {"name": "Heat", "count": 11},
+        "output": {"items": []},
+        "res_output": {"name": "Kinetic", "count": 10},
+        "ticks": 200,
+        "loss": 10,
     }
 )
 
 recipes_oven.append(
     {
         "name": "CoalPieceToCoke",
-        "Input": {"Items": [{"name": "Coal", "Count": 10}]},
-        "Output": {
-            "Items": [
-                {"name": "Coke", "Count": 10},
+        "input": {"items": [{"name": "Coal", "count": 10}]},
+        "output": {
+            "items": [
+                {"name": "Coke", "count": 10},
                 {
                     "name": "Creosote",
-                    "Count": 250,
+                    "count": 250,
                     "Capacity": 32000,
                 },
             ]
         },
-        "Ticks": 2000,
+        "ticks": 2000,
     }
 )
 
 recipes_oven.append(
     {
         "name": "LogToCoal",
-        "Input": {"Items": [{"name": "Log", "Count": 10}]},
-        "Output": {
-            "Items": [
-                {"name": "Coal", "Count": 10},
+        "input": {"items": [{"name": "Log", "count": 10}]},
+        "output": {
+            "items": [
+                {"name": "Coal", "count": 10},
                 {
                     "name": "Creosote",
-                    "Count": 100,
+                    "count": 100,
                     "Capacity": 32000,
                 },
             ]
         },
-        "Ticks": 2000,
+        "ticks": 2000,
     }
 )
 
 recipes_oven.append(
     {
         "name": "PlankToCoal",
-        "Input": {"Items": [{"name": "Plank", "Count": 10}]},
-        "Output": {
-            "Items": [
-                {"name": "Coal", "Count": 3},
+        "input": {"items": [{"name": "Plank", "count": 10}]},
+        "output": {
+            "items": [
+                {"name": "Coal", "count": 3},
                 {
                     "name": "Creosote",
-                    "Count": 30,
+                    "count": 30,
                     "Capacity": 32000,
                 },
             ]
         },
-        "Ticks": 500,
+        "ticks": 500,
     }
 )
 
 recipes_oven.append(
     {
         "name": "OrgToCoal",
-        "Input": {"Items": [{"name": "Organics", "Count": 10}]},
-        "Output": {
-            "Items": [
-                {"name": "Coal", "Count": 2},
+        "input": {"items": [{"name": "Organics", "count": 10}]},
+        "output": {
+            "items": [
+                {"name": "Coal", "count": 2},
                 {
                     "name": "Creosote",
-                    "Count": 20,
+                    "count": 20,
                     "Capacity": 32000,
                 },
             ]
         },
-        "Ticks": 500,
+        "ticks": 500,
     }
 )
 
 recipes_oven.append(
     {
         "name": "Terracotta",
-        "Input": {"Items": [{"name": "Clay", "Count": 10}]},
-        "Output": {
-            "Items": [
-                {"name": "Terracotta", "Count": 10},
+        "input": {"items": [{"name": "Clay", "count": 10}]},
+        "output": {
+            "items": [
+                {"name": "Terracotta", "count": 10},
             ]
         },
-        "Ticks": 1000,
+        "ticks": 1000,
     }
 )
 
@@ -1195,347 +1195,347 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
     recipes_blast_furnace.append(
         {
             "name": "IronIngotSmelting",
-            "Input": {
-                "Items": [
-                    {"name": fuel_type, "Count": 15},
-                    {"name": "IronIngot", "Count": 10},
+            "input": {
+                "items": [
+                    {"name": fuel_type, "count": 15},
+                    {"name": "IronIngot", "count": 10},
                 ]
             },
-            "Output": {"Items": [{"name": "SteelIngot", "Count": 10}]},
-            "Ticks": 2000,
+            "output": {"items": [{"name": "SteelIngot", "count": 10}]},
+            "ticks": 2000,
         }
     )
 
     recipes_blast_furnace.append(
         {
             "name": "IronDustSmelting",
-            "Input": {
-                "Items": [
-                    {"name": fuel_type, "Count": 10},
-                    {"name": "IronDust", "Count": 10},
+            "input": {
+                "items": [
+                    {"name": fuel_type, "count": 10},
+                    {"name": "IronDust", "count": 10},
                 ]
             },
-            "Output": {"Items": [{"name": "SteelIngot", "Count": 10}]},
-            "Ticks": 2000,
+            "output": {"items": [{"name": "SteelIngot", "count": 10}]},
+            "ticks": 2000,
         }
     )
 
     recipes_blast_furnace.append(
         {
             "name": "IronOreDustSmelting",
-            "Input": {
-                "Items": [
-                    {"name": fuel_type, "Count": 20},
-                    {"name": "IronOreDust", "Count": 10},
+            "input": {
+                "items": [
+                    {"name": fuel_type, "count": 20},
+                    {"name": "IronOreDust", "count": 10},
                 ]
             },
-            "Output": {"Items": [{"name": "SteelIngot", "Count": 10}]},
-            "Ticks": 2000,
+            "output": {"items": [{"name": "SteelIngot", "count": 10}]},
+            "ticks": 2000,
         }
     )
 
     recipes_blast_furnace.append(
         {
             "name": "IronOreDustSmelting" + fuel_type,
-            "Input": {
-                "Items": [
-                    {"name": fuel_type, "Count": 1},
-                    {"name": "SteelDust", "Count": 10},
+            "input": {
+                "items": [
+                    {"name": fuel_type, "count": 1},
+                    {"name": "SteelDust", "count": 10},
                 ]
             },
-            "Output": {"Items": [{"name": "SteelIngot", "Count": 10}]},
-            "Ticks": 2000,
+            "output": {"items": [{"name": "SteelIngot", "count": 10}]},
+            "ticks": 2000,
         }
     )
 
 recipes_mixer.append(
     {
         "name": "ReinforcedConcrete",
-        "Input": {
-            "Items": [
-                {"name": "Concrete", "Count": 10},
-                {"name": "SteelParts", "Count": 8},
-                {"name": "Water", "Count": 100},
+        "input": {
+            "items": [
+                {"name": "Concrete", "count": 10},
+                {"name": "SteelParts", "count": 8},
+                {"name": "Water", "count": 100},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "ReinforcedConcrete", "Count": 5}]},
-        "Ticks": 300,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "ReinforcedConcrete", "count": 5}]},
+        "ticks": 300,
     }
 )
 recipes_mixer.append(
     {
         "name": "Concrete",
-        "Input": {
-            "Items": [
-                {"name": "StoneSurface", "Count": 5},
-                {"name": "Water", "Count": 100},
+        "input": {
+            "items": [
+                {"name": "StoneSurface", "count": 5},
+                {"name": "Water", "count": 100},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "Concrete", "Count": 10}]},
-        "Ticks": 300,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "Concrete", "count": 10}]},
+        "ticks": 300,
     }
 )
 recipes_mixer.append(
     {
         "name": "SSCraft",
-        "Input": {
-            "Items": [
-                {"name": "IronDust", "Count": 10},
-                {"name": "ChromiumDust", "Count": 3},
+        "input": {
+            "items": [
+                {"name": "IronDust", "count": 10},
+                {"name": "ChromiumDust", "count": 3},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "StainlessSteelDust", "Count": 10}]},
-        "Ticks": 400,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "StainlessSteelDust", "count": 10}]},
+        "ticks": 400,
     }
 )
 recipes_mixer.append(
     {
         "name": "SSCraft2",
-        "Input": {
-            "Items": [
-                {"name": "IronOreDust", "Count": 10},
-                {"name": "ChromiumDust", "Count": 3},
+        "input": {
+            "items": [
+                {"name": "IronOreDust", "count": 10},
+                {"name": "ChromiumDust", "count": 3},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 40},
-        "Output": {"Items": [{"name": "StainlessSteelDust", "Count": 10}]},
-        "Ticks": 500,
+        "res_input": {"name": "Kinetic", "count": 40},
+        "output": {"items": [{"name": "StainlessSteelDust", "count": 10}]},
+        "ticks": 500,
     }
 )
 
 recipes_mixer.append(
     {
         "name": "PreparedTitaniumOxideCraft",
-        "Input": {
-            "Items": [
-                {"name": "TitaniumOxideDust", "Count": 1},
-                {"name": "Coke", "Count": 2},
+        "input": {
+            "items": [
+                {"name": "TitaniumOxideDust", "count": 1},
+                {"name": "Coke", "count": 2},
             ],
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Kinetic",
-            "Count": 10,
+            "count": 10,
         },
-        "Output": {"Items": [{"name": "PreparedTitaniumOxideDust", "Count": 1}]},
-        "Ticks": 200,
+        "output": {"items": [{"name": "PreparedTitaniumOxideDust", "count": 1}]},
+        "ticks": 200,
         "Scaled": False,
     }
 )
 
 # recipes_sep2.append({
 # 	"name": "RareSeparating",
-# 	"Input":{
-# 		"Items":[
+# 	"input":{
+# 		"items":[
 # 			{
 # 				"name": "RareEarthDust",
-# 				"Count": 10
+# 				"count": 10
 # 			},
 #
 # 		]
 # 	},
-# 	"ResourceInput":{
+# 	"res_input":{
 # 		"name": "Kinetic",
-# 		"Count": 50000
+# 		"count": 50000
 # 	},
-# 	"Output":{
-# 		"Items": [
+# 	"output":{
+# 		"items": [
 # 			{
 # 				"name": "RareMetalsDust",
-# 				"Count": 1
+# 				"count": 1
 # 			},
 # 			{
 # 				"name": "YttriumDust",
-# 				"Count": 1
+# 				"count": 1
 # 			},
 # 			{
 # 				"name": "LutetiumDust",
-# 				"Count": 1
+# 				"count": 1
 # 			},
 # 			{
 # 				"name": "DysprosiumDust",
-# 				"Count": 1
+# 				"count": 1
 # 			}
 # 		]
 # 	},
 #
-# 	"Ticks": 1000,
+# 	"ticks": 1000,
 # })
 
 # recipes_sep2.append({
 # "name": "OreWater",
-# "Input":{
-# "Items":[
+# "input":{
+# "items":[
 # {
 # "name": "OreWater",
-# "Count": 1000
+# "count": 1000
 # },
 # ]
 # },
-# "ResourceInput":{
+# "res_input":{
 # "name": "Kinetic",
-# "Count": 30
+# "count": 30
 # },
-# "Output":{
-# "Items": [
+# "output":{
+# "items": [
 # {
 # "name": "Clay",
-# "Count": 1
+# "count": 1
 # },
 # ]
 # },
 
-# "Ticks": 200,
+# "ticks": 200,
 # })
 
 recipes_sep2.append(
     {
         "name": "PlutoniumDust",
-        "Input": {
-            "Items": [
-                {"name": "DepletedUraniumCell", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "DepletedUraniumCell", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 30 * 90},
-        "Output": {
-            "Items": [
-                {"name": "Cell", "Count": 1},
-                {"name": "PlutoniumDust", "Count": 1, "split": 2},
+        "res_input": {"name": "Kinetic", "count": 30 * 90},
+        "output": {
+            "items": [
+                {"name": "Cell", "count": 1},
+                {"name": "PlutoniumDust", "count": 1, "split": 2},
             ]
         },
-        "Ticks": 400,
+        "ticks": 400,
     }
 )
 
 recipes_sep2.append(
     {
         "name": "Granite",
-        "Input": {
-            "Items": [
-                {"name": "GraniteSurface", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "GraniteSurface", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 30 * 90},
-        "Output": {
-            "Items": [
-                {"name": "SandSurface", "Count": 1},
+        "res_input": {"name": "Kinetic", "count": 30 * 90},
+        "output": {
+            "items": [
+                {"name": "SandSurface", "count": 1},
                 {
                     "name": "TungstenOxideDust",
-                    "Count": 1,
+                    "count": 1,
                     "split": 10,
                 },
             ]
         },
-        "Ticks": 40,
+        "ticks": 40,
     }
 )
 
 recipes_sep2.append(
     {
         "name": "Stone",
-        "Input": {
-            "Items": [
-                {"name": "StoneSurface", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "StoneSurface", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 30},
-        "Output": {
-            "Items": [
-                {"name": "SandSurface", "Count": 1},
+        "res_input": {"name": "Kinetic", "count": 30},
+        "output": {
+            "items": [
+                {"name": "SandSurface", "count": 1},
                 {
                     "name": "AluminiumOxideDust",
-                    "Count": 1,
+                    "count": 1,
                     "split": 10,
                 },
             ]
         },
-        "Ticks": 100,
+        "ticks": 100,
     }
 )
 
 recipes_sep2.append(
     {
         "name": "Basalt",
-        "Input": {
-            "Items": [
-                {"name": "BasaltSurface", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "BasaltSurface", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 30 * 25},
-        "Output": {
-            "Items": [
-                {"name": "SandSurface", "Count": 1},
+        "res_input": {"name": "Kinetic", "count": 30 * 25},
+        "output": {
+            "items": [
+                {"name": "SandSurface", "count": 1},
                 {
                     "name": "AluminiumOxideDust",
-                    "Count": 1,
+                    "count": 1,
                     "split": 5,
                 },
                 {
                     "name": "TitaniumOxideDust",
-                    "Count": 1,
+                    "count": 1,
                     "split": 10,
                 },
             ]
         },
-        "Ticks": 40,
+        "ticks": 40,
     }
 )
 
 recipes_sep2.append(
     {
         "name": "Sand",
-        "Input": {
-            "Items": [
-                {"name": "SandSurface", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "SandSurface", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 30},
-        "Output": {
-            "Items": [
+        "res_input": {"name": "Kinetic", "count": 30},
+        "output": {
+            "items": [
                 {
                     "name": "SiliconOxide",
-                    "Count": 1,
+                    "count": 1,
                     "split": 2,
                 }
             ]
         },
-        "Ticks": 100,
+        "ticks": 100,
     }
 )
 
 recipes_arc_furnace.append(
     {
         "name": "CopperOreDust",
-        "Input": {
-            "Items": [
-                {"name": "CopperOreDust", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "CopperOreDust", "count": 1},
             ]
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Electricity",
-            "Count": 20,
+            "count": 20,
         },
-        "Output": {"Items": [{"name": "CopperIngot", "Count": 1}]},
-        "Ticks": 200,
+        "output": {"items": [{"name": "CopperIngot", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_arc_furnace.append(
     {
         "name": "SandSurfaceSmelting",
-        "Input": {
-            "Items": [
-                {"name": "SandSurface", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "SandSurface", "count": 1},
             ],
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Electricity",
-            "Count": 20,
+            "count": 20,
         },
-        "Output": {"Items": [{"name": "Glass", "Count": 1}]},
-        "Ticks": 100,
+        "output": {"items": [{"name": "Glass", "count": 1}]},
+        "ticks": 100,
     }
 )
 
@@ -1545,512 +1545,512 @@ for material in materials:
             recipes_arc_furnace.append(
                 {
                     "name": material["name"] + "Ingot",
-                    "Input": {
-                        "Items": [
-                            {"name": material["name"] + "Dust", "Count": 1},
+                    "input": {
+                        "items": [
+                            {"name": material["name"] + "Dust", "count": 1},
                         ]
                     },
-                    "ResourceInput": {
+                    "res_input": {
                         "name": "Electricity",
-                        "Count": 20 if material["name"] != "StainlessSteel" else 100,
+                        "count": 20 if material["name"] != "StainlessSteel" else 100,
                     },
-                    "Output": {
-                        "Items": [{"name": material["name"] + "Ingot", "Count": 1}]
+                    "output": {
+                        "items": [{"name": material["name"] + "Ingot", "count": 1}]
                     },
-                    "Tier": extract_tier(material),
-                    "Ticks": 200,
+                    "tier": extract_tier(material),
+                    "ticks": 200,
                 }
             )
 
 recipes_macerator.append(
     {
         "name": "Pumpkin",
-        "Input": {
-            "Items": [
-                {"name": "Pumpkin", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "Pumpkin", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "Organics", "Count": 1}]},
-        "Tier": 0,
-        "Ticks": 200,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "Organics", "count": 1}]},
+        "tier": 0,
+        "ticks": 200,
     }
 )
 
 recipes_macerator.append(
     {
         "name": "Emerald",
-        "Input": {
-            "Items": [
-                {"name": "Emerald", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "Emerald", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 50},
-        "Output": {"Items": [{"name": "EmeraldDust", "Count": 1}]},
-        "Tier": 0,
-        "Ticks": 100,
+        "res_input": {"name": "Kinetic", "count": 50},
+        "output": {"items": [{"name": "EmeraldDust", "count": 1}]},
+        "tier": 0,
+        "ticks": 100,
     }
 )
 
 recipes_macerator.append(
     {
         "name": "MalachiteCrystal",
-        "Input": {
-            "Items": [
-                {"name": "MalachiteCrystal", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "MalachiteCrystal", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "CopperOreDust", "Count": 2}]},
-        "Tier": 0,
-        "Ticks": 200,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "CopperOreDust", "count": 2}]},
+        "tier": 0,
+        "ticks": 200,
     }
 )
 
 recipes_macerator.append(
     {
         "name": "MalachiteCluster",
-        "Input": {
-            "Items": [
-                {"name": "MalachiteCluster", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "MalachiteCluster", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "CopperOreDust", "Count": 5}]},
-        "Tier": 0,
-        "Ticks": 200,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "CopperOreDust", "count": 5}]},
+        "tier": 0,
+        "ticks": 200,
     }
 )
 
 recipes_macerator.append(
     {
         "name": "RutileCrystal",
-        "Input": {
-            "Items": [
-                {"name": "RutileCrystal", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "RutileCrystal", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "TitaniumOxideDust", "Count": 2}]},
-        "Tier": 0,
-        "Ticks": 200,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "TitaniumOxideDust", "count": 2}]},
+        "tier": 0,
+        "ticks": 200,
     }
 )
 
 recipes_macerator.append(
     {
         "name": "CinnabarCrystal",
-        "Input": {
-            "Items": [
-                {"name": "CinnabarCrystal", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "CinnabarCrystal", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "CinnabarDust", "Count": 2}]},
-        "Tier": 0,
-        "Ticks": 200,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "CinnabarDust", "count": 2}]},
+        "tier": 0,
+        "ticks": 200,
     }
 )
 
 recipes_macerator.append(
     {
         "name": "CinnabarCluster",
-        "Input": {
-            "Items": [
-                {"name": "CinnabarCluster", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "CinnabarCluster", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "CinnabarDust", "Count": 5}]},
-        "Tier": 0,
-        "Ticks": 200,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "CinnabarDust", "count": 5}]},
+        "tier": 0,
+        "ticks": 200,
     }
 )
 
 recipes_macerator.append(
     {
         "name": "UraniniteCrystal",
-        "Input": {
-            "Items": [
-                {"name": "UraniniteCrystal", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "UraniniteCrystal", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "UraniumDust", "Count": 2}]},
-        "Tier": 0,
-        "Ticks": 200,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "UraniumDust", "count": 2}]},
+        "tier": 0,
+        "ticks": 200,
     }
 )
 
 recipes_macerator.append(
     {
         "name": "UraniniteCluster",
-        "Input": {
-            "Items": [
-                {"name": "UraniniteCluster", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "UraniniteCluster", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {
-            "Items": [
-                {"name": "UraniumDust", "Count": 5},
-                {"name": "Uranium235Dust", "Count": 1},
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {
+            "items": [
+                {"name": "UraniumDust", "count": 5},
+                {"name": "Uranium235Dust", "count": 1},
             ]
         },
-        "Tier": 0,
-        "Ticks": 200,
+        "tier": 0,
+        "ticks": 200,
     }
 )
 
 recipes_macerator.append(
     {
         "name": "GravelToSand",
-        "Input": {
-            "Items": [
-                {"name": "GravelSurface", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "GravelSurface", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "SandSurface", "Count": 1}]},
-        "Tier": 0,
-        "Ticks": 200,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "SandSurface", "count": 1}]},
+        "tier": 0,
+        "ticks": 200,
     }
 )
 
 recipes_hammer.append(
     {
         "name": "StoneToGravel",
-        "Input": {
-            "Items": [
-                {"name": "StoneSurface", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "StoneSurface", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "GravelSurface", "Count": 1}]},
-        "Tier": 0,
-        "Ticks": 100,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "GravelSurface", "count": 1}]},
+        "tier": 0,
+        "ticks": 100,
     }
 )
 
 recipes_pump.append(
     {
         "name": "Water",
-        "Input": {"Items": []},
-        "Output": {"Items": []},
-        "ResourceOutput": {"name": "Water", "Count": 600},
-        "Ticks": 6 * 20,
+        "input": {"items": []},
+        "output": {"items": []},
+        "res_output": {"name": "Water", "count": 600},
+        "ticks": 6 * 20,
     }
 )
 
 recipes_indu.append(
     {
         "name": "SpongeToIngot",
-        "Input": {
-            "Items": [
-                {"name": "TitaniumSponge", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "TitaniumSponge", "count": 1},
             ],
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Heat",
-            "Count": 350,
+            "count": 350,
         },
-        "Output": {
-            "Items": [
-                {"name": "TitaniumIngot", "Count": 1},
+        "output": {
+            "items": [
+                {"name": "TitaniumIngot", "count": 1},
             ]
         },
-        "Tier": 5,
-        "Ticks": 200,
+        "tier": 5,
+        "ticks": 200,
     }
 )
 
 recipes_indu.append(
     {
         "name": "SuperconductorDust",
-        "Input": {
-            "Items": [
-                {"name": "SuperconductorDust", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "SuperconductorDust", "count": 1},
             ],
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Heat",
-            "Count": 100,
+            "count": 100,
         },
-        "Output": {
-            "Items": [
-                {"name": "SuperconductorIngot", "Count": 1},
+        "output": {
+            "items": [
+                {"name": "SuperconductorIngot", "count": 1},
             ]
         },
-        "Tier": 5,
-        "Ticks": 200,
+        "tier": 5,
+        "ticks": 200,
     }
 )
 
 recipes_indu.append(
     {
         "name": "TDustToIngot",
-        "Input": {
-            "Items": [
-                {"name": "TitaniumDust", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "TitaniumDust", "count": 1},
             ],
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Heat",
-            "Count": 350,
+            "count": 350,
         },
-        "Output": {
-            "Items": [
-                {"name": "TitaniumIngot", "Count": 1},
+        "output": {
+            "items": [
+                {"name": "TitaniumIngot", "count": 1},
             ]
         },
-        "Tier": 5,
-        "Ticks": 200,
+        "tier": 5,
+        "ticks": 200,
     }
 )
 
 recipes_indu.append(
     {
         "name": "HardMetalDustToIngot",
-        "Input": {
-            "Items": [
-                {"name": "HardMetalDust", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "HardMetalDust", "count": 1},
             ],
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Heat",
-            "Count": 900,
+            "count": 900,
         },
-        "Output": {
-            "Items": [
-                {"name": "HotHardMetalIngot", "Count": 1},
+        "output": {
+            "items": [
+                {"name": "HotHardMetalIngot", "count": 1},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_sep.append(
     {
         "name": "SiliconOxide",
-        "Input": {"Items": [{"name": "SandSurface", "Count": 2}]},
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "SiliconOxide", "Count": 1}]},
-        "Ticks": 1000,
+        "input": {"items": [{"name": "SandSurface", "count": 2}]},
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "SiliconOxide", "count": 1}]},
+        "ticks": 1000,
     }
 )
 
 recipes_mixer.append(
     {
         "name": "Organics",
-        "Input": {
-            "Items": [
-                {"name": "Organics", "Count": 1},
-                {"name": "Water", "Count": 500},
+        "input": {
+            "items": [
+                {"name": "Organics", "count": 1},
+                {"name": "Water", "count": 500},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "Biomass", "Count": 500}]},
-        "Ticks": 200,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "Biomass", "count": 500}]},
+        "ticks": 200,
     }
 )
 
 recipes_mixer.append(
     {
         "name": "HardMetalDust",
-        "Input": {
-            "Items": [
-                {"name": "TungstenCarbideDust", "Count": 4},
-                {"name": "CobaltDust", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "TungstenCarbideDust", "count": 4},
+                {"name": "CobaltDust", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 100},
-        "Output": {"Items": [{"name": "HardMetalDust", "Count": 5}]},
-        "Ticks": 1000,
+        "res_input": {"name": "Kinetic", "count": 100},
+        "output": {"items": [{"name": "HardMetalDust", "count": 5}]},
+        "ticks": 1000,
     }
 )
 
 recipes_mixer.append(
     {
         "name": "SuperconductorDust",
-        "Input": {
-            "Items": [
-                {"name": "GoldDust", "Count": 3},
-                {"name": "RareEarthElement", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "GoldDust", "count": 3},
+                {"name": "RareEarthElement", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 100},
-        "Output": {"Items": [{"name": "SuperconductorDust", "Count": 3}]},
-        "Ticks": 300,
+        "res_input": {"name": "Kinetic", "count": 100},
+        "output": {"items": [{"name": "SuperconductorDust", "count": 3}]},
+        "ticks": 300,
     }
 )
 
 recipes_electrolyzer.append(
     {
         "name": "AluminiumOxideDust",
-        "Input": {
-            "Items": [
-                {"name": "AluminiumOxideDust", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "AluminiumOxideDust", "count": 1},
             ]
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Electricity",
-            "Count": 50,
+            "count": 50,
         },
-        "Output": {"Items": [{"name": "AluminiumDust", "Count": 1}]},
-        "Ticks": 200,
+        "output": {"items": [{"name": "AluminiumDust", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_electrolyzer.append(
     {
         "name": "EmeraldDust",
-        "Input": {
-            "Items": [
-                {"name": "EmeraldDust", "Count": 2},
+        "input": {
+            "items": [
+                {"name": "EmeraldDust", "count": 2},
             ]
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Electricity",
-            "Count": 70,
+            "count": 70,
         },
-        "Output": {
-            "Items": [
-                {"name": "BerylliumDust", "Count": 1},
-                {"name": "AluminiumOxideDust", "Count": 1},
+        "output": {
+            "items": [
+                {"name": "BerylliumDust", "count": 1},
+                {"name": "AluminiumOxideDust", "count": 1},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_electrolyzer.append(
     {
         "name": "AluminiumOreDust",
-        "Input": {
-            "Items": [
-                {"name": "AluminiumOreDust", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "AluminiumOreDust", "count": 1},
             ]
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Electricity",
-            "Count": 30,
+            "count": 30,
         },
-        "Output": {"Items": [{"name": "AluminiumDust", "Count": 1}]},
-        "Ticks": 500,
+        "output": {"items": [{"name": "AluminiumDust", "count": 1}]},
+        "ticks": 500,
     }
 )
 
 recipes_electrolyzer.append(
     {
         "name": "Clay",
-        "Input": {
-            "Items": [
-                {"name": "Clay", "Count": 6},
+        "input": {
+            "items": [
+                {"name": "Clay", "count": 6},
             ]
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Electricity",
-            "Count": 1300,
+            "count": 1300,
         },
-        "Output": {
-            "Items": [
-                {"name": "SandSurface", "Count": 4},
-                {"name": "AluminiumOxideDust", "Count": 1},
-                {"name": "SodiumDust", "Count": 1},
+        "output": {
+            "items": [
+                {"name": "SandSurface", "count": 4},
+                {"name": "AluminiumOxideDust", "count": 1},
+                {"name": "SodiumDust", "count": 1},
             ]
         },
-        "Ticks": 40,
+        "ticks": 40,
     }
 )
 
 recipes_electrolyzer.append(
     {
         "name": "SandElectrolyze",
-        "Input": {"Items": [{"name": "SiliconOxide", "Count": 1}]},
-        "ResourceInput": {"name": "Electricity", "Count": 60},
-        "Output": {"Items": [{"name": "Silicon", "Count": 1}]},
-        "Ticks": 200,
+        "input": {"items": [{"name": "SiliconOxide", "count": 1}]},
+        "res_input": {"name": "Electricity", "count": 60},
+        "output": {"items": [{"name": "Silicon", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_electrolyzer.append(
     {
         "name": "WaterElectrolyze",
-        "Input": {"Items": [{"name": "Water", "Count": 100}]},
-        "ResourceInput": {"name": "Electricity", "Count": 280},
-        "Output": {
-            "Items": [
-                {"name": "Hydrogen", "Count": 100},
-                {"name": "Oxygen", "Count": 200},
+        "input": {"items": [{"name": "Water", "count": 100}]},
+        "res_input": {"name": "Electricity", "count": 280},
+        "output": {
+            "items": [
+                {"name": "Hydrogen", "count": 100},
+                {"name": "Oxygen", "count": 200},
             ]
         },
-        "Ticks": 100,
+        "ticks": 100,
     }
 )
 
 recipes_electrolyzer.append(
     {
         "name": "SaltElectrolyze",
-        "Input": {
-            "Items": [
-                {"name": "SaltDust", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "SaltDust", "count": 1},
             ]
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Electricity",
-            "Count": 10,
+            "count": 10,
         },
-        "Output": {
-            "Items": [
-                {"name": "SodiumDust", "Count": 1},
-                {"name": "Chlorine", "Count": 1000},
+        "output": {
+            "items": [
+                {"name": "SodiumDust", "count": 1},
+                {"name": "Chlorine", "count": 1000},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_electrolyzer.append(
     {
         "name": "PotassiumChloride",
-        "Input": {
-            "Items": [
-                {"name": "PotassiumChlorideDust", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "PotassiumChlorideDust", "count": 1},
             ]
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Electricity",
-            "Count": 10,
+            "count": 10,
         },
-        "Output": {
-            "Items": [
-                {"name": "PotassiumDust", "Count": 1},
-                {"name": "Chlorine", "Count": 1000},
+        "output": {
+            "items": [
+                {"name": "PotassiumDust", "count": 1},
+                {"name": "Chlorine", "count": 1000},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_electrolyzer.append(
     {
         "name": "Borax",
-        "Input": {
-            "Items": [
-                {"name": "BoraxDust", "Count": 2},
+        "input": {
+            "items": [
+                {"name": "BoraxDust", "count": 2},
             ]
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Electricity",
-            "Count": 50,
+            "count": 50,
         },
-        "Output": {
-            "Items": [
-                {"name": "SodiumDust", "Count": 1},
-                {"name": "BoronDust", "Count": 1},
+        "output": {
+            "items": [
+                {"name": "SodiumDust", "count": 1},
+                {"name": "BoronDust", "count": 1},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
@@ -2059,190 +2059,190 @@ recipes_electrolyzer.append(
 recipes_cutter.append(
     {
         "name": "LogCutting",
-        "Input": {
-            "Items": [
-                {"name": "Log", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "Log", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "Plank", "Count": 4}]},
-        "Ticks": 80,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "Plank", "count": 4}]},
+        "ticks": 80,
     }
 )
 recipes_cutter.append(
     {
         "name": "StoneLogCutting",
-        "Input": {
-            "Items": [
-                {"name": "StoneLog", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "StoneLog", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "Plank", "Count": 4}]},
-        "Ticks": 200,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "Plank", "count": 4}]},
+        "ticks": 200,
     }
 )
 recipes_cutter.append(
     {
         "name": "CircuitBoard",
-        "Input": {
-            "Items": [
-                {"name": "Plank", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "Plank", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "CircuitBoard", "Count": 1}]},
-        "Ticks": 80,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "CircuitBoard", "count": 1}]},
+        "ticks": 80,
     }
 )
 recipes_cutter.append(
     {
         "name": "StoneTiles",
-        "Input": {"Items": [{"name": "StoneSurface", "Count": 1}]},
-        "ResourceInput": {"name": "Kinetic", "Count": 20},
-        "Output": {"Items": [{"name": "StoneTiles", "Count": 1}]},
-        "Ticks": 100,
+        "input": {"items": [{"name": "StoneSurface", "count": 1}]},
+        "res_input": {"name": "Kinetic", "count": 20},
+        "output": {"items": [{"name": "StoneTiles", "count": 1}]},
+        "ticks": 100,
     }
 )
 recipes_cutter.append(
     {
         "name": "DarkTiles",
-        "Input": {"Items": [{"name": "DarkStoneSurface", "Count": 1}]},
-        "ResourceInput": {"name": "Kinetic", "Count": 20},
-        "Output": {"Items": [{"name": "DarkTiles", "Count": 1}]},
-        "Ticks": 100,
+        "input": {"items": [{"name": "DarkStoneSurface", "count": 1}]},
+        "res_input": {"name": "Kinetic", "count": 20},
+        "output": {"items": [{"name": "DarkTiles", "count": 1}]},
+        "ticks": 100,
     }
 )
 recipes_cutter.append(
     {
         "name": "RedTiles",
-        "Input": {"Items": [{"name": "RedStoneSurface", "Count": 1}]},
-        "ResourceInput": {"name": "Kinetic", "Count": 20},
-        "Output": {"Items": [{"name": "RedTiles", "Count": 1}]},
-        "Ticks": 100,
+        "input": {"items": [{"name": "RedStoneSurface", "count": 1}]},
+        "res_input": {"name": "Kinetic", "count": 20},
+        "output": {"items": [{"name": "RedTiles", "count": 1}]},
+        "ticks": 100,
     }
 )
 recipes_cutter.append(
     {
         "name": "Bricks",
-        "Input": {"Items": [{"name": "StoneTiles", "Count": 1}]},
-        "ResourceInput": {"name": "Kinetic", "Count": 20},
-        "Output": {"Items": [{"name": "Bricks", "Count": 1}]},
-        "Ticks": 100,
+        "input": {"items": [{"name": "StoneTiles", "count": 1}]},
+        "res_input": {"name": "Kinetic", "count": 20},
+        "output": {"items": [{"name": "Bricks", "count": 1}]},
+        "ticks": 100,
     }
 )
 recipes_cutter.append(
     {
         "name": "RedBricks",
-        "Input": {"Items": [{"name": "RedTiles", "Count": 1}]},
-        "ResourceInput": {"name": "Kinetic", "Count": 20},
-        "Output": {"Items": [{"name": "RedBricks", "Count": 1}]},
-        "Ticks": 100,
+        "input": {"items": [{"name": "RedTiles", "count": 1}]},
+        "res_input": {"name": "Kinetic", "count": 20},
+        "output": {"items": [{"name": "RedBricks", "count": 1}]},
+        "ticks": 100,
     }
 )
 recipes_cutter.append(
     {
         "name": "DarkBricks",
-        "Input": {"Items": [{"name": "DarkTiles", "Count": 1}]},
-        "ResourceInput": {"name": "Kinetic", "Count": 20},
-        "Output": {"Items": [{"name": "DarkBricks", "Count": 1}]},
-        "Ticks": 100,
+        "input": {"items": [{"name": "DarkTiles", "count": 1}]},
+        "res_input": {"name": "Kinetic", "count": 20},
+        "output": {"items": [{"name": "DarkBricks", "count": 1}]},
+        "ticks": 100,
     }
 )
 recipes_cutter.append(
     {
         "name": "TerracottaTiles",
-        "Input": {"Items": [{"name": "Terracotta", "Count": 1}]},
-        "ResourceInput": {"name": "Kinetic", "Count": 20},
-        "Output": {"Items": [{"name": "TerracottaTiles", "Count": 1}]},
-        "Ticks": 100,
+        "input": {"items": [{"name": "Terracotta", "count": 1}]},
+        "res_input": {"name": "Kinetic", "count": 20},
+        "output": {"items": [{"name": "TerracottaTiles", "count": 1}]},
+        "ticks": 100,
     }
 )
 recipes_cutter.append(
     {
         "name": "TerracottaBricks",
-        "Input": {"Items": [{"name": "TerracottaTiles", "Count": 1}]},
-        "ResourceInput": {"name": "Kinetic", "Count": 20},
-        "Output": {"Items": [{"name": "TerracottaBricks", "Count": 1}]},
-        "Ticks": 100,
+        "input": {"items": [{"name": "TerracottaTiles", "count": 1}]},
+        "res_input": {"name": "Kinetic", "count": 20},
+        "output": {"items": [{"name": "TerracottaBricks", "count": 1}]},
+        "ticks": 100,
     }
 )
 recipes_cutter.append(
     {
         "name": "ConcreteTiles",
-        "Input": {
-            "Items": [
-                {"name": "Concrete", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "Concrete", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "ConcreteTiles", "Count": 1}]},
-        "Ticks": 100,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "ConcreteTiles", "count": 1}]},
+        "ticks": 100,
     }
 )
 recipes_cutter.append(
     {
         "name": "ConcreteSmallTiles",
-        "Input": {
-            "Items": [
-                {"name": "ConcreteTiles", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "ConcreteTiles", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "ConcreteSmallTiles", "Count": 1}]},
-        "Ticks": 100,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "ConcreteSmallTiles", "count": 1}]},
+        "ticks": 100,
     }
 )
 recipes_cutter.append(
     {
         "name": "ConcreteBricks",
-        "Input": {
-            "Items": [
-                {"name": "ConcreteSmallTiles", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "ConcreteSmallTiles", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "ConcreteBricks", "Count": 1}]},
-        "Ticks": 100,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "ConcreteBricks", "count": 1}]},
+        "ticks": 100,
     }
 )
 recipes_cutter.append(
     {
         "name": "ReinforcedConcreteTiles",
-        "Input": {
-            "Items": [
-                {"name": "ReinforcedConcrete", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "ReinforcedConcrete", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "ReinforcedConcreteTiles", "Count": 1}]},
-        "Ticks": 100,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "ReinforcedConcreteTiles", "count": 1}]},
+        "ticks": 100,
     }
 )
 recipes_cutter.append(
     {
         "name": "ReinforcedConcreteSmallTiles",
-        "Input": {
-            "Items": [
-                {"name": "ReinforcedConcreteTiles", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "ReinforcedConcreteTiles", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "ReinforcedConcreteSmallTiles", "Count": 1}]},
-        "Ticks": 100,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "ReinforcedConcreteSmallTiles", "count": 1}]},
+        "ticks": 100,
     }
 )
 recipes_cutter.append(
     {
         "name": "ReinforcedConcreteBricks",
-        "Input": {
-            "Items": [
-                {"name": "ReinforcedConcreteSmallTiles", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "ReinforcedConcreteSmallTiles", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {"Items": [{"name": "ReinforcedConcreteBricks", "Count": 1}]},
-        "Ticks": 100,
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {"items": [{"name": "ReinforcedConcreteBricks", "count": 1}]},
+        "ticks": 100,
     }
 )
 # burning
@@ -2250,178 +2250,178 @@ recipes_cutter.append(
 recipes_elfurn.append(
     {
         "name": "Working",
-        "Input": {"Items": []},
-        "ResourceInput": {
+        "input": {"items": []},
+        "res_input": {
             "name": "Electricity",
-            "Count": 55,
+            "count": 55,
         },
-        "Output": {
-            "Items": [],
+        "output": {
+            "items": [],
         },
-        "ResourceOutput": {
+        "res_output": {
             "name": "Heat",
-            "Count": 50,
+            "count": 50,
         },
-        "Ticks": 200,
-        "Loss": 10,
+        "ticks": 200,
+        "loss": 10,
     }
 )
 
 recipes_coil.append(
     {
         "name": "Working",
-        "Input": {"Items": []},
-        "ResourceInput": {"name": "Electricity", "Count": 380},
-        "Output": {
-            "Items": [],
+        "input": {"items": []},
+        "res_input": {"name": "Electricity", "count": 380},
+        "output": {
+            "items": [],
         },
-        "ResourceOutput": {
+        "res_output": {
             "name": "Heat",
-            "Count": 342,
+            "count": 342,
         },
-        "Ticks": 200,
-        "Loss": 10,
+        "ticks": 200,
+        "loss": 10,
     }
 )
 
 recipes_ferm.append(
     {
         "name": "MethaneFromBiomass",
-        "Input": {
-            "Items": [
-                {"name": "Biomass", "Count": 500},
+        "input": {
+            "items": [
+                {"name": "Biomass", "count": 500},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {"Items": [{"name": "Methane", "Count": 500}]},
-        "Ticks": 200,
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {"items": [{"name": "Methane", "count": 500}]},
+        "ticks": 200,
     }
 )
 
 recipes_ferm.append(
     {
         "name": "MethaneFromPumpkin",
-        "Input": {
-            "Items": [
-                {"name": "Pumpkin", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "Pumpkin", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {"Items": [{"name": "Methane", "Count": 200}]},
-        "Ticks": 200,
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {"items": [{"name": "Methane", "count": 200}]},
+        "ticks": 200,
     }
 )
 
 recipes_radiator.append(
     {
         "name": "Working",
-        "Input": {
-            "Items": [],
+        "input": {
+            "items": [],
         },
-        "ResourceInput": {
+        "res_input": {
             "name": "Heat",
-            "Count": 500,
+            "count": 500,
         },
-        "Output": {"Items": []},
-        "Ticks": 200,
+        "output": {"items": []},
+        "ticks": 200,
     }
 )
 
 recipes_solar.append(
     {
         "name": "Working",
-        "Input": {"Items": []},
-        "Output": {"Items": []},
-        "ResourceOutput": {
+        "input": {"items": []},
+        "output": {"items": []},
+        "res_output": {
             "name": "Electricity",
-            "Count": 50,
+            "count": 50,
         },
-        "Ticks": 60,
+        "ticks": 60,
     }
 )
 
 recipes_riteg.append(
     {
         "name": "Working",
-        "Input": {"Items": []},
-        "Output": {"Items": []},
-        "ResourceOutput": {
+        "input": {"items": []},
+        "output": {"items": []},
+        "res_output": {
             "name": "Heat",
-            "Count": 500,
+            "count": 500,
         },
-        "Ticks": 60,
+        "ticks": 60,
     }
 )
 
 recipes_chem.append(
     {
         "name": "MineralWater",
-        "Input": {
-            "Items": [
-                {"name": "MineralWater", "Count": 1000},
+        "input": {
+            "items": [
+                {"name": "MineralWater", "count": 1000},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {"Items": [{"name": "SaltDust", "Count": 1}]},
-        "Ticks": 400,
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {"items": [{"name": "SaltDust", "count": 1}]},
+        "ticks": 400,
     }
 )
 
 recipes_chem.append(
     {
         "name": "MineralWater3",
-        "Input": {
-            "Items": [
-                {"name": "MineralWater", "Count": 1000},
+        "input": {
+            "items": [
+                {"name": "MineralWater", "count": 1000},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 60},
-        "Output": {"Items": [{"name": "BoraxDust", "Count": 1, "split": 10}]},
-        "Ticks": 100,
+        "res_input": {"name": "Electricity", "count": 60},
+        "output": {"items": [{"name": "BoraxDust", "count": 1, "split": 10}]},
+        "ticks": 100,
     }
 )
 
 recipes_chem.append(
     {
         "name": "MineralWater2",
-        "Input": {
-            "Items": [
-                {"name": "MineralWater", "Count": 1000},
+        "input": {
+            "items": [
+                {"name": "MineralWater", "count": 1000},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {"Items": [{"name": "PotassiumChlorideDust", "Count": 1}]},
-        "Ticks": 400,
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {"items": [{"name": "PotassiumChlorideDust", "count": 1}]},
+        "ticks": 400,
     }
 )
 
 recipes_chem.append(
     {
         "name": "TungstenCarbideDust",
-        "Input": {
-            "Items": [
-                {"name": "TungstenDust", "Count": 1},
-                {"name": "Coke", "Count": 2},
+        "input": {
+            "items": [
+                {"name": "TungstenDust", "count": 1},
+                {"name": "Coke", "count": 2},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {"Items": [{"name": "TungstenCarbideDust", "Count": 1}]},
-        "Ticks": 200,
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {"items": [{"name": "TungstenCarbideDust", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_chem.append(
     {
         "name": "TitaniumTetrachloride",
-        "Input": {
-            "Items": [
-                {"name": "PreparedTitaniumOxideDust", "Count": 1},
-                {"name": "Chlorine", "Count": 1000},
+        "input": {
+            "items": [
+                {"name": "PreparedTitaniumOxideDust", "count": 1},
+                {"name": "Chlorine", "count": 1000},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {"Items": [{"name": "TitaniumTetrachloride", "Count": 1000}]},
-        "Ticks": 200,
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {"items": [{"name": "TitaniumTetrachloride", "count": 1000}]},
+        "ticks": 200,
         "Scaled": False,
     }
 )
@@ -2429,19 +2429,19 @@ recipes_chem.append(
 recipes_chem.append(
     {
         "name": "TitaniumSponge",
-        "Input": {
-            "Items": [
-                {"name": "TitaniumTetrachloride", "Count": 1000},
-                {"name": "AluminiumDust", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "TitaniumTetrachloride", "count": 1000},
+                {"name": "AluminiumDust", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {
-            "Items": [
-                {"name": "TitaniumSponge", "Count": 1},
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {
+            "items": [
+                {"name": "TitaniumSponge", "count": 1},
             ],
         },
-        "Ticks": 200,
+        "ticks": 200,
         "Scaled": False,
     }
 )
@@ -2449,30 +2449,30 @@ recipes_chem.append(
 recipes_chem.append(
     {
         "name": "TungstenOxide",
-        "Input": {
-            "Items": [
-                {"name": "TungstenOxideDust", "Count": 1},
-                {"name": "Hydrogen", "Count": 1000},
+        "input": {
+            "items": [
+                {"name": "TungstenOxideDust", "count": 1},
+                {"name": "Hydrogen", "count": 1000},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {"Items": [{"name": "TungstenDust", "Count": 1}]},
-        "Ticks": 200,
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {"items": [{"name": "TungstenDust", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_chem.append(
     {
         "name": "CobaltOxide",
-        "Input": {
-            "Items": [
-                {"name": "CobaltOxideDust", "Count": 1},
-                {"name": "Hydrogen", "Count": 1000},
+        "input": {
+            "items": [
+                {"name": "CobaltOxideDust", "count": 1},
+                {"name": "Hydrogen", "count": 1000},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {"Items": [{"name": "CobaltDust", "Count": 1}]},
-        "Ticks": 200,
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {"items": [{"name": "CobaltDust", "count": 1}]},
+        "ticks": 200,
         "Scaled": False,
     }
 )
@@ -2480,13 +2480,13 @@ recipes_chem.append(
 for i in {"ProducerGas", "Methane", "Hydrogen", "Gasoline"}:
     recipes_gasturb.append(
         {
-            "Input": {"Items": [{"name": i, "Count": 14 * 1000}]},
-            "Output": {"Items": []},
-            "ResourceOutput": {
+            "input": {"items": [{"name": i, "count": 14 * 1000}]},
+            "output": {"items": []},
+            "res_output": {
                 "name": "Kinetic",
-                "Count": named_material(i)["Burnable"]["HeatPerTick"] * 14,
+                "count": named_material(i)["Burnable"]["HeatPerTick"] * 14,
             },
-            "Ticks": named_material(i)["Burnable"]["BurnTime"],
+            "ticks": named_material(i)["Burnable"]["BurnTime"],
             "name": i,
         }
     )
@@ -2494,380 +2494,380 @@ for i in {"ProducerGas", "Methane", "Hydrogen", "Gasoline"}:
     recipes_combustion.append(
         {
             "name": i,
-            "Input": {"Items": [{"name": i, "Count": 1000}]},
-            "Output": {"Items": []},
-            "ResourceOutput": {
+            "input": {"items": [{"name": i, "count": 1000}]},
+            "output": {"items": []},
+            "res_output": {
                 "name": "Kinetic",
-                "Count": named_material(i)["Burnable"]["HeatPerTick"],
+                "count": named_material(i)["Burnable"]["HeatPerTick"],
             },
-            "Ticks": named_material(i)["Burnable"]["BurnTime"],
+            "ticks": named_material(i)["Burnable"]["BurnTime"],
         }
     )
 
 recipes_pyro.append(
     {
         "name": "Coal",
-        "Input": {
-            "Items": [
-                {"name": "Coal", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "Coal", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Heat", "Count": 10},
-        "Output": {
-            "Items": [
-                {"name": "Coke", "Count": 1},
-                {"name": "RawOil", "Count": 100},
-                {"name": "ProducerGas", "Count": 100},
+        "res_input": {"name": "Heat", "count": 10},
+        "output": {
+            "items": [
+                {"name": "Coke", "count": 1},
+                {"name": "RawOil", "count": 100},
+                {"name": "ProducerGas", "count": 100},
             ]
         },
-        "Ticks": 400,
+        "ticks": 400,
     }
 )
 
 recipes_pyro.append(
     {
         "name": "CoalSteam",
-        "Input": {
-            "Items": [
-                {"name": "Coal", "Count": 1},
-                {"name": "Steam", "Count": 200},
+        "input": {
+            "items": [
+                {"name": "Coal", "count": 1},
+                {"name": "Steam", "count": 200},
             ]
         },
-        "ResourceInput": {"name": "Heat", "Count": 10},
-        "Output": {
-            "Items": [
-                {"name": "Coke", "Count": 1},
-                {"name": "ProducerGas", "Count": 500},
+        "res_input": {"name": "Heat", "count": 10},
+        "output": {
+            "items": [
+                {"name": "Coke", "count": 1},
+                {"name": "ProducerGas", "count": 500},
             ]
         },
-        "Ticks": 400,
+        "ticks": 400,
     }
 )
 
 recipes_pyro.append(
     {
         "name": "RawOil",
-        "Input": {
-            "Items": [
-                {"name": "RawOil", "Count": 2000},
+        "input": {
+            "items": [
+                {"name": "RawOil", "count": 2000},
             ]
         },
-        "ResourceInput": {"name": "Heat", "Count": 15},
-        "Output": {
-            "Items": [
-                {"name": "HeavyOil", "Count": 500},
-                {"name": "Gasoline", "Count": 100},
-                {"name": "Methane", "Count": 500},
+        "res_input": {"name": "Heat", "count": 15},
+        "output": {
+            "items": [
+                {"name": "HeavyOil", "count": 500},
+                {"name": "Gasoline", "count": 100},
+                {"name": "Methane", "count": 500},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_pyro.append(
     {
         "name": "RawOilSteam",
-        "Input": {
-            "Items": [
-                {"name": "RawOil", "Count": 1000 * 5},
-                {"name": "Steam", "Count": 1000},
+        "input": {
+            "items": [
+                {"name": "RawOil", "count": 1000 * 5},
+                {"name": "Steam", "count": 1000},
             ]
         },
-        "ResourceInput": {"name": "Heat", "Count": 100},
-        "Output": {
-            "Items": [
-                {"name": "HeavyOil", "Count": 150 * 2},
-                {"name": "Gasoline", "Count": 400 * 2},
-                {"name": "Methane", "Count": 500 * 2},
+        "res_input": {"name": "Heat", "count": 100},
+        "output": {
+            "items": [
+                {"name": "HeavyOil", "count": 150 * 2},
+                {"name": "Gasoline", "count": 400 * 2},
+                {"name": "Methane", "count": 500 * 2},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_pyro.append(
     {
         "name": "HeavyOil",
-        "Input": {
-            "Items": [
-                {"name": "HeavyOil", "Count": 1000},
-                {"name": "Steam", "Count": 200},
+        "input": {
+            "items": [
+                {"name": "HeavyOil", "count": 1000},
+                {"name": "Steam", "count": 200},
             ]
         },
-        "ResourceInput": {"name": "Heat", "Count": 10},
-        "Output": {
-            "Items": [
-                {"name": "Gasoline", "Count": 750},
+        "res_input": {"name": "Heat", "count": 10},
+        "output": {
+            "items": [
+                {"name": "Gasoline", "count": 750},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_pyro.append(
     {
         "name": "Gasoline",
-        "Input": {
-            "Items": [
-                {"name": "Gasoline", "Count": 1000},
-                {"name": "Steam", "Count": 200},
+        "input": {
+            "items": [
+                {"name": "Gasoline", "count": 1000},
+                {"name": "Steam", "count": 200},
             ]
         },
-        "ResourceInput": {"name": "Heat", "Count": 10},
-        "Output": {
-            "Items": [
-                {"name": "Methane", "Count": 750},
+        "res_input": {"name": "Heat", "count": 10},
+        "output": {
+            "items": [
+                {"name": "Methane", "count": 750},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_pyro.append(
     {
         "name": "Methane",
-        "Input": {
-            "Items": [
-                {"name": "Methane", "Count": 800 * 5},
-                {"name": "Steam", "Count": 200 * 20},
+        "input": {
+            "items": [
+                {"name": "Methane", "count": 800 * 5},
+                {"name": "Steam", "count": 200 * 20},
             ]
         },
-        "ResourceInput": {"name": "Heat", "Count": 100},
-        "Output": {
-            "Items": [
-                {"name": "ProducerGas", "Count": 1000 * 5},
+        "res_input": {"name": "Heat", "count": 100},
+        "output": {
+            "items": [
+                {"name": "ProducerGas", "count": 1000 * 5},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_pyro.append(
     {
         "name": "Methane2",
-        "Input": {"Items": [{"name": "Methane", "Count": 800 * 5}]},
-        "ResourceInput": {"name": "Heat", "Count": 50},
-        "Output": {
-            "Items": [
-                {"name": "ProducerGas", "Count": 500 * 5},
+        "input": {"items": [{"name": "Methane", "count": 800 * 5}]},
+        "res_input": {"name": "Heat", "count": 50},
+        "output": {
+            "items": [
+                {"name": "ProducerGas", "count": 500 * 5},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_chem.append(
     {
         "name": "Ethylene",
-        "Input": {
-            "Items": [
-                {"name": "ProducerGas", "Count": 1000},
+        "input": {
+            "items": [
+                {"name": "ProducerGas", "count": 1000},
                 {
                     "name": "Catalyst",
-                    "Count": 1,
+                    "count": 1,
                     "split": 0,
                 },
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {
-            "Items": [
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {
+            "items": [
                 {
                     "name": "Ethylene",
-                    "Count": 1000,
+                    "count": 1000,
                 },
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_chem.append(
     {
         "name": "Sulfur",
-        "Input": {
-            "Items": [
-                {"name": "HeavyOil", "Count": 150},
-                {"name": "Water", "Count": 250},
+        "input": {
+            "items": [
+                {"name": "HeavyOil", "count": 150},
+                {"name": "Water", "count": 250},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {
-            "Items": [
-                {"name": "Sulfur", "Count": 1},
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {
+            "items": [
+                {"name": "Sulfur", "count": 1},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_chem.append(
     {
         "name": "SulfuricAcid",
-        "Input": {
-            "Items": [
-                {"name": "Sulfur", "Count": 1},
-                {"name": "Oxygen", "Count": 250},
-                {"name": "Water", "Count": 250},
+        "input": {
+            "items": [
+                {"name": "Sulfur", "count": 1},
+                {"name": "Oxygen", "count": 250},
+                {"name": "Water", "count": 250},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {
-            "Items": [
-                {"name": "SulfuricAcid", "Count": 1000},
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {
+            "items": [
+                {"name": "SulfuricAcid", "count": 1000},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_chem.append(
     {
         "name": "Plastic1",
-        "Input": {
-            "Items": [
-                {"name": "Ethylene", "Count": 1000},
-                {"name": "Coal", "Count": 1},
+        "input": {
+            "items": [
+                {"name": "Ethylene", "count": 1000},
+                {"name": "Coal", "count": 1},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {
-            "Items": [
-                {"name": "Plastic", "Count": 1},
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {
+            "items": [
+                {"name": "Plastic", "count": 1},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_chem.append(
     {
         "name": "Plastic2",
-        "Input": {
-            "Items": [
-                {"name": "Ethylene", "Count": 1000},
-                {"name": "HeavyOil", "Count": 150},
+        "input": {
+            "items": [
+                {"name": "Ethylene", "count": 1000},
+                {"name": "HeavyOil", "count": 150},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {
-            "Items": [
-                {"name": "Plastic", "Count": 1},
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {
+            "items": [
+                {"name": "Plastic", "count": 1},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_chem.append(
     {
         "name": "ProducerGas",
-        "Input": {
-            "Items": [
-                {"name": "ProducerGas", "Count": 1000},
+        "input": {
+            "items": [
+                {"name": "ProducerGas", "count": 1000},
             ]
         },
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {
-            "Items": [
-                {"name": "Hydrogen", "Count": 750},
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {
+            "items": [
+                {"name": "Hydrogen", "count": 750},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_filtering_unit.append(
     {
         "name": "OreWater",
-        "Input": {
-            "Items": [
-                {"name": "OreWater", "Count": 500},
+        "input": {
+            "items": [
+                {"name": "OreWater", "count": 500},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {
-            "Items": [
-                {"name": "Clay", "Count": 1},
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {
+            "items": [
+                {"name": "Clay", "count": 1},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_filtering_unit.append(
     {
         "name": "OreWater2",
-        "Input": {
-            "Items": [
-                {"name": "OreWater", "Count": 500},
-                {"name": "FilteringCell", "Count": 1, "split": 10},
+        "input": {
+            "items": [
+                {"name": "OreWater", "count": 500},
+                {"name": "FilteringCell", "count": 1, "split": 10},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {
-            "Items": [
-                {"name": "AluminiumOreDust", "Count": 1, "split": 2},
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {
+            "items": [
+                {"name": "AluminiumOreDust", "count": 1, "split": 2},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_filtering_unit.append(
     {
         "name": "OreWater3",
-        "Input": {
-            "Items": [
-                {"name": "OreWater", "Count": 500},
-                {"name": "FilteringCell", "Count": 1, "split": 10},
+        "input": {
+            "items": [
+                {"name": "OreWater", "count": 500},
+                {"name": "FilteringCell", "count": 1, "split": 10},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {
-            "Items": [
-                {"name": "CopperOreDust", "Count": 1, "split": 2},
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {
+            "items": [
+                {"name": "CopperOreDust", "count": 1, "split": 2},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_filtering_unit.append(
     {
         "name": "OreWater4",
-        "Input": {
-            "Items": [
-                {"name": "OreWater", "Count": 500},
-                {"name": "FilteringCell", "Count": 1, "split": 10},
+        "input": {
+            "items": [
+                {"name": "OreWater", "count": 500},
+                {"name": "FilteringCell", "count": 1, "split": 10},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {
-            "Items": [
-                {"name": "UraniumOreDust", "Count": 1, "split": 2},
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {
+            "items": [
+                {"name": "UraniumOreDust", "count": 1, "split": 2},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
 recipes_filtering_unit.append(
     {
         "name": "OreWater5",
-        "Input": {
-            "Items": [
-                {"name": "OreWater", "Count": 500},
-                {"name": "FilteringCell", "Count": 1, "split": 10},
+        "input": {
+            "items": [
+                {"name": "OreWater", "count": 500},
+                {"name": "FilteringCell", "count": 1, "split": 10},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 10},
-        "Output": {
-            "Items": [
-                {"name": "IronOreDust", "Count": 1, "split": 2},
+        "res_input": {"name": "Kinetic", "count": 10},
+        "output": {
+            "items": [
+                {"name": "IronOreDust", "count": 1, "split": 2},
             ]
         },
-        "Ticks": 200,
+        "ticks": 200,
     }
 )
 
@@ -2875,180 +2875,180 @@ for i in {"IronOreDust", "CopperOreDust"}:
     recipes_chemical_bath.append(
         {
             "name": i,
-            "Input": {
-                "Items": [
-                    {"name": "Mercury", "Count": 500},
+            "input": {
+                "items": [
+                    {"name": "Mercury", "count": 500},
                     {
                         "name": i,
-                        "Count": 2,
+                        "count": 2,
                     },
                 ]
             },
-            "ResourceInput": {"name": "Kinetic", "Count": 10},
-            "Output": {
-                "Items": [
+            "res_input": {"name": "Kinetic", "count": 10},
+            "output": {
+                "items": [
                     {
                         "name": "GoldDust",
-                        "Count": 1,
+                        "count": 1,
                     },
                 ]
             },
-            "Ticks": 200,
+            "ticks": 200,
         }
     )
 
 recipes_chemical_bath.append(
     {
         "name": "RareEarthElement",
-        "Input": {
-            "Items": [
-                {"name": "AluminiumOreDust", "Count": 10},
-                {"name": "SulfuricAcid", "Count": 1000},
+        "input": {
+            "items": [
+                {"name": "AluminiumOreDust", "count": 10},
+                {"name": "SulfuricAcid", "count": 1000},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 30},
-        "Output": {"Items": [{"name": "RareEarthElement", "Count": 1}]},
-        "Ticks": 1000,
+        "res_input": {"name": "Kinetic", "count": 30},
+        "output": {"items": [{"name": "RareEarthElement", "count": 1}]},
+        "ticks": 1000,
     }
 )
 
 recipes_chemical_bath.append(
     {
         "name": "CobaltOxideDust",
-        "Input": {
-            "Items": [
-                {"name": "IronOreDust", "Count": 10},
-                {"name": "SulfuricAcid", "Count": 1000},
+        "input": {
+            "items": [
+                {"name": "IronOreDust", "count": 10},
+                {"name": "SulfuricAcid", "count": 1000},
             ]
         },
-        "ResourceInput": {"name": "Kinetic", "Count": 30},
-        "Output": {"Items": [{"name": "CobaltOxideDust", "Count": 1}]},
-        "Ticks": 1000,
+        "res_input": {"name": "Kinetic", "count": 30},
+        "output": {"items": [{"name": "CobaltOxideDust", "count": 1}]},
+        "ticks": 1000,
     }
 )
 
 recipes_freezer.append(
     {
         "name": "HotHardmetalIngot",
-        "Input": {"Items": [{"name": "HotHardMetalIngot", "Count": 1}]},
-        "ResourceInput": {"name": "Kinetic", "Count": 100},
-        "Output": {"Items": [{"name": "HardMetalIngot", "Count": 1}]},
-        "Ticks": 200,
+        "input": {"items": [{"name": "HotHardMetalIngot", "count": 1}]},
+        "res_input": {"name": "Kinetic", "count": 100},
+        "output": {"items": [{"name": "HardMetalIngot", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_freezer.append(
     {
         "name": "HotNeutroniumIngot",
-        "Input": {"Items": [{"name": "HotNeutroniumIngot", "Count": 1}]},
-        "ResourceInput": {"name": "Kinetic", "Count": 1000},
-        "Output": {"Items": [{"name": "NeutroniumIngot", "Count": 1}]},
-        "Ticks": 200,
+        "input": {"items": [{"name": "HotNeutroniumIngot", "count": 1}]},
+        "res_input": {"name": "Kinetic", "count": 1000},
+        "output": {"items": [{"name": "NeutroniumIngot", "count": 1}]},
+        "ticks": 200,
     }
 )
 
 recipes_computer.append(
     {
         "name": "Computations",
-        "Input": {"Items": []},
-        "ResourceInput": {"name": "Electricity", "Count": 10},
-        "Output": {"Items": [{"name": "Computations", "Count": 1}]},
-        "Ticks": 40,
+        "input": {"items": []},
+        "res_input": {"name": "Electricity", "count": 10},
+        "output": {"items": [{"name": "Computations", "count": 1}]},
+        "ticks": 40,
     }
 )
 
 recipes_q_computer.append(
     {
         "name": "QuantumComputations",
-        "Input": {"Items": []},
-        "ResourceInput": {"name": "Electricity", "Count": 100},
-        "Output": {"Items": [{"name": "Computations", "Count": 40}]},
-        "Ticks": 40,
+        "input": {"items": []},
+        "res_input": {"name": "Electricity", "count": 100},
+        "output": {"items": [{"name": "Computations", "count": 40}]},
+        "ticks": 40,
     }
 )
 
 recipes_portal.append(
     {
         "name": "Ping",
-        "Input": {"Items": []},
-        "ResourceInput": {
+        "input": {"items": []},
+        "res_input": {
             "name": "Electricity",
-            "Count": 2 * fission_fullpower * 0.9 * 0.9,
+            "count": 2 * fission_fullpower * 0.9 * 0.9,
         },
-        "Output": {"Items": [{"name": "MothershipPing", "Count": 1}]},
-        "Ticks": 1000,
+        "output": {"items": [{"name": "MothershipPing", "count": 1}]},
+        "ticks": 1000,
     }
 )
 
 append_recipe_hand_press(
     {
         "name": "Column",
-        "Input": {"Items": [{"name": "StoneSurface", "Count": 1}]},
-        "Output": {"Items": [{"name": "Column", "Count": 1}]},
-        "Ticks": 20,
+        "input": {"items": [{"name": "StoneSurface", "count": 1}]},
+        "output": {"items": [{"name": "Column", "count": 1}]},
+        "ticks": 20,
     }
 )
 
 append_recipe_hand_press(
     {
         "name": "FluetedColumn",
-        "Input": {"Items": [{"name": "Column", "Count": 1}]},
-        "Output": {"Items": [{"name": "FluetedColumn", "Count": 1}]},
-        "Ticks": 20,
+        "input": {"items": [{"name": "Column", "count": 1}]},
+        "output": {"items": [{"name": "FluetedColumn", "count": 1}]},
+        "ticks": 20,
     }
 )
 
 append_recipe_hand_press(
     {
         "name": "GlassBlock",
-        "Input": {"Items": [{"name": "Glass", "Count": 1}]},
-        "Output": {"Items": [{"name": "GlassBlock", "Count": 1}]},
-        "Ticks": 10,
+        "input": {"items": [{"name": "Glass", "count": 1}]},
+        "output": {"items": [{"name": "GlassBlock", "count": 1}]},
+        "ticks": 10,
     }
 )
 
 append_recipe_hand_press(
     {
         "name": "PlasticBlock",
-        "Input": {"Items": [{"name": "Plastic", "Count": 1}]},
-        "Output": {"Items": [{"name": "PlasticBlock", "Count": 1}]},
-        "Ticks": 10,
+        "input": {"items": [{"name": "Plastic", "count": 1}]},
+        "output": {"items": [{"name": "PlasticBlock", "count": 1}]},
+        "ticks": 10,
     }
 )
 
 append_recipe_hand_press(
     {
         "name": "DangerBlock",
-        "Input": {"Items": [{"name": "Concrete", "Count": 1}]},
-        "Output": {"Items": [{"name": "DangerBlock", "Count": 1}]},
-        "Ticks": 20,
+        "input": {"items": [{"name": "Concrete", "count": 1}]},
+        "output": {"items": [{"name": "DangerBlock", "count": 1}]},
+        "ticks": 20,
     }
 )
 
 append_recipe_hand_press(
     {
         "name": "BasicPlatform",
-        "Input": {"Items": [{"name": "SandSurface", "Count": 1}]},
-        "Output": {"Items": [{"name": "BasicPlatform", "Count": 1}]},
-        "Ticks": 10,
+        "input": {"items": [{"name": "SandSurface", "count": 1}]},
+        "output": {"items": [{"name": "BasicPlatform", "count": 1}]},
+        "ticks": 10,
     }
 )
 
 append_recipe_hand_press(
     {
         "name": "RustyCopperCasing",
-        "Input": {"Items": [{"name": "CopperCasing", "Count": 1}]},
-        "Output": {"Items": [{"name": "RustyCopperCasing", "Count": 1}]},
-        "Ticks": 20,
+        "input": {"items": [{"name": "CopperCasing", "count": 1}]},
+        "output": {"items": [{"name": "RustyCopperCasing", "count": 1}]},
+        "ticks": 20,
     }
 )
 
 append_recipe_hand_press(
     {
         "name": "RustyIronCasing",
-        "Input": {"Items": [{"name": "SteelCasing", "Count": 1}]},
-        "Output": {"Items": [{"name": "RustyIronCasing", "Count": 1}]},
-        "Ticks": 20,
+        "input": {"items": [{"name": "SteelCasing", "count": 1}]},
+        "output": {"items": [{"name": "RustyIronCasing", "count": 1}]},
+        "ticks": 20,
     }
 )
 
@@ -3063,50 +3063,50 @@ for i in [
     recipes_computer.append(
         {
             "name": i,
-            "Input": {"Items": [{"name": i, "Count": 1}]},
-            "ResourceInput": {"name": "Electricity", "Count": 40},
-            "Output": {"Items": [{"name": i, "Count": 1}]},
-            "Ticks": 40,
+            "input": {"items": [{"name": i, "count": 1}]},
+            "res_input": {"name": "Electricity", "count": 40},
+            "output": {"items": [{"name": i, "count": 1}]},
+            "ticks": 40,
         }
     )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Multitool", "Recipes": recipes_wrench}
+    {"class": recipe_dictionary, "name": "Multitool", "recipes": recipes_wrench}
 )
 
 objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "BlastFurnace",
-        "Recipes": recipes_blast_furnace,
+        "recipes": recipes_blast_furnace,
     }
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Oven", "Recipes": recipes_oven}
+    {"class": recipe_dictionary, "name": "Oven", "recipes": recipes_oven}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Smelter", "Recipes": recipes_smelter}
+    {"class": recipe_dictionary, "name": "Smelter", "recipes": recipes_smelter}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Macerator", "Recipes": recipes_macerator}
+    {"class": recipe_dictionary, "name": "Macerator", "recipes": recipes_macerator}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Boiler", "Recipes": recipes_boiler}
+    {"class": recipe_dictionary, "name": "Boiler", "recipes": recipes_boiler}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Generator", "Recipes": recipes_generator}
+    {"class": recipe_dictionary, "name": "Generator", "recipes": recipes_generator}
 )
 
 objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "ElectricEngine",
-        "Recipes": recipes_electric_engine,
+        "recipes": recipes_electric_engine,
     }
 )
 
@@ -3114,35 +3114,35 @@ objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "StirlingEngine",
-        "Recipes": recipes_steam_engine,
+        "recipes": recipes_steam_engine,
     }
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Pump", "Recipes": recipes_pump}
+    {"class": recipe_dictionary, "name": "Pump", "recipes": recipes_pump}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Separator", "Recipes": recipes_sep}
+    {"class": recipe_dictionary, "name": "Separator", "recipes": recipes_sep}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "IndustrialSeparator", "Recipes": recipes_sep2}
+    {"class": recipe_dictionary, "name": "IndustrialSeparator", "recipes": recipes_sep2}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Press", "Recipes": recipes_press}
+    {"class": recipe_dictionary, "name": "Press", "recipes": recipes_press}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "ArcSmelter", "Recipes": recipes_arc_furnace}
+    {"class": recipe_dictionary, "name": "ArcSmelter", "recipes": recipes_arc_furnace}
 )
 
 objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "SteamTurbine",
-        "Recipes": recipes_steam_turbine,
+        "recipes": recipes_steam_turbine,
     }
 )
 
@@ -3150,155 +3150,155 @@ objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "Electrolyzer",
-        "Recipes": recipes_electrolyzer,
+        "recipes": recipes_electrolyzer,
     }
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "CuttingMachine", "Recipes": recipes_cutter}
+    {"class": recipe_dictionary, "name": "CuttingMachine", "recipes": recipes_cutter}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Furnace", "Recipes": recipes_furnace}
+    {"class": recipe_dictionary, "name": "Furnace", "recipes": recipes_furnace}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "ElectricFurnace", "Recipes": recipes_elfurn}
+    {"class": recipe_dictionary, "name": "ElectricFurnace", "recipes": recipes_elfurn}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Fermenter", "Recipes": recipes_ferm}
+    {"class": recipe_dictionary, "name": "Fermenter", "recipes": recipes_ferm}
 )
 
 objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "MultitoolRobotArm",
-        "Recipes": recipes_toolarm,
+        "recipes": recipes_toolarm,
     }
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "AutomaticHammer", "Recipes": recipes_hammer}
+    {"class": recipe_dictionary, "name": "AutomaticHammer", "recipes": recipes_hammer}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Mixer", "Recipes": recipes_mixer}
+    {"class": recipe_dictionary, "name": "Mixer", "recipes": recipes_mixer}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Radiator", "Recipes": recipes_radiator}
+    {"class": recipe_dictionary, "name": "Radiator", "recipes": recipes_radiator}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "SolarPanel", "Recipes": recipes_solar}
+    {"class": recipe_dictionary, "name": "SolarPanel", "recipes": recipes_solar}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "ChemReactor", "Recipes": recipes_chem}
+    {"class": recipe_dictionary, "name": "ChemReactor", "recipes": recipes_chem}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "InductionCoil", "Recipes": recipes_coil}
+    {"class": recipe_dictionary, "name": "InductionCoil", "recipes": recipes_coil}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "IndustrialSmelter", "Recipes": recipes_indu}
+    {"class": recipe_dictionary, "name": "IndustrialSmelter", "recipes": recipes_indu}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "HeatExchanger", "Recipes": recipes_exch}
+    {"class": recipe_dictionary, "name": "HeatExchanger", "recipes": recipes_exch}
 )
 
 objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "InverseHeatExchanger",
-        "Recipes": recipes_iexch,
+        "recipes": recipes_iexch,
     }
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Freezer", "Recipes": recipes_freezer}
+    {"class": recipe_dictionary, "name": "Freezer", "recipes": recipes_freezer}
 )
 
 objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "CombustionEngine",
-        "Recipes": recipes_combustion,
+        "recipes": recipes_combustion,
     }
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "PyrolysisUnit", "Recipes": recipes_pyro}
+    {"class": recipe_dictionary, "name": "PyrolysisUnit", "recipes": recipes_pyro}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Computer", "Recipes": recipes_computer}
+    {"class": recipe_dictionary, "name": "Computer", "recipes": recipes_computer}
 )
 
 objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "CompactGenerator",
-        "Recipes": recipes_compact_generator,
+        "recipes": recipes_compact_generator,
     }
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "FissionReactor", "Recipes": recipes_fission}
+    {"class": recipe_dictionary, "name": "FissionReactor", "recipes": recipes_fission}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "AutomaticFarm", "Recipes": recipes_farm}
+    {"class": recipe_dictionary, "name": "AutomaticFarm", "recipes": recipes_farm}
 )
 
 objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "AtmosphericCondenser",
-        "Recipes": recipes_condens,
+        "recipes": recipes_condens,
     }
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Assembler", "Recipes": recipes_assembler}
+    {"class": recipe_dictionary, "name": "Assembler", "recipes": recipes_assembler}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "GasTurbine", "Recipes": recipes_gasturb}
+    {"class": recipe_dictionary, "name": "GasTurbine", "recipes": recipes_gasturb}
 )
 
 objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "FilteringUnit",
-        "Recipes": recipes_filtering_unit,
+        "recipes": recipes_filtering_unit,
     }
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Portal", "Recipes": recipes_portal}
+    {"class": recipe_dictionary, "name": "Portal", "recipes": recipes_portal}
 )
 
 objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "ChemicalBath",
-        "Recipes": recipes_chemical_bath,
+        "recipes": recipes_chemical_bath,
     }
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Riteg", "Recipes": recipes_riteg}
+    {"class": recipe_dictionary, "name": "Riteg", "recipes": recipes_riteg}
 )
 
 objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "IndustrialSteamTurbine",
-        "Recipes": recipes_industrial_steam_turbine,
+        "recipes": recipes_industrial_steam_turbine,
     }
 )
 
@@ -3306,7 +3306,7 @@ objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "FusionReactor",
-        "Recipes": recipes_fusion_reactor,
+        "recipes": recipes_fusion_reactor,
     }
 )
 
@@ -3314,7 +3314,7 @@ objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "IndustrialBoiler",
-        "Recipes": recipes_industrial_boiler,
+        "recipes": recipes_industrial_boiler,
     }
 )
 
@@ -3322,12 +3322,12 @@ objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "IndustrialElectricEngine",
-        "Recipes": recipes_industrial_electric_engine,
+        "recipes": recipes_industrial_electric_engine,
     }
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Hand", "Recipes": recipes_hand}
+    {"class": recipe_dictionary, "name": "Hand", "recipes": recipes_hand}
 )
 
 data = {"Objects": objects_array}

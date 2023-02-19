@@ -11,9 +11,9 @@ our_path = os.path.dirname(sys.argv[0])
 
 def res_cost(level, mul=1):
     arr = []
-    arr.append({"name": tiers_res_item[0], "Count": tiers_base_cost[level] * mul})
+    arr.append({"name": tiers_res_item[0], "count": tiers_base_cost[level] * mul})
     if level > 1:
-        arr.append({"name": tiers_res_item[level - 1], "Count": tiers_adv_cost[level]})
+        arr.append({"name": tiers_res_item[level - 1], "count": tiers_adv_cost[level]})
 
     return arr
 
@@ -77,9 +77,9 @@ def simple_in_out_recipe(name):
 
     return {
         "name": "SimpleInOutRecipe" + str(simple_in_out_recipe.counter),
-        "Input": {"Items": [{"name": name, "Count": 1}]},
-        "Output": {"Items": [{"name": name, "Count": 1}]},
-        "Ticks": 20,
+        "input": {"items": [{"name": name, "count": 1}]},
+        "output": {"items": [{"name": name, "count": 1}]},
+        "ticks": 20,
     }
 
 
@@ -113,7 +113,7 @@ def clamp(val, _min, _max):
 
 def has_hand_recipe(recipes_hand, result):
     for r in recipes_hand:
-        if not r["Output"]["Items"][0]["name"].find(result) == -1:
+        if not r["output"]["items"][0]["name"].find(result) == -1:
             return True
 
     return False
@@ -121,7 +121,7 @@ def has_hand_recipe(recipes_hand, result):
 
 def get_hand_recipe(recipes_hand, result):
     for r in recipes_hand:
-        if not r["Output"]["Items"][0]["name"].find(result) == -1:
+        if not r["output"]["items"][0]["name"].find(result) == -1:
             return r
 
     return None
@@ -149,7 +149,7 @@ static_prop = "SmallStaticProp"
 static_big_prop = "BigStaticProp"
 
 block_logic = "BlockLogic"
-slot_logic = "item_logic"
+slot_logic = "ItemLogic"
 
 building_cube_logic = "BuildingSurfaceBlockItemLogic"
 building_single_logic = "BuildingSingleBlockItemLogic"
@@ -167,7 +167,7 @@ tesselator_cube = "TesselatorCube"
 tesselator_static_mesh = "TesselatorStaticMesh"
 
 item_data = "ItemData"
-prop_list = "PropList"
+prop_list = "prop_list"
 basic_slot_widget_c = "Gui/BasicStackedSlotWidget.BasicStackedSlotWidget_C"
 
 ico = ""
