@@ -36,7 +36,7 @@ props = [
         "Variations": 2,
         "ProjectToTerrainPower": 1,
         "IsBig": True,
-        "Drops": "Organics",
+        "drops": "Organics",
         "AdditiveElevation": 0,
         "TimeMul": 1,
     },
@@ -46,7 +46,7 @@ props = [
         "ScaleMax": [4, 4, 4],
         "Variations": 3,
         "ProjectToTerrainPower": 1,
-        "Drops": "Organics",
+        "drops": "Organics",
         "CullBegin": 10000,
         "CullEnd": 12000,
         "AdditiveElevation": 0,
@@ -57,7 +57,7 @@ props = [
         "ScaleMax": [6, 6, 6],
         "Variations": 3,
         "ProjectToTerrainPower": 1,
-        "Drops": "Organics",
+        "drops": "Organics",
         "CullBegin": 10000,
         "CullEnd": 12000,
         "AdditiveElevation": 0,
@@ -68,7 +68,7 @@ props = [
         "ScaleMax": [4, 4, 4],
         "Variations": 1,
         "ProjectToTerrainPower": 1,
-        "Drops": "Organics",
+        "drops": "Organics",
         "CullBegin": 10000,
         "CullEnd": 12000,
         "AdditiveElevation": 0,
@@ -79,7 +79,7 @@ props = [
         "ScaleMax": [4, 4, 4],
         "Variations": 22,
         "ProjectToTerrainPower": 0,
-        "Drops": "Organics",
+        "drops": "Organics",
         "CullBegin": 10000,
         "CullEnd": 12000,
         "AdditiveElevation": 0,
@@ -91,7 +91,7 @@ props = [
         "ScaleMax": [4, 4, 4],
         "Variations": 5,
         "ProjectToTerrainPower": 0,
-        "Drops": "Organics",
+        "drops": "Organics",
         "CullBegin": 10000,
         "CullEnd": 12000,
         "AdditiveElevation": 0,
@@ -103,7 +103,7 @@ props = [
         "ScaleMax": [3, 3, 3],
         "Variations": 1,
         "ProjectToTerrainPower": 1,
-        "Drops": "Organics",
+        "drops": "Organics",
         "CullBegin": 10000,
         "CullEnd": 12000,
         "AdditiveElevation": 0,
@@ -115,7 +115,7 @@ props = [
         "Variations": 3,
         "ProjectToTerrainPower": 0,
         "IsBig": True,
-        "Drops": "Log",
+        "drops": "Log",
         "TimeMul": 1,
     },
     {
@@ -125,7 +125,7 @@ props = [
         "Variations": 1,
         "ProjectToTerrainPower": 0,
         "IsBig": True,
-        "Drops": "Log",
+        "drops": "Log",
         "TimeMul": 1,
     },
     {
@@ -135,7 +135,7 @@ props = [
         "Variations": 1,
         "ProjectToTerrainPower": 1,
         "IsBig": True,
-        "Drops": "Log",
+        "drops": "Log",
         "CullBegin": 10000,
         "CullEnd": 12000,
         "TimeMul": 1,
@@ -147,7 +147,7 @@ props = [
         "Variations": 2,
         "ProjectToTerrainPower": 1,
         "IsBig": True,
-        "Drops": "StoneSurface",
+        "drops": "StoneSurface",
         "DropCount": 10,
         "AdditiveElevation": 0,
         "TimeMul": 1,
@@ -159,7 +159,7 @@ props = [
         "Variations": 3,
         "ProjectToTerrainPower": 0,
         "IsBig": True,
-        "Drops": "Log",
+        "drops": "Log",
         "TimeMul": 1,
     },
     {
@@ -169,7 +169,7 @@ props = [
         "Variations": 3,
         "ProjectToTerrainPower": 0,
         "IsBig": True,
-        "Drops": "Log",
+        "drops": "Log",
         "TimeMul": 1,
     },
     {
@@ -179,7 +179,7 @@ props = [
         "Variations": 2,
         "ProjectToTerrainPower": 0,
         "IsBig": True,
-        "Drops": "Log",
+        "drops": "Log",
         "TimeMul": 1,
     },
     {
@@ -189,7 +189,7 @@ props = [
         "Variations": 2,
         "ProjectToTerrainPower": 0,
         "IsBig": True,
-        "Drops": "Log",
+        "drops": "Log",
         "TimeMul": 1,
     },
     {
@@ -198,7 +198,7 @@ props = [
         "ScaleMax": [3, 3, 3],
         "Variations": 5,
         "ProjectToTerrainPower": 0,
-        "Drops": "Organics",
+        "drops": "Organics",
         "CullBegin": 7000,
         "CullEnd": 8000,
         "AdditiveElevation": 0,
@@ -209,7 +209,7 @@ props = [
         "ScaleMax": [3, 3, 3],
         "Variations": 1,
         "ProjectToTerrainPower": 0,
-        "Drops": "Organics",
+        "drops": "Organics",
         "CullBegin": 7000,
         "CullEnd": 8000,
         "AdditiveElevation": 70,
@@ -221,7 +221,7 @@ props = [
         "ScaleMax": [3, 3, 3],
         "Variations": 2,
         "ProjectToTerrainPower": 0,
-        "Drops": "Organics",
+        "drops": "Organics",
         "CullBegin": 7000,
         "CullEnd": 8000,
         "AdditiveElevation": 70,
@@ -233,7 +233,7 @@ props = [
         "ScaleMax": [2, 2, 2],
         "Variations": 6,
         "ProjectToTerrainPower": 0,
-        "Drops": "Organics",
+        "drops": "Organics",
         "AdditiveElevation": 20,
         "CullBegin": 10000,
         "CullEnd": 12000,
@@ -244,7 +244,7 @@ props = [
         "ScaleMax": [2, 2, 2],
         "Variations": 1,
         "ProjectToTerrainPower": 1,
-        "Drops": "Organics",
+        "drops": "Organics",
         "CullBegin": 10000,
         "CullEnd": 12000,
         "AdditiveElevation": 0,
@@ -255,7 +255,7 @@ props = [
         "ScaleMax": [2, 2, 2],
         "Variations": 1,
         "ProjectToTerrainPower": 1,
-        "Drops": "Organics",
+        "drops": "Organics",
         "CullBegin": 10000,
         "CullEnd": 12000,
         "AdditiveElevation": 0,
@@ -266,7 +266,7 @@ props = [
         "ScaleMax": [2, 2, 2],
         "Variations": 1,
         "ProjectToTerrainPower": 1,
-        "Drops": "Organics",
+        "drops": "Organics",
         "CullBegin": 10000,
         "CullEnd": 12000,
         "AdditiveElevation": 0,
@@ -278,7 +278,7 @@ props = [
         "Variations": 1,
         "ProjectToTerrainPower": 1,
         "HandInteraction": True,
-        "Drops": "Plank",
+        "drops": "Plank",
         "AdditiveElevation": 0,
         "CullBegin": 10000,
         "CullEnd": 12000,
@@ -290,7 +290,7 @@ props = [
         "Variations": 1,
         "ProjectToTerrainPower": 1,
         "HandInteraction": True,
-        "Drops": "StoneSurface",
+        "drops": "StoneSurface",
         "CullBegin": 10000,
         "CullEnd": 12000,
         "AdditiveElevation": 0,
@@ -304,7 +304,7 @@ props = [
         "HandInteraction": False,
         "AdditiveElevation": 0,
         "IsBig": True,
-        "Drops": "StoneLog",
+        "drops": "StoneLog",
         "TimeMul": 6,
     },
     {
@@ -314,7 +314,7 @@ props = [
         "Variations": 1,
         "ProjectToTerrainPower": 1,
         "HandInteraction": False,
-        "Drops": "Organics",
+        "drops": "Organics",
         "CullBegin": 10000,
         "CullEnd": 12000,
         "AdditiveElevation": 0,
@@ -326,7 +326,7 @@ props = [
         "Variations": 4,
         "ProjectToTerrainPower": 1,
         "HandInteraction": False,
-        "Drops": "BasaltSurface",
+        "drops": "BasaltSurface",
         "DropCount": 10,
         "IsBig": True,
         "AdditiveElevation": 0,
@@ -339,7 +339,7 @@ props = [
         "Variations": 4,
         "ProjectToTerrainPower": 1,
         "HandInteraction": False,
-        "Drops": "BasaltSurface",
+        "drops": "BasaltSurface",
         "DropCount": 10,
         "CullBegin": 10000,
         "CullEnd": 12000,
@@ -354,7 +354,7 @@ props = [
         "Variations": 3,
         "ProjectToTerrainPower": 1,
         "HandInteraction": False,
-        "Drops": "Organics",
+        "drops": "Organics",
         "CullBegin": 10000,
         "CullEnd": 12000,
         "AdditiveElevation": 0,
@@ -370,10 +370,10 @@ proplists = [
     {
         "name": "PrairieDryPropList",
         "Array": [
-            {"Props": ["SmallRock"], "Chance": 0.01},
-            {"Props": ["DryGrass"], "Chance": 0.5},
+            {"props": ["SmallRock"], "Chance": 0.01},
+            {"props": ["DryGrass"], "Chance": 0.5},
             {
-                "Props": ["Broadleaf", "Broadleaf", "Birch", "BigBush", "Noleafes"],
+                "props": ["Broadleaf", "Broadleaf", "Birch", "BigBush", "Noleafes"],
                 "Chance": 0.0001,
             },
         ],
@@ -381,11 +381,11 @@ proplists = [
     {
         "name": "PrairiePropList",
         "Array": [
-            {"Props": ["SmallRock"], "Chance": 0.01},
-            {"Props": ["DryGrass"], "Chance": 0.35},
-            {"Props": ["LongGrass"], "Chance": 0.35},
+            {"props": ["SmallRock"], "Chance": 0.01},
+            {"props": ["DryGrass"], "Chance": 0.35},
+            {"props": ["LongGrass"], "Chance": 0.35},
             {
-                "Props": ["Broadleaf", "Broadleaf", "Birch", "BigBush", "Noleafes"],
+                "props": ["Broadleaf", "Broadleaf", "Birch", "BigBush", "Noleafes"],
                 "Chance": 0.0004,
             },
         ],
@@ -393,46 +393,46 @@ proplists = [
     {
         "name": "DipteroPropList",
         "Array": [
-            {"Props": ["Diptero"], "Chance": 0.001},
+            {"props": ["Diptero"], "Chance": 0.001},
             {
-                "Props": ["Broadleaf", "Broadleaf", "Birch", "Shrub", "BigBush"],
+                "props": ["Broadleaf", "Broadleaf", "Birch", "Shrub", "BigBush"],
                 "Chance": 0.01,
             },
-            {"Props": ["SmallRock"], "Chance": 0.01},
-            {"Props": ["Fern"], "Chance": 0.05},
-            {"Props": ["LongGrass"], "Chance": 0.9},
+            {"props": ["SmallRock"], "Chance": 0.01},
+            {"props": ["Fern"], "Chance": 0.05},
+            {"props": ["LongGrass"], "Chance": 0.9},
         ],
     },
     {
         "name": "SmallRocksProps",
         "Array": [
-            {"Props": ["SmallRock"], "Chance": 0.06},
-            {"Props": ["VolcanicRock"], "Chance": 0.01},
+            {"props": ["SmallRock"], "Chance": 0.06},
+            {"props": ["VolcanicRock"], "Chance": 0.01},
         ],
     },
-    {"name": "SnowProps", "Array": [{"Props": ["SnowyRock"], "Chance": 0.01}]},
+    {"name": "SnowProps", "Array": [{"props": ["SnowyRock"], "Chance": 0.01}]},
     {
         "name": "BushlandProps",
         "Array": [
-            {"Props": ["Shrub", "BigBush"], "Chance": 0.05},
-            {"Props": ["LongGrass"], "Chance": 0.5},
-            {"Props": ["TallGrass"], "Chance": 0.1},
+            {"props": ["Shrub", "BigBush"], "Chance": 0.05},
+            {"props": ["LongGrass"], "Chance": 0.5},
+            {"props": ["TallGrass"], "Chance": 0.1},
         ],
     },
     {
         "name": "GrasslandProps",
         "Array": [
-            {"Props": ["Rock"], "Chance": 0.005},
-            {"Props": ["Dandaleon"], "Chance": 0.05},
-            {"Props": ["LongGrass"], "Chance": 0.9},
-            {"Props": ["TallGrass"], "Chance": 0.3},
+            {"props": ["Rock"], "Chance": 0.005},
+            {"props": ["Dandaleon"], "Chance": 0.05},
+            {"props": ["LongGrass"], "Chance": 0.9},
+            {"props": ["TallGrass"], "Chance": 0.3},
         ],
     },
     {
         "name": "RedFlowersProps",
         "Array": [
-            {"Props": ["RedFlower"], "Chance": 0.5},
-            {"Props": ["LongGrass"], "Chance": 0.9},
+            {"props": ["RedFlower"], "Chance": 0.5},
+            {"props": ["LongGrass"], "Chance": 0.9},
             {"Attaches": ["Butterfly"], "Chance": 0.001},
             {"Attaches": ["Flies"], "Chance": 0.001},
         ],
@@ -440,32 +440,32 @@ proplists = [
     {
         "name": "YellowFlowersProps",
         "Array": [
-            {"Props": ["YellowFlower"], "Chance": 0.5},
-            {"Props": ["LongGrass"], "Chance": 0.9},
+            {"props": ["YellowFlower"], "Chance": 0.5},
+            {"props": ["LongGrass"], "Chance": 0.9},
             {"Attaches": ["Butterfly"], "Chance": 0.001},
         ],
     },
     {
         "name": "WhiteFlowersProps",
         "Array": [
-            {"Props": ["WhiteFlower"], "Chance": 0.5},
-            {"Props": ["LongGrass"], "Chance": 0.9},
+            {"props": ["WhiteFlower"], "Chance": 0.5},
+            {"props": ["LongGrass"], "Chance": 0.9},
             {"Attaches": ["Butterfly"], "Chance": 0.001},
         ],
     },
     {
         "name": "DenseForestProps",
         "Array": [
-            {"Props": ["Noleafes"], "Chance": 0.001},
+            {"props": ["Noleafes"], "Chance": 0.001},
             {
-                "Props": ["Broadleaf", "Broadleaf", "Birch", "Shrub", "BigBush"],
+                "props": ["Broadleaf", "Broadleaf", "Birch", "Shrub", "BigBush"],
                 "Chance": 0.02,
             },
-            {"Props": ["SmallRock"], "Chance": 0.01},
-            {"Props": ["Fern"], "Chance": 0.03},
-            {"Props": ["Dandaleon"], "Chance": 0.3},
-            {"Props": ["LongGrass"], "Chance": 0.7},
-            {"Props": ["Shroom"], "Chance": 0.01},
+            {"props": ["SmallRock"], "Chance": 0.01},
+            {"props": ["Fern"], "Chance": 0.03},
+            {"props": ["Dandaleon"], "Chance": 0.3},
+            {"props": ["LongGrass"], "Chance": 0.7},
+            {"props": ["Shroom"], "Chance": 0.01},
             {"Attaches": ["Birds"], "Chance": 0.001},
             {"Attaches": ["Leafes"], "Chance": 0.001},
         ],
@@ -473,16 +473,16 @@ proplists = [
     {
         "name": "ForestProps",
         "Array": [
-            {"Props": ["Noleafes"], "Chance": 0.001},
+            {"props": ["Noleafes"], "Chance": 0.001},
             {
-                "Props": ["Broadleaf", "Broadleaf", "Birch", "Shrub", "BigBush"],
+                "props": ["Broadleaf", "Broadleaf", "Birch", "Shrub", "BigBush"],
                 "Chance": 0.01,
             },
-            {"Props": ["SmallRock"], "Chance": 0.01},
-            {"Props": ["Fern"], "Chance": 0.05},
-            {"Props": ["Dandaleon"], "Chance": 0.5},
-            {"Props": ["LongGrass"], "Chance": 0.9},
-            {"Props": ["Shroom"], "Chance": 0.01},
+            {"props": ["SmallRock"], "Chance": 0.01},
+            {"props": ["Fern"], "Chance": 0.05},
+            {"props": ["Dandaleon"], "Chance": 0.5},
+            {"props": ["LongGrass"], "Chance": 0.9},
+            {"props": ["Shroom"], "Chance": 0.01},
             {"Attaches": ["Birds"], "Chance": 0.001},
             {"Attaches": ["Leafes"], "Chance": 0.001},
             {"Attaches": ["Flies"], "Chance": 0.002},
@@ -491,11 +491,11 @@ proplists = [
     {
         "name": "DensePineForestProps",
         "Array": [
-            {"Props": ["Rock"], "Chance": 0.001},
-            {"Props": ["SmallRock"], "Chance": 0.01},
-            {"Props": ["Pine"], "Chance": 0.02},
-            {"Props": ["LongGrass"], "Chance": 0.03},
-            {"Props": ["Shroom"], "Chance": 0.01},
+            {"props": ["Rock"], "Chance": 0.001},
+            {"props": ["SmallRock"], "Chance": 0.01},
+            {"props": ["Pine"], "Chance": 0.02},
+            {"props": ["LongGrass"], "Chance": 0.03},
+            {"props": ["Shroom"], "Chance": 0.01},
             {"Attaches": ["Birds"], "Chance": 0.001},
             {"Attaches": ["Flies"], "Chance": 0.001},
         ],
@@ -503,49 +503,49 @@ proplists = [
     {
         "name": "PineForestProps",
         "Array": [
-            {"Props": ["Rock"], "Chance": 0.002},
-            {"Props": ["SmallRock"], "Chance": 0.01},
-            {"Props": ["Pine"], "Chance": 0.01},
-            {"Props": ["LongGrass"], "Chance": 0.07},
-            {"Props": ["Shroom"], "Chance": 0.01},
+            {"props": ["Rock"], "Chance": 0.002},
+            {"props": ["SmallRock"], "Chance": 0.01},
+            {"props": ["Pine"], "Chance": 0.01},
+            {"props": ["LongGrass"], "Chance": 0.07},
+            {"props": ["Shroom"], "Chance": 0.01},
             {"Attaches": ["Birds"], "Chance": 0.001},
             {"Attaches": ["Bugs"], "Chance": 0.001},
             {"Attaches": ["Flies"], "Chance": 0.001},
         ],
     },
-    {"name": "UnimplementedProps", "Array": [{"Props": ["Rock"], "Chance": 0.01}]},
+    {"name": "UnimplementedProps", "Array": [{"props": ["Rock"], "Chance": 0.01}]},
     {
         "name": "DesertProps",
         "Array": [
-            {"Props": ["Cactus"], "Chance": 0.01},
-            {"Props": ["Palm"], "Chance": 0.002},
+            {"props": ["Cactus"], "Chance": 0.01},
+            {"props": ["Palm"], "Chance": 0.002},
             {"Attaches": ["DesertSound"], "Chance": 0.002},
         ],
     },
     {
         "name": "IslandProps",
         "Array": [
-            {"Props": ["SmallRock"], "Chance": 0.01},
-            {"Props": ["SeaPlant"], "Chance": 0.07},
+            {"props": ["SmallRock"], "Chance": 0.01},
+            {"props": ["SeaPlant"], "Chance": 0.07},
         ],
     },
     {
         "name": "SeagrassProps",
         "Array": [
-            {"Props": ["SmallRock"], "Chance": 0.01},
-            {"Props": ["SeaGrass"], "Chance": 0.15},
+            {"props": ["SmallRock"], "Chance": 0.01},
+            {"props": ["SeaGrass"], "Chance": 0.15},
         ],
     },
-    {"name": "EmptySeaProps", "Array": [{"Props": ["SmallRock"], "Chance": 0.05}]},
+    {"name": "EmptySeaProps", "Array": [{"props": ["SmallRock"], "Chance": 0.05}]},
     {
         "name": "SwampProps",
         "Array": [
-            {"Props": ["SmallRock"], "Chance": 0.01},
-            {"Props": ["LongGrass"], "Chance": 0.7},
-            {"Props": ["Fern"], "Chance": 0.05},
-            {"Props": ["Rogoz"], "Chance": 0.5},
-            {"Props": ["Lily"], "Chance": 0.5},
-            {"Props": ["LilyFlower"], "Chance": 0.05},
+            {"props": ["SmallRock"], "Chance": 0.01},
+            {"props": ["LongGrass"], "Chance": 0.7},
+            {"props": ["Fern"], "Chance": 0.05},
+            {"props": ["Rogoz"], "Chance": 0.5},
+            {"props": ["Lily"], "Chance": 0.5},
+            {"props": ["LilyFlower"], "Chance": 0.05},
             {"Attaches": ["SwampSound"], "Chance": 0.002},
             {"Attaches": ["Firefly", "Flies"], "Chance": 0.005},
         ],
@@ -553,33 +553,33 @@ proplists = [
     {
         "name": "SwampForestProps",
         "Array": [
-            {"Props": ["LongGrass"], "Chance": 0.7},
-            {"Props": ["Fern"], "Chance": 0.05},
-            {"Props": ["Birch", "BigBush"], "Chance": 0.01},
-            {"Props": ["Shroom"], "Chance": 0.01},
+            {"props": ["LongGrass"], "Chance": 0.7},
+            {"props": ["Fern"], "Chance": 0.05},
+            {"props": ["Birch", "BigBush"], "Chance": 0.01},
+            {"props": ["Shroom"], "Chance": 0.01},
             {"Attaches": ["Firefly", "Flies"], "Chance": 0.005},
         ],
     },
     {
         "name": "OreProps",
         "Array": [
-            {"Props": ["LongGrass"], "Chance": 0.07},
-            {"Props": ["Birch", "BigBush"], "Chance": 0.01},
-            {"Props": ["Shroom"], "Chance": 0.01},
+            {"props": ["LongGrass"], "Chance": 0.07},
+            {"props": ["Birch", "BigBush"], "Chance": 0.01},
+            {"props": ["Shroom"], "Chance": 0.01},
         ],
     },
     {
         "name": "SnowGrassProps",
         "Array": [
-            {"Props": ["SnowyGrass"], "Chance": 0.2},
-            {"Props": ["SnowyRock"], "Chance": 0.01},
+            {"props": ["SnowyGrass"], "Chance": 0.2},
+            {"props": ["SnowyRock"], "Chance": 0.01},
         ],
     },
     {
         "name": "SnowForestProps",
         "Array": [
-            {"Props": ["SnowyGrass"], "Chance": 0.2},
-            {"Props": ["SnowyPine"], "Chance": 0.005},
+            {"props": ["SnowyGrass"], "Chance": 0.2},
+            {"props": ["SnowyPine"], "Chance": 0.005},
         ],
     },
 ]
@@ -599,7 +599,7 @@ for prop in props:
                 "max_count": 32,
                 "image": "T_" + prop["name"],
                 "logic_json": {"Block": prop["name"] + variation_helper[variation]},
-                "item_logic": building_prop_logic
+                "logic": building_prop_logic
                 if "IsBig" in prop
                 else building_prop_logic,
                 "category": "Terrain",
@@ -611,7 +611,7 @@ for prop in props:
         temp_prop = {
             "class": prop_class,
             "name": prop["name"] + variation_helper[variation],
-            "Mesh": "Props/"
+            "mesh": "Props/"
             + prop["name"]
             + "/"
             + prop["name"]
@@ -644,17 +644,17 @@ for prop in props:
         breaking_hand.append(
             {
                 "name": prop["name"] + variation_helper[variation],
-                "Ticks": 40,
-                "Input": {
-                    "Items": [
-                        {"name": prop["name"] + variation_helper[variation], "Count": 1}
+                "ticks": 40,
+                "input": {
+                    "items": [
+                        {"name": prop["name"] + variation_helper[variation], "count": 1}
                     ]
                 },
-                "Output": {
-                    "Items": [
+                "output": {
+                    "items": [
                         {
-                            "name": prop["Drops"],
-                            "Count": 1
+                            "name": prop["drops"],
+                            "count": 1
                             if "DropCount" not in prop
                             else prop["DropCount"],
                         }
@@ -668,8 +668,8 @@ for proplist in proplists:
     proplist_datas = []
     for subitem in proplist["Array"]:
         props_array = []
-        if "Props" in subitem:
-            for prop_name in subitem["Props"]:
+        if "props" in subitem:
+            for prop_name in subitem["props"]:
                 for variation in range(0, named_prop(prop_name)["Variations"]):
                     prop_class = (
                         static_big_prop
@@ -680,7 +680,7 @@ for proplist in proplists:
         if "Attaches" in subitem:
             for attach_name in subitem["Attaches"]:
                 props_array.append(attach_name)
-        proplist_datas.append({"Props": props_array, "Chance": subitem["Chance"] * 0.5})
+        proplist_datas.append({"props": props_array, "Chance": subitem["Chance"] * 0.5})
     objects_array.append(
         {"class": prop_list, "name": proplist["name"], "Array": proplist_datas}
     )
@@ -692,7 +692,7 @@ write_file("Generated/Mixed/props.json", data)
 objects_array = []
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Multitool", "Recipes": breaking_hand}
+    {"class": recipe_dictionary, "name": "Multitool", "recipes": breaking_hand}
 )
 
 data = {"Objects": objects_array}

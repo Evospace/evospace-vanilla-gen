@@ -28,11 +28,11 @@ cvs = []
 
 def append_gas_burning(recipe):
     gas2 = copy.deepcopy(recipe)
-    gas2["Input"]["Items"].append(
-        {"name": "Oxygen", "Count": gas2["Input"]["Items"][0]["Count"]}
+    gas2["input"]["items"].append(
+        {"name": "Oxygen", "count": gas2["input"]["items"][0]["count"]}
     )
-    gas2["Output"]["Items"][0]["Count"] = gas2["Output"]["Items"][0]["Count"] * 2
-    gas2["Output"]["Items"] = [gas2["Output"]["Items"][0]]
+    gas2["output"]["items"][0]["count"] = gas2["output"]["items"][0]["count"] * 2
+    gas2["output"]["items"] = [gas2["output"]["items"][0]]
     recipes_gasturb.append(gas2)
 
     recipes_gasturb.append(recipe)
@@ -52,17 +52,17 @@ for part in parts:
                 "name": material + part["name"],
                 "label_parts": [[material + part["name"], "parts"]],
                 "image": "T_" + material + part["name"],
-                "max_count": part["Stack"],
+                "max_count": part["max_count"],
                 "logic_json": {"Block": material + part["name"]},
                 "tag": "Misc",
                 "Materials": ["Materials/" + material],
                 "category": "Parts",
             }
-            if "item_logic" in part:
-                item["item_logic"] = part["item_logic"]
+            if "logic" in part:
+                item["logic"] = part["logic"]
 
-            if "Mesh" in part:
-                item["Mesh"] = part["Mesh"]
+            if "mesh" in part:
+                item["mesh"] = part["mesh"]
 
             if "Materials" in part:
                 dict = copy.deepcopy(part["Materials"])
@@ -78,10 +78,10 @@ for part in parts:
 
             images.append(
                 {
-                    "NewName": "T_" + material + part["name"],
-                    "Base": "T_" + part["name"],
-                    "MulMask": "T_" + material,
-                    "AddMask": "T_" + part["name"] + additive_ico,
+                    "new_name": "T_" + material + part["name"],
+                    "base": "T_" + part["name"],
+                    "mul": "T_" + material,
+                    "add": "T_" + part["name"] + additive_ico,
                 }
             )
 
@@ -89,21 +89,21 @@ for part in parts:
                 recipes_macerator.append(
                     {
                         "name": material + part["name"],
-                        "Input": {
-                            "Items": [
-                                {"name": material + part["name"], "Count": 1},
+                        "input": {
+                            "items": [
+                                {"name": material + part["name"], "count": 1},
                             ]
                         },
-                        "ResourceInput": {
+                        "res_input": {
                             "name": "Kinetic",
-                            "Count": 10 * 1.5**level,
+                            "count": 10 * 1.5**level,
                         },
-                        "Output": {
-                            "Items": [
-                                {"name": material + "Dust", "Count": part["Volume"]}
+                        "output": {
+                            "items": [
+                                {"name": material + "Dust", "count": part["Volume"]}
                             ]
                         },
-                        "Ticks": 80 * part["Volume"] * 1.5**level,
+                        "ticks": 80 * part["Volume"] * 1.5**level,
                     }
                 )
             recipes_wrench.append(simple_in_out_recipe(material + part["name"]))
@@ -116,11 +116,11 @@ for part in parts:
                 recipes_hand.append(
                     {
                         "name": material + "Casing",
-                        "Input": {"Items": [{"name": material + "Plate", "Count": 3}]},
-                        "Output": {
-                            "Items": [{"name": material + "Casing", "Count": 1}]
+                        "input": {"items": [{"name": material + "Plate", "count": 3}]},
+                        "output": {
+                            "items": [{"name": material + "Casing", "count": 1}]
                         },
-                        "Ticks": 40,
+                        "ticks": 40,
                     }
                 )
                 objects_array.append(
@@ -143,37 +143,37 @@ for part in parts:
                 recipes_hammer.append(
                     {
                         "name": material + "Plate",
-                        "Input": {
-                            "Items": [
+                        "input": {
+                            "items": [
                                 {
                                     "name": material
                                     + ("Ingot" if material != "Stone" else "Surface"),
-                                    "Count": 1,
+                                    "count": 1,
                                 },
                             ]
                         },
-                        "ResourceInput": {
+                        "res_input": {
                             "name": "Kinetic",
-                            "Count": 10 * 1.5**level,
+                            "count": 10 * 1.5**level,
                         },
-                        "Output": {"Items": [{"name": material + "Plate", "Count": 1}]},
-                        "Ticks": 80 * 1.5**level,
+                        "output": {"items": [{"name": material + "Plate", "count": 1}]},
+                        "ticks": 80 * 1.5**level,
                     }
                 )
                 recipes_hand.append(
                     {
                         "name": material + "Plate",
-                        "Input": {
-                            "Items": [
+                        "input": {
+                            "items": [
                                 {
                                     "name": material
                                     + ("Ingot" if material != "Stone" else "Surface"),
-                                    "Count": 1,
+                                    "count": 1,
                                 }
                             ]
                         },
-                        "Output": {"Items": [{"name": material + "Plate", "Count": 1}]},
-                        "Ticks": 20,
+                        "output": {"items": [{"name": material + "Plate", "count": 1}]},
+                        "ticks": 20,
                     }
                 )
 
@@ -181,25 +181,25 @@ for part in parts:
                 recipes_hand.append(
                     {  # parts recipe
                         "name": material + "Parts",
-                        "Input": {"Items": [{"name": material + "Plate", "Count": 1}]},
-                        "Output": {"Items": [{"name": material + "Parts", "Count": 1}]},
-                        "Ticks": 20,
+                        "input": {"items": [{"name": material + "Plate", "count": 1}]},
+                        "output": {"items": [{"name": material + "Parts", "count": 1}]},
+                        "ticks": 20,
                     }
                 )
                 recipes_cutter.append(
                     {
                         "name": material + "Parts",
-                        "Input": {
-                            "Items": [
-                                {"name": material + "Plate", "Count": 1},
+                        "input": {
+                            "items": [
+                                {"name": material + "Plate", "count": 1},
                             ]
                         },
-                        "ResourceInput": {
+                        "res_input": {
                             "name": "Kinetic",
-                            "Count": 10 * 1.5**level,
+                            "count": 10 * 1.5**level,
                         },
-                        "Output": {"Items": [{"name": material + "Parts", "Count": 1}]},
-                        "Ticks": 80 * 1.5**level,
+                        "output": {"items": [{"name": material + "Parts", "count": 1}]},
+                        "ticks": 80 * 1.5**level,
                     }
                 )
 
@@ -247,8 +247,8 @@ for material in materials:
             "tag": "Misc",
         }
 
-        if "Craftable" in material:
-            item["Craftable"] = False
+        if "craftable" in material:
+            item["craftable"] = False
 
         if "category" in material:
             item["category"] = material["category"]
@@ -262,11 +262,11 @@ for material in materials:
         if "Unit" in material:
             item["Unit"] = material["Unit"]
 
-        if "Stack" in material:
-            item["max_count"] = material["Stack"]
+        if "max_count" in material:
+            item["max_count"] = material["max_count"]
 
-        if "Mesh" in material:
-            item["Mesh"] = material["Mesh"]
+        if "mesh" in material:
+            item["mesh"] = material["mesh"]
             item["Materials"] = ["Materials/" + material["name"]]
 
         if "Materials" in material:
@@ -276,20 +276,20 @@ for material in materials:
             recipes_furnace.append(
                 {
                     "name": material["name"],
-                    "Input": {"Items": [{"name": material["name"], "Count": 1}]},
-                    "Output": {
-                        "Items": [
+                    "input": {"items": [{"name": material["name"], "count": 1}]},
+                    "output": {
+                        "items": [
                             # {
                             # 	"name": "AshDust",
-                            # 	"Count": material["Burnable"]["TotalAsh"],
+                            # 	"count": material["Burnable"]["TotalAsh"],
                             # }
                         ],
                     },
-                    "ResourceOutput": {
+                    "res_output": {
                         "name": "Heat",
-                        "Count": material["Burnable"]["HeatPerTick"],
+                        "count": material["Burnable"]["HeatPerTick"],
                     },
-                    "Ticks": material["Burnable"]["BurnTime"],
+                    "ticks": material["Burnable"]["BurnTime"],
                 }
             )
             item["description_parts"] = [
@@ -312,7 +312,7 @@ for material in materials:
             "name": material["name"] + "Ingot",
             "image": "T_" + material["name"] + "Ingot",
             "max_count": 32,
-            "Mesh": "Models/Ingot",
+            "mesh": "Models/Ingot",
             "Materials": ["Materials/" + material["name"]],
             "label_parts": [[material["name"] + "Ingot", "parts"]],
             "tag": "Misc",
@@ -329,10 +329,10 @@ for material in materials:
 
         images.append(
             {
-                "NewName": "T_" + material["name"] + "Ingot",
-                "Base": "T_" + "Ingot",
-                "MulMask": "T_" + material["name"],
-                "AddMask": "T_" + "Ingot" + additive_ico,
+                "new_name": "T_" + material["name"] + "Ingot",
+                "base": "T_" + "Ingot",
+                "mul": "T_" + material["name"],
+                "add": "T_" + "Ingot" + additive_ico,
             }
         )
 
@@ -340,31 +340,31 @@ for material in materials:
             recipes_smelt.append(
                 {
                     "name": material["name"] + "Ingot",
-                    "Input": {
-                        "Items": [{"name": material["name"] + "Dust", "Count": 1}],
+                    "input": {
+                        "items": [{"name": material["name"] + "Dust", "count": 1}],
                     },
-                    "ResourceInput": {
+                    "res_input": {
                         "name": "Heat",
-                        "Count": 10,
+                        "count": 10,
                     },
-                    "Output": {
-                        "Items": [{"name": material["name"] + "Ingot", "Count": 1}]
+                    "output": {
+                        "items": [{"name": material["name"] + "Ingot", "count": 1}]
                     },
-                    "Ticks": 200,
+                    "ticks": 200,
                 }
             )
 
         recipes_macerator.append(
             {
                 "name": material["name"] + "Ingot",
-                "Input": {
-                    "Items": [
-                        {"name": material["name"] + "Ingot", "Count": 1},
+                "input": {
+                    "items": [
+                        {"name": material["name"] + "Ingot", "count": 1},
                     ]
                 },
-                "ResourceInput": {"name": "Kinetic", "Count": 15},
-                "Output": {"Items": [{"name": material["name"] + "Dust", "Count": 1}]},
-                "Ticks": 120,
+                "res_input": {"name": "Kinetic", "count": 15},
+                "output": {"items": [{"name": material["name"] + "Dust", "count": 1}]},
+                "ticks": 120,
             }
         )
 
@@ -375,12 +375,12 @@ for material in materials:
             "name": material["name"] + "Block",
             "image": "T_" + material["name"] + "Block",
             "max_count": 999,
-            # "Mesh": "Models/Ingot",
+            # "mesh": "Models/Ingot",
             "Materials": ["Materials/" + material["name"]],
             "label_parts": [[material["name"] + "Block", "parts"]],
             "tag": "Decoration",
             "category": "Block",
-            "item_logic": building_cube_logic,
+            "logic": building_cube_logic,
             "logic_json": {"Block": material["name"] + "Block"},
         }
 
@@ -394,10 +394,10 @@ for material in materials:
 
         images.append(
             {
-                "NewName": "T_" + material["name"] + "Block",
-                "Base": "T_" + "Block",
-                "MulMask": "T_" + material["name"],
-                "AddMask": "T_" + "Block" + additive_ico,
+                "new_name": "T_" + material["name"] + "Block",
+                "base": "T_" + "Block",
+                "mul": "T_" + material["name"],
+                "add": "T_" + "Block" + additive_ico,
             }
         )
         objects_array.append(
@@ -419,24 +419,24 @@ for material in materials:
         recipes_press.append(
             {
                 "name": material["name"] + "Block",
-                "Input": {
-                    "Items": [{"name": material["name"] + "Dust", "Count": 4}],
+                "input": {
+                    "items": [{"name": material["name"] + "Dust", "count": 4}],
                 },
-                "ResourceInput": {
+                "res_input": {
                     "name": "Kinetic",
-                    "Count": 10,
+                    "count": 10,
                 },
-                "Output": {"Items": [{"name": material["name"] + "Block", "Count": 1}]},
-                "Ticks": 200,
+                "output": {"items": [{"name": material["name"] + "Block", "count": 1}]},
+                "ticks": 200,
             }
         )
 
         recipes_wrench.append(
             {
                 "name": material["name"] + "Block" + "Wrenching",
-                "Ticks": 20,
-                "Input": {"Items": [{"name": material["name"] + "Block", "Count": 1}]},
-                "Output": {"Items": [{"name": material["name"] + "Block", "Count": 1}]},
+                "ticks": 20,
+                "input": {"items": [{"name": material["name"] + "Block", "count": 1}]},
+                "output": {"items": [{"name": material["name"] + "Block", "count": 1}]},
             }
         )
 
@@ -454,7 +454,7 @@ for material in materials:
             "UnitMul": 1.0 / 1000.0,
             "category": "Fluid",
             "description_parts": [["Fluid", "common"], ["ByPipes", "common"]],
-            "Solid": False,
+            "solid": False,
         }
 
         if "category" in material:
@@ -483,33 +483,33 @@ for material in materials:
 
         images.append(
             {
-                "NewName": "T_" + material["name"] + "",
-                "Base": "T_" + "",
-                "MulMask": "T_" + material["name"],
-                "AddMask": "T_" + "" + additive_ico,
+                "new_name": "T_" + material["name"] + "",
+                "base": "T_" + "",
+                "mul": "T_" + material["name"],
+                "add": "T_" + "" + additive_ico,
             }
         )
 
         if "UnitMul" in material:
             item["UnitMul"] = material["UnitMul"]
 
-        if "Color" in material:
-            item["Color"] = material["Color"]
+        if "color" in material:
+            item["color"] = material["color"]
 
         if "Burnable" in material:
             recipes_gasfurn.append(
                 {
-                    "Input": {
-                        "Items": [{"name": material["name"] + "", "Count": 1000}]
+                    "input": {
+                        "items": [{"name": material["name"] + "", "count": 1000}]
                     },
-                    "Output": {
-                        "Items": [],
+                    "output": {
+                        "items": [],
                     },
-                    "ResourceOutput": {
+                    "res_output": {
                         "name": "Heat",
-                        "Count": material["Burnable"]["HeatPerTick"],
+                        "count": material["Burnable"]["HeatPerTick"],
                     },
-                    "Ticks": material["Burnable"]["BurnTime"],
+                    "ticks": material["Burnable"]["BurnTime"],
                     "name": material["name"] + "",
                 }
             )
@@ -517,16 +517,16 @@ for material in materials:
         recipes_liq_dump.append(
             {
                 "name": material["name"] + "Dumping",
-                "Input": {
-                    "Items": [
+                "input": {
+                    "items": [
                         {
                             "name": material["name"] + "",
-                            "Count": 1000 if material["name"] != "Steam" else 10000,
+                            "count": 1000 if material["name"] != "Steam" else 10000,
                         }
                     ]
                 },
-                "Output": {"Items": []},
-                "Ticks": 200,
+                "output": {"items": []},
+                "ticks": 200,
             }
         )
 
@@ -544,7 +544,7 @@ for material in materials:
             "UnitMul": 1.0 / 1000.0,
             "category": "Fluid",
             "description_parts": [["Gas", "common"], ["ByPipes", "common"]],
-            "Solid": False,
+            "solid": False,
         }
 
         if "category" in material:
@@ -573,33 +573,33 @@ for material in materials:
 
         images.append(
             {
-                "NewName": "T_" + material["name"] + "",
-                "Base": "T_" + "",
-                "MulMask": "T_" + material["name"],
-                "AddMask": "T_" + "" + additive_ico,
+                "new_name": "T_" + material["name"] + "",
+                "base": "T_" + "",
+                "mul": "T_" + material["name"],
+                "add": "T_" + "" + additive_ico,
             }
         )
 
         if "UnitMul" in material:
             item["UnitMul"] = material["UnitMul"]
 
-        if "Color" in material:
-            item["Color"] = material["Color"]
+        if "color" in material:
+            item["color"] = material["color"]
 
         if "Burnable" in material:
             recipes_gasfurn.append(
                 {
-                    "Input": {
-                        "Items": [{"name": material["name"] + "", "Count": 1000}]
+                    "input": {
+                        "items": [{"name": material["name"] + "", "count": 1000}]
                     },
-                    "Output": {
-                        "Items": [],
+                    "output": {
+                        "items": [],
                     },
-                    "ResourceOutput": {
+                    "res_output": {
                         "name": "Heat",
-                        "Count": material["Burnable"]["HeatPerTick"],
+                        "count": material["Burnable"]["HeatPerTick"],
                     },
-                    "Ticks": material["Burnable"]["BurnTime"],
+                    "ticks": material["Burnable"]["BurnTime"],
                     "name": material["name"],
                 }
             )
@@ -607,16 +607,16 @@ for material in materials:
         recipes_gas_dump.append(
             {
                 "name": material["name"],
-                "Input": {
-                    "Items": [
+                "input": {
+                    "items": [
                         {
                             "name": material["name"] + "",
-                            "Count": 1000 if material["name"] != "Steam" else 10000,
+                            "count": 1000 if material["name"] != "Steam" else 10000,
                         }
                     ]
                 },
-                "Output": {"Items": []},
-                "Ticks": 1,
+                "output": {"items": []},
+                "ticks": 1,
             }
         )
 
@@ -630,7 +630,7 @@ for material in materials:
             "max_count": 32,
             "label_parts": [[material["name"] + "Dust", "parts"]],
             "tag": "Misc",
-            "Mesh": "Models/Dust",
+            "mesh": "Models/Dust",
             "Materials": ["Materials/" + material["name"] + "Dust"],
             "UnitMul": 1,
             "category": "Dust",
@@ -646,31 +646,31 @@ for material in materials:
 
         images.append(
             {
-                "NewName": "T_" + material["name"] + "Dust",
-                "Base": "T_" + "Dust",
-                "MulMask": "T_" + material["name"],
-                "AddMask": "T_" + "Dust" + additive_ico,
+                "new_name": "T_" + material["name"] + "Dust",
+                "base": "T_" + "Dust",
+                "mul": "T_" + material["name"],
+                "add": "T_" + "Dust" + additive_ico,
             }
         )
         if "Burnable" in material:
             recipes_furnace.append(
                 {
-                    "Input": {
-                        "Items": [{"name": material["name"] + "Dust", "Count": 1}]
+                    "input": {
+                        "items": [{"name": material["name"] + "Dust", "count": 1}]
                     },
-                    "Output": {
-                        "Items": [
+                    "output": {
+                        "items": [
                             # {
                             # 	"name": "AshDust",
-                            # 	"Count": material["Burnable"]["TotalAsh"]
+                            # 	"count": material["Burnable"]["TotalAsh"]
                             # },
                         ],
                     },
-                    "ResourceOutput": {
+                    "res_output": {
                         "name": "Heat",
-                        "Count": material["Burnable"]["HeatPerTick"],
+                        "count": material["Burnable"]["HeatPerTick"],
                     },
-                    "Ticks": material["Burnable"]["BurnTime"],
+                    "ticks": material["Burnable"]["BurnTime"],
                     "name": material["name"] + "Dust",
                 }
             )
@@ -685,10 +685,10 @@ for tool in tools:
                 "class": static_item,
                 "name": item_name,
                 "image": "T_" + item_name,
-                "item_logic": tool["item_logic"],
+                "logic": tool["logic"],
                 "logic_json": {
                     "RecipeDictionary": tool["name"],
-                    "Tier": tier,
+                    "tier": tier,
                 },
                 "max_count": 1,
                 "label_parts": [
@@ -703,10 +703,10 @@ for tool in tools:
 
             images.append(
                 {
-                    "NewName": "T_" + item_name,
-                    "Base": "T_" + tool["name"],
-                    "MulMask": "T_" + tier_material[tier],
-                    "AddMask": "T_" + tool["name"] + additive_ico,
+                    "new_name": "T_" + item_name,
+                    "base": "T_" + tool["name"],
+                    "mul": "T_" + tier_material[tier],
+                    "add": "T_" + tool["name"] + additive_ico,
                 }
             )
 
@@ -716,21 +716,21 @@ for tool in tools:
                 recipes_hand.append(
                     {
                         "name": tier_material[tier] + "Screwdriver",
-                        "Input": {
-                            "Items": [
-                                {"name": tier_material[tier] + "Parts", "Count": 1},
-                                {"name": "Plank", "Count": 1},
+                        "input": {
+                            "items": [
+                                {"name": tier_material[tier] + "Parts", "count": 1},
+                                {"name": "Plank", "count": 1},
                             ]
                         },
-                        "Output": {
-                            "Items": [
+                        "output": {
+                            "items": [
                                 {
                                     "name": tier_material[tier] + "Screwdriver",
-                                    "Count": 1,
+                                    "count": 1,
                                 }
                             ]
                         },
-                        "Ticks": 40,
+                        "ticks": 40,
                     }
                 )
 
@@ -740,23 +740,23 @@ for tool in tools:
                 recipes_hand.append(
                     {
                         "name": tier_material[tier] + "Multitool",
-                        "Input": {
-                            "Items": [
-                                {"name": tier_material[tier] + "Pipe", "Count": 2},
-                                {"name": tier_material[tier] + "Plate", "Count": 2},
+                        "input": {
+                            "items": [
+                                {"name": tier_material[tier] + "Pipe", "count": 2},
+                                {"name": tier_material[tier] + "Plate", "count": 2},
                                 {
                                     "name": tier_material[tier] + "Parts",
-                                    "Count": tier * 5 + 10,
+                                    "count": tier * 5 + 10,
                                 },
-                                {"name": circuits[tier], "Count": 10},
+                                {"name": circuits[tier], "count": 10},
                             ]
                         },
-                        "Output": {
-                            "Items": [
-                                {"name": tier_material[tier] + "Multitool", "Count": 1}
+                        "output": {
+                            "items": [
+                                {"name": tier_material[tier] + "Multitool", "count": 1}
                             ]
                         },
-                        "Ticks": 40,
+                        "ticks": 40,
                     }
                 )
 
@@ -766,23 +766,23 @@ for tool in tools:
                 recipes_hand.append(
                     {
                         "name": tier_material[tier] + "PaintTool",
-                        "Input": {
-                            "Items": [
-                                {"name": tier_material[tier] + "Pipe", "Count": 2},
-                                {"name": tier_material[tier] + "Plate", "Count": 2},
+                        "input": {
+                            "items": [
+                                {"name": tier_material[tier] + "Pipe", "count": 2},
+                                {"name": tier_material[tier] + "Plate", "count": 2},
                                 {
                                     "name": tier_material[tier] + "Parts",
-                                    "Count": tier * 5 + 10,
+                                    "count": tier * 5 + 10,
                                 },
-                                {"name": circuits[tier], "Count": 10},
+                                {"name": circuits[tier], "count": 10},
                             ]
                         },
-                        "Output": {
-                            "Items": [
-                                {"name": tier_material[tier] + "PaintTool", "Count": 1}
+                        "output": {
+                            "items": [
+                                {"name": tier_material[tier] + "PaintTool", "count": 1}
                             ]
                         },
-                        "Ticks": 40,
+                        "ticks": 40,
                     }
                 )
 
@@ -793,7 +793,7 @@ write_file("Generated/Mixed/parts.json", data)
 objects_array = []
 
 objects_array.append(
-    {"class": ico_generator, "name": "Parts" + ico_generator, "Images": images}
+    {"class": ico_generator, "name": "Parts" + ico_generator, "images": images}
 )
 
 data = {"Objects": objects_array}
@@ -803,15 +803,15 @@ write_file("Generated/Resources/parts.json", data)
 objects_array = []
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "CuttingMachine", "Recipes": recipes_cutter}
+    {"class": recipe_dictionary, "name": "CuttingMachine", "recipes": recipes_cutter}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "AutomaticHammer", "Recipes": recipes_hammer}
+    {"class": recipe_dictionary, "name": "AutomaticHammer", "recipes": recipes_hammer}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Macerator", "Recipes": recipes_macerator}
+    {"class": recipe_dictionary, "name": "Macerator", "recipes": recipes_macerator}
 )
 
 for r in recipes_hand:
@@ -821,7 +821,7 @@ objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "Hand",
-        "Recipes": recipes_hand,
+        "recipes": recipes_hand,
         "UsedIn": [
             {
                 "Item": "Hand",
@@ -831,11 +831,11 @@ objects_array.append(
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Press", "Recipes": recipes_press}
+    {"class": recipe_dictionary, "name": "Press", "recipes": recipes_press}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Furnace", "Recipes": recipes_furnace}
+    {"class": recipe_dictionary, "name": "Furnace", "recipes": recipes_furnace}
 )
 
 
@@ -851,29 +851,29 @@ objects_array.append(
     {
         "class": recipe_dictionary,
         "name": "Multitool",
-        "Recipes": recipes_wrench,
+        "recipes": recipes_wrench,
         "UsedIn": used_in,
     }
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Smelter", "Recipes": recipes_smelt}
+    {"class": recipe_dictionary, "name": "Smelter", "recipes": recipes_smelt}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "Assembler", "Recipes": recipes_assembler}
+    {"class": recipe_dictionary, "name": "Assembler", "recipes": recipes_assembler}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "FluidDump", "Recipes": recipes_liq_dump}
+    {"class": recipe_dictionary, "name": "FluidDump", "recipes": recipes_liq_dump}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "GasDump", "Recipes": recipes_gas_dump}
+    {"class": recipe_dictionary, "name": "GasDump", "recipes": recipes_gas_dump}
 )
 
 objects_array.append(
-    {"class": recipe_dictionary, "name": "FluidFurnace", "Recipes": recipes_gasfurn}
+    {"class": recipe_dictionary, "name": "FluidFurnace", "recipes": recipes_gasfurn}
 )
 
 data = {"Objects": objects_array}
