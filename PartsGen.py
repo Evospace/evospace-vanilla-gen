@@ -687,7 +687,7 @@ for tool in tools:
                 "image": "T_" + item_name,
                 "logic": tool["logic"],
                 "logic_json": {
-                    "RecipeDictionary": tool["name"],
+                    "recipes": tool["name"],
                     "tier": tier,
                 },
                 "max_count": 1,
