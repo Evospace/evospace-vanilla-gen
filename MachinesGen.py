@@ -215,54 +215,13 @@ for machine in machines:
                 }
             )
 
-            logic = {
-                "recipes": machine["recipes"]
-                if "recipes" in machine
-                else machine["name"],
-                "tier": tier,
-                "level": level,
-            }
-
-            if "CustomData" in machine:
-                dict = copy.deepcopy(machine["CustomData"])
-                for key, value in dict.items():
-                    if str(value).find("%Material%") != -1:
-                        dict[key] = value.replace("%Material%", tier_material[tier])
-                    if key == "StorageCapacity":
-                        dict[key] = value * 2**level
-
-                logic.update(dict)
-
-            if "BlockCreation" in machine:
-                logic["BlockCreation"] = machine["BlockCreation"]
-                if logic["BlockCreation"].find("%Material%") != -1:
-                    logic["BlockCreation"] = logic["BlockCreation"].replace(
-                        "%Material%", tier_material[tier]
-                    )
-
-                if logic["BlockCreation"].find("%Level%") != -1:
-                    logic["BlockCreation"] = logic["BlockCreation"].replace(
-                        "%Level%", str(tier - machine["StartTier"])
-                    )
-
-                if logic["BlockCreation"].find("%Tier%") != -1:
-                    logic["BlockCreation"] = logic["BlockCreation"].replace(
-                        "%Tier%", str(tier)
-                    )
-
-            logic["ActorCreation"] = ""
-
             block = {
                 "name": block_name,
                 "Item": item_name,
-                "logic_json": logic,
                 "class": static_block,
                 "logic": machine["name"],
                 "replace_tag": machine["name"],
             }
-
-            if "BlockLogic" in machine:
-                block["logic"] = machine["BlockLogic"]
 
             block["Actor"] = (
                 "/Game/Blocks/" + machine["name"] + "BP." + machine["name"] + "BP_C"

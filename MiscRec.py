@@ -77,6 +77,8 @@ recipes_industrial_electric_engine = []
 
 recipes_portal = []
 
+recipes_kinetic_heater = []
+
 recipes_hand = []
 
 
@@ -590,6 +592,7 @@ recipes_condens.append(
     {
         "name": "Water",
         "input": {"items": []},
+        "res_input": {"name": "Kinetic", "count": 10},
         "output": {"items": [{"name": "Water", "count": 250}]},
         "ticks": 200,
     }
@@ -1053,6 +1056,18 @@ recipes_generator.append(
         "res_input": {"name": "Kinetic", "count": 270},
         "output": {"items": []},
         "res_output": {"name": "Electricity", "count": 243},
+        "ticks": 200,
+        "loss": 10,
+    }
+)
+
+recipes_kinetic_heater.append(
+    {
+        "name": "Heating",
+        "input": {"items": []},
+        "res_input": {"name": "Kinetic", "count": 20},
+        "output": {"items": []},
+        "res_output": {"name": "Heat", "count": 18},
         "ticks": 200,
         "loss": 10,
     }
@@ -3323,6 +3338,14 @@ objects_array.append(
         "class": recipe_dictionary,
         "name": "IndustrialElectricEngine",
         "recipes": recipes_industrial_electric_engine,
+    }
+)
+
+objects_array.append(
+    {
+        "class": recipe_dictionary,
+        "name": "KineticHeater",
+        "recipes": recipes_kinetic_heater,
     }
 )
 
