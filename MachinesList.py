@@ -9,7 +9,7 @@ machines = [
         "Label": "Macerator",
         "StartTier": 1,
         "EndTier": 10,
-        "BlockLogic": "AutoCrafter",
+
         "BlockCreation": """
 		local crafter = current_block_logic()
 		
@@ -26,7 +26,7 @@ machines = [
         "Label": "Cutting Machine",
         "StartTier": 1,
         "EndTier": 10,
-        "BlockLogic": "AutoCrafter",
+
         "BlockCreation": """
 		local crafter = current_block_logic()
 		
@@ -53,7 +53,7 @@ machines = [
         "StartTier": 4,
         "EndTier": 10,
         "Positions": [[0, 0, 0], [0, 0, 1]],
-        "BlockLogic": "SelectCrafter",
+
         "BlockCreation": """
 		local crafter = current_block_logic()
 
@@ -71,7 +71,7 @@ machines = [
         "Label": "Chemical Reactor",
         "StartTier": 2,
         "EndTier": 10,
-        "BlockLogic": "SelectCrafter",
+
         "BlockCreation": """
 		local crafter = current_block_logic()
 		
@@ -88,7 +88,7 @@ machines = [
         "Label": "Separator",
         "StartTier": 2,
         "EndTier": 10,
-        "BlockLogic": "AutoCrafter",
+
         "BlockCreation": """
 		local crafter = current_block_logic()
 		
@@ -105,7 +105,7 @@ machines = [
         "Label": "Beam",
         "StartTier": 1,
         "EndTier": 10,
-        "BlockLogic": "BlockLogic",
+
         "tag": "Decoration",
         "Description": ["BuildingBlock"],
     },
@@ -114,7 +114,7 @@ machines = [
         "Label": "Corner",
         "StartTier": 1,
         "EndTier": 10,
-        "BlockLogic": "BlockLogic",
+
         "tag": "Decoration",
         "Description": ["BuildingBlock"],
     },
@@ -124,7 +124,7 @@ machines = [
         "Positions": [[0, 0, 0], [0, 0, 1]],
         "StartTier": 1,
         "EndTier": 10,
-        "BlockLogic": "AutoCrafter",
+
         "BlockCreation": """
 		local crafter = current_block_logic()
 		
@@ -151,26 +151,6 @@ machines = [
         "StartTier": 2,
         "EndTier": 10,
         "CommonTextKeys": ["Autocrafter"],
-        "BlockLogic": "NuclearReactor",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		heat_input = get_class("HeatInputAccessor")
-		fluid_input = get_class("FluidInputAccessor")
-		fluid_output = get_class("FluidOutputAccessor")
-		
-		local a = crafter:create_accessor(fluid_input)
-		a:set_side_pos(Vec3i.back(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(fluid_output)
-		a:set_side_pos(Vec3i.up(), Vec3i.zero())
-		a:bind(crafter:get_output_container())
-		
-		local a = crafter:create_accessor(heat_input)
-		a:set_side_pos(Vec3i.down(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["HeatInput", "FluidInput", "FluidOutput", "PowerOutput"],
         "CustomData": {
             "StorageCapacity": 30000,
@@ -183,7 +163,7 @@ machines = [
         "Label": "Pipe",
         "StartTier": 1,
         "EndTier": 10,
-        "BlockLogic": "FluidConductor",
+
         "tag": "Logistics",
         "Description": ["FluidConductor"],
         "PathFinding": True,
@@ -193,7 +173,7 @@ machines = [
         "Label": "Heat Pipe",
         "StartTier": 1,
         "EndTier": 1,
-        "BlockLogic": "HeatConductor",
+
         "tag": "Logistics",
         "Description": ["HeatConductor", "HeatStorage"],
         "PathFinding": True,
@@ -203,7 +183,7 @@ machines = [
         "Label": "Flywheel",
         "StartTier": 2,
         "EndTier": 2,
-        "BlockLogic": "KineticConductor",
+
         "tag": "Logistics",
         "Description": ["KineticConductor", "KineticStorage"],
         "PathFinding": True,
@@ -214,7 +194,7 @@ machines = [
         "StartTier": 1,
         "EndTier": 10,
         "tag": "Decoration",
-        "BlockLogic": "BlockLogic",
+
         "Description": ["BuildingBlock"],
     },
     {
@@ -223,7 +203,7 @@ machines = [
         "tag": "Decoration",
         "StartTier": 0,
         "EndTier": 10,
-        "BlockLogic": "Sign",
+
     },
     {
         "name": "AdvancedSign",
@@ -231,14 +211,14 @@ machines = [
         "tag": "Decoration",
         "StartTier": 2,
         "EndTier": 10,
-        "BlockLogic": "Sign",
+
     },
     {
         "name": "Connector",
         "Label": "Cable",
         "StartTier": 1,
         "EndTier": 1,
-        "BlockLogic": "ElectricConductor",
+
         "tag": "Logistics",
         "PathFinding": True,
     },
@@ -263,7 +243,7 @@ machines = [
         "StartTier": 1,
         "EndTier": 1,
         "CommonTextKeys": ["Valve"],
-        "BlockLogic": "FluidSwitch",
+
         "tag": "Logistics",
         "Description": ["FluidConductor"],
     },
@@ -272,7 +252,7 @@ machines = [
         "Label": "Switch",
         "StartTier": 2,
         "EndTier": 2,
-        "BlockLogic": "ElectricSwitch",
+
         "tag": "Logistics",
         "Description": ["ElectricConductor"],
     },
@@ -295,16 +275,6 @@ machines = [
         ],
         "StartTier": 2,
         "EndTier": 10,
-        "BlockLogic": "AutoCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		kinetic_input = get_class("KineticInputAccessor")
-		
-		local a = crafter:create_accessor(kinetic_input)
-		a:set_side_pos(Vec3i.front(), Vec3i.new(0,1,0))
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["KineticInput"],
     },
     {
@@ -338,7 +308,7 @@ machines = [
         "Label": "Container",
         "StartTier": 1,
         "EndTier": 10,
-        "BlockLogic": "FluidContainer",
+
         "tag": "Logistics",
         "Description": ["FluidConductor", "FluidStorage"],
     },
@@ -348,16 +318,6 @@ machines = [
         "StartTier": 2,
         "EndTier": 10,
         "CommonTextKeys": ["Press", "Autocrafter"],
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		kinetic_input = get_class("KineticInputAccessor")
-		
-		local a = crafter:create_accessor(kinetic_input)
-		a:set_side_pos(Vec3i.back(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		""",
     }
     # ,{
     # 	"name": "Compressor",
@@ -367,7 +327,7 @@ machines = [
     # 	"CommonTextKeys":[
     # 		"Autocrafter"
     # 	],
-    # 	"BlockLogic":"SelectCrafter",
+
     # 	"BlockCreation":"""
     # 	local crafter = current_block_logic()
     #
@@ -387,21 +347,6 @@ machines = [
         "Label": "Stirling Engine",
         "StartTier": 1,
         "EndTier": 10,
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		heat_input = get_class("HeatInputAccessor")
-		kinetic_output = get_class("KineticOutputAccessor")
-		
-		local a = crafter:create_accessor(heat_input)
-		a:set_side_pos(Vec3i.down(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(kinetic_output)
-		a:set_side_pos(Vec3i.back(), Vec3i.zero())
-		a:bind(crafter:get_output_container())
-		""",
         "Description": ["HeatInput", "KineticOutput", "PowerOutput"],
         "PowerOutput": 10,
     },
@@ -418,21 +363,6 @@ machines = [
         "Positions": [[0, 0, 0], [0, 0, 1], [0, 0, 2], [0, 1, 0], [0, 2, 0]],
         "StartTier": 3,
         "EndTier": 10,
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		heat_input = get_class("HeatInputAccessor")
-		heat_output = get_class("HeatOutputAccessor")
-		kinetic_input = get_class("KineticInputAccessor")
-		kinetic_output = get_class("KineticOutputAccessor")
-		electric_input = get_class("ElectricInputAccessor")
-		electric_output = get_class("ElectricOutputAccessor")
-		
-		local a = crafter:create_accessor(heat_input)
-		a:set_side_pos(Vec3i.down(), Vec3i.new( 0, 0, 0 ))
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["HeatInput"],
     },
     {
@@ -450,7 +380,7 @@ machines = [
         ],
         "StartTier": 2,
         "EndTier": 10,
-        "BlockLogic": "SelectCrafter",
+
         "BlockCreation": """
 		local crafter = current_block_logic()
 		
@@ -472,49 +402,36 @@ machines = [
         "name": "CompactGenerator",
         "Label": "Compact Generator",
         "StartTier": 1,
-        "EndTier": 1,
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		kinetic_input = get_class("KineticInputAccessor")
-		electric_output = get_class("ElectricOutputAccessor")
-		
-		local a = crafter:create_accessor(kinetic_input)
-		a:set_side_pos(Vec3i.front(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(electric_output)
-		a:set_side_pos(Vec3i.back(), Vec3i.zero())
-		a:bind(crafter:get_output_container())
-		""",
+        "EndTier": 10,
         "Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
         "PowerOutput": 18,
+    },
+    {
+        "name": "HandGenerator",
+        "Label": "HandGenerator",
+        "StartTier": 1,
+        "EndTier": 1,
+        "Description": ["KineticOutput", "PowerOutput"],
+        "PowerOutput": 9,
+        "Positions": [
+            [0, 0, 0],
+            [0, 0, 1],
+            [0, 0, 2],
+        ],
+    },
+    {
+        "name": "KineticHeater",
+        "Label": "Kinetic Heater",
+        "StartTier": 1,
+        "EndTier": 10,
+        "Description": ["KineticOutput", "HeatOutput", "PowerOutput"],
+        "PowerOutput": 9,
     },
     {
         "name": "ElectricEngine",
         "Label": "Electric Engine",
         "StartTier": 2,
         "EndTier": 10,
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		kinetic_output = get_class("KineticOutputAccessor")
-		electric_input = get_class("ElectricInputAccessor")
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.back(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(kinetic_output)
-		a:set_side_pos(Vec3i.front(), Vec3i.zero())
-		a:bind(crafter:get_output_container())
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.down(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
         "PowerOutput": 55,
     },
@@ -533,29 +450,6 @@ machines = [
             [0, 1, 1],
             [1, 1, 1],
         ],
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		kinetic_output = get_class("KineticOutputAccessor")
-		electric_input = get_class("ElectricInputAccessor")
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.back(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(kinetic_output)
-		a:set_side_pos(Vec3i.front(), Vec3i.new(1,0,0))
-		a:bind(crafter:get_output_container())
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.down(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.right(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
         "PowerOutput": 55 * 50,
     },
@@ -601,7 +495,7 @@ machines = [
         "Label": "Smelter",
         "StartTier": 0,
         "EndTier": 2,
-        "BlockLogic": "AutoCrafter",
+
         "BlockCreation": """
 		local crafter = current_block_logic()
 		
@@ -633,21 +527,6 @@ machines = [
         ],
         "StartTier": 2,
         "EndTier": 10,
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		kinetic_output = get_class("KineticOutputAccessor")
-		fluid_input = get_class("FluidInputAccessor")
-		
-		local a = crafter:create_accessor(fluid_input)
-		a:set_side_pos(Vec3i.up(), Vec3i.new(0, 0, 1))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(kinetic_output)
-		a:set_side_pos(Vec3i.front(), Vec3i.zero())
-		a:bind(crafter:get_output_container())
-		""",
         "Description": ["FluidInput", "KineticOutput", "PowerOutput"],
         "PowerOutput": 270,
     },
@@ -712,21 +591,6 @@ machines = [
         ],
         "StartTier": 5,
         "EndTier": 10,
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		fluid_input = get_class("FluidInputAccessor")
-		electric_output = get_class("ElectricOutputAccessor")
-		
-		local a = crafter:create_accessor(fluid_input)
-		a:set_side_pos(Vec3i.front(), Vec3i.new(0, 0, 0))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(electric_output)
-		a:set_side_pos(Vec3i.back(), Vec3i.new(-5, -1, 0))
-		a:bind(crafter:get_output_container())
-		""",
         "Description": ["FluidInput", "ElectricOutput", "PowerOutput"],
         "PowerOutput": fission_fullpower * 0.9 * 0.9,
     },
@@ -753,31 +617,6 @@ machines = [
         ],
         "StartTier": 4,
         "EndTier": 10,
-        "BlockLogic": "AutoCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		heat_input = get_class("HeatInputAccessor")
-		heat_output = get_class("HeatOutputAccessor")
-		kinetic_input = get_class("KineticInputAccessor")
-		kinetic_output = get_class("KineticOutputAccessor")
-		electric_input = get_class("ElectricInputAccessor")
-		electric_output = get_class("ElectricOutputAccessor")
-		fluid_input = get_class("FluidInputAccessor")
-		fluid_output = get_class("FluidOutputAccessor")
-		
-		local a = crafter:create_accessor(fluid_input)
-		a:set_side_pos(Vec3i.up(), Vec3i.new( -2, 0, 1 ))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(fluid_input)
-		a:set_side_pos(Vec3i.back(), Vec3i.new( -1, -1, 1 ))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(kinetic_output)
-		a:set_side_pos(Vec3i.right(), Vec3i.new( -3, -1, 0 ))
-		a:bind(crafter:get_output_container())
-		""",
         "Description": ["FluidInput", "KineticOutput"],
     },
     {
@@ -805,20 +644,6 @@ machines = [
         ],
         "StartTier": 5,
         "EndTier": 10,
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		heat_output = get_class("HeatOutputAccessor")
-		
-		local a = crafter:create_accessor(heat_output)
-		a:set_side_pos(Vec3i.down(), Vec3i.new( 0, 0, 0 ))
-		a:bind(crafter:get_output_container())
-		
-		a = crafter:create_accessor(heat_output)
-		a:set_side_pos(Vec3i.up(), Vec3i.new( 0, 0, 1 ))
-		a:bind(crafter:get_output_container())
-		""",
         "Description": ["HeatOutput", "PowerOutput"],
         "PowerOutput": 500,
     },
@@ -841,23 +666,6 @@ machines = [
         ],
         "StartTier": 2,
         "EndTier": 10,
-        "BlockLogic": "AutoCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		heat_input = get_class("HeatInputAccessor")
-		heat_output = get_class("HeatOutputAccessor")
-		kinetic_input = get_class("KineticInputAccessor")
-		kinetic_output = get_class("KineticOutputAccessor")
-		electric_input = get_class("ElectricInputAccessor")
-		electric_output = get_class("ElectricOutputAccessor")
-		fluid_input = get_class("FluidInputAccessor")
-		fluid_output = get_class("FluidOutputAccessor")
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.back(), Vec3i.new( -1, 1, 0 ))
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["ElectricInput"],
     },
     {
@@ -875,16 +683,6 @@ machines = [
         ],
         "StartTier": 3,
         "EndTier": 10,
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		kinetic_input = get_class("KineticInputAccessor")
-		
-		local a = crafter:create_accessor(kinetic_input)
-		a:set_side_pos(Vec3i.front(), Vec3i.new( 0, 0, 0 ))
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["KineticInput"],
     },
     {
@@ -902,16 +700,6 @@ machines = [
         ],
         "StartTier": 3,
         "EndTier": 10,
-        "BlockLogic": "AutoCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		kinetic_input = get_class("KineticInputAccessor")
-		
-		local a = crafter:create_accessor(kinetic_input)
-		a:set_side_pos(Vec3i.front(), Vec3i.new( 0, 0, 0 ))
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["KineticInput"],
     },
     {
@@ -929,16 +717,6 @@ machines = [
         ],
         "StartTier": 3,
         "EndTier": 10,
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		kinetic_input = get_class("KineticInputAccessor")
-		
-		local a = crafter:create_accessor(kinetic_input)
-		a:set_side_pos(Vec3i.front(), Vec3i.new( 0, 0, 0 ))
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["KineticInput"],
     },
     {
@@ -946,16 +724,6 @@ machines = [
         "Label": "Furnace",
         "StartTier": 0,
         "EndTier": 10,
-        "BlockLogic": "AutoCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		heat_output = get_class("HeatOutputAccessor")
-		
-		local a = crafter:create_accessor(heat_output)
-		a:set_side_pos(Vec3i.up(), Vec3i.zero())
-		a:bind(crafter:get_output_container())
-		""",
         "Description": ["HeatOutput"],
     },
     {
@@ -992,7 +760,7 @@ machines = [
         ],
         "StartTier": 1,
         "EndTier": 10,
-        "BlockLogic": "AutoCrafter",
+
         "Description": ["SpeedBonus"],
     },
     {
@@ -1038,7 +806,7 @@ machines = [
         ],
         "StartTier": 1,
         "EndTier": 10,
-        "BlockLogic": "SelectCrafter",
+
         "Description": ["SpeedBonus"],
     },
     {
@@ -1046,21 +814,6 @@ machines = [
         "Label": "Fluid Furnace",
         "StartTier": 1,
         "EndTier": 10,
-        "BlockLogic": "AutoCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		heat_output = get_class("HeatOutputAccessor")
-		fluid_input = get_class("FluidInputAccessor")
-		
-		local a = crafter:create_accessor(fluid_input)
-		a:set_side_pos(Vec3i.back(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(heat_output)
-		a:set_side_pos(Vec3i.up(), Vec3i.zero())
-		a:bind(crafter:get_output_container())
-		""",
         "Description": ["FluidInput", "HeatOutput"],
     },
     {
@@ -1068,21 +821,6 @@ machines = [
         "Label": "Electric Furnace",
         "StartTier": 2,
         "EndTier": 10,
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		heat_output = get_class("HeatOutputAccessor")
-		electric_input = get_class("ElectricInputAccessor")
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.back(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(heat_output)
-		a:set_side_pos(Vec3i.up(), Vec3i.zero())
-		a:bind(crafter:get_output_container())
-		""",
         "Description": ["ElectricInput", "HeatOutput", "PowerOutput"],
         "PowerOutput": 40,
     },
@@ -1103,7 +841,7 @@ machines = [
         "StartTier": 3,
         "EndTier": 10,
         "Description": ["ElectricConductor", "ElectricStorage"],
-        "BlockLogic": "BatteryBox",
+
         "CustomData": {
             "BaseCapacity": 100000,
             "BonusCapacity": 100000,
@@ -1361,34 +1099,13 @@ machines = [
             [-5, -5, 3],
             [-6, -5, 4],
         ],
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		electric_input = get_class("ElectricInputAccessor")
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.front(), Vec3i.new(0,1,1))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.left(), Vec3i.new(0,1,1))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.front(), Vec3i.new(0,-5,1))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.right(), Vec3i.new(0,-5,1))
-		a:bind(crafter:get_input_container())
-		""",
     },
     # {
     # 	"name": "MoltenSaltBattery",
     # 	"Label": "Molten Salt Battery",
     # 	"StartTier": 5,
     # 	"EndTier": 10,
-    # 	"BlockLogic": "HighcapElectricBattery",
+
     # }
     {
         "name": "DrillingRig",
@@ -1459,16 +1176,6 @@ machines = [
             [0, -1, 1],
             [-1, -1, 1],
         ],
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		electric_input = get_class("ElectricInputAccessor")
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.front(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["ElectricInput"],
     },
     {
@@ -1486,16 +1193,6 @@ machines = [
             [0, -1, 1],
             [-1, -1, 1],
         ],
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		electric_input = get_class("ElectricInputAccessor")
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.front(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["ElectricInput"],
     },
     {
@@ -1513,16 +1210,6 @@ machines = [
             [0, -1, 1],
             [-1, -1, 1],
         ],
-        "BlockLogic": "DeconstructorCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		electric_input = get_class("ElectricInputAccessor")
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.front(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["ElectricInput"],
     },
     {
@@ -1557,16 +1244,6 @@ machines = [
         ],
         "StartTier": 1,
         "EndTier": 10,
-        "BlockLogic": "AutoCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		fluid_input = get_class("FluidInputAccessor")
-		
-		local a = crafter:create_accessor(fluid_input)
-		a:set_side_pos(Vec3i.front(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["FluidInput"],
     },
     {
@@ -1575,16 +1252,6 @@ machines = [
         "Positions": [[0, 0, 0]],
         "StartTier": 2,
         "EndTier": 2,
-        "BlockLogic": "DumpCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-
-		fluid_input = get_class("FluidInputAccessor")
-		
-		local a = crafter:create_accessor(fluid_input)
-		a:set_side_pos(Vec3i.down(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["FluidInput"],
     },
     {
@@ -1598,7 +1265,7 @@ machines = [
         ],
         "StartTier": 2,
         "EndTier": 2,
-        "BlockLogic": "DumpAny",
+
         "Description": ["SolidInput"],
     },
     # ,{
@@ -1613,7 +1280,7 @@ machines = [
         "Label": "Lamp",
         "StartTier": 1,
         "EndTier": 10,
-        "BlockLogic": "Lamp",
+
     },
     {
         "name": "AdminElectricGenerator",
@@ -1674,16 +1341,6 @@ machines = [
         "Label": "Electrolyzer",
         "StartTier": 2,
         "EndTier": 10,
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		electric_input = get_class("ElectricInputAccessor")
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.back(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["ElectricInput"],
     },
     {
@@ -1692,16 +1349,6 @@ machines = [
         "StartTier": 2,
         "EndTier": 10,
         "Positions": [[0, 0, 0], [-1, 0, 0], [0, 0, 1], [-1, 0, 1]],
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		kinetic_input = get_class("KineticInputAccessor")
-		
-		local a = crafter:create_accessor(kinetic_input)
-		a:set_side_pos(Vec3i.back(), Vec3i.new(-1,0,0))
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["KineticInput"],
     },
     {
@@ -1710,16 +1357,6 @@ machines = [
         "StartTier": 5,
         "EndTier": 10,
         "Positions": [[0, 0, 0], [-1, 0, 0], [0, 0, 1], [-1, 0, 1]],
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		kinetic_input = get_class("KineticInputAccessor")
-		
-		local a = crafter:create_accessor(kinetic_input)
-		a:set_side_pos(Vec3i.left(), Vec3i.new(-1,0,0))
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["KineticInput", "HeatOutput"],
     },
     {
@@ -1777,16 +1414,6 @@ machines = [
         ],
         "StartTier": 1,
         "EndTier": 10,
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		fluid_input = get_class("FluidInputAccessor")
-		
-		local a = crafter:create_accessor(fluid_input)
-		a:set_side_pos(Vec3i.front(), Vec3i.new(0,0,0))
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["FluidInput"],
     },
     {
@@ -1814,18 +1441,6 @@ machines = [
         ],
         "StartTier": 1,
         "EndTier": 10,
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		local a = crafter:create_accessor(get_class("FluidOutputAccessor"))
-		a:set_side_pos(Vec3i.front(), Vec3i.new(0,0,0))
-		a:bind(crafter:get_output_container())
-		
-		local a = crafter:create_accessor(get_class("KineticInputAccessor"))
-		a:set_side_pos(Vec3i.right(), Vec3i.new(-1,-2,0))
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["KineticInput", "FluidOutput"],
     },
     {
@@ -1833,7 +1448,7 @@ machines = [
         "Label": "Terminal",
         "StartTier": 4,
         "EndTier": 4,
-        "BlockLogic": "Monitor",
+
     },
     {
         "name": "BigTerminal",
@@ -1842,7 +1457,7 @@ machines = [
         "EndTier": 5,
         "image": "Terminal",
         "Positions": [[0, 0, 0], [0, -1, 0], [0, 0, 1], [0, -1, 1]],
-        "BlockLogic": "Monitor",
+
     },
     {
         "name": "HugeTerminal",
@@ -1861,14 +1476,14 @@ machines = [
             [0, -1, 2],
             [0, -2, 2],
         ],
-        "BlockLogic": "Monitor",
+
     },
     {
         "name": "FlatTerminal",
         "Label": "Flat Terminal",
         "StartTier": 4,
         "EndTier": 4,
-        "BlockLogic": "Monitor",
+
     },
     {
         "name": "BigFlatTerminal",
@@ -1877,7 +1492,7 @@ machines = [
         "EndTier": 5,
         "image": "FlatTerminal",
         "Positions": [[0, 0, 0], [0, -1, 0], [0, 0, 1], [0, -1, 1]],
-        "BlockLogic": "Monitor",
+
     },
     {
         "name": "HugeFlatTerminal",
@@ -1896,14 +1511,14 @@ machines = [
             [0, -1, 2],
             [0, -2, 2],
         ],
-        "BlockLogic": "Monitor",
+
     },
     {
         "name": "Computer",
         "Label": "Computer",
         "StartTier": 1,
         "EndTier": 10,
-        "BlockLogic": "Computer",
+
         "Description": ["ElectricInput"],
     },
     {
@@ -1911,7 +1526,7 @@ machines = [
         "Label": "Quantum Computer",
         "StartTier": 5,
         "EndTier": 10,
-        "BlockLogic": "QuantumComputer",
+
         "Description": ["ElectricInput"],
         "Positions": [
             [0, 0, 0],
@@ -1963,15 +1578,6 @@ machines = [
         "StartTier": 3,
         "EndTier": 10,
         "CommonTextKeys": ["Separator", "Autocrafter"],
-        "BlockLogic": "AutoCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		local a = crafter:create_accessor(get_class("KineticInputAccessor"))
-		a:set_side_pos(Vec3i.back(), Vec3i.new(-1,1,0))
-		a:bind(crafter:get_input_container())
-		print('123123')
-		""",
         "Description": ["KineticInput"],
     },
     {
@@ -1979,14 +1585,6 @@ machines = [
         "Label": "Radiator",
         "StartTier": 3,
         "EndTier": 10,
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		local a = crafter:create_accessor(get_class("HeatInputAccessor"))
-		a:set_side_pos(Vec3i.down(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		""",
         "Description": ["HeatInput"],
     },
     {
@@ -2106,46 +1704,8 @@ machines = [
         ],
         "StartTier": 5,
         "EndTier": 10,
-        "BlockLogic": "NuclearReactor",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		heat_output = get_class("HeatOutputAccessor")
-		
-		local a = crafter:create_accessor(heat_output)
-		a:set_side_pos(Vec3i.left(), Vec3i.new(0, 1, 0))
-		a:bind(crafter:get_output_container())
-		
-		local a = crafter:create_accessor(heat_output)
-		a:set_side_pos(Vec3i.front(), Vec3i.new(0, 1, 0))
-		a:bind(crafter:get_output_container())
-		
-		local a = crafter:create_accessor(heat_output)
-		a:set_side_pos(Vec3i.front(), Vec3i.new(0, -2, 0))
-		a:bind(crafter:get_output_container())
-		
-		local a = crafter:create_accessor(heat_output)
-		a:set_side_pos(Vec3i.right(), Vec3i.new(0, -2, 0))
-		a:bind(crafter:get_output_container())
-		
-		local a = crafter:create_accessor(heat_output)
-		a:set_side_pos(Vec3i.left(), Vec3i.new(-3, 1, 0)) 
-		a:bind(crafter:get_output_container())
-		
-		local a = crafter:create_accessor(heat_output)
-		a:set_side_pos(Vec3i.back(), Vec3i.new(-3, 1, 0))
-		a:bind(crafter:get_output_container())
-		
-		local a = crafter:create_accessor(heat_output)
-		a:set_side_pos(Vec3i.back(), Vec3i.new(-3, -2, 0))
-		a:bind(crafter:get_output_container())
-		
-		local a = crafter:create_accessor(heat_output)
-		a:set_side_pos(Vec3i.right(), Vec3i.new(-3, -2, 0))
-		a:bind(crafter:get_output_container())
-		""",
         "CustomData": {
-            "LoadIndependent": True,
+            "load_independent": True,
             "StorageCapacity": 10000000,
             "StorageDrain": 80,
         },
@@ -2258,28 +1818,6 @@ machines = [
             [-3, -3, 3],
             [-4, -3, 3],
         ],
-        "BlockLogic": "FusionReactor",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		electric_input = get_class("ElectricInputAccessor")
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.front(), Vec3i.new(0, 1, 0))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.left(), Vec3i.new(0, 1, 0))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.front(), Vec3i.new(0, -3, 0))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.right(), Vec3i.new(0, -3, 0))
-		a:bind(crafter:get_input_container())
-		""",
     },
     {
         "name": "IndustrialBoiler",
@@ -2324,43 +1862,6 @@ machines = [
             [-2, -2, 2],
             [-3, -2, 2],
         ],
-        "BlockLogic": "NuclearReactor",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		heat_input = get_class("HeatInputAccessor")
-		heat_output = get_class("HeatOutputAccessor")
-		kinetic_input = get_class("KineticInputAccessor")
-		kinetic_output = get_class("KineticOutputAccessor")
-		electric_input = get_class("ElectricInputAccessor")
-		electric_output = get_class("ElectricOutputAccessor")
-		fluid_input = get_class("FluidInputAccessor")
-		fluid_output = get_class("FluidOutputAccessor")
-		
-		local a = crafter:create_accessor(fluid_input)
-		a:set_side_pos(Vec3i.front(), Vec3i.new(0, 0, 0))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(heat_input)
-		a:set_side_pos(Vec3i.down(), Vec3i.new(0, -1, 0))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(heat_input)
-		a:set_side_pos(Vec3i.down(), Vec3i.new(-1, -1, 0))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(heat_input)
-		a:set_side_pos(Vec3i.down(), Vec3i.new(-2, -1, 0))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(heat_input)
-		a:set_side_pos(Vec3i.down(), Vec3i.new(-3, -1, 0))
-		a:bind(crafter:get_input_container())
-		
-		a = crafter:create_accessor(fluid_output)
-		a:set_side_pos(Vec3i.back(), Vec3i.new(-3, 0, 0))
-		a:bind(crafter:get_output_container())
-		""",
         "Description": ["FluidInput", "FluidOutput", "PowerOutput"],
         "PowerOutput": fission_fullpower * 0.9,
         "CustomData": {"StorageCapacity": 6000000, "StorageDrain": 0},
@@ -2399,17 +1900,6 @@ machines = [
         ],
         "StartTier": 3,
         "EndTier": 10,
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-
-		electric_output = get_class("ElectricOutputAccessor")
-		
-		local a = crafter:create_accessor(electric_output)
-		a:set_side_pos(Vec3i.down(), Vec3i.new(0,0,0))
-		a:bind(crafter:get_output_container())
-		""",
         "Description": ["ElectricOutput", "PowerOutput"],
         "PowerOutput": 50,
     },
@@ -2516,7 +2006,7 @@ machines = [
     # 	"Label": "Heat Exchanger",
     # 	"StartTier": 3,
     # 	"EndTier": 10,
-    # 	"BlockLogic":"SelectCrafter",
+
     # 	"BlockCreation":"""
     # 	local crafter = current_block_logic()
     #
@@ -2539,7 +2029,7 @@ machines = [
     # 	"Label": "Inverse Heat Exchanger",
     # 	"StartTier": 1,
     # 	"EndTier": 10,
-    # 	"BlockLogic":"SelectCrafter",
+
     # 	"BlockCreation":"""
     # 	local crafter = current_block_logic()
     #
@@ -2601,38 +2091,6 @@ machines = [
             [-1, -1, 2],
             [-2, -1, 2],
         ],
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		heat_input = get_class("HeatInputAccessor")
-		fluid_input = get_class("FluidInputAccessor")
-		fluid_output = get_class("FluidOutputAccessor")
-		
-		local a = crafter:create_accessor(fluid_input)
-		a:set_side_pos(Vec3i.back(), Vec3i.new(-1,0,2))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(heat_input)
-		a:set_side_pos(Vec3i.down(), Vec3i.new(0,0,2))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(heat_input)
-		a:set_side_pos(Vec3i.down(), Vec3i.new(-2,0,2))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(heat_input)
-		a:set_side_pos(Vec3i.down(), Vec3i.new(-1,1,2))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(heat_input)
-		a:set_side_pos(Vec3i.down(), Vec3i.new(-1,-1,2))
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(fluid_output)
-		a:set_side_pos(Vec3i.back(), Vec3i.new(-2,0,0))
-		a:bind(crafter:get_output_container())
-		""",
         "Description": ["HeatInput"],
     },
     {
@@ -2650,22 +2108,6 @@ machines = [
             [0, -1, 0],
             [-2, -1, 0],
         ],
-        "BlockLogic": "SelectCrafter",
-        "BlockCreation": """
-		local crafter = current_block_logic()
-		
-		local heat_output = get_class("HeatOutputAccessor")
-		local electric_input = get_class("ElectricInputAccessor")
-		
-		local a = crafter:create_accessor(electric_input)
-		a:set_side_pos(Vec3i.front(), Vec3i.zero())
-		a:bind(crafter:get_input_container())
-		
-		local a = crafter:create_accessor(heat_output)
-		
-		a:set_side_pos(Vec3i.up(), Vec3i.zero())
-		a:bind(crafter:get_output_container())
-		""",
         "Description": ["ElectricInput", "HeatOutput"],
     },
     {
@@ -2706,7 +2148,7 @@ machines = [
     {
         "name": "LogicWire",
         "Label": "Logic Wire",
-        "BlockLogic": "DataConductor",
+
         "StartTier": 2,
         "EndTier": 2,
         "Description": ["DataConductor"],
