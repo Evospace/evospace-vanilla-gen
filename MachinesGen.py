@@ -1380,6 +1380,29 @@ for machine in machines:
                     }
                 )
 
+            if machine["name"] == "HandGenerator":
+                append_recipe(
+                    {
+                        "name": tier_material[tier] + machine["name"],
+                        "input": {
+                            "items": [
+                                {"name": tier_material[tier] + "Plate", "count": 5},
+                                {"name": tier_material[tier] + "Parts", "count": 8},
+                            ]
+                        },
+                        "output": {
+                            "items": [
+                                {
+                                    "name": tier_material[tier] + machine["name"],
+                                    "count": 1,
+                                }
+                            ]
+                        },
+                        "tier": tier,
+                        "ticks": 20,
+                    }
+                )
+
             if machine["name"] == "Deconstructor":
                 append_recipe(
                     {
