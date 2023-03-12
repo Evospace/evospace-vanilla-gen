@@ -230,8 +230,8 @@ for machine in machines:
             if "Selector" in machine:
                 block["Selector"] = machine["Selector"]
 
-            if "Positions" in machine:
-                block["Positions"] = machine["Positions"]
+            if "sub_blocks" in machine:
+                block["sub_blocks"] = machine["sub_blocks"]
 
             objects_array.append(block)
 
@@ -263,7 +263,7 @@ for machine in machines:
                 {
                     "class": recipe_dictionary,
                     "name": machine["name"],
-                    "UsedIn": [
+                    "used_in": [
                         {"Item": tier_material[tier] + machine["name"], "tier": tier}
                     ],
                 }

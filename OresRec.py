@@ -374,7 +374,7 @@ objects_array.append(
         "class": recipe_dictionary,
         "name": "Multitool",
         "recipes": recipes_break,
-        "UsedIn": [{"Item": "Multitool", "tier": 0}],
+        "used_in": [{"Item": "Multitool", "tier": 0}],
         "ticks": 20,
     }
 )

@@ -52,7 +52,7 @@ machines = [
         "Label": "Fermenter",
         "StartTier": 4,
         "EndTier": 10,
-        "Positions": [[0, 0, 0], [0, 0, 1]],
+        "sub_blocks": [[0, 0, 0], [0, 0, 1]],
 
         "BlockCreation": """
 		local crafter = current_block_logic()
@@ -121,7 +121,7 @@ machines = [
     {
         "name": "AutomaticHammer",
         "Label": "Automatic Hammer",
-        "Positions": [[0, 0, 0], [0, 0, 1]],
+        "sub_blocks": [[0, 0, 0], [0, 0, 1]],
         "StartTier": 1,
         "EndTier": 10,
 
@@ -232,7 +232,7 @@ machines = [
     {
         "name": "ItemRack",
         "Label": "Item Rack",
-        "Positions": [[0, 0, 0], [-1, 0, 0], [0, 0, 1], [-1, 0, 1]],
+        "sub_blocks": [[0, 0, 0], [-1, 0, 0], [0, 0, 1], [-1, 0, 1]],
         "StartTier": 1,
         "EndTier": 10,
         "tag": "Logistics",
@@ -259,7 +259,7 @@ machines = [
     {
         "name": "OreWasher",
         "Label": "Ore Washer",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [0, 1, 0],
             [-1, 0, 0],
@@ -360,7 +360,7 @@ machines = [
     {
         "name": "PyrolysisUnit",
         "Label": "Pyrolysis Unit",
-        "Positions": [[0, 0, 0], [0, 0, 1], [0, 0, 2], [0, 1, 0], [0, 2, 0]],
+        "sub_blocks": [[0, 0, 0], [0, 0, 1], [0, 0, 2], [0, 1, 0], [0, 2, 0]],
         "StartTier": 3,
         "EndTier": 10,
         "Description": ["HeatInput"],
@@ -368,7 +368,7 @@ machines = [
     {
         "name": "Generator",
         "Label": "Generator",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [0, 1, 0],
@@ -413,7 +413,7 @@ machines = [
         "EndTier": 1,
         "Description": ["KineticOutput", "PowerOutput"],
         "PowerOutput": 9,
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [0, 0, 1],
             [0, 0, 2],
@@ -440,7 +440,7 @@ machines = [
         "Label": "Industrial Electric Engine",
         "StartTier": 4,
         "EndTier": 10,
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [1, 0, 0],
             [0, 1, 0],
@@ -511,7 +511,7 @@ machines = [
     {
         "name": "SteamTurbine",
         "Label": "Steam Turbine",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [-2, 0, 0],
@@ -533,7 +533,7 @@ machines = [
     {
         "name": "IndustrialSteamTurbine",
         "Label": "Industrial Steam Turbine",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [-2, 0, 0],
@@ -597,7 +597,7 @@ machines = [
     {
         "name": "GasTurbine",
         "Label": "Gas Turbine",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [-2, 0, 0],
@@ -622,7 +622,7 @@ machines = [
     {
         "name": "Riteg",
         "Label": "RTG",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [1, 0, 0],
@@ -650,7 +650,7 @@ machines = [
     {
         "name": "ArcSmelter",
         "Label": "Arc Smelter",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [0, 1, 0],
@@ -671,7 +671,7 @@ machines = [
     {
         "name": "ChemicalBath",
         "Label": "Chemical Bath",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [0, 1, 0],
@@ -688,7 +688,7 @@ machines = [
     {
         "name": "Sifter",
         "Label": "Sifter",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [0, 1, 0],
@@ -705,7 +705,7 @@ machines = [
     {
         "name": "FilteringUnit",
         "Label": "Filtering Unit",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [0, 1, 0],
@@ -729,7 +729,7 @@ machines = [
     {
         "name": "Oven",
         "Label": "Oven",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [-2, 0, 0],
@@ -766,7 +766,7 @@ machines = [
     {
         "name": "BlastFurnace",
         "Label": "Blast Furnace",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [-2, 0, 0],
@@ -852,7 +852,7 @@ machines = [
         "Label": "Portal",
         "StartTier": 7,
         "EndTier": 10,
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [-2, 0, 0],
@@ -1110,7 +1110,7 @@ machines = [
     {
         "name": "DrillingRig",
         "Label": "Drilling Rig",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [-2, 0, 0],
@@ -1166,7 +1166,7 @@ machines = [
         "Label": "Assembler",
         "StartTier": 1,
         "EndTier": 10,
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [0, 0, 1],
@@ -1183,7 +1183,7 @@ machines = [
         "Label": "Constructor",
         "StartTier": 2,
         "EndTier": 10,
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [0, 0, 1],
@@ -1200,7 +1200,7 @@ machines = [
         "Label": "Deconstructor",
         "StartTier": 2,
         "EndTier": 10,
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [0, 0, 1],
@@ -1215,7 +1215,7 @@ machines = [
     {
         "name": "FluidDump",
         "Label": "Fluid Dump",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [0, -1, 0],
             [0, -2, 0],
@@ -1249,7 +1249,7 @@ machines = [
     {
         "name": "GasDump",
         "Label": "Gas Dump",
-        "Positions": [[0, 0, 0]],
+        "sub_blocks": [[0, 0, 0]],
         "StartTier": 2,
         "EndTier": 2,
         "Description": ["FluidInput"],
@@ -1257,7 +1257,7 @@ machines = [
     {
         "name": "SolidDump",
         "Label": "Solid Dump",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [0, -1, 0],
@@ -1348,7 +1348,7 @@ machines = [
         "Label": "Mixer",
         "StartTier": 2,
         "EndTier": 10,
-        "Positions": [[0, 0, 0], [-1, 0, 0], [0, 0, 1], [-1, 0, 1]],
+        "sub_blocks": [[0, 0, 0], [-1, 0, 0], [0, 0, 1], [-1, 0, 1]],
         "Description": ["KineticInput"],
     },
     {
@@ -1356,13 +1356,13 @@ machines = [
         "Label": "Freezer",
         "StartTier": 5,
         "EndTier": 10,
-        "Positions": [[0, 0, 0], [-1, 0, 0], [0, 0, 1], [-1, 0, 1]],
+        "sub_blocks": [[0, 0, 0], [-1, 0, 0], [0, 0, 1], [-1, 0, 1]],
         "Description": ["KineticInput", "HeatOutput"],
     },
     {
         "name": "AutomaticFarm",
         "Label": "Automatic Farm",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [-2, 0, 0],
@@ -1419,7 +1419,7 @@ machines = [
     {
         "name": "AtmosphericCondenser",
         "Label": "Atmospheric Condenser",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [-2, 0, 0],
@@ -1456,7 +1456,7 @@ machines = [
         "StartTier": 5,
         "EndTier": 5,
         "image": "Terminal",
-        "Positions": [[0, 0, 0], [0, -1, 0], [0, 0, 1], [0, -1, 1]],
+        "sub_blocks": [[0, 0, 0], [0, -1, 0], [0, 0, 1], [0, -1, 1]],
 
     },
     {
@@ -1465,7 +1465,7 @@ machines = [
         "StartTier": 6,
         "EndTier": 6,
         "image": "Terminal",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [0, -1, 0],
             [0, -2, 0],
@@ -1491,7 +1491,7 @@ machines = [
         "StartTier": 5,
         "EndTier": 5,
         "image": "FlatTerminal",
-        "Positions": [[0, 0, 0], [0, -1, 0], [0, 0, 1], [0, -1, 1]],
+        "sub_blocks": [[0, 0, 0], [0, -1, 0], [0, 0, 1], [0, -1, 1]],
 
     },
     {
@@ -1500,7 +1500,7 @@ machines = [
         "StartTier": 6,
         "EndTier": 6,
         "image": "FlatTerminal",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [0, -1, 0],
             [0, -2, 0],
@@ -1528,7 +1528,7 @@ machines = [
         "EndTier": 10,
 
         "Description": ["ElectricInput"],
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [-2, 0, 0],
@@ -1561,7 +1561,7 @@ machines = [
     {
         "name": "IndustrialSeparator",
         "Label": "Industrial Separator",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [0, -1, 0],
@@ -1597,7 +1597,7 @@ machines = [
     # ,{
     # 	"name": "Tank",
     # 	"Label": "Tank",
-    # 	"Positions": [
+    # 	"sub_blocks": [
     # 		[0,0,0],[-1,0,0],[-2,0,0],
     # 		[0,1,0],[-1,1,0],[-2,1,0],
     # 		[0,-1,0],[-1,-1,0],[-2,-1,0],
@@ -1620,7 +1620,7 @@ machines = [
     {
         "name": "FissionReactor",
         "Label": "Fission Reactor",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [-2, 0, 0],
@@ -1716,7 +1716,7 @@ machines = [
         "Label": "Fusion Reactor",
         "StartTier": 6,
         "EndTier": 10,
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [-2, 0, 0],
@@ -1824,7 +1824,7 @@ machines = [
         "Label": "Industrial Boiler",
         "StartTier": 5,
         "EndTier": 10,
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [-2, 0, 0],
@@ -1869,7 +1869,7 @@ machines = [
     {
         "name": "SolarPanel",
         "Label": "Solar Panel",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [1, 0, 0],
@@ -1906,7 +1906,7 @@ machines = [
     {
         "name": "Pumpjack",
         "Label": "Pumpjack",
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [-2, 0, 0],
@@ -2057,7 +2057,7 @@ machines = [
     # 		"CokeOven"
     # 	],
     #
-    # 	"Positions": [
+    # 	"sub_blocks": [
     # 		[0,0,0],[-1,0,0],
     # 		[0,1,0],[-1,1,0],
     # 	],
@@ -2068,7 +2068,7 @@ machines = [
         "Label": "Industrial Smelter",
         "StartTier": 4,
         "EndTier": 10,
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-1, 0, 0],
             [-2, 0, 0],
@@ -2098,7 +2098,7 @@ machines = [
         "Label": "Induction Coil",
         "StartTier": 4,
         "EndTier": 10,
-        "Positions": [
+        "sub_blocks": [
             [0, 0, 0],
             [-2, 0, 0],
             [0, 1, 0],
