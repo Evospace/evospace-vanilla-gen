@@ -822,7 +822,7 @@ objects_array.append(
         "class": recipe_dictionary,
         "name": "Hand",
         "recipes": recipes_hand,
-        "UsedIn": [
+        "used_in": [
             {
                 "Item": "Hand",
             }
@@ -852,7 +852,7 @@ objects_array.append(
         "class": recipe_dictionary,
         "name": "Multitool",
         "recipes": recipes_wrench,
-        "UsedIn": used_in,
+        "used_in": used_in,
     }
 )
 

@@ -7,20 +7,20 @@ cvs = []
 
 wooden_misc = [
     {"name": "Chair"},
-    {"name": "Table", "Positions": [[0, 0, 0], [-1, 0, 0]]},
+    {"name": "Table", "sub_blocks": [[0, 0, 0], [-1, 0, 0]]},
     {"name": "Rack"},
     {
         "name": "Bed",
-        "Positions": [[0, 0, 0], [-1, 0, 0]],
+        "sub_blocks": [[0, 0, 0], [-1, 0, 0]],
         "BlockLogic": "BedBlockLogic",
     },
     {"name": "Ladder"},
     {
         "name": "Door",
-        "Positions": [[0, 0, 0], [0, 0, 1]],
+        "sub_blocks": [[0, 0, 0], [0, 0, 1]],
         "BlockLogic": "Door",
     },
-    {"name": "Window", "Positions": [[0, 0, 0], [0, 0, 1]]},
+    {"name": "Window", "sub_blocks": [[0, 0, 0], [0, 0, 1]]},
 ]
 
 simple_single = [
@@ -39,7 +39,7 @@ simple_single = [
     {
         "name": "FireCup",
     },
-    {"name": "PlasticWindow", "Positions": [[0, 0, 0], [0, 0, 1]]},
+    {"name": "PlasticWindow", "sub_blocks": [[0, 0, 0], [0, 0, 1]]},
     {"name": "SteelFence", "BlockLogic": "FenceBlockLogic", "tier": 1},
     {"name": "StainlessSteelFence", "BlockLogic": "FenceBlockLogic", "tier": 2},
     {
@@ -179,8 +179,8 @@ for one in wooden_misc:
         "class": static_block,
     }
 
-    if "Positions" in one:
-        block["Positions"] = one["Positions"]
+    if "sub_blocks" in one:
+        block["sub_blocks"] = one["sub_blocks"]
 
     objects_array.append(block)
 
@@ -209,8 +209,8 @@ for one in simple_single:
         "logic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
     }
 
-    if "Positions" in one:
-        block["Positions"] = one["Positions"]
+    if "sub_blocks" in one:
+        block["sub_blocks"] = one["sub_blocks"]
 
     objects_array.append(block)
 
