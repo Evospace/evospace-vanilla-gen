@@ -167,7 +167,7 @@ tesselator_cube = "TesselatorCube"
 tesselator_static_mesh = "TesselatorStaticMesh"
 
 item_data = "ItemData"
-prop_list = "prop_list"
+prop_list = "PropList"
 basic_slot_widget_c = "Gui/BasicStackedSlotWidget.BasicStackedSlotWidget_C"
 
 ico = ""
