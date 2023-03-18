@@ -351,7 +351,7 @@ props = [
         "name": "SnowyGrass",
         "scale_min": [2, 2, 2],
         "scale_max": [4, 4, 4],
-        "variations": 3,
+        "variations": 1,
         "project_to_terrain_power": 1,
         "HandInteraction": False,
         "drops": "Organics",
