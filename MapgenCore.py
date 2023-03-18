@@ -11,7 +11,7 @@ mapgen_objects = [
         "side": [158 / 255.0, 123 / 255.0, 100 / 255.0],
         "Item": [200 / 255.0, 200 / 255.0, 50 / 255.0],
         "drops": "Sand",
-        "Hardness": 1,
+        "hardness": 1,
     },
     {
         "name": "Sandstone",
@@ -19,7 +19,7 @@ mapgen_objects = [
         "side": [158 / 255.0, 123 / 255.0, 100 / 255.0],
         "Item": [200 / 255.0, 200 / 255.0, 50 / 255.0],
         "drops": "Sand",
-        "Hardness": 1,
+        "hardness": 1,
     },
     {
         "name": "Stone",
@@ -27,7 +27,7 @@ mapgen_objects = [
         "side": [111 / 255.0, 106 / 255.0, 85 / 255.0],
         "Item": [128 / 255.0, 128 / 255.0, 128 / 255.0],
         "drops": "Stone",
-        "Hardness": 2,
+        "hardness": 2,
     },
     {
         "name": "DesertSand",
@@ -35,7 +35,7 @@ mapgen_objects = [
         "side": [180 / 255.0, 133 / 255.0, 109 / 255.0],
         "Item": [200 / 255.0, 200 / 255.0, 50 / 255.0],
         "drops": "Sand",
-        "Hardness": 1,
+        "hardness": 1,
     },
     {
         "name": "Grass",
@@ -43,7 +43,7 @@ mapgen_objects = [
         "side": [134 / 255.0 / 5, 102 / 255.0 / 5, 64 / 255.0 / 5],
         "Item": [102 / 255.0, 51 / 255.0, 0 / 255.0],
         "drops": "Dirt",
-        "Hardness": 1,
+        "hardness": 1,
     },
     {
         "name": "BogFog",
@@ -51,7 +51,7 @@ mapgen_objects = [
         "side": [255 / 255.0, 0 / 255.0, 0 / 255.0],
         "Item": [102 / 255.0, 51 / 255.0, 0 / 255.0],
         "drops": "Dirt",
-        "Hardness": 1,
+        "hardness": 1,
     },
     {
         "name": "LavaSmoke",
@@ -59,7 +59,7 @@ mapgen_objects = [
         "side": [255 / 255.0, 0 / 255.0, 0 / 255.0],
         "Item": [128 / 255.0, 128 / 255.0, 128 / 255.0],
         "drops": "Basalt",
-        "Hardness": 2,
+        "hardness": 2,
     },
     {
         "name": "Lava",
@@ -67,7 +67,7 @@ mapgen_objects = [
         "side": [104 / 255.0, 104 / 255.0, 104 / 255.0],
         "Item": [127 / 255.0, 127 / 255.0, 127 / 255.0],
         "drops": "Basalt",
-        "Hardness": 5,
+        "hardness": 5,
     },
     {
         "name": "Basalt",
@@ -75,7 +75,7 @@ mapgen_objects = [
         "side": [105 / 255.0, 105 / 255.0, 105 / 255.0],
         "Item": [128 / 255.0, 128 / 255.0, 128 / 255.0],
         "drops": "Basalt",
-        "Hardness": 2,
+        "hardness": 2,
     },
     {
         "name": "Bog",
@@ -83,7 +83,7 @@ mapgen_objects = [
         "side": [134 / 255.0 / 5, 102 / 255.0 / 5, 64 / 255.0 / 5],
         "Item": [102 / 255.0, 51 / 255.0, 0 / 255.0],
         "drops": "Dirt",
-        "Hardness": 1,
+        "hardness": 1,
     },
     {
         "name": "PineForest",
@@ -91,7 +91,7 @@ mapgen_objects = [
         "side": [87 / 255.0, 66 / 255.0, 38 / 255.0],
         "Item": [102 / 255.0, 51 / 255.0, 0 / 255.0],
         "drops": "Dirt",
-        "Hardness": 1,
+        "hardness": 1,
     },
     {
         "name": "CoralBubbleEmitter",
@@ -99,7 +99,7 @@ mapgen_objects = [
         "side": [255 / 255.0, 0 / 255.0, 0 / 255.0],
         "Item": [128 / 255.0, 128 / 255.0, 128 / 255.0],
         "drops": "Dirt",
-        "Hardness": 2,
+        "hardness": 2,
     },
     {
         "name": "Dirt",
@@ -107,7 +107,7 @@ mapgen_objects = [
         "side": [134 / 255.0, 102 / 255.0, 64 / 255.0],
         "Item": [102 / 255.0, 51 / 255.0, 0 / 255.0],
         "drops": "Dirt",
-        "Hardness": 1,
+        "hardness": 1,
     },
     {
         "name": "Gravel",
@@ -115,7 +115,7 @@ mapgen_objects = [
         "side": [141 / 255.0, 118 / 255.0, 70 / 255.0],
         "Item": [200 / 255.0, 200 / 255.0, 50 / 255.0],
         "drops": "Gravel",
-        "Hardness": 1,
+        "hardness": 1,
     },
     {
         "name": "DryGrass",
@@ -123,7 +123,7 @@ mapgen_objects = [
         "side": [134 / 255.0, 102 / 255.0, 65 / 255.0],
         "Item": [102 / 255.0, 51 / 255.0, 0 / 255.0],
         "drops": "Dirt",
-        "Hardness": 1,
+        "hardness": 1,
     },
     {
         "name": "Limestone",
@@ -131,7 +131,7 @@ mapgen_objects = [
         "side": [161 / 255.0, 156 / 255.0, 135 / 255.0],
         "Item": [161 / 255.0, 156 / 255.0, 135 / 255.0],
         "drops": "Gravel",
-        "Hardness": 1.5,
+        "hardness": 1.5,
     },
     {
         "name": "RedStone",
@@ -139,7 +139,7 @@ mapgen_objects = [
         "side": [91 / 255.0, 56 / 255.0, 35 / 255.0],
         "Item": [91 / 255.0, 56 / 255.0, 35 / 255.0],
         "drops": "RedStone",
-        "Hardness": 2,
+        "hardness": 2,
     },
     {
         "name": "DarkStone",
@@ -147,7 +147,7 @@ mapgen_objects = [
         "side": [12 / 255.0, 8 / 255.0, 12 / 255.0],
         "Item": [12 / 255.0, 8 / 255.0, 12 / 255.0],
         "drops": "DarkStone",
-        "Hardness": 2,
+        "hardness": 2,
     },
     {
         "name": "Snow",
@@ -155,7 +155,7 @@ mapgen_objects = [
         "side": [133 / 255.0, 101 / 255.0, 64 / 255.0],
         "Item": [255 / 255.0, 255 / 255.0, 255 / 255.0],
         "drops": "Snow",
-        "Hardness": 1,
+        "hardness": 1,
     },
     {
         "name": "Granite",
@@ -163,7 +163,7 @@ mapgen_objects = [
         "side": [111 / 255.0, 106 / 255.0, 85 / 255.0],
         "Item": [128 / 255.0, 128 / 255.0, 128 / 255.0],
         "drops": "Granite",
-        "Hardness": 4,
+        "hardness": 4,
     },
     {
         "name": "Peat",
@@ -171,7 +171,7 @@ mapgen_objects = [
         "side": [134 / 255.0 / 7, 102 / 255.0 / 7, 64 / 255.0 / 7],
         "Item": [102 / 255.0, 51 / 255.0, 0 / 255.0],
         "drops": "Peat",
-        "Hardness": 1,
+        "hardness": 1,
     },
 ]
 
@@ -187,7 +187,7 @@ for object in mapgen_objects:
             "image": "T_" + object["name"],
             "logic": building_brush_slot_logic,
             "mesh": "Models/piece",
-            "Materials": ["Materials/" + object["drops"]],
+            "materials": ["Materials/" + object["drops"]],
             "color": object["Item"],
             "logic_json": {"Block": object["name"] + "Surface"},
             "max_count": 64,
@@ -199,16 +199,16 @@ for object in mapgen_objects:
         {
             "class": "TesselatorMarching",
             "name": object["name"] + "Surface",
-            "Material": "Materials/Triplanar/" + object["name"] + "Material",
+            "material": "Materials/Triplanar/" + object["name"] + "Material",
         }
     )
     objects_array.append(
         {
             "class": static_surface,
             "name": object["name"] + "Surface",
-            "Tesselator": object["name"] + "Surface",
+            "tesselator": object["name"] + "Surface",
             "Item": object["name"] + "Surface",
-            "ColorSide": object["side"],
+            "color_side": object["side"],
             "color_top": object["color"],
             "is_surface": True,
         }
@@ -216,7 +216,7 @@ for object in mapgen_objects:
     pickaxe_recipes.append(
         {
             "name": object["name"] + "SurfaceBreaking",
-            "ticks": object["Hardness"] * 20,
+            "ticks": object["hardness"] * 20,
             "input": {"items": [{"name": object["name"] + "Surface", "count": 1}]},
             "output": {"items": [{"name": object["drops"] + "Surface", "count": 1}]},
         }
@@ -231,7 +231,7 @@ objects_array = []
 objects_array.append(
     {
         "class": recipe_dictionary,
-        "name": "Multitool" + recipe_dictionary,
+        "name": "Multitool",
         "recipes": pickaxe_recipes,
     }
 )
