@@ -29,7 +29,7 @@ for ore_type in ore_types:
                         {"name": ore_type["name"] + "Ore", "count": 1},
                     ]
                 },
-                "res_input": {"name": "Kinetic", "count": 8 * ore_type["Hardness"]},
+                "res_input": {"name": "Kinetic", "count": 8 * ore_type["hardness"]},
                 "output": {
                     "items": [
                         {"name": ore_type["name"] + "ImpureOreGravel", "count": 1},
@@ -41,7 +41,7 @@ for ore_type in ore_types:
                     ]
                 },
                 "tier": tier,
-                "ticks": 150 * ore_type["Hardness"],
+                "ticks": 150 * ore_type["hardness"],
             }
         )
 
@@ -363,7 +363,7 @@ for ore_type in ore_types:
     recipes_break.append(
         {
             "name": ore_type["name"] + "OreBreaking",
-            "ticks": ore_type["Hardness"] * 20,
+            "ticks": ore_type["hardness"] * 20,
             "input": {"items": [{"name": ore_type["name"] + "Ore", "count": 1}]},
             "output": {"items": [{"name": ore_type["drops"], "count": 1}]},
         }
