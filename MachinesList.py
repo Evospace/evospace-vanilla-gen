@@ -668,20 +668,20 @@ machines = [
 		""",
 		"Description": ["KineticInput"],
 	},{
-		"Name": "FilteringUnit",
-		"Label": "Filtering Unit",
-		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,1,1],[-1,1,1]],
+		"Name": "IndustrialChemReactor",
+		"Label": "Industrial Chemical Reactor",
+		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
-		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
+		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
 		a:SetSidePos(Vec3i:Front(), Vec3i:New( 0, 0, 0 ))
 		a:Bind(crafter:GetInputContainer())
 		""",
-		"Description": ["KineticInput"],
+		"Description": ["ElectricInput"],
 	},{
 		"Name": "Furnace",
 		"Label": "Furnace",
@@ -1742,5 +1742,37 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 2,		
 		"Description": ["DataOutput"],
-	}
+	},{
+        "Name": "HandGenerator",
+        "Label": "HandGenerator",
+        "StartTier": 1,
+        "EndTier": 1,
+        "Description": ["KineticOutput", "PowerOutput"],
+        "PowerOutput": 9,
+        "Positions": [
+            [0, 0, 0],
+            [0, 0, 1],
+            [0, 0, 2],
+        ],
+    },
+    {
+        "Name": "KineticHeater",
+        "Label": "Kinetic Heater",
+        "StartTier": 1,
+        "EndTier": 10,
+        "Description": ["KineticOutput", "HeatOutput", "PowerOutput"],
+        "PowerOutput": 9,
+        "BlockLogic":"AutoCrafterBlockLogic",
+        "BlockCreation":"""
+		local crafter = BlockLogic:Link(_internal_GetThis())
+		
+		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
+		a:SetSidePos(Vec3i:Left(), Vec3i:Zero())
+		a:Bind(crafter:GetInputContainer())
+		
+		local a = Accessor:Link(crafter:CreateSubobject(HeatOutputAccessor))
+		a:SetSidePos(Vec3i:Right(), Vec3i:Zero())
+		a:Bind(crafter:GetOutputContainer())
+		""",
+    },
 ]

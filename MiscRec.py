@@ -59,7 +59,7 @@ recipes_assembler = []
 
 recipes_gasturb = []
 
-recipes_filtering_unit = []
+recipes_industrial_chemreactor = []
 
 recipes_chemical_bath = []
 
@@ -78,6 +78,8 @@ recipes_industrial_electric_engine = []
 recipes_portal = []
 
 recipes_hand = []
+
+recipes_kinetic_heater = []
 
 def append_recipe(recipe):
 	item_count = 0
@@ -339,7 +341,7 @@ append_recipe({
 	
 })
 
-append_recipe({
+recipes_assembler.append({
 	"Name":"Cell2",
 	"Input":{
 		"Items":[
@@ -357,8 +359,8 @@ append_recipe({
 			}
 		]
 	},
-	"Ticks" : 200,
-	
+	"Ticks" : 200*3,
+	"ResourceInput": { "Name": "Electricity" + static_item, "Count": 10 }
 })
 
 append_recipe({
@@ -1717,6 +1719,29 @@ recipes_generator.append({
 	"Loss": 10,
 })
 
+recipes_kinetic_heater.append({
+	"Name": "Generating",
+	"Input":{
+		"Items":[
+		]
+	},
+	"ResourceInput":{
+		"Name": "Kinetic" + static_item,
+		"Count": 10
+	},
+	"Output":{
+		"Items":[
+		]
+	},
+	"ResourceOutput":{
+		"Name": "Heat" + static_item,
+		"Count": 9
+	},
+	
+	"Ticks" : 200,
+	"Loss": 10,
+})
+
 recipes_electric_engine.append({
 	"Name": "Rotating",
 	"Input":{
@@ -2490,7 +2515,7 @@ for material in materials:
 				},
 				"ResourceInput":{
 					"Name": "Electricity" + static_item,
-					"Count": 20 if material["Name"] is not "StainlessSteel" else 100,
+					"Count": 20 if material["Name"] != "StainlessSteel" else 100,
 				},
 				"Output":{
 					"Items":[
@@ -4593,7 +4618,7 @@ recipes_chem.append({
 	"Ticks" : 200
 })
 
-recipes_filtering_unit.append({
+recipes_industrial_chemreactor.append({
 	"Name": "OreWater",
 	"Input":{
 		"Items":[
@@ -4620,7 +4645,7 @@ recipes_filtering_unit.append({
 	"Ticks" : 200
 })
 
-recipes_filtering_unit.append({
+recipes_industrial_chemreactor.append({
 	"Name": "OreWater2",
 	"Input":{
 		"Items":[
@@ -4652,7 +4677,7 @@ recipes_filtering_unit.append({
 	"Ticks" : 200
 })
 
-recipes_filtering_unit.append({
+recipes_industrial_chemreactor.append({
 	"Name": "OreWater3",
 	"Input":{
 		"Items":[
@@ -4684,7 +4709,7 @@ recipes_filtering_unit.append({
 	"Ticks" : 200
 })
 
-recipes_filtering_unit.append({
+recipes_industrial_chemreactor.append({
 	"Name": "OreWater4",
 	"Input":{
 		"Items":[
@@ -4716,7 +4741,7 @@ recipes_filtering_unit.append({
 	"Ticks" : 200
 })
 
-recipes_filtering_unit.append({
+recipes_industrial_chemreactor.append({
 	"Name": "OreWater5",
 	"Input":{
 		"Items":[
@@ -5356,8 +5381,8 @@ objects_array.append({ "Class": base_recipe,
 })
 
 objects_array.append({ "Class": base_recipe,
-	"Name": "FilteringUnit" + base_recipe,
-	"Recipes": recipes_filtering_unit
+	"Name": "IndustrialChemReactor" + base_recipe,
+	"Recipes": recipes_industrial_chemreactor
 })
 
 objects_array.append({ "Class": base_recipe,
@@ -5393,6 +5418,11 @@ objects_array.append({ "Class": base_recipe,
 objects_array.append({ "Class": base_recipe,
 	"Name": "IndustrialElectricEngine" + base_recipe,
 	"Recipes": recipes_industrial_electric_engine
+})
+
+objects_array.append({ "Class": base_recipe,
+	"Name": "KineticHeater" + base_recipe,
+	"Recipes": recipes_kinetic_heater
 })
 
 objects_array.append({ "Class": base_recipe,
