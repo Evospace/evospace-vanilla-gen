@@ -2473,6 +2473,60 @@ for machine in machines:
 					"Tier": tier,
 					"Ticks" : 20
 				})
+
+			if machine["Name"] == "KineticHeater":
+				append_recipe({
+					"Name": tier_material[tier] + machine["Name"],
+					"Input":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + "Plate" + static_item,
+								"Count": 3
+							},
+							{
+								"Name": "CopperPipe" + static_item,
+								"Count": 4 + parts_ramp(level, 4)
+							}
+						]
+					},
+					"Output":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Tier": tier,
+					"Ticks" : 20
+				})
+
+			if machine["Name"] == "HandGenerator":
+				append_recipe({
+					"Name": tier_material[tier] + machine["Name"],
+					"Input":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + "Plate" + static_item,
+								"Count": 2
+							},
+							{
+								"Name": "CopperParts" + static_item,
+								"Count": 4
+							}
+						]
+					},
+					"Output":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Tier": tier,
+					"Ticks" : 20
+				})
 				
 			if machine["Name"] == "AutomaticFarm":
 				append_recipe({
