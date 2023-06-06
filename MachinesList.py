@@ -219,6 +219,7 @@ machines = [
 		"StartTier": 0,
 		"EndTier": 10,
 		"Tag": "Logistics",
+        "Description": ["ItemInput", "ItemStorage"],
 	},{
 		"Name": "ItemRack",
 		"Label": "Item Rack",
@@ -226,6 +227,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 10,
 		"Tag": "Logistics",
+        "Description": ["ItemInput", "ItemStorage"],
 	},{
 		"Name": "Vent",
 		"Label": "Valve",
