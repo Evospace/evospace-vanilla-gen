@@ -105,6 +105,9 @@ for machine in machines:
 				
 			if machine["Name"] == "Conveyor":
 				item["DescriptionParts"].append(["ips", "common", conv_speed_d[level]])
+
+			if machine["Name"] == "ItemRack":
+				item["DescriptionParts"].append(["rack", "common", 2048*(level+1)])
 				
 			if machine["Name"] == "QuantumComputer":
 				item["DescriptionParts"].append(["computations", "common", 2**level * 150 * 10 / 20.0])
