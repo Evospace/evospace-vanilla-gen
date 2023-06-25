@@ -37,6 +37,7 @@ append_levels({
 	"LabelParts": [["InitialScan", "researches"]],
 	"CompleteByDefault": True,
 	"Chapter": "Production"+static_chapter,
+	"Unlocks": [["Hand" + base_recipe, tier_material[0] + "HandGenerator"],["Constructor" + base_recipe, tier_material[0] + "HandGenerator"]],
 })
 append_levels({
 	"Class": static_research,
@@ -431,6 +432,17 @@ append_levels({
 })
 append_levels({
 	"Class": static_research,
+	"Name": "KineticHeater" + static_research,
+	"LabelParts": [["HeatTransferring", "researches"]],
+	"RequiredResearches": ["HeatTransferring" + static_research],
+	"Unlocks": [["Hand" + base_recipe, "%Material%KineticHeater"],["Constructor" + base_recipe, "%Material%KineticHeater"]],
+	"Position": [-1,-1],
+	"Levels":[1,7],
+	"Chapter":"Production"+static_chapter,
+	"CostMul":1,
+})
+append_levels({
+	"Class": static_research,
 	"Name": "Radiator" + static_research,
 	"LabelParts": [["Radiator", "machines"]],
 	"RequiredResearches": ["HeatTransferring" + static_research],
@@ -447,7 +459,7 @@ append_levels({
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%AtmosphericCondenser"],["Constructor" + base_recipe, "%Material%AtmosphericCondenser"]],
 	"Chapter":"Production"+static_chapter,
-	"Position": [-2,0],
+	"Position": [-3,0],
 	"CostMul":0.5,
 })
 append_levels({
