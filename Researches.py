@@ -37,7 +37,6 @@ append_levels({
 	"LabelParts": [["InitialScan", "researches"]],
 	"CompleteByDefault": True,
 	"Chapter": "Production"+static_chapter,
-	"Unlocks": [["Hand" + base_recipe, tier_material[0] + "HandGenerator"],["Constructor" + base_recipe, tier_material[0] + "HandGenerator"]],
 })
 append_levels({
 	"Class": static_research,
@@ -91,13 +90,7 @@ append_levels({
 	"Name": "Electricity" + static_research,
 	"LabelParts": [["Electricity", "researches"]],
 	"RequiredResearches": ["InitialScan"+static_research],
-	"Unlocks": [["Hand" + base_recipe, tier_material[1] + "Connector"], ["Constructor" + base_recipe, tier_material[1] + "Connector"]],
-	"Collect": { "Items": [
-		{
-			"Name": "Sand" + static_item,
-			"Count": 10
-		}
-	] },
+	"Unlocks": [["Hand" + base_recipe, tier_material[1] + "Connector"], ["Constructor" + base_recipe, tier_material[1] + "Connector"],["Hand" + base_recipe, tier_material[1] + "HandGenerator"],["Constructor" + base_recipe, tier_material[1] + "HandGenerator"]],
 	"Position": [0,-1],
 	"Chapter": "Production"+static_chapter,
 	"CompleteByDefault": True,
@@ -137,7 +130,7 @@ append_levels({
 	"Name": "PowerGeneration" + static_research,
 	"LabelParts": [["PowerGeneration", "researches"]],
 	"RequiredResearches": ["Electricity" + static_research],
-	"Levels": [1,1],
+	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%CompactGenerator"],["Constructor" + base_recipe, "%Material%CompactGenerator"]],
 	"Chapter":"Production"+static_chapter,
 	"Position": [1,-1],
@@ -433,10 +426,10 @@ append_levels({
 append_levels({
 	"Class": static_research,
 	"Name": "KineticHeater" + static_research,
-	"LabelParts": [["HeatTransferring", "researches"]],
+	"LabelParts": [["KineticHeater", "machines"]],
 	"RequiredResearches": ["HeatTransferring" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%KineticHeater"],["Constructor" + base_recipe, "%Material%KineticHeater"]],
-	"Position": [-1,-1],
+	"Position": [-2,0],
 	"Levels":[1,7],
 	"Chapter":"Production"+static_chapter,
 	"CostMul":1,
@@ -459,7 +452,7 @@ append_levels({
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%AtmosphericCondenser"],["Constructor" + base_recipe, "%Material%AtmosphericCondenser"]],
 	"Chapter":"Production"+static_chapter,
-	"Position": [-3,0],
+	"Position": [-1,0],
 	"CostMul":0.5,
 })
 append_levels({

@@ -1762,7 +1762,7 @@ machines = [
         "Label": "Kinetic Heater",
         "StartTier": 1,
         "EndTier": 10,
-        "Description": ["KineticOutput", "HeatOutput", "PowerOutput"],
+        "Description": ["KineticInput", "HeatOutput", "PowerOutput"],
         "PowerOutput": 9,
         "BlockLogic":"AutoCrafterBlockLogic",
         "BlockCreation":"""
