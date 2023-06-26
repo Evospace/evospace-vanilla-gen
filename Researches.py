@@ -670,11 +670,11 @@ append_levels({
 })
 append_levels({
 	"Class": static_research,
-	"Name": "FilteringUnit" + static_research,
-	"LabelParts": [["FilteringUnit", "machines"]],
+	"Name": "IndustrialChemReactor" + static_research,
+	"LabelParts": [["IndustrialChemReactor", "machines"]],
 	"Chapter":"Production"+static_chapter,
 	"RequiredResearches": ["Chemistry" + static_research],
-	"Unlocks": [["Hand" + base_recipe, "%Material%FilteringUnit"],["Constructor" + base_recipe, "%Material%FilteringUnit"]],
+	"Unlocks": [["Hand" + base_recipe, "%Material%IndustrialChemReactor"],["Constructor" + base_recipe, "%Material%IndustrialChemReactor"]],
 	"Levels": [3,7],
 	"Position": [5,-3],
 })
@@ -733,7 +733,7 @@ append_levels({
 	"Name": "ChemicalBath" + static_research,
 	"LabelParts": [["ChemicalBath", "machines"]],
 	"Chapter": "Production" + static_chapter,
-	"RequiredResearches": ["FilteringUnit" + static_research],
+	"RequiredResearches": ["IndustrialChemReactor" + static_research],
 	"Levels": [3,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%ChemicalBath"],["Constructor" + base_recipe, "%Material%ChemicalBath"]],
 	"Position": [5,-4],
