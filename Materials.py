@@ -484,6 +484,17 @@ materials = [
 		"Tier": 2,
 		"Color": [.2,.2,.5],
 	},{
+		"Name": "Methanol",
+		"Label": "Methanol",
+		"IsGas": True,
+		"Burnable": {
+			"BurnTime": 1000,
+			"HeatPerTick": 20,
+			"TotalAsh": 0
+		},
+		"Tier": 2,
+		"Color":[0.5,0.2,0.2]
+	},{
 		"Name": "Methane",
 		"Label": "Methane",
 		"IsGas": True,
@@ -541,6 +552,14 @@ materials = [
 	},{
 		"Name": "Biomass",
 		"Label": "Biomass",
+		"IsFluid": True,
+	},{
+		"Name": "FermentedBiomass",
+		"Label": "Fermented Biomass",
+		"IsFluid": True,
+	},{
+		"Name": "Ammonia",
+		"Label": "Ammonia",
 		"IsFluid": True,
 	},{
 		"Name": "Clay",
