@@ -4630,7 +4630,7 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"ResourceInput":{
-			"Name": "Kinetic" + static_item,
+			"Name": "Electricity" + static_item,
 			"Count": 10
 		},
 	"Output":{
@@ -4661,7 +4661,7 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"ResourceInput":{
-			"Name": "Kinetic" + static_item,
+			"Name": "Electricity" + static_item,
 			"Count": 10
 		},
 	"Output":{
@@ -4693,7 +4693,7 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"ResourceInput":{
-			"Name": "Kinetic" + static_item,
+			"Name": "Electricity" + static_item,
 			"Count": 10
 		},
 	"Output":{
@@ -4725,7 +4725,7 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"ResourceInput":{
-			"Name": "Kinetic" + static_item,
+			"Name": "Electricity" + static_item,
 			"Count": 10
 		},
 	"Output":{
@@ -4757,7 +4757,7 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"ResourceInput":{
-			"Name": "Kinetic" + static_item,
+			"Name": "Electricity" + static_item,
 			"Count": 10
 		},
 	"Output":{
