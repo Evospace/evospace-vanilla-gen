@@ -3812,11 +3812,45 @@ recipes_ferm.append({
 			{
 				"Name": "Methane" + static_item,
 				"Count": 500
+			},
+			{
+				"Name": "FermentedBiomass" + static_item,
+				"Count": 500
 			}
 		]
 	},
 	
 	"Ticks" : 200
+})
+
+recipes_ferm.append({
+	"Name": "EthanolFromFB",
+	"Input":{
+		"Items":[
+			{
+				"Name": "FermentedBiomass" + static_item,
+				"Count": 1000
+			},
+		]
+	},
+	"ResourceInput":{
+		"Name": "Electricity" + static_item,
+		"Count": 10
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "Ethanol" + static_item,
+				"Count": 500
+			},
+			{
+				"Name": "Water" + static_item,
+				"Count": 500
+			}
+		]
+	},
+	
+	"Ticks" : 200*3
 })
 
 recipes_ferm.append({
@@ -4436,6 +4470,37 @@ recipes_pyro.append({
 	"Ticks" : 200
 })
 
+
+recipes_pyro.append({
+	"Name": "BioToAmmonia",
+	"Input":{
+		"Items":[
+			{
+				"Name": "FermentedBiomass" + static_item,
+				"Count": 1000
+			}
+		]
+	},
+	"ResourceInput":{
+			"Name": "Heat" + static_item,
+			"Count": 50
+		},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "Ammonia" + static_item,
+				"Count": 500
+			},	
+			{
+				"Name": "Ash" + static_item,
+				"Count": 3
+			},	
+		]
+	},
+	
+	"Ticks" : 200
+})
+
 recipes_chem.append({
 	"Name": "Ethylene",
 	"Input":{
@@ -4497,7 +4562,7 @@ recipes_chem.append({
 	"Ticks" : 200
 })
 
-recipes_chem.append({
+recipes_industrial_chemreactor.append({
 	"Name": "SulfuricAcid",
 	"Input":{
 		"Items":[
@@ -4772,6 +4837,67 @@ recipes_industrial_chemreactor.append({
 	
 	"Ticks" : 200
 })
+
+recipes_industrial_chemreactor.append({
+	"Name": "Ammonia",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Nitrogen" + static_item,
+				"Count": 250
+			},
+			{
+				"Name": "Hydrogen" + static_item,
+				"Count": 750
+			},
+		]
+	},
+	"ResourceInput":{
+			"Name": "Electricity" + static_item,
+			"Count": 20
+		},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "Ammonia" + static_item,
+				"Count": 1000
+			},		
+		]
+	},
+	
+	"Ticks" : 200
+})
+
+recipes_industrial_chemreactor.append({
+	"Name": "Methanol",
+	"Input":{
+		"Items":[
+			{
+				"Name": "CarbonMonoxide" + static_item,
+				"Count": 250
+			},
+			{
+				"Name": "Hydrogen" + static_item,
+				"Count": 750
+			},
+		]
+	},
+	"ResourceInput":{
+			"Name": "Electricity" + static_item,
+			"Count": 50
+		},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "Methanol" + static_item,
+				"Count": 1000
+			},		
+		]
+	},
+	
+	"Ticks" : 100
+})
+
 
 for i in {"IronOreDust", "CopperOreDust"}:
 	recipes_chemical_bath.append({
