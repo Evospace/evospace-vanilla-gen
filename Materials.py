@@ -484,6 +484,17 @@ materials = [
 		"Tier": 2,
 		"Color": [.2,.2,.5],
 	},{
+		"Name": "Ethanol",
+		"Label": "Ethanol",
+		"IsGas": True,
+		"Burnable": {
+			"BurnTime": 500,
+			"HeatPerTick": 45,
+			"TotalAsh": 0
+		},
+		"Tier": 2,
+		"Color":[0.5,0.2,0.2]
+	},{
 		"Name": "Methanol",
 		"Label": "Methanol",
 		"IsGas": True,
