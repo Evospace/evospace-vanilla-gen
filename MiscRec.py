@@ -81,6 +81,8 @@ recipes_hand = []
 
 recipes_kinetic_heater = []
 
+oil_crack = []
+
 def append_recipe(recipe):
 	item_count = 0
 	for item in recipe["Input"]["Items"]:
@@ -4191,7 +4193,7 @@ for i in {"ProducerGas", "Methane", "Hydrogen", "Gasoline"}:
 			"Items":[
 				{
 					"Name": i + static_item,
-					"Count": 1000
+					"Count": 1000 * 5
 				}			
 			]
 		},
@@ -4201,11 +4203,57 @@ for i in {"ProducerGas", "Methane", "Hydrogen", "Gasoline"}:
 		},
 		"ResourceOutput":{
 				"Name": "Kinetic" + static_item,
-				"Count": named_material(i)["Burnable"]["HeatPerTick"]
+				"Count": named_material(i)["Burnable"]["HeatPerTick"] * 5
 			},
 		
 		"Ticks" : named_material(i)["Burnable"]["BurnTime"],
 	})
+
+oil_crack.append({
+	"Name": "RawOil",
+	"Input":{
+		"Items":[
+			{
+				"Name": "RawOil" + static_item,
+				"Count": 600
+			},
+		]
+	},
+	"ResourceInput":{
+			"Name": "Electricity" + static_item,
+			"Count": 15
+		},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "ExtraHeavyOil" + static_item,
+				"Count": 80
+			},
+			{
+				"Name": "HeavyOil" + static_item,
+				"Count": 100
+			},
+			{
+				"Name": "Gasoline" + static_item,
+				"Count": 100
+			},
+			{
+				"Name": "Ethylene" + static_item,
+				"Count": 500
+			},
+			{
+				"Name": "Methane" + static_item,
+				"Count": 500
+			},
+			{
+				"Name": "Hydrogen" + static_item,
+				"Count": 250
+			}				
+		]
+	},
+	
+	"Ticks" : 600
+})
 
 recipes_pyro.append({
 	"Name": "Coal",
@@ -5549,6 +5597,11 @@ objects_array.append({ "Class": base_recipe,
 objects_array.append({ "Class": base_recipe,
 	"Name": "KineticHeater" + base_recipe,
 	"Recipes": recipes_kinetic_heater
+})
+
+objects_array.append({ "Class": base_recipe,
+	"Name": "OilCrackingTower" + base_recipe,
+	"Recipes": oil_crack
 })
 
 objects_array.append({ "Class": base_recipe,

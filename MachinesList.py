@@ -362,6 +362,12 @@ machines = [
 		"EndTier": 10,
 		"Description": ["FluidInput", "KineticOutput"],
 	},{
+		"Name": "OilCrackingTower",
+		"Label": "Oil Cracking Tower",
+		"StartTier": 4,
+		"EndTier": 10,
+		"Description": ["ElectricInput", "FluidInput", "FluidOutput","MachineColumn"],
+	},{
 		"Name": "PyrolysisUnit",
 		"Label": "Pyrolysis Unit",
 		"Positions": [[0,0,0],[0,0,1],[0,0,2],[0,1,0],[0,2,0]],
