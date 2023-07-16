@@ -4598,6 +4598,80 @@ recipes_pyro.append({
 })
 
 recipes_industrial_chemreactor.append({
+	"Name": "RocketFuel",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Chlorine" + static_item,
+				"Count": 1000
+			},{
+				"Name": "Ammonia" + static_item,
+				"Count": 3000
+			},{
+				"Name": "Methanol" + static_item,
+				"Count": 4000
+			},
+			{
+				"Name": "Catalyst" + static_item,
+				"Count": 1,
+				"Probability": 0,
+			},
+		]
+	},
+	"ResourceInput":{
+			"Name": "Electricity" + static_item,
+			"Count": 10
+		},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "RocketFuel" + static_item,
+				"Count": 5000,
+			},		
+		]
+	},
+	
+	"Ticks" : 200
+})
+
+recipes_industrial_chemreactor.append({
+	"Name": "RocketFuel2",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Chlorine" + static_item,
+				"Count": 1000
+			},{
+				"Name": "Ammonia" + static_item,
+				"Count": 3000
+			},{
+				"Name": "Methanol" + static_item,
+				"Count": 4000
+			},
+			{
+				"Name": "UltimateCatalyst" + static_item,
+				"Count": 1,
+				"Probability": 0,
+			},
+		]
+	},
+	"ResourceInput":{
+			"Name": "Electricity" + static_item,
+			"Count": 10
+		},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "RocketFuel" + static_item,
+				"Count": 7000,
+			},		
+		]
+	},
+	
+	"Ticks" : 200
+})
+
+recipes_industrial_chemreactor.append({
 	"Name": "Ethylene",
 	"Input":{
 		"Items":[
@@ -4914,6 +4988,42 @@ recipes_industrial_chemreactor.append({
 			},
 			{
 				"Name": "Catalyst" + static_item,
+				"Count": 1,
+				"Probability": 0,
+			},
+		]
+	},
+	"ResourceInput":{
+			"Name": "Electricity" + static_item,
+			"Count": 10
+		},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "Superfuel" + static_item,
+				"Count": 800
+			},		
+		]
+	},
+	
+	"Ticks" : 300
+})
+
+recipes_industrial_chemreactor.append({
+	"Name": "Superfuel2",
+	"Input":{
+		"Items":[
+			{
+				"Name": "HighCetaneDiesel" + static_item,
+				"Count": 1000
+			},
+			{
+				"Name": "FilteringCell" + static_item,
+				"Count": 32,
+				"Probability": 0,
+			},
+			{
+				"Name": "UltimateCatalyst" + static_item,
 				"Count": 1,
 				"Probability": 0,
 			},
