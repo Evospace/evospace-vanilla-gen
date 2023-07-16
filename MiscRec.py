@@ -4869,7 +4869,7 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"Ticks" : 200,
-	"Colors": [[0.4,0.4,0.8,0.5],[1.0,0.7,1.0,0.5]]
+	"Colors": [[0.4,0.4,0.8,0.5],[0.5,0.2,0.5,0.3]]
 })
 
 recipes_industrial_chemreactor.append({
@@ -4928,7 +4928,7 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"Ticks" : 150,
-	"Colors": [[1.0,0.7,1.0,0.5],[0.0,1.0,0.5,1.0]]
+	"Colors": [[0.5,0.2,0.5,0.3],[0.0,0.5,0.25,0.3]]
 })
 
 recipes_industrial_chemreactor.append({
@@ -4958,7 +4958,7 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"Ticks" : 300,
-	"Colors": [[1.0,0.8,0.2,1.0],[1.0,0.8,0.5,1.0]]
+	"Colors": [[0.4,0.4,0.0,0.15],[0.4,0.2,0.0,0.15]]
 })
 
 recipes_industrial_chemreactor.append({
@@ -4994,7 +4994,7 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"Ticks" : 300,
-	"Colors": [[1.0,0.8,0.5,1.0],[1.0,0.9,0.7,1.0]]
+	"Colors": [[0.4,0.2,0.0,0.15],[0.7,0.6,0.25,0.15]]
 })
 
 recipes_industrial_chemreactor.append({
@@ -5030,7 +5030,7 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"Ticks" : 300,
-	"Colors": [[1.0,0.8,0.5,1.0],[1.0,0.9,0.7,1.0]]
+	"Colors": [[0.4,0.2,0.0,0.15],[0.7,0.6,0.25,0.15]]
 })
 
 recipes_chem.append({
@@ -5101,7 +5101,7 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"Ticks" : 400,
-	"Colors": [[0.4,0.4,0.1,0.8],[0.2,0.2,0.1,0.2]]
+	"Colors": [[0.02,0.02,0.00,1.5],[0.1,0.1,0.1,0.1]]
 })
 
 for i in {"IronOreDust", "CopperOreDust"}:
