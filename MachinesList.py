@@ -358,9 +358,19 @@ machines = [
 	},{
 		"Name": "CombustionEngine",
 		"Label": "Combustion Engine",
+		"BlockLogic": "AutoCrafterBlockLogic",
 		"StartTier": 2,
 		"EndTier": 10,
 		"Description": ["FluidInput", "KineticOutput"],
+		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockCreation":"""
+		local crafter = BlockLogic:Link(_internal_GetThis())
+		
+		local a = Accessor:Link(crafter:CreateSubobject(KineticOutputAccessor))
+		a:SetSidePos(Vec3i:Right(), Vec3i:New(-1,0,0))
+		a:Bind(crafter:GetOutputContainer())
+		""",
+		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,2,0],[-1,2,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,2,1],[-1,2,1]],
 	},{
 		"Name": "OilCrackingTower",
 		"Label": "Oil Cracking Tower",
