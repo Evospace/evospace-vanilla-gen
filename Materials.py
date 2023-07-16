@@ -376,6 +376,12 @@ materials = [
 		"Tier": 3,
 		"IsBlock": True,
 	},{
+		"Name": "SodiumHydroxide",
+		"Label": "Sodium Hydroxide",
+		"IsDust": True,
+		"Tier": 3,
+		"IsBlock": True,
+	},{
 		"Name": "Potassium",
 		"Label": "Potassium",
 		"IsDust": True,
@@ -476,7 +482,7 @@ materials = [
 	},{
 		"Name": "Ash",
 		"Label": "Ash",
-		"IsDust": True,
+		"IsExact": True,
 		"Tier": 0
 	},{
 		"Name": "Hydrogen",
@@ -648,6 +654,18 @@ materials = [
 		"Tier": 3
 	},
 	{
+		"Name": "RapeseedOil",
+		"Label": "Rapeseed Oil",
+		"IsFluid": True,
+		"Tier": 0,
+		"Burnable": {
+			"BurnTime": 800,
+			"HeatPerTick": 5,
+			"TotalAsh": 2
+		},
+		"Color":[0.1,0.1,0.1]
+	},
+	{
 		"Name": "RawOil",
 		"Label": "Raw Oil",
 		"IsFluid": True,
@@ -655,9 +673,9 @@ materials = [
 		"Burnable": {
 			"BurnTime": 400,
 			"HeatPerTick": 10,
-			"TotalAsh": 0
+			"TotalAsh": 1
 		},
-		"Color":[0.1,0.1,0.1]
+		"Color":[0.01,0.01,0.01]
 	},
 	{
 		"Name": "MineralWater",
@@ -716,7 +734,7 @@ materials = [
 		"Tier": 1,
 		"Color":[0,1,0],
 		"Burnable": {
-			"BurnTime": 200,
+			"BurnTime": 300,
 			"HeatPerTick": 1000,
 			"TotalAsh": 0
 		}

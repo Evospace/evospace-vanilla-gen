@@ -3265,6 +3265,37 @@ recipes_electrolyzer.append({
 })
 
 recipes_electrolyzer.append({
+	"Name":"MineralWater",
+	"Input":{
+		"Items":[
+			{
+				"Name": "MineralWater" + static_item,
+				"Count": 1
+			},
+		]
+	},
+	"ResourceInput":{
+		"Name": "Electricity" + static_item,
+		"Count": 10,
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "SodiumHydroxideDust" + static_item,
+				"Count": 1
+			},
+			{
+				"Name": "Chlorine" + static_item,
+				"Count": 1000
+			}
+			
+		]
+	},
+	
+	"Ticks" : 200
+})
+
+recipes_electrolyzer.append({
 	"Name":"PotassiumChloride",
 	"Input":{
 		"Items":[
@@ -4582,7 +4613,7 @@ recipes_pyro.append({
 				"Count": 500
 			},	
 			{
-				"Name": "AshDust" + static_item,
+				"Name": "Ash" + static_item,
 				"Count": 1
 			},	
 		]
@@ -4758,6 +4789,40 @@ recipes_industrial_chemreactor.append({
 	"Colors": [[0.4,0.4,0.8,0.5],[1.0,0.7,0.1,0.5]]
 })
 
+recipes_industrial_chemreactor.append({
+	"Name": "RapeseedOil",
+	"Input":{
+		"Items":[
+			{
+				"Name": "RapeseedOil" + static_item,
+				"Count": 1000
+			},
+			{
+				"Name": "Ethanol" + static_item,
+				"Count": 150
+			},
+			{
+				"Name": "SodiumHydroxideDust" + static_item,
+				"Count": 1
+			}
+		]
+	},
+	"ResourceInput":{
+			"Name": "Electricity" + static_item,
+			"Count": 10
+		},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "Diesel" + static_item,
+				"Count": 400
+			}
+		]
+	},
+	"Ticks" : 400,
+	"Colors": [[0.4,0.4,0.0,1.0],[0.4,0.4,0.0,0.15]]
+})
+
 recipes_chem.append({
 	"Name": "Plastic1",
 	"Input":{
@@ -4840,6 +4905,32 @@ recipes_chem.append({
 		]
 	},
 	"Ticks" : 200
+})
+
+recipes_chem.append({
+	"Name": "Coal",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Ash" + static_item,
+				"Count": 3
+			},
+			
+		]
+	},
+	"ResourceInput":{
+			"Name": "Electricity" + static_item,
+			"Count": 10
+		},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "Coal" + static_item,
+				"Count": 1
+			},		
+		]
+	},
+	"Ticks" : 10
 })
 
 recipes_industrial_chemreactor.append({
