@@ -676,7 +676,27 @@ append_levels({
 	"RequiredResearches": ["Chemistry" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%IndustrialChemReactor"],["Constructor" + base_recipe, "%Material%IndustrialChemReactor"]],
 	"Levels": [3,7],
-	"Position": [5,-3],
+	"Position": [5,-6],
+})
+append_levels({
+	"Class": static_research,
+	"Name": "FuelChemistry" + static_research,
+	"LabelParts": [["FuelChemistry", "researches"]],
+	"Chapter":"Production"+static_chapter,
+	"RequiredResearches": ["IndustrialChemReactor" + static_research],
+	"Unlocks": [["IndustrialChemReactor" + base_recipe, "Superfuel"], ["IndustrialChemReactor" + base_recipe, "RocketFuel"]],
+	"Levels": [3,7],
+	"Position": [6,-6],
+})
+append_levels({
+	"Class": static_research,
+	"Name": "FuelChemistry2" + static_research,
+	"LabelParts": [["FuelChemistry2", "researches"]],
+	"Chapter":"Production"+static_chapter,
+	"RequiredResearches": ["FuelChemistry" + static_research],
+	"Unlocks": [["IndustrialChemReactor" + base_recipe, "RocketFuel2"], ["IndustrialChemReactor" + base_recipe, "Superfuel2"]],
+	"Levels": [3,7],
+	"Position": [6,-7],
 })
 append_levels({
 	"Class": static_research,
@@ -736,7 +756,7 @@ append_levels({
 	"RequiredResearches": ["IndustrialChemReactor" + static_research],
 	"Levels": [3,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%ChemicalBath"],["Constructor" + base_recipe, "%Material%ChemicalBath"]],
-	"Position": [5,-4],
+	"Position": [5,-7],
 })
 append_levels({
 	"Class": static_research,
@@ -1020,50 +1040,6 @@ append_levels({
 	"Chapter": "Production" + static_chapter,
 	"Position": [4,-6],
 })
-csv.append(["InventoryUpgrade", "Inventory Upgrade"])
-csv.append(["PlutoniumReaction", "Plutonium Reaction"])
-csv.append(["ThoriumReaction", "Thorium Reaction"])
-csv.append(["Drying", "Drying"])	
-csv.append(["PowerGeneration", "Power Generation"])
-csv.append(["Automatization", "Automatization"])
-csv.append(["AdditionalStorage", "Additional Storage"])
-csv.append(["HeatTransferring", "Heat Transferring"])
-csv.append(["BasicMachines", "Basic Machines"])
-csv.append(["Container", "Fluid Storage"])
-csv.append(["FluidDumping", "Fluid Dumping"])
-csv.append(["SingleTypeStorage", "Single Type Storage"])
-csv.append(["DistributedComputing", "Distributed Computing"])
-csv.append(["Electrolysis", "Electrolysis"])
-csv.append(["Sign", "Sign"])
-csv.append(["Cutting", "Cutting"])
-csv.append(["SteelProduction", "Steel Production"])
-csv.append(["AutomaticMining", "Automatic Mining"])
-csv.append(["MetalConstructions", "Metal Constructions"])	
-csv.append(["Chemistry", "Chemistry"])
-csv.append(["MassivePowerGeneration", "Massive Power Generation"])
-csv.append(["AdvancedSmelting", "Advanced Smelting"])
-csv.append(["IndustrialSmelting", "Industrial Smelting"])
-csv.append(["Fermentation", "Fermentation"])
-csv.append(["AdvancedSeparation", "Advanced Separation"])
-csv.append(["NeutroniumProduction", "Neutronium Production"])
-csv.append(["AluminiumProduction", "Aluminium Production"])
-csv.append(["StainlessSteelProduction", "Stainless Steel Production"])
-csv.append(["TitaniumProduction", "Titanium Production"])
-csv.append(["HardMetalProduction", "Hard Metal Production"])
-csv.append(["InitialScan", "Initial Scan"])
-csv.append(["MineralsScan", "Minerals Scan"])
-csv.append(["Electricity", "Electricity"])
-csv.append(["Smelting", "Smelting"])
-csv.append(["Metalwork", "Metalwork"])
-csv.append(["Filtering", "Filtering"])
-csv.append(["DecorativeWood", "Decorative Wood"])
-csv.append(["DecorativePlastic", "Decorative Plastic"])
-csv.append(["DecorativeStone", "Decorative Stone"])
-csv.append(["DecorativeConcrete", "Decorative Concrete"])
-csv.append(["DecorationClay", "Decoration Clay"])
-csv.append(["ReinforcedConcrete", "Decorative Reinforced Concrete"])
-csv.append(["AdvancedReflection", "Advanced Reflection"])
-csv.append(["ReactionThrottling", "Reaction Throttling"])
 	
 append_levels({
 	"Class": static_research,
@@ -1350,6 +1326,53 @@ append_levels({
 data = {
 	"Objects": researches
 }
+
+csv.append(["InventoryUpgrade", "Inventory Upgrade"])
+csv.append(["PlutoniumReaction", "Plutonium Reaction"])
+csv.append(["ThoriumReaction", "Thorium Reaction"])
+csv.append(["Drying", "Drying"])	
+csv.append(["PowerGeneration", "Power Generation"])
+csv.append(["Automatization", "Automatization"])
+csv.append(["AdditionalStorage", "Additional Storage"])
+csv.append(["HeatTransferring", "Heat Transferring"])
+csv.append(["BasicMachines", "Basic Machines"])
+csv.append(["Container", "Fluid Storage"])
+csv.append(["FluidDumping", "Fluid Dumping"])
+csv.append(["SingleTypeStorage", "Single Type Storage"])
+csv.append(["DistributedComputing", "Distributed Computing"])
+csv.append(["Electrolysis", "Electrolysis"])
+csv.append(["Sign", "Sign"])
+csv.append(["Cutting", "Cutting"])
+csv.append(["SteelProduction", "Steel Production"])
+csv.append(["AutomaticMining", "Automatic Mining"])
+csv.append(["MetalConstructions", "Metal Constructions"])	
+csv.append(["Chemistry", "Chemistry"])
+csv.append(["MassivePowerGeneration", "Massive Power Generation"])
+csv.append(["AdvancedSmelting", "Advanced Smelting"])
+csv.append(["IndustrialSmelting", "Industrial Smelting"])
+csv.append(["Fermentation", "Fermentation"])
+csv.append(["AdvancedSeparation", "Advanced Separation"])
+csv.append(["NeutroniumProduction", "Neutronium Production"])
+csv.append(["AluminiumProduction", "Aluminium Production"])
+csv.append(["StainlessSteelProduction", "Stainless Steel Production"])
+csv.append(["TitaniumProduction", "Titanium Production"])
+csv.append(["HardMetalProduction", "Hard Metal Production"])
+csv.append(["InitialScan", "Initial Scan"])
+csv.append(["MineralsScan", "Minerals Scan"])
+csv.append(["Electricity", "Electricity"])
+csv.append(["Smelting", "Smelting"])
+csv.append(["Metalwork", "Metalwork"])
+csv.append(["Filtering", "Filtering"])
+csv.append(["DecorativeWood", "Decorative Wood"])
+csv.append(["DecorativePlastic", "Decorative Plastic"])
+csv.append(["DecorativeStone", "Decorative Stone"])
+csv.append(["DecorativeConcrete", "Decorative Concrete"])
+csv.append(["DecorationClay", "Decoration Clay"])
+csv.append(["ReinforcedConcrete", "Decorative Reinforced Concrete"])
+csv.append(["AdvancedReflection", "Advanced Reflection"])
+csv.append(["ReactionThrottling", "Reaction Throttling"])
+csv.append(["FuelChemistry", "Fuel Chemistry"])
+csv.append(["FuelChemistry2", "Fuel Chemistry II"])
 
 write_file("Generated/Researches/basic.json", data);
 write_file("Loc/source/researches.json", csv)

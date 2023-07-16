@@ -703,10 +703,21 @@ materials = [
 		"Label": "Superfuel",
 		"IsFluid": True,
 		"Tier": 1,
-		"Color":[.1,.1,0.1],
+		"Color":[1,1,0.5],
 		"Burnable": {
 			"BurnTime": 2000,
 			"HeatPerTick": 100,
+			"TotalAsh": 0
+		}
+	},{
+		"Name": "RocketFuel",
+		"Label": "Rocket Fuel",
+		"IsFluid": True,
+		"Tier": 1,
+		"Color":[0,1,0],
+		"Burnable": {
+			"BurnTime": 200,
+			"HeatPerTick": 1000,
 			"TotalAsh": 0
 		}
 	},{
