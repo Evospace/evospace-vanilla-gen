@@ -4404,7 +4404,6 @@ recipes_pyro.append({
 			},			
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -4443,7 +4442,6 @@ recipes_pyro.append({
 			},			
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -4474,7 +4472,6 @@ recipes_pyro.append({
 			},		
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -4505,7 +4502,6 @@ recipes_pyro.append({
 			},		
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -4536,7 +4532,6 @@ recipes_pyro.append({
 			},		
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -4562,7 +4557,6 @@ recipes_pyro.append({
 			},		
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -4593,7 +4587,6 @@ recipes_pyro.append({
 			},	
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -4630,8 +4623,8 @@ recipes_industrial_chemreactor.append({
 			},		
 		]
 	},
-	
-	"Ticks" : 200
+	"Ticks" : 200,
+	"Colors": [[0.3,0.2,0,1],[1,1,0.5,1]]
 })
 
 recipes_industrial_chemreactor.append({
@@ -4667,8 +4660,8 @@ recipes_industrial_chemreactor.append({
 			},		
 		]
 	},
-	
-	"Ticks" : 200
+	"Ticks" : 200,
+	"Colors": [[0.3,0.2,0,1],[1,1,0.5,1]]
 })
 
 recipes_industrial_chemreactor.append({
@@ -4698,8 +4691,8 @@ recipes_industrial_chemreactor.append({
 			},		
 		]
 	},
-	
-	"Ticks" : 200
+	"Ticks" : 200,
+	"Colors": [[0.2,0.2,0.2,0.5],[0.2,0.5,0.2,0.5]]
 })
 
 recipes_chem.append({
@@ -4728,7 +4721,6 @@ recipes_chem.append({
 			},		
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -4762,8 +4754,8 @@ recipes_industrial_chemreactor.append({
 			},		
 		]
 	},
-	
-	"Ticks" : 200
+	"Ticks" : 200,
+	"Colors": [[0.4,0.4,0.8,0.5],[1.0,0.7,0.1,0.5]]
 })
 
 recipes_chem.append({
@@ -4792,7 +4784,6 @@ recipes_chem.append({
 			},		
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -4822,7 +4813,6 @@ recipes_chem.append({
 			},		
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -4849,7 +4839,6 @@ recipes_chem.append({
 			},		
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -4879,8 +4868,8 @@ recipes_industrial_chemreactor.append({
 			},		
 		]
 	},
-	
-	"Ticks" : 200
+	"Ticks" : 200,
+	"Colors": [[0.4,0.4,0.8,0.5],[1.0,0.7,1.0,0.5]]
 })
 
 recipes_industrial_chemreactor.append({
@@ -4909,7 +4898,6 @@ recipes_industrial_chemreactor.append({
 			},		
 		]
 	},
-	
 	"Ticks" : 100
 })
 
@@ -4939,8 +4927,8 @@ recipes_industrial_chemreactor.append({
 			},		
 		]
 	},
-	
-	"Ticks" : 150
+	"Ticks" : 150,
+	"Colors": [[1.0,0.7,1.0,0.5],[0.0,1.0,0.5,1.0]]
 })
 
 recipes_industrial_chemreactor.append({
@@ -4969,8 +4957,8 @@ recipes_industrial_chemreactor.append({
 			},		
 		]
 	},
-	
-	"Ticks" : 300
+	"Ticks" : 300,
+	"Colors": [[1.0,0.8,0.2,1.0],[1.0,0.8,0.5,1.0]]
 })
 
 recipes_industrial_chemreactor.append({
@@ -5005,8 +4993,8 @@ recipes_industrial_chemreactor.append({
 			},		
 		]
 	},
-	
-	"Ticks" : 300
+	"Ticks" : 300,
+	"Colors": [[1.0,0.8,0.5,1.0],[1.0,0.9,0.7,1.0]]
 })
 
 recipes_industrial_chemreactor.append({
@@ -5041,8 +5029,8 @@ recipes_industrial_chemreactor.append({
 			},		
 		]
 	},
-	
-	"Ticks" : 300
+	"Ticks" : 300,
+	"Colors": [[1.0,0.8,0.5,1.0],[1.0,0.9,0.7,1.0]]
 })
 
 recipes_chem.append({
@@ -5112,8 +5100,8 @@ recipes_industrial_chemreactor.append({
 			}				
 		]
 	},
-	
-	"Ticks" : 400
+	"Ticks" : 400,
+	"Colors": [[0.4,0.4,0.1,0.8],[0.2,0.2,0.1,0.2]]
 })
 
 for i in {"IronOreDust", "CopperOreDust"}:
@@ -5143,8 +5131,8 @@ for i in {"IronOreDust", "CopperOreDust"}:
 				},		
 			]
 		},
-		
-		"Ticks" : 200
+		"Ticks" : 200,
+		"Colors": [[0.4,0.4,0.1,0.8],[0.2,0.2,0.1,0.2]]
 	})
 	
 recipes_chemical_bath.append({
@@ -5173,8 +5161,8 @@ recipes_chemical_bath.append({
 			}
 		]
 	},
-	
-	"Ticks" : 1000
+	"Ticks" : 1000,
+	"Colors": [[0.4,0.4,0.1,0.8],[0.2,0.2,0.1,0.2]]
 })
 
 recipes_chemical_bath.append({
