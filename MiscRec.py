@@ -4165,7 +4165,7 @@ recipes_chem.append({
 	"Scaled": False,
 })
 
-for i in {"ProducerGas", "Methane", "Hydrogen", "Gasoline"}:
+for i in {"ProducerGas", "Methane", "Hydrogen"}:
 	recipes_gasturb.append({
 		"Input":{
 			"Items":[
@@ -4181,7 +4181,7 @@ for i in {"ProducerGas", "Methane", "Hydrogen", "Gasoline"}:
 		},
 		"ResourceOutput":{
 				"Name": "Kinetic" + static_item,
-				"Count": named_material(i)["Burnable"]["HeatPerTick"] * 14
+				"Count": named_material(i)["Burnable"]["HeatPerTick"] * 14 * 2
 			},
 		"Ticks" : named_material(i)["Burnable"]["BurnTime"],
 		"Name": i,
@@ -4206,7 +4206,51 @@ for i in {"ProducerGas", "Methane", "Hydrogen", "Gasoline"}:
 				"Count": named_material(i)["Burnable"]["HeatPerTick"] * 5
 			},
 		
+		"Ticks" : named_material(i)["Burnable"]["BurnTime"]
+	})
+
+for i in {"Gasoline", "Diesel", "HighCetaneDiesel", "Superfuel"}:
+	recipes_combustion.append({
+		"Input":{
+			"Items":[
+				{
+					"Name": i + static_item,
+					"Count": 1000 * 5
+				}
+			]
+		},
+		"Output":{
+			"Items":[
+			]
+		},
+		"ResourceOutput":{
+				"Name": "Kinetic" + static_item,
+				"Count": named_material(i)["Burnable"]["HeatPerTick"] * 5 * 5
+			},
 		"Ticks" : named_material(i)["Burnable"]["BurnTime"],
+		"Name": i,
+	})
+
+for i in {"Gasoline", "Diesel", "HighCetaneDiesel", "Superfuel"}:
+	recipes_combustion.append({
+		"Input":{
+			"Items":[
+				{
+					"Name": i + static_item,
+					"Count": 1000 * 5 * 2
+				}
+			]
+		},
+		"Output":{
+			"Items":[
+			]
+		},
+		"ResourceOutput":{
+				"Name": "Kinetic" + static_item,
+				"Count": named_material(i)["Burnable"]["HeatPerTick"] * 5 * 5 * 0.95 * 2
+			},
+		"Ticks" : named_material(i)["Burnable"]["BurnTime"],
+		"Name": "Double"+i,
 	})
 
 oil_crack.append({
@@ -4215,7 +4259,7 @@ oil_crack.append({
 		"Items":[
 			{
 				"Name": "RawOil" + static_item,
-				"Count": 600
+				"Count": 1500
 			},
 		]
 	},
@@ -4232,6 +4276,10 @@ oil_crack.append({
 			{
 				"Name": "HeavyOil" + static_item,
 				"Count": 100
+			},
+			{
+				"Name": "Diesel" + static_item,
+				"Count": 400
 			},
 			{
 				"Name": "Gasoline" + static_item,
@@ -4791,6 +4839,102 @@ recipes_industrial_chemreactor.append({
 	"Ticks" : 100
 })
 
+recipes_industrial_chemreactor.append({
+	"Name": "NitricAcid",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Oxygen" + static_item,
+				"Count": 250
+			},
+			{
+				"Name": "Ammonia" + static_item,
+				"Count": 750
+			},
+		]
+	},
+	"ResourceInput":{
+			"Name": "Electricity" + static_item,
+			"Count": 20
+		},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "NitricAcid" + static_item,
+				"Count": 1000
+			},		
+		]
+	},
+	
+	"Ticks" : 150
+})
+
+recipes_industrial_chemreactor.append({
+	"Name": "HighCetaneDiesel",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Diesel" + static_item,
+				"Count": 900
+			},
+			{
+				"Name": "NitricAcid" + static_item,
+				"Count": 100
+			},
+		]
+	},
+	"ResourceInput":{
+			"Name": "Electricity" + static_item,
+			"Count": 10
+		},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "HighCetaneDiesel" + static_item,
+				"Count": 1000
+			},		
+		]
+	},
+	
+	"Ticks" : 300
+})
+
+recipes_industrial_chemreactor.append({
+	"Name": "Superfuel",
+	"Input":{
+		"Items":[
+			{
+				"Name": "HighCetaneDiesel" + static_item,
+				"Count": 1000
+			},
+			{
+				"Name": "FilteringCell" + static_item,
+				"Count": 32,
+				"Probability": 0,
+			},
+			{
+				"Name": "Catalyst" + static_item,
+				"Count": 1,
+				"Probability": 0,
+			},
+		]
+	},
+	"ResourceInput":{
+			"Name": "Electricity" + static_item,
+			"Count": 10
+		},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "Superfuel" + static_item,
+				"Count": 1000
+			},		
+		]
+	},
+	
+	"Ticks" : 300
+})
+
 recipes_chem.append({
 	"Name": "OreWater",
 	"Input":{
@@ -4819,49 +4963,17 @@ recipes_chem.append({
 })
 
 recipes_industrial_chemreactor.append({
-	"Name": "OreWater2",
+	"Name": "OreWaterAll",
 	"Input":{
 		"Items":[
 			{
 				"Name": "OreWater" + static_item,
-				"Count": 500
+				"Count": 1000
 			},
 			{
 				"Name": "FilteringCell" + static_item,
-				"Count": 1,
-				"Probability": .1
-			},
-		]
-	},
-	"ResourceInput":{
-			"Name": "Electricity" + static_item,
-			"Count": 10
-		},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "AluminiumOreDust" + static_item,
-				"Count": 1,
-				"Probability": .5
-			},		
-		]
-	},
-	
-	"Ticks" : 200
-})
-
-recipes_industrial_chemreactor.append({
-	"Name": "OreWater3",
-	"Input":{
-		"Items":[
-			{
-				"Name": "OreWater" + static_item,
-				"Count": 500
-			},
-			{
-				"Name": "FilteringCell" + static_item,
-				"Count": 1,
-				"Probability": .1
+				"Count": 32,
+				"Probability": 0
 			},
 		]
 	},
@@ -4874,76 +4986,24 @@ recipes_industrial_chemreactor.append({
 			{
 				"Name": "CopperOreDust" + static_item,
 				"Count": 1,
-				"Probability": .5
-			},		
-		]
-	},
-	
-	"Ticks" : 200
-})
-
-recipes_industrial_chemreactor.append({
-	"Name": "OreWater4",
-	"Input":{
-		"Items":[
-			{
-				"Name": "OreWater" + static_item,
-				"Count": 500
-			},
-			{
-				"Name": "FilteringCell" + static_item,
-				"Count": 1,
 				"Probability": .1
-			},
-		]
-	},
-	"ResourceInput":{
-			"Name": "Electricity" + static_item,
-			"Count": 10
-		},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "UraniumOreDust" + static_item,
-				"Count": 1,
-				"Probability": .5
-			},		
-		]
-	},
-	
-	"Ticks" : 200
-})
-
-recipes_industrial_chemreactor.append({
-	"Name": "OreWater5",
-	"Input":{
-		"Items":[
-			{
-				"Name": "OreWater" + static_item,
-				"Count": 500
-			},
-			{
-				"Name": "FilteringCell" + static_item,
-				"Count": 1,
-				"Probability": .1
-			},
-		]
-	},
-	"ResourceInput":{
-			"Name": "Electricity" + static_item,
-			"Count": 10
-		},
-	"Output":{
-		"Items":[	
-			{
+			},{
 				"Name": "IronOreDust" + static_item,
 				"Count": 1,
-				"Probability": .5
-			},		
+				"Probability": .1
+			},{
+				"Name": "UraniumOreDust" + static_item,
+				"Count": 1,
+				"Probability": .05
+			},{
+				"Name": "AluminiumOreDust" + static_item,
+				"Count": 1,
+				"Probability": .05
+			}				
 		]
 	},
 	
-	"Ticks" : 200
+	"Ticks" : 400
 })
 
 for i in {"IronOreDust", "CopperOreDust"}:

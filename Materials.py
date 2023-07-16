@@ -455,7 +455,7 @@ materials = [
 			"TotalAsh": 0
 		},
 		"Color": [1,1,1],
-		
+		"MoreEfficientIn":"GasTurbine"
 	},{
 		"Name": "CarbonMonoxide",
 		"Label": "Carbon Monoxide",
@@ -465,7 +465,13 @@ materials = [
 			"HeatPerTick": 40,
 			"TotalAsh": 0
 		},
-		"Color": [1,1,1],
+		"Color": [0.5,0.5,0.5],
+		"MoreEfficientIn":"GasTurbine"
+	},{
+		"Name": "NitricAcid",
+		"Label": "Nitric Acid",
+		"IsFluid": True,		
+		"Color": [1.0,0.5,0.0],
 		
 	},{
 		"Name": "Ash",
@@ -670,8 +676,40 @@ materials = [
 			"TotalAsh": 0
 		},
 		"Color":[.5,.5,0.2]
-	},
-	{
+	},{
+		"Name": "Diesel",
+		"Label": "Diesel",
+		"IsFluid": True,
+		"Tier": 1,
+		"Burnable": {
+			"BurnTime": 800,
+			"HeatPerTick": 30,
+			"TotalAsh": 0
+		},
+		"Color":[.2,.2,0.2]
+	},{
+		"Name": "HighCetaneDiesel",
+		"Label": "High Cetane Diesel",
+		"IsFluid": True,
+		"Tier": 1,
+		"Color":[.1,.1,0.1],
+		"Burnable": {
+			"BurnTime": 1000,
+			"HeatPerTick": 50,
+			"TotalAsh": 0
+		}
+	},{
+		"Name": "Superfuel",
+		"Label": "Superfuel",
+		"IsFluid": True,
+		"Tier": 1,
+		"Color":[.1,.1,0.1],
+		"Burnable": {
+			"BurnTime": 2000,
+			"HeatPerTick": 100,
+			"TotalAsh": 0
+		}
+	},{
 		"Name": "ExtraHeavyOil",
 		"Label": "Extra Heavy Oil",
 		"IsGas": True,

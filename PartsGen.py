@@ -538,6 +538,9 @@ for material in materials:
 			item["DescriptionParts"].append(["burnable", "common", material["Burnable"]["BurnTime"]*material["Burnable"]["HeatPerTick"]])
 			item["DescriptionParts"].append(["power_output", "common", material["Burnable"]["HeatPerTick"]*20])
 		
+		if "MoreEfficientIn" in material:
+			item["DescriptionParts"].append(["MoreEfficientIn", "common", material["MoreEfficientIn"]])
+
 		objects_array.append(item)
 		
 		images.append({ "NewName": "T_" + material["Name"] + "",
@@ -624,6 +627,9 @@ for material in materials:
 			item["DescriptionParts"].append(["burnable", "common", material["Burnable"]["BurnTime"]*material["Burnable"]["HeatPerTick"]])
 			item["DescriptionParts"].append(["power_output", "common", material["Burnable"]["HeatPerTick"]*20])
 		
+		if "MoreEfficientIn" in material:
+			item["DescriptionParts"].append(["MoreEfficientIn", "common", material["MoreEfficientIn"]])
+
 		objects_array.append(item)
 		
 		images.append({ "NewName": "T_" + material["Name"] + "",

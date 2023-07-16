@@ -50,6 +50,8 @@ cvs.append(["ElectricStorage", "Stores electricity<img id=\"Electricity2\"></>"]
 
 cvs.append(["MachineColumn", "Have more item output slots with more stacked layers"])
 
+cvs.append(["MoreEfficientIn", "More efficient in {0}"])
+
 cvs.append(["DataInput", "Read data"])
 cvs.append(["DataOutput", "Write data"])
 cvs.append(["DataConductor", "Conducts data"])
