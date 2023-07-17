@@ -4224,7 +4224,7 @@ for i in {"ProducerGas", "Methane", "Hydrogen"}:
 			"Items":[
 				{
 					"Name": i + static_item,
-					"Count": 1000 * 5
+					"Count": 1000 * 5 / 10.0
 				}			
 			]
 		},
@@ -4237,7 +4237,7 @@ for i in {"ProducerGas", "Methane", "Hydrogen"}:
 				"Count": named_material(i)["Burnable"]["HeatPerTick"] * 5
 			},
 		
-		"Ticks" : named_material(i)["Burnable"]["BurnTime"]
+		"Ticks" : named_material(i)["Burnable"]["BurnTime"] / 10.0
 	})
 
 for i in {"Gasoline", "Diesel", "HighCetaneDiesel", "Superfuel"}:
@@ -4246,7 +4246,7 @@ for i in {"Gasoline", "Diesel", "HighCetaneDiesel", "Superfuel"}:
 			"Items":[
 				{
 					"Name": i + static_item,
-					"Count": 1000 * 5
+					"Count": 1000 * 5 / 10.0
 				}
 			]
 		},
@@ -4258,7 +4258,7 @@ for i in {"Gasoline", "Diesel", "HighCetaneDiesel", "Superfuel"}:
 				"Name": "Kinetic" + static_item,
 				"Count": named_material(i)["Burnable"]["HeatPerTick"] * 5 * 5
 			},
-		"Ticks" : named_material(i)["Burnable"]["BurnTime"],
+		"Ticks" : named_material(i)["Burnable"]["BurnTime"] / 10.0,
 		"Name": i,
 	})
 
@@ -4268,7 +4268,7 @@ for i in {"Gasoline", "Diesel", "HighCetaneDiesel", "Superfuel"}:
 			"Items":[
 				{
 					"Name": i + static_item,
-					"Count": 1000 * 5 * 2
+					"Count": 1000 * 5 * 2 / 10.0
 				}
 			]
 		},
@@ -4280,7 +4280,7 @@ for i in {"Gasoline", "Diesel", "HighCetaneDiesel", "Superfuel"}:
 				"Name": "Kinetic" + static_item,
 				"Count": named_material(i)["Burnable"]["HeatPerTick"] * 5 * 5 * 0.95 * 2
 			},
-		"Ticks" : named_material(i)["Burnable"]["BurnTime"],
+		"Ticks" : named_material(i)["Burnable"]["BurnTime"] / 10.0,
 		"Name": "Double"+i,
 	})
 
