@@ -917,6 +917,26 @@ machines = [
 		"EndTier": 10,
 		"Description": ["KineticInput", "ItemOutput"],
 	},{
+		"Name": "IndustrialGenerator",
+		"Label": "Industrial Generator",
+		"Positions": [
+			[0,0,0],[-1,0,0],[-2,0,0],
+			[0,1,0],[-1,1,0],[-2,1,0],
+			[0,-1,0],[-1,-1,0],[-2,-1,0],
+			
+			[0,0,1],[-1,0,1],[-2,0,1],
+			[0,1,1],[-1,1,1],[-2,1,1],
+			[0,-1,1],[-1,-1,1],[-2,-1,1],
+			
+			[0,0,2],[-1,0,2],[-2,0,2],
+			[0,1,2],[-1,1,2],[-2,1,2],
+			[0,-1,2],[-1,-1,2],[-2,-1,2]
+		],
+		"BlockLogic": "AutoCrafterBlockLogic",
+		"StartTier": 5,
+		"EndTier": 10,
+		"Description": ["KineticInput", "ItemOutput"],
+	},{
 		"Name": "Assembler",
 		"Label": "Assembler",
 		"StartTier": 1,
