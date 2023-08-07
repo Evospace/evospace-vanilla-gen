@@ -396,7 +396,7 @@ machines = [
 		"Description": ["HeatInput"],
 	},{
         "Name": "HandGenerator",
-        "Label": "HandGenerator",
+        "Label": "Hand Generator",
         "StartTier": 1,
         "EndTier": 1,
         "Description": ["KineticOutput", "PowerOutput"],
