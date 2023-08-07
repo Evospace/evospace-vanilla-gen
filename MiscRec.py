@@ -15,6 +15,7 @@ recipes_boiler = []
 recipes_farm = []
 recipes_condens = []
 recipes_generator = []
+recipes_industrial_generator = []
 recipes_electric_engine = []
 recipes_compact_generator = []
 recipes_steam_engine = []
@@ -132,7 +133,7 @@ recipes_industrial_steam_turbine.append({
 		]
 	},
 	"ResourceOutput":{
-		"Name": "Electricity" + static_item,
+		"Name": "Kinetic" + static_item,
 		"Count": fission_fullpower * 0.9 * 0.9
 	},
 	
@@ -1715,6 +1716,29 @@ recipes_generator.append({
 	"ResourceOutput":{
 		"Name": "Electricity" + static_item,
 		"Count": 243
+	},
+	
+	"Ticks" : 200,
+	"Loss": 10,
+})
+
+recipes_industrial_generator.append({
+	"Name": "Generating",
+	"Input":{
+		"Items":[
+		]
+	},
+	"ResourceInput":{
+		"Name": "Kinetic" + static_item,
+		"Count": 270*20
+	},
+	"Output":{
+		"Items":[
+		]
+	},
+	"ResourceOutput":{
+		"Name": "Electricity" + static_item,
+		"Count": 243*20
 	},
 	
 	"Ticks" : 200,
@@ -5635,6 +5659,11 @@ objects_array.append({ "Class": base_recipe,
 objects_array.append({ "Class": base_recipe,
 	"Name": "Generator" + base_recipe,
 	"Recipes": recipes_generator
+})
+
+objects_array.append({ "Class": base_recipe,
+	"Name": "IndustrialGenerator" + base_recipe,
+	"Recipes": recipes_industrial_generator
 })
 
 objects_array.append({ "Class": base_recipe,
