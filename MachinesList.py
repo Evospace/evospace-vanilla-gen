@@ -48,7 +48,7 @@ machines = [
 		"StartTier": 4,
 		"EndTier": 10,
 		"Positions": [[0,0,0],[0,0,1]],
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -63,7 +63,7 @@ machines = [
 		"Label": "Chemical Reactor",
 		"StartTier": 2,
 		"EndTier": 10,		
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -305,7 +305,7 @@ machines = [
 			"Press",
 			"Autocrafter"
 		],
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -322,7 +322,7 @@ machines = [
 	#	"CommonTextKeys":[
 	#		"Autocrafter"
 	#	],
-	#	"BlockLogic":"AutoCrafterBlockLogic",
+	#	"BlockLogic":"SelectCrafterBlockLogic",
 	#	"BlockCreation":"""
 	#	local crafter = BlockLogic:Link(_internal_GetThis())
 	#	
@@ -341,7 +341,7 @@ machines = [
 		"Label": "Stirling Engine",
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -358,11 +358,11 @@ machines = [
 	},{
 		"Name": "CombustionEngine",
 		"Label": "Combustion Engine",
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafterBlockLogic",
 		"StartTier": 2,
 		"EndTier": 10,
 		"Description": ["FluidInput", "KineticOutput"],
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -377,13 +377,15 @@ machines = [
 		"StartTier": 4,
 		"EndTier": 10,
 		"Description": ["ElectricInput", "FluidInput", "FluidOutput","MachineColumn"],
+		"BlockLogic": "OilCrackingTowerBlockLogic",
+		"Positions": [[0,0,0],[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[1,1,0],[-1,-1,0],[1,-1,0],[-1,1,0]],
 	},{
 		"Name": "PyrolysisUnit",
 		"Label": "Pyrolysis Unit",
 		"Positions": [[0,0,0],[0,0,1],[0,0,2],[0,1,0],[0,2,0]],
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -393,12 +395,24 @@ machines = [
 		""",
 		"Description": ["HeatInput"],
 	},{
+        "Name": "HandGenerator",
+        "Label": "HandGenerator",
+        "StartTier": 1,
+        "EndTier": 1,
+        "Description": ["KineticOutput", "PowerOutput"],
+        "PowerOutput": 9,
+        "Positions": [
+            [0, 0, 0],
+            [0, 0, 1],
+            [0, 0, 2],
+        ],
+    },{
 		"Name": "Generator",
 		"Label": "Generator",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -414,11 +428,34 @@ machines = [
 		"PowerOutput": 243,
 		 
 	},{
+		"Name": "IndustrialGenerator",
+		"Label": "Industrial Generator",
+		"Positions": [[0,0,0],[1,0,0],[-1,0,0],[0,1,0],[1,1,0],[-1,1,0],[0,-1,0],[1,-1,0],[-1,-1,0],
+		[0,0,1],[1,0,1],[-1,0,1],[0,1,1],[1,1,1],[-1,1,1],[0,-1,1],[1,-1,1],[-1,-1,1],
+		[0,0,2],[1,0,2],[-1,0,2],[0,1,2],[1,1,2],[-1,1,2],[0,-1,2],[1,-1,2],[-1,-1,2]],
+		"StartTier": 4,
+		"EndTier": 10,
+		"BlockLogic": "SelectCrafterBlockLogic",
+		"BlockCreation":"""
+		local crafter = BlockLogic:Link(_internal_GetThis())
+		
+		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
+		a:SetSidePos(Vec3i:Back(), Vec3i:New( 1, 0, 0 ))
+		a:Bind(crafter:GetInputContainer())
+		
+		local a = Accessor:Link(crafter:CreateSubobject(ElectricOutputAccessor))
+		a:SetSidePos(Vec3i:Front(), Vec3i:New( -1, 0, 0 ))
+		a:Bind(crafter:GetOutputContainer())
+		""",
+		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
+		"PowerOutput": 243*20,
+		 
+	},{
 		"Name": "CompactGenerator",
 		"Label": "Compact Generator",
 		"StartTier": 1,
 		"EndTier": 1,
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -437,7 +474,7 @@ machines = [
 		"Label": "Electric Engine",
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -461,7 +498,7 @@ machines = [
 		"StartTier": 4,
 		"EndTier": 10,
 		"Positions": [[0,0,0],[1,0,0],[0,1,0],[1,1,0],[0,0,1],[1,0,1],[0,1,1],[1,1,1]],
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -543,7 +580,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[-2,0,0],[0,-1,0],[-1,-1,0],[-2,-1,0],[0,0,1],[-1,0,1],[-2,0,1],[0,-1,1],[-1,-1,1],[-2,-1,1]],
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -575,7 +612,7 @@ machines = [
 		],
 		"StartTier": 5,
 		"EndTier": 10,
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -583,11 +620,11 @@ machines = [
 		a:SetSidePos(Vec3i:Front(), Vec3i:New(0, 0, 0))
 		a:Bind(crafter:GetInputContainer())
 		
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricOutputAccessor))
+		local a = Accessor:Link(crafter:CreateSubobject(KineticOutputAccessor))
 		a:SetSidePos(Vec3i:Back(), Vec3i:New(-5, -1, 0))
 		a:Bind(crafter:GetOutputContainer())
 		""",
-		"Description": ["FluidInput", "ElectricOutput","PowerOutput"],
+		"Description": ["FluidInput", "KineticOutput","PowerOutput"],
 		"PowerOutput": fission_fullpower * 0.9 * 0.9,
 	},{
 		"Name": "GasTurbine",
@@ -626,7 +663,7 @@ machines = [
 		],
 		"StartTier": 5,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -661,7 +698,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -691,7 +728,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -756,7 +793,7 @@ machines = [
 		],
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"Description": ["SpeedBonus"],
 	},{
 		"Name": "FluidFurnace",
@@ -781,7 +818,7 @@ machines = [
 		"Label": "Electric Furnace",
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic": "AutoCrafterBlockLogic",
+		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -917,26 +954,6 @@ machines = [
 		"EndTier": 10,
 		"Description": ["KineticInput", "ItemOutput"],
 	},{
-		"Name": "IndustrialGenerator",
-		"Label": "Industrial Generator",
-		"Positions": [
-			[0,0,0],[-1,0,0],[-2,0,0],
-			[0,1,0],[-1,1,0],[-2,1,0],
-			[0,-1,0],[-1,-1,0],[-2,-1,0],
-			
-			[0,0,1],[-1,0,1],[-2,0,1],
-			[0,1,1],[-1,1,1],[-2,1,1],
-			[0,-1,1],[-1,-1,1],[-2,-1,1],
-			
-			[0,0,2],[-1,0,2],[-2,0,2],
-			[0,1,2],[-1,1,2],[-2,1,2],
-			[0,-1,2],[-1,-1,2],[-2,-1,2]
-		],
-		"BlockLogic": "AutoCrafterBlockLogic",
-		"StartTier": 5,
-		"EndTier": 10,
-		"Description": ["KineticInput", "ItemOutput"],
-	},{
 		"Name": "Assembler",
 		"Label": "Assembler",
 		"StartTier": 1,
@@ -948,7 +965,7 @@ machines = [
 			[0,-1,0],[-1,-1,0],
 			[0,-1,1],[-1,-1,1],
 		],
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -969,7 +986,7 @@ machines = [
 			[0,-1,0],[-1,-1,0],
 			[0,-1,1],[-1,-1,1],
 		],
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -1110,7 +1127,7 @@ machines = [
 		"Label": "Electrolyzer",
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -1125,7 +1142,7 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 10,
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -1140,7 +1157,7 @@ machines = [
 		"StartTier": 5,
 		"EndTier": 10,
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -1170,7 +1187,7 @@ machines = [
 		],
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -1193,7 +1210,7 @@ machines = [
 		],
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -1302,7 +1319,7 @@ machines = [
 		"Label": "Radiator",
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -1535,7 +1552,7 @@ machines = [
 		],
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -1604,7 +1621,7 @@ machines = [
 	#	"Label": "Heat Exchanger",
 	#	"StartTier": 3,
 	#	"EndTier": 10,
-	#	"BlockLogic":"AutoCrafterBlockLogic",
+	#	"BlockLogic":"SelectCrafterBlockLogic",
 	#	"BlockCreation":"""
 	#	local crafter = BlockLogic:Link(_internal_GetThis())
 	#	
@@ -1627,7 +1644,7 @@ machines = [
 	#	"Label": "Inverse Heat Exchanger",
 	#	"StartTier": 1,
 	#	"EndTier": 10,
-	#	"BlockLogic":"AutoCrafterBlockLogic",
+	#	"BlockLogic":"SelectCrafterBlockLogic",
 	#	"BlockCreation":"""
 	#	local crafter = BlockLogic:Link(_internal_GetThis())
 	#	
@@ -1679,7 +1696,7 @@ machines = [
 			[0,1,2],[-1,1,2],[-2,1,2],
 			[0,-1,2],[-1,-1,2],[-2,-1,2],
 		],
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -1718,7 +1735,7 @@ machines = [
 			[0,1,0],[-1,1,0],[-2,1,0],
 			[-1,-1,0],[0,-1,0],[-2,-1,0],
 		],
-		"BlockLogic":"AutoCrafterBlockLogic",
+		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		
@@ -1780,19 +1797,7 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 2,		
 		"Description": ["DataOutput"],
-	},{
-        "Name": "HandGenerator",
-        "Label": "HandGenerator",
-        "StartTier": 1,
-        "EndTier": 1,
-        "Description": ["KineticOutput", "PowerOutput"],
-        "PowerOutput": 9,
-        "Positions": [
-            [0, 0, 0],
-            [0, 0, 1],
-            [0, 0, 2],
-        ],
-    },
+	},
     {
         "Name": "KineticHeater",
         "Label": "Kinetic Heater",
@@ -1800,7 +1805,7 @@ machines = [
         "EndTier": 10,
         "Description": ["KineticInput", "HeatOutput", "PowerOutput"],
         "PowerOutput": 9,
-        "BlockLogic":"AutoCrafterBlockLogic",
+        "BlockLogic":"SelectCrafterBlockLogic",
         "BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		

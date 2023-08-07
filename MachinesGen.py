@@ -477,7 +477,7 @@ for machine in machines:
 						]
 					},
 					"Tier": tier,
-					"Ticks" : 20
+					"Ticks" : 80
 				})
 				
 			if machine["Name"] == "PyrolysisUnit":
@@ -1020,6 +1020,35 @@ for machine in machines:
 					"Tier": tier,
 					"Ticks" : 20
 				})
+
+			if machine["Name"] == "IndustrialGenerator":
+				append_recipe({
+					"Name": tier_material[tier] + machine["Name"],
+					"Input":{
+						"Items":[
+							{
+								"Name": wires[tier],
+								"Count": 32 + level * 12
+							},{
+								"Name": tier_material[tier] + "Plate" + static_item,
+								"Count": 8
+							},{
+								"Name": tier_material[tier] + "Parts" + static_item,
+								"Count": 14 + parts_ramp(level)*3
+							}
+						]
+					},
+					"Output":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Tier": tier,
+					"Ticks" : 100
+				})
 				
 			if machine["Name"] == "CompactGenerator":
 				append_recipe({
@@ -1420,7 +1449,7 @@ for machine in machines:
 						]
 					},
 					"Tier": tier,
-					"Ticks" : 20
+					"Ticks" : 50
 				})
 				
 			if machine["Name"] == "Assembler":
@@ -2255,6 +2284,41 @@ for machine in machines:
 					"Tier": tier,
 					"Ticks" : 100
 				})
+
+			if machine["Name"] == "CombustionEngine":
+				append_recipe({
+					"Name": tier_material[tier] + machine["Name"],
+					"Input":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + "Plate" + static_item,
+								"Count": 15
+							},
+							{
+								"Name": tier_material[tier] + "Parts" + static_item,
+								"Count": 20 + level * 5
+							},
+							{
+								"Name": circuits[tier],
+								"Count": 3
+							},
+							{
+								"Name": "Catalyst" + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Output":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Tier": tier,
+					"Ticks" : 100
+				})
 				
 			if machine["Name"] == "BatteryBox":
 				append_recipe({
@@ -2416,7 +2480,7 @@ for machine in machines:
 						]
 					},
 					"Tier": tier,
-					"Ticks" : 20
+					"Ticks" : 200
 				})
 				
 			if machine["Name"] == "GasTurbine":
