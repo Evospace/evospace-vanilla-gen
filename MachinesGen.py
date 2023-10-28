@@ -794,6 +794,41 @@ for machine in machines:
 					"Tier": tier,
 					"Ticks" : 20
 				})
+
+			if machine["Name"] == "Freezer":
+				append_recipe({
+					"Name": tier_material[tier] + machine["Name"],
+					"Input":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + "Plate" + static_item,
+								"Count": 6
+							},
+							{
+								"Name": tier_material[tier] + "Parts" + static_item,
+								"Count": 15 + parts_ramp(level)
+							},
+							{
+								"Name": tier_material[tier] + "ElectricEngine" + static_item,
+								"Count": 2
+							},
+							{
+								"Name": "CopperPipe" + static_item,
+								"Count": 10
+							}
+						]
+					},
+					"Output":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + "Freezer" + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Tier": tier,
+					"Ticks" : 20
+				})
 				
 			if machine["Name"] == "FlatTerminal":
 				append_recipe({
