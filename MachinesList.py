@@ -376,9 +376,23 @@ machines = [
 		"Label": "Oil Cracking Tower",
 		"StartTier": 4,
 		"EndTier": 10,
-		"Description": ["ElectricInput", "FluidInput", "FluidOutput","MachineColumn"],
-		"BlockLogic": "OilCrackingTowerBlockLogic",
-		"Positions": [[0,0,0],[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[1,1,0],[-1,-1,0],[1,-1,0],[-1,1,0]],
+		"Description": ["ElectricInput", "FluidInput", "FluidOutput"],
+		"BlockLogic": "SelectCrafterBlockLogic",
+		"Positions": [[0,0,0],[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[1,1,0],[-1,-1,0],[1,-1,0],[-1,1,0],
+                [0,0,1],[1,0,1],[-1,0,1],[0,1,1],[0,-1,1],[1,1,1],[-1,-1,1],[1,-1,1],[-1,1,1],
+                [0,0,2],[1,0,2],[-1,0,2],[0,1,2],[0,-1,2],[1,1,2],[-1,-1,2],[1,-1,2],[-1,1,2],
+                [0,0,3],[1,0,3],[-1,0,3],[0,1,3],[0,-1,3],[1,1,3],[-1,-1,3],[1,-1,3],[-1,1,3],
+                [0,0,4],[1,0,4],[-1,0,4],[0,1,4],[0,-1,4],[1,1,4],[-1,-1,4],[1,-1,4],[-1,1,4],
+                [0,0,5],[1,0,5],[-1,0,5],[0,1,5],[0,-1,5],[1,1,5],[-1,-1,5],[1,-1,5],[-1,1,5],
+                [0,0,6],[1,0,6],[-1,0,6],[0,1,6],[0,-1,6],[1,1,6],[-1,-1,6],[1,-1,6],[-1,1,6],
+                [0,0,7],[1,0,7],[-1,0,7],[0,1,7],[0,-1,7],[1,1,7],[-1,-1,7],[1,-1,7],[-1,1,7]],
+        "BlockCreation":"""
+		local crafter = BlockLogic:Link(_internal_GetThis())
+		
+		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
+		a:SetSidePos(Vec3i:Back(), Vec3i:New( -1, 0, 0 ))
+		a:Bind(crafter:GetInputContainer())
+		""",
 	},{
 		"Name": "PyrolysisUnit",
 		"Label": "Pyrolysis Unit",
