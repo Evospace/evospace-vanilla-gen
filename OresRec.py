@@ -51,7 +51,6 @@ for ore_type in ore_types:
 			"Tier": tier,
 			"Ticks": 150 * ore_type["Hardness"],
 		})
-		
 		if "SmeltLevel" in named_mat and named_mat["SmeltLevel"] <= 0:
 			recipes_smelt.append({
 				"Name": ore_type["Name"] + "Ore",
@@ -79,7 +78,6 @@ for ore_type in ore_types:
 				"Tier": extract_tier(ore_type) - 1,
 				"Ticks" : 400,
 			})
-		
 		out_items = []
 		out_items.append({
 			"Name": ore_type["Name"] + "OreDust" + static_item,
@@ -110,7 +108,6 @@ for ore_type in ore_types:
 			"Tier": extract_tier(ore_type),
 			"Ticks" : 200,
 		})
-		
 		recipes_mac.append({
 			"Name": ore_type["Name"] + "OreGravel",
 			"Input":{
@@ -141,7 +138,6 @@ for ore_type in ore_types:
 			"Tier": extract_tier(ore_type),
 			"Ticks" : 200,
 		})
-		
 		if "SmeltLevel" in named_mat and named_mat["SmeltLevel"] <= 0:
 			recipes_smelt.append({
 				"Name": ore_type["Name"] + "OreDust",
@@ -218,7 +214,6 @@ for ore_type in ore_types:
 				"Ticks" : 300,
 				"Tier": extract_tier(ore_type),
 			})
-		
 		out_items = []
 		out_items.append({
 			"Name": ore_type["Name"] + "OreGravel" + static_item,
@@ -233,7 +228,6 @@ for ore_type in ore_types:
 			
 			if "ByproductChanse" in ore_type:
 				oi["Probability"] = ore_type["ByproductChanse"][0]
-		
 			out_items.append(oi)
 				
 		out_items.append({
@@ -265,7 +259,6 @@ for ore_type in ore_types:
 			"Tier": extract_tier(ore_type),
 			"Ticks" : 130,
 		})
-		
 		out_items = []
 		out_items.append({
 			"Name": (ore_type["Name"] + "Dust" + static_item) if "Oxide" not in ore_type else (ore_type["Name"] + "OxideDust" + static_item),
@@ -302,7 +295,6 @@ for ore_type in ore_types:
 			"Ticks" : 200,
 			"Tier": extract_tier(ore_type),
 		})	
-		
 		out_items = []
 		if "Byproducts" in ore_type and len(ore_type["Byproducts"]) > 0:
 			oi = {
@@ -335,7 +327,6 @@ for ore_type in ore_types:
 			"Ticks" : 100,
 			"Tier": extract_tier(ore_type),
 		})	
-		
 		for i in {"OreGravel", "ImpureOreGravel"}:
 			recipes_sifter.append({
 				"Name": ore_type["Name"] + i,
@@ -373,7 +364,6 @@ for ore_type in ore_types:
 				"Ticks" : 40,
 				"Tier": extract_tier(ore_type),
 			})	
-		
 		#out_items = []
 		#out_items.append({
 		#	"Name": (ore_type["Name"] + "Dust" + static_item) if "Oxide" not in ore_type else (ore_type["Name"] + "OxideDust" + static_item),

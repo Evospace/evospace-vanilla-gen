@@ -15,7 +15,6 @@ ore_types = [
 		],
 		"Color": [1, .1,  0],
 		"Hardness": 1.5,
-		
 		"Drops": "CopperOre",
 		"Remain": 1000,
 	},{
@@ -28,7 +27,6 @@ ore_types = [
 		],
 		"Color": [111 / 255., 106 / 255., 81 / 255.],
 		"Hardness": 2,
-		
 		"Drops": "IronOre",
 		"Remain": 1000,
 	},{
@@ -93,21 +91,16 @@ for ore_type in ore_types:
 	item = { "Class": solid_static_item,
 		"Name": item_name,
 		"Mesh": "Models/Ore",
-		
 		"Image": "T_" + ore_type["Name"] + "Ore",
 		"MaxCount": 32, 
 		"Category": "Ore",
-		
 		"LabelParts": [[ore_type["Name"]+"Ore", "ores"]],
-		
 		"CommonTextKeys":[
 		],
-		
 		"Materials" : [
 			"Materials/" + ore_type["Name"] + "ImpureOreGravel"
 		],
 	}
-		
 	if "SmeltLevel" in named_mat:
 		item["CommonTextKeys"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
 	
@@ -150,15 +143,11 @@ for ore_type in ore_types:
 			"CommonTextKeys":[
 			],
 		}
-		
 		if "SmeltLevel" in named_mat:
 			item["CommonTextKeys"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
-		
 		if "Mesh" in named_mat:
 			item["Mesh"] = named_mat["Mesh"]
-		
 		objects_array.append(item)
-		
 		# gravel
 		cvs.append([ore_type["Name"]+"OreGravel", ore_type["Name"]+" Ore Gravel"])
 		item = { "Class": solid_static_item,
@@ -182,7 +171,6 @@ for ore_type in ore_types:
 			
 		if "SmeltLevel" in named_mat:
 			item["CommonTextKeys"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
-		
 		objects_array.append(item)
 			
 		# impure dust
@@ -211,34 +199,28 @@ for ore_type in ore_types:
 			
 		if "SmeltLevel" in named_mat:
 			item["CommonTextKeys"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
-		
 		objects_array.append(item)
-		
 		images.append({
 			"Base": "T_" + "Gravel",
 			"NewName": "T_" + ore_type["Name"] + "OreGravel",
 			"MulMask": "T_" + ore_type["Name"],
 			"AddMask": "T_" + "Gravel" + additive_ico
 		})
-		
 		images.append({
 			"Base": "T_" + "Gravel",
 			"NewName": "T_" + ore_type["Name"] + "ImpureOreGravel",
 			"MulMask": "T_" + ore_type["Name"],
 			"AddMask": ["T_" + "impure_gravel_add", "T_"+"Gravel" + additive_ico]
 		})
-		
 		images.append({
 			"Base": "T_" + "Dust",
 			"NewName": "T_" + ore_type["Name"] + "OreDust",
 			"MulMask": "T_" + ore_type["Name"],
 			"AddMask": "T_" + "impure_dust_add"
 		})
-		
 data = {
 	"Objects": objects_array
 }
-		
 filename = "Generated/Mixed/ores.json"
 
 write_file(filename, data)

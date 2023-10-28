@@ -99,7 +99,6 @@ materials = [
 		"IsIngot": True,
 		"SmeltLevel": 0,
 		"IsBlock": True,
-		
 	},{
 		"Name" : "Superconductor",
 		"Label" : "Superconductor",
@@ -200,7 +199,6 @@ materials = [
 			"HeatPerTick": 18,
 			"TotalAsh": 0.06
 		},
-		
 		"IsBlock": True
 	},{
 		"Name": "Tungsten",
@@ -302,7 +300,6 @@ materials = [
 		"Name": "Cement",
 		"Label": "Cement",
 		"IsDust": True,
-		
 	},{
 		"Name": "Neutronium",
 		"Label": "Neutronium",
@@ -315,7 +312,6 @@ materials = [
 		"SmeltLevel": 0,
 		"IsDust": True,
 		"Tier": 3
-		
 	},{
 		"Name": "Plutonium",
 		"Label": "Plutonium",
@@ -478,7 +474,6 @@ materials = [
 		"Label": "Nitric Acid",
 		"IsFluid": True,		
 		"Color": [1.0,0.5,0.0],
-		
 	},{
 		"Name": "Ash",
 		"Label": "Ash",
@@ -593,9 +588,7 @@ materials = [
 	},{
 		"Name": "OreWater",
 		"Label": "Ore Water",
-		
 		"IsFluid": True,
-		
 	},{
 		"Name": "RareEarthElement",
 		"Label": "Rare Earth Element",
@@ -604,7 +597,6 @@ materials = [
 	},{
 		"Name": "Log",
 		"Label": "Log",
-		
 		"IsExact": True,
 		"Tier": 0,
 		"Burnable": {
@@ -626,7 +618,6 @@ materials = [
 	},{
 		"Name": "Plank",
 		"Label": "Plank",
-		
 		"IsExact": True,
 		"Tier": 0,
 		"Burnable": {
