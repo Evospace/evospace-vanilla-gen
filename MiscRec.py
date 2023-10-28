@@ -1608,7 +1608,6 @@ recipes_chem.append({
 				"Count": 1
 			}
 		],
-		
 	},
 	"ResourceInput":{
 		"Name": "Electricity" + static_item,
@@ -1638,7 +1637,6 @@ recipes_chem.append({
 				"Count": 1
 			}
 		],
-		
 	},
 	"ResourceInput":{
 		"Name": "Electricity" + static_item,
@@ -1646,7 +1644,6 @@ recipes_chem.append({
 	},
 	"Ticks" : 200,
 })
-		
 recipes_boiler.append({
 	"Name": "Boiling",
 	"Input":{
@@ -1656,7 +1653,6 @@ recipes_boiler.append({
 				"Count": 50
 			}
 		],
-		
 	},
 	"ResourceInput":{
 			"Name": "Heat" + static_item,
@@ -2016,7 +2012,6 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 				}
 			]
 		},
-		
 		"Ticks" : 2000
 	})
 
@@ -2042,7 +2037,6 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 				}
 			]
 		},
-		
 		"Ticks" : 2000
 	})
 	
@@ -2068,7 +2062,6 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 				}
 			]
 		},
-		
 		"Ticks" : 2000
 	})
 	
@@ -2095,7 +2088,6 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 				}
 			]
 		},
-		
 		"Ticks" : 2000
 	})
 
@@ -2189,7 +2181,6 @@ recipes_mixer.append({
 			}
 		]
 	},
-	
 	"Ticks" : 400,
 })
 recipes_mixer.append({
@@ -2235,7 +2226,6 @@ recipes_mixer.append({
 				"Count": 2
 			},
 		],
-		
 	},
 	"ResourceInput":{
 			"Name": "Kinetic" + static_item,
@@ -2346,7 +2336,6 @@ recipes_sep2.append({
 			}
 		]
 	},
-	
 	"Ticks": 400,
 })	
 
@@ -2408,7 +2397,6 @@ recipes_sep2.append({
 			},
 		]
 	},
-	
 	"Ticks" : 100
 })	
 
@@ -2471,7 +2459,6 @@ recipes_sep2.append({
 			}
 		]
 	},
-	
 	"Ticks" : 100
 })
 
@@ -2509,7 +2496,6 @@ recipes_arc_furnace.append({
 				"Count": 1
 			},
 		],
-		
 	},
 	"ResourceInput":{
 			"Name": "Electricity" + static_item,
@@ -2871,7 +2857,6 @@ recipes_indu.append({
 				"Count": 1
 			},
 		],
-		
 	},
 	"ResourceInput":{
 				"Name": "Heat" + static_item,
@@ -2898,7 +2883,6 @@ recipes_indu.append({
 				"Count": 1
 			},
 		],
-		
 	},
 	"ResourceInput":{
 				"Name": "Heat" + static_item,
@@ -2925,7 +2909,6 @@ recipes_indu.append({
 				"Count": 1
 			},
 		],
-		
 	},
 	"ResourceInput":{
 				"Name": "Heat" + static_item,
@@ -2952,7 +2935,6 @@ recipes_indu.append({
 				"Count": 1
 			},
 		],
-		
 	},
 	"ResourceInput":{
 			"Name": "Heat" + static_item,
@@ -2992,7 +2974,6 @@ recipes_sep.append({
 			}
 		]
 	},
-	
 	"Ticks" : 1000
 })
 
@@ -3082,7 +3063,6 @@ recipes_mixer.append({
 			}
 		]
 	},
-	
 	"Ticks": 300,
 })
 
@@ -3164,7 +3144,6 @@ recipes_electrolyzer.append({
 			}
 		]
 	},
-	
 	"Ticks" : 500
 })
 
@@ -3315,7 +3294,6 @@ recipes_electrolyzer.append({
 			
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -3346,7 +3324,6 @@ recipes_electrolyzer.append({
 			
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -3377,7 +3354,6 @@ recipes_electrolyzer.append({
 			
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -3455,7 +3431,6 @@ recipes_cutter.append({
 			}
 		]
 	},
-	
 	"Ticks" : 80,
 })
 recipes_cutter.append({
@@ -3672,7 +3647,6 @@ recipes_cutter.append({
 			}
 		]
 	},
-	
 	"Ticks" : 100,
 })
 recipes_cutter.append({
@@ -3722,7 +3696,6 @@ recipes_cutter.append({
 			}
 		]
 	},
-	
 	"Ticks" : 100,
 })
 recipes_cutter.append({
@@ -3816,13 +3789,11 @@ recipes_elfurn.append({
 	"Output":{
 		"Items":[
 		],
-		
 	},
 	"ResourceOutput":{
 			"Name": "Heat" + static_item,
 			"Count": 50,
 		},
-	
 	"Ticks" : 200,
 	"Loss": 10,
 })
@@ -3840,7 +3811,6 @@ recipes_coil.append({
 	"Output":{
 		"Items":[
 		],
-		
 	},
 	"ResourceOutput":{
 			"Name": "Heat" + static_item,
@@ -3932,7 +3902,6 @@ recipes_ferm.append({
 			}
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -3941,7 +3910,6 @@ recipes_radiator.append({
 	"Input":{
 		"Items":[
 		],
-		
 	},
 	"ResourceInput":{
 			"Name": "Heat" + static_item,
@@ -4063,7 +4031,6 @@ recipes_chem.append({
 			}
 		]
 	},
-	
 	"Ticks" : 400,
 })
 
@@ -4154,7 +4121,6 @@ recipes_chem.append({
 			},
 		],
 	},
-	
 	"Ticks" : 200,
 	"Scaled": False,
 })
@@ -4260,7 +4226,6 @@ for i in {"ProducerGas", "Methane", "Hydrogen"}:
 				"Name": "Kinetic" + static_item,
 				"Count": named_material(i)["Burnable"]["HeatPerTick"] * 5
 			},
-		
 		"Ticks" : named_material(i)["Burnable"]["BurnTime"] / 10.0
 	})
 
@@ -5332,7 +5297,6 @@ recipes_freezer.append({
 			}
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -5380,7 +5344,7 @@ recipes_computer.append({
 			}
 		]
 	},
-	
+
 	"Ticks" : 40
 })
 
@@ -5402,7 +5366,6 @@ recipes_q_computer.append({
 			}
 		]
 	},
-	
 	"Ticks" : 40
 })
 
@@ -5622,7 +5585,6 @@ for i in ["Circuit", "AdvancedCircuit", "Processor", "QuantumCircuit", "QuantumP
 				}
 			]
 		},
-		
 		"Ticks" : 40
 	})
 
