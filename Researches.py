@@ -37,6 +37,7 @@ append_levels({
 	"LabelParts": [["InitialScan", "researches"]],
 	"CompleteByDefault": True,
 	"Chapter": "Production"+static_chapter,
+	"MainResearch": True,
 })
 append_levels({
 	"Class": static_research,
@@ -54,6 +55,7 @@ append_levels({
 	"Position": [0,1],
 	"Chapter": "Production"+static_chapter,
 	"CompleteByDefault": True,
+	"MainResearch": True,
 })
 append_levels({
 	"Class": static_research,
@@ -94,6 +96,7 @@ append_levels({
 	"Position": [0,-1],
 	"Chapter": "Production"+static_chapter,
 	"CompleteByDefault": True,
+	"MainResearch": True,
 })
 append_levels({
 	"Class": static_research,
@@ -156,6 +159,7 @@ append_levels({
 	"AlsoUnlocks": [["Hand" + base_recipe, "SteelParts"],["Hand" + base_recipe, "SteelPlate"],["Hand" + base_recipe, "SteelPipe"]],
 	"Chapter":"Production"+static_chapter,
 	"Position": [3, 0],
+	"MainResearch": True,
 })
 append_levels({
 	"Class": static_research,
@@ -166,6 +170,7 @@ append_levels({
 	"Levels": [2,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%ArcSmelter"],["Constructor" + base_recipe, "%Material%ArcSmelter"]],
 	"Chapter":"Production"+static_chapter,
+	"MainResearch": True,
 })
 append_levels({
 	"Class": static_research,
@@ -189,6 +194,7 @@ append_levels({
 	"Position": [5,-1],
 	"Levels": [3,3],
 	"CostLevelOffset": -1,
+	"MainResearch": True,
 })
 append_levels({
 	"Class": static_research,
@@ -465,6 +471,7 @@ append_levels({
 	"Chapter":"Production"+static_chapter,
 	"Position": [1,1],
 	"CompleteByDefault": True,
+	"MainResearch": True,
 })
 append_levels({
 	"Class": static_research,
@@ -475,6 +482,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, "%Material%Furnace"],["Constructor" + base_recipe, "%Material%Furnace"]],
 	"Chapter":"Production"+static_chapter,
 	"Position": [2, 1],
+	"MainResearch": True,
 })
 append_levels({
 	"Class": static_research,
@@ -485,6 +493,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, "%Material%Oven"],["Constructor" + base_recipe, "%Material%Oven"]],
 	"Position": [2,0],
 	"Chapter":"Production"+static_chapter,
+	"MainResearch": True,
 })
 append_levels({
 	"Class": static_research,
@@ -760,6 +769,16 @@ append_levels({
 })
 append_levels({
 	"Class": static_research,
+	"Name": "CombustionEngine" + static_research,
+	"LabelParts": [["CombustionEngine", "machines"]],
+	"Chapter": "Production" + static_chapter,
+	"RequiredResearches": ["IndustrialChemReactor" + static_research],
+	"Levels": [3,7],
+	"Unlocks": [["Hand" + base_recipe, "%Material%CombustionEngine"],["Constructor" + base_recipe, "%Material%CombustionEngine"]],
+	"Position": [4,-7],
+})
+append_levels({
+	"Class": static_research,
 	"Name": "StainlessSteelProduction" + static_research,
 	"LabelParts": [["StainlessSteelProduction", "researches"]],
 	"RequiredResearches": ["Chemistry" + static_research, "AluminiumProduction" + static_research],
@@ -770,6 +789,7 @@ append_levels({
 	"Position": [6,-2],
 	"Levels": [4,4],
 	"CostLevelOffset": -1,
+	"MainResearch": True,
 })
 append_levels({
 	"Class": static_research,
@@ -803,6 +823,7 @@ append_levels({
 	"Position": [7,-4],
 	"Levels": [4,4],
 	"CostLevelOffset": -1,
+	"MainResearch": True,
 })
 append_levels({
 	"Class": static_research,
@@ -833,6 +854,7 @@ append_levels({
 	"Chapter": "Production"+static_chapter,
 	"Position": [8,-4],
 	"Levels": [5,7],
+	"MainResearch": True,
 })
 append_levels({
 	"Class": static_research,
@@ -845,6 +867,7 @@ append_levels({
 	"Chapter": "Production" + static_chapter,
 	"Position": [9,-4],
 	"Levels": [5,5],
+	"MainResearch": True,
 })
 append_levels({
 	"Class": static_research,
@@ -855,6 +878,7 @@ append_levels({
 	"Chapter":"Production"+static_chapter,
 	"Position": [10,-4],
 	"Levels": [6,7],
+	"MainResearch": True,
 })
 append_levels({
 	"Class": static_research,
@@ -867,6 +891,7 @@ append_levels({
 	"Chapter": "Production" + static_chapter,
 	"Position": [11,-4],
 	"Levels": [6,6],
+	"MainResearch": True,
 })
 append_levels({
 	 "Class": static_research,
@@ -877,6 +902,7 @@ append_levels({
 	 "Chapter": "Production" + static_chapter,
 	 "Position": [12,-4],
 	 "Levels": [7,7],
+	 "MainResearch": True,
  })
 append_levels({
 	"Class": static_research,
@@ -898,6 +924,7 @@ append_levels({
 	"Levels": [4,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%IndustrialSmelter"],["Constructor" + base_recipe, "%Material%IndustrialSmelter"]],
 	"Position": [7,-2],
+	"MainResearch": True,
 })
 append_levels({
 	"Class": static_research,

@@ -1115,7 +1115,7 @@ machines = [
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Left(), Vec3i:New(-1,0,0))
+		a:SetSidePos(Vec3i:Back(), Vec3i:New(-1,0,0))
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["KineticInput", "HeatOutput"],

@@ -4279,43 +4279,43 @@ oil_crack.append({
 		"Items":[
 			{
 				"Name": "RawOil" + static_item,
-				"Count": 1500
+				"Count": 15000
 			},
 		]
 	},
 	"ResourceInput":{
 			"Name": "Electricity" + static_item,
-			"Count": 15
+			"Count": 150
 		},
 	"Output":{
 		"Items":[	
 			{
 				"Name": "ExtraHeavyOil" + static_item,
-				"Count": 80
+				"Count": 800
 			},
 			{
 				"Name": "HeavyOil" + static_item,
-				"Count": 100
+				"Count": 1000
 			},
 			{
 				"Name": "Diesel" + static_item,
-				"Count": 400
+				"Count": 4000
 			},
 			{
 				"Name": "Gasoline" + static_item,
-				"Count": 100
+				"Count": 1000
 			},
 			{
 				"Name": "Ethylene" + static_item,
-				"Count": 500
+				"Count": 5000
 			},
 			{
 				"Name": "Methane" + static_item,
-				"Count": 500
+				"Count": 5000
 			},
 			{
 				"Name": "Hydrogen" + static_item,
-				"Count": 250
+				"Count": 2500
 			}				
 		]
 	},
