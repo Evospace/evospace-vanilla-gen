@@ -427,17 +427,18 @@ machines = [
 		"Label": "Industrial Generator",
 		"Positions": [[0,0,0],[1,0,0],[-1,0,0],[0,1,0],[1,1,0],[-1,1,0],[0,-1,0],[1,-1,0],[-1,-1,0],
 		[0,0,1],[1,0,1],[-1,0,1],[0,1,1],[1,1,1],[-1,1,1],[0,-1,1],[1,-1,1],[-1,-1,1],
-		[0,0,2],[1,0,2],[-1,0,2],[0,1,2],[1,1,2],[-1,1,2],[0,-1,2],[1,-1,2],[-1,-1,2]],
+		[0,0,2],[1,0,2],[-1,0,2],[0,1,2],[1,1,2],[-1,1,2],[0,-1,2],[1,-1,2],[-1,-1,2],
+        [-1,-2,0],[0,-2,0],[1,-2,0],[-1,-2,1],[0,-2,1],[1,-2,1],[-1,-2,2],[0,-2,2],[1,-2,2]],
 		"StartTier": 4,
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
 		local crafter = BlockLogic:Link(_internal_GetThis())
 		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New( 1, 0, 0 ))
+		a:SetSidePos(Vec3i:Right(), Vec3i:New( 0, -2, 0 ))
 		a:Bind(crafter:GetInputContainer())
 		local a = Accessor:Link(crafter:CreateSubobject(ElectricOutputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New( -1, 0, 0 ))
+		a:SetSidePos(Vec3i:Left(), Vec3i:New( 0, 1, 0 ))		
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
