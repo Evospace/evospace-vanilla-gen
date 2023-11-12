@@ -1182,6 +1182,27 @@ recipes_farm.append({
 	"Ticks" : 1000,
 })
 
+recipes_farm.append({
+	"Name":"Rapeseed",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Water" + static_item,
+				"Count": 625
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "Rapeseed" + static_item,
+				"Count": 10
+			}
+		]
+	},
+	"Ticks" : 1000,
+})
+
 recipes_centrifuge.append({
 	"Name":"DepletedUraniumCell",
 	"Input":{
@@ -3821,6 +3842,32 @@ recipes_coil.append({
 })
 
 recipes_ferm.append({
+	"Name": "Rapseed",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Rapeseed" + static_item,
+				"Count": 1
+			},
+		]
+	},
+	"ResourceInput":{
+		"Name": "Electricity" + static_item,
+		"Count": 10
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "RapeseedOil" + static_item,
+				"Count": 500
+			}
+		]
+	},
+	
+	"Ticks" : 200
+})
+
+recipes_ferm.append({
 	"Name": "MethaneFromBiomass",
 	"Input":{
 		"Items":[
@@ -4621,7 +4668,7 @@ recipes_industrial_chemreactor.append({
 				"Name": "Ammonia" + static_item,
 				"Count": 3000
 			},{
-				"Name": "Methanol" + static_item,
+				"Name": "Ethanol" + static_item,
 				"Count": 4000
 			},
 			{
@@ -4658,7 +4705,7 @@ recipes_industrial_chemreactor.append({
 				"Name": "Ammonia" + static_item,
 				"Count": 3000
 			},{
-				"Name": "Methanol" + static_item,
+				"Name": "Ethanol" + static_item,
 				"Count": 4000
 			},
 			{
@@ -4973,7 +5020,7 @@ recipes_industrial_chemreactor.append({
 	"Output":{
 		"Items":[	
 			{
-				"Name": "Methanol" + static_item,
+				"Name": "Ethanol" + static_item,
 				"Count": 1000
 			},		
 		]
