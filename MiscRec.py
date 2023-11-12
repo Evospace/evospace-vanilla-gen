@@ -118,6 +118,29 @@ def append_recipe_hand_press(recipe):
 
 # wrenching
 
+recipes_industrial_generator.append({
+	"Name": "Generating",
+	"Input":{
+		"Items":[
+		]
+	},
+	"ResourceInput":{
+		"Name": "Kinetic" + static_item,
+		"Count": fission_fullpower * 0.9
+	},
+	"Output":{
+		"Items":[
+		]
+	},
+	"ResourceOutput":{
+		"Name": "Electricity" + static_item,
+		"Count": fission_fullpower * 0.9 * 0.9
+	},
+	
+	"Ticks" : 200,
+	"Loss": 10,
+})
+
 recipes_industrial_steam_turbine.append({
 	"Name": "Rotating",
 	"Input":{
@@ -126,7 +149,7 @@ recipes_industrial_steam_turbine.append({
 	},
 	"ResourceInput":{
 		"Name": "Steam" + static_item,
-		"Count": fission_fullpower * 0.9
+		"Count": fission_fullpower * 0.95
 	},
 	"Output":{
 		"Items":[
@@ -134,7 +157,7 @@ recipes_industrial_steam_turbine.append({
 	},
 	"ResourceOutput":{
 		"Name": "Kinetic" + static_item,
-		"Count": fission_fullpower * 0.9 * 0.9
+		"Count": fission_fullpower * 0.9
 	},
 	
 	"Ticks" : 200,
@@ -161,7 +184,7 @@ recipes_industrial_boiler.append({
 	},
 	"ResourceOutput":{
 		"Name":"Steam" + static_item,
-		"Count": fission_fullpower * 0.9
+		"Count": fission_fullpower * 0.95
 	},
 	"Ticks" : 200,
 })
@@ -1733,29 +1756,6 @@ recipes_generator.append({
 	"ResourceOutput":{
 		"Name": "Electricity" + static_item,
 		"Count": 243
-	},
-	
-	"Ticks" : 200,
-	"Loss": 10,
-})
-
-recipes_industrial_generator.append({
-	"Name": "Generating",
-	"Input":{
-		"Items":[
-		]
-	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 270*20
-	},
-	"Output":{
-		"Items":[
-		]
-	},
-	"ResourceOutput":{
-		"Name": "Electricity" + static_item,
-		"Count": 243*20
 	},
 	
 	"Ticks" : 200,
