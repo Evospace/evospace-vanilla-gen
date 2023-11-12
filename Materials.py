@@ -502,17 +502,6 @@ materials = [
 		"Tier": 2,
 		"Color":[0.5,0.2,0.2]
 	},{
-		"Name": "Methanol",
-		"Label": "Methanol",
-		"IsGas": True,
-		"Burnable": {
-			"BurnTime": 1000,
-			"HeatPerTick": 20,
-			"TotalAsh": 0
-		},
-		"Tier": 2,
-		"Color":[0.5,0.2,0.2]
-	},{
 		"Name": "Methane",
 		"Label": "Methane",
 		"IsGas": True,
@@ -643,6 +632,13 @@ materials = [
 		"Label": "Sulfuric Acid",
 		"IsFluid": True,
 		"Tier": 3
+	},
+	{
+		"Name": "Rapeseed",
+		"Label": "Rapeseed",
+		"IsExact": True,
+		"Tier": 0,
+		"Color":[0.1,0.1,0.1]
 	},
 	{
 		"Name": "RapeseedOil",
