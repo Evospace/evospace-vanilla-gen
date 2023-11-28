@@ -543,6 +543,17 @@ machines = [
 		"Selector": "/Game/Blocks/ArrowBP.ArrowBP_C",
 		"Description": ["Sorter", "FluidInput", "FluidOutput"],
 	},{
+		"Name": "OverflowPump",
+		"Label": "Overflow Pump",
+		"StartTier": 1,
+		"EndTier": 10,
+		"CustomData":{
+			"ItemPortion": 1000
+		},
+		"Tag": "Logistics",
+		"Selector": "/Game/Blocks/ArrowBP.ArrowBP_C",
+		"Description": ["FluidInput", "FluidOutput"],
+	},{
 		"Name": "Smelter",
 		"Label": "Smelter",
 		"StartTier": 0,

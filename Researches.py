@@ -694,8 +694,8 @@ append_levels({
 	"Chapter":"Production"+static_chapter,
 	"RequiredResearches": ["IndustrialChemReactor" + static_research],
 	"Unlocks": [["IndustrialChemReactor" + base_recipe, "Superfuel"], ["IndustrialChemReactor" + base_recipe, "RocketFuel"]],
-	"Levels": [3,7],
-	"Position": [6,-6],
+	"Levels": [3,3],
+	"Position": [6,-7],
 })
 append_levels({
 	"Class": static_research,
@@ -704,8 +704,8 @@ append_levels({
 	"Chapter":"Production"+static_chapter,
 	"RequiredResearches": ["FuelChemistry" + static_research],
 	"Unlocks": [["IndustrialChemReactor" + base_recipe, "RocketFuel2"], ["IndustrialChemReactor" + base_recipe, "Superfuel2"]],
-	"Levels": [3,7],
-	"Position": [6,-7],
+	"Levels": [3,3],
+	"Position": [6,-8],
 })
 append_levels({
 	"Class": static_research,
@@ -766,6 +766,16 @@ append_levels({
 	"Levels": [3,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%ChemicalBath"],["Constructor" + base_recipe, "%Material%ChemicalBath"]],
 	"Position": [5,-7],
+})
+append_levels({
+	"Class": static_research,
+	"Name": "OilCrackingTower" + static_research,
+	"LabelParts": [["OilCrackingTower", "machines"]],
+	"Chapter": "Production" + static_chapter,
+	"RequiredResearches": ["FuelChemistry" + static_research],
+	"Levels": [4,7],
+	"Unlocks": [["Hand" + base_recipe, "%Material%OilCrackingTower"],["Constructor" + base_recipe, "%Material%OilCrackingTower"]],
+	"Position": [5,-8],
 })
 append_levels({
 	"Class": static_research,
@@ -843,6 +853,16 @@ append_levels({
 	"RequiredResearches": ["IndustrialBoiler" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%IndustrialSteamTurbine"],["Connector" + base_recipe, "%Material%IndustrialSteamTurbine"]],
 	"Position": [6,-5],
+	"Levels": [5,7],
+})
+append_levels({
+	"Class": static_research,
+	"Name": "IndustrialGenerator" + static_research,
+	"LabelParts": [["IndustrialGenerator", "machines"]],
+	"Chapter": "Production" + static_chapter,
+	"RequiredResearches": ["IndustrialSteamTurbine" + static_research],
+	"Unlocks": [["Hand" + base_recipe, "%Material%IndustrialGenerator"],["Connector" + base_recipe, "%Material%IndustrialGenerator"]],
+	"Position": [6,-6],
 	"Levels": [5,7],
 })
 append_levels({
