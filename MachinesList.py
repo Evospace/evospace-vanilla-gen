@@ -110,16 +110,7 @@ machines = [
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["KineticInput"],
-	}
-	#,{
-	#	"Name": "Lathe",
-	#	"Label": "Lathe",
-	#	
-	#	"StartTier": 2,
-	#	"EndTier": 7,
-	#	"Description": "Unused.",
-	#}
-	,{
+	},{
 		"Name": "Boiler",
 		"Label": "Boiler",
 		"StartTier": 2,
