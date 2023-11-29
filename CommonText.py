@@ -48,8 +48,6 @@ cvs.append(["ElectricOutput", "<img id=\"Electricity\"></>Produces electricity<i
 cvs.append(["ElectricConductor", "<img id=\"Electricity\"></>Conducts electricity<img id=\"Electricity2\"></>"])
 cvs.append(["ElectricStorage", "Stores electricity<img id=\"Electricity2\"></>"])
 
-cvs.append(["MachineColumn", "Have more item output slots with more stacked layers"])
-
 cvs.append(["DataInput", "Read data"])
 cvs.append(["DataOutput", "Write data"])
 cvs.append(["DataConductor", "Conducts data"])
