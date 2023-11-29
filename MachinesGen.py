@@ -1250,8 +1250,6 @@ for machine in machines:
 					"Ticks" : 100
 				})
 				
-			
-				
 			if machine["Name"] == "Oven":
 				r = {
 					"Name": tier_material[tier] + machine["Name"],
