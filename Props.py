@@ -761,7 +761,7 @@ for prop in props:
 			"LogicJson": {
 				"StaticBlock": prop["Name"] + variation_helper[variation] + prop_class
 			},
-			"ItemLogic": building_big_prop_logic if "IsBig" in prop else building_prop_logic,
+			"ItemLogic": building_prop_logic,
 			"Category": "Terrain",
 			
 			"LabelParts": [[prop["Name"], "props"]],
