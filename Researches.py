@@ -66,6 +66,7 @@ append_levels({
 	"Position": [-1,1],
 	"Levels":[0,7],
 	"Chapter":"Production"+static_chapter,
+	"CompleteByDefault": True,
 })
 append_levels({
 	"Class": static_research,
@@ -385,6 +386,16 @@ append_levels({
 	"Levels": [1,7],
 	"Chapter": "Production"+static_chapter,
 	"Position": [4, 3],
+})
+append_levels({
+	"Class": static_research,
+	"Name": "OverflowPump" + static_research,
+	"LabelParts": [["OverflowPump", "machines"]],
+	"RequiredResearches": ["FilteringPump" + static_research],
+	"Unlocks": [["Hand" + base_recipe, "%Material%OverflowPump"],["Constructor" + base_recipe, "%Material%OverflowPump"]],
+	"Levels": [1,7],
+	"Chapter": "Production"+static_chapter,
+	"Position": [4, 4],
 })
 append_levels({
 	"Class": static_research,
