@@ -48,13 +48,6 @@ mapgen_objects = [
 		"Drops": "Dirt",
 		"Hardness": 1
 	},{
-		"Name": "LavaSmoke",
-		"Color": [255 / 255., 0 / 255.,  0 / 255.],
-		"Side": [255 / 255., 0 / 255.,  0 / 255.],
-		"Item": [128 / 255., 128 / 255.,  128 / 255.],
-		"Drops": "Basalt",
-		"Hardness": 2
-	},{
 		"Name": "Lava",
 		"Color": [104 / 255., 104 / 255., 104 / 255.],
 		"Side": [104 / 255., 104 / 255., 104 / 255.],
@@ -82,13 +75,6 @@ mapgen_objects = [
 		"Item": [102 / 255., 51 / 255.,  0 / 255.],
 		"Drops": "Dirt",
 		"Hardness": 1
-	},{
-		"Name": "CoralBubbleEmitter",
-		"Color": [255 / 255., 0 / 255.,  0 / 255.],
-		"Side": [255 / 255., 0 / 255.,  0 / 255.],
-		"Item": [128 / 255., 128 / 255.,  128 / 255.],
-		"Drops": "Dirt",
-		"Hardness": 2
 	},{
 		"Name": "Dirt",
 		"Color": [134 / 255., 102 / 255.,  64 / 255.],

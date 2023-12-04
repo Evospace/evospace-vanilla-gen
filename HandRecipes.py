@@ -7,6 +7,23 @@ objects_array = []
 
 recipes_hand = []
 
+recipes_press = []
+
+def append_recipe_hand_press(recipe):
+	item_count = 0
+	for item in recipe["Input"]["Items"]:
+		item_count = item_count + item["Count"]
+	
+	dec_recipe = copy.deepcopy(recipe)
+
+	recipes_hand.append(recipe)
+	
+	output = copy.deepcopy(dec_recipe["Input"])
+	
+	dec_recipe["Ticks"] = 60
+	dec_recipe["ResourceInput"] = { "Name": "Kinetic" + static_item, "Count": 100 }
+	recipes_press.append(dec_recipe)	
+
 recipes_hand.append({
 	"Name": "ClayBlock",
 	"Input":{
@@ -447,7 +464,7 @@ recipes_hand.append({
 	"Ticks" : 20
 })
 
-recipes_hand.append({
+append_recipe_hand_press({
 	"Name": "WoodenPlanks",
 	"Input":{
 		"Items":[
@@ -1155,6 +1172,11 @@ for r in recipes_hand:
 objects_array.append({ "Class": base_recipe,
 	"Name": "Hand" + base_recipe,
 	"Recipes": recipes_hand
+})
+
+objects_array.append({ "Class": base_recipe,
+	"Name": "Press" + base_recipe,
+	"Recipes": recipes_press
 })
 
 data = {
