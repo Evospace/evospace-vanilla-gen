@@ -192,9 +192,7 @@ for machine in machines:
 					
 			logic["ActorCreation"] = """
 			local mat = LoadAsset("/Game/Materials/%Material%")
-			
-			local obj = Object:Link(_internal_GetThis())
-			obj:SetFieldObject("HullMaterial", mat)
+			Legacy.this:SetFieldObject("HullMaterial", mat)
 			""".replace("%Material%", tier_material[tier])
 			
 			block = {
@@ -512,29 +510,6 @@ for machine in machines:
 					"Ticks" : 20
 				})	
 				
-			if machine["Name"] == "Smelter":
-				append_recipe({
-					"Name": tier_material[tier] + machine["Name"],
-					"Input":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + "Plate" + static_item if tier > 0 else "StoneSurface" + static_item,
-								"Count": 4
-							},
-						]
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + "Smelter" + static_item,
-								"Count": 1
-							}
-						]
-					},
-					"Tier": tier,
-					"Ticks" : 20
-				})
-				
 			if machine["Name"] == "InductionCoil":
 				append_recipe({
 					"Name": tier_material[tier] + machine["Name"],
@@ -616,7 +591,7 @@ for machine in machines:
 							},
 							{
 								"Name": cables[tier],
-								"Count": 2
+								"Count": 2 + parts_ramp(level)
 							}
 						]
 					},
@@ -624,6 +599,33 @@ for machine in machines:
 						"Items":[
 							{
 								"Name": tier_material[tier] + "Electrolyzer" + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Tier": tier,
+					"Ticks" : 20
+				})
+
+			if machine["Name"] == "Fermenter":
+				append_recipe({
+					"Name": tier_material[tier] + machine["Name"],
+					"Input":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + "Plate" + static_item,
+								"Count": 2
+							}, 
+							{
+								"Name": tier_material[tier] + "Parts" + static_item,
+								"Count": 6 + parts_ramp(level)
+							}
+						]
+					},
+					"Output":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + machine["Name"] + static_item,
 								"Count": 1
 							}
 						]
@@ -652,13 +654,161 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "ChemReactor" + static_item,
+								"Name": tier_material[tier] + machine["Name"] + static_item,
 								"Count": 1
 							}
 						]
 					},
 					"Tier": tier,
 					"Ticks" : 20
+				})
+
+			if machine["Name"] == "IndustrialChemReactor":
+				append_recipe({
+					"Name": tier_material[tier] + machine["Name"],
+					"Input":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + "Plate" + static_item,
+								"Count": 15
+							},{
+								"Name": tier_material[tier] + "Parts" + static_item,
+								"Count": 15 + parts_ramp(level)
+							},{
+								"Name": tier_material[tier] + "ElectricEngine" + static_item,
+								"Count": 3
+							},{
+								"Name": "Glass" + static_item,
+								"Count": 5
+							}
+						]
+					},
+					"Output":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Tier": tier,
+					"Ticks" : 40
+				})
+
+			if machine["Name"] == "AtmosphericCondenser":
+				append_recipe({
+					"Name": tier_material[tier] + machine["Name"],
+					"Input":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + "Plate" + static_item,
+								"Count": 5
+							},{
+								"Name": tier_material[tier] + "Parts" + static_item,
+								"Count": 2
+							},{
+								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Count": 5 + parts_ramp(level)
+							}
+						]
+					},
+					"Output":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Tier": tier,
+					"Ticks" : 20
+				})
+
+			if machine["Name"] == "ChemicalBath":
+				append_recipe({
+					"Name": tier_material[tier] + machine["Name"],
+					"Input":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + "Plate" + static_item,
+								"Count": 10
+							},{
+								"Name": tier_material[tier] + "Parts" + static_item,
+								"Count": 5 + parts_ramp(level)
+							},{
+								"Name": tier_material[tier] + "ElectricEngine" + static_item,
+								"Count": 1
+							},{
+								"Name": "Glass" + static_item,
+								"Count": 10
+							}
+						]
+					},
+					"Output":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Tier": tier,
+					"Ticks" : 40
+				})
+
+			if machine["Name"] == "Lamp":
+				append_recipe({
+					"Name": tier_material[tier] + machine["Name"],
+					"Input":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + "Plate" + static_item,
+								"Count": 2
+							},{
+								"Name": "Glass" + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Output":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Tier": tier,
+					"Ticks" : 40
+				})
+
+			if machine["Name"] == "Sifter":
+				append_recipe({
+					"Name": tier_material[tier] + machine["Name"],
+					"Input":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + "Plate" + static_item,
+								"Count": 5
+							},{
+								"Name": tier_material[tier] + "Parts" + static_item,
+								"Count": 5 + parts_ramp(level)
+							},{
+								"Name": tier_material[tier] + "ElectricEngine" + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Output":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Tier": tier,
+					"Ticks" : 40
 				})
 				
 			if machine["Name"] == "Mixer":
@@ -704,7 +854,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Press" + static_item,
+								"Name": tier_material[tier] + machine["Name"] + static_item,
 								"Count": 1
 							}
 						]
@@ -733,7 +883,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "ElectricalSwitch" + static_item,
+								"Name": tier_material[tier] + machine["Name"] + static_item,
 								"Count": 1
 							}
 						]
@@ -822,7 +972,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Freezer" + static_item,
+								"Name": tier_material[tier] + machine["Name"] + static_item,
 								"Count": 1
 							}
 						]
@@ -845,7 +995,7 @@ for machine in machines:
 					"Output":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "FlatTerminal" + static_item,
+								"Name": tier_material[tier] + machine["Name"] + static_item,
 								"Count": 1
 							}
 						]
@@ -1395,6 +1545,37 @@ for machine in machines:
 					},
 					"Tier": tier,
 					"Ticks" : 20
+				})
+
+			if machine["Name"] == "OilCrackingTower":
+				append_recipe({
+					"Name": tier_material[tier] + machine["Name"],
+					"Input":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + "Plate" + static_item,
+								"Count": 10 + level
+							},
+							{
+								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Count": 10 + level
+							},
+							{
+								"Name": tier_material[tier] + "FilteringPump" + static_item,
+								"Count": 6
+							},
+						]
+					},
+					"Output":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Tier": tier,
+					"Ticks" : 40
 				})
 			
 			if machine["Name"] == "FluidFurnace":

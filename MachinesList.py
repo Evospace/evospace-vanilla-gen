@@ -11,9 +11,9 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "UniversalCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("KineticInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["KineticInput"],
@@ -24,9 +24,9 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"UniversalCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("KineticInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["KineticInput"],
@@ -47,9 +47,9 @@ machines = [
 		"Positions": [[0,0,0],[0,0,1]],
 		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"RequiredResearches":["Fermentation"+static_research],
@@ -61,9 +61,9 @@ machines = [
 		"EndTier": 10,		
 		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["ElectricInput"],
@@ -74,9 +74,9 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"UniversalCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("KineticInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["KineticInput"],
@@ -104,9 +104,9 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"UniversalCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("KineticInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["KineticInput"],
@@ -120,15 +120,15 @@ machines = [
 		],
 		"BlockLogic":"NuclearReactorBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(FluidInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("FluidInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(FluidOutputAccessor))
-		a:SetSidePos(Vec3i:Up(), Vec3i:Zero())
+		local a = crafter:CreateAccessor(Class.Find("FluidOutputAccessor"))
+		a:SetSidePos(Vec3i.up, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatInputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:Zero())
+		local a = crafter:CreateAccessor(Class.Find("HeatInputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["HeatInput", "FluidInput", "FluidOutput", "PowerOutput"],
@@ -236,9 +236,9 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"UniversalCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0,1,0))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("KineticInputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.new(0,1,0))
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["KineticInput"],
@@ -287,9 +287,9 @@ machines = [
 		],
 		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("KineticInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 	}
@@ -303,14 +303,14 @@ machines = [
 	#	],
 	#	"BlockLogic":"SelectCrafterBlockLogic",
 	#	"BlockCreation":"""
-	#	local crafter = BlockLogic:Link(_internal_GetThis())
+	#	local crafter = Legacy.this
 	#	
-	#	local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-	#	a:SetSidePos(Vec3i:Left(), Vec3i:Zero())
+	#	local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+	#	a:SetSidePos(Vec3i.left, Vec3i.zero)
 	#	a:Bind(crafter:GetInputContainer())
 	#	
-	#	local a = Accessor:Link(crafter:CreateSubobject(FluidOutputAccessor))
-	#	a:SetSidePos(Vec3i:Right(), Vec3i:Zero())
+	#	local a = crafter:CreateAccessor(Class.Find("FluidOutputAccessor"))
+	#	a:SetSidePos(Vec3i.right, Vec3i.zero)
 	#	a:Bind(crafter:GetOutputContainer())
 	#	""",
 	#	 
@@ -322,12 +322,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatInputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("HeatInputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticOutputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
+		local a = crafter:CreateAccessor(Class.Find("KineticOutputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Description": ["HeatInput", "KineticOutput","PowerOutput"],
@@ -341,9 +341,9 @@ machines = [
 		"Description": ["FluidInput", "KineticOutput"],
 		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticOutputAccessor))
-		a:SetSidePos(Vec3i:Right(), Vec3i:New(-1,0,0))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("KineticOutputAccessor"))
+		a:SetSidePos(Vec3i.right, Vec3i.new(-1,0,0))
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,2,0],[-1,2,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,2,1],[-1,2,1]],
@@ -363,9 +363,9 @@ machines = [
                 [0,0,6],[1,0,6],[-1,0,6],[0,1,6],[0,-1,6],[1,1,6],[-1,-1,6],[1,-1,6],[-1,1,6],
                 [0,0,7],[1,0,7],[-1,0,7],[0,1,7],[0,-1,7],[1,1,7],[-1,-1,7],[1,-1,7],[-1,1,7]],
         "BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New( -1, 0, 0 ))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.new( -1, 0, 0 ))
 		a:Bind(crafter:GetInputContainer())
 		""",
 	},{
@@ -376,9 +376,9 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatInputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New( 0, 0, 0 ))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("HeatInputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.new( 0, 0, 0 ))
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["HeatInput"],
@@ -402,12 +402,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New( -1, 1, 0 ))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("KineticInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.new( -1, 1, 0 ))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricOutputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New( 0, 0, 0 ))
+		local a = crafter:CreateAccessor(Class.Find("ElectricOutputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.new( 0, 0, 0 ))
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
@@ -424,12 +424,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Right(), Vec3i:New( 0, -2, 0 ))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("KineticInputAccessor"))
+		a:SetSidePos(Vec3i.right, Vec3i.new( 0, -2, 0 ))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricOutputAccessor))
-		a:SetSidePos(Vec3i:Left(), Vec3i:New( 0, 1, 0 ))		
+		local a = crafter:CreateAccessor(Class.Find("ElectricOutputAccessor"))
+		a:SetSidePos(Vec3i.left, Vec3i.new( 0, 1, 0 ))		
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
@@ -442,12 +442,12 @@ machines = [
 		"EndTier": 1,
 		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("KineticInputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricOutputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
+		local a = crafter:CreateAccessor(Class.Find("ElectricOutputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
@@ -459,15 +459,15 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticOutputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:Zero())
+		local a = crafter:CreateAccessor(Class.Find("KineticOutputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:Zero())
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
@@ -480,18 +480,18 @@ machines = [
 		"Positions": [[0,0,0],[1,0,0],[0,1,0],[1,1,0],[0,0,1],[1,0,1],[0,1,1],[1,1,1]],
 		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticOutputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(1,0,0))
+		local a = crafter:CreateAccessor(Class.Find("KineticOutputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.new(1,0,0))
 		a:Bind(crafter:GetOutputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:Zero())
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Right(), Vec3i:Zero())
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.right, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
@@ -551,9 +551,9 @@ machines = [
 		"EndTier": 2,
 		"BlockLogic":"UniversalCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatInputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("HeatInputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["HeatInput"],
@@ -568,12 +568,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(FluidInputAccessor))
-		a:SetSidePos(Vec3i:Up(), Vec3i:New(0, 0, 1))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("FluidInputAccessor"))
+		a:SetSidePos(Vec3i.up, Vec3i.new(0, 0, 1))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticOutputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:Zero())
+		local a = crafter:CreateAccessor(Class.Find("KineticOutputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Description": ["FluidInput", "KineticOutput","PowerOutput"],
@@ -598,12 +598,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(FluidInputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0, 0, 0))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("FluidInputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.new(0, 0, 0))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticOutputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New(-5, -1, 0))
+		local a = crafter:CreateAccessor(Class.Find("KineticOutputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.new(-5, -1, 0))
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Description": ["FluidInput", "KineticOutput","PowerOutput"],
@@ -616,15 +616,15 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"UniversalCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(FluidInputAccessor))
-		a:SetSidePos(Vec3i:Up(), Vec3i:New( -2, 0, 1 ))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("FluidInputAccessor"))
+		a:SetSidePos(Vec3i.up, Vec3i.new( -2, 0, 1 ))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(FluidInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New( -1, -1, 1 ))
+		local a = crafter:CreateAccessor(Class.Find("FluidInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.new( -1, -1, 1 ))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticOutputAccessor))
-		a:SetSidePos(Vec3i:Right(), Vec3i:New( -3, -1, 0 ))
+		local a = crafter:CreateAccessor(Class.Find("KineticOutputAccessor"))
+		a:SetSidePos(Vec3i.right, Vec3i.new( -3, -1, 0 ))
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Description": ["FluidInput", "KineticOutput"],
@@ -644,12 +644,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatOutputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New( 0, 0, 0 ))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("HeatOutputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.new( 0, 0, 0 ))
 		a:Bind(crafter:GetOutputContainer())
-		a = Accessor:Link(crafter:CreateSubobject(HeatOutputAccessor))
-		a:SetSidePos(Vec3i:Up(), Vec3i:New( 0, 0, 1 ))
+		a = crafter:CreateAccessor(Class.Find("HeatOutputAccessor"))
+		a:SetSidePos(Vec3i.up, Vec3i.new( 0, 0, 1 ))
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Description": ["HeatOutput", "PowerOutput"],
@@ -662,9 +662,9 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"UniversalCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New( -1, 1, 0 ))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.new( -1, 1, 0 ))
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["ElectricInput"],
@@ -676,9 +676,9 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New( 0, 0, 0 ))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("KineticInputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.new( 0, 0, 0 ))
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["KineticInput"],
@@ -690,9 +690,9 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"UniversalCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New( 0, 0, 0 ))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("KineticInputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.new( 0, 0, 0 ))
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["KineticInput"],
@@ -704,9 +704,9 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New( 0, 0, 0 ))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.new( 0, 0, 0 ))
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["ElectricInput"],
@@ -717,9 +717,9 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"UniversalCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatOutputAccessor))
-		a:SetSidePos(Vec3i:Up(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("HeatOutputAccessor"))
+		a:SetSidePos(Vec3i.up, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Description": ["HeatOutput"],
@@ -774,12 +774,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "UniversalCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(FluidInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("FluidInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatOutputAccessor))
-		a:SetSidePos(Vec3i:Up(), Vec3i:Zero())
+		local a = crafter:CreateAccessor(Class.Find("HeatOutputAccessor"))
+		a:SetSidePos(Vec3i.up, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Description": ["FluidInput", "HeatOutput"],
@@ -790,12 +790,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatOutputAccessor))
-		a:SetSidePos(Vec3i:Up(), Vec3i:Zero())
+		local a = crafter:CreateAccessor(Class.Find("HeatOutputAccessor"))
+		a:SetSidePos(Vec3i.up, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Description": ["ElectricInput", "HeatOutput", "PowerOutput"],
@@ -868,18 +868,18 @@ machines = [
 			[0,-5,3],[-1,-5,3],[-2,-5,3],[-3,-5,3],[-4,-5,3],[-5,-5,3],[-6,-5,4]
 		],
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0,1,1))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.new(0,1,1))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Left(), Vec3i:New(0,1,1))
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.left, Vec3i.new(0,1,1))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0,-5,1))
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.new(0,-5,1))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Right(), Vec3i:New(0,-5,1))
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.right, Vec3i.new(0,-5,1))
 		a:Bind(crafter:GetInputContainer())
 		""",
 	},
@@ -931,9 +931,9 @@ machines = [
 		],
 		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["ElectricInput"],
@@ -951,9 +951,9 @@ machines = [
 		],
 		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["ElectricInput"],
@@ -971,9 +971,9 @@ machines = [
 		],
 		"BlockLogic":"DeconstructorCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["ElectricInput"],
@@ -992,9 +992,9 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"UniversalCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(FluidInputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("FluidInputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["FluidInput"],
@@ -1008,9 +1008,9 @@ machines = [
 		"EndTier": 2,
 		"BlockLogic":"DumpCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(FluidInputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("FluidInputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["FluidInput"],
@@ -1088,9 +1088,9 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["ElectricInput"],
@@ -1102,9 +1102,9 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
 		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New(-1,0,0))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("KineticInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.new(-1,0,0))
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["KineticInput"],
@@ -1116,9 +1116,9 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
 		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New(-1,0,0))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("KineticInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.new(-1,0,0))
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["KineticInput", "HeatOutput"],
@@ -1145,9 +1145,9 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(FluidInputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0,0,0))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("FluidInputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.new(0,0,0))
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["FluidInput"],
@@ -1167,12 +1167,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(FluidOutputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0,0,0))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("FluidOutputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.new(0,0,0))
 		a:Bind(crafter:GetOutputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Right(), Vec3i:New(-1,-2,0))
+		local a = crafter:CreateAccessor(Class.Find("KineticInputAccessor"))
+		a:SetSidePos(Vec3i.right, Vec3i.new(-1,-2,0))
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["KineticInput", "FluidOutput"],
@@ -1260,9 +1260,9 @@ machines = [
 		],
 		"BlockLogic":"UniversalCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New(-1,1,0))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("KineticInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.new(-1,1,0))
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["KineticInput"],
@@ -1273,9 +1273,9 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatInputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("HeatInputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		""",
 		"Description": ["HeatInput"],
@@ -1342,30 +1342,30 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"NuclearReactorBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatOutputAccessor))
-		a:SetSidePos(Vec3i:Left(), Vec3i:New(0, 1, 0))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("HeatOutputAccessor"))
+		a:SetSidePos(Vec3i.left, Vec3i.new(0, 1, 0))
 		a:Bind(crafter:GetOutputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatOutputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0, 1, 0))
+		local a = crafter:CreateAccessor(Class.Find("HeatOutputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.new(0, 1, 0))
 		a:Bind(crafter:GetOutputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatOutputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0, -2, 0))
+		local a = crafter:CreateAccessor(Class.Find("HeatOutputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.new(0, -2, 0))
 		a:Bind(crafter:GetOutputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatOutputAccessor))
-		a:SetSidePos(Vec3i:Right(), Vec3i:New(0, -2, 0))
+		local a = crafter:CreateAccessor(Class.Find("HeatOutputAccessor"))
+		a:SetSidePos(Vec3i.right, Vec3i.new(0, -2, 0))
 		a:Bind(crafter:GetOutputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatOutputAccessor))
-		a:SetSidePos(Vec3i:Left(), Vec3i:New(-3, 1, 0)) 
+		local a = crafter:CreateAccessor(Class.Find("HeatOutputAccessor"))
+		a:SetSidePos(Vec3i.left, Vec3i.new(-3, 1, 0)) 
 		a:Bind(crafter:GetOutputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatOutputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New(-3, 1, 0))
+		local a = crafter:CreateAccessor(Class.Find("HeatOutputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.new(-3, 1, 0))
 		a:Bind(crafter:GetOutputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatOutputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New(-3, -2, 0))
+		local a = crafter:CreateAccessor(Class.Find("HeatOutputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.new(-3, -2, 0))
 		a:Bind(crafter:GetOutputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatOutputAccessor))
-		a:SetSidePos(Vec3i:Right(), Vec3i:New(-3, -2, 0))
+		local a = crafter:CreateAccessor(Class.Find("HeatOutputAccessor"))
+		a:SetSidePos(Vec3i.right, Vec3i.new(-3, -2, 0))
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"CustomData":{
@@ -1406,18 +1406,18 @@ machines = [
 		],
 		"BlockLogic":"FusionReactorBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0, 1, 0))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.new(0, 1, 0))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Left(), Vec3i:New(0, 1, 0))
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.left, Vec3i.new(0, 1, 0))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0, -3, 0))
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.new(0, -3, 0))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Right(), Vec3i:New(0, -3, 0))
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.right, Vec3i.new(0, -3, 0))
 		a:Bind(crafter:GetInputContainer())
 		""",
 	},{
@@ -1440,24 +1440,24 @@ machines = [
 		],
 		"BlockLogic":"NuclearReactorBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(FluidInputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:New(0, 0, 0))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("FluidInputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.new(0, 0, 0))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatInputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(0, -1, 0))
+		local a = crafter:CreateAccessor(Class.Find("HeatInputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.new(0, -1, 0))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatInputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(-1, -1, 0))
+		local a = crafter:CreateAccessor(Class.Find("HeatInputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.new(-1, -1, 0))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatInputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(-2, -1, 0))
+		local a = crafter:CreateAccessor(Class.Find("HeatInputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.new(-2, -1, 0))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatInputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(-3, -1, 0))
+		local a = crafter:CreateAccessor(Class.Find("HeatInputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.new(-3, -1, 0))
 		a:Bind(crafter:GetInputContainer())
-		a = Accessor:Link(crafter:CreateSubobject(FluidOutputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New(-3, 0, 0))
+		a = crafter:CreateAccessor(Class.Find("FluidOutputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.new(-3, 0, 0))
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Description": ["FluidInput", "FluidOutput","PowerOutput"],
@@ -1487,9 +1487,9 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricOutputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(0,0,0))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("ElectricOutputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.new(0,0,0))
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Description": ["ElectricOutput", "PowerOutput"],
@@ -1555,18 +1555,18 @@ machines = [
 	#	"EndTier": 10,
 	#	"BlockLogic":"SelectCrafterBlockLogic",
 	#	"BlockCreation":"""
-	#	local crafter = BlockLogic:Link(_internal_GetThis())
+	#	local crafter = Legacy.this
 	#	
-	#	local a = Accessor:Link(crafter:CreateSubobject(FluidInputAccessor))
-	#	a:SetSidePos(Vec3i:Left(), Vec3i:Zero())
+	#	local a = crafter:CreateAccessor(Class.Find("FluidInputAccessor"))
+	#	a:SetSidePos(Vec3i.left, Vec3i.zero)
 	#	a:Bind(crafter:GetInputContainer())
 	#	
-	#	local a = Accessor:Link(crafter:CreateSubobject(FluidOutputAccessor))
-	#	a:SetSidePos(Vec3i:Right(), Vec3i:Zero())
+	#	local a = crafter:CreateAccessor(Class.Find("FluidOutputAccessor"))
+	#	a:SetSidePos(Vec3i.right, Vec3i.zero)
 	#	a:Bind(crafter:GetOutputContainer())
 	#	
-	#	local a = Accessor:Link(crafter:CreateSubobject(HeatOutputAccessor))
-	#	a:SetSidePos(Vec3i:Up(), Vec3i:Zero())
+	#	local a = crafter:CreateAccessor(Class.Find("HeatOutputAccessor"))
+	#	a:SetSidePos(Vec3i.up, Vec3i.zero)
 	#	a:Bind(crafter:GetOutputContainer())
 	#	""",
 	#	"RequiredResearches":["HeatTransferring"+static_research],
@@ -1578,18 +1578,18 @@ machines = [
 	#	"EndTier": 10,
 	#	"BlockLogic":"SelectCrafterBlockLogic",
 	#	"BlockCreation":"""
-	#	local crafter = BlockLogic:Link(_internal_GetThis())
+	#	local crafter = Legacy.this
 	#	
-	#	local a = Accessor:Link(crafter:CreateSubobject(FluidInputAccessor))
-	#	a:SetSidePos(Vec3i:Left(), Vec3i:Zero())
+	#	local a = crafter:CreateAccessor(Class.Find("FluidInputAccessor"))
+	#	a:SetSidePos(Vec3i.left, Vec3i.zero)
 	#	a:Bind(crafter:GetInputContainer())
 	#	
-	#	local a = Accessor:Link(crafter:CreateSubobject(FluidOutputAccessor))
-	#	a:SetSidePos(Vec3i:Right(), Vec3i:Zero())
+	#	local a = crafter:CreateAccessor(Class.Find("FluidOutputAccessor"))
+	#	a:SetSidePos(Vec3i.right, Vec3i.zero)
 	#	a:Bind(crafter:GetOutputContainer())
 	#	
-	#	local a = Accessor:Link(crafter:CreateSubobject(HeatInputAccessor))
-	#	a:SetSidePos(Vec3i:Down(), Vec3i:Zero())
+	#	local a = crafter:CreateAccessor(Class.Find("HeatInputAccessor"))
+	#	a:SetSidePos(Vec3i.down, Vec3i.zero)
 	#	a:Bind(crafter:GetInputContainer())
 	#	""",
 	#	"RequiredResearches":["HeatTransferring"+static_research],
@@ -1630,24 +1630,24 @@ machines = [
 		],
 		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(FluidInputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New(-1,0,2))
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("FluidInputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.new(-1,0,2))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatInputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(0,0,2))
+		local a = crafter:CreateAccessor(Class.Find("HeatInputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.new(0,0,2))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatInputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(-2,0,2))
+		local a = crafter:CreateAccessor(Class.Find("HeatInputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.new(-2,0,2))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatInputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(-1,1,2))
+		local a = crafter:CreateAccessor(Class.Find("HeatInputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.new(-1,1,2))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatInputAccessor))
-		a:SetSidePos(Vec3i:Down(), Vec3i:New(-1,-1,2))
+		local a = crafter:CreateAccessor(Class.Find("HeatInputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.new(-1,-1,2))
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(FluidOutputAccessor))
-		a:SetSidePos(Vec3i:Back(), Vec3i:New(-2,0,0))
+		local a = crafter:CreateAccessor(Class.Find("FluidOutputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.new(-2,0,0))
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Description": ["HeatInput"],
@@ -1663,12 +1663,12 @@ machines = [
 		],
 		"BlockLogic":"SelectCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(ElectricInputAccessor))
-		a:SetSidePos(Vec3i:Front(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatOutputAccessor))
-		a:SetSidePos(Vec3i:Up(), Vec3i:Zero())
+		local a = crafter:CreateAccessor(Class.Find("HeatOutputAccessor"))
+		a:SetSidePos(Vec3i.up, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Description": ["ElectricInput", "HeatOutput"],
@@ -1678,6 +1678,7 @@ machines = [
 		"StartTier": 7,
 		"EndTier": 7,
 		"Description": ["DataInput", "DataOutput"],
+        "Craftable": False,
 	},{
 		"Name": "LogicCircuit",
 		"Label": "Logic Circuit",
@@ -1731,12 +1732,12 @@ machines = [
         "PowerOutput": 9,
         "BlockLogic":"SelectCrafterBlockLogic",
         "BlockCreation":"""
-		local crafter = BlockLogic:Link(_internal_GetThis())
-		local a = Accessor:Link(crafter:CreateSubobject(KineticInputAccessor))
-		a:SetSidePos(Vec3i:Left(), Vec3i:Zero())
+		local crafter = Legacy.this
+		local a = crafter:CreateAccessor(Class.Find("KineticInputAccessor"))
+		a:SetSidePos(Vec3i.left, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
-		local a = Accessor:Link(crafter:CreateSubobject(HeatOutputAccessor))
-		a:SetSidePos(Vec3i:Right(), Vec3i:Zero())
+		local a = crafter:CreateAccessor(Class.Find("HeatOutputAccessor"))
+		a:SetSidePos(Vec3i.right, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
 		""",
     },
