@@ -112,7 +112,7 @@ def append_recipe_hand_press(recipe):
 	
 	output = copy.deepcopy(dec_recipe["Input"])
 	
-	dec_recipe["Ticks"] = 60;
+	dec_recipe["Ticks"] = 60
 	dec_recipe["ResourceInput"] = { "Name": "Kinetic" + static_item, "Count": 100 }
 	recipes_press.append(dec_recipe)		
 
@@ -3405,6 +3405,7 @@ recipes_cutter.append({
 	
 	"Ticks" : 80,
 })
+
 recipes_cutter.append({
 	"Name": "StoneLogCutting",
 	"Input":{
