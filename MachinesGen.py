@@ -2070,6 +2070,33 @@ for machine in machines:
 					"Tier": tier,
 					"Ticks" : 20
 				})
+
+			if machine["Name"] == "OverflowPump":
+				append_recipe({
+					"Name": tier_material[tier] + machine["Name"],
+					"Input":{
+						"Items":[
+							{
+								"Name": circuits[tier],
+								"Count": 3
+							},
+							{
+								"Name": tier_material[tier] + "Pump" + static_item,
+								"Count": 1
+						}
+						]
+					},
+					"Output":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Tier": tier,
+					"Ticks" : 20
+				})
 				
 			if machine["Name"] == "Pump":
 				append_recipe({
