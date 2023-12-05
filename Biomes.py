@@ -225,8 +225,8 @@ generators.extend([
 	},{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "PeatLayering",
-		"Blocks": ["PeatSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
-		"Starts": [0, 2, 6, 9, 12, 16, 19, 23, 30]
+		"Blocks": ["CoalOre" + static_surface, "CoalOre" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Starts": [0, 2, 4, 9, 12, 16, 19, 23, 30]
 	},{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "ClayLayering",
