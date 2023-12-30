@@ -1213,6 +1213,13 @@ machines = [
 		"Positions": [[0,0,0],[0,-1,0],[0,0,1],[0,-1,1]],
 		"BlockLogic": "MonitorBlockLogic",
 	},{
+		"Name": "RailStation",
+		"Label": "Rail Station",
+		"StartTier": 3,
+		"EndTier": 7,
+		"Positions": [[0,0,0],[1,0,0],[2,0,0],[3,0,0],[0,0,1],[1,0,1],[2,0,1],[3,0,1]],
+		"BlockLogic": "RailStationBlockLogic",
+	},{
 		"Name": "HugeFlatTerminal",
 		"Label": "Huge Flat Terminal",
 		"StartTier": 6,
