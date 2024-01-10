@@ -1066,3 +1066,10 @@ materials.append({
 		"IsExact": True,
 		"Craftable": False,
 	})
+
+materials.append({
+	"Name": "Drain",
+	"Label": "Drain",
+	"IsExact": True,
+	"Craftable": False,
+})
