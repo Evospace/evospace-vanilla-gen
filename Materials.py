@@ -40,8 +40,7 @@ def extract_tier(something):
 def named_material(name):
 	list = [x for x in materials if x["Name"] == name]
 	if len(list) > 0:
-		 return list[0]
-		 
+		return list[0]
 	return materials[0]
 	
 # https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D1%82%D1%80%D0%B8%D0%B4_%D0%B1%D0%BE%D1%80%D0%B0 BoronNitride
