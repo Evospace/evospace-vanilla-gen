@@ -9,7 +9,7 @@ machines = [
 		"Label": "Macerator",
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic": "UniversalCrafterBlockLogic",
+		"BlockLogic": "AutoCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
@@ -22,7 +22,7 @@ machines = [
 		"Label": "Cutting Machine",
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
@@ -45,7 +45,7 @@ machines = [
 		"StartTier": 4,
 		"EndTier": 10,
 		"Positions": [[0,0,0],[0,0,1]],
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
@@ -59,7 +59,7 @@ machines = [
 		"Label": "Chemical Reactor",
 		"StartTier": 2,
 		"EndTier": 10,		
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
@@ -72,7 +72,7 @@ machines = [
 		"Label": "Separator",
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
@@ -102,7 +102,7 @@ machines = [
 		"Positions": [[0,0,0],[0,0,1]],
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
@@ -234,7 +234,7 @@ machines = [
 		"Positions": [[0,0,0],[0,1,0],[-1,0,0],[-1,1,0],[-2,0,0],[-2,1,0],[0,0,1],[0,1,1],[-1,0,1],[-1,1,1],[-2,0,1],[-2,1,1]],
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
@@ -285,7 +285,7 @@ machines = [
 			"Press",
 			"Autocrafter"
 		],
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
@@ -301,7 +301,7 @@ machines = [
 	#	"CommonTextKeys":[
 	#		"Autocrafter"
 	#	],
-	#	"BlockLogic":"SelectCrafterBlockLogic",
+	#	"BlockLogic":"SelectCrafter",
 	#	"BlockCreation":"""
 	#	local crafter = Legacy.this
 	#	
@@ -320,7 +320,7 @@ machines = [
 		"Label": "Stirling Engine",
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic": "SelectCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("HeatInputAccessor"))
@@ -335,11 +335,11 @@ machines = [
 	},{
 		"Name": "CombustionEngine",
 		"Label": "Combustion Engine",
-		"BlockLogic": "SelectCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"StartTier": 2,
 		"EndTier": 10,
 		"Description": ["FluidInput", "KineticOutput"],
-		"BlockLogic": "SelectCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("KineticOutputAccessor"))
@@ -353,7 +353,7 @@ machines = [
 		"StartTier": 4,
 		"EndTier": 10,
 		"Description": ["ElectricInput", "FluidInput", "FluidOutput"],
-		"BlockLogic": "SelectCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"Positions": [[0,0,0],[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[1,1,0],[-1,-1,0],[1,-1,0],[-1,1,0],
                 [0,0,1],[1,0,1],[-1,0,1],[0,1,1],[0,-1,1],[1,1,1],[-1,-1,1],[1,-1,1],[-1,1,1],
                 [0,0,2],[1,0,2],[-1,0,2],[0,1,2],[0,-1,2],[1,1,2],[-1,-1,2],[1,-1,2],[-1,1,2],
@@ -374,7 +374,7 @@ machines = [
 		"Positions": [[0,0,0],[0,0,1],[0,0,2],[0,1,0],[0,2,0]],
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic": "SelectCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("HeatInputAccessor"))
@@ -400,7 +400,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic": "SelectCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
@@ -422,7 +422,7 @@ machines = [
         [-1,-2,0],[0,-2,0],[1,-2,0],[-1,-2,1],[0,-2,1],[1,-2,1],[-1,-2,2],[0,-2,2],[1,-2,2]],
 		"StartTier": 5,
 		"EndTier": 10,
-		"BlockLogic": "SelectCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
@@ -440,7 +440,7 @@ machines = [
 		"Label": "Compact Generator",
 		"StartTier": 1,
 		"EndTier": 1,
-		"BlockLogic": "SelectCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
@@ -457,7 +457,7 @@ machines = [
 		"Label": "Electric Engine",
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic": "SelectCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
@@ -478,7 +478,7 @@ machines = [
 		"StartTier": 4,
 		"EndTier": 10,
 		"Positions": [[0,0,0],[1,0,0],[0,1,0],[1,1,0],[0,0,1],[1,0,1],[0,1,1],[1,1,1]],
-		"BlockLogic": "SelectCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
@@ -549,7 +549,7 @@ machines = [
 		"Label": "Smelter",
 		"StartTier": 0,
 		"EndTier": 2,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("HeatInputAccessor"))
@@ -566,7 +566,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[-2,0,0],[0,-1,0],[-1,-1,0],[-2,-1,0],[0,0,1],[-1,0,1],[-2,0,1],[0,-1,1],[-1,-1,1],[-2,-1,1]],
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic": "SelectCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
@@ -596,7 +596,7 @@ machines = [
 		],
 		"StartTier": 5,
 		"EndTier": 10,
-		"BlockLogic": "SelectCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
@@ -614,7 +614,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[-2,0,0],[-3,0,0],[0,-1,0],[-1,-1,0],[-2,-1,0],[-3,-1,0],[0,0,1],[-1,0,1],[-2,0,1],[-3,0,1],[0,-1,1],[-1,-1,1],[-2,-1,1],[-3,-1,1]],
 		"StartTier": 4,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
@@ -642,7 +642,7 @@ machines = [
 		],
 		"StartTier": 5,
 		"EndTier": 10,
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("HeatOutputAccessor"))
@@ -660,7 +660,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,0,2],[-1,0,2],[0,1,2],[-1,1,2]],
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
@@ -674,7 +674,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
@@ -688,7 +688,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
@@ -702,7 +702,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
@@ -715,7 +715,7 @@ machines = [
 		"Label": "Furnace",
 		"StartTier": 0,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("HeatOutputAccessor"))
@@ -741,7 +741,7 @@ machines = [
 		],
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"Description": ["SpeedBonus"],
 	},{
 		"Name": "BlastFurnace",
@@ -765,14 +765,14 @@ machines = [
 		],
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"Description": ["SpeedBonus"],
 	},{
 		"Name": "FluidFurnace",
 		"Label": "Fluid Furnace",
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic": "UniversalCrafterBlockLogic",
+		"BlockLogic": "AutoCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
@@ -788,7 +788,7 @@ machines = [
 		"Label": "Electric Furnace",
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic": "SelectCrafterBlockLogic",
+		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
@@ -929,7 +929,7 @@ machines = [
 			[0,-1,0],[-1,-1,0],
 			[0,-1,1],[-1,-1,1],
 		],
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
@@ -949,7 +949,7 @@ machines = [
 			[0,-1,0],[-1,-1,0],
 			[0,-1,1],[-1,-1,1],
 		],
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
@@ -990,7 +990,7 @@ machines = [
 		],
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
@@ -1086,7 +1086,7 @@ machines = [
 		"Label": "Electrolyzer",
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
@@ -1100,7 +1100,7 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 10,
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
@@ -1114,7 +1114,7 @@ machines = [
 		"StartTier": 5,
 		"EndTier": 10,
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
@@ -1143,7 +1143,7 @@ machines = [
 		],
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
@@ -1165,7 +1165,7 @@ machines = [
 		],
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("FluidOutputAccessor"))
@@ -1265,7 +1265,7 @@ machines = [
 			"Separator",
 			"Autocrafter"
 		],
-		"BlockLogic":"UniversalCrafterBlockLogic",
+		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
@@ -1278,7 +1278,7 @@ machines = [
 		"Label": "Radiator",
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("HeatInputAccessor"))
@@ -1492,7 +1492,7 @@ machines = [
 		],
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("ElectricOutputAccessor"))
@@ -1560,7 +1560,7 @@ machines = [
 	#	"Label": "Heat Exchanger",
 	#	"StartTier": 3,
 	#	"EndTier": 10,
-	#	"BlockLogic":"SelectCrafterBlockLogic",
+	#	"BlockLogic":"SelectCrafter",
 	#	"BlockCreation":"""
 	#	local crafter = Legacy.this
 	#	
@@ -1583,7 +1583,7 @@ machines = [
 	#	"Label": "Inverse Heat Exchanger",
 	#	"StartTier": 1,
 	#	"EndTier": 10,
-	#	"BlockLogic":"SelectCrafterBlockLogic",
+	#	"BlockLogic":"SelectCrafter",
 	#	"BlockCreation":"""
 	#	local crafter = Legacy.this
 	#	
@@ -1635,7 +1635,7 @@ machines = [
 			[0,1,2],[-1,1,2],[-2,1,2],
 			[0,-1,2],[-1,-1,2],[-2,-1,2],
 		],
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
@@ -1668,7 +1668,7 @@ machines = [
 			[0,1,0],[-1,1,0],[-2,1,0],
 			[-1,-1,0],[0,-1,0],[-2,-1,0],
 		],
-		"BlockLogic":"SelectCrafterBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
@@ -1737,7 +1737,7 @@ machines = [
         "EndTier": 10,
         "Description": ["KineticInput", "HeatOutput", "PowerOutput"],
         "PowerOutput": 9,
-        "BlockLogic":"SelectCrafterBlockLogic",
+        "BlockLogic":"SelectCrafter",
         "BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
