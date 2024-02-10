@@ -439,7 +439,7 @@ machines = [
 		"Name": "CompactGenerator",
 		"Label": "Compact Generator",
 		"StartTier": 1,
-		"EndTier": 1,
+		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		local crafter = Legacy.this
