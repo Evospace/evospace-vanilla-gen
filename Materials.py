@@ -1072,3 +1072,10 @@ materials.append({
 	"IsExact": True,
 	"Craftable": False,
 })
+
+materials.append({
+	"Name": "Percent",
+	"Label": "Percent",
+	"IsExact": True,
+	"Craftable": False,
+})
