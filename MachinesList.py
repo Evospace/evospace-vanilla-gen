@@ -1747,5 +1747,15 @@ machines = [
 		a:SetSidePos(Vec3i.right, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
 		""",
-    },
+    },{
+		"Name": "CableBundle",
+		"Label": "Cable Bundle",
+		"StartTier": 1,
+		"EndTier": 1,		
+        "BlockLogic":"CableBundleBlockLogic",
+		"Description": ["ElectricConductor"],
+        "CustomData":{
+			"SplineMesh": "CoreContent/Rail2",
+		}
+	}
 ]
