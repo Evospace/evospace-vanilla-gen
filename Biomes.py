@@ -244,12 +244,6 @@ generators.extend([
 		"Name":"OrePropsBase",
 		"Class": "PropsGenerator",
 		"PropList": "OreProps"
-	},{
-		"Name":"BogHeightMapBase",
-		"Class":"BogHeightMap"
-	},{
-		"Name":"BogForestHeightMapBase",
-		"Class":"BogForestHeightMap"
 	},
 	
 	# grass
@@ -286,21 +280,6 @@ generators.extend([
 		"Name":"PineForestPropsBase",
 		"Class":"PropsGenerator",
 		"PropList": "PineForestProps"
-	},{
-		"Name":"FieldsHeightMapBase",
-		"Class":"FieldsHeightMap"
-	},{
-		"Name":"HillsHeightMapBase",
-		"Class":"HillsHeightMap"
-	},{
-		"Name":"HillsSIMDHeightMapBase",
-		"Class":"HillsSIMDHeightMap"
-	},{
-		"Name":"MountainsHeightMapBase",
-		"Class":"MountainsHeightMap"
-	},{
-		"Name":"MountainDensityBase",
-		"Class":"MountainDensity"
 	},
 	
 	# forest
@@ -352,12 +331,6 @@ generators.extend([
 		"Name": "EmptySeaPropsBase",
 		"Class": "PropsGenerator",
 		"PropList": "EmptySeaProps"
-	},{
-		"Class": "SeaBottomHeightMap",
-		"Name": "SeaBottomHeightMapBase"
-	},{
-		"Class": "IslesHeightMap",
-		"Name": "IslesHeightMapBase"
 	},
 	
 	# volcanic
@@ -374,14 +347,6 @@ generators.extend([
 		"Starts": [0, 4, 9, 12, ]
 	},
 	{
-		"Class": "VolcanoHeightMap",
-		"Name": "VolcanoHeightMapBase"
-	},
-	{
-		"Class": "BrokenLandHeightMap",
-		"Name": "BrokenLandHeightMapBase"
-	},
-	{
 		"Name":"SmallRocksPropsBase",
 		"Class":"PropsGenerator",
 		"PropList": "SmallRocksProps"
@@ -393,10 +358,6 @@ generators.extend([
 		"Name":"RiverLayeringSand",
 		"Blocks":["SandSurface" + static_surface, "SandstoneSurface" + static_surface, "LimestoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
-	},
-	{
-		"Class":"RiverHeightMap",
-		"Name":"RiverHeightMapBase"
 	},
 	
 	# desert
@@ -424,20 +385,8 @@ generators.extend([
 		"PropList": "DesertProps"
 	},
 	{
-		"Class": "SandDesertHeightMap",
-		"Name": "SandDesertHeightMapBase"
-	},
-	{
 		"Class": "MensaeMountainDesertLayering",
 		"Name": "MensaeMountainDesertLayeringBase"
-	},
-	{
-		"Class": "MensaeMountainDesertHeightMap",
-		"Name": "MensaeMountainDesertHeightMapBase"
-	},
-	{
-		"Class": "MensaeUMountainDensity",
-		"Name": "MensaeUMountainDensityBase"
 	},
 	
 	# snow 
@@ -464,21 +413,18 @@ biomes.extend([
 	{
 		"Class":"Biome",
 		"Name":"PrairieDryPlainsBiome",
-		"Height":"FieldsHeightMapBase",
 		"Layering":"DryGrassLayering",
 		"Props":"PrairieDryProps"
 	},
 	{
 		"Class":"Biome",
 		"Name":"PrairiePlainsBiome",
-		"Height":"FieldsHeightMapBase",
 		"Layering":"DryGrassLayering",
 		"Props":"PrairieProps"
 	},
 	{
 		"Class":"Biome",
 		"Name":"PrairieDryHillsBiome",
-		"Height":"HillsSIMDHeightMapBase",
 		"Layering":"DryGrassLayering",
 		"Props":"PrairieDryProps"
 	},
@@ -487,14 +433,12 @@ biomes.extend([
 	{
 		"Class":"Biome",
 		"Name":"DensePineForestBiome",
-		"Height":"FieldsHeightMapBase",
 		"Layering":"JustGrassLayeringPine",
 		"Props":"DensePineForestPropsBase",
 		"Color":[184/255.0, 255/255.0, 133/255.0]
 	},{
 		"Class":"Biome",
 		"Name":"DenseForestBiome",
-		"Height":"FieldsHeightMapBase",
 		"Layering":"GrassLayering",
 		"Props":"DenseForestPropsBase",
 		"Color":[184/255.0, 255/255.0, 133/255.0]
@@ -504,21 +448,18 @@ biomes.extend([
 	{
 		"Class":"Biome",
 		"Name":"SnowBiome",
-		"Height":"FieldsHeightMapBase",
 		"Layering":"SnowLayering",
 		"Props": "SnowPropsBase"
 	},
 	{
 		"Class":"Biome",
 		"Name":"SnowGrassBiome",
-		"Height":"FieldsHeightMapBase",
 		"Layering":"SnowLayering",
 		"Props": "SnowGrassGenerator"
 	},
 	{
 		"Class":"Biome",
 		"Name":"SnowForestBiome",
-		"Height":"FieldsHeightMapBase",
 		"Layering":"SnowLayering",
 		"Props": "SnowForestGenerator"
 	},
@@ -527,14 +468,12 @@ biomes.extend([
 	{
 		"Class":"Biome",
 		"Name":"DipteroBiome",
-		"Height":"HillsSIMDHeightMapBase",
 		"Layering":"DipteroLayering",
 		"Props":"DipteroProps",
 		"Color":[204/255.0, 255/255.0, 153/255.0]
 	},{
 		"Class":"Biome",
 		"Name":"BrokenLandBiome",
-		"Height":"BrokenLandHeightMapBase",
 		"Layering":"BrokenLandLayeringBasalt",
 		"Props":"SmallRocksPropsBase"
 	}
@@ -543,7 +482,6 @@ biomes.extend([
 	,{
 		"Class":"Biome",
 		"Name":"VolcanoBiome",
-		"Height":"VolcanoHeightMapBase",
 		"Layering":"VolcanicLayeringBasalt"
 	}
 	
@@ -551,46 +489,38 @@ biomes.extend([
 	,{
 		"Class":"Biome",
 		"Name":"SeaBiome",
-		"Height":"SeaBottomHeightMapBase",
 		"Layering":"SeaBottomLayeringSand",
 		"Props":"IslesPropsBase"
 	},{
 		"Class":"Biome",
 		"Name":"SeaGrassBiome",
-		"Height":"SeaBottomHeightMapBase",
 		"Layering":"SeaBottomLayeringSand",
 		"Props":"SeaGrassPropsBase"
 	},{
 		"Class":"Biome",
 		"Name":"EmptySeaBiome",
-		"Height":"SeaBottomHeightMapBase",
 		"Layering":"SeaBottomLayeringSand",
 		"Props":"EmptySeaPropsBase"
 	},{
 		"Class":"Biome",
 		"Name":"GravelSeaBiome",
-		"Height":"IslesHeightMapBase",
 		"Layering":"SeaBottomLayeringGravel"
 	},{
 		"Class":"Biome",
 		"Name":"CopperSeaBiome",
-		"Height":"IslesHeightMapBase",
 		"Layering":"SeaBottomLayeringCopper"
 	},{
 		"Class":"Biome",
 		"Name":"ClaySeaBiome",
-		"Height":"IslesHeightMapBase",
 		"Layering":"SeaBottomLayeringClay"
 	},{
 		"Class":"Biome",
 		"Name":"IslesBiome",
-		"Height":"IslesHeightMapBase",
 		"Layering":"IslesLayeringSand",
 		"Props":"IslesPropsBase"
 	},{
 		"Class":"Biome",
 		"Name":"SeaGrassBiome",
-		"Height":"IslesHeightMapBase",
 		"Layering":"IslesLayeringSand",
 		"Props":"SeaGrassPropsBase"
 	}
@@ -599,57 +529,48 @@ biomes.extend([
 	,{
 		"Class":"Biome",
 		"Name":"HillsBiome",
-		"Height":"HillsSIMDHeightMapBase",
 		"Layering":"GrassLayering",
 		"Props":"GrasslandPropsBase"
 	},{
 		"Class":"Biome",
 		"Name":"MountainsBiome",
-		"Height":"MountainsHeightMapBase",
 		"Layering":"GrassLayering"
 	},{
 		"Class":"Biome",
 		"Name":"BogBiome",
-		"Height":"BogForestHeightMapBase",
 		"Layering":"BogGrassLayeringGrass",
 		"Props":"BogPropsBase",
 		"Color":[204/255.0, 255/255.0, 153/255.0]
 	},{
 		"Class":"Biome",
 		"Name":"PeatBiome",
-		"Height":"BogHeightMapBase",
 		"Layering":"PeatLayering",
 		"Props":"OrePropsBase"
 	},{
 		"Class":"Biome",
 		"Name":"ClayBiome",
-		"Height":"BogHeightMapBase",
 		"Layering":"ClayLayering",
 		"Props":"OrePropsBase"
 	},{
 		"Class":"Biome",
 		"Name":"BogForestBiome",
-		"Height":"BogForestHeightMapBase",
 		"Layering":"BogGrassLayeringGrass",
 		"Props":"BogForestPropsBase",
 		"Color":[204/255.0, 255/255.0, 153/255.0]
 	},{
 		"Class":"Biome",
 		"Name":"PineForestBiome",
-		"Height":"FieldsHeightMapBase",
 		"Layering":"JustGrassLayeringPine",
 		"Props":"PineForestPropsBase"
 	},{
 		"Class":"Biome",
 		"Name":"ForestBiome",
-		"Height":"FieldsHeightMapBase",
 		"Layering":"GrassLayering",
 		"Props":"ForestPropsBase",
 		"Color":[204/255.0, 255/255.0, 153/255.0]
 	},{
 		"Class":"Biome",
 		"Name":"BushlandBiome",
-		"Height":"FieldsHeightMapBase",
 		"Layering":"GrassLayering",
 		"Props":"BushlandPropsBase",
 		"Color":[204/255.0, 255/255.0, 153/255.0]
@@ -659,25 +580,21 @@ biomes.extend([
 	{
 		"Class":"Biome",
 		"Name":"PlainsBiome",
-		"Height":"FieldsHeightMapBase",
 		"Layering":"GrassLayering",
 		"Props":"GrasslandPropsBase"
 	},{
 		"Class":"Biome",
 		"Name":"RedPlainsBiome",
-		"Height":"FieldsHeightMapBase",
 		"Layering":"GrassLayering",
 		"Props":"GrasslandPropsRed"
 	},{
 		"Class":"Biome",
 		"Name":"WhitePlainsBiome",
-		"Height":"FieldsHeightMapBase",
 		"Layering":"GrassLayering",
 		"Props":"GrasslandPropsWhite"
 	},{
 		"Class":"Biome",
 		"Name":"YellowPlainsBiome",
-		"Height":"FieldsHeightMapBase",
 		"Layering":"GrassLayering",
 		"Props":"GrasslandPropsYellow"
 	},
@@ -686,13 +603,11 @@ biomes.extend([
 	{
 		"Class":"Biome",
 		"Name":"DesertBiome",
-		"Height":"SandDesertHeightMapBase",
 		"Layering":"SandDesertLayeringSand",
 		"Props":"SandlandPropsBase"
 	},{
 		"Class":"Biome",
 		"Name":"MensaeBiome",
-		"Height":"MensaeMountainDesertHeightMapBase",
 		"Layering":"MensaeMountainDesertLayeringSand"
 	},
 	
@@ -700,7 +615,6 @@ biomes.extend([
 	{
 		"Class":"Biome",
 		"Name":"RiverBiome",
-		"Height":"RiverHeightMapBase",
 		"Layering":"RiverLayeringSand"
 	}
 ])
