@@ -519,6 +519,105 @@ recipes_hand.append({
 })
 
 recipes_hand.append({
+	"Name": "AdvancedSteampack",
+	"Input":{
+		"Items":[
+			{
+				"Name": "StainlessSteelParts" + static_item,
+				"Count": 30
+			},
+			{
+				"Name": "StainlessSteelPlate" + static_item,
+				"Count": 10
+			},
+			{
+				"Name": "CopperPipe" + static_item,
+				"Count": 30
+			},
+			{
+				"Name": "Processor" + static_item,
+				"Count": 10
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "AdvancedSteampack" + static_item,
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 20
+})
+
+recipes_hand.append({
+	"Name": "HighCapacitySteampack",
+	"Input":{
+		"Items":[
+			{
+				"Name": "SteelParts" + static_item,
+				"Count": 30
+			},
+			{
+				"Name": "SteelPlate" + static_item,
+				"Count": 10
+			},
+			{
+				"Name": "CopperPipe" + static_item,
+				"Count": 5
+			},
+			{
+				"Name": "Circuit" + static_item,
+				"Count": 15
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "HighCapacitySteampack" + static_item,
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 20
+})
+
+recipes_hand.append({
+	"Name": "HighPressureSteampack",
+	"Input":{
+		"Items":[
+			{
+				"Name": "SteelParts" + static_item,
+				"Count": 6
+			},
+			{
+				"Name": "SteelPlate" + static_item,
+				"Count": 2
+			},
+			{
+				"Name": "CopperPipe" + static_item,
+				"Count": 30
+			},
+			{
+				"Name": "Circuit" + static_item,
+				"Count": 15
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "HighPressureSteampack" + static_item,
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 20
+})
+
+recipes_hand.append({
 	"Name": "Jetpack",
 	"Input":{
 		"Items":[
