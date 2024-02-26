@@ -281,6 +281,15 @@ equipped = [
 		"Name": "Steampack",
 		"ItemLogic": "Equipped/SteampackBP.SteampackBP_C"
 	},{
+		"Name": "HighPressureSteampack",
+		"ItemLogic": "Equipped/HighPresSteampackBP.HighPresSteampackBP_C"
+	},{
+		"Name": "HighCapacitySteampack",
+		"ItemLogic": "Equipped/HighCapSteampackBP.HighCapSteampackBP_C"
+	},{
+		"Name": "AdvancedSteampack",
+		"ItemLogic": "Equipped/AdvancedSteampackBP.AdvancedSteampackBP_C"
+	},{
 		"Name": "Jetpack",
 		"ItemLogic": "Equipped/JetpackBP.JetpackBP_C"
 	},{
@@ -451,6 +460,27 @@ images.append({
 		"Base": "T_" + "JetpackBase",
 		"NewName": "T_" + "Steampack",
 		"MulMask": "T_" + "Copper",
+	})
+
+images.append({
+		"Base": "T_" + "JetpackBase",
+		"NewName": "T_" + "HighPressureSteampack",
+		"MulMask": "T_" + "Steel",
+		"AddMask": "T_RedCircle" + additive_ico,
+	})
+
+images.append({
+		"Base": "T_" + "JetpackBase",
+		"NewName": "T_" + "HighCapacitySteampack",
+		"MulMask": "T_" + "Steel",
+		"AddMask": "T_BlueCircle" + additive_ico,
+	})
+
+images.append({
+		"Base": "T_" + "JetpackBase",
+		"NewName": "T_" + "AdvancedSteampack",
+		"MulMask": "T_" + "StainlessSteel",
+		"AddMask": "T_GreenCircle" + additive_ico,
 	})
 	
 for one in equipped:

@@ -45,6 +45,36 @@ def append_equipment(xy, append_levels, researches):
 	})
 	append_levels({
 		"Class": static_research,
+		"Name": "HighPressureSteampack" + static_research,
+		"LabelParts": [["HighPressureSteampack", "misc"]],
+		"RequiredResearches": ["Steampack" + static_research],
+		"Unlocks": [["Hand" + base_recipe, "HighPressureSteampack"]],
+		"Chapter": "Production" + static_chapter,
+		"Position": [xy[0] - 2, xy[1] + 1],
+		"Levels": [2,2],
+	})
+	append_levels({
+		"Class": static_research,
+		"Name": "HighCapacitySteampack" + static_research,
+		"LabelParts": [["HighCapacitySteampack", "misc"]],
+		"RequiredResearches": ["Steampack" + static_research],
+		"Unlocks": [["Hand" + base_recipe, "HighCapacitySteampack"]],
+		"Chapter": "Production" + static_chapter,
+		"Position": [xy[0] - 2, xy[1] + 2],
+		"Levels": [2,2],
+	})
+	append_levels({
+		"Class": static_research,
+		"Name": "AdvancedSteampack" + static_research,
+		"LabelParts": [["AdvancedSteampack", "misc"]],
+		"RequiredResearches": ["HighCapacitySteampack" + static_research, "HighPressureSteampack" + static_research],
+		"Unlocks": [["Hand" + base_recipe, "AdvancedSteampack"]],
+		"Chapter": "Production" + static_chapter,
+		"Position": [xy[0] - 3, xy[1] + 2],
+		"Levels": [3,3],
+	})
+	append_levels({
+		"Class": static_research,
 		"Name": "Screwdriver" + static_research,
 		"LabelParts": [["Screwdriver", "parts"]],
 		"RequiredResearches": ["Multitool" + static_research],
