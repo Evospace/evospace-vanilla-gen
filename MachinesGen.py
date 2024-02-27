@@ -1486,6 +1486,35 @@ for machine in machines:
 					"Tier": tier,
 					"Ticks" : 20
 				})
+
+			if machine["Name"] == "Smelter":
+				recipe = {
+					"Name": tier_material[tier] + machine["Name"],
+					"Input":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + "Plate"+ static_item if tier > 0 else "StoneSurface" + static_item,
+								"Count": 4
+							}
+						]
+					},
+					"Output":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Tier": tier,
+					"Ticks" : 20
+				}
+				if tier > 0:
+					recipe["Input"]["Items"].append({
+							"Name": "StoneSmelter" + static_item,
+							"Count": 1
+						})
+				append_recipe(recipe)
 				
 			if machine["Name"] == "Furnace":
 				recipe = {
