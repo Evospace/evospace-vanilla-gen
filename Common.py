@@ -234,6 +234,9 @@ def parts_ramp(level, factor = 5):
 		return level * factor
 	else:
 		return factor * 3
+	
+def exp_ramp(level, factor = 2):
+	return factor ** level
 
 tiers_res_item = [
 	"Computations" + static_item,

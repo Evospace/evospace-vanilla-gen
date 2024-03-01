@@ -690,10 +690,20 @@ append_levels({
 })
 append_levels({
 	"Class": static_research,
+	"Name": "Catalyst" + static_research,
+	"LabelParts": [["Catalyst", "parts"]],
+	"Chapter":"Production"+static_chapter,
+	"RequiredResearches": ["Chemistry" + static_research],
+	"Unlocks": [["Hand" + base_recipe, "Catalyst"],["Assembler" + base_recipe, "Catalyst"]],
+	"Levels": [2,2],
+	"Position": [5,-3],
+})
+append_levels({
+	"Class": static_research,
 	"Name": "IndustrialChemReactor" + static_research,
 	"LabelParts": [["IndustrialChemReactor", "machines"]],
 	"Chapter":"Production"+static_chapter,
-	"RequiredResearches": ["Chemistry" + static_research],
+	"RequiredResearches": ["Catalyst" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%IndustrialChemReactor"],["Constructor" + base_recipe, "%Material%IndustrialChemReactor"]],
 	"Levels": [3,7],
 	"Position": [5,-6],
@@ -806,6 +816,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, tier_material[4] + "Parts"],
 	["Hand" + base_recipe, tier_material[4] + "Plate"],
 	["Hand" + base_recipe, tier_material[4] + "Pipe"],["Constructor" + base_recipe, tier_material[4] + "Pipe"]],
+	"AlsoUnlocks": [["Hand" + base_recipe, "Cell"]],
 	"Chapter": "Production" + static_chapter,
 	"Position": [6,-2],
 	"Levels": [4,4],
@@ -920,6 +931,17 @@ append_levels({
 	["Hand" + base_recipe, tier_material[7] + "Plate"],
 	["Hand" + base_recipe, tier_material[7] + "Pipe"],["Constructor" + base_recipe, tier_material[7] + "Pipe"]],
 	"Chapter": "Production" + static_chapter,
+	"Position": [11,-5],
+	"Levels": [6,6],
+	"MainResearch": True,
+})
+append_levels({
+	"Class": static_research,
+	"Name": "UltimateCatalyst" + static_research,
+	"LabelParts": [["UltimateCatalyst", "parts"]],
+	"RequiredResearches": ["NeutroniumProduction" + static_research],
+	"Unlocks": [["Hand" + base_recipe, "UltimateCatalyst"],["Assembler" + base_recipe, "UltimateCatalyst"]],
+	"Chapter": "Production" + static_chapter,
 	"Position": [11,-4],
 	"Levels": [6,6],
 	"MainResearch": True,
@@ -928,7 +950,7 @@ append_levels({
 	 "Class": static_research,
 	 "Name": "Portal" + static_research,
 	 "LabelParts": [["Portal", "machines"]],
-	 "RequiredResearches": ["NeutroniumProduction" + static_research],
+	 "RequiredResearches": ["UltimateCatalyst" + static_research],
 	 "Unlocks": [["Hand" + base_recipe, "%Material%Portal"],["Constructor" + base_recipe, "%Material%Portal"]],
 	 "Chapter": "Production" + static_chapter,
 	 "Position": [12,-4],
@@ -940,10 +962,20 @@ append_levels({
 	"Name": "FissionReactor" + static_research,
 	"LabelParts": [["FissionReactor", "machines"]],
 	"Chapter": "Production" + static_chapter,
-	"RequiredResearches": ["TitaniumProduction" + static_research],
+	"RequiredResearches": ["UraniumCell" + static_research],
 	"Levels": [5,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%FissionReactor"],["Constructor" + base_recipe, "%Material%FissionReactor"]],
 	"Position": [7,-6],
+})
+append_levels({
+	"Class": static_research,
+	"Name": "UraniumCell" + static_research,
+	"LabelParts": [["UraniumCell", "parts"]],
+	"Chapter": "Production" + static_chapter,
+	"RequiredResearches": ["TitaniumProduction" + static_research],
+	"Levels": [5,5],
+	"Unlocks": [["Hand" + base_recipe, "UraniumCell"],["Assembler" + base_recipe, "UraniumCell"]],
+	"Position": [7,-5],
 })
 append_nuclear([7,-7], append_levels, researches)
 append_levels({

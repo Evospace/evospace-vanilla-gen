@@ -638,7 +638,7 @@ recipes_assembler.append({
 	"Ticks" : 200,
 })
 
-recipes_assembler.append({
+append_recipe({
 	"Name":"QuantumBrain",
 	"Input":{
 		"Items":[	
@@ -707,7 +707,7 @@ append_recipe({
 			},	
 			{
 				"Name": "NeutroniumParts" + static_item,
-				"Count": 8
+				"Count": 2
 			},	
 			{
 				"Name": "Coke" + static_item,
@@ -1202,7 +1202,32 @@ recipes_farm.append({
 			}
 		]
 	},
-	"Ticks" : 1000,
+	"Ticks" : 2000,
+})
+
+recipes_farm.append({
+	"Name":"Grass",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Water" + static_item,
+				"Count": 100
+			},
+			{
+				"Name": "DirtSurface" + static_item,
+				"Count": 5
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "GrassSurface" + static_item,
+				"Count": 5
+			}
+		]
+	},
+	"Ticks" : 200,
 })
 
 recipes_farm.append({
