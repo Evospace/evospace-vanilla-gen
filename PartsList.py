@@ -45,6 +45,17 @@ circuits = [
 	"QuantumBrain" + static_item,
 ]
 
+catalyzers = [
+	"CopperParts" + static_item,      # 0 stone
+	"CopperParts" + static_item,      # 1 copper
+	"SteelParts" + static_item,       # 2 steel
+	"AdvancedCircuit" + static_item,  # 3 alum
+	"Processor" + static_item,        # 4 ss
+	"QuantumCircuit" + static_item,   # 5 tita
+	"QuantumProcessor" + static_item, # 6 hard
+	"QuantumBrain" + static_item,     # 7 neu
+]
+
 wires = [
 	"CopperWire" + static_item,
 	"CopperWire" + static_item,

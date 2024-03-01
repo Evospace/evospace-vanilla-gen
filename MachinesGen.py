@@ -1135,7 +1135,7 @@ for machine in machines:
 							},
 							{
 								"Name": "Silicon" + static_item,
-								"Count": 3
+								"Count": 3 + exp_ramp(level)
 								
 							}
 						]
@@ -2339,7 +2339,7 @@ for machine in machines:
 							},
 							{
 								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 1 + parts_ramp(level, 2),
+								"Count": 1 + 1  if level > 0 else 0,
 							}
 						]
 					},
@@ -2362,11 +2362,11 @@ for machine in machines:
 						"Items":[
 							{
 								"Name": tier_material[tier] + "Conveyor" + static_item,
-								"Count": 4,
+								"Count": 2,
 							},
 							{
 								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 5 + parts_ramp(level, 5),
+								"Count": 4,
 							}
 						]
 					},
