@@ -3,36 +3,50 @@
 from Common import *
 from Materials import *
 
-parts = []
-	
-parts.append({
-	"Label" : "Plate",
-	"Name" : "Plate",
-	"Volume": 1, # from 1 ingot
-	"StartTier": 1,
-	"EndTier": 100,
-	"Stack": 64,
-})	
-parts.append({
-	"Label" : "Parts",
-	"Name" : "Parts",
-	"Volume": 1,
-	"StartTier": 1,
-	"EndTier": 100,
-	"Stack": 64,
-	"Mesh":"Models/PartsCrate",
-	"Materials":["Materials/Pine","Materials/%Material%"],
-})
-parts.append({
-	"Label" : "Casing",
-	"Name" : "Casing",
-	"StartTier": 1,
-	"EndTier": 100,
-	"ItemLogic": building_cube_logic,
-	"Stack": 32,
-	"RequiredResearches":["MetalConstructions"+static_research],
-	"Tag": "Decoration"
-})
+parts = [
+    {
+		"Label" : "Plate",
+		"Name" : "Plate",
+		"Volume": 1, # from 1 ingot
+		"StartTier": 1,
+		"EndTier": 100,
+		"Stack": 64,
+	},
+	{
+		"Label" : "Parts",
+		"Name" : "Parts",
+		"Volume": 1,
+		"StartTier": 1,
+		"EndTier": 100,
+		"Stack": 64,
+		"Mesh":"Models/PartsCrate",
+		"Materials":["Materials/Pine","Materials/%Material%"],
+	},
+	{
+		"Label" : "Casing",
+		"Name" : "Casing",
+		"StartTier": 1,
+		"EndTier": 100,
+		"ItemLogic": building_cube_logic,
+		"Stack": 32,
+		"RequiredResearches":["MetalConstructions"+static_research],
+		"Tag": "Decoration"
+	},
+	{
+		"Label" : "Gearbox",
+		"Name" : "Gearbox",
+		"StartTier": 1,
+		"EndTier": 100,
+		"Stack": 32
+	},
+	{
+		"Label" : "Solar Cell",
+		"Name" : "SolarCell",
+		"StartTier": 3,
+		"EndTier": 100,
+		"Stack": 32
+	}
+]
 
 circuits = [
 	"CopperParts" + static_item,
@@ -46,10 +60,10 @@ circuits = [
 ]
 
 catalyzers = [
-	"CopperParts" + static_item,      # 0 stone
-	"CopperParts" + static_item,      # 1 copper
-	"SteelParts" + static_item,       # 2 steel
-	"AdvancedCircuit" + static_item,  # 3 alum
+	"CopperDust" + static_item,      # 0 stone
+	"CopperDust" + static_item,      # 1 copper
+	"GoldDust" + static_item,        # 2 steel
+	"GoldDust" + static_item,        # 3 alum
 	"Processor" + static_item,        # 4 ss
 	"QuantumCircuit" + static_item,   # 5 tita
 	"QuantumProcessor" + static_item, # 6 hard

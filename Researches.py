@@ -3,6 +3,7 @@ from Materials import *
 import copy
 from NuclearResearches import *
 from EquipmentResearches import *
+from PartsResearchHelper import *
 
 researches = []
 
@@ -157,7 +158,7 @@ append_levels({
 	"RequiredResearches": ["Drying"+static_research],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%BlastFurnace"],["Constructor" + base_recipe, "%Material%BlastFurnace"]],
-	"AlsoUnlocks": [["Hand" + base_recipe, "SteelParts"],["Hand" + base_recipe, "SteelPlate"],["Hand" + base_recipe, "SteelPipe"]],
+	"AlsoUnlocks": get_parts_unlocks(tier_material[2]),
 	"Chapter":"Production"+static_chapter,
 	"Position": [3, 0],
 	"MainResearch": True,
@@ -188,9 +189,7 @@ append_levels({
 	"Name": "AluminiumProduction" + static_research,
 	"LabelParts": [["AluminiumProduction", "researches"]],
 	"RequiredResearches": ["AdvancedSmelting" + static_research, "Electrolysis" + static_research],
-	"Unlocks": [["Hand" + base_recipe, tier_material[3] + "Parts"],
-	["Hand" + base_recipe, tier_material[3] + "Plate"],
-	["Hand" + base_recipe, tier_material[3] + "Pipe"],["Constructor" + base_recipe, tier_material[3] + "Pipe"]],
+	"Unlocks": get_parts_unlocks(tier_material[3]),
 	"Chapter": "Production" + static_chapter,
 	"Position": [5,-1],
 	"Levels": [3,3],
@@ -236,13 +235,7 @@ append_levels({
 	"Name": "Metalwork" + static_research,
 	"LabelParts": [["Metalwork", "researches"]],
 	"RequiredResearches": ["Smelting"+static_research],
-	"Unlocks": [["Hand" + base_recipe, "CopperParts"],["Hand" + base_recipe, "CopperPlate"],["Hand" + base_recipe, "CopperPipe"]],
-	"Collect": { "Items": [
-		{
-			"Name": "CopperOre" + static_item,
-			"Count": 10
-		}
-	] },
+	"Unlocks": get_parts_unlocks(tier_material[1]),
 	"Position": [1,2],
 	"Levels": [1,1],
 	"Chapter": "Production"+static_chapter,
@@ -813,9 +806,7 @@ append_levels({
 	"Name": "StainlessSteelProduction" + static_research,
 	"LabelParts": [["StainlessSteelProduction", "researches"]],
 	"RequiredResearches": ["Chemistry" + static_research, "AluminiumProduction" + static_research],
-	"Unlocks": [["Hand" + base_recipe, tier_material[4] + "Parts"],
-	["Hand" + base_recipe, tier_material[4] + "Plate"],
-	["Hand" + base_recipe, tier_material[4] + "Pipe"],["Constructor" + base_recipe, tier_material[4] + "Pipe"]],
+	"Unlocks": get_parts_unlocks(tier_material[4]),
 	"AlsoUnlocks": [["Hand" + base_recipe, "Cell"]],
 	"Chapter": "Production" + static_chapter,
 	"Position": [6,-2],
@@ -849,9 +840,7 @@ append_levels({
 	"LabelParts": [["TitaniumProduction", "researches"]],
 	"Chapter": "Production" + static_chapter,
 	"RequiredResearches": ["IndustrialSmelting" + static_research],
-	"Unlocks": [["Hand" + base_recipe, tier_material[5] + "Parts"],
-	["Hand" + base_recipe, tier_material[5] + "Plate"],
-	["Hand" + base_recipe, tier_material[5] + "Pipe"],["Constructor" + base_recipe, tier_material[5] + "Pipe"]],
+	"Unlocks": get_parts_unlocks(tier_material[5]),
 	"Position": [7,-4],
 	"Levels": [4,4],
 	"CostLevelOffset": -1,
@@ -903,9 +892,7 @@ append_levels({
 	"Name": "HardMetalProduction" + static_research,
 	"LabelParts": [["HardMetalProduction", "researches"]],
 	"RequiredResearches": ["Freezer" + static_research],
-	"Unlocks": [["Hand" + base_recipe, tier_material[6] + "Parts"],
-	["Hand" + base_recipe, tier_material[6] + "Plate"],
-	["Hand" + base_recipe, tier_material[6] + "Pipe"],["Constructor" + base_recipe, tier_material[6] + "Pipe"]],
+	"Unlocks": get_parts_unlocks(tier_material[6]),
 	"Chapter": "Production" + static_chapter,
 	"Position": [9,-4],
 	"Levels": [5,5],
@@ -927,9 +914,7 @@ append_levels({
 	"Name": "NeutroniumProduction" + static_research,
 	"LabelParts": [["NeutroniumProduction", "researches"]],
 	"RequiredResearches": ["FusionReactor" + static_research],
-	"Unlocks": [["Hand" + base_recipe, tier_material[7] + "Parts"],
-	["Hand" + base_recipe, tier_material[7] + "Plate"],
-	["Hand" + base_recipe, tier_material[7] + "Pipe"],["Constructor" + base_recipe, tier_material[7] + "Pipe"]],
+	"Unlocks": get_parts_unlocks(tier_material[7]),
 	"Chapter": "Production" + static_chapter,
 	"Position": [11,-5],
 	"Levels": [6,6],
