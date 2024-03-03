@@ -1045,6 +1045,18 @@ materials = [
 		"Craftable": False,
 		"IsExact": True,
 		"Category": "Signal"
+	},{
+		"Name": "Drain",
+		"Label": "Drain",
+		"IsExact": True,
+		"Craftable": False,
+		"Category": "Signal"
+	},{
+		"Name": "Percent",
+		"Label": "Percent",
+		"IsExact": True,
+		"Craftable": False,
+		"Category": "Signal"
 	}
 ]
 
@@ -1060,22 +1072,9 @@ for a in list(string.ascii_uppercase):
 	})
 
 materials.append({
-		"Name": "ErrorString",
-		"Label": "Error String",
-		"IsExact": True,
-		"Craftable": False,
-	})
-
-materials.append({
-	"Name": "Drain",
-	"Label": "Drain",
+	"Name": "ErrorString",
+	"Label": "Error String",
 	"IsExact": True,
 	"Craftable": False,
-})
-
-materials.append({
-	"Name": "Percent",
-	"Label": "Percent",
-	"IsExact": True,
-	"Craftable": False,
+	"Category": "Signal"
 })

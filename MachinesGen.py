@@ -15,11 +15,6 @@ researches = []
 cvs = []
 desc_csv = []
 
-researches.append({
-	"Name": "Core" + static_research,
-	"UnlokedItems": [ "Core" + static_item ],
-})
-
 def append_recipe(recipe):
 	item_count = 0
 	for item in recipe["Input"]["Items"]:
@@ -1123,21 +1118,16 @@ for machine in machines:
 							},
 							{
 								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 6 + parts_ramp(level)
+								"Count": 4
 							},
 							{
-								"Name": tier_material[tier] + "ElectricEngine" + static_item,
+								"Name": tier_material[tier] + "SolarCell" + static_item,
 								"Count": 1
 							},
 							{
 								"Name": "Glass" + static_item,
-								"Count": 3
+								"Count": 4
 							},
-							{
-								"Name": "Silicon" + static_item,
-								"Count": 3 + exp_ramp(level)
-								
-							}
 						]
 					},
 					"Output":{
@@ -1297,8 +1287,8 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 3 + parts_ramp(level)
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 1
 							},{
 								"Name": tier_material[tier] + "Plate" + static_item,
 								"Count": 3

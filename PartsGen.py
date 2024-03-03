@@ -34,6 +34,18 @@ def append_gas_burning(recipe):
 	
 	recipes_gasturb.append(recipe)
 
+def append_recipe(crafter, recipe):
+	item_count = 0
+	for item in recipe["Input"]["Items"]:
+		item_count = item_count + item["Count"]
+
+	con_recipe = copy.deepcopy(recipe)
+	crafter.append(con_recipe)
+
+	recipe["Ticks"] = 20
+	recipe["ResourceInput"] = {}
+	recipes_hand.append(recipe)
+
 # tiered parts
 for part in parts:
 	for tier in tiers_numlist:
@@ -107,9 +119,8 @@ for part in parts:
 					},
 					"Ticks" : 80 * part["Volume"]  * 1.5**level,
 				})
-			recipes_wrench.append(simple_in_out_recipe(material + part["Name"]))
 			
-			if part["Name"] == "Casing" and part["StartTier"] <= tier and part["EndTier"] >= tier:
+			if part["Name"] == "Casing":
 				recipes_hand.append({
 					"Name": material + "Casing",
 					"Input":{
@@ -139,9 +150,81 @@ for part in parts:
 					"Item" : material + "Casing" + static_item,
 					"Tesselator": material + "Casing" + tesselator,
 				})
+				recipes_wrench.append(simple_in_out_recipe(material + part["Name"]))
 			
+			if part["Name"] == "Gearbox":
+				append_recipe(recipes_assembler, {
+					"Name": material + "Gearbox",
+					"Input":{
+						"Items":[
+							{
+								"Name": material + "Plate" + static_item,
+								"Count": 1 if tier < 3 else 4
+							}
+						] +  ([] if tier > 2 else [{
+							"Name": material + "Parts" + static_item,
+							"Count": 2 + (0 if tier != 2 else 4)
+						}]) + ([] if tier < 2 else [
+							{
+								"Name": tier_material[(tier - 1) if tier < 3 else 2] + "Gearbox" + static_item,
+								"Count": 2 + (0 if tier < 3 else (tier - 2) * 2 )
+							}
+						])
+					},
+					"ResourceInput":{
+						"Name": "Electricity" + static_item,
+						"Count": 10 * 1.5**level
+					},
+					"Output":{
+						"Items":[
+							{
+								"Name": material + "Gearbox" + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Ticks" : 80 * 1.5**level,
+				})
+
+			if part["Name"] == "SolarCell":
+				append_recipe(recipes_assembler, {
+					"Name": material + "SolarCell",
+					"Input":{
+						"Items":[
+							{
+								"Name": wires[tier],
+								"Count": 2
+							},{
+								"Name": "SiliconWafer" + static_item,
+								"Count": 2
+							},{
+								"Name": "SteelPlate" + static_item,
+								"Count": 1
+							}
+						] + ([] if tier < 3 else [
+							{
+								"Name": tier_material[tier - 1] + "SolarCell" + static_item,
+								"Count": 2
+							}
+						])
+					},
+					"ResourceInput":{
+						"Name": "Electricity" + static_item,
+						"Count": 10 * 1.5**level
+					},
+					"Output":{
+						"Items":[
+							{
+								"Name": material + "SolarCell" + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Ticks" : 80 * 1.5**level,
+				})
+
 			if part["Name"] == "Plate":
-				recipes_hammer.append({
+				append_recipe(recipes_hammer, {
 					"Name": material + "Plate",
 					"Input":{
 						"Items":[
@@ -165,49 +248,9 @@ for part in parts:
 					},
 					"Ticks" : 80 * 1.5**level,
 				})
-				recipes_hand.append({
-					"Name": material + "Plate",
-					"Input":{
-						"Items":[
-							{
-								"Name": material + ("Ingot" if material != "Stone" else "Surface") + static_item,
-								"Count": 1
-							}
-						]
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": material + "Plate" + static_item,
-								"Count": 1
-							}
-						]
-					},
-					"Ticks" : 20,
-				})
 				
 			if part["Name"] == "Parts":
-				recipes_hand.append({ # parts recipe
-					"Name": material + "Parts",
-					"Input":{
-						"Items":[
-							{
-								"Name": material + "Plate" + static_item,
-								"Count": 1
-							}
-						]
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": material + "Parts" + static_item,
-								"Count": 1
-							}
-						]
-					},
-					"Ticks" : 20,
-				})
-				recipes_cutter.append({
+				append_recipe(recipes_cutter, {
 					"Name": material + "Parts",
 					"Input":{
 						"Items":[
