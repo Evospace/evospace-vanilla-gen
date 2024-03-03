@@ -35,6 +35,16 @@ simple_single = [
 	},{
 		"Name": "Stairs",
 	},{
+		"Name": "ConcreteRamp",
+	},{
+		"Name": "ConcreteRamp2",
+	},{
+		"Name": "ConcreteRamp3",
+	},{
+		"Name": "ConcreteBeam",
+	},{
+		"Name": "ConcreteBeam2",
+	},{
 		"Name": "WoodenStairs",
 	},{
 		"Name": "CopperChair",		

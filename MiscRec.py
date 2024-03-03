@@ -5550,26 +5550,27 @@ append_recipe_hand_press({
 	"Ticks" : 10
 })
 
-append_recipe_hand_press({
-	"Name":"DangerBlock",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Concrete" + static_item,
-				"Count": 1
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "DangerBlock" + static_item,
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 20
-})
+for name in ("DangerBlock", "ConcreteRamp", "ConcreteRamp2", "ConcreteRamp3", "ConcreteBeam", "ConcreteBeam2"):
+	append_recipe_hand_press({
+		"Name": name,
+		"Input":{
+			"Items":[
+				{
+					"Name": "Concrete" + static_item,
+					"Count": 1
+				}
+			]
+		},
+		"Output":{
+			"Items":[
+				{
+					"Name": name + static_item,
+					"Count": 1
+				}
+			]
+		},
+		"Ticks" : 20
+	})
 
 append_recipe_hand_press({
 	"Name": "BasicPlatform",
