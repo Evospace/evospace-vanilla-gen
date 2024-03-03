@@ -1252,8 +1252,10 @@ append_levels({
 	"Name": "DecorativeConcrete" + static_research,
 	"LabelParts": [["DecorativeConcrete", "researches"]],
 	"RequiredResearches": ["Mixer" + static_research], 
-	"Unlocks": [["Hand" + base_recipe, "ConcreteTiles"], ["CuttingMachine" + base_recipe, "ConcreteTiles"]],
+	"Unlocks": [["Hand" + base_recipe, "ConcreteTiles"], ["CuttingMachine" + base_recipe, "ConcreteTiles"],
+			 ["Hand" + base_recipe, "ConcreteBeam"], ["Press" + base_recipe, "ConcreteBeam"]],
 	"Chapter": "Decorations" + static_chapter,
+	"Levels": [1, 2],
 	"Position": [3,0],
 })
 append_levels({
@@ -1262,8 +1264,11 @@ append_levels({
 	"LabelParts": [["DecorativeConcrete", "researches"], [level_labels[1], "common"]],
 
 	"RequiredResearches": ["DecorativeConcrete" + static_research], 
-	"Unlocks": [["Hand" + base_recipe, "ConcreteSmallTiles"], ["CuttingMachine" + base_recipe, "ConcreteSmallTiles"]],
+	"Unlocks": [["Hand" + base_recipe, "ConcreteSmallTiles"], ["CuttingMachine" + base_recipe, "ConcreteSmallTiles"],
+			 ["Hand" + base_recipe, "ConcreteBeam2"], ["Press" + base_recipe, "ConcreteBeam2"],
+			 ["Hand" + base_recipe, "ConcreteRamp3"], ["Press" + base_recipe, "ConcreteRamp3"]],
 	"Chapter": "Decorations" + static_chapter,
+	"Levels": [1, 3],
 	"Position": [3,1],
 })
 append_levels({
@@ -1272,8 +1277,11 @@ append_levels({
 	"LabelParts": [["DecorativeConcrete", "researches"], [level_labels[2], "common"]],
 
 	"RequiredResearches": ["DecorativeConcrete2" + static_research], 
-	"Unlocks": [["Hand" + base_recipe, "ConcreteBricks"], ["CuttingMachine" + base_recipe, "ConcreteBricks"]],
+	"Unlocks": [["Hand" + base_recipe, "ConcreteBricks"], ["CuttingMachine" + base_recipe, "ConcreteBricks"],
+			 ["Hand" + base_recipe, "ConcreteRamp"], ["Press" + base_recipe, "ConcreteRamp"],
+			 ["Hand" + base_recipe, "ConcreteRamp2"], ["Press" + base_recipe, "ConcreteRamp2"]],
 	"Chapter": "Decorations" + static_chapter,
+	"Levels": [2, 4],
 	"Position": [3,2],
 })
 append_levels({
@@ -1284,6 +1292,7 @@ append_levels({
 	"RequiredResearches": ["DecorativeConcrete3" + static_research], 
 	"Unlocks": [["Hand" + base_recipe, "DangerBlock"]],
 	"Chapter": "Decorations" + static_chapter,
+	"Levels": [3, 3],
 	"Position": [3,3],
 })
 append_levels({
