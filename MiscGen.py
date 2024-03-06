@@ -335,7 +335,7 @@ for one in wooden_misc:
 	block = {
 		"Name": one["Name"] + static_block,
 		"Item" : one["Name"] + static_item,
-		"Actor" : "/Game/Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
+		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
 		"Class": static_block
 	}
@@ -366,7 +366,7 @@ for one in simple_single:
 		"Class": static_block,
 		"Name": one["Name"] + static_block,
 		"Item" : one["Name"] + static_item,
-		"Actor" : "/Game/Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
+		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
 	}
 	
@@ -453,7 +453,7 @@ for one in static_mesh_block:
 		"Class": static_block,
 		"Name": one["Name"] + static_block,
 		"Item" : one["Name"] + static_item,
-		"Actor" : "/Game/Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
+		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic",
 		#"Tesselator": one["Name"] + tesselator_static_mesh
 	})

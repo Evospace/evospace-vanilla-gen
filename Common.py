@@ -211,6 +211,8 @@ building_decoration_logic = "BuildingDecorationItemLogic"
 building_prop_logic = "BuildingPropItemLogic"
 building_big_prop_logic = "BuildingPropItemLogic"
 
+cover_item_logic = "CoverItemLogic"
+
 building_brush_slot_logic = "BuildingBrushItemLogic"
 base_recipe = "BaseRecipeDictionary"
 breaking_recipe = "BaseRecipeDictionary"
