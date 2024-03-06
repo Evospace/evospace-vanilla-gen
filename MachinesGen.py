@@ -202,7 +202,7 @@ for machine in machines:
 			if "BlockLogic" in machine:
 				block["BlockLogic"] = machine["BlockLogic"]
 			
-			block["Actor"] = "/Game/Blocks/" + machine["Name"] + "BP." + machine["Name"] + "BP_C"
+			block["Actor"] = "Blocks/" + machine["Name"] + "BP." + machine["Name"] + "BP_C"
 			
 			if "Selector" in machine:
 				block["Selector"] = machine["Selector"]
@@ -2983,7 +2983,7 @@ data = {
 	"Objects": objects_array
 }
 
-write_file("Generated/Recipes/machines.json", data);
+write_file("Generated/Mixed/machines_recipes.json", data);
 
 data = {
 	"Objects": researches

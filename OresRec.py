@@ -475,4 +475,4 @@ data = {
 	"Objects": objects_array
 }
 
-write_file("Generated/Recipes/ores.json", data);
+write_file("Generated/Mixed/ores_recipes.json", data);

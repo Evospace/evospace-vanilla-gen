@@ -1001,7 +1001,7 @@ data = {
 	"Objects": objects_array
 }
 
-write_file("Generated/Recipes/parts.json", data);
+write_file("Generated/Mixed/parts_recipes.json", data);
 
 data = {
 	"Objects": researches

@@ -1282,4 +1282,4 @@ data = {
 	"Objects": objects_array
 }
 
-write_file("Generated/Recipes/misc_hand.json", data);
+write_file("Generated/Mixed/misc_hand_recipes.json", data);

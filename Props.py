@@ -860,6 +860,6 @@ data = {
 	"Objects": objects_array
 }
 
-write_file("Generated/Recipes/props.json", data);
+write_file("Generated/Mixed/props_recipes.json", data);
 
 write_file("Loc/source/props.json", cvs)
