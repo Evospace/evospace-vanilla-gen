@@ -194,6 +194,7 @@ machines = [
 		"BlockLogic": "ElectricConductorBlockLogic",
 		"Tag": "Logistics",
 		"PathFinding": True,
+        "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
 	},{
 		"Name": "Chest",
 		"Label": "Chest",
@@ -251,7 +252,7 @@ machines = [
 			"Conveyor",
 			"Transporter"
 		],
-		"Selector": "/Game/Blocks/ArrowConvBP.ArrowConvBP_C",
+		"Selector": "Blocks/ArrowConvBP.ArrowConvBP_C",
 		"Tag": "Logistics",
 		"PathFinding": True,
 	},{
@@ -501,14 +502,14 @@ machines = [
 		"Label": "Robot Arm",
 		"StartTier": 1,
 		"EndTier": 10,
-		"Selector": "/Game/Blocks/ArrowBP.ArrowBP_C",
+		"Selector": "Blocks/ArrowBP.ArrowBP_C",
 		"Tag": "Logistics", 
 	},{
 		"Name": "FilteringRobotArm",
 		"Label": "Filtering Robot Arm",
 		"StartTier": 1,
 		"EndTier": 10,
-		"Selector": "/Game/Blocks/ArrowBP.ArrowBP_C",
+		"Selector": "Blocks/ArrowBP.ArrowBP_C",
 		"Tag": "Logistics",
 		"Description": ["Sorter"],
 	},{
@@ -520,7 +521,7 @@ machines = [
 			"ItemPortion": 1000
 		},
 		"Tag": "Logistics",
-		"Selector": "/Game/Blocks/ArrowBP.ArrowBP_C",
+		"Selector": "Blocks/ArrowBP.ArrowBP_C",
 		"Description": ["FluidInput", "FluidOutput"],
 	},{
 		"Name": "FilteringPump",
@@ -531,7 +532,7 @@ machines = [
 			"ItemPortion": 1000
 		},
 		"Tag": "Logistics",
-		"Selector": "/Game/Blocks/ArrowBP.ArrowBP_C",
+		"Selector": "Blocks/ArrowBP.ArrowBP_C",
 		"Description": ["Sorter", "FluidInput", "FluidOutput"],
 	},{
 		"Name": "OverflowPump",
@@ -542,7 +543,7 @@ machines = [
 			"ItemPortion": 1000
 		},
 		"Tag": "Logistics",
-		"Selector": "/Game/Blocks/ArrowBP.ArrowBP_C",
+		"Selector": "Blocks/ArrowBP.ArrowBP_C",
 		"Description": ["FluidInput", "FluidOutput"],
 	},{
 		"Name": "Smelter",
