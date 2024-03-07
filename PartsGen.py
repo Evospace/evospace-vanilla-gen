@@ -53,7 +53,7 @@ for part in parts:
 		if part["StartTier"] <= tier and part["EndTier"] >= tier:
 			cvs.append([material + part["Name"], CamelToSpaces(material) + " " + part["Label"]])
 			level = tier - part["StartTier"]
-			item = { "Class": solid_static_item,
+			item = { "Class": static_item,
 				"Name": material + part["Name"] + static_item,
 				"LabelParts": [[material + part["Name"], "parts"]],
 				"Image": "T_" + material + part["Name"],
@@ -281,13 +281,14 @@ for material in materials:
 	# abstract
 	if "IsAbstract" in material:
 		cvs.append([material["Name"], material["Label"]])
-		item = { "Class": abstract_static_item,
+		item = { "Class": static_item,
 			"Name": material["Name"] + static_item,
 			"Image": "T_" + material["Name"],
 			
 			"MaxCount": 1,
 			"Tag": "Misc",
 			"LabelParts": [[material["Name"], "parts"]],
+			"Type": "Abstract"
 		}
 		
 		if "Unit" in material:
@@ -310,7 +311,7 @@ for material in materials:
 	# exact
 	if "IsExact" in material:
 		cvs.append([material["Name"], material["Label"]])
-		item = { "Class": solid_static_item,
+		item = { "Class": static_item,
 			"Name": material["Name"] + static_item,
 			"Image": "T_" + material["Name"],
 			
@@ -381,7 +382,7 @@ for material in materials:
 	# ingot
 	if "IsIngot" in material:
 		cvs.append([material["Name"] + "Ingot", material["Label"] + " Ingot"])
-		item = { "Class": solid_static_item,
+		item = { "Class": static_item,
 			"Name": material["Name"] + "Ingot" + static_item,
 			"Image": "T_" + material["Name"] + "Ingot",
 			"MaxCount": 32,
@@ -462,7 +463,7 @@ for material in materials:
 			
 	if "IsBlock" in material:
 		cvs.append([material["Name"] + "Block", material["Label"] + " Block"])
-		item = { "Class": solid_static_item,
+		item = { "Class": static_item,
 			"Name": material["Name"] + "Block" + static_item,
 			"Image": "T_" + material["Name"] + "Block",
 			"MaxCount": 999,
@@ -553,7 +554,7 @@ for material in materials:
 	# fluid
 	if "IsFluid" in material:
 		cvs.append([material["Name"], material["Label"]])
-		item = { "Class": fluid_static_item,
+		item = { "Class": static_item,
 			"Name": material["Name"] + "" + static_item,
 			"Image": "T_" + material["Name"] + "",
 			
@@ -566,6 +567,7 @@ for material in materials:
 			
 			"Category": "Fluid",
 			"DescriptionParts":[["Fluid","common"],["ByPipes","common"]],
+			"Type": "Fluid"
 		}
 		
 		if "Category" in material:
@@ -639,7 +641,7 @@ for material in materials:
 	# gas
 	if "IsGas" in material:
 		cvs.append([material["Name"], material["Label"]])
-		item = { "Class": fluid_static_item,
+		item = { "Class": static_item,
 			"Name": material["Name"] + "" + static_item,
 			"Image": "T_" + material["Name"] + "",
 			
@@ -652,6 +654,7 @@ for material in materials:
 			
 			"Category": "Fluid",
 			"DescriptionParts":[["Gas","common"],["ByPipes","common"]],
+			"Type": "Fluid"
 		}
 		
 		if "Category" in material:
@@ -725,7 +728,7 @@ for material in materials:
 	# dust
 	if "IsDust" in material:
 		cvs.append([material["Name"] + "Dust", material["Label"] + " Dust"])
-		item = { "Class": solid_static_item,
+		item = { "Class": static_item,
 			"Name": material["Name"] + "Dust" + static_item,
 			"Image": "T_" + material["Name"] + "Dust",
 			
@@ -786,7 +789,7 @@ for tool in tools:
 	for tier in tiers_numlist:
 		if tool["StartTier"] <= tier and tool["EndTier"] >= tier:
 			item_name = tier_material[tier] + tool["Name"] + static_item
-			item = { "Class": solid_static_item,
+			item = { "Class": static_item,
 				"Name": item_name,
 				"Image": "T_" + item_name,
 				"ItemLogic": tool["ItemLogic"],

@@ -88,7 +88,7 @@ for ore_type in ore_types:
 	
 	cvs.append([ore_type["Name"]+"Ore", ore_type["Name"]+" Ore"])
 	
-	item = { "Class": solid_static_item,
+	item = { "Class": static_item,
 		"Name": item_name,
 		"Mesh": "Models/Ore",
 		"Image": "T_" + ore_type["Name"] + "Ore",
@@ -125,7 +125,7 @@ for ore_type in ore_types:
 	if "NotOre" not in ore_type:		
 		# impur gravel		
 		cvs.append([ore_type["Name"]+"ImpureOreGravel", ore_type["Name"]+" Impure Ore Gravel"])
-		item = { "Class": solid_static_item,
+		item = { "Class": static_item,
 			"Name": ore_type["Name"] + "ImpureOreGravel" + static_item,
 			"Label": ore_type["Name"] + " Impure Ore Gravel",
 			"Mesh": "Models/Gravel",
@@ -150,7 +150,7 @@ for ore_type in ore_types:
 		objects_array.append(item)
 		# gravel
 		cvs.append([ore_type["Name"]+"OreGravel", ore_type["Name"]+" Ore Gravel"])
-		item = { "Class": solid_static_item,
+		item = { "Class": static_item,
 			"Name": ore_type["Name"] + "OreGravel" + static_item,
 			"Label": ore_type["Name"] + " Ore Gravel",
 			"Mesh": "Models/Gravel",
@@ -175,7 +175,7 @@ for ore_type in ore_types:
 			
 		# impure dust
 		cvs.append([ore_type["Name"] + "OreDust", ore_type["Name"]+" Impure Ore Dust"])
-		item = { "Class": solid_static_item,
+		item = { "Class": static_item,
 			"Name": ore_type["Name"] + "OreDust" + static_item,
 			"Label": ore_type["Name"] + " Impure Ore Dust",
 			"Mesh": "Models/Dust",

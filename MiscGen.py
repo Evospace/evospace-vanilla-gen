@@ -317,7 +317,7 @@ equipped = [
 for one in wooden_misc:
 	cvs.append([one["Name"], "Wooden " + CamelToSpaces(one["Name"])])
 
-	item = { "Class": solid_static_item,
+	item = { "Class": static_item,
 		"Name": one["Name"] + static_item,
 		"Image": "T_" + one["Name"],
 		"LogicJson":
@@ -348,7 +348,7 @@ for one in wooden_misc:
 for one in simple_single:
 	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
-	objects_array.append({ "Class": solid_static_item,
+	objects_array.append({ "Class": static_item,
 		"Name": one["Name"] + static_item,
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_single_logic,
@@ -378,7 +378,7 @@ for one in simple_single:
 for one in simple_deco:
 	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
-	deco = { "Class": solid_static_item,
+	deco = { "Class": static_item,
 		"Name": one["Name"] + static_item,
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_decoration_logic,
@@ -405,7 +405,7 @@ for one in simple_deco:
 for one in simple_blocks:
 	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
-	objects_array.append({ "Class": solid_static_item,
+	objects_array.append({ "Class": static_item,
 		"Name": one["Name"] + static_item,
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_plane_logic,
@@ -433,7 +433,7 @@ for one in simple_blocks:
 for one in static_mesh_block:
 	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
-	objects_array.append({ "Class": solid_static_item,
+	objects_array.append({ "Class": static_item,
 		"Name": one["Name"] + static_item,
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_single_logic,
@@ -496,7 +496,7 @@ images.append({
 for one in equipped:
 	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
-	equ = { "Class": solid_static_item,
+	equ = { "Class": static_item,
 		"Name": one["Name"] + static_item,
 		"Image": "T_" + one["Name"],
 		"LogicJson":

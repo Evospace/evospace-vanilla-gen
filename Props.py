@@ -753,7 +753,7 @@ for prop in props:
 	for variation in range(0, prop["Variations"]):
 		prop_class = static_big_prop if "IsBig" in prop else static_prop
 		
-		objects_array.append({ "Class": solid_static_item,
+		objects_array.append({ "Class": static_item,
 			"Name": prop["Name"] + variation_helper[variation] + static_item,
 			
 			"MaxCount": 32,
