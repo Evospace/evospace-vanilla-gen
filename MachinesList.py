@@ -1497,11 +1497,32 @@ machines = [
 		"BlockCreation":"""
 		local crafter = Legacy.this
 		local a = crafter:CreateAccessor(Class.find("ElectricOutputAccessor"))
-		a:SetSidePos(Vec3i.down, Vec3i.new(0,0,0))
+		a:SetSidePos(Vec3i.back, Vec3i.new(-1,0,0))
 		a:Bind(crafter:GetOutputContainer())
 		""",
 		"Description": ["ElectricOutput", "PowerOutput"],
-		"PowerOutput": 50,
+		"PowerOutput": 400,
+        "CustomData": {
+            "Power": 400
+		}
+	},
+	{
+		"Name": "SmallSolarPanel",
+		"Label": "Small Solar Panel",
+		"Positions": [
+			[0,0,0],
+			[0,-1,0],
+			[0,0,1],
+			[0,-1,1],
+		],
+		"StartTier": 3,
+		"EndTier": 10,
+		"BlockLogic":"SolarPanel",
+		"Description": ["ElectricOutput", "PowerOutput"],
+		"PowerOutput": 40,
+        "CustomData": {
+            "Power": 40
+		}
 	},
 	{
 		"Name": "Pumpjack",
