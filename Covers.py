@@ -57,7 +57,7 @@ for mat in paint_metals:
 	
 for cover in covers:
     if "HasItem" in cover:
-        objects_array.append({ "Class": solid_static_item,
+        objects_array.append({ "Class": static_item,
             "Name": cover["Name"] + static_item,
             
             "MaxCount": 32,
