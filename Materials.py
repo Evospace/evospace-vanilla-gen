@@ -128,6 +128,8 @@ materials = [
 		"Name" : "Plastic",
 		"Label" : "Plastic",
 		"IsExact": True,
+		"Mesh":"Models/Ingot",
+		"Materials":["Materials/GreenPlastic"],
 	},{
 		"Name" : "Steel",
 		"Label" : "Steel",
