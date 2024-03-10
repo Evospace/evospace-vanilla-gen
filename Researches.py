@@ -753,6 +753,16 @@ append_levels({
 })
 append_levels({
 	"Class": static_research,
+	"Name": "BiElectricEngine" + static_research,
+	"LabelParts": [["BiElectricEngine", "machines"]],
+	"Chapter":"Production"+static_chapter,
+	"RequiredResearches": ["ElectricEngine" + static_research],
+	"Levels": [2,7],
+	"Unlocks": [["Hand" + base_recipe, "%Material%BiElectricEngine"],["Constructor" + base_recipe, "%Material%BiElectricEngine"]],
+	"Position": [3,-2],
+})
+append_levels({
+	"Class": static_research,
 	"Name": "OreWasher" + static_research,
 	"LabelParts": [["OreWasher", "machines"]],
 	"Levels": [2,7],

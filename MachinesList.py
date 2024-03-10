@@ -508,6 +508,28 @@ machines = [
 		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
 		"PowerOutput": 55,
 	},{
+		"Name": "BiElectricEngine",
+		"Label": "Bi-Directional Electric Engine",
+		"StartTier": 2,
+		"EndTier": 10,
+		"BlockLogic": "SelectCrafter",
+		"BlockCreation":"""
+        return function(self)
+		local crafter = BlockLogic.cast(self)
+		local a = crafter:CreateAccessor(Class.find("KineticOutputAccessor"))
+		a:SetSidePos(Vec3i.back, Vec3i.zero)
+		a:Bind(crafter:GetOutputContainer())
+		local a = crafter:CreateAccessor(Class.find("KineticOutputAccessor"))
+		a:SetSidePos(Vec3i.front, Vec3i.zero)
+		a:Bind(crafter:GetOutputContainer())
+		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
+		a:SetSidePos(Vec3i.down, Vec3i.zero)
+		a:Bind(crafter:GetInputContainer())
+        end
+		""",
+		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
+		"PowerOutput": 55,
+	},{
 		"Name": "IndustrialElectricEngine",
 		"Label": "Industrial Electric Engine",
 		"StartTier": 4,
