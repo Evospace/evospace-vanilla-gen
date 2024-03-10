@@ -11,10 +11,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "AutoCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -24,10 +26,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["KineticInput"],
 	}
@@ -47,10 +51,12 @@ machines = [
 		"Positions": [[0,0,0],[0,0,1]],
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"RequiredResearches":["Fermentation"+static_research],
 		"Description": ["ElectricInput"],
@@ -61,10 +67,12 @@ machines = [
 		"EndTier": 10,		
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["ElectricInput"],
 	},{
@@ -74,10 +82,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -104,10 +114,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -120,7 +132,8 @@ machines = [
 		],
 		"BlockLogic":"NuclearReactorBlockLogic",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
@@ -130,6 +143,7 @@ machines = [
 		local a = crafter:CreateAccessor(Class.find("HeatInputAccessor"))
 		a:SetSidePos(Vec3i.down, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["HeatInput", "FluidInput", "FluidOutput", "PowerOutput"],
 		"CustomData":{
@@ -237,10 +251,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.new(0,1,0))
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -288,10 +304,12 @@ machines = [
 		],
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 	}
 	#,{
@@ -304,7 +322,7 @@ machines = [
 	#	],
 	#	"BlockLogic":"SelectCrafter",
 	#	"BlockCreation":"""
-	#	local crafter = Legacy.this
+	#	local crafter = BlockLogic.cast(self)
 	#	
 	#	local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 	#	a:SetSidePos(Vec3i.left, Vec3i.zero)
@@ -323,13 +341,15 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("HeatInputAccessor"))
 		a:SetSidePos(Vec3i.down, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		local a = crafter:CreateAccessor(Class.find("KineticOutputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
 		"Description": ["HeatInput", "KineticOutput","PowerOutput"],
 		"PowerOutput": 10,
@@ -342,10 +362,12 @@ machines = [
 		"Description": ["FluidInput", "KineticOutput"],
 		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("KineticOutputAccessor"))
 		a:SetSidePos(Vec3i.right, Vec3i.new(-1,0,0))
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,2,0],[-1,2,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,2,1],[-1,2,1]],
 	},{
@@ -364,10 +386,12 @@ machines = [
                 [0,0,6],[1,0,6],[-1,0,6],[0,1,6],[0,-1,6],[1,1,6],[-1,-1,6],[1,-1,6],[-1,1,6],
                 [0,0,7],[1,0,7],[-1,0,7],[0,1,7],[0,-1,7],[1,1,7],[-1,-1,7],[1,-1,7],[-1,1,7]],
         "BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.new( -1, 0, 0 ))
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 	},{
 		"Name": "PyrolysisUnit",
@@ -377,10 +401,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("HeatInputAccessor"))
 		a:SetSidePos(Vec3i.down, Vec3i.new( 0, 0, 0 ))
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["HeatInput"],
 	},{
@@ -403,13 +429,15 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.new( -1, 1, 0 ))
 		a:Bind(crafter:GetInputContainer())
 		local a = crafter:CreateAccessor(Class.find("ElectricOutputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.new( 0, 0, 0 ))
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
 		"PowerOutput": 243,
@@ -425,13 +453,15 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
 		a:SetSidePos(Vec3i.right, Vec3i.new( 0, -2, 0 ))
 		a:Bind(crafter:GetInputContainer())
 		local a = crafter:CreateAccessor(Class.find("ElectricOutputAccessor"))
 		a:SetSidePos(Vec3i.left, Vec3i.new( 0, 1, 0 ))		
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
 		"PowerOutput": 243*20,
@@ -443,13 +473,15 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		local a = crafter:CreateAccessor(Class.find("ElectricOutputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
 		"PowerOutput": 18,
@@ -460,7 +492,8 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+        return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
@@ -470,6 +503,7 @@ machines = [
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.down, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+        end
 		""",
 		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
 		"PowerOutput": 55,
@@ -481,7 +515,8 @@ machines = [
 		"Positions": [[0,0,0],[1,0,0],[0,1,0],[1,1,0],[0,0,1],[1,0,1],[0,1,1],[1,1,1]],
 		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
@@ -494,6 +529,7 @@ machines = [
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.right, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
 		"PowerOutput": 55*50,
@@ -552,10 +588,12 @@ machines = [
 		"EndTier": 2,
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("HeatInputAccessor"))
 		a:SetSidePos(Vec3i.down, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["HeatInput"],
 		"CustomData":{
@@ -569,13 +607,15 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
 		a:SetSidePos(Vec3i.up, Vec3i.new(0, 0, 1))
 		a:Bind(crafter:GetInputContainer())
 		local a = crafter:CreateAccessor(Class.find("KineticOutputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
 		"Description": ["FluidInput", "KineticOutput","PowerOutput"],
 		"PowerOutput": 270,
@@ -599,13 +639,15 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.new(0, 0, 0))
 		a:Bind(crafter:GetInputContainer())
 		local a = crafter:CreateAccessor(Class.find("KineticOutputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.new(-5, -1, 0))
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
 		"Description": ["FluidInput", "KineticOutput","PowerOutput"],
 		"PowerOutput": fission_fullpower * 0.9 * 0.9,
@@ -617,7 +659,8 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
 		a:SetSidePos(Vec3i.up, Vec3i.new( -2, 0, 1 ))
 		a:Bind(crafter:GetInputContainer())
@@ -627,6 +670,7 @@ machines = [
 		local a = crafter:CreateAccessor(Class.find("KineticOutputAccessor"))
 		a:SetSidePos(Vec3i.right, Vec3i.new( -3, -1, 0 ))
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
 		"Description": ["FluidInput", "KineticOutput"],
 	},{
@@ -645,13 +689,15 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("HeatOutputAccessor"))
 		a:SetSidePos(Vec3i.down, Vec3i.new( 0, 0, 0 ))
 		a:Bind(crafter:GetOutputContainer())
 		a = crafter:CreateAccessor(Class.find("HeatOutputAccessor"))
 		a:SetSidePos(Vec3i.up, Vec3i.new( 0, 0, 1 ))
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
 		"Description": ["HeatOutput", "PowerOutput"],
 		"PowerOutput": 500,
@@ -663,10 +709,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.new( -1, 1, 0 ))
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["ElectricInput"],
 	},{
@@ -677,10 +725,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.new( 0, 0, 0 ))
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -691,10 +741,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.new( 0, 0, 0 ))
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -705,10 +757,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.new( 0, 0, 0 ))
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["ElectricInput"],
 	},{
@@ -718,10 +772,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("HeatOutputAccessor"))
 		a:SetSidePos(Vec3i.up, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
 		"Description": ["HeatOutput"],
 	},{
@@ -775,13 +831,15 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "AutoCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		local a = crafter:CreateAccessor(Class.find("HeatOutputAccessor"))
 		a:SetSidePos(Vec3i.up, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
 		"Description": ["FluidInput", "HeatOutput"],
 	},{
@@ -791,13 +849,15 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		local a = crafter:CreateAccessor(Class.find("HeatOutputAccessor"))
 		a:SetSidePos(Vec3i.up, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
 		"Description": ["ElectricInput", "HeatOutput", "PowerOutput"],
 		"PowerOutput": 40,
@@ -869,7 +929,8 @@ machines = [
 			[0,-5,3],[-1,-5,3],[-2,-5,3],[-3,-5,3],[-4,-5,3],[-5,-5,3],[-6,-5,4]
 		],
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.new(0,1,1))
 		a:Bind(crafter:GetInputContainer())
@@ -882,6 +943,7 @@ machines = [
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.right, Vec3i.new(0,-5,1))
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 	},
 	#{
@@ -932,10 +994,12 @@ machines = [
 		],
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["ElectricInput"],
 	},{
@@ -952,10 +1016,12 @@ machines = [
 		],
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["ElectricInput"],
 	},{
@@ -972,10 +1038,12 @@ machines = [
 		],
 		"BlockLogic":"DeconstructorCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["ElectricInput"],
 	},
@@ -993,10 +1061,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["FluidInput"],
 	},{
@@ -1009,10 +1079,12 @@ machines = [
 		"EndTier": 2,
 		"BlockLogic":"DumpCrafterBlockLogic",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
 		a:SetSidePos(Vec3i.down, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["FluidInput"],
 	},{
@@ -1089,10 +1161,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["ElectricInput"],
 	},{
@@ -1103,10 +1177,12 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.new(-1,0,0))
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -1117,10 +1193,12 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.new(-1,0,0))
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["KineticInput", "HeatOutput"],
 	},{
@@ -1146,10 +1224,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.new(0,0,0))
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["FluidInput"],
 	},{
@@ -1168,13 +1248,15 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("FluidOutputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.new(0,0,0))
 		a:Bind(crafter:GetOutputContainer())
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
 		a:SetSidePos(Vec3i.right, Vec3i.new(-1,-2,0))
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["KineticInput", "FluidOutput"],
 	},{
@@ -1268,10 +1350,12 @@ machines = [
 		],
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.new(-1,1,0))
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -1281,10 +1365,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("HeatInputAccessor"))
 		a:SetSidePos(Vec3i.down, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 		"Description": ["HeatInput"],
 	},{
@@ -1350,7 +1436,8 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"NuclearReactorBlockLogic",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("HeatOutputAccessor"))
 		a:SetSidePos(Vec3i.left, Vec3i.new(0, 1, 0))
 		a:Bind(crafter:GetOutputContainer())
@@ -1375,6 +1462,7 @@ machines = [
 		local a = crafter:CreateAccessor(Class.find("HeatOutputAccessor"))
 		a:SetSidePos(Vec3i.right, Vec3i.new(-3, -2, 0))
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
 		"CustomData":{
 			"LoadIndependent": True,
@@ -1414,7 +1502,8 @@ machines = [
 		],
 		"BlockLogic":"FusionReactorBlockLogic",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.new(0, 1, 0))
 		a:Bind(crafter:GetInputContainer())
@@ -1427,6 +1516,7 @@ machines = [
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.right, Vec3i.new(0, -3, 0))
 		a:Bind(crafter:GetInputContainer())
+		end
 		""",
 	},{
 		"Name": "IndustrialBoiler",
@@ -1448,7 +1538,8 @@ machines = [
 		],
 		"BlockLogic":"NuclearReactorBlockLogic",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.new(0, 0, 0))
 		a:Bind(crafter:GetInputContainer())
@@ -1467,6 +1558,7 @@ machines = [
 		a = crafter:CreateAccessor(Class.find("FluidOutputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.new(-3, 0, 0))
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
 		"Description": ["FluidInput", "FluidOutput","PowerOutput"],
 		"PowerOutput": fission_fullpower * 0.9,
@@ -1495,10 +1587,12 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("ElectricOutputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.new(-1,0,0))
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
 		"Description": ["ElectricOutput", "PowerOutput"],
 		"PowerOutput": 400,
@@ -1584,7 +1678,7 @@ machines = [
 	#	"EndTier": 10,
 	#	"BlockLogic":"SelectCrafter",
 	#	"BlockCreation":"""
-	#	local crafter = Legacy.this
+	#	local crafter = BlockLogic.cast(self)
 	#	
 	#	local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
 	#	a:SetSidePos(Vec3i.left, Vec3i.zero)
@@ -1607,7 +1701,7 @@ machines = [
 	#	"EndTier": 10,
 	#	"BlockLogic":"SelectCrafter",
 	#	"BlockCreation":"""
-	#	local crafter = Legacy.this
+	#	local crafter = BlockLogic.cast(self)
 	#	
 	#	local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
 	#	a:SetSidePos(Vec3i.left, Vec3i.zero)
@@ -1659,7 +1753,8 @@ machines = [
 		],
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("FluidInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.new(-1,0,2))
 		a:Bind(crafter:GetInputContainer())
@@ -1678,6 +1773,7 @@ machines = [
 		local a = crafter:CreateAccessor(Class.find("FluidOutputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.new(-2,0,0))
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
 		"Description": ["HeatInput"],
 	},{
@@ -1692,13 +1788,15 @@ machines = [
 		],
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("ElectricInputAccessor"))
 		a:SetSidePos(Vec3i.front, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		local a = crafter:CreateAccessor(Class.find("HeatOutputAccessor"))
 		a:SetSidePos(Vec3i.up, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
 		"Description": ["ElectricInput", "HeatOutput"],
 	},{
@@ -1761,13 +1859,15 @@ machines = [
         "PowerOutput": 9,
         "BlockLogic":"SelectCrafter",
         "BlockCreation":"""
-		local crafter = Legacy.this
+		return function(self)
+		local crafter = BlockLogic.cast(self)
 		local a = crafter:CreateAccessor(Class.find("KineticInputAccessor"))
 		a:SetSidePos(Vec3i.left, Vec3i.zero)
 		a:Bind(crafter:GetInputContainer())
 		local a = crafter:CreateAccessor(Class.find("HeatOutputAccessor"))
 		a:SetSidePos(Vec3i.right, Vec3i.zero)
 		a:Bind(crafter:GetOutputContainer())
+		end
 		""",
     },{
 		"Name": "CableBundle",
