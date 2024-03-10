@@ -151,12 +151,21 @@ for machine in machines:
 			objects_wiki_array[tier_material[tier]+machine["Name"]] = wiki_item
 
 			# wiki json generation
-			
-			images.append({ "NewName": "T_" + tier_material[tier] + image,
-				"Base": "T_" + image,
-				"MulMask": "T_" + named_material(tier_material[tier])["Name"],
-				"AddMask": "T_" + image + additive_ico,
-			})
+
+			if machine["Name"] == "BiElectricEngine":
+				images.append({
+					"Base": "T_" + "ElectricEngine",
+					"NewName": "T_" + tier_material[tier] + "BiElectricEngine",
+					"MulMask": "T_" + named_material(tier_material[tier])["Name"],
+					"AddMask": "T_GreenCircle" + additive_ico,
+				})
+			else:
+				images.append({ 
+					"NewName": "T_" + tier_material[tier] + image,
+					"Base": "T_" + image,
+					"MulMask": "T_" + named_material(tier_material[tier])["Name"],
+					"AddMask": "T_" + image + additive_ico,
+				})
 			
 			logic = {
 				"Recipes": machine["Recipes"] if "Recipes" in machine else machine["Name"] + base_recipe,
@@ -2480,7 +2489,7 @@ for machine in machines:
 					"Ticks" : 20
 				})
 				
-			if machine["Name"] == "ElectricEngine":
+			if machine["Name"] == "ElectricEngine" or machine["Name"] == "BiElectricEngine":
 				append_recipe({
 					"Name": tier_material[tier] + machine["Name"],
 					"Input":{
@@ -2946,10 +2955,10 @@ write_file("Generated/Mixed/machines.json", data);
 objects_array = []
 
 objects_array.append({	
-		"Class": ico_generator,
-		"Name": "Macerator" + ico_generator,
-		"Images": images
-	})
+	"Class": ico_generator,
+	"Name": "Macerator" + ico_generator,
+	"Images": images
+})
 	
 data = {
 	"Objects": objects_array
