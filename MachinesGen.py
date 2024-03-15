@@ -1116,7 +1116,7 @@ for machine in machines:
 					"Ticks" : 20
 				})
 				
-			if machine["Name"] == "SolarPanel":
+			if machine["Name"] == "SolarPanel" or machine["Name"] == "SmallSolarPanel":
 				append_recipe({
 					"Name": tier_material[tier] + machine["Name"],
 					"Input":{
@@ -1131,7 +1131,7 @@ for machine in machines:
 							},
 							{
 								"Name": tier_material[tier] + "SolarCell" + static_item,
-								"Count": 1
+								"Count": 1 if machine["Name"] == "SmallSolarPanel" else 4
 							},
 							{
 								"Name": "Glass" + static_item,

@@ -1635,9 +1635,9 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"SolarPanel",
 		"Description": ["ElectricOutput", "PowerOutput"],
-		"PowerOutput": 40,
+		"PowerOutput": 80,
         "CustomData": {
-            "Power": 40
+            "Power": 80
 		}
 	},
 	{
