@@ -5926,4 +5926,4 @@ data = {
 	"Objects": objects_array
 }
 
-write_file("Generated/Mixed/misc_recipes.json", data);
+write_file("Generated/Recipes/misc.json", data);

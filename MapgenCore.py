@@ -215,6 +215,6 @@ data = {
 	"Objects": objects_array
 }
 
-write_file("Generated/Mixed/mapgen_core_recipes.json", data);
+write_file("Generated/Recipes/mapgen_core.json", data);
 
 write_file("Loc/source/mapgen_core.json", csv)
