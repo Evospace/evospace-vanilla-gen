@@ -160,6 +160,7 @@ machines = [
 		"Tag": "Logistics",
 		"Description": ["FluidConductor"],
 		"PathFinding": True,
+        "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
 	},{
 		"Name": "HeatPipe",
 		"Label": "Heat Pipe",
@@ -169,6 +170,7 @@ machines = [
 		"Tag": "Logistics",
 		"Description": ["HeatConductor", "HeatStorage"],
 		"PathFinding": True,
+        "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
 	},{
 		"Name": "Flywheel",
 		"Label": "Flywheel",
@@ -1859,6 +1861,7 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 2,
 		"Description": ["DataConductor"],
+        "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
 	},{
 		"Name": "Button",
 		"Label": "Button",
