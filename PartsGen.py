@@ -187,26 +187,28 @@ for part in parts:
 				})
 
 			if part["Name"] == "SolarCell":
+				inp = [{
+					"Name": wires[tier],
+					"Count": 2
+				}]
+				if tier > 3:
+					inp.append({
+						"Name": tier_material[tier - 1] + "SolarCell" + static_item,
+						"Count": 2
+					})
+				else:
+					inp.append({
+					"Name": "SiliconWafer" + static_item,
+					"Count": 2
+					})
+					inp.append({
+						"Name": "SteelPlate" + static_item,
+						"Count": 1
+					})
 				append_recipe(recipes_assembler, {
 					"Name": material + "SolarCell",
 					"Input":{
-						"Items":[
-							{
-								"Name": wires[tier],
-								"Count": 2
-							},{
-								"Name": "SiliconWafer" + static_item,
-								"Count": 2
-							},{
-								"Name": "SteelPlate" + static_item,
-								"Count": 1
-							}
-						] + ([] if tier < 3 else [
-							{
-								"Name": tier_material[tier - 1] + "SolarCell" + static_item,
-								"Count": 2
-							}
-						])
+						"Items": inp
 					},
 					"ResourceInput":{
 						"Name": "Electricity" + static_item,
