@@ -2992,7 +2992,7 @@ data = {
 	"Objects": objects_array
 }
 
-write_file("Generated/Mixed/machines_recipes.json", data);
+write_file("Generated/Recipes/machines.json", data);
 
 data = {
 	"Objects": researches

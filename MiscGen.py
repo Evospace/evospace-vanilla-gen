@@ -487,12 +487,6 @@ images.append({
 	})
 
 images.append({
-		"Base": "T_" + "ElectricEngine",
-		"NewName": "T_" + "BiElectricEngine",
-		"AddMask": "T_BlueCircle" + additive_ico,
-	})
-
-images.append({
 		"Base": "T_" + "JetpackBase",
 		"NewName": "T_" + "AdvancedSteampack",
 		"MulMask": "T_" + "StainlessSteel",
