@@ -175,27 +175,8 @@ for object in mapgen_objects:
 		"Tesselator": object["Name"] + "Surface" + tesselator,
 		"Item" : object["Name"] + "Surface" + static_item,
 		"ColorSide": object["Side"],
-		"ColorTop": object["Color"]
-	})
-	pickaxe_recipes.append({
-		"Name": object["Name"] + "SurfaceBreaking",
-		"Ticks": object["Hardness"]*20,
-		"Input":{
-			"Items":[
-				{
-					"Name": object["Name"] + "Surface" + static_item,
-					"Count": 1
-				}
-			]
-		},
-		"Output":{
-			"Items":[
-				{
-					"Name": object["Drops"] + "Surface" + static_item,
-					"Count": 1
-				}
-			]
-		}
+		"ColorTop": object["Color"],
+		"Minable": {"MiningTime": object["Hardness"]*20, "Result": object["Drops"] + "Surface" + static_item},
 	})
 	
 data = {
@@ -203,18 +184,4 @@ data = {
 }
 
 write_file("Generated/Mixed/mapgen_core.json", data);
-
-objects_array = []
-
-objects_array.append({ "Class": base_recipe,
-	"Name": "Multitool" + base_recipe,
-	"Recipes": pickaxe_recipes
-})
-
-data = {
-	"Objects": objects_array
-}
-
-write_file("Generated/Recipes/mapgen_core.json", data);
-
 write_file("Loc/source/mapgen_core.json", csv)

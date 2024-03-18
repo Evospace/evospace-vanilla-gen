@@ -337,7 +337,8 @@ for one in wooden_misc:
 		"Item" : one["Name"] + static_item,
 		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
-		"Class": static_block
+		"Class": static_block,
+		"Minable": {"MiningTime": 20, "Result": one["Name"] + static_item},
 	}
 	
 	if "Positions" in one:
@@ -368,6 +369,7 @@ for one in simple_single:
 		"Item" : one["Name"] + static_item,
 		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
+		"Minable": {"MiningTime": 20, "Result": one["Name"] + static_item},
 	}
 	
 	if "Positions" in one:
@@ -400,6 +402,7 @@ for one in simple_deco:
 		"Item" : one["Name"] + static_item,
 		"Actor" : "Decorations/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic",
+		"Minable": {"MiningTime": 20, "Result": one["Name"] + static_item},
 	})
 	
 for one in simple_blocks:
@@ -428,6 +431,7 @@ for one in simple_blocks:
 		"Name": one["Name"] + static_block,
 		"Item" : one["Name"] + static_item,
 		"Tesselator": one["Name"] + tesselator,
+		"Minable": {"MiningTime": 20, "Result": one["Name"] + static_item},
 	})
 	
 for one in static_mesh_block:
@@ -455,7 +459,7 @@ for one in static_mesh_block:
 		"Item" : one["Name"] + static_item,
 		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic",
-		#"Tesselator": one["Name"] + tesselator_static_mesh
+		"Minable": {"MiningTime": 20, "Result": one["Name"] + static_item},
 	})
 
 images = []
