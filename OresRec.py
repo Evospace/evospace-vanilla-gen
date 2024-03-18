@@ -437,42 +437,8 @@ objects_array.append({ "Class": base_recipe,
 	"Recipes": recipes_sifter
 })
 
-recipes_break = []
-
-for ore_type in ore_types:
-	recipes_break.append({
-		"Name": ore_type["Name"] + "OreBreaking",
-		"Ticks": ore_type["Hardness"] * 20,
-		"Input":{
-			"Items":[
-				{
-					"Name": ore_type["Name"] + "Ore" + static_item,
-					"Count": 1
-				}
-			]
-		},
-		"Output":{
-			"Items":[
-				{
-					"Name": ore_type["Drops"] + static_item,
-					"Count": 1
-				}
-			]
-		}
-	})
-
-objects_array.append({ "Class": base_recipe,
-	"Name": "Multitool" + base_recipe,
-	"Recipes": recipes_break,	
-	"UsedIn": [{
-		"Item": "Multitool" + static_item,
-		"Tier": 0
-	}],
-	"Ticks" : 20,
-})
-	
 data = {
 	"Objects": objects_array
 }
 
-write_file("Generated/Recipes/ores.json", data);
+write_file("Generated/Recipes/ores.json", data)

@@ -19,12 +19,12 @@ covers = [
         "Name": "HeatSide",
         "Mesh": "Covers/HeatSide",
         "Materials": ["Materials/HeatingCopper"],
-        "Item": "HeatPipe"
+        "Item": "CopperHeatPipe"
     },{
         "Name": "HeatCenter",
         "Mesh": "Covers/HeatCenter",
         "Materials": ["Materials/HeatingCopper"],
-        "Item": "HeatPipe"
+        "Item": "CopperHeatPipe"
     },{
 		"Name": "Cover",
 		"Mesh": "Cover",
@@ -73,7 +73,8 @@ for cover in covers:
         "Name": cover["Name"] + "StaticCover",
         "Mesh": cover["Mesh"],
         "Materials": cover["Materials"],
-        "Item": "" if "Item" not in cover else (cover["Item"] + static_item)
+        "Item": "" if "Item" not in cover else (cover["Item"] + static_item),
+        "Minable": {"MiningTime": 20, "Result": "" if "Item" not in cover else (cover["Item"] + static_item)},
     })
 
 

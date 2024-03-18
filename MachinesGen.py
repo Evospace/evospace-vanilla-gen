@@ -7,7 +7,6 @@ images = []
 objects_array = []
 objects_wiki_array = {}
 recipes_hand = []
-recipes_wrench = []
 recipes_deconstructor = []
 recipes_constructor = []
 researches = []
@@ -205,7 +204,8 @@ for machine in machines:
 				"LogicJson": logic,
 				"Class": static_block,
 				"BlockLogic": machine["Name"] + "BlockLogic",
-				"ReplaceTag": machine["Name"]
+				"ReplaceTag": machine["Name"],
+				"Minable": {"MiningTime": 20, "Result": item_name},
 			}
 			
 			if "BlockLogic" in machine:
@@ -220,28 +220,6 @@ for machine in machines:
 				block["Positions"] = machine["Positions"]
 				
 			objects_array.append(block)
-			
-			if "Unbreakable" not in machine:
-				recipes_wrench.append({
-					"Name": tier_material[tier] + machine["Name"],
-					"Ticks" : 20,
-					"Input":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
-								"Count": 1
-							}
-						]
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
-								"Count": 1
-							}
-						]
-				}
-			})
 			
 			objects_array.append({ 
 				"Class": base_recipe,
@@ -1300,7 +1278,7 @@ for machine in machines:
 								"Count": 1
 							},{
 								"Name": tier_material[tier] + "Plate" + static_item,
-								"Count": 3
+								"Count": 2
 							}
 						]
 					},
@@ -1644,11 +1622,11 @@ for machine in machines:
 							},
 							{
 								"Name": tier_material[tier] + "Plate" + static_item,
-								"Count": 9
+								"Count": 2
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 4 + parts_ramp(level)
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 1
 							}
 						]
 					},
@@ -1671,16 +1649,16 @@ for machine in machines:
 						"Items":[
 							{
 								"Name": tier_material[tier] + "Pipe" + static_item,
-								"Count": 6
+								"Count": 3
 							},
 							{
 								"Name": tier_material[tier] + "Plate" + static_item,
-								"Count": 6
+								"Count": 3
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 10 + parts_ramp(level)*2
-							}
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 3
+							},
 						]
 					},
 					"Output":{
@@ -2163,9 +2141,9 @@ for machine in machines:
 								"Count": 4
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 1 + parts_ramp(level)
-							}
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 1
+							},
 						]
 					},
 					"Output":{
@@ -2190,8 +2168,8 @@ for machine in machines:
 								"Count": 7
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 10 + parts_ramp(level)
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 3
 							},
 							{
 								"Name": tier_material[tier] + "Pipe" + static_item,
@@ -2364,9 +2342,9 @@ for machine in machines:
 								"Count": 2,
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 4,
-							}
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 1
+							},
 						]
 					},
 					"Output":{
@@ -2503,8 +2481,8 @@ for machine in machines:
 								"Count": 2
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 2
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 1
 							}
 						]
 					},
@@ -2531,11 +2509,11 @@ for machine in machines:
 							},
 							{
 								"Name": tier_material[tier] + "Plate" + static_item,
-								"Count": 30
+								"Count": 10
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 20 + level * 5
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 3
 							},
 							{
 								"Name": circuits[tier],
@@ -2562,11 +2540,11 @@ for machine in machines:
 						"Items":[
 							{
 								"Name": tier_material[tier] + "Plate" + static_item,
-								"Count": 15
+								"Count": 10
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 20 + level * 5
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 3
 							},
 							{
 								"Name": circuits[tier],
@@ -2697,8 +2675,8 @@ for machine in machines:
 								"Count": 8
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 4 + parts_ramp(level)
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 2
 							},
 							{
 								"Name": tier_material[tier] + "Pipe" + static_item,
@@ -2728,8 +2706,8 @@ for machine in machines:
 								"Count": 50
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 50 + level * 10
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 4
 							},
 							{
 								"Name": tier_material[tier] + "Pipe" + static_item,
@@ -2763,8 +2741,8 @@ for machine in machines:
 								"Count": 8
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 8 + parts_ramp(level)
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 2
 							},
 							{
 								"Name": tier_material[tier] + "Pipe" + static_item,
@@ -2981,11 +2959,6 @@ objects_array.append({ "Class": base_recipe,
 objects_array.append({ "Class": base_recipe,
 	"Name": "Constructor" + base_recipe,
 	"Recipes": recipes_constructor
-})
-
-objects_array.append({ "Class": base_recipe,
-	"Name": "Multitool" + base_recipe,
-	"Recipes": recipes_wrench
 })
 
 data = {
