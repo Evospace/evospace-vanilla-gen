@@ -774,7 +774,8 @@ for prop in props:
 			"ScaleMin": prop["ScaleMin"],
 			"ScaleMax": prop["ScaleMax"],
 			"ProjectToTerrainPower": prop["ProjectToTerrainPower"],
-			"Item": prop["Name"] + static_item
+			"Item": prop["Name"] + static_item,
+			"Minable": {"MiningTime": 1 if "DropCount" not in prop else prop["DropCount"], "Result": prop["Drops"] + static_item},
 		}
 		
 		if "CullBegin" in prop:
@@ -796,30 +797,6 @@ for prop in props:
 			temp_prop["MinimumHeight"] = prop["MinimumHeight"]	
 			
 		objects_array.append(temp_prop)
-		breaking_hand.append({
-			"Name": prop["Name"] + variation_helper[variation],
-			"Ticks": 40,
-			"Input":
-			{
-				"Items":
-				[
-					{
-						"Name": prop["Name"] + variation_helper[variation] + static_item,
-						"Count": 1
-					}
-				]
-			},
-			"Output":
-			{
-				"Items":
-				[
-					{
-						"Name": prop["Drops"] + static_item,
-						"Count": 1 if "DropCount" not in prop else prop["DropCount"]
-					}
-				]
-			}
-		})
 
 
 for proplist in proplists:
