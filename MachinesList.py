@@ -509,6 +509,7 @@ machines = [
 		""",
 		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
 		"PowerOutput": 55,
+        "DefaultRotation": [-1, 0, 0, 0]
 	},{
 		"Name": "BiElectricEngine",
 		"Label": "Bi-Directional Electric Engine",
@@ -531,6 +532,7 @@ machines = [
 		""",
 		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
 		"PowerOutput": 55,
+        "DefaultRotation": [-1, 0, 0, 0]
 	},{
 		"Name": "IndustrialElectricEngine",
 		"Label": "Industrial Electric Engine",

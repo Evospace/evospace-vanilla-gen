@@ -215,6 +215,9 @@ for machine in machines:
 			
 			if "Selector" in machine:
 				block["Selector"] = machine["Selector"]
+
+			if "DefaultRotation" in machine:
+				block["DefaultRotation"] = machine["DefaultRotation"]
 				
 			if "Positions" in machine:
 				block["Positions"] = machine["Positions"]
