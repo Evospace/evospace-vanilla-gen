@@ -43,7 +43,7 @@ def append_recipe(crafter, recipe):
 	crafter.append(con_recipe)
 
 	recipe["Ticks"] = 20
-	recipe["ResourceInput"] = {}
+	recipe.pop("ResourceInput", None)
 	recipes_hand.append(recipe)
 
 # tiered parts
