@@ -68,14 +68,15 @@ for cover in covers:
             "LabelParts": [[cover["Name"], "props"]],
             "DescriptionParts":[["WorldObject","common"]],
         })
-    
-    objects_array.append({ "Class": "StaticCover",
+    cover = { "Class": "StaticCover",
         "Name": cover["Name"] + "StaticCover",
         "Mesh": cover["Mesh"],
-        "Materials": cover["Materials"],
-        "Item": "" if "Item" not in cover else (cover["Item"] + static_item),
-        "Minable": {"MiningTime": 20, "Result": "" if "Item" not in cover else (cover["Item"] + static_item)},
-    })
+        "Materials": cover["Materials"]
+    }
+    if "Item" in cover:
+        cover["Minable"] = {"MiningTime": 20, "Result": cover["Item"] + static_item}
+        cover["Item"] = cover["Item"] + static_item
+    objects_array.append(cover)
 
 
 data = {
