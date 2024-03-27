@@ -1112,7 +1112,7 @@ for machine in machines:
 							},
 							{
 								"Name": tier_material[tier] + "SolarCell" + static_item,
-								"Count": 1 if machine["Name"] == "SmallSolarPanel" else 4
+								"Count": 1 if machine["Name"] == "SmallSolarPanel" else 2 * (level + 1)
 							},
 							{
 								"Name": "Glass" + static_item,
