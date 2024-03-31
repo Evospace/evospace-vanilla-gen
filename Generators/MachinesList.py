@@ -1611,15 +1611,7 @@ machines = [
 		],
 		"StartTier": 3,
 		"EndTier": 10,
-		"BlockLogic":"SelectCrafter",
-		"BlockCreation":"""
-		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("ElectricOutputAccessor"))
-		a:SetSidePos(Vec3i.back, Vec3i.new(-1,0,0))
-		a:Bind(self:GetOutputContainer())
-		end
-		""",
+		"BlockLogic":"BigSolarPanel",
 		"Description": ["ElectricOutput", "PowerOutput"],
 		"PowerOutput": 400,
         "CustomData": {
