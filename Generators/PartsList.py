@@ -145,6 +145,15 @@ tools = [
 		"CustomData":{
 			"PaintMaterial":"Amethyst"
 		}
+	},{
+		"Name": "BuildTool",
+		"Label": "Build Tool",
+		"ItemLogic": "Equipped/BuildToolBP.BuildToolBP_C",
+		"StartTier": 3,
+		"EndTier": 3,
+		"CommonTextKeys": [
+			"Multitool"
+		],
 	}
 	#{
 	#	"Name": "BuildTool",
