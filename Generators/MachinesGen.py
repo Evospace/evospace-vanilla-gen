@@ -167,7 +167,7 @@ for machine in machines:
 				})
 			
 			logic = {
-				"Recipes": machine["Recipes"] if "Recipes" in machine else machine["Name"] + base_recipe,
+				"Recipes": machine["Recipes"] + base_recipe if "Recipes" in machine else machine["Name"] + base_recipe,
 				"Tier": tier,
 				"Level": level,
 			}

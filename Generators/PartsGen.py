@@ -788,123 +788,26 @@ for material in materials:
 # tools	
 for tool in tools:
 	cvs.append([tool["Name"], tool["Label"]])
-	for tier in tiers_numlist:
-		if tool["StartTier"] <= tier and tool["EndTier"] >= tier:
-			item_name = tier_material[tier] + tool["Name"] + static_item
-			item = { "Class": static_item,
-				"Name": item_name,
-				"Image": "T_" + item_name,
-				"ItemLogic": tool["ItemLogic"],
-				"LogicJson": {
-					"RecipeDictionary": tool["Name"] + base_recipe,
-					"Tier": tier,
-				},
-				"MaxCount": 1,
-				"LabelParts": [[tier_material[tier], "common"], [tool["Name"], "parts"]],
-				"Tag": "Misc",
-				"LabelFormat": ["machines_label_format","common"],
-			}
-				
-			objects_array.append(item)
-			
-			images.append({ "NewName": "T_" + item_name,
-				"Base": "T_" + tool["Name"],
-				"MulMask": "T_" + tier_material[tier],
-				"AddMask": "T_" + tool["Name"] + additive_ico
-			})
-			
-			if tool["Name"] == "Screwdriver" and "IsIngot" in named_material(tier_material[tier]):
-				recipes_hand.append({
-					"Name": tier_material[tier] + "Screwdriver",
-					"Input":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 1
-							},{
-								"Name": "Plank" + static_item,
-								"Count": 1
-							},
-						]
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + "Screwdriver" + static_item,
-								"Count": 1
-							}
-						]
-					},
-					"Ticks" : 40
-				})
-				
-			if tool["Name"] == "Multitool" and "IsIngot" in named_material(tier_material[tier]):
-				recipes_hand.append({
-					"Name": tier_material[tier] + "Multitool",
-					"Input":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
-								"Count": 2
-							},
-							{
-								"Name": tier_material[tier] + "Plate" + static_item,
-								"Count": 2
-							},
-							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": tier * 5 + 10
-							},
-							{
-								"Name": circuits[tier],
-								"Count": 10
-							}
-						]
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + "Multitool" + static_item,
-								"Count": 1
-							}
-						]
-					},
-					"Ticks" : 40
-				})
-				
-			if tool["Name"] == "PaintTool" and "IsIngot" in named_material(tier_material[tier]):
-				recipes_hand.append({
-					"Name": tier_material[tier] + "PaintTool",
-					"Input":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
-								"Count": 2
-							},
-							{
-								"Name": tier_material[tier] + "Plate" + static_item,
-								"Count": 2
-							},
-							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": tier * 5 + 10
-							},
-							{
-								"Name": circuits[tier],
-								"Count": 10
-							}
-						]
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + "PaintTool" + static_item,
-								"Count": 1
-							}
-						]
-					},
-					"Ticks" : 40
-				})
+	item_name = tool["Name"] + static_item
+	item = { "Class": static_item,
+		"Name": item_name,
+		"Image": "T_" + item_name,
+		"ItemLogic": tool["ItemLogic"],
+		"LogicJson": {
+			"RecipeDictionary": tool["Name"] + base_recipe,
+		},
+		"MaxCount": 1,
+		"LabelParts": [[tool["Name"], "parts"]],
+		"Tag": "Misc",
+	}
+		
+	objects_array.append(item)
+	
+	images.append({ "NewName": "T_" + item_name,
+		"Base": "T_" + tool["Name"],
+		"MulMask": "T_" + "StainlessSteel",
+		"AddMask": "T_" + tool["Name"] + additive_ico
+	})
 					
 data = {
 	"Objects": objects_array
@@ -962,19 +865,6 @@ objects_array.append({ "Class": base_recipe,
 objects_array.append({ "Class": base_recipe,
 	"Name": "Furnace" + base_recipe,
 	"Recipes": recipes_furnace
-})
-
-
-used_in = []
-for tier in range(tools[0]["StartTier"], tools[0]["EndTier"]):
-	used_in.append({
-		"Item": tier_material[tier] + "Multitool" + static_item,
-	})
-	
-objects_array.append({ "Class": base_recipe,
-	"Name": "Multitool" + base_recipe,
-	"Recipes": recipes_wrench,
-	"UsedIn": used_in
 })
 
 objects_array.append({ "Class": base_recipe,

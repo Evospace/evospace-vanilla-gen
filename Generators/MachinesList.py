@@ -512,6 +512,7 @@ machines = [
         "DefaultRotation": [-1, 0, 0, 0]
 	},{
 		"Name": "BiElectricEngine",
+        "Recipes": "ElectricEngine",
 		"Label": "Bi-Directional Electric Engine",
 		"StartTier": 2,
 		"EndTier": 10,
