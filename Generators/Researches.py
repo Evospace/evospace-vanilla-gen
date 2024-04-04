@@ -33,7 +33,7 @@ def append_levels(research):
 	researches.append(research)
 
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearchToolUnlock",
 	"Name": "InitialScan" + static_research,
 	"LabelParts": [["InitialScan", "researches"]],
 	"CompleteByDefault": True,
@@ -1371,7 +1371,7 @@ append_levels({
 	"LabelParts": [["PaintTool", "parts"]],
 	"RequiredResearches": [],
 	"Levels": [1,1],
-	"Unlocks": [["Hand" + base_recipe, "CopperPaintTool"],["Constructor" + base_recipe, "CopperPaintTool"]],
+	"Unlocks": [],
 	"Position": [1, 2],
 	"Chapter": "Decorations"+static_chapter,
 })

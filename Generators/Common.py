@@ -59,7 +59,7 @@ def write_text_file(filename, data):
 			spamwriter.writerow(x)
 			
 def CamelToSpaces(name):
-	return re.sub("([a-z])([A-Z])","\g<1> \g<2>", name)
+	return re.sub(r"([a-z])([A-Z])", r"\g<1> \g<2>", name)
 	
 def simple_in_out_recipe(name):
 	if not hasattr(simple_in_out_recipe, "counter"):

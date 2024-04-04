@@ -3,7 +3,7 @@ from Materials import *
 
 def append_equipment(xy, append_levels, researches):
 	append_levels({
-		"Class": static_research,
+		"Class": "StaticResearchToolUnlock",
 		"Name": "Torch" + static_research,
 		"LabelParts": [["Torch", "misc"]],
 		"Chapter": "Production"+static_chapter,
@@ -14,17 +14,17 @@ def append_equipment(xy, append_levels, researches):
 		"CostMul":0.25,
 	})
 	append_levels({
-		"Class": static_research,
+		"Class": "StaticResearchToolUnlock",
 		"Name": "Multitool" + static_research,
 		"LabelParts": [["Multitool", "parts"]],
 		"Chapter": "Production"+static_chapter,
 		"RequiredResearches": ["Smelting" + static_research],
-		"Unlocks": [["Hand" + base_recipe, "%Material%Multitool"]],
-		"Levels": [1,7],
+		"Unlocks": [["Hand" + base_recipe, "Multitool"]],
+		"Levels": [1,1],
 		"Position": [xy[0] - 0, xy[1] + 0],
 	})
 	append_levels({
-		"Class": static_research,
+		"Class": "StaticResearchToolUnlock",
 		"Name": "Scanner" + static_research,
 		"LabelParts": [["Scanner", "misc"]],
 		"RequiredResearches": ["Multitool" + static_research],
@@ -74,7 +74,7 @@ def append_equipment(xy, append_levels, researches):
 		"Levels": [3,3],
 	})
 	append_levels({
-		"Class": static_research,
+		"Class": "StaticResearchToolUnlock",
 		"Name": "Screwdriver" + static_research,
 		"LabelParts": [["Screwdriver", "parts"]],
 		"RequiredResearches": ["Multitool" + static_research],

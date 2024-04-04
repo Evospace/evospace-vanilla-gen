@@ -119,8 +119,6 @@ tools = [
 		"Name": "Multitool",
 		"Label": "Multitool",
 		"ItemLogic": "Equipped/MultitoolBP.MultitoolBP_C",
-		"StartTier": 1,
-		"EndTier": 7,
 		"CommonTextKeys": [
 			"Multitool"
 		]
@@ -128,8 +126,6 @@ tools = [
 		"Name": "Screwdriver",
 		"Label": "Screwdriver",
 		"ItemLogic": "Equipped/ScrewdriverBP.ScrewdriverBP_C",
-		"StartTier": 1,
-		"EndTier": 1,
 		"CommonTextKeys": [
 			"Screwdriver"
 		]
@@ -137,8 +133,6 @@ tools = [
 		"Name": "PaintTool",
 		"Label": "Paint Tool",
 		"ItemLogic": "Equipped/PaintToolBP.PaintToolBP_C",
-		"StartTier": 1,
-		"EndTier": 1,
 		"CommonTextKeys": [
 			"Multitool"
 		],
@@ -146,14 +140,24 @@ tools = [
 			"PaintMaterial":"Amethyst"
 		}
 	},{
-		"Name": "BuildTool",
-		"Label": "Build Tool",
-		"ItemLogic": "Equipped/BuildToolBP.BuildToolBP_C",
-		"StartTier": 3,
-		"EndTier": 3,
+		"Name": "BuilderTool",
+		"Label": "Builder Tool",
+		"ItemLogic": "Equipped/BuilderToolBP.BuilderToolBP_C",
 		"CommonTextKeys": [
 			"Multitool"
 		],
+	},{
+		"Name": "ConstructionBlueprint",
+		"Label": "Construction Blueprint",
+        "ItemLogic": "Equipped/BlueprintToolBP.BlueprintToolBP_C",
+	},{
+		"Name": "DeconstructionBlueprint",
+		"Label": "Deconstruction Blueprint",
+        "ItemLogic": "Equipped/BlueprintToolBP.BlueprintToolBP_C",
+	},{
+		"Name": "UpgradeBlueprint",
+		"Label": "Upgrade Blueprint",
+        "ItemLogic": "Equipped/BlueprintToolBP.BlueprintToolBP_C",
 	}
 	#{
 	#	"Name": "BuildTool",
