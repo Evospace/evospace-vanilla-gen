@@ -1366,7 +1366,7 @@ append_levels({
 	"Chapter": "Decorations"+static_chapter,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearchToolUnlock",
 	"Name": "PaintTool" + static_research,
 	"LabelParts": [["PaintTool", "parts"]],
 	"RequiredResearches": [],
