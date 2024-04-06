@@ -140,12 +140,13 @@ tools = [
 			"PaintMaterial":"Amethyst"
 		}
 	},{
-		"Name": "BuilderTool",
-		"Label": "Builder Tool",
-		"ItemLogic": "Equipped/BuilderToolBP.BuilderToolBP_C",
-		"CommonTextKeys": [
-			"Multitool"
-		],
+		"Name": "ConstructionTool",
+		"Label": "Construction Tool",
+		"ItemLogic": "Equipped/ConstructionToolBP.ConstructionToolBP_C",
+	},{
+		"Name": "DeconstructionTool",
+		"Label": "Deconstruction Tool",
+		"ItemLogic": "Equipped/DeconstructionToolBP.DeconstructionToolBP_C",
 	},{
 		"Name": "ConstructionBlueprint",
 		"Label": "Construction Blueprint",

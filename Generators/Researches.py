@@ -44,7 +44,6 @@ append_levels({
 	"Class": static_research,
 	"Name": "MineralsScan" + static_research,
 	"LabelParts": [["MineralsScan", "researches"]],
-
 	"RequiredResearches": ["InitialScan" + static_research],
 	"Unlocks": [["Hand" + base_recipe, tier_material[0] + "Furnace"],["Constructor" + base_recipe, tier_material[0] + "Furnace"],["Hand" + base_recipe, "SandSurface"],["Hand" + base_recipe, "GravelSurface"]],
 	"Position": [0,1],
