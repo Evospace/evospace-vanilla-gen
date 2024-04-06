@@ -47,12 +47,6 @@ append_levels({
 
 	"RequiredResearches": ["InitialScan" + static_research],
 	"Unlocks": [["Hand" + base_recipe, tier_material[0] + "Furnace"],["Constructor" + base_recipe, tier_material[0] + "Furnace"],["Hand" + base_recipe, "SandSurface"],["Hand" + base_recipe, "GravelSurface"]],
-	"Collect": { "Items": [
-		{
-			"Name": "Dirt" + static_item,
-			"Count": 10
-		}
-	] },
 	"Position": [0,1],
 	"Chapter": "Production"+static_chapter,
 	"CompleteByDefault": True,

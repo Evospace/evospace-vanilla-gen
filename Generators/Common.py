@@ -124,7 +124,16 @@ tiers_base_cost = [
 	1024,
 	2048,
 	2048*2,
-	2048*4
+	2048*4,
+	2048*8,
+	2048*16,
+	2048*32,
+	2048*64,
+	2048*128,
+	2048*256,
+	2048*512,
+	2048*1024,
+	2048*2048
 ]
 
 tiers_energy_level = [
@@ -152,10 +161,13 @@ tiers_adv_cost = [
 	32,
 	16,
 	32,
-	32,
-	32,
-	32,
-	32
+	36,
+	38,
+	40,
+	42,
+	44,
+	46,
+	48,
 ]
 
 def clamp(val, _min, _max):
@@ -243,6 +255,13 @@ tiers_res_item = [
 	"Processor" + static_item,
 	"QuantumCircuit" + static_item,
 	"QuantumProcessor" + static_item,
+	"QuantumBrain" + static_item,
+	"QuantumBrain" + static_item,
+	"QuantumBrain" + static_item,
+	"QuantumBrain" + static_item,
+	"QuantumBrain" + static_item,
+	"QuantumBrain" + static_item,
+	"QuantumBrain" + static_item,
 	"QuantumBrain" + static_item,
 	"QuantumBrain" + static_item,
 ]
