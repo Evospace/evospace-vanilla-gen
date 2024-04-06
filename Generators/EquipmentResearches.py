@@ -74,20 +74,10 @@ def append_equipment(xy, append_levels, researches):
 		"Levels": [3,3],
 	})
 	append_levels({
-		"Class": "StaticResearchToolUnlock",
-		"Name": "Screwdriver" + static_research,
-		"LabelParts": [["Screwdriver", "parts"]],
-		"RequiredResearches": ["Multitool" + static_research],
-		"Unlocks": [["Hand" + base_recipe, tier_material[1] + "Screwdriver"]],
-		"Position": [xy[0] - 0, xy[1] + 1],
-		"Chapter": "Production" + static_chapter,
-		"Levels": [1,1],
-	})
-	append_levels({
 		"Class": static_research,
 		"Name": "Flashlight" + static_research,
 		"LabelParts": [["Flashlight", "misc"]],
-		"RequiredResearches": ["Screwdriver" + static_research],
+		"RequiredResearches": ["Multitool" + static_research],
 		"Unlocks": [["Hand" + base_recipe, "Flashlight"]],
 		"Position": [xy[0] - 0, xy[1] + 2],
 		"Chapter": "Production" + static_chapter,
