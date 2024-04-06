@@ -19,7 +19,13 @@ tier_material = [
 	"StainlessSteel",
 	"Titanium",
 	"HardMetal",
-	"Neutronium"
+	"Neutronium",
+	"Neutronium",
+	"Neutronium",
+	"Neutronium",
+	"Neutronium",
+	"Neutronium",
+	"Neutronium",
 ]
 
 def extract_tier(something):

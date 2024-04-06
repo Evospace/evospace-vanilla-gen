@@ -14,14 +14,17 @@ def append_equipment(xy, append_levels, researches):
 		"CostMul":0.25,
 	})
 	append_levels({
-		"Class": "StaticResearchToolUnlock",
+		"Class": "StaticResearchModifier",
 		"Name": "Multitool" + static_research,
 		"LabelParts": [["Multitool", "parts"]],
 		"Chapter": "Production"+static_chapter,
 		"RequiredResearches": ["Smelting" + static_research],
 		"Unlocks": [["Hand" + base_recipe, "Multitool"]],
-		"Levels": [1,1],
+		"Levels": [1,10],
 		"Position": [xy[0] - 0, xy[1] + 0],
+		"Image": "T_Multitool",
+		"Modifier": "ToolLevelStaticModifier",
+		"BonusValue": 1.0
 	})
 	append_levels({
 		"Class": "StaticResearchToolUnlock",
