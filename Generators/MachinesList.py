@@ -1899,5 +1899,15 @@ machines = [
         "CustomData":{
 			"SplineMesh": "CoreContent/Rail2",
 		}
+	},{
+		"Name": "Rails",
+		"Label": "Rails",
+		"StartTier": 2,
+		"EndTier": 2,		
+        "BlockLogic":"CableBundleBlockLogic",
+		"Description": ["ElectricConductor"],
+        "CustomData":{
+			"SplineMesh": "CoreContent/Rail2",
+		}
 	}
 ]

@@ -45,6 +45,20 @@ parts = [
 		"StartTier": 3,
 		"EndTier": 100,
 		"Stack": 32
+	},
+	{
+		"Label" : "Locomotive",
+		"Name" : "Locomotive",
+		"StartTier": 2,
+		"EndTier": 2,
+		"Stack": 1
+	},
+	{
+		"Label" : "Wagon",
+		"Name" : "Wagon",
+		"StartTier": 2,
+		"EndTier": 2,
+		"Stack": 1
 	}
 ]
 
