@@ -186,7 +186,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 10,
 		"Tag": "Decoration",
-		"BlockLogic": "BlockLogic",
+		"BlockLogic": "SimpleInstancedBlockLogic",
 		"Description": ["BuildingBlock"],
 	},{
 		"Name": "Sign",

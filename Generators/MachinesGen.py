@@ -197,6 +197,9 @@ for machine in machines:
 			local mat = Material.load("Materials/%Material%")
 			Legacy.this:set_field_object("HullMaterial", mat)
 			""".replace("%Material%", tier_material[tier])
+
+			if "BlockLogic" in machine and machine["BlockLogic"] == "SimpleInstancedBlockLogic":
+				logic["Cover"] = tier_material[tier] + machine["Name"] + static_cover
 			
 			block = {
 				"Name": block_name,
@@ -207,9 +210,6 @@ for machine in machines:
 				"ReplaceTag": machine["Name"],
 				"Minable": {"MiningTime": 20, "Result": item_name},
 			}
-
-			if block["BlockLogic"] == "SimpleInstancedBlockLogic":
-				logic["Cover"] = tier_material[tier] + machine["Name"] + static_cover
 			
 			if "BlockLogic" in machine:
 				block["BlockLogic"] = machine["BlockLogic"]
