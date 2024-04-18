@@ -60,6 +60,12 @@ for mat in paint_metals:
         "Materials": ["Materials/"+mat],
         "Item": mat+"Corner"
     })
+    covers.append({
+        "Name": mat+"Scaffold",
+        "Mesh": "Models/Scafold",
+        "Materials": ["Materials/"+mat],
+        "Item": mat+"Scaffold"
+    })
 	
 for cover in covers:
     if "HasItem" in cover:
