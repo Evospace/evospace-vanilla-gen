@@ -775,7 +775,7 @@ for prop in props:
 			"ScaleMax": prop["ScaleMax"],
 			"ProjectToTerrainPower": prop["ProjectToTerrainPower"],
 			"Item": prop["Name"] + static_item,
-			"Minable": {"MiningTime": 1 if "DropCount" not in prop else prop["DropCount"], "Result": prop["Drops"] + static_item},
+			"Minable": {"MiningTime": 40 if "DropCount" not in prop else prop["DropCount"], "Result": prop["Drops"] + static_item},
 		}
 		
 		if "CullBegin" in prop:

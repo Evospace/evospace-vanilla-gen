@@ -207,6 +207,9 @@ for machine in machines:
 				"ReplaceTag": machine["Name"],
 				"Minable": {"MiningTime": 20, "Result": item_name},
 			}
+
+			if block["BlockLogic"] == "SimpleInstancedBlockLogic":
+				logic["Cover"] = tier_material[tier] + machine["Name"] + static_cover
 			
 			if "BlockLogic" in machine:
 				block["BlockLogic"] = machine["BlockLogic"]

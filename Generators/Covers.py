@@ -54,6 +54,12 @@ for mat in paint_metals:
         "Materials": ["Materials/"+mat],
         "Item": mat+"Pipe"
     })
+    covers.append({
+        "Name": mat+"Corner",
+        "Mesh": "CoreContent/Corner",
+        "Materials": ["Materials/"+mat],
+        "Item": mat+"Corner"
+    })
 	
 for cover in covers:
     if "HasItem" in cover:
@@ -68,8 +74,8 @@ for cover in covers:
             "LabelParts": [[cover["Name"], "props"]],
             "DescriptionParts":[["WorldObject","common"]],
         })
-    staticCover = { "Class": "StaticCover",
-        "Name": cover["Name"] + "StaticCover",
+    staticCover = { "Class": static_cover,
+        "Name": cover["Name"] + static_cover,
         "Mesh": cover["Mesh"],
         "Materials": cover["Materials"]
     }
