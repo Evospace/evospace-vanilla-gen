@@ -103,9 +103,9 @@ machines = [
 		"Label": "Corner",
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic": "BlockLogic",
+		"BlockLogic": "SimpleInstancedBlockLogic",
 		"Tag":"Decoration",
-		"Description": ["BuildingBlock"],
+		"Description": ["BuildingBlock"]
 	},{
 		"Name": "AutomaticHammer",
 		"Label": "Automatic Hammer",
@@ -1327,7 +1327,7 @@ machines = [
 		"Label": "Rail Station",
 		"StartTier": 3,
 		"EndTier": 7,
-		"Positions": [[0,0,0],[1,0,0],[2,0,0],[3,0,0],[0,0,1],[1,0,1],[2,0,1],[3,0,1]],
+		"Positions": [[0,0,0],[-1,0,0],[-2,0,0],[-3,0,0]],
 		"BlockLogic": "RailStationBlockLogic",
 	},{
 		"Name": "HugeFlatTerminal",
