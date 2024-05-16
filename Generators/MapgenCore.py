@@ -130,7 +130,8 @@ mapgen_objects = [
 		"Side": [111 / 255., 106 / 255., 85 / 255.],
 		"Item": [128 / 255., 128 / 255.,  128 / 255.],
 		"Drops": "Granite",
-		"Hardness": 4
+		"Hardness": 4,
+		"Unbreakable": True
 	},{
 		"Name": "Peat",
 		"Color": [109 / 255. / 7, 108 / 255. / 7,  20 / 255. / 7],
@@ -176,7 +177,7 @@ for object in mapgen_objects:
 		"Item" : object["Name"] + "Surface" + static_item,
 		"ColorSide": object["Side"],
 		"ColorTop": object["Color"],
-		"Minable": {"MiningTime": object["Hardness"]*20, "Result": object["Drops"] + "Surface" + static_item},
+		"Minable": {"Minable": False} if "Unbreakable" in object else {"MiningTime": object["Hardness"]*20, "Result": object["Drops"] + "Surface" + static_item},
 	})
 	
 data = {
