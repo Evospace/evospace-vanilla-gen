@@ -20,6 +20,7 @@ recipes_smelt = []
 recipes_liq_dump = []
 recipes_gas_dump = []
 recipes_gasfurn = []
+recipes_disassembler = []
 
 recipes_gasturb = []
 
@@ -38,6 +39,25 @@ def append_recipe(crafter, recipe):
 	item_count = 0
 	for item in recipe["Input"]["Items"]:
 		item_count = item_count + item["Count"]
+
+	con_recipe = copy.deepcopy(recipe)
+	crafter.append(con_recipe)
+
+	recipe["Ticks"] = 20
+	recipe.pop("ResourceInput", None)
+	recipes_hand.append(recipe)
+
+def append_recipe_diss(crafter, recipe):
+	item_count = 0
+	for item in recipe["Input"]["Items"]:
+		item_count = item_count + item["Count"]
+
+	diss_recipe = copy.deepcopy(recipe)
+	temp = diss_recipe["Input"]
+	diss_recipe["Input"] = diss_recipe["Output"] 
+	diss_recipe["Output"] = temp
+	diss_recipe["Ticks"] *= 2
+	recipes_disassembler.append(diss_recipe)
 
 	con_recipe = copy.deepcopy(recipe)
 	crafter.append(con_recipe)
@@ -153,7 +173,7 @@ for part in parts:
 				recipes_wrench.append(simple_in_out_recipe(material + part["Name"]))
 			
 			if part["Name"] == "Gearbox":
-				append_recipe(recipes_assembler, {
+				append_recipe_diss(recipes_assembler, {
 					"Name": material + "Gearbox",
 					"Input":{
 						"Items":[
@@ -890,6 +910,11 @@ objects_array.append({ "Class": base_recipe,
 objects_array.append({ "Class": base_recipe,
 	"Name": "FluidFurnace" + base_recipe,
 	"Recipes": recipes_gasfurn
+})
+
+objects_array.append({ "Class": base_recipe,
+	"Name": "Deconstructor" + base_recipe,
+	"Recipes": recipes_disassembler
 })
 
 data = {

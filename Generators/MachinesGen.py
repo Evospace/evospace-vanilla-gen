@@ -477,7 +477,7 @@ for machine in machines:
 								"Count": 5
 							},
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": "CopperPipe" + static_item,
 								"Count": 5 + parts_ramp(level, 5)
 							},
 							{
@@ -695,7 +695,7 @@ for machine in machines:
 								"Name": tier_material[tier] + "Parts" + static_item,
 								"Count": 2
 							},{
-								"Name": tier_material[tier] + "Pipe" + static_item,
+								"Name": "CopperPipe" + static_item,
 								"Count": 5 + parts_ramp(level)
 							}
 						]
@@ -779,7 +779,7 @@ for machine in machines:
 								"Name": tier_material[tier] + "Plate" + static_item,
 								"Count": 5
 							},{
-								"Name": tier_material[tier] + "Parts" + static_item,
+								"Name": "SteelParts" + static_item,
 								"Count": 5 + parts_ramp(level)
 							},{
 								"Name": tier_material[tier] + "ElectricEngine" + static_item,
@@ -1538,8 +1538,8 @@ for machine in machines:
 								"Count": 4 + level
 							},
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
-								"Count": 1 + level
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 3 + parts_ramp(level, 3)
 							},
 							{
 								"Name": tier_material[tier] + "RobotArm" + static_item,
@@ -1569,8 +1569,12 @@ for machine in machines:
 								"Count": 10 + level
 							},
 							{
-								"Name": tier_material[tier] + "Pipe" + static_item,
-								"Count": 10 + level
+								"Name": "StainlessSteelPipe" + static_item,
+								"Count": 10 + parts_ramp(level)
+							},
+							{
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 2 + level * 2
 							},
 							{
 								"Name": tier_material[tier] + "FilteringPump" + static_item,
@@ -1720,8 +1724,8 @@ for machine in machines:
 								"Count": 5
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 5 + parts_ramp(level)
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 2 + parts_ramp(level, 2)
 							},
 							{
 								"Name": tier_material[tier] + "Pipe" + static_item,
@@ -1786,8 +1790,8 @@ for machine in machines:
 								"Count": 4
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 10 + parts_ramp(level, 10)
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 2 + parts_ramp(level, 2)
 							},
 							{
 								"Name": circuits[tier],
@@ -1821,8 +1825,8 @@ for machine in machines:
 								"Count": 4
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 10 + parts_ramp(level, 5)
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 1 + parts_ramp(level, 1)
 							},
 							{
 								"Name": circuits[tier],
@@ -1938,8 +1942,8 @@ for machine in machines:
 								"Count": 40
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 100
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 50
 							},
 							{
 								"Name": wires[tier],
@@ -2402,8 +2406,8 @@ for machine in machines:
 								"Count": 10
 							},
 							{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 2 + parts_ramp(level)
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 1
 							}
 						]
 					},
