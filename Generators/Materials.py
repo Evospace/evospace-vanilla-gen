@@ -1060,6 +1060,12 @@ materials = [
 		"Craftable": False,
 		"Category": "Signal"
 	},{
+		"Name": "Storage",
+		"Label": "Storage",
+		"IsExact": True,
+		"Craftable": False,
+		"Category": "Signal"
+	},{
 		"Name": "Percent",
 		"Label": "Percent",
 		"IsExact": True,
