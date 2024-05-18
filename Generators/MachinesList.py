@@ -797,10 +797,10 @@ machines = [
 		"Label": "Furnace",
 		"StartTier": 0,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafter",
+		"BlockLogic":"Furnace",
+        "Selector": "019Content/FurnaceSelector.FurnaceSelector_C",
 		"BlockCreation":"""
 		return function(self)
-		
 		local a = self:CreateAccessor(Class.find("HeatOutputAccessor"))
 		a:SetSidePos(Vec3i.up, Vec3i.zero)
 		a:Bind(self:GetOutputContainer())

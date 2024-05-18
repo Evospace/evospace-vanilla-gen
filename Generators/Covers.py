@@ -1,7 +1,7 @@
 from Common import *
 
 paint_colors = ("PaintYellow",)
-paint_metals = ("Steel", "Copper", "StainlessSteel", "Aluminium", "HardMetal", "Titanium" , "Neutronium")
+paint_metals = ("Stone", "Copper", "Steel", "Aluminium", "StainlessSteel", "Titanium", "HardMetal", "Neutronium")
 
 covers = [
     {
@@ -32,6 +32,7 @@ covers = [
         "Item": "Cover"
 	}
 ]
+
 objects_array = []
 
 for mat in paint_colors + paint_metals:
@@ -41,7 +42,7 @@ for mat in paint_colors + paint_metals:
         "Materials": [mat]
 	})
      
-for mat in paint_metals:
+for mat, num in zip(paint_metals, range(0,7)):
     covers.append({
         "Name": mat+"PipeCenter",
         "Mesh": "Covers/PipeCenter",
@@ -66,6 +67,13 @@ for mat in paint_metals:
         "Materials": ["Materials/"+mat],
         "Item": mat+"Scaffold"
     })
+    covers.append({
+		"Name": mat+"Furnace",
+		"Mesh": "019Content/FurnaceRound",
+        "Materials": ["019Content/FurnaceMaterial"],
+        "Item": mat+"Furnace",
+        "TierTint": num
+	})
 	
 for cover in covers:
     if "HasItem" in cover:
@@ -85,6 +93,9 @@ for cover in covers:
         "Mesh": cover["Mesh"],
         "Materials": cover["Materials"]
     }
+    if "TierTint" in cover:
+         staticCover["TierTint"] = cover["TierTint"]
+
     if "Item" in cover:
         staticCover["Minable"] = {"MiningTime": 20, "Result": cover["Item"] + static_item}
         staticCover["Item"] = cover["Item"] + static_item
