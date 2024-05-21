@@ -893,11 +893,8 @@ machines = [
 		"Label": "Battery Box",
 		"StartTier": 4,
 		"EndTier": 10,
-		"Description": ["ElectricConductor", "ElectricStorage"],
-		"CustomData": {
-			"BaseCapacity": 1000000,
-			"BonusCapacity": 1000000,
-		},
+        "BlockLogic": "BatteryContainerBlockLogic",
+		"Description": ["ElectricConductor", "ElectricStorage"]
 	},{
 		 "Name": "SmallBattery",
 		 "Label": "Small Battery",

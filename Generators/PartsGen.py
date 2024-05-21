@@ -366,6 +366,10 @@ for material in materials:
 			item["Materials"] =	[
 				"Materials/" + material["Name"]
 			]
+
+		if "MaxCharge" in material:
+			item["MaxCharge"] = material["MaxCharge"]
+			item["DescriptionParts"] = [["battery", "common", material["MaxCharge"]]]
 			
 		if "Materials" in material:
 			item["Materials"] = material["Materials"]
