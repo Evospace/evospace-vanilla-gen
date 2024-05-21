@@ -923,6 +923,30 @@ materials = [
 		"Stack": 32,
 		"IsExact": True,
 	},{
+		"Name" : "BasicBattery",
+		"Label" : "Basic Battery",
+		"Stack": 1,
+		"IsExact": True,
+		"MaxCharge": 100000
+	},{
+		"Name" : "AdvancedBattery",
+		"Label" : "Advanced Battery",
+		"Stack": 1,
+		"IsExact": True,
+		"MaxCharge": 200000
+	},{
+		"Name" : "SuperiorBattery",
+		"Label" : "Superior Battery",
+		"Stack": 1,
+		"IsExact": True,
+		"MaxCharge": 500000 
+	},{
+		"Name" : "UltimateBattery",
+		"Label" : "Ultimate Battery",
+		"Stack": 1,
+		"IsExact": True,
+		"MaxCharge": 1000000
+	},{
 		"Name" : "ControlCell",
 		"Label" : "Control Cell",
 		"Stack": 32,

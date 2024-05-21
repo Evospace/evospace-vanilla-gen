@@ -95,6 +95,8 @@ cvs.append(["WorldGeneratorPlains", "Plains and coast"])
 
 cvs.append(["machines_label_format", "{0} {1}"])
 
+cvs.append(["battery", "Maximum charge: {0}J"])
+
 
 write_file("Loc/source/common.json", cvs)
 

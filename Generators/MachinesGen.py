@@ -131,7 +131,7 @@ for machine in machines:
 			if machine["Name"] == "Container":
 				item["DescriptionParts"].append(["container", "common", 30*(level+1)])
 				
-			if machine["Name"] == "BatteryBox" or machine["Name"] == "SmallBattery":
+			if machine["Name"] == "SmallBattery":
 				item["DescriptionParts"].append(["battery", "common", machine["CustomData"]["BaseCapacity"] + machine["CustomData"]["BonusCapacity"] * level])
 			
 			if "Tag" in machine:
