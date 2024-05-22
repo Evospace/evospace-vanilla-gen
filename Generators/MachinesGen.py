@@ -2259,10 +2259,6 @@ for machine in machines:
 								"Count": 2
 							},
 							{
-								"Name": "Glass" + static_item,
-								"Count": 1
-							},
-							{
 								"Name": circuits[tier],
 								"Count": 5
 							}
