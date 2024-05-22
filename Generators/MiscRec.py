@@ -1,6 +1,7 @@
 from Common import *
 from MachinesList import *
 from MiscGen import *
+from PartsList import circuits
 import copy
 
 objects_array = []
@@ -236,7 +237,7 @@ recipes_fusion_reactor.append({
 			}
 		]
 	},
-	"Ticks" : 200 * 2,
+	"Ticks" : 300,
 })
 
 recipes_fusion_reactor.append({
@@ -288,7 +289,7 @@ recipes_fusion_reactor.append({
 			}
 		]
 	},
-	"Ticks" : 200 * 2,
+	"Ticks" : 300,
 })
 
 recipes_smelter.append({
@@ -340,6 +341,32 @@ for list in (simple_deco, wooden_misc, simple_single, simple_blocks, static_mesh
 		})
 
 # other		
+		
+for level, name, copm_name in zip(range(0, 4), ["BasicBattery", "AdvancedBattery", "SuperiorBattery", "UltimateBattery"], ["Battery", "BasicBattery", "AdvancedBattery", "SuperiorBattery"]):
+	append_recipe({
+		"Name": name,
+		"Input":{
+			"Items":[
+				{
+					"Name": copm_name + static_item,
+					"Count": battery_mul(0) if level == 0 else 4
+				},
+				{
+					"Name": circuits[level + 1],
+					"Count": 1
+				}
+			]
+		},
+		"Output":{
+			"Items":[
+				{
+					"Name": name + static_item,
+					"Count": 1
+				}
+			]
+		},
+		"Ticks" : 100 * level,
+	})
 
 append_recipe({
 	"Name":"Cell",

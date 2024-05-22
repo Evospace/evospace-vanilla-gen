@@ -69,8 +69,8 @@ cvs.append(["dps", "Degrees per second: {0}"])
 cvs.append(["power_limit", "Power limit: {0}W"])
 cvs.append(["power_output", "Power output: {0}W"])
 cvs.append(["power_input", "Power input: {0}W"])
-cvs.append(["container", "Capacity: {0} L"])
-cvs.append(["battery", "Capacity: {0} J"])
+cvs.append(["container", "Capacity: {0}L"])
+cvs.append(["battery", "Capacity: {0}J"])
 cvs.append(["chest", "Capacity: {0} stacks"])
 cvs.append(["item_rack", "Capacity: {0} items"])
 cvs.append(["burnable", "Burnable"])
@@ -94,8 +94,6 @@ cvs.append(["FlatWorldGenerator", "Concrete world"])
 cvs.append(["WorldGeneratorPlains", "Plains and coast"])
 
 cvs.append(["machines_label_format", "{0} {1}"])
-
-cvs.append(["battery", "Maximum charge: {0}J"])
 
 
 write_file("Loc/source/common.json", cvs)

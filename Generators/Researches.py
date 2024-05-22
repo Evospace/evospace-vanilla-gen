@@ -839,6 +839,16 @@ append_levels({
 })
 append_levels({
 	"Class": static_research,
+	"Name": "BatteryBox" + static_research,
+	"LabelParts": [["BatteryBox", "machines"]],
+	"Chapter": "Production" + static_chapter,
+	"RequiredResearches": ["SmallBattery" + static_research],
+	"Position": [6,1],
+	"Levels": [4,7],
+	"Unlocks": [["Hand" + base_recipe, "%Material%BatteryBox"],["Constructor" + base_recipe, "%Material%BatteryBox"]],
+})
+append_levels({
+	"Class": static_research,
 	"Name": "TitaniumProduction" + static_research,
 	"LabelParts": [["TitaniumProduction", "researches"]],
 	"Chapter": "Production" + static_chapter,
@@ -986,16 +996,6 @@ append_levels({
 	"RequiredResearches": ["IndustrialSmelting" + static_research],
 	"Position": [7,-3],
 	"Unlocks": [["Hand" + base_recipe, "%Material%Fermenter"],["Constructor" + base_recipe, "%Material%Fermenter"]],
-})
-append_levels({
-	"Class": static_research,
-	"Name": "BatteryBox" + static_research,
-	"LabelParts": [["BatteryBox", "machines"]],
-	"Chapter": "Production" + static_chapter,
-	"RequiredResearches": ["IndustrialSmelting" + static_research],
-	"Position": [8,-2],
-	"Levels": [4,7],
-	"Unlocks": [["Hand" + base_recipe, "%Material%BatteryBox"],["Constructor" + base_recipe, "%Material%BatteryBox"]],
 })
 append_levels({
 	"Class": static_research,

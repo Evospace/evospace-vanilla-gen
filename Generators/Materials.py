@@ -758,7 +758,7 @@ materials = [
 	},
 	{
 		"Name": "Battery",
-		"Label": "Battery",
+		"Label": "Battery Cell",
 		"IsExact": True,
 		"Tier": 3
 	},
@@ -927,25 +927,25 @@ materials = [
 		"Label" : "Basic Battery",
 		"Stack": 1,
 		"IsExact": True,
-		"MaxCharge": 100000
+		"MaxCharge": single_battery_cell_charge * battery_mul(0)
 	},{
 		"Name" : "AdvancedBattery",
 		"Label" : "Advanced Battery",
 		"Stack": 1,
 		"IsExact": True,
-		"MaxCharge": 200000
+		"MaxCharge": single_battery_cell_charge * battery_mul(1)
 	},{
 		"Name" : "SuperiorBattery",
 		"Label" : "Superior Battery",
 		"Stack": 1,
 		"IsExact": True,
-		"MaxCharge": 500000 
+		"MaxCharge": single_battery_cell_charge * battery_mul(2)
 	},{
 		"Name" : "UltimateBattery",
 		"Label" : "Ultimate Battery",
 		"Stack": 1,
 		"IsExact": True,
-		"MaxCharge": 1000000
+		"MaxCharge": single_battery_cell_charge * battery_mul(3)
 	},{
 		"Name" : "ControlCell",
 		"Label" : "Control Cell",
