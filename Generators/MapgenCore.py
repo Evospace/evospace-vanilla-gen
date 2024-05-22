@@ -161,7 +161,7 @@ for object in mapgen_objects:
 		{
 			"StaticBlock": object["Name"] + "Surface" + static_surface
 		},
-		"MaxCount": 64,
+		"MaxCount": 999,
 		"LabelParts": [[object["Name"]+ "Surface", "mapgen_core"]],
 		
 		"Tag": "Misc",

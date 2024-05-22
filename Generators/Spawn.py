@@ -8,10 +8,6 @@ data = {
 	{
 		"Items": [
 			{
-				"Name": "CopperMultitool" + static_item,
-				"Count": 1
-			},
-			{
 				"Name": "StoneSurface" + static_item,
 				"Count": 99
 			},
