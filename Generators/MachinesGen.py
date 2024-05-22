@@ -2585,7 +2585,7 @@ for machine in machines:
 						"Items":[
 							{
 								"Name": cables[tier],
-								"Count": 2
+								"Count": 2 * (level + 1)
 							},
 							{
 								"Name": tier_material[tier] + "Plate" + static_item,
@@ -2594,10 +2594,6 @@ for machine in machines:
 							{
 								"Name": circuits[tier],
 								"Count": 1
-							},
-							{
-								"Name": "Battery" + static_item,
-								"Count": 5 * level + 10
 							}
 						]
 					},
