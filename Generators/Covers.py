@@ -83,12 +83,6 @@ for mat, num in zip(paint_metals, range(1,7+1)):
         "Materials": ["Materials/RubberWithSpeedParam", tier_materials[num]],
         "Tier": num
 	})
-    covers.append({
-		"Name": mat+"ConveyorBase",
-		"Mesh": "019Content/conveyor",
-        "Materials": ["Materials/RubberWithSpeedParam", tier_materials[num]],
-        "Tier": num
-	})
 	
 for cover in covers:
     if "HasItem" in cover:
