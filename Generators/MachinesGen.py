@@ -52,7 +52,7 @@ for machine in machines:
 			
 			level = tier - machine["StartTier"]
 			
-			item = { "Class": static_item,
+			item = { "Class": "StaticItem",
 				"Name": item_name,
 				
 				"Image": "T_" + tier_material[tier] + image,
@@ -205,7 +205,7 @@ for machine in machines:
 				"Name": block_name,
 				"Item": item_name,
 				"LogicJson": logic,
-				"Class": static_block,
+				"Class": "StaticBlock",
 				"BlockLogic": machine["Name"] + "BlockLogic",
 				"ReplaceTag": machine["Name"],
 				"Minable": {"MiningTime": 20, "Result": item_name},

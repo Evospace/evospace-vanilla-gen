@@ -73,7 +73,7 @@ for part in parts:
 		if part["StartTier"] <= tier and part["EndTier"] >= tier:
 			cvs.append([material + part["Name"], CamelToSpaces(material) + " " + part["Label"]])
 			level = tier - part["StartTier"]
-			item = { "Class": static_item,
+			item = { "Class": "StaticItem",
 				"Name": material + part["Name"] + static_item,
 				"LabelParts": [[material + part["Name"], "parts"]],
 				"Image": "T_" + material + part["Name"],
@@ -165,7 +165,7 @@ for part in parts:
 					"Name": material + "Casing" + tesselator,
 					"Material" : "Materials/" + material + "Casing"
 				})
-				objects_array.append({ "Class": static_block,
+				objects_array.append({ "Class": "StaticBlock",
 					"Name": material + "Casing" + static_block,
 					"Item" : material + "Casing" + static_item,
 					"Tesselator": material + "Casing" + tesselator,
@@ -303,7 +303,7 @@ for material in materials:
 	# abstract
 	if "IsAbstract" in material:
 		cvs.append([material["Name"], material["Label"]])
-		item = { "Class": static_item,
+		item = { "Class": "StaticItem",
 			"Name": material["Name"] + static_item,
 			"Image": "T_" + material["Name"],
 			
@@ -333,7 +333,7 @@ for material in materials:
 	# exact
 	if "IsExact" in material:
 		cvs.append([material["Name"], material["Label"]])
-		item = { "Class": static_item,
+		item = { "Class": "StaticItem",
 			"Name": material["Name"] + static_item,
 			"Image": "T_" + material["Name"],
 			
@@ -408,7 +408,7 @@ for material in materials:
 	# ingot
 	if "IsIngot" in material:
 		cvs.append([material["Name"] + "Ingot", material["Label"] + " Ingot"])
-		item = { "Class": static_item,
+		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "Ingot" + static_item,
 			"Image": "T_" + material["Name"] + "Ingot",
 			"MaxCount": 32,
@@ -489,7 +489,7 @@ for material in materials:
 			
 	if "IsBlock" in material:
 		cvs.append([material["Name"] + "Block", material["Label"] + " Block"])
-		item = { "Class": static_item,
+		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "Block" + static_item,
 			"Image": "T_" + material["Name"] + "Block",
 			"MaxCount": 999,
@@ -524,7 +524,7 @@ for material in materials:
 			"Name": material["Name"] + "Block" + tesselator,
 			"Material" : "Materials/" + material["Name"]
 		})
-		objects_array.append({ "Class": static_block,
+		objects_array.append({ "Class": "StaticBlock",
 			"Name": material["Name"] + "Block" + static_block,
 			"Item" : material["Name"] + "Block" + static_item,
 			"Tesselator": material["Name"] + "Block" + tesselator,
@@ -580,7 +580,7 @@ for material in materials:
 	# fluid
 	if "IsFluid" in material:
 		cvs.append([material["Name"], material["Label"]])
-		item = { "Class": static_item,
+		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "" + static_item,
 			"Image": "T_" + material["Name"] + "",
 			
@@ -667,7 +667,7 @@ for material in materials:
 	# gas
 	if "IsGas" in material:
 		cvs.append([material["Name"], material["Label"]])
-		item = { "Class": static_item,
+		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "" + static_item,
 			"Image": "T_" + material["Name"] + "",
 			
@@ -754,7 +754,7 @@ for material in materials:
 	# dust
 	if "IsDust" in material:
 		cvs.append([material["Name"] + "Dust", material["Label"] + " Dust"])
-		item = { "Class": static_item,
+		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "Dust" + static_item,
 			"Image": "T_" + material["Name"] + "Dust",
 			
@@ -813,7 +813,7 @@ for material in materials:
 for tool in tools:
 	cvs.append([tool["Name"], tool["Label"]])
 	item_name = tool["Name"] + static_item
-	item = { "Class": static_item,
+	item = { "Class": "StaticItem",
 		"Name": item_name,
 		"Image": "T_" + item_name,
 		"ItemLogic": tool["ItemLogic"],
