@@ -86,7 +86,7 @@ for mat, num in zip(paint_metals, range(1,7+1)):
 	
 for cover in covers:
     if "HasItem" in cover:
-        objects_array.append({ "Class": static_item,
+        objects_array.append({ "Class": "StaticItem",
             "Name": cover["Name"] + static_item,
             
             "MaxCount": 32,

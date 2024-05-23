@@ -147,7 +147,7 @@ pickaxe_recipes = []
 for object in mapgen_objects:
 	csv.append([object["Name"] + "Surface", CamelToSpaces(object["Name"])])
 
-	objects_array.append({ "Class": static_item,
+	objects_array.append({ "Class": "StaticItem",
 		"Name": object["Name"] + "Surface" + static_item,
 		"Image": "T_" + object["Name"],
 		
