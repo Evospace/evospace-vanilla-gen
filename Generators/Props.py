@@ -442,12 +442,6 @@ proplists = [
 			},{
 				"Props": ["LongGrass"],
 				"Chance": 0.9
-			},{
-				"Attaches": ["Butterfly"],
-				"Chance": 0.001
-			},{
-				"Attaches": ["Flies"],
-				"Chance": 0.001
 			}
 		]
 	},{ 
@@ -459,9 +453,6 @@ proplists = [
 			},{
 				"Props": ["LongGrass"],
 				"Chance": 0.9
-			},{
-				"Attaches": ["Butterfly"],
-				"Chance": 0.001
 			}
 		]
 	},{ 
@@ -502,12 +493,6 @@ proplists = [
 			},{
 				"Props": ["Shroom"],
 				"Chance": 0.01
-			},{
-				"Attaches": ["Birds"],
-				"Chance": 0.001
-			},{
-				"Attaches": ["Leafes"],
-				"Chance": 0.001
 			}
 		]
 	},{ 
@@ -534,16 +519,7 @@ proplists = [
 			},{
 				"Props": ["Shroom"],
 				"Chance": 0.01
-			},{
-				"Attaches": ["Birds"],
-				"Chance": 0.001
-			},{
-				"Attaches": ["Leafes"],
-				"Chance": 0.001
-			},{
-				"Attaches": ["Flies"],
-				"Chance": 0.002
-			},
+			}
 
 		]
 	},{ 
@@ -564,12 +540,6 @@ proplists = [
 			},{
 				"Props": ["Shroom"],
 				"Chance": 0.01
-			},{
-				"Attaches": ["Birds"],
-				"Chance": 0.001
-			},{
-				"Attaches": ["Flies"],
-				"Chance": 0.001
 			}
 		]
 	},{ 
@@ -590,15 +560,6 @@ proplists = [
 			},{
 				"Props": ["Shroom"],
 				"Chance": 0.01
-			},{
-				"Attaches": ["Birds"],
-				"Chance": 0.001
-			},{
-				"Attaches": ["Bugs"],
-				"Chance": 0.001
-			},{
-				"Attaches": ["Flies"],
-				"Chance": 0.001
 			}
 		]
 	},{	
@@ -617,9 +578,6 @@ proplists = [
 				"Chance": 0.01
 			},{
 				"Props": ["Palm"],
-				"Chance": 0.002
-			},{
-				"Attaches": ["DesertSound"],
 				"Chance": 0.002
 			}
 		]
@@ -674,12 +632,6 @@ proplists = [
 			},{
 				"Props": ["LilyFlower"],
 				"Chance": 0.05
-			},{
-				"Attaches": ["SwampSound"],
-				"Chance": 0.002
-			},{
-				"Attaches": ["Firefly", "Flies"],
-				"Chance": 0.005
 			}
 		]
 	},{	
@@ -697,9 +649,6 @@ proplists = [
 			},{
 				"Props": ["Shroom"],
 				"Chance": 0.01
-			},{
-				"Attaches": ["Firefly", "Flies"],
-				"Chance": 0.005
 			}
 		]
 	},{	
@@ -751,15 +700,13 @@ breaking_hand = []
 for prop in props: 
 	cvs.append([prop["Name"], CamelToSpaces(prop["Name"])])
 	for variation in range(0, prop["Variations"]):
-		prop_class = static_big_prop if "IsBig" in prop else static_prop
-		
 		objects_array.append({ "Class": "StaticItem",
 			"Name": prop["Name"] + variation_helper[variation] + static_item,
 			
 			"MaxCount": 32,
 			"Image": "T_" + prop["Name"],
 			"LogicJson": {
-				"StaticBlock": prop["Name"] + variation_helper[variation] + prop_class
+				"StaticBlock": prop["Name"] + variation_helper[variation]
 			},
 			"ItemLogic": building_prop_logic,
 			"Category": "Terrain",
@@ -768,8 +715,8 @@ for prop in props:
 			"DescriptionParts":[["WorldObject","common"]],
 		})
 		
-		temp_prop = { "Class": prop_class,
-			"Name": prop["Name"] + variation_helper[variation] + prop_class,
+		temp_prop = { "Class": "BigStaticProp" if "IsBig" in prop else "SmallStaticProp",
+			"Name": prop["Name"] + variation_helper[variation],
 			"Mesh": "Props/" + prop["Name"] + "/" + prop["Name"] + variation_helper[variation],
 			"ScaleMin": prop["ScaleMin"],
 			"ScaleMax": prop["ScaleMax"],
@@ -806,11 +753,7 @@ for proplist in proplists:
 		if "Props" in subitem:
 			for prop_name in subitem["Props"]:
 				for variation in range(0, named_prop(prop_name)["Variations"]):
-					prop_class = static_big_prop if "IsBig" in named_prop(prop_name) else static_prop
-					props_array.append(prop_name + variation_helper[variation] + prop_class)
-		if "Attaches" in subitem:
-			for attach_name in subitem["Attaches"]:
-				props_array.append(attach_name + static_decoration)
+					props_array.append(prop_name + variation_helper[variation])
 		proplist_datas.append({
 			"Props": props_array,
 			"Chance": subitem["Chance"] * 0.5

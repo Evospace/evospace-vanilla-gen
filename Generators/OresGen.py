@@ -109,13 +109,14 @@ for ore_type in ore_types:
 		"Name": ore_type["Name"] + "Ore" + tesselator,
 		"Material": "Materials/Triplanar/" + ore_type["Name"] + "OreMaterial"
 	})
-	objects_array.append({ "Class": static_surface,
+	objects_array.append({ "Class": "StaticBlock",
 		"Name": ore_type["Name"] + "Ore" + static_surface,
 		"Tesselator": ore_type["Name"] + "Ore" + tesselator,
 		"Item": item_name,
 		"ColorSide": ore_type["Color"],
 		"ColorTop": ore_type["Color"],
 		"Minable": {"MiningTime": ore_type["Hardness"]*20, "Result": ore_type["Drops"] + static_item},
+		"Surface": True
 	})
 	images.append({
 		"Base": "T_" + "Ore",

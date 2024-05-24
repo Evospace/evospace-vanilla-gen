@@ -198,7 +198,7 @@ for machine in machines:
 			Legacy.this:set_field_object("HullMaterial", mat)
 			""".replace("%Material%", tier_material[tier])
 
-			if "BlockLogic" in machine and machine["BlockLogic"] == "SimpleInstancedBlockLogic":
+			if "BlockLogic" in machine and (machine["BlockLogic"] == "SimpleInstancedBlockLogic" or machine["BlockLogic"] == "SelectCrafterInstanced" or machine["BlockLogic"] == "AutoCrafterInstanced"):
 				logic["Cover"] = tier_material[tier] + machine["Name"] + static_cover
 			
 			block = {

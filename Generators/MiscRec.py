@@ -317,7 +317,7 @@ recipes_smelter.append({
 	"Ticks" : 200,
 })
 	
-for list in (simple_deco, wooden_misc, simple_single, simple_blocks, static_mesh_block):	
+for list in (wooden_misc, simple_single, simple_blocks, static_mesh_block):	
 	for one in list:
 		recipes_wrench.append({
 			"Name": one["Name"] + "Wrenching",
