@@ -492,7 +492,8 @@ machines = [
 		"Label": "Electric Engine",
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic": "SelectCrafter",
+		"BlockLogic": "SelectCrafterInstanced",
+        "Selector": "Blocks/ElectricEngineBP.ElectricEngineBP_C",
 		"BlockCreation":"""
         return function(self)
 		

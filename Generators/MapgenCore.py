@@ -171,13 +171,14 @@ for object in mapgen_objects:
 		"Material": "Materials/Triplanar/" + object["Name"] + "Material"
 	})
 	objects_array.append({
-		"Class": static_surface,
+		"Class": "StaticBlock",
 		"Name": object["Name"] + "Surface" + static_surface,
 		"Tesselator": object["Name"] + "Surface" + tesselator,
 		"Item" : object["Name"] + "Surface" + static_item,
 		"ColorSide": object["Side"],
 		"ColorTop": object["Color"],
 		"Minable": {"Minable": False} if "Unbreakable" in object else {"MiningTime": object["Hardness"]*20, "Result": object["Drops"] + "Surface" + static_item},
+		"Surface": True
 	})
 	
 data = {

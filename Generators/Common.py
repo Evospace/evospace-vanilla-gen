@@ -208,13 +208,10 @@ qchapter = "StaticQuestChapter"
 static_research = "StaticResearch"
 static_chapter = "StaticChapter"
 static_block = ""
-static_surface = "StaticSurface"
-static_decoration = "StaticDecoration"
-static_prop = "SmallStaticProp"
-static_big_prop = "BigStaticProp"
+static_surface = ""
+
 static_cover = "StaticCover"
 
-block_logic = "BlockLogic"
 slot_logic = "ItemLogic"
 
 building_cube_logic = "BuildingSurfaceBlockItemLogic"

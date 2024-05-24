@@ -67,44 +67,6 @@ simple_single = [
 	}
 ]
 
-#,{
-#		"Name": "Campfire",
-#		"Tier": 0
-#	}
-#	{
-#		"Name": "CeramicPlate",
-#		"Tier": 0
-#	},{
-#		"Name": "Candle",
-#		"Tier": 0
-#	},{
-#		"Name": "CeramicCup",
-#		"Tier": 0
-#	},{
-#		"Name": "CeramicPot",
-#		"Tier": 0
-#	}
-
-simple_deco = [
-	{
-		"Name": "Firefly"
-	},{
-		"Name": "Flies"
-	},{
-		"Name": "Birds"
-	},{
-		"Name": "DesertSound"
-	},{
-		"Name": "SwampSound"
-	},{
-		"Name": "Butterfly"
-	},{
-		"Name": "Leafes"
-	},{
-		"Name": "Bugs"
-	}
-]
-
 simple_blocks = [
 	{
 		"Name": "WoodenPlanks",
@@ -378,34 +340,6 @@ for one in simple_single:
 		
 	objects_array.append(block)
 	
-for one in simple_deco:
-	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
-	
-	deco = { "Class": "StaticItem",
-		"Name": one["Name"] + static_item,
-		"Image": "T_" + one["Name"],
-		"ItemLogic": building_decoration_logic,
-		"LogicJson":
-		{
-			"StaticBlock": one["Name"] + static_decoration
-		},
-		"MaxCount": 32,
-		"LabelParts":[[one["Name"],"misc"]],
-		"Tag":"Decoration",
-	}
-	if "ItemLogic" in one:
-		deco["ItemLogic"] = one["ItemLogic"]
-		
-	objects_array.append(deco)
-	objects_array.append({
-		"Class": static_decoration,
-		"Name": one["Name"] + static_decoration,
-		"Item" : one["Name"] + static_item,
-		"Actor" : "Decorations/" + one["Name"] + "BP." + one["Name"] + "BP_C",
-		"BlockLogic": "BlockLogic",
-		"Minable": {"MiningTime": 20, "Result": one["Name"] + static_item},
-	})
-	
 for one in simple_blocks:
 	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
@@ -505,10 +439,6 @@ for one in equipped:
 	equ = { "Class": "StaticItem",
 		"Name": one["Name"] + static_item,
 		"Image": "T_" + one["Name"],
-		"LogicJson":
-		{
-			"StaticBlock": one["Name"] + static_decoration
-		},
 		"MaxCount": 32,
 		"Tag":"Misc",
 		"LabelParts":[[one["Name"],"misc"]],
