@@ -3,7 +3,7 @@ from Materials import *
 
 def append_nuclear(xy, append_levels, researches):
 	append_levels({
-		"Class": static_research,
+		"Class": "StaticResearch",
 		"Name": "ControlCell" + static_research,
 		"LabelParts": [["ControlCell", "parts"]],
 		"RequiredResearches": ["FissionReactor"+static_research],
@@ -13,7 +13,7 @@ def append_nuclear(xy, append_levels, researches):
 		"Levels": [5,5],
 	})
 	append_levels({
-		"Class": static_research,
+		"Class": "StaticResearch",
 		"Name": "ReflectorCell" + static_research,
 		"LabelParts": [["ReflectorCell", "parts"]],
 		"RequiredResearches": ["ControlCell"+static_research],
@@ -23,7 +23,7 @@ def append_nuclear(xy, append_levels, researches):
 		"Levels": [5,5],
 	})
 	append_levels({
-		"Class": static_research,
+		"Class": "StaticResearch",
 		"Name": "ReactionThrottling" + static_research,
 		"LabelParts": [["ReactionThrottling", "researches"]],
 		"RequiredResearches": ["ControlCell" + static_research],
@@ -33,7 +33,7 @@ def append_nuclear(xy, append_levels, researches):
 		"Levels": [5,5],
 	})
 	append_levels({
-		"Class": static_research,
+		"Class": "StaticResearch",
 		"Name": "AdvancedReflection" + static_research,
 		"LabelParts": [["AdvancedReflection", "researches"]],
 		"RequiredResearches": ["ReflectorCell" + static_research],
@@ -43,7 +43,7 @@ def append_nuclear(xy, append_levels, researches):
 		"Levels": [5,5],
 	})
 	append_levels({
-		"Class": static_research,
+		"Class": "StaticResearch",
 		"Name": "AdvancedReflection2" + static_research,
 		"LabelParts": [["AdvancedReflection", "researches"], ["II", "common"]],
 		"RequiredResearches": ["AdvancedReflection" + static_research],
@@ -53,7 +53,7 @@ def append_nuclear(xy, append_levels, researches):
 		"Levels": [5,5],
 	})
 	append_levels({
-		"Class": static_research,
+		"Class": "StaticResearch",
 		"Name": "ThoriumReaction" + static_research,
 		"LabelParts": [["ThoriumReaction", "researches"]],
 		"RequiredResearches": ["AdvancedReflection" + static_research],
@@ -63,7 +63,7 @@ def append_nuclear(xy, append_levels, researches):
 		"Levels": [5,5],
 	})
 	append_levels({
-		"Class": static_research,
+		"Class": "StaticResearch",
 		"Name": "PlutoniumReaction" + static_research,
 		"LabelParts": [["PlutoniumReaction", "researches"]],
 		"RequiredResearches": ["ThoriumReaction" + static_research],
@@ -73,7 +73,7 @@ def append_nuclear(xy, append_levels, researches):
 		"Levels": [5,5],
 	})
 	append_levels({
-		"Class": static_research,
+		"Class": "StaticResearch",
 		"Name": "PlutoniumReaction2" + static_research,
 		"LabelParts": [["PlutoniumReaction", "researches"], ["II", "common"]],
 		"RequiredResearches": ["PlutoniumReaction" + static_research],

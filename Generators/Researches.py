@@ -41,7 +41,7 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "MineralsScan" + static_research,
 	"LabelParts": [["MineralsScan", "researches"]],
 	"RequiredResearches": ["InitialScan" + static_research],
@@ -52,7 +52,7 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "AdditionalStorage" + static_research,
 	"LabelParts": [["AdditionalStorage", "researches"]],
 	"RequiredResearches": ["MineralsScan" + static_research],
@@ -63,7 +63,7 @@ append_levels({
 	"CompleteByDefault": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "SingleTypeStorage" + static_research,
 	"LabelParts": [["SingleTypeStorage", "researches"]],
 	"RequiredResearches": ["AdditionalStorage" + static_research ],
@@ -83,7 +83,7 @@ append_levels({
 	"Levels": [0,7],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Electricity" + static_research,
 	"LabelParts": [["Electricity", "researches"]],
 	"RequiredResearches": ["InitialScan"+static_research],
@@ -94,7 +94,7 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "ElectricFurnace" + static_research,
 	"LabelParts": [["ElectricFurnace", "machines"]],
 	"Levels": [2,7],
@@ -104,7 +104,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, "%Material%ElectricFurnace"],["Constructor" + base_recipe, "%Material%ElectricFurnace"]],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "ElectricalSwitch" + static_research,
 	"LabelParts": [["ElectricalSwitch", "machines"]],
 	"RequiredResearches": ["Electricity" + static_research],
@@ -114,7 +114,7 @@ append_levels({
 	"Chapter": "Production"+static_chapter,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Diode" + static_research,
 	"LabelParts": [["Diode", "machines"]],
 	"Position": [0,-3],
@@ -124,7 +124,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, "%Material%Diode"],["Constructor" + base_recipe, "%Material%Diode"]],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "PowerGeneration" + static_research,
 	"LabelParts": [["PowerGeneration", "researches"]],
 	"RequiredResearches": ["Electricity" + static_research],
@@ -135,7 +135,7 @@ append_levels({
 	"CompleteByDefault": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Electrolysis" + static_research,
 	"LabelParts": [["Electrolysis", "researches"]],
 	"RequiredResearches": ["SteelProduction" + static_research], 
@@ -145,7 +145,7 @@ append_levels({
 	"Position": [4,-1]
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "SteelProduction" + static_research,
 	"LabelParts": [["SteelProduction", "researches"]],
 	"RequiredResearches": ["Drying"+static_research],
@@ -157,7 +157,7 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "AdvancedSmelting" + static_research,
 	"LabelParts": [["AdvancedSmelting", "researches"]],
 	"RequiredResearches": ["SteelProduction" + static_research],
@@ -168,7 +168,7 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "SolarPanel" + static_research,
 	"LabelParts": [["SolarPanel", "machines"]],
 	"Position": [5, 0],
@@ -178,7 +178,7 @@ append_levels({
 	"Chapter":"Production"+static_chapter,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "AluminiumProduction" + static_research,
 	"LabelParts": [["AluminiumProduction", "researches"]],
 	"RequiredResearches": ["AdvancedSmelting" + static_research, "Electrolysis" + static_research],
@@ -190,7 +190,7 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "MassivePowerGeneration" + static_research,
 	"LabelParts": [["MassivePowerGeneration", "researches"]],
 	"RequiredResearches": ["PowerGeneration" + static_research ],
@@ -202,7 +202,7 @@ append_levels({
 	"Position": [1,-2],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "GasTurbine" + static_research,
 	"LabelParts": [["GasTurbine", "machines"]],
 	"Position": [1,-3],
@@ -212,7 +212,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, "%Material%GasTurbine"],["Constructor" + base_recipe, "%Material%GasTurbine"]],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Smelting" + static_research,
 	"LabelParts": [["Smelting", "researches"]],
 	"RequiredResearches": ["MineralsScan"+static_research],
@@ -224,7 +224,7 @@ append_levels({
 })
 append_equipment([-1,3], append_levels, researches)
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Metalwork" + static_research,
 	"LabelParts": [["Metalwork", "researches"]],
 	"RequiredResearches": ["Smelting"+static_research],
@@ -235,7 +235,7 @@ append_levels({
 	"CompleteByDefault": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Valve" + static_research,
 	"LabelParts": [["Vent", "machines"]],
 	"RequiredResearches": ["Metalwork" + static_research],
@@ -245,7 +245,7 @@ append_levels({
 	"Chapter": "Production"+static_chapter,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "BasicMachines" + static_research,
 	"LabelParts": [["BasicMachines", "researches"]],
 	"RequiredResearches": ["Metalwork" + static_research],
@@ -257,7 +257,7 @@ append_levels({
 	"CostMul":0.25
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Flywheel" + static_research,
 	"LabelParts": [["Flywheel", "machines"]],
 	"RequiredResearches": ["BasicMachines" + static_research],
@@ -267,7 +267,7 @@ append_levels({
 	"Position": [0,4],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Cutting" + static_research,
 	"LabelParts": [["Cutting", "researches"]],
 
@@ -278,7 +278,7 @@ append_levels({
 	"Position": [2, 2],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "SolidDump" + static_research,
 	"LabelParts": [["SolidDump", "machines"]],
 	"Position": [4, 1],
@@ -288,7 +288,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, tier_material[2] + "SolidDump"],["Constructor" + base_recipe, tier_material[2] + "SolidDump"]],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Pump" + static_research,
 	"LabelParts": [["Pump", "machines"]],
 	"RequiredResearches": ["Automatization" + static_research],
@@ -299,7 +299,7 @@ append_levels({
 	"CostMul":0.5,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Container" + static_research,
 	"LabelParts": [["Container", "machines"]],
 	"RequiredResearches": ["Pump" + static_research],
@@ -309,7 +309,7 @@ append_levels({
 	"Position": [4, 2],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "FluidFurnace" + static_research,
 	"LabelParts": [["FluidFurnace", "machines"]],
 	"RequiredResearches": ["Furnace" + static_research],
@@ -319,7 +319,7 @@ append_levels({
 	"Position": [3, 1],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "FluidDumping" + static_research,
 	"LabelParts": [["FluidDumping", "researches"]],
 	"RequiredResearches": ["Container" + static_research],
@@ -330,7 +330,7 @@ append_levels({
 	"CostMul":0.5,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "GasDump" + static_research,
 	"LabelParts": [["GasDump", "machines"]],
 	"Position": [5, 1],
@@ -340,7 +340,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, tier_material[2] + "GasDump"],["Constructor" + base_recipe, tier_material[2] + "GasDump"]],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Automatization" + static_research,
 	"LabelParts": [["Automatization", "researches"]],
 	"RequiredResearches": ["BasicMachines" + static_research],
@@ -353,7 +353,7 @@ append_levels({
 	"CostMul":0.25
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Filtering" + static_research,
 	"LabelParts": [["Filtering", "researches"]],
 	"RequiredResearches": ["Automatization" + static_research],
@@ -364,7 +364,7 @@ append_levels({
 	"Position": [3, 3],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "FilteringPump" + static_research,
 	"LabelParts": [["FilteringPump", "machines"]],
 	"RequiredResearches": ["Pump" + static_research],
@@ -374,7 +374,7 @@ append_levels({
 	"Position": [4, 3],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "OverflowPump" + static_research,
 	"LabelParts": [["OverflowPump", "machines"]],
 	"RequiredResearches": ["FilteringPump" + static_research],
@@ -384,7 +384,7 @@ append_levels({
 	"Position": [4, 4],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "AutomaticMining" + static_research,
 	"LabelParts": [["AutomaticMining", "researches"]],
 	"RequiredResearches": ["Automatization" + static_research],
@@ -395,7 +395,7 @@ append_levels({
 	"CostMul":0.5
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Pumpjack" + static_research,
 	"LabelParts": [["Pumpjack", "machines"]],
 	"Position": [2, 5],
@@ -405,7 +405,7 @@ append_levels({
 	"Chapter":"Production"+static_chapter,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "AutomaticFarm" + static_research,
 	"LabelParts": [["AutomaticFarm", "machines"]],
 	"RequiredResearches": ["Automatization" + static_research],
@@ -416,7 +416,7 @@ append_levels({
 	"CostMul":0.5
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "HeatTransferring" + static_research,
 	"LabelParts": [["HeatTransferring", "researches"]],
 	"RequiredResearches": ["InitialScan" + static_research],
@@ -427,7 +427,7 @@ append_levels({
 	"CostMul":0.5,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "KineticHeater" + static_research,
 	"LabelParts": [["KineticHeater", "machines"]],
 	"RequiredResearches": ["HeatTransferring" + static_research],
@@ -438,7 +438,7 @@ append_levels({
 	"CostMul":1,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Radiator" + static_research,
 	"LabelParts": [["Radiator", "machines"]],
 	"RequiredResearches": ["HeatTransferring" + static_research],
@@ -448,7 +448,7 @@ append_levels({
 	"Chapter":"Production"+static_chapter,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "AtmosphericCondenser" + static_research,
 	"LabelParts": [["AtmosphericCondenser", "machines"]],
 	"RequiredResearches": ["InitialScan" + static_research],
@@ -459,7 +459,7 @@ append_levels({
 	"CostMul":0.5,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "StirlingEngine" + static_research,
 	"LabelParts": [["StirlingEngine", "machines"]],
 	"RequiredResearches": ["MineralsScan"+static_research],
@@ -471,7 +471,7 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Furnace" + static_research,
 	"LabelParts": [["Furnace", "machines"]],
 	"RequiredResearches": ["StirlingEngine" + static_research],
@@ -482,7 +482,7 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Drying" + static_research,
 	"LabelParts": [["Drying", "researches"]],
 	"RequiredResearches": ["Furnace" + static_research,],
@@ -493,7 +493,7 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DistributedComputing" + static_research,
 	"LabelParts": [["DistributedComputing", "researches"]],
 	"RequiredResearches": ["PowerGeneration" + static_research],
@@ -504,7 +504,7 @@ append_levels({
 	"CompleteByDefault": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "CopperWire" + static_research,
 	"LabelParts": [["CopperWire", "parts"]],
 	"RequiredResearches": ["DistributedComputing" + static_research],
@@ -515,7 +515,7 @@ append_levels({
 	"CompleteByDefault": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "CircuitBoard" + static_research,
 	"LabelParts": [["CircuitBoard", "parts"]],
 	"RequiredResearches": ["CopperWire" + static_research],
@@ -526,7 +526,7 @@ append_levels({
 	"CostMul":0.25,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Circuit" + static_research,
 	"LabelParts": [["Circuit", "parts"]],
 	"RequiredResearches": ["CircuitBoard" + static_research],
@@ -537,7 +537,7 @@ append_levels({
 	"CostMul":0.5,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "LogicCircuit" + static_research,
 	"LabelParts": [["LogicCircuit", "machines"]],
 	"RequiredResearches": ["Circuit" + static_research],
@@ -552,7 +552,7 @@ append_levels({
 	"CostMul":0.5,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "AdvancedCircuit" + static_research,
 	"LabelParts": [["AdvancedCircuit", "parts"]],
 	"RequiredResearches": ["Circuit" + static_research],
@@ -562,7 +562,7 @@ append_levels({
 	"Position": [3,-4],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "GoldWire" + static_research,
 	"LabelParts": [["GoldWire", "parts"]],
 	"RequiredResearches": ["AdvancedCircuit" + static_research, "OreWasher" + static_research],
@@ -572,7 +572,7 @@ append_levels({
 	"Position": [3,-5],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "AdvancedCircuitBoard" + static_research,
 	"LabelParts": [["AdvancedCircuitBoard", "parts"]],
 	"RequiredResearches": ["GoldWire" + static_research, "PyrolysisUnit" + static_research],
@@ -582,7 +582,7 @@ append_levels({
 	"Position": [3,-6],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Processor" + static_research,
 	"LabelParts": [["Processor", "parts"]],
 	"RequiredResearches": ["AdvancedCircuitBoard" + static_research],
@@ -592,7 +592,7 @@ append_levels({
 	"Levels": [3,3],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "QuantumCore" + static_research,
 	"LabelParts": [["QuantumCore", "parts"]],
 	"RequiredResearches": ["Processor" + static_research],
@@ -602,7 +602,7 @@ append_levels({
 	"Position": [3,-8],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "QuantumCircuit" + static_research,
 	"LabelParts": [["QuantumCircuit", "parts"]],
 	"RequiredResearches": ["QuantumCore" + static_research],
@@ -612,7 +612,7 @@ append_levels({
 	"Position": [3,-9],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "QuantumProcessor" + static_research,
 	"LabelParts": [["QuantumProcessor", "parts"]],
 	"RequiredResearches": ["QuantumCircuit" + static_research],
@@ -622,7 +622,7 @@ append_levels({
 	"Position": [4,-10],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "QuantumBrain" + static_research,
 	"LabelParts": [["QuantumBrain", "parts"]],
 	"RequiredResearches": ["QuantumProcessor" + static_research],
@@ -632,7 +632,7 @@ append_levels({
 	"Position": [4,-11],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "QuantumComputer" + static_research,
 	"LabelParts": [["QuantumComputer", "machines"]],
 	"RequiredResearches": ["QuantumCircuit" + static_research],
@@ -643,7 +643,7 @@ append_levels({
 	"CostSub": 1,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "MetalConstructions" + static_research,
 	"LabelParts": [["MetalConstructions", "researches"]],
 	"RequiredResearches": ["Metalwork" + static_research],
@@ -655,7 +655,7 @@ append_levels({
 	"Position": [4,3],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Scaffold" + static_research,
 	"LabelParts": [["Scaffold", "researches"]],
 	"Chapter": "Decorations"+static_chapter,
@@ -665,7 +665,7 @@ append_levels({
 	"Position": [3, 4],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Chemistry" + static_research,
 	"LabelParts": [["Chemistry", "researches"]],
 	"Chapter":"Production"+static_chapter,
@@ -675,7 +675,7 @@ append_levels({
 	"Position": [5,-2],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Catalyst" + static_research,
 	"LabelParts": [["Catalyst", "parts"]],
 	"Chapter":"Production"+static_chapter,
@@ -685,7 +685,7 @@ append_levels({
 	"Position": [5,-3],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "IndustrialChemReactor" + static_research,
 	"LabelParts": [["IndustrialChemReactor", "machines"]],
 	"Chapter":"Production"+static_chapter,
@@ -695,7 +695,7 @@ append_levels({
 	"Position": [5,-6],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "FuelChemistry" + static_research,
 	"LabelParts": [["FuelChemistry", "researches"]],
 	"Chapter":"Production"+static_chapter,
@@ -705,7 +705,7 @@ append_levels({
 	"Position": [6,-7],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "FuelChemistry2" + static_research,
 	"LabelParts": [["FuelChemistry2", "researches"]],
 	"Chapter":"Production"+static_chapter,
@@ -715,7 +715,7 @@ append_levels({
 	"Position": [6,-8],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Sifter" + static_research,
 	"LabelParts": [["Sifter", "machines"]],
 	"Chapter":"Production"+static_chapter,
@@ -725,7 +725,7 @@ append_levels({
 	"Position": [6,-3],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Separator" + static_research,
 	"LabelParts": [["Separator", "machines"]],
 	"Chapter":"Production"+static_chapter,
@@ -735,7 +735,7 @@ append_levels({
 	"Position": [4,-3],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "ElectricEngine" + static_research,
 	"LabelParts": [["ElectricEngine", "machines"]],
 	"Chapter":"Production"+static_chapter,
@@ -745,7 +745,7 @@ append_levels({
 	"Position": [4,-2],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "BiElectricEngine" + static_research,
 	"LabelParts": [["BiElectricEngine", "machines"]],
 	"Chapter":"Production"+static_chapter,
@@ -755,7 +755,7 @@ append_levels({
 	"Position": [3,-2],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "OreWasher" + static_research,
 	"LabelParts": [["OreWasher", "machines"]],
 	"Levels": [2,7],
@@ -765,7 +765,7 @@ append_levels({
 	"Position": [4,-4],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Mixer" + static_research,
 	"LabelParts": [["Mixer", "machines"]],
 	"Chapter": "Production" + static_chapter,
@@ -775,7 +775,7 @@ append_levels({
 	"Position": [4,-5],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "ChemicalBath" + static_research,
 	"LabelParts": [["ChemicalBath", "machines"]],
 	"Chapter": "Production" + static_chapter,
@@ -785,7 +785,7 @@ append_levels({
 	"Position": [5,-7],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "OilCrackingTower" + static_research,
 	"LabelParts": [["OilCrackingTower", "machines"]],
 	"Chapter": "Production" + static_chapter,
@@ -795,7 +795,7 @@ append_levels({
 	"Position": [5,-8],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "CombustionEngine" + static_research,
 	"LabelParts": [["CombustionEngine", "machines"]],
 	"Chapter": "Production" + static_chapter,
@@ -805,7 +805,7 @@ append_levels({
 	"Position": [4,-7],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "StainlessSteelProduction" + static_research,
 	"LabelParts": [["StainlessSteelProduction", "researches"]],
 	"RequiredResearches": ["Chemistry" + static_research, "AluminiumProduction" + static_research],
@@ -818,7 +818,7 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "AdvancedSeparation" + static_research,
 	"LabelParts": [["AdvancedSeparation", "researches"]],
 	"Chapter": "Production" + static_chapter,
@@ -828,7 +828,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, "%Material%IndustrialSeparator"],["Constructor" + base_recipe, "%Material%IndustrialSeparator"]],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "SmallBattery" + static_research,
 	"LabelParts": [["SmallBattery", "machines"]],
 	"Chapter": "Production" + static_chapter,
@@ -838,7 +838,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, "%Material%SmallBattery"],["Constructor" + base_recipe, "%Material%SmallBattery"]],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "BatteryBox" + static_research,
 	"LabelParts": [["BatteryBox", "machines"]],
 	"Chapter": "Production" + static_chapter,
@@ -848,7 +848,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, "%Material%BatteryBox"],["Constructor" + base_recipe, "%Material%BatteryBox"]],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "TitaniumProduction" + static_research,
 	"LabelParts": [["TitaniumProduction", "researches"]],
 	"Chapter": "Production" + static_chapter,
@@ -860,7 +860,7 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "IndustrialBoiler" + static_research,
 	"LabelParts": [["IndustrialBoiler", "machines"]],
 	"Chapter": "Production" + static_chapter,
@@ -870,7 +870,7 @@ append_levels({
 	"Levels": [5,7],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "IndustrialSteamTurbine" + static_research,
 	"LabelParts": [["IndustrialSteamTurbine", "machines"]],
 	"Chapter": "Production" + static_chapter,
@@ -880,7 +880,7 @@ append_levels({
 	"Levels": [5,7],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "IndustrialGenerator" + static_research,
 	"LabelParts": [["IndustrialGenerator", "machines"]],
 	"Chapter": "Production" + static_chapter,
@@ -890,7 +890,7 @@ append_levels({
 	"Levels": [5,7],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Freezer" + static_research,
 	"LabelParts": [["Freezer", "machines"]],
 	"RequiredResearches": ["TitaniumProduction" + static_research],
@@ -901,7 +901,7 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "HardMetalProduction" + static_research,
 	"LabelParts": [["HardMetalProduction", "researches"]],
 	"RequiredResearches": ["Freezer" + static_research],
@@ -912,7 +912,7 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "FusionReactor" + static_research,
 	"LabelParts": [["FusionReactor", "machines"]],
 	"RequiredResearches": ["HardMetalProduction" + static_research],
@@ -923,7 +923,7 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "NeutroniumProduction" + static_research,
 	"LabelParts": [["NeutroniumProduction", "researches"]],
 	"RequiredResearches": ["FusionReactor" + static_research],
@@ -934,7 +934,7 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "UltimateCatalyst" + static_research,
 	"LabelParts": [["UltimateCatalyst", "parts"]],
 	"RequiredResearches": ["NeutroniumProduction" + static_research],
@@ -945,7 +945,7 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	 "Class": static_research,
+	 "Class": "StaticResearch",
 	 "Name": "Portal" + static_research,
 	 "LabelParts": [["Portal", "machines"]],
 	 "RequiredResearches": ["UltimateCatalyst" + static_research],
@@ -956,7 +956,7 @@ append_levels({
 	 "MainResearch": True,
  })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "FissionReactor" + static_research,
 	"LabelParts": [["FissionReactor", "machines"]],
 	"Chapter": "Production" + static_chapter,
@@ -966,7 +966,7 @@ append_levels({
 	"Position": [7,-6],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "UraniumCell" + static_research,
 	"LabelParts": [["UraniumCell", "parts"]],
 	"Chapter": "Production" + static_chapter,
@@ -977,7 +977,7 @@ append_levels({
 })
 append_nuclear([7,-7], append_levels, researches)
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "IndustrialSmelting" + static_research,
 	"LabelParts": [["IndustrialSmelting", "researches"]],
 	"Chapter": "Production" + static_chapter,
@@ -988,7 +988,7 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Fermentation" + static_research,
 	"LabelParts": [["Fermentation", "researches"]],
 	"Levels": [4,7],
@@ -998,7 +998,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, "%Material%Fermenter"],["Constructor" + base_recipe, "%Material%Fermenter"]],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "InductionCoil" + static_research,
 	"LabelParts": [["InductionCoil", "machines"]],
 	"Chapter": "Production" + static_chapter,
@@ -1008,7 +1008,7 @@ append_levels({
 	"Position": [8,-3],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "IndustrialElectricEngine" + static_research,
 	"LabelParts": [["IndustrialElectricEngine", "machines"]],
 	"Chapter": "Production" + static_chapter,
@@ -1018,7 +1018,7 @@ append_levels({
 	"Position": [9,-3],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Terminal" + static_research,
 	"LabelParts": [["Terminal", "machines"]],
 	"Levels": [4,4],
@@ -1028,7 +1028,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, tier_material[4] + "Terminal"],["Constructor" + base_recipe, tier_material[4] + "Terminal"]],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "FlatTerminal" + static_research,
 	"LabelParts": [["FlatTerminal", "machines"]],
 	"Levels": [4,4],
@@ -1038,7 +1038,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, tier_material[4] + "FlatTerminal"],["Constructor" + base_recipe, tier_material[4] + "FlatTerminal"]],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Constructor" + static_research,
 	"LabelParts": [["Constructor", "machines"]],
 	"Position": [1,5],
@@ -1048,7 +1048,7 @@ append_levels({
 	"Chapter": "Production" + static_chapter,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Assembler" + static_research,
 	"LabelParts": [["Assembler", "machines"]],
 	"RequiredResearches": ["Automatization" + static_research],
@@ -1059,7 +1059,7 @@ append_levels({
 	"CostMul":0.5
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Deconstructor" + static_research,
 	"LabelParts": [["Deconstructor", "machines"]],
 	"Position": [0, 5],
@@ -1069,7 +1069,7 @@ append_levels({
 	"Chapter": "Production" + static_chapter,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "BigTerminal" + static_research,
 	"LabelParts": [["BigTerminal", "machines"]],
 	"RequiredResearches": ["Terminal" + static_research],
@@ -1079,7 +1079,7 @@ append_levels({
 	"Position": [7,0],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "BigFlatTerminal" + static_research,
 	"LabelParts": [["BigFlatTerminal", "machines"]],
 	"RequiredResearches": ["BigTerminal" + static_research],
@@ -1089,7 +1089,7 @@ append_levels({
 	"Position": [8,0],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "HugeTerminal" + static_research,
 	"LabelParts": [["HugeTerminal", "machines"]],
 	"RequiredResearches": ["BigTerminal" + static_research],
@@ -1099,7 +1099,7 @@ append_levels({
 	"Position": [7,1],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "HugeFlatTerminal" + static_research,
 	"LabelParts": [["HugeFlatTerminal", "machines"]],
 	"RequiredResearches": ["HugeTerminal" + static_research],
@@ -1109,7 +1109,7 @@ append_levels({
 	"Position": [8,1],
 }) 
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "PyrolysisUnit" + static_research,
 	"LabelParts": [["PyrolysisUnit", "machines"]],
 	"RequiredResearches": ["Mixer" + static_research],
@@ -1120,7 +1120,7 @@ append_levels({
 })
 	
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorativeWood" + static_research,
 	"LabelParts": [["DecorativeWood", "researches"]],
 	"Unlocks": [["Hand" + base_recipe, "WoodenPlanks"],["Hand" + base_recipe, "WoodenStairs"],["Hand" + base_recipe, "Bed"],["Hand" + base_recipe, "Door"]],
@@ -1128,7 +1128,7 @@ append_levels({
 	"Position": [0,0],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorativeWood2" + static_research,
 	"LabelParts": [["DecorativeWood", "researches"], [level_labels[1], "common"]],
 	"RequiredResearches": ["DecorativeWood" + static_research],
@@ -1137,7 +1137,7 @@ append_levels({
 	"Position": [0,1],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Fence" + static_research,
 	"LabelParts": [["Fence", "misc"]],
 	"RequiredResearches": ["DecorativeWood2" + static_research],
@@ -1146,7 +1146,7 @@ append_levels({
 	"Position": [-1,1],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Fence1" + static_research,
 	"LabelParts": [["Fence", "misc"], [level_labels[1], "common"]],
 	"RequiredResearches": ["Fence" + static_research],
@@ -1155,7 +1155,7 @@ append_levels({
 	"Position": [-2,1],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorativeWood4" + static_research,
 	"LabelParts": [["DecorativeWood", "researches"], [level_labels[3], "common"]],
 	"RequiredResearches": ["DecorativeWood2" + static_research],
@@ -1164,7 +1164,7 @@ append_levels({
 	"Position": [1,1],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorativeWood3" + static_research,
 	"LabelParts": [["DecorativeWood", "researches"], [level_labels[2], "common"]],
 	"RequiredResearches": ["DecorativeWood2" + static_research, "AdvancedSmelting" + static_research],
@@ -1173,7 +1173,7 @@ append_levels({
 	"Position": [0,2],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorativePlastic" + static_research,
 	"LabelParts": [["DecorativePlastic", "researches"]],
 	"RequiredResearches": ["Chemistry" + static_research, "PyrolysisUnit" + static_research, "DecorativeWood3" + static_research],
@@ -1183,7 +1183,7 @@ append_levels({
 	"Position": [-1,2],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "PlasticBlock" + static_research,
 	"LabelParts": [["PlasticBlock", "misc"]],
 	"RequiredResearches": ["DecorativePlastic" + static_research], 
@@ -1192,7 +1192,7 @@ append_levels({
 	"Position": [-2,2],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "BasicPlatform" + static_research,
 	"LabelParts": [["BasicPlatform", "misc"]],
 	"CompleteByDefault": True,
@@ -1202,7 +1202,7 @@ append_levels({
 	"RequiredResearches": []
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorativeStone" + static_research,
 	"LabelParts": [["DecorativeStone", "researches"]],
 	"RequiredResearches": ["BasicPlatform"+static_research], 
@@ -1211,7 +1211,7 @@ append_levels({
 	"Position": [1,0],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorativeStone2" + static_research,
 	"LabelParts": [["DecorativeStone", "researches"], [level_labels[1], "common"]],
 
@@ -1221,7 +1221,7 @@ append_levels({
 	"Position": [2,0],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "GlassBlock" + static_research,
 	"LabelParts": [["GlassBlock", "misc"]],
 
@@ -1231,7 +1231,7 @@ append_levels({
 	"Position": [2,-1],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorativeStone3" + static_research,
 	"LabelParts": [["DecorativeStone", "researches"], [level_labels[2], "common"]],
 
@@ -1241,7 +1241,7 @@ append_levels({
 	"Position": [2,1],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorativeStone4" + static_research,
 	"LabelParts": [["DecorativeStone", "researches"], [level_labels[3], "common"]],
 
@@ -1251,7 +1251,7 @@ append_levels({
 	"Position": [2,2],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorativeConcrete" + static_research,
 	"LabelParts": [["DecorativeConcrete", "researches"]],
 	"RequiredResearches": ["Mixer" + static_research], 
@@ -1262,7 +1262,7 @@ append_levels({
 	"Position": [3,0],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorativeConcrete2" + static_research,
 	"LabelParts": [["DecorativeConcrete", "researches"], [level_labels[1], "common"]],
 
@@ -1275,7 +1275,7 @@ append_levels({
 	"Position": [3,1],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorativeConcrete3" + static_research,
 	"LabelParts": [["DecorativeConcrete", "researches"], [level_labels[2], "common"]],
 
@@ -1288,7 +1288,7 @@ append_levels({
 	"Position": [3,2],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorativeConcrete4" + static_research,
 	"LabelParts": [["DecorativeConcrete", "researches"], [level_labels[3], "common"]],
 
@@ -1299,7 +1299,7 @@ append_levels({
 	"Position": [3,3],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorativeReinforcedConcrete" + static_research,
 	"LabelParts": [["ReinforcedConcrete", "researches"]],
 
@@ -1309,7 +1309,7 @@ append_levels({
 	"Position": [4,0],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorativeReinforcedConcrete2" + static_research,
 	"LabelParts": [["ReinforcedConcrete", "researches"], [level_labels[1], "common"]],
 
@@ -1319,7 +1319,7 @@ append_levels({
 	"Position": [4,1],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorativeReinforcedConcrete3" + static_research,
 	"LabelParts": [["ReinforcedConcrete", "researches"], [level_labels[2], "common"]],
 
@@ -1329,7 +1329,7 @@ append_levels({
 	"Position": [4,2],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorationClay" + static_research,
 	"LabelParts": [["DecorationClay", "researches"]],
 
@@ -1339,7 +1339,7 @@ append_levels({
 	"Position": [5,0],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "DecorationClay2" + static_research,
 	"LabelParts": [["DecorationClay", "researches"], [level_labels[1], "common"]],
 
@@ -1349,7 +1349,7 @@ append_levels({
 	"Position": [5,1],
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Press" + static_research,
 	"LabelParts": [["Press", "machines"]],
 	"RequiredResearches": [],
@@ -1369,7 +1369,7 @@ append_levels({
 	"Chapter": "Decorations"+static_chapter,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Lamp" + static_research,
 	"LabelParts": [["Lamp", "machines"]],
 	"RequiredResearches": [],
@@ -1379,7 +1379,7 @@ append_levels({
 	"Chapter": "Decorations"+static_chapter,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Column" + static_research,
 	"LabelParts": [["Column", "misc"]],
 	"RequiredResearches": [],
@@ -1389,7 +1389,7 @@ append_levels({
 	"Chapter": "Decorations"+static_chapter,
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "Sign" + static_research,
 	"LabelParts": [["Sign", "machines"]],
 	"RequiredResearches": ["MineralsScan" + static_research],
@@ -1400,7 +1400,7 @@ append_levels({
 
 })
 append_levels({
-	"Class": static_research,
+	"Class": "StaticResearch",
 	"Name": "AdvancedSign" + static_research,
 	"LabelParts": [["AdvancedSign", "machines"]],
 	"RequiredResearches": ["Sign" + static_research],

@@ -205,7 +205,7 @@ int32max = 2147483647
 quest = "StaticQuest"
 qchapter = "StaticQuestChapter"
 
-static_research = "StaticResearch"
+static_research = ""
 static_chapter = "StaticChapter"
 static_block = ""
 static_surface = ""
