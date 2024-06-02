@@ -106,17 +106,6 @@ cables = [
 	"CopperConnector" + static_item,
 ]
 
-electric_isolators = [
-	"Glass" + static_item,
-	"Glass" + static_item,
-	"Glass" + static_item,
-	"Glass" + static_item,
-	"Glass" + static_item,
-	"Glass" + static_item,
-	"Glass" + static_item,
-	"Glass" + static_item,
-]
-
 heat_isolators = [
 	"StoneSurface" + static_item,
 	"StoneSurface" + static_item,
