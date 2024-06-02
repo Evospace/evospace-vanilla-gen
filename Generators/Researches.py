@@ -59,7 +59,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, "%Material%Chest"],["Constructor" + base_recipe, "%Material%Chest"]],
 	
 	"Levels":[0,7],
-	"Chapter":"Production"+static_chapter,
+	
 	"CompleteByDefault": True,
 })
 append_levels({
@@ -69,7 +69,7 @@ append_levels({
 	"RequiredResearches": ["AdditionalStorage" + static_research ],
 	
 	"Levels":[1,7],
-	"Chapter":"Production"+static_chapter,
+	
 	"Unlocks": [["Hand" + base_recipe, "%Material%ItemRack"],["Constructor" + base_recipe, "%Material%ItemRack"]],
 })
 append_levels({
@@ -130,7 +130,7 @@ append_levels({
 	"RequiredResearches": ["Electricity" + static_research],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%CompactGenerator"],["Constructor" + base_recipe, "%Material%CompactGenerator"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 	"CompleteByDefault": True,
 })
@@ -152,7 +152,7 @@ append_levels({
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%BlastFurnace"],["Constructor" + base_recipe, "%Material%BlastFurnace"]],
 	"AlsoUnlocks": get_parts_unlocks(tier_material[2]),
-	"Chapter":"Production"+static_chapter,
+	
 	
 	"MainResearch": True,
 })
@@ -164,18 +164,17 @@ append_levels({
 	
 	"Levels": [2,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%ArcSmelter"],["Constructor" + base_recipe, "%Material%ArcSmelter"]],
-	"Chapter":"Production"+static_chapter,
+	
 	"MainResearch": True,
 })
 append_levels({
 	"Class": "StaticResearch",
 	"Name": "SolarPanel" + static_research,
 	"LabelParts": [["SolarPanel", "machines"]],
-	
-	"RequiredResearches": ["AluminiumProduction" + static_research],
+	"RequiredResearches": ["SiliconWafer" + static_research],
 	"Levels": [3,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%SolarPanel"],["Constructor" + base_recipe, "%Material%SolarPanel"]],
-	"Chapter":"Production"+static_chapter,
+	
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -198,7 +197,7 @@ append_levels({
 	["Hand" + base_recipe, "%Material%Boiler"],["Constructor" + base_recipe, "%Material%Boiler"],
 	["Hand" + base_recipe, "%Material%SteamTurbine"],["Constructor" + base_recipe, "%Material%SteamTurbine"]],
 	"Levels": [2,7],
-	"Chapter":"Production"+static_chapter,
+	
 	
 })
 append_levels({
@@ -208,7 +207,7 @@ append_levels({
 	
 	"RequiredResearches": ["MassivePowerGeneration" + static_research],
 	"Levels": [4,7],
-	"Chapter":"Production"+static_chapter,
+	
 	"Unlocks": [["Hand" + base_recipe, "%Material%GasTurbine"],["Constructor" + base_recipe, "%Material%GasTurbine"]],
 })
 append_levels({
@@ -252,7 +251,7 @@ append_levels({
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%Macerator"],["Constructor" + base_recipe, "%Material%Macerator"],
 	["Hand" + base_recipe, "%Material%AutomaticHammer"],["Constructor" + base_recipe, "%Material%AutomaticHammer"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 	"CostMul":0.25
 })
@@ -263,7 +262,7 @@ append_levels({
 	"RequiredResearches": ["BasicMachines" + static_research],
 	"Unlocks": [["Hand" + base_recipe, tier_material[2] + "Flywheel"],["Constructor" + base_recipe, tier_material[2] + "Flywheel"]],
 	"Levels": [2,2],
-	"Chapter":"Production"+static_chapter,
+	
 	
 })
 append_levels({
@@ -274,7 +273,7 @@ append_levels({
 	"RequiredResearches": ["BasicMachines" + static_research],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%CuttingMachine"],["Constructor" + base_recipe, "%Material%CuttingMachine"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 })
 append_levels({
@@ -283,7 +282,7 @@ append_levels({
 	"LabelParts": [["SolidDump", "machines"]],
 	
 	"Levels": [2,2],
-	"Chapter":"Production"+static_chapter,
+	
 	"RequiredResearches": ["Furnace" + static_research],
 	"Unlocks": [["Hand" + base_recipe, tier_material[2] + "SolidDump"],["Constructor" + base_recipe, tier_material[2] + "SolidDump"]],
 })
@@ -294,7 +293,7 @@ append_levels({
 	"RequiredResearches": ["Automatization" + static_research],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%Pump"],["Constructor" + base_recipe, "%Material%Pump"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 	"CostMul":0.5,
 })
@@ -305,7 +304,7 @@ append_levels({
 	"RequiredResearches": ["Pump" + static_research],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%Container"],["Constructor" + base_recipe, "%Material%Container"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 })
 append_levels({
@@ -315,7 +314,7 @@ append_levels({
 	"RequiredResearches": ["Furnace" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%FluidFurnace"],["Constructor" + base_recipe, "%Material%FluidFurnace"]],
 	"Levels": [1,7],
-	"Chapter":"Production"+static_chapter,
+	
 	
 })
 append_levels({
@@ -325,7 +324,7 @@ append_levels({
 	"RequiredResearches": ["Container" + static_research],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%FluidDump"],["Constructor" + base_recipe, "%Material%FluidDump"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 	"CostMul":0.5,
 })
@@ -335,7 +334,7 @@ append_levels({
 	"LabelParts": [["GasDump", "machines"]],
 	
 	"Levels": [2,2],
-	"Chapter":"Production"+static_chapter,
+	
 	"RequiredResearches": ["Container" + static_research],
 	"Unlocks": [["Hand" + base_recipe, tier_material[2] + "GasDump"],["Constructor" + base_recipe, tier_material[2] + "GasDump"]],
 })
@@ -348,7 +347,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, "%Material%RobotArm"],["Constructor" + base_recipe, "%Material%RobotArm"],
 	["Hand" + base_recipe, "%Material%Conveyor"],["Constructor" + base_recipe, "%Material%Conveyor"],
 	["Hand" + base_recipe, "%Material%Splitter"],["Constructor" + base_recipe, "%Material%Splitter"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 	"CostMul":0.25
 })
@@ -391,7 +390,7 @@ append_levels({
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%DrillingRig"],["Constructor" + base_recipe, "%Material%DrillingRig"]],
 	
-	"Chapter":"Production"+static_chapter,
+	
 	"CostMul":0.5
 })
 append_levels({
@@ -402,7 +401,7 @@ append_levels({
 	"RequiredResearches": ["AutomaticMining" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%Pumpjack"],["Constructor" + base_recipe, "%Material%Pumpjack"]],
 	"Levels": [3,7],
-	"Chapter":"Production"+static_chapter,
+	
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -411,7 +410,7 @@ append_levels({
 	"RequiredResearches": ["Automatization" + static_research],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%AutomaticFarm"],["Constructor" + base_recipe, "%Material%AutomaticFarm"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 	"CostMul":0.5
 })
@@ -423,7 +422,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, "%Material%HeatPipe"],["Constructor" + base_recipe, "%Material%HeatPipe"]],
 	
 	"Levels":[1,1],
-	"Chapter":"Production"+static_chapter,
+	
 	"CostMul":0.5,
 })
 append_levels({
@@ -434,7 +433,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, "%Material%KineticHeater"],["Constructor" + base_recipe, "%Material%KineticHeater"]],
 	
 	"Levels":[1,7],
-	"Chapter":"Production"+static_chapter,
+	
 	"CostMul":1,
 })
 append_levels({
@@ -445,7 +444,7 @@ append_levels({
 	"Levels": [3,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%Radiator"],["Constructor" + base_recipe, "%Material%Radiator"]],
 	
-	"Chapter":"Production"+static_chapter,
+	
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -454,7 +453,7 @@ append_levels({
 	"RequiredResearches": ["InitialScan" + static_research],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%AtmosphericCondenser"],["Constructor" + base_recipe, "%Material%AtmosphericCondenser"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 	"CostMul":0.5,
 })
@@ -465,7 +464,7 @@ append_levels({
 	"RequiredResearches": ["MineralsScan"+static_research],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%StirlingEngine"],["Constructor" + base_recipe, "%Material%StirlingEngine"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 	"CompleteByDefault": True,
 	"MainResearch": True,
@@ -477,7 +476,7 @@ append_levels({
 	"RequiredResearches": ["StirlingEngine" + static_research],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%Furnace"],["Constructor" + base_recipe, "%Material%Furnace"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 	"MainResearch": True,
 })
@@ -489,7 +488,7 @@ append_levels({
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%Oven"],["Constructor" + base_recipe, "%Material%Oven"]],
 	
-	"Chapter":"Production"+static_chapter,
+	
 	"MainResearch": True,
 })
 append_levels({
@@ -499,7 +498,7 @@ append_levels({
 	"RequiredResearches": ["PowerGeneration" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%Computer"],["Constructor" + base_recipe, "%Material%Computer"]],
 	"Levels": [1,7],
-	"Chapter":"Production"+static_chapter,
+	
 	
 	"CompleteByDefault": True,
 })
@@ -510,7 +509,7 @@ append_levels({
 	"RequiredResearches": ["DistributedComputing" + static_research],
 	"Levels": [1,1],
 	"Unlocks": [["Hand" + base_recipe, "CopperWire"],["Assembler" + base_recipe, "CopperWire"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 	"CompleteByDefault": True,
 })
@@ -521,7 +520,7 @@ append_levels({
 	"RequiredResearches": ["CopperWire" + static_research],
 	"Levels": [1,1],
 	"Unlocks": [["Hand" + base_recipe, "CircuitBoard"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 	"CostMul":0.25,
 })
@@ -532,7 +531,7 @@ append_levels({
 	"RequiredResearches": ["CircuitBoard" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "Circuit"],["Assembler" + base_recipe, "Circuit"]],
 	"Levels": [1,1],
-	"Chapter":"Production"+static_chapter,
+	
 	
 	"CostMul":0.5,
 })
@@ -547,7 +546,7 @@ append_levels({
 	["Hand" + base_recipe, "SteelLogicDisplay"],["Constructor" + base_recipe, "SteelLogicDisplay"],
 	["Hand" + base_recipe, "SteelLogicWire"],["Constructor" + base_recipe, "SteelLogicWire"]],
 	"Levels": [1,1],
-	"Chapter":"Production"+static_chapter,
+	
 	
 	"CostMul":0.5,
 })
@@ -558,7 +557,7 @@ append_levels({
 	"RequiredResearches": ["Circuit" + static_research],
 	"Levels": [2,2],
 	"Unlocks": [["Hand" + base_recipe, "AdvancedCircuit"],["Assembler" + base_recipe, "AdvancedCircuit"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 })
 append_levels({
@@ -568,7 +567,7 @@ append_levels({
 	"RequiredResearches": ["AdvancedCircuit" + static_research, "OreWasher" + static_research],
 	"Levels": [2,2],
 	"Unlocks": [["Hand" + base_recipe, "GoldWire"],["Assembler" + base_recipe, "GoldWire"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 })
 append_levels({
@@ -578,17 +577,21 @@ append_levels({
 	"RequiredResearches": ["GoldWire" + static_research, "PyrolysisUnit" + static_research],
 	"Levels": [2,2],
 	"Unlocks": [["Hand" + base_recipe, "AdvancedCircuitBoard"],["Assembler" + base_recipe, "AdvancedCircuitBoard"]],
-	"Chapter":"Production"+static_chapter,
-	
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "SiliconWafer" + static_research,
+	"LabelParts": [["SiliconWafer", "parts"]],
+	"RequiredResearches": ["Assembler" + static_research],
+	"Unlocks": [["Assembler" + base_recipe, "SiliconWafer"]],
+	"Levels": [3,3],
 })
 append_levels({
 	"Class": "StaticResearch",
 	"Name": "Processor" + static_research,
 	"LabelParts": [["Processor", "parts"]],
-	"RequiredResearches": ["AdvancedCircuitBoard" + static_research],
-	"Unlocks": [["Hand" + base_recipe, "Processor"],["Assembler" + base_recipe, "Processor"],["Assembler" + base_recipe, "SiliconWafer"],["Assembler" + base_recipe, "Processor2"]],
-	"Chapter":"Production"+static_chapter,
-	
+	"RequiredResearches": ["SiliconWafer" + static_research, "AdvancedCircuit" + static_research],
+	"Unlocks": [["Hand" + base_recipe, "Processor"],["Assembler" + base_recipe, "Processor"],["Assembler" + base_recipe, "Processor2"]],
 	"Levels": [3,3],
 })
 append_levels({
@@ -598,8 +601,6 @@ append_levels({
 	"RequiredResearches": ["Processor" + static_research],
 	"Levels": [4,4],
 	"Unlocks": [["Hand" + base_recipe, "QuantumCore"],["Assembler" + base_recipe, "QuantumCore"]],
-	"Chapter":"Production"+static_chapter,
-	
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -608,7 +609,7 @@ append_levels({
 	"RequiredResearches": ["QuantumCore" + static_research],
 	"Levels": [4,4],
 	"Unlocks": [["Hand" + base_recipe, "QuantumCircuit"],["Assembler" + base_recipe, "QuantumCircuit"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 })
 append_levels({
@@ -618,7 +619,7 @@ append_levels({
 	"RequiredResearches": ["QuantumCircuit" + static_research],
 	"Levels": [5,5],
 	"Unlocks": [["Hand" + base_recipe, "QuantumProcessor"],["Assembler" + base_recipe, "QuantumProcessor"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 })
 append_levels({
@@ -628,7 +629,7 @@ append_levels({
 	"RequiredResearches": ["QuantumProcessor" + static_research],
 	"Levels": [6,6],
 	"Unlocks": [["Hand" + base_recipe, "QuantumBrain"],["Assembler" + base_recipe, "QuantumBrain"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 })
 append_levels({
@@ -638,7 +639,7 @@ append_levels({
 	"RequiredResearches": ["QuantumCircuit" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%QuantumComputer"],["Constructor" + base_recipe, "%Material%QuantumComputer"]],
 	"Levels": [5,7],
-	"Chapter":"Production"+static_chapter,
+	
 	
 	"CostSub": 1,
 })
@@ -668,7 +669,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Chemistry" + static_research,
 	"LabelParts": [["Chemistry", "researches"]],
-	"Chapter":"Production"+static_chapter,
+	
 	"RequiredResearches": ["ElectricEngine" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%ChemReactor"],["Constructor" + base_recipe, "%Material%ChemReactor"]],
 	"Levels": [2,7],
@@ -678,7 +679,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Catalyst" + static_research,
 	"LabelParts": [["Catalyst", "parts"]],
-	"Chapter":"Production"+static_chapter,
+	
 	"RequiredResearches": ["Chemistry" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "Catalyst"],["Assembler" + base_recipe, "Catalyst"]],
 	"Levels": [2,2],
@@ -688,7 +689,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "IndustrialChemReactor" + static_research,
 	"LabelParts": [["IndustrialChemReactor", "machines"]],
-	"Chapter":"Production"+static_chapter,
+	
 	"RequiredResearches": ["Catalyst" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%IndustrialChemReactor"],["Constructor" + base_recipe, "%Material%IndustrialChemReactor"]],
 	"Levels": [3,7],
@@ -698,7 +699,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "FuelChemistry" + static_research,
 	"LabelParts": [["FuelChemistry", "researches"]],
-	"Chapter":"Production"+static_chapter,
+	
 	"RequiredResearches": ["IndustrialChemReactor" + static_research],
 	"Unlocks": [["IndustrialChemReactor" + base_recipe, "Superfuel"], ["IndustrialChemReactor" + base_recipe, "RocketFuel"]],
 	"Levels": [3,3],
@@ -708,7 +709,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "FuelChemistry2" + static_research,
 	"LabelParts": [["FuelChemistry2", "researches"]],
-	"Chapter":"Production"+static_chapter,
+	
 	"RequiredResearches": ["FuelChemistry" + static_research],
 	"Unlocks": [["IndustrialChemReactor" + base_recipe, "RocketFuel2"], ["IndustrialChemReactor" + base_recipe, "Superfuel2"]],
 	"Levels": [3,3],
@@ -718,7 +719,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Sifter" + static_research,
 	"LabelParts": [["Sifter", "machines"]],
-	"Chapter":"Production"+static_chapter,
+	
 	"RequiredResearches": ["Chemistry" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%Sifter"],["Constructor" + base_recipe, "%Material%Sifter"]],
 	"Levels": [3,7],
@@ -728,7 +729,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Separator" + static_research,
 	"LabelParts": [["Separator", "machines"]],
-	"Chapter":"Production"+static_chapter,
+	
 	"RequiredResearches": ["ElectricEngine" + static_research],
 	"Levels": [2,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%Separator"],["Constructor" + base_recipe, "%Material%Separator"]],
@@ -738,7 +739,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "ElectricEngine" + static_research,
 	"LabelParts": [["ElectricEngine", "machines"]],
-	"Chapter":"Production"+static_chapter,
+	
 	"RequiredResearches": ["Electrolysis" + static_research],
 	"Levels": [2,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%ElectricEngine"],["Constructor" + base_recipe, "%Material%ElectricEngine"]],
@@ -748,7 +749,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "BiElectricEngine" + static_research,
 	"LabelParts": [["BiElectricEngine", "machines"]],
-	"Chapter":"Production"+static_chapter,
+	
 	"RequiredResearches": ["ElectricEngine" + static_research],
 	"Levels": [2,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%BiElectricEngine"],["Constructor" + base_recipe, "%Material%BiElectricEngine"]],
@@ -759,7 +760,7 @@ append_levels({
 	"Name": "OreWasher" + static_research,
 	"LabelParts": [["OreWasher", "machines"]],
 	"Levels": [2,7],
-	"Chapter":"Production"+static_chapter,
+	
 	"RequiredResearches": ["Separator" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%OreWasher"],["Constructor" + base_recipe, "%Material%OreWasher"]],
 	
@@ -917,7 +918,7 @@ append_levels({
 	"LabelParts": [["FusionReactor", "machines"]],
 	"RequiredResearches": ["HardMetalProduction" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%FusionReactor"],["Constructor" + base_recipe, "%Material%FusionReactor"]],
-	"Chapter":"Production"+static_chapter,
+	
 	
 	"Levels": [6,7],
 	"MainResearch": True,

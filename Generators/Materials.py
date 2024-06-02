@@ -706,8 +706,8 @@ materials = [
 		"Tier": 1,
 		"Color":[.1,.1,0.1],
 		"Burnable": {
-			"BurnTime": 1000,
-			"HeatPerTick": 50,
+			"BurnTime": 1600,
+			"HeatPerTick": 60,
 			"TotalAsh": 0
 		}
 	},{

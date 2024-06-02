@@ -315,10 +315,6 @@ for machine in machines:
 								"Count": 1
 							},
 							{
-								"Name": electric_isolators[tier],
-								"Count": 1
-							},
-							{
 								"Name": circuits[tier],
 								"Count": 1
 							}
@@ -539,10 +535,6 @@ for machine in machines:
 								"Count": 1
 							},
 							{
-								"Name": "Glass" + static_item,
-								"Count": 1
-							},
-							{
 								"Name": "BrassDetails" + static_item,
 								"Count": 1
 							},
@@ -665,9 +657,6 @@ for machine in machines:
 							},{
 								"Name": tier_material[tier] + "ElectricEngine" + static_item,
 								"Count": 3
-							},{
-								"Name": "Glass" + static_item,
-								"Count": 5
 							}
 						]
 					},
@@ -726,9 +715,6 @@ for machine in machines:
 							},{
 								"Name": tier_material[tier] + "ElectricEngine" + static_item,
 								"Count": 1
-							},{
-								"Name": "Glass" + static_item,
-								"Count": 10
 							}
 						]
 					},
@@ -752,9 +738,6 @@ for machine in machines:
 							{
 								"Name": tier_material[tier] + "Plate" + static_item,
 								"Count": 2
-							},{
-								"Name": "Glass" + static_item,
-								"Count": 1
 							}
 						]
 					},
@@ -911,14 +894,9 @@ for machine in machines:
 							{
 								"Name": tier_material[tier] + "Plate" + static_item,
 								"Count": 3
-							},
-							{
+							},{
 								"Name": cables[tier],
 								"Count": 4
-							},
-							{
-								"Name": "Glass" + static_item,
-								"Count": 1
 							}
 						]
 					},
@@ -1000,14 +978,9 @@ for machine in machines:
 							{
 								"Name": tier_material[tier] + "Plate" + static_item,
 								"Count": 6
-							},
-							{
+							},{
 								"Name": cables[tier],
 								"Count": 6
-							},
-							{
-								"Name": "Glass" + static_item,
-								"Count": 4
 							}
 						]
 					},
@@ -1054,14 +1027,9 @@ for machine in machines:
 							{
 								"Name": tier_material[tier] + "Plate" + static_item,
 								"Count": 9
-							},
-							{
+							},{
 								"Name": cables[tier],
 								"Count": 8
-							},
-							{
-								"Name": "Glass" + static_item,
-								"Count": 9
 							}
 						]
 					},
@@ -1116,11 +1084,7 @@ for machine in machines:
 							{
 								"Name": tier_material[tier] + "SolarCell" + static_item,
 								"Count": 1 if machine["Name"] == "SmallSolarPanel" else 10
-							},
-							{
-								"Name": "Glass" + static_item,
-								"Count": 4
-							},
+							}
 						]
 					},
 					"Output":{

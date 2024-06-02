@@ -222,7 +222,7 @@ for part in parts:
 					"Count": 2
 					})
 					inp.append({
-						"Name": "SteelPlate" + static_item,
+						"Name": "AluminiumPlate" + static_item,
 						"Count": 1
 					})
 				append_recipe(recipes_assembler, {
