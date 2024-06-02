@@ -98,7 +98,7 @@ append_levels({
 	"Name": "ElectricFurnace" + static_research,
 	"LabelParts": [["ElectricFurnace", "machines"]],
 	"Levels": [2,7],
-	"RequiredResearches": ["Electricity" + static_research],
+	"RequiredResearches": ["CopperWire" + static_research],
 	
 	"Chapter": "Production"+static_chapter,
 	"Unlocks": [["Hand" + base_recipe, "%Material%ElectricFurnace"],["Constructor" + base_recipe, "%Material%ElectricFurnace"]],
@@ -107,7 +107,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "ElectricalSwitch" + static_research,
 	"LabelParts": [["ElectricalSwitch", "machines"]],
-	"RequiredResearches": ["Electricity" + static_research],
+	"RequiredResearches": ["CopperWire" + static_research],
 	"Unlocks": [["Hand" + base_recipe, tier_material[2] + "ElectricalSwitch"],["Constructor" + base_recipe, tier_material[2] + "ElectricalSwitch"]],
 	
 	"Levels": [2,2],
@@ -118,7 +118,7 @@ append_levels({
 	"Name": "Diode" + static_research,
 	"LabelParts": [["Diode", "machines"]],
 	
-	"RequiredResearches": ["CopperWire" + static_research],
+	"RequiredResearches": ["ElectricalSwitch" + static_research],
 	"Levels": [2,7],
 	"Chapter": "Production"+static_chapter,
 	"Unlocks": [["Hand" + base_recipe, "%Material%Diode"],["Constructor" + base_recipe, "%Material%Diode"]],
