@@ -2641,6 +2641,32 @@ recipes_macerator.append({
 })
 
 recipes_macerator.append({
+	"Name": "Rapeseed",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Rapeseed" + static_item,
+				"Count": 2
+			},
+		]
+	},
+	"ResourceInput":{
+		"Name": "Kinetic" + static_item,
+		"Count": 10
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "Organics" + static_item,
+				"Count": 1
+			}
+		]
+	},
+	"Tier": 0,
+	"Ticks" : 200
+})
+
+recipes_macerator.append({
 	"Name": "Emerald",
 	"Input":{
 		"Items":[
@@ -3892,6 +3918,36 @@ recipes_coil.append({
 		},
 	"Ticks" : 200,
 	"Loss" : 10
+})
+
+recipes_ferm.append({
+	"Name": "Dirt",
+	"Input":{
+		"Items":[
+			{
+				"Name": "SandSurface" + static_item,
+				"Count": 1
+			},
+			{
+				"Name": "Organics" + static_item,
+				"Count": 1
+			},
+		]
+	},
+	"ResourceInput":{
+		"Name": "Electricity" + static_item,
+		"Count": 10
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "DirtSurface" + static_item,
+				"Count": 1
+			}
+		]
+	},
+	
+	"Ticks" : 200
 })
 
 recipes_ferm.append({

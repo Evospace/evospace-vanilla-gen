@@ -46,7 +46,7 @@ machines = [
 	,{
 		"Name": "Fermenter",
 		"Label": "Fermenter",
-		"StartTier": 4,
+		"StartTier": 3,
 		"EndTier": 10,
 		"Positions": [[0,0,0],[0,0,1]],
 		"BlockLogic":"SelectCrafter",
