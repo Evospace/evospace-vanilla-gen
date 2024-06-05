@@ -5,8 +5,6 @@ import copy
 
 objects_array = []
 
-researches = []
-
 images = []
 recipes_cutter = []
 recipes_hammer = []
@@ -926,11 +924,5 @@ data = {
 }
 
 write_file("Generated/Recipes/parts.json", data);
-
-data = {
-	"Objects": researches
-}
-
-write_file("Generated/Researches/parts.json", data);
 
 write_file("Loc/source/parts.json", cvs)

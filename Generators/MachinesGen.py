@@ -9,7 +9,6 @@ objects_wiki_array = {}
 recipes_hand = []
 recipes_deconstructor = []
 recipes_constructor = []
-researches = []
 
 cvs = []
 desc_csv = []
@@ -2932,12 +2931,6 @@ data = {
 }
 
 write_file("Generated/Recipes/machines.json", data);
-
-data = {
-	"Objects": researches
-}
-
-write_file("Generated/Researches/machines.json", data);
 
 data = {
 	"Objects": objects_wiki_array
