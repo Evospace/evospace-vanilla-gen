@@ -96,9 +96,6 @@ def append_recipe(recipe):
 
 	recipes_hand.append(recipe)
 	
-	output = copy.deepcopy(dec_recipe["Input"])
-	
-	dec_recipe["Ticks"] = max(min(item_count * 10, 400), 20);
 	dec_recipe["ResourceInput"] = { "Name": "Electricity" + static_item, "Count": 20 * level }
 	recipes_assembler.append(dec_recipe)
 
@@ -365,7 +362,7 @@ for level, name, copm_name in zip(range(0, 4), ["BasicBattery", "AdvancedBattery
 				}
 			]
 		},
-		"Ticks" : 100 * level,
+		"Ticks" : 100 * (level + 1),
 	})
 
 append_recipe({

@@ -35,6 +35,11 @@ covers = [
 		"Name": "RobotArmBase",
 		"Mesh": "019Content/RobotArmBase",
         "Materials": []
+	},{
+		"Name": "BuilingBox",
+		"Mesh": "BoxStaticMesh",
+        "Materials": [],
+        "NoCollision": True
 	}
 ]
 
@@ -115,7 +120,10 @@ for cover in covers:
         "Materials": cover["Materials"]
     }
     if "Tier" in cover:
-         staticCover["Tier"] = cover["Tier"]
+        staticCover["Tier"] = cover["Tier"]
+
+    if "NoCollision" in cover:
+        staticCover["NoCollision"] = cover["NoCollision"]
 
     objects_array.append(staticCover)
 
