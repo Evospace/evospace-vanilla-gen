@@ -650,13 +650,13 @@ for machine in machines:
 						"Items":[
 							{
 								"Name": tier_material[tier] + "Plate" + static_item,
-								"Count": 15
+								"Count": 8
 							},{
 								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 15 + parts_ramp(level)
+								"Count": 8 + parts_ramp(level)
 							},{
 								"Name": tier_material[tier] + "ElectricEngine" + static_item,
-								"Count": 3
+								"Count": 2
 							}
 						]
 					},
@@ -708,7 +708,7 @@ for machine in machines:
 						"Items":[
 							{
 								"Name": tier_material[tier] + "Plate" + static_item,
-								"Count": 10
+								"Count": 8
 							},{
 								"Name": tier_material[tier] + "Parts" + static_item,
 								"Count": 5 + parts_ramp(level)
@@ -760,10 +760,10 @@ for machine in machines:
 						"Items":[
 							{
 								"Name": tier_material[tier] + "Plate" + static_item,
-								"Count": 5
+								"Count": 4
 							},{
 								"Name": "SteelParts" + static_item,
-								"Count": 5 + parts_ramp(level)
+								"Count": 4 + parts_ramp(level)
 							},{
 								"Name": tier_material[tier] + "ElectricEngine" + static_item,
 								"Count": 1
@@ -789,10 +789,10 @@ for machine in machines:
 						"Items":[
 							{
 								"Name": tier_material[tier] + "Plate" + static_item,
-								"Count": 6
+								"Count": 4
 							},{
 								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 6 + parts_ramp(level)
+								"Count": 4 + parts_ramp(level)
 							}
 						]
 					},
@@ -923,7 +923,7 @@ for machine in machines:
 							},
 							{
 								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 15 + parts_ramp(level)
+								"Count": 8 + parts_ramp(level)
 							},
 							{
 								"Name": tier_material[tier] + "ElectricEngine" + static_item,
@@ -931,7 +931,7 @@ for machine in machines:
 							},
 							{
 								"Name": "CopperPipe" + static_item,
-								"Count": 10
+								"Count": 10 + parts_ramp(level)
 							}
 						]
 					},
