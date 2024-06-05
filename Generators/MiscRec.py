@@ -2877,6 +2877,32 @@ recipes_macerator.append({
 	"Tier": 0,
 	"Ticks" : 200
 })
+
+recipes_macerator.append({
+	"Name": "Clay",
+	"Input":{
+		"Items":[
+			{
+				"Name": "DirtSurface" + static_item,
+				"Count": 1
+			}
+		]
+	},
+	"ResourceInput":{
+		"Name": "Kinetic" + static_item,
+		"Count": 10
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "Clay" + static_item,
+				"Count": 1
+			}
+		]
+	},
+	
+	"Ticks" : 200
+})
 			
 recipes_macerator.append({
 	"Name": "GravelToSand",
@@ -2900,7 +2926,6 @@ recipes_macerator.append({
 			}
 		]
 	},
-	"Tier": 0,
 	"Ticks" : 200
 })
 
@@ -3244,38 +3269,6 @@ recipes_electrolyzer.append({
 		]
 	},
 	"Ticks" : 500
-})
-
-recipes_electrolyzer.append({
-	"Name":"Clay",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Clay" + static_item,
-				"Count": 6
-			},
-		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity" + static_item,
-		"Count": 1300,
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "SandSurface" + static_item,
-				"Count": 4
-			},{
-				"Name": "AluminiumOxideDust" + static_item,
-				"Count": 1
-			},{
-				"Name": "SodiumDust" + static_item,
-				"Count": 1
-			}
-		]
-	},
-	
-	"Ticks" : 40
 })
 
 recipes_electrolyzer.append({
@@ -4775,9 +4768,12 @@ recipes_industrial_chemreactor.append({
 				"Count": 1000
 			},{
 				"Name": "Ammonia" + static_item,
-				"Count": 3000
+				"Count": 1000
 			},{
 				"Name": "Ethanol" + static_item,
+				"Count": 2000
+			},{
+				"Name": "Gasoline" + static_item,
 				"Count": 4000
 			},
 			{
@@ -4795,11 +4791,11 @@ recipes_industrial_chemreactor.append({
 		"Items":[	
 			{
 				"Name": "RocketFuel" + static_item,
-				"Count": 5000,
+				"Count": 6000,
 			},		
 		]
 	},
-	"Ticks" : 200,
+	"Ticks" : 1500,
 	"Colors": [[0.3,0.2,0,1],[1,1,0.5,1]]
 })
 
@@ -4812,10 +4808,13 @@ recipes_industrial_chemreactor.append({
 				"Count": 1000
 			},{
 				"Name": "Ammonia" + static_item,
-				"Count": 3000
+				"Count": 1000
 			},{
 				"Name": "Ethanol" + static_item,
-				"Count": 4000
+				"Count": 2000
+			},{
+				"Name": "Gasoline" + static_item,
+				"Count": 3000
 			},
 			{
 				"Name": "UltimateCatalyst" + static_item,
@@ -4832,11 +4831,11 @@ recipes_industrial_chemreactor.append({
 		"Items":[	
 			{
 				"Name": "RocketFuel" + static_item,
-				"Count": 7000,
+				"Count": 8000,
 			},		
 		]
 	},
-	"Ticks" : 200,
+	"Ticks" : 1500,
 	"Colors": [[0.3,0.2,0,1],[1,1,0.5,1]]
 })
 

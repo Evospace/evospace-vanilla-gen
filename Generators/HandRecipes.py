@@ -700,7 +700,7 @@ recipes_hand.append({
 				"Count": 10
 			},
 			{
-				"Name": "StainlessSteelEngine" + static_item,
+				"Name": "StainlessSteelElectricEngine" + static_item,
 				"Count": 2
 			}
 		]
