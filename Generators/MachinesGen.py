@@ -1136,8 +1136,8 @@ for machine in machines:
 								"Name": tier_material[tier] + "Plate" + static_item,
 								"Count": 4
 							},{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 2 + parts_ramp(level)
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 1
 							}
 						]
 					},
@@ -1165,8 +1165,8 @@ for machine in machines:
 								"Name": tier_material[tier] + "Plate" + static_item,
 								"Count": 8
 							},{
-								"Name": tier_material[tier] + "Parts" + static_item,
-								"Count": 14 + parts_ramp(level)*3
+								"Name": tier_material[tier] + "Gearbox" + static_item,
+								"Count": 3
 							}
 						]
 					},
