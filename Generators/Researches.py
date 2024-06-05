@@ -981,10 +981,8 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Fermentation" + static_research,
 	"LabelParts": [["Fermentation", "researches"]],
-	"Levels": [4,7],
-	
-	"RequiredResearches": ["IndustrialSmelting" + static_research],
-	
+	"Levels": [3,7],
+	"RequiredResearches": ["Chemistry" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%Fermenter"],["Constructor" + base_recipe, "%Material%Fermenter"]],
 })
 append_levels({
