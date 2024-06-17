@@ -80,7 +80,7 @@ props = [
 		"ScaleMin": [1, 1, 1],
 		"ScaleMax": [3, 3, 3],
 		"Variations": 1,
-		"ProjectToTerrainPower": 1,
+		"ProjectToTerrainPower": 0,
 		"Drops": "Organics",
 		"CullBegin": 10000,
 		"CullEnd": 12000,
@@ -413,7 +413,7 @@ proplists = [
 				"Chance": 0.5
 			},{
 				"Props": ["TallGrass"],
-				"Chance": 0.1
+				"Chance": 0.05
 			}
 		]
 	},{ 	
@@ -430,7 +430,7 @@ proplists = [
 				"Chance": 0.9
 			},{
 				"Props": ["TallGrass"],
-				"Chance": 0.3
+				"Chance": 0.15
 			}
 		]
 	},{ 
