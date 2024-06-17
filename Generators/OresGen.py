@@ -13,7 +13,7 @@ ore_types = [
 			"GoldDust", # wash
 			["CopperOreDust", "MalachiteCrystal", "MalachiteCluster"], #sifter
 		],
-		"Color": [1, .1,  0],
+		"Color": [0.8,.3,.3],
 		"Hardness": 1.5,
 		"Drops": "CopperOre",
 		"Remain": 1000,
@@ -38,7 +38,7 @@ ore_types = [
 		"ByproductChanse":[
 		0.05
 		],
-		"Color": [0, 1, 0],
+		"Color": [0.3, 0.7, 0.3],
 		"Hardness": 2,
 		"Tier": 5,
 		"Drops": "UraniumOre",
