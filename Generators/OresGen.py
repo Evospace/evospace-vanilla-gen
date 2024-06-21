@@ -13,7 +13,7 @@ ore_types = [
 			"GoldDust", # wash
 			["CopperOreDust", "MalachiteCrystal", "MalachiteCluster"], #sifter
 		],
-		"Color": [0.8,.3,.3],
+		"Color": [0.8/2.0,.3/2.0,.3/2.0],
 		"Hardness": 1.5,
 		"Drops": "CopperOre",
 		"Remain": 1000,
@@ -25,7 +25,7 @@ ore_types = [
 			"ChromiumOxideDust", # wash
 			["IronOreDust", "CinnabarCrystal", "CinnabarCluster"], #sifter
 		],
-		"Color": [111 / 255., 106 / 255., 81 / 255.],
+		"Color": [111 / 255./2.0, 106 / 255./2.0, 81 / 255./2.0],
 		"Hardness": 2,
 		"Drops": "IronOre",
 		"Remain": 1000,
@@ -38,7 +38,7 @@ ore_types = [
 		"ByproductChanse":[
 		0.05
 		],
-		"Color": [0.3, 0.7, 0.3],
+		"Color": [0.3/2.0, 0.7/2.0, 0.3/2.0],
 		"Hardness": 2,
 		"Tier": 5,
 		"Drops": "UraniumOre",
@@ -50,7 +50,7 @@ ore_types = [
 			"TitaniumOxideDust", # wash
 			["AluminiumOreDust", "RutileCrystal", "Emerald"], #sifter
 		],
-		"Color": [.5, .5, 1],
+		"Color": [.5/2.0, .5/2.0, 1/2.0],
 		"Hardness": 2,
 		"Drops": "AluminiumOre",
 		"Oxide": True,
