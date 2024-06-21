@@ -290,7 +290,7 @@ recipes_hand.append({
 		"Items":[
 			{
 				"Name": "GoldWire" + static_item,
-				"Count": 2
+				"Count": 1
 			}
 		]
 	},
@@ -311,7 +311,7 @@ recipes_hand.append({
 		"Items":[
 			{
 				"Name": "CopperWire" + static_item,
-				"Count": 2
+				"Count": 1
 			}
 		]
 	},
