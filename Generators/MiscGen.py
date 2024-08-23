@@ -288,7 +288,6 @@ for one in wooden_misc:
 			"StaticBlock": one["Name"] + static_block
 		},
 		"MaxCount": 32,
-		"Tag": "Decoration",
 		"LabelParts":[[one["Name"],"misc"]],
 		"ItemLogic": building_single_logic
 	}
@@ -321,7 +320,6 @@ for one in simple_single:
 			"StaticBlock": one["Name"] + static_block
 		},
 		"MaxCount": 32,
-		"Tag": "Decoration",
 		"LabelParts":[[one["Name"],"misc"]],
 		"Tier": one["Tier"] if "Tier" in one else 0
 	})	
@@ -353,7 +351,6 @@ for one in simple_blocks:
 			"BuildingMode": "Plane"
 		},
 		"MaxCount": 999,
-		"Tag": "Decoration",
 		"LabelParts":[[one["Name"],"misc"]],
 		"Category": "Block",
 		"DescriptionParts": [["BuildingBlock", "common"]],
@@ -382,7 +379,6 @@ for one in static_mesh_block:
 			"StaticBlock": one["Name"] + static_block
 		},
 		"MaxCount": 32,
-		"Tag": "Decoration",
 		"LabelParts":[[one["Name"],"misc"]],
 	})	
 	#objects_array.append({ "Class": tesselator_static_mesh,
@@ -440,7 +436,6 @@ for one in equipped:
 		"Name": one["Name"] + static_item,
 		"Image": "T_" + one["Name"],
 		"MaxCount": 32,
-		"Tag":"Misc",
 		"LabelParts":[[one["Name"],"misc"]],
 	}
 	if "ItemLogic" in one:

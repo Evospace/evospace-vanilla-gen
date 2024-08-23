@@ -163,8 +163,6 @@ for object in mapgen_objects:
 		},
 		"MaxCount": 999,
 		"LabelParts": [[object["Name"]+ "Surface", "mapgen_core"]],
-		
-		"Tag": "Misc",
 	})
 	objects_array.append({ "Class": "TesselatorMarching",
 		"Name": object["Name"] + "Surface" + tesselator,

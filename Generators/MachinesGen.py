@@ -60,7 +60,6 @@ for machine in machines:
 					"StaticBlock": block_name,
 				},
 				"MaxCount": 32,
-				"Tag": "Machines",
 				"LabelParts": [[tier_material[tier], "common"],[machine["Name"], "machines"]],
 				"LabelFormat": ["machines_label_format","common"],
 				"DescriptionParts": [[machine["Name"], "description_machines"]],
@@ -132,9 +131,6 @@ for machine in machines:
 				
 			if machine["Name"] == "SmallBattery":
 				item["DescriptionParts"].append(["battery", "common", machine["CustomData"]["BaseCapacity"] + machine["CustomData"]["BonusCapacity"] * level])
-			
-			if "Tag" in machine:
-				item["Tag"] = machine["Tag"]
 			
 			if "Craftable" in machine:
 				item["Craftable"] = False

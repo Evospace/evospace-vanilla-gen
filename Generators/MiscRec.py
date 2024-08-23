@@ -4080,7 +4080,7 @@ recipes_solar.append({
 	},
 	"ResourceOutput":{
 		"Name": "Electricity" + static_item,
-		"Count": 50,
+		"Count": 800,
 	},
 	"Ticks" : 60,
 })
