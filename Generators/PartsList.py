@@ -30,7 +30,6 @@ parts = [
 		"ItemLogic": building_cube_logic,
 		"Stack": 32,
 		"RequiredResearches":["MetalConstructions"+static_research],
-		"Tag": "Decoration"
 	},
 	{
 		"Label" : "Gearbox",

@@ -80,7 +80,6 @@ for part in parts:
 				{
 					"StaticBlock": material + part["Name"] + static_block
 				},
-				"Tag": "Misc",
 				"Materials" : [
 					"Materials/" + material
 				],
@@ -99,9 +98,6 @@ for part in parts:
 					if dict[i].find("%Material%") != -1:
 						dict[i] = dict[i].replace("%Material%", tier_material[tier])		
 				item["Materials"] = dict
-			
-			if "Tag" in part:
-				item["Tag"] = part["Tag"]
 			
 			objects_array.append(item)
 			
@@ -306,7 +302,6 @@ for material in materials:
 			"Image": "T_" + material["Name"],
 			
 			"MaxCount": 1,
-			"Tag": "Misc",
 			"LabelParts": [[material["Name"], "parts"]],
 			"Type": "Abstract"
 		}
@@ -319,9 +314,6 @@ for material in materials:
 			
 		if "Category" in material:
 			item["Category"] = material["Category"]
-			
-		if "Tag" in material:
-			item["Tag"] = material["Tag"]
 			
 		if "Description" in material:
 			item["DescriptionParts"] = material["Description"]
@@ -338,7 +330,6 @@ for material in materials:
 			"MaxCount": 32 if material["Name"] != "Signal" else 214748364,
 			
 			"LabelParts": [[material["Name"], "parts"]],
-			"Tag": "Misc",
 		}
 			
 		if "Craftable" in material:
@@ -349,9 +340,6 @@ for material in materials:
 			
 		if "Description" in material:
 			item["DescriptionParts"] = material["Description"]
-			
-		if "Tag" in material:
-			item["Tag"] = material["Tag"]
 			
 		if "Unit" in material:
 			item["Unit"] = material["Unit"]
@@ -415,15 +403,11 @@ for material in materials:
 				"Materials/" + material["Name"]
 			],			
 			"LabelParts": [[material["Name"] + "Ingot", "parts"]],
-			"Tag": "Misc",
 			"Category": "Ingot",
 		}
 		
 		if "Category" in material:
 			item["Category"] = material["Category"]
-			
-		if "Tag" in material:
-			item["Tag"] = material["Tag"]
 			
 		objects_array.append(item)
 		
@@ -496,7 +480,6 @@ for material in materials:
 				"Materials/" + material["Name"]
 			],			
 			"LabelParts": [[material["Name"] + "Block", "parts"]],
-			"Tag": "Decoration",
 			"Category": "Block",
 			"ItemLogic": building_cube_logic,
 			"LogicJson":
@@ -507,9 +490,6 @@ for material in materials:
 		
 		if "Category" in material:
 			item["Category"] = material["Category"]
-			
-		if "Tag" in material:
-			item["Tag"] = material["Tag"]
 			
 		objects_array.append(item)
 		
@@ -584,7 +564,6 @@ for material in materials:
 			
 			"MaxCount": 1,
 			"Category": "",
-			"Tag": "Misc",
 			"LabelParts": [[material["Name"], "parts"]],
 			
 			"UnitMul": 1.0 / 1000.0,
@@ -596,9 +575,6 @@ for material in materials:
 		
 		if "Category" in material:
 			item["Category"] = material["Category"]
-			
-		if "Tag" in material:
-			item["Tag"] = material["Tag"]
 		
 		#if item["MaterialKey"] + " " + item["Key"] in explicites:
 		#	item["ExplicitKey"] = ex_cvs[explicites.index(item["MaterialKey"] + " " + item["Key"])][0]
@@ -671,7 +647,6 @@ for material in materials:
 			
 			"MaxCount": 1,
 			"Category": "",
-			"Tag": "Misc",
 			"LabelParts": [[material["Name"], "parts"]],
 			
 			"UnitMul": 1.0 / 1000.0,
@@ -683,9 +658,6 @@ for material in materials:
 		
 		if "Category" in material:
 			item["Category"] = material["Category"]
-			
-		if "Tag" in material:
-			item["Tag"] = material["Tag"]
 		
 		#if item["MaterialKey"] + " " + item["Key"] in explicites:
 		#	item["ExplicitKey"] = ex_cvs[explicites.index(item["MaterialKey"] + " " + item["Key"])][0]
@@ -759,7 +731,6 @@ for material in materials:
 			"MaxCount": 32,
 			
 			"LabelParts": [[material["Name"] + "Dust", "parts"]],
-			"Tag": "Misc",
 			"Mesh": "Models/Dust",
 			"Materials": [
 				"Materials/" + material["Name"] + "Dust"
@@ -770,9 +741,6 @@ for material in materials:
 		
 		if "Category" in material:
 			item["Category"] = material["Category"]
-			
-		if "Tag" in material:
-			item["Tag"] = material["Tag"]
 			
 		objects_array.append(item)
 		
@@ -820,7 +788,6 @@ for tool in tools:
 		},
 		"MaxCount": 1,
 		"LabelParts": [[tool["Name"], "parts"]],
-		"Tag": "Misc",
 	}
 		
 	objects_array.append(item)

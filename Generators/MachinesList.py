@@ -96,7 +96,6 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 10,
 		"BlockLogic": "BlockLogic",
-		"Tag":"Decoration",
 		"Description": ["BuildingBlock"],
 	},{
 		"Name": "Corner",
@@ -104,7 +103,6 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 10,
 		"BlockLogic": "SimpleInstancedBlockLogic",
-		"Tag":"Decoration",
 		"Description": ["BuildingBlock"]
 	},{
 		"Name": "AutomaticHammer",
@@ -157,7 +155,6 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 10,
 		"BlockLogic": "FluidConductorBlockLogic",
-		"Tag": "Logistics",
 		"Description": ["FluidConductor"],
 		"PathFinding": True,
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
@@ -167,7 +164,6 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 1,
 		"BlockLogic": "HeatConductorBlockLogic",
-		"Tag": "Logistics",
 		"Description": ["HeatConductor", "HeatStorage"],
 		"PathFinding": True,
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
@@ -177,7 +173,6 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 2,
 		"BlockLogic": "KineticConductorBlockLogic",
-		"Tag": "Logistics",
 		"Description": ["KineticConductor", "KineticStorage"],
 		"PathFinding": True,
 	},{
@@ -185,20 +180,17 @@ machines = [
 		"Label": "Scaffold",
 		"StartTier": 1,
 		"EndTier": 10,
-		"Tag": "Decoration",
 		"BlockLogic": "SimpleInstancedBlockLogic",
 		"Description": ["BuildingBlock"],
 	},{
 		"Name": "Sign",
 		"Label": "Sign",
-		"Tag":"Decoration",
 		"StartTier": 0,
 		"EndTier": 10,
 		"BlockLogic": "SignBlockLogic",
 	},{
 		"Name": "AdvancedSign",
 		"Label": "Advanced Sign",
-		"Tag":"Decoration",
 		"StartTier": 2,
 		"EndTier": 10,
 		"BlockLogic": "SignBlockLogic",
@@ -208,7 +200,6 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 1,
 		"BlockLogic": "ElectricConductorBlockLogic",
-		"Tag": "Logistics",
 		"PathFinding": True,
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
 	},{
@@ -216,7 +207,6 @@ machines = [
 		"Label": "Chest",
 		"StartTier": 0,
 		"EndTier": 10,
-		"Tag": "Logistics",
         "Description": ["ItemInput", "ItemStorage"],
 	},{
 		"Name": "ItemRack",
@@ -224,7 +214,6 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
 		"StartTier": 1,
 		"EndTier": 10,
-		"Tag": "Logistics",
         "Description": ["ItemInput", "ItemStorage"],
 	},{
 		"Name": "Vent",
@@ -235,7 +224,6 @@ machines = [
 			"Valve"
 		],
 		"BlockLogic": "FluidSwitchBlockLogic",
-		"Tag": "Logistics",
 		"Description": ["FluidConductor"],
 	},{
 		"Name": "ElectricalSwitch",
@@ -243,7 +231,6 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 2,
 		"BlockLogic": "ElectricSwitchBlockLogic",
-		"Tag": "Logistics",
 		"Description": ["ElectricConductor"],
 	},{
 		"Name": "OreWasher",
@@ -271,7 +258,6 @@ machines = [
 			"Transporter"
 		],
 		"Selector": "Blocks/ArrowConvBP.ArrowConvBP_C",
-		"Tag": "Logistics",
 		"PathFinding": True,
 	},{
 		"Name": "Splitter",
@@ -279,21 +265,18 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 10,
 		"Description": ["Splitter"],
-		"Tag": "Logistics",
 	},{
 		"Name": "Sorter",
 		"Label": "Sorter",
 		"StartTier": 2,
 		"EndTier": 10,
 		"Description": ["Splitter", "Sorter"],
-		"Tag": "Logistics",
 	},{
 		"Name": "Container",
 		"Label": "Container",
 		"StartTier": 1,
 		"EndTier": 10,
 		"BlockLogic": "FluidContainerBlockLogic",
-		"Tag": "Logistics",
 		"Description": ["FluidConductor", "FluidStorage"],
 	},{
 		"Name": "Press",
@@ -567,14 +550,12 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 10,
 		"Selector": "Blocks/ArrowBP.ArrowBP_C",
-		"Tag": "Logistics", 
 	},{
 		"Name": "FilteringRobotArm",
 		"Label": "Filtering Robot Arm",
 		"StartTier": 1,
 		"EndTier": 10,
 		"Selector": "Blocks/ArrowBP.ArrowBP_C",
-		"Tag": "Logistics",
 		"Description": ["Sorter"],
 	},{
 		"Name": "Pump",
@@ -584,7 +565,6 @@ machines = [
 		"CustomData":{
 			"ItemPortion": 1000
 		},
-		"Tag": "Logistics",
 		"Selector": "Blocks/ArrowBP.ArrowBP_C",
 		"Description": ["FluidInput", "FluidOutput"],
 	},{
@@ -595,7 +575,6 @@ machines = [
 		"CustomData":{
 			"ItemPortion": 1000
 		},
-		"Tag": "Logistics",
 		"Selector": "Blocks/ArrowBP.ArrowBP_C",
 		"Description": ["Sorter", "FluidInput", "FluidOutput"],
 	},{
@@ -606,7 +585,6 @@ machines = [
 		"CustomData":{
 			"ItemPortion": 1000
 		},
-		"Tag": "Logistics",
 		"Selector": "Blocks/ArrowBP.ArrowBP_C",
 		"Description": ["FluidInput", "FluidOutput"],
 	},{
