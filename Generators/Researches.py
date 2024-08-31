@@ -7,28 +7,57 @@ from PartsResearchHelper import *
 
 researches = []
 
+tier_researches = [
+	"InitialScan",
+	"InitialScan",
+	"SteelProduction",
+	"AluminiumProduction",
+	"StainlessSteelProduction",
+	"TitaniumProduction",
+	"HardMetalProduction",
+	"NeutroniumProduction",
+	"NeutroniumProduction",
+	"NeutroniumProduction",
+	"NeutroniumProduction",
+	"NeutroniumProduction",
+	"NeutroniumProduction",
+]
+
 csv = []
 
-def append_levels(research):
-    if "Unlocks" in research:
-        unl = copy.deepcopy(research["Unlocks"])
-        research["Unlocks"] = []
-        
-        for i in range(research["Levels"][0] if "Levels" in research else 0, research["Levels"][1] + 1 if "Levels" in research else 1):
-            new = []
-            for j in unl:
-                new.append([j[0], j[1].replace("%Material%", tier_material[i])])                
-            research["Unlocks"].append(new)
+def append_levels(research_base):
+	mini = research_base["Levels"][0] if "Levels" in research_base else 0
+	maxi = research_base["Levels"][1] + 1 if "Levels" in research_base else 1
+	for i in range(mini, maxi):
+		research = copy.deepcopy(research_base)
+		if i != mini:
+			research["IsUpgrade"] = True
+			research["MainResearch"] = False
+			research["Name"] = research["Name"] + str(i)
+			if i != mini + 1:
+				research["RequiredResearches"] = [research_base["Name"] + str(i - 1)]
+			else:
+				research["RequiredResearches"] = [research_base["Name"]]
+
+			research["RequiredResearches"].append(tier_researches[i])
+
+		if "Unlocks" in research:
+			unl = copy.deepcopy(research["Unlocks"])
+			research["Unlocks"] = []
+			
+			new = []
+			for j in unl:
+				new.append([j[0], j[1].replace("%Material%", tier_material[i])])                
+			research["Unlocks"].append(new)
+		
+		CostSub = research["CostSub"] if "CostSub" in research else 0
+		CostMul = research["CostMul"] if "CostMul" in research else 1
+		offset = research["CostLevelOffset"] if "CostLevelOffset" in research else 0
+
+		research["Levels"] = [i,i]
+		research["DataPoints"] = {"Items" : res_cost(i - CostSub + offset, CostMul)}
     
-    CostSub = research["CostSub"] if "CostSub" in research else 0
-    CostMul = research["CostMul"] if "CostMul" in research else 1
-    offset = research["CostLevelOffset"] if "CostLevelOffset" in research else 0
-    
-    research["DataPoints"] = []
-    for i in range(research["Levels"][0] if "Levels" in research else 0, research["Levels"][1] + 1 if "Levels" in research else 1):
-        research["DataPoints"].append({"Items" : res_cost(i - CostSub + offset, CostMul)})
-    
-    researches.append(research)
+		researches.append(research)
 
 append_levels({
 	"Class": "StaticResearchToolUnlock",
