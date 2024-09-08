@@ -33,6 +33,7 @@ def append_levels(research_base):
 		if i != mini:
 			research["IsUpgrade"] = True
 			research["MainResearch"] = False
+			research["CompleteByDefault"] = False
 			research["Name"] = research["Name"] + str(i)
 			if i != mini + 1:
 				research["RequiredResearches"] = [research_base["Name"] + str(i - 1)]
