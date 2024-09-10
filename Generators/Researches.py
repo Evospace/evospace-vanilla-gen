@@ -29,14 +29,15 @@ def append_levels(research_base):
 	mini = research_base["Levels"][0] if "Levels" in research_base else 0
 	maxi = research_base["Levels"][1] + 1 if "Levels" in research_base else 1
 	for i in range(mini, maxi):
+		thisLevel = i - mini
 		research = copy.deepcopy(research_base)
 		if i != mini:
 			research["IsUpgrade"] = True
 			research["MainResearch"] = False
 			research["CompleteByDefault"] = False
-			research["Name"] = research["Name"] + str(i)
+			research["Name"] = research["Name"] + str(thisLevel)
 			if i != mini + 1:
-				research["RequiredResearches"] = [research_base["Name"] + str(i - 1)]
+				research["RequiredResearches"] = [research_base["Name"] + str(thisLevel - 1)]
 			else:
 				research["RequiredResearches"] = [research_base["Name"]]
 
