@@ -98,7 +98,7 @@ for ore_type in ore_types:
 		"CommonTextKeys":[
 		],
 		"Materials" : [
-			"Materials/" + ore_type["Name"] + "ImpureOreGravel"
+			"/Game/Materials/" + ore_type["Name"] + "ImpureOreGravel"
 		],
 	}
 	if "SmeltLevel" in named_mat:
@@ -107,7 +107,7 @@ for ore_type in ore_types:
 	objects_array.append(item)
 	objects_array.append({ "Class": "TesselatorMarching",
 		"Name": ore_type["Name"] + "Ore" + tesselator,
-		"Material": "Materials/Triplanar/" + ore_type["Name"] + "OreMaterial"
+		"Material": "/Game/Materials/Triplanar/" + ore_type["Name"] + "OreMaterial"
 	})
 	objects_array.append({ "Class": "StaticBlock",
 		"Name": ore_type["Name"] + "Ore" + static_surface,
@@ -136,7 +136,7 @@ for ore_type in ore_types:
 			"MaxCount": 32,
 
 			"Materials" : [
-				"Materials/" + ore_type["Name"] + "ImpureOreGravel"
+				"/Game/Materials/" + ore_type["Name"] + "ImpureOreGravel"
 			],
 			"Category": "Ore",
 			
@@ -161,7 +161,7 @@ for ore_type in ore_types:
 			"MaxCount": 32,
 
 			"Materials" : [
-				"Materials/" + ore_type["Name"] + "OreGravel"
+				"/Game/Materials/" + ore_type["Name"] + "OreGravel"
 			],
 			"Category": "Ore",
 			
@@ -186,7 +186,7 @@ for ore_type in ore_types:
 			"MaxCount": 32,
 
 			"Materials" : [
-				"Materials/ImpureOreDust"
+				"/Game/Materials/ImpureOreDust"
 			],
 			"Category": "Ore",
 			
@@ -195,7 +195,7 @@ for ore_type in ore_types:
 			"CommonTextKeys":[
 			],
 			"Materials" : [
-				"Materials/" + ore_type["Name"] + "OreGravel"
+				"/Game/Materials/" + ore_type["Name"] + "OreGravel"
 			],
 		}
 			

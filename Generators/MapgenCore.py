@@ -153,9 +153,7 @@ for object in mapgen_objects:
 		
 		"ItemLogic": building_brush_slot_logic,
 		"Mesh": "Models/piece",
-		"Materials" : [
-					"Materials/" + object["Drops"]
-				],
+		"Materials" : ["/Game/Materials/" + object["Drops"]],
 		"Color": object["Item"],
 		"LogicJson":
 		{
@@ -166,7 +164,7 @@ for object in mapgen_objects:
 	})
 	objects_array.append({ "Class": "TesselatorMarching",
 		"Name": object["Name"] + "Surface" + tesselator,
-		"Material": "Materials/Triplanar/" + object["Name"] + "Material"
+		"Material": "/Game/Materials/Triplanar/" + object["Name"] + "Material"
 	})
 	objects_array.append({
 		"Class": "StaticBlock",
