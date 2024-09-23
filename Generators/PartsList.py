@@ -20,7 +20,7 @@ parts = [
 		"EndTier": 100,
 		"Stack": 64,
 		"Mesh":"Models/PartsCrate",
-		"Materials":["Materials/Pine","Materials/%Material%"],
+		"Materials":["/Game/Materials/Pine","/Game/Materials/%Material%"],
 	},
 	{
 		"Label" : "Casing",

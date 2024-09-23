@@ -357,7 +357,7 @@ for one in simple_blocks:
 	})
 	objects_array.append({ "Class": tesselator_cube,
 		"Name": one["Name"] + tesselator,
-		"Material" : "Materials/" + one["Name"],
+		"Material" : "/Game/Materials/" + one["Name"],
 		"Transparent": one["Transparent"] if "Transparent" in one else False
 	})
 	objects_array.append({ "Class": "StaticBlock",

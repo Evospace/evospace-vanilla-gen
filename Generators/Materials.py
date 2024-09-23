@@ -1,14 +1,14 @@
 from Common import *
 
 material_array_metal1 = [
-	"Materials/Stone",
-	"Materials/Copper",
-	"Materials/Steel",
-	"Materials/Aluminium",
-	"Materials/StainlessSteel",
-	"Materials/Titanium",
-	"Materials/HardMetal",
-	"Materials/Neutronium"
+	"/Game/Materials/Stone",
+	"/Game/Materials/Copper",
+	"/Game/Materials/Steel",
+	"/Game/Materials/Aluminium",
+	"/Game/Materials/StainlessSteel",
+	"/Game/Materials/Titanium",
+	"/Game/Materials/HardMetal",
+	"/Game/Materials/Neutronium"
 ]
 
 tier_material = [
@@ -123,19 +123,19 @@ materials = [
 		"Label" : "Circuit Board",
 		"IsExact": True,
 		"Mesh":"Models/BoardCrate",
-		"Materials":["Materials/Plastic"],
+		"Materials":["/Game/Materials/Plastic"],
 	},{
 		"Name" : "AdvancedCircuitBoard",
 		"Label" : "Advanced Circuit Board",
 		"IsExact": True,
 		"Mesh":"Models/BoardCrate",
-		"Materials":["Materials/DarkGreenPlastic"],
+		"Materials":["/Game/Materials/DarkGreenPlastic"],
 	},{
 		"Name" : "Plastic",
 		"Label" : "Plastic",
 		"IsExact": True,
 		"Mesh":"Models/Ingot",
-		"Materials":["Materials/GreenPlastic"],
+		"Materials":["/Game/Materials/GreenPlastic"],
 	},{
 		"Name" : "Steel",
 		"Label" : "Steel",
@@ -239,7 +239,7 @@ materials = [
 		"IsExact": True,
 		"Tier": 5,
         "Mesh":"Models/Ingot",
-        "Materials":["Materials/HotMetal"],
+        "Materials":["/Game/Materials/HotMetal"],
 	},{
 		"Name": "HotNeutroniumIngot",
 		"Label": "Hot Neutronium Ingot",
@@ -247,7 +247,7 @@ materials = [
 		"IsExact": True,
 		"Tier": 5,
         "Mesh":"Models/Ingot",
-        "Materials":["Materials/VeryHotMetal"],
+        "Materials":["/Game/Materials/VeryHotMetal"],
 	}
 	#,{
 	#	"Name": "Rubber",
@@ -829,7 +829,7 @@ materials = [
 		"IsExact": True,
 		"Category": "Parts",
 		"Mesh":"Models/WireCrate",
-		"Materials":["Materials/CopperWiresOnCrate"],
+		"Materials":["/Game/CopperWiresOnCrate"],
 	},{
 		"Name" : "GoldWire",
 		"Label" : "Gold Wire",
@@ -837,7 +837,7 @@ materials = [
 		"IsExact": True,
 		"Category": "Parts",
 		"Mesh":"Models/WireCrate",
-		"Materials":["Materials/GoldWiresOnCrate"],
+		"Materials":["/Game/Materials/GoldWiresOnCrate"],
 	},{
 		"Name" : "SuperconductorWire",
 		"Label" : "Superconductor Wire",
@@ -845,7 +845,7 @@ materials = [
 		"IsExact": True,
 		"Category": "Parts",
 		"Mesh":"Models/WireCrate",
-		"Materials":["Materials/SuperWiresOnCrate"],
+		"Materials":["/Game/Materials/SuperWiresOnCrate"],
 	},{
 		"Name" : "Circuit",
 		"Label" : "Circuit",

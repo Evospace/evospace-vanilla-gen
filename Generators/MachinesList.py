@@ -777,7 +777,7 @@ machines = [
 		"StartTier": 0,
 		"EndTier": 10,
 		"BlockLogic":"Furnace",
-        "Selector": "019Content/FurnaceSelector.FurnaceSelector_C",
+        "Selector": "019/FurnaceSelector.FurnaceSelector_C",
 		"BlockCreation":"""
 		return function(self)
 		local a = self:CreateAccessor(Class.find("HeatOutputAccessor"))
@@ -959,6 +959,7 @@ machines = [
 	{
 		"Name": "DrillingRig",
 		"Label": "Drilling Rig",
+        
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],
 			[0,1,0],[-1,1,0],[-2,1,0],

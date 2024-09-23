@@ -189,7 +189,7 @@ for machine in machines:
 					logic["BlockCreation"] = logic["BlockCreation"].replace("%Tier%", str(tier))
 					
 			logic["ActorCreation"] = """
-			local mat = Material.load("Materials/%Material%")
+			local mat = Material.load("/Game/Materials/%Material%")
 			Legacy.this:set_field_object("HullMaterial", mat)
 			""".replace("%Material%", tier_material[tier])
 

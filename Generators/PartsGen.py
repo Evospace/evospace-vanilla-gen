@@ -81,7 +81,7 @@ for part in parts:
 					"StaticBlock": material + part["Name"] + static_block
 				},
 				"Materials" : [
-					"Materials/" + material
+					"/Game/Materials/" + material
 				],
 				
 				"Category": "Parts",
@@ -157,7 +157,7 @@ for part in parts:
 				})
 				objects_array.append({ "Class": tesselator_cube,
 					"Name": material + "Casing" + tesselator,
-					"Material" : "Materials/" + material + "Casing"
+					"Material" : "/Game/Materials/" + material + "Casing"
 				})
 				objects_array.append({ "Class": "StaticBlock",
 					"Name": material + "Casing" + static_block,
@@ -350,7 +350,7 @@ for material in materials:
 		if "Mesh" in material:
 			item["Mesh"] = material["Mesh"]
 			item["Materials"] =	[
-				"Materials/" + material["Name"]
+				"/Game/Materials/" + material["Name"]
 			]
 
 		if "MaxCharge" in material:
@@ -400,7 +400,7 @@ for material in materials:
 			"MaxCount": 32,
 			"Mesh": "Models/Ingot",
 			"Materials" : [
-				"Materials/" + material["Name"]
+				"/Game/Materials/" + material["Name"]
 			],			
 			"LabelParts": [[material["Name"] + "Ingot", "parts"]],
 			"Category": "Ingot",
@@ -477,7 +477,7 @@ for material in materials:
 			"MaxCount": 999,
 			#"Mesh": "Models/Ingot",
 			"Materials" : [
-				"Materials/" + material["Name"]
+				"/Game/Materials/" + material["Name"]
 			],			
 			"LabelParts": [[material["Name"] + "Block", "parts"]],
 			"Category": "Block",
@@ -500,7 +500,7 @@ for material in materials:
 			})
 		objects_array.append({ "Class": tesselator_cube,
 			"Name": material["Name"] + "Block" + tesselator,
-			"Material" : "Materials/" + material["Name"]
+			"Material" : "/Game/Materials/" + material["Name"]
 		})
 		objects_array.append({ "Class": "StaticBlock",
 			"Name": material["Name"] + "Block" + static_block,
@@ -733,7 +733,7 @@ for material in materials:
 			"LabelParts": [[material["Name"] + "Dust", "parts"]],
 			"Mesh": "Models/Dust",
 			"Materials": [
-				"Materials/" + material["Name"] + "Dust"
+				"/Game/Materials/" + material["Name"] + "Dust"
 			],
 			"UnitMul": 1,
 			"Category": "Dust",
