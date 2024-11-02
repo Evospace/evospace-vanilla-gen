@@ -24,6 +24,7 @@ cvs.append(["WorldObject","""Can't be crafted
 Appears in world"""])
 cvs.append(["Circuit","""Part of smart devices
 Used by computers to produce science points"""])
+cvs.append(["Part","Part of devices"])
 
 cvs.append(["ItemInput", "<img id=\"ItemInput\"></>Has item input"])
 cvs.append(["ItemOutput", "<img id=\"ItemOutput\"></>Has item ouput"])

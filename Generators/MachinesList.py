@@ -200,6 +200,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 1,
 		"BlockLogic": "ElectricConductorBlockLogic",
+        "Description": ["ElectricConductor"],
 		"PathFinding": True,
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
 	},{
