@@ -100,6 +100,8 @@ for part in parts:
 				item["Materials"] = dict
 			
 			objects_array.append(item)
+
+			item["DescriptionParts"] = [["Part","common"]]
 			
 			images.append({ "NewName": "T_" + material + part["Name"],
 				"Base": "T_" + part["Name"],
@@ -181,7 +183,7 @@ for part in parts:
 						}]) + ([] if tier < 2 else [
 							{
 								"Name": tier_material[(tier - 1) if tier < 3 else 2] + "Gearbox" + static_item,
-								"Count": 2 + (0 if tier < 3 else (tier - 2) * 2 )
+								"Count": 2 + (0 if tier < 3 else (tier - 2) )
 							}
 						])
 					},
