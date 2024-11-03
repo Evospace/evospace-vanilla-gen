@@ -18,7 +18,6 @@ def append_equipment(xy, append_levels, researches):
 		"Name": "Multitool" + static_research,
 		"LabelParts": [["Multitool", "parts"]],
 		
-		"RequiredResearches": ["Smelting" + static_research],
 		"Unlocks": [["Hand" + base_recipe, "Multitool"]],
 		"Levels": [1,10],
 		
