@@ -76,7 +76,7 @@ for ore_type in ore_types:
 					]
 				},
 				"Tier": extract_tier(ore_type) - 1,
-				"Ticks" : 400,
+				"Ticks" : 180,
 			})
 		out_items = []
 		out_items.append({
@@ -161,7 +161,7 @@ for ore_type in ore_types:
 						}
 					]
 				},
-				"Ticks" : 200,
+				"Ticks" : 60,
 				"Tier": extract_tier(ore_type),
 			})
 			recipes_smelt.append({
@@ -186,7 +186,7 @@ for ore_type in ore_types:
 						}
 					]
 				},
-				"Ticks" : 300,
+				"Ticks" : 120,
 				"Tier": extract_tier(ore_type),
 			})
 			recipes_smelt.append({
@@ -211,7 +211,7 @@ for ore_type in ore_types:
 						}
 					]
 				},
-				"Ticks" : 300,
+				"Ticks" : 120,
 				"Tier": extract_tier(ore_type),
 			})
 		out_items = []
@@ -257,7 +257,7 @@ for ore_type in ore_types:
 				"Items": out_items
 			},
 			"Tier": extract_tier(ore_type),
-			"Ticks" : 130,
+			"Ticks" : 120,
 		})
 		out_items = []
 		out_items.append({
@@ -292,7 +292,7 @@ for ore_type in ore_types:
 			"Output":{
 				"Items": out_items
 			},
-			"Ticks" : 200,
+			"Ticks" : 60,
 			"Tier": extract_tier(ore_type),
 		})	
 		out_items = []
@@ -324,7 +324,7 @@ for ore_type in ore_types:
 			"Output":{
 				"Items": out_items
 			},
-			"Ticks" : 100,
+			"Ticks" : 60,
 			"Tier": extract_tier(ore_type),
 		})	
 		for i in {"OreGravel", "ImpureOreGravel"}:

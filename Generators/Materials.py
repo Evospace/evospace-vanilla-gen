@@ -430,6 +430,7 @@ materials = [
 			"TotalAsh": 0.12
 		},
 		"Tier": 0,
+		"Stack": 200,
 		"Color":[0.0,0.0,0.0],
 		"Mesh": "Models/Piece"
 	},{

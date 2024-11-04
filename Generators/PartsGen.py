@@ -443,7 +443,7 @@ for material in materials:
 						}
 					]
 				},
-				"Ticks" : 200,
+				"Ticks" : 60,
 			})
 			
 		recipes_macerator.append({
