@@ -441,12 +441,12 @@ machines = [
 		"BlockCreation":"""
 		return function(self)
 		
-		local a = self:CreateAccessor(Class.find("KineticInputAccessor"))
+		local a = self:new_resource_accessor("KineticInputAccessor")
 		a:SetSidePos(Vec3i.right, Vec3i.new( 0, -2, 0 ))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("ElectricOutputAccessor"))
+		a:Bind(self:get_resource_component())
+		local a = self:new_resource_accessor("ElectricOutputAccessor")
 		a:SetSidePos(Vec3i.left, Vec3i.new( 0, 1, 0 ))		
-		a:Bind(self:GetOutputContainer())
+		a:Bind(self:get_resource_component())
 		end
 		""",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
@@ -481,15 +481,15 @@ machines = [
 		"BlockCreation":"""
         return function(self)
 		
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
+		local a = self:new_resource_accessor("ElectricInputAccessor")
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("KineticOutputAccessor"))
+		a:Bind(self:get_resource_component())
+		local a = self:new_resource_accessor("KineticOutputAccessor")
 		a:SetSidePos(Vec3i.front, Vec3i.zero)
-		a:Bind(self:GetOutputContainer())
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
+		a:Bind(self:get_resource_component())
+		local a = self:new_resource_accessor("ElectricInputAccessor")
 		a:SetSidePos(Vec3i.down, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
+		a:Bind(self:get_resource_component())
         end
 		""",
 		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
@@ -596,10 +596,12 @@ machines = [
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("HeatInputAccessor"))
+		local a = self:new_resource_accessor("HeatInputAccessor")
 		a:SetSidePos(Vec3i.down, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Heat")
 		end
 		""",
 		"Description": ["HeatInput"],
@@ -781,9 +783,12 @@ machines = [
         "Selector": "019/FurnaceSelector.FurnaceSelector_C",
 		"BlockCreation":"""
 		return function(self)
-		local a = self:CreateAccessor(Class.find("HeatOutputAccessor"))
+		local a = self:new_resource_accessor("HeatOutputAccessor")
 		a:SetSidePos(Vec3i.up, Vec3i.zero)
-		a:Bind(self:GetOutputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.output = 20
+        res.item = StaticItem.find("Heat")
 		end
 		""",
 		"Description": ["HeatOutput"],
