@@ -12,10 +12,12 @@ machines = [
 		"BlockLogic": "AutoCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("KineticInputAccessor"))
+        local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Kinetic")
 		end
 		""",
 		"Description": ["KineticInput"],
@@ -27,10 +29,12 @@ machines = [
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("KineticInputAccessor"))
+		local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Kinetic")
 		end
 		""",
 		"Description": ["KineticInput"],
@@ -52,10 +56,12 @@ machines = [
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
+        local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Electricity")
 		end
 		""",
 		"RequiredResearches":["Fermentation"+static_research],
@@ -68,10 +74,12 @@ machines = [
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
+        local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Electricity")
 		end
 		""",
 		"Description": ["ElectricInput"],
@@ -83,10 +91,12 @@ machines = [
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("KineticInputAccessor"))
+        local a = self:new_resource_accessor("KineticInputAccessor")
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Kinetic")
 		end
 		""",
 		"Description": ["KineticInput"],
@@ -113,10 +123,12 @@ machines = [
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("KineticInputAccessor"))
+        local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Kinetic")
 		end
 		""",
 		"Description": ["KineticInput"],
@@ -131,7 +143,7 @@ machines = [
 		"BlockLogic":"NuclearReactorBlockLogic",
 		"BlockCreation":"""
 		return function(self)
-		
+-----
 		local a = self:CreateAccessor(Class.find("FluidInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
 		a:Bind(self:GetInputContainer())
@@ -240,12 +252,20 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
-		"BlockCreation":"""
+		"BlockCreation":""" -----------
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("KineticInputAccessor"))
+        local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.front, Vec3i.new(0,1,0))
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Kinetic")
+		local a = self:new_resource_accessor("Input")
+		a:SetSidePos(Vec3i.back, Vec3i.zero)
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Kinetic")
 		end
 		""",
 		"Description": ["KineticInput"],
@@ -291,10 +311,12 @@ machines = [
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("KineticInputAccessor"))
+		local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Kinetic")
 		end
 		""",
 	}
@@ -328,7 +350,7 @@ machines = [
 		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
+-------
 		local a = self:CreateAccessor(Class.find("HeatInputAccessor"))
 		a:SetSidePos(Vec3i.down, Vec3i.zero)
 		a:Bind(self:GetInputContainer())
@@ -349,10 +371,12 @@ machines = [
 		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("KineticOutputAccessor"))
+		local a = self:new_resource_accessor("Output")
 		a:SetSidePos(Vec3i.right, Vec3i.new(-1,0,0))
-		a:Bind(self:GetOutputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Kinetic")
 		end
 		""",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,2,0],[-1,2,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,2,1],[-1,2,1]],
@@ -373,10 +397,12 @@ machines = [
                 [0,0,7],[1,0,7],[-1,0,7],[0,1,7],[0,-1,7],[1,1,7],[-1,-1,7],[1,-1,7],[-1,1,7]],
         "BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
+        local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.back, Vec3i.new( -1, 0, 0 ))
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Electricity")
 		end
 		""",
 	},{
@@ -388,10 +414,12 @@ machines = [
 		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("HeatInputAccessor"))
-		a:SetSidePos(Vec3i.down, Vec3i.new( 0, 0, 0 ))
-		a:Bind(self:GetInputContainer())
+        local a = self:new_resource_accessor("Input")
+		a:SetSidePos(Vec3i.down, Vec3i.zero)
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Heat")
 		end
 		""",
 		"Description": ["HeatInput"],
@@ -416,7 +444,7 @@ machines = [
 		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
+-------
 		local a = self:CreateAccessor(Class.find("KineticInputAccessor"))
 		a:SetSidePos(Vec3i.back, Vec3i.new( -1, 1, 0 ))
 		a:Bind(self:GetInputContainer())
@@ -719,10 +747,12 @@ machines = [
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
+        local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.back, Vec3i.new( -1, 1, 0 ))
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Electricity")
 		end
 		""",
 		"Description": ["ElectricInput"],
@@ -735,10 +765,12 @@ machines = [
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("KineticInputAccessor"))
+        local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.front, Vec3i.new( 0, 0, 0 ))
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Kinetic")
 		end
 		""",
 		"Description": ["KineticInput"],
@@ -751,10 +783,12 @@ machines = [
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("KineticInputAccessor"))
-		a:SetSidePos(Vec3i.front, Vec3i.new( 0, 0, 0 ))
-		a:Bind(self:GetInputContainer())
+        local a = self:new_resource_accessor("Input")
+		a:SetSidePos(Vec3i.front, Vec3i.zero)
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Kinetic")
 		end
 		""",
 		"Description": ["KineticInput"],
@@ -767,10 +801,12 @@ machines = [
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
+        local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.front, Vec3i.new( 0, 0, 0 ))
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Electricity")
 		end
 		""",
 		"Description": ["ElectricInput"],
@@ -1049,10 +1085,12 @@ machines = [
 		"BlockLogic":"DeconstructorCrafterBlockLogic",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
+        local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.front, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Electricity")
 		end
 		""",
 		"Description": ["ElectricInput"],
@@ -1188,10 +1226,12 @@ machines = [
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("KineticInputAccessor"))
+        local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.back, Vec3i.new(-1,0,0))
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Kinetic")
 		end
 		""",
 		"Description": ["KineticInput"],
@@ -1204,10 +1244,12 @@ machines = [
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("KineticInputAccessor"))
+        local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.back, Vec3i.new(-1,0,0))
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Kinetic")
 		end
 		""",
 		"Description": ["KineticInput", "HeatOutput"],
@@ -1361,10 +1403,12 @@ machines = [
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("KineticInputAccessor"))
+        local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.back, Vec3i.new(-1,1,0))
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Kinetic")
 		end
 		""",
 		"Description": ["KineticInput"],
@@ -1376,10 +1420,12 @@ machines = [
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("HeatInputAccessor"))
+        local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.down, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
+        local res = self:get_resource_component()
+		a:Bind(res)
+        res.input = 20
+        res.item = StaticItem.find("Heat")
 		end
 		""",
 		"Description": ["HeatInput"],
