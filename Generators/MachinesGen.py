@@ -203,7 +203,7 @@ for machine in machines:
 				"Class": "StaticBlock",
 				"BlockLogic": machine["Name"] + "BlockLogic",
 				"ReplaceTag": machine["Name"],
-				"Minable": {"MiningTime": 20, "Result": item_name},
+				"Minable": {"MiningTime": 10, "Result": item_name},
 			}
 			
 			if "BlockLogic" in machine:
