@@ -1748,7 +1748,7 @@ recipes_boiler.append({
 		],
 	},
 	"ResourceInput":{
-			"Name": "Heat" + static_item,
+		  	"Name": "Heat" + static_item,
 			"Count": 110,
 		},
 	"Output":{
