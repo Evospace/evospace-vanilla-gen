@@ -203,8 +203,7 @@ materials = [
 		"IsDust": True,
 		"Burnable": {
 			"BurnTime": 18*20,
-			"HeatPerTick": 18,
-			"TotalAsh": 0.06
+			"HeatPerTick": 18
 		},
 		"IsBlock": True
 	},{
@@ -414,8 +413,7 @@ materials = [
 		"IsExact": True,
 		"Burnable": {
 			"BurnTime": 400,
-			"HeatPerTick": 10,
-			"TotalAsh": 0.24
+			"HeatPerTick": 10
 		},
 		"Tier": 0,
 		"Color":[0.2,0.2,0.0],
@@ -425,9 +423,8 @@ materials = [
 		"Label": "Coal",
 		"IsExact": True,
 		"Burnable": {
-			"BurnTime": 400,
-			"HeatPerTick": 20,
-			"TotalAsh": 0.12
+			"BurnTime": 800,
+			"HeatPerTick": 20
 		},
 		"Tier": 0,
 		"Stack": 200,
@@ -438,9 +435,8 @@ materials = [
 		"Label": "Coke",
 		"IsExact": True,
 		"Burnable": {
-			"BurnTime": 400/1.5,
-			"HeatPerTick": 30*1.5,
-			"TotalAsh": 0.06
+			"BurnTime": 1000,
+			"HeatPerTick": 30*1.5
 		},
 		"Color":[0.0,0.0,0.0],
 		"Mesh": "Models/Piece"
@@ -461,8 +457,7 @@ materials = [
 		"IsGas": True,		
 		"Burnable": {
 			"BurnTime": 400,
-			"HeatPerTick": 80,
-			"TotalAsh": 0
+			"HeatPerTick": 80
 		},
 		"Color": [1,1,1],
 		"MoreEfficientIn":"GasTurbine"
@@ -472,8 +467,7 @@ materials = [
 		"IsGas": True,		
 		"Burnable": {
 			"BurnTime": 200,
-			"HeatPerTick": 40,
-			"TotalAsh": 0
+			"HeatPerTick": 40
 		},
 		"Color": [0.5,0.5,0.5],
 		"MoreEfficientIn":"GasTurbine"
@@ -493,8 +487,7 @@ materials = [
 		"IsGas": True,
 		"Burnable": {
 			"BurnTime": 400,
-			"HeatPerTick": 160,
-			"TotalAsh": 0
+			"HeatPerTick": 160
 		},
 		"Tier": 2,
 		"Color": [.2,.2,.5],
@@ -504,8 +497,7 @@ materials = [
 		"IsGas": True,
 		"Burnable": {
 			"BurnTime": 500,
-			"HeatPerTick": 45,
-			"TotalAsh": 0
+			"HeatPerTick": 45
 		},
 		"Tier": 2,
 		"Color":[0.5,0.2,0.2]
@@ -515,8 +507,7 @@ materials = [
 		"IsGas": True,
 		"Burnable": {
 			"BurnTime": 400,
-			"HeatPerTick": 40,
-			"TotalAsh": 0
+			"HeatPerTick": 40
 		},
 		"Tier": 2,
 		"Color":[0.5,0.2,0.2]
@@ -526,8 +517,7 @@ materials = [
 		"IsGas": True,
 		"Burnable": {
 			"BurnTime": 400,
-			"HeatPerTick": 50,
-			"TotalAsh": 0
+			"HeatPerTick": 50
 		},
 		"Tier": 2,
 		"Color": [.2,.5,.2],
@@ -598,8 +588,7 @@ materials = [
 		"Tier": 0,
 		"Burnable": {
 			"BurnTime": 400,
-			"HeatPerTick": 10, #5.5kwh
-			"TotalAsh": 0.24
+			"HeatPerTick": 10
 		},
 		"Color":[0.9,0.9,0.9]
 	},{
@@ -609,8 +598,7 @@ materials = [
 		"Tier": 0,
 		"Burnable": {
 			"BurnTime": 800,
-			"HeatPerTick": 10,
-			"TotalAsh": 0.5
+			"HeatPerTick": 10
 		},
 	},{
 		"Name": "Plank",
@@ -619,8 +607,7 @@ materials = [
 		"Tier": 0,
 		"Burnable": {
 			"BurnTime": 100,
-			"HeatPerTick": 10,
-			"TotalAsh": 0.24
+			"HeatPerTick": 10
 		},
 	},
 	{
@@ -655,8 +642,7 @@ materials = [
 		"Tier": 0,
 		"Burnable": {
 			"BurnTime": 800,
-			"HeatPerTick": 5,
-			"TotalAsh": 2
+			"HeatPerTick": 5
 		},
 		"Color":[0.1,0.1,0.1]
 	},
@@ -667,8 +653,7 @@ materials = [
 		"Tier": 0,
 		"Burnable": {
 			"BurnTime": 400,
-			"HeatPerTick": 10,
-			"TotalAsh": 1
+			"HeatPerTick": 10
 		},
 		"Color":[0.01,0.01,0.01]
 	},
@@ -685,8 +670,7 @@ materials = [
 		"Tier": 1,
 		"Burnable": {
 			"BurnTime": 400,
-			"HeatPerTick": 40,
-			"TotalAsh": 0
+			"HeatPerTick": 40
 		},
 		"Color":[.5,.5,0.2]
 	},{
@@ -696,8 +680,7 @@ materials = [
 		"Tier": 1,
 		"Burnable": {
 			"BurnTime": 800,
-			"HeatPerTick": 30,
-			"TotalAsh": 0
+			"HeatPerTick": 30
 		},
 		"Color":[.2,.2,0.2]
 	},{
@@ -708,8 +691,7 @@ materials = [
 		"Color":[.1,.1,0.1],
 		"Burnable": {
 			"BurnTime": 1600,
-			"HeatPerTick": 60,
-			"TotalAsh": 0
+			"HeatPerTick": 60
 		}
 	},{
 		"Name": "Superfuel",
@@ -719,8 +701,7 @@ materials = [
 		"Color":[1,1,0.5],
 		"Burnable": {
 			"BurnTime": 2000,
-			"HeatPerTick": 100,
-			"TotalAsh": 0
+			"HeatPerTick": 100
 		}
 	},{
 		"Name": "RocketFuel",
@@ -730,8 +711,7 @@ materials = [
 		"Color":[0,1,0],
 		"Burnable": {
 			"BurnTime": 300,
-			"HeatPerTick": 1000,
-			"TotalAsh": 0
+			"HeatPerTick": 1000
 		}
 	},{
 		"Name": "ExtraHeavyOil",
@@ -740,8 +720,7 @@ materials = [
 		"Tier": 2,
 		"Burnable": {
 			"BurnTime": 800,
-			"HeatPerTick": 10,
-			"TotalAsh": 0
+			"HeatPerTick": 10
 		},
 		"Color":[0.01,.01,0.01]
 	},
@@ -752,8 +731,7 @@ materials = [
 		"Tier": 2,
 		"Burnable": {
 			"BurnTime": 400,
-			"HeatPerTick": 20,
-			"TotalAsh": 0
+			"HeatPerTick": 20
 		},
 		"Color":[0.2,.5,0.2]
 	},

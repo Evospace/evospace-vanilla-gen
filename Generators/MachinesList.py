@@ -14,16 +14,17 @@ machines = [
 		return function(self)
         local crafter = AbstractCrafter.cast(self)
         
-        local input = ResourceInventory.new(crafter, "InputInv")
-        input.item = StaticItem.find("Kinetic")
-        input.input = 20
-        input.capacity = 20
+        local inv = ResourceInventory.new(crafter, "InputInv")
+        inv.item = StaticItem.find("Kinetic")
+        inv.input = 20
+        inv.capacity = inv.input
         crafter.energy_input_inventory = inv
         
-        local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side = Vec3i.down
-        acc.pos = Vec3i.back
-        acc.inventory = input
+        local acc = ResourceAccessor.new(crafter, "Input1")
+        acc.side, acc.pos = Vec3i.back, Vec3i.zero
+        acc.inventory = inv
+        acc.is_input = true
+        acc.channel = "Kinetic"
 		end
 		""",
 		"Description": ["KineticInput"],
@@ -37,16 +38,17 @@ machines = [
 		return function(self)
         local crafter = AbstractCrafter.cast(self)
         
-        local input = ResourceInventory.new(crafter, "InputInv")
-        input.item = StaticItem.find("Kinetic")
-        input.input = 20
-        input.capacity = 20
+        local inv = ResourceInventory.new(crafter, "InputInv")
+        inv.item = StaticItem.find("Kinetic")
+        inv.input = 20
+        inv.capacity = inv.input
         crafter.energy_input_inventory = inv
         
-        local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side = Vec3i.back
-        acc.pos = Vec3i.zero
-        acc.inventory = input
+        local acc = ResourceAccessor.new(crafter, "Input1")
+        acc.side, acc.pos = Vec3i.back, Vec3i.zero
+        acc.inventory = inv
+        acc.is_input = true
+        acc.channel = "Kinetic"
 		end
 		""",
 		"Description": ["KineticInput"],
@@ -117,16 +119,17 @@ machines = [
 		return function(self)
         local crafter = AbstractCrafter.cast(self)
         
-        local input = crafter.energy_input_inventory
-        input.item = StaticItem.find("Kinetic")
-        input.input = 20
-        input.capacity = 20
+        local inv = ResourceInventory.new(crafter, "InputInv")
+        inv.item = StaticItem.find("Kinetic")
+        inv.input = 20
+        inv.capacity = inv.input
         crafter.energy_input_inventory = inv
         
-        local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side = Vec3i.back
-        acc.pos = Vec3i.zero
-        acc.inventory = input
+        local acc = ResourceAccessor.new(crafter, "Input1")
+        acc.side, acc.pos = Vec3i.back, Vec3i.zero
+        acc.inventory = inv
+        acc.is_input = true
+        acc.channel = "Kinetic"
 		end
 		""",
 		"Description": ["KineticInput"],
@@ -158,7 +161,7 @@ machines = [
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Kinetic")
         inv.input = 20
-        inv.capacity = 20
+        inv.capacity = inv.input
         crafter.energy_input_inventory = inv
         
         local acc = ResourceAccessor.new(crafter, "Input")
@@ -294,20 +297,31 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
-		"BlockCreation":""" -----------
+		"BlockCreation":""" 
 		return function(self)
-        local a = self:new_resource_accessor("Input")
-		a:SetSidePos(Vec3i.front, Vec3i.new(0,1,0))
-        local res = self:get_resource_component()
-		a:Bind(res)
-        res.input = 20
-        res.input_item = StaticItem.find("Kinetic")
-		local a = self:new_resource_accessor("Input")
-		a:SetSidePos(Vec3i.back, Vec3i.zero)
-        local res = self:get_resource_component()
-		a:Bind(res)
-        res.input = 20
-        res.input_item = StaticItem.find("Kinetic")
+        local crafter = AbstractCrafter.cast(self)
+        
+        local inv = ResourceInventory.new(crafter, "InputInv")
+        inv.item = StaticItem.find("Kinetic")
+        inv.input = 20
+        inv.capacity = inv.input
+        crafter.energy_input_inventory = inv
+        
+        local acc = ResourceAccessor.new(crafter, "Input")
+        acc.side, acc.pos = Vec3i.front, Vec3i.new(0,1,0)
+        acc.inventory = inv
+        acc.is_input = true
+        acc.channel = "Kinetic"
+        
+        local acc = ResourceAccessor.new(crafter, "Output2")
+        acc.side, acc.pos = Vec3i.left, Vec3i.new(-2,1,0)
+        acc.is_output = true
+        acc.channel = "Fluid"
+        
+        local acc = ResourceAccessor.new(crafter, "Input2")
+        acc.side, acc.pos = Vec3i.right, Vec3i.new(-2,0,1)
+        acc.is_input = true
+        acc.channel = "Fluid"
 		end
 		""",
 		"Description": ["KineticInput"],
@@ -355,16 +369,17 @@ machines = [
 		return function(self)
         local crafter = AbstractCrafter.cast(self)
         
-        local input = ResourceInventory.new(crafter, "InputInv")
-        input.item = StaticItem.find("Kinetic")
-        input.input = 20
-        input.capacity = 20
+        local inv = ResourceInventory.new(crafter, "InputInv")
+        inv.item = StaticItem.find("Kinetic")
+        inv.input = 20
+        inv.capacity = inv.input
         crafter.energy_input_inventory = inv
         
-        local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side = Vec3i.back
-        acc.pos = Vec3i.zero
-        acc.inventory = input
+        local acc = ResourceAccessor.new(crafter, "Input1")
+        acc.side, acc.pos = Vec3i.back, Vec3i.zero
+        acc.inventory = inv
+        acc.is_input = true
+        acc.channel = "Kinetic"
 		end
 		""",
 	}
@@ -403,7 +418,7 @@ machines = [
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Heat")
         inv.input = 20
-        inv.capacity = 20
+        inv.capacity = inv.input
         crafter.energy_input_inventory = inv
         
         local acc = ResourceAccessor.new(crafter, "Input1")
@@ -415,7 +430,7 @@ machines = [
         local inv = ResourceInventory.new(crafter, "OutputInv")
         inv.item = StaticItem.find("Kinetic")
         inv.output = 20
-        inv.capacity = 20
+        inv.capacity = inv.output
         crafter.energy_output_inventory = inv
         
     	local acc = ResourceAccessor.new(crafter, "Output")
@@ -521,7 +536,7 @@ machines = [
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Kinetic")
         inv.input = 20
-        inv.capacity = 20
+        inv.capacity = inv.input
         crafter.energy_input_inventory = inv
         
         local acc = ResourceAccessor.new(crafter, "Input")
@@ -532,6 +547,7 @@ machines = [
         inv = ResourceInventory.new(crafter, "OutputInv")
         inv.item = StaticItem.find("Electricity")
         inv.output = 20
+        inv.capacity = inv.output
         crafter.energy_output_inventory = inv
         
     	acc = ResourceAccessor.new(crafter, "Output")
@@ -579,17 +595,32 @@ machines = [
 		"BlockLogic": "SelectCrafter",
 		"BlockCreation":"""
 		return function(self)
-		local res = self:get_resource_component()
-        res.input = 20
-        res.output = 20
-        res.input_item = StaticItem.find("Kinetic")
-        res.output_item = StaticItem.find("Electricity")
-		local a = self:get_resource_component("Input")
-		a:SetSidePos(Vec3i.front, Vec3i.zero)
-		a:bind_input(res)
-		local a = self:get_resource_component("Output")
-		a:SetSidePos(Vec3i.back, Vec3i.zero)
-		a:bind_output(res)
+		local crafter = AbstractCrafter.cast(self)
+        crafter.speed = (crafter.level + 1)*100
+        
+        local inv = ResourceInventory.new(crafter, "InputInv")
+        inv.item = StaticItem.find("Kinetic")
+        inv.input = 20
+        inv.capacity = inv.input
+        crafter.energy_input_inventory = inv
+        
+        local acc = ResourceAccessor.new(crafter, "Input2")
+        acc.side, acc.pos = Vec3i.front, Vec3i.zero
+        acc.inventory = inv
+        acc.is_input = true
+        acc.channel = "Kinetic"
+        
+        local inv = ResourceInventory.new(crafter, "OutputInv")
+        inv.item = StaticItem.find("Electricity")
+        inv.output = 20
+        inv.capacity = inv.output
+        crafter.energy_output_inventory = inv
+        
+    	local acc = ResourceAccessor.new(crafter, "Output")
+        acc.side, acc.pos = Vec3i.back, Vec3i.zero
+        acc.inventory = inv
+        acc.is_output = true
+        acc.channel = "Electricity"
 		end
 		""",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
@@ -608,7 +639,7 @@ machines = [
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Electricity")
         inv.input = 20
-        inv.capacity = 20
+        inv.capacity = inv.output
         crafter.energy_input_inventory = inv
         
         local acc = ResourceAccessor.new(crafter, "Input1")
@@ -626,7 +657,7 @@ machines = [
         local inv = ResourceInventory.new(crafter, "OutputInv")
         inv.item = StaticItem.find("Kinetic")
         inv.output = 20
-        inv.capacity = 20
+        inv.capacity = inv.output
         crafter.energy_output_inventory = inv
         
     	local acc = ResourceAccessor.new(crafter, "Output")
@@ -696,13 +727,6 @@ machines = [
 		"EndTier": 10,
 		"Selector": "Blocks/ArrowBP.ArrowBP_C",
 	},{
-		"Name": "FilteringRobotArm",
-		"Label": "Filtering Robot Arm",
-		"StartTier": 1,
-		"EndTier": 10,
-		"Selector": "Blocks/ArrowBP.ArrowBP_C",
-		"Description": ["Sorter"],
-	},{
 		"Name": "Pump",
 		"Label": "Pump",
 		"StartTier": 1,
@@ -712,16 +736,6 @@ machines = [
 		},
 		"Selector": "Blocks/ArrowBP.ArrowBP_C",
 		"Description": ["FluidInput", "FluidOutput"],
-	},{
-		"Name": "FilteringPump",
-		"Label": "Filtering Pump",
-		"StartTier": 1,
-		"EndTier": 10,
-		"CustomData":{
-			"ItemPortion": 1000
-		},
-		"Selector": "Blocks/ArrowBP.ArrowBP_C",
-		"Description": ["Sorter", "FluidInput", "FluidOutput"],
 	},{
 		"Name": "OverflowPump",
 		"Label": "Overflow Pump",
@@ -772,6 +786,7 @@ machines = [
         local inv = ResourceInventory.new(crafter, "OutputInv")
         inv.item = StaticItem.find("Kinetic")
         inv.output = 40
+        inv.capacity = inv.output
         crafter.energy_output_inventory = inv
         
     	acc = ResourceAccessor.new(crafter, "Output")
@@ -782,6 +797,7 @@ machines = [
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Steam")
         inv.input = 40
+        inv.capacity = inv.input
         crafter.energy_input_inventory = inv
         
     	acc = ResourceAccessor.new(crafter, "Input")
@@ -956,11 +972,12 @@ machines = [
 		"BlockCreation":"""
 		return function(self)
         local crafter = AbstractCrafter.cast(self)
+        crafter.speed = (crafter.level + 1) * 100
         
         local inv = ResourceInventory.new(crafter, "OutputInv")
         inv.item = StaticItem.find("Heat")
-        inv.output = 20
-        inv.capacity = 200
+        inv.output = 20 * (crafter.level + 1)
+        inv.capacity = inv.output
         crafter.energy_output_inventory = inv
         
     	local acc = ResourceAccessor.new(crafter, "Output")
@@ -1184,13 +1201,21 @@ machines = [
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		return function(self)
-		local a = self:new_resource_accessor("Input")
-		a:SetSidePos(Vec3i.front, Vec3i.zero)
-        local res = self:get_resource_component()
-		a:bind_input(res)
-        res.input = 20
-        res.input_item = StaticItem.find("Electricity")
-		end
+		local crafter = AbstractCrafter.cast(self)
+        crafter.speed = (crafter.level + 1) * 100
+        
+        local inv = ResourceInventory.new(crafter, "InputInv")
+        inv.item = StaticItem.find("Electricity")
+        inv.input = 40 * (crafter.level + 1)
+        inv.capacity = inv.input
+        crafter.energy_input_inventory = inv
+        
+    	local acc = ResourceAccessor.new(crafter, "Input")
+        acc.side, acc.pos = Vec3i.front, Vec3i.zero
+        acc.inventory = inv
+        acc.is_input = true
+        acc.channel = "Electricity"
+        end
 		""",
 		"Description": ["ElectricInput"],
 	},{
@@ -1257,12 +1282,13 @@ machines = [
 		"BlockLogic":"AutoCrafter",
 		"BlockCreation":"""
 		return function(self)
-		local a = self:new_resource_accessor("Input")
-		a:SetSidePos(Vec3i.front, Vec3i.zero)
-        local res = self:get_resource_component()
-		a:bind_input(res)
-        res.input = 20
-        res.input_item = StaticItem.find("Electricity")
+        local crafter = AbstractCrafter.cast(self)
+        
+        local acc = ResourceAccessor.new(crafter, "Input")
+        acc.side, acc.pos = Vec3i.front, Vec3i.zero
+        acc.inventory = input
+        acc.is_input = true
+        acc.channel = "Fluid"
 		end
 		""",
 		"Description": ["FluidInput"],
@@ -1455,7 +1481,7 @@ machines = [
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Kinetic")
         inv.input = 20
-        inv.capacity = 20
+        inv.capacity = inv.input
         crafter.energy_input_inventory = inv
         
         local acc = ResourceAccessor.new(crafter, "Input")
@@ -1466,6 +1492,7 @@ machines = [
         inv = ResourceInventory.new(crafter, "OutputInv")
         inv.item = StaticItem.find("Electricity")
         inv.output = 20
+        inv.capacity = inv.output
         crafter.energy_output_inventory = inv
         
     	acc = ResourceAccessor.new(crafter, "Output")

@@ -328,26 +328,9 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "Filtering" + static_research,
-	"LabelParts": [["Filtering", "researches"]],
-	"RequiredResearches": ["Automatization" + static_research],
-	"Unlocks": [["Hand" + base_recipe, "%Material%FilteringRobotArm"],["Constructor" + base_recipe, "%Material%FilteringRobotArm"],
-	["Hand" + base_recipe, "%Material%Sorter"],["Constructor" + base_recipe, "%Material%Sorter"]],
-	"Levels": [1,7],
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "FilteringPump" + static_research,
-	"LabelParts": [["FilteringPump", "machines"]],
-	"RequiredResearches": ["Pump" + static_research],
-	"Unlocks": [["Hand" + base_recipe, "%Material%FilteringPump"],["Constructor" + base_recipe, "%Material%FilteringPump"]],
-	"Levels": [1,7],
-})
-append_levels({
-	"Class": "StaticResearch",
 	"Name": "OverflowPump" + static_research,
 	"LabelParts": [["OverflowPump", "machines"]],
-	"RequiredResearches": ["FilteringPump" + static_research],
+	"RequiredResearches": ["Pump" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%OverflowPump"],["Constructor" + base_recipe, "%Material%OverflowPump"]],
 	"Levels": [1,7],
 })
@@ -1223,7 +1206,6 @@ csv.append(["MineralsScan", "Minerals Scan"])
 csv.append(["Electricity", "Electricity"])
 csv.append(["Smelting", "Smelting"])
 csv.append(["Metalwork", "Metalwork"])
-csv.append(["Filtering", "Filtering"])
 csv.append(["DecorativeWood", "Decorative Wood"])
 csv.append(["DecorativePlastic", "Decorative Plastic"])
 csv.append(["DecorativeStone", "Decorative Stone"])
