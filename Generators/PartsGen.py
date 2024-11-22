@@ -199,7 +199,7 @@ for part in parts:
 							}
 						]
 					},
-					"Ticks" : 80 * 1.5**level,
+					"Ticks" : 200 * 1.5**level,
 				})
 
 			if part["Name"] == "SolarCell":
@@ -291,6 +291,7 @@ for part in parts:
 						]
 					},
 					"Ticks" : 80 * 1.5**level,
+					"Productivity":50,
 				})
 
 # ingots, dusts, fluids, gems, blocks
@@ -375,17 +376,9 @@ for material in materials:
 				},
 				"Output":{
 					"Items":[
-						#{
-						#	"Name": "AshDust" + static_item,
-						#	"Count": material["Burnable"]["TotalAsh"],
-						#}
 					],
 					
 				},
-				"ResourceOutput":{
-						"Name": "Heat" + static_item,
-						"Count": material["Burnable"]["HeatPerTick"],
-					},
 				"Ticks" : material["Burnable"]["BurnTime"],
 			})
 			item["DescriptionParts"] = [["burnable", "common", material["Burnable"]["BurnTime"]*material["Burnable"]["HeatPerTick"]],
@@ -443,7 +436,7 @@ for material in materials:
 						}
 					]
 				},
-				"Ticks" : 60,
+				"Ticks" : 100,
 			})
 			
 		recipes_macerator.append({
@@ -614,10 +607,6 @@ for material in materials:
 					],
 					
 				},
-				"ResourceOutput":{
-						"Name": "Heat" + static_item,
-						"Count": material["Burnable"]["HeatPerTick"],
-					},
 				"Ticks" : material["Burnable"]["BurnTime"],
 				"Name": material["Name"] + "",
 			})
@@ -697,10 +686,6 @@ for material in materials:
 					],
 					
 				},
-				"ResourceOutput":{
-						"Name": "Heat" + static_item,
-						"Count": material["Burnable"]["HeatPerTick"],
-					},
 				"Ticks" : material["Burnable"]["BurnTime"],
 				"Name": material["Name"],
 			})
@@ -763,16 +748,8 @@ for material in materials:
 				},
 				"Output":{
 					"Items":[
-						#{
-						#	"Name": "AshDust" + static_item,
-						#	"Count": material["Burnable"]["TotalAsh"]
-						#},
 					],
 				},
-				"ResourceOutput":{
-						"Name": "Heat" + static_item,
-						"Count": material["Burnable"]["HeatPerTick"],
-					},
 				"Ticks" : material["Burnable"]["BurnTime"],
 				"Name": material["Name"] + "Dust",
 			})
