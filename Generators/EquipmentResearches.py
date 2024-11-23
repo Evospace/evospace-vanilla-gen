@@ -3,22 +3,11 @@ from Materials import *
 
 def append_equipment(xy, append_levels, researches):
 	append_levels({
-		"Class": "StaticResearchToolUnlock",
-		"Name": "Torch" + static_research,
-		"LabelParts": [["Torch", "misc"]],
-		
-		"RequiredResearches": ["Multitool" + static_research],
-		"Unlocks": [["Hand" + base_recipe, "Torch"],["Assembler" + base_recipe, "Torch"]],
-		"Levels": [1,1],
-		
-		"CostMul":0.25,
-	})
-	append_levels({
 		"Class": "StaticResearchModifier",
 		"Name": "Multitool" + static_research,
 		"LabelParts": [["Multitool", "parts"]],
 		
-		"Unlocks": [["Hand" + base_recipe, "Multitool"]],
+		"Unlocks": [],
 		"Levels": [1,10],
 		
 		"Image": "T_Multitool",

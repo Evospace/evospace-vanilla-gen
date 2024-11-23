@@ -239,9 +239,6 @@ static_mesh_block = [
 
 equipped = [
 	{
-		"Name": "Torch",
-		"ItemLogic": "Equipped/TorchBP.TorchBP_C"
-	},{
 		"Name": "Flashlight",
 		"ItemLogic": "Equipped/FlashlightBP.FlashlightBP_C"
 	},{

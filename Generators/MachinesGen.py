@@ -101,11 +101,6 @@ for machine in machines:
 			if machine["Name"] == "ItemRack":
 				item["DescriptionParts"].append(["item_rack", "common", 2048*(level+1)])
 				
-			if machine["Name"] == "QuantumComputer":
-				item["DescriptionParts"].append(["computations", "common", 2**level * 150 * 10 / 20.0])
-				item["DescriptionParts"].append(["power_input", "common", 2**level * 400 * 20 * 10])
-				item["DescriptionParts"].append(["electric_drain", "common", 2**level * 400 * 20])
-				
 			if machine["Name"] == "Computer":
 				item["DescriptionParts"].append(["computations", "common", 2**level * 3 * 10 / 20.0])
 				item["DescriptionParts"].append(["power_input", "common", 2**level * 20 * 10])
@@ -2220,41 +2215,6 @@ for machine in machines:
 							{
 								"Name": circuits[tier],
 								"Count": 5
-							}
-						]
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
-								"Count": 1
-							}
-						]
-					},
-					"Tier": tier,
-					"Ticks" : 20
-				})
-				
-			if machine["Name"] == "QuantumComputer":
-				append_recipe({
-					"Name": tier_material[tier] + machine["Name"],
-					"Input":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + "Computer" + static_item,
-								"Count": 20
-							},
-							{
-								"Name": cables[tier],
-								"Count": 50
-							},
-							{
-								"Name": circuits[tier],
-								"Count": 20
-							},
-							{
-								"Name": tier_material[tier] + "Plate" + static_item,
-								"Count": 20
 							}
 						]
 					},

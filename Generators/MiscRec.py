@@ -5484,27 +5484,6 @@ recipes_computer.append({
 	"Ticks" : 40
 })
 
-recipes_q_computer.append({
-	"Name":"QuantumComputations",
-	"Input":{
-		"Items":[
-		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity" + static_item,
-		"Count": 100
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Computations" + static_item,
-				"Count": 40
-			}
-		]
-	},
-	"Ticks" : 40
-})
-
 recipes_portal.append({
 	"Name":"Ping",
 	"Input":{

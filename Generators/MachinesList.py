@@ -16,8 +16,7 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Kinetic")
-        inv.input = 20
-        inv.capacity = inv.input
+        inv.capacity = 20
         crafter.energy_input_inventory = inv
         
         local acc = ResourceAccessor.new(crafter, "Input1")
@@ -40,8 +39,7 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Kinetic")
-        inv.input = 20
-        inv.capacity = inv.input
+        inv.capacity = 20
         crafter.energy_input_inventory = inv
         
         local acc = ResourceAccessor.new(crafter, "Input1")
@@ -74,7 +72,6 @@ machines = [
         
         local input = ResourceInventory.new(crafter, "InputInv")
         input.item = StaticItem.find("Electricity")
-        input.input = 20
         input.capacity = 20
         crafter.energy_input_inventory = inv
         
@@ -98,7 +95,6 @@ machines = [
         
         local input = ResourceInventory.new(crafter, "InputInv")
         input.item = StaticItem.find("Electricity")
-        input.input = 20
         input.capacity = 20
         crafter.energy_input_inventory = inv
         
@@ -121,7 +117,6 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Kinetic")
-        inv.input = 20
         inv.capacity = inv.input
         crafter.energy_input_inventory = inv
         
@@ -160,8 +155,7 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Kinetic")
-        inv.input = 20
-        inv.capacity = inv.input
+        inv.capacity = 20
         crafter.energy_input_inventory = inv
         
         local acc = ResourceAccessor.new(crafter, "Input")
@@ -190,8 +184,6 @@ machines = [
         local res = self:get_resource_component()
 		a:bind_input(res)
         b:bind_output(res)
-        res.input = 20
-        res.output = 20
         res.input_item = StaticItem.find("Heat")
         res.output_item = StaticItem.find("Steam")
         
@@ -303,8 +295,7 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Kinetic")
-        inv.input = 20
-        inv.capacity = inv.input
+        inv.capacity = 20
         crafter.energy_input_inventory = inv
         
         local acc = ResourceAccessor.new(crafter, "Input")
@@ -371,8 +362,7 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Kinetic")
-        inv.input = 20
-        inv.capacity = inv.input
+        inv.capacity = 20
         crafter.energy_input_inventory = inv
         
         local acc = ResourceAccessor.new(crafter, "Input1")
@@ -417,8 +407,7 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Heat")
-        inv.input = 20
-        inv.capacity = inv.input
+        inv.capacity = 20
         crafter.energy_input_inventory = inv
         
         local acc = ResourceAccessor.new(crafter, "Input1")
@@ -429,8 +418,7 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "OutputInv")
         inv.item = StaticItem.find("Kinetic")
-        inv.output = 20
-        inv.capacity = inv.output
+        inv.capacity = 20
         crafter.energy_output_inventory = inv
         
     	local acc = ResourceAccessor.new(crafter, "Output")
@@ -499,7 +487,6 @@ machines = [
         
         local input = ResourceInventory.new(crafter, "InputInv")
         input.item = StaticItem.find("Heat")
-        input.input = 20
         input.capacity = 20
         crafter.energy_input_inventory = inv
         
@@ -535,8 +522,8 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Kinetic")
-        inv.input = 20
-        inv.capacity = inv.input
+
+        inv.capacity = 20
         crafter.energy_input_inventory = inv
         
         local acc = ResourceAccessor.new(crafter, "Input")
@@ -546,8 +533,7 @@ machines = [
         
         inv = ResourceInventory.new(crafter, "OutputInv")
         inv.item = StaticItem.find("Electricity")
-        inv.output = 20
-        inv.capacity = inv.output
+        inv.capacity = 20
         crafter.energy_output_inventory = inv
         
     	acc = ResourceAccessor.new(crafter, "Output")
@@ -572,8 +558,6 @@ machines = [
 		"BlockCreation":"""
 		return function(self)
 		local res = self:get_resource_component()
-        res.input = 20
-        res.output = 20
         res.input_item = StaticItem.find("Kinetic")
         res.output_item = StaticItem.find("Electricity")
 		local a = self:new_resource_accessor("KineticInputAccessor")
@@ -600,8 +584,7 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Kinetic")
-        inv.input = 20
-        inv.capacity = inv.input
+        inv.capacity = 20
         crafter.energy_input_inventory = inv
         
         local acc = ResourceAccessor.new(crafter, "Input2")
@@ -612,8 +595,7 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "OutputInv")
         inv.item = StaticItem.find("Electricity")
-        inv.output = 20
-        inv.capacity = inv.output
+        inv.capacity = 20
         crafter.energy_output_inventory = inv
         
     	local acc = ResourceAccessor.new(crafter, "Output")
@@ -638,8 +620,7 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Electricity")
-        inv.input = 20
-        inv.capacity = inv.output
+        inv.capacity = 20
         crafter.energy_input_inventory = inv
         
         local acc = ResourceAccessor.new(crafter, "Input1")
@@ -656,8 +637,7 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "OutputInv")
         inv.item = StaticItem.find("Kinetic")
-        inv.output = 20
-        inv.capacity = inv.output
+        inv.capacity = 20
         crafter.energy_output_inventory = inv
         
     	local acc = ResourceAccessor.new(crafter, "Output")
@@ -758,14 +738,14 @@ machines = [
         
         local input = ResourceInventory.new(crafter, "InputInv")
         input.item = StaticItem.find("Heat")
-        input.input = 20
         input.capacity = 20
-        crafter.energy_input_inventory = inv
+        crafter.energy_input_inventory = input
         
         local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side = Vec3i.down
-        acc.pos = Vec3i.zero
+        acc.side, acc.pos = Vec3i.down, Vec3i.zero
         acc.inventory = input
+        acc.is_input = true
+        acc.channel = "Heat"
 		end
 		""",
 		"Description": ["HeatInput"],
@@ -785,8 +765,7 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "OutputInv")
         inv.item = StaticItem.find("Kinetic")
-        inv.output = 40
-        inv.capacity = inv.output
+        inv.capacity = 40
         crafter.energy_output_inventory = inv
         
     	acc = ResourceAccessor.new(crafter, "Output")
@@ -796,8 +775,7 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Steam")
-        inv.input = 40
-        inv.capacity = inv.input
+        inv.capacity = 40
         crafter.energy_input_inventory = inv
         
     	acc = ResourceAccessor.new(crafter, "Input")
@@ -976,8 +954,7 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "OutputInv")
         inv.item = StaticItem.find("Heat")
-        inv.output = 20 * (crafter.level + 1)
-        inv.capacity = inv.output
+        inv.capacity = 20 * (crafter.level + 1)
         crafter.energy_output_inventory = inv
         
     	local acc = ResourceAccessor.new(crafter, "Output")
@@ -1206,8 +1183,7 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Electricity")
-        inv.input = 40 * (crafter.level + 1)
-        inv.capacity = inv.input
+        inv.capacity = 40 * (crafter.level + 1)
         crafter.energy_input_inventory = inv
         
     	local acc = ResourceAccessor.new(crafter, "Input")
@@ -1480,8 +1456,7 @@ machines = [
         
         local inv = ResourceInventory.new(crafter, "InputInv")
         inv.item = StaticItem.find("Kinetic")
-        inv.input = 20
-        inv.capacity = inv.input
+        inv.capacity = 20
         crafter.energy_input_inventory = inv
         
         local acc = ResourceAccessor.new(crafter, "Input")
@@ -1491,8 +1466,7 @@ machines = [
         
         inv = ResourceInventory.new(crafter, "OutputInv")
         inv.item = StaticItem.find("Electricity")
-        inv.output = 20
-        inv.capacity = inv.output
+        inv.capacity = 20
         crafter.energy_output_inventory = inv
         
     	acc = ResourceAccessor.new(crafter, "Output")
@@ -1569,27 +1543,6 @@ machines = [
 		"BlockLogic":"ComputerBlockLogic",
 		"Description": ["ElectricInput"],
 	},{
-		"Name": "QuantumComputer",
-		"Label": "Quantum Computer",
-		"StartTier": 5,
-		"EndTier": 10,
-		"BlockLogic":"QuantumComputerBlockLogic",
-		"Description": ["ElectricInput"],
-		"Positions": [
-			[0,0,0],[-1,0,0],[-2,0,0],
-			[0,-2,0],[-1,-2,0],[-2,-2,0],
-			[0,-1,0],[-1,-1,0],[-2,-1,0],
-			
-			[0,0,1],[-1,0,1],[-2,0,1],
-			[0,-2,1],[-1,-2,1],[-2,-2,1],
-			[0,-1,1],[-1,-1,1],[-2,-1,1],
-			
-			[0,0,2],[-1,0,2],[-2,0,2],
-			[0,-2,2],[-1,-2,2],[-2,-2,2],
-			[0,-1,2],[-1,-1,2],[-2,-1,2],
-		]
-	}
-	,{
 		"Name": "IndustrialSeparator",
 		"Label": "Industrial Separator",
 		"Positions": [[0,0,0],[-1,0,0],[0,-1,0],[-1,-1,0],[0,1,0],[-1,1,0], [0,0,1],[-1,0,1],[0,-1,1],[-1,-1,1],[0,1,1],[-1,1,1]],

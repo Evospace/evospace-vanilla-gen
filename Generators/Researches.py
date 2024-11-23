@@ -52,12 +52,14 @@ def append_levels(research_base):
 				new.append([j[0], j[1].replace("%Material%", tier_material[i])])                
 			research["Unlocks"].append(new)
 		
-		CostSub = research["CostSub"] if "CostSub" in research else 0
 		CostMul = research["CostMul"] if "CostMul" in research else 1
-		offset = research["CostLevelOffset"] if "CostLevelOffset" in research else 0
 
 		research["Levels"] = [i,i]
-		research["DataPoints"] = {"Items" : res_cost(i - CostSub + offset, CostMul)}
+		research["DataPoints"] = {"Items" : [{
+			"Name": "Computations",
+			"Count": tiers_base_cost[i] * CostMul
+			}]
+		}
     
 		researches.append(research)
 
@@ -166,6 +168,7 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, "%Material%BlastFurnace"],["Constructor" + base_recipe, "%Material%BlastFurnace"]],
 	"AlsoUnlocks": get_parts_unlocks(tier_material[2]),
 	"MainResearch": True,
+	"CostMul": 5
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -543,15 +546,6 @@ append_levels({
 	"RequiredResearches": ["QuantumProcessor" + static_research],
 	"Levels": [6,6],
 	"Unlocks": [["Hand" + base_recipe, "QuantumBrain"],["Assembler" + base_recipe, "QuantumBrain"]],
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "QuantumComputer" + static_research,
-	"LabelParts": [["QuantumComputer", "machines"]],
-	"RequiredResearches": ["QuantumCircuit" + static_research],
-	"Unlocks": [["Hand" + base_recipe, "%Material%QuantumComputer"],["Constructor" + base_recipe, "%Material%QuantumComputer"]],
-	"Levels": [5,7],
-	"CostSub": 1,
 })
 append_levels({
 	"Class": "StaticResearch",

@@ -10,9 +10,7 @@ our_path = os.path.dirname(sys.argv[0])
 
 def res_cost(level, mul = 1):
 	arr = []
-	arr.append({"Name": tiers_res_item[0], "Count": tiers_base_cost[level] * mul})
-	if level > 1:
-		arr.append({"Name": tiers_res_item[level - 1], "Count": tiers_adv_cost[level]})
+	arr.append({"Name": "Computations", "Count": tiers_base_cost[level] * mul})
 		
 	return arr
 
@@ -117,20 +115,20 @@ tiers_name_helper = [
 ]
 
 tiers_base_cost = [
-	32, # stone
-	128, # copper
-	256, # steel
-	512, # alum
-	1024, # ss
-	2048*2, # tita
-	2048*8, # hm
-	2048*32, # neu
-	2048*64,
-	2048*128,
-	2048*256,
-	2048*512,
-	2048*1024,
-	2048*2048
+	20, # stone
+	200, # copper
+	2000, # steel
+	20000, # alum
+	200000, # ss
+	2000000, # tita
+	20000000, # hm
+	200000000, # neu
+	2000000000,
+	2000000000,
+	2000000000,
+	2000000000,
+	2000000000,
+	2000000000
 ]
 
 tiers_energy_level = [
