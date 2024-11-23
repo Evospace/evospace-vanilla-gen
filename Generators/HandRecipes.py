@@ -655,31 +655,6 @@ recipes_hand.append({
 })
 
 recipes_hand.append({
-	"Name": "Torch",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Plank" + static_item,
-				"Count": 1
-			},
-			{
-				"Name": "Organics" + static_item,
-				"Count": 10
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Torch" + static_item,
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 20
-})
-
-recipes_hand.append({
 	"Name": "AdvancedJetpack",
 	"Input":{
 		"Items":[
