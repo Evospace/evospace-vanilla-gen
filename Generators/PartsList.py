@@ -10,7 +10,7 @@ parts = [
 		"Volume": 1, # from 1 ingot
 		"StartTier": 1,
 		"EndTier": 100,
-		"Stack": 64,
+		"StackSize": 64,
 	},
 	{
 		"Label" : "Parts",
@@ -18,7 +18,7 @@ parts = [
 		"Volume": 1,
 		"StartTier": 1,
 		"EndTier": 100,
-		"Stack": 64,
+		"StackSize": 64,
 		"Mesh":"Models/PartsCrate",
 		"Materials":["/Game/Materials/Pine","/Game/Materials/%Material%"],
 	},
@@ -28,36 +28,36 @@ parts = [
 		"StartTier": 1,
 		"EndTier": 100,
 		"ItemLogic": building_cube_logic,
-		"Stack": 32,
-		"RequiredResearches":["MetalConstructions"+static_research],
+		"StackSize": 32,
+		"RequiredResearch":["MetalConstructions"+static_research],
 	},
 	{
 		"Label" : "Gearbox",
 		"Name" : "Gearbox",
 		"StartTier": 1,
 		"EndTier": 100,
-		"Stack": 32
+		"StackSize": 32
 	},
 	{
 		"Label" : "Solar Cell",
 		"Name" : "SolarCell",
 		"StartTier": 3,
 		"EndTier": 100,
-		"Stack": 32
+		"StackSize": 32
 	},
 	{
 		"Label" : "Locomotive",
 		"Name" : "Locomotive",
 		"StartTier": 2,
 		"EndTier": 2,
-		"Stack": 1
+		"StackSize": 1
 	},
 	{
 		"Label" : "Wagon",
 		"Name" : "Wagon",
 		"StartTier": 2,
 		"EndTier": 2,
-		"Stack": 1
+		"StackSize": 1
 	}
 ]
 

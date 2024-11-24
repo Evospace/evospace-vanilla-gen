@@ -7,35 +7,12 @@ images = []
 objects_array = []
 objects_wiki_array = {}
 recipes_hand = []
-recipes_deconstructor = []
-recipes_constructor = []
 
 cvs = []
 desc_csv = []
 
 def append_recipe(recipe):
-	item_count = 0
-	for item in recipe["Input"]["Items"]:
-		item_count = item_count + item["Count"]
-
-	level = extract_tier(recipe["Output"]["Items"][0]["Name"]) + 1
-
-	con_recipe = copy.deepcopy(recipe)
-	con_recipe["Ticks"] = max(min(item_count * 10, 1200), 20);
-	con_recipe["ResourceInput"] = { "Name": "Electricity" + static_item, "Count": 20 }
-	recipes_constructor.append(con_recipe)
-
-	dec_recipe = copy.deepcopy(recipe)
-
 	recipes_hand.append(recipe)
-	
-	output = copy.deepcopy(dec_recipe["Input"])
-	
-	dec_recipe["Input"] = copy.deepcopy(dec_recipe["Output"])
-	dec_recipe["Ticks"] = max(min(item_count * 10, 1200), 20);
-	dec_recipe["ResourceInput"] = { "Name": "Electricity" + static_item, "Count": 20 }
-	dec_recipe["Output"] = copy.deepcopy(output)
-	recipes_deconstructor.append(dec_recipe)	
 
 for machine in machines:
 	cvs.append([machine["Name"], machine["Label"]])
@@ -59,7 +36,7 @@ for machine in machines:
 				"LogicJson": {
 					"StaticBlock": block_name,
 				},
-				"MaxCount": 32,
+				"StackSize": 32,
 				"LabelParts": [[tier_material[tier], "common"],[machine["Name"], "machines"]],
 				"LabelFormat": ["machines_label_format","common"],
 				"DescriptionParts": [[machine["Name"], "description_machines"]],
@@ -198,7 +175,7 @@ for machine in machines:
 				"Class": "StaticBlock",
 				"BlockLogic": machine["Name"] + "BlockLogic",
 				"ReplaceTag": machine["Name"],
-				"Minable": {"MiningTime": 10, "Result": item_name},
+				"Minable": {"Result": item_name},
 			}
 			
 			if "BlockLogic" in machine:
@@ -1766,6 +1743,14 @@ for machine in machines:
 				})
 				
 			if machine["Name"] == "Constructor":
+				objects_array.append({ 
+					"Class": base_recipe,
+					"Name": "Hand" + base_recipe,
+					"UsedIn": [{
+						"Item": tier_material[tier] + machine["Name"] + static_item,
+						"Tier": tier
+					}]
+				})
 				append_recipe({
 					"Name": tier_material[tier] + machine["Name"],
 					"Input":{
@@ -2870,16 +2855,6 @@ objects_array = []
 objects_array.append({ "Class": base_recipe,
 	"Name": "Hand" + base_recipe,
 	"Recipes": recipes_hand
-})
-
-objects_array.append({ "Class": base_recipe,
-	"Name": "Deconstructor" + base_recipe,
-	"Recipes": recipes_deconstructor
-})
-
-objects_array.append({ "Class": base_recipe,
-	"Name": "Constructor" + base_recipe,
-	"Recipes": recipes_constructor
 })
 
 data = {

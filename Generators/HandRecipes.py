@@ -692,35 +692,6 @@ recipes_hand.append({
 })
 
 recipes_hand.append({
-	"Name": "Scanner",
-	"Input":{
-		"Items":[
-			{
-				"Name": "SteelPlate" + static_item,
-				"Count": 1
-			},
-			{
-				"Name": "AdvancedCircuit" + static_item,
-				"Count": 2
-			},
-			{
-				"Name": "CopperConnector" + static_item,
-				"Count": 5
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Scanner" + static_item,
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 20
-})
-
-recipes_hand.append({
 	"Name": "AntigravityUnit",
 	"Input":{
 		"Items":[

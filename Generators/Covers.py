@@ -106,7 +106,7 @@ for cover in covers:
         objects_array.append({ "Class": "StaticItem",
             "Name": cover["Name"] + static_item,
             
-            "MaxCount": 32,
+            "StackSize": 32,
             "Image": "T_" + cover["Name"],
             "ItemLogic": cover_item_logic,
             "Category": "Terrain",

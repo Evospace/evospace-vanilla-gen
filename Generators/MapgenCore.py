@@ -159,7 +159,7 @@ for object in mapgen_objects:
 		{
 			"StaticBlock": object["Name"] + "Surface" + static_surface
 		},
-		"MaxCount": 999,
+		"StackSize": 999,
 		"LabelParts": [[object["Name"]+ "Surface", "mapgen_core"]],
 	})
 	objects_array.append({ "Class": "TesselatorMarching",
@@ -173,7 +173,7 @@ for object in mapgen_objects:
 		"Item" : object["Name"] + "Surface" + static_item,
 		"ColorSide": object["Side"],
 		"ColorTop": object["Color"],
-		"Minable": {"Minable": False} if "Unbreakable" in object else {"MiningTime": object["Hardness"]*20, "Result": object["Drops"] + "Surface" + static_item},
+		"Minable": {"Minable": False} if "Unbreakable" in object else {"Result": object["Drops"] + "Surface" + static_item},
 		"Surface": True
 	})
 	

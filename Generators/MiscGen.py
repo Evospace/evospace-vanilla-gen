@@ -268,9 +268,6 @@ equipped = [
 	},{
 		"Name": "AntigravityUnit",
 		"ItemLogic": "Equipped/AntigravityUnitBP.AntigravityUnitBP_C"
-	},{
-		"Name": "Scanner",
-		"ItemLogic": "Equipped/ScannerBP.ScannerBP_C"
 	}
 ]
 
@@ -284,7 +281,7 @@ for one in wooden_misc:
 		{
 			"StaticBlock": one["Name"] + static_block
 		},
-		"MaxCount": 32,
+		"StackSize": 32,
 		"LabelParts":[[one["Name"],"misc"]],
 		"ItemLogic": building_single_logic
 	}
@@ -297,7 +294,7 @@ for one in wooden_misc:
 		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
 		"Class": "StaticBlock",
-		"Minable": {"MiningTime": 10, "Result": one["Name"] + static_item},
+		"Minable": {"Result": one["Name"] + static_item},
 	}
 	
 	if "Positions" in one:
@@ -316,7 +313,7 @@ for one in simple_single:
 		{
 			"StaticBlock": one["Name"] + static_block
 		},
-		"MaxCount": 32,
+		"StackSize": 32,
 		"LabelParts":[[one["Name"],"misc"]],
 		"Tier": one["Tier"] if "Tier" in one else 0
 	})	
@@ -327,7 +324,7 @@ for one in simple_single:
 		"Item" : one["Name"] + static_item,
 		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
-		"Minable": {"MiningTime": 10, "Result": one["Name"] + static_item},
+		"Minable": {"Result": one["Name"] + static_item},
 	}
 	
 	if "Positions" in one:
@@ -347,7 +344,7 @@ for one in simple_blocks:
 			"StaticBlock": one["Name"] + static_block,
 			"BuildingMode": "Plane"
 		},
-		"MaxCount": 999,
+		"StackSize": 999,
 		"LabelParts":[[one["Name"],"misc"]],
 		"Category": "Block",
 		"DescriptionParts": [["BuildingBlock", "common"]],
@@ -361,7 +358,7 @@ for one in simple_blocks:
 		"Name": one["Name"] + static_block,
 		"Item" : one["Name"] + static_item,
 		"Tesselator": one["Name"] + tesselator,
-		"Minable": {"MiningTime": 10, "Result": one["Name"] + static_item},
+		"Minable": {"Result": one["Name"] + static_item},
 	})
 	
 for one in static_mesh_block:
@@ -375,7 +372,7 @@ for one in static_mesh_block:
 		{
 			"StaticBlock": one["Name"] + static_block
 		},
-		"MaxCount": 32,
+		"StackSize": 32,
 		"LabelParts":[[one["Name"],"misc"]],
 	})	
 	#objects_array.append({ "Class": tesselator_static_mesh,
@@ -388,7 +385,7 @@ for one in static_mesh_block:
 		"Item" : one["Name"] + static_item,
 		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic",
-		"Minable": {"MiningTime": 10, "Result": one["Name"] + static_item},
+		"Minable": {"Result": one["Name"] + static_item},
 	})
 
 images = []
@@ -432,7 +429,7 @@ for one in equipped:
 	equ = { "Class": "StaticItem",
 		"Name": one["Name"] + static_item,
 		"Image": "T_" + one["Name"],
-		"MaxCount": 32,
+		"StackSize": 32,
 		"LabelParts":[[one["Name"],"misc"]],
 	}
 	if "ItemLogic" in one:

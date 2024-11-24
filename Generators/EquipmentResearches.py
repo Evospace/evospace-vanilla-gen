@@ -3,52 +3,26 @@ from Materials import *
 
 def append_equipment(xy, append_levels, researches):
 	append_levels({
-		"Class": "StaticResearchModifier",
-		"Name": "Multitool" + static_research,
-		"LabelParts": [["Multitool", "parts"]],
-		
-		"Unlocks": [],
-		"Levels": [1,10],
-		
-		"Image": "T_Multitool",
-		"Modifier": "ToolLevelStaticModifier",
-		"BonusValue": 1.0
-	})
-	append_levels({
-		"Class": "StaticResearchToolUnlock",
-		"Name": "Scanner" + static_research,
-		"LabelParts": [["Scanner", "misc"]],
-		"RequiredResearches": ["Multitool" + static_research],
-		"Unlocks": [["Hand" + base_recipe, "Scanner"]],
-		
-		
-		"Levels": [1,1],
-	})
-	append_levels({
 		"Class": "StaticResearch",
 		"Name": "Steampack" + static_research,
 		"LabelParts": [["Steampack", "misc"]],
-		"RequiredResearches": ["Multitool" + static_research],
+		"RequiredResearch": ["Circuit"],
 		"Unlocks": [["Hand" + base_recipe, "Steampack"]],
-		
-		
 		"Levels": [1,1],
 	})
 	append_levels({
 		"Class": "StaticResearch",
 		"Name": "HighPressureSteampack" + static_research,
 		"LabelParts": [["HighPressureSteampack", "misc"]],
-		"RequiredResearches": ["Steampack" + static_research],
+		"RequiredResearch": ["Steampack"],
 		"Unlocks": [["Hand" + base_recipe, "HighPressureSteampack"]],
-		
-		
 		"Levels": [2,2],
 	})
 	append_levels({
 		"Class": "StaticResearch",
 		"Name": "HighCapacitySteampack" + static_research,
 		"LabelParts": [["HighCapacitySteampack", "misc"]],
-		"RequiredResearches": ["Steampack" + static_research],
+		"RequiredResearch": ["Steampack"],
 		"Unlocks": [["Hand" + base_recipe, "HighCapacitySteampack"]],
 		
 		
@@ -58,7 +32,7 @@ def append_equipment(xy, append_levels, researches):
 		"Class": "StaticResearch",
 		"Name": "AdvancedSteampack" + static_research,
 		"LabelParts": [["AdvancedSteampack", "misc"]],
-		"RequiredResearches": ["HighCapacitySteampack" + static_research, "HighPressureSteampack" + static_research],
+		"RequiredResearch": ["HighCapacitySteampack", "HighPressureSteampack"],
 		"Unlocks": [["Hand" + base_recipe, "AdvancedSteampack"]],
 		
 		
@@ -68,7 +42,7 @@ def append_equipment(xy, append_levels, researches):
 		"Class": "StaticResearch",
 		"Name": "Flashlight" + static_research,
 		"LabelParts": [["Flashlight", "misc"]],
-		"RequiredResearches": ["Multitool" + static_research],
+		"RequiredResearch": ["Multitool"],
 		"Unlocks": [["Hand" + base_recipe, "Flashlight"]],
 		
 		
@@ -78,7 +52,7 @@ def append_equipment(xy, append_levels, researches):
 		"Class": "StaticResearch",
 		"Name": "Jetpack" + static_research,
 		"LabelParts": [["Jetpack", "misc"]],
-		"RequiredResearches": ["Steampack" + static_research],
+		"RequiredResearch": ["AdvancedCircuit", "Steampack", "ElectricEngine1"],
 		"Unlocks": [["Hand" + base_recipe, "Jetpack"]],
 		
 		
@@ -88,7 +62,7 @@ def append_equipment(xy, append_levels, researches):
 		"Class": "StaticResearch",
 		"Name": "AdvancedJetpack" + static_research,
 		"LabelParts": [["AdvancedJetpack", "misc"]],
-		"RequiredResearches": ["Jetpack" + static_research],
+		"RequiredResearch": ["Jetpack", "Processor", "ElectricEngine2"],
 		"Unlocks": [["Hand" + base_recipe, "AdvancedJetpack"]],
 		
 		
@@ -98,7 +72,7 @@ def append_equipment(xy, append_levels, researches):
 		"Class": "StaticResearch",
 		"Name": "AntigravityUnit" + static_research,
 		"LabelParts": [["AntigravityUnit", "misc"]],
-		"RequiredResearches": ["AdvancedJetpack" + static_research],
+		"RequiredResearch": ["AdvancedJetpack", "QuantumProcessor", "Calalyst"],
 		"Unlocks": [["Hand" + base_recipe, "AntigravityUnit"]],
 		
 		
