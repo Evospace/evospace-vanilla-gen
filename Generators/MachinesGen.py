@@ -2389,7 +2389,7 @@ for machine in machines:
 						]
 					},
 					"Tier": tier,
-					"Ticks" : 20
+					"Ticks" : 5
 				})
 				
 			if machine["Name"] == "ElectricEngine" or machine["Name"] == "BiElectricEngine":
