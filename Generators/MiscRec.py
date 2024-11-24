@@ -54,9 +54,6 @@ recipes_combustion = []
 
 recipes_pyro = []
 
-recipes_computer = []
-recipes_q_computer = []
-
 recipes_assembler = []
 
 recipes_gasturb = []
@@ -1290,7 +1287,7 @@ recipes_centrifuge.append({
 			{
 				"Name": "PlutoniumDust" + static_item,
 				"Count": 1,
-				"Probability": 0.1,
+				"Probability": 10,
 			}
 		]
 	},
@@ -1953,7 +1950,7 @@ recipes_oven.append({
 		]
 	},
 	
-	"Ticks": 2000,
+	"Ticks": 10*5*20,
 })
 
 recipes_oven.append({
@@ -1980,7 +1977,7 @@ recipes_oven.append({
 		]
 	},
 	
-	"Ticks": 2000,
+	"Ticks": 10*5*20,
 })
 
 recipes_oven.append({
@@ -2056,20 +2053,20 @@ recipes_oven.append({
 		]
 	},
 	
-	"Ticks": 1000,
+	"Ticks": 500,
 })
 
-for fuel_type, bonus in zip(["Coke"], [1.0]):
+for fuel_type, bonus in zip(["Coke"], [1.0]):	
 	recipes_blast_furnace.append({
-		"Name": "IronIngotSmelting",
+		"Name": "IronOreSmelting",
 		"Input":{
 			"Items":[
 				{
 					"Name": fuel_type + static_item,
-					"Count": 15
+					"Count": 30
 				},
 				{
-					"Name": "IronIngot" + static_item,
+					"Name": "IronOre" + static_item,
 					"Count": 10
 				},
 			]
@@ -2082,9 +2079,80 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 				}
 			]
 		},
-		"Ticks" : 2000
+		"Ticks" : 10*5*20
 	})
-
+	recipes_blast_furnace.append({
+		"Name": "IronImpureOreGravelSmelting",
+		"Input":{
+			"Items":[
+				{
+					"Name": fuel_type + static_item,
+					"Count": 25
+				},
+				{
+					"Name": "IronImpureOreGravel" + static_item,
+					"Count": 10
+				},
+			]
+		},
+		"Output":{
+			"Items":[
+				{
+					"Name": "SteelIngot" + static_item,
+					"Count": 10
+				}
+			]
+		},
+		"Ticks" : 10*5*20
+	})
+	recipes_blast_furnace.append({
+		"Name": "IronOreGravelSmelting",
+		"Input":{
+			"Items":[
+				{
+					"Name": fuel_type + static_item,
+					"Count": 20
+				},
+				{
+					"Name": "IronOreGravel" + static_item,
+					"Count": 10
+				},
+			]
+		},
+		"Output":{
+			"Items":[
+				{
+					"Name": "SteelIngot" + static_item,
+					"Count": 10
+				}
+			]
+		},
+		"Ticks" : 10*5*20
+	})
+	recipes_blast_furnace.append({
+		"Name": "IronOreDustSmelting",
+		"Input":{
+			"Items":[
+				{
+					"Name": fuel_type + static_item,
+					"Count": 15
+				},
+				{
+					"Name": "IronOreDust" + static_item,
+					"Count": 10
+				},
+			]
+		},
+		"Output":{
+			"Items":[
+				{
+					"Name": "SteelIngot" + static_item,
+					"Count": 10
+				}
+			]
+		},
+		"Ticks" : 10*5*20
+	})
 	recipes_blast_furnace.append({
 		"Name": "IronDustSmelting",
 		"Input":{
@@ -2107,58 +2175,7 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 				}
 			]
 		},
-		"Ticks" : 2000
-	})
-	
-	recipes_blast_furnace.append({
-		"Name": "IronOreDustSmelting",
-		"Input":{
-			"Items":[
-				{
-					"Name": fuel_type + static_item,
-					"Count": 20
-				},
-				{
-					"Name": "IronOreDust" + static_item,
-					"Count": 10
-				},
-			]
-		},
-		"Output":{
-			"Items":[
-				{
-					"Name": "SteelIngot" + static_item,
-					"Count": 10
-				}
-			]
-		},
-		"Ticks" : 2000
-	})
-	
-	
-	recipes_blast_furnace.append({
-		"Name": "IronOreDustSmelting" + fuel_type,
-		"Input":{
-			"Items":[
-				{
-					"Name": fuel_type + static_item,
-					"Count": 1
-				},
-				{
-					"Name": "SteelDust" + static_item,
-					"Count": 10
-				},
-			]
-		},
-		"Output":{
-			"Items":[
-				{
-					"Name": "SteelIngot" + static_item,
-					"Count": 10
-				}
-			]
-		},
-		"Ticks" : 2000
+		"Ticks" : 10*5*20
 	})
 
 recipes_mixer.append({
@@ -2402,7 +2419,7 @@ recipes_sep2.append({
 			{
 				"Name": "PlutoniumDust" + static_item,
 				"Count": 1,
-				"Probability":0.5
+				"Probability":50
 			}
 		]
 	},
@@ -2432,7 +2449,7 @@ recipes_sep2.append({
 			{
 				"Name": "TungstenOxideDust" + static_item,
 				"Count": 1,
-				"Probability":0.1,
+				"Probability":10,
 			},
 		]
 	},
@@ -2463,7 +2480,7 @@ recipes_sep2.append({
 			{
 				"Name": "AluminiumOxideDust" + static_item,
 				"Count": 1,
-				"Probability":0.1,
+				"Probability":10,
 			},
 		]
 	},
@@ -2493,12 +2510,12 @@ recipes_sep2.append({
 			{
 				"Name": "AluminiumOxideDust" + static_item,
 				"Count": 1,
-				"Probability": 0.2,
+				"Probability": 20,
 			},
 			{
 				"Name": "TitaniumOxideDust" + static_item,
 				"Count": 1,
-				"Probability": 0.1,
+				"Probability": 10,
 			}
 		]
 	},
@@ -2525,7 +2542,7 @@ recipes_sep2.append({
 			{
 				"Name": "SiliconOxide" + static_item,
 				"Count": 1,
-				"Probability": 0.5,
+				"Probability": 50,
 			}
 		]
 	},
@@ -2861,10 +2878,6 @@ recipes_macerator.append({
 	},
 	"Output":{
 		"Items":[
-			{
-				"Name": "UraniumDust" + static_item,
-				"Count": 5
-			},
 			{
 				"Name": "Uranium235Dust" + static_item,
 				"Count": 1
@@ -4147,7 +4160,7 @@ recipes_chem.append({
 			{
 				"Name": "BoraxDust" + static_item,
 				"Count": 1,
-				"Probability": 0.1
+				"Probability": 10
 			}
 		]
 	},
@@ -5300,19 +5313,19 @@ recipes_industrial_chemreactor.append({
 			{
 				"Name": "CopperOreDust" + static_item,
 				"Count": 1,
-				"Probability": .1
+				"Probability": 10
 			},{
 				"Name": "IronOreDust" + static_item,
 				"Count": 1,
-				"Probability": .1
+				"Probability": 10
 			},{
 				"Name": "UraniumOreDust" + static_item,
 				"Count": 1,
-				"Probability": .05
+				"Probability": 5
 			},{
 				"Name": "AluminiumOreDust" + static_item,
 				"Count": 1,
-				"Probability": .05
+				"Probability": 5
 			}				
 		]
 	},
@@ -5460,28 +5473,6 @@ recipes_freezer.append({
 	},
 	
 	"Ticks" : 200
-})
-
-recipes_computer.append({
-	"Name":"Computations",
-	"Input":{
-		"Items":[
-		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity" + static_item,
-		"Count": 10
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Computations" + static_item,
-				"Count": 1
-			}
-		]
-	},
-
-	"Ticks" : 40
 })
 
 recipes_portal.append({
@@ -5677,33 +5668,6 @@ append_recipe_hand_press({
 	"Ticks" : 20
 })
 
-for i in ["Circuit", "AdvancedCircuit", "Processor", "QuantumCircuit", "QuantumProcessor", "QuantumBrain"]:
-	recipes_computer.append(
-	{
-		"Name": i,
-		"Input":{
-			"Items":[
-				{
-					"Name": i + static_item,
-					"Count": 1
-				}
-			]
-		},
-		"ResourceInput":{
-			"Name": "Electricity" + static_item,
-			"Count": 40
-		},
-		"Output":{
-			"Items":[
-				{
-					"Name": i + static_item,
-					"Count": 1
-				}
-			]
-		},
-		"Ticks" : 40
-	})
-
 objects_array.append({ "Class": base_recipe,
 	"Name": "Multitool" + base_recipe,
 	"Recipes": recipes_wrench
@@ -5872,11 +5836,6 @@ objects_array.append({ "Class": base_recipe,
 objects_array.append({ "Class": base_recipe,
 	"Name": "PyrolysisUnit" + base_recipe,
 	"Recipes": recipes_pyro
-})
-
-objects_array.append({ "Class": base_recipe,
-	"Name": "Computer" + base_recipe,
-	"Recipes": recipes_computer
 })
 
 objects_array.append({ "Class": base_recipe,

@@ -92,7 +92,7 @@ for ore_type in ore_types:
 		"Name": item_name,
 		"Mesh": "Models/Ore",
 		"Image": "T_" + ore_type["Name"] + "Ore",
-		"MaxCount": 32, 
+		"StackSize": 64, 
 		"Category": "Ore",
 		"LabelParts": [[ore_type["Name"]+"Ore", "ores"]],
 		"CommonTextKeys":[
@@ -115,7 +115,7 @@ for ore_type in ore_types:
 		"Item": item_name,
 		"ColorSide": ore_type["Color"],
 		"ColorTop": ore_type["Color"],
-		"Minable": {"MiningTime": ore_type["Hardness"]*20, "Result": ore_type["Drops"] + static_item},
+		"Minable": {"Result": ore_type["Drops"] + static_item},
 		"Surface": True
 	})
 	images.append({
@@ -133,7 +133,7 @@ for ore_type in ore_types:
 			"Mesh": "Models/Gravel",
 			
 			"Image": "T_" + ore_type["Name"] + "ImpureOreGravel",
-			"MaxCount": 32,
+			"StackSize": 64, 
 
 			"Materials" : [
 				"/Game/Materials/" + ore_type["Name"] + "ImpureOreGravel"
@@ -158,7 +158,7 @@ for ore_type in ore_types:
 			"Mesh": "Models/Gravel",
 			
 			"Image": "T_" + ore_type["Name"] + "OreGravel",
-			"MaxCount": 32,
+			"StackSize": 64,
 
 			"Materials" : [
 				"/Game/Materials/" + ore_type["Name"] + "OreGravel"
@@ -183,7 +183,7 @@ for ore_type in ore_types:
 			"Mesh": "Models/Dust",
 			
 			"Image": "T_" + ore_type["Name"] + "OreDust",
-			"MaxCount": 32,
+			"StackSize": 64,
 
 			"Materials" : [
 				"/Game/Materials/ImpureOreDust"

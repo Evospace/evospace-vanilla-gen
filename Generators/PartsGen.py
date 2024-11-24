@@ -75,7 +75,7 @@ for part in parts:
 				"Name": material + part["Name"] + static_item,
 				"LabelParts": [[material + part["Name"], "parts"]],
 				"Image": "T_" + material + part["Name"],
-				"MaxCount": part["Stack"],
+				"StackSize": part["StackSize"],
 				"LogicJson":
 				{
 					"StaticBlock": material + part["Name"] + static_block
@@ -121,15 +121,12 @@ for part in parts:
 							},
 						]
 					},
-					"ResourceInput":{
-						"Name": "Kinetic" + static_item,
-						"Count": 10  * 1.5**level
-					},
 					"Output":{
 						"Items":[
 							{
 								"Name": material + "Dust" + static_item,
-								"Count": part["Volume"]
+								"Count": part["Volume"],
+								"Probability": 25
 							}
 						]
 					},
@@ -291,7 +288,7 @@ for part in parts:
 						]
 					},
 					"Ticks" : 80 * 1.5**level,
-					"Productivity":50,
+					"Productivity": 50,
 				})
 
 # ingots, dusts, fluids, gems, blocks
@@ -304,7 +301,7 @@ for material in materials:
 			"Name": material["Name"] + static_item,
 			"Image": "T_" + material["Name"],
 			
-			"MaxCount": 1,
+			"StackSize": 1,
 			"LabelParts": [[material["Name"], "parts"]],
 			"Type": "Abstract"
 		}
@@ -330,7 +327,7 @@ for material in materials:
 			"Name": material["Name"] + static_item,
 			"Image": "T_" + material["Name"],
 			
-			"MaxCount": 32 if material["Name"] != "Signal" else 214748364,
+			"StackSize": 64 if material["Name"] != "Signal" else 214748364,
 			
 			"LabelParts": [[material["Name"], "parts"]],
 		}
@@ -347,8 +344,8 @@ for material in materials:
 		if "Unit" in material:
 			item["Unit"] = material["Unit"]
 			
-		if "Stack" in material:
-			item["MaxCount"] = material["Stack"]
+		if "StackSize" in material:
+			item["StackSize"] = material["StackSize"]
 			
 		if "Mesh" in material:
 			item["Mesh"] = material["Mesh"]
@@ -392,7 +389,7 @@ for material in materials:
 		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "Ingot" + static_item,
 			"Image": "T_" + material["Name"] + "Ingot",
-			"MaxCount": 32,
+			"StackSize": 128,
 			"Mesh": "Models/Ingot",
 			"Materials" : [
 				"/Game/Materials/" + material["Name"]
@@ -457,7 +454,8 @@ for material in materials:
 				"Items":[
 					{
 						"Name": material["Name"] + "Dust" + static_item,
-						"Count": 1
+						"Count": 1,
+						"Probability": 25
 					}
 				]
 			},
@@ -469,7 +467,7 @@ for material in materials:
 		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "Block" + static_item,
 			"Image": "T_" + material["Name"] + "Block",
-			"MaxCount": 999,
+			"StackSize": 999,
 			#"Mesh": "Models/Ingot",
 			"Materials" : [
 				"/Game/Materials/" + material["Name"]
@@ -557,7 +555,7 @@ for material in materials:
 			"Name": material["Name"] + "" + static_item,
 			"Image": "T_" + material["Name"] + "",
 			
-			"MaxCount": 1,
+			"StackSize": 1000,
 			"Category": "",
 			"LabelParts": [[material["Name"], "parts"]],
 			
@@ -636,7 +634,7 @@ for material in materials:
 			"Name": material["Name"] + "" + static_item,
 			"Image": "T_" + material["Name"] + "",
 			
-			"MaxCount": 1,
+			"StackSize": 1000,
 			"Category": "",
 			"LabelParts": [[material["Name"], "parts"]],
 			
@@ -715,7 +713,7 @@ for material in materials:
 			"Name": material["Name"] + "Dust" + static_item,
 			"Image": "T_" + material["Name"] + "Dust",
 			
-			"MaxCount": 32,
+			"StackSize": 64,
 			
 			"LabelParts": [[material["Name"] + "Dust", "parts"]],
 			"Mesh": "Models/Dust",
@@ -765,7 +763,7 @@ for tool in tools:
 		"LogicJson": {
 			"RecipeDictionary": tool["Name"] + base_recipe,
 		},
-		"MaxCount": 1,
+		"StackSize": 1,
 		"LabelParts": [[tool["Name"], "parts"]],
 	}
 		

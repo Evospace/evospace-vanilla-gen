@@ -115,7 +115,7 @@ materials = [
 		"Name" : "Iron",
 		"Label" : "Iron",
 		"IsDust": True,
-		"IsIngot": True,
+		"IsIngot": False,
 		"SmeltLevel": 0,
 		"IsBlock": True,
 	},{
@@ -343,28 +343,28 @@ materials = [
 		"Label": "Uranium 233 Cell",
 		"Tier": 5,
 		"IsExact": True,
-		"Stack": 32,
+		"StackSize": 32,
 		"Description":[["NuclearFuel", "common"]],
 	},{
 		"Name": "UraniumCell",
 		"Label": "Uranium Cell",
 		"Tier": 5,
 		"IsExact": True,
-		"Stack": 32,
+		"StackSize": 32,
 		"Description":[["NuclearFuel", "common"]],
 	},{
 		"Name": "PlutoniumCell",
 		"Label": "Plutonium Cell",
 		"Tier": 5,
 		"IsExact": True,
-		"Stack": 32,
+		"StackSize": 32,
 		"Description":[["NuclearFuel", "common"]],
 	},{
 		"Name": "DepletedUraniumCell",
 		"Label": "Depleted Uranium Cell",
 		"Tier": 5,
 		"IsExact": True,
-		"Stack": 32,
+		"StackSize": 32,
 		"Description":[["NuclearFuel", "common"]],
 	},{
 		"Name": "Thorium",
@@ -427,13 +427,14 @@ materials = [
 			"HeatPerTick": 20
 		},
 		"Tier": 0,
-		"Stack": 200,
+		"StackSize": 64,
 		"Color":[0.0,0.0,0.0],
 		"Mesh": "Models/Piece"
 	},{
 		"Name": "Coke",
 		"Label": "Coke",
 		"IsExact": True,
+		"StackSize": 64,
 		"Burnable": {
 			"BurnTime": 1000,
 			"HeatPerTick": 30*1.5
@@ -804,7 +805,7 @@ materials = [
 	},{
 		"Name" : "CopperWire",
 		"Label" : "Copper Wire",
-		"Stack": 64,
+		"StackSize": 64,
 		"IsExact": True,
 		"Category": "Parts",
 		"Mesh":"Models/WireCrate",
@@ -812,7 +813,7 @@ materials = [
 	},{
 		"Name" : "GoldWire",
 		"Label" : "Gold Wire",
-		"Stack": 64,
+		"StackSize": 64,
 		"IsExact": True,
 		"Category": "Parts",
 		"Mesh":"Models/WireCrate",
@@ -820,7 +821,7 @@ materials = [
 	},{
 		"Name" : "SuperconductorWire",
 		"Label" : "Superconductor Wire",
-		"Stack": 64,
+		"StackSize": 64,
 		"IsExact": True,
 		"Category": "Parts",
 		"Mesh":"Models/WireCrate",
@@ -828,7 +829,7 @@ materials = [
 	},{
 		"Name" : "Circuit",
 		"Label" : "Circuit",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
@@ -836,7 +837,7 @@ materials = [
 	},{
 		"Name" : "AdvancedCircuit",
 		"Label" : "Advanced Circuit",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
@@ -844,7 +845,7 @@ materials = [
 	},{
 		"Name" : "Processor",
 		"Label" : "Processor",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
@@ -852,7 +853,7 @@ materials = [
 	},{
 		"Name" : "QuantumCircuit",
 		"Label" : "Quantum Circuit",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
@@ -860,7 +861,7 @@ materials = [
 	},{
 		"Name" : "QuantumProcessor",
 		"Label" : "Quantum Processor",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
@@ -868,14 +869,14 @@ materials = [
 	},{
 		"Name" : "QuantumCore",
 		"Label" : "Quantum Core",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Parts",
 		"Mesh": "Models/Circuit3Crate"
 	},{
 		"Name" : "QuantumBrain",
 		"Label" : "Quantum Brain",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
@@ -883,120 +884,120 @@ materials = [
 	},{
 		"Name" : "Cell",
 		"Label" : "Cell",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Parts",
 	},{
 		"Name" : "Catalyst",
 		"Label" : "Catalyst Cell",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 	},{
 		"Name" : "UltimateCatalyst",
 		"Label" : "Ultimate Catalyst Cell",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 	},{
 		"Name" : "MothershipPing",
 		"Label" : "Mothership Ping",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 	},{
 		"Name" : "BasicBattery",
 		"Label" : "Basic Battery",
-		"Stack": 1,
+		"StackSize": 1,
 		"IsExact": True,
 		"MaxCharge": single_battery_cell_charge * battery_mul(0)
 	},{
 		"Name" : "AdvancedBattery",
 		"Label" : "Advanced Battery",
-		"Stack": 1,
+		"StackSize": 1,
 		"IsExact": True,
 		"MaxCharge": single_battery_cell_charge * battery_mul(1)
 	},{
 		"Name" : "SuperiorBattery",
 		"Label" : "Superior Battery",
-		"Stack": 1,
+		"StackSize": 1,
 		"IsExact": True,
 		"MaxCharge": single_battery_cell_charge * battery_mul(2)
 	},{
 		"Name" : "UltimateBattery",
 		"Label" : "Ultimate Battery",
-		"Stack": 1,
+		"StackSize": 1,
 		"IsExact": True,
 		"MaxCharge": single_battery_cell_charge * battery_mul(3)
 	},{
 		"Name" : "ControlCell",
 		"Label" : "Control Cell",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 	},{
 		"Name" : "ReflectorCell",
 		"Label" : "Reflector Cell",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 	},{
 		"Name" : "ThoriumCell",
 		"Label" : "Thorium Cell",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 	},{
 		"Name" : "MixedOxideCell",
 		"Label" : "Mixed-Oxide Cell",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 	},{
 		"Name" : "RutileCrystal",
 		"Label" : "Rutile Crystal",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Mineral",
 	},{
 		"Name" : "UraniniteCrystal",
 		"Label" : "Uraninite Crystal",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Mineral",
 	},{
 		"Name" : "UraniniteCluster",
 		"Label" : "Uraninite Cluster",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Mineral",
 	},{
 		"Name" : "Cinnabar",
 		"Label" : "Cinnabar",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsDust": True,
 		"Category": "Mineral",
 	},{
 		"Name" : "CinnabarCrystal",
 		"Label" : "Cinnabar Crystal",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Mineral",
 	},{
 		"Name" : "CinnabarCluster",
 		"Label" : "Cinnabar Cluster",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Mineral",
 	},{
 		"Name" : "Malachite",
 		"Label" : "Malachite",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsDust": True,
 		"Category": "Mineral",
 	},{
 		"Name" : "MalachiteCrystal",
 		"Label" : "Malachite Crystal",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Mineral",
 	},{
 		"Name" : "MalachiteCluster",
 		"Label" : "Malachite Cluster",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Mineral",
 	},{
@@ -1006,7 +1007,7 @@ materials = [
 	},{
 		"Name" : "FilteringCell",
 		"Label" : "Filtering Cell",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 	},{
 		"Name": "Boron",
@@ -1016,13 +1017,13 @@ materials = [
 	},{
 		"Name" : "Borax",
 		"Label" : "Borax",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsDust": True,
 		"Category": "Mineral",
 	},{
 		"Name" : "Emerald",
 		"Label" : "Emerald",
-		"Stack": 32,
+		"StackSize": 32,
 		"IsExact": True,
 		"IsDust": True,
 		"Category": "Mineral",
@@ -1071,6 +1072,12 @@ materials = [
 	},{
 		"Name": "Percent",
 		"Label": "Percent",
+		"IsExact": True,
+		"Craftable": False,
+		"Category": "Signal"
+	},{
+		"Name": "IncreaseInventorySize",
+		"Label": "IncreaseInventorySize",
 		"IsExact": True,
 		"Craftable": False,
 		"Category": "Signal"

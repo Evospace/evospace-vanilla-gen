@@ -81,7 +81,7 @@ machines = [
         acc.inventory = input
 		end
 		""",
-		"RequiredResearches":["Fermentation"+static_research],
+		"RequiredResearch":["Fermentation"+static_research],
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "ChemReactor",
@@ -970,7 +970,7 @@ machines = [
 		"Label": "Oven",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],
-			[0,1,0],[-1,1,0],[-2,1,0],
+			[0,1,0],[-2,1,0],
 			[0,-1,0],[-1,-1,0],[-2,-1,0],
 			
 			[0,0,1],[-1,0,1],[-2,0,1],
@@ -985,6 +985,23 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
 		"Description": ["SpeedBonus"],
+        "BlockCreation":"""
+		return function(self)
+        local crafter = AbstractCrafter.cast(self)
+        crafter.speed = (crafter.level + 1) * 100
+        
+        local inv = ResourceInventory.new(crafter, "InputInv")
+        inv.item = StaticItem.find("Heat")
+        inv.capacity = 20 * (crafter.level + 1)
+        crafter.energy_input_inventory = inv
+        
+    	local acc = ResourceAccessor.new(crafter, "Input")
+        acc.side, acc.pos = Vec3i.down, Vec3i.new(-1,1,1)
+        acc.inventory = inv
+        acc.is_input = true
+        acc.channel = "Heat"
+		end
+		"""
 	},{
 		"Name": "BlastFurnace",
 		"Label": "Blast Furnace",
@@ -1007,7 +1024,7 @@ machines = [
 		],
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"SelectCrafter",
+		"BlockLogic":"AutoCrafter",
 		"Description": ["SpeedBonus"],
 	},{
 		"Name": "FluidFurnace",
@@ -1206,6 +1223,7 @@ machines = [
 			[0,-1,0],[-1,-1,0],
 			[0,-1,1],[-1,-1,1],
 		],
+        "Recipes": "Hand",
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		return function(self)
@@ -1609,7 +1627,7 @@ machines = [
 	#	"CommonTextKeys":[
 	#		"Container"
 	#	],
-	#	"RequiredResearches":["LiquidsScan"+static_research],
+	#	"RequiredResearch":["LiquidsScan"+static_research],
 	#},
 	{
 		"Name": "FissionReactor",
@@ -1892,7 +1910,7 @@ machines = [
 	#	a:SetSidePos(Vec3i.up, Vec3i.zero)
 	#	a:Bind(self:GetOutputContainer())
 	#	""",
-	#	"RequiredResearches":["HeatTransferring"+static_research],
+	#	"RequiredResearch":["HeatTransferring"+static_research],
 	#}
 	#,{
 	#	"Name": "InverseHeatExchanger",
@@ -1915,7 +1933,7 @@ machines = [
 	#	a:SetSidePos(Vec3i.down, Vec3i.zero)
 	#	a:Bind(self:GetInputContainer())
 	#	""",
-	#	"RequiredResearches":["HeatTransferring"+static_research],
+	#	"RequiredResearch":["HeatTransferring"+static_research],
 	#}
 	#,{
 	#	"Name": "IndustrialOven",

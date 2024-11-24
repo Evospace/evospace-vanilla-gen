@@ -42,7 +42,7 @@ for ore_type in ore_types:
 					{
 						"Name": ore_type["Name"] + "ImpureOreGravel" + static_item,
 						"Count": 1,
-						"Probability": 0.5,
+						"Probability": 50,
 					}
 				]
 			},
@@ -206,7 +206,7 @@ for ore_type in ore_types:
 			oi = {
 				"Name": ore_type["Byproducts"][0] + static_item,
 				"Count": 1,
-				"Probability": 0.1,
+				"Probability": 10,
 			}
 			
 			if "ByproductChanse" in ore_type:
@@ -250,7 +250,7 @@ for ore_type in ore_types:
 			oi = {
 				"Name": ore_type["Byproducts"][0] + static_item,
 				"Count": 1,
-				"Probability":0.1,
+				"Probability": 10,
 			}
 			if "ByproductChanse" in ore_type:
 				oi["Probability"] = ore_type["ByproductChanse"][0]
@@ -327,17 +327,17 @@ for ore_type in ore_types:
 						{
 							"Name": ore_type["Byproducts"][1][0] + static_item,
 							"Count": 1,
-							"Probability": 0.8,
+							"Probability": 80,
 						},
 						{
 							"Name": ore_type["Byproducts"][1][1] + static_item,
 							"Count": 1,
-							"Probability": 0.2,
+							"Probability": 20,
 						},
 						{
 							"Name": ore_type["Byproducts"][1][2] + static_item,
 							"Count": 1,
-							"Probability": 0.02,
+							"Probability": 2,
 						},
 					]
 				},

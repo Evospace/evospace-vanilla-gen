@@ -703,7 +703,7 @@ for prop in props:
 		objects_array.append({ "Class": "StaticItem",
 			"Name": prop["Name"] + variation_helper[variation] + static_item,
 			
-			"MaxCount": 32,
+			"StackSize": 32,
 			"Image": "T_" + prop["Name"],
 			"LogicJson": {
 				"StaticBlock": prop["Name"] + variation_helper[variation]
@@ -722,7 +722,7 @@ for prop in props:
 			"ScaleMax": prop["ScaleMax"],
 			"ProjectToTerrainPower": prop["ProjectToTerrainPower"],
 			"Item": prop["Name"] + static_item,
-			"Minable": {"MiningTime": 40 if "DropCount" not in prop else prop["DropCount"], "Result": prop["Drops"] + static_item},
+			"Minable": {"Result": prop["Drops"] + static_item},
 		}
 		
 		if "CullBegin" in prop:
