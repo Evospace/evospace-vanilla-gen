@@ -339,214 +339,6 @@ for list in (wooden_misc, simple_single, simple_blocks, static_mesh_block):
 
 # other		
 		
-for level, name, copm_name in zip(range(0, 4), ["BasicBattery", "AdvancedBattery", "SuperiorBattery", "UltimateBattery"], ["Battery", "BasicBattery", "AdvancedBattery", "SuperiorBattery"]):
-	append_recipe({
-		"Name": name,
-		"Input":{
-			"Items":[
-				{
-					"Name": copm_name + static_item,
-					"Count": battery_mul(0) if level == 0 else 4
-				},
-				{
-					"Name": circuits[level + 1],
-					"Count": 1
-				}
-			]
-		},
-		"Output":{
-			"Items":[
-				{
-					"Name": name + static_item,
-					"Count": 1
-				}
-			]
-		},
-		"Ticks" : 100 * (level + 1),
-	})
-
-append_recipe({
-	"Name":"Cell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "StainlessSteelPlate" + static_item,
-				"Count": 1
-			},
-			{
-				"Name": "StainlessSteelParts" + static_item,
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Cell" + static_item,
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 200,
-	
-})
-
-recipes_assembler.append({
-	"Name":"Cell2",
-	"Input":{
-		"Items":[
-			{
-				"Name": "DepletedUraniumCell" + static_item,
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Cell" + static_item,
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 200*3,
-	"ResourceInput": { "Name": "Electricity" + static_item, "Count": 10 }
-})
-
-append_recipe({
-	"Name":"UraniumCell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Uranium235Dust" + static_item,
-				"Count": 3
-			},
-			{
-				"Name": "UraniumDust" + static_item,
-				"Count": 20
-			},
-			{
-				"Name": "Cell" + static_item,
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "UraniumCell" + static_item,
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 200,
-	
-})
-
-append_recipe({
-	"Name":"ThoriumCell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "ThoriumDust" + static_item,
-				"Count": 20
-			},
-			{
-				"Name": "Cell" + static_item,
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "ThoriumCell" + static_item,
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 200,
-	
-})
-
-append_recipe({
-	"Name":"Uranium233Cell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Uranium233Dust" + static_item,
-				"Count": 3
-			},
-			{
-				"Name": "Cell" + static_item,
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Uranium233Cell" + static_item,
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 200,
-	
-})
-
-append_recipe({
-	"Name":"PlutoniumCell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "PlutoniumDust" + static_item,
-				"Count": 3
-			},
-			{
-				"Name": "Cell" + static_item,
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "PlutoniumCell" + static_item,
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 200,
-	
-})
-
-append_recipe({
-	"Name":"FilteringCell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Coal" + static_item,
-				"Count": 10
-			},
-			{
-				"Name": "Cell" + static_item,
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "FilteringCell" + static_item,
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 200,
-	
-})
-
 recipes_assembler.append({
 	"Name":"Circuit",
 	"Input":{
@@ -950,6 +742,214 @@ recipes_assembler.append({
 		]
 	},
 	"Ticks" : 100,
+})
+		
+for level, name, copm_name in zip(range(0, 4), ["BasicBattery", "AdvancedBattery", "SuperiorBattery", "UltimateBattery"], ["Battery", "BasicBattery", "AdvancedBattery", "SuperiorBattery"]):
+	append_recipe({
+		"Name": name,
+		"Input":{
+			"Items":[
+				{
+					"Name": copm_name + static_item,
+					"Count": battery_mul(0) if level == 0 else 4
+				},
+				{
+					"Name": circuits[level + 1],
+					"Count": 1
+				}
+			]
+		},
+		"Output":{
+			"Items":[
+				{
+					"Name": name + static_item,
+					"Count": 1
+				}
+			]
+		},
+		"Ticks" : 100 * (level + 1),
+	})
+
+append_recipe({
+	"Name":"Cell",
+	"Input":{
+		"Items":[
+			{
+				"Name": "StainlessSteelPlate" + static_item,
+				"Count": 1
+			},
+			{
+				"Name": "StainlessSteelParts" + static_item,
+				"Count": 1
+			},
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "Cell" + static_item,
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 200,
+	
+})
+
+recipes_assembler.append({
+	"Name":"Cell2",
+	"Input":{
+		"Items":[
+			{
+				"Name": "DepletedUraniumCell" + static_item,
+				"Count": 1
+			},
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "Cell" + static_item,
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 200*3,
+	"ResourceInput": { "Name": "Electricity" + static_item, "Count": 10 }
+})
+
+append_recipe({
+	"Name":"UraniumCell",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Uranium235Dust" + static_item,
+				"Count": 3
+			},
+			{
+				"Name": "UraniumDust" + static_item,
+				"Count": 20
+			},
+			{
+				"Name": "Cell" + static_item,
+				"Count": 1
+			},
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "UraniumCell" + static_item,
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 200,
+	
+})
+
+append_recipe({
+	"Name":"ThoriumCell",
+	"Input":{
+		"Items":[
+			{
+				"Name": "ThoriumDust" + static_item,
+				"Count": 20
+			},
+			{
+				"Name": "Cell" + static_item,
+				"Count": 1
+			},
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "ThoriumCell" + static_item,
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 200,
+	
+})
+
+append_recipe({
+	"Name":"Uranium233Cell",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Uranium233Dust" + static_item,
+				"Count": 3
+			},
+			{
+				"Name": "Cell" + static_item,
+				"Count": 1
+			},
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "Uranium233Cell" + static_item,
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 200,
+	
+})
+
+append_recipe({
+	"Name":"PlutoniumCell",
+	"Input":{
+		"Items":[
+			{
+				"Name": "PlutoniumDust" + static_item,
+				"Count": 3
+			},
+			{
+				"Name": "Cell" + static_item,
+				"Count": 1
+			},
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "PlutoniumCell" + static_item,
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 200,
+	
+})
+
+append_recipe({
+	"Name":"FilteringCell",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Coal" + static_item,
+				"Count": 10
+			},
+			{
+				"Name": "Cell" + static_item,
+				"Count": 1
+			},
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "FilteringCell" + static_item,
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 200,
+	
 })
 
 recipes_assembler.append({

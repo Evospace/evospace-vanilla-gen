@@ -21,5 +21,9 @@ cvs.append(["Crouch", "Crouch"])
 cvs.append(["EmptyHand", "Empty hand"])
 cvs.append(["Researches", "Researches"])
 
+cvs.append(["EssentialResearchDescription", "This ressearch is essential for game progress"])
+
+cvs.append(["BasicMachinesDescription", "First step in resource processing for better yield"])
+
 write_file("Loc/source/ui.json", cvs)
 
