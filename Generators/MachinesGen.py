@@ -222,7 +222,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20,
 				})
 				
@@ -295,7 +294,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 			
@@ -318,7 +316,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -349,7 +346,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 			
@@ -372,7 +368,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 			
@@ -395,7 +390,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -426,7 +420,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 80
 				})
 				
@@ -457,7 +450,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})	
 				
@@ -484,7 +476,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -519,7 +510,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -550,7 +540,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 
@@ -577,7 +566,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -606,7 +594,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 
@@ -635,7 +622,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 40
 				})
 
@@ -664,7 +650,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 
@@ -693,7 +678,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 40
 				})
 
@@ -716,7 +700,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 40
 				})
 
@@ -745,7 +728,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 40
 				})
 				
@@ -771,7 +753,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -797,7 +778,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -826,7 +806,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -849,7 +828,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -875,7 +853,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 
@@ -910,7 +887,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -933,7 +909,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -959,7 +934,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -982,7 +956,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -1008,7 +981,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -1031,7 +1003,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -1062,7 +1033,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -1088,7 +1058,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -1117,7 +1086,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 
@@ -1146,7 +1114,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 100
 				})
 				
@@ -1175,7 +1142,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -1201,7 +1167,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -1227,7 +1192,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20,
 				})
 				
@@ -1250,7 +1214,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -1276,7 +1239,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -1334,7 +1296,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				}
 				if tier != 0:
@@ -1366,7 +1327,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -1397,7 +1357,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 
@@ -1420,7 +1379,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				}
 				if tier > 0:
@@ -1449,7 +1407,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				}
 				if tier > 0:
@@ -1486,7 +1443,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 
@@ -1521,7 +1477,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 40
 				})
 			
@@ -1548,7 +1503,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -1579,7 +1533,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -1610,7 +1563,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 50
 				})
 				
@@ -1641,7 +1593,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 			
@@ -1676,7 +1627,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 			
@@ -1703,7 +1653,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -1738,7 +1687,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -1820,7 +1768,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 200
 				})
 				
@@ -1863,7 +1810,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 300
 				})
 				
@@ -1906,7 +1852,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 300
 				})
 				
@@ -1941,7 +1886,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 100
 			})
 				
@@ -1968,7 +1912,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 			
@@ -1995,7 +1938,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 			
@@ -2022,8 +1964,29 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
+				})
+
+			if machine["Name"] == "HeatPipe":
+				append_recipe({
+					"Name": tier_material[tier] + machine["Name"],
+					"Input":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + "Plate" + static_item,
+								"Count": 4
+							}
+						]
+					},
+					"Output":{
+						"Items":[
+							{
+								"Name": tier_material[tier] + machine["Name"] + static_item,
+								"Count": 1
+							}
+						]
+					},
+					"Ticks" : 10
 				})
 
 			if machine["Name"] == "OverflowPump":
@@ -2049,7 +2012,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -2076,7 +2038,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -2103,7 +2064,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -2134,7 +2094,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -2157,8 +2116,7 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
-					"Ticks" : 20
+					"Ticks" : 5
 				})
 			
 			if machine["Name"] == "Vent":
@@ -2184,7 +2142,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -2238,7 +2195,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -2265,7 +2221,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -2292,7 +2247,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 			
@@ -2350,7 +2304,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -2373,7 +2326,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 5
 				})
 				
@@ -2404,7 +2356,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -2439,7 +2390,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 100
 				})
 
@@ -2474,7 +2424,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 100
 				})
 				
@@ -2505,7 +2454,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -2536,7 +2484,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -2567,7 +2514,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -2598,7 +2544,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -2633,7 +2578,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 200
 				})
 				
@@ -2664,7 +2608,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 				
@@ -2691,7 +2634,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 
@@ -2718,7 +2660,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 
@@ -2776,7 +2717,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 
@@ -2803,7 +2743,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 			
@@ -2826,7 +2765,6 @@ for machine in machines:
 							}
 						]
 					},
-					"Tier": tier,
 					"Ticks" : 20
 				})
 	
