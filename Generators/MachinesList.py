@@ -1446,10 +1446,13 @@ machines = [
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("FluidInputAccessor"))
-		a:SetSidePos(Vec3i.front, Vec3i.new(0,0,0))
-		a:Bind(self:GetInputContainer())
+		local crafter = AbstractCrafter.cast(self)
+        crafter.speed = (crafter.level + 1) * 100
+        
+    	local acc = ResourceAccessor.new(crafter, "Input")
+        acc.side, acc.pos = Vec3i.front, Vec3i.zero
+        acc.is_input = true
+        acc.channel = "Fluid"
 		end
 		""",
 		"Description": ["FluidInput"],
@@ -1478,27 +1481,15 @@ machines = [
         crafter.energy_input_inventory = inv
         
         local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side = Vec3i.right
-        acc.pos = Vec3i.new(-1,-2,0)
+        acc.side, acc.pos = Vec3i.right, Vec3i.new(-1,-2,0)
         acc.inventory = inv
+        acc.channel = "Kinetic"
+        acc.is_input = true
         
-        inv = ResourceInventory.new(crafter, "OutputInv")
-        inv.item = StaticItem.find("Electricity")
-        inv.capacity = 20
-        crafter.energy_output_inventory = inv
-        
-    	acc = ResourceAccessor.new(crafter, "Output")
-        acc.side = Vec3i.front
-        acc.pos = Vec3i.zero
-        acc.inventory = inv
-        
-		
-		local a = self:CreateAccessor(Class.find("FluidOutputAccessor"))
-		a:SetSidePos(Vec3i.front, Vec3i.new(0,0,0))
-		a:Bind(self:GetOutputContainer())
-		local a = self:CreateAccessor(Class.find("KineticInputAccessor"))
-		a:SetSidePos(Vec3i.right, Vec3i.new(-1,-2,0))
-		a:Bind(self:GetInputContainer())
+    	acc = ResourceAccessor.new(crafter, "CraftOutput")
+        acc.side, acc.pos = Vec3i.front, Vec3i.zero
+        acc.channel = "Fluid"
+        acc.is_output = true
 		end
 		""",
 		"Description": ["KineticInput", "FluidOutput"],
