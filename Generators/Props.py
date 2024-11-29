@@ -717,7 +717,7 @@ for prop in props:
 		
 		temp_prop = { "Class": "BigStaticProp" if "IsBig" in prop else "SmallStaticProp",
 			"Name": prop["Name"] + variation_helper[variation],
-			"Mesh": "Props/" + prop["Name"] + "/" + prop["Name"] + variation_helper[variation],
+			"Mesh": "/Game/Props/" + prop["Name"] + "/" + prop["Name"] + variation_helper[variation],
 			"ScaleMin": prop["ScaleMin"],
 			"ScaleMax": prop["ScaleMax"],
 			"ProjectToTerrainPower": prop["ProjectToTerrainPower"],

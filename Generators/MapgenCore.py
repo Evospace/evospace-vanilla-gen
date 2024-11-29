@@ -152,7 +152,7 @@ for object in mapgen_objects:
 		"Image": "T_" + object["Name"],
 		
 		"ItemLogic": building_brush_slot_logic,
-		"Mesh": "Models/piece",
+		"Mesh": "/Game/Models/piece",
 		"Materials" : ["/Game/Materials/" + object["Drops"]],
 		"Color": object["Item"],
 		"LogicJson":

@@ -19,7 +19,7 @@ parts = [
 		"StartTier": 1,
 		"EndTier": 100,
 		"StackSize": 64,
-		"Mesh":"Models/PartsCrate",
+		"Mesh":"/Game/Models/PartsCrate",
 		"Materials":["/Game/Materials/Pine","/Game/Materials/%Material%"],
 	},
 	{

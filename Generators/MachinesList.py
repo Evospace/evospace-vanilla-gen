@@ -1297,10 +1297,13 @@ machines = [
 		"BlockLogic":"DumpCrafterBlockLogic",
 		"BlockCreation":"""
 		return function(self)
-		
-		local a = self:CreateAccessor(Class.find("FluidInputAccessor"))
-		a:SetSidePos(Vec3i.down, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
+        local crafter = AbstractCrafter.cast(self)
+        
+        local acc = ResourceAccessor.new(crafter, "Input")
+        acc.side, acc.pos = Vec3i.down, Vec3i.zero
+        acc.inventory = input
+        acc.is_input = true
+        acc.channel = "Fluid"
 		end
 		""",
 		"Description": ["FluidInput"],

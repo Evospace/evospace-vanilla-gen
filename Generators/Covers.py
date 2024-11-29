@@ -8,12 +8,12 @@ tier_materials = ("/Game/Materials/Stone", "/Game/Materials/Copper", "/Game/Mate
 covers = [
     {
         "Name": "CableSide",
-        "Mesh": "Covers/PipeSide",
+        "Mesh": "/Game/Covers/PipeSide",
         "Materials": ["/Game/Materials/Rubber2"]
     },
     {
         "Name": "CableCenter",
-        "Mesh": "Covers/PipeCenter",
+        "Mesh": "/Game/Covers/PipeCenter",
         "Materials": ["/Game/Materials/Rubber2"]
     },{
         "Name": "HeatSide",
@@ -21,24 +21,29 @@ covers = [
         "Materials": ["/Game/Materials/HeatingCopper"]
     },{
         "Name": "HeatCenter",
-        "Mesh": "Covers/HeatCenter",
+        "Mesh": "/Game/Covers/HeatCenter",
         "Materials": ["/Game/Materials/HeatingCopper"]
     },{
 		"Name": "Cover",
-		"Mesh": "Cover",
+		"Mesh": "/Game/Cover",
         "Materials": [""]
 	},{
 		"Name": "StoneFurnace",
-		"Mesh": "019/FurnaceRound",
+		"Mesh": "/Game019/FurnaceRound",
         "Materials": ["/Game/019/StoneFurnaceMaterial"]
 	},{
 		"Name": "RobotArmBase",
-		"Mesh": "019/RobotArmBase",
+		"Mesh": "/Game/019/RobotArmBase",
         "Materials": []
 	},{
-		"Name": "BuilingBox",
-		"Mesh": "BoxStaticMesh",
+		"Name": "BuildingBox",
+		"Mesh": "/Game/BoxStaticMesh",
         "Materials": [],
+        "NoCollision": True
+	},{
+		"Name": "ElectricityInput",
+		"Mesh": "/Game/020/AсcessorPlane2",
+        "Materials": ["/Game/Materials/ImportIco"],
         "NoCollision": True
 	}
 ]
@@ -48,19 +53,19 @@ objects_array = []
 for mat in paint_colors + paint_tiers:
 	covers.append({
 		"Name": "Cover" + mat,
-		"Mesh": "Cover",
+		"Mesh": "/Game/Cover",
         "Materials": [mat]
 	})
      
 for mat, num in zip(paint_tiers, range(0,7+1)):
     covers.append({
         "Name": mat+"PipeCenter",
-        "Mesh": "Covers/PipeCenter",
+        "Mesh": "/Game/Covers/PipeCenter",
         "Materials": ["/Game/Materials/"+mat]
     })
     covers.append({
         "Name": mat+"PipeSide",
-        "Mesh": "Covers/PipeSide",
+        "Mesh": "/Game/Covers/PipeSide",
         "Materials": ["/Game/Materials/"+mat],
         "Item": mat+"Pipe"
     })
@@ -71,20 +76,20 @@ for mat, num in zip(paint_tiers, range(0,7+1)):
     })
     covers.append({
         "Name": mat+"Scaffold",
-        "Mesh": "Models/Scafold",
+        "Mesh": "/Game/Models/Scafold",
         "Materials": ["/Game/Materials/"+mat]
     })
 
 for mat, num in zip(paint_metals, range(1,7+1)):
     covers.append({
 		"Name": mat+"Furnace",
-		"Mesh": "019Content/FurnaceRound",
+		"Mesh": "/Game/019Content/FurnaceRound",
         "Materials": ["/Game/019/FurnaceMaterial"],
         "Tier": num
 	})
     covers.append({
 		"Name": mat+"Conveyor",
-		"Mesh": "019/conveyor_end",
+		"Mesh": "/Game/019/conveyor_end",
         "Materials": ["/Game/Materials/RubberWithTierParam", tier_materials[num]],
         "Tier": num
 	})
@@ -96,7 +101,7 @@ for mat, num in zip(paint_metals, range(1,7+1)):
 	})
     covers.append({
 		"Name": mat+"ElectricEngine",
-		"Mesh": "019/ElectricEngine",
+		"Mesh": "/Game/019/ElectricEngine",
         "Materials": ["/Game/019/ElectricEngineMaterial"],
         "Tier": num
 	})
@@ -115,7 +120,7 @@ for cover in covers:
             "DescriptionParts":[["WorldObject","common"]],
         })
     staticCover = { "Class": static_cover,
-        "Name": cover["Name"] + static_cover,
+        "Name": cover["Name"],
         "Mesh": cover["Mesh"],
         "Materials": cover["Materials"]
     }
