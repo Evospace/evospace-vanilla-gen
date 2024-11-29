@@ -90,7 +90,7 @@ for ore_type in ore_types:
 	
 	item = { "Class": "StaticItem",
 		"Name": item_name,
-		"Mesh": "Models/Ore",
+		"Mesh": "/Game/Models/Ore",
 		"Image": "T_" + ore_type["Name"] + "Ore",
 		"StackSize": 64, 
 		"Category": "Ore",
@@ -130,7 +130,7 @@ for ore_type in ore_types:
 		item = { "Class": "StaticItem",
 			"Name": ore_type["Name"] + "ImpureOreGravel" + static_item,
 			"Label": ore_type["Name"] + " Impure Ore Gravel",
-			"Mesh": "Models/Gravel",
+			"Mesh": "/Game/Models/Gravel",
 			
 			"Image": "T_" + ore_type["Name"] + "ImpureOreGravel",
 			"StackSize": 64, 
@@ -155,7 +155,7 @@ for ore_type in ore_types:
 		item = { "Class": "StaticItem",
 			"Name": ore_type["Name"] + "OreGravel" + static_item,
 			"Label": ore_type["Name"] + " Ore Gravel",
-			"Mesh": "Models/Gravel",
+			"Mesh": "/Game/Models/Gravel",
 			
 			"Image": "T_" + ore_type["Name"] + "OreGravel",
 			"StackSize": 64,
@@ -180,7 +180,7 @@ for ore_type in ore_types:
 		item = { "Class": "StaticItem",
 			"Name": ore_type["Name"] + "OreDust" + static_item,
 			"Label": ore_type["Name"] + " Impure Ore Dust",
-			"Mesh": "Models/Dust",
+			"Mesh": "/Game/Models/Dust",
 			
 			"Image": "T_" + ore_type["Name"] + "OreDust",
 			"StackSize": 64,

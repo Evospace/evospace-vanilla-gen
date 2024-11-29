@@ -122,19 +122,19 @@ materials = [
 		"Name" : "CircuitBoard",
 		"Label" : "Circuit Board",
 		"IsExact": True,
-		"Mesh":"Models/BoardCrate",
+		"Mesh":"/Game/Models/BoardCrate",
 		"Materials":["/Game/Materials/Plastic"],
 	},{
 		"Name" : "AdvancedCircuitBoard",
 		"Label" : "Advanced Circuit Board",
 		"IsExact": True,
-		"Mesh":"Models/BoardCrate",
+		"Mesh":"/Game/Models/BoardCrate",
 		"Materials":["/Game/Materials/DarkGreenPlastic"],
 	},{
 		"Name" : "Plastic",
 		"Label" : "Plastic",
 		"IsExact": True,
-		"Mesh":"Models/Ingot",
+		"Mesh":"/Game/Models/Ingot",
 		"Materials":["/Game/Materials/GreenPlastic"],
 	},{
 		"Name" : "Steel",
@@ -237,7 +237,7 @@ materials = [
 		"SmeltLevel": 4,
 		"IsExact": True,
 		"Tier": 5,
-        "Mesh":"Models/Ingot",
+        "Mesh":"/Game/Models/Ingot",
         "Materials":["/Game/Materials/HotMetal"],
 	},{
 		"Name": "HotNeutroniumIngot",
@@ -245,7 +245,7 @@ materials = [
 		"SmeltLevel": 4,
 		"IsExact": True,
 		"Tier": 5,
-        "Mesh":"Models/Ingot",
+        "Mesh":"/Game/Models/Ingot",
         "Materials":["/Game/Materials/VeryHotMetal"],
 	}
 	#,{
@@ -393,7 +393,7 @@ materials = [
 		"Name": "Sulfur",
 		"Label": "Sulfur",
 		"IsExact": True,
-		"Mesh": "Models/Dust",
+		"Mesh": "/Game/Models/Dust",
 	},{
 		"Name": "Steam",
 		"Label": "Steam",
@@ -417,7 +417,7 @@ materials = [
 		},
 		"Tier": 0,
 		"Color":[0.2,0.2,0.0],
-		"Mesh": "Models/Piece"
+		"Mesh": "/Game/Models/Piece"
 	},{
 		"Name": "Coal",
 		"Label": "Coal",
@@ -429,7 +429,7 @@ materials = [
 		"Tier": 0,
 		"StackSize": 64,
 		"Color":[0.0,0.0,0.0],
-		"Mesh": "Models/Piece"
+		"Mesh": "/Game/Models/Piece"
 	},{
 		"Name": "Coke",
 		"Label": "Coke",
@@ -440,7 +440,7 @@ materials = [
 			"HeatPerTick": 30*1.5
 		},
 		"Color":[0.0,0.0,0.0],
-		"Mesh": "Models/Piece"
+		"Mesh": "/Game/Models/Piece"
 	},{
 		"Name": "Creosote",
 		"Label": "Creosote",
@@ -451,7 +451,7 @@ materials = [
 		},
 		"Tier": 0,
 		"Color":[0.0,0.0,0.0],
-		"Mesh": "Models/Piece"
+		"Mesh": "/Game/Models/Piece"
 	},{
 		"Name": "ProducerGas",
 		"Label": "Producer Gas",
@@ -553,7 +553,7 @@ materials = [
 		"Label": "Organics",
 		"IsExact": True,
 		"Tier": 0,
-		"Mesh": "Models/Piece",
+		"Mesh": "/Game/Models/Piece",
 		"Description":[["Organics","common"]],
 	},{
 		"Name": "Biomass",
@@ -572,7 +572,7 @@ materials = [
 		"Label": "Clay",
 		"Tier": 0,
 		"IsExact": True,
-		"Mesh": "Models/Piece"
+		"Mesh": "/Game/Models/Piece"
 	},{
 		"Name": "OreWater",
 		"Label": "Ore Water",
@@ -581,7 +581,7 @@ materials = [
 		"Name": "RareEarthElement",
 		"Label": "Rare Earth Element",
 		"IsExact": True,
-		"Mesh": "Models/Dust",
+		"Mesh": "/Game/Models/Dust",
 	},{
 		"Name": "Log",
 		"Label": "Log",
@@ -808,7 +808,7 @@ materials = [
 		"StackSize": 64,
 		"IsExact": True,
 		"Category": "Parts",
-		"Mesh":"Models/WireCrate",
+		"Mesh":"/Game/Models/WireCrate",
 		"Materials":["/Game/CopperWiresOnCrate"],
 	},{
 		"Name" : "GoldWire",
@@ -816,7 +816,7 @@ materials = [
 		"StackSize": 64,
 		"IsExact": True,
 		"Category": "Parts",
-		"Mesh":"Models/WireCrate",
+		"Mesh":"/Game/Models/WireCrate",
 		"Materials":["/Game/Materials/GoldWiresOnCrate"],
 	},{
 		"Name" : "SuperconductorWire",
@@ -824,7 +824,7 @@ materials = [
 		"StackSize": 64,
 		"IsExact": True,
 		"Category": "Parts",
-		"Mesh":"Models/WireCrate",
+		"Mesh":"/Game/Models/WireCrate",
 		"Materials":["/Game/Materials/SuperWiresOnCrate"],
 	},{
 		"Name" : "Circuit",
@@ -833,7 +833,7 @@ materials = [
 		"IsExact": True,
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
-		"Mesh": "Models/CircuitCrate"
+		"Mesh": "/Game/Models/CircuitCrate"
 	},{
 		"Name" : "AdvancedCircuit",
 		"Label" : "Advanced Circuit",
@@ -841,7 +841,7 @@ materials = [
 		"IsExact": True,
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
-		"Mesh": "Models/Circuit2Crate"
+		"Mesh": "/Game/Models/Circuit2Crate"
 	},{
 		"Name" : "Processor",
 		"Label" : "Processor",
@@ -849,7 +849,7 @@ materials = [
 		"IsExact": True,
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
-		"Mesh": "Models/Circuit3Crate"
+		"Mesh": "/Game/Models/Circuit3Crate"
 	},{
 		"Name" : "QuantumCircuit",
 		"Label" : "Quantum Circuit",
@@ -857,7 +857,7 @@ materials = [
 		"IsExact": True,
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
-		"Mesh": "Models/Circuit3Crate"
+		"Mesh": "/Game/Models/Circuit3Crate"
 	},{
 		"Name" : "QuantumProcessor",
 		"Label" : "Quantum Processor",
@@ -865,14 +865,14 @@ materials = [
 		"IsExact": True,
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
-		"Mesh": "Models/Circuit3Crate"
+		"Mesh": "/Game/Models/Circuit3Crate"
 	},{
 		"Name" : "QuantumCore",
 		"Label" : "Quantum Core",
 		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Parts",
-		"Mesh": "Models/Circuit3Crate"
+		"Mesh": "/Game/Models/Circuit3Crate"
 	},{
 		"Name" : "QuantumBrain",
 		"Label" : "Quantum Brain",
@@ -880,7 +880,7 @@ materials = [
 		"IsExact": True,
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
-		"Mesh": "Models/Circuit3Crate"
+		"Mesh": "/Game/Models/Circuit3Crate"
 	},{
 		"Name" : "Cell",
 		"Label" : "Cell",

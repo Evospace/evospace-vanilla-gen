@@ -390,7 +390,7 @@ for material in materials:
 			"Name": material["Name"] + "Ingot" + static_item,
 			"Image": "T_" + material["Name"] + "Ingot",
 			"StackSize": 128,
-			"Mesh": "Models/Ingot",
+			"Mesh": "/Game/Models/Ingot",
 			"Materials" : [
 				"/Game/Materials/" + material["Name"]
 			],			
@@ -716,7 +716,7 @@ for material in materials:
 			"StackSize": 64,
 			
 			"LabelParts": [[material["Name"] + "Dust", "parts"]],
-			"Mesh": "Models/Dust",
+			"Mesh": "/Game/Models/Dust",
 			"Materials": [
 				"/Game/Materials/" + material["Name"] + "Dust"
 			],

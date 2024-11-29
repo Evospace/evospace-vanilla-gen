@@ -504,7 +504,8 @@ append_levels({
 	"RequiredResearch": ["Separator", "Circuit"],
 	"Levels": [2,2],
 	"Unlocks": [["Hand" + base_recipe, "AdvancedCircuit"],["Assembler" + base_recipe, "AdvancedCircuit"]],
-	"MainResearch": True
+	"MainResearch": True,
+	"CostMul":2.5,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -540,7 +541,8 @@ append_levels({
 	"RequiredResearch": ["SiliconWafer", "AdvancedCircuitBoard"],
 	"Unlocks": [["Hand" + base_recipe, "Processor"],["Assembler" + base_recipe, "Processor"],["Assembler" + base_recipe, "Processor2"]],
 	"Levels": [3,3],
-	"MainResearch": True
+	"MainResearch": True,
+	"CostMul":2.5,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -549,7 +551,8 @@ append_levels({
 	"RequiredResearch": ["Processor" + static_research],
 	"Levels": [4,4],
 	"Unlocks": [["Hand" + base_recipe, "QuantumCore"],["Assembler" + base_recipe, "QuantumCore"]],
-	"MainResearch": True
+	"MainResearch": True,
+	"CostMul":2.5,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -567,7 +570,8 @@ append_levels({
 	"RequiredResearch": ["QuantumCircuit" + static_research],
 	"Levels": [5,5],
 	"Unlocks": [["Hand" + base_recipe, "QuantumProcessor"],["Assembler" + base_recipe, "QuantumProcessor"]],
-	"MainResearch": True
+	"MainResearch": True,
+	"CostMul":2.5,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -576,7 +580,8 @@ append_levels({
 	"RequiredResearch": ["QuantumProcessor" + static_research],
 	"Levels": [6,6],
 	"Unlocks": [["Hand" + base_recipe, "QuantumBrain"],["Assembler" + base_recipe, "QuantumBrain"]],
-	"MainResearch": True
+	"MainResearch": True,
+	"CostMul":2.5,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -845,6 +850,7 @@ append_levels({
 	 "Unlocks": [["Hand" + base_recipe, "%Material%Portal"],["Constructor" + base_recipe, "%Material%Portal"]],
 	 "Levels": [7,7],
 	 "MainResearch": True,
+	 "CostMul": 5
  })
 append_levels({
 	"Class": "StaticResearch",
