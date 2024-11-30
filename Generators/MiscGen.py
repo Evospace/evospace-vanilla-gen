@@ -375,10 +375,6 @@ for one in static_mesh_block:
 		"StackSize": 32,
 		"LabelParts":[[one["Name"],"misc"]],
 	})	
-	#objects_array.append({ "Class": tesselator_static_mesh,
-	#	"Name": one["Name"] + tesselator_static_mesh,
-	#	"Mesh": "Models/" + one["Name"],
-	#})
 	objects_array.append({
 		"Class": "StaticBlock",
 		"Name": one["Name"] + static_block,

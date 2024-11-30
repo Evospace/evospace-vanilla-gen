@@ -468,7 +468,6 @@ for material in materials:
 			"Name": material["Name"] + "Block" + static_item,
 			"Image": "T_" + material["Name"] + "Block",
 			"StackSize": 999,
-			#"Mesh": "Models/Ingot",
 			"Materials" : [
 				"/Game/Materials/" + material["Name"]
 			],			
