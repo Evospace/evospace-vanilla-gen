@@ -220,8 +220,8 @@ building_big_prop_logic = "BuildingPropItemLogic"
 cover_item_logic = "CoverItemLogic"
 
 building_brush_slot_logic = "BuildingBrushItemLogic"
-base_recipe = "BaseRecipeDictionary"
-breaking_recipe = "BaseRecipeDictionary"
+base_recipe = "RecipeDictionary"
+breaking_recipe = "RecipeDictionary"
 ico_generator = "IcoGenerator"
 
 tesselator = "Tesselator"

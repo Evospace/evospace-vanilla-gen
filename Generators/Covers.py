@@ -95,7 +95,7 @@ for mat, num in zip(paint_metals, range(1,7+1)):
 	})
     covers.append({
 		"Name": mat+"ConveyorBox",
-		"Mesh": "019/conveyor_box",
+		"Mesh": "/Game/019/conveyor_box",
         "Materials": [tier_materials[num]],
         "Tier": num
 	})
