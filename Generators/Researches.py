@@ -261,11 +261,11 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "SolidDump" + static_research,
-	"LabelParts": [["SolidDump", "machines"]],
+	"Name": "Destroyer" + static_research,
+	"LabelParts": [["Destroyer", "machines"]],
 	"Levels": [2,2],
 	"RequiredResearch": ["Furnace" + static_research],
-	"Unlocks": [["Hand" + base_recipe, tier_material[2] + "SolidDump"],["Constructor" + base_recipe, tier_material[2] + "SolidDump"]],
+	"Unlocks": [["Hand" + base_recipe, tier_material[2] + "Destroyer"],["Constructor" + base_recipe, tier_material[2] + "Destroyer"]],
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -291,23 +291,6 @@ append_levels({
 	"RequiredResearch": ["Furnace" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%FluidFurnace"],["Constructor" + base_recipe, "%Material%FluidFurnace"]],
 	"Levels": [1,7],
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "FluidDumping" + static_research,
-	"LabelParts": [["FluidDumping", "researches"]],
-	"RequiredResearch": ["Container" + static_research],
-	"Levels": [1,7],
-	"Unlocks": [["Hand" + base_recipe, "%Material%FluidDump"],["Constructor" + base_recipe, "%Material%FluidDump"]],
-	"CostMul":0.5,
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "GasDump" + static_research,
-	"LabelParts": [["GasDump", "machines"]],
-	"Levels": [2,2],
-	"RequiredResearch": ["Container" + static_research],
-	"Unlocks": [["Hand" + base_recipe, tier_material[2] + "GasDump"],["Constructor" + base_recipe, tier_material[2] + "GasDump"]],
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -938,14 +921,6 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "Deconstructor" + static_research,
-	"LabelParts": [["Deconstructor", "machines"]],
-	"RequiredResearch": ["Constructor" + static_research],
-	"Unlocks": [["Hand" + base_recipe, "%Material%Deconstructor"],["Constructor" + base_recipe, "%Material%Deconstructor"]],
-	"Levels": [2,7],
-})
-append_levels({
-	"Class": "StaticResearch",
 	"Name": "BigTerminal" + static_research,
 	"LabelParts": [["BigTerminal", "machines"]],
 	"RequiredResearch": ["Terminal" + static_research],
@@ -1214,7 +1189,6 @@ csv.append(["AdditionalStorage", "Additional Storage"])
 csv.append(["HeatTransferring", "Heat Transferring"])
 csv.append(["BasicMachines", "Basic Machines"])
 csv.append(["Container", "Fluid Storage"])
-csv.append(["FluidDumping", "Fluid Dumping"])
 csv.append(["SingleTypeStorage", "Single Type Storage"])
 csv.append(["DistributedComputing", "Distributed Computing"])
 csv.append(["Electrolysis", "Electrolysis"])

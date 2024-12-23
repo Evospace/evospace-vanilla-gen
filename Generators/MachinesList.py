@@ -24,6 +24,7 @@ machines = [
         acc.inventory = inv
         acc.is_input = true
         acc.channel = "Kinetic"
+        acc.cover = StaticCover.find("KineticInput")
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -32,6 +33,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
+        "Recipes": "CuttingMachine",
 		"BlockCreation":"""
         local crafter = AbstractCrafter.cast(self)
         
@@ -45,6 +47,7 @@ machines = [
         acc.inventory = inv
         acc.is_input = true
         acc.channel = "Kinetic"
+        acc.cover = StaticCover.find("KineticInput")
 		""",
 		"Description": ["KineticInput"],
 	}
@@ -75,6 +78,7 @@ machines = [
         acc.side = Vec3i.back
         acc.pos = Vec3i.zero
         acc.inventory = input
+        acc.cover = StaticCover.find("ElectricityInput")
 		""",
 		"RequiredResearch":["Fermentation"+static_research],
 		"Description": ["ElectricInput"],
@@ -96,6 +100,8 @@ machines = [
         acc.side = Vec3i.back
         acc.pos = Vec3i.zero
         acc.inventory = input
+        acc.channel = "Electricity"
+        acc.cover = StaticCover.find("ElectricityInput")
 		""",
 		"Description": ["ElectricInput"],
 	},{
@@ -117,6 +123,7 @@ machines = [
         acc.inventory = inv
         acc.is_input = true
         acc.channel = "Kinetic"
+        acc.cover = StaticCover.find("KineticInput")
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -140,6 +147,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
+        "Recipes": "AutomaticHammer",
 		"BlockCreation":"""
         local crafter = AbstractCrafter.cast(self)
         
@@ -153,6 +161,7 @@ machines = [
         acc.inventory = inv
         acc.is_input = true
         acc.channel = "Kinetic"
+        acc.cover = StaticCover.find("KineticInput")
 		""",
 		"Description": ["KineticInput"],
 	},{
@@ -397,6 +406,7 @@ machines = [
         acc.inventory = inv
         acc.is_input = true
         acc.channel = "Heat"
+        acc.cover = StaticCover.find("HeatInput")
         
         local inv = ResourceInventory.new(crafter, "OutputInv")
         inv.item = StaticItem.find("Kinetic")
@@ -408,6 +418,7 @@ machines = [
         acc.inventory = inv
         acc.is_output = true
         acc.channel = "Kinetic"
+        acc.cover = StaticCover.find("KineticOutput")
 		""",
 		"Description": ["HeatInput", "KineticOutput","PowerOutput"],
 		"PowerOutput": 10,
@@ -560,6 +571,7 @@ machines = [
         acc.inventory = inv
         acc.is_input = true
         acc.channel = "Kinetic"
+        acc.cover = StaticCover.find("KineticInput")
         
         local inv = ResourceInventory.new(crafter, "OutputInv")
         inv.item = StaticItem.find("Electricity")
@@ -571,6 +583,7 @@ machines = [
         acc.inventory = inv
         acc.is_output = true
         acc.channel = "Electricity"
+        acc.cover = StaticCover.find("ElectricityOutput")
 		""",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
 		"PowerOutput": 18,
@@ -594,12 +607,14 @@ machines = [
         acc.inventory = inv
         acc.is_input = true
         acc.channel = "Electricity"
+        acc.cover = StaticCover.find("ElectricityInput")
         
         local acc = ResourceAccessor.new(crafter, "Input2")
         acc.side, acc.pos = Vec3i.down, Vec3i.zero
         acc.inventory = inv
         acc.is_input = true
         acc.channel = "Electricity"
+        acc.cover = StaticCover.find("ElectricityInput")
         
         local inv = ResourceInventory.new(crafter, "OutputInv")
         inv.item = StaticItem.find("Kinetic")
@@ -611,6 +626,7 @@ machines = [
         acc.inventory = inv
         acc.is_output = true
         acc.channel = "Kinetic"
+        acc.cover = StaticCover.find("KineticOutput")
         """,
 		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
 		"PowerOutput": 55,
@@ -905,6 +921,7 @@ machines = [
         acc.inventory = inv
         acc.is_output = true
         acc.channel = "Heat"
+        acc.cover = StaticCover.find("HeatOutput")
 		""",
 		"Description": ["HeatOutput"],
 	},{
@@ -942,6 +959,7 @@ machines = [
         acc.inventory = inv
         acc.is_input = true
         acc.channel = "Heat"
+        acc.cover = StaticCover.find("HeatInput")
 		"""
 	},{
 		"Name": "BlastFurnace",
@@ -1165,89 +1183,34 @@ machines = [
 		""",
 		"Description": ["ElectricInput"],
 	},{
-		"Name": "Deconstructor",
-		"Label": "Deconstructor",
-		"StartTier": 2,
-		"EndTier": 10,
+		"Name": "Destroyer",
+		"Label": "Destroyer",
 		"Positions": [
-			[0,0,0],[-1,0,0],
-			[0,0,1],[-1,0,1],
-			
-			[0,-1,0],[-1,-1,0],
-			[0,-1,1],[-1,-1,1],
-		],
-		"BlockLogic":"DeconstructorCrafterBlockLogic",
-		"BlockCreation":"""
-        local a = self:new_resource_accessor("Input")
-		a:SetSidePos(Vec3i.front, Vec3i.zero)
-        local res = self:get_resource_component()
-		a:Bind(res)
-        res.input = 20
-        res.input_item = StaticItem.find("Electricity")
-		""",
-		"Description": ["ElectricInput"],
-	},
-	{
-		"Name": "FluidDump",
-		"Label": "Fluid Dump",
-		"Positions": [
-			[0,0,0],[0,-1,0],[0,-2,0],[0,1,0],[0,2,0],
-			[-1,0,0],[-1,-1,0],[-1,-2,0],[-1,1,0],[-1,2,0],
-			[-2,0,0],[-2,-1,0],[-2,-2,0],[-2,1,0],[-2,2,0],
-			[-3,0,0],[-3,-1,0],[-3,-2,0],[-3,1,0],[-3,2,0],
-			[-4,0,0],[-4,-1,0],[-4,-2,0],[-4,1,0],[-4,2,0],
+			[0,0,0],[0,1,0],[0,2,0],
+            [1,0,0],[1,1,0],[1,2,0],
+            
+			[0,0,1],[0,1,1],[0,2,1],
+            [1,0,1],[1,1,1],[1,2,1],
 		],
 		"StartTier": 1,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafter",
-		"BlockCreation":"""
-        local crafter = AbstractCrafter.cast(self)
-        
-        local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side, acc.pos = Vec3i.front, Vec3i.zero
-        acc.inventory = input
-        acc.is_input = true
-        acc.channel = "Fluid"
-		""",
-		"Description": ["FluidInput"],
-	},{
-		"Name": "GasDump",
-		"Label": "Gas Dump",
-		"Positions": [
-			[0,0,0]
-		],
-		"StartTier": 2,
-		"EndTier": 2,
 		"BlockLogic":"DumpCrafterBlockLogic",
 		"BlockCreation":"""
         local crafter = AbstractCrafter.cast(self)
         
-        local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side, acc.pos = Vec3i.down, Vec3i.zero
-        acc.is_input = true
+        local inv = ResourceInventory.new(crafter, "InputInv")
+        inv.capacity = 20
+        crafter.energy_input_inventory = inv
+        
+    	acc = ResourceAccessor.new(crafter, "FluidInput")
+        acc.side, acc.pos = Vec3i.back, Vec3i.zero
         acc.channel = "Fluid"
+        acc.is_input = true
+        acc.cover = StaticCover.find("FluidInput")
+        acc.inventory = inv
 		""",
 		"Description": ["FluidInput"],
 	},{
-		"Name": "SolidDump",
-		"Label": "Solid Dump",
-		"Positions": [
-			[0,0,0],[-1,0,0],
-			[0,-1,0],[-1,-1,0],
-		],
-		"StartTier": 2,
-		"EndTier": 2,
-		"BlockLogic":"DumpAnyBlockLogic",
-		"Description": ["SolidInput"],
-	},
-	#,{
-	#	"Name": "Liquifier",
-	#	"Label": "Liquifier",
-	#	"StartTier": 2,
-	#	"EndTier": 3,
-	#	"Description": ""
-	#}
-	{
 		"Name": "Lamp",
 		"Label": "Lamp",
 		"StartTier": 1,
@@ -1400,11 +1363,13 @@ machines = [
         acc.inventory = inv
         acc.channel = "Kinetic"
         acc.is_input = true
+        acc.cover = StaticCover.find("KineticInput")
         
     	acc = ResourceAccessor.new(crafter, "CraftOutput")
         acc.side, acc.pos = Vec3i.front, Vec3i.zero
         acc.channel = "Fluid"
         acc.is_output = true
+        acc.cover = StaticCover.find("FluidOutput")
 		""",
 		"Description": ["KineticInput", "FluidOutput"],
 	},{
@@ -1984,7 +1949,7 @@ machines = [
         "BlockLogic":"CableBundleBlockLogic",
 		"Description": ["ElectricConductor"],
         "CustomData":{
-			"SplineMesh": "CoreContent/Rail2",
+			"SplineMesh": "/Game/CoreContent/Rail2",
 		}
 	},{
 		"Name": "Rails",
@@ -1994,7 +1959,7 @@ machines = [
         "BlockLogic":"CableBundleBlockLogic",
 		"Description": ["ElectricConductor"],
         "CustomData":{
-			"SplineMesh": "CoreContent/Rail2",
+			"SplineMesh": "/Game/CoreContent/Rail2",
 		}
 	}
 ]

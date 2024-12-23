@@ -136,16 +136,8 @@
         "Robot Arm"
     ],
     [
-        "FilteringRobotArm",
-        "Filtering Robot Arm"
-    ],
-    [
         "Pump",
         "Pump"
-    ],
-    [
-        "FilteringPump",
-        "Filtering Pump"
     ],
     [
         "Smelter",
@@ -226,22 +218,6 @@
     [
         "Constructor",
         "Constructor"
-    ],
-    [
-        "Deconstructor",
-        "Deconstructor"
-    ],
-    [
-        "FluidDump",
-        "Fluid Dump"
-    ],
-    [
-        "GasDump",
-        "Gas Dump"
-    ],
-    [
-        "SolidDump",
-        "Solid Dump"
     ],
     [
         "Lamp",

@@ -17,7 +17,7 @@ covers = [
         "Materials": ["/Game/Materials/Rubber2"]
     },{
         "Name": "HeatSide",
-        "Mesh": "Covers/HeatSide",
+        "Mesh": "/Game/Covers/HeatSide",
         "Materials": ["/Game/Materials/HeatingCopper"]
     },{
         "Name": "HeatCenter",
@@ -25,11 +25,11 @@ covers = [
         "Materials": ["/Game/Materials/HeatingCopper"]
     },{
 		"Name": "Cover",
-		"Mesh": "/Game/Cover",
+		"Mesh": "/Game/Covers/SimpleCover",
         "Materials": [""]
 	},{
 		"Name": "StoneFurnace",
-		"Mesh": "/Game019/FurnaceRound",
+		"Mesh": "/Game/019/FurnaceRound",
         "Materials": ["/Game/019/StoneFurnaceMaterial"]
 	},{
 		"Name": "RobotArmBase",
@@ -42,8 +42,35 @@ covers = [
         "NoCollision": True
 	},{
 		"Name": "ElectricityInput",
-		"Mesh": "/Game/020/AсcessorPlane2",
-        "Materials": ["/Game/Materials/ImportIco"],
+		"Mesh": "/Game/Covers/ElectricityIn",
+        "NoCollision": True
+	},{
+		"Name": "ElectricityOutput",
+		"Mesh": "/Game/Covers/ElectricityOut",
+        "NoCollision": True
+	},{
+		"Name": "KineticInput",
+		"Mesh": "/Game/Covers/KineticIn",
+        "NoCollision": True
+	},{
+		"Name": "KineticOutput",
+		"Mesh": "/Game/Covers/KineticOut",
+        "NoCollision": True
+	},{
+		"Name": "HeatInput",
+		"Mesh": "/Game/Covers/HeatIn",
+        "NoCollision": True
+	},{
+		"Name": "HeatOutput",
+		"Mesh": "/Game/Covers/HeatOut",
+        "NoCollision": True
+	},{
+		"Name": "FluidInput",
+		"Mesh": "/Game/Covers/FluidIn",
+        "NoCollision": True
+	},{
+		"Name": "FluidOutput",
+		"Mesh": "/Game/Covers/FluidOut",
         "NoCollision": True
 	}
 ]
@@ -53,7 +80,7 @@ objects_array = []
 for mat in paint_colors + paint_tiers:
 	covers.append({
 		"Name": "Cover" + mat,
-		"Mesh": "/Game/Cover",
+		"Mesh": "/Game/Covers/SimpleCover",
         "Materials": [mat]
 	})
      
@@ -71,7 +98,7 @@ for mat, num in zip(paint_tiers, range(0,7+1)):
     })
     covers.append({
         "Name": mat+"Corner",
-        "Mesh": "CoreContent/Corner",
+        "Mesh": "/Game/CoreContent/Corner",
         "Materials": ["/Game/Materials/"+mat]
     })
     covers.append({
@@ -121,9 +148,11 @@ for cover in covers:
         })
     staticCover = { "Class": static_cover,
         "Name": cover["Name"],
-        "Mesh": cover["Mesh"],
-        "Materials": cover["Materials"]
+        "Mesh": cover["Mesh"]
     }
+    if "Materials" in cover:
+         staticCover["Materials"] = cover["Materials"]
+
     if "Tier" in cover:
         staticCover["Tier"] = cover["Tier"]
 

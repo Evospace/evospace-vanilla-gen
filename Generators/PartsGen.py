@@ -15,8 +15,6 @@ recipes_furnace = []
 recipes_press = []
 recipes_wrench = []
 recipes_smelt = []
-recipes_liq_dump = []
-recipes_gas_dump = []
 recipes_gasfurn = []
 recipes_disassembler = []
 
@@ -607,24 +605,6 @@ for material in materials:
 				"Ticks" : material["Burnable"]["BurnTime"],
 				"Name": material["Name"] + "",
 			})
-		
-		recipes_liq_dump.append({
-			"Name": material["Name"] + "Dumping",
-			"Input":{
-				"Items":[
-					{
-						"Name": material["Name"] + "" + static_item,
-						"Count": 1000 if material["Name"] != "Steam" else 10000
-					}
-				]
-			},
-			"Output":{
-				"Items":
-				[
-				]
-			},
-			"Ticks" : 200,
-		})
 	
 	# gas
 	if "IsGas" in material:
@@ -686,24 +666,6 @@ for material in materials:
 				"Ticks" : material["Burnable"]["BurnTime"],
 				"Name": material["Name"],
 			})
-		
-		recipes_gas_dump.append({
-			"Name": material["Name"],
-			"Input":{
-				"Items":[
-					{
-						"Name": material["Name"] + "" + static_item,
-						"Count": 1000 if material["Name"] != "Steam" else 10000
-					}
-				]
-			},
-			"Output":{
-				"Items":
-				[
-				]
-			},
-			"Ticks" : 1,
-		})
 	
 	# dust
 	if "IsDust" in material:
@@ -843,23 +805,8 @@ objects_array.append({ "Class": base_recipe,
 })
 
 objects_array.append({ "Class": base_recipe,
-	"Name": "FluidDump" + base_recipe,
-	"Recipes": recipes_liq_dump
-})
-
-objects_array.append({ "Class": base_recipe,
-	"Name": "GasDump" + base_recipe,
-	"Recipes": recipes_gas_dump
-})
-
-objects_array.append({ "Class": base_recipe,
 	"Name": "FluidFurnace" + base_recipe,
 	"Recipes": recipes_gasfurn
-})
-
-objects_array.append({ "Class": base_recipe,
-	"Name": "Deconstructor" + base_recipe,
-	"Recipes": recipes_disassembler
 })
 
 data = {
