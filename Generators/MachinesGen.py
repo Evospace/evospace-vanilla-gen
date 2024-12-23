@@ -61,7 +61,7 @@ for machine in machines:
 					else:
 						item["DescriptionParts"].append([ss, "common"])	
 			
-			if machine["Name"] == "RobotArm" or machine["Name"] == "FilteringRobotArm":
+			if machine["Name"] == "RobotArm":
 				item["DescriptionParts"].append(["dps", "common", arm_speed_d[level]])
 				
 			if machine["Name"] == "FluidFurnace" or machine["Name"] == "Furnace" or machine["Name"] == "FissionReactor":
@@ -133,12 +133,6 @@ for machine in machines:
 					"AddMask": "T_" + image + additive_ico,
 				})
 			
-			logic = {
-				"Recipes": machine["Recipes"] + base_recipe if "Recipes" in machine else machine["Name"] + base_recipe,
-				"Tier": tier,
-				"Level": level,
-			}
-			
 			block = {
 				"Name": block_name,
 				"Item": item_name,
@@ -164,7 +158,7 @@ for machine in machines:
 			actor_init = "local mat = Material.load(\"/Game/Materials/%Material%\") Legacy.this:set_field_object(\"HullMaterial\", mat)".replace("%Material%", tier_material[tier])
 
 			blockCreation += "local tb = TieredBlockLogic.cast(self) tb.tier = " + str(tier) + " tb.level = " + str(tier - machine["StartTier"])
-			
+
 			if "Recipes" in machine:
 				blockCreation += " local crafter = AbstractCrafter.cast(self) crafter.recipes = RecipeDictionary.find(\"" + machine["Recipes"] + base_recipe + "\")"
 
@@ -1459,7 +1453,7 @@ for machine in machines:
 								"Count": 2 + level * 2
 							},
 							{
-								"Name": tier_material[tier] + "FilteringPump" + static_item,
+								"Name": tier_material[tier] + "Pump" + static_item,
 								"Count": 6
 							},
 						]
@@ -1651,14 +1645,14 @@ for machine in machines:
 					"Ticks" : 20
 				})
 				
-			if machine["Name"] == "Deconstructor":
+			if machine["Name"] == "Destroyer":
 				append_recipe({
 					"Name": tier_material[tier] + machine["Name"],
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "FilteringRobotArm" + static_item,
-								"Count": 4
+								"Name": tier_material[tier] + "RobotArm" + static_item,
+								"Count": 2
 							},
 							{
 								"Name": tier_material[tier] + "Plate" + static_item,
@@ -1670,7 +1664,7 @@ for machine in machines:
 							},
 							{
 								"Name": circuits[tier],
-								"Count": 3 + level
+								"Count": 1 + level
 							}
 						]
 					},
@@ -1699,7 +1693,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": tier_material[tier] + "FilteringRobotArm" + static_item,
+								"Name": tier_material[tier] + "RobotArm" + static_item,
 								"Count": 4
 							},
 							{
@@ -1897,58 +1891,6 @@ for machine in machines:
 								"Name": tier_material[tier] + "Plate" + static_item,
 								"Count": 1
 							}
-						]
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
-								"Count": 1
-							}
-						]
-					},
-					"Ticks" : 20
-				})
-			
-			if machine["Name"] == "FilteringRobotArm":
-				append_recipe({
-					"Name": tier_material[tier] + machine["Name"],
-					"Input":{
-						"Items":[
-							{
-								"Name": circuits[tier],
-								"Count": 1
-							},
-							{
-								"Name": tier_material[tier] + "RobotArm" + static_item,
-								"Count": 1
-						}
-						]
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + machine["Name"] + static_item,
-								"Count": 1
-							}
-						]
-					},
-					"Ticks" : 20
-				})
-			
-			if machine["Name"] == "FilteringPump":
-				append_recipe({
-					"Name": tier_material[tier] + machine["Name"],
-					"Input":{
-						"Items":[
-							{
-								"Name": circuits[tier],
-								"Count": 1
-							},
-							{
-								"Name": tier_material[tier] + "Pump" + static_item,
-								"Count": 1
-						}
 						]
 					},
 					"Output":{
@@ -2245,7 +2187,7 @@ for machine in machines:
 					"Ticks" : 20
 				})
 			
-			if machine["Name"] == "FluidDump":
+			if machine["Name"] == "Destroyer":
 				append_recipe({
 					"Name": tier_material[tier] + machine["Name"],
 					"Input":{
