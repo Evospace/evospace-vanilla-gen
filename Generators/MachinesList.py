@@ -11,21 +11,6 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic": "AutoCrafter",
         "Recipes": "Macerator",
-		"BlockCreation":"""
-        local crafter = AbstractCrafter.cast(self)
-        
-        local inv = ResourceInventory.new(crafter, "InputInv")
-        inv.item = StaticItem.find("Kinetic")
-        inv.capacity = 20
-        crafter.energy_input_inventory = inv
-        
-        local acc = ResourceAccessor.new(crafter, "Input1")
-        acc.side, acc.pos = Vec3i.back, Vec3i.zero
-        acc.inventory = inv
-        acc.is_input = true
-        acc.channel = "Kinetic"
-        acc.cover = StaticCover.find("KineticInput")
-		""",
 		"Description": ["KineticInput"],
 	},{
 		"Name": "CuttingMachine",
@@ -34,21 +19,6 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
         "Recipes": "CuttingMachine",
-		"BlockCreation":"""
-        local crafter = AbstractCrafter.cast(self)
-        
-        local inv = ResourceInventory.new(crafter, "InputInv")
-        inv.item = StaticItem.find("Kinetic")
-        inv.capacity = 20
-        crafter.energy_input_inventory = inv
-        
-        local acc = ResourceAccessor.new(crafter, "Input1")
-        acc.side, acc.pos = Vec3i.back, Vec3i.zero
-        acc.inventory = inv
-        acc.is_input = true
-        acc.channel = "Kinetic"
-        acc.cover = StaticCover.find("KineticInput")
-		""",
 		"Description": ["KineticInput"],
 	}
 	#,{
@@ -66,20 +36,6 @@ machines = [
 		"EndTier": 10,
 		"Positions": [[0,0,0],[0,0,1]],
 		"BlockLogic":"SelectCrafter",
-		"BlockCreation":"""
-        local crafter = AbstractCrafter.cast(self)
-        
-        local input = ResourceInventory.new(crafter, "InputInv")
-        input.item = StaticItem.find("Electricity")
-        input.capacity = 20
-        crafter.energy_input_inventory = inv
-        
-        local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side = Vec3i.back
-        acc.pos = Vec3i.zero
-        acc.inventory = input
-        acc.cover = StaticCover.find("ElectricityInput")
-		""",
 		"RequiredResearch":["Fermentation"+static_research],
 		"Description": ["ElectricInput"],
 	},{
@@ -148,21 +104,6 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
         "Recipes": "AutomaticHammer",
-		"BlockCreation":"""
-        local crafter = AbstractCrafter.cast(self)
-        
-        local inv = ResourceInventory.new(crafter, "InputInv")
-        inv.item = StaticItem.find("Kinetic")
-        inv.capacity = 20
-        crafter.energy_input_inventory = inv
-        
-        local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side, acc.pos = Vec3i.back, Vec3i.zero
-        acc.inventory = inv
-        acc.is_input = true
-        acc.channel = "Kinetic"
-        acc.cover = StaticCover.find("KineticInput")
-		""",
 		"Description": ["KineticInput"],
 	},{
 		"Name": "Boiler",
@@ -173,7 +114,8 @@ machines = [
 			"Autocrafter"
 		],
 		"BlockLogic":"NuclearReactorBlockLogic",
-		"BlockCreation":"""local a = self:new_resource_accessor("Input")
+		"BlockCreation":"""
+        local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.back, Vec3i.zero)
         local b = self:new_resource_accessor("Output")
         b:SetSidePos(Vec3i.up, Vec3i.zero)
@@ -284,30 +226,6 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
-		"BlockCreation":""" 
-        local crafter = AbstractCrafter.cast(self)
-        
-        local inv = ResourceInventory.new(crafter, "InputInv")
-        inv.item = StaticItem.find("Kinetic")
-        inv.capacity = 20
-        crafter.energy_input_inventory = inv
-        
-        local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side, acc.pos = Vec3i.front, Vec3i.new(0,1,0)
-        acc.inventory = inv
-        acc.is_input = true
-        acc.channel = "Kinetic"
-        
-        local acc = ResourceAccessor.new(crafter, "Output2")
-        acc.side, acc.pos = Vec3i.left, Vec3i.new(-2,1,0)
-        acc.is_output = true
-        acc.channel = "Fluid"
-        
-        local acc = ResourceAccessor.new(crafter, "Input2")
-        acc.side, acc.pos = Vec3i.right, Vec3i.new(-2,0,1)
-        acc.is_input = true
-        acc.channel = "Fluid"
-		""",
 		"Description": ["KineticInput"],
 	},{
 		"Name": "Conveyor",
@@ -393,33 +311,6 @@ machines = [
 		"EndTier": 10,
         "Recipes": "StirlingEngine",
 		"BlockLogic": "SelectCrafter",
-		"BlockCreation":"""
-        local crafter = AbstractCrafter.cast(self)
-        
-        local inv = ResourceInventory.new(crafter, "InputInv")
-        inv.item = StaticItem.find("Heat")
-        inv.capacity = 20
-        crafter.energy_input_inventory = inv
-        
-        local acc = ResourceAccessor.new(crafter, "Input1")
-        acc.side, acc.pos = Vec3i.down, Vec3i.zero
-        acc.inventory = inv
-        acc.is_input = true
-        acc.channel = "Heat"
-        acc.cover = StaticCover.find("HeatInput")
-        
-        local inv = ResourceInventory.new(crafter, "OutputInv")
-        inv.item = StaticItem.find("Kinetic")
-        inv.capacity = 20
-        crafter.energy_output_inventory = inv
-        
-    	local acc = ResourceAccessor.new(crafter, "Output")
-        acc.side, acc.pos = Vec3i.back, Vec3i.zero
-        acc.inventory = inv
-        acc.is_output = true
-        acc.channel = "Kinetic"
-        acc.cover = StaticCover.find("KineticOutput")
-		""",
 		"Description": ["HeatInput", "KineticOutput","PowerOutput"],
 		"PowerOutput": 10,
 	},{
@@ -558,33 +449,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
         "Recipes": "CompactGenerator",
-		"BlockCreation":"""local crafter = AbstractCrafter.cast(self)
-        crafter.speed = (crafter.level + 1)*100
-        
-        local inv = ResourceInventory.new(crafter, "InputInv")
-        inv.item = StaticItem.find("Kinetic")
-        inv.capacity = 20
-        crafter.energy_input_inventory = inv
-        
-        local acc = ResourceAccessor.new(crafter, "Input2")
-        acc.side, acc.pos = Vec3i.front, Vec3i.zero
-        acc.inventory = inv
-        acc.is_input = true
-        acc.channel = "Kinetic"
-        acc.cover = StaticCover.find("KineticInput")
-        
-        local inv = ResourceInventory.new(crafter, "OutputInv")
-        inv.item = StaticItem.find("Electricity")
-        inv.capacity = 20
-        crafter.energy_output_inventory = inv
-        
-    	local acc = ResourceAccessor.new(crafter, "Output")
-        acc.side, acc.pos = Vec3i.back, Vec3i.zero
-        acc.inventory = inv
-        acc.is_output = true
-        acc.channel = "Electricity"
-        acc.cover = StaticCover.find("ElectricityOutput")
-		""",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
 		"PowerOutput": 18,
 	},{
@@ -708,20 +572,6 @@ machines = [
 		"EndTier": 2,
 		"BlockLogic":"AutoCrafter",
         "Recipes": "Smelter",
-		"BlockCreation":"""
-        local crafter = AbstractCrafter.cast(self)
-        
-        local input = ResourceInventory.new(crafter, "InputInv")
-        input.item = StaticItem.find("Heat")
-        input.capacity = 20
-        crafter.energy_input_inventory = input
-        
-        local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side, acc.pos = Vec3i.down, Vec3i.zero
-        acc.inventory = input
-        acc.is_input = true
-        acc.channel = "Heat"
-		""",
 		"Description": ["HeatInput"],
 		"CustomData":{
 			"Capacity":32
@@ -907,22 +757,6 @@ machines = [
 		"BlockLogic":"Furnace",
         "Recipes": "Furnace",
         "Selector": "019/FurnaceSelector.FurnaceSelector_C",
-		"BlockCreation":"""
-        local crafter = AbstractCrafter.cast(self)
-        crafter.speed = (crafter.level + 1) * 100
-        
-        local inv = ResourceInventory.new(crafter, "OutputInv")
-        inv.item = StaticItem.find("Heat")
-        inv.capacity = 20 * (crafter.level + 1)
-        crafter.energy_output_inventory = inv
-        
-    	local acc = ResourceAccessor.new(crafter, "Output")
-        acc.side, acc.pos = Vec3i.up, Vec3i.zero
-        acc.inventory = inv
-        acc.is_output = true
-        acc.channel = "Heat"
-        acc.cover = StaticCover.find("HeatOutput")
-		""",
 		"Description": ["HeatOutput"],
 	},{
 		"Name": "Oven",
@@ -944,23 +778,7 @@ machines = [
 		"EndTier": 10,
 		"BlockLogic":"AutoCrafter",
         "Recipes": "Oven",
-		"Description": ["SpeedBonus"],
-        "BlockCreation":"""
-        local crafter = AbstractCrafter.cast(self)
-        crafter.speed = (crafter.level + 1) * 100
-        
-        local inv = ResourceInventory.new(crafter, "InputInv")
-        inv.item = StaticItem.find("Heat")
-        inv.capacity = 20 * (crafter.level + 1)
-        crafter.energy_input_inventory = inv
-        
-    	local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side, acc.pos = Vec3i.down, Vec3i.new(-1,1,1)
-        acc.inventory = inv
-        acc.is_input = true
-        acc.channel = "Heat"
-        acc.cover = StaticCover.find("HeatInput")
-		"""
+		"Description": ["SpeedBonus"]
 	},{
 		"Name": "BlastFurnace",
 		"Label": "Blast Furnace",
@@ -1144,21 +962,6 @@ machines = [
 			[0,-1,1],[-1,-1,1],
 		],
         "Recipes": "Assembler",
-		"BlockLogic":"SelectCrafter",
-		"BlockCreation":"""local crafter = AbstractCrafter.cast(self)
-        crafter.speed = (crafter.level + 1) * 100
-        
-        local inv = ResourceInventory.new(crafter, "InputInv")
-        inv.item = StaticItem.find("Electricity")
-        inv.capacity = 40 * (crafter.level + 1)
-        crafter.energy_input_inventory = inv
-        
-    	local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side, acc.pos = Vec3i.front, Vec3i.zero
-        acc.inventory = inv
-        acc.is_input = true
-        acc.channel = "Electricity"
-        """,
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "Constructor",
@@ -1195,20 +998,6 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 10,
 		"BlockLogic":"DumpCrafterBlockLogic",
-		"BlockCreation":"""
-        local crafter = AbstractCrafter.cast(self)
-        
-        local inv = ResourceInventory.new(crafter, "InputInv")
-        inv.capacity = 20
-        crafter.energy_input_inventory = inv
-        
-    	acc = ResourceAccessor.new(crafter, "FluidInput")
-        acc.side, acc.pos = Vec3i.back, Vec3i.zero
-        acc.channel = "Fluid"
-        acc.is_input = true
-        acc.cover = StaticCover.find("FluidInput")
-        acc.inventory = inv
-		""",
 		"Description": ["FluidInput"],
 	},{
 		"Name": "Lamp",
