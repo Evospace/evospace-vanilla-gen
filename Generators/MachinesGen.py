@@ -140,29 +140,9 @@ for machine in machines:
 				"BlockLogic": machine["Name"] + "BlockLogic",
 				"ReplaceTag": machine["Name"],
 				"Minable": {"Result": item_name},
+				"Tier": tier,
+				"Level": tier - machine["StartTier"]
 			}
-
-
-			blockCreation = ""
-			if "BlockCreation" in machine:
-				blockCreation = machine["BlockCreation"]
-				if blockCreation.find("%Material%") != -1:
-					blockCreation = blockCreation.replace("%Material%", tier_material[tier])
-					
-				if blockCreation.find("%Level%") != -1:
-					blockCreation = blockCreation.replace("%Level%", str(tier - machine["StartTier"]))
-					
-				if blockCreation.find("%Tier%") != -1:
-					blockCreation = blockCreation.replace("%Tier%", str(tier))
-
-			actor_init = "local mat = Material.load(\"/Game/Materials/%Material%\") Legacy.this:set_field_object(\"HullMaterial\", mat)".replace("%Material%", tier_material[tier])
-
-			blockCreation += "local tb = TieredBlockLogic.cast(self) tb.tier = " + str(tier) + " tb.level = " + str(tier - machine["StartTier"])
-
-			if "Recipes" in machine:
-				blockCreation += " local crafter = AbstractCrafter.cast(self) crafter.recipes = RecipeDictionary.find(\"" + machine["Recipes"] + base_recipe + "\")"
-
-			block["Lua"] = "return { logic_init = function(self) " + blockCreation + " end, actor_init = function(self) " + actor_init + " end }"
 
 			if "BlockLogic" in machine and (machine["BlockLogic"] == "SimpleInstancedBlockLogic" or machine["BlockLogic"] == "SelectCrafterInstanced" or machine["BlockLogic"] == "AutoCrafterInstanced"):
 				block["Cover"] = tier_material[tier] + machine["Name"] + static_cover
