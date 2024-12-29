@@ -593,15 +593,6 @@ materials = [
 		},
 		"Color":[0.9,0.9,0.9]
 	},{
-		"Name": "StoneLog",
-		"Label": "Stone Log",
-		"IsExact": True,
-		"Tier": 0,
-		"Burnable": {
-			"BurnTime": 800,
-			"HeatPerTick": 10
-		},
-	},{
 		"Name": "Plank",
 		"Label": "Plank",
 		"IsExact": True,
