@@ -114,21 +114,6 @@ machines = [
 			"Autocrafter"
 		],
 		"BlockLogic":"NuclearReactorBlockLogic",
-		"BlockCreation":"""
-        local a = self:new_resource_accessor("Input")
-		a:SetSidePos(Vec3i.back, Vec3i.zero)
-        local b = self:new_resource_accessor("Output")
-        b:SetSidePos(Vec3i.up, Vec3i.zero)
-        local res = self:get_resource_component()
-		a:bind_input(res)
-        b:bind_output(res)
-        res.input_item = StaticItem.find("Heat")
-        res.output_item = StaticItem.find("Steam")
-        
-		local a = self:CreateAccessor(Class.find("FluidInputAccessor"))
-		a:SetSidePos()
-		a:Bind(self:GetInputContainer())
-		""",
 		"Description": ["HeatInput", "FluidInput", "FluidOutput", "PowerOutput"],
 		"CustomData":{
 			"StorageCapacity": 30000,
@@ -1114,14 +1099,6 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafter",
-		"BlockCreation":"""local crafter = AbstractCrafter.cast(self)
-        crafter.speed = (crafter.level + 1) * 100
-        
-    	local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side, acc.pos = Vec3i.front, Vec3i.zero
-        acc.is_input = true
-        acc.channel = "Fluid"
-		""",
 		"Description": ["FluidInput"],
 	},{
 		"Name": "AtmosphericCondenser",
@@ -1139,27 +1116,6 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafter",
-		"BlockCreation":"""
-        local crafter = AbstractCrafter.cast(self)
-        
-        local inv = ResourceInventory.new(crafter, "InputInv")
-        inv.item = StaticItem.find("Kinetic")
-        inv.capacity = 20
-        crafter.energy_input_inventory = inv
-        
-        local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side, acc.pos = Vec3i.right, Vec3i.new(-1,-2,0)
-        acc.inventory = inv
-        acc.channel = "Kinetic"
-        acc.is_input = true
-        acc.cover = StaticCover.find("KineticInput")
-        
-    	acc = ResourceAccessor.new(crafter, "CraftOutput")
-        acc.side, acc.pos = Vec3i.front, Vec3i.zero
-        acc.channel = "Fluid"
-        acc.is_output = true
-        acc.cover = StaticCover.find("FluidOutput")
-		""",
 		"Description": ["KineticInput", "FluidOutput"],
 	},{
 		"Name": "Terminal",

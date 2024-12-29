@@ -46,7 +46,7 @@ for ore_type in ore_types:
 					}
 				]
 			},
-			"Ticks": 150 * ore_type["Hardness"],
+			"Ticks": 100,
 		})
 		if "SmeltLevel" in named_mat and named_mat["SmeltLevel"] <= 0:
 			recipes_smelt.append({

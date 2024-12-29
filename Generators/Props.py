@@ -273,7 +273,7 @@ props = [
 		"HandInteraction": False,
 		"AdditiveElevation": 0,
 		"IsBig": True,
-		"Drops": "StoneLog",
+		"Drops": "Log",
 		"TimeMul": 6
 	},{
 		"Name": "DryGrass",

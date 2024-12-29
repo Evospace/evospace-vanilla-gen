@@ -713,7 +713,7 @@ recipes_assembler.append({
 			}
 		]
 	},
-	"Ticks" : 100,
+	"Ticks" : 40,
 })
 
 recipes_assembler.append({
@@ -3487,31 +3487,6 @@ recipes_cutter.append({
 	"Ticks" : 80,
 })
 
-recipes_cutter.append({
-	"Name": "StoneLogCutting",
-	"Input":{
-		"Items":[
-			{
-				"Name": "StoneLog" + static_item,
-				"Count": 1
-			},
-		]
-	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 10
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Plank" + static_item,
-				"Count": 4
-			}
-		]
-	},
-	
-	"Ticks" : 200
-})
 recipes_cutter.append({
 	"Name": "CircuitBoard",
 	"Input":{
