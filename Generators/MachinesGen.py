@@ -2230,7 +2230,7 @@ for machine in machines:
 					"Input":{
 						"Items":[
 							{
-								"Name": "CopperIngot" + static_item,
+								"Name": "CopperWire" + static_item,
 								"Count": 1
 							}
 						]

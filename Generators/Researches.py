@@ -477,8 +477,8 @@ append_levels({
 	["Hand" + base_recipe, "SteelLogicInterface"] ,
 	["Hand" + base_recipe, "SteelLogicDisplay"] ,
 	["Hand" + base_recipe, "SteelLogicWire"] ],
-	"Levels": [1,1],
-	"CostMul":0.5,
+	"Levels": [2,2],
+	"CostMul": 1.5,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -1117,6 +1117,7 @@ append_levels({
 	"LabelParts": [["DecorationClay", "researches"]],
 	"RequiredResearch": ["Drying" + static_research], 
 	"Unlocks": [["Hand" + base_recipe, "TerracottaTiles"], ["CuttingMachine" + base_recipe, "TerracottaTiles"]],
+	"Levels": [1,1],
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -1124,6 +1125,7 @@ append_levels({
 	"LabelParts": [["DecorationClay", "researches"], [level_labels[1], "common"]],
 	"RequiredResearch": ["DecorationClay" + static_research], 
 	"Unlocks": [["Hand" + base_recipe, "TerracottaBricks"], ["CuttingMachine" + base_recipe, "TerracottaBricks"]],
+	"Levels": [1,1],
 })
 append_levels({
 	"Class": "StaticResearch",
