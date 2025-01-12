@@ -504,9 +504,9 @@ append_levels({
 	"Name": "AdvancedCircuitBoard",
 	"LabelParts": [["AdvancedCircuitBoard", "parts"]],
 	"RequiredResearch": ["GoldWire", "PyrolysisUnit"],
-	"Levels": [2,2],
+	"Levels": [3,3],
 	"Unlocks": [["Hand" + base_recipe, "AdvancedCircuitBoard"],["Assembler" + base_recipe, "AdvancedCircuitBoard"]],
-	"MainResearch": True
+	"MainResearch": True,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -683,6 +683,7 @@ append_levels({
 	"RequiredResearch": ["OreWasher" + static_research],
 	"Levels": [2,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%Mixer"] ],
+	"MainResearch": True,
 	
 })
 append_levels({
@@ -735,9 +736,11 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "SmallBattery" + static_research,
 	"LabelParts": [["SmallBattery", "machines"]],
-	"RequiredResearch": ["AdvancedSeparation" + static_research],
+	"RequiredResearch": ["AluminiumProduction" + static_research],
 	"Levels": [3,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%SmallBattery"] ],
+	"MainResearch": True,
+	"CostMul":1.5,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -958,6 +961,7 @@ append_levels({
 	"RequiredResearch": ["Mixer" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%PyrolysisUnit"] ],
 	"Levels": [3,7],
+	"MainResearch": True,
 })
 	
 append_levels({

@@ -8,7 +8,6 @@ objects_array = []
 images = []
 recipes_cutter = []
 recipes_hammer = []
-recipes_macerator = []
 recipes_hand = []
 recipes_assembler = []
 recipes_furnace = []
@@ -106,30 +105,6 @@ for part in parts:
 				"MulMask": "T_" + material,
 				"AddMask": "T_" + part["Name"] + additive_ico,
 			})
-			
-			
-			if "Volume" in part:
-				recipes_macerator.append({
-					"Name": material + part["Name"],
-					"Input":{
-						"Items":[
-							{
-								"Name": material + part["Name"] + static_item,
-								"Count": 1
-							},
-						]
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": material + "Dust" + static_item,
-								"Count": part["Volume"],
-								"Probability": 25
-							}
-						]
-					},
-					"Ticks" : 80 * part["Volume"]  * 1.5**level,
-				})
 			
 			if part["Name"] == "Casing":
 				recipes_hand.append({
@@ -433,32 +408,6 @@ for material in materials:
 				},
 				"Ticks" : 100,
 			})
-			
-		recipes_macerator.append({
-			"Name": material["Name"] + "Ingot",
-			"Input":{
-				"Items":[
-					{
-						"Name": material["Name"] + "Ingot" + static_item,
-						"Count": 1
-					},
-				]
-			},
-			"ResourceInput":{
-				"Name": "Kinetic" + static_item,
-				"Count": 15
-			},
-			"Output":{
-				"Items":[
-					{
-						"Name": material["Name"] + "Dust" + static_item,
-						"Count": 1,
-						"Probability": 25
-					}
-				]
-			},
-			"Ticks" : 120,
-		})
 			
 	if "IsBlock" in material:
 		cvs.append([material["Name"] + "Block", material["Label"] + " Block"])
@@ -766,11 +715,6 @@ objects_array.append({ "Class": base_recipe,
 objects_array.append({ "Class": base_recipe,
 	"Name": "AutomaticHammer" + base_recipe,
 	"Recipes": recipes_hammer
-})
-
-objects_array.append({ "Class": base_recipe,
-	"Name": "Macerator" + base_recipe,
-	"Recipes": recipes_macerator
 })
 
 for r in recipes_hand:
