@@ -8,6 +8,7 @@ objects_array = []
 images = []
 recipes_cutter = []
 recipes_hammer = []
+recipes_macerator = []
 recipes_hand = []
 recipes_assembler = []
 recipes_furnace = []
@@ -409,6 +410,31 @@ for material in materials:
 				"Ticks" : 100,
 			})
 			
+		recipes_macerator.append({
+			"Name": material["Name"] + "Ingot",
+			"Input":{
+				"Items":[
+					{
+						"Name": material["Name"] + "Ingot" + static_item,
+						"Count": 1
+					},
+				]
+			},
+			"ResourceInput":{
+				"Name": "Kinetic" + static_item,
+				"Count": 15
+			},
+			"Output":{
+				"Items":[
+					{
+						"Name": material["Name"] + "Dust" + static_item,
+						"Count": 1
+					}
+				]
+			},
+			"Ticks" : 80 * 1.5**level,
+		})
+			
 	if "IsBlock" in material:
 		cvs.append([material["Name"] + "Block", material["Label"] + " Block"])
 		item = { "Class": "StaticItem",
@@ -715,6 +741,11 @@ objects_array.append({ "Class": base_recipe,
 objects_array.append({ "Class": base_recipe,
 	"Name": "AutomaticHammer" + base_recipe,
 	"Recipes": recipes_hammer
+})
+
+objects_array.append({ "Class": base_recipe,
+	"Name": "Macerator" + base_recipe,
+	"Recipes": recipes_macerator
 })
 
 for r in recipes_hand:

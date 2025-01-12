@@ -529,9 +529,9 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "QuantumCore" + static_research,
+	"Name": "QuantumCore",
 	"LabelParts": [["QuantumCore", "parts"]],
-	"RequiredResearch": ["Processor" + static_research],
+	"RequiredResearch": ["Processor", "ChemicalBath"],
 	"Levels": [4,4],
 	"Unlocks": [["Hand" + base_recipe, "QuantumCore"],["Assembler" + base_recipe, "QuantumCore"]],
 	"MainResearch": True,
@@ -539,18 +539,18 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "QuantumCircuit" + static_research,
+	"Name": "QuantumCircuit",
 	"LabelParts": [["QuantumCircuit", "parts"]],
-	"RequiredResearch": ["QuantumCore" + static_research],
+	"RequiredResearch": ["QuantumCore"],
 	"Levels": [4,4],
 	"Unlocks": [["Hand" + base_recipe, "QuantumCircuit"],["Assembler" + base_recipe, "QuantumCircuit"]],
 	"MainResearch": True
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "QuantumProcessor" + static_research,
+	"Name": "QuantumProcessor",
 	"LabelParts": [["QuantumProcessor", "parts"]],
-	"RequiredResearch": ["QuantumCircuit" + static_research],
+	"RequiredResearch": ["QuantumCircuit"],
 	"Levels": [5,5],
 	"Unlocks": [["Hand" + base_recipe, "QuantumProcessor"],["Assembler" + base_recipe, "QuantumProcessor"]],
 	"MainResearch": True,
@@ -558,9 +558,9 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "QuantumBrain" + static_research,
+	"Name": "QuantumBrain",
 	"LabelParts": [["QuantumBrain", "parts"]],
-	"RequiredResearch": ["QuantumProcessor" + static_research],
+	"RequiredResearch": ["QuantumProcessor"],
 	"Levels": [6,6],
 	"Unlocks": [["Hand" + base_recipe, "QuantumBrain"],["Assembler" + base_recipe, "QuantumBrain"]],
 	"MainResearch": True,
@@ -603,7 +603,8 @@ append_levels({
 	"RequiredResearch": ["Chemistry" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "Catalyst"],["Assembler" + base_recipe, "Catalyst"]],
 	"Levels": [2,2],
-	
+	"MainResearch": True,
+	"CostMul":5,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -612,7 +613,7 @@ append_levels({
 	"RequiredResearch": ["Catalyst" + static_research],
 	"Unlocks": [["Hand" + base_recipe, "%Material%IndustrialChemReactor"] ],
 	"Levels": [3,7],
-	
+	"MainResearch": True,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -693,7 +694,8 @@ append_levels({
 	"RequiredResearch": ["IndustrialChemReactor" + static_research],
 	"Levels": [3,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%ChemicalBath"] ],
-	
+	"MainResearch": True,
+	"CostMul":5,
 })
 append_levels({
 	"Class": "StaticResearch",
