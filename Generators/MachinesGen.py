@@ -57,7 +57,9 @@ for machine in machines:
 						if level != 0:
 							item["DescriptionParts"].append(["speedbonus", "common", round(1.5**level * 10) / 10])
 					elif ss == "PowerOutput": 
-						item["DescriptionParts"].append(["power_output", "common", machine["PowerOutput"] * 20 * 2**level])					
+						item["DescriptionParts"].append(["power_output", "common", machine["PowerOutput"] * 20 * 2**level])		
+					elif ss == "PowerInput": 
+						item["DescriptionParts"].append(["power_input", "common", machine["PowerInput"] * 20 * 2**level])			
 					else:
 						item["DescriptionParts"].append([ss, "common"])	
 			

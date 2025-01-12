@@ -1072,11 +1072,11 @@ recipes_condens.append({
 		"Items":[
 			{
 				"Name": "Water" + static_item,
-				"Count": 250
+				"Count": 500
 			}
 		]
 	},
-	"Ticks" : 200,
+	"Ticks" : 40,
 })
 
 recipes_condens.append({
@@ -2197,10 +2197,6 @@ recipes_mixer.append({
 			
 		]
 	},
-	"ResourceInput":{
-				"Name": "Kinetic" + static_item,
-				"Count": 10
-			},
 	"Output":{
 		"Items":[
 			{
@@ -2227,10 +2223,6 @@ recipes_mixer.append({
 			
 		]
 	},
-	"ResourceInput":{
-				"Name": "Kinetic" + static_item,
-				"Count": 10
-			},
 	"Output":{
 		"Items":[
 			{
@@ -2256,10 +2248,6 @@ recipes_mixer.append({
 			}
 		]
 	},
-	"ResourceInput":{
-				"Name": "Kinetic" + static_item,
-				"Count": 10
-			},
 	"Output":{
 		"Items":[
 			{
@@ -2284,10 +2272,6 @@ recipes_mixer.append({
 			}
 		]
 	},
-	"ResourceInput":{
-				"Name": "Kinetic" + static_item,
-				"Count": 40
-			},
 	"Output":{
 		"Items":[
 			{
@@ -2314,10 +2298,6 @@ recipes_mixer.append({
 			},
 		],
 	},
-	"ResourceInput":{
-			"Name": "Kinetic" + static_item,
-			"Count": 10,
-		},
 	"Output":{
 		"Items":[
 			{
@@ -2406,10 +2386,6 @@ recipes_sep2.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 30*90
-	},
 	"Output":{
 		"Items": [
 			{
@@ -2466,10 +2442,6 @@ recipes_sep2.append({
 				"Count": 1
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 30
 	},
 	"Output":{
 		"Items": [
@@ -2533,16 +2505,11 @@ recipes_sep2.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 30
-	},
 	"Output":{
 		"Items":[
 			{
 				"Name": "SiliconOxide" + static_item,
-				"Count": 1,
-				"Probability": 50,
+				"Count": 1
 			}
 		]
 	},
@@ -2558,10 +2525,6 @@ recipes_arc_furnace.append({
 				"Count": 1
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity" + static_item,
-		"Count": 20,
 	},
 	"Output":{
 		"Items":[
@@ -2584,10 +2547,6 @@ recipes_arc_furnace.append({
 			},
 		],
 	},
-	"ResourceInput":{
-			"Name": "Electricity" + static_item,
-			"Count": 20,
-		},
 	"Output":{
 		"Items":[
 			{
@@ -2638,10 +2597,6 @@ recipes_macerator.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 10
-	},
 	"Output":{
 		"Items":[
 			{
@@ -2663,10 +2618,6 @@ recipes_macerator.append({
 				"Count": 2
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 10
 	},
 	"Output":{
 		"Items":[
@@ -2690,10 +2641,6 @@ recipes_macerator.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 50
-	},
 	"Output":{
 		"Items":[
 			{
@@ -2716,10 +2663,6 @@ recipes_macerator.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 10
-	},
 	"Output":{
 		"Items":[
 			{
@@ -2741,10 +2684,6 @@ recipes_macerator.append({
 				"Count": 1
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 10
 	},
 	"Output":{
 		"Items":[
@@ -2794,10 +2733,6 @@ recipes_macerator.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 10
-	},
 	"Output":{
 		"Items":[
 			{
@@ -2819,10 +2754,6 @@ recipes_macerator.append({
 				"Count": 1
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 10
 	},
 	"Output":{
 		"Items":[
@@ -2846,10 +2777,6 @@ recipes_macerator.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 10
-	},
 	"Output":{
 		"Items":[
 			{
@@ -2871,10 +2798,6 @@ recipes_macerator.append({
 				"Count": 1
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 10
 	},
 	"Output":{
 		"Items":[
@@ -2898,10 +2821,6 @@ recipes_macerator.append({
 			}
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 10
-	},
 	"Output":{
 		"Items":[
 			{
@@ -2924,10 +2843,6 @@ recipes_macerator.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 10
-	},
 	"Output":{
 		"Items":[
 			{
@@ -2936,7 +2851,7 @@ recipes_macerator.append({
 			}
 		]
 	},
-	"Ticks" : 200
+	"Ticks" : 100
 })
 
 recipes_hammer.append({
@@ -2948,10 +2863,6 @@ recipes_hammer.append({
 				"Count": 1
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 10
 	},
 	"Output":{
 		"Items":[
@@ -2975,10 +2886,6 @@ recipes_pump.append({
 		"Items":[
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Water" + static_item,
-		"Count": 600
-	},
 	"Ticks" : 6*20,
 })
 
@@ -2992,10 +2899,6 @@ recipes_indu.append({
 			},
 		],
 	},
-	"ResourceInput":{
-				"Name": "Heat" + static_item,
-				"Count": 350,
-			},
 	"Output":{
 		"Items":[
 			{
@@ -3018,10 +2921,6 @@ recipes_indu.append({
 			},
 		],
 	},
-	"ResourceInput":{
-				"Name": "Heat" + static_item,
-				"Count": 100,
-			},
 	"Output":{
 		"Items":[
 			{
@@ -3044,10 +2943,6 @@ recipes_indu.append({
 			},
 		],
 	},
-	"ResourceInput":{
-				"Name": "Heat" + static_item,
-				"Count": 350,
-			},
 	"Output":{
 		"Items":[
 			{
@@ -3096,10 +2991,6 @@ recipes_sep.append({
 			}
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 10
-	},
 	"Output":{
 		"Items":[
 			{
@@ -3108,7 +2999,7 @@ recipes_sep.append({
 			}
 		]
 	},
-	"Ticks" : 1000
+	"Ticks" : 10*20
 })
 
 recipes_mixer.append({

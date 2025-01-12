@@ -302,7 +302,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "CopperIngot" + static_item,
+				"Name": "CopperPlate" + static_item,
 				"Count": 1
 			},	
 		]
