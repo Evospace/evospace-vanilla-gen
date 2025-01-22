@@ -83,7 +83,7 @@ ore_types = [
 images = []
 
 for ore_type in ore_types:
-	item_name = ore_type["Name"] + "Ore" + static_item
+	item_name = ore_type["Name"] + "Ore"
 	named_mat = named_material(ore_type["Name"])
 	
 	cvs.append([ore_type["Name"]+"Ore", ore_type["Name"]+" Ore"])
@@ -115,7 +115,7 @@ for ore_type in ore_types:
 		"Item": item_name,
 		"ColorSide": ore_type["Color"],
 		"ColorTop": ore_type["Color"],
-		"Minable": {"Result": ore_type["Drops"] + static_item},
+		"Minable": {"Result": ore_type["Drops"]},
 		"Surface": True
 	})
 	images.append({
@@ -128,7 +128,7 @@ for ore_type in ore_types:
 		# impur gravel		
 		cvs.append([ore_type["Name"]+"ImpureOreGravel", ore_type["Name"]+" Impure Ore Gravel"])
 		item = { "Class": "StaticItem",
-			"Name": ore_type["Name"] + "ImpureOreGravel" + static_item,
+			"Name": ore_type["Name"] + "ImpureOreGravel",
 			"Label": ore_type["Name"] + " Impure Ore Gravel",
 			"Mesh": "/Game/Models/Gravel",
 			
@@ -153,7 +153,7 @@ for ore_type in ore_types:
 		# gravel
 		cvs.append([ore_type["Name"]+"OreGravel", ore_type["Name"]+" Ore Gravel"])
 		item = { "Class": "StaticItem",
-			"Name": ore_type["Name"] + "OreGravel" + static_item,
+			"Name": ore_type["Name"] + "OreGravel",
 			"Label": ore_type["Name"] + " Ore Gravel",
 			"Mesh": "/Game/Models/Gravel",
 			
@@ -178,7 +178,7 @@ for ore_type in ore_types:
 		# impure dust
 		cvs.append([ore_type["Name"] + "OreDust", ore_type["Name"]+" Impure Ore Dust"])
 		item = { "Class": "StaticItem",
-			"Name": ore_type["Name"] + "OreDust" + static_item,
+			"Name": ore_type["Name"] + "OreDust",
 			"Label": ore_type["Name"] + " Impure Ore Dust",
 			"Mesh": "/Game/Models/Dust",
 			

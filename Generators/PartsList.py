@@ -62,58 +62,58 @@ parts = [
 ]
 
 circuits = [
-	"CopperParts" + static_item,
-	"CopperParts" + static_item,
-	"Circuit" + static_item,
-	"AdvancedCircuit" + static_item,
-	"Processor" + static_item,
-	"QuantumCircuit" + static_item,
-	"QuantumProcessor" + static_item,
-	"QuantumBrain" + static_item,
+	"CopperParts",
+	"CopperParts",
+	"Circuit",
+	"AdvancedCircuit",
+	"Processor",
+	"QuantumCircuit",
+	"QuantumProcessor",
+	"QuantumBrain",
 ]
 
 catalyzers = [
-	"CopperDust" + static_item,      # 0 stone
-	"CopperDust" + static_item,      # 1 copper
-	"GoldDust" + static_item,        # 2 steel
-	"GoldDust" + static_item,        # 3 alum
-	"Processor" + static_item,        # 4 ss
-	"QuantumCircuit" + static_item,   # 5 tita
-	"QuantumProcessor" + static_item, # 6 hard
-	"QuantumBrain" + static_item,     # 7 neu
+	"CopperDust",      # 0 stone
+	"CopperDust",      # 1 copper
+	"GoldDust",        # 2 steel
+	"GoldDust",        # 3 alum
+	"Processor",        # 4 ss
+	"QuantumCircuit",   # 5 tita
+	"QuantumProcessor", # 6 hard
+	"QuantumBrain",     # 7 neu
 ]
 
 wires = [
-	"CopperWire" + static_item,
-	"CopperWire" + static_item,
-	"CopperWire" + static_item,
-	"CopperWire" + static_item,
-	"CopperWire" + static_item,
-	"GoldWire" + static_item,
-	"GoldWire" + static_item,
-	"SuperconductorWire" + static_item,
+	"CopperWire",
+	"CopperWire",
+	"CopperWire",
+	"CopperWire",
+	"CopperWire",
+	"GoldWire",
+	"GoldWire",
+	"SuperconductorWire",
 ]
 
 cables = [
-	"CopperConnector" + static_item,
-	"CopperConnector" + static_item,
-	"CopperConnector" + static_item,
-	"CopperConnector" + static_item,
-	"CopperConnector" + static_item,
-	"CopperConnector" + static_item,
-	"CopperConnector" + static_item,
-	"CopperConnector" + static_item,
+	"CopperConnector",
+	"CopperConnector",
+	"CopperConnector",
+	"CopperConnector",
+	"CopperConnector",
+	"CopperConnector",
+	"CopperConnector",
+	"CopperConnector",
 ]
 
 heat_isolators = [
-	"StoneSurface" + static_item,
-	"StoneSurface" + static_item,
-	"StoneSurface" + static_item,
-	"Concrete" + static_item,
-	"Concrete" + static_item,
-	"ReinforcedConcrete" + static_item,
-	"ReinforcedConcrete" + static_item,
-	"ReinforcedConcrete" + static_item,
+	"StoneSurface",
+	"StoneSurface",
+	"StoneSurface",
+	"Concrete",
+	"Concrete",
+	"ReinforcedConcrete",
+	"ReinforcedConcrete",
+	"ReinforcedConcrete",
 ]
 
 tools = [

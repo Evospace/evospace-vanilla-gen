@@ -148,7 +148,7 @@ for object in mapgen_objects:
 	csv.append([object["Name"] + "Surface", CamelToSpaces(object["Name"])])
 
 	objects_array.append({ "Class": "StaticItem",
-		"Name": object["Name"] + "Surface" + static_item,
+		"Name": object["Name"] + "Surface",
 		"Image": "T_" + object["Name"],
 		
 		"ItemLogic": building_brush_slot_logic,
@@ -170,10 +170,10 @@ for object in mapgen_objects:
 		"Class": "StaticBlock",
 		"Name": object["Name"] + "Surface" + static_surface,
 		"Tesselator": object["Name"] + "Surface" + tesselator,
-		"Item" : object["Name"] + "Surface" + static_item,
+		"Item" : object["Name"] + "Surface",
 		"ColorSide": object["Side"],
 		"ColorTop": object["Color"],
-		"Minable": {"Minable": False} if "Unbreakable" in object else {"Result": object["Drops"] + "Surface" + static_item},
+		"Minable": {"Minable": False} if "Unbreakable" in object else {"Result": object["Drops"] + "Surface"},
 		"Surface": True
 	})
 	
