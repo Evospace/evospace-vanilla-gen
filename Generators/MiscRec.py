@@ -2460,42 +2460,6 @@ recipes_sep2.append({
 })	
 
 recipes_sep2.append({
-	"Name": "Basalt",
-	"Input":{
-		"Items":[
-			{
-				"Name": "BasaltSurface" + static_item,
-				"Count": 1
-			},
-		]
-	},
-	"ResourceInput":{
-		"Name": "Kinetic" + static_item,
-		"Count": 30*25
-	},
-	"Output":{
-		"Items": [
-			{
-				"Name": "SandSurface" + static_item,
-				"Count": 1
-			},
-			{
-				"Name": "AluminiumOxideDust" + static_item,
-				"Count": 1,
-				"Probability": 20,
-			},
-			{
-				"Name": "TitaniumOxideDust" + static_item,
-				"Count": 1,
-				"Probability": 10,
-			}
-		]
-	},
-	
-	"Ticks" : 40
-})
-
-recipes_sep2.append({
 	"Name":"Sand",
 	"Input":{
 		"Items":[
