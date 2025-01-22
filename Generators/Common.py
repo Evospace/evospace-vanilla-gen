@@ -70,7 +70,7 @@ def simple_in_out_recipe(name):
 		"Input":{
 			"Items":[
 				{
-					"Name": name + static_item,
+					"Name": name,
 					"Count": 1
 				}
 			]
@@ -78,7 +78,7 @@ def simple_in_out_recipe(name):
 		"Output":{
 			"Items":[
 				{
-					"Name": name + static_item,
+					"Name": name,
 					"Count": 1
 				}
 			]
@@ -247,21 +247,21 @@ def exp_ramp(level, factor = 2):
 	return factor ** level
 
 tiers_res_item = [
-	"Computations" + static_item,
-	"Circuit" + static_item,
-	"AdvancedCircuit" + static_item,
-	"Processor" + static_item,
-	"QuantumCircuit" + static_item,
-	"QuantumProcessor" + static_item,
-	"QuantumBrain" + static_item,
-	"QuantumBrain" + static_item,
-	"QuantumBrain" + static_item,
-	"QuantumBrain" + static_item,
-	"QuantumBrain" + static_item,
-	"QuantumBrain" + static_item,
-	"QuantumBrain" + static_item,
-	"QuantumBrain" + static_item,
-	"QuantumBrain" + static_item,
+	"Computations",
+	"Circuit",
+	"AdvancedCircuit",
+	"Processor",
+	"QuantumCircuit",
+	"QuantumProcessor",
+	"QuantumBrain",
+	"QuantumBrain",
+	"QuantumBrain",
+	"QuantumBrain",
+	"QuantumBrain",
+	"QuantumBrain",
+	"QuantumBrain",
+	"QuantumBrain",
+	"QuantumBrain",
 ]
 
 euler = 2.718281

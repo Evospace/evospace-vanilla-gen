@@ -275,7 +275,7 @@ for one in wooden_misc:
 	cvs.append([one["Name"], "Wooden " + CamelToSpaces(one["Name"])])
 
 	item = { "Class": "StaticItem",
-		"Name": one["Name"] + static_item,
+		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"LogicJson":
 		{
@@ -290,11 +290,11 @@ for one in wooden_misc:
 	
 	block = {
 		"Name": one["Name"] + static_block,
-		"Item" : one["Name"] + static_item,
+		"Item" : one["Name"],
 		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
 		"Class": "StaticBlock",
-		"Minable": {"Result": one["Name"] + static_item},
+		"Minable": {"Result": one["Name"]},
 	}
 	
 	if "Positions" in one:
@@ -306,7 +306,7 @@ for one in simple_single:
 	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
 	objects_array.append({ "Class": "StaticItem",
-		"Name": one["Name"] + static_item,
+		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_single_logic,
 		"LogicJson":
@@ -321,10 +321,10 @@ for one in simple_single:
 	block = {
 		"Class": "StaticBlock",
 		"Name": one["Name"] + static_block,
-		"Item" : one["Name"] + static_item,
+		"Item" : one["Name"],
 		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
-		"Minable": {"Result": one["Name"] + static_item},
+		"Minable": {"Result": one["Name"]},
 	}
 	
 	if "Positions" in one:
@@ -336,7 +336,7 @@ for one in simple_blocks:
 	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
 	objects_array.append({ "Class": "StaticItem",
-		"Name": one["Name"] + static_item,
+		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_plane_logic,
 		"LogicJson":
@@ -356,16 +356,16 @@ for one in simple_blocks:
 	})
 	objects_array.append({ "Class": "StaticBlock",
 		"Name": one["Name"] + static_block,
-		"Item" : one["Name"] + static_item,
+		"Item" : one["Name"],
 		"Tesselator": one["Name"] + tesselator,
-		"Minable": {"Result": one["Name"] + static_item},
+		"Minable": {"Result": one["Name"]},
 	})
 	
 for one in static_mesh_block:
 	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
 	objects_array.append({ "Class": "StaticItem",
-		"Name": one["Name"] + static_item,
+		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_single_logic,
 		"LogicJson":
@@ -378,10 +378,10 @@ for one in static_mesh_block:
 	objects_array.append({
 		"Class": "StaticBlock",
 		"Name": one["Name"] + static_block,
-		"Item" : one["Name"] + static_item,
+		"Item" : one["Name"],
 		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic",
-		"Minable": {"Result": one["Name"] + static_item},
+		"Minable": {"Result": one["Name"]},
 	})
 
 images = []
@@ -423,7 +423,7 @@ for one in equipped:
 	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
 	equ = { "Class": "StaticItem",
-		"Name": one["Name"] + static_item,
+		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"StackSize": 32,
 		"LabelParts":[[one["Name"],"misc"]],

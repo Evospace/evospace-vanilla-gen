@@ -8,15 +8,15 @@ data = {
 	{
 		"Items": [
 			{
-				"Name": "StoneSurface" + static_item,
+				"Name": "StoneSurface",
 				"Count": 99
 			},
 			{
-				"Name": "Log" + static_item,
+				"Name": "Log",
 				"Count": 15
 			},
 			{
-				"Name": "BasicPlatform" + static_item,
+				"Name": "BasicPlatform",
 				"Count": 99
 			}
 		]

@@ -24,23 +24,23 @@ for ore_type in ore_types:
 			"Input":{
 				"Items":[
 					{
-						"Name": ore_type["Name"] + "Ore" + static_item,
+						"Name": ore_type["Name"] + "Ore",
 						"Count": 1
 					},
 				]
 			},
 			"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 8 * ore_type["Hardness"]
 			},
 			"Output":{
 				"Items": [
 					{
-						"Name": ore_type["Name"] + "ImpureOreGravel" + static_item,
+						"Name": ore_type["Name"] + "ImpureOreGravel",
 						"Count": 1
 					},
 					{
-						"Name": ore_type["Name"] + "ImpureOreGravel" + static_item,
+						"Name": ore_type["Name"] + "ImpureOreGravel",
 						"Count": 1,
 						"Probability": 50,
 					}
@@ -54,20 +54,20 @@ for ore_type in ore_types:
 				"Input":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + "Ore" + static_item,
+							"Name": ore_type["Name"] + "Ore",
 							"Count": 1
 						},
 						
 					]
 				},
 				"ResourceInput":{
-							"Name": "Heat" + static_item,
+							"Name": "Heat",
 							"Count": 10
 						},
 				"Output":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + "Ingot" + static_item,
+							"Name": ore_type["Name"] + "Ingot",
 							"Count": 1
 						}
 					]
@@ -79,23 +79,23 @@ for ore_type in ore_types:
 			"Input":{
 				"Items":[
 					{
-						"Name": ore_type["Name"] + "ImpureOreGravel" + static_item,
+						"Name": ore_type["Name"] + "ImpureOreGravel",
 						"Count": 1
 					},
 				]
 			},
 			"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 10
 			},
 			"Output":{
 				"Items": [
 					{
-						"Name": ore_type["Name"] + "OreDust" + static_item,
+						"Name": ore_type["Name"] + "OreDust",
 						"Count": 1
 					},
 					{
-						"Name": ore_type["Name"] + "OreDust" + static_item,
+						"Name": ore_type["Name"] + "OreDust",
 						"Count": 1,
 						"Bonus": True
 					}
@@ -109,23 +109,23 @@ for ore_type in ore_types:
 			"Input":{
 				"Items":[
 					{
-						"Name": ore_type["Name"] + "OreGravel" + static_item,
+						"Name": ore_type["Name"] + "OreGravel",
 						"Count": 1
 					},
 				]
 			},
 			"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 10
 			},
 			"Output":{
 				"Items": [
 					{
-						"Name": ore_type["Name"] + "OreDust" + static_item,
+						"Name": ore_type["Name"] + "OreDust",
 						"Count": 1
 					},
 					{
-						"Name": ore_type["Name"] + "OreDust" + static_item,
+						"Name": ore_type["Name"] + "OreDust",
 						"Count": 1,
 						"Bonus": True
 					}
@@ -140,19 +140,19 @@ for ore_type in ore_types:
 				"Input":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + "OreDust" + static_item,
+							"Name": ore_type["Name"] + "OreDust",
 							"Count": 1
 						},
 					]
 				},
 				"ResourceInput":{
-					"Name": "Heat" + static_item,
+					"Name": "Heat",
 					"Count": 10
 				},
 				"Output":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + "Ingot" + static_item,
+							"Name": ore_type["Name"] + "Ingot",
 							"Count": 1
 						}
 					]
@@ -164,19 +164,19 @@ for ore_type in ore_types:
 				"Input":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + "ImpureOreGravel" + static_item,
+							"Name": ore_type["Name"] + "ImpureOreGravel",
 							"Count": 1
 						},
 					]
 				},
 				"ResourceInput":{
-					"Name": "Heat" + static_item,
+					"Name": "Heat",
 					"Count": 10
 				},
 				"Output":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + "Ingot" + static_item,
+							"Name": ore_type["Name"] + "Ingot",
 							"Count": 1
 						}
 					]
@@ -188,19 +188,19 @@ for ore_type in ore_types:
 				"Input":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + "OreGravel" + static_item,
+							"Name": ore_type["Name"] + "OreGravel",
 							"Count": 1
 						},
 					]
 				},
 				"ResourceInput":{
-					"Name": "Heat" + static_item,
+					"Name": "Heat",
 					"Count": 10
 				},
 				"Output":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + "Ingot" + static_item,
+							"Name": ore_type["Name"] + "Ingot",
 							"Count": 1
 						}
 					]
@@ -209,12 +209,12 @@ for ore_type in ore_types:
 			})
 		out_items = []
 		out_items.append({
-			"Name": ore_type["Name"] + "OreGravel" + static_item,
+			"Name": ore_type["Name"] + "OreGravel",
 			"Count": 1
 		})
 		if "Byproducts" in ore_type and len(ore_type["Byproducts"]) > 0:
 			oi = {
-				"Name": ore_type["Byproducts"][0] + static_item,
+				"Name": ore_type["Byproducts"][0],
 				"Count": 1,
 				"Probability": 10,
 			}
@@ -224,7 +224,7 @@ for ore_type in ore_types:
 			out_items.append(oi)
 				
 		out_items.append({
-			"Name": "OreWater" + static_item,
+			"Name": "OreWater",
 			"Count": 50,
 			"Capacity": 32000,
 		})
@@ -233,17 +233,17 @@ for ore_type in ore_types:
 			"Input":{
 				"Items":[
 					{
-						"Name": ore_type["Name"] + "ImpureOreGravel" + static_item,
+						"Name": ore_type["Name"] + "ImpureOreGravel",
 						"Count": 1
 					},
 					{
-						"Name": "Water" + static_item,
+						"Name": "Water",
 						"Count": 250
 					}
 				]
 			},
 			"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 10
 			},
 			"Output":{
@@ -300,13 +300,13 @@ for ore_type in ore_types:
 			"Input":{
 				"Items":[
 					{
-						"Name": ore_type["Name"] + "OreDust" + static_item,
+						"Name": ore_type["Name"] + "OreDust",
 						"Count": 1
 					},
 				]
 			},
 			"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 20
 			},
 			"Output":{
@@ -320,29 +320,29 @@ for ore_type in ore_types:
 				"Input":{
 					"Items":[
 						{
-							"Name": ore_type["Name"] + i + static_item,
+							"Name": ore_type["Name"] + i,
 							"Count": 1
 						},
 					]
 				},
 				"ResourceInput":{
-					"Name": "Kinetic" + static_item,
+					"Name": "Kinetic",
 					"Count": 200
 				},
 				"Output":{
 					"Items": [
 						{
-							"Name": ore_type["Byproducts"][1][0] + static_item,
+							"Name": ore_type["Byproducts"][1][0],
 							"Count": 1,
 							"Probability": 80,
 						},
 						{
-							"Name": ore_type["Byproducts"][1][1] + static_item,
+							"Name": ore_type["Byproducts"][1][1],
 							"Count": 1,
 							"Probability": 20,
 						},
 						{
-							"Name": ore_type["Byproducts"][1][2] + static_item,
+							"Name": ore_type["Byproducts"][1][2],
 							"Count": 1,
 							"Probability": 2,
 						},
@@ -352,13 +352,13 @@ for ore_type in ore_types:
 			})	
 		#out_items = []
 		#out_items.append({
-		#	"Name": (ore_type["Name"] + "Dust" + static_item) if "Oxide" not in ore_type else (ore_type["Name"] + "OxideDust" + static_item),
+		#	"Name": (ore_type["Name"] + "Dust") if "Oxide" not in ore_type else (ore_type["Name"] + "OxideDust"),
 		#	"Count": 8
 		#})
 		#if "Byproducts" in ore_type and len(ore_type["Byproducts"]) > 0:
 		#	for byp in ore_type["Byproducts"]:
 		#		out_items.append({
-		#			"Name": byp + "Dust" + static_item,
+		#			"Name": byp + "Dust",
 		#			"Count": 1,
 		#		})
 		#recipes_sep2.append({
@@ -366,13 +366,13 @@ for ore_type in ore_types:
 		#	"Input":{
 		#		"Items":[
 		#			{
-		#				"Name": ore_type["Name"] + "OreDust" + static_item,
+		#				"Name": ore_type["Name"] + "OreDust",
 		#				"Count": 7
 		#			},
 		#		]
 		#	},
 		#	"ResourceInput":{
-		#		"Name": "Kinetic" + static_item,
+		#		"Name": "Kinetic",
 		#		"Count": 3000 * 8
 		#	},
 		#	"Output":{

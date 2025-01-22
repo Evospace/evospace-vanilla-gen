@@ -701,7 +701,7 @@ for prop in props:
 	cvs.append([prop["Name"], CamelToSpaces(prop["Name"])])
 	for variation in range(0, prop["Variations"]):
 		objects_array.append({ "Class": "StaticItem",
-			"Name": prop["Name"] + variation_helper[variation] + static_item,
+			"Name": prop["Name"] + variation_helper[variation],
 			
 			"StackSize": 32,
 			"Image": "T_" + prop["Name"],
@@ -721,8 +721,8 @@ for prop in props:
 			"ScaleMin": prop["ScaleMin"],
 			"ScaleMax": prop["ScaleMax"],
 			"ProjectToTerrainPower": prop["ProjectToTerrainPower"],
-			"Item": prop["Name"] + static_item,
-			"Minable": {"Result": prop["Drops"] + static_item},
+			"Item": prop["Name"],
+			"Minable": {"Result": prop["Drops"]},
 		}
 		
 		if "CullBegin" in prop:

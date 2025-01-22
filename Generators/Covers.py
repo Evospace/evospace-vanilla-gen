@@ -136,7 +136,7 @@ for mat, num in zip(paint_metals, range(1,7+1)):
 for cover in covers:
     if "HasItem" in cover:
         objects_array.append({ "Class": "StaticItem",
-            "Name": cover["Name"] + static_item,
+            "Name": cover["Name"],
             
             "StackSize": 32,
             "Image": "T_" + cover["Name"],
