@@ -4,7 +4,7 @@ from Materials import *
 def append_nuclear(xy, append_levels, researches):
 	append_levels({
 		"Class": "StaticResearch",
-		"Name": "ControlCell" + static_research,
+		"Name": "ControlCell",
 		"LabelParts": [["ControlCell", "parts"]],
 		"RequiredResearch": ["FissionReactor"+static_research],
 		"Unlocks": [["Assembler" + base_recipe, "ControlCell"], ["Hand" + base_recipe, "ControlCell"],["FissionReactor" + base_recipe, "ControlCell"]],
@@ -14,7 +14,7 @@ def append_nuclear(xy, append_levels, researches):
 	})
 	append_levels({
 		"Class": "StaticResearch",
-		"Name": "ReflectorCell" + static_research,
+		"Name": "ReflectorCell",
 		"LabelParts": [["ReflectorCell", "parts"]],
 		"RequiredResearch": ["ControlCell"+static_research],
 		"Unlocks": [["Assembler" + base_recipe, "ReflectorCell"], ["Hand" + base_recipe, "ReflectorCell"],["FissionReactor" + base_recipe, "UraniumCell2"]],
@@ -24,9 +24,9 @@ def append_nuclear(xy, append_levels, researches):
 	})
 	append_levels({
 		"Class": "StaticResearch",
-		"Name": "ReactionThrottling" + static_research,
+		"Name": "ReactionThrottling",
 		"LabelParts": [["ReactionThrottling", "researches"]],
-		"RequiredResearch": ["ControlCell" + static_research],
+		"RequiredResearch": ["ControlCell"],
 		"Unlocks": [["FissionReactor" + base_recipe, "ControlCell3"]],
 		
 		
@@ -34,9 +34,9 @@ def append_nuclear(xy, append_levels, researches):
 	})
 	append_levels({
 		"Class": "StaticResearch",
-		"Name": "AdvancedReflection" + static_research,
+		"Name": "AdvancedReflection",
 		"LabelParts": [["AdvancedReflection", "researches"]],
-		"RequiredResearch": ["ReflectorCell" + static_research],
+		"RequiredResearch": ["ReflectorCell"],
 		"Unlocks": [["FissionReactor" + base_recipe, "UraniumCell3"]],
 		
 		
@@ -44,9 +44,9 @@ def append_nuclear(xy, append_levels, researches):
 	})
 	append_levels({
 		"Class": "StaticResearch",
-		"Name": "AdvancedReflection2" + static_research,
+		"Name": "AdvancedReflection2",
 		"LabelParts": [["AdvancedReflection", "researches"], ["II", "common"]],
-		"RequiredResearch": ["AdvancedReflection" + static_research],
+		"RequiredResearch": ["AdvancedReflection"],
 		"Unlocks": [["FissionReactor" + base_recipe, "UraniumCell4"]],
 		
 		
@@ -54,9 +54,9 @@ def append_nuclear(xy, append_levels, researches):
 	})
 	append_levels({
 		"Class": "StaticResearch",
-		"Name": "ThoriumReaction" + static_research,
+		"Name": "ThoriumReaction",
 		"LabelParts": [["ThoriumReaction", "researches"]],
-		"RequiredResearch": ["AdvancedReflection" + static_research],
+		"RequiredResearch": ["AdvancedReflection"],
 		"Unlocks": [["FissionReactor" + base_recipe, "ThoriumCell"]],
 		
 		
@@ -64,9 +64,9 @@ def append_nuclear(xy, append_levels, researches):
 	})
 	append_levels({
 		"Class": "StaticResearch",
-		"Name": "PlutoniumReaction" + static_research,
+		"Name": "PlutoniumReaction",
 		"LabelParts": [["PlutoniumReaction", "researches"]],
-		"RequiredResearch": ["ThoriumReaction" + static_research],
+		"RequiredResearch": ["ThoriumReaction"],
 		"Unlocks": [["FissionReactor" + base_recipe, "PlutoniumCell"]],
 		
 		
@@ -74,9 +74,9 @@ def append_nuclear(xy, append_levels, researches):
 	})
 	append_levels({
 		"Class": "StaticResearch",
-		"Name": "PlutoniumReaction2" + static_research,
+		"Name": "PlutoniumReaction2",
 		"LabelParts": [["PlutoniumReaction", "researches"], ["II", "common"]],
-		"RequiredResearch": ["PlutoniumReaction" + static_research],
+		"RequiredResearch": ["PlutoniumReaction"],
 		"Unlocks": [["FissionReactor" + base_recipe, "PlutoniumCell2"]],
 		
 		

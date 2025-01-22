@@ -1078,14 +1078,6 @@ machines = [
 			"Autocrafter"
 		],
 		"BlockLogic":"AutoCrafter",
-		"BlockCreation":"""
-        local a = self:new_resource_accessor("Input")
-		a:SetSidePos(Vec3i.back, Vec3i.new(-1,1,0))
-        local res = self:get_resource_component()
-		a:Bind(res)
-        res.input = 20
-        res.input_item = StaticItem.find("Kinetic")
-		""",
 		"Description": ["KineticInput"],
 	},{
 		"Name": "Radiator",

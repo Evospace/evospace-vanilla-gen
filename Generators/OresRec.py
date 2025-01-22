@@ -74,11 +74,6 @@ for ore_type in ore_types:
 				},
 				"Ticks" : 180,
 			})
-		out_items = []
-		out_items.append({
-			"Name": ore_type["Name"] + "OreDust" + static_item,
-			"Count": 1
-		})
 		recipes_mac.append({
 			"Name": ore_type["Name"] + "ImpureOreGravel",
 			"Input":{
@@ -94,7 +89,17 @@ for ore_type in ore_types:
 				"Count": 10
 			},
 			"Output":{
-				"Items": out_items
+				"Items": [
+					{
+						"Name": ore_type["Name"] + "OreDust" + static_item,
+						"Count": 1
+					},
+					{
+						"Name": ore_type["Name"] + "OreDust" + static_item,
+						"Count": 1,
+						"Bonus": True
+					}
+				]
 			},
 			"Ticks" : 200,
 			"Productivity": 50,
@@ -118,6 +123,11 @@ for ore_type in ore_types:
 					{
 						"Name": ore_type["Name"] + "OreDust" + static_item,
 						"Count": 1
+					},
+					{
+						"Name": ore_type["Name"] + "OreDust" + static_item,
+						"Count": 1,
+						"Bonus": True
 					}
 				]
 			},
@@ -241,45 +251,42 @@ for ore_type in ore_types:
 			},
 			"Ticks" : 200,
 		})
-		out_items = []
-		out_items.append({
-			"Name": (ore_type["Name"] + "Dust" + static_item) if "Oxide" not in ore_type else (ore_type["Name"] + "OxideDust" + static_item),
-			"Count": 1
-		})
-		if "Byproducts" in ore_type and len(ore_type["Byproducts"]) > 0:
-			oi = {
-				"Name": ore_type["Byproducts"][0] + static_item,
-				"Count": 1,
-				"Probability": 10,
-			}
-			if "ByproductChanse" in ore_type:
-				oi["Probability"] = ore_type["ByproductChanse"][0]
-				
-			out_items.append(oi)
 			
-		recipes_sep2.append({
+		sep2_rec = {
 			"Name": ore_type["Name"] + "OreDust",
 			"Input":{
 				"Items":[
 					{
-						"Name": ore_type["Name"] + "OreDust" + static_item,
+						"Name": ore_type["Name"] + "OreDust",
 						"Count": 1
 					},
 				]
 			},
 			"ResourceInput":{
-				"Name": "Kinetic" + static_item,
+				"Name": "Kinetic",
 				"Count": 50*4
 			},
 			"Output":{
-				"Items": out_items
+				"Items": [{
+					"Name": (ore_type["Name"] + "Dust") if "Oxide" not in ore_type else (ore_type["Name"] + "OxideDust"),
+					"Count": 1
+				}],
 			},
 			"Ticks" : 60,
-		})	
+			"Productivity": 50
+		}
+		if "Byproducts" in ore_type and len(ore_type["Byproducts"]) > 0:
+			sep2_rec["Output"]["Items"].append({
+				"Name": ore_type["Byproducts"][0],
+				"Count": 1,
+				"Bonus": True
+			})
+		recipes_sep2.append(sep2_rec)	
+		
 		out_items = []
 		if "Byproducts" in ore_type and len(ore_type["Byproducts"]) > 0:
 			oi = {
-				"Name": (ore_type["Name"] + "Dust" + static_item) if "Oxide" not in ore_type else (ore_type["Name"] + "OxideDust" + static_item),
+				"Name": (ore_type["Name"] + "Dust") if "Oxide" not in ore_type else (ore_type["Name"] + "OxideDust"),
 				"Count": 1
 			}
 			
