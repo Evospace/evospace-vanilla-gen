@@ -1627,40 +1627,6 @@ for machine in machines:
 					"Ticks" : 20
 				})
 				
-			if machine["Name"] == "Destroyer":
-				append_recipe({
-					"Name": tier_material[tier] + machine["Name"],
-					"Input":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + "RobotArm",
-								"Count": 2
-							},
-							{
-								"Name": tier_material[tier] + "Plate",
-								"Count": 4
-							},
-							{
-								"Name": tier_material[tier] + "Gearbox",
-								"Count": 2 + parts_ramp(level, 2)
-							},
-							{
-								"Name": circuits[tier],
-								"Count": 1 + level
-							}
-						]
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + machine["Name"],
-								"Count": 1
-							}
-						]
-					},
-					"Ticks" : 20
-				})
-				
 			if machine["Name"] == "Constructor":
 				objects_array.append({ 
 					"Class": base_recipe,

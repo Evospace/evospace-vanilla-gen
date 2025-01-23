@@ -155,7 +155,7 @@ machines = [
 		"Label": "Cable",
 		"StartTier": 1,
 		"EndTier": 1,
-		"BlockLogic": "ElectricConductorBlockLogic",
+		"BlockLogic": "ElectricityConductorBlockLogic",
         "Description": ["ElectricConductor"],
 		"PathFinding": True,
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
@@ -187,7 +187,7 @@ machines = [
 		"Label": "Switch",
 		"StartTier": 2,
 		"EndTier": 2,
-		"BlockLogic": "ElectricSwitchBlockLogic",
+		"BlockLogic": "ElectricitySwitchBlockLogic",
 		"Description": ["ElectricConductor"],
 	},{
 		"Name": "OreWasher",
@@ -329,19 +329,6 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 10,
 		"BlockLogic": "SelectCrafter",
-		"BlockCreation":"""
-        local crafter = AbstractCrafter.cast(self)
-        
-        local input = ResourceInventory.new(crafter, "InputInv")
-        input.item = StaticItem.find("Heat")
-        input.capacity = 20
-        crafter.energy_input_inventory = inv
-        
-        local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side = Vec3i.down
-        acc.pos = Vec3i.zero
-        acc.inventory = input
-		""",
 		"Description": ["HeatInput"],
 	},{
         "Name": "HandGenerator",
@@ -622,14 +609,6 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 10,
 		"BlockLogic":"SelectCrafter",
-		"BlockCreation":"""
-        local a = self:new_resource_accessor("Input")
-		a:SetSidePos(Vec3i.front, Vec3i.new( 0, 0, 0 ))
-        local res = self:get_resource_component()
-		a:bind_input(res)
-        res.input = 20
-        res.input_item = StaticItem.find("Electricity")
-		""",
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "Furnace",
@@ -943,14 +922,6 @@ machines = [
 		"EndTier": 10,
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
 		"BlockLogic":"SelectCrafter",
-		"BlockCreation":"""
-        local a = self:new_resource_accessor("Input")
-		a:SetSidePos(Vec3i.back, Vec3i.new(-1,0,0))
-        local res = self:get_resource_component()
-		a:Bind(res)
-        res.input = 20
-        res.input_item = StaticItem.find("Kinetic")
-		""",
 		"Description": ["KineticInput"],
 	},{
 		"Name": "Freezer",

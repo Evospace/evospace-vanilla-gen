@@ -4367,6 +4367,32 @@ recipes_pyro.append({
 })
 
 recipes_pyro.append({
+	"Name": "PrimitiveRawOil",
+	"Input":{
+		"Items":[
+			{
+				"Name": "RawOil",
+				"Count": 2000
+			},
+			
+		]
+	},
+	"ResourceInput":{
+			"Name": "Heat",
+			"Count": 15
+		},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "HeavyOil",
+				"Count": 500
+			}		
+		]
+	},
+	"Ticks" : 150
+})
+
+recipes_pyro.append({
 	"Name": "RawOil",
 	"Input":{
 		"Items":[
@@ -4439,7 +4465,7 @@ recipes_pyro.append({
 })
 
 recipes_pyro.append({
-	"Name": "HeavyOil",
+	"Name": "HeavyOilSteam",
 	"Input":{
 		"Items":[
 			{
@@ -4469,7 +4495,7 @@ recipes_pyro.append({
 })
 
 recipes_pyro.append({
-	"Name": "Gasoline",
+	"Name": "GasolineSteam",
 	"Input":{
 		"Items":[
 			{
@@ -4499,7 +4525,7 @@ recipes_pyro.append({
 })
 
 recipes_pyro.append({
-	"Name": "Methane",
+	"Name": "MethaneSteam",
 	"Input":{
 		"Items":[
 			{
@@ -4694,7 +4720,7 @@ recipes_industrial_chemreactor.append({
 	"Colors": [[0.2,0.2,0.2,0.5],[0.2,0.5,0.2,0.5]]
 })
 
-recipes_chem.append({
+recipes_industrial_chemreactor.append({
 	"Name": "Sulfur",
 	"Input":{
 		"Items":[
