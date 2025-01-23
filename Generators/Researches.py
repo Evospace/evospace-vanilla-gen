@@ -61,7 +61,7 @@ def append_levels(research_base):
 			new = []
 			for j in unl:
 				new.append([j[0], j[1].replace("%Material%", tier_material[i])])                
-			research["Unlocks"].append(new)
+			research["Unlocks"] = new
 		
 		CostMul = research["CostMul"] if "CostMul" in research else 1
 
@@ -529,9 +529,47 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
+	"Name": "Sulfur",
+	"LabelParts": [["SulfurSynthesis", "researches"]],
+	"RequiredResearch": ["IndustrialChemReactor", "PyrolysisUnit"],
+	"Levels": [4,4],
+	"Unlocks": [["IndustrialChemReactor" + base_recipe, "Sulfur"]],
+	"MainResearch": True,
+	"CostMul": 0.5,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "SulfuricAcid",
+	"LabelParts": [["SulfuricAcidSynthesis", "researches"]],
+	"RequiredResearch": ["Sulfur"],
+	"Levels": [4,4],
+	"Unlocks": [["IndustrialChemReactor" + base_recipe, "SulfuricAcid"]],
+	"MainResearch": True,
+	"CostMul": 0.75,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "NitricAcid",
+	"LabelParts": [["NitricAcid", "parts"]],
+	"RequiredResearch": ["IndustrialChemReactor"],
+	"Levels": [4,4],
+	"Unlocks": [["IndustrialChemReactor" + base_recipe, "NitricAcid"]],
+	"CostMul": 0.5,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "RareEarthElement",
+	"LabelParts": [["RareEarthElement", "parts"]],
+	"RequiredResearch": ["ChemicalBath", "SulfuricAcid"],
+	"Levels": [4,4],
+	"Unlocks": [["ChemicalBath" + base_recipe, "RareEarthElement"]],
+	"MainResearch": True,
+})
+append_levels({
+	"Class": "StaticResearch",
 	"Name": "QuantumCore",
 	"LabelParts": [["QuantumCore", "parts"]],
-	"RequiredResearch": ["Processor", "ChemicalBath"],
+	"RequiredResearch": ["Processor", "RareEarthElement"],
 	"Levels": [4,4],
 	"Unlocks": [["Hand" + base_recipe, "QuantumCore"],["Assembler" + base_recipe, "QuantumCore"]],
 	"MainResearch": True,
@@ -598,9 +636,18 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
+	"Name": "IndustrialChemReactor",
+	"LabelParts": [["IndustrialChemReactor", "machines"]],
+	"RequiredResearch": ["Chemistry"],
+	"Unlocks": [["Hand" + base_recipe, "%Material%IndustrialChemReactor"] ],
+	"Levels": [3,7],
+	"MainResearch": True,
+})
+append_levels({
+	"Class": "StaticResearch",
 	"Name": "Catalyst",
 	"LabelParts": [["Catalyst", "parts"]],
-	"RequiredResearch": ["Chemistry"],
+	"RequiredResearch": ["IndustrialChemReactor"],
 	"Unlocks": [["Hand" + base_recipe, "Catalyst"],["Assembler" + base_recipe, "Catalyst"]],
 	"Levels": [2,2],
 	"MainResearch": True,
@@ -608,18 +655,9 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "IndustrialChemReactor",
-	"LabelParts": [["IndustrialChemReactor", "machines"]],
-	"RequiredResearch": ["Catalyst"],
-	"Unlocks": [["Hand" + base_recipe, "%Material%IndustrialChemReactor"] ],
-	"Levels": [3,7],
-	"MainResearch": True,
-})
-append_levels({
-	"Class": "StaticResearch",
 	"Name": "FuelChemistry",
 	"LabelParts": [["FuelChemistry", "researches"]],
-	"RequiredResearch": ["IndustrialChemReactor"],
+	"RequiredResearch": ["Catalyst"],
 	"Unlocks": [["IndustrialChemReactor" + base_recipe, "Superfuel"], ["IndustrialChemReactor" + base_recipe, "RocketFuel"]],
 	"Levels": [3,3],
 	
@@ -658,7 +696,7 @@ append_levels({
 	"RequiredResearch": ["Electrolysis"],
 	"Levels": [2,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%ElectricEngine"] ],
-	"MainResearch": True,
+	"MainResearchArr": [True, True, False, False, False, False, False],
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -710,7 +748,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "CombustionEngine",
 	"LabelParts": [["CombustionEngine", "machines"]],
-	"RequiredResearch": ["IndustrialChemReactor"],
+	"RequiredResearch": ["Catalyst"],
 	"Levels": [3,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%CombustionEngine"] ],
 	
@@ -733,6 +771,7 @@ append_levels({
 	"RequiredResearch": ["AluminiumProduction", "ElectricEngine1"],
 	"Levels": [3,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%IndustrialSeparator"] ],
+	"MainResearch": True,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -758,7 +797,7 @@ append_levels({
 	"LabelParts": [["TitaniumProduction", "researches"]],
 	"RequiredResearch": ["IndustrialSmelting"],
 	"Unlocks": get_parts_unlocks(tier_material[5]),
-	"Levels": [4,4],
+	"Levels": [5,5],
 	"MainResearch": True,
 })
 append_levels({
@@ -865,6 +904,7 @@ append_levels({
 	"Levels": [4,7],
 	"Unlocks": [["Hand" + base_recipe, "%Material%IndustrialSmelter"] ],
 	"MainResearch": True,
+	"CostMul":5,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -964,6 +1004,22 @@ append_levels({
 	"Unlocks": [["Hand" + base_recipe, "%Material%PyrolysisUnit"] ],
 	"Levels": [3,7],
 	"MainResearch": True,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "PreciseTemperaturePyrolysis",
+	"LabelParts": [["PreciseTemperaturePyrolysis", "researches"]],
+	"RequiredResearch": ["PyrolysisUnit"],
+	"Unlocks": [["PyrolysisUnit" + base_recipe, "RawOil"]],
+	"Levels": [4,4]
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "SteamPyrolysis",
+	"LabelParts": [["SteamPyrolysis", "researches"]],
+	"RequiredResearch": ["PreciseTemperaturePyrolysis"],
+	"Unlocks": [["PyrolysisUnit" + base_recipe, "RawOilSteam"],["PyrolysisUnit" + base_recipe, "HeavyOilSteam"],["PyrolysisUnit" + base_recipe, "GasolineSteam"],["PyrolysisUnit" + base_recipe, "MethaneSteam"]],
+	"Levels": [5,5]
 })
 	
 append_levels({
@@ -1230,6 +1286,10 @@ csv.append(["AdvancedReflection", "Advanced Reflection"])
 csv.append(["ReactionThrottling", "Reaction Throttling"])
 csv.append(["FuelChemistry", "Fuel Chemistry"])
 csv.append(["FuelChemistry2", "Fuel Chemistry II"])
+csv.append(["SulfurSynthesis", "Sulfur Synthesis"])
+csv.append(["SulfuricAcidSynthesis", "Sulfuric Acid Synthesis"])
+csv.append(["PreciseTemperaturePyrolysis", "Precise Temperature Pyrolysis"])
+csv.append(["SteamPyrolysis", "Steam Pyrolysis"])
 
 write_file("Generated/Researches/basic.json", data)
 write_file("Loc/source/researches.json", csv)
