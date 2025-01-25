@@ -863,7 +863,7 @@ materials = [
 		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Parts",
-		"Mesh": "/Game/Models/Circuit3Crate"
+		"Mesh": "/Game/Models/QuantumCircuitCrate"
 	},{
 		"Name" : "QuantumBrain",
 		"Label" : "Quantum Brain",

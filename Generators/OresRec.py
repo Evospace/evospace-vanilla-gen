@@ -273,7 +273,7 @@ for ore_type in ore_types:
 				}],
 			},
 			"Ticks" : 60,
-			"Productivity": 50
+			"Productivity": 25
 		}
 		if "Byproducts" in ore_type and len(ore_type["Byproducts"]) > 0:
 			sep2_rec["Output"]["Items"].append({

@@ -170,8 +170,7 @@ append_levels({
 	"LabelParts": [["SteelProduction", "researches"]],
 	"RequiredResearch": ["Drying"+static_research],
 	"Levels": [1,7],
-	"Unlocks": [["Hand" + base_recipe, "%Material%BlastFurnace"] ],
-	"AlsoUnlocks": get_parts_unlocks(tier_material[2]),
+	"Unlocks": [["Hand" + base_recipe, "%Material%BlastFurnace"] ] + get_parts_unlocks(tier_material[2]),
 	"MainResearch": True,
 	"CostMul": 5
 })
@@ -541,7 +540,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "SulfuricAcid",
 	"LabelParts": [["SulfuricAcidSynthesis", "researches"]],
-	"RequiredResearch": ["Sulfur"],
+	"RequiredResearch": ["Sulfur", "Catalyst"],
 	"Levels": [4,4],
 	"Unlocks": [["IndustrialChemReactor" + base_recipe, "SulfuricAcid"]],
 	"MainResearch": True,
@@ -560,10 +559,11 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "RareEarthElement",
 	"LabelParts": [["RareEarthElement", "parts"]],
-	"RequiredResearch": ["ChemicalBath", "SulfuricAcid"],
+	"RequiredResearch": ["SulfuricAcid"],
 	"Levels": [4,4],
-	"Unlocks": [["ChemicalBath" + base_recipe, "RareEarthElement"]],
+	"Unlocks": [["IndustrialChemReactor" + base_recipe, "RareEarthElement"]],
 	"MainResearch": True,
+	"CostMul": 1.5,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -649,9 +649,9 @@ append_levels({
 	"LabelParts": [["Catalyst", "parts"]],
 	"RequiredResearch": ["IndustrialChemReactor"],
 	"Unlocks": [["Hand" + base_recipe, "Catalyst"],["Assembler" + base_recipe, "Catalyst"]],
-	"Levels": [2,2],
+	"Levels": [4,4],
 	"MainResearch": True,
-	"CostMul":5,
+	"CostMul":1,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -758,8 +758,7 @@ append_levels({
 	"Name": "StainlessSteelProduction",
 	"LabelParts": [["StainlessSteelProduction", "researches"]],
 	"RequiredResearch": ["Chemistry", "AluminiumProduction", "AdvancedSeparation"],
-	"Unlocks": get_parts_unlocks(tier_material[4]),
-	"AlsoUnlocks": [["Hand" + base_recipe, "Cell"]],
+	"Unlocks": [["Hand" + base_recipe, "Cell"]] + get_parts_unlocks(tier_material[4]),
 	"Levels": [4,4],
 	"CostLevelOffset": -1,
 	"MainResearch": True,
