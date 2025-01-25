@@ -336,7 +336,7 @@ for list in (wooden_misc, simple_single, simple_blocks, static_mesh_block):
 
 # other		
 		
-recipes_assembler.append({
+append_recipe({
 	"Name":"Circuit",
 	"Input":{
 		"Items":[
@@ -366,7 +366,7 @@ recipes_assembler.append({
 	
 })
 
-recipes_assembler.append({
+append_recipe({
 	"Name":"AdvancedCircuit",
 	"Input":{
 		"Items":[
@@ -422,7 +422,7 @@ recipes_assembler.append({
 	
 })
 
-recipes_assembler.append({
+append_recipe({
 	"Name":"Processor",
 	"Input":{
 		"Items":[
@@ -601,7 +601,7 @@ recipes_assembler.append({
 	
 })
 
-recipes_assembler.append({
+append_recipe({
 	"Name":"QuantumCore",
 	"Input":{
 		"Items":[
@@ -631,7 +631,7 @@ recipes_assembler.append({
 	
 })
 
-recipes_assembler.append({
+append_recipe({
 	"Name":"QuantumCircuit",
 	"Input":{
 		"Items":[
@@ -640,7 +640,7 @@ recipes_assembler.append({
 				"Count": 2
 			},	
 			{
-				"Name": "AdvancedCircuitBoard",
+				"Name": "Processor",
 				"Count": 1
 			}
 		]
@@ -661,7 +661,7 @@ recipes_assembler.append({
 	
 })
 
-recipes_assembler.append({
+append_recipe({
 	"Name":"QuantumProcessor",
 	"Input":{
 		"Items":[
@@ -700,10 +700,6 @@ recipes_assembler.append({
 				"Count": 1
 			},
 		]
-	},
-	"ResourceInput": {
-		"Name": "Electricity",
-		"Count": 10
 	},
 	"Output":{
 		"Items":[
@@ -1950,7 +1946,7 @@ recipes_oven.append({
 		]
 	},
 	
-	"Ticks": 10*5*20,
+	"Ticks": 5*2*20,
 })
 
 recipes_oven.append({
@@ -1977,7 +1973,7 @@ recipes_oven.append({
 		]
 	},
 	
-	"Ticks": 10*5*20,
+	"Ticks": 5*2*20,
 })
 
 recipes_oven.append({
@@ -2004,7 +2000,7 @@ recipes_oven.append({
 		]
 	},
 	
-	"Ticks": 500,
+	"Ticks": 3*2*20,
 })
 
 recipes_oven.append({
@@ -2031,7 +2027,7 @@ recipes_oven.append({
 		]
 	},
 	
-	"Ticks": 500,
+	"Ticks": 2*2*20,
 })
 
 recipes_oven.append({
@@ -2053,7 +2049,7 @@ recipes_oven.append({
 		]
 	},
 	
-	"Ticks": 500,
+	"Ticks": 100,
 })
 
 for fuel_type, bonus in zip(["Coke"], [1.0]):	
@@ -2240,11 +2236,11 @@ recipes_mixer.append({
 		"Items":[
 			{
 				"Name": "IronDust",
-				"Count": 10
+				"Count": 4
 			},
 			{
 				"Name": "ChromiumDust",
-				"Count": 3
+				"Count": 1
 			}
 		]
 	},
@@ -2252,7 +2248,7 @@ recipes_mixer.append({
 		"Items":[
 			{
 				"Name": "StainlessSteelDust",
-				"Count": 10
+				"Count": 4
 			}
 		]
 	},
@@ -2264,11 +2260,11 @@ recipes_mixer.append({
 		"Items":[
 			{
 				"Name": "IronOreDust",
-				"Count": 10
+				"Count": 4
 			},
 			{
 				"Name": "ChromiumDust",
-				"Count": 3
+				"Count": 1
 			}
 		]
 	},
@@ -2276,12 +2272,12 @@ recipes_mixer.append({
 		"Items":[
 			{
 				"Name": "StainlessSteelDust",
-				"Count": 10
+				"Count": 4
 			}
 		]
 	},
 	
-	"Ticks" : 500,
+	"Ticks" : 600,
 })
 
 recipes_mixer.append({
@@ -4746,7 +4742,8 @@ recipes_industrial_chemreactor.append({
 			},		
 		]
 	},
-	"Ticks" : 200
+	"Ticks" : 200,
+	"Colors": [[0.0,0.2,0.0,0.9],[0.0,0.0,0.0,0.2]]
 })
 
 recipes_industrial_chemreactor.append({
@@ -4758,29 +4755,26 @@ recipes_industrial_chemreactor.append({
 				"Count": 1
 			},
 			{
-				"Name": "Oxygen",
-				"Count": 250
+				"Name": "Catalyst",
+				"Count": 1,
+				"Probability": 0
 			},
 			{
 				"Name": "Water",
-				"Count": 250
+				"Count": 1000
 			},
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[	
 			{
 				"Name": "SulfuricAcid",
-				"Count": 1000
+				"Count": 300
 			},		
 		]
 	},
 	"Ticks" : 200,
-	"Colors": [[0.4,0.4,0.8,0.5],[1.0,0.7,0.1,0.5]]
+	"Colors": [[0.0,0.0,0.3,0.2],[0.8,0.8,0.1,0.3]]
 })
 
 recipes_industrial_chemreactor.append({
@@ -5190,7 +5184,7 @@ recipes_industrial_chemreactor.append({
 })
 
 for i in {"IronOreDust", "CopperOreDust"}:
-	recipes_chemical_bath.append({
+	recipes_industrial_chemreactor.append({
 		"Name": i,
 		"Input":{
 			"Items":[
@@ -5220,7 +5214,7 @@ for i in {"IronOreDust", "CopperOreDust"}:
 		"Colors": [[0.4,0.4,0.1,0.8],[0.2,0.2,0.1,0.2]]
 	})
 	
-recipes_chemical_bath.append({
+recipes_industrial_chemreactor.append({
 	"Name":"RareEarthElement",
 	"Input":{
 		"Items":[
@@ -5247,10 +5241,10 @@ recipes_chemical_bath.append({
 		]
 	},
 	"Ticks" : 1000,
-	"Colors": [[0.4,0.4,0.1,0.8],[0.2,0.2,0.1,0.2]]
+	"Colors": [[0.8,0.8,0.1,0.3],[0.7,0.2,0.7,0.8]]
 })
 
-recipes_chemical_bath.append({
+recipes_industrial_chemreactor.append({
 	"Name":"CobaltOxideDust",
 	"Input":{
 		"Items":[

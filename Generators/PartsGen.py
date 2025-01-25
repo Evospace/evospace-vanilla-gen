@@ -154,7 +154,7 @@ for part in parts:
 						}]) + ([] if tier < 2 else [
 							{
 								"Name": tier_material[(tier - 1) if tier < 3 else 2] + "Gearbox",
-								"Count": 2 + (0 if tier < 3 else (tier - 2) )
+								"Count": 1 + (0 if tier < 3 else (tier - 2) )
 							}
 						])
 					},
