@@ -749,13 +749,6 @@ machines = [
 		a:Bind(self:GetInputContainer())
 		""",
 	},
-	#{
-	#	"Name": "MoltenSaltBattery",
-	#	"Label": "Molten Salt Battery",
-	#	"StartTier": 5,
-	#	"EndTier": 10,
-	#	"BlockLogic": "HighcapElectricBatteryBlockLogic",
-	#}
 	{
 		"Name": "DrillingRig",
 		"Label": "Drilling Rig",
@@ -897,22 +890,6 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
 		"BlockLogic":"SelectCrafter",
 		"Description": ["KineticInput"],
-	},{
-		"Name": "Freezer",
-		"Label": "Freezer",
-		"StartTier": 5,
-		"EndTier": 10,
-		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
-		"BlockLogic":"SelectCrafter",
-		"BlockCreation":"""
-        local a = self:new_resource_accessor("Input")
-		a:SetSidePos(Vec3i.back, Vec3i.new(-1,0,0))
-        local res = self:get_resource_component()
-		a:Bind(res)
-        res.input = 20
-        res.input_item = StaticItem.find("Kinetic")
-		""",
-		"Description": ["KineticInput", "HeatOutput"],
 	},{
 		"Name": "AutomaticFarm",
 		"Label": "Automatic Farm",
