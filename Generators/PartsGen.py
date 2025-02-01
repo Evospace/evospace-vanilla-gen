@@ -13,7 +13,6 @@ recipes_hand = []
 recipes_assembler = []
 recipes_furnace = []
 recipes_press = []
-recipes_wrench = []
 recipes_smelt = []
 recipes_gasfurn = []
 recipes_disassembler = []
@@ -137,7 +136,6 @@ for part in parts:
 					"Item" : material + "Casing",
 					"Tesselator": material + "Casing" + tesselator,
 				})
-				recipes_wrench.append(simple_in_out_recipe(material + part["Name"]))
 			
 			if part["Name"] == "Gearbox":
 				append_recipe_diss(recipes_assembler, {
@@ -352,8 +350,8 @@ for material in materials:
 				},
 				"Ticks" : material["Burnable"]["BurnTime"],
 			})
-			item["DescriptionParts"] = [["burnable", "common", material["Burnable"]["BurnTime"]*material["Burnable"]["HeatPerTick"]],
-										["power_output", "common", material["Burnable"]["HeatPerTick"]*20]]
+			#item["DescriptionParts"] = [["burnable", "common", material["Burnable"]["BurnTime"]*material["Burnable"]["HeatPerTick"]],
+										#["power_output", "common", material["Burnable"]["HeatPerTick"]*20]]
 			
 		objects_array.append(item)
 
@@ -498,27 +496,6 @@ for material in materials:
 			},
 			"Ticks" : 200,
 		})
-		
-		recipes_wrench.append({
-			"Name": material["Name"] + "Block" + "Wrenching",
-			"Ticks" : 20,
-			"Input":{
-				"Items":[
-					{
-						"Name": material["Name"] + "Block",
-						"Count": 1
-					}
-				]
-			},
-			"Output":{
-				"Items":[
-					{
-						"Name": material["Name"] + "Block",
-						"Count": 1
-					}
-				]
-			}
-		})
 	
 	# fluid
 	if "IsFluid" in material:
@@ -544,9 +521,9 @@ for material in materials:
 		#if item["MaterialKey"] + " " + item["Key"] in explicites:
 		#	item["ExplicitKey"] = ex_cvs[explicites.index(item["MaterialKey"] + " " + item["Key"])][0]
 		
-		if "Burnable" in material:
-			item["DescriptionParts"].append(["burnable", "common", material["Burnable"]["BurnTime"]*material["Burnable"]["HeatPerTick"]])
-			item["DescriptionParts"].append(["power_output", "common", material["Burnable"]["HeatPerTick"]*20])
+		#if "Burnable" in material:
+		#	item["DescriptionParts"].append(["burnable", "common", material["Burnable"]["BurnTime"]*material["Burnable"]["HeatPerTick"]])
+		#	item["DescriptionParts"].append(["power_output", "common", material["Burnable"]["HeatPerTick"]*20])
 
 		objects_array.append(item)
 		
@@ -605,9 +582,9 @@ for material in materials:
 		#if item["MaterialKey"] + " " + item["Key"] in explicites:
 		#	item["ExplicitKey"] = ex_cvs[explicites.index(item["MaterialKey"] + " " + item["Key"])][0]
 		
-		if "Burnable" in material:
-			item["DescriptionParts"].append(["burnable", "common", material["Burnable"]["BurnTime"]*material["Burnable"]["HeatPerTick"]])
-			item["DescriptionParts"].append(["power_output", "common", material["Burnable"]["HeatPerTick"]*20])
+		#if "Burnable" in material:
+		#	item["DescriptionParts"].append(["burnable", "common", material["Burnable"]["BurnTime"]*material["Burnable"]["HeatPerTick"]])
+		#	item["DescriptionParts"].append(["power_output", "common", material["Burnable"]["HeatPerTick"]*20])
 
 		objects_array.append(item)
 		
@@ -697,7 +674,7 @@ for tool in tools:
 		"Image": "T_" + item_name,
 		"ItemLogic": tool["ItemLogic"],
 		"LogicJson": {
-			"RecipeDictionary": tool["Name"] + base_recipe,
+			"RecipeDictionary": tool["Name"] + r_dict,
 		},
 		"StackSize": 1,
 		"LabelParts": [[tool["Name"], "parts"]],
@@ -733,54 +710,54 @@ write_file("Generated/Resources/parts.json", data);
 
 objects_array = []
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "CuttingMachine" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "CuttingMachine" + r_dict,
 	"Recipes": recipes_cutter
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "AutomaticHammer" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "AutomaticHammer" + r_dict,
 	"Recipes": recipes_hammer
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Macerator" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Macerator" + r_dict,
 	"Recipes": recipes_macerator
 })
 
 for r in recipes_hand:
 	r["Locked"] = True
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Hand" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Hand" + r_dict,
 	"Recipes": recipes_hand,
 	"UsedIn": [{
 		"Item": "Hand",
 	}]
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Press" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Press" + r_dict,
 	"Recipes": recipes_press
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Furnace" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Furnace" + r_dict,
 	"Recipes": recipes_furnace
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Smelter" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Smelter" + r_dict,
 	"Recipes": recipes_smelt
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Assembler" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Assembler" + r_dict,
 	"Recipes": recipes_assembler
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "FluidFurnace" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "FluidFurnace" + r_dict,
 	"Recipes": recipes_gasfurn
 })
 
