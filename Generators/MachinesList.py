@@ -699,21 +699,10 @@ machines = [
 	},{
 		"Name": "BatteryBox",
 		"Label": "Battery Box",
-		"StartTier": 4,
+		"StartTier": 3,
 		"EndTier": 10,
         "BlockLogic": "BatteryContainerBlockLogic",
 		"Description": ["ElectricConductor", "ElectricStorage"]
-	},{
-		 "Name": "SmallBattery",
-		 "Label": "Small Battery",
-		 "StartTier": 3,
-		 "EndTier": 10,
-		 "Description": ["ElectricConductor", "ElectricStorage"],
-		 "BlockLogic": "BatteryBoxBlockLogic",
-		 "CustomData": {
-			 "BaseCapacity": 100000,
-			 "BonusCapacity": 100000,
-		 },
 	},{
 		 "Name": "Portal",
 		 "Label": "Portal",

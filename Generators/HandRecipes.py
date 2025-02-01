@@ -1089,13 +1089,13 @@ recipes_hand.append({
 for r in recipes_hand:
 	r["Locked"] = True
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Hand" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Hand" + r_dict,
 	"Recipes": recipes_hand
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Press" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Press" + r_dict,
 	"Recipes": recipes_press
 })
 

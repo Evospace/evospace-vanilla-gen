@@ -120,21 +120,21 @@ tools = [
 	{
 		"Name": "Multitool",
 		"Label": "Multitool",
-		"ItemLogic": "Equipped/MultitoolBP.MultitoolBP_C",
+		"ItemLogic": "/Game/Equipped/MultitoolBP.MultitoolBP_C",
 		"CommonTextKeys": [
 			"Multitool"
 		]
 	},{
 		"Name": "Screwdriver",
 		"Label": "Screwdriver",
-		"ItemLogic": "Equipped/ScrewdriverBP.ScrewdriverBP_C",
+		"ItemLogic": "/Game/Equipped/ScrewdriverBP.ScrewdriverBP_C",
 		"CommonTextKeys": [
 			"Screwdriver"
 		]
 	},{
 		"Name": "PaintTool",
 		"Label": "Paint Tool",
-		"ItemLogic": "Equipped/PaintToolBP.PaintToolBP_C",
+		"ItemLogic": "/Game/Equipped/PaintToolBP.PaintToolBP_C",
 		"CommonTextKeys": [
 			"Multitool"
 		],
@@ -144,42 +144,42 @@ tools = [
 	},{
 		"Name": "ConstructionTool",
 		"Label": "Construction Tool",
-		"ItemLogic": "Equipped/ConstructionToolBP.ConstructionToolBP_C",
+		"ItemLogic": "/Game/Equipped/ConstructionToolBP.ConstructionToolBP_C",
 	},{
 		"Name": "DeconstructionTool",
 		"Label": "Deconstruction Tool",
-		"ItemLogic": "Equipped/DeconstructionToolBP.DeconstructionToolBP_C",
+		"ItemLogic": "/Game/Equipped/DeconstructionToolBP.DeconstructionToolBP_C",
 	},{
 		"Name": "ConstructionBlueprint",
 		"Label": "Construction Blueprint",
-        "ItemLogic": "Equipped/BlueprintToolBP.BlueprintToolBP_C",
+        "ItemLogic": "/Game/Equipped/BlueprintToolBP.BlueprintToolBP_C",
 	},{
 		"Name": "DeconstructionBlueprint",
 		"Label": "Deconstruction Blueprint",
-        "ItemLogic": "Equipped/BlueprintToolBP.BlueprintToolBP_C",
+        "ItemLogic": "/Game/Equipped/BlueprintToolBP.BlueprintToolBP_C",
 	},{
 		"Name": "UpgradeBlueprint",
 		"Label": "Upgrade Blueprint",
-        "ItemLogic": "Equipped/BlueprintToolBP.BlueprintToolBP_C",
+        "ItemLogic": "/Game/Equipped/BlueprintToolBP.BlueprintToolBP_C",
 	}
 	#{
 	#	"Name": "BuildTool",
 	#	"Label": "Build Tool",
-	#	"ItemLogic": "Equipped/BuildToolBP.BuildToolBP_C",
+	#	"ItemLogic": "/Game/Equipped/BuildToolBP.BuildToolBP_C",
 	#	"StartTier": 7,
 	#	"EndTier": 7,
 	#}
 	#,{
 	#	"Name": "AdminTool",
 	#	"Label": "Admin Tool",
-	#	"ItemLogic": "Equipped/AdminToolBP.AdminToolBP_C",
+	#	"ItemLogic": "/Game/Equipped/AdminToolBP.AdminToolBP_C",
 	#	"StartTier": 7,
 	#	"EndTier": 7,
 	#},
 	#{
 	#	"Name": "StorageUpgrade",
 	#	"Label": "Storage Upgrade",
-	#	"ItemLogic": "Equipped/StorageUpgradeBP.StorageUpgradeBP_C",
+	#	"ItemLogic": "/Game/Equipped/StorageUpgradeBP.StorageUpgradeBP_C",
 	#	"StartTier": 0,
 	#	"EndTier": 7,
 	#}
