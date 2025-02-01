@@ -166,8 +166,8 @@ for machine in machines:
 			objects_array.append(block)
 			
 			objects_array.append({ 
-				"Class": base_recipe,
-				"Name": machine["Name"] + base_recipe,
+				"Class": r_dict,
+				"Name": machine["Name"] + r_dict,
 				"UsedIn": [{
 					"Item": tier_material[tier] + machine["Name"],
 					"Tier": tier
@@ -1629,8 +1629,8 @@ for machine in machines:
 				
 			if machine["Name"] == "Constructor":
 				objects_array.append({ 
-					"Class": base_recipe,
-					"Name": "Hand" + base_recipe,
+					"Class": r_dict,
+					"Name": "Hand" + r_dict,
 					"UsedIn": [{
 						"Item": tier_material[tier] + machine["Name"],
 						"Tier": tier
@@ -2675,8 +2675,8 @@ write_file("Generated/Resources/machines.json", data);
 
 objects_array = []
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Hand" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Hand" + r_dict,
 	"Recipes": recipes_hand
 })
 

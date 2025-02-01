@@ -2,10 +2,10 @@ from Common import *
 
 def get_parts_unlocks(material):
     return [
-        ["Hand" + base_recipe, material + "Parts"],
-        ["Hand" + base_recipe, material + "Plate"],
-        ["Hand" + base_recipe, material + "Pipe"],
-        ["Hand" + base_recipe, material + "Gearbox"],
-        ["Assembler" + base_recipe, material + "Gearbox"],
-        ["Constructor" + base_recipe, material + "Pipe"]
+        ["Hand" + r_dict, material + "Parts"],
+        ["Hand" + r_dict, material + "Plate"],
+        ["Hand" + r_dict, material + "Pipe"],
+        ["Hand" + r_dict, material + "Gearbox"],
+        ["Assembler" + r_dict, material + "Gearbox"],
+        ["Constructor" + r_dict, material + "Pipe"]
     ]

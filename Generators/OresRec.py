@@ -382,44 +382,44 @@ for ore_type in ore_types:
 		#	"Tier": extract_tier(ore_type),
 		#})
 	
-objects_array.append({ "Class": base_recipe,
-	"Name": "Macerator" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Macerator" + r_dict,
 	"Recipes": recipes_mac
 })
 	
-objects_array.append({ "Class": base_recipe,
-	"Name": "Smelter" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Smelter" + r_dict,
 	"Recipes": recipes_smelt
 })	
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "OreWasher" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "OreWasher" + r_dict,
 	"Recipes": recipes_ore_washer
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Separator" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Separator" + r_dict,
 	"Recipes": recipes_sep
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "IndustrialSeparator" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "IndustrialSeparator" + r_dict,
 	"Recipes": recipes_sep2
 })
 
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "AutomaticHammer" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "AutomaticHammer" + r_dict,
 	"Recipes": recipes_hammer
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "ArcSmelter" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "ArcSmelter" + r_dict,
 	"Recipes": recipes_arc
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Sifter" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Sifter" + r_dict,
 	"Recipes": recipes_sifter
 })
 

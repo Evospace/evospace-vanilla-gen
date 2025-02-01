@@ -240,34 +240,34 @@ static_mesh_block = [
 equipped = [
 	{
 		"Name": "Flashlight",
-		"ItemLogic": "Equipped/FlashlightBP.FlashlightBP_C"
+		"ItemLogic": "/Game/Equipped/FlashlightBP.FlashlightBP_C"
 	},{
 		"Name": "NightVision",
-		"ItemLogic": "Equipped/NightVisionBP.NightVisionBP_C"
+		"ItemLogic": "/Game/Equipped/NightVisionBP.NightVisionBP_C"
 	},{
 		"Name": "AdvancedNightVision",
-		"ItemLogic": "Equipped/AdvancedNightVisionBP.AdvancedNightVisionBP_C"
+		"ItemLogic": "/Game/Equipped/AdvancedNightVisionBP.AdvancedNightVisionBP_C"
 	},{
 		"Name": "Steampack",
-		"ItemLogic": "Equipped/SteampackBP.SteampackBP_C"
+		"ItemLogic": "/Game/Equipped/SteampackBP.SteampackBP_C"
 	},{
 		"Name": "HighPressureSteampack",
-		"ItemLogic": "Equipped/HighPresSteampackBP.HighPresSteampackBP_C"
+		"ItemLogic": "/Game/Equipped/HighPresSteampackBP.HighPresSteampackBP_C"
 	},{
 		"Name": "HighCapacitySteampack",
-		"ItemLogic": "Equipped/HighCapSteampackBP.HighCapSteampackBP_C"
+		"ItemLogic": "/Game/Equipped/HighCapSteampackBP.HighCapSteampackBP_C"
 	},{
 		"Name": "AdvancedSteampack",
-		"ItemLogic": "Equipped/AdvancedSteampackBP.AdvancedSteampackBP_C"
+		"ItemLogic": "/Game/Equipped/AdvancedSteampackBP.AdvancedSteampackBP_C"
 	},{
 		"Name": "Jetpack",
-		"ItemLogic": "Equipped/JetpackBP.JetpackBP_C"
+		"ItemLogic": "/Game/Equipped/JetpackBP.JetpackBP_C"
 	},{
 		"Name": "AdvancedJetpack",
-		"ItemLogic": "Equipped/AdvancedJetpackBP.AdvancedJetpackBP_C"
+		"ItemLogic": "/Game/Equipped/AdvancedJetpackBP.AdvancedJetpackBP_C"
 	},{
 		"Name": "AntigravityUnit",
-		"ItemLogic": "Equipped/AntigravityUnitBP.AntigravityUnitBP_C"
+		"ItemLogic": "/Game/Equipped/AntigravityUnitBP.AntigravityUnitBP_C"
 	}
 ]
 
