@@ -202,8 +202,7 @@ materials = [
 		"IsMetal": True,
 		"IsDust": True,
 		"Burnable": {
-			"BurnTime": 18*20,
-			"HeatPerTick": 18
+			"BurnTime": 18*20
 		},
 		"IsBlock": True
 	},{
@@ -372,24 +371,6 @@ materials = [
 		"IsBlock": True,
 		"IsDust": True,
 	},{
-		"Name": "Sodium",
-		"Label": "Sodium",
-		"IsDust": True,
-		"Tier": 3,
-		"IsBlock": True,
-	},{
-		"Name": "SodiumHydroxide",
-		"Label": "Sodium Hydroxide",
-		"IsDust": True,
-		"Tier": 3,
-		"IsBlock": True,
-	},{
-		"Name": "Potassium",
-		"Label": "Potassium",
-		"IsDust": True,
-		"Tier": 3,
-		"IsBlock": True,
-	},{
 		"Name": "Sulfur",
 		"Label": "Sulfur",
 		"IsExact": True,
@@ -412,8 +393,7 @@ materials = [
 		"Label": "Peat",
 		"IsExact": True,
 		"Burnable": {
-			"BurnTime": 400,
-			"HeatPerTick": 10
+			"BurnTime": 400
 		},
 		"Tier": 0,
 		"Color":[0.2,0.2,0.0],
@@ -423,8 +403,7 @@ materials = [
 		"Label": "Coal",
 		"IsExact": True,
 		"Burnable": {
-			"BurnTime": 800,
-			"HeatPerTick": 20
+			"BurnTime": 800
 		},
 		"Tier": 0,
 		"StackSize": 64,
@@ -436,8 +415,7 @@ materials = [
 		"IsExact": True,
 		"StackSize": 64,
 		"Burnable": {
-			"BurnTime": 1000,
-			"HeatPerTick": 30*1.5
+			"BurnTime": 1200
 		},
 		"Color":[0.0,0.0,0.0],
 		"Mesh": "/Game/Models/Piece"
@@ -446,8 +424,7 @@ materials = [
 		"Label": "Creosote",
 		"IsGas": True,
 		"Burnable": {
-			"BurnTime": 400,
-			"HeatPerTick": 20,
+			"BurnTime": 4000
 		},
 		"Tier": 0,
 		"Color":[0.0,0.0,0.0],
@@ -457,8 +434,7 @@ materials = [
 		"Label": "Producer Gas",
 		"IsGas": True,		
 		"Burnable": {
-			"BurnTime": 400,
-			"HeatPerTick": 80
+			"BurnTime": 400
 		},
 		"Color": [1,1,1],
 		"MoreEfficientIn":"GasTurbine"
@@ -467,8 +443,7 @@ materials = [
 		"Label": "Carbon Monoxide",
 		"IsGas": True,		
 		"Burnable": {
-			"BurnTime": 200,
-			"HeatPerTick": 40
+			"BurnTime": 200
 		},
 		"Color": [0.5,0.5,0.5],
 		"MoreEfficientIn":"GasTurbine"
@@ -487,8 +462,7 @@ materials = [
 		"Label": "Hydrogen",
 		"IsGas": True,
 		"Burnable": {
-			"BurnTime": 400,
-			"HeatPerTick": 160
+			"BurnTime": 400
 		},
 		"Tier": 2,
 		"Color": [.2,.2,.5],
@@ -497,8 +471,7 @@ materials = [
 		"Label": "Ethanol",
 		"IsGas": True,
 		"Burnable": {
-			"BurnTime": 500,
-			"HeatPerTick": 45
+			"BurnTime": 500
 		},
 		"Tier": 2,
 		"Color":[0.5,0.2,0.2]
@@ -507,8 +480,7 @@ materials = [
 		"Label": "Methane",
 		"IsGas": True,
 		"Burnable": {
-			"BurnTime": 400,
-			"HeatPerTick": 40
+			"BurnTime": 400
 		},
 		"Tier": 2,
 		"Color":[0.5,0.2,0.2]
@@ -517,8 +489,7 @@ materials = [
 		"Label": "Ethylene",
 		"IsGas": True,
 		"Burnable": {
-			"BurnTime": 400,
-			"HeatPerTick": 50
+			"BurnTime": 400
 		},
 		"Tier": 2,
 		"Color": [.2,.5,.2],
@@ -588,8 +559,7 @@ materials = [
 		"IsExact": True,
 		"Tier": 0,
 		"Burnable": {
-			"BurnTime": 400,
-			"HeatPerTick": 10
+			"BurnTime": 400
 		},
 		"Color":[0.9,0.9,0.9]
 	},{
@@ -598,8 +568,7 @@ materials = [
 		"IsExact": True,
 		"Tier": 0,
 		"Burnable": {
-			"BurnTime": 100,
-			"HeatPerTick": 10
+			"BurnTime": 100
 		},
 	},
 	{
@@ -633,8 +602,7 @@ materials = [
 		"IsFluid": True,
 		"Tier": 0,
 		"Burnable": {
-			"BurnTime": 800,
-			"HeatPerTick": 5
+			"BurnTime": 800
 		},
 		"Color":[0.1,0.1,0.1]
 	},
@@ -644,8 +612,7 @@ materials = [
 		"IsFluid": True,
 		"Tier": 0,
 		"Burnable": {
-			"BurnTime": 400,
-			"HeatPerTick": 10
+			"BurnTime": 400
 		},
 		"Color":[0.01,0.01,0.01]
 	},
@@ -661,8 +628,7 @@ materials = [
 		"IsGas": True,
 		"Tier": 1,
 		"Burnable": {
-			"BurnTime": 400,
-			"HeatPerTick": 40
+			"BurnTime": 400
 		},
 		"Color":[.5,.5,0.2]
 	},{
@@ -671,8 +637,7 @@ materials = [
 		"IsFluid": True,
 		"Tier": 1,
 		"Burnable": {
-			"BurnTime": 800,
-			"HeatPerTick": 30
+			"BurnTime": 800
 		},
 		"Color":[.2,.2,0.2]
 	},{
@@ -682,8 +647,7 @@ materials = [
 		"Tier": 1,
 		"Color":[.1,.1,0.1],
 		"Burnable": {
-			"BurnTime": 1600,
-			"HeatPerTick": 60
+			"BurnTime": 1600
 		}
 	},{
 		"Name": "Superfuel",
@@ -692,8 +656,7 @@ materials = [
 		"Tier": 1,
 		"Color":[1,1,0.5],
 		"Burnable": {
-			"BurnTime": 2000,
-			"HeatPerTick": 100
+			"BurnTime": 2000
 		}
 	},{
 		"Name": "RocketFuel",
@@ -702,8 +665,7 @@ materials = [
 		"Tier": 1,
 		"Color":[0,1,0],
 		"Burnable": {
-			"BurnTime": 300,
-			"HeatPerTick": 1000
+			"BurnTime": 300
 		}
 	},{
 		"Name": "ExtraHeavyOil",
@@ -711,8 +673,7 @@ materials = [
 		"IsGas": True,
 		"Tier": 2,
 		"Burnable": {
-			"BurnTime": 800,
-			"HeatPerTick": 10
+			"BurnTime": 800
 		},
 		"Color":[0.01,.01,0.01]
 	},
@@ -722,8 +683,7 @@ materials = [
 		"IsGas": True,
 		"Tier": 2,
 		"Burnable": {
-			"BurnTime": 400,
-			"HeatPerTick": 20
+			"BurnTime": 400
 		},
 		"Color":[0.2,.5,0.2]
 	},
@@ -893,6 +853,12 @@ materials = [
 		"Label" : "Mothership Ping",
 		"StackSize": 32,
 		"IsExact": True,
+	},{
+		"Name" : "PrimitiveBattery",
+		"Label" : "Primitive Battery",
+		"StackSize": 1,
+		"IsExact": True,
+		"MaxCharge": single_battery_cell_charge / 4
 	},{
 		"Name" : "BasicBattery",
 		"Label" : "Basic Battery",

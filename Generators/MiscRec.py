@@ -6,7 +6,6 @@ import copy
 
 objects_array = []
 
-recipes_wrench = []
 recipes_blast_furnace = []
 recipes_oven = []
 recipes_smelter = []
@@ -93,7 +92,6 @@ def append_recipe(recipe):
 
 	recipes_hand.append(recipe)
 	
-	dec_recipe["ResourceInput"] = { "Name": "Electricity", "Count": 20 * level }
 	recipes_assembler.append(dec_recipe)
 
 def append_recipe_hand_press(recipe):
@@ -108,10 +106,7 @@ def append_recipe_hand_press(recipe):
 	output = copy.deepcopy(dec_recipe["Input"])
 	
 	dec_recipe["Ticks"] = 60
-	dec_recipe["ResourceInput"] = { "Name": "Kinetic", "Count": 100 }
 	recipes_press.append(dec_recipe)		
-
-# wrenching
 
 recipes_industrial_generator.append({
 	"Name": "Generating",
@@ -119,19 +114,10 @@ recipes_industrial_generator.append({
 		"Items":[
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": fission_fullpower * 0.9
-	},
 	"Output":{
 		"Items":[
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Electricity",
-		"Count": fission_fullpower * 0.9 * 0.9
-	},
-	
 	"Ticks" : 200,
 	"Loss": 10,
 })
@@ -142,19 +128,10 @@ recipes_industrial_steam_turbine.append({
 		"Items":[
 		]
 	},
-	"ResourceInput":{
-		"Name": "Steam",
-		"Count": fission_fullpower * 0.95
-	},
 	"Output":{
 		"Items":[
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Kinetic",
-		"Count": fission_fullpower * 0.9
-	},
-	
 	"Ticks" : 200,
 	"Loss": 10,
 })
@@ -169,17 +146,9 @@ recipes_industrial_boiler.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name":"Heat",
-		"Count": fission_fullpower
-	},
 	"Output":{
 		"Items":[
 		]
-	},
-	"ResourceOutput":{
-		"Name":"Steam",
-		"Count": fission_fullpower * 0.95
 	},
 	"Ticks" : 200,
 })
@@ -193,10 +162,6 @@ recipes_fusion_reactor.append({
 				"Count": 1000
 			}
 		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": fission_fullpower*0.9*0.9
 	},
 	"Output":{
 		"Items":[
@@ -218,10 +183,6 @@ recipes_fusion_reactor.append({
 				"Count": 3000
 			}
 		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 2 * fission_fullpower*0.9*0.9
 	},
 	"Output":{
 		"Items":[
@@ -245,10 +206,6 @@ recipes_fusion_reactor.append({
 			}
 		]
 	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": fission_fullpower*0.9*0.9
-	},
 	"Output":{
 		"Items":[
 			{
@@ -271,10 +228,6 @@ recipes_fusion_reactor.append({
 			}
 		]
 	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 2 * fission_fullpower*0.9*0.9
-	},
 	"Output":{
 		"Items":[
 			{
@@ -296,10 +249,6 @@ recipes_smelter.append({
 			},
 		]
 	},
-	"ResourceInput": {
-		"Name": "Heat",
-		"Count": 10
-	},
 	"Output":{
 		"Items":[
 			{
@@ -310,29 +259,6 @@ recipes_smelter.append({
 	},
 	"Ticks" : 200,
 })
-	
-for list in (wooden_misc, simple_single, simple_blocks, static_mesh_block):	
-	for one in list:
-		recipes_wrench.append({
-			"Name": one["Name"] + "Wrenching",
-			"Ticks" : 20,
-			"Input":{
-				"Items":[
-					{
-						"Name": one["Name"],
-						"Count": 1
-					}
-				]
-			},
-			"Output":{
-				"Items":[
-					{
-						"Name": one["Name"],
-						"Count": 1
-					}
-				]
-			}
-		})
 
 # other		
 		
@@ -349,10 +275,6 @@ append_recipe({
 				"Count": 6
 			}
 		]
-	},
-	"ResourceInput": {
-		"Name": "Electricity",
-		"Count": 10
 	},
 	"Output":{
 		"Items":[
@@ -380,10 +302,6 @@ append_recipe({
 			}
 		]
 	},
-	"ResourceInput": {
-		"Name": "Electricity",
-		"Count": 30
-	},
 	"Output":{
 		"Items":[
 			{
@@ -405,10 +323,6 @@ recipes_assembler.append({
 				"Count": 1
 			},	
 		]
-	},
-	"ResourceInput": {
-		"Name": "Electricity",
-		"Count": 100
 	},
 	"Output":{
 		"Items":[
@@ -436,10 +350,6 @@ append_recipe({
 			}
 		]
 	},
-	"ResourceInput": {
-		"Name": "Electricity",
-		"Count": 80
-	},
 	"Output":{
 		"Items":[
 			{
@@ -464,10 +374,6 @@ append_recipe({
 				"Count": 1
 			}
 		]
-	},
-	"ResourceInput": {
-		"Name": "Electricity",
-		"Count": 1000
 	},
 	"Output":{
 		"Items":[
@@ -554,10 +460,6 @@ recipes_assembler.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 20
-	},
 	"Output":{
 		"Items":[
 			{
@@ -585,10 +487,6 @@ recipes_assembler.append({
 			}
 		]
 	},
-	"ResourceInput": {
-		"Name": "Electricity",
-		"Count": 80
-	},
 	"Output":{
 		"Items":[
 			{
@@ -614,10 +512,6 @@ append_recipe({
 				"Count": 2
 			}
 		]
-	},
-	"ResourceInput": {
-		"Name": "Electricity",
-		"Count": 1000
 	},
 	"Output":{
 		"Items":[
@@ -645,10 +539,6 @@ append_recipe({
 			}
 		]
 	},
-	"ResourceInput": {
-		"Name": "Electricity",
-		"Count": 1000 / 7
-	},
 	"Output":{
 		"Items":[
 			{
@@ -674,10 +564,6 @@ append_recipe({
 				"Count": 1
 			}
 		]
-	},
-	"ResourceInput": {
-		"Name": "Electricity",
-		"Count": 2000 / 13
 	},
 	"Output":{
 		"Items":[
@@ -722,15 +608,40 @@ recipes_assembler.append({
 			},
 		]
 	},
-	"ResourceInput": {
-		"Name": "Electricity",
-		"Count": 100
-	},
 	"Output":{
 		"Items":[
 			{
 				"Name": "SuperconductorWire",
 				"Count": 2
+			}
+		]
+	},
+	"Ticks" : 100,
+})
+
+append_recipe({
+	"Name": "PrimitiveBattery",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Coke",
+				"Count": 1
+			},
+			{
+				"Name": "AluminiumParts",
+				"Count": 1
+			},
+			{
+				"Name": "SteelPlate",
+				"Count": 1
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "PrimitiveBattery",
+				"Count": 1
 			}
 		]
 	},
@@ -807,8 +718,7 @@ recipes_assembler.append({
 			}
 		]
 	},
-	"Ticks" : 200*3,
-	"ResourceInput": { "Name": "Electricity", "Count": 10 }
+	"Ticks" : 200*3
 })
 
 append_recipe({
@@ -958,14 +868,10 @@ recipes_assembler.append({
 				"Count": 1
 			},
 			{
-				"Name": "StainlessSteelPlate",
+				"Name": "SteelPlate",
 				"Count": 1
 			},
 		]
-	},
-	"ResourceInput": {
-		"Name": "Electricity",
-		"Count": 10
 	},
 	"Output":{
 		"Items":[
@@ -988,10 +894,6 @@ recipes_assembler.append({
 				"Count": 1
 			},
 		]
-	},
-	"ResourceInput": {
-		"Name": "Electricity",
-		"Count": 10
 	},
 	"Output":{
 		"Items":[
@@ -1038,14 +940,10 @@ append_recipe({
 				"Count": 1
 			},
 			{
-				"Name": "BoronDust",
+				"Name": "RareEarthElement",
 				"Count": 3
 			},
 		]
-	},
-	"ResourceInput": {
-		"Name": "Electricity",
-		"Count": 1000 / 9
 	},
 	"Output":{
 		"Items":[
@@ -1081,10 +979,6 @@ recipes_condens.append({
 		"Items":[
 		]
 	},
-	"ResourceInput": {
-		"Name": "Kinetic",
-		"Count": 20
-	},
 	"Output":{
 		"Items":[
 			{
@@ -1101,10 +995,6 @@ recipes_condens.append({
 	"Input":{
 		"Items":[
 		]
-	},
-	"ResourceInput": {
-		"Name": "Kinetic",
-		"Count": 20
 	},
 	"Output":{
 		"Items":[
@@ -1123,10 +1013,6 @@ recipes_condens.append({
 		"Items":[
 		]
 	},
-	"ResourceInput": {
-		"Name": "Kinetic",
-		"Count": 40
-	},
 	"Output":{
 		"Items":[
 			{
@@ -1144,10 +1030,6 @@ recipes_condens.append({
 		"Items":[
 		]
 	},
-	"ResourceInput": {
-		"Name": "Kinetic",
-		"Count": 40
-	},
 	"Output":{
 		"Items":[
 			{
@@ -1164,10 +1046,6 @@ recipes_condens.append({
 	"Input":{
 		"Items":[
 		]
-	},
-	"ResourceInput": {
-		"Name": "Kinetic",
-		"Count": 40
 	},
 	"Output":{
 		"Items":[
@@ -1287,10 +1165,6 @@ recipes_centrifuge.append({
 			}
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 100
-	},
 	"Ticks" : 2000,
 })
 
@@ -1311,10 +1185,6 @@ recipes_fission.append({
 				"Count": 1
 			}
 		]
-	},
-	"ResourceOutput":{
-		"Name": "Heat",
-		"Count": 7100
 	},
 	"Ticks" : 2000,
 })
@@ -1342,10 +1212,6 @@ recipes_fission.append({
 			}
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Heat",
-		"Count": 7100 * 2.2
-	},
 	"Ticks" : 2000,
 })
 
@@ -1371,10 +1237,6 @@ recipes_fission.append({
 				"Count": 3
 			}
 		]
-	},
-	"ResourceOutput":{
-		"Name": "Heat",
-		"Count": 7100 * 3.3
 	},
 	"Ticks" : 2000,
 })
@@ -1402,10 +1264,6 @@ recipes_fission.append({
 			}
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Heat",
-		"Count": 7100 * 3.3 / 2
-	},
 	"Ticks" : 2000 * 2,
 })
 
@@ -1431,10 +1289,6 @@ recipes_fission.append({
 				"Count": 1
 			}
 		]
-	},
-	"ResourceOutput":{
-		"Name": "Heat",
-		"Count": 7100 / 4
 	},
 	"Ticks" : 8000 * .9 * .9,
 })
@@ -1470,10 +1324,6 @@ recipes_fission.append({
 			}
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Heat",
-		"Count": 200
-	},
 	"Ticks" : 2000,
 })
 
@@ -1507,10 +1357,6 @@ recipes_fission.append({
 				"Count": 1
 			}
 		]
-	},
-	"ResourceOutput":{
-		"Name": "Heat",
-		"Count": 200
 	},
 	"Ticks" : 2000,
 })
@@ -1546,10 +1392,6 @@ recipes_fission.append({
 			}
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Heat",
-		"Count": 200
-	},
 	"Ticks" : 2000,
 })
 
@@ -1575,10 +1417,6 @@ recipes_fission.append({
 				"Count": 1
 			}
 		]
-	},
-	"ResourceOutput":{
-		"Name": "Heat",
-		"Count": 7100 / 2
 	},
 	"Ticks" : 4000 * 0.9,
 })
@@ -1606,10 +1444,6 @@ recipes_fission.append({
 			}
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Heat",
-		"Count": 7100 * 3.3
-	},
 	"Ticks" : 2000,
 })
 
@@ -1635,10 +1469,6 @@ recipes_fission.append({
 				"Count": 2,
 			}
 		]
-	},
-	"ResourceOutput":{
-		"Name": "Heat",
-		"Count": fission_fullpower / 2
 	},
 	"Ticks" : 2000,
 })
@@ -1666,10 +1496,6 @@ recipes_fission.append({
 			}
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Heat",
-		"Count": fission_fullpower
-	},
 	"Ticks" : 2000,
 })
 
@@ -1694,10 +1520,6 @@ recipes_chem.append({
 				"Count": 1
 			}
 		],
-	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 10,
 	},
 	"Ticks" : 200,
 })
@@ -1724,10 +1546,6 @@ recipes_chem.append({
 			}
 		],
 	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 10,
-	},
 	"Ticks" : 200,
 })
 recipes_boiler.append({
@@ -1740,20 +1558,10 @@ recipes_boiler.append({
 			}
 		],
 	},
-	"ResourceInput":{
-		  	"Name": "Heat",
-			"Count": 110,
-		},
 	"Output":{
 		"Items":[
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Steam",
-		"Count": 100,
-		#"Capacity": 32000,
-	},
-	
 	"Ticks" : 200,
 	"Loss": 10,
 })
@@ -1764,19 +1572,10 @@ recipes_steam_turbine.append({
 		"Items":[
 		]
 	},
-	"ResourceInput":{
-		"Name": "Steam",
-		"Count": 300
-	},
 	"Output":{
 		"Items":[
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Kinetic",
-		"Count": 270
-	},
-	
 	"Ticks" : 200,
 	"Loss": 10,
 })
@@ -1787,19 +1586,10 @@ recipes_generator.append({
 		"Items":[
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 270
-	},
 	"Output":{
 		"Items":[
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Electricity",
-		"Count": 243
-	},
-	
 	"Ticks" : 200,
 	"Loss": 10,
 })
@@ -1810,19 +1600,10 @@ recipes_kinetic_heater.append({
 		"Items":[
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 10
-	},
 	"Output":{
 		"Items":[
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Heat",
-		"Count": 9
-	},
-	
 	"Ticks" : 200,
 	"Loss": 10,
 })
@@ -1833,21 +1614,11 @@ recipes_electric_engine.append({
 		"Items":[
 		]
 	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 55
-	},
 	"Output":{
 		"Items":[
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Kinetic",
-		"Count": 50
-	},
-	
 	"Loss": 10,
-	
 	"Ticks": 200,
 })
 
@@ -1857,21 +1628,11 @@ recipes_industrial_electric_engine.append({
 		"Items":[
 		]
 	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 55*50
-	},
 	"Output":{
 		"Items":[
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Kinetic",
-		"Count": 50*50
-	},
-	
 	"Loss": 10,
-	
 	"Ticks": 200,
 })
 
@@ -1881,21 +1642,11 @@ recipes_compact_generator.append({
 		"Items":[
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 20
-	},
 	"Output":{
 		"Items":[
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Electricity",
-		"Count": 18
-	},
-	
 	"Loss": 10,
-	
 	"Ticks": 200,
 })
 
@@ -1905,19 +1656,10 @@ recipes_steam_engine.append({
 		"Items":[
 		]
 	},
-	"ResourceInput":{
-		"Name": "Heat",
-		"Count": 11
-	},
 	"Output":{
 		"Items":[
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Kinetic",
-		"Count": 10
-	},
-	
 	"Ticks": 200,
 	"Loss": 10
 })
@@ -1945,7 +1687,6 @@ recipes_oven.append({
 			},
 		]
 	},
-	
 	"Ticks": 5*2*20,
 })
 
@@ -1972,7 +1713,6 @@ recipes_oven.append({
 			},
 		]
 	},
-	
 	"Ticks": 5*2*20,
 })
 
@@ -1999,7 +1739,6 @@ recipes_oven.append({
 			},
 		]
 	},
-	
 	"Ticks": 3*2*20,
 })
 
@@ -2026,7 +1765,6 @@ recipes_oven.append({
 			},
 		]
 	},
-	
 	"Ticks": 2*2*20,
 })
 
@@ -2048,7 +1786,6 @@ recipes_oven.append({
 			},
 		]
 	},
-	
 	"Ticks": 100,
 })
 
@@ -2408,10 +2145,6 @@ recipes_sep2.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 30*90
-	},
 	"Output":{
 		"Items": [
 			{
@@ -2425,7 +2158,6 @@ recipes_sep2.append({
 			},
 		]
 	},
-	
 	"Ticks": 40,
 })	
 
@@ -2530,10 +2262,6 @@ for material in materials:
 							"Count": 1
 						},
 					]
-				},
-				"ResourceInput":{
-					"Name": "Electricity",
-					"Count": 20 if material["Name"] != "StainlessSteel" else 100,
 				},
 				"Output":{
 					"Items":[
@@ -2666,10 +2394,6 @@ recipes_macerator.append({
 				"Count": 1
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 10
 	},
 	"Output":{
 		"Items":[
@@ -2925,10 +2649,6 @@ recipes_indu.append({
 			},
 		],
 	},
-	"ResourceInput":{
-			"Name": "Heat",
-			"Count": 900,
-		},
 	"Output":{
 		"Items":[
 			{
@@ -2937,7 +2657,6 @@ recipes_indu.append({
 			},
 		]
 	},
-	
 	"Ticks" : 200,
 })
 
@@ -2976,10 +2695,6 @@ recipes_mixer.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 10
-	},
 	"Output":{
 		"Items":[
 			{
@@ -2988,7 +2703,6 @@ recipes_mixer.append({
 			}
 		]
 	},
-	
 	"Ticks": 200,
 })
 
@@ -3006,10 +2720,6 @@ recipes_mixer.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 100
-	},
 	"Output":{
 		"Items":[
 			{
@@ -3018,7 +2728,6 @@ recipes_mixer.append({
 			}
 		]
 	},
-	
 	"Ticks": 1000,
 })
 
@@ -3035,10 +2744,6 @@ recipes_mixer.append({
 				"Count": 1
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 100
 	},
 	"Output":{
 		"Items":[
@@ -3061,10 +2766,6 @@ recipes_electrolyzer.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 50,
-	},
 	"Output":{
 		"Items":[
 			{
@@ -3073,7 +2774,6 @@ recipes_electrolyzer.append({
 			}
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -3087,10 +2787,6 @@ recipes_electrolyzer.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 70,
-	},
 	"Output":{
 		"Items":[
 			{
@@ -3103,7 +2799,6 @@ recipes_electrolyzer.append({
 			}
 		]
 	},
-	
 	"Ticks" : 200
 })
 
@@ -3116,10 +2811,6 @@ recipes_electrolyzer.append({
 				"Count": 1
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 30,
 	},
 	"Output":{
 		"Items":[
@@ -3142,11 +2833,6 @@ recipes_electrolyzer.append({
 			}
 		]
 	},
-	"ResourceInput":
-	{
-		"Name": "Electricity",
-		"Count": 60
-	},
 	"Output":{
 		"Items":[
 			{
@@ -3155,38 +2841,7 @@ recipes_electrolyzer.append({
 			}
 		]
 	},
-	
 	"Ticks" : 200
-})
-
-recipes_electrolyzer.append({
-	"Name":"WaterElectrolyze",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Water",
-				"Count": 100
-			}
-			
-		]
-	},
-	"ResourceInput":{
-				"Name": "Electricity",
-				"Count": 280 
-			},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Hydrogen",
-				"Count": 100
-			},
-			{
-				"Name": "Oxygen",
-				"Count": 200
-			}
-		]
-	},
-	"Ticks" : 100
 })
 
 recipes_electrolyzer.append({
@@ -3199,47 +2854,8 @@ recipes_electrolyzer.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 10,
-	},
 	"Output":{
 		"Items":[
-			{
-				"Name": "SodiumDust",
-				"Count": 1
-			},
-			{
-				"Name": "Chlorine",
-				"Count": 1000
-			}
-			
-		]
-	},
-	
-	"Ticks" : 200
-})
-
-recipes_electrolyzer.append({
-	"Name":"MineralWater",
-	"Input":{
-		"Items":[
-			{
-				"Name": "MineralWater",
-				"Count": 1
-			},
-		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 10,
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "SodiumHydroxideDust",
-				"Count": 1
-			},
 			{
 				"Name": "Chlorine",
 				"Count": 1000
@@ -3250,65 +2866,6 @@ recipes_electrolyzer.append({
 	"Ticks" : 200
 })
 
-recipes_electrolyzer.append({
-	"Name":"PotassiumChloride",
-	"Input":{
-		"Items":[
-			{
-				"Name": "PotassiumChlorideDust",
-				"Count": 1
-			},
-		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 10,
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "PotassiumDust",
-				"Count": 1
-			},
-			{
-				"Name": "Chlorine",
-				"Count": 1000
-			}
-			
-		]
-	},
-	"Ticks" : 200
-})
-
-recipes_electrolyzer.append({
-	"Name":"Borax",
-	"Input":{
-		"Items":[
-			{
-				"Name": "BoraxDust",
-				"Count": 2
-			},
-		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 50,
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "SodiumDust",
-				"Count": 1
-			},
-			{
-				"Name": "BoronDust",
-				"Count": 1
-			}
-			
-		]
-	},
-	"Ticks" : 200
-})
 
 # wood
 
@@ -3322,10 +2879,6 @@ recipes_cutter.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 10
-	},
 	"Output":{
 		"Items":[
 			{
@@ -3334,7 +2887,6 @@ recipes_cutter.append({
 			}
 		]
 	},
-	
 	"Ticks" : 80,
 })
 
@@ -3347,10 +2899,6 @@ recipes_cutter.append({
 				"Count": 1
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 10
 	},
 	"Output":{
 		"Items":[
@@ -3372,10 +2920,6 @@ recipes_cutter.append({
 			}
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 20
-	},
 	"Output":{
 		"Items":[
 			{
@@ -3395,10 +2939,6 @@ recipes_cutter.append({
 				"Count": 1
 			}
 		]
-	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 20
 	},
 	"Output":{
 		"Items":[
@@ -3420,10 +2960,6 @@ recipes_cutter.append({
 			}
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 20
-	},
 	"Output":{
 		"Items":[
 			{
@@ -3443,10 +2979,6 @@ recipes_cutter.append({
 				"Count": 1
 			}
 		]
-	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 20
 	},
 	"Output":{
 		"Items":[
@@ -3468,10 +3000,6 @@ recipes_cutter.append({
 			}
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 20
-	},
 	"Output":{
 		"Items":[
 			{
@@ -3491,10 +3019,6 @@ recipes_cutter.append({
 				"Count": 1
 			}
 		]
-	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 20
 	},
 	"Output":{
 		"Items":[
@@ -3516,10 +3040,6 @@ recipes_cutter.append({
 			}
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 20
-	},
 	"Output":{
 		"Items":[
 			{
@@ -3539,10 +3059,6 @@ recipes_cutter.append({
 				"Count": 1
 			}
 		]
-	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 20
 	},
 	"Output":{
 		"Items":[
@@ -3564,10 +3080,6 @@ recipes_cutter.append({
 			},		
 		]
 	},
-	"ResourceInput":{
-				"Name": "Kinetic",
-				"Count": 10
-			},
 	"Output":{
 		"Items":[
 			{
@@ -3588,10 +3100,6 @@ recipes_cutter.append({
 			},		
 		]
 	},
-	"ResourceInput":{
-				"Name": "Kinetic",
-				"Count": 10
-			},
 	"Output":{
 		"Items":[
 			{
@@ -3613,10 +3121,6 @@ recipes_cutter.append({
 			},		
 		]
 	},
-	"ResourceInput":{
-				"Name": "Kinetic",
-				"Count": 10
-			},
 	"Output":{
 		"Items":[
 			{
@@ -3637,10 +3141,6 @@ recipes_cutter.append({
 			},		
 		]
 	},
-	"ResourceInput":{
-				"Name": "Kinetic",
-				"Count": 10
-			},
 	"Output":{
 		"Items":[
 			{
@@ -3662,10 +3162,6 @@ recipes_cutter.append({
 			},		
 		]
 	},
-	"ResourceInput":{
-				"Name": "Kinetic",
-				"Count": 10
-			},
 	"Output":{
 		"Items":[
 			{
@@ -3687,10 +3183,6 @@ recipes_cutter.append({
 			},		
 		]
 	},
-	"ResourceInput":{
-				"Name": "Kinetic",
-				"Count": 10
-			},
 	"Output":{
 		"Items":[
 			{
@@ -3711,18 +3203,10 @@ recipes_elfurn.append({
 			
 		]
 	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 55,
-	},
 	"Output":{
 		"Items":[
 		],
 	},
-	"ResourceOutput":{
-			"Name": "Heat",
-			"Count": 50,
-		},
 	"Ticks" : 200,
 	"Loss": 10,
 })
@@ -3733,18 +3217,10 @@ recipes_coil.append({
 		"Items":[
 		]
 	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 380
-	},
 	"Output":{
 		"Items":[
 		],
 	},
-	"ResourceOutput":{
-			"Name": "Heat",
-			"Count": 342,
-		},
 	"Ticks" : 200,
 	"Loss" : 10
 })
@@ -3762,10 +3238,6 @@ recipes_ferm.append({
 				"Count": 1
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 10
 	},
 	"Output":{
 		"Items":[
@@ -3789,10 +3261,6 @@ recipes_ferm.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 10
-	},
 	"Output":{
 		"Items":[
 			{
@@ -3814,10 +3282,6 @@ recipes_ferm.append({
 				"Count": 500
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 10
 	},
 	"Output":{
 		"Items":[
@@ -3845,10 +3309,6 @@ recipes_ferm.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 10
-	},
 	"Output":{
 		"Items":[
 			{
@@ -3875,10 +3335,6 @@ recipes_ferm.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 10
-	},
 	"Output":{
 		"Items":[
 			{
@@ -3896,10 +3352,6 @@ recipes_radiator.append({
 		"Items":[
 		],
 	},
-	"ResourceInput":{
-			"Name": "Heat",
-			"Count": 500,
-		},
 	"Output":{
 		"Items":[
 		]
@@ -3917,10 +3369,6 @@ recipes_solar.append({
 		"Items":[
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Electricity",
-		"Count": 800,
-	},
 	"Ticks" : 60,
 })
 
@@ -3934,10 +3382,6 @@ recipes_riteg.append({
 		"Items":[
 		]
 	},
-	"ResourceOutput":{
-		"Name": "Heat",
-		"Count": 500,
-	},
 	"Ticks" : 60,
 })
 
@@ -3946,14 +3390,10 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "MineralWater",
+				"Name": "Water",
 				"Count": 1000
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 10
 	},
 	"Output":{
 		"Items":[
@@ -3972,14 +3412,10 @@ recipes_chem.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "MineralWater",
+				"Name": "Water",
 				"Count": 1000
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 60
 	},
 	"Output":{
 		"Items":[
@@ -3992,31 +3428,6 @@ recipes_chem.append({
 	},
 	
 	"Ticks" : 100,
-})
-
-recipes_chem.append({
-	"Name": "MineralWater2",
-	"Input":{
-		"Items":[
-			{
-				"Name": "MineralWater",
-				"Count": 1000
-			},
-		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 10
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "PotassiumChlorideDust",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 400,
 })
 
 recipes_chem.append({
@@ -4033,10 +3444,6 @@ recipes_chem.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 10
-	},
 	"Output":{
 		"Items":[
 			{
@@ -4049,7 +3456,7 @@ recipes_chem.append({
 	"Ticks" : 200,
 })
 
-recipes_chem.append({
+recipes_industrial_chemreactor.append({
 	"Name": "TitaniumTetrachloride",
 	"Input":{
 		"Items":[
@@ -4062,10 +3469,6 @@ recipes_chem.append({
 				"Count": 1000
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 10
 	},
 	"Output":{
 		"Items":[
@@ -4080,7 +3483,7 @@ recipes_chem.append({
 	"Scaled": False,
 })
 
-recipes_chem.append({
+recipes_industrial_chemreactor.append({
 	"Name": "TitaniumSponge",
 	"Input":{
 		"Items":[
@@ -4093,10 +3496,6 @@ recipes_chem.append({
 				"Count": 1
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 10
 	},
 	"Output":{
 		"Items":[
@@ -4124,10 +3523,6 @@ recipes_chem.append({
 			},
 		]
 	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 10
-	},
 	"Output":{
 		"Items":[
 			{
@@ -4153,10 +3548,6 @@ recipes_chem.append({
 				"Count": 1000
 			},
 		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 10
 	},
 	"Output":{
 		"Items":[
@@ -4252,10 +3643,6 @@ oil_crack.append({
 			},
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 150
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4303,10 +3690,6 @@ recipes_pyro.append({
 			
 		]
 	},
-	"ResourceInput":{
-			"Name": "Heat",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[
 			{
@@ -4342,10 +3725,6 @@ recipes_pyro.append({
 			
 		]
 	},
-	"ResourceInput":{
-			"Name": "Heat",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[
 			{
@@ -4373,10 +3752,6 @@ recipes_pyro.append({
 			
 		]
 	},
-	"ResourceInput":{
-			"Name": "Heat",
-			"Count": 15
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4399,10 +3774,6 @@ recipes_pyro.append({
 			
 		]
 	},
-	"ResourceInput":{
-			"Name": "Heat",
-			"Count": 15
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4437,10 +3808,6 @@ recipes_pyro.append({
 			
 		]
 	},
-	"ResourceInput":{
-			"Name": "Heat",
-			"Count": 100
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4475,10 +3842,6 @@ recipes_pyro.append({
 			
 		]
 	},
-	"ResourceInput":{
-			"Name": "Heat",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4505,10 +3868,6 @@ recipes_pyro.append({
 			
 		]
 	},
-	"ResourceInput":{
-			"Name": "Heat",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4535,10 +3894,6 @@ recipes_pyro.append({
 			
 		]
 	},
-	"ResourceInput":{
-			"Name": "Heat",
-			"Count": 100
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4560,10 +3915,6 @@ recipes_pyro.append({
 			}
 		]
 	},
-	"ResourceInput":{
-			"Name": "Heat",
-			"Count": 50
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4586,10 +3937,6 @@ recipes_pyro.append({
 			}
 		]
 	},
-	"ResourceInput":{
-			"Name": "Heat",
-			"Count": 50
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4629,10 +3976,6 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4669,10 +4012,6 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4700,10 +4039,6 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4730,10 +4065,6 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4795,10 +4126,6 @@ recipes_industrial_chemreactor.append({
 			}
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4825,10 +4152,6 @@ recipes_chem.append({
 			},
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4854,10 +4177,6 @@ recipes_chem.append({
 			},
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4880,10 +4199,6 @@ recipes_chem.append({
 			
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4906,10 +4221,6 @@ recipes_chem.append({
 			
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4935,10 +4246,6 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 20
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4965,10 +4272,6 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 50
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -4994,10 +4297,6 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 20
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -5024,10 +4323,6 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -5060,10 +4355,6 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -5096,10 +4387,6 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -5123,10 +4410,6 @@ recipes_chem.append({
 			
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -5154,10 +4437,6 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"ResourceInput":{
-			"Name": "Electricity",
-			"Count": 10
-		},
 	"Output":{
 		"Items":[	
 			{
@@ -5198,10 +4477,6 @@ for i in {"IronOreDust", "CopperOreDust"}:
 				},
 			]
 		},
-		"ResourceInput":{
-				"Name": "Kinetic",
-				"Count": 10
-			},
 		"Output":{
 			"Items":[	
 				{
@@ -5227,10 +4502,6 @@ recipes_industrial_chemreactor.append({
 				"Count": 1000
 			}
 		]
-	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 30
 	},
 	"Output":{
 		"Items":[
@@ -5258,10 +4529,6 @@ recipes_industrial_chemreactor.append({
 			}
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 30
-	},
 	"Output":{
 		"Items":[
 			{
@@ -5284,10 +4551,6 @@ recipes_freezer.append({
 			}
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 100
-	},
 	"Output":{
 		"Items":[
 			{
@@ -5309,10 +4572,6 @@ recipes_freezer.append({
 			}
 		]
 	},
-	"ResourceInput":{
-		"Name": "Kinetic",
-		"Count": 1000
-	},
 	"Output":{
 		"Items":[
 			{
@@ -5330,10 +4589,6 @@ recipes_portal.append({
 	"Input":{
 		"Items":[
 		]
-	},
-	"ResourceInput":{
-		"Name": "Electricity",
-		"Count": 2 * fission_fullpower*0.9*0.9
 	},
 	"Output":{
 		"Items":[
@@ -5518,258 +4773,253 @@ append_recipe_hand_press({
 	"Ticks" : 20
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Multitool" + base_recipe,
-	"Recipes": recipes_wrench
-})
-
-objects_array.append({ "Class": base_recipe,
-	"Name": "BlastFurnace" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "BlastFurnace" + r_dict,
 	"Recipes": recipes_blast_furnace
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Oven" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Oven" + r_dict,
 	"Recipes": recipes_oven
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Smelter" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Smelter" + r_dict,
 	"Recipes": recipes_smelter
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Macerator" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Macerator" + r_dict,
 	"Recipes": recipes_macerator
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Boiler" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Boiler" + r_dict,
 	"Recipes": recipes_boiler
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Generator" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Generator" + r_dict,
 	"Recipes": recipes_generator
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "IndustrialGenerator" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "IndustrialGenerator" + r_dict,
 	"Recipes": recipes_industrial_generator
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "ElectricEngine" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "ElectricEngine" + r_dict,
 	"Recipes": recipes_electric_engine
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "StirlingEngine" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "StirlingEngine" + r_dict,
 	"Recipes": recipes_steam_engine
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Pump" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Pump" + r_dict,
 	"Recipes": recipes_pump
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Separator" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Separator" + r_dict,
 	"Recipes": recipes_sep
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "IndustrialSeparator" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "IndustrialSeparator" + r_dict,
 	"Recipes": recipes_sep2
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Press" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Press" + r_dict,
 	"Recipes": recipes_press
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "ArcSmelter" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "ArcSmelter" + r_dict,
 	"Recipes": recipes_arc_furnace
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "SteamTurbine" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "SteamTurbine" + r_dict,
 	"Recipes": recipes_steam_turbine
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Electrolyzer" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Electrolyzer" + r_dict,
 	"Recipes": recipes_electrolyzer
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "CuttingMachine" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "CuttingMachine" + r_dict,
 	"Recipes": recipes_cutter
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Furnace" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Furnace" + r_dict,
 	"Recipes": recipes_furnace
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "ElectricFurnace" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "ElectricFurnace" + r_dict,
 	"Recipes": recipes_elfurn
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Fermenter" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Fermenter" + r_dict,
 	"Recipes": recipes_ferm
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "MultitoolRobotArm" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "MultitoolRobotArm" + r_dict,
 	"Recipes": recipes_toolarm
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "AutomaticHammer" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "AutomaticHammer" + r_dict,
 	"Recipes": recipes_hammer
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Mixer" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Mixer" + r_dict,
 	"Recipes": recipes_mixer
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Radiator" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Radiator" + r_dict,
 	"Recipes": recipes_radiator
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "SolarPanel" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "SolarPanel" + r_dict,
 	"Recipes": recipes_solar
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "ChemReactor" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "ChemReactor" + r_dict,
 	"Recipes": recipes_chem
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "InductionCoil" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "InductionCoil" + r_dict,
 	"Recipes": recipes_coil
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "IndustrialSmelter" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "IndustrialSmelter" + r_dict,
 	"Recipes": recipes_indu
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "HeatExchanger" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "HeatExchanger" + r_dict,
 	"Recipes": recipes_exch
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "InverseHeatExchanger" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "InverseHeatExchanger" + r_dict,
 	"Recipes": recipes_iexch
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Freezer" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Freezer" + r_dict,
 	"Recipes": recipes_freezer
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "CombustionEngine" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "CombustionEngine" + r_dict,
 	"Recipes": recipes_combustion
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "PyrolysisUnit" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "PyrolysisUnit" + r_dict,
 	"Recipes": recipes_pyro
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "CompactGenerator" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "CompactGenerator" + r_dict,
 	"Recipes": recipes_compact_generator
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "FissionReactor" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "FissionReactor" + r_dict,
 	"Recipes": recipes_fission
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "AutomaticFarm" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "AutomaticFarm" + r_dict,
 	"Recipes": recipes_farm
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "AtmosphericCondenser" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "AtmosphericCondenser" + r_dict,
 	"Recipes": recipes_condens
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Assembler" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Assembler" + r_dict,
 	"Recipes": recipes_assembler
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "GasTurbine" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "GasTurbine" + r_dict,
 	"Recipes": recipes_gasturb
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "IndustrialChemReactor" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "IndustrialChemReactor" + r_dict,
 	"Recipes": recipes_industrial_chemreactor
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Portal" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Portal" + r_dict,
 	"Recipes": recipes_portal
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "ChemicalBath" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "ChemicalBath" + r_dict,
 	"Recipes": recipes_chemical_bath
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Riteg" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Riteg" + r_dict,
 	"Recipes": recipes_riteg
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "IndustrialSteamTurbine" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "IndustrialSteamTurbine" + r_dict,
 	"Recipes": recipes_industrial_steam_turbine
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "FusionReactor" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "FusionReactor" + r_dict,
 	"Recipes": recipes_fusion_reactor
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "IndustrialBoiler" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "IndustrialBoiler" + r_dict,
 	"Recipes": recipes_industrial_boiler
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "IndustrialElectricEngine" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "IndustrialElectricEngine" + r_dict,
 	"Recipes": recipes_industrial_electric_engine
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "KineticHeater" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "KineticHeater" + r_dict,
 	"Recipes": recipes_kinetic_heater
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "OilCrackingTower" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "OilCrackingTower" + r_dict,
 	"Recipes": oil_crack
 })
 
-objects_array.append({ "Class": base_recipe,
-	"Name": "Hand" + base_recipe,
+objects_array.append({ "Class": r_dict,
+	"Name": "Hand" + r_dict,
 	"Recipes": recipes_hand
 })
 

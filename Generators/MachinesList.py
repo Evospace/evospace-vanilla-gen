@@ -44,21 +44,6 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 10,		
 		"BlockLogic":"SelectCrafter",
-		"BlockCreation":"""
-        local crafter = AbstractCrafter.cast(self)
-        
-        local input = ResourceInventory.new(crafter, "InputInv")
-        input.item = StaticItem.find("Electricity")
-        input.capacity = 20
-        crafter.energy_input_inventory = inv
-        
-        local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side = Vec3i.back
-        acc.pos = Vec3i.zero
-        acc.inventory = input
-        acc.channel = "Electricity"
-        acc.cover = StaticCover.find("ElectricityInput")
-		""",
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "Separator",
@@ -902,7 +887,7 @@ machines = [
 		"Label": "Electrolyzer",
 		"StartTier": 2,
 		"EndTier": 10,
-		"BlockLogic":"AutoCrafter",
+		"BlockLogic":"SelectCrafter",
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "Mixer",
