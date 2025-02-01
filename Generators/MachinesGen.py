@@ -9,14 +9,12 @@ objects_wiki_array = {}
 recipes_hand = []
 
 cvs = []
-desc_csv = []
 
 def append_recipe(recipe):
 	recipes_hand.append(recipe)
 
 for machine in machines:
 	cvs.append([machine["Name"], machine["Label"]])
-	desc_csv.append([machine["Name"], ""])
 	for tier in tiers_numlist:
 		if machine["StartTier"] <= tier and machine["EndTier"] >= tier:
 			item_name = tier_material[tier] +  machine["Name"]
@@ -39,7 +37,7 @@ for machine in machines:
 				"StackSize": 32,
 				"LabelParts": [[tier_material[tier], "common"],[machine["Name"], "machines"]],
 				"LabelFormat": ["machines_label_format","common"],
-				"DescriptionParts": [[machine["Name"], "description_machines"]],
+				"DescriptionParts": [[machine["Name"], "machines_description"]],
 				"ItemLogic": building_single_logic,
 				
 				"Category": CamelToSpaces(tier_material[tier]),
@@ -820,40 +818,6 @@ for machine in machines:
 						"Items":[
 							{
 								"Name": tier_material[tier] + "Terminal",
-								"Count": 1
-							}
-						]
-					},
-					"Ticks" : 20
-				})
-
-			if machine["Name"] == "Freezer":
-				append_recipe({
-					"Name": tier_material[tier] + machine["Name"],
-					"Input":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + "Plate",
-								"Count": 6
-							},
-							{
-								"Name": tier_material[tier] + "Parts",
-								"Count": 8 + parts_ramp(level)
-							},
-							{
-								"Name": tier_material[tier] + "ElectricEngine",
-								"Count": 2
-							},
-							{
-								"Name": "CopperPipe",
-								"Count": 10 + parts_ramp(level)
-							}
-						]
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": tier_material[tier] + machine["Name"],
 								"Count": 1
 							}
 						]
@@ -2684,13 +2648,12 @@ data = {
 	"Objects": objects_array
 }
 
-write_file("Generated/Recipes/machines.json", data);
+write_file("Generated/Recipes/machines.json", data)
 
 data = {
 	"Objects": objects_wiki_array
 }
 
-write_file("Generated/Wiki/machines_wiki.json", data);
+write_file("Generated/Wiki/machines_wiki.json", data)
 
 write_file("Loc/source/machines.json", cvs)
-write_file("Loc/source/description_machines.json", desc_csv)
