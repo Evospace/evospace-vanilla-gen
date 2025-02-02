@@ -7,8 +7,8 @@ material_array_metal1 = [
 	"/Game/Materials/Aluminium",
 	"/Game/Materials/StainlessSteel",
 	"/Game/Materials/Titanium",
-	"/Game/Materials/HardMetal",
-	"/Game/Materials/Neutronium"
+	"/Game/Materials/Advanced",
+	"/Game/Materials/Ultimate"
 ]
 
 tier_material = [
@@ -18,14 +18,8 @@ tier_material = [
 	"Aluminium",
 	"StainlessSteel",
 	"Titanium",
-	"HardMetal",
-	"Neutronium",
-	"Neutronium",
-	"Neutronium",
-	"Neutronium",
-	"Neutronium",
-	"Neutronium",
-	"Neutronium",
+	"Advanced",
+	"Ultimate"
 ]
 
 def extract_tier(something):
@@ -196,16 +190,6 @@ materials = [
 		"IsDust": True,
 		"IsBlock": True,
 	},{
-		"Name": "Lithium",
-		"Label": "Lithium",
-		"SmeltLevel": 0,
-		"IsMetal": True,
-		"IsDust": True,
-		"Burnable": {
-			"BurnTime": 18*20
-		},
-		"IsBlock": True
-	},{
 		"Name": "Tungsten",
 		"Label": "Tungsten",
 		"SmeltLevel": 4,
@@ -222,22 +206,6 @@ materials = [
 		"Label": "Tungsten Carbide",
 		"IsDust": True,
 		"Tier": 5,
-	},{
-		"Name": "HardMetal",
-		"Label": "Hard Metal",
-		"SmeltLevel": 4,
-		"IsIngot": True,
-		"IsDust": True,
-		"Tier": 5,
-		"IsBlock": True,
-	},{
-		"Name": "HotHardMetalIngot",
-		"Label": "Hot Hard Metal Ingot",
-		"SmeltLevel": 4,
-		"IsExact": True,
-		"Tier": 5,
-        "Mesh":"/Game/Models/Ingot",
-        "Materials":["/Game/Materials/HotMetal"],
 	},{
 		"Name": "HotNeutroniumIngot",
 		"Label": "Hot Neutronium Ingot",
@@ -742,7 +710,7 @@ materials = [
 	},{
 		"Name": "Salt",
 		"Label": "Salt",
-		"IsDust": True,
+		"IsExact": True,
 		"Tier": 4
 	},{
 		"Name": "PortalBase",
@@ -808,7 +776,7 @@ materials = [
 		"IsExact": True,
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
-		"Mesh": "/Game/Models/Circuit3Crate"
+		"Mesh": "/Game/Models/QuantumCircuitCrate"
 	},{
 		"Name" : "QuantumProcessor",
 		"Label" : "Quantum Processor",
@@ -823,7 +791,7 @@ materials = [
 		"StackSize": 32,
 		"IsExact": True,
 		"Category": "Parts",
-		"Mesh": "/Game/Models/QuantumCircuitCrate"
+		"Mesh": "/Game/Models/QuantumCoreCrate"
 	},{
 		"Name" : "QuantumBrain",
 		"Label" : "Quantum Brain",
@@ -962,6 +930,10 @@ materials = [
 		"Label" : "Mercury",
 		"IsFluid": True,
 	},{
+		"Name" : "HotMercury",
+		"Label" : "Hot Mercury",
+		"IsFluid": True,
+	},{
 		"Name" : "FilteringCell",
 		"Label" : "Filtering Cell",
 		"StackSize": 32,
@@ -985,6 +957,58 @@ materials = [
 		"IsDust": True,
 		"Category": "Mineral",
 	},{
+		"Name" : "CarbonPrecursor",
+		"Label" : "Carbon Precursor",
+		"IsFluid": True
+	},{
+		"Name" : "CarbonFiber",
+		"Label" : "Carbon Fiber",
+		"StackSize": 32,
+		"IsExact": True
+	},{
+		"Name" : "CarbonFiberSheet",
+		"Label" : "Carbon Fiber Sheet",
+		"StackSize": 32,
+		"IsExact": True
+	},{
+		"Name" : "LithiumPlate",
+		"Label" : "Lithium Plate",
+		"StackSize": 32,
+		"IsExact": True
+	},{
+		"Name" : "AdvancedFrame",
+		"Label" : "Advanced Frame",
+		"StackSize": 16,
+		"IsExact": True
+	},{
+		"Name": "Advanced",
+		"Label": "Advanced",
+		"SmeltLevel": 4,
+		"IsIngot": True,
+		"Tier": 6,
+		"IsBlock": True,
+	},{
+		"Name": "Ultimate",
+		"Label": "Ultimate",
+		"SmeltLevel": 4,
+		"IsIngot": True,
+		"Tier": 7,
+		"IsBlock": True,
+	},{
+		"Name" : "UltimateFrame",
+		"Label" : "Ultimate Frame",
+		"StackSize": 16,
+		"IsExact": True
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	,{
 		"Name" : "Capacity",
 		"Label" : "Capacity",
 		"Craftable": False,
