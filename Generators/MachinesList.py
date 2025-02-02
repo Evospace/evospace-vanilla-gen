@@ -803,15 +803,7 @@ machines = [
 			[0,-1,0],[-1,-1,0],
 			[0,-1,1],[-1,-1,1],
 		],
-        "Recipes": "Hand",
 		"BlockLogic":"SelectCrafter",
-		"BlockCreation":"""local a = self:new_resource_accessor("Input")
-		a:SetSidePos(Vec3i.front, Vec3i.zero)
-        local res = self:get_resource_component()
-		a:bind_input(res)
-        res.input = 20
-        res.input_item = StaticItem.find("Electricity")
-		""",
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "Destroyer",

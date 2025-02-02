@@ -966,9 +966,10 @@ append_levels({
 	"Name": "AdvancedFrame",
 	"LabelParts": [["AdvancedFrame", "parts"]],
 	"RequiredResearch": ["TitaniumProduction", "LithiumPlate", "CarbonFiberSheet"],
-	"Levels": [5,5],
+	"Levels": [6,6],
 	"Unlocks": [["Assembler" + r_dict, "AdvancedFrame"]],
 	"MainResearch": True,
+	"CostMul": 2.25
 })
 append_levels({
 	"Class": "StaticResearch",

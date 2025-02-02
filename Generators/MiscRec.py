@@ -3543,32 +3543,6 @@ recipes_chem.append({
 	"Ticks" : 200,
 })
 
-recipes_chem.append({
-	"Name": "CobaltOxide",
-	"Input":{
-		"Items":[
-			{
-				"Name": "CobaltOxideDust",
-				"Count": 1
-			},
-			{
-				"Name": "Hydrogen",
-				"Count": 1000
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "CobaltDust",
-				"Count": 1
-			}
-		]
-	},
-	
-	"Ticks" : 200
-})
-
 for i in {"ProducerGas", "Methane", "Hydrogen"}:
 	recipes_gasturb.append({
 		"Input":{
@@ -4518,34 +4492,8 @@ recipes_industrial_chemreactor.append({
 			}
 		]
 	},
-	"Ticks" : 1000,
+	"Ticks" : 500,
 	"Colors": [[0.8,0.8,0.1,0.3],[0.7,0.2,0.7,0.8]]
-})
-
-recipes_industrial_chemreactor.append({
-	"Name":"CobaltOxideDust",
-	"Input":{
-		"Items":[
-			{
-				"Name": "IronOreDust",
-				"Count": 10
-			},
-			{
-				"Name": "SulfuricAcid",
-				"Count": 1000
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "CobaltOxideDust",
-				"Count": 1
-			}
-		]
-	},
-	
-	"Ticks" : 1000
 })
 
 recipes_industrial_chemreactor.append({
