@@ -14,7 +14,7 @@ tier_researches = [
 	"AluminiumProduction",
 	"StainlessSteelProduction",
 	"TitaniumProduction",
-	"HardMetalProduction",
+	"AdvancedFrame",
 	"NeutroniumProduction",
 	"NeutroniumProduction",
 	"NeutroniumProduction",
@@ -66,6 +66,7 @@ def append_levels(research_base):
 		CostMul = research["CostMul"] if "CostMul" in research else 1
 		CostMul = research["CostMuls"][thisLevel] if "CostMuls" in research else CostMul
 
+		research["DescriptionParts"] = [[research_base["Name"], "researches_description"]]
 		research["Level"] = thisLevel
 		research["Levels"] = [i,i]
 		research["DataPoints"] = {"Items" : [{
@@ -177,11 +178,21 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "SolarPanel",
-	"LabelParts": [["SolarPanel", "machines"]],
+	"Name": "SmallSolarPanel",
+	"LabelParts": [["SmallSolarPanel", "machines"]],
 	"RequiredResearch": ["SiliconWafer"],
 	"Levels": [3,7],
+	"Unlocks": [["Hand" + r_dict, "%Material%SmallSolarPanel"] ],
+	"CostMul": 2
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "SolarPanel",
+	"LabelParts": [["SolarPanel", "machines"]],
+	"RequiredResearch": ["SmallSolarPanel"],
+	"Levels": [3,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%SolarPanel"] ],
+	"CostMul": 8
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -615,10 +626,30 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "NitricAcid",
 	"LabelParts": [["NitricAcid", "parts"]],
-	"RequiredResearch": ["IndustrialChemReactor"],
-	"Levels": [4,4],
+	"RequiredResearch": ["IndustrialChemReactor1"],
+	"Levels": [5,5],
 	"Unlocks": [["IndustrialChemReactor" + r_dict, "NitricAcid"]],
-	"CostMul": 0.5,
+	"CostMul": 0.2,
+	"MainResearch": True,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "LithiumPlate",
+	"LabelParts": [["LithiumPlate", "parts"]],
+	"RequiredResearch": ["NitricAcid"],
+	"Levels": [5,5],
+	"Unlocks": [["IndustrialChemReactor" + r_dict, "LithiumPlate"]],
+	"CostMul": 0.3,
+	"MainResearch": True,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "LithiumBattery",
+	"LabelParts": [["LithiumBattery", "researches"]],
+	"RequiredResearch": ["LithiumPlate"],
+	"Levels": [5,5],
+	"Unlocks": [["Assembler" + r_dict, "LithiumBattery"]],
+	"CostMul": 0.75,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -707,7 +738,7 @@ append_levels({
 	"RequiredResearch": ["Chemistry"],
 	"Unlocks": [["Hand" + r_dict, "%Material%IndustrialChemReactor"] ],
 	"Levels": [3,7],
-	"MainResearch": True,
+	"MainResearchArr": [True, True, False, False, False, False],
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -866,7 +897,26 @@ append_levels({
 	"CostMul": 2,
 	"MainResearch": True,
 })
-
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "CarbonFiber",
+	"LabelParts": [["CarbonFiber", "parts"]],
+	"RequiredResearch": ["PyrolysisUnit", "IndustrialChemReactor1"],
+	"Unlocks": [["PyrolysisUnit"+r_dict,"CarbonFiber"]],
+	"Levels": [5,5],
+	"MainResearch": True,
+	"CostMul": 0.3,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "CarbonFiberSheet",
+	"LabelParts": [["CarbonFiberSheet", "parts"]],
+	"RequiredResearch": ["CarbonFiber"],
+	"Unlocks": [["Hand"+r_dict,"CarbonFiberSheet"]],
+	"Levels": [5,5],
+	"MainResearch": True,
+	"CostMul": 0.6,
+})
 append_levels({
 	"Class": "StaticResearch",
 	"Name": "KrollProcess",
@@ -876,6 +926,7 @@ append_levels({
 	"Levels": [5,5],
 	"MainResearch": True,
 	"CostMul": 0.5,
+	
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -912,27 +963,18 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "Freezer",
-	"LabelParts": [["Freezer", "machines"]],
-	"RequiredResearch": ["TitaniumProduction"],
-	"Unlocks": [["Hand" + r_dict, "%Material%Freezer"] ],
-	"Levels": [5,7],
-	"MainResearch": True,
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "HardMetalProduction",
-	"LabelParts": [["HardMetalProduction", "researches"]],
-	"RequiredResearch": ["Freezer"],
-	"Unlocks": get_parts_unlocks(tier_material[6]),
+	"Name": "AdvancedFrame",
+	"LabelParts": [["AdvancedFrame", "parts"]],
+	"RequiredResearch": ["TitaniumProduction", "LithiumPlate", "CarbonFiberSheet"],
 	"Levels": [5,5],
+	"Unlocks": [["Assembler" + r_dict, "AdvancedFrame"]],
 	"MainResearch": True,
 })
 append_levels({
 	"Class": "StaticResearch",
 	"Name": "FusionReactor",
 	"LabelParts": [["FusionReactor", "machines"]],
-	"RequiredResearch": ["HardMetalProduction"],
+	"RequiredResearch": ["AdvancedFrame"],
 	"Unlocks": [["Hand" + r_dict, "%Material%FusionReactor"] ],
 	"Levels": [6,7],
 	"MainResearch": True,
@@ -1357,7 +1399,6 @@ csv.append(["NeutroniumProduction", "Neutronium Production"])
 csv.append(["AluminiumProduction", "Aluminium Production"])
 csv.append(["StainlessSteelProduction", "Stainless Steel Production"])
 csv.append(["TitaniumProduction", "Titanium Production"])
-csv.append(["HardMetalProduction", "Hard Metal Production"])
 csv.append(["MineralsScan", "Minerals Scan"])
 csv.append(["Electricity", "Electricity"])
 csv.append(["Smelting", "Smelting"])
@@ -1379,6 +1420,7 @@ csv.append(["SteamPyrolysis", "Steam Pyrolysis"])
 csv.append(["KrollProcess", "Kroll Process"])
 csv.append(["AluminiumReduction", "Aluminium Reduction"])
 csv.append(["AdvancedAlloys", "Advanced Alloys"])
+csv.append(["LithiumBattery", "Lithium Battery"])
 
 write_file("Generated/Researches/basic.json", data)
 write_file("Loc/source/researches.json", csv)

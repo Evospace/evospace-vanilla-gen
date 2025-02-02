@@ -1378,26 +1378,6 @@ machines = [
 			[0,-1,2],[-1,-1,2],[-2,-1,2],
 		],
 		"BlockLogic":"SelectCrafter",
-		"BlockCreation":"""
-		local a = self:CreateAccessor(Class.find("FluidInputAccessor"))
-		a:SetSidePos(Vec3i.back, Vec3i.new(-1,0,2))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("HeatInputAccessor"))
-		a:SetSidePos(Vec3i.down, Vec3i.new(0,0,2))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("HeatInputAccessor"))
-		a:SetSidePos(Vec3i.down, Vec3i.new(-2,0,2))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("HeatInputAccessor"))
-		a:SetSidePos(Vec3i.down, Vec3i.new(-1,1,2))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("HeatInputAccessor"))
-		a:SetSidePos(Vec3i.down, Vec3i.new(-1,-1,2))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("FluidOutputAccessor"))
-		a:SetSidePos(Vec3i.back, Vec3i.new(-2,0,0))
-		a:Bind(self:GetOutputContainer())
-		""",
 		"Description": ["HeatInput"],
 	},{
 		"Name": "InductionCoil",

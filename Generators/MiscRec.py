@@ -47,8 +47,6 @@ recipes_indu = []
 recipes_exch = []
 recipes_iexch = []
 
-recipes_freezer = []
-
 recipes_combustion = []
 
 recipes_pyro = []
@@ -886,6 +884,70 @@ recipes_assembler.append({
 })
 
 recipes_assembler.append({
+	"Name":"LithiumBattery",
+	"Input":{
+		"Items":[
+			{
+				"Name": "SulfuricAcid",
+				"Count": 200
+			},
+			{
+				"Name": "LithiumPlate",
+				"Count": 1
+			},
+			{
+				"Name": "CopperParts",
+				"Count": 3
+			},
+			{
+				"Name": "SteelPlate",
+				"Count": 3
+			},
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "Battery",
+				"Count": 10
+			}
+		]
+	},
+	"Ticks" : 300,
+	
+})
+
+recipes_assembler.append({
+	"Name":"AdvancedFrame",
+	"Input":{
+		"Items":[
+			{
+				"Name": "TitaniumParts",
+				"Count": 4
+			},
+			{
+				"Name": "CarbonFiberSheet",
+				"Count": 1
+			},
+			{
+				"Name": "LithiumPlate",
+				"Count": 1
+			},
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "AdvancedFrame",
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 300,
+	
+})
+
+recipes_assembler.append({
 	"Name":"GoldWire",
 	"Input":{
 		"Items":[
@@ -1524,7 +1586,7 @@ recipes_chem.append({
 	"Ticks" : 200,
 })
 
-recipes_chem.append({
+recipes_industrial_chemreactor.append({
 	"Name":"CinnabarDust",
 	"Input":{
 		"Items":[
@@ -2136,58 +2198,6 @@ recipes_sep2.append({
 })	
 
 recipes_sep2.append({
-	"Name": "Granite",
-	"Input":{
-		"Items":[
-			{
-				"Name": "GraniteSurface",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items": [
-			{
-				"Name": "SandSurface",
-				"Count": 1
-			},
-			{
-				"Name": "TungstenOxideDust",
-				"Count": 1,
-				"Probability":10,
-			},
-		]
-	},
-	"Ticks": 40,
-})	
-
-recipes_sep2.append({
-	"Name": "Stone",
-	"Input":{
-		"Items":[
-			{
-				"Name": "StoneSurface",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items": [
-			{
-				"Name": "SandSurface",
-				"Count": 1
-			},
-			{
-				"Name": "AluminiumOxideDust",
-				"Count": 1,
-				"Probability":10,
-			},
-		]
-	},
-	"Ticks" : 100
-})	
-
-recipes_sep2.append({
 	"Name":"Sand",
 	"Input":{
 		"Items":[
@@ -2581,6 +2591,10 @@ recipes_indu.append({
 				"Name": "TitaniumSponge",
 				"Count": 1
 			},
+			{
+				"Name": "Mercury",
+				"Count": 1000
+			},
 		],
 	},
 	"Output":{
@@ -2588,6 +2602,10 @@ recipes_indu.append({
 			{
 				"Name": "TitaniumIngot",
 				"Count": 1
+			},
+			{
+				"Name": "HotMercury",
+				"Count": 1000
 			},
 		]
 	},
@@ -2603,6 +2621,10 @@ recipes_indu.append({
 				"Name": "SuperconductorDust",
 				"Count": 1
 			},
+			{
+				"Name": "Mercury",
+				"Count": 300
+			},
 		],
 	},
 	"Output":{
@@ -2611,10 +2633,14 @@ recipes_indu.append({
 				"Name": "SuperconductorIngot",
 				"Count": 1
 			},
+			{
+				"Name": "HotMercury",
+				"Count": 300
+			},
 		]
 	},
 	"Tier": 5,
-	"Ticks" : 200,
+	"Ticks" : 100,
 })
 	
 recipes_indu.append({
@@ -2625,6 +2651,10 @@ recipes_indu.append({
 				"Name": "TitaniumDust",
 				"Count": 1
 			},
+			{
+				"Name": "Mercury",
+				"Count": 100
+			},
 		],
 	},
 	"Output":{
@@ -2633,31 +2663,14 @@ recipes_indu.append({
 				"Name": "TitaniumIngot",
 				"Count": 1
 			},
+			{
+				"Name": "HotMercury",
+				"Count": 100
+			},
 		]
 	},
 	"Tier": 5,
-	"Ticks" : 200,
-})
-
-recipes_indu.append({
-	"Name":"HardMetalDustToIngot",
-	"Input":{
-		"Items":[
-			{
-				"Name": "HardMetalDust",
-				"Count": 1
-			},
-		],
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "HotHardMetalIngot",
-				"Count": 1
-			},
-		]
-	},
-	"Ticks" : 200,
+	"Ticks" : 100,
 })
 
 recipes_sep.append({
@@ -2704,31 +2717,6 @@ recipes_mixer.append({
 		]
 	},
 	"Ticks": 200,
-})
-
-recipes_mixer.append({
-	"Name": "HardMetalDust",
-	"Input":{
-		"Items":[
-			{
-				"Name": "TungstenCarbideDust",
-				"Count": 4
-			},
-			{
-				"Name": "CobaltDust",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "HardMetalDust",
-				"Count": 5
-			}
-		]
-	},
-	"Ticks": 1000,
 })
 
 recipes_mixer.append({
@@ -2849,7 +2837,7 @@ recipes_electrolyzer.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SaltDust",
+				"Name": "Salt",
 				"Count": 1
 			},
 		]
@@ -3398,7 +3386,7 @@ recipes_chem.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "SaltDust",
+				"Name": "Salt",
 				"Count": 1
 			}
 		]
@@ -3457,6 +3445,28 @@ recipes_chem.append({
 })
 
 recipes_industrial_chemreactor.append({
+	"Name": "HotMercury",
+	"Input":{
+		"Items":[
+			{
+				"Name": "HotMercury",
+				"Count": 1000
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "Mercury",
+				"Count": 1000
+			}
+		]
+	},
+	"Ticks" : 600,
+	"Colors": [[20,5,0],[0.5,0.5,0.5]]
+})
+
+recipes_industrial_chemreactor.append({
 	"Name": "TitaniumTetrachloride",
 	"Input":{
 		"Items":[
@@ -3478,9 +3488,8 @@ recipes_industrial_chemreactor.append({
 			}
 		]
 	},
-	
 	"Ticks" : 200,
-	"Scaled": False,
+	"Colors": [[0.8,0.8,0,0.3],[.3,0,0.3]]
 })
 
 recipes_industrial_chemreactor.append({
@@ -3505,8 +3514,7 @@ recipes_industrial_chemreactor.append({
 			},
 		],
 	},
-	"Ticks" : 200,
-	"Scaled": False,
+	"Ticks" : 200
 })
 
 recipes_chem.append({
@@ -3558,8 +3566,7 @@ recipes_chem.append({
 		]
 	},
 	
-	"Ticks" : 200,
-	"Scaled": False,
+	"Ticks" : 200
 })
 
 for i in {"ProducerGas", "Methane", "Hydrogen"}:
@@ -4541,20 +4548,28 @@ recipes_industrial_chemreactor.append({
 	"Ticks" : 1000
 })
 
-recipes_freezer.append({
-	"Name":"HotHardmetalIngot",
+recipes_industrial_chemreactor.append({
+	"Name": "LithiumPlate",
 	"Input":{
 		"Items":[
 			{
-				"Name": "HotHardMetalIngot",
+				"Name": "IronOreDust",
+				"Count": 3
+			},
+			{
+				"Name": "Salt",
 				"Count": 1
+			},
+			{
+				"Name": "NitricAcid",
+				"Count": 500
 			}
 		]
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "HardMetalIngot",
+				"Name": "LithiumPlate",
 				"Count": 1
 			}
 		]
@@ -4562,25 +4577,70 @@ recipes_freezer.append({
 	"Ticks" : 200
 })
 
-recipes_freezer.append({
-	"Name":"HotNeutroniumIngot",
+recipes_industrial_chemreactor.append({
+	"Name": "CarbonPrecursor",
 	"Input":{
 		"Items":[
 			{
-				"Name": "HotNeutroniumIngot",
-				"Count": 1
+				"Name": "HeavyOil",
+				"Count": 1000
+			},
+			{
+				"Name": "SulfuricAcid",
+				"Count": 100
 			}
 		]
 	},
 	"Output":{
 		"Items":[
 			{
-				"Name": "NeutroniumIngot",
+				"Name": "CarbonPrecursor",
+				"Count": 1000
+			}
+		]
+	},
+	"Ticks" : 200
+})
+
+recipes_pyro.append({
+	"Name": "CarbonFiber",
+	"Input":{
+		"Items":[
+			{
+				"Name": "CarbonPrecursor",
+				"Count": 500
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "CarbonFiber",
 				"Count": 1
 			}
 		]
 	},
-	
+	"Ticks" : 200
+})
+
+append_recipe({
+	"Name": "CarbonFiberSheet",
+	"Input":{
+		"Items":[
+			{
+				"Name": "CarbonFiber",
+				"Count": 2
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "CarbonFiberSheet",
+				"Count": 1
+			}
+		]
+	},
 	"Ticks" : 200
 })
 
@@ -4921,11 +4981,6 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": "InverseHeatExchanger" + r_dict,
 	"Recipes": recipes_iexch
-})
-
-objects_array.append({ "Class": r_dict,
-	"Name": "Freezer" + r_dict,
-	"Recipes": recipes_freezer
 })
 
 objects_array.append({ "Class": r_dict,

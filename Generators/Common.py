@@ -185,7 +185,7 @@ def get_hand_recipe(recipes_hand, result):
 single_battery_cell_charge = 100000
 
 def battery_mul(level):
-	return 4 * pow(4, level)
+	return 4 * pow(5, level)
 	
 f_machine_bonus = 1.5
 

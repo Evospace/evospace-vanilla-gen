@@ -25,27 +25,6 @@ def append_recipe_hand_press(recipe):
 	recipes_press.append(dec_recipe)	
 
 recipes_hand.append({
-	"Name": "ClayBlock",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Clay",
-				"Count": 1
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "ClayBlock",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 20
-})
-
-recipes_hand.append({
 	"Name":"Bricks",
 	"Input":{
 		"Items":[
@@ -318,27 +297,6 @@ recipes_hand.append({
 	"Ticks" : 20
 })
 
-recipes_hand.append({
-	"Name": "WoodenChest",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Plank",
-				"Count": 6
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "WoodenChest",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 20
-})
-
 append_recipe_hand_press({
 	"Name": "WoodenPlanks",
 	"Input":{
@@ -571,15 +529,15 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "HardMetalParts",
+				"Name": "AdvancedParts",
 				"Count": 20
 			},
 			{
-				"Name": "HardMetalPlate",
+				"Name": "AdvancedPlate",
 				"Count": 2
 			},
 			{
-				"Name": "HardMetalPipe",
+				"Name": "AdvancedPipe",
 				"Count": 6
 			},
 			{
@@ -591,7 +549,7 @@ recipes_hand.append({
 				"Count": 4
 			},
 			{
-				"Name": "HardMetalElectricEngine",
+				"Name": "AdvancedElectricEngine",
 				"Count": 8
 			}
 		]

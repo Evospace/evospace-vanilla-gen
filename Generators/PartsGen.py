@@ -138,38 +138,53 @@ for part in parts:
 				})
 			
 			if part["Name"] == "Gearbox":
-				append_recipe_diss(recipes_assembler, {
+				items = []
+				
+				if tier < 6:
+					plate_count = 1 if tier < 3 else 4
+					items.append({
+						"Name": material + "Plate",
+						"Count": plate_count
+					})
+				elif tier < 7:
+					items.append({
+						"Name": "AdvancedFrame",
+						"Count": 1
+					})
+				else:
+					items.append({
+						"Name": "UltimateFrame",
+						"Count": 1
+					})
+				
+				if tier <= 2:
+					parts_count = 2 + (4 if tier == 2 else 0)
+					items.append({
+						"Name": material + "Parts",
+						"Count": parts_count
+					})
+				
+				if tier >= 2:
+					index = tier - 1 if tier < 3 else 2
+					gearbox_count = 1 if tier < 3 else (1 + (tier - 2))
+					items.append({
+						"Name": tier_material[index] + "Gearbox",
+						"Count": gearbox_count
+					})
+				
+				recipe = {
 					"Name": material + "Gearbox",
-					"Input":{
-						"Items":[
-							{
-								"Name": material + "Plate",
-								"Count": 1 if tier < 3 else 4
-							}
-						] +  ([] if tier > 2 else [{
-							"Name": material + "Parts",
-							"Count": 2 + (0 if tier != 2 else 4)
-						}]) + ([] if tier < 2 else [
-							{
-								"Name": tier_material[(tier - 1) if tier < 3 else 2] + "Gearbox",
-								"Count": 1 + (0 if tier < 3 else (tier - 2) )
-							}
-						])
+					"Input": { "Items": items },
+					"Output": {
+						"Items": [{
+							"Name": material + "Gearbox",
+							"Count": 1
+						}]
 					},
-					"ResourceInput":{
-						"Name": "Electricity",
-						"Count": 10 * 1.5**level
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": material + "Gearbox",
-								"Count": 1
-							}
-						]
-					},
-					"Ticks" : 200 * 1.5**level,
-				})
+					"Ticks": 200 * (1.5 ** level)
+				}
+				
+				append_recipe_diss(recipes_assembler, recipe)
 
 			if part["Name"] == "SolarCell":
 				inp = [{
