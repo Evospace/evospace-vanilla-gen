@@ -17,6 +17,7 @@ ore_types = [
 		"Hardness": 1.5,
 		"Drops": "CopperOre",
 		"Remain": 1000,
+		"Tier": 0,
 	},{
 		# https://www.tf.uni-kiel.de/matwis/amat/iss/kap_a/advanced/aa_2_1.html
 		# https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D0%BA%D0%B5%D0%BB%D1%8C#%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5
@@ -29,6 +30,7 @@ ore_types = [
 		"Hardness": 2,
 		"Drops": "IronOre",
 		"Remain": 1000,
+		"Tier": 2,
 	},{
 		"Name": "Uranium",
 		"Byproducts":[
@@ -43,6 +45,7 @@ ore_types = [
 		"Tier": 5,
 		"Drops": "UraniumOre",
 		"Remain": 1000,
+		"Tier": 4,
 	},{
 		# https://en.wikipedia.org/wiki/Cassiterite
 		"Name": "Aluminium",
@@ -55,6 +58,7 @@ ore_types = [
 		"Drops": "AluminiumOre",
 		"Oxide": True,
 		"Remain": 1000,
+		"Tier": 3,
 	},{
 		"Name": "Coal",
 		"Color": [.06, .06, .06],
@@ -65,6 +69,7 @@ ore_types = [
 		"Hardness": 1,
 		"NotOre": True,
 		"Remain": 1000,
+		"Tier": 0,
 	},{
 		"Name": "Clay",
 		"Color": [202 / 255., 115 / 512., 43 / 512.],
@@ -77,6 +82,7 @@ ore_types = [
 		"Byproducts":[
 			"RareEarthElement"
 		],
+		"Tier": 0,
 	}
 ]
 

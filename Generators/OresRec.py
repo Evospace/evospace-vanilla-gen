@@ -16,6 +16,7 @@ recipes_sifter = []
 objects_array = []
 
 for ore_type in ore_types:
+	material_tier = ore_type["Tier"]
 	if "NotOre" not in ore_type:
 		named_mat = named_material(ore_type["Name"])
 	
@@ -46,7 +47,8 @@ for ore_type in ore_types:
 					}
 				]
 			},
-			"Ticks": 100,
+			"Ticks": 100 * 2**material_tier,
+			"Tier": material_tier,
 		})
 		if "SmeltLevel" in named_mat and named_mat["SmeltLevel"] <= 0:
 			recipes_smelt.append({
@@ -72,7 +74,8 @@ for ore_type in ore_types:
 						}
 					]
 				},
-				"Ticks" : 180,
+				"Ticks" : 180 * 2**material_tier,
+				"Tier": material_tier,
 			})
 		recipes_mac.append({
 			"Name": ore_type["Name"] + "ImpureOreGravel",
@@ -101,8 +104,9 @@ for ore_type in ore_types:
 					}
 				]
 			},
-			"Ticks" : 200,
+			"Ticks" : 200 * 2**material_tier,
 			"Productivity": 50,
+			"Tier": material_tier,
 		})
 		recipes_mac.append({
 			"Name": ore_type["Name"] + "OreGravel",
@@ -131,8 +135,9 @@ for ore_type in ore_types:
 					}
 				]
 			},
-			"Ticks" : 200,
+			"Ticks" : 200 * 2**material_tier,
 			"Productivity": 50,
+			"Tier": material_tier,
 		})
 		if "SmeltLevel" in named_mat and named_mat["SmeltLevel"] <= 0:
 			recipes_smelt.append({
@@ -157,7 +162,8 @@ for ore_type in ore_types:
 						}
 					]
 				},
-				"Ticks" : 100,
+				"Ticks" : 100 * 2 **material_tier,
+				"Tier": material_tier,
 			})
 			recipes_smelt.append({
 				"Name": ore_type["Name"] + "ImpureOreGravel",
@@ -181,7 +187,8 @@ for ore_type in ore_types:
 						}
 					]
 				},
-				"Ticks" : 120,
+				"Ticks" : 120 * 2**material_tier,
+				"Tier": material_tier,
 			})
 			recipes_smelt.append({
 				"Name": ore_type["Name"] + "OreGravel",
@@ -205,7 +212,8 @@ for ore_type in ore_types:
 						}
 					]
 				},
-				"Ticks" : 120,
+				"Ticks" : 120 * 2**material_tier,
+				"Tier": material_tier,
 			})
 		out_items = []
 		out_items.append({
@@ -249,7 +257,8 @@ for ore_type in ore_types:
 			"Output":{
 				"Items": out_items
 			},
-			"Ticks" : 200,
+			"Ticks" : 200 * 2**material_tier,
+			"Tier": material_tier,
 		})
 			
 		sep2_rec = {
@@ -272,8 +281,9 @@ for ore_type in ore_types:
 					"Count": 1
 				}],
 			},
-			"Ticks" : 60,
-			"Productivity": 25
+			"Ticks" : 60 * 2**material_tier,
+			"Productivity": 25,
+			"Tier": material_tier,
 		}
 		if "Byproducts" in ore_type and len(ore_type["Byproducts"]) > 0:
 			sep2_rec["Output"]["Items"].append({
@@ -312,7 +322,8 @@ for ore_type in ore_types:
 			"Output":{
 				"Items": out_items
 			},
-			"Ticks" : 60,
+			"Ticks" : 60 * 2**material_tier,
+			"Tier": material_tier,
 		})	
 		for i in {"OreGravel", "ImpureOreGravel"}:
 			recipes_sifter.append({
@@ -348,7 +359,8 @@ for ore_type in ore_types:
 						},
 					]
 				},
-				"Ticks" : 40,
+				"Ticks" : 40 * 2**material_tier,
+				"Tier": material_tier,
 			})	
 		#out_items = []
 		#out_items.append({

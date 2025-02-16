@@ -65,6 +65,7 @@ def append_recipe_diss(crafter, recipe):
 for part in parts:
 	for tier in tiers_numlist:
 		material = tier_material[tier]
+		material_tier = tier
 		if part["StartTier"] <= tier and part["EndTier"] >= tier:
 			cvs.append([material + part["Name"], CamelToSpaces(material) + " " + part["Label"]])
 			level = tier - part["StartTier"]
@@ -181,7 +182,7 @@ for part in parts:
 							"Count": 1
 						}]
 					},
-					"Ticks": 200 * (1.5 ** level)
+					"Ticks": 200 * 2 ** material_tier
 				}
 				
 				append_recipe_diss(recipes_assembler, recipe)
@@ -210,10 +211,6 @@ for part in parts:
 					"Input":{
 						"Items": inp
 					},
-					"ResourceInput":{
-						"Name": "Electricity",
-						"Count": 10 * 1.5**level
-					},
 					"Output":{
 						"Items":[
 							{
@@ -222,7 +219,7 @@ for part in parts:
 							}
 						]
 					},
-					"Ticks" : 80 * 1.5**level,
+					"Ticks" : 80 * 2**level,
 				})
 
 			if part["Name"] == "Plate":
@@ -236,10 +233,6 @@ for part in parts:
 							},
 						]
 					},
-					"ResourceInput":{
-						"Name": "Kinetic",
-						"Count": 10 * 1.5**level
-					},
 					"Output":{
 						"Items":[
 							{
@@ -248,7 +241,7 @@ for part in parts:
 							}
 						]
 					},
-					"Ticks" : 80 * 1.5**level,
+					"Ticks" : 80 * 2**material_tier,
 				})
 				
 			if part["Name"] == "Parts":
@@ -262,10 +255,6 @@ for part in parts:
 							},
 						]
 					},
-					"ResourceInput":{
-						"Name": "Kinetic",
-						"Count": 10 * 1.5**level
-					},
 					"Output":{
 						"Items":[
 							{
@@ -274,13 +263,13 @@ for part in parts:
 							}
 						]
 					},
-					"Ticks" : 80 * 1.5**level,
+					"Ticks" : 80 * 2**material_tier,
 					"Productivity": 50,
 				})
 
 # ingots, dusts, fluids, gems, blocks
 for material in materials:
-
+	material_tier = 0 if "Tier" not in material else material["Tier"]
 	# abstract
 	if "IsAbstract" in material:
 		cvs.append([material["Name"], material["Label"]])
@@ -445,7 +434,8 @@ for material in materials:
 					}
 				]
 			},
-			"Ticks" : 80 * 1.5**level,
+			"Ticks" : 80 * 2**material_tier,
+			"Tier": material_tier,
 		})
 			
 	if "IsBlock" in material:
