@@ -118,7 +118,7 @@ append_levels({
 	"Name": "Electricity",
 	"LabelParts": [["Electricity", "researches"]],
 	"RequiredResearch": ["MineralScan"+static_research],
-	"Unlocks": [["Hand" + r_dict, tier_material[1] + "Connector"],["Hand" + r_dict, tier_material[1] + "HandGenerator"]],
+	"Unlocks": [["Hand" + r_dict, "CopperConnector"],["Hand" + r_dict, "CopperHandGenerator"]],
 	"CompleteByDefault": True,
 	"MainResearch": True,
 })

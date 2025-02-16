@@ -19,6 +19,7 @@ tier_material = [
 	"StainlessSteel",
 	"Titanium",
 	"Advanced",
+	"Ultimate",
 	"Ultimate"
 ]
 
@@ -91,9 +92,17 @@ materials = [
 		"IsDust": True,
 		"SmeltLevel": 0,
 		"IsBlock": True,
+		"Tier": 1,
 	},{
 		"Name" : "Gold",
 		"Label" : "Gold",
+		"IsDust": True,
+		"IsIngot": True,
+		"SmeltLevel": 0,
+		"IsBlock": True,
+	},{
+		"Name" : "Platinum",
+		"Label" : "Platinum",
 		"IsDust": True,
 		"IsIngot": True,
 		"SmeltLevel": 0,
@@ -137,6 +146,7 @@ materials = [
 		"IsDust": True,
 		"SmeltLevel": 1,
 		"IsBlock": True,
+		"Tier": 2,
 	},{
 		"Name" : "Aluminium",
 		"Label" : "Aluminium",
@@ -144,6 +154,7 @@ materials = [
 		"IsIngot": True,
 		"SmeltLevel": 3,
 		"IsBlock": True,
+		"Tier": 3,
 	},{
 		"Name" : "AluminiumOxide",
 		"Label" : "Aluminium Oxide",
@@ -157,6 +168,7 @@ materials = [
 		"IsIngot": True,
 		"IsDust": True,
 		"IsBlock": True,
+		"Tier": 4,
 	},{
 		"Name" : "Titanium",
 		"Label" : "Titanium",
@@ -164,6 +176,7 @@ materials = [
 		"IsIngot": True,
 		"IsDust": True,
 		"IsBlock": True,
+		"Tier": 5,
 	},{
 		"Name" : "TitaniumTetrachloride",
 		"Label" : "Titanium Tetrachloride",
@@ -459,6 +472,24 @@ materials = [
 		"Burnable": {
 			"BurnTime": 400
 		},
+		"Tier": 2,
+		"Color": [.2,.5,.2],
+	},{
+		"Name": "Fluorine",
+		"Label": "Fluorine",
+		"IsFluid": True,
+		"Tier": 2,
+		"Color": [.2,.5,.2],
+	},{
+		"Name": "Tetrafluoroethylene",
+		"Label": "Tetrafluoroethylene",
+		"IsFluid": True,
+		"Tier": 2,
+		"Color": [.2,.5,.2],
+	},{
+		"Name": "PTFE",
+		"Label": "PTFE",
+		"IsFluid": True,
 		"Tier": 2,
 		"Color": [.2,.5,.2],
 	},
@@ -793,6 +824,20 @@ materials = [
 		"Category": "Parts",
 		"Mesh": "/Game/Models/QuantumCoreCrate"
 	},{
+		"Name" : "DecisionResonator",
+		"Label" : "Decision Resonator",
+		"StackSize": 32,
+		"IsExact": True,
+		"Category": "Parts",
+		"Mesh": "/Game/Models/QuantumCoreCrate"
+	},{
+		"Name" : "BrainMatrix",
+		"Label" : "Brain Matrix",
+		"StackSize": 32,
+		"IsExact": True,
+		"Category": "Parts",
+		"Mesh": "/Game/Models/QuantumCoreCrate"
+	},{
 		"Name" : "QuantumBrain",
 		"Label" : "Quantum Brain",
 		"StackSize": 32,
@@ -971,6 +1016,11 @@ materials = [
 		"StackSize": 32,
 		"IsExact": True
 	},{
+		"Name" : "Graphene",
+		"Label" : "Graphene",
+		"StackSize": 32,
+		"IsExact": True
+	},{
 		"Name" : "LithiumPlate",
 		"Label" : "Lithium Plate",
 		"StackSize": 32,
@@ -1033,8 +1083,8 @@ materials = [
 		"IsExact": True,
 		"Category": "Signal"
 	},{
-		"Name" : "SwitchedOn", 
-		"Label" : "Switched On",
+		"Name" : "SwitchOn", 
+		"Label" : "Switch On",
 		"Craftable": False,
 		"IsExact": True,
 		"Category": "Signal"

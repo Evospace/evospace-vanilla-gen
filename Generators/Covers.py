@@ -7,14 +7,62 @@ tier_materials = ("/Game/Materials/Stone", "/Game/Materials/Copper", "/Game/Mate
 
 covers = [
     {
+        "Name": "CopperConnector",
+        "Mesh": "/Game/Covers/CableSide",
+        "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/Copper"]
+    },
+    {
+        "Name": "OFCCable",
+        "Mesh": "/Game/Covers/CableSide",
+        "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/OFC"]
+    },
+    {
+        "Name": "GCable",
+        "Mesh": "/Game/Covers/CableSide",
+        "Materials": ["/Game/Materials/RubberMV", "/Game/Materials/Gold"]
+    },
+    {
+        "Name": "CNCable",
+        "Mesh": "/Game/Covers/CableSide",
+        "Materials": ["/Game/Materials/RubberMV", "/Game/Materials/CN"]
+    },
+    {
+        "Name": "YBCOCable",
+        "Mesh": "/Game/Covers/CableSide",
+        "Materials": ["/Game/Materials/RubberMV", "/Game/Materials/YBCO"]
+    },
+    {
+        "Name": "PCable",
+        "Mesh": "/Game/Covers/CableSide",
+        "Materials": ["/Game/Materials/RubberHV", "/Game/Materials/GlowHV1"]
+    },
+    {
+        "Name": "TNCable",
+        "Mesh": "/Game/Covers/CableSide",
+        "Materials": ["/Game/Materials/RubberHV", "/Game/Materials/GlowHV2"]
+    },
+    {
+        "Name": "ABCCOCable",
+        "Mesh": "/Game/Covers/CableSide",
+        "Materials": ["/Game/Materials/RubberHV", "/Game/Materials/GlowHV3"]
+    },
+    {
         "Name": "CableSide",
         "Mesh": "/Game/Covers/PipeSide",
         "Materials": ["/Game/Materials/Rubber2"]
     },
     {
-        "Name": "CableCenter",
+        "Name": "CableCenterLV",
         "Mesh": "/Game/Covers/PipeCenter",
         "Materials": ["/Game/Materials/Rubber2"]
+    },{
+        "Name": "CableCenterMV",
+        "Mesh": "/Game/Covers/PipeCenter",
+        "Materials": ["/Game/Materials/RubberMV"]
+    },{
+        "Name": "CableCenterHV",
+        "Mesh": "/Game/Covers/PipeCenter",
+        "Materials": ["/Game/Materials/RubberHV"]
     },{
         "Name": "HeatSide",
         "Mesh": "/Game/Covers/HeatSide",

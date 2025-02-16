@@ -15,11 +15,6 @@ recipes_boiler = []
 recipes_farm = []
 recipes_condens = []
 recipes_generator = []
-recipes_industrial_generator = []
-recipes_electric_engine = []
-recipes_compact_generator = []
-recipes_steam_engine = []
-recipes_steam_turbine = []
 recipes_pump = []
 recipes_electrolyzer = []
 recipes_cutter = []
@@ -75,8 +70,6 @@ recipes_portal = []
 
 recipes_hand = []
 
-recipes_kinetic_heater = []
-
 oil_crack = []
 
 def append_recipe(recipe):
@@ -105,20 +98,6 @@ def append_recipe_hand_press(recipe):
 	
 	dec_recipe["Ticks"] = 60
 	recipes_press.append(dec_recipe)		
-
-recipes_industrial_generator.append({
-	"Name": "Generating",
-	"Input":{
-		"Items":[
-		]
-	},
-	"Output":{
-		"Items":[
-		]
-	},
-	"Ticks" : 200,
-	"Loss": 10,
-})
 
 recipes_industrial_steam_turbine.append({
 	"Name": "Rotating",
@@ -283,7 +262,7 @@ append_recipe({
 		]
 	},
 	"Ticks" : 200,
-	
+	"Tier": 1,
 })
 
 append_recipe({
@@ -308,8 +287,8 @@ append_recipe({
 			}
 		]
 	},
-	"Ticks" : 200,
-	
+	"Ticks" : 200 * 2**2,
+	"Tier": 2,
 })
 
 recipes_assembler.append({
@@ -330,8 +309,8 @@ recipes_assembler.append({
 			}
 		]
 	},
-	"Ticks" : 200,
-	
+	"Ticks" : 200 * 2**3,
+	"Tier": 3,
 })
 
 append_recipe({
@@ -356,32 +335,8 @@ append_recipe({
 			}
 		]
 	},
-	"Ticks" : 200,
-})
-
-append_recipe({
-	"Name":"QuantumBrain",
-	"Input":{
-		"Items":[	
-			{
-				"Name": "QuantumProcessor",
-				"Count": 2
-			},
-			{
-				"Name": "UltimateCatalyst",
-				"Count": 1
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "QuantumBrain",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 200,
+	"Ticks" : 200 * 2**3,
+	"Tier": 3,
 })
 
 append_recipe({
@@ -440,8 +395,8 @@ append_recipe({
 			}
 		]
 	},
-	"Ticks" : 200,
-	
+	"Ticks" : 200 * 2**7,
+	"Tier": 7,
 })
 
 recipes_assembler.append({
@@ -467,8 +422,8 @@ recipes_assembler.append({
 		]
 	},
 	
-	"Ticks" : 80,
-	
+	"Ticks" : 80 * 2**3,
+	"Tier": 3,
 })
 
 recipes_assembler.append({
@@ -493,8 +448,8 @@ recipes_assembler.append({
 			}
 		]
 	},
-	"Ticks" : 200,
-	
+	"Ticks" : 200 * 2**3,
+	"Tier": 3,
 })
 
 append_recipe({
@@ -519,7 +474,8 @@ append_recipe({
 			}
 		]
 	},
-	"Ticks" : 200,
+	"Ticks" : 200 * 2**4,
+	"Tier": 4,
 	
 })
 
@@ -545,8 +501,8 @@ append_recipe({
 			}
 		]
 	},
-	"Ticks" : 200,
-	
+	"Ticks" : 200 * 2**4,
+	"Tier": 4,
 })
 
 append_recipe({
@@ -555,10 +511,10 @@ append_recipe({
 		"Items":[
 			{
 				"Name": "QuantumCircuit",
-				"Count": 1
+				"Count": 2
 			},	
 			{
-				"Name": "Processor",
+				"Name": "DecisionResonator",
 				"Count": 1
 			}
 		]
@@ -571,8 +527,112 @@ append_recipe({
 			}
 		]
 	},
-	"Ticks" : 200,
-	
+	"Ticks" : 200 * 2**5,
+	"Tier": 5,
+})
+
+recipes_industrial_chemreactor.append({
+	"Name":"Tetrafluoroethylene",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Fluorine",
+				"Count": 500
+			},	
+			{
+				"Name": "Ethylene",
+				"Count": 1000
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "Tetrafluoroethylene",
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 200 * 2**5,
+	"Tier": 5,
+})
+
+recipes_industrial_chemreactor.append({
+	"Name":"PTFE",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Tetrafluoroethylene",
+				"Count": 1000
+			},	
+			{
+				"Name": "Oxygen",
+				"Count": 500
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "PTFE",
+				"Count": 1000
+			}
+		]
+	},
+	"Ticks" : 600 * 2**5,
+	"Tier": 5,
+})
+
+recipes_industrial_chemreactor.append({
+	"Name":"BrainMatrix",
+	"Input":{
+		"Items":[
+			{
+				"Name": "CarbonFiberSheet",
+				"Count": 1
+			},	
+			{
+				"Name": "PTFE",
+				"Count": 100
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "BrainMatrix",
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 200 * 2**5,
+	"Tier": 5,
+})
+
+append_recipe({
+	"Name":"QuantumBrain",
+	"Input":{
+		"Items":[	
+			{
+				"Name": "QuantumProcessor",
+				"Count": 2
+			},
+			{
+				"Name": "BrainMatrix",
+				"Count": 1
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "QuantumBrain",
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 200 * 2**6,
+	"Tier": 6,
 })
 
 recipes_assembler.append({
@@ -1628,20 +1688,6 @@ recipes_boiler.append({
 	"Loss": 10,
 })
 
-recipes_steam_turbine.append({
-	"Name": "Rotating",
-	"Input":{
-		"Items":[
-		]
-	},
-	"Output":{
-		"Items":[
-		]
-	},
-	"Ticks" : 200,
-	"Loss": 10,
-})
-
 recipes_generator.append({
 	"Name": "Generating",
 	"Input":{
@@ -1656,34 +1702,6 @@ recipes_generator.append({
 	"Loss": 10,
 })
 
-recipes_kinetic_heater.append({
-	"Name": "Generating",
-	"Input":{
-		"Items":[
-		]
-	},
-	"Output":{
-		"Items":[
-		]
-	},
-	"Ticks" : 200,
-	"Loss": 10,
-})
-
-recipes_electric_engine.append({
-	"Name": "Rotating",
-	"Input":{
-		"Items":[
-		]
-	},
-	"Output":{
-		"Items":[
-		]
-	},
-	"Loss": 10,
-	"Ticks": 200,
-})
-
 recipes_industrial_electric_engine.append({
 	"Name": "Rotating",
 	"Input":{
@@ -1696,34 +1714,6 @@ recipes_industrial_electric_engine.append({
 	},
 	"Loss": 10,
 	"Ticks": 200,
-})
-
-recipes_compact_generator.append({
-	"Name": "Rotating",
-	"Input":{
-		"Items":[
-		]
-	},
-	"Output":{
-		"Items":[
-		]
-	},
-	"Loss": 10,
-	"Ticks": 200,
-})
-
-recipes_steam_engine.append({
-	"Name": "Rotating",
-	"Input":{
-		"Items":[
-		]
-	},
-	"Output":{
-		"Items":[
-		]
-	},
-	"Ticks": 200,
-	"Loss": 10
 })
 
 recipes_oven.append({
@@ -2347,8 +2337,8 @@ recipes_macerator.append({
 			}
 		]
 	},
-	"Tier": 0,
-	"Ticks" : 100
+	"Tier": 5,
+	"Ticks" : 80 * 2**5,
 })
 
 recipes_macerator.append({
@@ -2369,8 +2359,8 @@ recipes_macerator.append({
 			}
 		]
 	},
-	"Tier": 0,
-	"Ticks" : 200
+	"Tier": 5,
+	"Ticks" : 80 * 2**5,
 })
 
 recipes_macerator.append({
@@ -2391,8 +2381,8 @@ recipes_macerator.append({
 			}
 		]
 	},
-	"Tier": 0,
-	"Ticks" : 200
+	"Tier": 5,
+	"Ticks" : 100 * 2**5,
 })
 
 recipes_macerator.append({
@@ -2413,8 +2403,8 @@ recipes_macerator.append({
 			}
 		]
 	},
-	"Tier": 0,
-	"Ticks" : 200
+	"Tier": 5,
+	"Ticks" : 80 * 2**5,
 })
 
 recipes_macerator.append({
@@ -2435,8 +2425,8 @@ recipes_macerator.append({
 			}
 		]
 	},
-	"Tier": 0,
-	"Ticks" : 200
+	"Tier": 5,
+	"Ticks" : 80 * 2**5,
 })
 
 recipes_macerator.append({
@@ -2457,8 +2447,8 @@ recipes_macerator.append({
 			}
 		]
 	},
-	"Tier": 0,
-	"Ticks" : 200
+	"Tier": 5,
+	"Ticks" : 100 * 2**5,
 })
 
 recipes_macerator.append({
@@ -2479,8 +2469,8 @@ recipes_macerator.append({
 			}
 		]
 	},
-	"Tier": 0,
-	"Ticks" : 200
+	"Tier": 6,
+	"Ticks" : 80 * 2**6,
 })
 
 recipes_macerator.append({
@@ -2501,8 +2491,8 @@ recipes_macerator.append({
 			}
 		]
 	},
-	"Tier": 0,
-	"Ticks" : 200
+	"Tier": 6,
+	"Ticks" : 100 * 2**6,
 })
 
 recipes_macerator.append({
@@ -2610,7 +2600,7 @@ recipes_indu.append({
 		]
 	},
 	"Tier": 5,
-	"Ticks" : 200,
+	"Ticks" : 200 * 2,
 })
 
 recipes_indu.append({
@@ -2670,7 +2660,7 @@ recipes_indu.append({
 		]
 	},
 	"Tier": 5,
-	"Ticks" : 100,
+	"Ticks" : 40 * 2,
 })
 
 recipes_sep.append({
@@ -4812,21 +4802,6 @@ objects_array.append({ "Class": r_dict,
 })
 
 objects_array.append({ "Class": r_dict,
-	"Name": "IndustrialGenerator" + r_dict,
-	"Recipes": recipes_industrial_generator
-})
-
-objects_array.append({ "Class": r_dict,
-	"Name": "ElectricEngine" + r_dict,
-	"Recipes": recipes_electric_engine
-})
-
-objects_array.append({ "Class": r_dict,
-	"Name": "StirlingEngine" + r_dict,
-	"Recipes": recipes_steam_engine
-})
-
-objects_array.append({ "Class": r_dict,
 	"Name": "Pump" + r_dict,
 	"Recipes": recipes_pump
 })
@@ -4849,11 +4824,6 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": "ArcSmelter" + r_dict,
 	"Recipes": recipes_arc_furnace
-})
-
-objects_array.append({ "Class": r_dict,
-	"Name": "SteamTurbine" + r_dict,
-	"Recipes": recipes_steam_turbine
 })
 
 objects_array.append({ "Class": r_dict,
@@ -4942,11 +4912,6 @@ objects_array.append({ "Class": r_dict,
 })
 
 objects_array.append({ "Class": r_dict,
-	"Name": "CompactGenerator" + r_dict,
-	"Recipes": recipes_compact_generator
-})
-
-objects_array.append({ "Class": r_dict,
 	"Name": "FissionReactor" + r_dict,
 	"Recipes": recipes_fission
 })
@@ -5009,11 +4974,6 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": "IndustrialElectricEngine" + r_dict,
 	"Recipes": recipes_industrial_electric_engine
-})
-
-objects_array.append({ "Class": r_dict,
-	"Name": "KineticHeater" + r_dict,
-	"Recipes": recipes_kinetic_heater
 })
 
 objects_array.append({ "Class": r_dict,
