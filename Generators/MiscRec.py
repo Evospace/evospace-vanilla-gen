@@ -4478,7 +4478,7 @@ recipes_industrial_chemreactor.append({
 		"Items":[
 			{
 				"Name": "RareEarthElement",
-				"Count": 1
+				"Count": 2
 			}
 		]
 	},

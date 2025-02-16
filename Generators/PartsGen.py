@@ -242,6 +242,7 @@ for part in parts:
 						]
 					},
 					"Ticks" : 80 * 2**material_tier,
+					"Tier": material_tier
 				})
 				
 			if part["Name"] == "Parts":
