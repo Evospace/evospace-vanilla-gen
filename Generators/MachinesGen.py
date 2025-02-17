@@ -153,7 +153,7 @@ for machine in machines:
 			"Item": block_name,
 			"Class": "StaticBlock",
 			"BlockLogic": machine["Name"] + "BlockLogic",
-			"ReplaceTag": machine["Name"],
+			"ReplaceTag": machine["Name"] if "ReplaceTag" not in machine else machine["ReplaceTag"],
 			"Minable": {"Result": block_name},
 			"Tier": tier,
 			"Level": tier - machine["StartTier"]

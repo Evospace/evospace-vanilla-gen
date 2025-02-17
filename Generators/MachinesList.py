@@ -151,6 +151,15 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SignBlockLogic",
 	},{
+		"Name": "Transformer",
+		"Label": "Transformer",
+		"StartTier": 1,
+		"EndTier": 1,
+		"BlockLogic": "Transformer",
+        "ExactName": True,
+        "Category": "Network",
+        "ReplaceTag": "Transformer",
+	},{
 		"Name": "CopperConnector",
 		"Label": "Copper Cable",
 		"StartTier": 1,
@@ -162,6 +171,7 @@ machines = [
         "NoActorRenderable": True,
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
         "Category": "Network",
+        "ReplaceTag": "Cable",
 	},{
 		"Name": "OFCCable",
 		"Label": "Oxygen Free Copper Cable",
@@ -174,6 +184,7 @@ machines = [
         "NoActorRenderable": True,
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
         "Category": "Network",
+        "ReplaceTag": "Cable",
 	},{
 		"Name": "GCable",
 		"Label": "Gold Cable",
@@ -186,6 +197,7 @@ machines = [
         "NoActorRenderable": True,
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
         "Category": "Network",
+        "ReplaceTag": "Cable",
 	},{
 		"Name": "CNCable",
 		"Label": "Copper Nickel Cable",
@@ -198,6 +210,7 @@ machines = [
         "NoActorRenderable": True,
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
         "Category": "Network",
+        "ReplaceTag": "Cable",
 	},{
 		"Name": "YBCOCable",
 		"Label": "Yttrium Barium Copper Oxide Cable",
@@ -210,6 +223,7 @@ machines = [
         "NoActorRenderable": True,
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
         "Category": "Network",
+        "ReplaceTag": "Cable",
 	},{
 		"Name": "PCable",
 		"Label": "Platinum Cable",
@@ -222,6 +236,7 @@ machines = [
         "NoActorRenderable": True,
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
         "Category": "Network",
+        "ReplaceTag": "Cable",
 	},{
 		"Name": "TNCable",
 		"Label": "Tantalum Niobium Cable",
@@ -234,6 +249,7 @@ machines = [
         "NoActorRenderable": True,
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
         "Category": "Network",
+        "ReplaceTag": "Cable",
 	},{
 		"Name": "ABCCOCable",
 		"Label": "Arsenic Barium Calcium Copper Oxide Cable",
@@ -246,6 +262,7 @@ machines = [
         "NoActorRenderable": True,
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
         "Category": "Network",
+        "ReplaceTag": "Cable",
 	},{
 		"Name": "Chest",
 		"Label": "Chest",
