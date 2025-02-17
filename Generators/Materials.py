@@ -72,8 +72,22 @@ materials = [
 		"UnitS": "W",
 		"UnitMul" : 1,
 	},{
-		"Name" : "Electricity",
-		"Label" : "Electricity",
+		"Name" : "LV",
+		"Label" : "LV",
+		"IsAbstract": True,
+		"Unit": "J",
+		"UnitS": "W",
+		"UnitMul" : 1,
+	},{
+		"Name" : "MV",
+		"Label" : "MV",
+		"IsAbstract": True,
+		"Unit": "J",
+		"UnitS": "W",
+		"UnitMul" : 1,
+	},{
+		"Name" : "HV",
+		"Label" : "HV",
 		"IsAbstract": True,
 		"Unit": "J",
 		"UnitS": "W",
@@ -1091,6 +1105,12 @@ materials = [
 	},{
 		"Name": "Drain",
 		"Label": "Drain",
+		"IsExact": True,
+		"Craftable": False,
+		"Category": "Signal"
+	},{
+		"Name": "HeatLoss",
+		"Label": "Heat Loss",
 		"IsExact": True,
 		"Craftable": False,
 		"Category": "Signal"

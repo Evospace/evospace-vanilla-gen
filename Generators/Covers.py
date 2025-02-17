@@ -89,6 +89,14 @@ covers = [
         "Materials": [],
         "NoCollision": True
 	},{
+		"Name": "MVInput",
+		"Mesh": "/Game/Covers/MVIn",
+        "NoCollision": True
+	},{
+		"Name": "MVOutput",
+		"Mesh": "/Game/Covers/MVOut",
+        "NoCollision": True
+	},{
 		"Name": "ElectricityInput",
 		"Mesh": "/Game/Covers/ElectricityIn",
         "NoCollision": True
