@@ -18,18 +18,18 @@ covers = [
     },
     {
         "Name": "GCable",
-        "Mesh": "/Game/Covers/CableSide",
-        "Materials": ["/Game/Materials/RubberMV", "/Game/Materials/Gold"]
+        "Mesh": "/Game/Covers/MVCable",
+        "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/Gold"]
     },
     {
         "Name": "CNCable",
-        "Mesh": "/Game/Covers/CableSide",
-        "Materials": ["/Game/Materials/RubberMV", "/Game/Materials/CN"]
+        "Mesh": "/Game/Covers/MVCable",
+        "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/CN"]
     },
     {
         "Name": "YBCOCable",
-        "Mesh": "/Game/Covers/CableSide",
-        "Materials": ["/Game/Materials/RubberMV", "/Game/Materials/YBCO"]
+        "Mesh": "/Game/Covers/MVCable",
+        "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/YBCO"]
     },
     {
         "Name": "PCable",
@@ -48,7 +48,7 @@ covers = [
     },
     {
         "Name": "CableSide",
-        "Mesh": "/Game/Covers/PipeSide",
+        "Mesh": "/Game/Covers/MVCable",
         "Materials": ["/Game/Materials/Rubber2"]
     },
     {
