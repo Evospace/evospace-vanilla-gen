@@ -151,14 +151,23 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SignBlockLogic",
 	},{
-		"Name": "Transformer",
-		"Label": "Transformer",
+		"Name": "TransformerLVMV",
+		"Label": "Transformer (LV -> MV)",
 		"StartTier": 1,
 		"EndTier": 1,
-		"BlockLogic": "Transformer",
+		"BlockLogic": "TransformerLVMV",
         "ExactName": True,
         "Category": "Network",
-        "ReplaceTag": "Transformer",
+        "ReplaceTag": "Cable",
+	},{
+		"Name": "TransformerMVLV",
+		"Label": "Transformer (MV -> LV)",
+		"StartTier": 1,
+		"EndTier": 1,
+		"BlockLogic": "TransformerMVLV",
+        "ExactName": True,
+        "Category": "Network",
+        "ReplaceTag": "Cable"
 	},{
 		"Name": "CopperConnector",
 		"Label": "Copper Cable",
