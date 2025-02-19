@@ -42,14 +42,14 @@ props = [
 	},
 	{
 		"Name": "LongGrass",
-		"ScaleMin": [2, 2, 2],
+		"ScaleMin": [3.5, 3.5, 3.5],
 		"ScaleMax": [4, 4, 4],
-		"Variations": 1,
+		"Variations": 4,
 		"ProjectToTerrainPower": 1,
 		"Drops": "Organics",
 		"CullBegin": 10000,
 		"CullEnd": 12000,
-		"AdditiveElevation": 0
+		"AdditiveElevation": 15
 	},
 	{
 		"Name": "SeaPlant",
@@ -79,7 +79,7 @@ props = [
 		"Name": "TallGrass",
 		"ScaleMin": [1, 1, 1],
 		"ScaleMax": [3, 3, 3],
-		"Variations": 1,
+		"Variations": 2,
 		"ProjectToTerrainPower": 0,
 		"Drops": "Organics",
 		"CullBegin": 10000,
@@ -278,8 +278,8 @@ props = [
 	},{
 		"Name": "DryGrass",
 		"ScaleMin": [1, 1, 1],
-		"ScaleMax": [4, 4, 4],
-		"Variations": 1,
+		"ScaleMax": [2, 2, 2],
+		"Variations": 2,
 		"ProjectToTerrainPower": 1,
 		"HandInteraction": False,
 		"Drops": "Organics",
@@ -410,7 +410,7 @@ proplists = [
 				"Chance": 0.05
 			},{
 				"Props": ["LongGrass"],
-				"Chance": 0.5
+				"Chance": 0.75
 			},{
 				"Props": ["TallGrass"],
 				"Chance": 0.05
@@ -489,7 +489,7 @@ proplists = [
 				"Chance": 0.3
 			},{
 				"Props": ["LongGrass"],
-				"Chance": 0.7
+				"Chance": 0.75
 			},{
 				"Props": ["Shroom"],
 				"Chance": 0.01
@@ -535,7 +535,7 @@ proplists = [
 				"Props": ["Pine"],
 				"Chance": 0.02
 			},{
-				"Props": ["LongGrass"],
+				"Props": ["DryGrass"],
 				"Chance": 0.03
 			},{
 				"Props": ["Shroom"],
@@ -555,8 +555,8 @@ proplists = [
 				"Props": ["Pine"],
 				"Chance": 0.01
 			},{
-				"Props": ["LongGrass"],
-				"Chance": 0.07
+				"Props": ["DryGrass"],
+				"Chance": 0.1
 			},{
 				"Props": ["Shroom"],
 				"Chance": 0.01
@@ -619,7 +619,7 @@ proplists = [
 				"Chance": 0.01
 			},{
 				"Props": ["LongGrass"],
-				"Chance": 0.7
+				"Chance": 0.75
 			},{
 				"Props": ["Fern"],
 				"Chance": 0.05
