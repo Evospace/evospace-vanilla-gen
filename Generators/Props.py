@@ -15,6 +15,7 @@ props = [
 		"ProjectToTerrainPower": 1,
 		"IsBig": True,
 		"Drops": "Organics",
+		"Count": 30,
 		"AdditiveElevation": 0,
 		"TimeMul": 1
 	},
@@ -25,6 +26,8 @@ props = [
 		"Variations": 3,
 		"ProjectToTerrainPower": 1,
 		"Drops": "Organics",
+		"Count": 1,
+		"IsBig": False,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 0
@@ -36,6 +39,8 @@ props = [
 		"Variations": 3,
 		"ProjectToTerrainPower": 1,
 		"Drops": "Organics",
+		"Count": 2,
+		"IsBig": False,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 0
@@ -47,6 +52,8 @@ props = [
 		"Variations": 4,
 		"ProjectToTerrainPower": 1,
 		"Drops": "Organics",
+		"Count": 1,
+		"IsBig": False,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 15
@@ -58,6 +65,8 @@ props = [
 		"Variations": 22,
 		"ProjectToTerrainPower": 0,
 		"Drops": "Organics",
+		"Count": 10,
+		"IsBig": False,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
@@ -70,6 +79,8 @@ props = [
 		"Variations": 5,
 		"ProjectToTerrainPower": 0,
 		"Drops": "Organics",
+		"Count": 1,
+		"IsBig": False,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
@@ -82,6 +93,8 @@ props = [
 		"Variations": 2,
 		"ProjectToTerrainPower": 0,
 		"Drops": "Organics",
+		"Count": 1,
+		"IsBig": False,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 0
@@ -94,6 +107,7 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
 		"Drops": "Log",
+		"Count": 20,
 		"TimeMul": 1
 	},
 	{
@@ -104,6 +118,7 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
 		"Drops": "Log",
+		"Count": 20,
 		"TimeMul": 1
 	},
 	{
@@ -114,6 +129,7 @@ props = [
 		"ProjectToTerrainPower": 1,
 		"IsBig": True,
 		"Drops": "Log",
+		"Count": 1,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"TimeMul": 1
@@ -126,7 +142,7 @@ props = [
 		"ProjectToTerrainPower": 1,
 		"IsBig": True,
 		"Drops": "StoneSurface",
-		"DropCount": 10,
+		"Count": 100,
 		"AdditiveElevation": 0,
 		"TimeMul": 1
 	},
@@ -138,6 +154,7 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
 		"Drops": "Log",
+		"Count": 20,
 		"TimeMul": 1
 	},
 	{
@@ -148,6 +165,7 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
 		"Drops": "Log",
+		"Count": 20,
 		"TimeMul": 1
 	},
 	{
@@ -158,6 +176,7 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
 		"Drops": "Log",
+		"Count": 15,
 		"TimeMul": 1
 	},
 	{
@@ -168,6 +187,7 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
 		"Drops": "Log",
+		"Count": 10,
 		"TimeMul": 1
 	},
 	{
@@ -177,6 +197,8 @@ props = [
 		"Variations": 5,
 		"ProjectToTerrainPower": 0,
 		"Drops": "Organics",
+		"IsBig": False,
+		"Count": 1,
 		"CullBegin": 7000,
 		"CullEnd": 8000,
 		"AdditiveElevation": 0
@@ -187,10 +209,12 @@ props = [
 		"Variations": 1,
 		"ProjectToTerrainPower": 0,
 		"Drops": "Organics",
+		"Count": 1,
 		"CullBegin": 7000,
 		"CullEnd": 8000,
 		"AdditiveElevation": 70,
 		"Floating": True,
+		"IsBig": False,
 	},{
 		"Name": "LilyFlower",
 		"ScaleMin": [1, 1, 1],
@@ -198,10 +222,12 @@ props = [
 		"Variations": 2,
 		"ProjectToTerrainPower": 0,
 		"Drops": "Organics",
+		"Count": 1,
 		"CullBegin": 7000,
 		"CullEnd": 8000,
 		"AdditiveElevation": 70,
 		"Floating": True,
+		"IsBig": False,
 	},{
 		"Name": "Shroom",
 		"ScaleMin": [1, 1, 1],
@@ -209,9 +235,11 @@ props = [
 		"Variations": 6,
 		"ProjectToTerrainPower": 0,
 		"Drops": "Organics",
+		"Count": 10,
 		"AdditiveElevation": 20,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
+		"IsBig": False,
 	},{
 		"Name": "YellowFlower",
 		"ScaleMin": [1, 1, 1],
@@ -219,9 +247,11 @@ props = [
 		"Variations": 1,
 		"ProjectToTerrainPower": 1,
 		"Drops": "Organics",
+		"Count": 1,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
-		"AdditiveElevation": 0
+		"AdditiveElevation": 0,
+		"IsBig": False,
 	},{
 		"Name": "RedFlower",
 		"ScaleMin": [1, 1, 1],
@@ -229,9 +259,11 @@ props = [
 		"Variations": 1,
 		"ProjectToTerrainPower": 1,
 		"Drops": "Organics",
+		"Count": 1,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
-		"AdditiveElevation": 0
+		"AdditiveElevation": 0,
+		"IsBig": False,
 	},{
 		"Name": "WhiteFlower",
 		"ScaleMin": [1, 1, 1],
@@ -239,9 +271,11 @@ props = [
 		"Variations": 1,
 		"ProjectToTerrainPower": 1,
 		"Drops": "Organics",
+		"Count": 1,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
-		"AdditiveElevation": 0
+		"AdditiveElevation": 0,
+		"IsBig": False,
 	},{
 		"Name": "BigBush",
 		"ScaleMin": [1.5, 1.5, 1.5],
@@ -249,7 +283,9 @@ props = [
 		"Variations": 1,
 		"ProjectToTerrainPower": 1,
 		"HandInteraction": True,
+		"IsBig": False,
 		"Drops": "Plank",
+		"Count": 1,
 		"AdditiveElevation": 0,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
@@ -261,9 +297,11 @@ props = [
 		"ProjectToTerrainPower": 1,
 		"HandInteraction": True,
 		"Drops": "StoneSurface",
+		"Count": 10,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
-		"AdditiveElevation": 0
+		"AdditiveElevation": 0,
+		"IsBig": False,
 	},{
 		"Name": "Diptero",
 		"ScaleMin": [.8, .8, .8],
@@ -272,6 +310,7 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"HandInteraction": False,
 		"AdditiveElevation": 0,
+		"Count": 1,
 		"IsBig": True,
 		"Drops": "Log",
 		"TimeMul": 6
@@ -283,9 +322,11 @@ props = [
 		"ProjectToTerrainPower": 1,
 		"HandInteraction": False,
 		"Drops": "Organics",
+		"Count": 1,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
-		"AdditiveElevation": 0
+		"AdditiveElevation": 0,
+		"IsBig": False,
 	},{
 		"Name": "VolcanicRock",
 		"ScaleMin": [.5, .5, .5],
@@ -294,7 +335,7 @@ props = [
 		"ProjectToTerrainPower": 1,
 		"HandInteraction": False,
 		"Drops": "BasaltSurface",
-		"DropCount": 10,
+		"Count": 100,
 		"IsBig": True,
 		"AdditiveElevation": 0,
 		"TimeMul": 1
@@ -306,7 +347,7 @@ props = [
 		"ProjectToTerrainPower": 1,
 		"HandInteraction": False,
 		"Drops": "BasaltSurface",
-		"DropCount": 10,
+		"Count": 100,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"IsBig": True,
@@ -320,9 +361,11 @@ props = [
 		"ProjectToTerrainPower": 1,
 		"HandInteraction": False,
 		"Drops": "Organics",
+		"Count": 1,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
-		"AdditiveElevation": 0
+		"AdditiveElevation": 0,
+		"IsBig": False,
 	}
 ]
 
@@ -715,14 +758,18 @@ for prop in props:
 			"DescriptionParts":[["WorldObject","common"]],
 		})
 		
-		temp_prop = { "Class": "BigStaticProp" if "IsBig" in prop else "SmallStaticProp",
+		temp_prop = { "Class": "StaticProp",
 			"Name": prop["Name"] + variation_helper[variation],
 			"Mesh": "/Game/Props/" + prop["Name"] + "/" + prop["Name"] + variation_helper[variation],
 			"ScaleMin": prop["ScaleMin"],
 			"ScaleMax": prop["ScaleMax"],
 			"ProjectToTerrainPower": prop["ProjectToTerrainPower"],
 			"Item": prop["Name"],
-			"Minable": {"Result": prop["Drops"]},
+			"Minable": {
+				"Result": prop["Drops"],
+				"Count": prop["Count"]
+			},
+			"IsBig": prop["IsBig"]
 		}
 		
 		if "CullBegin" in prop:
