@@ -2038,7 +2038,7 @@ for machine in machines:
 				"Ticks" : 20 * 2**tier
 			})
 			
-		if machine["Name"] == "Connector":
+		if machine["Name"] == "CopperConnector":
 			append_recipe({
 				"Name": "CopperConnector",
 				"Input":{
