@@ -366,6 +366,19 @@ props = [
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
 		"IsBig": False,
+	},{
+		"Name": "CopperCluster",
+		"ScaleMin": [1, 1, 1],
+		"ScaleMax": [1, 1, 1],
+		"Variations": 1,
+		"ProjectToTerrainPower": 1,
+		"HandInteraction": False,
+		"Drops": "Organics",
+		"Count": 1,
+		"CullBegin": 100000,
+		"CullEnd": 100000,
+		"AdditiveElevation": 0,
+		"IsBig": True,
 	}
 ]
 
