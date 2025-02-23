@@ -1915,30 +1915,6 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 		"Ticks" : 10*5*20
 	})
 	recipes_blast_furnace.append({
-		"Name": "IronOreDustSmelting",
-		"Input":{
-			"Items":[
-				{
-					"Name": fuel_type,
-					"Count": 15
-				},
-				{
-					"Name": "IronOreDust",
-					"Count": 10
-				},
-			]
-		},
-		"Output":{
-			"Items":[
-				{
-					"Name": "SteelIngot",
-					"Count": 10
-				}
-			]
-		},
-		"Ticks" : 10*5*20
-	})
-	recipes_blast_furnace.append({
 		"Name": "IronDustSmelting",
 		"Input":{
 			"Items":[
@@ -2042,31 +2018,6 @@ recipes_mixer.append({
 		]
 	},
 	"Ticks" : 400,
-})
-recipes_mixer.append({
-	"Name": "SSCraft2",
-	"Input":{
-		"Items":[
-			{
-				"Name": "IronOreDust",
-				"Count": 4
-			},
-			{
-				"Name": "ChromiumDust",
-				"Count": 1
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "StainlessSteelDust",
-				"Count": 4
-			}
-		]
-	},
-	
-	"Ticks" : 600,
 })
 
 recipes_mixer.append({
@@ -2209,27 +2160,6 @@ recipes_sep2.append({
 })
 
 recipes_arc_furnace.append({
-	"Name": "CopperOreDust",
-	"Input":{
-		"Items":[
-			{
-				"Name": "CopperOreDust",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "CopperIngot",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 200
-})
-
-recipes_arc_furnace.append({
 	"Name": "SandSurfaceSmelting",
 	"Input":{
 		"Items":[
@@ -2354,7 +2284,7 @@ recipes_macerator.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "CopperOreDust",
+				"Name": "MalachiteDust",
 				"Count": 2
 			}
 		]
@@ -2376,7 +2306,7 @@ recipes_macerator.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "CopperOreDust",
+				"Name": "MalachiteDust",
 				"Count": 5
 			}
 		]
@@ -2778,27 +2708,6 @@ recipes_electrolyzer.append({
 		]
 	},
 	"Ticks" : 200
-})
-
-recipes_electrolyzer.append({
-	"Name":"AluminiumOreDust",
-	"Input":{
-		"Items":[
-			{
-				"Name": "AluminiumOreDust",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "AluminiumDust",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 500
 })
 
 recipes_electrolyzer.append({
@@ -4391,46 +4300,6 @@ recipes_chem.append({
 	},
 	
 	"Ticks" : 200
-})
-
-recipes_industrial_chemreactor.append({
-	"Name": "OreWaterAll",
-	"Input":{
-		"Items":[
-			{
-				"Name": "OreWater",
-				"Count": 1000
-			},
-			{
-				"Name": "FilteringCell",
-				"Count": 32,
-				"Probability": 0
-			},
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "CopperOreDust",
-				"Count": 1,
-				"Probability": 10
-			},{
-				"Name": "IronOreDust",
-				"Count": 1,
-				"Probability": 10
-			},{
-				"Name": "UraniumOreDust",
-				"Count": 1,
-				"Probability": 5
-			},{
-				"Name": "AluminiumOreDust",
-				"Count": 1,
-				"Probability": 5
-			}				
-		]
-	},
-	"Ticks" : 400,
-	"Colors": [[0.02,0.02,0.00,1.5],[0.1,0.1,0.1,0.1]]
 })
 
 for i in {"IronOreDust", "CopperOreDust"}:

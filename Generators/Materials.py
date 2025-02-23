@@ -100,6 +100,20 @@ materials = [
 		"UnitS": "W",
 		"UnitMul" : 1,
 	},{
+		"Name" : "Chalcopyrite",
+		"Label" : "Chalcopyrite",
+		"IsDust": True,
+		"SmeltLevel": 0,
+		"IsBlock": True,
+		"Tier": 1,
+	},{
+		"Name" : "Pyrite",
+		"Label" : "Pyrite",
+		"IsDust": True,
+		"SmeltLevel": 0,
+		"IsBlock": True,
+		"Tier": 1,
+	},{
 		"Name" : "Copper",
 		"Label" : "Copper",
 		"IsIngot": True,
@@ -132,7 +146,7 @@ materials = [
 		"Name" : "Iron",
 		"Label" : "Iron",
 		"IsDust": True,
-		"IsIngot": False,
+		"IsIngot": True,
 		"SmeltLevel": 0,
 		"IsBlock": True,
 	},{
@@ -311,27 +325,32 @@ materials = [
 		"Label": "Chromium",
 		"SmeltLevel": 0,
 		"IsDust": True,
+		"IsIngot": True,
 		"Tier": 3
 	},{
 		"Name": "Plutonium",
 		"Label": "Plutonium",
 		"IsBlock": True,
 		"IsDust": True,
+		"IsIngot": True,
 	},{
 		"Name": "Uranium",
 		"Label": "Uranium-238",
 		"IsBlock": True,
 		"IsDust": True,
+		"IsIngot": True,
 	},{
 		"Name": "Uranium235",
 		"Label": "Uranium-235",
 		"IsBlock": True,
 		"IsDust": True,
+		"IsIngot": True,
 	},{
 		"Name": "Uranium233",
 		"Label": "Uranium-233",
 		"IsBlock": True,
 		"IsDust": True,
+		"IsIngot": True,
 	},{
 		"Name": "Uranium233Cell",
 		"Label": "Uranium 233 Cell",
@@ -365,6 +384,7 @@ materials = [
 		"Label": "Thorium",
 		"IsBlock": True,
 		"IsDust": True,
+		"IsIngot": True,
 	},{
 		"Name": "Sulfur",
 		"Label": "Sulfur",
