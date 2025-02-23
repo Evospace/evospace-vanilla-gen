@@ -243,7 +243,7 @@ generators.extend([
 	},{
 		"Name":"OrePropsBase",
 		"Class": "PropsGenerator",
-		"PropList": "OreProps"
+		"PropList": "ClayBeachProps"
 	},
 	
 	# grass

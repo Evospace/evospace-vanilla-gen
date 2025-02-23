@@ -182,6 +182,12 @@ def get_hand_recipe(recipes_hand, result):
 			
 	return None
 
+def create_item(name, count=1):
+    return {"Name": name, "Count": count}
+
+def one_item(item_name, count=1):
+    return {"Items": [create_item(item_name, count)]}
+
 single_battery_cell_charge = 100000
 
 def battery_mul(level):
@@ -229,7 +235,6 @@ tesselator_cube = "TesselatorCube"
 tesselator_static_mesh = "TesselatorStaticMesh"
 
 item_data = "ItemData"
-prop_list = "PropList"
 basic_slot_widget_c = "Gui/BasicStackedSlotWidget.BasicStackedSlotWidget_C"
 
 ico = ""
