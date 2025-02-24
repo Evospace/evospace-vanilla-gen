@@ -26,7 +26,6 @@ recipes_mixer = []
 recipes_chem = []
 
 recipes_sep = []
-recipes_sep2 = []
 recipes_press = []
 
 recipes_elfurn = []
@@ -218,22 +217,8 @@ recipes_fusion_reactor.append({
 
 recipes_smelter.append({
 	"Name":"Glass",
-	"Input":{
-		"Items":[
-			{
-				"Name": "SandSurface",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Glass",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("SandSurface"),
+	"Output": one_item("Glass"),
 	"Ticks" : 200,
 })
 
@@ -253,14 +238,7 @@ append_recipe({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Circuit",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("Circuit"),
 	"Ticks" : 200,
 	"Tier": 1,
 })
@@ -279,36 +257,15 @@ append_recipe({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "AdvancedCircuit",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("AdvancedCircuit"),
 	"Ticks" : 200 * 2**2,
 	"Tier": 2,
 })
 
 recipes_assembler.append({
 	"Name":"SiliconWafer",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Silicon",
-				"Count": 1
-			},	
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "SiliconWafer",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("Silicon"),
+	"Output": one_item("SiliconWafer"),
 	"Ticks" : 200 * 2**3,
 	"Tier": 3,
 })
@@ -327,14 +284,7 @@ append_recipe({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Processor",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("Processor"),
 	"Ticks" : 200 * 2**3,
 	"Tier": 3,
 })
@@ -357,14 +307,7 @@ append_recipe({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Catalyst",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("Catalyst"),
 	"Ticks" : 200,
 	
 })
@@ -387,14 +330,7 @@ append_recipe({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "UltimateCatalyst",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("UltimateCatalyst"),
 	"Ticks" : 200 * 2**7,
 	"Tier": 7,
 })
@@ -413,15 +349,7 @@ recipes_assembler.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "AdvancedCircuitBoard",
-				"Count": 1
-			}
-		]
-	},
-	
+	"Output": one_item("AdvancedCircuitBoard"),
 	"Ticks" : 80 * 2**3,
 	"Tier": 3,
 })
@@ -440,14 +368,7 @@ recipes_assembler.append({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Processor",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("Processor"),
 	"Ticks" : 200 * 2**3,
 	"Tier": 3,
 })
@@ -466,14 +387,7 @@ append_recipe({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "QuantumCore",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("QuantumCore"),
 	"Ticks" : 200 * 2**4,
 	"Tier": 4,
 	
@@ -493,14 +407,7 @@ append_recipe({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "QuantumCircuit",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("QuantumCircuit"),
 	"Ticks" : 200 * 2**4,
 	"Tier": 4,
 })
@@ -519,14 +426,7 @@ append_recipe({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "QuantumProcessor",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("QuantumProcessor"),
 	"Ticks" : 200 * 2**5,
 	"Tier": 5,
 })
@@ -545,14 +445,7 @@ recipes_industrial_chemreactor.append({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Tetrafluoroethylene",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("Tetrafluoroethylene", 1000),
 	"Ticks" : 200 * 2**5,
 	"Tier": 5,
 })
@@ -571,14 +464,7 @@ recipes_industrial_chemreactor.append({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "PTFE",
-				"Count": 1000
-			}
-		]
-	},
+	"Output": one_item("PTFE", 1000),
 	"Ticks" : 600 * 2**5,
 	"Tier": 5,
 })
@@ -597,14 +483,7 @@ recipes_industrial_chemreactor.append({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "BrainMatrix",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("BrainMatrix"),
 	"Ticks" : 200 * 2**5,
 	"Tier": 5,
 })
@@ -623,14 +502,7 @@ append_recipe({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "QuantumBrain",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("QuantumBrain"),
 	"Ticks" : 200 * 2**6,
 	"Tier": 6,
 })
@@ -645,14 +517,7 @@ recipes_assembler.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "CopperWire",
-				"Count": 2
-			}
-		]
-	},
+	"Output": one_item("CopperWire", 2),
 	"Ticks" : 40,
 })
 
@@ -666,14 +531,7 @@ recipes_assembler.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "SuperconductorWire",
-				"Count": 2
-			}
-		]
-	},
+	"Output": one_item("SuperconductorWire", 2),
 	"Ticks" : 100,
 })
 
@@ -695,14 +553,7 @@ append_recipe({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "PrimitiveBattery",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("PrimitiveBattery"),
 	"Ticks" : 100,
 })
 		
@@ -721,14 +572,7 @@ for level, name, copm_name in zip(range(0, 4), ["BasicBattery", "AdvancedBattery
 				}
 			]
 		},
-		"Output":{
-			"Items":[
-				{
-					"Name": name,
-					"Count": 1
-				}
-			]
-		},
+		"Output": one_item(name),
 		"Ticks" : 100 * (level + 1),
 	})
 
@@ -768,14 +612,7 @@ recipes_assembler.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Cell",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("Cell"),
 	"Ticks" : 200*3
 })
 
@@ -823,14 +660,7 @@ append_recipe({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "ThoriumCell",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("ThoriumCell"),
 	"Ticks" : 200,
 	
 })
@@ -849,14 +679,7 @@ append_recipe({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Uranium233Cell",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("Uranium233Cell"),
 	"Ticks" : 200,
 	
 })
@@ -875,14 +698,7 @@ append_recipe({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "PlutoniumCell",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("PlutoniumCell"),
 	"Ticks" : 200,
 	
 })
@@ -931,14 +747,7 @@ recipes_assembler.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Battery",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("Battery"),
 	"Ticks" : 200,
 	
 })
@@ -965,14 +774,7 @@ recipes_assembler.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Battery",
-				"Count": 10
-			}
-		]
-	},
+	"Output": one_item("Battery", 10),
 	"Ticks" : 300,
 	
 })
@@ -995,28 +797,14 @@ recipes_assembler.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "AdvancedFrame",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("AdvancedFrame"),
 	"Ticks" : 300,
 	
 })
 
 recipes_assembler.append({
 	"Name":"GoldWire",
-	"Input":{
-		"Items":[
-			{
-				"Name": "GoldIngot",
-				"Count": 1
-			},
-		]
-	},
+	"Input": one_item("GoldIngot"),
 	"Output":{
 		"Items":[
 			{
@@ -1042,14 +830,7 @@ append_recipe({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "ReflectorCell",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("ReflectorCell"),
 	"Ticks" : 100,
 })
 
@@ -1067,14 +848,7 @@ append_recipe({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "ControlCell",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("ControlCell"),
 	"Ticks" : 100,
 })
 
@@ -1270,14 +1044,7 @@ recipes_farm.append({
 
 recipes_centrifuge.append({
 	"Name":"DepletedUraniumCell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "DepletedUraniumCell",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("DepletedUraniumCell"),
 	"Output":{
 		"Items":[
 			{
@@ -1404,14 +1171,7 @@ recipes_fission.append({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "DepletedUraniumCell",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("DepletedUraniumCell"),
 	"Ticks" : 8000 * .9 * .9,
 })
 
@@ -1532,14 +1292,7 @@ recipes_fission.append({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "DepletedUraniumCell",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("DepletedUraniumCell"),
 	"Ticks" : 4000 * 0.9,
 })
 
@@ -1621,32 +1374,7 @@ recipes_fission.append({
 	"Ticks" : 2000,
 })
 
-recipes_chem.append({
-	"Name":"AluminothermicChromiumDust",
-	"Input":{
-		"Items":[
-			{
-				"Name": "AluminiumDust",
-				"Count": 1
-			},
-			{
-				"Name": "ChromiumOxideDust",
-				"Count": 1
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "ChromiumDust",
-				"Count": 1
-			}
-		],
-	},
-	"Ticks" : 200,
-})
-
-recipes_industrial_chemreactor.append({
+recipes_electrolyzer.append({
 	"Name":"CinnabarDust",
 	"Input":{
 		"Items":[
@@ -1659,12 +1387,11 @@ recipes_industrial_chemreactor.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Mercury",
-				"Count": 1000
-			},
-			{
 				"Name": "Sulfur",
 				"Count": 1
+			},{
+				"Name": "Mercury",
+				"Count": 1000
 			}
 		],
 	},
@@ -1688,6 +1415,7 @@ recipes_boiler.append({
 	"Loss": 10,
 })
 
+# Using this for all converters
 recipes_generator.append({
 	"Name": "Generating",
 	"Input":{
@@ -1867,7 +1595,7 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 		"Ticks" : 10*5*20
 	})
 	recipes_blast_furnace.append({
-		"Name": "IronImpureOreGravelSmelting",
+		"Name": "IronOreImpureGravelSmelting",
 		"Input":{
 			"Items":[
 				{
@@ -1875,7 +1603,7 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 					"Count": 25
 				},
 				{
-					"Name": "IronImpureOreGravel",
+					"Name": "IronOreImpureGravel",
 					"Count": 10
 				},
 			]
@@ -2034,20 +1762,12 @@ recipes_mixer.append({
 			},
 		],
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "PreparedTitaniumOxideDust",
-				"Count": 1
-			}
-		]
-	},
-	
+	"Output": one_item("PreparedTitaniumOxideDust"),
 	"Ticks" : 200,
 	"Scaled": False,
 })
 
-#recipes_sep2.append({
+#recipes_sep.append({
 #	"Name": "RareSeparating",
 #	"Input":{
 #		"Items":[
@@ -2086,7 +1806,7 @@ recipes_mixer.append({
 #	"Ticks": 1000,
 #})
 
-# recipes_sep2.append({
+# recipes_sep.append({
 	# "Name": "OreWater",
 	# "Input":{
 		# "Items":[
@@ -2112,20 +1832,13 @@ recipes_mixer.append({
 	# "Ticks": 200,
 # })	
 
-recipes_sep2.append({
+recipes_sep.append({
 	"Name": "PlutoniumDust",
-	"Input":{
-		"Items":[
-			{
-				"Name": "DepletedUraniumCell",
-				"Count": 1
-			},
-		]
-	},
+	"Input": one_item("DepletedUraniumCell"),
 	"Output":{
 		"Items": [
 			{
-				"Name":"Cell"+static_item,
+				"Name":"Cell",
 				"Count":1
 			},
 			{
@@ -2138,16 +1851,9 @@ recipes_sep2.append({
 	"Ticks": 400,
 })	
 
-recipes_sep2.append({
+recipes_sep.append({
 	"Name":"Sand",
-	"Input":{
-		"Items":[
-			{
-				"Name": "SandSurface",
-				"Count": 1
-			},
-		]
-	},
+	"Input": one_item("SandSurface"),
 	"Output":{
 		"Items":[
 			{
@@ -2161,14 +1867,7 @@ recipes_sep2.append({
 
 recipes_arc_furnace.append({
 	"Name": "SandSurfaceSmelting",
-	"Input":{
-		"Items":[
-			{
-				"Name": "SandSurface",
-				"Count": 1
-			},
-		],
-	},
+	"Input": one_item("SandSurface"),
 	"Output":{
 		"Items":[
 			{
@@ -2185,14 +1884,7 @@ for material in materials:
 		if "SmeltLevel" in material and material["SmeltLevel"] <= 3:
 			recipes_arc_furnace.append({
 				"Name": material["Name"] + "Ingot",
-				"Input":{
-					"Items":[
-						{
-							"Name": material["Name"] + "Dust",
-							"Count": 1
-						},
-					]
-				},
+				"Input": one_item(material["Name"] + "Dust"),
 				"Output":{
 					"Items":[
 						{
@@ -2207,22 +1899,8 @@ for material in materials:
 
 recipes_macerator.append({
 	"Name": "Pumpkin",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Pumpkin",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Organics",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("Pumpkin"),
+	"Output": one_item("Organics"),
 	"Tier": 0,
 	"Ticks" : 200
 })
@@ -2237,193 +1915,27 @@ recipes_macerator.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Organics",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("Organics"),
 	"Tier": 0,
 	"Ticks" : 200
 })
 
 recipes_macerator.append({
 	"Name": "Emerald",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Emerald",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "EmeraldDust",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("EmeraldCrystal"),
+	"Output": one_item("EmeraldDust", 4),
 	"Tier": 5,
 	"Ticks" : 80 * 2**5,
 })
 
-recipes_macerator.append({
-	"Name": "MalachiteCrystal",
-	"Input":{
-		"Items":[
-			{
-				"Name": "MalachiteCrystal",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "MalachiteDust",
-				"Count": 2
-			}
-		]
-	},
-	"Tier": 5,
-	"Ticks" : 80 * 2**5,
-})
-
-recipes_macerator.append({
-	"Name": "MalachiteCluster",
-	"Input":{
-		"Items":[
-			{
-				"Name": "MalachiteCluster",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "MalachiteDust",
-				"Count": 5
-			}
-		]
-	},
-	"Tier": 5,
-	"Ticks" : 100 * 2**5,
-})
-
-recipes_macerator.append({
-	"Name": "RutileCrystal",
-	"Input":{
-		"Items":[
-			{
-				"Name": "RutileCrystal",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "TitaniumOxideDust",
-				"Count": 2
-			}
-		]
-	},
-	"Tier": 5,
-	"Ticks" : 80 * 2**5,
-})
-
-recipes_macerator.append({
-	"Name": "CinnabarCrystal",
-	"Input":{
-		"Items":[
-			{
-				"Name": "CinnabarCrystal",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "CinnabarDust",
-				"Count": 2
-			}
-		]
-	},
-	"Tier": 5,
-	"Ticks" : 80 * 2**5,
-})
-
-recipes_macerator.append({
-	"Name": "CinnabarCluster",
-	"Input":{
-		"Items":[
-			{
-				"Name": "CinnabarCluster",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "CinnabarDust",
-				"Count": 5
-			}
-		]
-	},
-	"Tier": 5,
-	"Ticks" : 100 * 2**5,
-})
-
-recipes_macerator.append({
-	"Name": "UraniniteCrystal",
-	"Input":{
-		"Items":[
-			{
-				"Name": "UraniniteCrystal",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "UraniumDust",
-				"Count": 2
-			}
-		]
-	},
-	"Tier": 6,
-	"Ticks" : 80 * 2**6,
-})
-
-recipes_macerator.append({
-	"Name": "UraniniteCluster",
-	"Input":{
-		"Items":[
-			{
-				"Name": "UraniniteCluster",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Uranium235Dust",
-				"Count": 1
-			}
-		]
-	},
-	"Tier": 6,
-	"Ticks" : 100 * 2**6,
-})
+for material in {"Ruby", "Malachite"}:
+	recipes_macerator.append({
+		"Name": material+"Crystal",
+		"Input": one_item(material+"Crystal"),
+		"Output": one_item(material+"Dust", 4),
+		"Tier": 3,
+		"Ticks" : 80 * 2**3,
+	})
 
 recipes_macerator.append({
 	"Name": "Clay",
@@ -2665,15 +2177,111 @@ recipes_mixer.append({
 })
 
 recipes_electrolyzer.append({
-	"Name":"AluminiumOxideDust",
-	"Input":{
-		"Items":[
+	"Name": "ElectrolyzerPyriteDust",
+	"Input": one_item("PyriteDust", 2),
+	"Output":{
+		"Items": [
 			{
-				"Name": "AluminiumOxideDust",
+				"Name": "IronDust",
 				"Count": 1
-			},
+			},{
+				"Name": "Sulfur",
+				"Count": 1
+			}
 		]
 	},
+	"Ticks": 200,
+})	
+recipes_electrolyzer.append({
+	"Name": "ElectrolyzerChalcopyriteDust",
+	"Input": one_item("ChalcopyriteDust", 2),
+	"Output":{
+		"Items": [
+			{
+				"Name": "CopperDust",
+				"Count": 1
+			},{
+				"Name": "Sulfur",
+				"Count": 1
+			}
+		]
+	},
+	"Ticks": 100*2,
+})
+recipes_electrolyzer.append({
+	"Name": "ElectrolyzerMagnetiteDust",
+	"Input": one_item("MagnetiteDust", 2),
+	"Output":{
+		"Items": [
+			{
+				"Name": "IronDust",
+				"Count": 1
+			},{
+				"Name": "Oxygen",
+				"Count": 1000
+			}
+		]
+	},
+	"Ticks": 200,
+})
+recipes_electrolyzer.append({
+	"Name": "ElectrolyzerMalachiteDust",
+	"Input": one_item("MalachiteDust", 2),
+	"Output":{
+		"Items": [
+			{
+				"Name": "CopperDust",
+				"Count": 1
+			},{
+				"Name": "Oxygen",
+				"Count": 1000
+			}
+		]
+	},
+	"Ticks": 200,
+})
+recipes_electrolyzer.append({
+	"Name": "ElectrolyzerBauxiteDust",
+	"Input": one_item("BauxiteDust", 12),
+	"Output":{
+		"Items": [
+			{
+				"Name": "AluminiumOxideDust",
+				"Count": 6
+			},{
+				"Name": "TitaniumOxideDust",
+				"Count": 1
+			},{
+				"Name": "Oxygen",
+				"Count": 5000
+			}
+		]
+	},
+	"Ticks": 200,
+})
+recipes_electrolyzer.append({
+	"Name": "ElectrolyzerRubyDust",
+	"Input": one_item("RubyDust", 8),
+	"Output":{
+		"Items": [
+			{
+				"Name": "AluminiumOxideDust",
+				"Count": 4
+			},{
+				"Name": "ChromiumDust",
+				"Count": 1
+			},{
+				"Name": "Oxygen",
+				"Count": 3000
+			}
+		]
+	},
+	"Ticks": 200,
+})
+
+recipes_electrolyzer.append({
+	"Name":"AluminiumOxideDust",
+	"Input": one_item("AluminiumOxideDust"),
 	"Output":{
 		"Items":[
 			{
@@ -2687,23 +2295,20 @@ recipes_electrolyzer.append({
 
 recipes_electrolyzer.append({
 	"Name":"EmeraldDust",
-	"Input":{
-		"Items":[
-			{
-				"Name": "EmeraldDust",
-				"Count": 2
-			},
-		]
-	},
+	"Input": one_item("EmeraldDust", 11),
 	"Output":{
 		"Items":[
 			{
 				"Name": "BerylliumDust",
-				"Count": 1
+				"Count": 3
 			},
 			{
 				"Name": "AluminiumOxideDust",
-				"Count": 1
+				"Count": 2
+			},
+			{
+				"Name": "SiliconOxide",
+				"Count": 6
 			}
 		]
 	},
@@ -2712,14 +2317,7 @@ recipes_electrolyzer.append({
 
 recipes_electrolyzer.append({
 	"Name":"SandElectrolyze",
-	"Input":{
-		"Items":[
-			{
-				"Name": "SiliconOxide",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("SiliconOxide"),
 	"Output":{
 		"Items":[
 			{
@@ -2733,14 +2331,7 @@ recipes_electrolyzer.append({
 
 recipes_electrolyzer.append({
 	"Name":"SaltElectrolyze",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Salt",
-				"Count": 1
-			},
-		]
-	},
+	"Input": one_item("Salt"),
 	"Output":{
 		"Items":[
 			{
@@ -2758,14 +2349,7 @@ recipes_electrolyzer.append({
 
 recipes_cutter.append({
 	"Name": "LogCutting",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Log",
-				"Count": 1
-			},
-		]
-	},
+	"Input": one_item("Log"),
 	"Output":{
 		"Items":[
 			{
@@ -2779,14 +2363,7 @@ recipes_cutter.append({
 
 recipes_cutter.append({
 	"Name": "CircuitBoard",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Plank",
-				"Count": 1
-			},
-		]
-	},
+	"Input": one_item("Plank"),
 	"Output":{
 		"Items":[
 			{
@@ -2799,14 +2376,7 @@ recipes_cutter.append({
 })
 recipes_cutter.append({
 	"Name":"StoneTiles",
-	"Input":{
-		"Items":[
-			{
-				"Name": "StoneSurface",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("StoneSurface"),
 	"Output":{
 		"Items":[
 			{
@@ -2819,14 +2389,7 @@ recipes_cutter.append({
 })
 recipes_cutter.append({
 	"Name":"DarkTiles",
-	"Input":{
-		"Items":[
-			{
-				"Name": "DarkStoneSurface",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("DarkStoneSurface"),
 	"Output":{
 		"Items":[
 			{
@@ -2839,14 +2402,7 @@ recipes_cutter.append({
 })
 recipes_cutter.append({
 	"Name":"RedTiles",
-	"Input":{
-		"Items":[
-			{
-				"Name": "RedStoneSurface",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("RedStoneSurface"),
 	"Output":{
 		"Items":[
 			{
@@ -2859,14 +2415,7 @@ recipes_cutter.append({
 })
 recipes_cutter.append({
 	"Name":"Bricks",
-	"Input":{
-		"Items":[
-			{
-				"Name": "StoneTiles",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("StoneTiles"),
 	"Output":{
 		"Items":[
 			{
@@ -2879,14 +2428,7 @@ recipes_cutter.append({
 })
 recipes_cutter.append({
 	"Name":"RedBricks",
-	"Input":{
-		"Items":[
-			{
-				"Name": "RedTiles",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("RedTiles"),
 	"Output":{
 		"Items":[
 			{
@@ -2899,14 +2441,7 @@ recipes_cutter.append({
 })
 recipes_cutter.append({
 	"Name":"DarkBricks",
-	"Input":{
-		"Items":[
-			{
-				"Name": "DarkTiles",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("DarkTiles"),
 	"Output":{
 		"Items":[
 			{
@@ -2919,14 +2454,7 @@ recipes_cutter.append({
 })
 recipes_cutter.append({
 	"Name":"TerracottaTiles",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Terracotta",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("Terracotta"),
 	"Output":{
 		"Items":[
 			{
@@ -2939,14 +2467,7 @@ recipes_cutter.append({
 })
 recipes_cutter.append({
 	"Name":"TerracottaBricks",
-	"Input":{
-		"Items":[
-			{
-				"Name": "TerracottaTiles",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("TerracottaTiles"),
 	"Output":{
 		"Items":[
 			{
@@ -2959,14 +2480,7 @@ recipes_cutter.append({
 })
 recipes_cutter.append({
 	"Name": "ConcreteTiles",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Concrete",
-				"Count": 1
-			},		
-		]
-	},
+	"Input": one_item("Concrete"),
 	"Output":{
 		"Items":[
 			{
@@ -2979,14 +2493,7 @@ recipes_cutter.append({
 })
 recipes_cutter.append({
 	"Name": "ConcreteSmallTiles",
-	"Input":{
-		"Items":[
-			{
-				"Name": "ConcreteTiles",
-				"Count": 1
-			},		
-		]
-	},
+	"Input": one_item("ConcreteTiles"),
 	"Output":{
 		"Items":[
 			{
@@ -3000,14 +2507,7 @@ recipes_cutter.append({
 })
 recipes_cutter.append({
 	"Name": "ConcreteBricks",
-	"Input":{
-		"Items":[
-			{
-				"Name": "ConcreteSmallTiles",
-				"Count": 1
-			},		
-		]
-	},
+	"Input": one_item("ConcreteSmallTiles"),
 	"Output":{
 		"Items":[
 			{
@@ -3020,14 +2520,7 @@ recipes_cutter.append({
 })
 recipes_cutter.append({
 	"Name": "ReinforcedConcreteTiles",
-	"Input":{
-		"Items":[
-			{
-				"Name": "ReinforcedConcrete",
-				"Count": 1
-			},		
-		]
-	},
+	"Input": one_item("ReinforcedConcrete"),
 	"Output":{
 		"Items":[
 			{
@@ -3041,14 +2534,7 @@ recipes_cutter.append({
 })
 recipes_cutter.append({
 	"Name": "ReinforcedConcreteSmallTiles",
-	"Input":{
-		"Items":[
-			{
-				"Name": "ReinforcedConcreteTiles",
-				"Count": 1
-			},		
-		]
-	},
+	"Input": one_item("ReinforcedConcreteTiles"),
 	"Output":{
 		"Items":[
 			{
@@ -3062,14 +2548,7 @@ recipes_cutter.append({
 })
 recipes_cutter.append({
 	"Name": "ReinforcedConcreteBricks",
-	"Input":{
-		"Items":[
-			{
-				"Name": "ReinforcedConcreteSmallTiles",
-				"Count": 1
-			},		
-		]
-	},
+	"Input": one_item("ReinforcedConcreteSmallTiles"),
 	"Output":{
 		"Items":[
 			{
@@ -3082,35 +2561,6 @@ recipes_cutter.append({
 	"Ticks" : 100,
 })
 # burning
-
-recipes_elfurn.append({
-	"Name": "Working",
-	"Input":{
-		"Items":[
-			
-		]
-	},
-	"Output":{
-		"Items":[
-		],
-	},
-	"Ticks" : 200,
-	"Loss": 10,
-})
-
-recipes_coil.append({
-	"Name": "Working",
-	"Input":{
-		"Items":[
-		]
-	},
-	"Output":{
-		"Items":[
-		],
-	},
-	"Ticks" : 200,
-	"Loss" : 10
-})
 
 recipes_ferm.append({
 	"Name": "Dirt",
@@ -3140,14 +2590,7 @@ recipes_ferm.append({
 
 recipes_ferm.append({
 	"Name": "Rapseed",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Rapeseed",
-				"Count": 1
-			},
-		]
-	},
+	"Input": one_item("Rapeseed"),
 	"Output":{
 		"Items":[
 			{
@@ -3214,14 +2657,7 @@ recipes_ferm.append({
 
 recipes_ferm.append({
 	"Name": "MethaneFromPumpkin",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Pumpkin",
-				"Count": 1
-			},
-		]
-	},
+	"Input": one_item("Pumpkin"),
 	"Output":{
 		"Items":[
 			{
@@ -3442,77 +2878,6 @@ recipes_chem.append({
 	"Ticks" : 200,
 })
 
-for i in {"ProducerGas", "Methane", "Hydrogen"}:
-	recipes_gasturb.append({
-		"Input":{
-			"Items":[
-				{
-					"Name": i,
-					"Count": 14 * 1000
-				}
-			]
-		},
-		"Output":{
-			"Items":[
-			]
-		},
-		"Ticks" : named_material(i)["Burnable"]["BurnTime"],
-		"Name": i,
-	})
-	
-	recipes_combustion.append({
-		"Name": i,
-		"Input":{
-			"Items":[
-				{
-					"Name": i,
-					"Count": 1000 * 5 / 10.0
-				}			
-			]
-		},
-		"Output":{
-			"Items":[
-			]
-		},
-		"Ticks" : named_material(i)["Burnable"]["BurnTime"] / 10.0
-	})
-
-for i in {"Gasoline", "Diesel", "HighCetaneDiesel", "Superfuel"}:
-	recipes_combustion.append({
-		"Input":{
-			"Items":[
-				{
-					"Name": i,
-					"Count": 1000 * 5 / 10.0
-				}
-			]
-		},
-		"Output":{
-			"Items":[
-			]
-		},
-		"Ticks" : named_material(i)["Burnable"]["BurnTime"] / 10.0,
-		"Name": i,
-	})
-
-for i in {"Gasoline", "Diesel", "HighCetaneDiesel", "Superfuel"}:
-	recipes_combustion.append({
-		"Input":{
-			"Items":[
-				{
-					"Name": i,
-					"Count": 1000 * 5 * 2 / 10.0
-				}
-			]
-		},
-		"Output":{
-			"Items":[
-			]
-		},
-		"Ticks" : named_material(i)["Burnable"]["BurnTime"] / 10.0,
-		"Name": "Double"+i,
-	})
-
 oil_crack.append({
 	"Name": "RawOil",
 	"Input":{
@@ -3623,15 +2988,7 @@ recipes_pyro.append({
 
 recipes_pyro.append({
 	"Name": "PrimitiveRawOil",
-	"Input":{
-		"Items":[
-			{
-				"Name": "RawOil",
-				"Count": 2000
-			},
-			
-		]
-	},
+	"Input": one_item("RawOil", 2000),
 	"Output":{
 		"Items":[	
 			{
@@ -3645,15 +3002,7 @@ recipes_pyro.append({
 
 recipes_pyro.append({
 	"Name": "RawOil",
-	"Input":{
-		"Items":[
-			{
-				"Name": "RawOil",
-				"Count": 2000
-			},
-			
-		]
-	},
+	"Input": one_item("RawOil", 2000),
 	"Output":{
 		"Items":[	
 			{
@@ -3787,14 +3136,7 @@ recipes_pyro.append({
 
 recipes_pyro.append({
 	"Name": "Methane2",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Methane",
-				"Count": 800*5
-			}
-		]
-	},
+	"Input": one_item("Methane", 800*5),
 	"Output":{
 		"Items":[	
 			{
@@ -3809,14 +3151,7 @@ recipes_pyro.append({
 
 recipes_pyro.append({
 	"Name": "BioToAmmonia",
-	"Input":{
-		"Items":[
-			{
-				"Name": "FermentedBiomass",
-				"Count": 1000
-			}
-		]
-	},
+	"Input": one_item("FermentedBiomass", 1000),
 	"Output":{
 		"Items":[	
 			{
@@ -4070,15 +3405,7 @@ recipes_chem.append({
 
 recipes_chem.append({
 	"Name": "ProducerGas",
-	"Input":{
-		"Items":[
-			{
-				"Name": "ProducerGas",
-				"Count": 1000
-			},
-			
-		]
-	},
+	"Input": one_item("ProducerGas", 1000),
 	"Output":{
 		"Items":[	
 			{
@@ -4092,15 +3419,7 @@ recipes_chem.append({
 
 recipes_chem.append({
 	"Name": "Coal",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Ash",
-				"Count": 3
-			},
-			
-		]
-	},
+	"Input": one_item("Ash", 3),
 	"Output":{
 		"Items":[	
 			{
@@ -4279,31 +3598,8 @@ recipes_industrial_chemreactor.append({
 	"Colors": [[0.4,0.2,0.0,0.15],[0.7,0.6,0.25,0.15]]
 })
 
-recipes_chem.append({
-	"Name": "OreWater",
-	"Input":{
-		"Items":[
-			{
-				"Name": "OreWater",
-				"Count": 500
-			},
-			
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "Clay",
-				"Count": 1
-			},		
-		]
-	},
-	
-	"Ticks" : 200
-})
-
 for i in {"IronOreDust", "CopperOreDust"}:
-	recipes_industrial_chemreactor.append({
+	recipes_chemical_bath.append({
 		"Name": i,
 		"Input":{
 			"Items":[
@@ -4329,7 +3625,7 @@ for i in {"IronOreDust", "CopperOreDust"}:
 		"Colors": [[0.4,0.4,0.1,0.8],[0.2,0.2,0.1,0.2]]
 	})
 	
-recipes_industrial_chemreactor.append({
+recipes_chemical_bath.append({
 	"Name":"RareEarthElement",
 	"Input":{
 		"Items":[
@@ -4457,101 +3753,35 @@ recipes_portal.append({
 		"Items":[
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "MothershipPing",
-				"Count": 1
-			}
-		]
-	},
-	
+	"Output": one_item("MothershipPing"),
 	"Ticks" : 1000
 })
 
 append_recipe_hand_press({
 	"Name": "Column",
-	"Input":{
-		"Items":[
-			{
-				"Name": "StoneSurface",
-				"Count": 1
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Column",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("StoneSurface"),
+	"Output": one_item("Column"),
 	"Ticks" : 20
 })
 
 append_recipe_hand_press({
 	"Name": "FluetedColumn",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Column",
-				"Count": 1
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "FluetedColumn",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("Column"),
+	"Output": one_item("FluetedColumn"),
 	"Ticks" : 20
 })
 
 append_recipe_hand_press({
 	"Name":"GlassBlock",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Glass",
-				"Count": 1
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "GlassBlock",
-				"Count": 1
-			}
-		]
-	},
-	
+	"Input": one_item("Glass"),
+	"Output": one_item("GlassBlock"),
 	"Ticks" : 10
 })
 
 append_recipe_hand_press({
 	"Name":"PlasticBlock",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Plastic",
-				"Count": 1
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "PlasticBlock",
-				"Count": 1
-			}
-		]
-	},
-	
+	"Input": one_item("Plastic"),
+	"Output": one_item("PlasticBlock"),
 	"Ticks" : 10
 })
 
@@ -4579,64 +3809,22 @@ for name in ("DangerBlock", "ConcreteRamp", "ConcreteRamp2", "ConcreteRamp3", "C
 
 append_recipe_hand_press({
 	"Name": "BasicPlatform",
-	"Input":{
-		"Items":[
-			{
-				"Name": "SandSurface",
-				"Count": 1
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "BasicPlatform",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("SandSurface"),
+	"Output": one_item("BasicPlatform"),
 	"Ticks" : 10
 })
 
 append_recipe_hand_press({
 	"Name":"RustyCopperCasing",
-	"Input":{
-		"Items":[
-			{
-				"Name": "CopperCasing",
-				"Count": 1
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "RustyCopperCasing",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("CopperCasing"),
+	"Output": one_item("RustyCopperCasing"),
 	"Ticks" : 20
 })
 
 append_recipe_hand_press({
 	"Name":"RustyIronCasing",
-	"Input":{
-		"Items":[
-			{
-				"Name": "SteelCasing",
-				"Count": 1
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "RustyIronCasing",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("SteelCasing"),
+	"Output": one_item("RustyIronCasing"),
 	"Ticks" : 20
 })
 
@@ -4678,11 +3866,6 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": "Separator" + r_dict,
 	"Recipes": recipes_sep
-})
-
-objects_array.append({ "Class": r_dict,
-	"Name": "IndustrialSeparator" + r_dict,
-	"Recipes": recipes_sep2
 })
 
 objects_array.append({ "Class": r_dict,

@@ -137,14 +137,14 @@ for machine in machines:
 			images.append({
 				"Base": "T_" + "ElectricEngine",
 				"NewName": "T_" + tier_material[tier] + "BiElectricEngine",
-				"MulMask": "T_" + named_material(tier_material[tier])["Name"],
+				"MulMask": "T_Material" + named_material(tier_material[tier])["Name"],
 				"AddMask": "T_GreenCircle" + additive_ico,
 			})
 		else:
 			images.append({ 
 				"NewName": "T_" + tier_material[tier] + image,
 				"Base": "T_" + image,
-				"MulMask": "T_" + named_material(tier_material[tier])["Name"],
+				"MulMask": "T_Material" + named_material(tier_material[tier])["Name"],
 				"AddMask": "T_" + image + additive_ico,
 			})
 
@@ -1407,34 +1407,6 @@ for machine in machines:
 				},
 				"Tier": tier,
 				"Ticks" : 20 * 2**tier
-			})
-			
-		if machine["Name"] == "IndustrialSeparator":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "Pipe",
-							"Count": 3
-						},
-						plate_frame_component(tier, 3),
-						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 3
-						},
-					]
-				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
-				"Tier": tier,
-				"Ticks" : 50
 			})
 			
 		if machine["Name"] == "Assembler":

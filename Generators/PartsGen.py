@@ -103,7 +103,7 @@ for part in parts:
 			
 			images.append({ "NewName": "T_" + material + part["Name"],
 				"Base": "T_" + part["Name"],
-				"MulMask": "T_" + material,
+				"MulMask": "T_Material" + material,
 				"AddMask": "T_" + part["Name"] + additive_ico,
 			})
 			
@@ -382,7 +382,7 @@ for material in materials:
 		
 		images.append({ "NewName": "T_" + material["Name"] + "Ingot",
 			"Base": "T_" + "Ingot",
-			"MulMask": "T_" + material["Name"],
+			"MulMask": "T_Material" + material["Name"],
 			"AddMask": "T_" + "Ingot" + additive_ico,
 		})
 		
@@ -464,7 +464,7 @@ for material in materials:
 		
 		images.append({ "NewName": "T_" + material["Name"] + "Block",
 				"Base": "T_" + "Block",
-				"MulMask": "T_" + material["Name"],
+				"MulMask": "T_Material" + material["Name"],
 				"AddMask": "T_" + "Block" + additive_ico,
 			})
 		objects_array.append({ "Class": tesselator_cube,
@@ -535,7 +535,7 @@ for material in materials:
 		
 		images.append({ "NewName": "T_" + material["Name"] + "",
 			"Base": "T_" + "",
-			"MulMask": "T_" + material["Name"],
+			"MulMask": "T_Material" + material["Name"],
 			"AddMask": "T_" + "" + additive_ico,
 		})
 		
@@ -596,7 +596,7 @@ for material in materials:
 		
 		images.append({ "NewName": "T_" + material["Name"] + "",
 			"Base": "T_" + "",
-			"MulMask": "T_" + material["Name"],
+			"MulMask": "T_Material" + material["Name"],
 			"AddMask": "T_" + "" + additive_ico,
 		})
 		
@@ -650,7 +650,7 @@ for material in materials:
 		
 		images.append({ "NewName": "T_" + material["Name"] + "Dust",
 			"Base": "T_" + "Dust",
-			"MulMask": "T_" + material["Name"],
+			"MulMask": "T_Material" + material["Name"],
 			"AddMask": "T_" + "Dust" + additive_ico,
 		})
 		if "Burnable" in material:
@@ -690,7 +690,7 @@ for tool in tools:
 	
 	images.append({ "NewName": "T_" + item_name,
 		"Base": "T_" + tool["Name"],
-		"MulMask": "T_" + "StainlessSteel",
+		"MulMask": "T_Material" + "StainlessSteel",
 		"AddMask": "T_" + tool["Name"] + additive_ico
 	})
 					

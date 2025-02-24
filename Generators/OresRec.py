@@ -8,11 +8,8 @@ recipes_ore_washer = []
 recipes_sep = [] 
 recipes_hammer = []
 recipes_arc = []
-
-recipes_sep2 = [] 
-
 recipes_sifter = [] 
-
+recipes_chemical_bath = []
 objects_array = []
 
 for ore_type in ore_types:
@@ -29,11 +26,11 @@ for ore_type in ore_types:
 			"Output":{
 				"Items": [
 					{
-						"Name": ore_name + "ImpureOreGravel",
+						"Name": ore_name + "OreImpureGravel",
 						"Count": 1
 					},
 					{
-						"Name": ore_name + "ImpureOreGravel",
+						"Name": ore_name + "OreImpureGravel",
 						"Count": 1,
 						"Bonus": True
 					}
@@ -61,8 +58,8 @@ for ore_type in ore_types:
 				"Tier": material_tier,
 			})
 			recipes_smelt.append({
-				"Name": "Furnace" + ore_name + "ImpureOreGravel",
-				"Input": one_item(ore_name + "ImpureOreGravel"),
+				"Name": "Furnace" + ore_name + "OreImpureGravel",
+				"Input": one_item(ore_name + "OreImpureGravel"),
 				"Output": one_item(processing["Furnace"]),
 				"Ticks" : 120 * 2**material_tier,
 				"Tier": material_tier,
@@ -86,8 +83,8 @@ for ore_type in ore_types:
 		# Macerator
 		if "Macerator" in processing:
 			recipes_mac.append({
-				"Name": "Macerator" + ore_name + "ImpureOreGravel",
-				"Input": one_item(ore_name + "ImpureOreGravel"),
+				"Name": "Macerator" + ore_name + "OreImpureGravel",
+				"Input": one_item(ore_name + "OreImpureGravel"),
 				"Output":{
 					"Items": [
 						{
@@ -101,8 +98,8 @@ for ore_type in ore_types:
 						}
 					]
 				},
-				"Ticks" : 200 * 2**material_tier,
-				"Productivity": 25,
+				"Ticks" : 300 * 2**material_tier,
+				"Productivity": 33,
 				"Tier": material_tier,
 			})
 			recipes_mac.append({
@@ -122,18 +119,18 @@ for ore_type in ore_types:
 				"Output":{
 					"Items": [
 						{
-							"Name": ore_name + "OreDust",
+							"Name": processing["Macerator"],
 							"Count": 1
 						},
 						{
-							"Name": ore_name + "OreDust",
+							"Name": processing["Macerator"],
 							"Count": 1,
 							"Bonus": True
 						}
 					]
 				},
 				"Ticks" : 200 * 2**material_tier,
-				"Productivity": 50,
+				"Productivity": 25,
 				"Tier": material_tier,
 			})
 
@@ -149,18 +146,12 @@ for ore_type in ore_types:
 				"Count": 1,
 				"Probability": 10,
 			})
-				
-		out_items.append({
-			"Name": "OreWater",
-			"Count": 50,
-			"Capacity": 32000,
-		})
 		recipes_ore_washer.append({
-			"Name": "OreWasher" + ore_name + "ImpureOreGravel",
+			"Name": "OreWasher" + ore_name + "OreImpureGravel",
 			"Input":{
 				"Items":[
 					{
-						"Name": ore_name + "ImpureOreGravel",
+						"Name": ore_name + "OreImpureGravel",
 						"Count": 1
 					},
 					{
@@ -181,17 +172,17 @@ for ore_type in ore_types:
 		})
 			
 		# Industrial Separator
-		if "IndustrialSeparator" in processing:
-			recipes_sep2.append({
-				"Name": "IndustrialSeparator" + ore_name + "OreDust",
+		if "Separator" in processing:
+			recipes_sep.append({
+				"Name": "Separator" + ore_name + "OreDust",
 				"Input": one_item(ore_name + "OreDust"),
 				"Output":{
 					"Items": [
 						{
-							"Name": processing["IndustrialSeparator"][0],
+							"Name": processing["Separator"][0],
 							"Count": 1
 						}, {
-							"Name": processing["IndustrialSeparator"][1],
+							"Name": processing["Separator"][1],
 							"Count": 1,
 							"Probability": 14
 						}
@@ -200,20 +191,40 @@ for ore_type in ore_types:
 				"Ticks" : 60 * 2**material_tier,
 				"Tier": material_tier,
 			})	
-		
-		# Separator
-		if "Separator" in processing:
-			recipes_sep.append({
-				"Name": ore_type["Name"] + "OreDust",
-				"Input": one_item(ore_type["Name"] + "OreDust"),
-				"Output": one_item(processing["Separator"]),
+
+		# ChemicalBath
+		if "ChemicalBath" in processing:
+			recipes_chemical_bath.append({
+				"Name": ore_type["Name"] + "ImpureOreGravel",
+				"Input": {
+					"Items": [
+						{
+							"Name": ore_type["Name"] + "OreImpureGravel",
+							"Count": 1
+						},{
+							"Name": processing["ChemicalBath"][0],
+							"Count": 100
+						}
+					]
+				},
+				"Output": {
+					"Items": [
+						{
+							"Name": ore_type["Name"] + "OreGravel",
+							"Count": 1
+						},{
+							"Name": processing["ChemicalBath"][1],
+							"Count": 1
+						},
+					]
+				},
 				"Ticks" : 60 * 2**material_tier,
 				"Tier": material_tier,
 			})	
 
 		# Sifter
 		if "Sifter" in processing:
-			for gravel in {"OreGravel", "ImpureOreGravel"}:
+			for gravel in {"OreGravel", "OreImpureGravel"}:
 				recipes_sifter.append({
 					"Name": ore_type["Name"] + gravel,
 					"Input": one_item(ore_type["Name"] + gravel),
@@ -261,12 +272,6 @@ objects_array.append({ "Class": r_dict,
 })
 
 objects_array.append({ "Class": r_dict,
-	"Name": "IndustrialSeparator" + r_dict,
-	"Recipes": recipes_sep2
-})
-
-
-objects_array.append({ "Class": r_dict,
 	"Name": "AutomaticHammer" + r_dict,
 	"Recipes": recipes_hammer
 })
@@ -279,6 +284,11 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": "Sifter" + r_dict,
 	"Recipes": recipes_sifter
+})
+
+objects_array.append({ "Class": r_dict,
+	"Name": "ChemicalBath" + r_dict,
+	"Recipes": recipes_chemical_bath
 })
 
 data = {

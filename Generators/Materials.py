@@ -100,20 +100,6 @@ materials = [
 		"UnitS": "W",
 		"UnitMul" : 1,
 	},{
-		"Name" : "Chalcopyrite",
-		"Label" : "Chalcopyrite",
-		"IsDust": True,
-		"SmeltLevel": 0,
-		"IsBlock": True,
-		"Tier": 1,
-	},{
-		"Name" : "Pyrite",
-		"Label" : "Pyrite",
-		"IsDust": True,
-		"SmeltLevel": 0,
-		"IsBlock": True,
-		"Tier": 1,
-	},{
 		"Name" : "Copper",
 		"Label" : "Copper",
 		"IsIngot": True,
@@ -127,6 +113,13 @@ materials = [
 		"IsDust": True,
 		"IsIngot": True,
 		"SmeltLevel": 0,
+		"IsBlock": True,
+	},{
+		"Name" : "Silver",
+		"Label" : "Silver",
+		"IsDust": True,
+		"IsIngot": True,
+		"SmeltLevel": 2,
 		"IsBlock": True,
 	},{
 		"Name" : "Platinum",
@@ -280,6 +273,12 @@ materials = [
 		"Name": "Stone",
 		"Label": "Stone",
 		"Tier": 0,
+		"IsExact": True,
+	},{
+		"Name": "Sulfur",
+		"Label": "Sulfur",
+		"Tier": 0,
+		"IsExact": True,
 	},	
 	#},{
 	#	"Name": "Bronze",
@@ -385,11 +384,6 @@ materials = [
 		"IsBlock": True,
 		"IsDust": True,
 		"IsIngot": True,
-	},{
-		"Name": "Sulfur",
-		"Label": "Sulfur",
-		"IsExact": True,
-		"Mesh": "/Game/Models/Dust",
 	},{
 		"Name": "Steam",
 		"Label": "Steam",
@@ -747,11 +741,6 @@ materials = [
 		"IsGas": True,
 		"Tier": 4
 	},{
-		"Name": "ChromiumOxide",
-		"Label": "Chromium Oxide",
-		"IsDust": True,
-		"Tier": 3
-	},{
 		"Name": "PotassiumChloride",
 		"Label": "Potassium Chloride",
 		"IsDust": True,
@@ -951,60 +940,6 @@ materials = [
 		"StackSize": 32,
 		"IsExact": True,
 	},{
-		"Name" : "RutileCrystal",
-		"Label" : "Rutile Crystal",
-		"StackSize": 32,
-		"IsExact": True,
-		"Category": "Mineral",
-	},{
-		"Name" : "UraniniteCrystal",
-		"Label" : "Uraninite Crystal",
-		"StackSize": 32,
-		"IsExact": True,
-		"Category": "Mineral",
-	},{
-		"Name" : "UraniniteCluster",
-		"Label" : "Uraninite Cluster",
-		"StackSize": 32,
-		"IsExact": True,
-		"Category": "Mineral",
-	},{
-		"Name" : "Cinnabar",
-		"Label" : "Cinnabar",
-		"StackSize": 32,
-		"IsDust": True,
-		"Category": "Mineral",
-	},{
-		"Name" : "CinnabarCrystal",
-		"Label" : "Cinnabar Crystal",
-		"StackSize": 32,
-		"IsExact": True,
-		"Category": "Mineral",
-	},{
-		"Name" : "CinnabarCluster",
-		"Label" : "Cinnabar Cluster",
-		"StackSize": 32,
-		"IsExact": True,
-		"Category": "Mineral",
-	},{
-		"Name" : "Malachite",
-		"Label" : "Malachite",
-		"StackSize": 32,
-		"IsDust": True,
-		"Category": "Mineral",
-	},{
-		"Name" : "MalachiteCrystal",
-		"Label" : "Malachite Crystal",
-		"StackSize": 32,
-		"IsExact": True,
-		"Category": "Mineral",
-	},{
-		"Name" : "MalachiteCluster",
-		"Label" : "Malachite Cluster",
-		"StackSize": 32,
-		"IsExact": True,
-		"Category": "Mineral",
-	},{
 		"Name" : "Mercury",
 		"Label" : "Mercury",
 		"IsFluid": True,
@@ -1026,13 +961,6 @@ materials = [
 		"Name" : "Borax",
 		"Label" : "Borax",
 		"StackSize": 32,
-		"IsDust": True,
-		"Category": "Mineral",
-	},{
-		"Name" : "Emerald",
-		"Label" : "Emerald",
-		"StackSize": 32,
-		"IsExact": True,
 		"IsDust": True,
 		"Category": "Mineral",
 	},{
