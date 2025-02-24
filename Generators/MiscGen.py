@@ -389,33 +389,33 @@ images = []
 images.append({
 		"Base": "T_" + "JetpackBase",
 		"NewName": "T_" + "Jetpack",
-		"MulMask": "T_" + "Aluminium",
+		"MulMask": "T_Material" + "Aluminium",
 	})
 	
 images.append({
 		"Base": "T_" + "JetpackBase",
 		"NewName": "T_" + "Steampack",
-		"MulMask": "T_" + "Copper",
+		"MulMask": "T_Material" + "Copper",
 	})
 
 images.append({
 		"Base": "T_" + "JetpackBase",
 		"NewName": "T_" + "HighPressureSteampack",
-		"MulMask": "T_" + "Steel",
+		"MulMask": "T_Material" + "Steel",
 		"AddMask": "T_RedCircle" + additive_ico,
 	})
 
 images.append({
 		"Base": "T_" + "JetpackBase",
 		"NewName": "T_" + "HighCapacitySteampack",
-		"MulMask": "T_" + "Steel",
+		"MulMask": "T_Material" + "Steel",
 		"AddMask": "T_BlueCircle" + additive_ico,
 	})
 
 images.append({
 		"Base": "T_" + "JetpackBase",
 		"NewName": "T_" + "AdvancedSteampack",
-		"MulMask": "T_" + "StainlessSteel",
+		"MulMask": "T_Material" + "StainlessSteel",
 		"AddMask": "T_GreenCircle" + additive_ico,
 	})
 	

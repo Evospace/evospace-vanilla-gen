@@ -854,7 +854,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "AdvancedAlloys",
 	"LabelParts": [["AdvancedAlloys", "researches"]],
-	"RequiredResearch": ["Chemistry", "AluminiumProduction", "AdvancedSeparation"],
+	"RequiredResearch": ["Chemistry", "AluminiumProduction", "Separator"],
 	"Unlocks": [["Mixer" + r_dict, "SSCraft"],["Mixer" + r_dict, "SSCraft2"]],
 	"Levels": [4,4],
 	"MainResearch": True,
@@ -867,15 +867,6 @@ append_levels({
 	"RequiredResearch": ["AdvancedAlloys"],
 	"Unlocks": get_parts_unlocks(tier_material[4]) + [["Hand" + r_dict, "Cell"]],
 	"Levels": [4,4],
-	"MainResearch": True,
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "AdvancedSeparation",
-	"LabelParts": [["AdvancedSeparation", "researches"]],
-	"RequiredResearch": ["AluminiumProduction", "ElectricEngine1"],
-	"Levels": [3,7],
-	"Unlocks": [["Hand" + r_dict, "%Material%IndustrialSeparator"] ],
 	"MainResearch": True,
 })
 append_levels({
@@ -1395,7 +1386,6 @@ csv.append(["MassivePowerGeneration", "Massive Power Generation"])
 csv.append(["AdvancedSmelting", "Advanced Smelting"])
 csv.append(["IndustrialSmelting", "Industrial Smelting"])
 csv.append(["Fermentation", "Fermentation"])
-csv.append(["AdvancedSeparation", "Advanced Separation"])
 csv.append(["NeutroniumProduction", "Neutronium Production"])
 csv.append(["AluminiumProduction", "Aluminium Production"])
 csv.append(["StainlessSteelProduction", "Stainless Steel Production"])

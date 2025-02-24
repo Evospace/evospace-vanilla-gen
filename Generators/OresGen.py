@@ -10,45 +10,117 @@ ore_types = [
 		# https://en.wikipedia.org/wiki/List_of_copper_ores
 		"Name": "Chalcopyrite",
 		"Processing":{
-			"OreWasher": "IronDust",
-			"Furnace": "GoldIngot",
+			"OreWasher": "PyriteDust",
 			"ChemicalBath": ["Mercury", "GoldDust"],
-			"Separator": "ChalcopyriteDust",
-			"IndustrialSeparator": ["ChalcopyriteDust", "PyriteDust"],
+			"Separator": ["ChalcopyriteDust", "PyriteDust"],
 			"Macerator": "ChalcopyriteOreDust",
 			"Furnace": "CopperIngot",
 		},
+		"Formula": "CuFeS2",
 		"Color": [0.8/2.0,.3/2.0,.3/2.0],
-		"Drops": "CopperOre",
-		"Remain": 1000,
+		"Drops": "ChalcopyriteOre",
 		"Tier": 0,
 	},{
 		# https://en.wikipedia.org/wiki/List_of_copper_ores
 		"Name": "Malachite",
 		"Processing":{
 			"OreWasher": "IronDust",
-        	"Sifter": ["MalachiteOreDust", "MalachiteCrystal", "MalachiteCluster"],
-			"Furnace": "GoldIngot",
-			"ChemicalBath": ["Mercury", "GoldDust"],
-			"Macerator": "MalachiteDust",
+			"ChemicalBath": ["NitricAcid", "SilverDust"],
+			"Separator": ["MalachiteDust", "IronDust"],
+			"Macerator": "MalachiteOreDust",
 			"Furnace": "CopperIngot",
+			"Sifter": ["MalachiteOreDust", "MalachiteDust", "MalachiteCrystal"],
 		},
+		"Formula": "CuCO3",
+		"Crystal": True,
 		"Color": [0.8/2.0,.3/2.0,.3/2.0],
-		"Drops": "CopperOre",
-		"Remain": 1000,
+		"Drops": "MalachiteOre",
 		"Tier": 0,
 	},{
-		# https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D0%BA%D0%B5%D0%BB%D1%8C#%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5
-		"Name": "Iron",
+		# https://en.wikipedia.org/wiki/Iron_ore
+		"Name": "Pyrite",
 		"Processing":{
-			"OreWasher": "ChromiumOxideDust",
-			"Sifter": ["IronOreDust", "CinnabarCrystal", "CinnabarCluster"],
+			"OreWasher": "IronDust",
+			"Separator": ["PyriteDust", "Sulfur"],
+			"Macerator": "PyriteOreDust",
 			"Furnace": "IronIngot",
 		},
+		"Formula": "FeS2",
 		"Color": [111 / 255./2.0, 106 / 255./2.0, 81 / 255./2.0],
-		"Drops": "IronOre",
-		"Remain": 1000,
+		"Drops": "PyriteOre",
 		"Tier": 2,
+	},{
+		# https://en.wikipedia.org/wiki/Iron_ore
+		"Name": "Magnetite",
+		"Processing":{
+			"OreWasher": "IronDust",
+			"ChemicalBath": ["Mercury", "GoldDust"],
+			"Separator": ["MagnetiteDust", "GoldDust"],
+			"Macerator": "MagnetiteOreDust",
+			"Furnace": "IronIngot",
+		},
+		"Formula": "Fe3O4",
+		"Color": [111 / 255./2.0, 106 / 255./2.0, 81 / 255./2.0],
+		"Drops": "MagnetiteOre",
+		"Tier": 2,
+	},{
+		# https://en.wikipedia.org/wiki/Bauxite
+		"Name": "Bauxite",
+		"Processing":{
+			"OreWasher": "BauxiteDust",
+			"ChemicalBath": ["NitricAcid", "TitaniumOxideDust"],
+			"Separator": ["BauxiteDust", "SiliconOxide"],
+			"Macerator": "BauxiteOreDust",
+			"Furnace": "BauxiteDust",
+		},
+		"Formula": "Al2O3+TiO2",
+		"Color": [.5/2.0, .5/2.0, 1/2.0],
+		"Drops": "BauxiteOre",
+		"Tier": 3,
+	},{
+		"Name": "Ruby",
+		"Processing":{
+			"OreWasher": "ChromiumDust",
+			"Sifter": ["RubyOreDust", "RubyDust", "RubyCrystal"],
+			"ChemicalBath": ["SulfuricAcid", "ChromiumDust"],
+			"Separator": ["RubyDust", "ChromiumDust"],
+			"Macerator": "RubyOreDust",
+			"Furnace": "RubyDust",
+		},
+		"Formula": "CrAl203",
+		"Crystal": True,
+		"Color": [.5/2.0, .5/2.0, 1/2.0],
+		"Drops": "BauxiteOre",
+		"Tier": 3,
+	},{
+		"Name": "Emerald",
+		"Processing":{
+			"OreWasher": "BerylliumDust",
+			"Sifter": ["EmeraldOreDust", "EmeraldDust", "EmeraldCrystal"],
+			"Separator": ["EmeraldDust", "AluminiumOxideDust"],
+			"Macerator": "EmeraldOreDust",
+			"Furnace": "EmeraldDust",
+		},
+		"Formula": "Be3Al2SiO3",
+		"Crystal": True,
+		"Color": [.5/2.0, .5/2.0, 1/2.0],
+		"Drops": "BauxiteOre",
+		"Tier": 3,
+	},{
+		"Name": "Cinnabar",
+		"Color": [202 / 255., 115 / 512., 43 / 512.],
+		"Side": [202 / 255., 115 / 512., 43 / 512.],
+		"Item": [202 / 255., 115 / 512.,  43 / 512.],
+		"Crystal": True,
+		"Drops": "CinnabarOre",
+		"Tier": 1,
+		"Formula": "HgS",
+		"Processing":{
+			"OreWasher": "Sulfur",
+			"Separator": ["CinnabarDust", "Sulfur"],
+			"Macerator": "CinnabarOreDust",
+			"Furnace": "Sulfur",
+		},
 	},{
 		"Name": "Uranium",
 		"Processing":{
@@ -57,30 +129,14 @@ ore_types = [
 		},
 		"Color": [0.3/2.0, 0.7/2.0, 0.3/2.0],
 		"Drops": "UraniumOre",
-		"Remain": 1000,
 		"Tier": 4,
-	},{
-		# https://en.wikipedia.org/wiki/Cassiterite
-		"Name": "Aluminium",
-		"Processing":{
-			"OreWasher": "TitaniumOxideDust",
-			"Sifter": ["AluminiumOreDust", "RutileCrystal", "Emerald"],
-		},
-		"Color": [.5/2.0, .5/2.0, 1/2.0],
-		"Drops": "AluminiumOre",
-		"Oxide": True,
-		"Remain": 1000,
-		"Tier": 3,
-		"Processing":{
-		}
 	},{
 		"Name": "Coal",
 		"Color": [.06, .06, .06],
 		"Side": [.06, .06, .06],
 		"Item": [.06, .06, .06],
+		"Formula": "C",
 		"Drops": "Coal",
-		"Tier": 0,
-		"Remain": 1000,
 		"Tier": 0,
 		"Processing":{
 		}
@@ -90,17 +146,6 @@ ore_types = [
 		"Side": [202 / 255., 115 / 512., 43 / 512.],
 		"Item": [202 / 255., 115 / 512.,  43 / 512.],
 		"Drops": "Clay",
-		"Tier": 0,
-		"Processing":{
-		},
-		"Tier": 0,
-	},{
-		"Name": "Sulfur",
-		"Color": [202 / 255., 115 / 512., 43 / 512.],
-		"Side": [202 / 255., 115 / 512., 43 / 512.],
-		"Item": [202 / 255., 115 / 512.,  43 / 512.],
-		"Drops": "Clay",
-		"Tier": 1,
 		"Processing":{
 		},
 		"Tier": 0,
@@ -112,6 +157,7 @@ images = []
 for ore_type in ore_types:
 	item_name = ore_type["Name"] + "Ore"
 	named_mat = named_material(ore_type["Name"])
+	description = [[ore_type["Formula"], "ores"]] if "Formula" in ore_type else []
 	
 	cvs.append([ore_type["Name"]+"Ore", ore_type["Name"]+" Ore"])
 	
@@ -122,14 +168,13 @@ for ore_type in ore_types:
 		"StackSize": 64, 
 		"Category": "Ore",
 		"LabelParts": [[ore_type["Name"]+"Ore", "ores"]],
-		"CommonTextKeys":[
-		],
+		"DescriptionParts": description,
 		"Materials" : [
-			"/Game/Materials/" + ore_type["Name"] + "ImpureOreGravel"
+			"/Game/Materials/" + ore_type["Name"] + "OreImpureGravel"
 		],
 	}
 	if "SmeltLevel" in named_mat:
-		item["CommonTextKeys"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
+		item["DescriptionParts"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
 	
 	objects_array.append(item)
 	objects_array.append({ "Class": "TesselatorMarching",
@@ -148,41 +193,41 @@ for ore_type in ore_types:
 	images.append({
 		"Base": "T_" + "Ore",
 		"NewName": "T_" + ore_type["Name"] + "Ore",
-		"MulMask": "T_" + ore_type["Name"]
+		"MulMask": "T_Material" + ore_type["Name"],
+		"AddMask": "T_" + "OreAdditive"
 	})
 
 	if "NotOre" not in ore_type:		
 		# impure gravel		
-		cvs.append([ore_type["Name"]+"ImpureOreGravel", ore_type["Name"]+" Impure Ore Gravel"])
+		cvs.append([ore_type["Name"]+"OreImpureGravel", ore_type["Name"]+" Impure Ore Gravel"])
 		item = { "Class": "StaticItem",
-			"Name": ore_type["Name"] + "ImpureOreGravel",
-			"Label": ore_type["Name"] + " Impure Ore Gravel",
+			"Name": ore_type["Name"] + "OreImpureGravel",
 			"Mesh": "/Game/Models/Gravel",
-			
-			"Image": "T_" + ore_type["Name"] + "ImpureOreGravel",
+			"Image": "T_" + ore_type["Name"] + "OreImpureGravel",
 			"StackSize": 64, 
-
 			"Materials" : [
-				"/Game/Materials/" + ore_type["Name"] + "ImpureOreGravel"
+				"/Game/Materials/" + ore_type["Name"] + "OreImpureGravel"
 			],
 			"Category": "Ore",
-			
-			"LabelParts": [[ore_type["Name"]+"ImpureOreGravel","ores"]],
-			
-			"CommonTextKeys":[
-			],
+			"LabelParts": [[ore_type["Name"]+"OreImpureGravel", "ores"]],
+			"DescriptionParts": description,
 		}
 		if "SmeltLevel" in named_mat:
-			item["CommonTextKeys"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
+			item["DescriptionParts"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
 		if "Mesh" in named_mat:
 			item["Mesh"] = named_mat["Mesh"]
 		objects_array.append(item)
+		images.append({
+			"Base": "T_" + "Gravel",
+			"NewName": "T_" + ore_type["Name"] + "OreImpureGravel",
+			"MulMask": "T_Material" + ore_type["Name"],
+			"AddMask": ["T_" + "impure_gravel_add", "T_"+"Gravel" + additive_ico]
+		})
 
 		# gravel
 		cvs.append([ore_type["Name"]+"OreGravel", ore_type["Name"]+" Ore Gravel"])
 		item = { "Class": "StaticItem",
 			"Name": ore_type["Name"] + "OreGravel",
-			"Label": ore_type["Name"] + " Ore Gravel",
 			"Mesh": "/Game/Models/Gravel",
 			"Image": "T_" + ore_type["Name"] + "OreGravel",
 			"StackSize": 64,
@@ -190,56 +235,90 @@ for ore_type in ore_types:
 				"/Game/Materials/" + ore_type["Name"] + "OreGravel"
 			],
 			"Category": "Ore",
-			"LabelParts": [[ore_type["Name"]+"OreGravel","ores"]],
-			"CommonTextKeys":[
-			],
+			"LabelParts": [[ore_type["Name"]+"OreGravel", "ores"]],
+			"DescriptionParts": description,
 		}
-			
 		if "SmeltLevel" in named_mat:
-			item["CommonTextKeys"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
-		objects_array.append(item)
-			
-		# impure dust
-		cvs.append([ore_type["Name"] + "OreDust", ore_type["Name"]+" Impure Dust"])
-		item = { "Class": "StaticItem",
-			"Name": ore_type["Name"] + "OreDust",
-			"Label": ore_type["Name"] + " Impure Dust",
-			"Mesh": "/Game/Models/Dust",
-			"Image": "T_" + ore_type["Name"] + "OreDust",
-			"StackSize": 64,
-			"Materials" : [
-				"/Game/Materials/ImpureOreDust"
-			],
-			"Category": "Ore",
-			"LabelParts": [[ore_type["Name"]+"OreDust","ores"]],
-			"CommonTextKeys":[
-			],
-			"Materials" : [
-				"/Game/Materials/" + ore_type["Name"] + "OreGravel"
-			],
-		}
-			
-		if "SmeltLevel" in named_mat:
-			item["CommonTextKeys"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
+			item["DescriptionParts"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
 		objects_array.append(item)
 		images.append({
 			"Base": "T_" + "Gravel",
 			"NewName": "T_" + ore_type["Name"] + "OreGravel",
-			"MulMask": "T_" + ore_type["Name"],
+			"MulMask": "T_Material" + ore_type["Name"],
 			"AddMask": "T_" + "Gravel" + additive_ico
 		})
-		images.append({
-			"Base": "T_" + "Gravel",
-			"NewName": "T_" + ore_type["Name"] + "ImpureOreGravel",
-			"MulMask": "T_" + ore_type["Name"],
-			"AddMask": ["T_" + "impure_gravel_add", "T_"+"Gravel" + additive_ico]
-		})
+			
+		# impure dust
+		cvs.append([ore_type["Name"] + "OreDust", ore_type["Name"]+" Ore Dust"])
+		item = { "Class": "StaticItem",
+			"Name": ore_type["Name"] + "OreDust",
+			"Mesh": "/Game/Models/Dust",
+			"Image": "T_" + ore_type["Name"] + "OreDust",
+			"StackSize": 64,
+			"Category": "Ore",
+			"LabelParts": [[ore_type["Name"]+"OreDust", "ores"]],
+			"DescriptionParts": description,
+			"Materials" : [
+				"/Game/Materials/" + ore_type["Name"] + "OreGravel"
+			],
+		}
+		if "SmeltLevel" in named_mat:
+			item["DescriptionParts"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
+		objects_array.append(item)
 		images.append({
 			"Base": "T_" + "Dust",
 			"NewName": "T_" + ore_type["Name"] + "OreDust",
-			"MulMask": "T_" + ore_type["Name"],
+			"MulMask": "T_Material" + ore_type["Name"],
 			"AddMask": "T_" + "impure_dust_add"
 		})
+
+		# dust
+		cvs.append([ore_type["Name"] + "Dust", ore_type["Name"]+" Dust"])
+		item = { "Class": "StaticItem",
+			"Name": ore_type["Name"] + "Dust",
+			"Mesh": "/Game/Models/Dust",
+			"Image": "T_" + ore_type["Name"] + "Dust",
+			"StackSize": 64,
+			"Category": "Ore",
+			"LabelParts": [[ore_type["Name"]+"Dust", "ores"]],
+			"DescriptionParts": description,
+			"Materials" : [
+				"/Game/Materials/" + ore_type["Name"] + "Dust"
+			],
+		}
+		if "SmeltLevel" in named_mat:
+			item["DescriptionParts"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
+		objects_array.append(item)
+		images.append({
+			"Base": "T_" + "Dust",
+			"NewName": "T_" + ore_type["Name"] + "Dust",
+			"MulMask": "T_Material" + ore_type["Name"],
+			"AddMask": "T_" + "dust_add"
+		})
+
+		# crystal
+		if "Crystal" in ore_type:
+			cvs.append([ore_type["Name"] + "Crystal", ore_type["Name"]+" Crystal"])
+			item = { "Class": "StaticItem",
+				"Name": ore_type["Name"] + "Crystal",
+				"Mesh": "/Game/Models/Crystal",
+				"Image": "T_" + ore_type["Name"] + "Crystal",
+				"StackSize": 64,
+				"Category": "Ore",
+				"LabelParts": [[ore_type["Name"]+"Crystal", "ores"]],
+				"DescriptionParts": description,
+				"Materials" : [
+					"/Game/Materials/" + ore_type["Name"] + "Crystal"
+				],
+			}
+			objects_array.append(item)
+			images.append({
+				"Base": "T_" + "Crystal",
+				"NewName": "T_" + ore_type["Name"] + "Crystal",
+				"MulMask": "T_Material" + ore_type["Name"],
+				"AddMask": "T_" + "CrystalAdditive"
+			})
+			
 data = {
 	"Objects": objects_array
 }
@@ -258,6 +337,16 @@ objects_array.append({
 data = {
 	"Objects": objects_array
 }
+
+cvs.append(["FeS2", "FeS₂"])
+cvs.append(["CuFeS2", "CuFeS₂"])
+cvs.append(["CuCO3", "CuCO₃"])
+cvs.append(["Fe3O4", "Fe₃O₄"])
+cvs.append(["HgS", "HgS"])
+cvs.append(["CrAl203", "CrAl₂0₃"])
+cvs.append(["C", "C"])
+cvs.append(["Be3Al2SiO3", "Be₃Al₂SiO₃"])
+cvs.append(["Al2O3+TiO2", "Al₂O₃ + TiO₂"])
 
 write_file("Generated/Resources/ores.json", data);
 

@@ -1110,18 +1110,6 @@ machines = [
 		"BlockLogic":"ComputerBlockLogic",
 		"Description": ["ElectricInput"],
 	},{
-		"Name": "IndustrialSeparator",
-		"Label": "Industrial Separator",
-		"Positions": [[0,0,0],[-1,0,0],[0,-1,0],[-1,-1,0],[0,1,0],[-1,1,0], [0,0,1],[-1,0,1],[0,-1,1],[-1,-1,1],[0,1,1],[-1,1,1]],
-		"StartTier": 3,
-		"EndTier": 7,
-		"CommonTextKeys":[
-			"Separator",
-			"Autocrafter"
-		],
-		"BlockLogic":"AutoCrafter",
-		"Description": ["KineticInput"],
-	},{
 		"Name": "Radiator",
 		"Label": "Radiator",
 		"StartTier": 3,
