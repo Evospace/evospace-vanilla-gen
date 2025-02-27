@@ -1,4 +1,5 @@
 from Common import *
+from OresGen import ore_types
 
 cvs = []
 
@@ -379,10 +380,14 @@ props = [
 		"CullEnd": 100000,
 		"AdditiveElevation": 0,
 		"IsBig": True,
-	},{
-		"Name": "SulfurCluster",
-		"ScaleMin": 1,
-		"ScaleMax": 1,
+	}
+]
+
+for ore in ore_types:
+	props.append({
+		"Name": ore["Name"] + "Cluster",
+		"ScaleMin": 2,
+		"ScaleMax": 2,
 		"Variations": 1,
 		"ProjectToTerrainPower": 1,
 		"HandInteraction": False,
@@ -392,8 +397,8 @@ props = [
 		"CullEnd": 100000,
 		"AdditiveElevation": 0,
 		"IsBig": True,
-	}
-]
+		"Image": "T_Error",
+	})
 
 def named_prop(name):
 	return [x for x in props if x["Name"] == name][0]
@@ -760,34 +765,36 @@ proplists = [
 				"Chance": 0.005
 			}
 		]
-	},
-	{	
-		"Name": "OreProps",
-		"Array": [
-			{
-				"Props": ["SulfurCluster"],
-				"Chance": 1.0
-			}
-		]
 	}
 ]
+
+ore_props = []
+for ore in ore_types:
+	ore_props.append({
+		"Props": [ore["Name"]+"Cluster"],
+		"Chance": 1.0 / len(ore_types)
+	})
+ores_biome = {	
+	"Name": "OreProps",
+	"Array": ore_props
+}
+proplists.append(ores_biome)
 
 objects_array = []
 
 for prop in props: 
 	cvs.append([prop["Name"], CamelToSpaces(prop["Name"])])
 	for variation in range(0, prop["Variations"]):
+		image = "T_" + prop["Name"] if "Image" not in prop else prop["Image"]
 		objects_array.append({ "Class": "StaticItem",
 			"Name": prop["Name"] + variation_helper[variation],
-			
 			"StackSize": 32,
-			"Image": "T_" + prop["Name"],
+			"Image": image,
 			"LogicJson": {
 				"StaticBlock": prop["Name"] + variation_helper[variation]
 			},
 			"ItemLogic": building_prop_logic,
 			"Category": "Terrain",
-			
 			"LabelParts": [[prop["Name"], "props"]],
 			"DescriptionParts":[["WorldObject","common"]],
 		})
@@ -808,19 +815,14 @@ for prop in props:
 		
 		if "CullBegin" in prop:
 			temp_prop["CullBegin"] = prop["CullBegin"]
-			
 		if "Floating" in prop:
 			temp_prop["Floating"] = prop["Floating"]
-			
 		if "CullEnd" in prop:
 			temp_prop["CullEnd"] = prop["CullEnd"]
-			
 		if "AdditiveElevation" in prop:
 			temp_prop["AdditiveElevation"] = prop["AdditiveElevation"]	
-			
 		if "MaximumHeight" in prop:
 			temp_prop["MaximumHeight"] = prop["MaximumHeight"]	
-			
 		if "MinimumHeight" in prop:
 			temp_prop["MinimumHeight"] = prop["MinimumHeight"]	
 			
