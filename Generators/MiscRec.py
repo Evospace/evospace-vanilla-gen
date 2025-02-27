@@ -289,52 +289,6 @@ append_recipe({
 	"Tier": 3,
 })
 
-append_recipe({
-	"Name":"Catalyst",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Cell",
-				"Count": 1
-			},	
-			{
-				"Name": "GoldWire",
-				"Count": 10
-			},	
-			{
-				"Name": "Coal",
-				"Count": 4
-			}
-		]
-	},
-	"Output": one_item("Catalyst"),
-	"Ticks" : 200,
-	
-})
-
-append_recipe({
-	"Name":"UltimateCatalyst",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Cell",
-				"Count": 1
-			},	
-			{
-				"Name": "NeutroniumParts",
-				"Count": 2
-			},	
-			{
-				"Name": "Coke",
-				"Count": 10
-			}
-		]
-	},
-	"Output": one_item("UltimateCatalyst"),
-	"Ticks" : 200 * 2**7,
-	"Tier": 7,
-})
-
 recipes_assembler.append({
 	"Name": "AdvancedCircuitBoard",
 	"Input":{
@@ -533,6 +487,52 @@ recipes_assembler.append({
 	},
 	"Output": one_item("SuperconductorWire", 2),
 	"Ticks" : 100,
+})
+
+append_recipe({
+	"Name":"UltimateCatalyst",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Cell",
+				"Count": 1
+			},	
+			{
+				"Name": "NeutroniumParts",
+				"Count": 2
+			},	
+			{
+				"Name": "Coke",
+				"Count": 10
+			}
+		]
+	},
+	"Output": one_item("UltimateCatalyst"),
+	"Ticks" : 200 * 2**7,
+	"Tier": 7,
+})
+
+append_recipe({
+	"Name":"Catalyst",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Cell",
+				"Count": 1
+			},	
+			{
+				"Name": "GoldWire",
+				"Count": 10
+			},	
+			{
+				"Name": "Coal",
+				"Count": 4
+			}
+		]
+	},
+	"Output": one_item("Catalyst"),
+	"Ticks" : 200,
+	
 })
 
 append_recipe({
@@ -3597,34 +3597,8 @@ recipes_industrial_chemreactor.append({
 	"Ticks" : 300,
 	"Colors": [[0.4,0.2,0.0,0.15],[0.7,0.6,0.25,0.15]]
 })
-
-for i in {"IronOreDust", "CopperOreDust"}:
-	recipes_chemical_bath.append({
-		"Name": i,
-		"Input":{
-			"Items":[
-				{
-					"Name": "Mercury",
-					"Count": 500
-				},
-				{
-					"Name": i,
-					"Count": 2,
-				},
-			]
-		},
-		"Output":{
-			"Items":[	
-				{
-					"Name": "GoldDust",
-					"Count": 1,
-				},		
-			]
-		},
-		"Ticks" : 200,
-		"Colors": [[0.4,0.4,0.1,0.8],[0.2,0.2,0.1,0.2]]
-	})
 	
+	# TODO: remove
 recipes_chemical_bath.append({
 	"Name":"RareEarthElement",
 	"Input":{

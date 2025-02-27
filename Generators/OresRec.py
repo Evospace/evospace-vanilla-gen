@@ -41,31 +41,31 @@ for ore_type in ore_types:
 			"Productivity": 50,
 		})
 
-		# Furnace
+		# Smelter
 		if "Furnace" in processing:
 			recipes_smelt.append({
-				"Name": "Furnace" + ore_name + "Ore",
+				"Name": "Smelter" + ore_name + "Ore",
 				"Input": one_item(ore_name + "Ore"),
 				"Output": one_item(processing["Furnace"]),
 				"Ticks" : 180 * 2**material_tier,
 				"Tier": material_tier,
 			})
 			recipes_smelt.append({
-				"Name": "Furnace" + ore_name + "OreDust",
+				"Name": "Smelter" + ore_name + "OreDust",
 				"Input": one_item(ore_name + "OreDust"),
 				"Output": one_item(processing["Furnace"]),
 				"Ticks" : 100 * 2 **material_tier,
 				"Tier": material_tier,
 			})
 			recipes_smelt.append({
-				"Name": "Furnace" + ore_name + "OreImpureGravel",
+				"Name": "Smelter" + ore_name + "OreImpureGravel",
 				"Input": one_item(ore_name + "OreImpureGravel"),
 				"Output": one_item(processing["Furnace"]),
 				"Ticks" : 120 * 2**material_tier,
 				"Tier": material_tier,
 			})
 			recipes_smelt.append({
-				"Name": "Furnace" + ore_name + "OreGravel",
+				"Name": "Smelter" + ore_name + "OreGravel",
 				"Input": one_item(ore_name + "OreGravel"),
 				"Output": one_item(processing["Furnace"]),
 				"Ticks" : 120 * 2**material_tier,
@@ -73,7 +73,7 @@ for ore_type in ore_types:
 			})
 			if "Macerator" in processing:
 				recipes_smelt.append({
-					"Name": "Furnace" + processing["Macerator"],
+					"Name": "Smelter" + processing["Macerator"],
 					"Input": one_item(processing["Macerator"]),
 					"Output": one_item(processing["Furnace"]),
 					"Ticks" : 180 * 2**material_tier,

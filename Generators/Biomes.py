@@ -123,6 +123,7 @@ families.extend([
 			"IslesBiome",
 			"SeaGrassBiome",
 			"EmptySeaBiome",
+            "GravelSeaBiome"
 		],
 		"ChildFrequency": biome_family_size,
 	},{
@@ -312,7 +313,7 @@ generators.extend([
 	},{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "SeaBottomLayeringCopper",
-		"Blocks": ["CopperOre" + static_surface, "LimestoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["ClayOre" + static_surface, "LimestoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
 		"Starts": [0, 2, 9, 12, 16, 19, 23, 30]
 	},{
 		"Class": "SimpleLayeringGenerator",
@@ -507,22 +508,9 @@ biomes.extend([
 		"Layering":"SeaBottomLayeringGravel"
 	},{
 		"Class":"Biome",
-		"Name":"CopperSeaBiome",
-		"Layering":"SeaBottomLayeringCopper"
-	},{
-		"Class":"Biome",
-		"Name":"ClaySeaBiome",
-		"Layering":"SeaBottomLayeringClay"
-	},{
-		"Class":"Biome",
 		"Name":"IslesBiome",
 		"Layering":"IslesLayeringSand",
 		"Props":"IslesPropsBase"
-	},{
-		"Class":"Biome",
-		"Name":"SeaGrassBiome",
-		"Layering":"IslesLayeringSand",
-		"Props":"SeaGrassPropsBase"
 	}
 	
 	# grass

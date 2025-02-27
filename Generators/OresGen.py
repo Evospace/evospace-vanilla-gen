@@ -59,7 +59,7 @@ ore_types = [
 			"Macerator": "MagnetiteOreDust",
 			"Furnace": "IronIngot",
 		},
-		"Formula": "Fe3O4",
+		"Formula": "Fe3O4+Au",
 		"Color": [111 / 255./2.0, 106 / 255./2.0, 81 / 255./2.0],
 		"Drops": "MagnetiteOre",
 		"Tier": 2,
@@ -341,7 +341,7 @@ data = {
 cvs.append(["FeS2", "FeS₂"])
 cvs.append(["CuFeS2", "CuFeS₂"])
 cvs.append(["CuCO3", "CuCO₃"])
-cvs.append(["Fe3O4", "Fe₃O₄"])
+cvs.append(["Fe3O4+Au", "Fe₃O₄ + Au"])
 cvs.append(["HgS", "HgS"])
 cvs.append(["CrAl203", "CrAl₂0₃"])
 cvs.append(["C", "C"])
