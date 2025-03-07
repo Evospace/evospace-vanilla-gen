@@ -11,6 +11,7 @@ recipes_arc = []
 recipes_sifter = [] 
 recipes_chemical_bath = []
 objects_array = []
+recipes_furnace = []
 
 for ore_type in ore_types:
 	material_tier = ore_type["Tier"]
@@ -36,7 +37,7 @@ for ore_type in ore_types:
 					}
 				]
 			},
-			"Ticks": 100 * 2**material_tier,
+			"Ticks": 100,
 			"Tier": material_tier,
 			"Productivity": 50,
 		})
@@ -47,38 +48,37 @@ for ore_type in ore_types:
 				"Name": "Smelter" + ore_name + "Ore",
 				"Input": one_item(ore_name + "Ore"),
 				"Output": one_item(processing["Furnace"]),
-				"Ticks" : 180 * 2**material_tier,
+				"Ticks" : 180,
+				"Tier": material_tier,
+			})
+			recipes_smelt.append({
+				"Name": "Smelter" + ore_name + "Dust",
+				"Input": one_item(ore_name + "Dust"),
+				"Output": one_item(processing["Furnace"]),
+				"Ticks" : 50 * 2 **material_tier,
 				"Tier": material_tier,
 			})
 			recipes_smelt.append({
 				"Name": "Smelter" + ore_name + "OreDust",
 				"Input": one_item(ore_name + "OreDust"),
 				"Output": one_item(processing["Furnace"]),
-				"Ticks" : 100 * 2 **material_tier,
+				"Ticks" : 75 * 2 **material_tier,
 				"Tier": material_tier,
 			})
 			recipes_smelt.append({
 				"Name": "Smelter" + ore_name + "OreImpureGravel",
 				"Input": one_item(ore_name + "OreImpureGravel"),
 				"Output": one_item(processing["Furnace"]),
-				"Ticks" : 120 * 2**material_tier,
+				"Ticks" : 120,
 				"Tier": material_tier,
 			})
 			recipes_smelt.append({
 				"Name": "Smelter" + ore_name + "OreGravel",
 				"Input": one_item(ore_name + "OreGravel"),
 				"Output": one_item(processing["Furnace"]),
-				"Ticks" : 120 * 2**material_tier,
+				"Ticks" : 120,
 				"Tier": material_tier,
 			})
-			if "Macerator" in processing:
-				recipes_smelt.append({
-					"Name": "Smelter" + processing["Macerator"],
-					"Input": one_item(processing["Macerator"]),
-					"Output": one_item(processing["Furnace"]),
-					"Ticks" : 180 * 2**material_tier,
-					"Tier": material_tier,
-				})
 
 		# Macerator
 		if "Macerator" in processing:
@@ -98,7 +98,7 @@ for ore_type in ore_types:
 						}
 					]
 				},
-				"Ticks" : 300 * 2**material_tier,
+				"Ticks" : 300,
 				"Productivity": 33,
 				"Tier": material_tier,
 			})
@@ -129,7 +129,7 @@ for ore_type in ore_types:
 						}
 					]
 				},
-				"Ticks" : 200 * 2**material_tier,
+				"Ticks" : 200,
 				"Productivity": 25,
 				"Tier": material_tier,
 			})
@@ -167,7 +167,7 @@ for ore_type in ore_types:
 			"Output":{
 				"Items": out_items
 			},
-			"Ticks" : 200 * 2**material_tier,
+			"Ticks" : 200,
 			"Tier": material_tier,
 		})
 			
@@ -188,7 +188,7 @@ for ore_type in ore_types:
 						}
 					],
 				},
-				"Ticks" : 60 * 2**material_tier,
+				"Ticks" : 60,
 				"Tier": material_tier,
 			})	
 
@@ -218,7 +218,7 @@ for ore_type in ore_types:
 						},
 					]
 				},
-				"Ticks" : 60 * 2**material_tier,
+				"Ticks" : 60,
 				"Tier": material_tier,
 			})	
 
@@ -247,9 +247,22 @@ for ore_type in ore_types:
 							},
 						]
 					},
-					"Ticks" : 40 * 2**material_tier,
+					"Ticks" : 40,
 					"Tier": material_tier,
 				})	
+
+		if "Burnable" in ore_type:
+			for item, timeMul in [["Dust", 0.9], ["OreDust", 0.8], ["Ore", 0.9], ["OreGravel", 0.9], ["OreImpureGravel", 0.8]]:
+				recipes_furnace.append({
+					"Name": ore_type["Name"]+item,
+					"Input": one_item(ore_type["Name"] + item),
+					"Output":{
+						"Items":[
+						],
+						
+					},
+					"Ticks" : ore_type["Burnable"]["BurnTime"] * timeMul,
+				})
 	
 objects_array.append({ "Class": r_dict,
 	"Name": "Macerator" + r_dict,
@@ -289,6 +302,11 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": "ChemicalBath" + r_dict,
 	"Recipes": recipes_chemical_bath
+})
+
+objects_array.append({ "Class": r_dict,
+	"Name": "Furnace" + r_dict,
+	"Recipes": recipes_furnace
 })
 
 data = {

@@ -122,13 +122,32 @@ ore_types = [
 			"Furnace": "Sulfur",
 		},
 	},{
-		"Name": "Uranium",
+		"Name": "Thorianite",
 		"Processing":{
-			"Washing": "Uranium235Dust",
-			"Sifter": ["ThoriumDust", "UraniniteCrystal", "UraniniteCluster"],
+			"OreWasher": "UraniumDust",
+			"Separator": ["ThoriumDust", "UraniumDust"],
+			"Washing": "Uranium238Dust",
+			"Sifter": ["ThoriumDust", "UraniumDust", "ThorianiteCrystal"],
+			"Furnace": "ThoriumDust",
+			"Macerator": "ThorianiteOreDust",
+		},
+		"Crystal": True,
+		"Color": [0.3/2.0, 0.7/2.0, 0.3/2.0],
+		"Drops": "ThorianiteOre",
+		"Formula": "ThO2+UO2",
+		"Tier": 4,
+	},{
+		"Name": "Pyroplatite",
+		"Processing":{
+			"OreWasher": "GoldDust",
+			"Separator": ["PyroplatiteDust", "GoldDust"],
+			"Washing": "PyroplatiteDust",
+			"Furnace": "PyroplatiteDust",
+			"Macerator": "PyroplatiteOreDust",
 		},
 		"Color": [0.3/2.0, 0.7/2.0, 0.3/2.0],
-		"Drops": "UraniumOre",
+		"Drops": "PyroplatiteOre",
+		"Formula": "AuS2+PtS2+RhS2",
 		"Tier": 4,
 	},{
 		"Name": "Coal",
@@ -136,10 +155,18 @@ ore_types = [
 		"Side": [.06, .06, .06],
 		"Item": [.06, .06, .06],
 		"Formula": "C",
-		"Drops": "Coal",
-		"Tier": 0,
 		"Processing":{
-		}
+			"OreWasher": "CoalDust",
+			"Separator": ["Coal", "CoalDust"],
+			"Washing": "CoalDust",
+			"Furnace": "Coal",
+			"Macerator": "CoalOreDust",
+		},
+		"Drops": "CoalOre",
+		"Tier": 0,
+		"Burnable": {
+			"BurnTime": 800
+		},
 	},{
 		"Name": "Clay",
 		"Color": [202 / 255., 115 / 512., 43 / 512.],
@@ -147,6 +174,11 @@ ore_types = [
 		"Item": [202 / 255., 115 / 512.,  43 / 512.],
 		"Drops": "Clay",
 		"Processing":{
+			"OreWasher": "ClayDust",
+			"Separator": ["Clay", "ClayDust"],
+			"Washing": "ClayDust",
+			"Furnace": "Clay",
+			"Macerator": "ClayOreDust",
 		},
 		"Tier": 0,
 	}
@@ -269,7 +301,7 @@ for ore_type in ore_types:
 			"Base": "T_" + "Dust",
 			"NewName": "T_" + ore_type["Name"] + "OreDust",
 			"MulMask": "T_Material" + ore_type["Name"],
-			"AddMask": "T_" + "impure_dust_add"
+			"AddMask": "T_" + "ImpureDustAdditive"
 		})
 
 		# dust
@@ -293,8 +325,10 @@ for ore_type in ore_types:
 			"Base": "T_" + "Dust",
 			"NewName": "T_" + ore_type["Name"] + "Dust",
 			"MulMask": "T_Material" + ore_type["Name"],
-			"AddMask": "T_" + "dust_add"
+			"AddMask": "T_" + "DustAdditive"
 		})
+		if "Burnable" in ore_type:
+			item["DescriptionParts"] = [["burnable", "common"]]
 
 		# crystal
 		if "Crystal" in ore_type:
@@ -347,6 +381,10 @@ cvs.append(["CrAl203", "CrAl₂0₃"])
 cvs.append(["C", "C"])
 cvs.append(["Be3Al2SiO3", "Be₃Al₂SiO₃"])
 cvs.append(["Al2O3+TiO2", "Al₂O₃ + TiO₂"])
+cvs.append(["ThO2+UO2", "ThO₂+UO₂"])
+cvs.append(["AuS2+PtS2+RhS2", "AuS₂ + PtS₂ + RhS₂"])
+
+
 
 write_file("Generated/Resources/ores.json", data);
 

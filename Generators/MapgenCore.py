@@ -139,7 +139,7 @@ mapgen_objects = [
 		"Item": [102 / 255., 51 / 255.,  0 / 255.],
 		"Drops": "Peat",
 		"Hardness": 1
-	}
+	},
 ]
 
 pickaxe_recipes = []

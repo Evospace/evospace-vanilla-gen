@@ -72,17 +72,8 @@ recipes_hand = []
 oil_crack = []
 
 def append_recipe(recipe):
-	item_count = 0
-	for item in recipe["Input"]["Items"]:
-		item_count = item_count + item["Count"]
-
-	level = extract_tier(recipe["Output"]["Items"][0]["Name"]) + 1
-	
-	dec_recipe = copy.deepcopy(recipe)
-
 	recipes_hand.append(recipe)
-	
-	recipes_assembler.append(dec_recipe)
+	recipes_assembler.append(recipe)
 
 def append_recipe_hand_press(recipe):
 	item_count = 0
@@ -219,7 +210,7 @@ recipes_smelter.append({
 	"Name":"Glass",
 	"Input": one_item("SandSurface"),
 	"Output": one_item("Glass"),
-	"Ticks" : 200,
+	"Ticks" : 100,
 })
 
 # other		
@@ -233,12 +224,31 @@ append_recipe({
 				"Count": 1
 			},
 			{
-				"Name": "CopperWire",
-				"Count": 6
+				"Name": "Triod",
+				"Count": 3
 			}
 		]
 	},
 	"Output": one_item("Circuit"),
+	"Ticks" : 200,
+	"Tier": 1,
+})
+
+append_recipe({
+	"Name":"Triod",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Glass",
+				"Count": 1
+			},
+			{
+				"Name": "CopperWire",
+				"Count": 3
+			}
+		]
+	},
+	"Output": one_item("Triod"),
 	"Ticks" : 200,
 	"Tier": 1,
 })
@@ -258,7 +268,7 @@ append_recipe({
 		]
 	},
 	"Output": one_item("AdvancedCircuit"),
-	"Ticks" : 200 * 2**2,
+	"Ticks" : 200,
 	"Tier": 2,
 })
 
@@ -266,7 +276,7 @@ recipes_assembler.append({
 	"Name":"SiliconWafer",
 	"Input": one_item("Silicon"),
 	"Output": one_item("SiliconWafer"),
-	"Ticks" : 200 * 2**3,
+	"Ticks" : 200,
 	"Tier": 3,
 })
 
@@ -285,7 +295,7 @@ append_recipe({
 		]
 	},
 	"Output": one_item("Processor"),
-	"Ticks" : 200 * 2**3,
+	"Ticks" : 200,
 	"Tier": 3,
 })
 
@@ -304,7 +314,7 @@ recipes_assembler.append({
 		]
 	},
 	"Output": one_item("AdvancedCircuitBoard"),
-	"Ticks" : 80 * 2**3,
+	"Ticks" : 80,
 	"Tier": 3,
 })
 
@@ -323,7 +333,7 @@ recipes_assembler.append({
 		]
 	},
 	"Output": one_item("Processor"),
-	"Ticks" : 200 * 2**3,
+	"Ticks" : 200,
 	"Tier": 3,
 })
 
@@ -332,7 +342,7 @@ append_recipe({
 	"Input":{
 		"Items":[
 			{
-				"Name": "RareEarthElement",
+				"Name": "YttriumDust",
 				"Count": 1
 			},	
 			{
@@ -342,7 +352,7 @@ append_recipe({
 		]
 	},
 	"Output": one_item("QuantumCore"),
-	"Ticks" : 200 * 2**4,
+	"Ticks" : 200,
 	"Tier": 4,
 	
 })
@@ -362,7 +372,7 @@ append_recipe({
 		]
 	},
 	"Output": one_item("QuantumCircuit"),
-	"Ticks" : 200 * 2**4,
+	"Ticks" : 200,
 	"Tier": 4,
 })
 
@@ -381,7 +391,7 @@ append_recipe({
 		]
 	},
 	"Output": one_item("QuantumProcessor"),
-	"Ticks" : 200 * 2**5,
+	"Ticks" : 200,
 	"Tier": 5,
 })
 
@@ -400,7 +410,7 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"Output": one_item("Tetrafluoroethylene", 1000),
-	"Ticks" : 200 * 2**5,
+	"Ticks" : 200,
 	"Tier": 5,
 })
 
@@ -419,7 +429,7 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"Output": one_item("PTFE", 1000),
-	"Ticks" : 600 * 2**5,
+	"Ticks" : 600,
 	"Tier": 5,
 })
 
@@ -438,7 +448,7 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"Output": one_item("BrainMatrix"),
-	"Ticks" : 200 * 2**5,
+	"Ticks" : 200,
 	"Tier": 5,
 })
 
@@ -457,7 +467,7 @@ append_recipe({
 		]
 	},
 	"Output": one_item("QuantumBrain"),
-	"Ticks" : 200 * 2**6,
+	"Ticks" : 200,
 	"Tier": 6,
 })
 
@@ -508,7 +518,7 @@ append_recipe({
 		]
 	},
 	"Output": one_item("UltimateCatalyst"),
-	"Ticks" : 200 * 2**7,
+	"Ticks" : 200,
 	"Tier": 7,
 })
 
@@ -780,7 +790,7 @@ recipes_assembler.append({
 })
 
 recipes_assembler.append({
-	"Name":"AdvancedFrame",
+	"Name":"CompositePlate",
 	"Input":{
 		"Items":[
 			{
@@ -797,7 +807,7 @@ recipes_assembler.append({
 			},
 		]
 	},
-	"Output": one_item("AdvancedFrame"),
+	"Output": one_item("CompositePlate"),
 	"Ticks" : 300,
 	
 })
@@ -834,6 +844,7 @@ append_recipe({
 	"Ticks" : 100,
 })
 
+#TODO: remove
 append_recipe({
 	"Name":"ControlCell",
 	"Input":{
@@ -843,7 +854,7 @@ append_recipe({
 				"Count": 1
 			},
 			{
-				"Name": "RareEarthElement",
+				"Name": "YttriumDust",
 				"Count": 3
 			},
 		]
@@ -870,7 +881,7 @@ recipes_condens.append({
 })
 
 recipes_condens.append({
-	"Name":"Oxygen",
+	"Name":"Air",
 	"Input":{
 		"Items":[
 		]
@@ -878,80 +889,12 @@ recipes_condens.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "Oxygen",
-				"Count": 250
+				"Name": "Air",
+				"Count": 500
 			}
 		]
 	},
-	"Ticks" : 200,
-})
-
-recipes_condens.append({
-	"Name":"Nitrogen",
-	"Input":{
-		"Items":[
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Nitrogen",
-				"Count": 1000
-			}
-		]
-	},
-	"Ticks" : 200,
-})
-
-recipes_condens.append({
-	"Name":"Helium",
-	"Input":{
-		"Items":[
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Helium",
-				"Count": 100
-			}
-		]
-	},
-	"Ticks" : 200,
-})
-
-recipes_condens.append({
-	"Name":"Methane",
-	"Input":{
-		"Items":[
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Methane",
-				"Count": 80
-			}
-		]
-	},
-	"Ticks" : 200,
-})
-
-recipes_condens.append({
-	"Name":"Hydrogen",
-	"Input":{
-		"Items":[
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Hydrogen",
-				"Count": 50
-			}
-		]
-	},
-	"Ticks" : 200,
+	"Ticks" : 20,
 })
 
 recipes_farm.append({
@@ -1185,7 +1128,7 @@ recipes_fission.append({
 			},
 			{
 				"Name": "ReflectorCell",
-				"Count": 1,
+				"Count": 4,
 				"Probability": 0,
 			},
 			{
@@ -1219,7 +1162,7 @@ recipes_fission.append({
 			},
 			{
 				"Name": "ReflectorCell",
-				"Count": 1,
+				"Count": 4,
 				"Probability": 0,
 			},
 			{
@@ -1253,7 +1196,7 @@ recipes_fission.append({
 			},
 			{
 				"Name": "ReflectorCell",
-				"Count": 2,
+				"Count": 8,
 				"Probability": 0,
 			},
 			{
@@ -1571,78 +1514,6 @@ recipes_oven.append({
 
 for fuel_type, bonus in zip(["Coke"], [1.0]):	
 	recipes_blast_furnace.append({
-		"Name": "IronOreSmelting",
-		"Input":{
-			"Items":[
-				{
-					"Name": fuel_type,
-					"Count": 30
-				},
-				{
-					"Name": "IronOre",
-					"Count": 10
-				},
-			]
-		},
-		"Output":{
-			"Items":[
-				{
-					"Name": "SteelIngot",
-					"Count": 10
-				}
-			]
-		},
-		"Ticks" : 10*5*20
-	})
-	recipes_blast_furnace.append({
-		"Name": "IronOreImpureGravelSmelting",
-		"Input":{
-			"Items":[
-				{
-					"Name": fuel_type,
-					"Count": 25
-				},
-				{
-					"Name": "IronOreImpureGravel",
-					"Count": 10
-				},
-			]
-		},
-		"Output":{
-			"Items":[
-				{
-					"Name": "SteelIngot",
-					"Count": 10
-				}
-			]
-		},
-		"Ticks" : 10*5*20
-	})
-	recipes_blast_furnace.append({
-		"Name": "IronOreGravelSmelting",
-		"Input":{
-			"Items":[
-				{
-					"Name": fuel_type,
-					"Count": 20
-				},
-				{
-					"Name": "IronOreGravel",
-					"Count": 10
-				},
-			]
-		},
-		"Output":{
-			"Items":[
-				{
-					"Name": "SteelIngot",
-					"Count": 10
-				}
-			]
-		},
-		"Ticks" : 10*5*20
-	})
-	recipes_blast_furnace.append({
 		"Name": "IronDustSmelting",
 		"Input":{
 			"Items":[
@@ -1652,6 +1523,30 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 				},
 				{
 					"Name": "IronDust",
+					"Count": 10
+				},
+			]
+		},
+		"Output":{
+			"Items":[
+				{
+					"Name": "SteelIngot",
+					"Count": 10
+				}
+			]
+		},
+		"Ticks" : 10*5*20
+	})
+	recipes_blast_furnace.append({
+		"Name": "IronIngotSmelting",
+		"Input":{
+			"Items":[
+				{
+					"Name": fuel_type,
+					"Count": 10
+				},
+				{
+					"Name": "IronIngot",
 					"Count": 10
 				},
 			]
@@ -1925,7 +1820,7 @@ recipes_macerator.append({
 	"Input": one_item("EmeraldCrystal"),
 	"Output": one_item("EmeraldDust", 4),
 	"Tier": 5,
-	"Ticks" : 80 * 2**5,
+	"Ticks" : 80,
 })
 
 for material in {"Ruby", "Malachite"}:
@@ -1934,7 +1829,7 @@ for material in {"Ruby", "Malachite"}:
 		"Input": one_item(material+"Crystal"),
 		"Output": one_item(material+"Dust", 4),
 		"Tier": 3,
-		"Ticks" : 80 * 2**3,
+		"Ticks" : 80,
 	})
 
 recipes_macerator.append({
@@ -2151,6 +2046,7 @@ recipes_mixer.append({
 	"Ticks": 200,
 })
 
+#TODO: remove
 recipes_mixer.append({
 	"Name": "SuperconductorDust",
 	"Input":{
@@ -2160,7 +2056,7 @@ recipes_mixer.append({
 				"Count": 3
 			},
 			{
-				"Name": "RareEarthElement",
+				"Name": "YttriumDust",
 				"Count": 1
 			},
 		]
@@ -2643,11 +2539,11 @@ recipes_ferm.append({
 		"Items":[
 			{
 				"Name": "Ethanol",
-				"Count": 500
+				"Count": 100
 			},
 			{
 				"Name": "Water",
-				"Count": 500
+				"Count": 900
 			}
 		]
 	},
@@ -3458,6 +3354,56 @@ recipes_industrial_chemreactor.append({
 })
 
 recipes_industrial_chemreactor.append({
+	"Name": "CarbonMonoxide",
+	"Input":{
+		"Items":[
+			{
+				"Name": "CoalDust",
+				"Count": 1
+			},
+			{
+				"Name": "Oxygen",
+				"Count": 500
+			},
+		]
+	},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "CarbonMonoxide",
+				"Count": 250
+			},		
+		]
+	},
+	"Ticks" : 100
+})
+
+recipes_industrial_chemreactor.append({
+	"Name": "AmmoniumChloride",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Ammonia",
+				"Count": 500
+			},
+			{
+				"Name": "Chlorine",
+				"Count": 500
+			},
+		]
+	},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "AmmoniumChloride",
+				"Count": 1
+			},		
+		]
+	},
+	"Ticks" : 100
+})
+
+recipes_industrial_chemreactor.append({
 	"Name": "Methanol",
 	"Input":{
 		"Items":[
@@ -3506,6 +3452,110 @@ recipes_industrial_chemreactor.append({
 	},
 	"Ticks" : 150,
 	"Colors": [[0.5,0.2,0.5,0.3],[0.0,0.5,0.25,0.3]]
+})
+
+recipes_industrial_chemreactor.append({
+	"Name": "AquaRegia",
+	"Input":{
+		"Items":[
+			{
+				"Name": "NitricAcid",
+				"Count": 500
+			},
+			{
+				"Name": "HydrochloricAcid",
+				"Count": 1500
+			},
+		]
+	},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "AquaRegia",
+				"Count": 1000
+			},		
+		]
+	},
+	"Ticks" : 60,
+	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]]
+})
+
+recipes_industrial_chemreactor.append({
+	"Name": "PlatinumRhodiumSolution",
+	"Input":{
+		"Items":[
+			{
+				"Name": "PyroplatiteDust",
+				"Count": 10
+			},
+			{
+				"Name": "AquaRegia",
+				"Count": 1000
+			},
+		]
+	},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "PlatinumRhodiumSolution",
+				"Count": 1000
+			},		
+		]
+	},
+	"Ticks" : 800,
+	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]]
+})
+
+recipes_industrial_chemreactor.append({
+	"Name": "RhodiumSolution",
+	"Input":{
+		"Items":[
+			{
+				"Name": "PlatinumRhodiumSolution",
+				"Count": 1300
+			},
+			{
+				"Name": "AmmoniumChloride",
+				"Count": 1
+			},
+		]
+	},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "PlatinumDust",
+				"Count": 1
+			},
+			{
+				"Name": "RhodiumSolution",
+				"Count": 300
+			},		
+		]
+	},
+	"Ticks" : 400,
+	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]]
+})
+
+recipes_electrolyzer.append({
+	"Name": "RhodiumDust",
+	"Input":{
+		"Items":[
+			{
+				"Name": "RhodiumSolution",
+				"Count": 1000
+			}
+		]
+	},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "RhodiumDust",
+				"Count": 1
+			}	
+		]
+	},
+	"Ticks" : 400,
+	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]]
 })
 
 recipes_industrial_chemreactor.append({
@@ -3598,13 +3648,12 @@ recipes_industrial_chemreactor.append({
 	"Colors": [[0.4,0.2,0.0,0.15],[0.7,0.6,0.25,0.15]]
 })
 	
-	# TODO: remove
 recipes_chemical_bath.append({
-	"Name":"RareEarthElement",
+	"Name":"RareEarthSludge",
 	"Input":{
 		"Items":[
 			{
-				"Name": "AluminiumOreDust",
+				"Name": "ClayDust",
 				"Count": 10
 			},
 			{
@@ -3616,12 +3665,38 @@ recipes_chemical_bath.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "RareEarthElement",
+				"Name": "RareEarthSludge",
 				"Count": 2
 			}
 		]
 	},
 	"Ticks" : 500,
+	"Colors": [[0.8,0.8,0.1,0.3],[0.7,0.2,0.7,0.8]]
+})
+
+recipes_chemical_bath.append({
+	"Name":"RareEarthSludge",
+	"Input":{
+		"Items":[
+			{
+				"Name": "RareEarthSludge",
+				"Count": 1
+			},
+			{
+				"Name": "Ammonia",
+				"Count": 300
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "YttriumDust",
+				"Count": 2
+			}
+		]
+	},
+	"Ticks" : 200,
 	"Colors": [[0.8,0.8,0.1,0.3],[0.7,0.2,0.7,0.8]]
 })
 
@@ -3953,7 +4028,7 @@ objects_array.append({ "Class": r_dict,
 })
 
 objects_array.append({ "Class": r_dict,
-	"Name": "Assembler" + r_dict,
+	"Name": assembler_r_dict,
 	"Recipes": recipes_assembler
 })
 

@@ -36,7 +36,7 @@ machines = [
 		"EndTier": 7,
 		"Positions": [[0,0,0],[0,0,1]],
 		"BlockLogic":"SelectCrafter",
-		"RequiredResearch":["Fermentation"+static_research],
+		"RequiredResearch":["Fermentation"],
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "ChemReactor",
@@ -392,7 +392,14 @@ machines = [
 		"Label": "Stirling Engine",
 		"StartTier": 1,
 		"EndTier": 7,
-        "Recipes": "StirlingEngine",
+		"BlockLogic": "SelectCrafter",
+		"Description": ["HeatInput", "KineticOutput","PowerOutput"],
+		"PowerOutput": 10,
+	},{
+		"Name": "SteamEngine",
+		"Label": "Steam Engine",
+		"StartTier": 1,
+		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["HeatInput", "KineticOutput","PowerOutput"],
 		"PowerOutput": 10,
@@ -905,10 +912,11 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"Description": ["KineticInput", "ItemOutput"],
+        "ItemLogic": "/Game/Equipped/DrillBP.DrillBP_C",
 	},{
 		"Name": "Assembler",
 		"Label": "Assembler",
-		"StartTier": 1,
+		"StartTier": 2,
 		"EndTier": 7,
 		"Positions": [
 			[0,0,0],[-1,0,0],
@@ -922,7 +930,7 @@ machines = [
 	},{
 		"Name": "Constructor",
 		"Label": "Constructor",
-		"StartTier": 2,
+		"StartTier": 1,
 		"EndTier": 7,
 		"Positions": [
 			[0,0,0],[-1,0,0],
@@ -1050,7 +1058,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
-		"Description": ["KineticInput", "FluidOutput"],
+		"Description": ["FluidOutput"],
 	},{
 		"Name": "Terminal",
 		"Label": "Terminal",

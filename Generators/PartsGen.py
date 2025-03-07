@@ -141,16 +141,11 @@ for part in parts:
 			if part["Name"] == "Gearbox":
 				items = []
 				
-				if tier < 6:
+				if tier < 7:
 					plate_count = 1 if tier < 3 else 4
 					items.append({
 						"Name": material + "Plate",
 						"Count": plate_count
-					})
-				elif tier < 7:
-					items.append({
-						"Name": "AdvancedFrame",
-						"Count": 1
 					})
 				else:
 					items.append({
@@ -219,7 +214,8 @@ for part in parts:
 							}
 						]
 					},
-					"Ticks" : 80 * 2**level,
+					"Ticks" : 80,
+					"Tier": level
 				})
 
 			if part["Name"] == "Plate":
@@ -241,7 +237,7 @@ for part in parts:
 							}
 						]
 					},
-					"Ticks" : 80 * 2**material_tier,
+					"Ticks" : 80,
 					"Tier": material_tier
 				})
 				
@@ -264,7 +260,7 @@ for part in parts:
 							}
 						]
 					},
-					"Ticks" : 80 * 2**material_tier,
+					"Ticks" : 80,
 					"Productivity": 50,
 				})
 
@@ -355,7 +351,7 @@ for material in materials:
 				},
 				"Ticks" : material["Burnable"]["BurnTime"],
 			})
-			#item["DescriptionParts"] = [["burnable", "common", material["Burnable"]["BurnTime"]*material["Burnable"]["HeatPerTick"]],
+			item["DescriptionParts"] = [["burnable", "common"]]
 										#["power_output", "common", material["Burnable"]["HeatPerTick"]*20]]
 			
 		objects_array.append(item)
@@ -435,7 +431,7 @@ for material in materials:
 					}
 				]
 			},
-			"Ticks" : 80 * 2**material_tier,
+			"Ticks" : 80,
 			"Tier": material_tier,
 		})
 			
@@ -648,11 +644,15 @@ for material in materials:
 			
 		objects_array.append(item)
 		
-		images.append({ "NewName": "T_" + material["Name"] + "Dust",
+		dustItem = { "NewName": "T_" + material["Name"] + "Dust",
 			"Base": "T_" + "Dust",
 			"MulMask": "T_Material" + material["Name"],
-			"AddMask": "T_" + "Dust" + additive_ico,
-		})
+			"AddMask": ["T_" + "Dust" + additive_ico],
+		}
+		if material["Name"] == "Rhodium" or material["Name"] == "Platinum":
+			dustItem["AddMask"].append("T_" + "Shiny" + additive_ico)
+		images.append(dustItem)
+
 		if "Burnable" in material:
 			recipes_furnace.append({
 				"Input":{
@@ -758,8 +758,8 @@ objects_array.append({ "Class": r_dict,
 })
 
 objects_array.append({ "Class": r_dict,
-	"Name": "Assembler" + r_dict,
-	"Recipes": recipes_assembler
+	"Name": assembler_r_dict,
+	"Recipes": recipes_assembler,
 })
 
 objects_array.append({ "Class": r_dict,

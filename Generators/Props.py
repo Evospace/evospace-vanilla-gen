@@ -17,8 +17,7 @@ props = [
 		"IsBig": True,
 		"Drops": "Organics",
 		"Count": 30,
-		"AdditiveElevation": 0,
-		"TimeMul": 1
+		"AdditiveElevation": 0
 	},
 	{
 		"Name":"Dandaleon",
@@ -108,8 +107,8 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
 		"Drops": "Log",
-		"Count": 20,
-		"TimeMul": 1
+		"Count": 3,
+		"BreakChance": 15
 	},
 	{
 		"Name": "Noleafes",
@@ -119,8 +118,9 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
 		"Drops": "Log",
-		"Count": 20,
-		"TimeMul": 1
+		"Count": 1,
+		"Count": 3,
+		"BreakChance": 15
 	},
 	{
 		"Name": "Shrub",
@@ -143,9 +143,9 @@ props = [
 		"ProjectToTerrainPower": 1,
 		"IsBig": True,
 		"Drops": "StoneSurface",
-		"Count": 100,
+		"Count": 5,
 		"AdditiveElevation": 0,
-		"TimeMul": 1
+		"BreakChance": 15
 	},
 	{
 		"Name": "Pine",
@@ -155,8 +155,8 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
 		"Drops": "Log",
-		"Count": 20,
-		"TimeMul": 1
+		"Count": 3,
+		"BreakChance": 15
 	},
 	{
 		"Name": "SnowyPine",
@@ -166,8 +166,8 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
 		"Drops": "Log",
-		"Count": 20,
-		"TimeMul": 1
+		"Count": 3,
+		"BreakChance": 15
 	},
 	{
 		"Name": "Birch",
@@ -177,8 +177,8 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
 		"Drops": "Log",
-		"Count": 15,
-		"TimeMul": 1
+		"Count": 2,
+		"BreakChance": 25
 	},
 	{
 		"Name": "Palm",
@@ -188,8 +188,8 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
 		"Drops": "Log",
-		"Count": 10,
-		"TimeMul": 1
+		"Count": 2,
+		"BreakChance": 25
 	},
 	{
 		"Name": "Rogoz",
@@ -283,20 +283,19 @@ props = [
 		"ScaleMax": 3,
 		"Variations": 1,
 		"ProjectToTerrainPower": 1,
-		"HandInteraction": True,
 		"IsBig": False,
 		"Drops": "Plank",
 		"Count": 1,
 		"AdditiveElevation": 0,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
+		"BreakChance": 25
 	},{
 		"Name": "SmallRock",
 		"ScaleMin": 1,
 		"ScaleMax": 3,
 		"Variations": 1,
 		"ProjectToTerrainPower": 1,
-		"HandInteraction": True,
 		"Drops": "StoneSurface",
 		"Count": 10,
 		"CullBegin": 10000,
@@ -309,19 +308,18 @@ props = [
 		"ScaleMax": 1.3,
 		"Variations": 2,
 		"ProjectToTerrainPower": 0,
-		"HandInteraction": False,
 		"AdditiveElevation": 0,
 		"Count": 1,
 		"IsBig": True,
 		"Drops": "Log",
-		"TimeMul": 6
+		"Count": 5,
+		"BreakChance": 10
 	},{
 		"Name": "DryGrass",
 		"ScaleMin": 1,
 		"ScaleMax": 2,
 		"Variations": 2,
 		"ProjectToTerrainPower": 1,
-		"HandInteraction": False,
 		"Drops": "Organics",
 		"Count": 1,
 		"CullBegin": 10000,
@@ -334,52 +332,36 @@ props = [
 		"ScaleMax": 1,
 		"Variations": 4,
 		"ProjectToTerrainPower": 1,
-		"HandInteraction": False,
 		"Drops": "BasaltSurface",
-		"Count": 100,
 		"IsBig": True,
 		"AdditiveElevation": 0,
-		"TimeMul": 1
+		"Count": 3,
+		"BreakChance": 5
 	},{
 		"Name": "SnowyRock",
 		"ScaleMin": .5,
 		"ScaleMax": 1,
 		"Variations": 4,
 		"ProjectToTerrainPower": 1,
-		"HandInteraction": False,
 		"Drops": "BasaltSurface",
-		"Count": 100,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"IsBig": True,
 		"AdditiveElevation": 0,
-		"TimeMul": 1
+		"Count": 3,
+		"BreakChance": 10
 	},{
 		"Name": "SnowyGrass",
 		"ScaleMin": 2,
 		"ScaleMax": 4,
 		"Variations": 3,
 		"ProjectToTerrainPower": 1,
-		"HandInteraction": False,
 		"Drops": "Organics",
 		"Count": 1,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
 		"IsBig": False,
-	},{
-		"Name": "CopperCluster",
-		"ScaleMin": 1,
-		"ScaleMax": 1,
-		"Variations": 1,
-		"ProjectToTerrainPower": 1,
-		"HandInteraction": False,
-		"Drops": "Organics",
-		"Count": 1,
-		"CullBegin": 90000,
-		"CullEnd": 100000,
-		"AdditiveElevation": 0,
-		"IsBig": True,
 	}
 ]
 
@@ -390,14 +372,14 @@ for ore in ore_types:
 		"ScaleMax": 2,
 		"Variations": 1,
 		"ProjectToTerrainPower": 1,
-		"HandInteraction": False,
-		"Drops": "Organics",
+		"Drops": ore["Name"] + "Ore",
 		"Count": 1,
 		"CullBegin": 90000,
 		"CullEnd": 100000,
 		"AdditiveElevation": 0,
 		"IsBig": True,
 		"Image": "T_Error",
+		"BreakChance": 0
 	})
 
 def named_prop(name):
@@ -813,6 +795,8 @@ for prop in props:
 			"IsBig": prop["IsBig"]
 		}
 		
+		if "BreakChance" in prop:
+			temp_prop["BreakChance"] = prop["BreakChance"]
 		if "CullBegin" in prop:
 			temp_prop["CullBegin"] = prop["CullBegin"]
 		if "Floating" in prop:
