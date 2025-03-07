@@ -188,6 +188,21 @@ def create_item(name, count=1):
 def one_item(item_name, count=1):
     return {"Items": [create_item(item_name, count)]}
 
+def item_array(array, level):
+	items = []
+	for item, count_fn in array:
+		if callable(count_fn):
+			count = count_fn(level)
+		else:
+			count = count_fn
+		if count > 0:
+			items.append({
+				"Name": item,
+				"Count": count
+			})
+
+	return {"Items": items}
+
 single_battery_cell_charge = 100000
 
 def battery_mul(level):
@@ -240,6 +255,7 @@ basic_slot_widget_c = "Gui/BasicStackedSlotWidget.BasicStackedSlotWidget_C"
 
 ico = ""
 additive_ico = "Additive"
+
 
 def parts_ramp(level, factor = 5):
 	if level == 0:
