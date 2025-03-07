@@ -6,8 +6,8 @@ def append_nuclear(xy, append_levels, researches):
 		"Class": "StaticResearch",
 		"Name": "ControlCell",
 		"LabelParts": [["ControlCell", "parts"]],
-		"RequiredResearch": ["FissionReactor"+static_research],
-		"Unlocks": [["Assembler" + r_dict, "ControlCell"], ["Hand" + r_dict, "ControlCell"],["FissionReactor" + r_dict, "ControlCell"]],
+		"RequiredResearch": ["FissionReactor"],
+		"Unlocks": [[assembler_r_dict, "ControlCell"], ["Hand" + r_dict, "ControlCell"],["FissionReactor" + r_dict, "ControlCell"]],
 		
 		
 		"Levels": [5,5],
@@ -16,8 +16,8 @@ def append_nuclear(xy, append_levels, researches):
 		"Class": "StaticResearch",
 		"Name": "ReflectorCell",
 		"LabelParts": [["ReflectorCell", "parts"]],
-		"RequiredResearch": ["ControlCell"+static_research],
-		"Unlocks": [["Assembler" + r_dict, "ReflectorCell"], ["Hand" + r_dict, "ReflectorCell"],["FissionReactor" + r_dict, "UraniumCell2"]],
+		"RequiredResearch": ["ControlCell"],
+		"Unlocks": [[assembler_r_dict, "ReflectorCell"], ["Hand" + r_dict, "ReflectorCell"],["FissionReactor" + r_dict, "UraniumCell2"]],
 		
 		
 		"Levels": [5,5],
@@ -38,8 +38,6 @@ def append_nuclear(xy, append_levels, researches):
 		"LabelParts": [["AdvancedReflection", "researches"]],
 		"RequiredResearch": ["ReflectorCell"],
 		"Unlocks": [["FissionReactor" + r_dict, "UraniumCell3"]],
-		
-		
 		"Levels": [5,5],
 	})
 	append_levels({
@@ -48,8 +46,6 @@ def append_nuclear(xy, append_levels, researches):
 		"LabelParts": [["AdvancedReflection", "researches"], ["II", "common"]],
 		"RequiredResearch": ["AdvancedReflection"],
 		"Unlocks": [["FissionReactor" + r_dict, "UraniumCell4"]],
-		
-		
 		"Levels": [5,5],
 	})
 	append_levels({
@@ -58,8 +54,6 @@ def append_nuclear(xy, append_levels, researches):
 		"LabelParts": [["ThoriumReaction", "researches"]],
 		"RequiredResearch": ["AdvancedReflection"],
 		"Unlocks": [["FissionReactor" + r_dict, "ThoriumCell"]],
-		
-		
 		"Levels": [5,5],
 	})
 	append_levels({

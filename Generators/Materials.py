@@ -7,7 +7,7 @@ material_array_metal1 = [
 	"/Game/Materials/Aluminium",
 	"/Game/Materials/StainlessSteel",
 	"/Game/Materials/Titanium",
-	"/Game/Materials/Advanced",
+	"/Game/Materials/Composite",
 	"/Game/Materials/Ultimate"
 ]
 
@@ -18,7 +18,7 @@ tier_material = [
 	"Aluminium",
 	"StainlessSteel",
 	"Titanium",
-	"Advanced",
+	"Composite",
 	"Ultimate",
 	"Ultimate"
 ]
@@ -126,8 +126,27 @@ materials = [
 		"Label" : "Platinum",
 		"IsDust": True,
 		"IsIngot": True,
-		"SmeltLevel": 0,
+		"SmeltLevel": 3,
 		"IsBlock": True,
+	},{
+		"Name" : "Rhodium",
+		"Label" : "Rhodium",
+		"IsDust": True,
+		"IsIngot": True,
+		"SmeltLevel": 3,
+		"IsBlock": True,
+	},{
+		"Name" : "PlatinumRhodiumSolution",
+		"Label" : "Platinum-Rhodium Solution",
+		"IsExact": True,
+	},{
+		"Name" : "AmmoniumChloride",
+		"Label" : "Ammonium Chloride",
+		"IsExact": True,
+	},{
+		"Name" : "RhodiumSolution",
+		"Label" : "Rhodium Solution",
+		"IsFluid": True,
 	},{
 		"Name" : "Superconductor",
 		"Label" : "Superconductor",
@@ -145,6 +164,12 @@ materials = [
 	},{
 		"Name" : "CircuitBoard",
 		"Label" : "Circuit Board",
+		"IsExact": True,
+		"Mesh":"/Game/Models/BoardCrate",
+		"Materials":["/Game/Materials/Plastic"],
+	},{
+		"Name" : "Triod",
+		"Label" : "Triod",
 		"IsExact": True,
 		"Mesh":"/Game/Models/BoardCrate",
 		"Materials":["/Game/Materials/Plastic"],
@@ -322,7 +347,7 @@ materials = [
 	},{
 		"Name": "Chromium",
 		"Label": "Chromium",
-		"SmeltLevel": 0,
+		"SmeltLevel": 3,
 		"IsDust": True,
 		"IsIngot": True,
 		"Tier": 3
@@ -457,8 +482,23 @@ materials = [
 		"Color": [0.5,0.5,0.5],
 		"MoreEfficientIn":"GasTurbine"
 	},{
+		"Name": "SulfuricAcid",
+		"Label": "Sulfuric Acid",
+		"IsFluid": True,
+		"Tier": 3
+	},{
 		"Name": "NitricAcid",
 		"Label": "Nitric Acid",
+		"IsFluid": True,		
+		"Color": [1.0,0.5,0.0],
+	},{
+		"Name": "HydrochloricAcid",
+		"Label": "Hydrochloric Acid",
+		"IsFluid": True,		
+		"Color": [1.0,0.5,0.0],
+	},{
+		"Name": "AquaRegia",
+		"Label": "Aqua Regia",
 		"IsFluid": True,		
 		"Color": [1.0,0.5,0.0],
 	},{
@@ -553,6 +593,9 @@ materials = [
 		"Tier": 0,
 		"Mesh": "/Game/Models/Piece",
 		"Description":[["Organics","common"]],
+		"Burnable": {
+			"BurnTime": 40
+		},
 	},{
 		"Name": "Biomass",
 		"Label": "Biomass",
@@ -576,9 +619,15 @@ materials = [
 		"Label": "Ore Water",
 		"IsFluid": True,
 	},{
-		"Name": "RareEarthElement",
-		"Label": "Rare Earth Element",
+		"Name": "RareEarthSludge",
+		"Label": "Rare Earth Sludge",
 		"IsExact": True,
+		"Mesh": "/Game/Models/Dust",
+	},{
+		"Name": "Yttrium",
+		"Label": "Yttrium",
+		"IsDust": True,
+		"IsBlock": True,
 		"Mesh": "/Game/Models/Dust",
 	},{
 		"Name": "Log",
@@ -609,12 +658,6 @@ materials = [
 		"Label": "Silicon Wafer",
 		"IsExact": True,
 		"Tier": 4
-	},
-	{
-		"Name": "SulfuricAcid",
-		"Label": "Sulfuric Acid",
-		"IsFluid": True,
-		"Tier": 3
 	},
 	{
 		"Name": "Rapeseed",
@@ -735,6 +778,11 @@ materials = [
 		"Label": "Oxygen",
 		"IsGas": True,
 		"Tier": 4
+	},{
+		"Name": "Air",
+		"Label": "Air",
+		"IsGas": True,
+		"Tier": 0
 	},{
 		"Name": "Nitrogen",
 		"Label": "Nitrogen",
@@ -988,13 +1036,8 @@ materials = [
 		"StackSize": 32,
 		"IsExact": True
 	},{
-		"Name" : "AdvancedFrame",
-		"Label" : "Advanced Frame",
-		"StackSize": 16,
-		"IsExact": True
-	},{
-		"Name": "Advanced",
-		"Label": "Advanced",
+		"Name": "Composite",
+		"Label": "Composite",
 		"SmeltLevel": 4,
 		"IsIngot": True,
 		"Tier": 6,

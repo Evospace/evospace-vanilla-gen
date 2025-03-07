@@ -6,6 +6,6 @@ def get_parts_unlocks(material):
         ["Hand" + r_dict, material + "Plate"],
         ["Hand" + r_dict, material + "Pipe"],
         ["Hand" + r_dict, material + "Gearbox"],
-        ["Assembler" + r_dict, material + "Gearbox"],
+        [assembler_r_dict, material + "Gearbox"],
         ["Constructor" + r_dict, material + "Pipe"]
     ]

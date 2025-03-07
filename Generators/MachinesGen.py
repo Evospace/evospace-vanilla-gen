@@ -17,9 +17,9 @@ def plate_frame_component(tier, count):
 	if tier < 6:
 		return {"Name": tier_material[tier] + "Plate", "Count": count}
 	if tier < 7: 
-		return {"Name": "AdvancedFrame", "Count": max(count / 5, 1)}
+		return {"Name": "CompositePlate", "Count": max(count / 5, 1)}
 	else:
-		return {"Name": "UltimateFrame", "Count": max(count / 5, 1)}
+		return {"Name": "UltimatePlate", "Count": max(count / 5, 1)}
 	
 def parts_component(tier, count):
 	if tier < 6:
@@ -54,7 +54,7 @@ for machine in machines:
 			"LabelParts": labelParts,
 			"LabelFormat": labelFormat,
 			"DescriptionParts": [[machine["Name"], "machines_description"]],
-			"ItemLogic": building_single_logic,
+			"ItemLogic": building_single_logic if "ItemLogic" not in machine else machine["ItemLogic"],
 			
 			"Category": machine["Category"] if "Category" in machine else CamelToSpaces(tier_material[tier]),
 		}
@@ -211,7 +211,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier,
+				"Ticks" : 20,
 			})
 			
 		if machine["Name"] == "Corner":
@@ -231,7 +231,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "Sign":
@@ -254,7 +254,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "AdvancedSign":
@@ -281,7 +281,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "LogicWire":
@@ -304,7 +304,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "LogicCircuit" or machine["Name"] == "LogicDisplay" or machine["Name"] == "LogicController" or machine["Name"] == "LogicInterface":
@@ -323,16 +323,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "Scaffold":
@@ -352,7 +345,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "Container":
@@ -372,7 +365,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "IndustrialSmelter":
@@ -428,7 +421,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})	
 			
 		if machine["Name"] == "InductionCoil":
@@ -452,7 +445,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "PneumaticInput":
@@ -481,7 +474,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Electrolyzer":
@@ -509,7 +502,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "Fermenter":
@@ -521,16 +514,9 @@ for machine in machines:
 						parts_component(tier, 6 + parts_ramp(level))
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "ChemReactor":
@@ -546,16 +532,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "IndustrialChemReactor":
@@ -571,14 +550,7 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
 				"Ticks" : 40
 			})
@@ -596,16 +568,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "ChemicalBath":
@@ -621,14 +586,7 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
 				"Ticks" : 40
 			})
@@ -641,14 +599,7 @@ for machine in machines:
 						plate_frame_component(tier, 2)
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
 				"Ticks" : 40
 			})
@@ -666,14 +617,7 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
 				"Ticks" : 40
 			})
@@ -696,7 +640,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Press":
@@ -708,16 +652,9 @@ for machine in machines:
 						parts_component(tier, 1 + parts_ramp(level))
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "ElectricalSwitch":
@@ -733,16 +670,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Tank":
@@ -762,7 +692,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Terminal":
@@ -786,7 +716,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "FlatTerminal":
@@ -800,16 +730,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "BigTerminal":
@@ -833,7 +756,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "BigFlatTerminal":
@@ -847,16 +770,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "HugeTerminal":
@@ -871,16 +787,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "HugeFlatTerminal":
@@ -894,16 +803,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "SolarPanel" or machine["Name"] == "SmallSolarPanel":
@@ -919,16 +821,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "StirlingEngine":
@@ -942,16 +837,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Generator":
@@ -970,16 +858,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "IndustrialGenerator":
@@ -998,14 +879,7 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
 				"Ticks" : 100
 			})
@@ -1026,16 +900,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "AutomaticHammer":
@@ -1047,16 +914,9 @@ for machine in machines:
 						parts_component(tier, 1 + parts_ramp(level))
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Macerator":
@@ -1071,16 +931,9 @@ for machine in machines:
 						plate_frame_component(tier, 2)
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier,
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Chest":
@@ -1094,15 +947,8 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
-				"Ticks" : 20 * 2**tier
+				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Boiler":
@@ -1114,16 +960,9 @@ for machine in machines:
 						parts_component(tier, 1 + parts_ramp(level))
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "IndustrialBoiler":
@@ -1143,14 +982,7 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
 				"Ticks" : 100
 			})
@@ -1166,16 +998,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			}
 			if tier != 0:
 				r["Input"]["Items"].append({
@@ -1196,16 +1021,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "ElectricFurnace":
@@ -1224,16 +1042,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "Smelter":
@@ -1247,16 +1058,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			}
 			if tier > 0:
 				recipe["Input"]["Items"].append({
@@ -1276,16 +1080,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			}
 			if tier > 0:
 				recipe["Input"]["Items"].append({
@@ -1310,16 +1107,9 @@ for machine in machines:
 						},
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "OilCrackingTower":
@@ -1342,14 +1132,7 @@ for machine in machines:
 						},
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
 				"Ticks" : 40
 			})
@@ -1369,16 +1152,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Separator":
@@ -1397,16 +1173,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Assembler":
@@ -1425,16 +1194,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "Pumpjack":
@@ -1457,16 +1219,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "Flywheel":
@@ -1478,15 +1233,8 @@ for machine in machines:
 						parts_component(tier, 4 + parts_ramp(level))
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
-				"Ticks" : 20 * 2**tier
+				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Constructor":
@@ -1517,16 +1265,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "FissionReactor":
@@ -1550,16 +1291,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "FusionReactor":
@@ -1587,14 +1321,7 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
 				"Ticks" : 300
 			})
@@ -1627,14 +1354,7 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
 				"Ticks" : 300
 			})
@@ -1656,14 +1376,7 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
 				"Ticks" : 100
 		})
@@ -1677,16 +1390,9 @@ for machine in machines:
 						plate_frame_component(tier, 1)
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "HeatPipe":
@@ -1697,14 +1403,7 @@ for machine in machines:
 						plate_frame_component(tier, 4)
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
 				"Ticks" : 10
 			})
@@ -1724,16 +1423,29 @@ for machine in machines:
 					}
 					]
 				},
-				"Output":{
+				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Tier": tier,
+				"Ticks" : 20
+			})
+
+		if machine["Name"] == "SteamEngine":
+			append_recipe({
+				"Name": tier_material[tier] + machine["Name"],
+				"Input":{
 					"Items":[
 						{
-							"Name": tier_material[tier] + machine["Name"],
+							"Name": circuits[tier],
+							"Count": 3
+						},
+						{
+							"Name": tier_material[tier] + "Pump",
 							"Count": 1
-						}
+					}
 					]
 				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Pump":
@@ -1751,16 +1463,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "CuttingMachine":
@@ -1775,16 +1480,9 @@ for machine in machines:
 						},
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "OreWasher":
@@ -1803,16 +1501,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Pipe":
@@ -1823,14 +1514,7 @@ for machine in machines:
 						plate_frame_component(tier, 1)
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
 				"Ticks" : 5
 			})
@@ -1847,16 +1531,9 @@ for machine in machines:
 						parts_component(tier, 2)
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Computer":
@@ -1871,16 +1548,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "Conveyor":
@@ -1901,7 +1571,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Splitter":
@@ -1928,7 +1598,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Sorter":
@@ -1946,16 +1616,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "Destroyer":
@@ -1970,16 +1633,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "ArcSmelter":
@@ -1998,16 +1654,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "CopperConnector":
@@ -2052,16 +1701,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "IndustrialElectricEngine":
@@ -2084,14 +1726,7 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
 				"Ticks" : 100
 			})
@@ -2116,14 +1751,7 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
 				"Ticks" : 100
 			})
@@ -2144,16 +1772,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "SmallBattery":
@@ -2172,16 +1793,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Diode":
@@ -2200,16 +1814,9 @@ for machine in machines:
 						plate_frame_component(tier, 1)
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "SteamTurbine":
@@ -2228,16 +1835,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "IndustrialSteamTurbine":
@@ -2260,16 +1860,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "GasTurbine":
@@ -2288,16 +1881,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "HeatExchanger":
@@ -2312,16 +1898,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "KineticHeater":
@@ -2336,16 +1915,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "HandGenerator":
@@ -2360,16 +1932,9 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "AutomaticFarm":
@@ -2388,16 +1953,9 @@ for machine in machines:
 						plate_frame_component(tier, 6),
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 		if machine["Name"] == "ItemRack":
@@ -2412,15 +1970,8 @@ for machine in machines:
 						parts_component(tier, 8)
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1
-						}
-					]
-				},
-				"Ticks" : 20 * 2**tier
+				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Ticks" : 20
 			})
 
 		if "Craftable" not in machine and not has_hand_recipe(recipes_hand, tier_material[tier] + machine["Name"]):
@@ -2440,7 +1991,7 @@ for machine in machines:
 					]
 				},
 				"Tier": tier,
-				"Ticks" : 20 * 2**tier
+				"Ticks" : 20
 			})
 
 data = {

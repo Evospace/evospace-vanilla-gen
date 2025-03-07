@@ -61,7 +61,7 @@ cvs.append(["Steel", "Steel"])
 cvs.append(["Aluminium", "Aluminium"])
 cvs.append(["StainlessSteel", "Stainless Steel"])
 cvs.append(["Titanium", "Titanium"])
-cvs.append(["Advanced", "Advanced"])
+cvs.append(["Composite", "Composite"])
 cvs.append(["Ultimate", "Ultimate"])
 
 cvs.append(["Splitter", "Can divide item flow into parts."])

@@ -72,7 +72,7 @@ def append_equipment(xy, append_levels, researches):
 		"Class": "StaticResearch",
 		"Name": "AntigravityUnit",
 		"LabelParts": [["AntigravityUnit", "misc"]],
-		"RequiredResearch": ["AdvancedJetpack", "QuantumProcessor", "Calalyst"],
+		"RequiredResearch": ["AdvancedJetpack", "QuantumProcessor", "Catalyst"],
 		"Unlocks": [["Hand" + r_dict, "AntigravityUnit"]],
 		
 		

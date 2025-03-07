@@ -29,7 +29,7 @@ parts = [
 		"EndTier": 100,
 		"ItemLogic": building_cube_logic,
 		"StackSize": 32,
-		"RequiredResearch":["MetalConstructions"+static_research],
+		"RequiredResearch":["MetalConstructions"],
 	},
 	{
 		"Label" : "Gearbox",
