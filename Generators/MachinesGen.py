@@ -2,6 +2,7 @@ from Common import *
 from MachinesList import *
 from PartsList import *
 import copy
+from functools import partial
 
 images = []
 objects_array = []
@@ -10,26 +11,26 @@ recipes_hand = []
 
 cvs = []
 
-def append_recipe(recipe):
-	recipes_hand.append(recipe)
-
 def plate_frame_component(tier, count):
-	if tier < 6:
-		return {"Name": tier_material[tier] + "Plate", "Count": count}
-	if tier < 7: 
-		return {"Name": "CompositePlate", "Count": max(count / 5, 1)}
+	if tier == 0:
+		return {"Name": "StoneSurface", "Count": count}
 	else:
-		return {"Name": "UltimatePlate", "Count": max(count / 5, 1)}
+		return {"Name": tier_material[tier] + "Plate", "Count": count}
 	
 def parts_component(tier, count):
-	if tier < 6:
-		return {"Name": tier_material[tier] + "Plate", "Count": count}
-	else: 
-		return {"Name": tier_material[6] + "Plate", "Count": count}
+	return {"Name": tier_material[tier] + "Parts", "Count": count}
 
 for machine in machines:
 	cvs.append([machine["Name"], machine["Label"]])
 	for tier in range(machine["StartTier"], machine["EndTier"] + 1):
+
+		def tiered(name):
+			return tier_material[tier] + name
+		
+		def append_recipe(recipe):
+			recipe["Tier"] = tier
+			recipes_hand.append(recipe)
+
 		block_name = machine["Name"] if "ExactName" in machine else (tier_material[tier] + machine["Name"])
 
 		image = machine["Image"] if "Image" in machine else machine["Name"]
@@ -210,7 +211,6 @@ for machine in machines:
 						}
 					]
 				},
-				"Tier": tier,
 				"Ticks" : 20,
 			})
 			
@@ -230,7 +230,6 @@ for machine in machines:
 						}
 					]
 				},
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -253,7 +252,6 @@ for machine in machines:
 						}
 					]
 				},
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -280,7 +278,6 @@ for machine in machines:
 						}
 					]
 				},
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -303,7 +300,6 @@ for machine in machines:
 						}
 					]
 				},
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -324,7 +320,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -344,7 +339,6 @@ for machine in machines:
 						}
 					]
 				},
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -364,7 +358,6 @@ for machine in machines:
 						}
 					]
 				},
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -392,7 +385,6 @@ for machine in machines:
 						}
 					]
 				},
-				"Tier": tier,
 				"Ticks" : 80
 			})
 			
@@ -420,7 +412,6 @@ for machine in machines:
 						}
 					]
 				},
-				"Tier": tier,
 				"Ticks" : 20
 			})	
 			
@@ -444,7 +435,6 @@ for machine in machines:
 						}
 					]
 				},
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -473,7 +463,6 @@ for machine in machines:
 						}
 					]
 				},
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -501,7 +490,6 @@ for machine in machines:
 						}
 					]
 				},
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -515,7 +503,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -533,7 +520,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -551,7 +537,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 40
 			})
 
@@ -569,7 +554,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -587,7 +571,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 40
 			})
 
@@ -600,7 +583,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 40
 			})
 
@@ -618,7 +600,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 40
 			})
 			
@@ -631,15 +612,7 @@ for machine in machines:
 						parts_component(tier, 4 + parts_ramp(level))
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "Mixer",
-							"Count": 1
-						}
-					]
-				},
-				"Tier": tier,
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
 			
@@ -653,7 +626,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -671,7 +643,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -683,15 +654,7 @@ for machine in machines:
 						plate_frame_component(tier, 12)
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "Tank",
-							"Count": 1
-						}
-					]
-				},
-				"Tier": tier,
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
 			
@@ -707,15 +670,7 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "Terminal",
-							"Count": 1
-						}
-					]
-				},
-				"Tier": tier,
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
 			
@@ -731,7 +686,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -747,15 +701,7 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "BigTerminal",
-							"Count": 1
-						}
-					]
-				},
-				"Tier": tier,
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
 			
@@ -771,7 +717,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -788,7 +733,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -804,7 +748,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -822,7 +765,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -838,7 +780,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -859,7 +800,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -880,7 +820,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 100
 			})
 			
@@ -901,7 +840,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -915,7 +853,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -932,7 +869,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -961,7 +897,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -983,46 +918,28 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 100
 			})
 			
 		if machine["Name"] == "Oven":
-			r = {
+			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": "StoneSurface",
-							"Count": 10
-						}
-					]
-				},
+				"Input": item_array([
+					["StoneSurface", 10],
+					[tiered("Pipe"), parts_ramp]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
-			}
-			if tier != 0:
-				r["Input"]["Items"].append({
-					"Name": tier_material[tier] + "Pipe",
-					"Count": 6 + parts_ramp(level)
-				})
-			append_recipe(r)
+			})
 			
 		if machine["Name"] == "BlastFurnace":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						parts_component(tier, 8 + parts_ramp(level)),
-						{
-							"Name": "StoneSurface",
-							"Count": 20
-						}
-					]
-				},
+				"Input": item_array([
+					["StoneSurface", 20],
+					[tiered("Pipe"), partial(parts_ramp, factor=10)]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1043,7 +960,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -1053,13 +969,12 @@ for machine in machines:
 				"Input":{
 					"Items":[
 						{
-							"Name": tier_material[tier] + "Plate"+ static_item if tier > 0 else "StoneSurface",
+							"Name": plate_frame_component(tier),
 							"Count": 4
 						}
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			}
 			if tier > 0:
@@ -1081,7 +996,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			}
 			if tier > 0:
@@ -1108,7 +1022,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -1133,7 +1046,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 40
 			})
 
@@ -1153,7 +1065,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1174,7 +1085,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1195,7 +1105,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -1220,7 +1129,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -1266,7 +1174,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1292,7 +1199,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1322,7 +1228,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 300
 			})
 			
@@ -1355,7 +1260,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 300
 			})
 			
@@ -1377,7 +1281,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 100
 		})
 			
@@ -1391,7 +1294,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -1404,7 +1306,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 10
 			})
 
@@ -1424,7 +1325,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -1444,7 +1344,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1464,7 +1363,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1481,7 +1379,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1502,7 +1399,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1515,7 +1411,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 5
 			})
 
@@ -1532,7 +1427,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1549,7 +1443,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -1559,7 +1452,7 @@ for machine in machines:
 				"Input":{
 					"Items":[
 						plate_frame_component(tier, 1),
-						parts_component(tier, 1 + 1  if level > 0 else 0)
+						parts_component(tier, 1 + parts_ramp(level, 1))
 					]
 				},
 				"Output":{
@@ -1570,7 +1463,6 @@ for machine in machines:
 						}
 					]
 				},
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1597,7 +1489,6 @@ for machine in machines:
 						}
 					]
 				},
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1617,7 +1508,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -1634,7 +1524,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1655,7 +1544,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1670,15 +1558,7 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": "CopperConnector",
-							"Count": 1
-						}
-					]
-				},
-				"Tier": tier,
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 5
 			})
 			
@@ -1702,7 +1582,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1727,7 +1606,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 100
 			})
 
@@ -1752,7 +1630,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 100
 			})
 			
@@ -1773,7 +1650,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1794,7 +1670,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1815,7 +1690,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1836,7 +1710,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1861,7 +1734,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1882,7 +1754,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1899,7 +1770,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -1916,7 +1786,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -1933,7 +1802,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 			
@@ -1954,7 +1822,6 @@ for machine in machines:
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
@@ -1990,7 +1857,6 @@ for machine in machines:
 						}
 					]
 				},
-				"Tier": tier,
 				"Ticks" : 20
 			})
 
