@@ -15,10 +15,7 @@ def plate_frame_component(tier, count):
 	if tier == 0:
 		return {"Name": "StoneSurface", "Count": count}
 	else:
-		return {"Name": tier_material[tier] + "Plate", "Count": count}
-	
-def parts_component(tier, count):
-	return {"Name": tier_material[tier] + "Parts", "Count": count}
+		return {"Name": tier_material[tier] + "Ingot", "Count": count}
 
 for machine in machines:
 	cvs.append([machine["Name"], machine["Label"]])
@@ -27,9 +24,42 @@ for machine in machines:
 		def tiered(name):
 			return tier_material[tier] + name
 		
+		def wire():
+			return a_wires[tier]
+		
+		def circuit():
+			return circuits[tier]
+		
+		def pipe():
+			return tier_material[tier] + "Pipe"
+		
+		def plate():
+			return tier_material[tier] + "Ingot"
+		
+		def gearbox():
+			return tier_material[tier] + "Gearbox"
+		
+		def robotarm():
+			return tier_material[tier] + "RobotArm"
+		
 		def append_recipe(recipe):
 			recipe["Tier"] = tier
 			recipes_hand.append(recipe)
+
+		def wire():
+			return a_wires[tier]
+			
+		def wires_count(count):
+			return {"Name": a_wires[tier], "Count": count}
+
+		def parts_count(count):
+			return {"Name": tier_material[tier] + "Parts", "Count": count}
+		
+		def isolators_count(count):
+			return {"Name": heat_isolators[tier], "Count": count}
+		
+		def plates_count(count):
+			return plate_frame_component(tier, count)
 
 		block_name = machine["Name"] if "ExactName" in machine else (tier_material[tier] + machine["Name"])
 
@@ -54,7 +84,7 @@ for machine in machines:
 			"StackSize": 32,
 			"LabelParts": labelParts,
 			"LabelFormat": labelFormat,
-			"DescriptionParts": [[machine["Name"], "machines_description"]],
+			"DescriptionParts": [["tier", "common", tier],[machine["Name"], "machines_description"]],
 			"ItemLogic": building_single_logic if "ItemLogic" not in machine else machine["ItemLogic"],
 			
 			"Category": machine["Category"] if "Category" in machine else CamelToSpaces(tier_material[tier]),
@@ -197,20 +227,10 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						{
-							"Name": tier_material[tier] + "Plate",
-							"Count": 3
-						}
+						plates_count(3),
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "Beam",
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20,
 			})
 			
@@ -219,17 +239,10 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 1)
+						plates_count(1)
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "Corner",
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
 
@@ -239,19 +252,12 @@ for machine in machines:
 				"Input":{
 					"Items":[
 						{
-							"Name": tier_material[tier] + "Plate" if tier != 0 else "StoneSurface",
+							"Name": tier_material[tier] + "Ingot" if tier != 0 else "StoneSurface",
 							"Count": 1
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "Sign",
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
 			
@@ -270,36 +276,15 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "AdvancedSign",
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
 
 		if machine["Name"] == "LogicWire":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": wires[tier],
-							"Count": 2
-						},
-					]
-				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "LogicWire",
-							"Count": 1
-						}
-					]
-				},
+				"Input": one_item(wire(), 2),
+				"Output": one_item(tier_material[tier] + "LogicWire"),
 				"Ticks" : 20
 			})
 			
@@ -308,7 +293,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 2),
+						plates_count(2),
 						{
 							"Name": circuits[tier],
 							"Count": 1
@@ -328,17 +313,10 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						parts_component(tier, 4),
+						parts_count(4),
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "Scaffold",
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
 
@@ -347,17 +325,10 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 3)
+						plates_count(3)
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "Container",
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
 			
@@ -366,25 +337,12 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						{
-							"Name": wires[tier],
-							"Count": 32 + level * 16
-						},
-						parts_component(tier, 12),
-						{
-							"Name": heat_isolators[tier],
-							"Count": 12
-						}
+						wires_count(32 + level * 16),
+						parts_count(12),
+						isolators_count(12)
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "IndustrialSmelter",
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 80
 			})
 			
@@ -393,7 +351,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 5),
+						plates_count(5),
 						{
 							"Name": "CopperPipe",
 							"Count": 5 + parts_ramp(level, 5)
@@ -404,14 +362,7 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "PyrolysisUnit",
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})	
 			
@@ -420,21 +371,14 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 3),
+						plates_count(3),
 						{
 							"Name": "CopperPipe",
 							"Count": 15 + 15 * level
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "InductionCoil",
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
 			
@@ -443,8 +387,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 3),
-						parts_component(tier, 1),
+						plates_count(3),
+						parts_count(1),
 						{
 							"Name": "BrassDetails",
 							"Count": 1
@@ -455,14 +399,7 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "PneumaticInput",
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
 			
@@ -471,7 +408,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 3), 
+						plates_count(3), 
 						{
 							"Name": "Coal",
 							"Count": 2
@@ -482,14 +419,7 @@ for machine in machines:
 						}
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "Electrolyzer",
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
 
@@ -498,8 +428,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 2), 
-						parts_component(tier, 6 + parts_ramp(level))
+						plates_count(2), 
+						parts_count(6 + parts_ramp(level))
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -511,8 +441,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 3),
-						parts_component(tier, 4 + parts_ramp(level)),
+						plates_count(3),
+						parts_count(4 + parts_ramp(level)),
 						{
 							"Name": tier_material[tier] + "ElectricEngine",
 							"Count": 1
@@ -528,8 +458,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 8),
-						parts_component(tier, 8 + parts_ramp(level)),
+						plates_count(8),
+						parts_count(8 + parts_ramp(level)),
 						{
 							"Name": tier_material[tier] + "ElectricEngine",
 							"Count": 2
@@ -545,8 +475,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 5),
-						parts_component(tier, 2 + parts_ramp(level)),
+						plates_count(5),
+						parts_count(2 + parts_ramp(level)),
 						{
 							"Name": "CopperPipe",
 							"Count": 5 + parts_ramp(level)
@@ -562,8 +492,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 8),
-						parts_component(tier, 5 + parts_ramp(level)),
+						plates_count(8),
+						parts_count(5 + parts_ramp(level)),
 						{
 							"Name": tier_material[tier] + "ElectricEngine",
 							"Count": 1
@@ -579,7 +509,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 2)
+						plates_count(2)
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -591,8 +521,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 4),
-						parts_component(tier, 4 + parts_ramp(level)),
+						plates_count(4),
+						parts_count(4 + parts_ramp(level)),
 						{
 							"Name": tier_material[tier] + "ElectricEngine",
 							"Count": 1
@@ -608,8 +538,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 4),
-						parts_component(tier, 4 + parts_ramp(level))
+						plates_count(4),
+						parts_count(4 + parts_ramp(level))
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -621,8 +551,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 4),
-						parts_component(tier, 1 + parts_ramp(level))
+						plates_count(4),
+						parts_count(1 + parts_ramp(level))
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -634,8 +564,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 1),
-						parts_component(tier, 1 + parts_ramp(level)),
+						plates_count(1),
+						parts_count(1 + parts_ramp(level)),
 						{
 							"Name": cables[tier],
 							"Count": 1
@@ -651,7 +581,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 12)
+						plates_count(12)
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -663,7 +593,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 3),
+						plates_count(3),
 						{
 							"Name": cables[tier],
 							"Count": 4
@@ -694,7 +624,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 1),
+						plates_count(1),
 						{
 							"Name": cables[tier],
 							"Count": 6
@@ -725,7 +655,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 9),
+						plates_count(9),
 						{
 							"Name": cables[tier],
 							"Count": 8
@@ -756,8 +686,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 4),
-						parts_component(tier, 4 + parts_ramp(level)),
+						plates_count(4),
+						parts_count(4 + parts_ramp(level)),
 						{
 							"Name": tier_material[tier] + "SolarCell",
 							"Count": 1 if machine["Name"] == "SmallSolarPanel" else 10
@@ -773,7 +703,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						parts_component(tier, 2 + parts_ramp(level)),{
+						parts_count(2 + parts_ramp(level)),{
 							"Name": tier_material[tier] + "Pipe",
 							"Count": 2
 						}
@@ -788,11 +718,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						{
-							"Name": wires[tier],
-							"Count": 12 + level * 6
-						},
-						plate_frame_component(tier, 4),
+						wires_count(12 + level * 6),
+						plates_count(4),
 						{
 							"Name": tier_material[tier] + "Gearbox",
 							"Count": 1
@@ -808,11 +735,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						{
-							"Name": wires[tier],
-							"Count": 32 + level * 12
-						},
-						plate_frame_component(tier, 8),
+						wires_count(32 + level * 12),
+						plates_count(8),
 						{
 							"Name": tier_material[tier] + "Gearbox",
 							"Count": 3
@@ -829,10 +753,10 @@ for machine in machines:
 				"Input":{
 					"Items":[
 						{
-							"Name": "CopperIngot",
+							"Name": "CopperWire",
 							"Count": 2 + parts_ramp(level)
 						},
-						plate_frame_component(tier, 1),
+						plates_count(1),
 						{
 							"Name": tier_material[tier] + "Parts",
 							"Count": 2 + parts_ramp(level)
@@ -848,8 +772,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 4),
-						parts_component(tier, 1 + parts_ramp(level))
+						plates_count(4),
+						parts_count(1 + parts_ramp(level))
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -865,7 +789,7 @@ for machine in machines:
 							"Name": tier_material[tier] + "Gearbox",
 							"Count": 1
 						},
-						plate_frame_component(tier, 2)
+						plates_count(2)
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -878,7 +802,7 @@ for machine in machines:
 				"Input":{
 					"Items":[
 						{
-							"Name": tier_material[tier] + "Plate" if tier != 0 else "StoneSurface",
+							"Name": tier_material[tier] + "Ingot" if tier != 0 else "StoneSurface",
 							"Count": 5
 						}
 					]
@@ -892,8 +816,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 3),
-						parts_component(tier, 1 + parts_ramp(level))
+						plates_count(3),
+						parts_count(1 + parts_ramp(level))
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -909,8 +833,8 @@ for machine in machines:
 							"Name": tier_material[tier] + "Pipe",
 							"Count": 25
 						},
-						plate_frame_component(tier, 30),
-						parts_component(tier, 10 + level*5),
+						plates_count(30),
+						parts_count(10 + level*5),
 						{
 							"Name": circuits[tier],
 							"Count": 1
@@ -924,10 +848,10 @@ for machine in machines:
 		if machine["Name"] == "Oven":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input": item_array([
+				"Input": items([
 					["StoneSurface", 10],
-					[tiered("Pipe"), parts_ramp]
-				]),
+					[tiered("Pipe"), 10]
+				], level),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -935,10 +859,10 @@ for machine in machines:
 		if machine["Name"] == "BlastFurnace":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input": item_array([
+				"Input": items([
 					["StoneSurface", 20],
-					[tiered("Pipe"), partial(parts_ramp, factor=10)]
-				]),
+					[tiered("Pipe"), 20]
+				], level),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -948,15 +872,9 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 3),
-						{
-							"Name": wires[tier],
-							"Count": 6 + level*3
-						},
-						{
-							"Name": heat_isolators[tier],
-							"Count": 6
-						}
+						plates_count(3),
+						wires_count(6 + level*3),
+						isolators_count(6)
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -968,10 +886,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						{
-							"Name": plate_frame_component(tier),
-							"Count": 4
-						}
+						plates_count(4)
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -990,7 +905,7 @@ for machine in machines:
 				"Input":{
 					"Items":[
 						{
-							"Name": tier_material[tier] + "Plate"+ static_item if tier > 0 else "StoneSurface",
+							"Name": tier_material[tier] + "Ingot"+ static_item if tier > 0 else "StoneSurface",
 							"Count": 4
 						}
 					]
@@ -1008,19 +923,11 @@ for machine in machines:
 		if machine["Name"] == "DrillingRig":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plate_frame_component(tier, 4+level),
-						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 3 + parts_ramp(level, 3)
-						},
-						{
-							"Name": tier_material[tier] + "RobotArm",
-							"Count": 1 + level
-						},
-					]
-				},
+				"Input": items([
+					[plate(), 4 + level],
+					[gearbox(), 3 + parts_ramp(level, 3)],
+					[robotarm(), 1 + level]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -1028,23 +935,12 @@ for machine in machines:
 		if machine["Name"] == "OilCrackingTower":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plate_frame_component(tier, 10+level),
-						{
-							"Name": "StainlessSteelPipe",
-							"Count": 10 + parts_ramp(level)
-						},
-						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 2 + level * 2
-						},
-						{
-							"Name": tier_material[tier] + "Pump",
-							"Count": 6
-						},
-					]
-				},
+				"Input": items([
+					[plate(), 10+level],
+					["StainlessSteelPipe", 10 + parts_ramp(level)],
+					[gearbox(), 2 + level * 2],
+					[tier_material[tier] + "Pump", 6]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 40
 			})
@@ -1052,18 +948,10 @@ for machine in machines:
 		if machine["Name"] == "FluidFurnace":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "Furnace",
-							"Count": 1
-						},
-						{
-							"Name": tier_material[tier] + "Pipe",
-							"Count": 2 + parts_ramp(level)
-						}
-					]
-				},
+				"Input": items([
+					[tier_material[tier] + "Furnace"],
+					[pipe(), 2 + parts_ramp(level)]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -1071,19 +959,10 @@ for machine in machines:
 		if machine["Name"] == "Separator":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "Pipe",
-							"Count": 2
-						},
-						plate_frame_component(tier, 2),
-						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 1
-						}
-					]
-				},
+				"Input": items([
+					[pipe(), 2],
+					[gearbox()]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -1091,19 +970,11 @@ for machine in machines:
 		if machine["Name"] == "Assembler":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "RobotArm",
-							"Count": 4
-						},
-						plate_frame_component(tier, 3),
-						{
-							"Name": circuits[tier],
-							"Count": 3 + level
-						}
-					]
-				},
+				"Input": items([
+					[robotarm(), 4],
+					[plate(), 3],
+					[circuit(), 3 + level]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -1111,23 +982,12 @@ for machine in machines:
 		if machine["Name"] == "Pumpjack":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plate_frame_component(tier, 5),
-						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 2 + parts_ramp(level, 2)
-						},
-						{
-							"Name": tier_material[tier] + "Pipe",
-							"Count": 5
-						},
-						{
-							"Name": circuits[tier],
-							"Count": 3
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 5],
+					[gearbox(), 2 + parts_ramp(level, 2)],
+					[pipe(), 5],
+					[circuit(), 3]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -1137,8 +997,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 1),
-						parts_component(tier, 4 + parts_ramp(level))
+						plates_count(1),
+						parts_count(4 + parts_ramp(level))
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -1162,7 +1022,7 @@ for machine in machines:
 							"Name": tier_material[tier] + "RobotArm",
 							"Count": 4
 						},
-						plate_frame_component(tier, 4),
+						plates_count(4),
 						{
 							"Name": tier_material[tier] + "Gearbox",
 							"Count": 1 + parts_ramp(level, 1)
@@ -1186,16 +1046,13 @@ for machine in machines:
 							"Name": "CopperHeatPipe",
 							"Count": 25
 						},
-						plate_frame_component(tier, 100),
-						parts_component(tier, 100),
+						plates_count(100),
+						parts_count(100),
 						{
 							"Name": circuits[tier],
 							"Count": 20 + 5 * level
 						},
-						{
-							"Name": heat_isolators[tier],
-							"Count": 100
-						}
+						isolators_count(100)
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -1205,26 +1062,20 @@ for machine in machines:
 		if machine["Name"] == "FusionReactor":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
+				"Input": {
+					"Items": [
 						{
 							"Name": "CopperHeatPipe",
 							"Count": 25
 						},
-						plate_frame_component(tier, 40),
-						parts_component(tier, 100),
-						{
-							"Name": wires[tier],
-							"Count": 100
-						},
+						plates_count(40),
+						parts_count(100),
+						wires_count(100),
 						{
 							"Name": circuits[tier],
 							"Count": 40 + 10 * level
 						},
-						{
-							"Name": heat_isolators[tier],
-							"Count": 50
-						}
+						isolators_count(50)
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -1240,23 +1091,17 @@ for machine in machines:
 							"Name": "UltimateCatalyst",
 							"Count": 10
 						},
-						plate_frame_component(tier, 40),
+						plates_count(40),
 						{
 							"Name": tier_material[tier] + "Gearbox",
 							"Count": 50
 						},
-						{
-							"Name": wires[tier],
-							"Count": 100
-						},
+						wires_count(100),
 						{
 							"Name": circuits[tier],
 							"Count": 40 + 10 * level
 						},
-						{
-							"Name": heat_isolators[tier],
-							"Count": 50
-						}
+						isolators_count(50)
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -1272,12 +1117,9 @@ for machine in machines:
 							"Name": "PlutoniumCell",
 							"Count": 1,
 						},
-						plate_frame_component(tier, 8),
-						parts_component(tier, 20 + 5 * level),
-						{
-							"Name": heat_isolators[tier],
-							"Count": 10
-						}
+						plates_count(8),
+						parts_count(20 + 5 * level),
+						isolators_count(10)
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -1289,8 +1131,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						parts_component(tier, 2 + parts_ramp(level, 3)),
-						plate_frame_component(tier, 1)
+						parts_count(2 + parts_ramp(level, 3)),
+						plates_count(1)
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -1300,11 +1142,7 @@ for machine in machines:
 		if machine["Name"] == "HeatPipe":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plate_frame_component(tier, 4)
-					]
-				},
+				"Input": one_item(plate(), 4),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 10
 			})
@@ -1312,18 +1150,10 @@ for machine in machines:
 		if machine["Name"] == "OverflowPump":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": circuits[tier],
-							"Count": 3
-						},
-						{
-							"Name": tier_material[tier] + "Pump",
-							"Count": 1
-					}
-					]
-				},
+				"Input": items([
+					[circuit(), 3],
+					[tier_material[tier] + "Pump"]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -1331,18 +1161,10 @@ for machine in machines:
 		if machine["Name"] == "SteamEngine":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": circuits[tier],
-							"Count": 3
-						},
-						{
-							"Name": tier_material[tier] + "Pump",
-							"Count": 1
-					}
-					]
-				},
+				"Input": items([
+					[circuit(), 3],
+					[tier_material[tier] + "Pump"]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -1350,18 +1172,10 @@ for machine in machines:
 		if machine["Name"] == "Pump":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "RobotArm",
-							"Count": 1
-						},
-						{
-							"Name": tier_material[tier] + "Pipe",
-							"Count": 1
-						}
-					]
-				},
+				"Input": items([
+					[robotarm()],
+					[pipe()]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -1371,7 +1185,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 4),
+						plates_count(4),
 						{
 							"Name": tier_material[tier] + "Gearbox",
 							"Count": 1
@@ -1387,7 +1201,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 7),
+						plates_count(7),
 						{
 							"Name": tier_material[tier] + "Gearbox",
 							"Count": 3
@@ -1407,7 +1221,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 1)
+						plates_count(1)
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -1423,7 +1237,7 @@ for machine in machines:
 							"Name": tier_material[tier] + "Pipe",
 							"Count": 1
 						},
-						parts_component(tier, 2)
+						parts_count(2)
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -1435,7 +1249,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 1),
+						plates_count(1),
 						{
 							"Name": circuits[tier],
 							"Count": 5
@@ -1451,8 +1265,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 1),
-						parts_component(tier, 1 + parts_ramp(level, 1))
+						plates_count(1),
+						parts_count(1 + parts_ramp(level, 1))
 					]
 				},
 				"Output":{
@@ -1516,7 +1330,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 10),
+						plates_count(10),
 						{
 							"Name": tier_material[tier] + "Gearbox",
 							"Count": 1
@@ -1532,15 +1346,9 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						{
-							"Name": heat_isolators[tier],
-							"Count": 6
-						},
-						parts_component(tier, 4),
-						{
-							"Name": wires[tier],
-							"Count": 5 + level * 5
-						}
+						isolators_count(6),
+						parts_count(4),
+						wires_count(5 + level * 5),
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -1567,10 +1375,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						{
-							"Name": wires[tier],
-							"Count": 5 + level * 3
-						},
+						wires_count(5 + level * 3),
 						{
 							"Name": tier_material[tier] + "Pipe",
 							"Count": 2
@@ -1590,11 +1395,8 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						{
-							"Name": wires[tier],
-							"Count": 50
-						},
-						plate_frame_component(tier, 10),
+						wires_count(50),
+						plates_count(10),
 						{
 							"Name": tier_material[tier] + "Gearbox",
 							"Count": 3
@@ -1614,7 +1416,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 10),
+						plates_count(10),
 						{
 							"Name": tier_material[tier] + "Gearbox",
 							"Count": 3
@@ -1642,7 +1444,7 @@ for machine in machines:
 							"Name": cables[tier],
 							"Count": 2 * (level + 1)
 						},
-						plate_frame_component(tier, 2),
+						plates_count(2),
 						{
 							"Name": circuits[tier],
 							"Count": 1
@@ -1662,7 +1464,7 @@ for machine in machines:
 							"Name": cables[tier],
 							"Count": 2
 						},
-						plate_frame_component(tier, 2),
+						plates_count(2),
 						{
 							"Name": "AluminiumParts",
 							"Count": 5 * level + 10
@@ -1686,7 +1488,7 @@ for machine in machines:
 							"Name": "Silicon",
 							"Count": parts_ramp(level, 3),
 						},
-						plate_frame_component(tier, 1)
+						plates_count(1)
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -1698,7 +1500,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 8),
+						plates_count(8),
 						{
 							"Name": tier_material[tier] + "Gearbox",
 							"Count": 2
@@ -1718,7 +1520,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 50),
+						plates_count(50),
 						{
 							"Name": tier_material[tier] + "Gearbox",
 							"Count": 4
@@ -1742,7 +1544,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 8),
+						plates_count(8),
 						{
 							"Name": tier_material[tier] + "Gearbox",
 							"Count": 2
@@ -1762,7 +1564,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 3),
+						plates_count(3),
 						{
 							"Name": "CopperPipe",
 							"Count": 10
@@ -1778,7 +1580,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 3),
+						plates_count(3),
 						{
 							"Name": "CopperPipe",
 							"Count": 4 + parts_ramp(level, 4)
@@ -1794,7 +1596,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 2),
+						plates_count(2),
 						{
 							"Name": "CopperParts",
 							"Count": 4
@@ -1818,7 +1620,7 @@ for machine in machines:
 							"Name": tier_material[tier] + "RobotArm",
 							"Count": 2
 						},
-						plate_frame_component(tier, 6),
+						plates_count(6),
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -1834,7 +1636,7 @@ for machine in machines:
 							"Name": "Plank",
 							"Count": 8
 						},
-						parts_component(tier, 8)
+						parts_count(8)
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -1846,7 +1648,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						plate_frame_component(tier, 4)
+						plates_count(4)
 					]
 				},
 				"Output":{

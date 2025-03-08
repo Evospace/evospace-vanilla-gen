@@ -188,13 +188,14 @@ def create_item(name, count=1):
 def one_item(item_name, count=1):
     return {"Items": [create_item(item_name, count)]}
 
-def item_array(array, level):
+def items(array, tier=0):
 	items = []
-	for item, count_fn in array:
-		if callable(count_fn):
-			count = count_fn(level)
+	for entry in array:
+		if len(entry) == 1:
+			item, count_fn = entry[0], 1
 		else:
-			count = count_fn
+			item, count_fn = entry
+		count = count_fn(tier) if callable(count_fn) else count_fn
 		if count > 0:
 			items.append({
 				"Name": item,
