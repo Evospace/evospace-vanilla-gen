@@ -42,25 +42,6 @@ def append_recipe(crafter, recipe):
 	recipe.pop("ResourceInput", None)
 	recipes_hand.append(recipe)
 
-def append_recipe_diss(crafter, recipe):
-	item_count = 0
-	for item in recipe["Input"]["Items"]:
-		item_count = item_count + item["Count"]
-
-	diss_recipe = copy.deepcopy(recipe)
-	temp = diss_recipe["Input"]
-	diss_recipe["Input"] = diss_recipe["Output"] 
-	diss_recipe["Output"] = temp
-	diss_recipe["Ticks"] *= 2
-	recipes_disassembler.append(diss_recipe)
-
-	con_recipe = copy.deepcopy(recipe)
-	crafter.append(con_recipe)
-
-	recipe["Ticks"] = 20
-	recipe.pop("ResourceInput", None)
-	recipes_hand.append(recipe)
-
 # tiered parts
 for part in parts:
 	for tier in tiers_numlist:
@@ -113,7 +94,7 @@ for part in parts:
 					"Input":{
 						"Items":[
 							{
-								"Name": material + "Plate",
+								"Name": material + "Ingot",
 								"Count": 3
 							}
 						]
@@ -139,52 +120,33 @@ for part in parts:
 				})
 			
 			if part["Name"] == "Gearbox":
-				items = []
-				
-				if tier < 7:
-					plate_count = 1 if tier < 3 else 4
-					items.append({
-						"Name": material + "Plate",
-						"Count": plate_count
+				if tier == 1:
+					recipes_hand.append({
+						"Name": material + "Gearbox",
+						"Input": items([
+							[material + "Ingot"],
+							[material + "Parts", 3],
+						], material_tier),
+						"Output": one_item(material + "Gearbox", 1),
+						"Tier": material_tier,
+						"Ticks": 200
 					})
 				else:
-					items.append({
-						"Name": "UltimateFrame",
-						"Count": 1
+					recipes_hand.append({
+						"Name": material + "Gearbox",
+						"Input": items([
+							[material + "Ingot", 3],
+							[material + "Parts", 6],
+						], material_tier),
+						"Output": one_item(material + "Gearbox", 1),
+						"Tier": material_tier,
+						"Ticks": 200
 					})
-				
-				if tier <= 2:
-					parts_count = 2 + (4 if tier == 2 else 0)
-					items.append({
-						"Name": material + "Parts",
-						"Count": parts_count
-					})
-				
-				if tier >= 2:
-					index = tier - 1 if tier < 3 else 2
-					gearbox_count = 1 if tier < 3 else (1 + (tier - 2))
-					items.append({
-						"Name": tier_material[index] + "Gearbox",
-						"Count": gearbox_count
-					})
-				
-				recipe = {
-					"Name": material + "Gearbox",
-					"Input": { "Items": items },
-					"Output": {
-						"Items": [{
-							"Name": material + "Gearbox",
-							"Count": 1
-						}]
-					},
-					"Ticks": 200 * 2 ** material_tier
-				}
-				
-				append_recipe_diss(recipes_assembler, recipe)
+					
 
 			if part["Name"] == "SolarCell":
 				inp = [{
-					"Name": wires[tier],
+					"Name": a_wires[tier],
 					"Count": 2
 				}]
 				if tier > 3:
@@ -198,7 +160,7 @@ for part in parts:
 					"Count": 2
 					})
 					inp.append({
-						"Name": "AluminiumPlate",
+						"Name": "AluminiumIngot",
 						"Count": 1
 					})
 				append_recipe(recipes_assembler, {
@@ -218,9 +180,9 @@ for part in parts:
 					"Tier": level
 				})
 
-			if part["Name"] == "Plate":
+			if part["Name"] == "Ingot":
 				append_recipe(recipes_hammer, {
-					"Name": material + "Plate",
+					"Name": material + "Ingot",
 					"Input":{
 						"Items":[
 							{
@@ -232,7 +194,7 @@ for part in parts:
 					"Output":{
 						"Items":[
 							{
-								"Name": material + "Plate",
+								"Name": material + "Ingot",
 								"Count": 1
 							}
 						]
@@ -247,7 +209,7 @@ for part in parts:
 					"Input":{
 						"Items":[
 							{
-								"Name": material + "Plate",
+								"Name": material + "Ingot",
 								"Count": 1
 							},
 						]
@@ -261,6 +223,7 @@ for part in parts:
 						]
 					},
 					"Ticks" : 80,
+					"Tier": tier,
 					"Productivity": 50,
 				})
 

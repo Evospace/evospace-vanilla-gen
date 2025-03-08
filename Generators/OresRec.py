@@ -38,7 +38,7 @@ for ore_type in ore_types:
 				]
 			},
 			"Ticks": 100,
-			"Tier": material_tier,
+			"Tier": max(1, material_tier),
 			"Productivity": 50,
 		})
 
@@ -55,14 +55,14 @@ for ore_type in ore_types:
 				"Name": "Smelter" + ore_name + "Dust",
 				"Input": one_item(ore_name + "Dust"),
 				"Output": one_item(processing["Furnace"]),
-				"Ticks" : 50 * 2 **material_tier,
+				"Ticks" : 50,
 				"Tier": material_tier,
 			})
 			recipes_smelt.append({
 				"Name": "Smelter" + ore_name + "OreDust",
 				"Input": one_item(ore_name + "OreDust"),
 				"Output": one_item(processing["Furnace"]),
-				"Ticks" : 75 * 2 **material_tier,
+				"Ticks" : 75,
 				"Tier": material_tier,
 			})
 			recipes_smelt.append({

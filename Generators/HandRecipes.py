@@ -278,22 +278,8 @@ recipes_hand.append({
 
 recipes_hand.append({
 	"Name":"CopperWire",
-	"Input":{
-		"Items":[
-			{
-				"Name": "CopperPlate",
-				"Count": 1
-			},	
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "CopperWire",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("CopperIngot", 1),
+	"Output": one_item("CopperWire", 1),
 	"Ticks" : 20
 })
 
@@ -327,7 +313,7 @@ recipes_hand.append({
 				"Count": 6
 			},
 			{
-				"Name": "CopperPlate",
+				"Name": "CopperIngot",
 				"Count": 2
 			},
 			{
@@ -360,7 +346,7 @@ recipes_hand.append({
 				"Count": 30
 			},
 			{
-				"Name": "StainlessSteelPlate",
+				"Name": "StainlessSteelIngot",
 				"Count": 10
 			},
 			{
@@ -393,7 +379,7 @@ recipes_hand.append({
 				"Count": 30
 			},
 			{
-				"Name": "SteelPlate",
+				"Name": "SteelIngot",
 				"Count": 10
 			},
 			{
@@ -426,7 +412,7 @@ recipes_hand.append({
 				"Count": 6
 			},
 			{
-				"Name": "SteelPlate",
+				"Name": "SteelIngot",
 				"Count": 2
 			},
 			{
@@ -459,7 +445,7 @@ recipes_hand.append({
 				"Count": 10
 			},
 			{
-				"Name": "AluminiumPlate",
+				"Name": "AluminiumIngot",
 				"Count": 3
 			},
 			{
@@ -496,7 +482,7 @@ recipes_hand.append({
 				"Count": 10
 			},
 			{
-				"Name": "StainlessSteelPlate",
+				"Name": "StainlessSteelIngot",
 				"Count": 3
 			},
 			{
@@ -533,7 +519,7 @@ recipes_hand.append({
 				"Count": 20
 			},
 			{
-				"Name": "AdvancedPlate",
+				"Name": "AdvancedIngot",
 				"Count": 2
 			},
 			{
@@ -616,7 +602,7 @@ recipes_hand.append({
 				"Count": 1
 			},
 			{
-				"Name": "CopperPlate",
+				"Name": "CopperIngot",
 				"Count": 1
 			}
 		]

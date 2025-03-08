@@ -4,17 +4,9 @@ from Common import *
 from Materials import *
 
 parts = [
-    {
-		"Label" : "Plate",
-		"Name" : "Plate",
-		"Volume": 1, # from 1 ingot
-		"StartTier": 1,
-		"EndTier": 100,
-		"StackSize": 64,
-	},
 	{
-		"Label" : "Parts",
-		"Name" : "Parts",
+		"Label": "Parts",
+		"Name": "Parts",
 		"Volume": 1,
 		"StartTier": 1,
 		"EndTier": 100,
@@ -23,8 +15,8 @@ parts = [
 		"Materials":["/Game/Materials/Pine","/Game/Materials/%Material%"],
 	},
 	{
-		"Label" : "Casing",
-		"Name" : "Casing",
+		"Label": "Casing",
+		"Name": "Casing",
 		"StartTier": 1,
 		"EndTier": 100,
 		"ItemLogic": building_cube_logic,
@@ -32,29 +24,29 @@ parts = [
 		"RequiredResearch":["MetalConstructions"],
 	},
 	{
-		"Label" : "Gearbox",
-		"Name" : "Gearbox",
+		"Label": "Gearbox",
+		"Name": "Gearbox",
 		"StartTier": 1,
 		"EndTier": 100,
 		"StackSize": 32
 	},
 	{
-		"Label" : "Solar Cell",
-		"Name" : "SolarCell",
+		"Label": "Solar Cell",
+		"Name": "SolarCell",
 		"StartTier": 3,
 		"EndTier": 100,
 		"StackSize": 32
 	},
 	{
-		"Label" : "Locomotive",
-		"Name" : "Locomotive",
+		"Label": "Locomotive",
+		"Name": "Locomotive",
 		"StartTier": 2,
 		"EndTier": 2,
 		"StackSize": 1
 	},
 	{
-		"Label" : "Wagon",
-		"Name" : "Wagon",
+		"Label": "Wagon",
+		"Name": "Wagon",
 		"StartTier": 2,
 		"EndTier": 2,
 		"StackSize": 1
@@ -83,7 +75,7 @@ catalyzers = [
 	"QuantumBrain",     # 7 neu
 ]
 
-wires = [
+a_wires = [
 	"CopperWire",
 	"CopperWire",
 	"CopperWire",

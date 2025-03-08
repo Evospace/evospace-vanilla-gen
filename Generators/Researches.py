@@ -87,19 +87,20 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "AdditionalStorage",
-	"LabelParts": [["AdditionalStorage", "researches"]],
+	"Name": "Chest",
+	"LabelParts": [["Chest", "blocks"]],
 	"RequiredResearch": ["MineralsScan"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Chest"] ],
 	"Levels":[0,7],
 	"CompleteByDefault": True,
+	"CostMul": 3,
 })
 append_levels({
 	"Class": "StaticResearch",
 	"Name": "SingleTypeStorage",
 	"LabelParts": [["SingleTypeStorage", "researches"]],
-	"RequiredResearch": ["AdditionalStorage" ],
-	
+	"RequiredResearch": ["Chest" ],
+	"MainResearch": True,
 	"Levels":[1,7],
 	
 	"Unlocks": [["Hand" + r_dict, "%Material%ItemRack"] ],
@@ -108,9 +109,10 @@ append_levels({
 	"Class": "StaticResearchBonusInventory",
 	"Name": "InventoryUpgrade",
 	"LabelParts": [["InventoryUpgrade", "researches"]],
-	"RequiredResearchArr": [["AdditionalStorage"],["AdditionalStorage1"],["AdditionalStorage2"],["AdditionalStorage3"],["AdditionalStorage4"],["AdditionalStorage5"],["AdditionalStorage6"],[],[],[],[],[],[],[]],
+	"RequiredResearchArr": [["Chest"],["Chest1"],["Chest2"],["Chest3"],["Chest4"],["Chest5"],["Chest6"],[],[],[],[],[],[],[]],
 	"Unlocks": [],
 	"Levels": [0,7],
+	"CostMul": 10,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -174,6 +176,7 @@ append_levels({
 	"Levels": [2,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%ArcSmelter"] ],
 	"MainResearch": True,
+	"CostMul": 4
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -201,6 +204,7 @@ append_levels({
 	"Levels": [2,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%Electrolyzer"] ],
 	"MainResearch": True,
+	"CostMul": 3
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -299,9 +303,11 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Container",
 	"LabelParts": [["Container", "machines"]],
-	"RequiredResearch": ["Pump"],
+	"RequiredResearchArr": [["Chest"],["Chest1"],["Chest2"],["Chest3"],["Chest4"],["Chest5"],["Chest6"],[],[],[],[],[],[],[]],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%Container"] ],
+	"MainResearch": True,
+	"CostMul": 3,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -491,7 +497,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Boiler",
 	"LabelParts": [["Boiler", "machines"]],
-	"RequiredResearch": ["PowerGeneration" ],
+	"RequiredResearch": ["PowerGeneration"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Boiler"]],
 	"Levels": [2,7],
 	"MainResearch": True
@@ -499,11 +505,12 @@ append_levels({
 append_levels({
 	"Class": "StaticResearch",
 	"Name": "SteamEngine",
-	"LabelParts": [["Boiler", "machines"]],
-	"RequiredResearch": ["Boiler" ],
-	"Unlocks": [["Hand" + r_dict, "%Material%GSteamEngine"]],
+	"LabelParts": [["SteamEngine", "machines"]],
+	"RequiredResearch": ["Boiler"],
+	"Unlocks": [["Hand" + r_dict, "%Material%SteamEngine"]],
 	"Levels": [2,7],
-	"MainResearch": True
+	"MainResearch": True,
+	"CostMul": 1.5,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -652,11 +659,11 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "LithiumPlate",
-	"LabelParts": [["LithiumPlate", "parts"]],
+	"Name": "LithiumIngot",
+	"LabelParts": [["LithiumIngot", "parts"]],
 	"RequiredResearch": ["NitricAcid"],
 	"Levels": [5,5],
-	"Unlocks": [["IndustrialChemReactor" + r_dict, "LithiumPlate"]],
+	"Unlocks": [["IndustrialChemReactor" + r_dict, "LithiumIngot"]],
 	"CostMul": 0.3,
 	"MainResearch": True,
 })
@@ -664,7 +671,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "LithiumBattery",
 	"LabelParts": [["LithiumBattery", "researches"]],
-	"RequiredResearch": ["LithiumPlate"],
+	"RequiredResearch": ["LithiumIngot"],
 	"Levels": [5,5],
 	"Unlocks": [[assembler_r_dict, "LithiumBattery"]],
 	"CostMul": 0.75,
@@ -812,6 +819,7 @@ append_levels({
 	"Levels": [2,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%ElectricEngine"] ],
 	"MainResearchArr": [True, True, False, False, False, False, False],
+	"CostMul": 2
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -820,6 +828,7 @@ append_levels({
 	"RequiredResearch": ["ElectricEngine"],
 	"Levels": [2,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%BiElectricEngine"] ],
+	"CostMul": 4
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -974,9 +983,9 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "CompositeMaterials",
 	"LabelParts": [["CompositeMaterials", "parts"]],
-	"RequiredResearch": ["TitaniumProduction", "LithiumPlate", "CarbonFiberSheet"],
+	"RequiredResearch": ["TitaniumProduction", "LithiumIngot", "CarbonFiberSheet"],
 	"Levels": [6,6],
-	"Unlocks": [[assembler_r_dict, "CompositePlate"]],
+	"Unlocks": [[assembler_r_dict, "CompositeIngot"]],
 	"MainResearch": True,
 	"CostMul": 2.25
 })
@@ -1088,9 +1097,9 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Assembler",
 	"LabelParts": [["Assembler", "machines"]],
-	"RequiredResearch": ["Constructor"],
+	"RequiredResearch": ["AdvancedCircuit"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Assembler"]],
-	"Levels": [2,7],
+	"Levels": [3,7],
 	"MainResearch": True,
 })
 append_levels({
@@ -1395,7 +1404,6 @@ csv.append(["PlutoniumReaction", "Plutonium Reaction"])
 csv.append(["ThoriumReaction", "Thorium Reaction"])
 csv.append(["PowerGeneration", "Power Generation"])
 csv.append(["Automatization", "Automatization"])
-csv.append(["AdditionalStorage", "Additional Storage"])
 csv.append(["HeatTransferring", "Heat Transferring"])
 csv.append(["BasicMachines", "Basic Machines"])
 csv.append(["Container", "Fluid Storage"])
