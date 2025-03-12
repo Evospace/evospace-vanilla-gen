@@ -14,7 +14,7 @@ ore_types = [
 			"ChemicalBath": ["Mercury", "GoldDust"],
 			"Separator": ["ChalcopyriteDust", "PyriteDust"],
 			"Macerator": "ChalcopyriteOreDust",
-			"Furnace": "CopperIngot",
+			"Furnace": "CopperPlate",
 		},
 		"Formula": "CuFeS2",
 		"Color": [0.8/2.0,.3/2.0,.3/2.0],
@@ -28,7 +28,7 @@ ore_types = [
 			"ChemicalBath": ["NitricAcid", "SilverDust"],
 			"Separator": ["MalachiteDust", "IronDust"],
 			"Macerator": "MalachiteOreDust",
-			"Furnace": "CopperIngot",
+			"Furnace": "CopperPlate",
 			"Sifter": ["MalachiteOreDust", "MalachiteDust", "MalachiteCrystal"],
 		},
 		"Formula": "CuCO3",
@@ -43,7 +43,7 @@ ore_types = [
 			"OreWasher": "IronDust",
 			"Separator": ["PyriteDust", "Sulfur"],
 			"Macerator": "PyriteOreDust",
-			"Furnace": "IronIngot",
+			"Furnace": "IronPlate",
 		},
 		"Formula": "FeS2",
 		"Color": [111 / 255./2.0, 106 / 255./2.0, 81 / 255./2.0],
@@ -57,7 +57,7 @@ ore_types = [
 			"ChemicalBath": ["Mercury", "GoldDust"],
 			"Separator": ["MagnetiteDust", "GoldDust"],
 			"Macerator": "MagnetiteOreDust",
-			"Furnace": "IronIngot",
+			"Furnace": "IronPlate",
 		},
 		"Formula": "Fe3O4+Au",
 		"Color": [111 / 255./2.0, 106 / 255./2.0, 81 / 255./2.0],
@@ -168,20 +168,6 @@ ore_types = [
 			"BurnTime": 800
 		},
 	},{
-		"Name": "Clay",
-		"Color": [202 / 255., 115 / 512., 43 / 512.],
-		"Side": [202 / 255., 115 / 512., 43 / 512.],
-		"Item": [202 / 255., 115 / 512.,  43 / 512.],
-		"Drops": "Clay",
-		"Processing":{
-			"OreWasher": "ClayDust",
-			"Separator": ["Clay", "ClayDust"],
-			"Washing": "ClayDust",
-			"Furnace": "Clay",
-			"Macerator": "ClayOreDust",
-		},
-		"Tier": 0,
-	},{
 		"Name": "Columbite",
 		"Formula": "MnO+Nb2O3+Ta2O3",
 		"Processing": {
@@ -189,7 +175,7 @@ ore_types = [
 			"Separator": ["TantalumDust", "ManganeseDust"],
 			"ChemicalBath": ["HydrofluoricAcid", "RareEarthDust"],
 			"Macerator": "ColumbiteOreDust",
-			"Furnace": "ManganeseIngot",
+			"Furnace": "ManganesePlate",
 		},
 		"Color": [0.25, 0.25, 0.3],
 		"Drops": "ColumbiteOre",
@@ -198,13 +184,15 @@ ore_types = [
 		"Name": "Monazite",
 		"Processing": {
 			"OreWasher": "ThoriumDust",
-			"Separator": ["MonaziteDust", "RareEarthSludge"],
+			"Separator": ["ThoriumDust", "MicaFlakes"],
+			"Sifter": ["ThoriumDust", "MicaFlakes", "MicaCrystal"],
 			"ChemicalBath": ["SulfuricAcid", "RareEarthSludge"],
 			"Macerator": "MonaziteOreDust",
 			"Furnace": "ThoriumDust"
 		},
 		"Color": [0.8, 0.7, 0.3],
 		"Drops": "MonaziteOre",
+		"Crystal": True,
 		"Formula": "ThPO4+NdPO4+YPO4",
 		"Tier": 3
 	}

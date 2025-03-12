@@ -15,7 +15,7 @@ def plate_frame_component(tier, count):
 	if tier == 0:
 		return {"Name": "StoneSurface", "Count": count}
 	else:
-		return {"Name": tier_material[tier] + "Ingot", "Count": count}
+		return {"Name": tier_material[tier] + "Plate", "Count": count}
 
 for machine in machines:
 	cvs.append([machine["Name"], machine["Label"]])
@@ -34,7 +34,7 @@ for machine in machines:
 			return tier_material[tier] + "Pipe"
 		
 		def plate():
-			return tier_material[tier] + "Ingot"
+			return tier_material[tier] + "Plate"
 		
 		def gearbox():
 			return tier_material[tier] + "Gearbox"
@@ -151,9 +151,6 @@ for machine in machines:
 		if machine["Name"] == "SmallBattery":
 			item["DescriptionParts"].append(["battery", "common", machine["CustomData"]["BaseCapacity"] + machine["CustomData"]["BonusCapacity"] * level])
 
-		if "Craftable" in machine:
-			item["Craftable"] = False
-
 		# wiki json generation ------------------------------------------------
 		objects_array.append(item)
 
@@ -252,7 +249,7 @@ for machine in machines:
 				"Input":{
 					"Items":[
 						{
-							"Name": tier_material[tier] + "Ingot" if tier != 0 else "StoneSurface",
+							"Name": tier_material[tier] + "Plate" if tier != 0 else "StoneSurface",
 							"Count": 1
 						}
 					]
@@ -802,7 +799,7 @@ for machine in machines:
 				"Input":{
 					"Items":[
 						{
-							"Name": tier_material[tier] + "Ingot" if tier != 0 else "StoneSurface",
+							"Name": tier_material[tier] + "Plate" if tier != 0 else "StoneSurface",
 							"Count": 5
 						}
 					]
@@ -905,7 +902,7 @@ for machine in machines:
 				"Input":{
 					"Items":[
 						{
-							"Name": tier_material[tier] + "Ingot"+ static_item if tier > 0 else "StoneSurface",
+							"Name": tier_material[tier] + "Plate"+ static_item if tier > 0 else "StoneSurface",
 							"Count": 4
 						}
 					]
@@ -1643,24 +1640,8 @@ for machine in machines:
 				"Ticks" : 20
 			})
 
-		if "Craftable" not in machine and not has_hand_recipe(recipes_hand, tier_material[tier] + machine["Name"]):
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(4)
-					]
-				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1,
-						}
-					]
-				},
-				"Ticks" : 20
-			})
+		if not has_hand_recipe(recipes_hand, tier_material[tier] + machine["Name"]):
+			print("No recipe for "+machine["Name"])
 
 data = {
 	"Objects": objects_array

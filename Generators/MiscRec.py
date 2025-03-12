@@ -114,7 +114,7 @@ recipes_industrial_boiler.append({
 })
 
 recipes_fusion_reactor.append({
-	"Name":"HotNeutroniumIngot1",
+	"Name":"HotNeutroniumPlate1",
 	"Input":{
 		"Items":[
 			{
@@ -123,12 +123,12 @@ recipes_fusion_reactor.append({
 			}
 		]
 	},
-	"Output": one_item("HotNeutroniumIngot", 1),
+	"Output": one_item("HotNeutroniumPlate", 1),
 	"Ticks" : 200,
 })
 
 recipes_fusion_reactor.append({
-	"Name":"HotNeutroniumIngot2",
+	"Name":"HotNeutroniumPlate2",
 	"Input":{
 		"Items":[
 			{
@@ -137,12 +137,12 @@ recipes_fusion_reactor.append({
 			}
 		]
 	},
-	"Output": one_item("HotNeutroniumIngot", 3),
+	"Output": one_item("HotNeutroniumPlate", 3),
 	"Ticks" : 300,
 })
 
 recipes_fusion_reactor.append({
-	"Name":"HotNeutroniumIngot4",
+	"Name":"HotNeutroniumPlate4",
 	"Input":{
 		"Items":[
 			{
@@ -152,12 +152,12 @@ recipes_fusion_reactor.append({
 			}
 		]
 	},
-	"Output": one_item("HotNeutroniumIngot", 1),
+	"Output": one_item("HotNeutroniumPlate", 1),
 	"Ticks" : 200,
 })
 
 recipes_fusion_reactor.append({
-	"Name":"HotNeutroniumIngot3",
+	"Name":"HotNeutroniumPlate3",
 	"Input":{
 		"Items":[
 			{
@@ -167,7 +167,7 @@ recipes_fusion_reactor.append({
 			}
 		]
 	},
-	"Output": one_item("HotNeutroniumIngot", 3),
+	"Output": one_item("HotNeutroniumPlate", 3),
 	"Ticks" : 300,
 })
 
@@ -199,7 +199,7 @@ recipes_assembler.append({
 	]),
 	"Output": one_item("Circuit"),
 	"Ticks" : 200,
-	"Tier": 1,
+	"Tier": 2,
 })
 
 recipes_hand.append({
@@ -230,62 +230,64 @@ recipes_assembler.append({
 	"Input": items([
 		["CoalDust"],
 		["Organics"],
-		["GoldWire", 2]
+		["GoldWire"]
 	]),
 	"Output": one_item("Resistor", 2),
 	"Ticks" : 60,
-	"Tier": 1,
+	"Tier": 2,
 })
 
 recipes_assembler.append({
 	"Name":"AltResistor2",
 	"Input": items([
-		["Polyethylene"],
-		["GoldWire", 2]
+		["PolyethyleneSheet"],
+		["GoldWire"]
 	]),
 	"Output": one_item("Resistor", 4),
 	"Ticks" : 60,
-	"Tier": 1,
+	"Tier": 3,
 })
 
 recipes_assembler.append({
 	"Name":"AltResistor3",
 	"Input": items([
-		["PTFE"]
-		["NeobiumWire", 1]
+		["PTFESheet"],
+		["NiobiumWire"]
 	]),
 	"Output": one_item("Resistor", 8),
 	"Ticks" : 60,
-	"Tier": 1,
+	"Tier": 4,
 })
 
 recipes_assembler.append({
 	"Name":"AltResistor4",
 	"Input": items([
-		["PTFE"]
-		["TantalumWire", 1]
+		["PTFESheet"],
+		["TantalumWire"]
 	]),
 	"Output": one_item("Resistor", 16),
 	"Ticks" : 60,
-	"Tier": 1,
+	"Tier": 5,
 })
 
 recipes_hand.append({
 	"Name":"AdvancedCircuit",
 	"Input": items([
-		["Resistor"],
+		["CircuitBoard"],
+		["Resistor", 2],
 		["Circuit", 3]
 	]),
 	"Output": one_item("AdvancedCircuit"),
 	"Ticks" : 200,
-	"Tier": 2,
+	"Tier": 1,
 })
 
 recipes_assembler.append({
 	"Name":"AltAdvancedCircuit",
 	"Input": items([
 		["CircuitBoard"],
-		["Transistor", 2]
+		["Transistor", 2],
+		["Resistor", 3],
 	]),
 	"Output": one_item("AdvancedCircuit"),
 	"Ticks" : 200,
@@ -294,29 +296,79 @@ recipes_assembler.append({
 
 recipes_assembler.append({
 	"Name":"SiliconWafer",
-	"Input": one_item("Silicon"),
-	"Output": one_item("SiliconWafer"),
+	"Input": one_item("SiliconMonocrystal"),
+	"Output": one_item("SiliconWafer", 16),
 	"Ticks" : 200,
 	"Tier": 3,
 })
 
-append_recipe({
+recipes_assembler.append({
+	"Name":"DopedSiliconWafer",
+	"Input": one_item("DopedSiliconMonocrystal"),
+	"Output": one_item("DopedSiliconWafer", 16),
+	"Ticks" : 200,
+	"Tier": 4,
+})
+
+recipes_assembler.append({
+	"Name":"IntegratedCircuit",
+	"Input": one_item("SiliconWafer"),
+	"Output": one_item("IntegratedCircuit", 4),
+	"Ticks" : 200,
+	"Tier": 3,
+})
+
+recipes_assembler.append({
+	"Name":"AltIntegratedCircuit",
+	"Input": one_item("DopedSiliconWafer"),
+	"Output": one_item("IntegratedCircuit", 8),
+	"Ticks" : 200,
+	"Tier": 3,
+})
+
+recipes_assembler.append({
+	"Name":"SystemOnChip",
+	"Input": one_item("DopedSiliconWafer"),
+	"Output": one_item("SystemOnChip", 4),
+	"Ticks" : 200,
+	"Tier": 3,
+})
+
+recipes_hand.append({
 	"Name":"Processor",
-	"Input":{
-		"Items":[
-			{
-				"Name": "SiliconWafer",
-				"Count": 1
-			},	
-			{
-				"Name": "AdvancedCircuit",
-				"Count": 1
-			}
-		]
-	},
+	"Input": items([
+		["CircuitBoard"],
+		["AdvancedCircuit", 3],
+		["Capacitor", 1],
+	]),
 	"Output": one_item("Processor"),
 	"Ticks" : 200,
 	"Tier": 3,
+})
+
+recipes_assembler.append({
+	"Name":"AltProcessor",
+	"Input": items([
+		["CircuitBoard"],
+		["AdvancedCircuit", 1],
+		["IntegratedCircuit", 2],
+		["Capacitor", 2],
+	]),
+	"Output": one_item("Processor"),
+	"Ticks" : 200,
+	"Tier": 4,
+})
+
+recipes_assembler.append({
+	"Name":"AltProcessor2",
+	"Input": items([
+		["CircuitBoard"],
+		["SystemOnChip", 1],
+		["Capacitor", 3],
+	]),
+	"Output": one_item("Processor"),
+	"Ticks" : 200,
+	"Tier": 5,
 })
 
 recipes_assembler.append({
@@ -335,25 +387,6 @@ recipes_assembler.append({
 	},
 	"Output": one_item("AdvancedCircuitBoard"),
 	"Ticks" : 80,
-	"Tier": 3,
-})
-
-recipes_assembler.append({
-	"Name":"Processor2",
-	"Input":{
-		"Items":[
-			{
-				"Name": "SiliconWafer",
-				"Count": 1
-			},	
-			{
-				"Name": "AdvancedCircuitBoard",
-				"Count": 1
-			}
-		]
-	},
-	"Output": one_item("Processor"),
-	"Ticks" : 200,
 	"Tier": 3,
 })
 
@@ -492,18 +525,11 @@ append_recipe({
 })
 
 recipes_assembler.append({
-	"Name":"CopperWire",
-	"Input": one_item("CopperIngot", 1),
-	"Output": one_item("CopperWire", 2),
-	"Ticks" : 40,
-})
-
-recipes_assembler.append({
 	"Name":"SuperconductorWire",
 	"Input":{
 		"Items":[
 			{
-				"Name": "SuperconductorIngot",
+				"Name": "SuperconductorPlate",
 				"Count": 1
 			},
 		]
@@ -552,7 +578,7 @@ append_recipe({
 	"Input": items([
 		["Coke"],
 		["AluminiumParts"],
-		["SteelIngot"]
+		["SteelPlate"]
 	]),
 	"Output": one_item("PrimitiveBattery"),
 	"Ticks" : 100,
@@ -582,7 +608,7 @@ append_recipe({
 	"Input":{
 		"Items":[
 			{
-				"Name": "StainlessSteelIngot",
+				"Name": "StainlessSteelPlate",
 				"Count": 1
 			},
 			{
@@ -743,7 +769,7 @@ recipes_assembler.append({
 				"Count": 1
 			},
 			{
-				"Name": "SteelIngot",
+				"Name": "SteelPlate",
 				"Count": 1
 			},
 		]
@@ -762,7 +788,7 @@ recipes_assembler.append({
 				"Count": 200
 			},
 			{
-				"Name": "LithiumIngot",
+				"Name": "LithiumPlate",
 				"Count": 1
 			},
 			{
@@ -770,7 +796,7 @@ recipes_assembler.append({
 				"Count": 3
 			},
 			{
-				"Name": "SteelIngot",
+				"Name": "SteelPlate",
 				"Count": 3
 			},
 		]
@@ -781,7 +807,7 @@ recipes_assembler.append({
 })
 
 recipes_assembler.append({
-	"Name":"CompositeIngot",
+	"Name":"CompositePlate",
 	"Input":{
 		"Items":[
 			{
@@ -793,19 +819,19 @@ recipes_assembler.append({
 				"Count": 1
 			},
 			{
-				"Name": "LithiumIngot",
+				"Name": "LithiumPlate",
 				"Count": 1
 			},
 		]
 	},
-	"Output": one_item("CompositeIngot"),
+	"Output": one_item("CompositePlate"),
 	"Ticks" : 300,
 	
 })
 
 recipes_assembler.append({
 	"Name":"GoldWire",
-	"Input": one_item("GoldIngot"),
+	"Input": one_item("GoldPlate"),
 	"Output":{
 		"Items":[
 			{
@@ -1518,7 +1544,7 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 		"Output":{
 			"Items":[
 				{
-					"Name": "SteelIngot",
+					"Name": "SteelPlate",
 					"Count": 10
 				}
 			]
@@ -1526,7 +1552,7 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 		"Ticks" : 10*5*20*2
 	})
 	recipes_blast_furnace.append({
-		"Name": "IronIngotSmelting",
+		"Name": "IronPlateSmelting",
 		"Input":{
 			"Items":[
 				{
@@ -1534,7 +1560,7 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 					"Count": 10
 				},
 				{
-					"Name": "IronIngot",
+					"Name": "IronPlate",
 					"Count": 10
 				},
 			]
@@ -1542,7 +1568,7 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 		"Output":{
 			"Items":[
 				{
-					"Name": "SteelIngot",
+					"Name": "SteelPlate",
 					"Count": 10
 				}
 			]
@@ -1698,15 +1724,15 @@ recipes_arc_furnace.append({
 })	
 
 for material in materials:
-	if "IsIngot" in material:
+	if "Parts" in material and "Plate" in material["Parts"]:
 		if "SmeltLevel" in material and material["SmeltLevel"] <= 3:
 			recipes_arc_furnace.append({
-				"Name": material["Name"] + "Ingot",
+				"Name": material["Name"] + "Plate",
 				"Input": one_item(material["Name"] + "Dust"),
 				"Output":{
 					"Items":[
 						{
-							"Name": material["Name"] + "Ingot",
+							"Name": material["Name"] + "Plate",
 							"Count": 1
 						}
 					]
@@ -1834,7 +1860,7 @@ recipes_pump.append({
 })
 
 recipes_indu.append({
-	"Name":"SpongeToIngot",
+	"Name":"SpongeToPlate",
 	"Input":{
 		"Items":[
 			{
@@ -1850,7 +1876,7 @@ recipes_indu.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "TitaniumIngot",
+				"Name": "TitaniumPlate",
 				"Count": 1
 			},
 			{
@@ -1880,7 +1906,7 @@ recipes_indu.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "SuperconductorIngot",
+				"Name": "SuperconductorPlate",
 				"Count": 1
 			},
 			{
@@ -1894,7 +1920,7 @@ recipes_indu.append({
 })
 	
 recipes_indu.append({
-	"Name":"TDustToIngot",
+	"Name":"TDustToPlate",
 	"Input":{
 		"Items":[
 			{
@@ -1910,7 +1936,7 @@ recipes_indu.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "TitaniumIngot",
+				"Name": "TitaniumPlate",
 				"Count": 1
 			},
 			{
@@ -2536,55 +2562,6 @@ recipes_chem.append({
 	"Ticks" : 400,
 })
 
-recipes_chem.append({
-	"Name": "MineralWater3",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Water",
-				"Count": 1000
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "BoraxDust",
-				"Count": 1,
-				"Probability": 10
-			}
-		]
-	},
-	
-	"Ticks" : 100,
-})
-
-recipes_chem.append({
-	"Name": "TungstenCarbideDust",
-	"Input":{
-		"Items":[
-			{
-				"Name": "TungstenDust",
-				"Count": 1
-			},
-			{
-				"Name": "Coke",
-				"Count": 2
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "TungstenCarbideDust",
-				"Count": 1
-			}
-		]
-	},
-	
-	"Ticks" : 200,
-})
-
 recipes_industrial_chemreactor.append({
 	"Name": "HotMercury",
 	"Input":{
@@ -2656,32 +2633,6 @@ recipes_industrial_chemreactor.append({
 		],
 	},
 	"Ticks" : 200
-})
-
-recipes_chem.append({
-	"Name": "TungstenOxide",
-	"Input":{
-		"Items":[
-			{
-				"Name": "TungstenOxideDust",
-				"Count": 1
-			},
-			{
-				"Name": "Hydrogen",
-				"Count": 1000
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "TungstenDust",
-				"Count": 1
-			}
-		]
-	},
-	
-	"Ticks" : 200,
 })
 
 oil_crack.append({
@@ -3611,7 +3562,7 @@ recipes_chemical_bath.append({
 })
 
 recipes_industrial_chemreactor.append({
-	"Name": "LithiumIngot",
+	"Name": "LithiumPlate",
 	"Input":{
 		"Items":[
 			{
@@ -3631,7 +3582,7 @@ recipes_industrial_chemreactor.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "LithiumIngot",
+				"Name": "LithiumPlate",
 				"Count": 1
 			}
 		]

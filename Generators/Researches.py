@@ -659,11 +659,11 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "LithiumIngot",
-	"LabelParts": [["LithiumIngot", "parts"]],
+	"Name": "LithiumPlate",
+	"LabelParts": [["LithiumPlate", "parts"]],
 	"RequiredResearch": ["NitricAcid"],
 	"Levels": [5,5],
-	"Unlocks": [["IndustrialChemReactor" + r_dict, "LithiumIngot"]],
+	"Unlocks": [["IndustrialChemReactor" + r_dict, "LithiumPlate"]],
 	"CostMul": 0.3,
 	"MainResearch": True,
 })
@@ -671,7 +671,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "LithiumBattery",
 	"LabelParts": [["LithiumBattery", "researches"]],
-	"RequiredResearch": ["LithiumIngot"],
+	"RequiredResearch": ["LithiumPlate"],
 	"Levels": [5,5],
 	"Unlocks": [[assembler_r_dict, "LithiumBattery"]],
 	"CostMul": 0.75,
@@ -940,7 +940,7 @@ append_levels({
 	"Name": "KrollProcess",
 	"LabelParts": [["KrollProcess", "researches"]],
 	"RequiredResearch": ["IndustrialSmelting"],
-	"Unlocks": [["IndustrialSmelter"+r_dict,"SpongeToIngot"],["IndustrialChemReactor" + r_dict, "TitaniumSponge"],["IndustrialChemReactor" + r_dict, "TitaniumTetrachloride"]],
+	"Unlocks": [["IndustrialSmelter"+r_dict,"SpongeToPlate"],["IndustrialChemReactor" + r_dict, "TitaniumSponge"],["IndustrialChemReactor" + r_dict, "TitaniumTetrachloride"]],
 	"Levels": [5,5],
 	"MainResearch": True,
 	"CostMul": 0.5,
@@ -983,9 +983,9 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "CompositeMaterials",
 	"LabelParts": [["CompositeMaterials", "parts"]],
-	"RequiredResearch": ["TitaniumProduction", "LithiumIngot", "CarbonFiberSheet"],
+	"RequiredResearch": ["TitaniumProduction", "LithiumPlate", "CarbonFiberSheet"],
 	"Levels": [6,6],
-	"Unlocks": [[assembler_r_dict, "CompositeIngot"]],
+	"Unlocks": [[assembler_r_dict, "CompositePlate"]],
 	"MainResearch": True,
 	"CostMul": 2.25
 })

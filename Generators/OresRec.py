@@ -224,7 +224,7 @@ for ore_type in ore_types:
 
 		# Sifter
 		if "Sifter" in processing:
-			for gravel in {"OreGravel", "OreImpureGravel"}:
+			for gravel in {"OreImpureGravel"}:
 				recipes_sifter.append({
 					"Name": ore_type["Name"] + gravel,
 					"Input": one_item(ore_type["Name"] + gravel),

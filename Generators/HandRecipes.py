@@ -260,7 +260,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "GoldIngot",
+				"Name": "GoldPlate",
 				"Count": 1
 			},	
 		]
@@ -273,13 +273,6 @@ recipes_hand.append({
 			}
 		]
 	},
-	"Ticks" : 20
-})
-
-recipes_hand.append({
-	"Name":"CopperWire",
-	"Input": one_item("CopperIngot", 1),
-	"Output": one_item("CopperWire", 1),
 	"Ticks" : 20
 })
 
@@ -313,7 +306,7 @@ recipes_hand.append({
 				"Count": 6
 			},
 			{
-				"Name": "CopperIngot",
+				"Name": "CopperPlate",
 				"Count": 2
 			},
 			{
@@ -346,7 +339,7 @@ recipes_hand.append({
 				"Count": 30
 			},
 			{
-				"Name": "StainlessSteelIngot",
+				"Name": "StainlessSteelPlate",
 				"Count": 10
 			},
 			{
@@ -379,7 +372,7 @@ recipes_hand.append({
 				"Count": 30
 			},
 			{
-				"Name": "SteelIngot",
+				"Name": "SteelPlate",
 				"Count": 10
 			},
 			{
@@ -412,7 +405,7 @@ recipes_hand.append({
 				"Count": 6
 			},
 			{
-				"Name": "SteelIngot",
+				"Name": "SteelPlate",
 				"Count": 2
 			},
 			{
@@ -445,7 +438,7 @@ recipes_hand.append({
 				"Count": 10
 			},
 			{
-				"Name": "AluminiumIngot",
+				"Name": "AluminiumPlate",
 				"Count": 3
 			},
 			{
@@ -482,7 +475,7 @@ recipes_hand.append({
 				"Count": 10
 			},
 			{
-				"Name": "StainlessSteelIngot",
+				"Name": "StainlessSteelPlate",
 				"Count": 3
 			},
 			{
@@ -502,7 +495,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "AdvancedJetpack",
+				"Name": "CompositeJetpack",
 				"Count": 1
 			}
 		]
@@ -515,15 +508,15 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "AdvancedParts",
+				"Name": "CompositeParts",
 				"Count": 20
 			},
 			{
-				"Name": "AdvancedIngot",
+				"Name": "CompositePlate",
 				"Count": 2
 			},
 			{
-				"Name": "AdvancedPipe",
+				"Name": "CompositePipe",
 				"Count": 6
 			},
 			{
@@ -535,7 +528,7 @@ recipes_hand.append({
 				"Count": 4
 			},
 			{
-				"Name": "AdvancedElectricEngine",
+				"Name": "CompositeElectricEngine",
 				"Count": 8
 			}
 		]
@@ -602,7 +595,7 @@ recipes_hand.append({
 				"Count": 1
 			},
 			{
-				"Name": "CopperIngot",
+				"Name": "CopperPlate",
 				"Count": 1
 			}
 		]
