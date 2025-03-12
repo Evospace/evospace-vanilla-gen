@@ -49,240 +49,193 @@ def named_material(name):
 
 # https://ru.wikipedia.org/wiki/%D0%A3%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%82%D0%B5%D0%BF%D0%BB%D0%BE%D1%82%D0%B0_%D1%81%D0%B3%D0%BE%D1%80%D0%B0%D0%BD%D0%B8%D1%8F burning
 
+tiered_parts_list = ["Plate", "Dust", "Block", "Parts", "Gearbox", "Gearbox"]
+
 materials = [
 	{
 		"Name": "Hand",
 		"Label": "Hand",
-		"Craftable": False,
-		"Items": ["Exact"]
-		"IsExact": True,
+		"Items": ["Exact"],
 	},{
 		"Name": "NoMaterial",
 		"Label": "NoMaterial",
-		"Craftable": False,
 	},{
 		"Name":"Computations",
 		"Label":"Computations",
-		"IsAbstract": True,
+		"Items": ["Abstract"],
 		"Description" : [["calculations", "common"]],
 	},{
 		"Name": "Heat",
 		"Label": "Heat",
-		"IsAbstract": True,
+		"Items": ["Abstract"],
 		"Unit": "J",
 		"UnitS": "W",
 		"UnitMul" : 1,
 	},{
 		"Name": "LV",
 		"Label": "LV",
-		"IsAbstract": True,
+		"Items": ["Abstract"],
 		"Unit": "J",
 		"UnitS": "W",
 		"UnitMul" : 1,
 	},{
 		"Name": "MV",
 		"Label": "MV",
-		"IsAbstract": True,
+		"Items": ["Abstract"],
 		"Unit": "J",
 		"UnitS": "W",
 		"UnitMul" : 1,
 	},{
 		"Name": "HV",
 		"Label": "HV",
-		"IsAbstract": True,
+		"Items": ["Abstract"],
 		"Unit": "J",
 		"UnitS": "W",
 		"UnitMul" : 1,
 	},{
 		"Name": "Kinetic",
 		"Label": "Kinetic",
-		"IsAbstract": True,
+		"Items": ["Abstract"],
 		"Unit": "J",
 		"UnitS": "W",
 		"UnitMul" : 1,
 	},{
 		"Name": "Copper",
 		"Label": "Copper",
-		"IsIngot": True,
-		"IsDust": True,
+		"Items": tiered_parts_list,
 		"SmeltLevel": 0,
-		"IsBlock": True,
 		"Tier": 1,
 	},{
 		"Name": "Gold",
 		"Label": "Gold",
-		"IsDust": True,
-		"IsIngot": True,
+		"Items": ["Plate", "Dust", "Block", "Wire"],
 		"SmeltLevel": 0,
-		"IsBlock": True,
+		"Tier": 2
 	},{
 		"Name": "Silver",
 		"Label": "Silver",
-		"IsDust": True,
-		"IsIngot": True,
+		"Items": ["Dust", "Plate", "Block"],
 		"SmeltLevel": 2,
-		"IsBlock": True,
 	},{
 		"Name": "Platinum",
 		"Label": "Platinum",
-		"IsDust": True,
-		"IsIngot": True,
+		"Items": ["Plate", "Dust", "Block", "Wire"],
 		"SmeltLevel": 3,
-		"IsBlock": True,
 	},{
 		"Name": "Rhodium",
 		"Label": "Rhodium",
-		"IsDust": True,
-		"IsIngot": True,
+		"Items": ["Dust", "Plate", "Block"],
 		"SmeltLevel": 3,
-		"IsBlock": True,
 	},{
 		"Name": "PlatinumRhodiumSolution",
 		"Label": "Platinum-Rhodium Solution",
-		"IsExact": True,
+		"Items": ["Exact"],
 	},{
 		"Name": "AmmoniumChloride",
 		"Label": "Ammonium Chloride",
-		"IsExact": True,
+		"Items": ["Exact"],
 	},{
 		"Name": "RhodiumSolution",
 		"Label": "Rhodium Solution",
-		"IsFluid": True,
+		"Items": ["Fluid"]
 	},{
 		"Name": "Superconductor",
 		"Label": "Superconductor",
-		"IsDust": True,
-		"IsIngot": True,
+		"Items": ["Dust", "Plate", "Block"],
 		"SmeltLevel": 4,
-		"IsBlock": True,
 	},{
 		"Name": "Iron",
 		"Label": "Iron",
-		"IsDust": True,
-		"IsIngot": True,
+		"Items": ["Plate", "Dust", "Block"],
 		"SmeltLevel": 0,
-		"IsBlock": True,
 	},{
 		"Name": "CircuitBoard",
 		"Label": "Circuit Board",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Mesh":"/Game/Models/BoardCrate",
 		"Materials":["/Game/Materials/Plastic"],
 	},{
 		"Name": "Triod",
 		"Label": "Triod",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Mesh":"/Game/Models/BoardCrate",
 		"Materials":["/Game/Materials/Plastic"],
 	},{
 		"Name": "Resistor",
 		"Label": "Resistor",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Mesh":"/Game/Models/BoardCrate",
 		"Materials":["/Game/Materials/Plastic"],
 	},{
 		"Name": "Transistor",
 		"Label": "Transistor",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Mesh":"/Game/Models/BoardCrate",
 		"Materials":["/Game/Materials/Plastic"],
 	},{
 		"Name": "AdvancedCircuitBoard",
 		"Label": "Advanced Circuit Board",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Mesh":"/Game/Models/BoardCrate",
 		"Materials":["/Game/Materials/DarkGreenPlastic"],
 	},{
 		"Name": "Plastic",
 		"Label": "Plastic",
-		"IsExact": True,
-		"Mesh":"/Game/Models/Ingot",
-		"Materials":["/Game/Materials/GreenPlastic"],
+		"Items": ["Exact"],
+		"Mesh": "/Game/Models/Ingot",
+		"Materials": ["/Game/Materials/GreenPlastic"],
 	},{
 		"Name": "Steel",
 		"Label": "Steel",
-		"IsIngot": True,
-		"IsDust": True,
 		"SmeltLevel": 1,
-		"IsBlock": True,
+		"Items": tiered_parts_list,
 		"Tier": 2,
 	},{
 		"Name": "Aluminium",
 		"Label": "Aluminium",
-		"IsDust": True,
-		"IsIngot": True,
+		"Items": tiered_parts_list,
 		"SmeltLevel": 3,
-		"IsBlock": True,
 		"Tier": 3,
 	},{
 		"Name": "AluminiumOxide",
 		"Label": "Aluminium Oxide",
-		"IsDust": True,
+		"Items": ["Dust", "Block"],
 		"SmeltLevel": 3,
-		"IsBlock": True,
 	},{
 		"Name": "StainlessSteel",
 		"Label": "Stainless Steel",
 		"SmeltLevel": 3,
-		"IsIngot": True,
-		"IsDust": True,
-		"IsBlock": True,
+		"Items": tiered_parts_list,
 		"Tier": 4,
 	},{
 		"Name": "Titanium",
 		"Label": "Titanium",
 		"SmeltLevel": 4,
-		"IsIngot": True,
-		"IsDust": True,
-		"IsBlock": True,
+		"Items": tiered_parts_list,
 		"Tier": 5,
 	},{
 		"Name": "TitaniumTetrachloride",
 		"Label": "Titanium Tetrachloride",
 		"SmeltLevel": 4,
-		"IsFluid": True,
+		"Items": ["Fluid"]
 	},{
 		"Name": "TitaniumSponge",
 		"Label": "Titanium Sponge",
 		"SmeltLevel": 4,
-		"IsExact": True,		
+		"Items": ["Exact"],		
 	},{
 		"Name": "TitaniumOxide",
 		"Label": "Titanium Oxide",
-		"IsDust": True,
+		"Items": ["Dust"],
 	},{
 		"Name": "PreparedTitaniumOxide",
 		"Label": "Prepared Titanium Oxide",
-		"IsDust": True,
+		"Items": ["Dust"],
 	},{
-		"Name": "Zink",
-		"Label": "Zink",
-		"SmeltLevel": 0,
-		"IsMetal": True,
-		"IsDust": True,
-		"IsBlock": True,
-	},{
-		"Name": "Tungsten",
-		"Label": "Tungsten",
+		"Name": "HotNeutroniumPlate",
+		"Label": "Hot Neutronium Plate",
 		"SmeltLevel": 4,
-		"IsDust": True,
-		"Tier": 5,
-	},{
-		"Name": "TungstenOxide",
-		"Label": "Tungsten Oxide",
-		"SmeltLevel": 4,
-		"IsDust": True,
-		"Tier": 5,
-	},{
-		"Name": "TungstenCarbide",
-		"Label": "Tungsten Carbide",
-		"IsDust": True,
-		"Tier": 5,
-	},{
-		"Name": "HotNeutroniumIngot",
-		"Label": "Hot Neutronium Ingot",
-		"SmeltLevel": 4,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Tier": 5,
         "Mesh":"/Game/Models/Ingot",
         "Materials":["/Game/Materials/VeryHotMetal"],
@@ -292,38 +245,37 @@ materials = [
 	#	"Label": "Rubber",
 	#	"SmeltLevel": 0,
 	#	"IsMetal": True,
-	#	"IsDust": True,
+	#	"Items": ["Dust"],
 	#	"Tier": 2
 	#}
 	,{
 		"Name": "Cobalt",
 		"Label": "Cobalt",
 		"SmeltLevel": 4,
-		"IsDust": True,
+		"Items": ["Dust", "Block"],
 		"Tier": 5,
-		"IsBlock": True,
 	},{
 		"Name": "CobaltOxide",
 		"Label": "Cobalt Oxide",
-		"IsDust": True,
+		"Items": ["Dust"],
 		"Tier": 5
 	},{
 		"Name": "Stone",
 		"Label": "Stone",
 		"Tier": 0,
-		"IsExact": True,
+		"Items": ["Exact"],
 	},{
 		"Name": "Sulfur",
 		"Label": "Sulfur",
 		"Tier": 0,
-		"IsExact": True,
+		"Items": ["Exact"],
 	},	
 	#},{
 	#	"Name": "Bronze",
 	#	"Label": "Bronze",
 	#	"SmeltLevel": 2,
 	#	"IsMetal": True,
-	#	"IsDust": True,
+	#	"Items": ["Dust"],
 	#	
 	#	"IsBlock": True
 	#},{
@@ -331,114 +283,102 @@ materials = [
 	#	"Label": "Brass",
 	#	"SmeltLevel": 2,
 	#	"IsMetal": True,
-	#	"IsDust": True,
+	#	"Items": ["Dust"],
 	#	
 	#	"IsBlock": True
 	#},{
 	#	"Name": "BrassDetails",
 	#	"Label": "Brass Parts",
 	#	
-	#	"IsExact": True,
+	#	"Items": ["Exact"],
 	#	"Category": "Component"
 	#},{
 	#	"Name": "BrassReductor",
 	#	"Label": "Brass Reductor",
 	#	
-	#	"IsExact": True,
+	#	"Items": ["Exact"],
 	#	"Category": "Component"
 	#},
 	{
 		"Name": "Cement",
 		"Label": "Cement",
-		"IsDust": True,
+		"Items": ["Dust"],
 	},{
 		"Name": "Neutronium",
 		"Label": "Neutronium",
-		"IsIngot": True,
-		"IsDust": True,
+		"Items": tiered_parts_list,
 		"Tier": 6
 	},{
 		"Name": "Chromium",
 		"Label": "Chromium",
 		"SmeltLevel": 3,
-		"IsDust": True,
-		"IsIngot": True,
+		"Items": ["Dust", "Plate"],
 		"Tier": 3
 	},{
 		"Name": "Plutonium",
 		"Label": "Plutonium",
-		"IsBlock": True,
-		"IsDust": True,
-		"IsIngot": True,
+		"Items": ["Dust", "Block", "Plate"],
 	},{
 		"Name": "Uranium",
 		"Label": "Uranium-238",
-		"IsBlock": True,
-		"IsDust": True,
-		"IsIngot": True,
+		"Items": ["Dust", "Plate"],
 	},{
 		"Name": "Uranium235",
 		"Label": "Uranium-235",
-		"IsBlock": True,
-		"IsDust": True,
-		"IsIngot": True,
+		"Items": ["Dust", "Plate"],
 	},{
 		"Name": "Uranium233",
 		"Label": "Uranium-233",
-		"IsBlock": True,
-		"IsDust": True,
-		"IsIngot": True,
+		"Items": ["Dust", "Plate"],
 	},{
 		"Name": "Uranium233Cell",
 		"Label": "Uranium 233 Cell",
 		"Tier": 5,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"StackSize": 32,
 		"Description":[["NuclearFuel", "common"]],
 	},{
 		"Name": "UraniumCell",
 		"Label": "Uranium Cell",
 		"Tier": 5,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"StackSize": 32,
 		"Description":[["NuclearFuel", "common"]],
 	},{
 		"Name": "PlutoniumCell",
 		"Label": "Plutonium Cell",
 		"Tier": 5,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"StackSize": 32,
 		"Description":[["NuclearFuel", "common"]],
 	},{
 		"Name": "DepletedUraniumCell",
 		"Label": "Depleted Uranium Cell",
 		"Tier": 5,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"StackSize": 32,
 		"Description":[["NuclearFuel", "common"]],
 	},{
 		"Name": "Thorium",
 		"Label": "Thorium",
-		"IsBlock": True,
-		"IsDust": True,
-		"IsIngot": True,
+		"Items": ["Dust", "Plate", "Block"],
 	},{
 		"Name": "Steam",
 		"Label": "Steam",
-		"IsGas": True,
+		"Items": ["Gas"],
 		"Unit": "J",
 		"UnitMul": 1,
 		"Color":[1,1,1]
 	},{
 		"Name": "Chlorine",
 		"Label": "Chlorine",
-		"IsGas": True,
+		"Items": ["Gas"],
 		"Tier": 4,
 		"Color": [1,1,0],
 	},{
 		"Name": "Peat",
 		"Label": "Peat",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Burnable": {
 			"BurnTime": 400
 		},
@@ -448,7 +388,7 @@ materials = [
 	},{
 		"Name": "Coal",
 		"Label": "Coal",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Burnable": {
 			"BurnTime": 800
 		},
@@ -459,7 +399,7 @@ materials = [
 	},{
 		"Name": "Coke",
 		"Label": "Coke",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"StackSize": 64,
 		"Burnable": {
 			"BurnTime": 1200
@@ -469,7 +409,7 @@ materials = [
 	},{
 		"Name": "Creosote",
 		"Label": "Creosote",
-		"IsGas": True,
+		"Items": ["Gas"],
 		"Burnable": {
 			"BurnTime": 4000
 		},
@@ -479,7 +419,7 @@ materials = [
 	},{
 		"Name": "ProducerGas",
 		"Label": "Producer Gas",
-		"IsGas": True,		
+		"Items": ["Gas"],
 		"Burnable": {
 			"BurnTime": 400
 		},
@@ -488,7 +428,7 @@ materials = [
 	},{
 		"Name": "CarbonMonoxide",
 		"Label": "Carbon Monoxide",
-		"IsGas": True,		
+		"Items": ["Gas"],		
 		"Burnable": {
 			"BurnTime": 200
 		},
@@ -497,32 +437,32 @@ materials = [
 	},{
 		"Name": "SulfuricAcid",
 		"Label": "Sulfuric Acid",
-		"IsFluid": True,
+		"Items": ["Fluid"],
 		"Tier": 3
 	},{
 		"Name": "NitricAcid",
 		"Label": "Nitric Acid",
-		"IsFluid": True,		
+		"Items": ["Fluid"],
 		"Color": [1.0,0.5,0.0],
 	},{
 		"Name": "HydrochloricAcid",
 		"Label": "Hydrochloric Acid",
-		"IsFluid": True,		
+		"Items": ["Fluid"],
 		"Color": [1.0,0.5,0.0],
 	},{
 		"Name": "AquaRegia",
 		"Label": "Aqua Regia",
-		"IsFluid": True,		
+		"Items": ["Fluid"],
 		"Color": [1.0,0.5,0.0],
 	},{
 		"Name": "Ash",
 		"Label": "Ash",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Tier": 0
 	},{
 		"Name": "Hydrogen",
 		"Label": "Hydrogen",
-		"IsGas": True,
+		"Items": ["Gas"],
 		"Burnable": {
 			"BurnTime": 400
 		},
@@ -531,7 +471,7 @@ materials = [
 	},{
 		"Name": "Ethanol",
 		"Label": "Ethanol",
-		"IsGas": True,
+		"Items": ["Gas"],
 		"Burnable": {
 			"BurnTime": 500
 		},
@@ -540,7 +480,7 @@ materials = [
 	},{
 		"Name": "Methane",
 		"Label": "Methane",
-		"IsGas": True,
+		"Items": ["Gas"],
 		"Burnable": {
 			"BurnTime": 400
 		},
@@ -549,7 +489,7 @@ materials = [
 	},{
 		"Name": "Ethylene",
 		"Label": "Ethylene",
-		"IsGas": True,
+		"Items": ["Gas"],
 		"Burnable": {
 			"BurnTime": 400
 		},
@@ -558,25 +498,25 @@ materials = [
 	},{
 		"Name": "Polyethylene",
 		"Label": "Polyethylene",
-		"IsExact": True,
+		"Items": ["Sheet"],
 		"Tier": 3,
 		"Color": [.2,.5,.2],
 	},{
 		"Name": "Fluorine",
 		"Label": "Fluorine",
-		"IsFluid": True,
+		"Items": ["Fluid"],
 		"Tier": 2,
 		"Color": [.2,.5,.2],
 	},{
 		"Name": "Tetrafluoroethylene",
 		"Label": "Tetrafluoroethylene",
-		"IsFluid": True,
+		"Items": ["Fluid"],
 		"Tier": 2,
 		"Color": [.2,.5,.2],
 	},{
 		"Name": "PTFE",
 		"Label": "PTFE",
-		"IsExact": True,
+		"Items": ["Sheet"],
 		"Tier": 2,
 		"Color": [.2,.5,.2],
 	},
@@ -585,7 +525,7 @@ materials = [
 	#	"Label": "Nickel",
 	#	"SmeltLevel": 0,
 	#	"IsMetal": True,
-	#	"IsDust": True,
+	#	"Items": ["Dust"],
 	#	"IsLiquidMetal": True,
 	#	"IsBlock": True,
 	#	"Tier": 3
@@ -593,22 +533,22 @@ materials = [
 	{
 		"Name": "Water",
 		"Label": "Water",
-		"IsFluid": True,
+		"Items": ["Fluid"],
 		"Tier": 0
 	},{
 		"Name": "Glass",
 		"Label": "Glass",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Tier": 0,
 	},{
 		"Name": "Lense",
 		"Label": "Lense",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Tier": 0,
 	},{
 		"Name": "Organics",
 		"Label": "Organics",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Tier": 0,
 		"Mesh": "/Game/Models/Piece",
 		"Description":[["Organics","common"]],
@@ -618,62 +558,52 @@ materials = [
 	},{
 		"Name": "Biomass",
 		"Label": "Biomass",
-		"IsFluid": True,
+		"Items": ["Fluid"]
 	},{
 		"Name": "FermentedBiomass",
 		"Label": "Fermented Biomass",
-		"IsFluid": True,
+		"Items": ["Fluid"]
 	},{
 		"Name": "Ammonia",
 		"Label": "Ammonia",
-		"IsFluid": True,
+		"Items": ["Fluid"]
 	},{
 		"Name": "Clay",
 		"Label": "Clay",
 		"Tier": 0,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Mesh": "/Game/Models/Piece"
-	},{
-		"Name": "OreWater",
-		"Label": "Ore Water",
-		"IsFluid": True,
 	},{
 		"Name": "RareEarthSludge",
 		"Label": "Rare Earth Sludge",
-		"IsExact": True,
-		"Mesh": "/Game/Models/Dust",
+		"Items": ["Exact"],
 	},{
 		"Name": "Yttrium",
 		"Label": "Yttrium",
-		"IsDust": True,
-		"IsBlock": True,
-		"IsIngot": True,
-		"Mesh": "/Game/Models/Dust",
+		"Items": ["Dust", "Block", "Plate"],
 	},{
 		"Name": "Neodymium",
 		"Label": "Neodymium",
-		"IsDust": True,
-		"IsBlock": True,
-		"IsIngot": True,
-		"Mesh": "/Game/Models/Dust",
+		"Items": ["Dust", "Block", "Plate"],
 	},{
 		"Name": "Niobium",
 		"Label": "Niobium",
-		"IsDust": True,
-		"IsBlock": True,
-		"IsIngot": True,
-		"Mesh": "/Game/Models/Dust",
+		"Items": ["Dust", "Block", "Plate", "Wire"],
+		"Tier": 4,
+	},{
+		"Name": "MicaFlakes",
+		"Label": "Mica Flakes",
+		"Items": ["Exact"],
+		"Tier": 3,
 	},{
 		"Name": "Tantalum",
 		"Label": "Tantalum",
-		"IsDust": True,
-		"IsBlock": True,
-		"IsIngot": True,
-		"Mesh": "/Game/Models/Dust",
+		"Items": ["Dust", "Block", "Plate", "Wire"],
+		"Tier": 5,
 	},{
 		"Name": "Log",
 		"Label": "Log",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Tier": 0,
 		"Burnable": {
 			"BurnTime": 400
@@ -682,35 +612,61 @@ materials = [
 	},{
 		"Name": "Plank",
 		"Label": "Plank",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Tier": 0,
 		"Burnable": {
 			"BurnTime": 100
 		},
-	},
-	{
+	},{
 		"Name": "Silicon",
 		"Label": "Silicon",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Tier": 3
-	},
-	{
+	},{
+		"Name": "SiliconMonocrystal",
+		"Label": "SiliconMonocrystal",
+		"Items": ["Exact"],
+		"Tier": 3
+	},{
+		"Name": "DopedSiliconMonocrystal",
+		"Label": "DopedSiliconMonocrystal",
+		"Items": ["Exact"],
+		"Tier": 4
+	},{
 		"Name": "SiliconWafer",
 		"Label": "Silicon Wafer",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Tier": 4
-	},
-	{
+	},{
+		"Name": "DopedSiliconWafer",
+		"Label": "Doped Silicon Wafer",
+		"Items": ["Exact"],
+		"Tier": 5
+	},{
+		"Name": "SystemOnChip",
+		"Label": "System On Chip",
+		"Items": ["Exact"],
+		"Tier": 5
+	},{
+		"Name": "IntegratedCircuit",
+		"Label": "IntegratedCircuit",
+		"Items": ["Exact"],
+		"Tier": 5
+	},{
+		"Name": "Capacitor",
+		"Label": "Capacitor",
+		"Items": ["Exact"],
+		"Tier": 3
+	},{
 		"Name": "Rapeseed",
 		"Label": "Rapeseed",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Tier": 0,
 		"Color":[0.1,0.1,0.1]
-	},
-	{
+	},{
 		"Name": "RapeseedOil",
 		"Label": "Rapeseed Oil",
-		"IsFluid": True,
+		"Items": ["Fluid"],
 		"Tier": 0,
 		"Burnable": {
 			"BurnTime": 800
@@ -720,7 +676,7 @@ materials = [
 	{
 		"Name": "RawOil",
 		"Label": "Raw Oil",
-		"IsFluid": True,
+		"Items": ["Fluid"],
 		"Tier": 0,
 		"Burnable": {
 			"BurnTime": 400
@@ -730,13 +686,13 @@ materials = [
 	{
 		"Name": "MineralWater",
 		"Label": "Mineral Water",
-		"IsFluid": True,
+		"Items": ["Fluid"],
 		"Tier": 0
 	},
 	{
 		"Name": "Gasoline",
 		"Label": "Gasoline",
-		"IsGas": True,
+		"Items": ["Gas"],
 		"Tier": 1,
 		"Burnable": {
 			"BurnTime": 400
@@ -745,7 +701,7 @@ materials = [
 	},{
 		"Name": "Diesel",
 		"Label": "Diesel",
-		"IsFluid": True,
+		"Items": ["Fluid"],
 		"Tier": 1,
 		"Burnable": {
 			"BurnTime": 800
@@ -754,7 +710,7 @@ materials = [
 	},{
 		"Name": "HighCetaneDiesel",
 		"Label": "High Cetane Diesel",
-		"IsFluid": True,
+		"Items": ["Fluid"],
 		"Tier": 1,
 		"Color":[.1,.1,0.1],
 		"Burnable": {
@@ -763,7 +719,7 @@ materials = [
 	},{
 		"Name": "Superfuel",
 		"Label": "Superfuel",
-		"IsFluid": True,
+		"Items": ["Fluid"],
 		"Tier": 1,
 		"Color":[1,1,0.5],
 		"Burnable": {
@@ -772,7 +728,7 @@ materials = [
 	},{
 		"Name": "RocketFuel",
 		"Label": "Rocket Fuel",
-		"IsFluid": True,
+		"Items": ["Fluid"],
 		"Tier": 1,
 		"Color":[0,1,0],
 		"Burnable": {
@@ -781,7 +737,7 @@ materials = [
 	},{
 		"Name": "ExtraHeavyOil",
 		"Label": "Extra Heavy Oil",
-		"IsGas": True,
+		"Items": ["Gas"],
 		"Tier": 2,
 		"Burnable": {
 			"BurnTime": 800
@@ -791,7 +747,7 @@ materials = [
 	{
 		"Name": "HeavyOil",
 		"Label": "Heavy Oil",
-		"IsGas": True,
+		"Items": ["Gas"],
 		"Tier": 2,
 		"Burnable": {
 			"BurnTime": 400
@@ -801,69 +757,73 @@ materials = [
 	{
 		"Name": "Battery",
 		"Label": "Battery Cell",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Tier": 3
 	},
 	{
 		"Name": "SiliconOxide",
 		"Label": "Silicon Oxide",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Tier": 1
 	},{
 		"Name": "Pumpkin",
 		"Label": "Pumpkin",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Tier": 0
 	},{
 		"Name": "Oxygen",
 		"Label": "Oxygen",
-		"IsGas": True,
+		"Items": ["Gas"],
 		"Tier": 4
 	},{
 		"Name": "Air",
 		"Label": "Air",
-		"IsGas": True,
+		"Items": ["Gas"],
 		"Tier": 0
 	},{
 		"Name": "Nitrogen",
 		"Label": "Nitrogen",
-		"IsGas": True,
+		"Items": ["Gas"],
 		"Tier": 4
 	},{
 		"Name": "PotassiumChloride",
 		"Label": "Potassium Chloride",
-		"IsDust": True,
+		"Items": ["Dust"],
 		"Tier": 3
 	},{
 		"Name": "Beryllium",
 		"Label": "Beryllium",
-		"IsDust": True,
+		"Items": ["Dust"],
 		"Tier": 4
 	},{
 		"Name": "Helium",
 		"Label": "Helium",
-		"IsGas": True,
-		"IsPlasma": True,
+		"Items": ["Gas", "Plasma"],
 		"Tier": 4
 	},{
 		"Name": "Salt",
 		"Label": "Salt",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Tier": 4
+	},{
+		"Name": "Manganese",
+		"Label": "Manganese",
+		"Items": ["Plate","Block","Dust"],
+		"Tier": 3
 	},{
 		"Name": "PortalBase",
 		"Label": "Portal Base",
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Tier": 2
 	},{
 		"Name": "Signal",
 		"Label": "Signal",
-		"IsExact": True
+		"Items": ["Exact"],
 	},{
 		"Name": "CopperWire",
 		"Label": "Copper Wire",
 		"StackSize": 64,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Parts",
 		"Mesh":"/Game/Models/WireCrate",
 		"Materials":["/Game/CopperWiresOnCrate"],
@@ -871,7 +831,7 @@ materials = [
 		"Name": "GoldWire",
 		"Label": "Gold Wire",
 		"StackSize": 64,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Parts",
 		"Mesh":"/Game/Models/WireCrate",
 		"Materials":["/Game/Materials/GoldWiresOnCrate"],
@@ -879,7 +839,7 @@ materials = [
 		"Name": "SuperconductorWire",
 		"Label": "Superconductor Wire",
 		"StackSize": 64,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Parts",
 		"Mesh":"/Game/Models/WireCrate",
 		"Materials":["/Game/Materials/SuperWiresOnCrate"],
@@ -887,7 +847,7 @@ materials = [
 		"Name": "Circuit",
 		"Label": "Circuit",
 		"StackSize": 32,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
 		"Mesh": "/Game/Models/CircuitCrate"
@@ -895,7 +855,7 @@ materials = [
 		"Name": "AdvancedCircuit",
 		"Label": "Advanced Circuit",
 		"StackSize": 32,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
 		"Mesh": "/Game/Models/Circuit2Crate"
@@ -903,7 +863,7 @@ materials = [
 		"Name": "Processor",
 		"Label": "Processor",
 		"StackSize": 32,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
 		"Mesh": "/Game/Models/Circuit3Crate"
@@ -911,7 +871,7 @@ materials = [
 		"Name": "QuantumCircuit",
 		"Label": "Quantum Circuit",
 		"StackSize": 32,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
 		"Mesh": "/Game/Models/QuantumCircuitCrate"
@@ -919,7 +879,7 @@ materials = [
 		"Name": "QuantumProcessor",
 		"Label": "Quantum Processor",
 		"StackSize": 32,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
 		"Mesh": "/Game/Models/Circuit3Crate"
@@ -927,28 +887,28 @@ materials = [
 		"Name": "QuantumCore",
 		"Label": "Quantum Core",
 		"StackSize": 32,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Parts",
 		"Mesh": "/Game/Models/QuantumCoreCrate"
 	},{
 		"Name": "DecisionResonator",
 		"Label": "Decision Resonator",
 		"StackSize": 32,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Parts",
 		"Mesh": "/Game/Models/QuantumCoreCrate"
 	},{
 		"Name": "BrainMatrix",
 		"Label": "Brain Matrix",
 		"StackSize": 32,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Parts",
 		"Mesh": "/Game/Models/QuantumCoreCrate"
 	},{
 		"Name": "QuantumBrain",
 		"Label": "Quantum Brain",
 		"StackSize": 32,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
 		"Mesh": "/Game/Models/Circuit3Crate"
@@ -956,140 +916,122 @@ materials = [
 		"Name": "Cell",
 		"Label": "Cell",
 		"StackSize": 32,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Parts",
 	},{
 		"Name": "Catalyst",
 		"Label": "Catalyst Cell",
 		"StackSize": 32,
-		"IsExact": True,
+		"Items": ["Exact"],
 	},{
 		"Name": "UltimateCatalyst",
 		"Label": "Ultimate Catalyst Cell",
 		"StackSize": 32,
-		"IsExact": True,
+		"Items": ["Exact"],
 	},{
 		"Name": "MothershipPing",
 		"Label": "Mothership Ping",
 		"StackSize": 32,
-		"IsExact": True,
+		"Items": ["Exact"],
 	},{
 		"Name": "PrimitiveBattery",
 		"Label": "Primitive Battery",
 		"StackSize": 1,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"MaxCharge": single_battery_cell_charge / 4
 	},{
 		"Name": "BasicBattery",
 		"Label": "Basic Battery",
 		"StackSize": 1,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"MaxCharge": single_battery_cell_charge * battery_mul(0)
 	},{
 		"Name": "AdvancedBattery",
 		"Label": "Advanced Battery",
 		"StackSize": 1,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"MaxCharge": single_battery_cell_charge * battery_mul(1)
 	},{
 		"Name": "SuperiorBattery",
 		"Label": "Superior Battery",
 		"StackSize": 1,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"MaxCharge": single_battery_cell_charge * battery_mul(2)
 	},{
 		"Name": "UltimateBattery",
 		"Label": "Ultimate Battery",
 		"StackSize": 1,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"MaxCharge": single_battery_cell_charge * battery_mul(3)
 	},{
 		"Name": "ControlCell",
 		"Label": "Control Cell",
 		"StackSize": 32,
-		"IsExact": True,
+		"Items": ["Exact"],
 	},{
 		"Name": "ReflectorCell",
 		"Label": "Reflector Cell",
 		"StackSize": 32,
-		"IsExact": True,
+		"Items": ["Exact"],
 	},{
 		"Name": "ThoriumCell",
 		"Label": "Thorium Cell",
 		"StackSize": 32,
-		"IsExact": True,
+		"Items": ["Exact"],
 	},{
 		"Name": "MixedOxideCell",
 		"Label": "Mixed-Oxide Cell",
 		"StackSize": 32,
-		"IsExact": True,
+		"Items": ["Exact"],
 	},{
 		"Name": "Mercury",
 		"Label": "Mercury",
-		"IsFluid": True,
+		"Items": ["Fluid"]
 	},{
 		"Name": "HotMercury",
 		"Label": "Hot Mercury",
-		"IsFluid": True,
+		"Items": ["Fluid"]
 	},{
 		"Name": "FilteringCell",
 		"Label": "Filtering Cell",
 		"StackSize": 32,
-		"IsExact": True,
-	},{
-		"Name": "Boron",
-		"Label": "Boron",
-		"IsDust": True,
-		"Tier": 4
-	},{
-		"Name": "Borax",
-		"Label": "Borax",
-		"StackSize": 32,
-		"IsDust": True,
-		"Category": "Mineral",
+		"Items": ["Exact"],
 	},{
 		"Name": "CarbonPrecursor",
 		"Label": "Carbon Precursor",
-		"IsFluid": True
+		"Items": ["Fluid"],
 	},{
 		"Name": "CarbonFiber",
 		"Label": "Carbon Fiber",
 		"StackSize": 32,
-		"IsExact": True
-	},{
-		"Name": "CarbonFiberSheet",
-		"Label": "Carbon Fiber Sheet",
-		"StackSize": 32,
-		"IsExact": True
+		"Items": ["Exact", "Sheet"],
 	},{
 		"Name": "Graphene",
 		"Label": "Graphene",
 		"StackSize": 32,
-		"IsExact": True
+		"Items": ["Exact"],
 	},{
-		"Name": "LithiumIngot",
-		"Label": "Lithium Ingot",
+		"Name": "LithiumPlate",
+		"Label": "Lithium Plate",
 		"StackSize": 32,
-		"IsExact": True
+		"Items": ["Exact"],
 	},{
 		"Name": "Composite",
 		"Label": "Composite",
 		"SmeltLevel": 4,
-		"IsIngot": True,
+		"Items": tiered_parts_list,
 		"Tier": 6,
-		"IsBlock": True,
 	},{
 		"Name": "Ultimate",
 		"Label": "Ultimate",
 		"SmeltLevel": 4,
-		"IsIngot": True,
+		"Items": ["Plate", "Block"],
 		"Tier": 7,
-		"IsBlock": True,
 	},{
 		"Name": "UltimateFrame",
 		"Label": "Ultimate Frame",
 		"StackSize": 16,
-		"IsExact": True
+		"Items": ["Exact"],
 	}
 	
 	
@@ -1102,62 +1044,52 @@ materials = [
 	,{
 		"Name": "Capacity",
 		"Label": "Capacity",
-		"Craftable": False,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Signal"
 	},{
 		"Name": "InputError",
 		"Label": "Input Error",
-		"Craftable": False,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Signal"
 	},{
 		"Name": "OutputError",
 		"Label": "Output Error",
-		"Craftable": False,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Signal"
 	},{
 		"Name": "Progress",
 		"Label": "Progress",
-		"Craftable": False,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Signal"
 	},{
 		"Name": "SwitchOn", 
 		"Label": "Switch On",
-		"Craftable": False,
-		"IsExact": True,
+		"Items": ["Exact"],
 		"Category": "Signal"
 	},{
 		"Name": "Drain",
 		"Label": "Drain",
-		"IsExact": True,
-		"Craftable": False,
+		"Items": ["Exact"],
 		"Category": "Signal"
 	},{
 		"Name": "HeatLoss",
 		"Label": "Heat Loss",
-		"IsExact": True,
-		"Craftable": False,
+		"Items": ["Exact"],
 		"Category": "Signal"
 	},{
 		"Name": "Storage",
 		"Label": "Storage",
-		"IsExact": True,
-		"Craftable": False,
+		"Items": ["Exact"],
 		"Category": "Signal"
 	},{
 		"Name": "Percent",
 		"Label": "Percent",
-		"IsExact": True,
-		"Craftable": False,
+		"Items": ["Exact"],
 		"Category": "Signal"
 	},{
 		"Name": "IncreaseInventorySize",
 		"Label": "IncreaseInventorySize",
-		"IsExact": True,
-		"Craftable": False,
+		"Items": ["Exact"],
 		"Category": "Signal"
 	}
 ]
@@ -1168,15 +1100,13 @@ for a in list(string.ascii_uppercase):
 	materials.append({
 		"Name": a,
 		"Label": a,
-		"IsExact": True,
-		"Craftable": False,
+		"Items": ["Exact"],
 		"Category": "Signal",
 	})
 
 materials.append({
 	"Name": "ErrorString",
 	"Label": "Error String",
-	"IsExact": True,
-	"Craftable": False,
+	"Items": ["Exact"],
 	"Category": "Signal"
 })

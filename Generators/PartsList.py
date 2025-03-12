@@ -7,51 +7,33 @@ parts = [
 	{
 		"Label": "Parts",
 		"Name": "Parts",
-		"Volume": 1,
-		"StartTier": 1,
-		"EndTier": 100,
 		"StackSize": 64,
 		"Mesh":"/Game/Models/PartsCrate",
 		"Materials":["/Game/Materials/Pine","/Game/Materials/%Material%"],
-	},
-	{
-		"Label": "Casing",
-		"Name": "Casing",
-		"StartTier": 1,
-		"EndTier": 100,
-		"ItemLogic": building_cube_logic,
-		"StackSize": 32,
-		"RequiredResearch":["MetalConstructions"],
-	},
-	{
+	},{
 		"Label": "Gearbox",
 		"Name": "Gearbox",
-		"StartTier": 1,
-		"EndTier": 100,
 		"StackSize": 32
-	},
-	{
+	},{
 		"Label": "Solar Cell",
 		"Name": "SolarCell",
-		"StartTier": 3,
-		"EndTier": 100,
 		"StackSize": 32
-	},
-	{
-		"Label": "Locomotive",
-		"Name": "Locomotive",
-		"StartTier": 2,
-		"EndTier": 2,
-		"StackSize": 1
-	},
-	{
-		"Label": "Wagon",
-		"Name": "Wagon",
-		"StartTier": 2,
-		"EndTier": 2,
-		"StackSize": 1
+	},{
+		"Label": "Sheet",
+		"Name": "Sheet",
+		"StackSize": 128
+	},{
+		"Label": "Wire",
+		"Name": "Wire",
+		"StackSize": 128
 	}
 ]
+
+def named_part(name):
+	list = [x for x in parts if x["Name"] == name]
+	if len(list) > 0:
+		return list[0]
+	return parts[0]
 
 circuits = [
 	"CopperParts",
@@ -76,14 +58,14 @@ catalyzers = [
 ]
 
 a_wires = [
-	"CopperWire",
-	"CopperWire",
-	"CopperWire",
-	"CopperWire",
-	"CopperWire",
-	"GoldWire",
-	"GoldWire",
-	"SuperconductorWire",
+	"CopperWire", # 0 stone
+	"CopperWire", # 1 copper
+	"CopperWire", # 2 steel
+	"CopperWire", # 3 alum
+	"CopperWire", # 4 ss
+	"GoldWire",   # 5 tita
+	"GoldWire",   # 6 hard
+	"SuperconductorWire", # 7 neu
 ]
 
 cables = [

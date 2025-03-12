@@ -20,9 +20,52 @@ recipes_disassembler = []
 recipes_gasturb = []
 
 cvs = []
+
+def generate_part(name, material_dict):
+	part = named_part(name)
+	material = material_dict["Name"]
+	tier = material_dict["Tier"] if "Tier" in material_dict else 0
+	cvs.append([material + part["Name"], CamelToSpaces(material) + " " + part["Label"]])
+	item = { "Class": "StaticItem",
+		"Name": material + part["Name"],
+		"LabelParts": [[material + part["Name"], "parts"]],
+		"Image": "T_" + material + part["Name"],
+		"StackSize": part["StackSize"],
+		"LogicJson":
+		{
+			"StaticBlock": material + part["Name"] + static_block
+		},
+		"Materials" : [
+			"/Game/Materials/" + material
+		],
+		
+		"Category": "Parts",
+	}
+	if "ItemLogic" in part:
+		item["ItemLogic"] = part["ItemLogic"]
+		
+	if "Mesh" in part:
+		item["Mesh"] = part["Mesh"]
+		
+	if "Materials" in part:
+		dict = copy.deepcopy(part["Materials"])
+		for i in range(0, len(dict)):
+			if dict[i].find("%Material%") != -1:
+				dict[i] = dict[i].replace("%Material%", material)		
+		item["Materials"] = dict
+	
+	objects_array.append(item)
+
+	item["DescriptionParts"] = [["Part","common"]]
+	
+	images.append({ "NewName": "T_" + material + part["Name"],
+		"Base": "T_" + part["Name"],
+		"MulMask": "T_Material" + material,
+		"AddMask": "T_" + part["Name"] + additive_ico,
+	})
 	
 def append_gas_burning(recipe):
-	gas2 = copy.deepcopy(recipe);
+	gas2 = copy.deepcopy(recipe)
 	gas2["Input"]["Items"].append({ "Name": "Oxygen", "Count": gas2["Input"]["Items"][0]["Count"]})
 	gas2["Output"]["Items"][0]["Count"] = gas2["Output"]["Items"][0]["Count"] * 2
 	gas2["Output"]["Items"] = [gas2["Output"]["Items"][0]]
@@ -30,26 +73,14 @@ def append_gas_burning(recipe):
 	
 	recipes_gasturb.append(recipe)
 
-def append_recipe(crafter, recipe):
-	item_count = 0
-	for item in recipe["Input"]["Items"]:
-		item_count = item_count + item["Count"]
-
-	con_recipe = copy.deepcopy(recipe)
-	crafter.append(con_recipe)
-
-	recipe["Ticks"] = 20
-	recipe.pop("ResourceInput", None)
-	recipes_hand.append(recipe)
-
 # tiered parts
 for part in parts:
+	continue
 	for tier in tiers_numlist:
 		material = tier_material[tier]
 		material_tier = tier
 		if part["StartTier"] <= tier and part["EndTier"] >= tier:
 			cvs.append([material + part["Name"], CamelToSpaces(material) + " " + part["Label"]])
-			level = tier - part["StartTier"]
 			item = { "Class": "StaticItem",
 				"Name": material + part["Name"],
 				"LabelParts": [[material + part["Name"], "parts"]],
@@ -87,61 +118,6 @@ for part in parts:
 				"MulMask": "T_Material" + material,
 				"AddMask": "T_" + part["Name"] + additive_ico,
 			})
-			
-			if part["Name"] == "Casing":
-				recipes_hand.append({
-					"Name": material + "Casing",
-					"Input":{
-						"Items":[
-							{
-								"Name": material + "Ingot",
-								"Count": 3
-							}
-						]
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": material + "Casing",
-								"Count": 1
-							}
-						]
-					},
-					"Ticks" : 40
-				})
-				objects_array.append({ "Class": tesselator_cube,
-					"Name": material + "Casing" + tesselator,
-					"Material" : "/Game/Materials/" + material + "Casing"
-				})
-				objects_array.append({ "Class": "StaticBlock",
-					"Name": material + "Casing" + static_block,
-					"Item" : material + "Casing",
-					"Tesselator": material + "Casing" + tesselator,
-				})
-			
-			if part["Name"] == "Gearbox":
-				if tier == 1:
-					recipes_hand.append({
-						"Name": material + "Gearbox",
-						"Input": items([
-							[material + "Ingot"],
-							[material + "Parts", 3],
-						], material_tier),
-						"Output": one_item(material + "Gearbox", 1),
-						"Tier": material_tier,
-						"Ticks": 200
-					})
-				else:
-					recipes_hand.append({
-						"Name": material + "Gearbox",
-						"Input": items([
-							[material + "Ingot", 3],
-							[material + "Parts", 6],
-						], material_tier),
-						"Output": one_item(material + "Gearbox", 1),
-						"Tier": material_tier,
-						"Ticks": 200
-					})
 					
 
 			if part["Name"] == "SolarCell":
@@ -160,10 +136,10 @@ for part in parts:
 					"Count": 2
 					})
 					inp.append({
-						"Name": "AluminiumIngot",
+						"Name": "AluminiumPlate",
 						"Count": 1
 					})
-				append_recipe(recipes_assembler, {
+				recipes_assembler.append({
 					"Name": material + "SolarCell",
 					"Input":{
 						"Items": inp
@@ -180,13 +156,13 @@ for part in parts:
 					"Tier": level
 				})
 
-			if part["Name"] == "Ingot":
-				append_recipe(recipes_hammer, {
-					"Name": material + "Ingot",
+			if part["Name"] == "Plate":
+				recipes_hammer.append({
+					"Name": material + "Plate",
 					"Input":{
 						"Items":[
 							{
-								"Name": material + ("Ingot" if material != "Stone" else "Surface"),
+								"Name": material + ("Plate" if material != "Stone" else "Surface"),
 								"Count": 1
 							},
 						]
@@ -194,7 +170,7 @@ for part in parts:
 					"Output":{
 						"Items":[
 							{
-								"Name": material + "Ingot",
+								"Name": material + "Plate",
 								"Count": 1
 							}
 						]
@@ -203,42 +179,93 @@ for part in parts:
 					"Tier": material_tier
 				})
 				
-			if part["Name"] == "Parts":
-				append_recipe(recipes_cutter, {
-					"Name": material + "Parts",
-					"Input":{
-						"Items":[
-							{
-								"Name": material + "Ingot",
-								"Count": 1
-							},
-						]
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": material + "Parts",
-								"Count": 1
-							}
-						]
-					},
-					"Ticks" : 80,
-					"Tier": tier,
-					"Productivity": 50,
-				})
+			
 
-# ingots, dusts, fluids, gems, blocks
 for material in materials:
 	material_tier = 0 if "Tier" not in material else material["Tier"]
+	m_name = material["Name"]
+
+	if "Items" not in material:
+		print("Material "+ m_name +" has no Items")
+		continue
+
+	if "Parts" in material["Items"]:
+		generate_part("Parts", material)
+		recipes_cutter.append({
+			"Name": m_name + "Parts",
+			"Input":{
+				"Items":[
+					{
+						"Name": m_name + "Plate",
+						"Count": 1
+					},
+				]
+			},
+			"Output":{
+				"Items":[
+					{
+						"Name": m_name + "Parts",
+						"Count": 1
+					}
+				]
+			},
+			"Ticks" : 80,
+			"Tier": material_tier,
+			"Productivity": 50,
+		})
+
+	if "Sheet" in material["Items"]:
+		generate_part("Sheet", material)
+
+	if "Wire" in material["Items"]:
+		generate_part("Wire", material)
+		recipes_assembler.append({
+			"Name":m_name+"Wire2",
+			"Input": one_item(m_name+"Plate", 1),
+			"Output": one_item(m_name+"Wire", 2),
+			"Ticks" : 40,
+		})
+		recipes_hand.append({
+			"Name":m_name+"Wire",
+			"Input": one_item(m_name+"Plate", 1),
+			"Output": one_item(m_name+"Wire", 1),
+			"Ticks" : 20,
+		})
+
+	if "Gearbox" in material["Items"]:
+		generate_part("Gearbox", material)
+		if material_tier == 1:
+			recipes_hand.append({
+				"Name": m_name + "Gearbox",
+				"Input": items([
+					[m_name + "Plate"],
+					[m_name + "Parts", 3],
+				], material_tier),
+				"Output": one_item(m_name + "Gearbox", 1),
+				"Tier": material_tier,
+				"Ticks": 200
+			})
+		else:
+			recipes_hand.append({
+				"Name": m_name + "Gearbox",
+				"Input": items([
+					[m_name + "Plate", 3],
+					[m_name + "Parts", 6],
+				], material_tier),
+				"Output": one_item(m_name + "Gearbox", 1),
+				"Tier": material_tier,
+				"Ticks": 200
+			})
+
 	# abstract
-	if "IsAbstract" in material:
-		cvs.append([material["Name"], material["Label"]])
+	if "Abstract" in material["Items"]:
+		cvs.append([m_name, material["Label"]])
 		item = { "Class": "StaticItem",
-			"Name": material["Name"],
-			"Image": "T_" + material["Name"],
+			"Name": m_name,
+			"Image": "T_" + m_name,
 			
 			"StackSize": 1,
-			"LabelParts": [[material["Name"], "parts"]],
+			"LabelParts": [[m_name, "parts"]],
 			"Type": "Abstract"
 		}
 		
@@ -257,7 +284,7 @@ for material in materials:
 		objects_array.append(item)
 	
 	# exact
-	if "IsExact" in material:
+	if "Exact" in material["Items"]:
 		cvs.append([material["Name"], material["Label"]])
 		item = { "Class": "StaticItem",
 			"Name": material["Name"],
@@ -267,9 +294,6 @@ for material in materials:
 			
 			"LabelParts": [[material["Name"], "parts"]],
 		}
-			
-		if "Craftable" in material:
-			item["Craftable"] = False
 			
 		if "Category" in material:
 			item["Category"] = material["Category"]
@@ -319,19 +343,19 @@ for material in materials:
 			
 		objects_array.append(item)
 
-	# ingot
-	if "IsIngot" in material:
-		cvs.append([material["Name"] + "Ingot", material["Label"] + " Ingot"])
+	# plate
+	if "Plate" in material["Items"]:
+		cvs.append([material["Name"] + "Plate", material["Label"] + " Plate"])
 		item = { "Class": "StaticItem",
-			"Name": material["Name"] + "Ingot",
-			"Image": "T_" + material["Name"] + "Ingot",
+			"Name": material["Name"] + "Plate",
+			"Image": "T_" + material["Name"] + "Plate",
 			"StackSize": 128,
 			"Mesh": "/Game/Models/Ingot",
 			"Materials" : [
 				"/Game/Materials/" + material["Name"]
 			],			
-			"LabelParts": [[material["Name"] + "Ingot", "parts"]],
-			"Category": "Ingot",
+			"LabelParts": [[material["Name"] + "Plate", "parts"]],
+			"Category": "Plate",
 		}
 		
 		if "Category" in material:
@@ -339,15 +363,15 @@ for material in materials:
 			
 		objects_array.append(item)
 		
-		images.append({ "NewName": "T_" + material["Name"] + "Ingot",
-			"Base": "T_" + "Ingot",
+		images.append({ "NewName": "T_" + material["Name"] + "Plate",
+			"Base": "T_" + "Plate",
 			"MulMask": "T_Material" + material["Name"],
-			"AddMask": "T_" + "Ingot" + additive_ico,
+			"AddMask": "T_" + "Plate" + additive_ico,
 		})
 		
 		if "SmeltLevel" in material and material["SmeltLevel"] <= 0:
 			recipes_smelt.append({
-				"Name": material["Name"] + "Ingot",
+				"Name": material["Name"] + "Plate",
 				"Input":{
 					"Items":[
 						{
@@ -364,7 +388,7 @@ for material in materials:
 				"Output":{
 					"Items":[
 						{
-							"Name": material["Name"] + "Ingot",
+							"Name": material["Name"] + "Plate",
 							"Count": 1
 						}
 					]
@@ -373,11 +397,11 @@ for material in materials:
 			})
 			
 		recipes_macerator.append({
-			"Name": material["Name"] + "Ingot",
+			"Name": material["Name"] + "Plate",
 			"Input":{
 				"Items":[
 					{
-						"Name": material["Name"] + "Ingot",
+						"Name": material["Name"] + "Plate",
 						"Count": 1
 					},
 				]
@@ -398,7 +422,8 @@ for material in materials:
 			"Tier": material_tier,
 		})
 			
-	if "IsBlock" in material:
+	# block
+	if "Block" in material["Items"]:
 		cvs.append([material["Name"] + "Block", material["Label"] + " Block"])
 		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "Block",
@@ -463,7 +488,7 @@ for material in materials:
 		})
 	
 	# fluid
-	if "IsFluid" in material:
+	if "Fluid" in material["Items"]:
 		cvs.append([material["Name"], material["Label"]])
 		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "",
@@ -524,7 +549,7 @@ for material in materials:
 			})
 	
 	# gas
-	if "IsGas" in material:
+	if "Gas" in material["Items"]:
 		cvs.append([material["Name"], material["Label"]])
 		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "",
@@ -544,13 +569,6 @@ for material in materials:
 		if "Category" in material:
 			item["Category"] = material["Category"]
 		
-		#if item["MaterialKey"] + " " + item["Key"] in explicites:
-		#	item["ExplicitKey"] = ex_cvs[explicites.index(item["MaterialKey"] + " " + item["Key"])][0]
-		
-		#if "Burnable" in material:
-		#	item["DescriptionParts"].append(["burnable", "common", material["Burnable"]["BurnTime"]*material["Burnable"]["HeatPerTick"]])
-		#	item["DescriptionParts"].append(["power_output", "common", material["Burnable"]["HeatPerTick"]*20])
-
 		objects_array.append(item)
 		
 		images.append({ "NewName": "T_" + material["Name"] + "",
@@ -585,7 +603,7 @@ for material in materials:
 			})
 	
 	# dust
-	if "IsDust" in material:
+	if "Dust" in material["Items"]:
 		cvs.append([material["Name"] + "Dust", material["Label"] + " Dust"])
 		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "Dust",
