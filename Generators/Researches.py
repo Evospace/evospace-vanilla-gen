@@ -128,14 +128,14 @@ append_levels({
 	"Name": "ElectricFurnace",
 	"LabelParts": [["ElectricFurnace", "machines"]],
 	"Levels": [2,7],
-	"RequiredResearch": ["CopperWire"],
+	"RequiredResearch": ["CopperWire", "SteelProduction"],
 	"Unlocks": [["Hand" + r_dict, "%Material%ElectricFurnace"] ],
 })
 append_levels({
 	"Class": "StaticResearch",
 	"Name": "ElectricalSwitch",
 	"LabelParts": [["ElectricalSwitch", "machines"]],
-	"RequiredResearch": ["CopperWire"],
+	"RequiredResearch": ["CopperWire","SteelProduction"],
 	"Unlocks": [["Hand" + r_dict, tier_material[2] + "ElectricalSwitch"]],
 	"Levels": [2,2],
 })
@@ -229,7 +229,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "GasTurbine",
 	"LabelParts": [["GasTurbine", "machines"]],
-	"RequiredResearch": ["Error"],
+	"RequiredResearch": ["StainlessSteelProduction"],
 	"Levels": [4,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%GasTurbine"] ],
 })
@@ -278,7 +278,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Flywheel",
 	"LabelParts": [["Flywheel", "machines"]],
-	"RequiredResearch": ["BasicMachines"],
+	"RequiredResearch": ["BasicMachines", "SteelProduction"],
 	"Unlocks": [["Hand" + r_dict, tier_material[2] + "Flywheel"]],
 	"Levels": [2,2],
 })
@@ -507,7 +507,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Boiler",
 	"LabelParts": [["Boiler", "machines"]],
-	"RequiredResearch": ["PowerGeneration"],
+	"RequiredResearch": ["PowerGeneration", "SteelProduction"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Boiler"]],
 	"Levels": [2,7],
 	"MainResearch": True
