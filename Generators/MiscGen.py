@@ -149,14 +149,6 @@ simple_blocks = [
 		"Label":"Danger Block",
 		"Tier": 2
 	},{
-		"Name":"RustyCopperCasing",
-		"Label":"Rusty Copper Casing",
-		"Tier": 1
-	},{
-		"Name":"RustyIronCasing",
-		"Label":"Rusty Iron Casing",
-		"Tier": 2
-	},{
 		"Name":"BasicPlatform",
 		"Label":"Basic Platform",
 		"Tier": 0

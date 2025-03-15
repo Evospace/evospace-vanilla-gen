@@ -157,7 +157,7 @@ ore_types = [
 		"Formula": "C",
 		"Processing":{
 			"OreWasher": "CoalDust",
-			"Separator": ["Coal", "CoalDust"],
+			"Separator": ["CoalDust", "CoalDust"],
 			"Washing": "CoalDust",
 			"Furnace": "Coal",
 			"Macerator": "CoalOreDust",
@@ -194,6 +194,16 @@ ore_types = [
 		"Drops": "MonaziteOre",
 		"Crystal": True,
 		"Formula": "ThPO4+NdPO4+YPO4",
+		"Tier": 3
+	},{
+		"Name": "Clay",
+		"NotOre": True,
+		"Color": [0.8, 0.7, 0.3],
+		"Drops": "Clay",
+		"Crystal": True,
+		"Formula": "",
+		"Processing": {
+		},
 		"Tier": 3
 	}
 ]

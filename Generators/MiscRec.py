@@ -187,7 +187,7 @@ recipes_hand.append({
 		["Triod", 3]
 	]),
 	"Output": one_item("Circuit"),
-	"Ticks" : 200,
+	"Ticks" : 150,
 	"Tier": 1,
 })
 
@@ -209,7 +209,7 @@ recipes_hand.append({
 		["CopperWire", 3]
 	]),
 	"Output": one_item("Triod"),
-	"Ticks" : 120,
+	"Ticks" : 50,
 	"Tier": 1,
 })
 
@@ -226,7 +226,7 @@ recipes_hand.append({
 })
 
 recipes_assembler.append({
-	"Name":"AltResistor",
+	"Name":"Resistor2",
 	"Input": items([
 		["CoalDust"],
 		["Organics"],
@@ -238,7 +238,7 @@ recipes_assembler.append({
 })
 
 recipes_assembler.append({
-	"Name":"AltResistor2",
+	"Name":"Resistor3",
 	"Input": items([
 		["PolyethyleneSheet"],
 		["GoldWire"]
@@ -249,7 +249,7 @@ recipes_assembler.append({
 })
 
 recipes_assembler.append({
-	"Name":"AltResistor3",
+	"Name":"Resistor4",
 	"Input": items([
 		["PTFESheet"],
 		["NiobiumWire"]
@@ -260,7 +260,7 @@ recipes_assembler.append({
 })
 
 recipes_assembler.append({
-	"Name":"AltResistor4",
+	"Name":"Resistor5",
 	"Input": items([
 		["PTFESheet"],
 		["TantalumWire"]
@@ -283,7 +283,7 @@ recipes_hand.append({
 })
 
 recipes_assembler.append({
-	"Name":"AltAdvancedCircuit",
+	"Name":"AdvancedCircuit2",
 	"Input": items([
 		["CircuitBoard"],
 		["Transistor", 2],
@@ -292,6 +292,53 @@ recipes_assembler.append({
 	"Output": one_item("AdvancedCircuit"),
 	"Ticks" : 200,
 	"Tier": 2,
+})
+
+recipes_hand.append({
+    "Name": "Transistor",
+    "Input": items([
+        ["Silicon", 1],
+        ["CopperWire", 2]
+    ]),
+    "Output": one_item("Transistor"),
+    "Ticks": 80,
+    "Tier": 1,
+})
+
+recipes_assembler.append({
+    "Name": "Transistor2",
+    "Input": items([
+        ["Silicon", 1],
+        ["GoldWire", 1],
+        ["PolyethyleneSheet", 1]
+    ]),
+    "Output": one_item("Transistor", 2),
+    "Ticks": 60,
+    "Tier": 2,
+})
+
+recipes_assembler.append({
+    "Name": "Transistor3",
+    "Input": items([
+        ["SiliconWafer", 1],
+        ["GoldWire", 4],
+        ["PolyethyleneSheet", 1]
+    ]),
+    "Output": one_item("Transistor", 8),
+    "Ticks": 60,
+    "Tier": 3,
+})
+
+recipes_assembler.append({
+    "Name": "Transistor4",
+    "Input": items([
+        ["DopedSiliconWafer", 1],
+        ["PlatinumWire", 2],
+        ["PolyethyleneSheet", 1]
+    ]),
+    "Output": one_item("Transistor", 16),
+    "Ticks": 60,
+    "Tier": 4,
 })
 
 recipes_assembler.append({
@@ -310,30 +357,6 @@ recipes_assembler.append({
 	"Tier": 4,
 })
 
-recipes_assembler.append({
-	"Name":"IntegratedCircuit",
-	"Input": one_item("SiliconWafer"),
-	"Output": one_item("IntegratedCircuit", 4),
-	"Ticks" : 200,
-	"Tier": 3,
-})
-
-recipes_assembler.append({
-	"Name":"AltIntegratedCircuit",
-	"Input": one_item("DopedSiliconWafer"),
-	"Output": one_item("IntegratedCircuit", 8),
-	"Ticks" : 200,
-	"Tier": 3,
-})
-
-recipes_assembler.append({
-	"Name":"SystemOnChip",
-	"Input": one_item("DopedSiliconWafer"),
-	"Output": one_item("SystemOnChip", 4),
-	"Ticks" : 200,
-	"Tier": 3,
-})
-
 recipes_hand.append({
 	"Name":"Processor",
 	"Input": items([
@@ -347,7 +370,7 @@ recipes_hand.append({
 })
 
 recipes_assembler.append({
-	"Name":"AltProcessor",
+	"Name":"Processor2",
 	"Input": items([
 		["CircuitBoard"],
 		["AdvancedCircuit", 1],
@@ -360,7 +383,7 @@ recipes_assembler.append({
 })
 
 recipes_assembler.append({
-	"Name":"AltProcessor2",
+	"Name":"Processor3",
 	"Input": items([
 		["CircuitBoard"],
 		["SystemOnChip", 1],
@@ -369,25 +392,6 @@ recipes_assembler.append({
 	"Output": one_item("Processor"),
 	"Ticks" : 200,
 	"Tier": 5,
-})
-
-recipes_assembler.append({
-	"Name": "AdvancedCircuitBoard",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Plastic",
-				"Count": 1
-			},
-			{
-				"Name": "GoldWire",
-				"Count": 3
-			},
-		]
-	},
-	"Output": one_item("AdvancedCircuitBoard"),
-	"Ticks" : 80,
-	"Tier": 3,
 })
 
 append_recipe({
@@ -3722,20 +3726,6 @@ append_recipe_hand_press({
 	"Input": one_item("SandSurface"),
 	"Output": one_item("BasicPlatform"),
 	"Ticks" : 10
-})
-
-append_recipe_hand_press({
-	"Name":"RustyCopperCasing",
-	"Input": one_item("CopperCasing"),
-	"Output": one_item("RustyCopperCasing"),
-	"Ticks" : 20
-})
-
-append_recipe_hand_press({
-	"Name":"RustyIronCasing",
-	"Input": one_item("SteelCasing"),
-	"Output": one_item("RustyIronCasing"),
-	"Ticks" : 20
 })
 
 objects_array.append({ "Class": r_dict,

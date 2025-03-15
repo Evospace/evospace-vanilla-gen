@@ -198,8 +198,8 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "Electrolysis",
-	"LabelParts": [["Electrolysis", "researches"]],
+	"Name": "Electrolyzer",
+	"LabelParts": [["Electrolyzer", "researches"]],
 	"RequiredResearch": ["SteelProduction"], 
 	"Levels": [2,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%Electrolyzer"] ],
@@ -210,7 +210,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "AluminiumReduction",
 	"LabelParts": [["AluminiumReduction", "researches"]],
-	"RequiredResearch": ["Electrolysis"], 
+	"RequiredResearch": ["Electrolyzer"], 
 	"Levels": [2,2],
 	"Unlocks": [["Electrolyzer" + r_dict, "AluminiumOxideDust"], ["Electrolyzer" + r_dict, "AluminiumOreDust"]],
 	"MainResearch": True,
@@ -485,6 +485,16 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
+	"Name": "Circuit2",
+	"LabelParts": [["Circuit", "parts"], ["II", "common"]],
+	"RequiredResearch": ["Circuit", "Transistor"],
+	"Unlocks": [[assembler_r_dict, "Circuit2"]],
+	"Levels": [1,1],
+	"MainResearch": True,
+	"CostMul": 1.5,
+})
+append_levels({
+	"Class": "StaticResearch",
 	"Name": "Furnace",
 	"LabelParts": [["Furnace", "machines"]],
 	"RequiredResearch": ["StirlingEngine"],
@@ -527,31 +537,99 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "AdvancedCircuit",
-	"LabelParts": [["AdvancedCircuit", "parts"]],
-	"RequiredResearch": ["Separator", "Circuit"],
+	"Name": "Resistor",
+	"LabelParts": [["Resistor", "parts"]],
+	"RequiredResearch": ["Circuit"],
 	"Levels": [2,2],
-	"Unlocks": [["Hand" + r_dict, "AdvancedCircuit"],[assembler_r_dict, "AdvancedCircuit"]],
+	"Unlocks": [["Hand" + r_dict, "Resistor"],[assembler_r_dict, "Resistor2"]],
 	"MainResearch": True,
+	"CostMul":1.5,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "Resistor2",
+	"LabelParts": [["Resistor", "parts"], ["II", "common"]],
+	"RequiredResearch": ["Resistor"],
+	"Levels": [2,2],
+	"Unlocks": [[assembler_r_dict, "Resistor3"]],
 	"CostMul":2.5,
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "GoldWire",
-	"LabelParts": [["GoldWire", "parts"]],
-	"RequiredResearch": ["AdvancedCircuit", "OreWasher"],
+	"Name": "Resistor3",
+	"LabelParts": [["Resistor", "parts"], ["III", "common"]],
+	"RequiredResearch": ["Resistor2"],
 	"Levels": [2,2],
-	"Unlocks": [["Hand" + r_dict, "GoldWire"],[assembler_r_dict, "GoldWire"]],
-	"MainResearch": True
+	"Unlocks": [[assembler_r_dict, "Resistor4"]],
+	"CostMul":4.5,
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "AdvancedCircuitBoard",
-	"LabelParts": [["AdvancedCircuitBoard", "parts"]],
-	"RequiredResearch": ["GoldWire", "PyrolysisUnit"],
-	"Levels": [3,3],
-	"Unlocks": [["Hand" + r_dict, "AdvancedCircuitBoard"],[assembler_r_dict, "AdvancedCircuitBoard"]],
+	"Name": "Resistor4",
+	"LabelParts": [["Resistor", "parts"], ["IV", "common"]],
+	"RequiredResearch": ["Resistor3"],
+	"Levels": [2,2],
+	"Unlocks": [[assembler_r_dict, "Resistor5"]],
+	"CostMul":8.5,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "AdvancedCircuit",
+	"LabelParts": [["AdvancedCircuit", "parts"]],
+	"RequiredResearch": ["Separator", "Resistor"],
+	"Levels": [2,2],
+	"Unlocks": [["Hand" + r_dict, "AdvancedCircuit"],[assembler_r_dict, "AdvancedCircuit"]],
+	"CostMul":1.6,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "Transistor",
+	"LabelParts": [["Transistor", "parts"]],
+	"RequiredResearch": ["AdvancedCircuit"],
+	"Levels": [2,2],
+	"Unlocks": [["Hand" + r_dict, "Transistor"],[assembler_r_dict, "Transistor"]],
 	"MainResearch": True,
+	"CostMul":3.5,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "Transistor2",
+	"LabelParts": [["Transistor", "parts"], ["II", "common"]],
+	"RequiredResearch": ["Transistor"],
+	"Levels": [2,2],
+	"Unlocks": [[assembler_r_dict, "Transistor2"]],
+	"MainResearch": True,
+	"CostMul":6.5,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "Transistor3",
+	"LabelParts": [["Transistor", "parts"], ["III", "common"]],
+	"RequiredResearch": ["Transistor2"],
+	"Levels": [2,2],
+	"Unlocks": [[assembler_r_dict, "Transistor3"]],
+	"MainResearch": True,
+	"CostMul":12.5,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "Transistor4",
+	"LabelParts": [["Transistor", "parts"], ["IV", "common"]],
+	"RequiredResearch": ["Transistor3"],
+	"Levels": [2,2],
+	"Unlocks": [[assembler_r_dict, "Transistor4"]],
+	"MainResearch": True,
+	"CostMul":23.5,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "AdvancedCircuit2",
+	"LabelParts": [["Alternative", "common"],["AdvancedCircuit", "parts"]],
+	"RequiredResearch": ["AdvancedCircuit", "Transistor"],
+	"Levels": [2,2],
+	"Unlocks": [[assembler_r_dict, "AltAdvancedCircuit"]],
+	"MainResearch": True,
+	"CostMul":2.5,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -566,7 +644,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Processor",
 	"LabelParts": [["Processor", "parts"]],
-	"RequiredResearch": ["SiliconWafer", "AdvancedCircuitBoard"],
+	"RequiredResearch": ["SiliconWafer"],
 	"Unlocks": [["Hand" + r_dict, "Processor"],[assembler_r_dict, "Processor"],[assembler_r_dict, "Processor2"]],
 	"Levels": [3,3],
 	"MainResearch": True,
@@ -731,9 +809,8 @@ append_levels({
 	"Name": "MetalConstructions",
 	"LabelParts": [["MetalConstructions", "researches"]],
 	"RequiredResearch": ["Metalwork"],
-	"Unlocks": [["Hand" + r_dict, "%Material%Corner"] ,
-	["Hand" + r_dict, "%Material%Casing"] ,
-	["Hand" + r_dict, "%Material%Beam"] ],
+	"Unlocks": [["Hand" + r_dict, "%Material%Corner"],
+	["Hand" + r_dict, "%Material%Beam"]],
 	"Levels": [1,7],
 	"Chapter":"Decorations"+static_chapter,
 	
@@ -749,18 +826,19 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "Chemistry",
-	"LabelParts": [["Chemistry", "researches"]],
+	"Name": "ChemReactor",
+	"LabelParts": [["ChemReactor", "machines"]],
 	"RequiredResearch": ["ElectricEngine"],
 	"Unlocks": [["Hand" + r_dict, "%Material%ChemReactor"] ],
 	"Levels": [2,7],
 	"MainResearch": True,
+	"CostMul": 2,
 })
 append_levels({
 	"Class": "StaticResearch",
 	"Name": "IndustrialChemReactor",
 	"LabelParts": [["IndustrialChemReactor", "machines"]],
-	"RequiredResearch": ["Chemistry"],
+	"RequiredResearch": ["ChemReactor"],
 	"Unlocks": [["Hand" + r_dict, "%Material%IndustrialChemReactor"] ],
 	"Levels": [3,7],
 	"MainResearchArr": [True, True, False, False, False, False],
@@ -797,7 +875,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Sifter",
 	"LabelParts": [["Sifter", "machines"]],
-	"RequiredResearch": ["Chemistry"],
+	"RequiredResearch": ["ChemReactor"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Sifter"] ],
 	"Levels": [3,7],
 	
@@ -843,7 +921,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Mixer",
 	"LabelParts": [["Mixer", "machines"]],
-	"RequiredResearch": ["OreWasher"],
+	"RequiredResearch": ["OreWasher", "Electrolyzer"],
 	"Levels": [2,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%Mixer"] ],
 	"MainResearch": True,
@@ -881,7 +959,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "AdvancedAlloys",
 	"LabelParts": [["AdvancedAlloys", "researches"]],
-	"RequiredResearch": ["Chemistry", "AluminiumProduction", "Separator"],
+	"RequiredResearch": ["ChemReactor", "AluminiumProduction", "Separator"],
 	"Unlocks": [["Mixer" + r_dict, "SSCraft"],["Mixer" + r_dict, "SSCraft2"]],
 	"Levels": [4,4],
 	"MainResearch": True,
@@ -1058,7 +1136,7 @@ append_levels({
 	"Name": "Fermentation",
 	"LabelParts": [["Fermentation", "researches"]],
 	"Levels": [3,7],
-	"RequiredResearch": ["Chemistry"],
+	"RequiredResearch": ["ChemReactor"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Fermenter"] ],
 })
 append_levels({
@@ -1222,7 +1300,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "DecorativePlastic",
 	"LabelParts": [["DecorativePlastic", "researches"]],
-	"RequiredResearch": ["Chemistry", "PyrolysisUnit", "DecorativeWood3"],
+	"RequiredResearch": ["ChemReactor", "PyrolysisUnit", "DecorativeWood3"],
 	"Unlocks": [["Hand" + r_dict, "PlasticWindow"]],
 	"Levels": [4,4],
 })
@@ -1409,13 +1487,11 @@ csv.append(["BasicMachines", "Basic Machines"])
 csv.append(["Container", "Fluid Storage"])
 csv.append(["SingleTypeStorage", "Single Type Storage"])
 csv.append(["DistributedComputing", "Distributed Computing"])
-csv.append(["Electrolysis", "Electrolysis"])
 csv.append(["Sign", "Sign"])
 csv.append(["Cutting", "Cutting"])
 csv.append(["SteelProduction", "Steel Production"])
 csv.append(["AutomaticMining", "Automatic Mining"])
 csv.append(["MetalConstructions", "Metal Constructions"])	
-csv.append(["Chemistry", "Chemistry"])
 csv.append(["AdvancedSmelting", "Advanced Smelting"])
 csv.append(["IndustrialSmelting", "Industrial Smelting"])
 csv.append(["Fermentation", "Fermentation"])

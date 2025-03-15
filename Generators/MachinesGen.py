@@ -701,6 +701,21 @@ for machine in machines:
 				"Input":{
 					"Items":[
 						parts_count(2 + parts_ramp(level)),{
+							"Name": tier_material[tier] + "Plate",
+							"Count": 2
+						}
+					]
+				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Ticks" : 20
+			})
+
+		if machine["Name"] == "SteamEngine":
+			append_recipe({
+				"Name": tier_material[tier] + machine["Name"],
+				"Input":{
+					"Items":[
+						parts_count(2 + parts_ramp(level)),{
 							"Name": tier_material[tier] + "Pipe",
 							"Count": 2
 						}
@@ -1154,17 +1169,6 @@ for machine in machines:
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
-
-		if machine["Name"] == "SteamEngine":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input": items([
-					[circuit(), 3],
-					[tier_material[tier] + "Pump"]
-				]),
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 20
-			})
 			
 		if machine["Name"] == "Pump":
 			append_recipe({
@@ -1363,7 +1367,7 @@ for machine in machines:
 						}
 					]
 				},
-				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Output": one_item(machine["Name"]),
 				"Ticks" : 5
 			})
 			

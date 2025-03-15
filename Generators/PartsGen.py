@@ -73,114 +73,6 @@ def append_gas_burning(recipe):
 	
 	recipes_gasturb.append(recipe)
 
-# tiered parts
-for part in parts:
-	continue
-	for tier in tiers_numlist:
-		material = tier_material[tier]
-		material_tier = tier
-		if part["StartTier"] <= tier and part["EndTier"] >= tier:
-			cvs.append([material + part["Name"], CamelToSpaces(material) + " " + part["Label"]])
-			item = { "Class": "StaticItem",
-				"Name": material + part["Name"],
-				"LabelParts": [[material + part["Name"], "parts"]],
-				"Image": "T_" + material + part["Name"],
-				"StackSize": part["StackSize"],
-				"LogicJson":
-				{
-					"StaticBlock": material + part["Name"] + static_block
-				},
-				"Materials" : [
-					"/Game/Materials/" + material
-				],
-				
-				"Category": "Parts",
-			}
-			if "ItemLogic" in part:
-				item["ItemLogic"] = part["ItemLogic"]
-				
-			if "Mesh" in part:
-				item["Mesh"] = part["Mesh"]
-				
-			if "Materials" in part:
-				dict = copy.deepcopy(part["Materials"])
-				for i in range(0, len(dict)):
-					if dict[i].find("%Material%") != -1:
-						dict[i] = dict[i].replace("%Material%", tier_material[tier])		
-				item["Materials"] = dict
-			
-			objects_array.append(item)
-
-			item["DescriptionParts"] = [["Part","common"]]
-			
-			images.append({ "NewName": "T_" + material + part["Name"],
-				"Base": "T_" + part["Name"],
-				"MulMask": "T_Material" + material,
-				"AddMask": "T_" + part["Name"] + additive_ico,
-			})
-					
-
-			if part["Name"] == "SolarCell":
-				inp = [{
-					"Name": a_wires[tier],
-					"Count": 2
-				}]
-				if tier > 3:
-					inp.append({
-						"Name": tier_material[tier - 1] + "SolarCell",
-						"Count": 2
-					})
-				else:
-					inp.append({
-					"Name": "SiliconWafer",
-					"Count": 2
-					})
-					inp.append({
-						"Name": "AluminiumPlate",
-						"Count": 1
-					})
-				recipes_assembler.append({
-					"Name": material + "SolarCell",
-					"Input":{
-						"Items": inp
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": material + "SolarCell",
-								"Count": 1
-							}
-						]
-					},
-					"Ticks" : 80,
-					"Tier": level
-				})
-
-			if part["Name"] == "Plate":
-				recipes_hammer.append({
-					"Name": material + "Plate",
-					"Input":{
-						"Items":[
-							{
-								"Name": material + ("Plate" if material != "Stone" else "Surface"),
-								"Count": 1
-							},
-						]
-					},
-					"Output":{
-						"Items":[
-							{
-								"Name": material + "Plate",
-								"Count": 1
-							}
-						]
-					},
-					"Ticks" : 80,
-					"Tier": material_tier
-				})
-				
-			
-
 for material in materials:
 	material_tier = 0 if "Tier" not in material else material["Tier"]
 	m_name = material["Name"]
@@ -189,9 +81,46 @@ for material in materials:
 		print("Material "+ m_name +" has no Items")
 		continue
 
+	if "SolarCell" in material["Items"]:
+		generate_part("SolarCell", material)
+		inp = [{
+			"Name": a_wires[material_tier],
+			"Count": 2
+		}]
+		if material_tier > 3:
+			inp.append({
+				"Name": tier_material[material_tier - 1] + "SolarCell",
+				"Count": 2
+			})
+		else:
+			inp.append({
+			"Name": "SiliconWafer",
+			"Count": 2
+			})
+			inp.append({
+				"Name": "AluminiumPlate",
+				"Count": 1
+			})
+		recipes_assembler.append({
+			"Name": m_name + "SolarCell",
+			"Input":{
+				"Items": inp
+			},
+			"Output":{
+				"Items":[
+					{
+						"Name": m_name + "SolarCell",
+						"Count": 1
+					}
+				]
+			},
+			"Ticks" : 80,
+			"Tier": material_tier
+		})
+
 	if "Parts" in material["Items"]:
 		generate_part("Parts", material)
-		recipes_cutter.append({
+		recipes_hand.append({
 			"Name": m_name + "Parts",
 			"Input":{
 				"Items":[
