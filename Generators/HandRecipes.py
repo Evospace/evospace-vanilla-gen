@@ -255,27 +255,6 @@ recipes_hand.append({
 	"Ticks" : 20
 })
 
-recipes_hand.append({
-	"Name":"GoldWire",
-	"Input":{
-		"Items":[
-			{
-				"Name": "GoldPlate",
-				"Count": 1
-			},	
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "GoldWire",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 20
-})
-
 append_recipe_hand_press({
 	"Name": "WoodenPlanks",
 	"Input":{

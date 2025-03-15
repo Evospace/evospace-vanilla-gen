@@ -67,7 +67,7 @@ cvs.append(["Ultimate", "Ultimate"])
 cvs.append(["Splitter", "Can divide item flow into parts."])
 cvs.append(["Sorter", "Allowing to set white filter."])
 
-cvs.append(["alt", "Alt"])
+cvs.append(["Alternative", "Alternative"])
 cvs.append(["tier", "Tier: {0}"])
 cvs.append(["ips", "Items per second: {0}"])
 cvs.append(["dps", "Degrees per second: {0}"])
