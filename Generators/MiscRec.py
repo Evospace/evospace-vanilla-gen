@@ -1360,6 +1360,7 @@ recipes_electrolyzer.append({
 		],
 	},
 	"Ticks" : 200,
+	"Tier":2,
 })
 recipes_boiler.append({
 	"Name": "Boiling",
@@ -1787,65 +1788,29 @@ for material in {"Ruby", "Malachite"}:
 
 recipes_macerator.append({
 	"Name": "Clay",
-	"Input":{
-		"Items":[
-			{
-				"Name": "DirtSurface",
-				"Count": 1
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Clay",
-				"Count": 1
-			}
-		]
-	},
-	
+	"Input": one_item("DirtSurface"),
+	"Output": one_item("Clay"),
 	"Ticks" : 200
+})
+recipes_macerator.append({
+	"Name": "Coal",
+	"Input": one_item("Coal"),
+	"Output": one_item("CoalDust"),
+	"Ticks" : 100,
+	"Tier": 0
 })
 			
 recipes_macerator.append({
 	"Name": "GravelToSand",
-	"Input":{
-		"Items":[
-			{
-				"Name": "GravelSurface",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "SandSurface",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("GravelSurface"),
+	"Output": one_item("SandSurface"),
 	"Ticks" : 100
 })
 
 recipes_hammer.append({
 	"Name": "StoneToGravel",
-	"Input":{
-		"Items":[
-			{
-				"Name": "StoneSurface",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "GravelSurface",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("StoneSurface"),
+	"Output": one_item("GravelSurface"),
 	"Tier": 1,
 	"Ticks": 100,
 })
@@ -2040,6 +2005,7 @@ recipes_electrolyzer.append({
 		]
 	},
 	"Ticks": 200,
+	"Tier":2,
 })	
 recipes_electrolyzer.append({
 	"Name": "ElectrolyzerChalcopyriteDust",
@@ -2056,6 +2022,7 @@ recipes_electrolyzer.append({
 		]
 	},
 	"Ticks": 100*2,
+	"Tier":2,
 })
 recipes_electrolyzer.append({
 	"Name": "ElectrolyzerMagnetiteDust",
@@ -2072,6 +2039,7 @@ recipes_electrolyzer.append({
 		]
 	},
 	"Ticks": 200,
+	"Tier":2,
 })
 recipes_electrolyzer.append({
 	"Name": "ElectrolyzerMalachiteDust",
@@ -2088,6 +2056,7 @@ recipes_electrolyzer.append({
 		]
 	},
 	"Ticks": 200,
+	"Tier":2,
 })
 recipes_electrolyzer.append({
 	"Name": "ElectrolyzerBauxiteDust",
@@ -2107,6 +2076,7 @@ recipes_electrolyzer.append({
 		]
 	},
 	"Ticks": 200,
+	"Tier":2,
 })
 recipes_electrolyzer.append({
 	"Name": "ElectrolyzerRubyDust",
@@ -2126,6 +2096,7 @@ recipes_electrolyzer.append({
 		]
 	},
 	"Ticks": 200,
+	"Tier":2,
 })
 
 recipes_electrolyzer.append({
@@ -2139,7 +2110,8 @@ recipes_electrolyzer.append({
 			}
 		]
 	},
-	"Ticks" : 200
+	"Ticks" : 200,
+	"Tier":2,
 })
 
 recipes_electrolyzer.append({
@@ -2161,7 +2133,8 @@ recipes_electrolyzer.append({
 			}
 		]
 	},
-	"Ticks" : 200
+	"Ticks" : 200,
+	"Tier":2,
 })
 
 recipes_electrolyzer.append({
@@ -2175,7 +2148,8 @@ recipes_electrolyzer.append({
 			}
 		]
 	},
-	"Ticks" : 200
+	"Ticks" : 200,
+	"Tier":2,
 })
 
 recipes_electrolyzer.append({
@@ -2190,212 +2164,10 @@ recipes_electrolyzer.append({
 			
 		]
 	},
-	"Ticks" : 200
+	"Ticks" : 200,
+	"Tier":2,
 })
 
-
-# wood
-
-recipes_cutter.append({
-	"Name": "LogCutting",
-	"Input": one_item("Log"),
-	"Output": one_item("Plank", 4),
-	"Ticks" : 80,
-})
-
-recipes_cutter.append({
-	"Name": "PlankToCircuitBoard",
-	"Input": one_item("Plank"),
-	"Output": one_item("CircuitBoard"),
-	"Ticks": 80,
-	"Tier": 1
-})
-recipes_cutter.append({
-	"Name": "PlasticToCircuitBoard",
-	"Input": one_item("Plastic"),
-	"Output": one_item("CircuitBoard", 4),
-	"Ticks": 80,
-	"Tier": 3,
-})
-recipes_cutter.append({
-	"Name":"StoneTiles",
-	"Input": one_item("StoneSurface"),
-	"Output": one_item("StoneTiles"),
-	"Ticks" : 100
-})
-recipes_cutter.append({
-	"Name":"DarkTiles",
-	"Input": one_item("DarkStoneSurface"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "DarkTiles",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 100
-})
-recipes_cutter.append({
-	"Name":"RedTiles",
-	"Input": one_item("RedStoneSurface"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "RedTiles",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 100
-})
-recipes_cutter.append({
-	"Name":"Bricks",
-	"Input": one_item("StoneTiles"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "Bricks",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 100
-})
-recipes_cutter.append({
-	"Name":"RedBricks",
-	"Input": one_item("RedTiles"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "RedBricks",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 100
-})
-recipes_cutter.append({
-	"Name":"DarkBricks",
-	"Input": one_item("DarkTiles"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "DarkBricks",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 100
-})
-recipes_cutter.append({
-	"Name":"TerracottaTiles",
-	"Input": one_item("Terracotta"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "TerracottaTiles",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 100
-})
-recipes_cutter.append({
-	"Name":"TerracottaBricks",
-	"Input": one_item("TerracottaTiles"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "TerracottaBricks",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 100
-})
-recipes_cutter.append({
-	"Name": "ConcreteTiles",
-	"Input": one_item("Concrete"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "ConcreteTiles",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 100,
-})
-recipes_cutter.append({
-	"Name": "ConcreteSmallTiles",
-	"Input": one_item("ConcreteTiles"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "ConcreteSmallTiles",
-				"Count": 1
-			}
-		]
-	},
-	
-	"Ticks" : 100,
-})
-recipes_cutter.append({
-	"Name": "ConcreteBricks",
-	"Input": one_item("ConcreteSmallTiles"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "ConcreteBricks",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 100,
-})
-recipes_cutter.append({
-	"Name": "ReinforcedConcreteTiles",
-	"Input": one_item("ReinforcedConcrete"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "ReinforcedConcreteTiles",
-				"Count": 1
-			}
-		]
-	},
-	
-	"Ticks" : 100,
-})
-recipes_cutter.append({
-	"Name": "ReinforcedConcreteSmallTiles",
-	"Input": one_item("ReinforcedConcreteTiles"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "ReinforcedConcreteSmallTiles",
-				"Count": 1
-			}
-		]
-	},
-	
-	"Ticks" : 100,
-})
-recipes_cutter.append({
-	"Name": "ReinforcedConcreteBricks",
-	"Input": one_item("ReinforcedConcreteSmallTiles"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "ReinforcedConcreteBricks",
-				"Count": 1
-			}
-		]
-	},
-	
-	"Ticks" : 100,
-})
 # burning
 
 recipes_ferm.append({
@@ -2412,30 +2184,14 @@ recipes_ferm.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "DirtSurface",
-				"Count": 1
-			}
-		]
-	},
-	
+	"Output": one_item("DirtSurface"),
 	"Ticks" : 200
 })
 
 recipes_ferm.append({
 	"Name": "Rapseed",
 	"Input": one_item("Rapeseed"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "RapeseedOil",
-				"Count": 500
-			}
-		]
-	},
-	
+	"Output": one_item("RapeseedOil", 500),
 	"Ticks" : 200
 })
 
@@ -3420,7 +3176,8 @@ recipes_electrolyzer.append({
 		]
 	},
 	"Ticks" : 400,
-	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]]
+	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]],
+	"Tier":2,
 })
 
 recipes_industrial_chemreactor.append({
@@ -3743,9 +3500,11 @@ objects_array.append({ "Class": r_dict,
 	"Recipes": recipes_smelter
 })
 
+FixMinTier(recipes_macerator, 1)
 objects_array.append({ "Class": r_dict,
 	"Name": "Macerator" + r_dict,
-	"Recipes": recipes_macerator
+	"Recipes": recipes_macerator,
+	"StartTier": 1,
 })
 
 objects_array.append({ "Class": r_dict,
@@ -3766,11 +3525,6 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": "Separator" + r_dict,
 	"Recipes": recipes_sep
-})
-
-objects_array.append({ "Class": r_dict,
-	"Name": "Press" + r_dict,
-	"Recipes": recipes_press
 })
 
 objects_array.append({ "Class": r_dict,
@@ -3795,7 +3549,8 @@ objects_array.append({ "Class": r_dict,
 
 objects_array.append({ "Class": r_dict,
 	"Name": "ElectricFurnace" + r_dict,
-	"Recipes": recipes_elfurn
+	"Recipes": recipes_elfurn,
+	"StartTier": 2,
 })
 
 objects_array.append({ "Class": r_dict,
@@ -3808,9 +3563,11 @@ objects_array.append({ "Class": r_dict,
 	"Recipes": recipes_toolarm
 })
 
+FixMinTier(recipes_hammer, 1)
 objects_array.append({ "Class": r_dict,
 	"Name": "AutomaticHammer" + r_dict,
-	"Recipes": recipes_hammer
+	"Recipes": recipes_hammer,
+	"StartTier": 1,
 })
 
 objects_array.append({ "Class": r_dict,

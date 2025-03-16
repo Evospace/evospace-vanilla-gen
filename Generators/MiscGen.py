@@ -303,16 +303,17 @@ for one in simple_single:
 		"ItemLogic": building_single_logic,
 		"LogicJson":
 		{
-			"StaticBlock": one["Name"] + static_block
+			"StaticBlock": one["Name"]
 		},
 		"StackSize": 32,
 		"LabelParts":[[one["Name"],"misc"]],
+		"Object": one["Name"],
 		"Tier": one["Tier"] if "Tier" in one else 0
 	})	
 	
 	block = {
 		"Class": "StaticBlock",
-		"Name": one["Name"] + static_block,
+		"Name": one["Name"],
 		"Item" : one["Name"],
 		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],

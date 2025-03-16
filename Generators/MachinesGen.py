@@ -543,19 +543,6 @@ for machine in machines:
 				"Ticks" : 20
 			})
 			
-		if machine["Name"] == "Press":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(4),
-						parts_count(1 + parts_ramp(level))
-					]
-				},
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 20
-			})
-			
 		if machine["Name"] == "ElectricalSwitch":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],

@@ -76,6 +76,8 @@ def append_levels(research_base):
     
 		researches.append(research)
 
+		
+
 append_levels({
 	"Class": "StaticResearch",
 	"Name": "MineralsScan",
@@ -83,7 +85,14 @@ append_levels({
 	"RequiredResearch": [],
 	"Unlocks": [["Hand" + r_dict, tier_material[0] + "Furnace"],["Hand" + r_dict, "SandSurface"],["Hand" + r_dict, "GravelSurface"]],
 	"CompleteByDefault": True,
-	"MainResearch": True,
+})
+append_levels({
+	"Class": "StaticResearchDecorationUnlock",
+	"Name": "BasicPlatform",
+	"LabelParts": [["BasicPlatform", "parts"]],
+	"RequiredResearch": ["MineralsScan"],
+	"Decoration": "BasicPlatform",
+	"CompleteByDefault": True,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -1306,141 +1315,6 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "PlasticBlock",
-	"LabelParts": [["PlasticBlock", "misc"]],
-	"RequiredResearch": ["DecorativePlastic"], 
-	"Unlocks": [["Hand" + r_dict, "PlasticBlock"],["Press" + r_dict, "PlasticBlock"]],
-	"Levels": [4,4],
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "BasicPlatform",
-	"LabelParts": [["BasicPlatform", "misc"]],
-	"CompleteByDefault": True,
-	"Unlocks": [["Hand" + r_dict, "BasicPlatform"], ["Press" + r_dict, "BasicPlatform"]],
-	"RequiredResearch": ["MineralsScan"]
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "DecorativeStone",
-	"LabelParts": [["DecorativeStone", "researches"]],
-	"RequiredResearch": ["Press"], 
-	"Unlocks": [["Hand" + r_dict, "StoneTiles"], ["CuttingMachine" + r_dict, "StoneTiles"]],
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "DecorativeStone2",
-	"LabelParts": [["DecorativeStone", "researches"], [level_labels[1], "common"]],
-	"RequiredResearch": ["DecorativeStone"], 
-	"Unlocks": [["Hand" + r_dict, "DarkTiles"],["Hand" + r_dict, "RedTiles"],["CuttingMachine" + r_dict, "DarkTiles"],["CuttingMachine" + r_dict, "RedTiles"]],
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "GlassBlock",
-	"LabelParts": [["GlassBlock", "misc"]],
-	"RequiredResearch": ["Press"], 
-	"Unlocks": [["Hand" + r_dict, "GlassBlock"],["Press" + r_dict, "GlassBlock"]],
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "DecorativeStone3",
-	"LabelParts": [["DecorativeStone", "researches"], [level_labels[2], "common"]],
-
-	"RequiredResearch": ["DecorativeStone2"], 
-	"Unlocks": [["Hand" + r_dict, "DarkBricks"],["Hand" + r_dict, "RedBricks"],["Hand" + r_dict, "Bricks"],["CuttingMachine" + r_dict, "DarkBricks"],["CuttingMachine" + r_dict, "RedBricks"],["CuttingMachine" + r_dict, "Bricks"]],
-	
-	
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "DecorativeStone4",
-	"LabelParts": [["DecorativeStone", "researches"], [level_labels[3], "common"]],
-	"RequiredResearch": ["DecorativeStone3"], 
-	"Unlocks": [["Hand" + r_dict, "Stairs"]],
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "DecorativeConcrete",
-	"LabelParts": [["DecorativeConcrete", "researches"]],
-	"RequiredResearch": ["Mixer"], 
-	"Unlocks": [["Hand" + r_dict, "ConcreteTiles"], ["CuttingMachine" + r_dict, "ConcreteTiles"],
-			 ["Hand" + r_dict, "ConcreteBeam"], ["Press" + r_dict, "ConcreteBeam"]],
-	"Levels": [1, 2],
-})
-
-for index, crafter, item, crafter2 in [
-		(1, "Hand", "ConcreteSmallTiles", "CuttingMachine"), 
-		(2, "Hand", "ConcreteBeam2", "Press"),
-        (3, "Hand", "ConcreteRamp3", "Press"),
-        (4, "Hand", "ConcreteRamp", "Press"),
-        (5, "Hand", "ConcreteRamp2", "Press"),
-        (6, "Hand", "DangerBlock", "Press")
-	]:
-	append_levels({
-		"Class": "StaticResearch",
-		"Name": "DecorativeConcrete" + item,
-		"LabelParts": [["DecorativeConcrete", "researches"], [level_labels[index], "common"]],
-		"RequiredResearch": ["DecorativeConcrete"], 
-		"Unlocks": [[crafter + r_dict, item], [crafter2 + r_dict, item]],
-		"Levels": [3, 3],
-	})
-     
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "DecorativeReinforcedConcrete",
-	"LabelParts": [["ReinforcedConcrete", "researches"]],
-	"RequiredResearch": ["DecorativeConcrete"], 
-	"Unlocks": [["Hand" + r_dict, "ReinforcedConcreteTiles"], ["CuttingMachine" + r_dict, "ReinforcedConcreteTiles"]],
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "DecorativeReinforcedConcrete2",
-	"LabelParts": [["ReinforcedConcrete", "researches"], [level_labels[1], "common"]],
-
-	"RequiredResearch": ["DecorativeReinforcedConcrete"], 
-	"Unlocks": [["Hand" + r_dict, "ReinforcedConcreteSmallTiles"], ["CuttingMachine" + r_dict, "ReinforcedConcreteSmallTiles"]],
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "DecorativeReinforcedConcrete3",
-	"LabelParts": [["ReinforcedConcrete", "researches"], [level_labels[2], "common"]],
-	"RequiredResearch": ["DecorativeReinforcedConcrete2"], 
-	"Unlocks": [["Hand" + r_dict, "ReinforcedConcreteBricks"], ["CuttingMachine" + r_dict, "ReinforcedConcreteBricks"]],
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "DecorationClay",
-	"LabelParts": [["DecorationClay", "researches"]],
-	"RequiredResearch": ["Oven"], 
-	"Unlocks": [["Hand" + r_dict, "TerracottaTiles"], ["CuttingMachine" + r_dict, "TerracottaTiles"]],
-	"Levels": [1,1],
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "DecorationClay2",
-	"LabelParts": [["DecorationClay", "researches"], [level_labels[1], "common"]],
-	"RequiredResearch": ["DecorationClay"], 
-	"Unlocks": [["Hand" + r_dict, "TerracottaBricks"], ["CuttingMachine" + r_dict, "TerracottaBricks"]],
-	"Levels": [1,1],
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "Press",
-	"LabelParts": [["Press", "machines"]],
-	"RequiredResearch": ["SteelProduction"],
-	"Levels": [2,7],
-	"Unlocks": [["Hand" + r_dict, "%Material%Press"] ],
-})
-append_levels({
-	"Class": "StaticResearchToolUnlock",
-	"Name": "PaintTool",
-	"LabelParts": [["PaintTool", "parts"]],
-	"RequiredResearch": ["Press"],
-	"Levels": [1,1],
-	"Unlocks": [],
-})
-append_levels({
-	"Class": "StaticResearch",
 	"Name": "Lamp",
 	"LabelParts": [["Lamp", "machines"]],
 	"RequiredResearch": [],
@@ -1450,17 +1324,9 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "Column",
-	"LabelParts": [["Column", "misc"]],
-	"RequiredResearch": ["DecorativeStone"],
-	"Levels": [1,1],
-	"Unlocks": [["Hand" + r_dict, "Column"],["Hand" + r_dict, "FluetedColumn"],["Press" + r_dict, "Column"],["Press" + r_dict, "FluetedColumn"]],
-})
-append_levels({
-	"Class": "StaticResearch",
 	"Name": "Sign",
 	"LabelParts": [["Sign", "machines"]],
-	"RequiredResearch": ["Press"],
+	"RequiredResearch": [],
 	"Unlocks": [["Hand" + r_dict, "%Material%Sign"] ],
 	"Levels": [0,7],
 })
@@ -1503,12 +1369,6 @@ csv.append(["MineralsScan", "Minerals Scan"])
 csv.append(["Electricity", "Electricity"])
 csv.append(["Smelting", "Smelting"])
 csv.append(["Metalwork", "Metalwork"])
-csv.append(["DecorativeWood", "Decorative Wood"])
-csv.append(["DecorativePlastic", "Decorative Plastic"])
-csv.append(["DecorativeStone", "Decorative Stone"])
-csv.append(["DecorativeConcrete", "Decorative Concrete"])
-csv.append(["DecorationClay", "Decoration Clay"])
-csv.append(["ReinforcedConcrete", "Decorative Reinforced Concrete"])
 csv.append(["AdvancedReflection", "Advanced Reflection"])
 csv.append(["ReactionThrottling", "Reaction Throttling"])
 csv.append(["FuelChemistry", "Fuel Chemistry"])

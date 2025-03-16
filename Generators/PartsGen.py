@@ -653,11 +653,6 @@ objects_array.append({ "Class": r_dict,
 })
 
 objects_array.append({ "Class": r_dict,
-	"Name": "Press" + r_dict,
-	"Recipes": recipes_press
-})
-
-objects_array.append({ "Class": r_dict,
 	"Name": "Furnace" + r_dict,
 	"Recipes": recipes_furnace
 })
