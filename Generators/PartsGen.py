@@ -298,30 +298,11 @@ for material in materials:
 			"AddMask": "T_" + "Plate" + additive_ico,
 		})
 		
-		if "SmeltLevel" in material and material["SmeltLevel"] <= 0:
+		if "Smelting" in material and "Smelter" in material["Smelting"]:
 			recipes_smelt.append({
 				"Name": material["Name"] + "Plate",
-				"Input":{
-					"Items":[
-						{
-							"Name": material["Name"] + "Dust",
-							"Count": 1
-						}
-					],
-					
-				},
-				"ResourceInput":{
-						"Name": "Heat",
-						"Count": 10,
-					},
-				"Output":{
-					"Items":[
-						{
-							"Name": material["Name"] + "Plate",
-							"Count": 1
-						}
-					]
-				},
+				"Input": one_item(material["Name"] + "Dust"),
+				"Output": one_item(material["Name"] + "Plate"),
 				"Ticks" : 100,
 			})
 			
