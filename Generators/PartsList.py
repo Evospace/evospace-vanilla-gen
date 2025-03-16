@@ -83,11 +83,11 @@ heat_isolators = [
 	"StoneSurface",
 	"StoneSurface",
 	"StoneSurface",
-	"Concrete",
-	"Concrete",
-	"ReinforcedConcrete",
-	"ReinforcedConcrete",
-	"ReinforcedConcrete",
+	"StoneSurface",
+	"StoneSurface",
+	"StoneSurface",
+	"StoneSurface",
+	"StoneSurface",
 ]
 
 tools = [
@@ -135,6 +135,10 @@ tools = [
 		"Name": "UpgradeBlueprint",
 		"Label": "Upgrade Blueprint",
         "ItemLogic": "/Game/Equipped/BlueprintToolBP.BlueprintToolBP_C",
+	},{
+		"Name": "DecorationTool",
+		"Label": "Decoration Tool",
+		"ItemLogic": "/Game/Equipped/DecorationToolBP.DecorationToolBP_C",
 	}
 	#{
 	#	"Name": "BuildTool",

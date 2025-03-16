@@ -341,53 +341,6 @@ machines = [
 		"BlockLogic": "FluidContainerBlockLogic",
 		"Description": ["FluidConductor", "FluidStorage"],
 	},{
-		"Name": "Press",
-		"Label": "Press",
-		"StartTier": 2,
-		"EndTier": 7,
-		"CommonTextKeys":[
-			"Press",
-			"Autocrafter"
-		],
-		"BlockLogic":"SelectCrafter",
-		"BlockCreation":"""
-        local crafter = AbstractCrafter.cast(self)
-        
-        local inv = ResourceInventory.new(crafter, "InputInv")
-        inv.item = StaticItem.find("Kinetic")
-        inv.capacity = 20
-        crafter.energy_input_inventory = inv
-        
-        local acc = ResourceAccessor.new(crafter, "Input1")
-        acc.side, acc.pos = Vec3i.back, Vec3i.zero
-        acc.inventory = inv
-        acc.is_input = true
-        acc.channel = "Kinetic"
-		""",
-	}
-	#,{
-	#	"Name": "Compressor",
-	#	"Label": "Compressor",
-	#	"StartTier": 2,
-	#	"EndTier": 7,
-	#	"CommonTextKeys":[
-	#		"Autocrafter"
-	#	],
-	#	"BlockLogic":"SelectCrafter",
-	#	"BlockCreation":"""
-	#	
-	#	
-	#	local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
-	#	a:SetSidePos(Vec3i.left, Vec3i.zero)
-	#	a:Bind(self:GetInputContainer())
-	#	
-	#	local a = self:CreateAccessor(Class.find("FluidOutputAccessor"))
-	#	a:SetSidePos(Vec3i.right, Vec3i.zero)
-	#	a:Bind(self:GetOutputContainer())
-	#	""",
-	#	 
-	#}
-	,{
 		"Name": "StirlingEngine",
 		"Label": "Stirling Engine",
 		"StartTier": 1,
