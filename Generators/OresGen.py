@@ -229,8 +229,6 @@ for ore_type in ore_types:
 			"/Game/Materials/" + ore_type["Name"] + "OreImpureGravel"
 		],
 	}
-	if "SmeltLevel" in named_mat:
-		item["DescriptionParts"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
 	
 	objects_array.append(item)
 	objects_array.append({ "Class": "TesselatorMarching",
@@ -268,8 +266,7 @@ for ore_type in ore_types:
 			"LabelParts": [[ore_type["Name"]+"OreImpureGravel", "ores"]],
 			"DescriptionParts": description,
 		}
-		if "SmeltLevel" in named_mat:
-			item["DescriptionParts"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
+
 		if "Mesh" in named_mat:
 			item["Mesh"] = named_mat["Mesh"]
 		objects_array.append(item)
@@ -294,8 +291,7 @@ for ore_type in ore_types:
 			"LabelParts": [[ore_type["Name"]+"OreGravel", "ores"]],
 			"DescriptionParts": description,
 		}
-		if "SmeltLevel" in named_mat:
-			item["DescriptionParts"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
+
 		objects_array.append(item)
 		images.append({
 			"Base": "T_" + "Gravel",
@@ -318,8 +314,7 @@ for ore_type in ore_types:
 				"/Game/Materials/" + ore_type["Name"] + "OreGravel"
 			],
 		}
-		if "SmeltLevel" in named_mat:
-			item["DescriptionParts"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
+
 		objects_array.append(item)
 		images.append({
 			"Base": "T_" + "Dust",
@@ -342,8 +337,7 @@ for ore_type in ore_types:
 				"/Game/Materials/" + ore_type["Name"] + "Dust"
 			],
 		}
-		if "SmeltLevel" in named_mat:
-			item["DescriptionParts"].append("SmeltLevel" + str(named_mat["SmeltLevel"]))
+
 		objects_array.append(item)
 		images.append({
 			"Base": "T_" + "Dust",

@@ -1580,63 +1580,6 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 		},
 		"Ticks" : 10*5*20*2
 	})
-
-recipes_mixer.append({
-	"Name": "ReinforcedConcrete",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Concrete",
-				"Count": 10
-			},
-			{
-				"Name": "SteelParts",
-				"Count": 8
-			},
-			{
-				"Name": "Water",
-				"Count": 100
-			},
-			
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "ReinforcedConcrete",
-				"Count": 5
-			}
-		]
-	},
-	
-	"Ticks" : 300,
-})
-recipes_mixer.append({
-	"Name": "Concrete",
-	"Input":{
-		"Items":[
-			{
-				"Name": "StoneSurface",
-				"Count": 5
-			},
-			{
-				"Name": "Water",
-				"Count": 100
-			},
-			
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Concrete",
-				"Count": 10
-			}
-		]
-	},
-	
-	"Ticks" : 300,
-})
 recipes_mixer.append({
 	"Name": "SSCraft",
 	"Input":{
@@ -1729,21 +1672,14 @@ recipes_arc_furnace.append({
 })	
 
 for material in materials:
-	if "Parts" in material and "Plate" in material["Parts"]:
-		if "SmeltLevel" in material and material["SmeltLevel"] <= 3:
+	if "Items" in material and "Plate" in material["Items"]:
+		if "Smelting" in material and "ArcFurnace" in material["Smelting"]:
 			recipes_arc_furnace.append({
 				"Name": material["Name"] + "Plate",
 				"Input": one_item(material["Name"] + "Dust"),
-				"Output":{
-					"Items":[
-						{
-							"Name": material["Name"] + "Plate",
-							"Count": 1
-						}
-					]
-				},
+				"Output": one_item(material["Name"] + "Plate"),
 				"Tier": extract_tier(material),
-				"Ticks" : 200
+				"Ticks" : 100
 			})
 
 recipes_macerator.append({
@@ -3456,28 +3392,6 @@ append_recipe_hand_press({
 	"Ticks" : 10
 })
 
-for name in ("DangerBlock", "ConcreteRamp", "ConcreteRamp2", "ConcreteRamp3", "ConcreteBeam", "ConcreteBeam2"):
-	append_recipe_hand_press({
-		"Name": name,
-		"Input":{
-			"Items":[
-				{
-					"Name": "Concrete",
-					"Count": 1
-				}
-			]
-		},
-		"Output":{
-			"Items":[
-				{
-					"Name": name,
-					"Count": 1
-				}
-			]
-		},
-		"Ticks" : 20
-	})
-
 append_recipe_hand_press({
 	"Name": "BasicPlatform",
 	"Input": one_item("SandSurface"),
@@ -3524,17 +3438,20 @@ objects_array.append({ "Class": r_dict,
 
 objects_array.append({ "Class": r_dict,
 	"Name": "Separator" + r_dict,
-	"Recipes": recipes_sep
+	"Recipes": recipes_sep,
+	"StartTier": 2,
 })
 
 objects_array.append({ "Class": r_dict,
 	"Name": "ArcSmelter" + r_dict,
-	"Recipes": recipes_arc_furnace
+	"Recipes": recipes_arc_furnace,
+	"StartTier": 2,
 })
 
 objects_array.append({ "Class": r_dict,
 	"Name": "Electrolyzer" + r_dict,
-	"Recipes": recipes_electrolyzer
+	"Recipes": recipes_electrolyzer,
+	"StartTier": 2,
 })
 
 objects_array.append({ "Class": r_dict,

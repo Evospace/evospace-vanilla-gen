@@ -103,29 +103,29 @@ materials = [
 		"Name": "Copper",
 		"Label": "Copper",
 		"Items": tiered_parts_list + ["Wire"],
-		"SmeltLevel": 0,
+		"Smelting": ["Smelter", "ArcFurnace"],
 		"Tier": 1,
 	},{
 		"Name": "Gold",
 		"Label": "Gold",
 		"Items": ["Plate", "Dust", "Block", "Wire"],
-		"SmeltLevel": 0,
+		"Smelting": ["Smelter", "ArcFurnace"],
 		"Tier": 2
 	},{
 		"Name": "Silver",
 		"Label": "Silver",
 		"Items": ["Dust", "Plate", "Block"],
-		"SmeltLevel": 2,
+		"Smelting": ["Smelter", "ArcFurnace"],
 	},{
 		"Name": "Platinum",
 		"Label": "Platinum",
 		"Items": ["Plate", "Dust", "Block", "Wire"],
-		"SmeltLevel": 3,
+		"Smelting": ["ArcFurnace"],
 	},{
 		"Name": "Rhodium",
 		"Label": "Rhodium",
 		"Items": ["Dust", "Plate", "Block"],
-		"SmeltLevel": 3,
+		"Smelting": ["ArcFurnace"],
 	},{
 		"Name": "PlatinumRhodiumSolution",
 		"Label": "Platinum-Rhodium Solution",
@@ -142,12 +142,12 @@ materials = [
 		"Name": "Superconductor",
 		"Label": "Superconductor",
 		"Items": ["Dust", "Plate", "Block"],
-		"SmeltLevel": 4,
+		"Smelting": ["ArcFurnace"],
 	},{
 		"Name": "Iron",
 		"Label": "Iron",
 		"Items": ["Plate", "Dust", "Block"],
-		"SmeltLevel": 0,
+		"Smelting": ["Smelter", "ArcFurnace"],
 	},{
 		"Name": "CircuitBoard",
 		"Label": "Circuit Board",
@@ -180,41 +180,39 @@ materials = [
 	},{
 		"Name": "Steel",
 		"Label": "Steel",
-		"SmeltLevel": 1,
+		"Smelting": ["ArcFurnace"],
 		"Items": tiered_parts_list,
 		"Tier": 2,
 	},{
 		"Name": "Aluminium",
 		"Label": "Aluminium",
 		"Items": tiered_parts_list,
-		"SmeltLevel": 3,
+		"Smelting": ["ArcFurnace"],
 		"Tier": 3,
 	},{
 		"Name": "AluminiumOxide",
 		"Label": "Aluminium Oxide",
 		"Items": ["Dust", "Block"],
-		"SmeltLevel": 3,
 	},{
 		"Name": "StainlessSteel",
 		"Label": "Stainless Steel",
-		"SmeltLevel": 3,
+		"Smelting": ["ArcFurnace"],
 		"Items": tiered_parts_list,
 		"Tier": 4,
 	},{
 		"Name": "Titanium",
 		"Label": "Titanium",
-		"SmeltLevel": 4,
+		"Smelting": ["InductionFurnace"],
 		"Items": tiered_parts_list,
 		"Tier": 5,
 	},{
 		"Name": "TitaniumTetrachloride",
 		"Label": "Titanium Tetrachloride",
-		"SmeltLevel": 4,
 		"Items": ["Fluid"]
 	},{
 		"Name": "TitaniumSponge",
 		"Label": "Titanium Sponge",
-		"SmeltLevel": 4,
+		"Smelting": ["InductionFurnace"],
 		"Items": ["Exact"],		
 	},{
 		"Name": "TitaniumOxide",
@@ -227,7 +225,7 @@ materials = [
 	},{
 		"Name": "HotNeutroniumPlate",
 		"Label": "Hot Neutronium Plate",
-		"SmeltLevel": 4,
+		"Smelting": ["InductionFurnace"],
 		"Items": ["Exact"],
 		"Tier": 5,
         "Mesh":"/Game/Models/Ingot",
@@ -244,7 +242,7 @@ materials = [
 	,{
 		"Name": "Cobalt",
 		"Label": "Cobalt",
-		"SmeltLevel": 4,
+		"Smelting": ["InductionFurnace"],
 		"Items": ["Dust", "Block"],
 		"Tier": 5,
 	},{
@@ -304,7 +302,7 @@ materials = [
 	},{
 		"Name": "Chromium",
 		"Label": "Chromium",
-		"SmeltLevel": 3,
+		"Smelting": ["ArcFurnace"],
 		"Items": ["Dust", "Plate"],
 		"Tier": 3
 	},{
@@ -1003,13 +1001,13 @@ materials = [
 	},{
 		"Name": "Composite",
 		"Label": "Composite",
-		"SmeltLevel": 4,
+		"Smelting": ["InductionFurnace"],
 		"Items": tiered_parts_list,
 		"Tier": 6,
 	},{
 		"Name": "Ultimate",
 		"Label": "Ultimate",
-		"SmeltLevel": 4,
+		"Smelting": ["InductionFurnace"],
 		"Items": tiered_parts_list,
 		"Tier": 7,
 	},{
