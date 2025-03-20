@@ -8,7 +8,7 @@ material_array_metal1 = [
 	"/Game/Materials/StainlessSteel",
 	"/Game/Materials/Titanium",
 	"/Game/Materials/Composite",
-	"/Game/Materials/Ultimate"
+	"/Game/Materials/Neutronium"
 ]
 
 tier_material = [
@@ -19,8 +19,8 @@ tier_material = [
 	"StainlessSteel",
 	"Titanium",
 	"Composite",
-	"Ultimate",
-	"Ultimate"
+	"Neutronium",
+	"Neutronium"
 ]
 
 def extract_tier(something):
@@ -36,13 +36,14 @@ def extract_tier(something):
 			if something.find(tier_material[i]) != -1:
 				return i
 			
-	return 0
+	raise Exception(f"{something} is not a dict with Tier or not a tier string")
 
 def named_material(name):
 	list = [x for x in materials if x["Name"] == name]
 	if len(list) > 0:
 		return list[0]
-	return materials[0]
+	
+	raise Exception(f"{name} is not a material")
 	
 # https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D1%82%D1%80%D0%B8%D0%B4_%D0%B1%D0%BE%D1%80%D0%B0 BoronNitride
 # https://en.wikipedia.org/wiki/Neutronium
@@ -114,18 +115,21 @@ materials = [
 	},{
 		"Name": "Silver",
 		"Label": "Silver",
-		"Items": ["Dust", "Plate", "Block"],
+		"Items": ["Dust", "Plate", "Block", "Wire"],
 		"Smelting": ["Smelter", "ArcFurnace"],
+		"Tier": 3,
 	},{
 		"Name": "Platinum",
 		"Label": "Platinum",
 		"Items": ["Plate", "Dust", "Block", "Wire"],
 		"Smelting": ["ArcFurnace"],
+		"Tier": 5,
 	},{
 		"Name": "Rhodium",
 		"Label": "Rhodium",
 		"Items": ["Dust", "Plate", "Block"],
 		"Smelting": ["ArcFurnace"],
+		"Tier": 6,
 	},{
 		"Name": "PlatinumRhodiumSolution",
 		"Label": "Platinum-Rhodium Solution",
@@ -139,15 +143,11 @@ materials = [
 		"Label": "Rhodium Solution",
 		"Items": ["Fluid"]
 	},{
-		"Name": "Superconductor",
-		"Label": "Superconductor",
-		"Items": ["Dust", "Plate", "Block"],
-		"Smelting": ["ArcFurnace"],
-	},{
 		"Name": "Iron",
 		"Label": "Iron",
 		"Items": ["Plate", "Dust", "Block"],
 		"Smelting": ["Smelter", "ArcFurnace"],
+		"Tier": 2,
 	},{
 		"Name": "CircuitBoard",
 		"Label": "Circuit Board",
@@ -186,7 +186,7 @@ materials = [
 	},{
 		"Name": "Aluminium",
 		"Label": "Aluminium",
-		"Items": tiered_parts_list,
+		"Items": tiered_parts_list + ["Foil"],
 		"Smelting": ["ArcFurnace"],
 		"Tier": 3,
 	},{
@@ -572,14 +572,19 @@ materials = [
 		"Name": "Yttrium",
 		"Label": "Yttrium",
 		"Items": ["Dust", "Block", "Plate"],
+		"Smelting": ["InductionFurnace"],
+		"Tier": 4,
 	},{
 		"Name": "Neodymium",
 		"Label": "Neodymium",
 		"Items": ["Dust", "Block", "Plate"],
+		"Smelting": ["ArcFurnace"],
+		"Tier": 4,
 	},{
 		"Name": "Niobium",
 		"Label": "Niobium",
 		"Items": ["Dust", "Block", "Plate", "Wire"],
+		"Smelting": ["ArcFurnace"],
 		"Tier": 4,
 	},{
 		"Name": "MicaFlakes",
@@ -589,8 +594,13 @@ materials = [
 	},{
 		"Name": "Tantalum",
 		"Label": "Tantalum",
-		"Items": ["Dust", "Block", "Plate", "Wire"],
+		"Items": ["Dust", "Block", "Plate", "Wire", "Foil"],
+		"Smelting": ["InductionFurnace"],
 		"Tier": 5,
+	},{
+		"Name": "TantalumSludge",
+		"Label": "TantalumSludge",
+		"Items": ["Exact"]
 	},{
 		"Name": "Log",
 		"Label": "Log",
@@ -819,14 +829,6 @@ materials = [
 		"Mesh":"/Game/Models/WireCrate",
 		"Materials":["/Game/CopperWiresOnCrate"],
 	},{
-		"Name": "SuperconductorWire",
-		"Label": "Superconductor Wire",
-		"StackSize": 64,
-		"Items": ["Exact"],
-		"Category": "Parts",
-		"Mesh":"/Game/Models/WireCrate",
-		"Materials":["/Game/Materials/SuperWiresOnCrate"],
-	},{
 		"Name": "Circuit",
 		"Label": "Circuit",
 		"StackSize": 32,
@@ -994,37 +996,18 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 	},{
-		"Name": "LithiumPlate",
-		"Label": "Lithium Plate",
-		"StackSize": 32,
-		"Items": ["Exact"],
-	},{
 		"Name": "Composite",
 		"Label": "Composite",
 		"Smelting": ["InductionFurnace"],
 		"Items": tiered_parts_list,
 		"Tier": 6,
 	},{
-		"Name": "Ultimate",
-		"Label": "Ultimate",
+		"Name": "Neutronium",
+		"Label": "Neutronium",
 		"Smelting": ["InductionFurnace"],
 		"Items": tiered_parts_list,
 		"Tier": 7,
 	},{
-		"Name": "UltimateFrame",
-		"Label": "Ultimate Frame",
-		"StackSize": 16,
-		"Items": ["Exact"],
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	,{
 		"Name": "Capacity",
 		"Label": "Capacity",
 		"Items": ["Exact"],

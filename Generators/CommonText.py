@@ -62,7 +62,7 @@ cvs.append(["Aluminium", "Aluminium"])
 cvs.append(["StainlessSteel", "Stainless Steel"])
 cvs.append(["Titanium", "Titanium"])
 cvs.append(["Composite", "Composite"])
-cvs.append(["Ultimate", "Ultimate"])
+cvs.append(["Neutronium", "Neutronium"])
 
 cvs.append(["Splitter", "Can divide item flow into parts."])
 cvs.append(["Sorter", "Allowing to set white filter."])

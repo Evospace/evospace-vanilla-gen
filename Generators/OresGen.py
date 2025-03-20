@@ -168,22 +168,22 @@ ore_types = [
 			"BurnTime": 800
 		},
 	},{
-		"Name": "Columbite",
-		"Formula": "MnO+Nb2O3+Ta2O3",
+		"Name": "Niobite",
+		"Formula": "FeNb2O3+FeTa2O3",
 		"Processing": {
-			"OreWasher": "ManganeseDust",
-			"Separator": ["TantalumDust", "ManganeseDust"],
-			"ChemicalBath": ["HydrofluoricAcid", "RareEarthDust"],
-			"Macerator": "ColumbiteOreDust",
-			"Furnace": "ManganesePlate",
+			"OreWasher": "IronDust",
+			"Separator": ["NiobiteDust", "IronDust"],
+			"ChemicalBath": ["HydrofluoricAcid", "TantalumSludge"],
+			"Macerator": "NiobiteOreDust",
+			"Furnace": "IronPlate",
 		},
 		"Color": [0.25, 0.25, 0.3],
-		"Drops": "ColumbiteOre",
+		"Drops": "NiobiteOre",
 		"Tier": 4,
 	},{
 		"Name": "Monazite",
 		"Processing": {
-			"OreWasher": "ThoriumDust",
+			"OreWasher": "MicaFlakes",
 			"Separator": ["ThoriumDust", "MicaFlakes"],
 			"Sifter": ["ThoriumDust", "MicaFlakes", "MicaCrystal"],
 			"ChemicalBath": ["SulfuricAcid", "RareEarthSludge"],
@@ -212,7 +212,6 @@ images = []
 
 for ore_type in ore_types:
 	item_name = ore_type["Name"] + "Ore"
-	named_mat = named_material(ore_type["Name"])
 	description = [[ore_type["Formula"], "ores"]] if "Formula" in ore_type else []
 	
 	cvs.append([ore_type["Name"]+"Ore", ore_type["Name"]+" Ore"])
@@ -267,8 +266,6 @@ for ore_type in ore_types:
 			"DescriptionParts": description,
 		}
 
-		if "Mesh" in named_mat:
-			item["Mesh"] = named_mat["Mesh"]
 		objects_array.append(item)
 		images.append({
 			"Base": "T_" + "Gravel",
@@ -401,7 +398,7 @@ cvs.append(["Be3Al2SiO3", "Be₃Al₂SiO₃"])
 cvs.append(["Al2O3+TiO2", "Al₂O₃ + TiO₂"])
 cvs.append(["ThO2+UO2", "ThO₂+UO₂"])
 cvs.append(["AuS2+PtS2+RhS2", "AuS₂ + PtS₂ + RhS₂"])
-cvs.append(["MnO+Nb2O3+Ta2O3", "MnO + Nb₂O₃ + Ta₂O₃"])
+cvs.append(["FeNb2O3+FeTa2O3", "FeNb₂O₃ + FeTa₂O₃"])
 cvs.append(["ThPO4+NdPO4+YPO4", "ThPO₄ + NdPO₄ + YPO₄"])
 
 write_file("Generated/Resources/ores.json", data);

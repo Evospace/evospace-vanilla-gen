@@ -26,6 +26,10 @@ parts = [
 		"Label": "Wire",
 		"Name": "Wire",
 		"StackSize": 128
+	},{
+		"Label": "Foil",
+		"Name": "Foil",
+		"StackSize": 128
 	}
 ]
 
@@ -33,7 +37,7 @@ def named_part(name):
 	list = [x for x in parts if x["Name"] == name]
 	if len(list) > 0:
 		return list[0]
-	return parts[0]
+	raise Exception(f"Part {name} not found!")
 
 circuits = [
 	"CopperParts",
@@ -61,11 +65,11 @@ a_wires = [
 	"CopperWire", # 0 stone
 	"CopperWire", # 1 copper
 	"CopperWire", # 2 steel
-	"CopperWire", # 3 alum
-	"CopperWire", # 4 ss
-	"GoldWire",   # 5 tita
-	"GoldWire",   # 6 hard
-	"SuperconductorWire", # 7 neu
+	"CopperrWire", # 3 alum
+	"SilverWire",   # 4 ss
+	"GoldWire", # 5 tita
+	"PlatinumWire",  # 6 hard
+	"YttriumWire",  # 7 neu
 ]
 
 cables = [
