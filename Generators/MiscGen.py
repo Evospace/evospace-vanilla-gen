@@ -269,10 +269,7 @@ for one in wooden_misc:
 	item = { "Class": "StaticItem",
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
-		"LogicJson":
-		{
-			"StaticBlock": one["Name"] + static_block
-		},
+		"Object": one["Name"],
 		"StackSize": 32,
 		"LabelParts":[[one["Name"],"misc"]],
 		"ItemLogic": building_single_logic
@@ -301,10 +298,7 @@ for one in simple_single:
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_single_logic,
-		"LogicJson":
-		{
-			"StaticBlock": one["Name"]
-		},
+		"Object": one["Name"],
 		"StackSize": 32,
 		"LabelParts":[[one["Name"],"misc"]],
 		"Object": one["Name"],
@@ -332,11 +326,7 @@ for one in simple_blocks:
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_plane_logic,
-		"LogicJson":
-		{
-			"StaticBlock": one["Name"] + static_block,
-			"BuildingMode": "Plane"
-		},
+		"Object": one["Name"] + static_block,
 		"StackSize": 999,
 		"LabelParts":[[one["Name"],"misc"]],
 		"Category": "Block",
@@ -361,10 +351,7 @@ for one in static_mesh_block:
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_single_logic,
-		"LogicJson":
-		{
-			"StaticBlock": one["Name"] + static_block
-		},
+		"Object": one["Name"] + static_block,
 		"StackSize": 32,
 		"LabelParts":[[one["Name"],"misc"]],
 	})	

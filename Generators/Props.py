@@ -772,9 +772,7 @@ for prop in props:
 			"Name": prop["Name"] + variation_helper[variation],
 			"StackSize": 32,
 			"Image": image,
-			"LogicJson": {
-				"StaticBlock": prop["Name"] + variation_helper[variation]
-			},
+			"Object": prop["Name"] + variation_helper[variation],
 			"ItemLogic": building_prop_logic,
 			"Category": "Terrain",
 			"LabelParts": [[prop["Name"], "props"]],

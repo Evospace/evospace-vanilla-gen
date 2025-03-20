@@ -155,10 +155,7 @@ for object in mapgen_objects:
 		"Mesh": "/Game/Models/piece",
 		"Materials" : ["/Game/Materials/" + object["Drops"]],
 		"Color": object["Item"],
-		"LogicJson":
-		{
-			"StaticBlock": object["Name"] + "Surface" + static_surface
-		},
+		"Object": object["Name"] + "Surface",
 		"StackSize": 999,
 		"LabelParts": [[object["Name"]+ "Surface", "mapgen_core"]],
 	})

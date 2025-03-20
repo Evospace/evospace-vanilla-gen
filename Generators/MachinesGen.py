@@ -75,12 +75,8 @@ for machine in machines:
 
 		item = { "Class": "StaticItem",
 			"Name": block_name,
-			
 			"Image": ("T_" + image) if "ExactName" in machine else ("T_" + tier_material[tier] + image),
-			
-			"LogicJson": {
-				"StaticBlock": block_name,
-			},
+			"Object": block_name,
 			"StackSize": 32,
 			"LabelParts": labelParts,
 			"LabelFormat": labelFormat,
@@ -93,8 +89,8 @@ for machine in machines:
 		conv_speed_d = [1.66,2.5,3.33,5,6.66,10,20]
 		arm_speed_d = [300/2,450/2,600/2,900/2,1200/2,1800/2,3600/2]
 
-		if "PathFinding" in machine:
-			item["LogicJson"]["BuildingMode"]  = "PathFinding"
+		#if "PathFinding" in machine:
+		#	item["LogicJson"]["BuildingMode"]  = "PathFinding"
 
 		if "Description" in machine:
 			for ss in machine["Description"]:
@@ -1361,19 +1357,11 @@ for machine in machines:
 		if machine["Name"] == "ElectricEngine" or machine["Name"] == "BiElectricEngine":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						wires_count(5 + level * 3),
-						{
-							"Name": tier_material[tier] + "Pipe",
-							"Count": 2
-						},
-						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 1
-						}
-					]
-				},
+				"Input": items([
+					[wire(), 5 + level * 3 if tier < 4 else 5],
+					[tier_material[tier] + "Pipe", 2],
+					[tier_material[tier] + "Gearbox"]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -1381,20 +1369,12 @@ for machine in machines:
 		if machine["Name"] == "IndustrialElectricEngine":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						wires_count(50),
-						plates_count(10),
-						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 3
-						},
-						{
-							"Name": circuits[tier],
-							"Count": 1
-						}
-					]
-				},
+				"Input": items([
+					[wire(), 30],
+					[circuit(), 1],
+					[plate(), 12],
+					[tier_material[tier] + "Gearbox", 3]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 100
 			})
@@ -1402,23 +1382,12 @@ for machine in machines:
 		if machine["Name"] == "CombustionEngine":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(10),
-						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 3
-						},
-						{
-							"Name": circuits[tier],
-							"Count": 3
-						},
-						{
-							"Name": "Catalyst",
-							"Count": 1
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 10],
+					[gearbox(), 3],
+					[circuit(), 3],
+					["Catalyst"]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 100
 			})

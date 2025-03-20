@@ -341,6 +341,50 @@ recipes_assembler.append({
     "Tier": 4,
 })
 
+recipes_hand.append({
+    "Name": "Capacitor",
+    "Input": items([
+        ["AluminiumFoil", 2],
+        ["Clay", 1]
+    ]),
+    "Output": one_item("Capacitor"),
+    "Ticks": 80,
+    "Tier": 1,
+})
+
+recipes_assembler.append({
+    "Name": "Capacitor2",
+    "Input": items([
+        ["AluminiumFoil", 2],
+        ["MicaSheet", 1]
+    ]),
+    "Output": one_item("Capacitor", 2),
+    "Ticks": 60,
+    "Tier": 2,
+})
+
+recipes_assembler.append({
+    "Name": "Capacitor3",
+    "Input": items([
+        ["AluminiumFoil", 2],
+        ["PTFESheet", 1]
+    ]),
+    "Output": one_item("Capacitor", 4),
+    "Ticks": 60,
+    "Tier": 3,
+})
+
+recipes_assembler.append({
+    "Name": "Capacitor4",
+    "Input": items([
+        ["TantalumFoil", 2],
+        ["CarbonFiberSheet", 1]
+    ]),
+    "Output": one_item("Capacitor", 8),
+    "Ticks": 60,
+    "Tier": 4,
+})
+
 recipes_assembler.append({
 	"Name":"SiliconWafer",
 	"Input": one_item("SiliconMonocrystal"),
@@ -374,7 +418,7 @@ recipes_assembler.append({
 	"Input": items([
 		["CircuitBoard"],
 		["AdvancedCircuit", 1],
-		["IntegratedCircuit", 2],
+		["SiliconWafer", 2],
 		["Capacitor", 2],
 	]),
 	"Output": one_item("Processor"),
@@ -386,7 +430,8 @@ recipes_assembler.append({
 	"Name":"Processor3",
 	"Input": items([
 		["CircuitBoard"],
-		["SystemOnChip", 1],
+		["DopedSiliconWafer", 1],
+		["Resistor", 2],
 		["Capacitor", 3],
 	]),
 	"Output": one_item("Processor"),
@@ -526,20 +571,6 @@ append_recipe({
 	"Output": one_item("QuantumBrain"),
 	"Ticks" : 200,
 	"Tier": 6,
-})
-
-recipes_assembler.append({
-	"Name":"SuperconductorWire",
-	"Input":{
-		"Items":[
-			{
-				"Name": "SuperconductorPlate",
-				"Count": 1
-			},
-		]
-	},
-	"Output": one_item("SuperconductorWire", 2),
-	"Ticks" : 100,
 })
 
 append_recipe({
@@ -784,53 +815,26 @@ recipes_assembler.append({
 })
 
 recipes_assembler.append({
-	"Name":"LithiumBattery",
-	"Input":{
-		"Items":[
-			{
-				"Name": "SulfuricAcid",
-				"Count": 200
-			},
-			{
-				"Name": "LithiumPlate",
-				"Count": 1
-			},
-			{
-				"Name": "CopperParts",
-				"Count": 3
-			},
-			{
-				"Name": "SteelPlate",
-				"Count": 3
-			},
-		]
-	},
-	"Output": one_item("Battery", 10),
+	"Name":"CompositePlate",
+	"Input": items([
+		["TitaniumPlate", 1],
+		["CarbonFiberSheet", 1],
+		["PTFESheet", 1]
+	]),
+	"Output": one_item("CompositePlate"),
 	"Ticks" : 300,
-	
 })
 
 recipes_assembler.append({
-	"Name":"CompositePlate",
-	"Input":{
-		"Items":[
-			{
-				"Name": "TitaniumParts",
-				"Count": 4
-			},
-			{
-				"Name": "CarbonFiberSheet",
-				"Count": 1
-			},
-			{
-				"Name": "LithiumPlate",
-				"Count": 1
-			},
-		]
-	},
-	"Output": one_item("CompositePlate"),
+	"Name":"CompositePlate2",
+	"Input": items([
+		["TitaniumPlate", 1],
+		["CarbonFiberSheet", 1],
+		["PTFESheet", 1],
+		["NeutroniumParts", 1]
+	]),
+	"Output": one_item("CompositePlate", 4),
 	"Ticks" : 300,
-	
 })
 
 recipes_assembler.append({
@@ -1765,94 +1769,76 @@ recipes_pump.append({
 })
 
 recipes_indu.append({
+	"Name":"SiliconMonocrystal",
+	"Input": items([
+			["Silicon", 16],
+			["Mercury", 1000]
+		]),
+	"Output": items([
+			["SiliconMonocrystal"],
+			["HotMercury", 1000]
+		]),
+	"Ticks" : 2000,
+})
+
+recipes_indu.append({
+	"Name":"DopedSiliconMonocrystal",
+	"Input": items([
+			["Silicon", 16],
+			["PlatinumDust", 1],
+			["Mercury", 1000]
+		]),
+	"Output": items([
+			["DopedSiliconMonocrystal"],
+			["HotMercury", 1000]
+		]),
+	"Ticks" : 3000,
+})
+
+recipes_indu.append({
+	"Name":"TantalumSludge",
+	"Input": items([
+			["TantalumSludge"],
+			["Aluminium"],
+			["Mercury", 1000]
+		]),
+	"Output": items([
+			["TantalumPlate"],
+			["HotMercury", 1000]
+		]),
+	"Ticks" : 200,
+})
+
+recipes_indu.append({
 	"Name":"SpongeToPlate",
-	"Input":{
-		"Items":[
-			{
-				"Name": "TitaniumSponge",
-				"Count": 1
-			},
-			{
-				"Name": "Mercury",
-				"Count": 1000
-			},
-		],
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "TitaniumPlate",
-				"Count": 1
-			},
-			{
-				"Name": "HotMercury",
-				"Count": 1000
-			},
-		]
-	},
+	"Input": items([
+			["TitaniumSponge"],
+			["Mercury", 1000]
+		]),
+	"Output": items([
+			["TitaniumPlate"],
+			["HotMercury", 1000]
+		]),
 	"Tier": 5,
 	"Ticks" : 200 * 2,
 })
 
-recipes_indu.append({
-	"Name":"SuperconductorDust",
-	"Input":{
-		"Items":[
-			{
-				"Name": "SuperconductorDust",
-				"Count": 1
-			},
-			{
-				"Name": "Mercury",
-				"Count": 300
-			},
-		],
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "SuperconductorPlate",
-				"Count": 1
-			},
-			{
-				"Name": "HotMercury",
-				"Count": 300
-			},
-		]
-	},
-	"Tier": 5,
-	"Ticks" : 100,
-})
-	
-recipes_indu.append({
-	"Name":"TDustToPlate",
-	"Input":{
-		"Items":[
-			{
-				"Name": "TitaniumDust",
-				"Count": 1
-			},
-			{
-				"Name": "Mercury",
-				"Count": 100
-			},
-		],
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "TitaniumPlate",
-				"Count": 1
-			},
-			{
-				"Name": "HotMercury",
-				"Count": 100
-			},
-		]
-	},
-	"Tier": 5,
-	"Ticks" : 40 * 2,
-})
+for material in materials:
+	if "Smelting" in material and "InductionFurnace" in material["Smelting"]:
+		m_name = material["Name"]
+		recipes_indu.append({
+			"Name": m_name+"Dust",
+			"Input": items([
+				[m_name + "Dust"],
+				["Mercury", 300]
+			]),
+			"Output": items([
+				[m_name + "Plate"],
+				["HotMercury", 300]
+			]),
+			"Tier": 5,
+			"Ticks" : 200,
+		})
 
 recipes_sep.append({
 	"Name":"SiliconOxide",
@@ -1898,32 +1884,6 @@ recipes_mixer.append({
 		]
 	},
 	"Ticks": 200,
-})
-
-#TODO: remove
-recipes_mixer.append({
-	"Name": "SuperconductorDust",
-	"Input":{
-		"Items":[
-			{
-				"Name": "GoldDust",
-				"Count": 3
-			},
-			{
-				"Name": "YttriumDust",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "SuperconductorDust",
-				"Count": 3
-			}
-		]
-	},
-	"Ticks": 300,
 })
 
 recipes_electrolyzer.append({
@@ -3205,32 +3165,6 @@ recipes_industrial_chemreactor.append({
 	"Ticks" : 300,
 	"Colors": [[0.4,0.2,0.0,0.15],[0.7,0.6,0.25,0.15]]
 })
-	
-recipes_chemical_bath.append({
-	"Name":"RareEarthSludge",
-	"Input":{
-		"Items":[
-			{
-				"Name": "ClayDust",
-				"Count": 10
-			},
-			{
-				"Name": "SulfuricAcid",
-				"Count": 1000
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "RareEarthSludge",
-				"Count": 2
-			}
-		]
-	},
-	"Ticks" : 500,
-	"Colors": [[0.8,0.8,0.1,0.3],[0.7,0.2,0.7,0.8]]
-})
 
 recipes_chemical_bath.append({
 	"Name":"RareEarthSludge",
@@ -3256,35 +3190,6 @@ recipes_chemical_bath.append({
 	},
 	"Ticks" : 200,
 	"Colors": [[0.8,0.8,0.1,0.3],[0.7,0.2,0.7,0.8]]
-})
-
-recipes_industrial_chemreactor.append({
-	"Name": "LithiumPlate",
-	"Input":{
-		"Items":[
-			{
-				"Name": "IronOreDust",
-				"Count": 3
-			},
-			{
-				"Name": "Salt",
-				"Count": 1
-			},
-			{
-				"Name": "NitricAcid",
-				"Count": 500
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "LithiumPlate",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 200
 })
 
 recipes_industrial_chemreactor.append({
@@ -3418,7 +3323,6 @@ FixMinTier(recipes_macerator, 1)
 objects_array.append({ "Class": r_dict,
 	"Name": "Macerator" + r_dict,
 	"Recipes": recipes_macerator,
-	"StartTier": 1,
 })
 
 objects_array.append({ "Class": r_dict,
@@ -3439,19 +3343,16 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": "Separator" + r_dict,
 	"Recipes": recipes_sep,
-	"StartTier": 2,
 })
 
 objects_array.append({ "Class": r_dict,
 	"Name": "ArcSmelter" + r_dict,
 	"Recipes": recipes_arc_furnace,
-	"StartTier": 2,
 })
 
 objects_array.append({ "Class": r_dict,
 	"Name": "Electrolyzer" + r_dict,
 	"Recipes": recipes_electrolyzer,
-	"StartTier": 2,
 })
 
 objects_array.append({ "Class": r_dict,
@@ -3484,7 +3385,6 @@ FixMinTier(recipes_hammer, 1)
 objects_array.append({ "Class": r_dict,
 	"Name": "AutomaticHammer" + r_dict,
 	"Recipes": recipes_hammer,
-	"StartTier": 1,
 })
 
 objects_array.append({ "Class": r_dict,

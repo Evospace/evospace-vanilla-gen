@@ -18,7 +18,6 @@ for ore_type in ore_types:
 	ore_name = ore_type["Name"]
 	processing = ore_type["Processing"]
 	if "NotOre" not in ore_type:
-		named_mat = named_material(ore_name)
 	
 	    # Hammer
 		recipes_hammer.append({

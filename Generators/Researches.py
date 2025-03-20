@@ -8,8 +8,8 @@ from PartsResearchHelper import *
 researches = []
 
 tier_researches = [
-	"MineralScan",
-	"MineralScan",
+	"Error",
+	"Error",
 	"SteelProduction",
 	"AluminiumProduction",
 	"StainlessSteelProduction",
@@ -127,7 +127,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Electricity",
 	"LabelParts": [["Electricity", "researches"]],
-	"RequiredResearch": ["MineralScan"],
+	"RequiredResearch": ["MineralsScan"],
 	"Unlocks": [["Hand" + r_dict, "CopperConnector"],["Hand" + r_dict, "CopperHandGenerator"]],
 	"CompleteByDefault": True,
 	"MainResearch": True,
@@ -164,7 +164,7 @@ append_levels({
 	"LabelParts": [["PowerGeneration", "researches"]],
 	"RequiredResearch": ["Electricity"],
 	"Levels": [1,7],
-	"Unlocks": [["Hand" + r_dict, "%Material%CompactGenerator"] ],
+	"Unlocks": [["Hand" + r_dict, "%Material%CompactGenerator"],["Hand" + r_dict, "%Material%StirlingEngine"]],
 	"CompleteByDefault": True,
 })
 append_levels({
@@ -423,16 +423,6 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "StirlingEngine",
-	"LabelParts": [["StirlingEngine", "machines"]],
-	"RequiredResearch": ["MineralsScan"],
-	"Levels": [1,7],
-	"Unlocks": [["Hand" + r_dict, "%Material%StirlingEngine"] ],
-	"CompleteByDefault": True,
-	"MainResearch": True,
-})
-append_levels({
-	"Class": "StaticResearch",
 	"Name": "Oven",
 	"LabelParts": [["Oven", "researches"]],
 	"RequiredResearch": ["Furnace",],
@@ -506,7 +496,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Furnace",
 	"LabelParts": [["Furnace", "machines"]],
-	"RequiredResearch": ["StirlingEngine"],
+	"RequiredResearch": ["PowerGeneration"],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%Furnace"] ],
 	"MainResearchArr": [True,True,True,True,True,True,True],
@@ -607,7 +597,6 @@ append_levels({
 	"RequiredResearch": ["Transistor"],
 	"Levels": [2,2],
 	"Unlocks": [[assembler_r_dict, "Transistor2"]],
-	"MainResearch": True,
 	"CostMul":6.5,
 })
 append_levels({
@@ -617,7 +606,6 @@ append_levels({
 	"RequiredResearch": ["Transistor2"],
 	"Levels": [2,2],
 	"Unlocks": [[assembler_r_dict, "Transistor3"]],
-	"MainResearch": True,
 	"CostMul":12.5,
 })
 append_levels({
@@ -627,17 +615,15 @@ append_levels({
 	"RequiredResearch": ["Transistor3"],
 	"Levels": [2,2],
 	"Unlocks": [[assembler_r_dict, "Transistor4"]],
-	"MainResearch": True,
 	"CostMul":23.5,
 })
 append_levels({
 	"Class": "StaticResearch",
 	"Name": "AdvancedCircuit2",
-	"LabelParts": [["Alternative", "common"],["AdvancedCircuit", "parts"]],
-	"RequiredResearch": ["AdvancedCircuit", "Transistor"],
+	"LabelParts": [["AdvancedCircuit", "parts"], ["II", "common"]],
+	"RequiredResearch": ["Transistor"],
 	"Levels": [2,2],
-	"Unlocks": [[assembler_r_dict, "AltAdvancedCircuit"]],
-	"MainResearch": True,
+	"Unlocks": [[assembler_r_dict, "AdvancedCircuit2"]],
 	"CostMul":2.5,
 })
 append_levels({
@@ -743,25 +729,6 @@ append_levels({
 	"Unlocks": [["IndustrialChemReactor" + r_dict, "NitricAcid"]],
 	"CostMul": 0.2,
 	"MainResearch": True,
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "LithiumPlate",
-	"LabelParts": [["LithiumPlate", "parts"]],
-	"RequiredResearch": ["NitricAcid"],
-	"Levels": [5,5],
-	"Unlocks": [["IndustrialChemReactor" + r_dict, "LithiumPlate"]],
-	"CostMul": 0.3,
-	"MainResearch": True,
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "LithiumBattery",
-	"LabelParts": [["LithiumBattery", "researches"]],
-	"RequiredResearch": ["LithiumPlate"],
-	"Levels": [5,5],
-	"Unlocks": [[assembler_r_dict, "LithiumBattery"]],
-	"CostMul": 0.75,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -1070,7 +1037,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "CompositeMaterials",
 	"LabelParts": [["CompositeMaterials", "parts"]],
-	"RequiredResearch": ["TitaniumProduction", "LithiumPlate", "CarbonFiberSheet"],
+	"RequiredResearch": ["TitaniumProduction", "CarbonFiberSheet"],
 	"Levels": [6,6],
 	"Unlocks": [[assembler_r_dict, "CompositePlate"]],
 	"MainResearch": True,

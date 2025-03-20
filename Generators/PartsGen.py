@@ -31,10 +31,6 @@ def generate_part(name, material_dict):
 		"LabelParts": [[material + part["Name"], "parts"]],
 		"Image": "T_" + material + part["Name"],
 		"StackSize": part["StackSize"],
-		"LogicJson":
-		{
-			"StaticBlock": material + part["Name"] + static_block
-		},
 		"Materials" : [
 			"/Game/Materials/" + material
 		],
@@ -106,38 +102,34 @@ for material in materials:
 			"Input":{
 				"Items": inp
 			},
-			"Output":{
-				"Items":[
-					{
-						"Name": m_name + "SolarCell",
-						"Count": 1
-					}
-				]
-			},
+			"Output": one_item(m_name + "SolarCell"),
 			"Ticks" : 80,
 			"Tier": material_tier
+		})
+	
+	if "Foil" in material["Items"]:
+		generate_part("Foil", material)
+		recipes_assembler.append({
+			"Name": m_name + "Foil",
+			"Input": one_item(m_name + "Plate"),
+			"Output": one_item(m_name + "Foil", 3),
+			"Ticks" : 80,
+			"Tier": material_tier,
+			"Productivity": 50,
+		})
+		recipes_hand.append({
+			"Name":m_name+"Wire",
+			"Input": one_item(m_name+"Plate", 1),
+			"Output": one_item(m_name+"Foil", 1),
+			"Ticks" : 20,
 		})
 
 	if "Parts" in material["Items"]:
 		generate_part("Parts", material)
 		recipes_hand.append({
 			"Name": m_name + "Parts",
-			"Input":{
-				"Items":[
-					{
-						"Name": m_name + "Plate",
-						"Count": 1
-					},
-				]
-			},
-			"Output":{
-				"Items":[
-					{
-						"Name": m_name + "Parts",
-						"Count": 1
-					}
-				]
-			},
+			"Input": one_item(m_name + "Plate"),
+			"Output": one_item(m_name + "Parts"),
 			"Ticks" : 80,
 			"Tier": material_tier,
 			"Productivity": 50,
@@ -345,10 +337,7 @@ for material in materials:
 			"LabelParts": [[material["Name"] + "Block", "parts"]],
 			"Category": "Block",
 			"ItemLogic": building_cube_logic,
-			"LogicJson":
-			{
-				"StaticBlock": material["Name"] + "Block" + static_block
-			},
+			"Object": material["Name"] + "Block",
 		}
 		
 		if "Category" in material:
@@ -570,9 +559,6 @@ for tool in tools:
 		"Name": item_name,
 		"Image": "T_" + item_name,
 		"ItemLogic": tool["ItemLogic"],
-		"LogicJson": {
-			"RecipeDictionary": tool["Name"] + r_dict,
-		},
 		"StackSize": 1,
 		"LabelParts": [[tool["Name"], "parts"]],
 	}
