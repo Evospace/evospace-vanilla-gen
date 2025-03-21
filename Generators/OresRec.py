@@ -275,7 +275,7 @@ objects_array.append({ "Class": r_dict,
 
 objects_array.append({ "Class": r_dict,
 	"Name": "OreWasher" + r_dict,
-	"Recipes": recipes_ore_washer
+	"Recipes": recipes_ore_washer,
 })
 
 objects_array.append({ "Class": r_dict,
