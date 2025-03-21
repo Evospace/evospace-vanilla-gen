@@ -636,7 +636,7 @@ objects_array.append({ "Class": r_dict,
 
 objects_array.append({ "Class": r_dict,
 	"Name": "FluidFurnace" + r_dict,
-	"Recipes": recipes_gasfurn
+	"Recipes": recipes_gasfurn,
 })
 
 data = {

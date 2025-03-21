@@ -344,7 +344,7 @@ recipes_assembler.append({
 recipes_hand.append({
     "Name": "Capacitor",
     "Input": items([
-        ["AluminiumFoil", 2],
+        ["AluminumFoilAluminumFoil", 2],
         ["Clay", 1]
     ]),
     "Output": one_item("Capacitor"),
@@ -2196,7 +2196,7 @@ recipes_riteg.append({
 	"Ticks" : 60,
 })
 
-recipes_chem.append({
+recipes_industrial_chemreactor.append({
 	"Name": "MineralWater",
 	"Input":{
 		"Items":[
@@ -2766,57 +2766,7 @@ recipes_industrial_chemreactor.append({
 	"Colors": [[0.4,0.4,0.0,1.0],[0.4,0.4,0.0,0.15]]
 })
 
-recipes_chem.append({
-	"Name": "Plastic1",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Ethylene",
-				"Count": 1000
-			},
-			{
-				"Name": "Coal",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "Plastic",
-				"Count": 1
-			},		
-		]
-	},
-	"Ticks" : 200
-})
-
-recipes_chem.append({
-	"Name": "Plastic2",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Ethylene",
-				"Count": 1000
-			},
-			{
-				"Name": "HeavyOil",
-				"Count": 150
-			},
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "Plastic",
-				"Count": 1
-			},		
-		]
-	},
-	"Ticks" : 200
-})
-
-recipes_chem.append({
+recipes_industrial_chemreactor.append({
 	"Name": "ProducerGas",
 	"Input": one_item("ProducerGas", 1000),
 	"Output":{
@@ -2830,7 +2780,7 @@ recipes_chem.append({
 	"Ticks" : 200
 })
 
-recipes_chem.append({
+recipes_industrial_chemreactor.append({
 	"Name": "Coal",
 	"Input": one_item("Ash", 3),
 	"Output":{
@@ -2917,7 +2867,8 @@ recipes_industrial_chemreactor.append({
 			},		
 		]
 	},
-	"Ticks" : 100
+	"Ticks" : 100,
+	"Tier": 5,
 })
 
 recipes_industrial_chemreactor.append({
@@ -3050,6 +3001,7 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"Ticks" : 400,
+	"Tier": 5,
 	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]]
 })
 
@@ -3306,7 +3258,7 @@ append_recipe_hand_press({
 
 objects_array.append({ "Class": r_dict,
 	"Name": "BlastFurnace" + r_dict,
-	"Recipes": recipes_blast_furnace
+	"Recipes": recipes_blast_furnace,
 })
 
 objects_array.append({ "Class": r_dict,
@@ -3367,13 +3319,12 @@ objects_array.append({ "Class": r_dict,
 
 objects_array.append({ "Class": r_dict,
 	"Name": "ElectricFurnace" + r_dict,
-	"Recipes": recipes_elfurn,
-	"StartTier": 2,
+	"Recipes": recipes_elfurn
 })
 
 objects_array.append({ "Class": r_dict,
 	"Name": "Fermenter" + r_dict,
-	"Recipes": recipes_ferm
+	"Recipes": recipes_ferm,
 })
 
 objects_array.append({ "Class": r_dict,
@@ -3404,7 +3355,7 @@ objects_array.append({ "Class": r_dict,
 
 objects_array.append({ "Class": r_dict,
 	"Name": "ChemReactor" + r_dict,
-	"Recipes": recipes_chem
+	"Recipes": recipes_chem,
 })
 
 objects_array.append({ "Class": r_dict,
@@ -3414,7 +3365,7 @@ objects_array.append({ "Class": r_dict,
 
 objects_array.append({ "Class": r_dict,
 	"Name": "IndustrialSmelter" + r_dict,
-	"Recipes": recipes_indu
+	"Recipes": recipes_indu,
 })
 
 objects_array.append({ "Class": r_dict,
@@ -3454,7 +3405,7 @@ objects_array.append({ "Class": r_dict,
 
 objects_array.append({ "Class": r_dict,
 	"Name": assembler_r_dict,
-	"Recipes": recipes_assembler
+	"Recipes": recipes_assembler,
 })
 
 objects_array.append({ "Class": r_dict,
@@ -3464,7 +3415,7 @@ objects_array.append({ "Class": r_dict,
 
 objects_array.append({ "Class": r_dict,
 	"Name": "IndustrialChemReactor" + r_dict,
-	"Recipes": recipes_industrial_chemreactor
+	"Recipes": recipes_industrial_chemreactor,
 })
 
 objects_array.append({ "Class": r_dict,
@@ -3509,11 +3460,11 @@ objects_array.append({ "Class": r_dict,
 
 objects_array.append({ "Class": r_dict,
 	"Name": "Hand" + r_dict,
-	"Recipes": recipes_hand
+	"Recipes": recipes_hand,
 })
 
 data = {
 	"Objects": objects_array
 }
 
-write_file("Generated/Recipes/misc.json", data);
+write_file("Generated/Recipes/misc.json", data)
