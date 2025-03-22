@@ -65,7 +65,7 @@ a_wires = [
 	"CopperWire", # 0 stone
 	"CopperWire", # 1 copper
 	"CopperWire", # 2 steel
-	"CopperrWire", # 3 alum
+	"CopperWire", # 3 alum
 	"SilverWire",   # 4 ss
 	"GoldWire", # 5 tita
 	"PlatinumWire",  # 6 hard

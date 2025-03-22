@@ -71,7 +71,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank",
+				"Name": "Log",
 				"Count": 1
 			},
 		]
@@ -92,7 +92,7 @@ append_recipe_hand_press({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank",
+				"Name": "Log",
 				"Count": 1
 			}
 		]
@@ -356,32 +356,11 @@ recipes_hand.append({
 })
 
 recipes_hand.append({
-	"Name": "Plank",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Log",
-				"Count": 1
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Plank",
-				"Count": 2
-			}
-		]
-	},
-	"Ticks" : 20
-})
-
-recipes_hand.append({
 	"Name": "Chair",
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank",
+				"Name": "Log",
 				"Count": 4
 			}
 		]
@@ -427,7 +406,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank",
+				"Name": "Log",
 				"Count": 4
 			}
 		]
@@ -448,7 +427,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank",
+				"Name": "Log",
 				"Count": 8
 			}
 		]
@@ -473,7 +452,7 @@ recipes_hand.append({
 				"Count": 2
 			},
 			{
-				"Name": "Plank",
+				"Name": "Log",
 				"Count": 2
 			}
 		]
@@ -519,7 +498,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank",
+				"Name": "Log",
 				"Count": 6
 			}
 		]
@@ -540,7 +519,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank",
+				"Name": "Log",
 				"Count": 8
 			}
 		]
@@ -561,7 +540,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank",
+				"Name": "Log",
 				"Count": 4
 			}
 		]
@@ -603,7 +582,7 @@ recipes_hand.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "Plank",
+				"Name": "Log",
 				"Count": 3
 			}
 		]

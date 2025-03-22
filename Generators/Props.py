@@ -284,7 +284,7 @@ props = [
 		"Variations": 1,
 		"ProjectToTerrainPower": 1,
 		"IsBig": False,
-		"Drops": "Plank",
+		"Drops": "Log",
 		"Count": 1,
 		"AdditiveElevation": 0,
 		"CullBegin": 10000,
