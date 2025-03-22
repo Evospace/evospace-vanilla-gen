@@ -571,7 +571,7 @@ materials = [
 	},{
 		"Name": "Yttrium",
 		"Label": "Yttrium",
-		"Items": ["Dust", "Block", "Plate"],
+		"Items": ["Dust", "Block", "Plate", "Wire"],
 		"Smelting": ["InductionFurnace"],
 		"Tier": 4,
 	},{
@@ -610,14 +610,6 @@ materials = [
 			"BurnTime": 400
 		},
 		"Color":[0.9,0.9,0.9]
-	},{
-		"Name": "Plank",
-		"Label": "Plank",
-		"Items": ["Exact"],
-		"Tier": 0,
-		"Burnable": {
-			"BurnTime": 100
-		},
 	},{
 		"Name": "Silicon",
 		"Label": "Silicon",

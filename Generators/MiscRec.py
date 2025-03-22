@@ -344,8 +344,8 @@ recipes_assembler.append({
 recipes_hand.append({
     "Name": "Capacitor",
     "Input": items([
-        ["AluminumFoilAluminumFoil", 2],
-        ["Clay", 1]
+        ["AluminiumFoil", 2],
+        ["Log", 1]
     ]),
     "Output": one_item("Capacitor"),
     "Ticks": 80,
@@ -356,7 +356,7 @@ recipes_assembler.append({
     "Name": "Capacitor2",
     "Input": items([
         ["AluminiumFoil", 2],
-        ["MicaSheet", 1]
+        ["MicaFlakes", 1]
     ]),
     "Output": one_item("Capacitor", 2),
     "Ticks": 60,
@@ -366,8 +366,8 @@ recipes_assembler.append({
 recipes_assembler.append({
     "Name": "Capacitor3",
     "Input": items([
-        ["AluminiumFoil", 2],
-        ["PTFESheet", 1]
+        ["TantalumFoil", 2],
+        ["PolyethyleneSheet", 1]
     ]),
     "Output": one_item("Capacitor", 4),
     "Ticks": 60,
@@ -378,7 +378,7 @@ recipes_assembler.append({
     "Name": "Capacitor4",
     "Input": items([
         ["TantalumFoil", 2],
-        ["CarbonFiberSheet", 1]
+        ["PTFESheet", 1]
     ]),
     "Output": one_item("Capacitor", 8),
     "Ticks": 60,
@@ -1462,31 +1462,6 @@ recipes_oven.append({
 		]
 	},
 	"Ticks": 5*2*20*3,
-})
-
-recipes_oven.append({
-	"Name": "PlankToCoal",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Plank",
-				"Count": 10
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Coal",
-				"Count": 3
-			},
-			{
-				"Name": "Creosote",
-				"Count": 150
-			},
-		]
-	},
-	"Ticks": 3*2*20*3,
 })
 
 recipes_oven.append({

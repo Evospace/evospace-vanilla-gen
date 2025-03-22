@@ -1590,7 +1590,7 @@ for machine in machines:
 				"Input":{
 					"Items":[
 						{
-							"Name": "Plank",
+							"Name": "Log",
 							"Count": 8
 						},
 						parts_count(8)
