@@ -127,8 +127,13 @@ materials = [
 	},{
 		"Name": "Rhodium",
 		"Label": "Rhodium",
-		"Items": ["Dust", "Plate", "Block"],
+		"Items": ["Dust", "Plate", "Block", "Foil"],
 		"Smelting": ["ArcFurnace"],
+		"Tier": 6,
+	},{
+		"Name": "RhodiumReflector",
+		"Label": "Rhodium Reflector",
+		"Items": ["Exact"],
 		"Tier": 6,
 	},{
 		"Name": "PlatinumRhodiumSolution",
@@ -294,11 +299,6 @@ materials = [
 		"Name": "Cement",
 		"Label": "Cement",
 		"Items": ["Dust"],
-	},{
-		"Name": "Neutronium",
-		"Label": "Neutronium",
-		"Items": tiered_parts_list,
-		"Tier": 6
 	},{
 		"Name": "Chromium",
 		"Label": "Chromium",
@@ -768,11 +768,6 @@ materials = [
 		"Label": "Oxygen",
 		"Items": ["Gas"],
 		"Tier": 4
-	},{
-		"Name": "Air",
-		"Label": "Air",
-		"Items": ["Gas"],
-		"Tier": 0
 	},{
 		"Name": "Nitrogen",
 		"Label": "Nitrogen",
