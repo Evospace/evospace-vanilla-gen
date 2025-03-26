@@ -439,59 +439,63 @@ recipes_assembler.append({
 	"Tier": 5,
 })
 
-append_recipe({
+recipes_hand.append({
 	"Name":"QuantumCore",
-	"Input":{
-		"Items":[
-			{
-				"Name": "YttriumDust",
-				"Count": 1
-			},	
-			{
-				"Name": "CopperParts",
-				"Count": 2
-			}
-		]
-	},
+	"Input":items([
+		["YttriumDust"],
+		["CopperParts", 2]
+	]),
 	"Output": one_item("QuantumCore"),
 	"Ticks" : 200,
 	"Tier": 4,
 	
 })
 
-append_recipe({
+recipes_hand.append({
 	"Name":"QuantumCircuit",
-	"Input":{
-		"Items":[
-			{
-				"Name": "QuantumCore",
-				"Count": 2
-			},	
-			{
-				"Name": "Processor",
-				"Count": 1
-			}
-		]
-	},
+	"Input": items([
+		["QuantumCore", 2],
+		["Processor", 3],
+		["Resistor", 6]
+	]),
 	"Output": one_item("QuantumCircuit"),
 	"Ticks" : 200,
 	"Tier": 4,
 })
 
-append_recipe({
+recipes_assembler.append({
+	"Name":"QuantumCircuit2",
+	"Input": items([
+		["QuantumCore", 2],
+		["Processor", 2],
+		["Resistor", 6],
+		["Transistor", 6]
+	]),
+	"Output": one_item("QuantumCircuit"),
+	"Ticks" : 200,
+	"Tier": 4,
+})
+
+recipes_hand.append({
 	"Name":"QuantumProcessor",
-	"Input":{
-		"Items":[
-			{
-				"Name": "QuantumCircuit",
-				"Count": 2
-			},	
-			{
-				"Name": "DecisionResonator",
-				"Count": 1
-			}
-		]
-	},
+	"Input": items([
+		["QuantumCircuit", 3],
+		["DecisionResonator", 1],
+		["Capacitor", 6]
+	]),
+	"Output": one_item("QuantumProcessor"),
+	"Ticks" : 200,
+	"Tier": 5,
+})
+
+recipes_assembler.append({
+	"Name":"QuantumProcessor2",
+	"Input": items([
+		["QuantumCircuit", 2],
+		["DecisionResonator", 1],
+		["Capacitor", 6],
+		["Transistor", 6]
+	]),
 	"Output": one_item("QuantumProcessor"),
 	"Ticks" : 200,
 	"Tier": 5,
@@ -517,7 +521,7 @@ recipes_industrial_chemreactor.append({
 })
 
 recipes_industrial_chemreactor.append({
-	"Name":"PTFE",
+	"Name":"PTFESheet",
 	"Input":{
 		"Items":[
 			{
@@ -530,44 +534,42 @@ recipes_industrial_chemreactor.append({
 			}
 		]
 	},
-	"Output": one_item("PTFE", 1000),
+	"Output": one_item("PTFESheet", 1000),
 	"Ticks" : 600,
 	"Tier": 5,
 })
 
 recipes_industrial_chemreactor.append({
 	"Name":"BrainMatrix",
-	"Input":{
-		"Items":[
-			{
-				"Name": "CarbonFiberSheet",
-				"Count": 1
-			},	
-			{
-				"Name": "PTFE",
-				"Count": 1
-			}
-		]
-	},
+	"Input":  items([
+		["CarbonFiberSheet"],
+		["PTFESheet"]
+	]),
 	"Output": one_item("BrainMatrix"),
 	"Ticks" : 200,
 	"Tier": 5,
 })
 
-append_recipe({
+recipes_hand.append({
 	"Name":"QuantumBrain",
-	"Input":{
-		"Items":[	
-			{
-				"Name": "QuantumProcessor",
-				"Count": 2
-			},
-			{
-				"Name": "BrainMatrix",
-				"Count": 1
-			}
-		]
-	},
+	"Input": items([
+		["QuantumProcessor", 3],
+		["BrainMatrix"],
+		["Resistor", 10]
+	]),
+	"Output": one_item("QuantumBrain"),
+	"Ticks" : 200,
+	"Tier": 6,
+})
+
+recipes_assembler.append({
+	"Name":"QuantumBrain2",
+	"Input": items([
+		["QuantumProcessor", 2],
+		["BrainMatrix"],
+		["Resistor", 10],
+		["UltimateCatalyst"]
+	]),
 	"Output": one_item("QuantumBrain"),
 	"Ticks" : 200,
 	"Tier": 6,
@@ -575,22 +577,11 @@ append_recipe({
 
 append_recipe({
 	"Name":"UltimateCatalyst",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Cell",
-				"Count": 1
-			},	
-			{
-				"Name": "NeutroniumParts",
-				"Count": 2
-			},	
-			{
-				"Name": "Coke",
-				"Count": 10
-			}
-		]
-	},
+	"Input": items([
+		["Cell"],
+		["NeutroniumParts", 2],
+		["Coke", 10]
+	]),
 	"Output": one_item("UltimateCatalyst"),
 	"Ticks" : 200,
 	"Tier": 7,
@@ -640,26 +631,11 @@ for level, name, copm_name in zip(range(0, 4), ["BasicBattery", "AdvancedBattery
 
 append_recipe({
 	"Name":"Cell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "StainlessSteelPlate",
-				"Count": 1
-			},
-			{
-				"Name": "StainlessSteelParts",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Cell",
-				"Count": 1
-			}
-		]
-	},
+	"Input": items([
+		["StainlessSteelPlate"],
+		["StainlessSteelParts"]
+	]),
+	"Output": one_item("Cell"),
 	"Ticks" : 200,
 	
 })
@@ -793,22 +769,11 @@ append_recipe({
 
 recipes_assembler.append({
 	"Name":"Battery",
-	"Input":{
-		"Items":[
-			{
-				"Name": "SulfuricAcid",
-				"Count": 100
-			},
-			{
-				"Name": "CopperParts",
-				"Count": 1
-			},
-			{
-				"Name": "SteelPlate",
-				"Count": 1
-			},
-		]
-	},
+	"Input": items([
+		["SulfuricAcid", 100],
+		["CopperParts"],
+		["SteelPlate"]
+	]),
 	"Output": one_item("Battery"),
 	"Ticks" : 200,
 	
@@ -840,50 +805,60 @@ recipes_assembler.append({
 recipes_assembler.append({
 	"Name":"GoldWire",
 	"Input": one_item("GoldPlate"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "GoldWire",
-				"Count": 2
-			}
-		]
-	},
+	"Output": one_item("GoldWire", 2),
 	"Ticks" : 100,
 })
 
 append_recipe({
 	"Name":"ReflectorCell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Cell",
-				"Count": 1
-			},
-			{
-				"Name": "BerylliumDust",
-				"Count": 3
-			},
-		]
-	},
+	"Input": items([
+		["Cell"],
+		["BerylliumDust", 3]
+	]),
 	"Output": one_item("ReflectorCell"),
 	"Ticks" : 100,
+})
+
+append_recipe({
+	"Name":"RhodiumReflector",
+	"Input": items([
+		["Cell"],
+		["RhodiumFoil"]
+	]),
+	"Output": one_item("RhodiumReflector"),
+	"Ticks" : 100,
+	"Tier": 6
+})
+
+append_recipe({
+	"Name":"BrainMatrix",
+	"Input": items([
+		["CarbonFiberSheet"],
+		["RhodiumFoil"]
+	]),
+	"Output": one_item("BrainMatrix"),
+	"Ticks" : 100,
+	"Tier": 6
+})
+
+append_recipe({
+	"Name":"DecisionResonator",
+	"Input": items([
+		["StainlessSteelParts", 4],
+		["MicaFlakes"]
+	]),
+	"Output": one_item("DecisionResonator"),
+	"Ticks" : 100,
+	"Tier": 5
 })
 
 #TODO: remove
 append_recipe({
 	"Name":"ControlCell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Cell",
-				"Count": 1
-			},
-			{
-				"Name": "YttriumDust",
-				"Count": 3
-			},
-		]
-	},
+	"Input":  items([
+		["Cell"],
+		["YttriumDust", 3]
+	]),
 	"Output": one_item("ControlCell"),
 	"Ticks" : 100,
 })
@@ -894,31 +869,17 @@ recipes_condens.append({
 		"Items":[
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Water",
-				"Count": 500
-			}
-		]
-	},
+	"Output": one_item("Water", 500),
 	"Ticks" : 40,
 })
 
 recipes_condens.append({
-	"Name":"Air",
+	"Name":"Nitrogen",
 	"Input":{
 		"Items":[
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Air",
-				"Count": 500
-			}
-		]
-	},
+	"Output" :one_item("Nitrogen", 500),
 	"Ticks" : 20,
 })
 
@@ -1342,6 +1303,48 @@ recipes_fission.append({
 	"Ticks" : 2000,
 })
 
+recipes_electrolyzer.append({
+	"Name":"Hydrogen",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Water",
+				"Count": 800
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "Hydrogen",
+				"Count": 400
+			}
+		],
+	},
+	"Ticks" : 200,
+	"Tier": 4,
+})
+recipes_electrolyzer.append({
+	"Name":"Oxygen",
+	"Input":{
+		"Items":[
+			{
+				"Name": "Water",
+				"Count": 800
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "Oxygen",
+				"Count": 200
+			}
+		],
+	},
+	"Ticks" : 200,
+	"Tier": 4,
+})
 recipes_electrolyzer.append({
 	"Name":"CinnabarDust",
 	"Input":{
@@ -2980,13 +2983,17 @@ recipes_industrial_chemreactor.append({
 	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]]
 })
 
-recipes_electrolyzer.append({
+recipes_industrial_chemreactor.append({
 	"Name": "RhodiumDust",
 	"Input":{
 		"Items":[
 			{
 				"Name": "RhodiumSolution",
 				"Count": 1000
+			},
+			{
+				"Name": "Ammonia",
+				"Count": 300
 			}
 		]
 	},
@@ -3000,7 +3007,7 @@ recipes_electrolyzer.append({
 	},
 	"Ticks" : 400,
 	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]],
-	"Tier":2,
+	"Tier":6,
 })
 
 recipes_industrial_chemreactor.append({

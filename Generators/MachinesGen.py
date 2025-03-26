@@ -33,14 +33,23 @@ for machine in machines:
 		def pipe():
 			return tier_material[tier] + "Pipe"
 		
+		def part():
+			return tier_material[tier] + "Parts"
+		
 		def plate():
 			return tier_material[tier] + "Plate"
 		
 		def gearbox():
 			return tier_material[tier] + "Gearbox"
 		
+		def engine():
+			return tier_material[tier] + "ElectricEngine"
+		
 		def robotarm():
 			return tier_material[tier] + "RobotArm"
+		
+		def isolator():
+			return heat_isolators[tier]
 		
 		def append_recipe(recipe):
 			recipe["Tier"] = tier
@@ -328,13 +337,11 @@ for machine in machines:
 		if machine["Name"] == "IndustrialSmelter":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						wires_count(32 + level * 16),
-						parts_count(12),
-						isolators_count(12)
-					]
-				},
+				"Input": items([
+					[wire(), 32] if tier != 4 else ["CopperWire", 64],
+					[plate(), 12],
+					[isolator(), 12]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 80
 			})
@@ -449,16 +456,11 @@ for machine in machines:
 		if machine["Name"] == "IndustrialChemReactor":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(8),
-						parts_count(8 + parts_ramp(level)),
-						{
-							"Name": tier_material[tier] + "ElectricEngine",
-							"Count": 2
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 15],
+					["Glass", 10],
+					[engine(), 2]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 40
 			})
@@ -1035,21 +1037,12 @@ for machine in machines:
 		if machine["Name"] == "FissionReactor":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": "CopperHeatPipe",
-							"Count": 25
-						},
-						plates_count(100),
-						parts_count(100),
-						{
-							"Name": circuits[tier],
-							"Count": 20 + 5 * level
-						},
-						isolators_count(100)
-					]
-				},
+				"Input": items([
+					["CopperHeatPipe", 25],
+					[plate(), 100],
+					[part(), 100],
+					[circuit(), 20 + 5 * level]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -1057,22 +1050,13 @@ for machine in machines:
 		if machine["Name"] == "FusionReactor":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input": {
-					"Items": [
-						{
-							"Name": "CopperHeatPipe",
-							"Count": 25
-						},
-						plates_count(40),
-						parts_count(100),
-						wires_count(100),
-						{
-							"Name": circuits[tier],
-							"Count": 40 + 10 * level
-						},
-						isolators_count(50)
-					]
-				},
+				"Input": items([
+					["CopperHeatPipe", 25],
+					[plate(), 40],
+					[wire(), 100],
+					[circuit(), 40 + 10 * level],
+					["RhodiumReflector", 40]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 300
 			})
@@ -1095,8 +1079,7 @@ for machine in machines:
 						{
 							"Name": circuits[tier],
 							"Count": 40 + 10 * level
-						},
-						isolators_count(50)
+						}
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -1113,8 +1096,7 @@ for machine in machines:
 							"Count": 1,
 						},
 						plates_count(8),
-						parts_count(20 + 5 * level),
-						isolators_count(10)
+						parts_count(20 + 5 * level)
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
