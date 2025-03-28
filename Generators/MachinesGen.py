@@ -468,16 +468,11 @@ for machine in machines:
 		if machine["Name"] == "AtmosphericCondenser":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(5),
-						parts_count(2 + parts_ramp(level)),
-						{
-							"Name": "CopperPipe",
-							"Count": 5 + parts_ramp(level)
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 5],
+					[part(), 2 + parts_ramp(level)],
+					["CopperPipe", 5 + parts_ramp(level)]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -485,16 +480,11 @@ for machine in machines:
 		if machine["Name"] == "ChemicalBath":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(8),
-						parts_count(5 + parts_ramp(level)),
-						{
-							"Name": tier_material[tier] + "ElectricEngine",
-							"Count": 1
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 8],
+					[part(), 5 + parts_ramp(level)],
+					[engine(), 1]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 40
 			})
@@ -502,11 +492,7 @@ for machine in machines:
 		if machine["Name"] == "Lamp":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(2)
-					]
-				},
+				"Input": one_item(plate(), 2),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 40
 			})
@@ -531,12 +517,10 @@ for machine in machines:
 		if machine["Name"] == "Mixer":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(4),
-						parts_count(4 + parts_ramp(level))
-					]
-				},
+				"Input": items([
+					[plate(), 4],
+					[part(), 4 + parts_ramp(level)]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -544,16 +528,11 @@ for machine in machines:
 		if machine["Name"] == "ElectricalSwitch":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(1),
-						parts_count(1 + parts_ramp(level)),
-						{
-							"Name": cables[tier],
-							"Count": 1
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 4],
+					[part(), 1 + parts_ramp(level)],
+					[cables[tier]]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -561,11 +540,7 @@ for machine in machines:
 		if machine["Name"] == "Tank":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(12)
-					]
-				},
+				"Input": one_item(plate(), 12),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -573,15 +548,11 @@ for machine in machines:
 		if machine["Name"] == "Terminal":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(3),
-						{
-							"Name": cables[tier],
-							"Count": 4
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 3],
+					["Glass", 4],
+					[cables[tier], 1]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -589,14 +560,11 @@ for machine in machines:
 		if machine["Name"] == "FlatTerminal":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "Terminal",
-							"Count": 1
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 3],
+					["Glass", 4],
+					[cables[tier], 1]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -604,15 +572,11 @@ for machine in machines:
 		if machine["Name"] == "BigTerminal":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(1),
-						{
-							"Name": cables[tier],
-							"Count": 6
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 6],
+					["Glass", 8],
+					[cables[tier], 2]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -620,14 +584,11 @@ for machine in machines:
 		if machine["Name"] == "BigFlatTerminal":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "BigTerminal",
-							"Count": 1
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 6],
+					["Glass", 8],
+					[cables[tier], 2]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -635,15 +596,11 @@ for machine in machines:
 		if machine["Name"] == "HugeTerminal":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(9),
-						{
-							"Name": cables[tier],
-							"Count": 8
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 9],
+					["Glass", 12],
+					[cables[tier], 3]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -651,14 +608,11 @@ for machine in machines:
 		if machine["Name"] == "HugeFlatTerminal":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "HugeTerminal",
-							"Count": 1
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 9],
+					["Glass", 12],
+					[cables[tier], 3]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -666,16 +620,11 @@ for machine in machines:
 		if machine["Name"] == "SolarPanel" or machine["Name"] == "SmallSolarPanel":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(4),
-						parts_count(4 + parts_ramp(level)),
-						{
-							"Name": tier_material[tier] + "SolarCell",
-							"Count": 1 if machine["Name"] == "SmallSolarPanel" else 10
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 4],
+					[part(), 4 + parts_ramp(level)],
+					[tier_material[tier] + "SolarCell", 1 if machine["Name"] == "SmallSolarPanel" else 10]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -683,14 +632,10 @@ for machine in machines:
 		if machine["Name"] == "StirlingEngine":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						parts_count(2 + parts_ramp(level)),{
-							"Name": tier_material[tier] + "Plate",
-							"Count": 2
-						}
-					]
-				},
+				"Input": items([
+					[part(), 2 + parts_ramp(level)],
+					[plate(), 2]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -698,68 +643,36 @@ for machine in machines:
 		if machine["Name"] == "SteamEngine":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						parts_count(2 + parts_ramp(level)),{
-							"Name": tier_material[tier] + "Pipe",
-							"Count": 2
-						}
-					]
-				},
+				"Input": items([
+					[part(), 2 + parts_ramp(level)],
+					[tier_material[tier] + "Pipe", 2]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
 			
-		if machine["Name"] == "Generator":
+		if machine["Name"] == "Generator" or machine["Name"] == "IndustrialGenerator":
+			count_mul = 1 if machine["Name"] == "Generator" else 3
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						wires_count(12 + level * 6),
-						plates_count(4),
-						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 1
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 8 * count_mul],
+					[wire(), (12 + level * 6) * count_mul],
+					[gearbox(), 1 * count_mul],
+					[circuit(), 2]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
-			})
-
-		if machine["Name"] == "IndustrialGenerator":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						wires_count(32 + level * 12),
-						plates_count(8),
-						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 3
-						}
-					]
-				},
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 100
 			})
 			
 		if machine["Name"] == "CompactGenerator":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": "CopperWire",
-							"Count": 2 + parts_ramp(level)
-						},
-						plates_count(1),
-						{
-							"Name": tier_material[tier] + "Parts",
-							"Count": 2 + parts_ramp(level)
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 1],
+					[wire(), 2 + parts_ramp(level)],
+					[part(), 2 + parts_ramp(level)]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -767,12 +680,10 @@ for machine in machines:
 		if machine["Name"] == "AutomaticHammer":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(4),
-						parts_count(1 + parts_ramp(level))
-					]
-				},
+				"Input": items([
+					[plate(), 4],
+					[part(), 1 + parts_ramp(level)]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -780,15 +691,10 @@ for machine in machines:
 		if machine["Name"] == "Macerator":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 1
-						},
-						plates_count(2)
-					]
-				},
+				"Input": items([
+					[plate(), 2],
+					[gearbox()]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
