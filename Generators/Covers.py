@@ -136,6 +136,14 @@ covers = [
 		"Name": "FluidOutput2",
 		"Mesh": "/Game/Covers/FluidOut2",
         "NoCollision": True
+	},{
+		"Name": "FluidInput1",
+		"Mesh": "/Game/Covers/FluidIn1",
+        "NoCollision": True
+	},{
+		"Name": "FluidInput2",
+		"Mesh": "/Game/Covers/FluidIn2",
+        "NoCollision": True
 	}
 ]
 

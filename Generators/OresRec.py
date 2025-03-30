@@ -202,7 +202,7 @@ for ore_type in ore_types:
 							"Count": 1
 						},{
 							"Name": processing["ChemicalBath"][0],
-							"Count": 100
+							"Count": 250
 						}
 					]
 				},
@@ -217,8 +217,8 @@ for ore_type in ore_types:
 						},
 					]
 				},
-				"Ticks" : 60,
-				"Tier": material_tier,
+				"Ticks" : 200,
+				"Tier": 3,
 			})	
 
 		# Sifter
