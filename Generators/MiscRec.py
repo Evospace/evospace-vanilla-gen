@@ -192,7 +192,7 @@ recipes_hand.append({
 })
 
 recipes_assembler.append({
-	"Name":"AltCircuit",
+	"Name":"Circuit2",
 	"Input": items([
 		["CircuitBoard"],
 		["Transistor", 2]
@@ -240,8 +240,8 @@ recipes_assembler.append({
 recipes_assembler.append({
 	"Name":"Resistor3",
 	"Input": items([
+		["GoldWire"],
 		["PolyethyleneSheet"],
-		["GoldWire"]
 	]),
 	"Output": one_item("Resistor", 4),
 	"Ticks" : 60,
@@ -251,8 +251,8 @@ recipes_assembler.append({
 recipes_assembler.append({
 	"Name":"Resistor4",
 	"Input": items([
-		["PTFESheet"],
-		["NiobiumWire"]
+		["NiobiumWire"],
+		["PolytetrafluoroethyleneSheet"],
 	]),
 	"Output": one_item("Resistor", 8),
 	"Ticks" : 60,
@@ -262,8 +262,8 @@ recipes_assembler.append({
 recipes_assembler.append({
 	"Name":"Resistor5",
 	"Input": items([
-		["PTFESheet"],
-		["TantalumWire"]
+		["TantalumWire"],
+		["PolytetrafluoroethyleneSheet"],
 	]),
 	"Output": one_item("Resistor", 16),
 	"Ticks" : 60,
@@ -378,7 +378,7 @@ recipes_assembler.append({
     "Name": "Capacitor4",
     "Input": items([
         ["TantalumFoil", 2],
-        ["PTFESheet", 1]
+        ["PolytetrafluoroethyleneSheet", 1]
     ]),
     "Output": one_item("Capacitor", 8),
     "Ticks": 60,
@@ -406,7 +406,7 @@ recipes_hand.append({
 	"Input": items([
 		["CircuitBoard"],
 		["AdvancedCircuit", 3],
-		["Capacitor", 1],
+		["Resistor", 2],
 	]),
 	"Output": one_item("Processor"),
 	"Ticks" : 200,
@@ -521,7 +521,7 @@ recipes_industrial_chemreactor.append({
 })
 
 recipes_industrial_chemreactor.append({
-	"Name":"PTFESheet",
+	"Name":"PolytetrafluoroethyleneSheet",
 	"Input":{
 		"Items":[
 			{
@@ -534,7 +534,7 @@ recipes_industrial_chemreactor.append({
 			}
 		]
 	},
-	"Output": one_item("PTFESheet", 1000),
+	"Output": one_item("PolytetrafluoroethyleneSheet", 1000),
 	"Ticks" : 600,
 	"Tier": 5,
 })
@@ -543,7 +543,7 @@ recipes_industrial_chemreactor.append({
 	"Name":"BrainMatrix",
 	"Input":  items([
 		["CarbonFiberSheet"],
-		["PTFESheet"]
+		["PolytetrafluoroethyleneSheet"]
 	]),
 	"Output": one_item("BrainMatrix"),
 	"Ticks" : 200,
@@ -784,10 +784,11 @@ recipes_assembler.append({
 	"Input": items([
 		["TitaniumPlate", 1],
 		["CarbonFiberSheet", 1],
-		["PTFESheet", 1]
+		["PolytetrafluoroethyleneSheet", 1]
 	]),
 	"Output": one_item("CompositePlate"),
 	"Ticks" : 300,
+	"Tier": 6,
 })
 
 recipes_assembler.append({
@@ -795,11 +796,12 @@ recipes_assembler.append({
 	"Input": items([
 		["TitaniumPlate", 1],
 		["CarbonFiberSheet", 1],
-		["PTFESheet", 1],
+		["PolytetrafluoroethyleneSheet", 1],
 		["NeutroniumParts", 1]
 	]),
 	"Output": one_item("CompositePlate", 4),
 	"Ticks" : 300,
+	"Tier": 7,
 })
 
 recipes_assembler.append({
@@ -1776,12 +1778,12 @@ recipes_indu.append({
 recipes_indu.append({
 	"Name":"TantalumSludge",
 	"Input": items([
-			["TantalumSludge"],
-			["Aluminium"],
+			["TantalumSludge", 2],
+			["AluminiumDust"],
 			["Mercury", 1000]
 		]),
 	"Output": items([
-			["TantalumPlate"],
+			["NiobiumPlate"],
 			["HotMercury", 1000]
 		]),
 	"Ticks" : 200,
@@ -2093,32 +2095,6 @@ recipes_ferm.append({
 	},
 	
 	"Ticks" : 200
-})
-
-recipes_ferm.append({
-	"Name": "EthanolFromFB",
-	"Input":{
-		"Items":[
-			{
-				"Name": "FermentedBiomass",
-				"Count": 1000
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Ethanol",
-				"Count": 100
-			},
-			{
-				"Name": "Water",
-				"Count": 900
-			}
-		]
-	},
-	
-	"Ticks" : 200*3
 })
 
 recipes_ferm.append({
@@ -2539,25 +2515,36 @@ recipes_pyro.append({
 	"Ticks" : 200
 })
 
-
 recipes_pyro.append({
-	"Name": "BioToAmmonia",
+	"Name": "FbToAmmonia",
 	"Input": one_item("FermentedBiomass", 1000),
-	"Output":{
-		"Items":[	
-			{
-				"Name": "Ammonia",
-				"Count": 500
-			},	
-			{
-				"Name": "Ash",
-				"Count": 1
-			},	
-		]
-	},
+	"Output": items([
+		["Ammonia", 500],
+		["Ash"]
+	]),
+	"Tier": 3,
 	"Ticks" : 200
 })
-
+recipes_pyro.append({
+	"Name": "FbToEthanol",
+	"Input": one_item("FermentedBiomass", 1000),
+	"Output": items([
+		["Ethanol", 200],
+		["Ash", 2]
+	]),
+	"Tier": 4,
+	"Ticks" : 200
+})
+recipes_pyro.append({
+	"Name": "FbToAcetone",
+	"Input": one_item("FermentedBiomass", 1000),
+	"Output": items([
+		["Acetone", 100],
+		["Ash", 4]
+	]),
+	"Tier": 5,
+	"Ticks" : 200
+})
 recipes_industrial_chemreactor.append({
 	"Name": "RocketFuel",
 	"Input":{
@@ -2681,6 +2668,33 @@ recipes_industrial_chemreactor.append({
 	},
 	"Ticks" : 200,
 	"Colors": [[0.0,0.2,0.0,0.9],[0.0,0.0,0.0,0.2]]
+})
+
+recipes_industrial_chemreactor.append({
+	"Name":"TantalumSludge2",
+	"Input": items([
+			["TantalumSludge", 1],
+			["MethylIsobutylKetone", 500]
+		]),
+	"Output": items([
+			["NiobiumDust"],
+			["TantalumSolution", 500]
+		]),
+	"Ticks" : 200,
+	"Tier": 6
+})
+
+recipes_industrial_chemreactor.append({
+	"Name":"TantalumSolution",
+	"Input": items([
+			["TantalumSolution", 500],
+			["Ammonia", 500]
+		]),
+	"Output": items([
+			["TantalumDust"]
+		]),
+	"Ticks" : 200,
+	"Tier": 6
 })
 
 recipes_industrial_chemreactor.append({
@@ -3122,6 +3136,7 @@ recipes_chemical_bath.append({
 			}
 		]
 	},
+	"Tier":4,
 	"Ticks" : 200,
 	"Colors": [[0.8,0.8,0.1,0.3],[0.7,0.2,0.7,0.8]]
 })

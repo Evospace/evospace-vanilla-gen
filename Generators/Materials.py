@@ -441,6 +441,11 @@ materials = [
 		"Items": ["Fluid"],
 		"Color": [1.0,0.5,0.0],
 	},{
+		"Name": "HydrofluoricAcid",
+		"Label": "Hydrofluoric Acid",
+		"Items": ["Fluid"],
+		"Color": [1.0,0.5,0.0],
+	},{
 		"Name": "AquaRegia",
 		"Label": "Aqua Regia",
 		"Items": ["Fluid"],
@@ -487,6 +492,32 @@ materials = [
 		"Tier": 2,
 		"Color": [.2,.5,.2],
 	},{
+		"Name": "Acetone",
+		"Label": "Acetone",
+		"Items": ["Fluid"],
+		"Burnable": {
+			"BurnTime": 100
+		},
+		"Tier": 3,
+		"Color": [.2,.5,.2],
+	},{
+		"Name": "MethylIsobutylKetone",
+		"Label": "Methyl Isobutyl Ketone",
+		"Items": ["Fluid"],
+		"Burnable": {
+			"BurnTime": 300
+		},
+		"Tier": 6,
+	},{
+		"Name": "MesitylOxide",
+		"Label": "Mesityl Oxide",
+		"Items": ["Fluid"],
+		"Burnable": {
+			"BurnTime": 200
+		},
+		"Tier": 4,
+		"Color": [.2,.5,.2],
+	},{
 		"Name": "Polyethylene",
 		"Label": "Polyethylene",
 		"Items": ["Sheet"],
@@ -505,8 +536,8 @@ materials = [
 		"Tier": 2,
 		"Color": [.2,.5,.2],
 	},{
-		"Name": "PTFE",
-		"Label": "PTFE",
+		"Name": "Polytetrafluoroethylene",
+		"Label": "Polytetrafluoroethylene",
 		"Items": ["Sheet"],
 		"Tier": 2,
 		"Color": [.2,.5,.2],
@@ -599,8 +630,14 @@ materials = [
 		"Tier": 5,
 	},{
 		"Name": "TantalumSludge",
-		"Label": "TantalumSludge",
-		"Items": ["Exact"]
+		"Label": "Tantalum Sludge",
+		"Items": ["Exact"],
+		"Tier": 6,
+	},{
+		"Name": "TantalumSolution",
+		"Label": "Tantalum Solution",
+		"Items": ["Exact"],
+		"Tier": 6,
 	},{
 		"Name": "Log",
 		"Label": "Log",
@@ -617,12 +654,12 @@ materials = [
 		"Tier": 3
 	},{
 		"Name": "SiliconMonocrystal",
-		"Label": "SiliconMonocrystal",
+		"Label": "Silicon Monocrystal",
 		"Items": ["Exact"],
 		"Tier": 3
 	},{
 		"Name": "DopedSiliconMonocrystal",
-		"Label": "DopedSiliconMonocrystal",
+		"Label": "Doped Silicon Monocrystal",
 		"Items": ["Exact"],
 		"Tier": 4
 	},{
@@ -633,16 +670,6 @@ materials = [
 	},{
 		"Name": "DopedSiliconWafer",
 		"Label": "Doped Silicon Wafer",
-		"Items": ["Exact"],
-		"Tier": 5
-	},{
-		"Name": "SystemOnChip",
-		"Label": "System On Chip",
-		"Items": ["Exact"],
-		"Tier": 5
-	},{
-		"Name": "IntegratedCircuit",
-		"Label": "IntegratedCircuit",
 		"Items": ["Exact"],
 		"Tier": 5
 	},{
@@ -774,11 +801,6 @@ materials = [
 		"Items": ["Gas"],
 		"Tier": 4
 	},{
-		"Name": "PotassiumChloride",
-		"Label": "Potassium Chloride",
-		"Items": ["Dust"],
-		"Tier": 3
-	},{
 		"Name": "Beryllium",
 		"Label": "Beryllium",
 		"Items": ["Dust"],
@@ -793,11 +815,6 @@ materials = [
 		"Label": "Salt",
 		"Items": ["Exact"],
 		"Tier": 4
-	},{
-		"Name": "Manganese",
-		"Label": "Manganese",
-		"Items": ["Plate","Block","Dust"],
-		"Tier": 3
 	},{
 		"Name": "PortalBase",
 		"Label": "Portal Base",
