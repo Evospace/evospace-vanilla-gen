@@ -198,12 +198,23 @@ def one_item(item_name, count=1):
 def items(array, tier=0):
 	items = []
 	for entry in array:
+		chance = 100  # reset chance per entry
 		if len(entry) == 1:
 			item, count_fn = entry[0], 1
+		elif len(entry) == 3:
+			item, count_fn = entry[0], entry[1]
+			chance = entry[2]
 		else:
 			item, count_fn = entry
 		count = count_fn(tier) if callable(count_fn) else count_fn
-		if count > 0:
+
+		if count > 0 and chance != 100:
+			items.append({
+				"Name": item,
+				"Count": count,
+				"Probability": chance
+			})
+		elif count > 0:
 			items.append({
 				"Name": item,
 				"Count": count
@@ -248,6 +259,7 @@ building_big_prop_logic = "BuildingPropItemLogic"
 
 cover_item_logic = "CoverItemLogic"
 
+ic_reactor_r_dict = "IndustrialChemReactorRecipeDictionary"
 building_brush_slot_logic = "BuildingBrushItemLogic"
 assembler_r_dict = "AssemblerRecipeDictionary"
 r_dict = "RecipeDictionary"

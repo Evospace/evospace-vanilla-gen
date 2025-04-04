@@ -14,7 +14,7 @@ tier_researches = [
 	"AluminiumProduction",
 	"StainlessSteelProduction",
 	"TitaniumProduction",
-	"CompositeMaterials",
+	"CompositePlate",
 	"NeutroniumProduction",
 	"NeutroniumProduction",
 	"NeutroniumProduction",
@@ -905,6 +905,15 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
+	"Name": "Catalyst2",
+	"LabelParts": [["Catalyst", "parts"],["II", "common"]],
+	"RequiredResearch": ["Catalyst"],
+	"Unlocks": [[assembler_r_dict, "Catalyst2"]],
+	"Levels": [4,4],
+	"CostMul":1.5,
+})
+append_levels({
+	"Class": "StaticResearch",
 	"Name": "FuelChemistry",
 	"LabelParts": [["FuelChemistry", "researches"]],
 	"RequiredResearch": ["Catalyst"],
@@ -1109,9 +1118,29 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
+	"Name": "Tetrafluoroethylene",
+	"LabelParts": [["Tetrafluoroethylene", "parts"]],
+	"RequiredResearch": ["Polyethylene"],
+	"Levels": [5,5],
+	"Unlocks": [["PyrolysisUnit"+r_dict, "Tetrafluoroethylene"], [ic_reactor_r_dict, "Chlorodifluoromethane"], [ic_reactor_r_dict, "Chloroform"]],
+	"MainResearch": True,
+	"CostMul": 2.25
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "Tetrafluoroethylene2",
+	"LabelParts": [["Tetrafluoroethylene", "parts"], ["II", "common"]],
+	"RequiredResearch": ["Tetrafluoroethylene"],
+	"Levels": [5,5],
+	"Unlocks": [[ic_reactor_r_dict, "Chlorodifluoromethane2"]],
+	"MainResearch": True,
+	"CostMul": 8
+})
+append_levels({
+	"Class": "StaticResearch",
 	"Name": "CompositePlate",
 	"LabelParts": [["CompositePlate", "parts"]],
-	"RequiredResearch": ["TitaniumProduction", "CarbonFiberSheet"],
+	"RequiredResearch": ["TitaniumProduction", "CarbonFiberSheet", "Tetrafluoroethylene"],
 	"Levels": [6,6],
 	"Unlocks": [[assembler_r_dict, "CompositePlate"]],
 	"MainResearch": True,
