@@ -93,13 +93,13 @@ ore_types = [
 		"Drops": "BauxiteOre",
 		"Tier": 3,
 	},{
-		"Name": "Emerald",
+		"Name": "Apatite",
 		"Processing":{
 			"OreWasher": "BerylliumDust",
-			"Sifter": ["EmeraldOreDust", "EmeraldDust", "EmeraldCrystal"],
-			"Separator": ["EmeraldDust", "AluminiumOxideDust"],
-			"Macerator": "EmeraldOreDust",
-			"Furnace": "EmeraldDust",
+			"Sifter": ["ApatiteOreDust", "ApatiteDust", "ApatiteCrystal"],
+			"Separator": ["ApatiteDust", "AluminiumOxideDust"],
+			"Macerator": "ApatiteOreDust",
+			"Furnace": "ApatiteDust",
 		},
 		"Formula": "Be3Al2SiO3",
 		"Crystal": True,

@@ -502,39 +502,58 @@ recipes_assembler.append({
 })
 
 recipes_industrial_chemreactor.append({
+	"Name":"Chloroform",
+	"Input": items([
+		["Methane", 200],
+		["Chlorine", 200],
+		["Catalyst", 1, 0]
+	]),
+	"Output": one_item("Chloroform", 300),
+	"Ticks" : 400,
+	"Tier": 4,
+})
+
+recipes_industrial_chemreactor.append({
+	"Name":"Chlorodifluoromethane",
+	"Input": items([
+		["Chloroform", 300],
+		["Fluorine", 600],
+		["Catalyst", 1, 0]
+	]),
+	"Output": one_item("Chlorodifluoromethane", 300),
+	"Ticks" : 100,
+	"Tier": 5,
+})
+
+recipes_industrial_chemreactor.append({
+	"Name":"Chlorodifluoromethane2",
+	"Input": items([
+		["Chloroform", 300],
+		["Fluorine", 600],
+		["UltimateCatalyst"]
+	]),
+	"Output": one_item("Chlorodifluoromethane", 600),
+	"Ticks" : 600,
+	"Tier": 5,
+})
+
+recipes_pyro.append({
 	"Name":"Tetrafluoroethylene",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Fluorine",
-				"Count": 500
-			},	
-			{
-				"Name": "Ethylene",
-				"Count": 1000
-			}
-		]
-	},
-	"Output": one_item("Tetrafluoroethylene", 1000),
-	"Ticks" : 200,
+	"Input": items([
+		["Chlorodifluoromethane", 1000]
+	]),
+	"Output": one_item("Tetrafluoroethylene", 800),
+	"Ticks" : 600,
 	"Tier": 5,
 })
 
 recipes_industrial_chemreactor.append({
 	"Name":"PolytetrafluoroethyleneSheet",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Tetrafluoroethylene",
-				"Count": 1000
-			},	
-			{
-				"Name": "Oxygen",
-				"Count": 500
-			}
-		]
-	},
-	"Output": one_item("PolytetrafluoroethyleneSheet", 1000),
+	"Input": items([
+		["Tetrafluoroethylene", 1000],
+		["Catalyst", 1, 0]
+	]),
+	"Output": one_item("PolytetrafluoroethyleneSheet", 10),
 	"Ticks" : 600,
 	"Tier": 5,
 })
@@ -596,7 +615,17 @@ append_recipe({
 	]),
 	"Output": one_item("Catalyst"),
 	"Ticks" : 200,
-	
+})
+
+recipes_assembler.append({
+	"Name":"Catalyst2",
+	"Input": items([
+		["Cell"],
+		["SilverWire", 10],
+		["Coal", 4]
+	]),
+	"Output": one_item("Catalyst"),
+	"Ticks" : 200,
 })
 
 append_recipe({
@@ -1690,9 +1719,9 @@ recipes_macerator.append({
 })
 
 recipes_macerator.append({
-	"Name": "Emerald",
-	"Input": one_item("EmeraldCrystal"),
-	"Output": one_item("EmeraldDust", 4),
+	"Name": "Apatite",
+	"Input": one_item("ApatiteCrystal"),
+	"Output": one_item("ApatiteDust", 4),
 	"Tier": 5,
 	"Ticks" : 80,
 })
@@ -1991,25 +2020,34 @@ recipes_electrolyzer.append({
 })
 
 recipes_electrolyzer.append({
-	"Name":"EmeraldDust",
-	"Input": one_item("EmeraldDust", 11),
+	"Name":"ApatiteDust",
+	"Input": one_item("ApatiteDust", 11),
 	"Output":{
 		"Items":[
 			{
 				"Name": "BerylliumDust",
-				"Count": 3
-			},
-			{
-				"Name": "AluminiumOxideDust",
-				"Count": 2
+				"Count": 1
 			},
 			{
 				"Name": "SiliconOxide",
-				"Count": 6
+				"Count": 10
 			}
 		]
 	},
 	"Ticks" : 200,
+	"Tier":2,
+})
+
+recipes_industrial_chemreactor.append({
+	"Name":"Fluorine",
+	"Input": items([
+		["ApatiteDust", 1],
+		["SulfuricAcid", 100]
+	]),
+	"Output": items([
+		["Fluorine", 100]
+	]),
+	"Ticks" : 100,
 	"Tier":2,
 })
 
@@ -2725,7 +2763,8 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"Ticks" : 200,
-	"Colors": [[0.0,0.0,0.3,0.2],[0.8,0.8,0.1,0.3]]
+	"Colors": [[0.0,0.0,0.3,0.2],[0.8,0.8,0.1,0.3]],
+	"Tier": 4,
 })
 
 recipes_industrial_chemreactor.append({

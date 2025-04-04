@@ -530,16 +530,28 @@ materials = [
 		"Tier": 2,
 		"Color": [.2,.5,.2],
 	},{
+		"Name": "Chloroform",
+		"Label": "Chloroform",
+		"Items": ["Fluid"],
+		"Tier": 3,
+		"Color": [.2,.5,.2],
+	},{
+		"Name": "Chlorodifluoromethane",
+		"Label": "Chlorodifluoromethane",
+		"Items": ["Fluid"],
+		"Tier": 4,
+		"Color": [.2,.5,.2],
+	},{
 		"Name": "Tetrafluoroethylene",
 		"Label": "Tetrafluoroethylene",
 		"Items": ["Fluid"],
-		"Tier": 2,
+		"Tier": 4,
 		"Color": [.2,.5,.2],
 	},{
 		"Name": "Polytetrafluoroethylene",
 		"Label": "Polytetrafluoroethylene",
 		"Items": ["Sheet"],
-		"Tier": 2,
+		"Tier": 5,
 		"Color": [.2,.5,.2],
 	},
 	#,{
