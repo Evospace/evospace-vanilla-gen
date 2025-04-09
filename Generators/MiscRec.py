@@ -256,7 +256,7 @@ recipes_assembler.append({
 	]),
 	"Output": one_item("Resistor", 8),
 	"Ticks" : 60,
-	"Tier": 4,
+	"Tier": 4
 })
 
 recipes_assembler.append({
@@ -442,13 +442,12 @@ recipes_assembler.append({
 recipes_hand.append({
 	"Name":"QuantumCore",
 	"Input":items([
-		["YttriumDust"],
-		["CopperParts", 2]
+		["YttriumDust", 1],
+		["CopperParts", 3]
 	]),
 	"Output": one_item("QuantumCore"),
-	"Ticks" : 200,
+	"Ticks" : 100,
 	"Tier": 4,
-	
 })
 
 recipes_hand.append({
@@ -545,6 +544,40 @@ recipes_pyro.append({
 	"Output": one_item("Tetrafluoroethylene", 800),
 	"Ticks" : 600,
 	"Tier": 5,
+	"Colors": [[0.5,0.5,0.0]]
+})
+
+recipes_industrial_chemreactor.append({
+	"Name":"MesitylOxide",
+	"Input": items([
+		["Acetone", 1000],
+		["AdvancedCatalyst", 1, 0]
+	]),
+	"Output": one_item("MesitylOxide", 200),
+	"Ticks" : 300,
+	"Tier": 6,
+})
+
+recipes_industrial_chemreactor.append({
+	"Name":"MethylIsobutylKetone",
+	"Input": items([
+		["MesitylOxide", 300],
+		["Hydrogen", 200]
+	]),
+	"Output": one_item("MethylIsobutylKetone", 400),
+	"Ticks" : 300,
+	"Tier": 6,
+})
+
+recipes_industrial_chemreactor.append({
+	"Name":"PolyethyleneSheet",
+	"Input": items([
+		["Ethylene", 1000],
+		["Catalyst", 1, 0]
+	]),
+	"Output": one_item("PolyethyleneSheet", 10),
+	"Ticks" : 600,
+	"Tier": 3,
 })
 
 recipes_industrial_chemreactor.append({
@@ -615,6 +648,7 @@ append_recipe({
 	]),
 	"Output": one_item("Catalyst"),
 	"Ticks" : 200,
+	"Tier": 3
 })
 
 recipes_assembler.append({
@@ -626,6 +660,19 @@ recipes_assembler.append({
 	]),
 	"Output": one_item("Catalyst"),
 	"Ticks" : 200,
+	"Tier": 4
+})
+
+recipes_assembler.append({
+	"Name":"AdvancedCatalyst",
+	"Input": items([
+		["Cell"],
+		["PlatinumWire", 10],
+		["CarbonFiberSheet", 2]
+	]),
+	"Output": one_item("AdvancedCatalyst"),
+	"Ticks" : 200,
+	"Tier": 6
 })
 
 append_recipe({
@@ -637,6 +684,7 @@ append_recipe({
 	]),
 	"Output": one_item("PrimitiveBattery"),
 	"Ticks" : 100,
+	"Tier": 3
 })
 		
 for level, name, copm_name in zip(range(0, 4), ["BasicBattery", "AdvancedBattery", "SuperiorBattery", "UltimateBattery"], ["Battery", "BasicBattery", "AdvancedBattery", "SuperiorBattery"]):
@@ -872,13 +920,48 @@ append_recipe({
 	"Tier": 6
 })
 
-append_recipe({
+recipes_hand.append({
 	"Name":"DecisionResonator",
 	"Input": items([
 		["StainlessSteelParts", 4],
 		["MicaFlakes"]
 	]),
 	"Output": one_item("DecisionResonator"),
+	"Ticks" : 100,
+	"Tier": 5
+})
+
+recipes_assembler.append({
+	"Name":"DecisionResonator2",
+	"Input": items([
+		["StainlessSteelParts", 4],
+		["RubyCrystal"]
+	]),
+	"Output": one_item("DecisionResonator", 2),
+	"Ticks" : 100,
+	"Tier": 5
+})
+
+recipes_assembler.append({
+	"Name":"DecisionResonator3",
+	"Input": items([
+		["StainlessSteelParts", 4],
+		["SiliconWafer"],
+		["CompositePlate"]
+	]),
+	"Output": one_item("DecisionResonator", 2),
+	"Ticks" : 100,
+	"Tier": 5
+})
+
+recipes_assembler.append({
+	"Name":"DecisionResonator4",
+	"Input": items([
+		["StainlessSteelParts", 4],
+		["DopedSiliconWafer"],
+		["CompositePlate"]
+	]),
+	"Output": one_item("DecisionResonator", 4),
 	"Ticks" : 100,
 	"Tier": 5
 })
@@ -2084,20 +2167,12 @@ recipes_electrolyzer.append({
 
 # burning
 
-recipes_ferm.append({
+recipes_hand.append({
 	"Name": "Dirt",
-	"Input":{
-		"Items":[
-			{
-				"Name": "SandSurface",
-				"Count": 1
-			},
-			{
-				"Name": "Organics",
-				"Count": 1
-			},
-		]
-	},
+	"Input": items([
+		["SandSurface"],
+		["Organics"]
+	]),
 	"Output": one_item("DirtSurface"),
 	"Ticks" : 200
 })
@@ -2357,202 +2432,37 @@ recipes_pyro.append({
 			
 		]
 	},
-	"Ticks" : 400
+	"Ticks" : 400,
+	"Tier": 3,
 })
-
 recipes_pyro.append({
-	"Name": "CoalSteam",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Coal",
-				"Count": 1
-			},
-			{
-				"Name": "Steam",
-				"Count": 200
-			},
-			
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Coke",
-				"Count": 1
-			},
-			{
-				"Name": "ProducerGas",
-				"Count": 500
-			},
-			
-		]
-	},
-	"Ticks" : 400
-})
-
-recipes_pyro.append({
-	"Name": "PrimitiveRawOil",
+	"Name": "OilHeavyOil",
 	"Input": one_item("RawOil", 2000),
-	"Output":{
-		"Items":[	
-			{
-				"Name": "HeavyOil",
-				"Count": 500
-			}		
-		]
-	},
-	"Ticks" : 150
+	"Output": one_item("HeavyOil", 500),
+	"Ticks" : 150,
+	"Tier": 3,
 })
-
 recipes_pyro.append({
-	"Name": "RawOil",
+	"Name": "OilGasoline",
 	"Input": one_item("RawOil", 2000),
-	"Output":{
-		"Items":[	
-			{
-				"Name": "HeavyOil",
-				"Count": 500
-			},
-			{
-				"Name": "Gasoline",
-				"Count": 100
-			},
-{
-				"Name": "Methane",
-				"Count": 500
-			},			
-		]
-	},
-	"Ticks" : 200
+	"Output": one_item("Gasoline", 400),
+	"Ticks" : 150,
+	"Tier": 3,
 })
-
 recipes_pyro.append({
-	"Name": "RawOilSteam",
-	"Input":{
-		"Items":[
-			{
-				"Name": "RawOil",
-				"Count": 1000*5
-			},
-			{
-				"Name": "Steam",
-				"Count": 1000
-			},
-			
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "HeavyOil",
-				"Count": 150*2
-			},
-			{
-				"Name": "Gasoline",
-				"Count": 400*2
-			},
-{
-				"Name": "Methane",
-				"Count": 500*2
-			},			
-		]
-	},
-	"Ticks" : 200
+	"Name": "OilMethane",
+	"Input": one_item("RawOil", 2000),
+	"Output": one_item("Methane", 600),
+	"Ticks" : 150,
+	"Tier": 3,
 })
-
-recipes_pyro.append({
-	"Name": "HeavyOilSteam",
-	"Input":{
-		"Items":[
-			{
-				"Name": "HeavyOil",
-				"Count": 1000
-			},
-			{
-				"Name": "Steam",
-				"Count": 200
-			},
-			
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "Gasoline",
-				"Count": 750
-			},		
-		]
-	},
-	"Ticks" : 200
-})
-
-recipes_pyro.append({
-	"Name": "GasolineSteam",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Gasoline",
-				"Count": 1000
-			},
-			{
-				"Name": "Steam",
-				"Count": 200
-			},
-			
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "Methane",
-				"Count": 750
-			},		
-		]
-	},
-	"Ticks" : 200
-})
-
-recipes_pyro.append({
-	"Name": "MethaneSteam",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Methane",
-				"Count": 800*5
-			},
-			{
-				"Name": "Steam",
-				"Count": 200*20
-			},
-			
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "ProducerGas",
-				"Count": 1000*5
-			},		
-		]
-	},
-	"Ticks" : 200
-})
-
 recipes_pyro.append({
 	"Name": "Methane2",
 	"Input": one_item("Methane", 800*5),
-	"Output":{
-		"Items":[	
-			{
-				"Name": "ProducerGas",
-				"Count": 500*5
-			},		
-		]
-	},
-	"Ticks" : 200
+	"Output": one_item("ProducerGas", 500*5),
+	"Ticks" : 200,
+	"Tier": 3,
 })
-
 recipes_pyro.append({
 	"Name": "FbToAmmonia",
 	"Input": one_item("FermentedBiomass", 1000),
@@ -2561,7 +2471,8 @@ recipes_pyro.append({
 		["Ash"]
 	]),
 	"Tier": 3,
-	"Ticks" : 200
+	"Ticks" : 200,
+	"Tier": 3,
 })
 recipes_pyro.append({
 	"Name": "FbToEthanol",
@@ -2571,7 +2482,8 @@ recipes_pyro.append({
 		["Ash", 2]
 	]),
 	"Tier": 4,
-	"Ticks" : 200
+	"Ticks" : 200,
+	"Tier": 3,
 })
 recipes_pyro.append({
 	"Name": "FbToAcetone",
@@ -2581,7 +2493,8 @@ recipes_pyro.append({
 		["Ash", 4]
 	]),
 	"Tier": 5,
-	"Ticks" : 200
+	"Ticks" : 200,
+	"Tier": 3,
 })
 recipes_industrial_chemreactor.append({
 	"Name": "RocketFuel",
@@ -2737,7 +2650,7 @@ recipes_industrial_chemreactor.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "SulfuricAcid",
-	"Input":{
+	"Input": {
 		"Items":[
 			{
 				"Name": "Sulfur",
@@ -2769,22 +2682,11 @@ recipes_industrial_chemreactor.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "RapeseedOil",
-	"Input":{
-		"Items":[
-			{
-				"Name": "RapeseedOil",
-				"Count": 1000
-			},
-			{
-				"Name": "Ethanol",
-				"Count": 150
-			},
-			{
-				"Name": "SodiumHydroxideDust",
-				"Count": 1
-			}
-		]
-	},
+	"Input": items([
+		["RapeseedOil", 1000],
+		["Ethanol", 150],
+		["SodiumHydroxideDust",1]
+	]),
 	"Output":{
 		"Items":[	
 			{
@@ -2827,18 +2729,10 @@ recipes_industrial_chemreactor.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "Ammonia",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Nitrogen",
-				"Count": 250
-			},
-			{
-				"Name": "Hydrogen",
-				"Count": 750
-			},
-		]
-	},
+	"Input": items([
+		["Nitrogen", 250],
+		["Hydrogen", 750]
+	]),
 	"Output":{
 		"Items":[	
 			{
@@ -2853,18 +2747,10 @@ recipes_industrial_chemreactor.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "CarbonMonoxide",
-	"Input":{
-		"Items":[
-			{
-				"Name": "CoalDust",
-				"Count": 1
-			},
-			{
-				"Name": "Oxygen",
-				"Count": 500
-			},
-		]
-	},
+	"Input": items([
+		["CoalDust"],
+		["Oxygen", 500]
+	]),
 	"Output":{
 		"Items":[	
 			{
@@ -2878,159 +2764,68 @@ recipes_industrial_chemreactor.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "AmmoniumChloride",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Ammonia",
-				"Count": 500
-			},
-			{
-				"Name": "Chlorine",
-				"Count": 500
-			},
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "AmmoniumChloride",
-				"Count": 1
-			},		
-		]
-	},
+	"Input": items([
+		["Ammonia", 500],
+		["Chlorine", 500]
+	]),
+	"Output": one_item("AmmoniumChloride"),
 	"Ticks" : 100,
 	"Tier": 5,
 })
 
 recipes_industrial_chemreactor.append({
 	"Name": "Methanol",
-	"Input":{
-		"Items":[
-			{
-				"Name": "CarbonMonoxide",
-				"Count": 250
-			},
-			{
-				"Name": "Hydrogen",
-				"Count": 750
-			},
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "Ethanol",
-				"Count": 1000
-			},		
-		]
-	},
+	"Input": items([
+		["CarbonMonoxide", 250],
+		["Hydrogen", 750]
+	]),
+	"Output": one_item("Ethanol", 1000),
 	"Ticks" : 100
 })
 
 recipes_industrial_chemreactor.append({
 	"Name": "NitricAcid",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Oxygen",
-				"Count": 250
-			},
-			{
-				"Name": "Ammonia",
-				"Count": 750
-			},
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "NitricAcid",
-				"Count": 1000
-			},		
-		]
-	},
+	"Input": items([
+		["Oxygen", 250],
+		["Ammonia", 750]
+	]),
+	"Output": one_item("NitricAcid", 1000),
 	"Ticks" : 150,
 	"Colors": [[0.5,0.2,0.5,0.3],[0.0,0.5,0.25,0.3]]
 })
 
 recipes_industrial_chemreactor.append({
 	"Name": "AquaRegia",
-	"Input":{
-		"Items":[
-			{
-				"Name": "NitricAcid",
-				"Count": 500
-			},
-			{
-				"Name": "HydrochloricAcid",
-				"Count": 1500
-			},
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "AquaRegia",
-				"Count": 1000
-			},		
-		]
-	},
+	"Input": items([
+		["NitricAcid", 500],
+		["HydrochloricAcid", 1500]
+	]),
+	"Output": one_item("AquaRegia", 1000),
 	"Ticks" : 60,
 	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]]
 })
 
 recipes_industrial_chemreactor.append({
 	"Name": "PlatinumRhodiumSolution",
-	"Input":{
-		"Items":[
-			{
-				"Name": "PyroplatiteDust",
-				"Count": 10
-			},
-			{
-				"Name": "AquaRegia",
-				"Count": 1000
-			},
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "PlatinumRhodiumSolution",
-				"Count": 1000
-			},		
-		]
-	},
+	"Input": items([
+		["PyroplatiteDust", 10],
+		["AquaRegia", 1000]
+	]),
+	"Output": one_item("PlatinumRhodiumSolution", 1000),
 	"Ticks" : 800,
 	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]]
 })
 
 recipes_industrial_chemreactor.append({
 	"Name": "RhodiumSolution",
-	"Input":{
-		"Items":[
-			{
-				"Name": "PlatinumRhodiumSolution",
-				"Count": 1300
-			},
-			{
-				"Name": "AmmoniumChloride",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "PlatinumDust",
-				"Count": 1
-			},
-			{
-				"Name": "RhodiumSolution",
-				"Count": 300
-			},		
-		]
-	},
+	"Input": items([
+		["PlatinumRhodiumSolution", 1300],
+		["AmmoniumChloride"]
+	]),
+	"Output": items([
+		["PlatinumDust"],
+		["RhodiumSolution", 200]
+	]),
 	"Ticks" : 400,
 	"Tier": 5,
 	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]]
@@ -3038,26 +2833,11 @@ recipes_industrial_chemreactor.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "RhodiumDust",
-	"Input":{
-		"Items":[
-			{
-				"Name": "RhodiumSolution",
-				"Count": 1000
-			},
-			{
-				"Name": "Ammonia",
-				"Count": 300
-			}
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "RhodiumDust",
-				"Count": 1
-			}	
-		]
-	},
+	"Input": items([
+		["RhodiumSolution", 1000],
+		["MethylIsobutylKetone", 300]
+	]),
+	"Output": one_item("RhodiumDust"),
 	"Ticks" : 400,
 	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]],
 	"Tier":6,
@@ -3207,43 +2987,15 @@ recipes_industrial_chemreactor.append({
 
 recipes_pyro.append({
 	"Name": "CarbonFiber",
-	"Input":{
-		"Items":[
-			{
-				"Name": "CarbonPrecursor",
-				"Count": 500
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "CarbonFiber",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 200
+	"Input": one_item("CarbonPrecursor", 500),
+	"Output": one_item("CarbonFiber"),
+	"Ticks" : 200,
+	"Tier": 5,
 })
-
 append_recipe({
 	"Name": "CarbonFiberSheet",
-	"Input":{
-		"Items":[
-			{
-				"Name": "CarbonFiber",
-				"Count": 2
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "CarbonFiberSheet",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("CarbonFiber", 2),
+	"Output": one_item("CarbonFiberSheet"),
 	"Ticks" : 200
 })
 
