@@ -63,8 +63,11 @@ def append_levels(research_base):
 				new.append([j[0], j[1].replace("%Material%", tier_material[i])])                
 			research["Unlocks"] = new
 		
-		CostMul = research["CostMul"] if "CostMul" in research else 1
-		CostMul = research["CostMuls"][thisLevel] if "CostMuls" in research else CostMul
+		CostMul = research.get("CostMul", 1)
+		if isinstance(CostMul, list):
+			CostMul = CostMul[thisLevel]
+		elif "CostMuls" in research:
+			CostMul = research["CostMuls"][thisLevel]
 
 		research["Level"] = thisLevel
 		research["Levels"] = [i,i]
@@ -83,7 +86,7 @@ append_levels({
 	"Name": "MineralsScan",
 	"LabelParts": [["MineralsScan", "researches"]],
 	"RequiredResearch": [],
-	"Unlocks": [["Hand" + r_dict, tier_material[0] + "Furnace"],["Hand" + r_dict, "SandSurface"],["Hand" + r_dict, "GravelSurface"]],
+	"Unlocks": [["Hand" + r_dict, tier_material[0] + "Furnace"],["Hand" + r_dict, "SandSurface"],["Hand" + r_dict, "GravelSurface"],["Hand" + r_dict, "Dirt"]],
 	"CompleteByDefault": True,
 })
 append_levels({
@@ -94,12 +97,19 @@ append_levels({
 	"Decoration": "BasicPlatform",
 	"CompleteByDefault": True,
 })
-for miscBlock in ["WoodenPlanks", "StoneTiles", "RedTiles", "DarkTiles", "Terracotta", "TerracottaTiles", "Bricks", "RedBricks", "DarkBricks", "TerracottaBricks"]:
+append_levels({
+	"Class": "StaticResearchDecorationUnlock",
+	"Name": "Bricks",
+	"LabelParts": [["Bricks", "misc"]],
+	"RequiredResearch": ["BasicPlatform"],
+	"Decoration": "Bricks",
+})
+for miscBlock in ["WoodenPlanks", "StoneTiles", "RedTiles", "DarkTiles", "Terracotta", "TerracottaTiles", "RedBricks", "DarkBricks", "TerracottaBricks"]:
 	append_levels({
 		"Class": "StaticResearchDecorationUnlock",
 		"Name": miscBlock,
 		"LabelParts": [[miscBlock, "misc"]],
-		"RequiredResearch": ["BasicPlatform"],
+		"RequiredResearch": ["Bricks"],
 		"Decoration": miscBlock,
 		"Levels": [1,1]
 	})
@@ -202,7 +212,7 @@ append_levels({
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%BlastFurnace"] ] + get_parts_unlocks(tier_material[2]),
 	"MainResearch": True,
-	"CostMul": 5
+	"CostMuls": [5, 2.5, 1.5, 1, 1, 1, 1, 1]
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -212,7 +222,7 @@ append_levels({
 	"Levels": [2,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%ArcSmelter"] ],
 	"MainResearch": True,
-	"CostMul": 4
+	"CostMuls": [4, 2, 1.5, 1, 1, 1, 1, 1, 1]
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -359,11 +369,18 @@ append_levels({
 	"LabelParts": [["Automatization", "researches"]],
 	"RequiredResearch": ["BasicMachines"],
 	"Levels": [1,7],
-	"Unlocks": [["Hand" + r_dict, "%Material%RobotArm"],
-	["Hand" + r_dict, "%Material%Conveyor"],
-	["Hand" + r_dict, "%Material%Splitter"]],
+	"Unlocks": [["Hand" + r_dict, "%Material%RobotArm"], ["Hand" + r_dict, "%Material%Conveyor"], ["Hand" + r_dict, "%Material%Splitter"]],
 	"CostMul":0.25,
 	"MainResearch": True,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "Sorter",
+	"LabelParts": [["Sorter", "machines"]],
+	"RequiredResearch": ["Automatization1"],
+	"Levels": [2,7],
+	"Unlocks": [["Hand" + r_dict, "%Material%Sorter"]],
+	"CostMul": 3,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -487,7 +504,7 @@ append_levels({
 	"RequiredResearch": ["CopperWire"],
 	"Levels": [1,1],
 	"Unlocks": [["Hand" + r_dict, "CircuitBoard"]],
-	"CostMul":0.25,
+	"CostMul":0.3,
 	"MainResearch": True
 })
 append_levels({
@@ -575,7 +592,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Resistor2",
 	"LabelParts": [["Resistor", "parts"], ["II", "common"]],
-	"RequiredResearch": ["Resistor"],
+	"RequiredResearch": ["Resistor", "Polyethylene"],
 	"Levels": [2,2],
 	"Unlocks": [[assembler_r_dict, "Resistor3"]],
 	"CostMul":2.5,
@@ -584,7 +601,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Resistor3",
 	"LabelParts": [["Resistor", "parts"], ["III", "common"]],
-	"RequiredResearch": ["Resistor2"],
+	"RequiredResearch": ["Resistor2", "Tetrafluoroethylene"],
 	"Levels": [2,2],
 	"Unlocks": [[assembler_r_dict, "Resistor4"]],
 	"CostMul":4.5,
@@ -621,7 +638,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Transistor2",
 	"LabelParts": [["Transistor", "parts"], ["II", "common"]],
-	"RequiredResearch": ["Transistor"],
+	"RequiredResearch": ["Transistor", "Polyethylene"],
 	"Levels": [2,2],
 	"Unlocks": [[assembler_r_dict, "Transistor2"]],
 	"CostMul":6.5,
@@ -695,7 +712,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Capacitor3",
 	"LabelParts": [["Capacitor", "parts"], ["III", "common"]],
-	"RequiredResearch": ["Capacitor2"],
+	"RequiredResearch": ["Capacitor2", "Polyethylene"],
 	"Levels": [3,3],
 	"Unlocks": [[assembler_r_dict, "Capacitor3"]],
 	"CostMul":6,
@@ -704,7 +721,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Capacitor4",
 	"LabelParts": [["Capacitor", "parts"], ["IV", "common"]],
-	"RequiredResearch": ["Capacitor3"],
+	"RequiredResearch": ["Capacitor3", "Tetrafluoroethylene"],
 	"Levels": [3,3],
 	"Unlocks": [[assembler_r_dict, "Capacitor4"]],
 	"CostMul":12,
@@ -836,9 +853,46 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
+	"Name": "DecisionResonator",
+	"LabelParts": [["DecisionResonator", "parts"]],
+	"RequiredResearch": ["QuantumCircuit"],
+	"Levels": [5,5],
+	"Unlocks": [["Hand" + r_dict, "DecisionResonator"]],
+	"MainResearch": True,
+	"CostMul":0.75,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "DecisionResonator2",
+	"LabelParts": [["DecisionResonator", "parts"], ["II", "common"]],
+	"RequiredResearch": ["DecisionResonator"],
+	"Levels": [5,5],
+	"Unlocks": [[assembler_r_dict, "DecisionResonator2"]],
+	"CostMul":1.0,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "DecisionResonator3",
+	"LabelParts": [["DecisionResonator", "parts"], ["III", "common"]],
+	"RequiredResearch": ["DecisionResonator2"],
+	"Levels": [5,5],
+	"Unlocks": [[assembler_r_dict, "DecisionResonator3"]],
+	"CostMul":2.5,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "DecisionResonator4",
+	"LabelParts": [["DecisionResonator", "parts"], ["IV", "common"]],
+	"RequiredResearch": ["DecisionResonator3"],
+	"Levels": [5,5],
+	"Unlocks": [[assembler_r_dict, "DecisionResonator4"]],
+	"CostMul":5.0,
+})
+append_levels({
+	"Class": "StaticResearch",
 	"Name": "QuantumProcessor",
 	"LabelParts": [["QuantumProcessor", "parts"]],
-	"RequiredResearch": ["QuantumCircuit"],
+	"RequiredResearch": ["DecisionResonator"],
 	"Levels": [5,5],
 	"Unlocks": [["Hand" + r_dict, "QuantumProcessor"],[assembler_r_dict, "QuantumProcessor"]],
 	"MainResearch": True,
@@ -868,7 +922,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "MetalConstructions",
 	"LabelParts": [["MetalConstructions", "researches"]],
-	"RequiredResearch": ["Metalwork"],
+	"RequiredResearch": ["Bricks"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Corner"],
 	["Hand" + r_dict, "%Material%Beam"]],
 	"Levels": [1,7],
@@ -911,6 +965,17 @@ append_levels({
 	"Unlocks": [[assembler_r_dict, "Catalyst2"]],
 	"Levels": [4,4],
 	"CostMul":1.5,
+	"MainResearch": True,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "AdvancedCatalyst",
+	"LabelParts": [["AdvancedCatalyst", "parts"]],
+	"RequiredResearch": ["Catalyst2"],
+	"Unlocks": [[assembler_r_dict, "AdvancedCatalyst"]],
+	"Levels": [6,6],
+	"CostMul": 1.75,
+	"MainResearch": True,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -957,6 +1022,26 @@ append_levels({
 	"Unlocks": [["Hand" + r_dict, "%Material%ElectricEngine"] ],
 	"MainResearchArr": [True, True, False, False, False, False, False],
 	"CostMul": 2
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "Generator",
+	"LabelParts": [["Generator", "machines"]],
+	"RequiredResearch": ["ElectricEngine1"],
+	"Levels": [3,7],
+	"Unlocks": [["Hand" + r_dict, "%Material%Generator"] ],
+	"MainResearchArr": [True, False, False, False, False, False, False],
+	"CostMul": 2.5
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "Transformer",
+	"LabelParts": [["TransformerLVMV", "machines"]],
+	"RequiredResearch": ["Generator"],
+	"Levels": [3,3],
+	"Unlocks": [["Hand" + r_dict, "TransformerLVMV"]],
+	"MainResearchArr": [True, False, False, False, False, False, False],
+	"CostMul": 1.5
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -1118,11 +1203,21 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
+	"Name": "Polyethylene",
+	"LabelParts": [["PolyethyleneSheet", "parts"]],
+	"RequiredResearch": ["IndustrialChemReactor"],
+	"Levels": [4,4],
+	"Unlocks": [[ic_reactor_r_dict, "PolyethyleneSheet"]],
+	"MainResearch": True,
+	"CostMul": 1.25
+})
+append_levels({
+	"Class": "StaticResearch",
 	"Name": "Tetrafluoroethylene",
 	"LabelParts": [["Tetrafluoroethylene", "parts"]],
 	"RequiredResearch": ["Polyethylene"],
 	"Levels": [5,5],
-	"Unlocks": [["PyrolysisUnit"+r_dict, "Tetrafluoroethylene"], [ic_reactor_r_dict, "Chlorodifluoromethane"], [ic_reactor_r_dict, "Chloroform"]],
+	"Unlocks": [[ic_reactor_r_dict, "PolytetrafluoroethyleneSheet"], ["PyrolysisUnit"+r_dict, "Tetrafluoroethylene"], [ic_reactor_r_dict, "Chlorodifluoromethane"], [ic_reactor_r_dict, "Chloroform"]],
 	"MainResearch": True,
 	"CostMul": 2.25
 })
@@ -1327,16 +1422,7 @@ append_levels({
 	"RequiredResearch": ["PyrolysisUnit"],
 	"Unlocks": [["PyrolysisUnit" + r_dict, "RawOil"]],
 	"Levels": [4,4]
-})
-append_levels({
-	"Class": "StaticResearch",
-	"Name": "SteamPyrolysis",
-	"LabelParts": [["SteamPyrolysis", "researches"]],
-	"RequiredResearch": ["PreciseTemperaturePyrolysis"],
-	"Unlocks": [["PyrolysisUnit" + r_dict, "RawOilSteam"],["PyrolysisUnit" + r_dict, "HeavyOilSteam"],["PyrolysisUnit" + r_dict, "GasolineSteam"],["PyrolysisUnit" + r_dict, "MethaneSteam"]],
-	"Levels": [5,5]
-})
-	
+})	
 append_levels({
 	"Class": "StaticResearch",
 	"Name": "DecorativeWood",
@@ -1406,7 +1492,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Sign",
 	"LabelParts": [["Sign", "machines"]],
-	"RequiredResearch": [],
+	"RequiredResearch": ["Lamp"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Sign"] ],
 	"Levels": [0,7],
 })

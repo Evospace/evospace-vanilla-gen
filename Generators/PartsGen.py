@@ -34,6 +34,7 @@ def generate_part(name, material_dict):
 		"Materials" : [
 			"/Game/Materials/" + material
 		],
+		"Mesh": "/Game/Models/"+name+"Crate",
 		
 		"Category": "Parts",
 	}
@@ -129,7 +130,17 @@ for material in materials:
 		recipes_hand.append({
 			"Name": m_name + "Parts",
 			"Input": one_item(m_name + "Plate"),
-			"Output": one_item(m_name + "Parts"),
+			"Output": { "Items": [
+				{
+					"Name": m_name + "Parts",
+					"Count": 1
+				},
+				{
+					"Name": m_name + "Parts",
+					"Count": 1,
+					"Bonus": True
+				}
+			]},
 			"Ticks" : 80,
 			"Tier": material_tier,
 			"Productivity": 50,
@@ -511,8 +522,9 @@ for material in materials:
 			"StackSize": 64,
 			
 			"LabelParts": [[material["Name"] + "Dust", "parts"]],
-			"Mesh": "/Game/Models/Dust",
+			"Mesh": "/Game/Models/DustCrate",
 			"Materials": [
+				"/Game/Materials/Black",
 				"/Game/Materials/" + material["Name"] + "Dust"
 			],
 			"UnitMul": 1,

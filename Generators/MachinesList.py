@@ -416,7 +416,7 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
-		"PowerOutput": 243,
+		"PowerOutput": 240,
 		 
 	},{
 		"Name": "IndustrialGenerator",
@@ -439,7 +439,7 @@ machines = [
 		a:bind_output(res)
 		""",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
-		"PowerOutput": 243*20,
+		"PowerOutput": 240*20,
 		 
 	},{
 		"Name": "CompactGenerator",
@@ -449,7 +449,7 @@ machines = [
 		"BlockLogic": "SelectCrafter",
         "Recipes": "CompactGenerator",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
-		"PowerOutput": 18,
+		"PowerOutput": 50,
 	},{
 		"Name": "ElectricEngine",
 		"Label": "Electric Engine",
@@ -549,7 +549,7 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["FluidInput", "KineticOutput","PowerOutput"],
-		"PowerOutput": 270,
+		"PowerOutput": 240,
 	},{
 		"Name": "IndustrialSteamTurbine",
 		"Label": "Industrial Steam Turbine",

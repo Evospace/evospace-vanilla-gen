@@ -249,7 +249,7 @@ materials = [
 		"Label": "Cobalt",
 		"Smelting": ["InductionFurnace"],
 		"Items": ["Dust", "Block"],
-		"Tier": 5,
+		"Tier": 5
 	},{
 		"Name": "CobaltOxide",
 		"Label": "Cobalt Oxide",
@@ -265,6 +265,8 @@ materials = [
 		"Label": "Sulfur",
 		"Tier": 0,
 		"Items": ["Exact"],
+		"Mesh": "/Game/Models/DustCrate",
+		"Materials": ["/Game/Materials/Black", "/Game/Materials/Sulfur"]
 	},	
 	#},{
 	#	"Name": "Bronze",
@@ -434,22 +436,18 @@ materials = [
 		"Name": "NitricAcid",
 		"Label": "Nitric Acid",
 		"Items": ["Fluid"],
-		"Color": [1.0,0.5,0.0],
 	},{
 		"Name": "HydrochloricAcid",
 		"Label": "Hydrochloric Acid",
 		"Items": ["Fluid"],
-		"Color": [1.0,0.5,0.0],
 	},{
 		"Name": "HydrofluoricAcid",
 		"Label": "Hydrofluoric Acid",
 		"Items": ["Fluid"],
-		"Color": [1.0,0.5,0.0],
 	},{
 		"Name": "AquaRegia",
 		"Label": "Aqua Regia",
 		"Items": ["Fluid"],
-		"Color": [1.0,0.5,0.0],
 	},{
 		"Name": "Ash",
 		"Label": "Ash",
@@ -463,7 +461,6 @@ materials = [
 			"BurnTime": 400
 		},
 		"Tier": 2,
-		"Color": [.2,.2,.5],
 	},{
 		"Name": "Ethanol",
 		"Label": "Ethanol",
@@ -472,7 +469,6 @@ materials = [
 			"BurnTime": 500
 		},
 		"Tier": 2,
-		"Color":[0.5,0.2,0.2]
 	},{
 		"Name": "Methane",
 		"Label": "Methane",
@@ -481,7 +477,6 @@ materials = [
 			"BurnTime": 400
 		},
 		"Tier": 2,
-		"Color":[0.5,0.2,0.2]
 	},{
 		"Name": "Ethylene",
 		"Label": "Ethylene",
@@ -490,7 +485,6 @@ materials = [
 			"BurnTime": 400
 		},
 		"Tier": 2,
-		"Color": [.2,.5,.2],
 	},{
 		"Name": "Acetone",
 		"Label": "Acetone",
@@ -499,7 +493,6 @@ materials = [
 			"BurnTime": 100
 		},
 		"Tier": 3,
-		"Color": [.2,.5,.2],
 	},{
 		"Name": "MethylIsobutylKetone",
 		"Label": "Methyl Isobutyl Ketone",
@@ -516,7 +509,6 @@ materials = [
 			"BurnTime": 200
 		},
 		"Tier": 4,
-		"Color": [.2,.5,.2],
 	},{
 		"Name": "Polyethylene",
 		"Label": "Polyethylene",
@@ -528,31 +520,26 @@ materials = [
 		"Label": "Fluorine",
 		"Items": ["Fluid"],
 		"Tier": 2,
-		"Color": [.2,.5,.2],
 	},{
 		"Name": "Chloroform",
 		"Label": "Chloroform",
 		"Items": ["Fluid"],
 		"Tier": 3,
-		"Color": [.2,.5,.2],
 	},{
 		"Name": "Chlorodifluoromethane",
 		"Label": "Chlorodifluoromethane",
 		"Items": ["Fluid"],
 		"Tier": 4,
-		"Color": [.2,.5,.2],
 	},{
 		"Name": "Tetrafluoroethylene",
 		"Label": "Tetrafluoroethylene",
 		"Items": ["Fluid"],
 		"Tier": 4,
-		"Color": [.2,.5,.2],
 	},{
 		"Name": "Polytetrafluoroethylene",
 		"Label": "Polytetrafluoroethylene",
 		"Items": ["Sheet"],
 		"Tier": 5,
-		"Color": [.2,.5,.2],
 	},
 	#,{
 	#	"Name": "Nickel",
@@ -922,6 +909,11 @@ materials = [
 	},{
 		"Name": "Catalyst",
 		"Label": "Catalyst Cell",
+		"StackSize": 32,
+		"Items": ["Exact"],
+	},{
+		"Name": "AdvancedCatalyst",
+		"Label": "Advanced Catalyst Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
 	},{

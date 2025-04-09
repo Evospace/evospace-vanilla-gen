@@ -659,9 +659,20 @@ for machine in machines:
 					[plate(), 8 * count_mul],
 					[wire(), (12 + level * 6) * count_mul],
 					[gearbox(), 1 * count_mul],
-					[circuit(), 2]
+					[circuit(), 1 * count_mul]
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Ticks" : 20
+			})
+
+		if machine["Name"] == "TransformerLVMV":
+			append_recipe({
+				"Name": machine["Name"],
+				"Input": items([
+					[plate(), 2],
+					[wire(), (10 + level * 5)]
+				]),
+				"Output": one_item(machine["Name"]),
 				"Ticks" : 20
 			})
 			

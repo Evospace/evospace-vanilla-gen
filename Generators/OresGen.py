@@ -301,14 +301,15 @@ for ore_type in ore_types:
 		cvs.append([ore_type["Name"] + "OreDust", ore_type["Name"]+" Ore Dust"])
 		item = { "Class": "StaticItem",
 			"Name": ore_type["Name"] + "OreDust",
-			"Mesh": "/Game/Models/Dust",
+			"Mesh": "/Game/Models/DustCrate",
 			"Image": "T_" + ore_type["Name"] + "OreDust",
 			"StackSize": 64,
 			"Category": "Ore",
 			"LabelParts": [[ore_type["Name"]+"OreDust", "ores"]],
 			"DescriptionParts": description,
 			"Materials" : [
-				"/Game/Materials/" + ore_type["Name"] + "OreGravel"
+				"/Game/Materials/Black",
+				"/Game/Materials/" + ore_type["Name"] + "Dust"
 			],
 		}
 
@@ -324,13 +325,14 @@ for ore_type in ore_types:
 		cvs.append([ore_type["Name"] + "Dust", ore_type["Name"]+" Dust"])
 		item = { "Class": "StaticItem",
 			"Name": ore_type["Name"] + "Dust",
-			"Mesh": "/Game/Models/Dust",
+			"Mesh": "/Game/Models/DustCrate",
 			"Image": "T_" + ore_type["Name"] + "Dust",
 			"StackSize": 64,
 			"Category": "Ore",
 			"LabelParts": [[ore_type["Name"]+"Dust", "ores"]],
 			"DescriptionParts": description,
 			"Materials" : [
+				"/Game/Materials/Black",
 				"/Game/Materials/" + ore_type["Name"] + "Dust"
 			],
 		}
