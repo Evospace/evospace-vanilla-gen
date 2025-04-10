@@ -119,10 +119,11 @@ for material in materials:
 			"Productivity": 50,
 		})
 		recipes_hand.append({
-			"Name":m_name+"Wire",
+			"Name":m_name+"Foil",
 			"Input": one_item(m_name+"Plate", 1),
 			"Output": one_item(m_name+"Foil", 1),
 			"Ticks" : 20,
+			"Tier": material_tier,
 		})
 
 	if "Parts" in material["Items"]:

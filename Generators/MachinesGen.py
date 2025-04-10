@@ -971,7 +971,7 @@ for machine in machines:
 					["CopperHeatPipe", 25],
 					[plate(), 40],
 					[wire(), 100],
-					[circuit(), 40 + 10 * level],
+					[circuit(), 15 + 5 * level],
 					["RhodiumReflector", 40]
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -995,7 +995,7 @@ for machine in machines:
 						wires_count(100),
 						{
 							"Name": circuits[tier],
-							"Count": 40 + 10 * level
+							"Count": 15 + 5 * level
 						}
 					]
 				},
