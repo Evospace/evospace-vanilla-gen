@@ -2657,13 +2657,13 @@ recipes_industrial_chemreactor.append({
 				"Count": 1
 			},
 			{
+				"Name": "Water",
+				"Count": 1000
+			},
+			{
 				"Name": "Catalyst",
 				"Count": 1,
 				"Probability": 0
-			},
-			{
-				"Name": "Water",
-				"Count": 1000
 			},
 		]
 	},
@@ -2678,6 +2678,38 @@ recipes_industrial_chemreactor.append({
 	"Ticks" : 200,
 	"Colors": [[0.0,0.0,0.3,0.2],[0.8,0.8,0.1,0.3]],
 	"Tier": 4,
+})
+
+recipes_industrial_chemreactor.append({
+	"Name": "HydrochloricAcid",
+	"Input": {
+		"Items":[
+			{
+				"Name": "Chlorine",
+				"Count": 500
+			},
+			{
+				"Name": "Hydrogen",
+				"Count": 300
+			},
+			{
+				"Name": "Catalyst",
+				"Count": 1,
+				"Probability": 0
+			},
+		]
+	},
+	"Output":{
+		"Items":[	
+			{
+				"Name": "HydrochloricAcid",
+				"Count": 300
+			},		
+		]
+	},
+	"Ticks" : 200,
+	"Colors": [[0.0,0.0,0.3,0.2],[0.8,0.8,0.1,0.3]],
+	"Tier": 3,
 })
 
 recipes_industrial_chemreactor.append({

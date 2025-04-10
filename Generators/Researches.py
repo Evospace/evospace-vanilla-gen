@@ -26,57 +26,52 @@ tier_researches = [
 csv = []
 
 def append_levels(research_base):
-	mini = research_base["Levels"][0] if "Levels" in research_base else 0
-	maxi = research_base["Levels"][1] + 1 if "Levels" in research_base else 1
+	mini, maxi = 0, 1
+	if "Levels" in research_base:
+		mini, maxi = research_base["Levels"][0], research_base["Levels"][1] + 1
+
 	for i in range(mini, maxi):
-		thisLevel = i - mini
+		this_level = i - mini
 		research = copy.deepcopy(research_base)
 
-		if "RequiredResearch" not in research:
-			research["RequiredResearch"] = []
+		research.setdefault("RequiredResearch", [])
 
 		if i != mini:
-			research["IsUpgrade"] = True
-			research["MainResearch"] = False
-			research["CompleteByDefault"] = False
-			research["Name"] = research["Name"] + str(thisLevel)
-			if i != mini + 1:
-				research["RequiredResearch"] = [research_base["Name"] + str(thisLevel - 1)]
-			else:
-				research["RequiredResearch"] = [research_base["Name"]]
-
+			research.update({
+				"IsUpgrade": True,
+				"MainResearch": False,
+				"CompleteByDefault": False,
+				"Name": research["Name"] + str(this_level),
+				"RequiredResearch": [research_base["Name"] + str(this_level - 1)] if i != mini + 1 else [research_base["Name"]],
+			})
 			research["RequiredResearch"].append(tier_researches[i])
 
-		if "RequiredResearchArr" in research:
-			if len(research["RequiredResearchArr"]) > thisLevel:
-				research["RequiredResearch"].extend(research["RequiredResearchArr"][thisLevel])
+		if "RequiredResearchArr" in research and len(research["RequiredResearchArr"]) > this_level:
+			research["RequiredResearch"].extend(research["RequiredResearchArr"][this_level])
 
-		if "MainResearchArr" in research and research["MainResearchArr"][thisLevel] == True:
+		if research.get("MainResearchArr", [False]*maxi)[this_level]:
 			research["MainResearch"] = True
 
 		if "Unlocks" in research:
-			unl = copy.deepcopy(research["Unlocks"])
-			research["Unlocks"] = []
-			
-			new = []
-			for j in unl:
-				new.append([j[0], j[1].replace("%Material%", tier_material[i])])                
-			research["Unlocks"] = new
-		
-		CostMul = research.get("CostMul", 1)
-		if isinstance(CostMul, list):
-			CostMul = CostMul[thisLevel]
-		elif "CostMuls" in research:
-			CostMul = research["CostMuls"][thisLevel]
+			research["Unlocks"] = [
+				[j[0], j[1].replace("%Material%", tier_material[i])]
+				for j in research["Unlocks"]
+			]
 
-		research["Level"] = thisLevel
-		research["Levels"] = [i,i]
-		research["DataPoints"] = {"Items" : [{
-			"Name": "Computations",
-			"Count": tiers_base_cost[i] * CostMul
-			}]
-		}
-    
+		cost_mul = research.get("CostMul", 1)
+		if isinstance(cost_mul, list):
+			cost_mul = cost_mul[this_level]
+		elif "CostMuls" in research:
+			cost_mul = research["CostMuls"][this_level]
+
+		cost = research.get("CostExact", tiers_base_cost[i] * cost_mul)
+
+		research.update({
+			"Level": this_level,
+			"Levels": [i, i],
+			"DataPoints": {"Items": [{"Name": "Computations", "Count": cost}]}
+		})
+
 		researches.append(research)
 
 		
@@ -88,6 +83,7 @@ append_levels({
 	"RequiredResearch": [],
 	"Unlocks": [["Hand" + r_dict, tier_material[0] + "Furnace"],["Hand" + r_dict, "SandSurface"],["Hand" + r_dict, "GravelSurface"],["Hand" + r_dict, "Dirt"]],
 	"CompleteByDefault": True,
+	"MainResearch": True,
 })
 append_levels({
 	"Class": "StaticResearchDecorationUnlock",
@@ -203,6 +199,7 @@ append_levels({
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%CompactGenerator"],["Hand" + r_dict, "%Material%StirlingEngine"]],
 	"CompleteByDefault": True,
+	"MainResearch": True,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -267,7 +264,7 @@ append_levels({
 	"Name": "AluminiumProduction",
 	"LabelParts": [["AluminiumProduction", "researches"]],
 	"RequiredResearch": ["AdvancedSmelting", "AluminiumReduction"],
-	"Unlocks": get_parts_unlocks(tier_material[3]),
+	"Unlocks": get_parts_unlocks(tier_material[3]) + [["Hand" + r_dict, "AluminiumFoil"],["Assembler" + r_dict, "AluminiumFoil"]],
 	"Levels": [3,3],
 	"MainResearch": True,
 })
@@ -623,6 +620,7 @@ append_levels({
 	"Levels": [2,2],
 	"Unlocks": [["Hand" + r_dict, "AdvancedCircuit"],[assembler_r_dict, "AdvancedCircuit"]],
 	"CostMul":1.6,
+	"MainResearch": True,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -656,10 +654,10 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Transistor4",
 	"LabelParts": [["Transistor", "parts"], ["IV", "common"]],
-	"RequiredResearch": ["Transistor3"],
+	"RequiredResearch": ["Transistor3", "DopedSiliconWafer"],
 	"Levels": [2,2],
 	"Unlocks": [[assembler_r_dict, "Transistor4"]],
-	"CostMul":23.5,
+	"CostExact": 4*10**6,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -678,6 +676,14 @@ append_levels({
 	"Unlocks": [["IndustrialSmelter"+r_dict, "SiliconMonocrystal"],[assembler_r_dict, "SiliconWafer"]],
 	"Levels": [3,3],
 	"MainResearch": True
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "DopedSiliconWafer",
+	"LabelParts": [["DopedSiliconWafer", "parts"]],
+	"RequiredResearch": ["SiliconWafer", "PlatinumRhodiumSolution"],
+	"Unlocks": [["IndustrialSmelter"+r_dict, "DopedSiliconMonocrystal"],[assembler_r_dict, "DopedSiliconWafer"]],
+	"Levels": [6,6]
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -740,10 +746,10 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Processor3",
 	"LabelParts": [["Processor", "parts"], ["III", "common"]],
-	"RequiredResearch": ["Processor2"],
-	"Unlocks": [[assembler_r_dict, "Processor2"]],
+	"RequiredResearch": ["Processor2", "DopedSiliconWafer"],
+	"Unlocks": [[assembler_r_dict, "Processor3"]],
 	"Levels": [3,3],
-	"CostMul":8,
+	"CostExact": 4*10**6,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -817,8 +823,48 @@ append_levels({
 	"LabelParts": [["NitricAcid", "parts"]],
 	"RequiredResearch": ["IndustrialChemReactor1"],
 	"Levels": [5,5],
-	"Unlocks": [["IndustrialChemReactor" + r_dict, "NitricAcid"]],
+	"Unlocks": [[ic_reactor_r_dict, "NitricAcid"]],
 	"CostMul": 0.2,
+	"MainResearch": True,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "HydrochloricAcid",
+	"LabelParts": [["HydrochloricAcid", "parts"]],
+	"RequiredResearch": ["NitricAcid"],
+	"Levels": [5,5],
+	"Unlocks": [[ic_reactor_r_dict, "HydrochloricAcid"]],
+	"CostMul": 0.4,
+	"MainResearch": True,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "AquaRegia",
+	"LabelParts": [["AquaRegia", "parts"]],
+	"RequiredResearch": ["HydrochloricAcid"],
+	"Levels": [5,5],
+	"Unlocks": [[ic_reactor_r_dict, "AquaRegia"]],
+	"CostMul": 0.8,
+	"MainResearch": True,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "PlatinumRhodiumSolution",
+	"LabelParts": [["PlatinumRhodiumSolution", "parts"]],
+	"RequiredResearch": ["AquaRegia"],
+	"Levels": [5,5],
+	"Unlocks": [[ic_reactor_r_dict, "PlatinumRhodiumSolution"],[ic_reactor_r_dict, "AmmoniumChloride"],[ic_reactor_r_dict, "RhodiumSolution"]],
+	"CostMul": 1.2,
+	"MainResearch": True,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "RhodiumDust",
+	"LabelParts": [["RhodiumDust", "parts"]],
+	"RequiredResearch": ["AdvancedCatalyst"],
+	"Levels": [5,5],
+	"Unlocks": [[ic_reactor_r_dict, "RhodiumDust"], [ic_reactor_r_dict,"MesitylOxide"], [ic_reactor_r_dict, "MethylIsobutylKetone"]],
+	"CostMul": 3.0,
 	"MainResearch": True,
 })
 append_levels({
@@ -883,7 +929,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "DecisionResonator4",
 	"LabelParts": [["DecisionResonator", "parts"], ["IV", "common"]],
-	"RequiredResearch": ["DecisionResonator3"],
+	"RequiredResearch": ["DecisionResonator3", "DopedSiliconWafer"],
 	"Levels": [5,5],
 	"Unlocks": [[assembler_r_dict, "DecisionResonator4"]],
 	"CostMul":5.0,
@@ -900,9 +946,19 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
+	"Name": "BrainMatrix",
+	"LabelParts": [["BrainMatrix", "parts"]],
+	"RequiredResearch": ["QuantumProcessor"],
+	"Levels": [6,6],
+	"Unlocks": [["Hand" + r_dict, "BrainMatrix"]],
+	"MainResearch": True,
+	"CostMul":1.5,
+})
+append_levels({
+	"Class": "StaticResearch",
 	"Name": "QuantumBrain",
 	"LabelParts": [["QuantumBrain", "parts"]],
-	"RequiredResearch": ["QuantumProcessor"],
+	"RequiredResearch": ["BrainMatrix"],
 	"Levels": [6,6],
 	"Unlocks": [["Hand" + r_dict, "QuantumBrain"]],
 	"MainResearch": True,
@@ -912,7 +968,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "QuantumBrain2",
 	"LabelParts": [["QuantumBrain", "parts"],["II", "common"]],
-	"RequiredResearch": ["QuantumBrain"],
+	"RequiredResearch": ["QuantumBrain", "UltimateCatalyst"],
 	"Levels": [6,6],
 	"Unlocks": [[assembler_r_dict, "QuantumBrain2"]],
 	"MainResearch": True,
@@ -971,7 +1027,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "AdvancedCatalyst",
 	"LabelParts": [["AdvancedCatalyst", "parts"]],
-	"RequiredResearch": ["Catalyst2"],
+	"RequiredResearch": ["Catalyst2", "PlatinumRhodiumSolution"],
 	"Unlocks": [[assembler_r_dict, "AdvancedCatalyst"]],
 	"Levels": [6,6],
 	"CostMul": 1.75,
