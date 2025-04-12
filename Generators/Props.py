@@ -752,13 +752,14 @@ proplists = [
 
 ore_props = []
 for ore in ore_types:
-	ore_props.append({
-		"Props": [ore["Name"]+"Cluster"],
-		"Chance": 1.0 / len(ore_types)
-	})
+	ore_props.append(ore["Name"]+"Cluster")
+
 ores_biome = {	
 	"Name": "OreProps",
-	"Array": ore_props
+	"Array": [{
+		"Props": ore_props,
+		"Chance": 1.0
+	}]
 }
 proplists.append(ores_biome)
 

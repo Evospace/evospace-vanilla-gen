@@ -647,10 +647,25 @@ materials = [
 		},
 		"Color":[0.9,0.9,0.9]
 	},{
+		"Name": "SiliconOxide",
+		"Label": "Silicon Oxide",
+		"Items": ["Exact"],
+		"Tier": 1,
+		"Mesh": "/Game/Models/CrystalCrate",
+		"Materials" : [
+			"/Game/Materials/Black",
+			"/Game/Materials/SiliconOxide"
+		],
+	},{
 		"Name": "Silicon",
 		"Label": "Silicon",
 		"Items": ["Exact"],
-		"Tier": 3
+		"Tier": 3,
+		"Mesh": "/Game/Models/CrystalCrate",
+		"Materials" : [
+			"/Game/Materials/Black",
+			"/Game/Materials/Silicon"
+		],
 	},{
 		"Name": "SiliconMonocrystal",
 		"Label": "Silicon Monocrystal",
@@ -778,12 +793,6 @@ materials = [
 		"Label": "Battery Cell",
 		"Items": ["Exact"],
 		"Tier": 3
-	},
-	{
-		"Name": "SiliconOxide",
-		"Label": "Silicon Oxide",
-		"Items": ["Exact"],
-		"Tier": 1
 	},{
 		"Name": "Pumpkin",
 		"Label": "Pumpkin",
