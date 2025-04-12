@@ -550,7 +550,7 @@ append_levels({
 	"RequiredResearch": ["PowerGeneration", "SteelProduction"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Boiler"]],
 	"Levels": [2,7],
-	"MainResearch": True
+	"MainResearchArr": [True,True,False,False,False,False,False],
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -1077,7 +1077,7 @@ append_levels({
 	"Levels": [2,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%ElectricEngine"] ],
 	"MainResearchArr": [True, True, False, False, False, False, False],
-	"CostMul": 2
+	"CostMul": 2,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -1087,7 +1087,17 @@ append_levels({
 	"Levels": [3,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%Generator"] ],
 	"MainResearchArr": [True, False, False, False, False, False, False],
-	"CostMul": 2.5
+	"CostMul": 2.5,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "SteamTurbine",
+	"LabelParts": [["SteamTurbine", "machines"]],
+	"RequiredResearch": ["Generator", "Boiler1"],
+	"Levels": [3,7],
+	"Unlocks": [["Hand" + r_dict, "%Material%SteamTurbine"] ],
+	"MainResearchArr": [True, False, False, False, False, False, False],
+	"CostMul": 1.0,
 })
 append_levels({
 	"Class": "StaticResearch",

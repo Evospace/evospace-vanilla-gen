@@ -352,14 +352,16 @@ for ore_type in ore_types:
 			cvs.append([ore_type["Name"] + "Crystal", ore_type["Name"]+" Crystal"])
 			item = { "Class": "StaticItem",
 				"Name": ore_type["Name"] + "Crystal",
-				"Mesh": "/Game/Models/Crystal",
+				
 				"Image": "T_" + ore_type["Name"] + "Crystal",
 				"StackSize": 64,
 				"Category": "Ore",
 				"LabelParts": [[ore_type["Name"]+"Crystal", "ores"]],
 				"DescriptionParts": description,
+				"Mesh": "/Game/Models/CrystalCrate",
 				"Materials" : [
-					"/Game/Materials/" + ore_type["Name"] + "Crystal"
+					"/Game/Materials/Black",
+					"/Game/Materials/" + ore_type["Name"]
 				],
 			}
 			objects_array.append(item)
