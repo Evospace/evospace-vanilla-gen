@@ -936,34 +936,46 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 	},{
+		"Name": "Canister",
+		"Label": "Canister",
+		"StackSize": 1,
+		"Items": ["Exact"],
+		"CustomData": True,
+		"MaxCharge": single_canister_capacity
+	},{
 		"Name": "PrimitiveBattery",
 		"Label": "Primitive Battery",
 		"StackSize": 1,
 		"Items": ["Exact"],
+		"CustomData": True,
 		"MaxCharge": single_battery_cell_charge / 4
 	},{
 		"Name": "BasicBattery",
 		"Label": "Basic Battery",
 		"StackSize": 1,
 		"Items": ["Exact"],
+		"CustomData": True,
 		"MaxCharge": single_battery_cell_charge * battery_mul(0)
 	},{
 		"Name": "AdvancedBattery",
 		"Label": "Advanced Battery",
 		"StackSize": 1,
 		"Items": ["Exact"],
+		"CustomData": True,
 		"MaxCharge": single_battery_cell_charge * battery_mul(1)
 	},{
 		"Name": "SuperiorBattery",
 		"Label": "Superior Battery",
 		"StackSize": 1,
 		"Items": ["Exact"],
+		"CustomData": True,
 		"MaxCharge": single_battery_cell_charge * battery_mul(2)
 	},{
 		"Name": "UltimateBattery",
 		"Label": "Ultimate Battery",
 		"StackSize": 1,
 		"Items": ["Exact"],
+		"CustomData": True,
 		"MaxCharge": single_battery_cell_charge * battery_mul(3)
 	},{
 		"Name": "ControlCell",
