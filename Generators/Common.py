@@ -224,6 +224,8 @@ def items(array, tier=0):
 
 single_battery_cell_charge = 100000
 
+single_canister_capacity = 10000
+
 def battery_mul(level):
 	return 4 * pow(5, level)
 	

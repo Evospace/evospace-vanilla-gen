@@ -222,12 +222,13 @@ for material in materials:
 		item = { "Class": "StaticItem",
 			"Name": material["Name"],
 			"Image": "T_" + material["Name"],
-			
 			"StackSize": 64 if material["Name"] != "Signal" else 214748364,
-			
 			"LabelParts": [[material["Name"], "parts"]],
 		}
-			
+
+		if "CustomData" in material:
+			item["CustomData"] = material["CustomData"]
+				
 		if "Category" in material:
 			item["Category"] = material["Category"]
 			
