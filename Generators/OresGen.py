@@ -400,11 +400,11 @@ cvs.append(["CrAl203", "CrAl₂0₃"])
 cvs.append(["C", "C"])
 cvs.append(["Be3Al2SiO3", "Be₃Al₂SiO₃"])
 cvs.append(["Al2O3+TiO2", "Al₂O₃ + TiO₂"])
-cvs.append(["ThO2+UO2", "ThO₂+UO₂"])
+cvs.append(["ThO2+UO2", "ThO₂ + UO₂"])
 cvs.append(["AuS2+PtS2+RhS2", "AuS₂ + PtS₂ + RhS₂"])
 cvs.append(["FeNb2O3+FeTa2O3", "FeNb₂O₃ + FeTa₂O₃"])
 cvs.append(["ThPO4+NdPO4+YPO4", "ThPO₄ + NdPO₄ + YPO₄"])
 
-write_file("Generated/Resources/ores.json", data);
+write_file("Generated/Resources/ores.json", data)
 
 write_file("Loc/source/ores.json", cvs)
