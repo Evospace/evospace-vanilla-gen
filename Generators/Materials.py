@@ -1077,6 +1077,11 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Signal"
 	},{
+		"Name": "Storage2",
+		"Label": "Storage2",
+		"Items": ["Exact"],
+		"Category": "Signal"
+	},{
 		"Name": "Percent",
 		"Label": "Percent",
 		"Items": ["Exact"],

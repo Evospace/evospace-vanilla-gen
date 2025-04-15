@@ -78,7 +78,7 @@ cvs.append(["container", "Capacity: {0}L"])
 cvs.append(["battery", "Capacity: {0}J"])
 cvs.append(["chest", "Capacity: {0} stacks"])
 cvs.append(["item_rack", "Capacity: {0} items"])
-cvs.append(["burnable", "Burnable"])
+cvs.append(["burnable", "Burnable<img id=\"Heat2\"></>\nTotal Heat: {0}J"])
 cvs.append(["speedbonus", "Speed bonus: x{0}"])
 cvs.append(["furnace_desc", "Burning speed: x{0}"])
 cvs.append(["furnace_desc2", "Heat output: x{0}"])
@@ -100,6 +100,27 @@ cvs.append(["WorldGeneratorPlains", "Plains and coast"])
 
 cvs.append(["machines_label_format", "{0} {1}"])
 
-
 write_file("Loc/source/common.json", cvs)
 
+cvs = []
+
+cvs.append(["LogicSRLatch", "SR latch is a simple memory device with two inputs, Set and Reset\n\nA - Set signal\nB - Reset signal"])
+cvs.append(["LogicAdd", "Result is addition of A signal value and B value"])
+cvs.append(["LogicSub", "Result is subtraction of B signal value from A value"])
+cvs.append(["LogicMul", "Result is multiplication of A signal value and B value"])
+cvs.append(["LogicAnd", "Result is bitwise AND of A signal value and B signal"])
+cvs.append(["LogicDiv", "Result is division of A signal value by A value"])
+cvs.append(["LogicXor", "Result is bitwise XOR of A signal value and B signal"])
+cvs.append(["LogicOr", "Result is bitwise OR of A signal value and B signal"])
+cvs.append(["LogicConst", "Constant value output"])
+cvs.append(["LogicEqual", "A signal value is equal to B signal"])
+cvs.append(["LogicGreater", "A signal value is greater than B signal"])
+cvs.append(["LogicGreaterEqual", "A signal value is greater or equal than B signal"])
+cvs.append(["LogicLess", "A signal value is less than B signal"])
+cvs.append(["LogicLessEqual", "A signal value is less or equal than B signal"])
+cvs.append(["LogicAbs", "Result is absolute value of A signal"])
+cvs.append(["LogicNotEqual", "A signal value is not equal to B signal"])
+cvs.append(["LogicMod", "Result is the remainder of a division A signal value by B signal"])
+cvs.append(["LogicWire", "Copy all non zero input signals to output"])
+
+write_file("Loc/source/logic.json", cvs)
