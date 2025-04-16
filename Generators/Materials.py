@@ -617,6 +617,11 @@ materials = [
 		"Smelting": ["ArcFurnace"],
 		"Tier": 4,
 	},{
+		"Name": "CalciumPhosphate",
+		"Label": "Calcium Phosphate",
+		"Items": ["Dust"],
+		"Tier": 3,
+	},{
 		"Name": "MicaFlakes",
 		"Label": "Mica Flakes",
 		"Items": ["Exact"],

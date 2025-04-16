@@ -58,6 +58,9 @@ def append_levels(research_base):
 				for j in research["Unlocks"]
 			]
 
+		if "UnlockFirst" in research and this_level == 0:
+			research["Unlocks"].extend([j[0], j[1].replace("%Material%", tier_material[i])] for j in research["UnlockFirst"])
+
 		cost_mul = research.get("CostMul", 1)
 		if isinstance(cost_mul, list):
 			cost_mul = cost_mul[this_level]
@@ -598,7 +601,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Resistor3",
 	"LabelParts": [["Resistor", "parts"], ["III", "common"]],
-	"RequiredResearch": ["Resistor2", "Tetrafluoroethylene"],
+	"RequiredResearch": ["Resistor2", "Tetrafluoroethylene", "CrudeNiobium"],
 	"Levels": [2,2],
 	"Unlocks": [[assembler_r_dict, "Resistor4"]],
 	"CostMul":4.5,
@@ -607,7 +610,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Resistor4",
 	"LabelParts": [["Resistor", "parts"], ["IV", "common"]],
-	"RequiredResearch": ["Resistor3"],
+	"RequiredResearch": ["Resistor3", "TantalumDust"],
 	"Levels": [2,2],
 	"Unlocks": [[assembler_r_dict, "Resistor5"]],
 	"CostMul":8.5,
@@ -718,7 +721,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "Capacitor3",
 	"LabelParts": [["Capacitor", "parts"], ["III", "common"]],
-	"RequiredResearch": ["Capacitor2", "Polyethylene"],
+	"RequiredResearch": ["Capacitor2", "Polyethylene", "TantalumDust"],
 	"Levels": [3,3],
 	"Unlocks": [[assembler_r_dict, "Capacitor3"]],
 	"CostMul":6,
@@ -863,8 +866,19 @@ append_levels({
 	"LabelParts": [["RhodiumDust", "parts"]],
 	"RequiredResearch": ["AdvancedCatalyst"],
 	"Levels": [5,5],
-	"Unlocks": [[ic_reactor_r_dict, "RhodiumDust"], [ic_reactor_r_dict,"MesitylOxide"], [ic_reactor_r_dict, "MethylIsobutylKetone"]],
+	"Unlocks": [[ic_reactor_r_dict, "RhodiumDust"], [ic_reactor_r_dict,"MesitylOxide"], 
+			 [ic_reactor_r_dict, "MethylIsobutylKetone"], [assembler_r_dict, "RhodiumFoil"]],
 	"CostMul": 3.0,
+	"MainResearch": True,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "RhodiumReflector",
+	"LabelParts": [["RhodiumReflector", "parts"]],
+	"RequiredResearch": ["RhodiumDust"],
+	"Levels": [5,5],
+	"Unlocks": [[h_r_dict, "RhodiumReflector"], [assembler_r_dict, "RhodiumReflector"]],
+	"CostMul": 6,
 	"MainResearch": True,
 })
 append_levels({
@@ -1085,9 +1099,30 @@ append_levels({
 	"LabelParts": [["Generator", "machines"]],
 	"RequiredResearch": ["ElectricEngine1"],
 	"Levels": [3,7],
-	"Unlocks": [["Hand" + r_dict, "%Material%Generator"] ],
+	"Unlocks": [["Hand" + r_dict, "%Material%Generator"]],
+	"UnlockFirst": [["Hand" + r_dict, "SCable"]],
 	"MainResearchArr": [True, False, False, False, False, False, False],
 	"CostMul": 2.5,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "GoldCable",
+	"LabelParts": [["GoldCable", "parts"]],
+	"RequiredResearch": ["Generator"],
+	"Levels": [3,3],
+	"Unlocks": [[h_r_dict, "GCable"]],
+	"MainResearch": True,
+	"CostMul": 4,
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "AluminiumCable",
+	"LabelParts": [["GoldCable", "parts"]],
+	"RequiredResearch": ["GoldCable"],
+	"Levels": [3,3],
+	"Unlocks": [[h_r_dict, "ACable"]],
+	"MainResearch": True,
+	"CostMul": 8,
 })
 append_levels({
 	"Class": "StaticResearch",
@@ -1289,6 +1324,34 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
+	"Name": "CrudeNiobium",
+	"LabelParts": [["CrudeNiobium", "researches"]],
+	"RequiredResearch": ["Tetrafluoroethylene"],
+	"Levels": [5,5],
+	"Unlocks": [["IndustrialSmelter" + r_dict, "TantalumSludge"], [h_r_dict, "NiobiumWire"]],
+	"CostMul": 5.5
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "NiobiumDust",
+	"LabelParts": [["NiobiumDust", "parts"]],
+	"RequiredResearch": ["CrudeNiobium"],
+	"Levels": [5,5],
+	"Unlocks": [[ic_reactor_r_dict, "TantalumSludge2"], [assembler_r_dict, "NiobiumWire2"]],
+	"CostMul": 7
+})
+append_levels({
+	"Class": "StaticResearch",
+	"Name": "TantalumDust",
+	"LabelParts": [["TantalumDust", "parts"]],
+	"RequiredResearch": ["NiobiumDust"],
+	"Levels": [5,5],
+	"Unlocks": [[ic_reactor_r_dict, "TantalumSolution"], [assembler_r_dict, "TantalumWire2"], [assembler_r_dict, "TantalumFoil"],
+			 [h_r_dict, "TantalumWire"], [h_r_dict, "TantalumFoil"]],
+	"CostMul": 9
+})
+append_levels({
+	"Class": "StaticResearch",
 	"Name": "Tetrafluoroethylene2",
 	"LabelParts": [["Tetrafluoroethylene", "parts"], ["II", "common"]],
 	"RequiredResearch": ["Tetrafluoroethylene"],
@@ -1321,7 +1384,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "FusionReactor",
 	"LabelParts": [["FusionReactor", "machines"]],
-	"RequiredResearch": ["CompositePlate"],
+	"RequiredResearch": ["CompositePlate", "RhodiumReflector"],
 	"Unlocks": [["Hand" + r_dict, "%Material%FusionReactor"] ],
 	"Levels": [6,7],
 	"MainResearch": True,
@@ -1613,6 +1676,7 @@ csv.append(["KrollProcess", "Kroll Process"])
 csv.append(["AluminiumReduction", "Aluminium Reduction"])
 csv.append(["AdvancedAlloys", "Advanced Alloys"])
 csv.append(["LithiumBattery", "Lithium Battery"])
+csv.append(["CrudeNiobium", "Crude Niobium"])
 
 write_file("Generated/Researches/basic.json", data)
 write_file("Loc/source/researches.json", csv)
