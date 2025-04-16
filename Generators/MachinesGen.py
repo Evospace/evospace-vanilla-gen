@@ -1240,11 +1240,41 @@ for machine in machines:
 			
 		if machine["Name"] == "CopperConnector":
 			append_recipe({
-				"Name": "CopperConnector",
+				"Name": machine["Name"],
 				"Input":{
 					"Items":[
 						{
 							"Name": "CopperWire",
+							"Count": 1
+						}
+					]
+				},
+				"Output": one_item(machine["Name"]),
+				"Ticks" : 5
+			})
+
+		if machine["Name"] == "GCable":
+			append_recipe({
+				"Name": machine["Name"],
+				"Input":{
+					"Items":[
+						{
+							"Name": "GoldWire",
+							"Count": 1
+						}
+					]
+				},
+				"Output": one_item(machine["Name"]),
+				"Ticks" : 5
+			})
+
+		if machine["Name"] == "SCable":
+			append_recipe({
+				"Name": machine["Name"],
+				"Input":{
+					"Items":[
+						{
+							"Name": "IronPlate",
 							"Count": 1
 						}
 					]

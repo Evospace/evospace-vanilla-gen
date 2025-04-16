@@ -2112,8 +2112,8 @@ recipes_electrolyzer.append({
 				"Count": 1
 			},
 			{
-				"Name": "SiliconOxide",
-				"Count": 10
+				"Name": "CalciumPhosphateDust",
+				"Count": 2
 			}
 		]
 	},
@@ -2629,7 +2629,7 @@ recipes_industrial_chemreactor.append({
 		]),
 	"Output": items([
 			["NiobiumDust"],
-			["TantalumSolution", 500]
+			["TantalumSolution", 300]
 		]),
 	"Ticks" : 200,
 	"Tier": 6
@@ -2638,7 +2638,7 @@ recipes_industrial_chemreactor.append({
 recipes_industrial_chemreactor.append({
 	"Name":"TantalumSolution",
 	"Input": items([
-			["TantalumSolution", 500],
+			["TantalumSolution", 1000],
 			["Ammonia", 500]
 		]),
 	"Output": items([

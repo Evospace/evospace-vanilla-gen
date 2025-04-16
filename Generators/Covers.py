@@ -17,14 +17,19 @@ covers = [
         "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/OFC"]
     },
     {
+        "Name": "SCable",
+        "Mesh": "/Game/Covers/MVCable",
+        "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/Steel"]
+    },
+    {
         "Name": "GCable",
         "Mesh": "/Game/Covers/MVCable",
         "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/Gold"]
     },
     {
-        "Name": "CNCable",
+        "Name": "ACable",
         "Mesh": "/Game/Covers/MVCable",
-        "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/CN"]
+        "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/Aluminium"]
     },
     {
         "Name": "YBCOCable",

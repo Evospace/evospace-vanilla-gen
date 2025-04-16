@@ -239,9 +239,6 @@ static_item = ""
 
 int32max = 2147483647
 
-quest = "StaticQuest"
-qchapter = "StaticQuestChapter"
-
 static_research = ""
 static_chapter = "StaticChapter"
 static_block = ""
@@ -264,6 +261,7 @@ cover_item_logic = "CoverItemLogic"
 ic_reactor_r_dict = "IndustrialChemReactorRecipeDictionary"
 building_brush_slot_logic = "BuildingBrushItemLogic"
 assembler_r_dict = "AssemblerRecipeDictionary"
+h_r_dict = "HandRecipeDictionary"
 r_dict = "RecipeDictionary"
 breaking_recipe = "RecipeDictionary"
 ico_generator = "IcoGenerator"
