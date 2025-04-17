@@ -402,16 +402,6 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "Cutting",
-	"LabelParts": [["Cutting", "researches"]],
-	"RequiredResearch": ["BasicMachines"],
-	"Levels": [1,7],
-	"Unlocks": [["Hand" + r_dict, "%Material%CuttingMachine"] ],
-	"MainResearch": True,
-	"CostMul":0.25,
-})
-append_levels({
-	"Class": "StaticResearch",
 	"Name": "Pumpjack",
 	"LabelParts": [["Pumpjack", "machines"]],
 	"RequiredResearch": ["AutomaticMining"],
@@ -1555,7 +1545,7 @@ append_levels({
 append_levels({
 	"Class": "StaticResearch",
 	"Name": "DecorativeWood",
-	"RequiredResearch": ["Cutting"],
+	"RequiredResearch": ["Bricks"],
 	"LabelParts": [["DecorativeWood", "researches"]],
 	"Unlocks": [["Hand" + r_dict, "WoodenPlanks"],["Hand" + r_dict, "WoodenStairs"],["Hand" + r_dict, "Bed"],["Hand" + r_dict, "Door"]],
 	"Levels": [1,1],
@@ -1649,7 +1639,6 @@ csv.append(["Container", "Fluid Storage"])
 csv.append(["SingleTypeStorage", "Single Type Storage"])
 csv.append(["DistributedComputing", "Distributed Computing"])
 csv.append(["Sign", "Sign"])
-csv.append(["Cutting", "Cutting"])
 csv.append(["SteelProduction", "Steel Production"])
 csv.append(["AutomaticMining", "Automatic Mining"])
 csv.append(["MetalConstructions", "Metal Constructions"])	
