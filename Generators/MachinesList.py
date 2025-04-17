@@ -11,13 +11,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "AutoCrafter",
 		"Description": ["KineticInput"],
-	},{
-		"Name": "CuttingMachine",
-		"Label": "Cutting Machine",
-		"StartTier": 1,
-		"EndTier": 7,
-		"BlockLogic":"AutoCrafter",
-		"Description": ["KineticInput"],
 	}
 	#,{
 	#	"Name": "RollerMachine",
