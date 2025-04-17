@@ -10,7 +10,6 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "AutoCrafter",
-        "Recipes": "Macerator",
 		"Description": ["KineticInput"],
 	},{
 		"Name": "CuttingMachine",
@@ -18,7 +17,6 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
-        "Recipes": "CuttingMachine",
 		"Description": ["KineticInput"],
 	}
 	#,{
@@ -66,7 +64,6 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
-        "Recipes": "AutomaticHammer",
 		"Description": ["KineticInput"],
 	},{
 		"Name": "Boiler",
@@ -460,7 +457,6 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
-        "Recipes": "CompactGenerator",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
 		"PowerOutput": 50,
 	},{
@@ -475,7 +471,6 @@ machines = [
         "DefaultRotation": [-1, 0, 0, 0]
 	},{
 		"Name": "BiElectricEngine",
-        "Recipes": "ElectricEngine",
 		"Label": "Bi-Directional Electric Engine",
 		"StartTier": 2,
 		"EndTier": 7,
@@ -549,7 +544,6 @@ machines = [
 		"StartTier": 0,
 		"EndTier": 2,
 		"BlockLogic":"AutoCrafter",
-        "Recipes": "Smelter",
 		"Description": ["HeatInput"],
 		"CustomData":{
 			"Capacity":32
@@ -599,7 +593,6 @@ machines = [
 		"StartTier": 4,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
-        "Recipes": "GasTurbine",
 		"BlockCreation":"""
 		local a = self:CreateAccessor(Class.find("FluidInputAccessor"))
 		a:SetSidePos(Vec3i.up, Vec3i.new( -2, 0, 1 ))
@@ -638,12 +631,20 @@ machines = [
 		"Description": ["HeatOutput", "PowerOutput"],
 		"PowerOutput": 500,
 	},{
+		"Name": "DroneStation",
+		"Label": "Drone Station",
+		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,0,2],[-1,0,2],[0,1,2],[-1,1,2]],
+		"StartTier": 2,
+		"EndTier": 7,
+		"BlockLogic":"DroneStationBlockLogic",
+		"Description": ["ElectricInput", "PowerInput"],
+        "PowerInput": 50,
+	},{
 		"Name": "ArcSmelter",
 		"Label": "Arc Smelter",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,0,2],[-1,0,2],[0,1,2],[-1,1,2]],
 		"StartTier": 2,
 		"EndTier": 7,
-        "Recipes": "ArcSmelter",
 		"BlockLogic":"AutoCrafter",
 		"Description": ["ElectricInput", "PowerInput"],
         "PowerInput": 100,
@@ -653,7 +654,6 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 7,
-        "Recipes": "ChemicalBath",
 		"BlockLogic":"SelectCrafter",
 		"BlockCreation":"""
         local a = self:new_resource_accessor("Input")
@@ -671,7 +671,6 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
-        "Recipes": "Sifter",
 		"BlockCreation":"""
         local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.front, Vec3i.zero)
@@ -695,7 +694,6 @@ machines = [
 		"StartTier": 0,
 		"EndTier": 7,
 		"BlockLogic":"Furnace",
-        "Recipes": "Furnace",
         "Selector": "019/FurnaceSelector.FurnaceSelector_C",
 		"Description": ["HeatOutput"],
 	},{
@@ -717,7 +715,6 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
-        "Recipes": "Oven",
 		"Description": ["SpeedBonus"]
 	},{
 		"Name": "BlastFurnace",
@@ -739,7 +736,6 @@ machines = [
 			[0,1,3],[-1,1,3],[-2,1,3],
 			[0,-1,3],[-1,-1,3],[-2,-1,3],
 		],
-        "Recipes": "BlastFurnace",
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
@@ -887,7 +883,6 @@ machines = [
 			[0,-2,0],[-1,-2,0],[-2,-2,0],
 			[0,-2,1],[-1,-2,1],[-2,-2,1],
 		],
-        "Recipes": "Assembler",
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "Constructor",
@@ -977,7 +972,6 @@ machines = [
 	},{
 		"Name": "AutomaticFarm",
 		"Label": "Automatic Farm",
-        "Recipes": "AutomaticFarm",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],[-3,0,0],
 			[0,1,0],[-1,1,0],[-2,1,0],[-3,1,0],
@@ -1001,7 +995,6 @@ machines = [
 	},{
 		"Name": "AtmosphericCondenser",
 		"Label": "Atmospheric Condenser",
-        "Recipes": "AtmosphericCondenser",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],
 			[0,-1,0],[-1,-1,0],[-2,-1,0],
