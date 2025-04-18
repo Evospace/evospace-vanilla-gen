@@ -763,7 +763,7 @@ machines = [
 		a:Bind(self:GetOutputContainer())
 		""",
 		"Description": ["ElectricInput", "HeatOutput", "PowerOutput"],
-		"PowerOutput": 40,
+		"PowerOutput": 55,
 	},{
 		"Name": "BatteryBox",
 		"Label": "Battery Box",
