@@ -510,6 +510,7 @@ recipes_industrial_chemreactor.append({
 	"Output": one_item("Chloroform", 300),
 	"Ticks" : 400,
 	"Tier": 4,
+	"Colors": [[0.8,0.1,0.1,0.5],[0.8,0.4,0.1,0.6]],
 })
 
 recipes_industrial_chemreactor.append({
@@ -522,6 +523,7 @@ recipes_industrial_chemreactor.append({
 	"Output": one_item("Chlorodifluoromethane", 300),
 	"Ticks" : 100,
 	"Tier": 5,
+	"Colors": [[0.8,0.4,0.1,0.0],[0.8,0.4,0.1,0.6]],
 })
 
 recipes_industrial_chemreactor.append({
@@ -589,6 +591,7 @@ recipes_industrial_chemreactor.append({
 	"Output": one_item("PolytetrafluoroethyleneSheet", 10),
 	"Ticks" : 600,
 	"Tier": 5,
+	"Colors": [[0.5,0.5,0.0,0.8],[0.5,0.5,0.0,0.0]],
 })
 
 recipes_industrial_chemreactor.append({
@@ -2132,6 +2135,7 @@ recipes_industrial_chemreactor.append({
 	]),
 	"Ticks" : 100,
 	"Tier":2,
+	"Colors": [[0.8,0.8,0.1,0.3],[0.8,0.8,0.1,0.0]],
 })
 
 recipes_electrolyzer.append({

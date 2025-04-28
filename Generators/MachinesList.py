@@ -10,7 +10,8 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "AutoCrafter",
-		"Description": ["KineticInput"],
+		"Description": ["KineticInput", "PowerInput"],
+        "PowerInput": 20,
 	}
 	#,{
 	#	"Name": "RollerMachine",
@@ -28,14 +29,16 @@ machines = [
 		"Positions": [[0,0,0],[0,0,1]],
 		"BlockLogic":"SelectCrafter",
 		"RequiredResearch":["Fermentation"],
-		"Description": ["ElectricInput"],
+		"Description": ["ElectricInput", "PowerInput"],
+        "PowerInput": 20,
 	},{
 		"Name": "Separator",
 		"Label": "Separator",
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
-		"Description": ["KineticInput"],
+		"Description": ["KineticInput", "PowerInput"],
+        "PowerInput": 80,
 	},{
 		"Name": "Beam",
 		"Label": "Beam",
@@ -57,7 +60,8 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
-		"Description": ["KineticInput"],
+		"Description": ["KineticInput", "PowerInput"],
+        "PowerInput": 30,
 	},{
 		"Name": "Boiler",
 		"Label": "Boiler",
@@ -142,6 +146,8 @@ machines = [
         "ExactName": True,
         "Category": "Network",
         "ReplaceTag": "Cable",
+        "Description": ["ElectricOutput", "ElectricInput" "PowerOutput"],
+		"PowerOutput": 400
 	},{
 		"Name": "TransformerMVLV",
 		"Label": "Transformer (MV -> LV)",
@@ -150,7 +156,9 @@ machines = [
 		"BlockLogic": "TransformerMVLV",
         "ExactName": True,
         "Category": "Network",
-        "ReplaceTag": "Cable"
+        "ReplaceTag": "Cable",
+        "Description": ["ElectricOutput", "ElectricInput", "PowerOutput"],
+		"PowerOutput": 400
 	},{
 		"Name": "CopperConnector",
 		"Label": "Copper Cable",
@@ -305,7 +313,8 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
-		"Description": ["KineticInput"],
+		"Description": ["KineticInput", "PowerInput"],
+        "PowerInput": 20,
 	},{
 		"Name": "Conveyor",
 		"Label": "Conveyor",
@@ -343,7 +352,7 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["HeatInput", "KineticOutput","PowerOutput"],
-		"PowerOutput": 20,
+		"PowerOutput": 50,
 	},{
 		"Name": "SteamEngine",
 		"Label": "Steam Engine",
@@ -351,7 +360,7 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["FluidInput", "KineticOutput", "PowerOutput"],
-		"PowerOutput": 100,
+		"PowerOutput": 200,
 	},{
 		"Name": "CombustionEngine",
 		"Label": "Combustion Engine",
@@ -398,7 +407,8 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
-		"Description": ["HeatInput"],
+		"Description": ["HeatInput", "PowerInput"],
+        "PowerInput": 50,
 	},{
         "Name": "HandGenerator",
         "Label": "Hand Generator",
@@ -419,7 +429,7 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
-		"PowerOutput": 240,
+		"PowerOutput": 100 * 5 * 2,
 		 
 	},{
 		"Name": "IndustrialGenerator",
@@ -549,7 +559,7 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["FluidInput", "KineticOutput","PowerOutput"],
-		"PowerOutput": 240,
+		"PowerOutput": 100 * 5 * 2,
 	},{
 		"Name": "IndustrialSteamTurbine",
 		"Label": "Industrial Steam Turbine",
@@ -656,7 +666,8 @@ machines = [
         res.input = 20
         res.input_item = StaticItem.find("Kinetic")
 		""",
-		"Description": ["KineticInput"],
+		"Description": ["KineticInput", "PowerInput"],
+        "PowerInput": 100,
 	},{
 		"Name": "Sifter",
 		"Label": "Sifter",
@@ -664,15 +675,8 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
-		"BlockCreation":"""
-        local a = self:new_resource_accessor("Input")
-		a:SetSidePos(Vec3i.front, Vec3i.zero)
-        local res = self:get_resource_component()
-		a:bind_input(res)
-        res.input = 20
-        res.input_item = StaticItem.find("Kinetic")
-		""",
-		"Description": ["KineticInput"],
+		"Description": ["KineticInput", "PowerInput"],
+        "PowerInput": 50,
 	},{
 		"Name": "IndustrialChemReactor",
 		"Label": "Chemical Reactor",
@@ -688,7 +692,8 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic":"Furnace",
         "Selector": "019/FurnaceSelector.FurnaceSelector_C",
-		"Description": ["HeatOutput"],
+		"Description": ["HeatOutput", "PowerOutput"],
+        "PowerOutput": 50,
 	},{
 		"Name": "Oven",
 		"Label": "Oven",
@@ -708,7 +713,8 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
-		"Description": ["SpeedBonus"]
+		"Description": ["SpeedBonus", "HeatInput", "PowerInput"],
+        "PowerInput": 100,
 	},{
 		"Name": "BlastFurnace",
 		"Label": "Blast Furnace",
@@ -747,7 +753,8 @@ machines = [
 		a:SetSidePos(Vec3i.up, Vec3i.zero)
 		a:Bind(self:GetOutputContainer())
 		""",
-		"Description": ["FluidInput", "HeatOutput"],
+		"Description": ["FluidInput", "HeatOutput", "PowerOutput"],
+        "PowerOutput": 200,
 	},{
 		"Name": "ElectricFurnace",
 		"Label": "Electric Furnace",
@@ -876,7 +883,8 @@ machines = [
 			[0,-2,0],[-1,-2,0],[-2,-2,0],
 			[0,-2,1],[-1,-2,1],[-2,-2,1],
 		],
-		"Description": ["ElectricInput"],
+		"Description": ["ElectricInput", "PowerInput"],
+        "PowerInput": 80,
 	},{
 		"Name": "Constructor",
 		"Label": "Constructor",
@@ -890,7 +898,8 @@ machines = [
 			[0,-1,1],[-1,-1,1],
 		],
 		"BlockLogic":"SelectCrafter",
-		"Description": ["ElectricInput"],
+		"Description": ["ElectricInput", "PowerInput"],
+        "PowerInput": 20,
 	},{
 		"Name": "Destroyer",
 		"Label": "Destroyer",
@@ -961,7 +970,8 @@ machines = [
 		"EndTier": 7,
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
 		"BlockLogic":"SelectCrafter",
-		"Description": ["KineticInput"],
+		"Description": ["KineticInput", "PowerInput"],
+        "PowerInput": 15,
 	},{
 		"Name": "AutomaticFarm",
 		"Label": "Automatic Farm",
@@ -1279,10 +1289,7 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic":"BigSolarPanel",
 		"Description": ["ElectricOutput", "PowerOutput"],
-		"PowerOutput": 800,
-        "CustomData": {
-            "Power": 800
-		}
+		"PowerOutput": 800
 	},
 	{
 		"Name": "SmallSolarPanel",
@@ -1297,10 +1304,7 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic":"SolarPanel",
 		"Description": ["ElectricOutput", "PowerOutput"],
-		"PowerOutput": 80,
-        "CustomData": {
-            "Power": 80
-		}
+		"PowerOutput": 80
 	},
 	{
 		"Name": "Pumpjack",
@@ -1436,7 +1440,8 @@ machines = [
 			[0,-1,2],[-1,-1,2],[-2,-1,2],
 		],
 		"BlockLogic":"SelectCrafter",
-		"Description": ["HeatInput"],
+		"Description": ["HeatInput", "PowerInput"],
+        "PowerInput": 1000,
 	},{
 		"Name": "InductionCoil",
 		"Label": "Induction Coil",
