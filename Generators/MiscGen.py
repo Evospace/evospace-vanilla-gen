@@ -283,7 +283,6 @@ for one in wooden_misc:
 		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
 		"Class": "StaticBlock",
-		"Minable": {"Result": one["Name"]},
 	}
 	
 	if "Positions" in one:
@@ -341,7 +340,6 @@ for one in simple_blocks:
 		"Name": one["Name"] + static_block,
 		"Item" : one["Name"],
 		"Tesselator": one["Name"] + tesselator,
-		"Minable": {"Result": one["Name"]},
 	})
 	
 for one in static_mesh_block:

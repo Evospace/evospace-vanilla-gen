@@ -114,15 +114,7 @@ for machine in machines:
 					item["DescriptionParts"].append([ss, "common"])	
 
 		if machine["Name"] == "RobotArm":
-			item["DescriptionParts"].append(["dps", "common", arm_speed_d[level]])
-			
-		if machine["Name"] == "FluidFurnace" or machine["Name"] == "Furnace" or machine["Name"] == "FissionReactor":
-			item["DescriptionParts"].append(["furnace_desc", "common", round(2**level)])
-			item["DescriptionParts"].append(["furnace_desc2", "common", round(2.0**level)])
-
-		if machine["Name"] == "GasTurbine" or machine["Name"] == "CombustionEngine":
-			item["DescriptionParts"].append(["furnace_desc", "common", round(2**level)])
-			item["DescriptionParts"].append(["furnace_desc3", "common", round(2**level)])			
+			item["DescriptionParts"].append(["dps", "common", arm_speed_d[level]])		
 			
 		if machine["Name"] == "Conveyor":
 			item["DescriptionParts"].append(["ips", "common", conv_speed_d[level]])

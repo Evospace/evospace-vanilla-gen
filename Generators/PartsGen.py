@@ -272,8 +272,7 @@ for material in materials:
 				},
 				"Ticks" : material["Burnable"]["BurnTime"],
 			})
-			item["DescriptionParts"] = [["burnable", "common"]]
-										#["power_output", "common", material["Burnable"]["HeatPerTick"]*20]]
+			item["DescriptionParts"] = [["burnable", "common", material["Burnable"]["BurnTime"]*50]]
 			
 		objects_array.append(item)
 
@@ -423,9 +422,8 @@ for material in materials:
 		#if item["MaterialKey"] + " " + item["Key"] in explicites:
 		#	item["ExplicitKey"] = ex_cvs[explicites.index(item["MaterialKey"] + " " + item["Key"])][0]
 		
-		#if "Burnable" in material:
-		#	item["DescriptionParts"].append(["burnable", "common", material["Burnable"]["BurnTime"]*material["Burnable"]["HeatPerTick"]])
-		#	item["DescriptionParts"].append(["power_output", "common", material["Burnable"]["HeatPerTick"]*20])
+		if "Burnable" in material:
+			item["DescriptionParts"].append(["burnable", "common", material["Burnable"]["BurnTime"]*200])
 
 		objects_array.append(item)
 		
@@ -480,6 +478,15 @@ for material in materials:
 		
 		if "Category" in material:
 			item["Category"] = material["Category"]
+
+		if "UnitMul" in material:
+			item["UnitMul"] = material["UnitMul"]
+			
+		if "Color" in material:
+			item["Color"] = material["Color"]
+
+		if "Burnable" in material:
+			item["DescriptionParts"].append(["burnable", "common", material["Burnable"]["BurnTime"]*200])
 		
 		objects_array.append(item)
 		
@@ -488,12 +495,6 @@ for material in materials:
 			"MulMask": "T_Material" + material["Name"],
 			"AddMask": "T_" + "" + additive_ico,
 		})
-		
-		if "UnitMul" in material:
-			item["UnitMul"] = material["UnitMul"]
-			
-		if "Color" in material:
-			item["Color"] = material["Color"]
 		
 		if "Burnable" in material:
 			recipes_gasfurn.append({
@@ -535,6 +536,10 @@ for material in materials:
 		
 		if "Category" in material:
 			item["Category"] = material["Category"]
+
+		if "Burnable" in material:
+			item["DescriptionParts"].append(["burnable", "common", material["Burnable"]["BurnTime"]*50])
+		
 			
 		objects_array.append(item)
 		

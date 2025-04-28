@@ -404,7 +404,7 @@ materials = [
 		"Label": "Creosote",
 		"Items": ["Gas"],
 		"Burnable": {
-			"BurnTime": 2000
+			"BurnTime": 800
 		},
 		"Tier": 0,
 		"Color":[0.0,0.0,0.0],
