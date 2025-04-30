@@ -71,6 +71,40 @@ recipes_hand = []
 
 oil_crack = []
 
+def oil_crack_recipe(index, input_count):
+	outputs = [{
+			"Name": "ExtraHeavyOil",
+			"Count": 800 * (input_count / 15000.0)
+		},
+		{
+			"Name": "HeavyOil",
+			"Count": 1000 * (input_count / 15000.0)
+		},
+		{
+			"Name": "Diesel",
+			"Count": 4000 * (input_count / 15000.0)
+		},
+		{
+			"Name": "Gasoline",
+			"Count": 1000 * (input_count / 15000.0)
+		},
+		{
+			"Name": "Ethylene",
+			"Count": 5000 * (input_count / 15000.0)
+		},
+		{
+			"Name": "Methane",
+			"Count": 5000 * (input_count / 15000.0)
+		},
+		{
+			"Name": "Hydrogen",
+			"Count": 2500 * (input_count / 15000.0)
+		}]
+	if index == -1:
+		return outputs
+
+	return outputs[index]
+
 def append_recipe(recipe):
 	recipes_hand.append(recipe)
 	recipes_assembler.append(recipe)
@@ -2373,39 +2407,11 @@ oil_crack.append({
 		]
 	},
 	"Output":{
-		"Items":[	
-			{
-				"Name": "ExtraHeavyOil",
-				"Count": 800
-			},
-			{
-				"Name": "HeavyOil",
-				"Count": 1000
-			},
-			{
-				"Name": "Diesel",
-				"Count": 4000
-			},
-			{
-				"Name": "Gasoline",
-				"Count": 1000
-			},
-			{
-				"Name": "Ethylene",
-				"Count": 5000
-			},
-			{
-				"Name": "Methane",
-				"Count": 5000
-			},
-			{
-				"Name": "Hydrogen",
-				"Count": 2500
-			}				
-		]
+		"Items": oil_crack_recipe(-1, 15000)
 	},
 	
-	"Ticks" : 600
+	"Ticks" : 600,
+	"Tier": 4
 })
 
 recipes_pyro.append({
@@ -2439,27 +2445,16 @@ recipes_pyro.append({
 	"Ticks" : 400,
 	"Tier": 3,
 })
-recipes_pyro.append({
-	"Name": "OilHeavyOil",
-	"Input": one_item("RawOil", 2000),
-	"Output": one_item("HeavyOil", 500),
-	"Ticks" : 150,
-	"Tier": 3,
-})
-recipes_pyro.append({
-	"Name": "OilGasoline",
-	"Input": one_item("RawOil", 2000),
-	"Output": one_item("Gasoline", 400),
-	"Ticks" : 150,
-	"Tier": 3,
-})
-recipes_pyro.append({
-	"Name": "OilMethane",
-	"Input": one_item("RawOil", 2000),
-	"Output": one_item("Methane", 600),
-	"Ticks" : 150,
-	"Tier": 3,
-})
+
+for i in range(0, 7):
+	recipes_pyro.append({
+		"Name": "RawOil"+str(i),
+		"Input": one_item("RawOil", 2000),
+		"Output": { "Items":[ oil_crack_recipe(i, 2000) ] },
+		"Ticks" : 150,
+		"Tier": 3,
+	})
+
 recipes_pyro.append({
 	"Name": "Methane2",
 	"Input": one_item("Methane", 800*5),
@@ -3278,7 +3273,7 @@ objects_array.append({ "Class": r_dict,
 })
 
 objects_array.append({ "Class": r_dict,
-	"Name": "OilCrackingTower" + r_dict,
+	"Name": "FractionatingColumn" + r_dict,
 	"Recipes": oil_crack
 })
 

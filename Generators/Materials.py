@@ -490,7 +490,7 @@ materials = [
 		"Label": "Acetone",
 		"Items": ["Fluid"],
 		"Burnable": {
-			"BurnTime": 100
+			"BurnTime": 130
 		},
 		"Tier": 3,
 	},{
