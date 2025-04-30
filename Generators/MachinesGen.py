@@ -838,7 +838,7 @@ for machine in machines:
 				"Ticks" : 20
 			})
 
-		if machine["Name"] == "OilCrackingTower":
+		if machine["Name"] == "FractionatingColumn":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([

@@ -1174,11 +1174,11 @@ append_levels({
 })
 append_levels({
 	"Class": "StaticResearch",
-	"Name": "OilCrackingTower",
-	"LabelParts": [["OilCrackingTower", "machines"]],
+	"Name": "FractionatingColumn",
+	"LabelParts": [["FractionatingColumn", "machines"]],
 	"RequiredResearch": ["FuelChemistry"],
 	"Levels": [4,7],
-	"Unlocks": [["Hand" + r_dict, "%Material%OilCrackingTower"] ],
+	"Unlocks": [["Hand" + r_dict, "%Material%FractionatingColumn"] ],
 	
 })
 append_levels({
