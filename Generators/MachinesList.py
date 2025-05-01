@@ -684,7 +684,7 @@ machines = [
 		"Label": "Furnace",
 		"StartTier": 0,
 		"EndTier": 7,
-		"BlockLogic":"Furnace",
+		"BlockLogic":"AutoCrafter",
         "Selector": "019/FurnaceSelector.FurnaceSelector_C",
 		"Description": ["HeatOutput", "PowerOutput"],
         "PowerOutput": 50,
