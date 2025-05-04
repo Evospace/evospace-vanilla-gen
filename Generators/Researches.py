@@ -412,7 +412,7 @@ append_levels({
 	"Class": "StaticResearch",
 	"Name": "AutomaticFarm",
 	"LabelParts": [["AutomaticFarm", "machines"]],
-	"RequiredResearch": ["Automatization"],
+	"RequiredResearchArr": [["Automatization"],["Automatization1"],["Automatization2"],["Automatization3"],["Automatization4"],["Automatization5"],["Automatization6"],],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%AutomaticFarm"] ],
 	"CostMul":0.5,
