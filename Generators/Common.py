@@ -121,22 +121,24 @@ tiers_name_helper = [
 	"12"
 ]
 
+tbcm = 0.8
+
 tiers_base_cost = [
-	20, # stone
-	200, # copper
-	2000, # steel
-	20000, # alum
-	200000, # ss
-	2000000, # tita
-	20000000, # hm
-	80000000, # neu
-	80000000*2,
-	80000000*4,
-	80000000*6,
-	80000000*8,
-	80000000*10,
-	80000000*12
-]
+ 	20, # stone
+ 	200 * tbcm**1, # copper
+ 	2000 * tbcm**2, # steel
+ 	20000 * tbcm**3, # alum
+ 	200000 * tbcm**4, # ss
+ 	2000000 * tbcm**5, # tita
+ 	20000000 * tbcm**6, # hm
+ 	80000000 * tbcm**7, # neu
+ 	80000000*2 * tbcm**7,
+ 	80000000*4 * tbcm**7,
+ 	80000000*6 * tbcm**7,
+ 	80000000*8 * tbcm**7,
+ 	80000000*10 * tbcm**7,
+ 	80000000*12 * tbcm**7
+ ]
 
 tiers_energy_level = [
 	10*20*1,
@@ -248,6 +250,7 @@ static_cover = "StaticCover"
 
 slot_logic = "ItemLogic"
 
+research_recipe = "StaticResearchRecipe"
 building_cube_logic = "BuildingSurfaceBlockItemLogic"
 building_single_logic = "BuildingSingleBlockItemLogic"
 building_drill_logic = "BuildingDrillBlockItemLogic"

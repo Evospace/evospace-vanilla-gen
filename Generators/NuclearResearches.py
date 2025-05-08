@@ -3,7 +3,7 @@ from Materials import *
 
 def append_nuclear(xy, append_levels, researches):
 	append_levels({
-		"Class": "StaticResearch",
+		"Class": research_recipe,
 		"Name": "ControlCell",
 		"LabelParts": [["ControlCell", "parts"]],
 		"RequiredResearch": ["FissionReactor"],
@@ -13,7 +13,7 @@ def append_nuclear(xy, append_levels, researches):
 		"Levels": [5,5],
 	})
 	append_levels({
-		"Class": "StaticResearch",
+		"Class": research_recipe,
 		"Name": "ReflectorCell",
 		"LabelParts": [["ReflectorCell", "parts"]],
 		"RequiredResearch": ["ControlCell"],
@@ -23,7 +23,7 @@ def append_nuclear(xy, append_levels, researches):
 		"Levels": [5,5],
 	})
 	append_levels({
-		"Class": "StaticResearch",
+		"Class": research_recipe,
 		"Name": "ReactionThrottling",
 		"LabelParts": [["ReactionThrottling", "researches"]],
 		"RequiredResearch": ["ControlCell"],
@@ -33,7 +33,7 @@ def append_nuclear(xy, append_levels, researches):
 		"Levels": [5,5],
 	})
 	append_levels({
-		"Class": "StaticResearch",
+		"Class": research_recipe,
 		"Name": "AdvancedReflection",
 		"LabelParts": [["AdvancedReflection", "researches"]],
 		"RequiredResearch": ["ReflectorCell"],
@@ -41,7 +41,7 @@ def append_nuclear(xy, append_levels, researches):
 		"Levels": [5,5],
 	})
 	append_levels({
-		"Class": "StaticResearch",
+		"Class": research_recipe,
 		"Name": "AdvancedReflection2",
 		"LabelParts": [["AdvancedReflection", "researches"], ["II", "common"]],
 		"RequiredResearch": ["AdvancedReflection"],
@@ -49,7 +49,7 @@ def append_nuclear(xy, append_levels, researches):
 		"Levels": [5,5],
 	})
 	append_levels({
-		"Class": "StaticResearch",
+		"Class": research_recipe,
 		"Name": "ThoriumReaction",
 		"LabelParts": [["ThoriumReaction", "researches"]],
 		"RequiredResearch": ["AdvancedReflection"],
@@ -57,7 +57,7 @@ def append_nuclear(xy, append_levels, researches):
 		"Levels": [5,5],
 	})
 	append_levels({
-		"Class": "StaticResearch",
+		"Class": research_recipe,
 		"Name": "PlutoniumReaction",
 		"LabelParts": [["PlutoniumReaction", "researches"]],
 		"RequiredResearch": ["ThoriumReaction"],
@@ -67,7 +67,7 @@ def append_nuclear(xy, append_levels, researches):
 		"Levels": [5,5],
 	})
 	append_levels({
-		"Class": "StaticResearch",
+		"Class": research_recipe,
 		"Name": "PlutoniumReaction2",
 		"LabelParts": [["PlutoniumReaction", "researches"], ["II", "common"]],
 		"RequiredResearch": ["PlutoniumReaction"],
