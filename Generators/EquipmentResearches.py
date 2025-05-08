@@ -3,7 +3,7 @@ from Materials import *
 
 def append_equipment(xy, append_levels, researches):
 	append_levels({
-		"Class": "StaticResearch",
+		"Class": research_recipe,
 		"Name": "Steampack",
 		"LabelParts": [["Steampack", "misc"]],
 		"RequiredResearch": ["Circuit"],
@@ -11,7 +11,7 @@ def append_equipment(xy, append_levels, researches):
 		"Levels": [1,1],
 	})
 	append_levels({
-		"Class": "StaticResearch",
+		"Class": research_recipe,
 		"Name": "HighPressureSteampack",
 		"LabelParts": [["HighPressureSteampack", "misc"]],
 		"RequiredResearch": ["Steampack"],
@@ -19,7 +19,7 @@ def append_equipment(xy, append_levels, researches):
 		"Levels": [2,2],
 	})
 	append_levels({
-		"Class": "StaticResearch",
+		"Class": research_recipe,
 		"Name": "HighCapacitySteampack",
 		"LabelParts": [["HighCapacitySteampack", "misc"]],
 		"RequiredResearch": ["Steampack"],
@@ -29,7 +29,7 @@ def append_equipment(xy, append_levels, researches):
 		"Levels": [2,2],
 	})
 	append_levels({
-		"Class": "StaticResearch",
+		"Class": research_recipe,
 		"Name": "AdvancedSteampack",
 		"LabelParts": [["AdvancedSteampack", "misc"]],
 		"RequiredResearch": ["HighCapacitySteampack", "HighPressureSteampack"],
@@ -39,7 +39,7 @@ def append_equipment(xy, append_levels, researches):
 		"Levels": [3,3],
 	})
 	append_levels({
-		"Class": "StaticResearch",
+		"Class": research_recipe,
 		"Name": "Flashlight",
 		"LabelParts": [["Flashlight", "misc"]],
 		"RequiredResearch": ["Multitool"],
@@ -49,7 +49,7 @@ def append_equipment(xy, append_levels, researches):
 		"Levels": [1,1],
 	})
 	append_levels({
-		"Class": "StaticResearch",
+		"Class": research_recipe,
 		"Name": "Jetpack",
 		"LabelParts": [["Jetpack", "misc"]],
 		"RequiredResearch": ["AdvancedCircuit", "Steampack", "ElectricEngine1"],
@@ -59,7 +59,7 @@ def append_equipment(xy, append_levels, researches):
 		"Levels": [2,2],
 	})
 	append_levels({
-		"Class": "StaticResearch",
+		"Class": research_recipe,
 		"Name": "AdvancedJetpack",
 		"LabelParts": [["AdvancedJetpack", "misc"]],
 		"RequiredResearch": ["Jetpack", "Processor", "ElectricEngine2"],
@@ -69,7 +69,7 @@ def append_equipment(xy, append_levels, researches):
 		"Levels": [3,3],
 	})
 	append_levels({
-		"Class": "StaticResearch",
+		"Class": research_recipe,
 		"Name": "AntigravityUnit",
 		"LabelParts": [["AntigravityUnit", "misc"]],
 		"RequiredResearch": ["AdvancedJetpack", "QuantumProcessor", "Catalyst"],
