@@ -1434,31 +1434,6 @@ machines = [
 		"Description": ["HeatInput", "PowerInput"],
         "PowerInput": 1000,
 	},{
-		"Name": "InductionCoil",
-		"Label": "Induction Coil",
-		"StartTier": 4,
-		"EndTier": 7,
-		"Positions": [
-			[0,0,0],[-2,0,0],
-			[0,1,0],[-1,1,0],[-2,1,0],
-			[-1,-1,0],[0,-1,0],[-2,-1,0],
-		],
-		"BlockLogic":"SelectCrafter",
-		"BlockCreation":"""
-        local crafter = AbstractCrafter.cast(self)
-        
-        local inv = ResourceInventory.new(crafter, "InputInv")
-        inv.item = StaticItem.find("Heat")
-        inv.input = 20
-        crafter.energy_input_inventory = inv
-        
-        local acc = ResourceAccessor.new(crafter, "Input")
-        acc.side = Vec3i.front
-        acc.pos = Vec3i.zero
-        acc.inventory = inv
-		""",
-		"Description": ["ElectricInput", "HeatOutput"],
-	},{
 		"Name": "CreativeController",
 		"Label": "Creative Controller",
 		"StartTier": 7,
