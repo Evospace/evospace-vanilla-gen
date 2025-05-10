@@ -205,6 +205,8 @@ materials = [
 		"Label": "Titanium Sponge",
 		"Smelting": ["InductionFurnace"],
 		"Items": ["Exact"],		
+		"Mesh":"/Game/Models/SpongeCrate",
+        "Materials":["/Game/Materials/GreenPlastic", "/Game/Materials/TitaniumOreGravel"],
 	},{
 		"Name": "TitaniumOxide",
 		"Label": "Titanium Oxide",
@@ -584,6 +586,8 @@ materials = [
 		"Name": "RareEarthSludge",
 		"Label": "Rare Earth Sludge",
 		"Items": ["Exact"],
+		"Mesh":"/Game/Models/SpongeCrate",
+        "Materials":["/Game/Materials/GreenPlastic", "/Game/Materials/RareEarthElement"],
 	},{
 		"Name": "Yttrium",
 		"Label": "Yttrium",
@@ -623,6 +627,8 @@ materials = [
 		"Label": "Tantalum Sludge",
 		"Items": ["Exact"],
 		"Tier": 6,
+		"Mesh":"/Game/Models/SpongeCrate",
+        "Materials":["/Game/Materials/GreenPlastic", "/Game/Materials/Tantalum"],
 	},{
 		"Name": "TantalumSolution",
 		"Label": "Tantalum Solution",
@@ -636,7 +642,8 @@ materials = [
 		"Burnable": {
 			"BurnTime": 400
 		},
-		"Color":[0.9,0.9,0.9]
+		"Color":[0.9,0.9,0.9],
+		"Mesh":"/Game/Models/LogCrate",
 	},{
 		"Name": "SiliconOxide",
 		"Label": "Silicon Oxide",
