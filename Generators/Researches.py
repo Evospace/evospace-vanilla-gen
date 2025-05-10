@@ -1444,17 +1444,9 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
-	"Name": "InductionCoil",
-	"LabelParts": [["InductionCoil", "machines"]],
-	"RequiredResearch": ["IndustrialSmelting"],
-	"Levels": [4,7],
-	"Unlocks": [["Hand" + r_dict, "%Material%InductionCoil"] ],
-})
-append_levels({
-	"Class": research_recipe,
 	"Name": "IndustrialElectricEngine",
 	"LabelParts": [["IndustrialElectricEngine", "machines"]],
-	"RequiredResearch": ["InductionCoil"],
+	"RequiredResearch": ["IndustrialSmelting"],
 	"Levels": [4,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%IndustrialElectricEngine"]],
 })
