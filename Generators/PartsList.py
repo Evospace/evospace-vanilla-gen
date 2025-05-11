@@ -62,14 +62,14 @@ catalyzers = [
 ]
 
 a_wires = [
-	"CopperWire", # 0 stone
-	"CopperWire", # 1 copper
-	"CopperWire", # 2 steel
-	"CopperWire", # 3 alum
-	"SilverWire",   # 4 ss
-	"GoldWire", # 5 tita
-	"PlatinumWire",  # 6 hard
-	"YttriumWire",  # 7 neu
+	["CopperWire", 1], # 0 stone
+	["CopperWire", 1.5], # 1 copper
+	["CopperWire", 2], # 2 steel
+	["CopperWire", 2.5], # 3 alum
+	["CopperWire", 3],   # 4 ss
+	["GoldWire", 1], # 5 tita
+	["PlatinumWire", 1],  # 6 hard
+	["YttriumWire", 1],  # 7 neu
 ]
 
 cables = [

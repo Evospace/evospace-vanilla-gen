@@ -1464,15 +1464,6 @@ machines = [
 		"EndTier": 2,
 		"Description": ["DataInput"],
 	},{
-		"Name": "LogicWire",
-		"Label": "Logic Wire",
-		"BlockLogic":"DataConductorBlockLogic",
-		"StartTier": 2,
-		"EndTier": 2,
-		"Description": ["DataConductor"],
-        "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
-        "Category": "Network",
-	},{
 		"Name": "Button",
 		"Label": "Button",
 		"StartTier": 2,

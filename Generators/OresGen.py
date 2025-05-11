@@ -25,7 +25,7 @@ ore_types = [
 		"Name": "Malachite",
 		"Processing":{
 			"OreWasher": "IronDust",
-			"ChemicalBath": ["NitricAcid", "SilverDust"],
+			"ChemicalBath": ["NitricAcid", "CopperDust"],
 			"Separator": ["MalachiteDust", "IronDust"],
 			"Macerator": "MalachiteOreDust",
 			"Furnace": "CopperPlate",

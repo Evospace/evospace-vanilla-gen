@@ -692,7 +692,7 @@ recipes_assembler.append({
 	"Name":"Catalyst2",
 	"Input": items([
 		["Cell"],
-		["SilverWire", 10],
+		["CopperWire", 40],
 		["Coal", 4]
 	]),
 	"Output": one_item("Catalyst"),
