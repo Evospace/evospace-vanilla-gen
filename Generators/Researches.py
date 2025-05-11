@@ -8,8 +8,8 @@ from PartsResearchHelper import *
 researches = []
 
 tier_researches = [
-	"Error",
-	"Error",
+	"MineralsScan",
+	"Metalwork",
 	"SteelProduction",
 	"AluminiumProduction",
 	"StainlessSteelProduction",
@@ -198,7 +198,7 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "PowerGeneration",
 	"LabelParts": [["PowerGeneration", "researches"]],
-	"RequiredResearch": ["Electricity"],
+	"RequiredResearch": ["Electricity", "Metalwork"],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%CompactGenerator"],["Hand" + r_dict, "%Material%StirlingEngine"]],
 	"CompleteByDefault": True,

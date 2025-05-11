@@ -24,9 +24,6 @@ for machine in machines:
 		def tiered(name):
 			return tier_material[tier] + name
 		
-		def wire():
-			return a_wires[tier]
-		
 		def circuit():
 			return circuits[tier]
 		
@@ -58,8 +55,8 @@ for machine in machines:
 		def wire():
 			return a_wires[tier]
 			
-		def wires_count(count):
-			return {"Name": a_wires[tier], "Count": count}
+		def wire_count(count):
+			return [a_wires[tier][0], count * a_wires[tier][1]]
 
 		def parts_count(count):
 			return {"Name": tier_material[tier] + "Parts", "Count": count}
@@ -211,7 +208,7 @@ for machine in machines:
 			"Class": r_dict,
 			"Name": machine["Name"] + r_dict,
 			"UsedIn": [{
-				"Item": tier_material[tier] + machine["Name"],
+				"Item": block_name,
 				"Tier": tier
 			}]
 		})
@@ -330,7 +327,7 @@ for machine in machines:
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([
-					[wire(), 32] if tier != 4 else ["CopperWire", 64],
+					wire_count(32),
 					[plate(), 12],
 					[isolator(), 12]
 				]),
@@ -649,7 +646,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([
 					[plate(), 8 * count_mul],
-					[wire(), (12 + level * 6) * count_mul],
+					wire_count(12 * count_mul),
 					[gearbox(), 1 * count_mul],
 					[circuit(), 1 * count_mul]
 				]),
@@ -662,7 +659,7 @@ for machine in machines:
 				"Name": machine["Name"],
 				"Input": items([
 					[plate(), 2],
-					[wire(), (10 + level * 5)]
+					wire_count(10)
 				]),
 				"Output": one_item(machine["Name"]),
 				"Ticks" : 20
@@ -673,7 +670,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([
 					[plate(), 1],
-					[wire(), 2 + parts_ramp(level)],
+					wire_count(2),
 					[part(), 2 + parts_ramp(level)]
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -779,7 +776,10 @@ for machine in machines:
 				"Input":{
 					"Items":[
 						plates_count(3),
-						wires_count(6 + level*3),
+						{
+							"Name": wire(),
+							"Count": 6 + level*3
+						},
 						isolators_count(6)
 					]
 				},
@@ -984,7 +984,10 @@ for machine in machines:
 							"Name": tier_material[tier] + "Gearbox",
 							"Count": 50
 						},
-						wires_count(100),
+						{
+							"Name": wire(),
+							"Count": 100
+						},
 						{
 							"Name": circuits[tier],
 							"Count": 15 + 5 * level
@@ -1219,13 +1222,11 @@ for machine in machines:
 		if machine["Name"] == "ArcSmelter":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						isolators_count(6),
-						parts_count(4),
-						wires_count(5 + level * 5),
-					]
-				},
+				"Input": items([
+					[isolator(), 6],
+					[part(), 4],
+					wire_count(5)
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -1291,7 +1292,7 @@ for machine in machines:
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([
-					[wire(), 30],
+					wire_count(30),
 					[circuit(), 1],
 					[plate(), 12],
 					[tier_material[tier] + "Gearbox", 3]

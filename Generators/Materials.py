@@ -99,12 +99,6 @@ materials = [
 		"Smelting": ["Smelter", "ArcFurnace"],
 		"Tier": 2
 	},{
-		"Name": "Silver",
-		"Label": "Silver",
-		"Items": ["Dust", "Plate", "Block", "Wire"],
-		"Smelting": ["Smelter", "ArcFurnace"],
-		"Tier": 3,
-	},{
 		"Name": "Platinum",
 		"Label": "Platinum",
 		"Items": ["Plate", "Dust", "Block", "Wire"],
@@ -837,7 +831,7 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Mesh":"/Game/Models/WireCrate",
-		"Materials":["/Game/CopperWiresOnCrate"],
+		"Materials":["/Game/Materials/CopperWiresOnCrate"],
 	},{
 		"Name": "Circuit",
 		"Label": "Circuit",
@@ -891,7 +885,8 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Category": "Parts",
-		"Mesh": "/Game/Models/QuantumCoreCrate"
+		"Mesh": "/Game/Models/QuantumCoreCrate",
+		"Materials": ["/Game/Materials/BlackSteel", "/Game/Materials/ArrowWhite"]
 	},{
 		"Name": "BrainMatrix",
 		"Label": "Brain Matrix",
