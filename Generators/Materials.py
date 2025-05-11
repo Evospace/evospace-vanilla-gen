@@ -607,8 +607,8 @@ materials = [
 		"Smelting": ["ArcFurnace"],
 		"Tier": 4,
 	},{
-		"Name": "CalciumPhosphate",
-		"Label": "Calcium Phosphate",
+		"Name": "CalciumFluoride",
+		"Label": "Calcium Fluoride",
 		"Items": ["Dust"],
 		"Tier": 3,
 	},{

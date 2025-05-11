@@ -2149,13 +2149,27 @@ recipes_electrolyzer.append({
 				"Count": 1
 			},
 			{
-				"Name": "CalciumPhosphateDust",
+				"Name": "CalciumFluorideDust",
 				"Count": 2
 			}
 		]
 	},
 	"Ticks" : 200,
 	"Tier":2,
+})
+
+recipes_industrial_chemreactor.append({
+	"Name":"HydrofluoricAcid",
+	"Input": items([
+		["CalciumFluorideDust", 1],
+		["SulfuricAcid", 200]
+	]),
+	"Output": items([
+		["HydrofluoricAcid", 400]
+	]),
+	"Ticks" : 100,
+	"Tier":5,
+	"Colors": [[0.8,0.8,0.1,0.3],[0.8,0.8,0.1,0.0]],
 })
 
 recipes_industrial_chemreactor.append({
