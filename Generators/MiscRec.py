@@ -451,8 +451,8 @@ recipes_assembler.append({
 	"Name":"Processor2",
 	"Input": items([
 		["CircuitBoard"],
-		["AdvancedCircuit", 1],
-		["SiliconWafer", 2],
+		["AdvancedCircuit", 2],
+		["SiliconWafer", 1],
 		["Capacitor", 2],
 	]),
 	"Output": one_item("Processor"),
@@ -468,7 +468,7 @@ recipes_assembler.append({
 		["Resistor", 2],
 		["Capacitor", 3],
 	]),
-	"Output": one_item("Processor"),
+	"Output": one_item("Processor", 2),
 	"Ticks" : 200,
 	"Tier": 5,
 })

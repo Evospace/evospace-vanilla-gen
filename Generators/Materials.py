@@ -124,7 +124,7 @@ materials = [
 	},{
 		"Name": "PlatinumRhodiumSolution",
 		"Label": "Platinum-Rhodium Solution",
-		"Items": ["Exact"],
+		"Items": ["Fluid"],
 	},{
 		"Name": "AmmoniumChloride",
 		"Label": "Ammonium Chloride",
