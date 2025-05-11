@@ -1898,6 +1898,17 @@ recipes_pump.append({
 })
 
 recipes_indu.append({
+	"Name":"RawHotMercury",
+	"Input": items([
+			["CinnabarDust", 10]
+		]),
+	"Output": items([
+			["HotMercury", 1000]
+		]),
+	"Ticks" : 200,
+})
+
+recipes_indu.append({
 	"Name":"SiliconMonocrystal",
 	"Input": items([
 			["Silicon", 16],
