@@ -1136,6 +1136,16 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "AdvancedTransformer",
+	"LabelParts": [["AdvancedTransformerLVMV", "machines"]],
+	"RequiredResearch": ["Transformer"],
+	"Levels": [4,4],
+	"Unlocks": [["Hand" + r_dict, "AdvancedTransformerLVMV"]],
+	"MainResearchArr": [True, False, False, False, False, False, False],
+	"CostMul": 1.5
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "BiElectricEngine",
 	"LabelParts": [["BiElectricEngine", "machines"]],
 	"RequiredResearch": ["ElectricEngine"],

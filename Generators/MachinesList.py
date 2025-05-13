@@ -146,7 +146,7 @@ machines = [
         "ExactName": True,
         "Category": "Network",
         "ReplaceTag": "Cable",
-        "Description": ["ElectricOutput", "ElectricInput" "PowerOutput"],
+        "Description": ["ElectricOutput", "ElectricInput", "PowerOutput"],
 		"PowerOutput": 400
 	},{
 		"Name": "TransformerMVLV",
@@ -159,6 +159,28 @@ machines = [
         "ReplaceTag": "Cable",
         "Description": ["ElectricOutput", "ElectricInput", "PowerOutput"],
 		"PowerOutput": 400
+	},{
+		"Name": "AdvancedTransformerLVMV",
+		"Label": "AdvancedTransformer (LV -> MV)",
+		"StartTier": 2,
+		"EndTier": 2,
+		"BlockLogic": "TransformerLVMV",
+        "ExactName": True,
+        "Category": "Network",
+        "ReplaceTag": "Cable",
+        "Description": ["ElectricOutput", "ElectricInput", "PowerOutput"],
+		"PowerOutput": 4000
+	},{
+		"Name": "AdvancedTransformerMVLV",
+		"Label": "Advanced Transformer (MV -> LV)",
+		"StartTier": 2,
+		"EndTier": 2,
+		"BlockLogic": "TransformerMVLV",
+        "ExactName": True,
+        "Category": "Network",
+        "ReplaceTag": "Cable",
+        "Description": ["ElectricOutput", "ElectricInput", "PowerOutput"],
+		"PowerOutput": 4000
 	},{
 		"Name": "CopperConnector",
 		"Label": "Copper Cable",
@@ -764,7 +786,7 @@ machines = [
 		a:Bind(self:GetOutputContainer())
 		""",
 		"Description": ["ElectricInput", "HeatOutput", "PowerOutput"],
-		"PowerOutput": 55,
+		"PowerOutput": 250,
 	},{
 		"Name": "BatteryBox",
 		"Label": "Battery Box",
@@ -1469,6 +1491,19 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 2,		
 		"Description": ["DataOutput"],
+	},{
+		"Name": "TeslaTower",
+		"Label": "TeslaTower",
+		"StartTier": 5,
+		"EndTier": 7,		
+        "BlockLogic":"SelectCrafter",
+        "Positions": [
+			[0,0,0],[1,0,0],[0,1,0],[1,1,0],
+            [0,0,1],[1,0,1],[0,1,1],[1,1,1],
+            [0,0,2],[1,0,2],[0,1,2],[1,1,2],
+            [0,0,3],[1,0,3],[0,1,3],[1,1,3],
+            [0,0,4],[1,0,4],[0,1,4],[1,1,4],
+		]
 	},{
 		"Name": "ToggleButton",
 		"Label": "Toggle Button",
