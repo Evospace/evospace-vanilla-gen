@@ -664,6 +664,17 @@ for machine in machines:
 				"Output": one_item(machine["Name"]),
 				"Ticks" : 20
 			})
+
+		if machine["Name"] == "AdvancedTransformerLVMV":
+			append_recipe({
+				"Name": machine["Name"],
+				"Input": items([
+					[plate(), 4],
+					wire_count(100)
+				]),
+				"Output": one_item(machine["Name"]),
+				"Ticks" : 20
+			})
 			
 		if machine["Name"] == "CompactGenerator":
 			append_recipe({
