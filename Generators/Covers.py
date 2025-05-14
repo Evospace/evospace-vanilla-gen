@@ -192,26 +192,22 @@ for mat, num in zip(paint_metals, range(1,7+1)):
     covers.append({
 		"Name": mat+"Furnace",
 		"Mesh": "/Game/019Content/FurnaceRound",
-        "Materials": ["/Game/019/FurnaceMaterial"],
-        "Tier": num
+        "Materials": ["/Game/019/FurnaceMaterial"]
 	})
     covers.append({
 		"Name": mat+"Conveyor",
 		"Mesh": "/Game/019/conveyor_end",
-        "Materials": ["/Game/Materials/RubberWithTierParam", tier_materials[num]],
-        "Tier": num
+        "Materials": ["/Game/Materials/RubberWithTierParam", tier_materials[num]]
 	})
     covers.append({
 		"Name": mat+"ConveyorBox",
 		"Mesh": "/Game/019/conveyor_box",
-        "Materials": [tier_materials[num]],
-        "Tier": num
+        "Materials": [tier_materials[num]]
 	})
     covers.append({
 		"Name": mat+"ElectricEngine",
 		"Mesh": "/Game/019/ElectricEngine",
-        "Materials": ["/Game/019/ElectricEngineMaterial"],
-        "Tier": num
+        "Materials": ["/Game/019/ElectricEngineMaterial"]
 	})
 	
 for cover in covers:
@@ -233,9 +229,6 @@ for cover in covers:
     }
     if "Materials" in cover:
          staticCover["Materials"] = cover["Materials"]
-
-    if "Tier" in cover:
-        staticCover["Tier"] = cover["Tier"]
 
     if "NoCollision" in cover:
         staticCover["NoCollision"] = cover["NoCollision"]
