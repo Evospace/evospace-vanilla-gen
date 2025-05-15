@@ -825,14 +825,6 @@ materials = [
 		"Label": "Signal",
 		"Items": ["Exact"],
 	},{
-		"Name": "CopperWire",
-		"Label": "Copper Wire",
-		"StackSize": 64,
-		"Items": ["Exact"],
-		"Category": "Parts",
-		"Mesh":"/Game/Models/WireCrate",
-		"Materials":["/Game/Materials/CopperWiresOnCrate"],
-	},{
 		"Name": "Circuit",
 		"Label": "Circuit",
 		"StackSize": 32,
