@@ -256,8 +256,6 @@ building_single_logic = "BuildingSingleBlockItemLogic"
 building_drill_logic = "BuildingDrillBlockItemLogic"
 building_plane_logic = "BuildingPlaneBlockItemLogic"
 building_decoration_logic = "BuildingDecorationItemLogic"
-building_prop_logic = "BuildingPropItemLogic"
-building_big_prop_logic = "BuildingPropItemLogic"
 
 cover_item_logic = "CoverItemLogic"
 

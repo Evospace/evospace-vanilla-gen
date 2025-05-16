@@ -162,6 +162,7 @@ ore_types = [
 			"Furnace": "Coal",
 			"Macerator": "CoalOreDust",
 		},
+		"Color": [.5,.5,.5],
 		"Drops": "CoalOre",
 		"Tier": 0,
 		"Burnable": {
@@ -190,7 +191,7 @@ ore_types = [
 			"Macerator": "MonaziteOreDust",
 			"Furnace": "ThoriumDust"
 		},
-		"Color": [0.8, 0.7, 0.3],
+		"Color": [0.15, 0.10, 0.03],
 		"Drops": "MonaziteOre",
 		"Crystal": True,
 		"Formula": "ThPO4+NdPO4+YPO4",
@@ -198,7 +199,7 @@ ore_types = [
 	},{
 		"Name": "Clay",
 		"NotOre": True,
-		"Color": [0.8, 0.7, 0.3],
+		"Color": [0.3, 0.1, 0.05],
 		"Drops": "Clay",
 		"Crystal": True,
 		"Formula": "",
