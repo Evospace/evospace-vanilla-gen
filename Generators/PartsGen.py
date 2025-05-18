@@ -284,7 +284,8 @@ for material in materials:
 			"Image": "T_" + material["Name"] + "Plate",
 			"StackSize": 128,
 			"Mesh": "/Game/Models/Ingot",
-			"Materials" : [
+			"Materials": [
+				"",
 				"/Game/Materials/" + material["Name"]
 			],			
 			"LabelParts": [[material["Name"] + "Plate", "parts"]],
@@ -527,7 +528,7 @@ for material in materials:
 			"LabelParts": [[material["Name"] + "Dust", "parts"]],
 			"Mesh": "/Game/Models/DustCrate",
 			"Materials": [
-				"/Game/Materials/Black",
+				"",
 				"/Game/Materials/" + material["Name"] + "Dust"
 			],
 			"UnitMul": 1,

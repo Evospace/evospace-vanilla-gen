@@ -309,7 +309,7 @@ for ore_type in ore_types:
 			"LabelParts": [[ore_type["Name"]+"OreDust", "ores"]],
 			"DescriptionParts": description,
 			"Materials" : [
-				"/Game/Materials/Black",
+				"",
 				"/Game/Materials/" + ore_type["Name"] + "Dust"
 			],
 		}
@@ -333,7 +333,7 @@ for ore_type in ore_types:
 			"LabelParts": [[ore_type["Name"]+"Dust", "ores"]],
 			"DescriptionParts": description,
 			"Materials" : [
-				"/Game/Materials/Black",
+				"",
 				"/Game/Materials/" + ore_type["Name"] + "Dust"
 			],
 		}
@@ -361,7 +361,7 @@ for ore_type in ore_types:
 				"DescriptionParts": description,
 				"Mesh": "/Game/Models/CrystalCrate",
 				"Materials" : [
-					"/Game/Materials/Black",
+					"",
 					"/Game/Materials/" + ore_type["Name"]
 				],
 			}
