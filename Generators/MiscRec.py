@@ -483,6 +483,16 @@ recipes_hand.append({
 	"Ticks" : 100,
 	"Tier": 4,
 })
+recipes_assembler.append({
+	"Name":"QuantumCore",
+	"Input":items([
+		["YttriumDust", 2],
+		["CompositePlate", 1]
+	]),
+	"Output": one_item("QuantumCore", 2),
+	"Ticks" : 100,
+	"Tier": 5,
+})
 
 recipes_hand.append({
 	"Name":"QuantumCircuit",

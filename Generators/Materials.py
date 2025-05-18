@@ -645,7 +645,7 @@ materials = [
 		"Tier": 1,
 		"Mesh": "/Game/Models/CrystalCrate",
 		"Materials" : [
-			"/Game/Materials/Black",
+			"",
 			"/Game/Materials/SiliconOxide"
 		],
 	},{
@@ -655,7 +655,7 @@ materials = [
 		"Tier": 3,
 		"Mesh": "/Game/Models/CrystalCrate",
 		"Materials" : [
-			"/Game/Materials/Black",
+			"",
 			"/Game/Materials/Silicon"
 		],
 	},{
