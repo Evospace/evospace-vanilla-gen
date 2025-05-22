@@ -91,8 +91,7 @@ families.extend([
 		"Class":"BiomeFamily",
 		"Childs":
 		[
-			"DesertBiome",
-			"MensaeBiome",
+			"DesertBiome"
 		],
 		"ChildFrequency": biome_family_size,
 	},{
@@ -375,19 +374,9 @@ generators.extend([
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
 	},
 	{
-		"Class": "SimpleLayeringGenerator",
-		"Name": "MensaeMountainDesertLayeringSand",
-		"Blocks": ["DesertSandSurface" + static_surface, "SandstoneSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
-		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
-	},
-	{
 		"Name": "SandlandPropsBase",
 		"Class": "PropsGenerator",
 		"PropList": "DesertProps"
-	},
-	{
-		"Class": "MensaeMountainDesertLayering",
-		"Name": "MensaeMountainDesertLayeringBase"
 	},
 	
 	# snow 
@@ -593,10 +582,6 @@ biomes.extend([
 		"Name":"DesertBiome",
 		"Layering":"SandDesertLayeringSand",
 		"Props":"SandlandPropsBase"
-	},{
-		"Class":"Biome",
-		"Name":"MensaeBiome",
-		"Layering":"MensaeMountainDesertLayeringSand"
 	},
 	
 	# river
