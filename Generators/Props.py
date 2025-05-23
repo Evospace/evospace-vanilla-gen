@@ -811,6 +811,8 @@ for prop in props:
 		objects_array.append(temp_prop)
 
 
+DensityMultiplier = 0.6
+
 for proplist in proplists:
 	proplist_datas = []
 	for subitem in proplist["Array"]:
@@ -821,7 +823,7 @@ for proplist in proplists:
 					props_array.append(prop_name + variation_helper[variation])
 		proplist_datas.append({
 			"Props": props_array,
-			"Chance": subitem["Chance"]
+			"Chance": subitem["Chance"] * DensityMultiplier
 		})
 	objects_array.append({ "Class": "StaticPropList",
 		"Name": proplist["Name"],
