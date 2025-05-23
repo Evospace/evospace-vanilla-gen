@@ -154,8 +154,7 @@ materials = [
 		"Name": "Transistor",
 		"Label": "Transistor",
 		"Items": ["Exact"],
-		"Mesh":"/Game/Models/BoardCrate",
-		"Materials":["/Game/Materials/Plastic"],
+		"Mesh":"/Game/Models/TransistorCrate",
 	},{
 		"Name": "Plastic",
 		"Label": "Plastic",
@@ -672,17 +671,21 @@ materials = [
 		"Name": "SiliconWafer",
 		"Label": "Silicon Wafer",
 		"Items": ["Exact"],
-		"Tier": 4
+		"Tier": 4,
+		"Mesh": "/Game/Models/WaferCrate",
 	},{
 		"Name": "DopedSiliconWafer",
 		"Label": "Doped Silicon Wafer",
 		"Items": ["Exact"],
-		"Tier": 5
+		"Tier": 5,
+		"Mesh": "/Game/Models/WaferCrate",
+		"Materials": ["", "/Game/Materials/GrayMirror"]
 	},{
 		"Name": "Capacitor",
 		"Label": "Capacitor",
 		"Items": ["Exact"],
-		"Tier": 3
+		"Tier": 3,
+		"Mesh":"/Game/Models/CapacitorCrate",
 	},{
 		"Name": "Rapeseed",
 		"Label": "Rapeseed",
