@@ -532,6 +532,12 @@ machines = [
 		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
 		"PowerOutput": 55*50,
 	},{
+		"Name": "Loader",
+		"Label": "Loader",
+		"StartTier": 1,
+		"EndTier": 7,
+		"Selector": "Blocks/ArrowBP.ArrowBP_C",
+	},{
 		"Name": "RobotArm",
 		"Label": "Robot Arm",
 		"StartTier": 1,
