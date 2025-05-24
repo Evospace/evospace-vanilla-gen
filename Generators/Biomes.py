@@ -99,7 +99,7 @@ families.extend([
 		"Class":"BiomeFamily",
 		"Childs":
 		[
-			"DenseForestBiome",
+			"ForestBiome",
 			"PlainsBiome",
 			"BushlandBiome",
 		],
@@ -109,8 +109,7 @@ families.extend([
 		"Class":"BiomeFamily",
 		"Childs":
 		[
-			"PineForestBiome",
-			"DensePineForestBiome",
+			"PineForestBiome"
 		],
 		"ChildFrequency": biome_family_size,
 	},{
@@ -282,17 +281,6 @@ generators.extend([
 		"PropList": "PineForestProps"
 	},
 	
-	# forest
-	{
-		"Name":"DenseForestPropsBase",
-		"Class":"PropsGenerator",
-		"PropList": "DenseForestProps"
-	},{
-		"Name":"DensePineForestPropsBase",
-		"Class":"PropsGenerator",
-		"PropList": "DensePineForestProps"
-	},
-	
 	# sea
 	{
 		"Class": "SimpleLayeringGenerator",
@@ -422,15 +410,15 @@ biomes.extend([
 	# forest
 	{
 		"Class":"Biome",
-		"Name":"DensePineForestBiome",
+		"Name":"PineForestBiome",
 		"Layering":"JustGrassLayeringPine",
-		"Props":"DensePineForestPropsBase",
+		"Props":"PineForestPropsBase",
 		"Color":[184/255.0, 255/255.0, 133/255.0]
 	},{
 		"Class":"Biome",
-		"Name":"DenseForestBiome",
+		"Name":"ForestBiome",
 		"Layering":"GrassLayering",
-		"Props":"DenseForestPropsBase",
+		"Props":"ForestPropsBase",
 		"Color":[184/255.0, 255/255.0, 133/255.0]
 	},
 	
