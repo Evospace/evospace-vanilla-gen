@@ -111,18 +111,6 @@ props = [
 		"BreakChance": 15
 	},
 	{
-		"Name": "Noleafes",
-		"ScaleMin": 1,
-		"ScaleMax": 3,
-		"Variations": 1,
-		"ProjectToTerrainPower": 0,
-		"IsBig": True,
-		"Drops": "Log",
-		"Count": 1,
-		"Count": 3,
-		"BreakChance": 15
-	},
-	{
 		"Name": "Shrub",
 		"ScaleMin": 1.5,
 		"ScaleMax": 2.5,
@@ -170,7 +158,7 @@ props = [
 		"BreakChance": 15
 	},
 	{
-		"Name": "Birch",
+		"Name": "Conifer",
 		"ScaleMin": .6,
 		"ScaleMax": 1.4,
 		"Variations": 2,
@@ -396,7 +384,7 @@ proplists = [
 				"Props": ["DryGrass"],
 				"Chance": 0.5
 			},{
-				"Props": ["Broadleaf", "Broadleaf", "Birch", "BigBush", "Noleafes"],
+				"Props": ["Broadleaf", "Broadleaf", "Conifer", "BigBush"],
 				"Chance": 0.0001
 			}
 		]
@@ -413,7 +401,7 @@ proplists = [
 				"Props": ["LongGrass"],
 				"Chance": 0.35
 			},{
-				"Props": ["Broadleaf", "Broadleaf", "Birch", "BigBush", "Noleafes"],
+				"Props": ["Broadleaf", "Broadleaf", "Conifer", "BigBush"],
 				"Chance": 0.0004
 			}
 		]
@@ -425,7 +413,7 @@ proplists = [
 				"Props": ["Diptero"],
 				"Chance": 0.001
 			},{
-				"Props": ["Broadleaf", "Broadleaf", "Birch", "Shrub", "BigBush"],
+				"Props": ["Broadleaf", "Broadleaf", "Conifer", "Shrub", "BigBush"],
 				"Chance": 0.01
 			},{
 				"Props": ["SmallRock"],
@@ -526,39 +514,10 @@ proplists = [
 			}
 		]
 	},{ 
-		"Name": "DenseForestProps",
-		"Array": [
-			{
-				"Props": ["Noleafes"],
-				"Chance": 0.001
-			},{
-				"Props": ["Broadleaf", "Broadleaf", "Birch", "Shrub", "BigBush"],
-				"Chance": 0.02
-			},{
-				"Props": ["SmallRock"],
-				"Chance": 0.01
-			},{
-				"Props": ["Fern"],
-				"Chance": 0.03
-			},{
-				"Props": ["Dandaleon"],
-				"Chance": 0.3
-			},{
-				"Props": ["LongGrass"],
-				"Chance": 0.75
-			},{
-				"Props": ["Shroom"],
-				"Chance": 0.01
-			}
-		]
-	},{ 
 		"Name": "ForestProps",
 		"Array": [
 			{
-				"Props": ["Noleafes"],
-				"Chance": 0.001
-			},{
-				"Props": ["Broadleaf", "Broadleaf", "Birch", "Shrub", "BigBush"],
+				"Props": ["Broadleaf", "Broadleaf", "Conifer", "Shrub", "BigBush"],
 				"Chance": 0.01
 			},{
 				"Props": ["SmallRock"],
@@ -577,26 +536,6 @@ proplists = [
 				"Chance": 0.01
 			}
 
-		]
-	},{ 
-		"Name": "DensePineForestProps",
-		"Array": [
-			{
-				"Props": ["Rock"],
-				"Chance": 0.001
-			},{
-				"Props": ["SmallRock"],
-				"Chance": 0.01
-			},{
-				"Props": ["Pine"],
-				"Chance": 0.02
-			},{
-				"Props": ["DryGrass"],
-				"Chance": 0.03
-			},{
-				"Props": ["Shroom"],
-				"Chance": 0.01
-			}
 		]
 	},{ 
 		"Name": "PineForestProps",
@@ -700,7 +639,7 @@ proplists = [
 				"Props": ["Fern"],
 				"Chance": 0.05
 			},{
-				"Props": ["Birch", "BigBush"],
+				"Props": ["Broadleaf", "BigBush"],
 				"Chance": 0.01
 			},{
 				"Props": ["Shroom"],
@@ -714,7 +653,7 @@ proplists = [
 				"Props": ["LongGrass"],
 				"Chance": 0.07
 			},{
-				"Props": ["Birch", "BigBush"],
+				"Props": ["Broadleaf", "BigBush"],
 				"Chance": 0.01
 			},{
 				"Props": ["Shroom"],
