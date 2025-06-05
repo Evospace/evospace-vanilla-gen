@@ -87,6 +87,42 @@ materials = [
 		"UnitS": "W",
 		"UnitMul" : 1,
 	},{
+		"Name": "BasicCoil",
+		"Label": "Basic Coil",
+		"Items": ["Exact"],
+		"Tier": 2,
+	},{
+		"Name": "AdvancedCoil",
+		"Label": "Advanced Coil",
+		"Items": ["Exact"],
+		"Tier": 3,
+	},{
+		"Name": "PowerCoil",
+		"Label": "Power Coil",
+		"Items": ["Exact"],
+		"Tier": 5,
+	},{
+		"Name": "BasicFrame",
+		"Label": "Basic Frame",
+		"Items": ["Exact"],
+		"Tier": 2,
+		"Mesh": "/Game/Models/FrameCrate",
+		"Materials": ["", ""]
+	},{
+		"Name": "ReinforcedFrame",
+		"Label": "Reinforced Frame",
+		"Items": ["Exact"],
+		"Tier": 3,
+		"Mesh": "/Game/Models/FrameCrate",
+		"Materials": ["/Game/Materials/BlackSteel", "/Game/Materials/BlackSteel"]
+	},{
+		"Name": "ModularFrame",
+		"Label": "Modular Frame",
+		"Items": ["Exact"],
+		"Tier": 5,
+		"Mesh": "/Game/Models/FrameCrate",
+		"Materials": ["/Game/Materials/BlackSteel", "/Game/Materials/StainlessSteel"]
+	},{
 		"Name": "Copper",
 		"Label": "Copper",
 		"Items": tiered_parts_list + ["Wire"],
@@ -101,32 +137,22 @@ materials = [
 	},{
 		"Name": "Platinum",
 		"Label": "Platinum",
-		"Items": ["Plate", "Dust", "Block", "Wire"],
+		"Items": ["Plate", "Dust", "Block", "Wire", "Foil"],
 		"Smelting": ["ArcFurnace"],
 		"Tier": 5,
 	},{
-		"Name": "Rhodium",
-		"Label": "Rhodium",
-		"Items": ["Dust", "Plate", "Block", "Foil"],
-		"Smelting": ["ArcFurnace"],
-		"Tier": 6,
-	},{
-		"Name": "RhodiumReflector",
-		"Label": "Rhodium Reflector",
+		"Name": "PlatinumReflector",
+		"Label": "Platinum Reflector",
 		"Items": ["Exact"],
 		"Tier": 6,
 	},{
-		"Name": "PlatinumRhodiumSolution",
-		"Label": "Platinum-Rhodium Solution",
+		"Name": "PlatinumSolution",
+		"Label": "Platinum Solution",
 		"Items": ["Fluid"],
 	},{
 		"Name": "AmmoniumChloride",
 		"Label": "Ammonium Chloride",
 		"Items": ["Exact"],
-	},{
-		"Name": "RhodiumSolution",
-		"Label": "Rhodium Solution",
-		"Items": ["Fluid"]
 	},{
 		"Name": "Iron",
 		"Label": "Iron",
@@ -418,18 +444,6 @@ materials = [
 		"Label": "Nitric Acid",
 		"Items": ["Fluid"],
 	},{
-		"Name": "HydrochloricAcid",
-		"Label": "Hydrochloric Acid",
-		"Items": ["Fluid"],
-	},{
-		"Name": "HydrofluoricAcid",
-		"Label": "Hydrofluoric Acid",
-		"Items": ["Fluid"],
-	},{
-		"Name": "AquaRegia",
-		"Label": "Aqua Regia",
-		"Items": ["Fluid"],
-	},{
 		"Name": "Ash",
 		"Label": "Ash",
 		"Items": ["Exact"],
@@ -467,60 +481,11 @@ materials = [
 		},
 		"Tier": 2,
 	},{
-		"Name": "Acetone",
-		"Label": "Acetone",
-		"Items": ["Fluid"],
-		"Burnable": {
-			"BurnTime": 130
-		},
-		"Tier": 3,
-	},{
-		"Name": "MethylIsobutylKetone",
-		"Label": "Methyl Isobutyl Ketone",
-		"Items": ["Fluid"],
-		"Burnable": {
-			"BurnTime": 300
-		},
-		"Tier": 6,
-	},{
-		"Name": "MesitylOxide",
-		"Label": "Mesityl Oxide",
-		"Items": ["Fluid"],
-		"Burnable": {
-			"BurnTime": 200
-		},
-		"Tier": 4,
-	},{
 		"Name": "Polyethylene",
 		"Label": "Polyethylene",
 		"Items": ["Sheet"],
 		"Tier": 3,
 		"Color": [.2,.5,.2],
-	},{
-		"Name": "Fluorine",
-		"Label": "Fluorine",
-		"Items": ["Fluid"],
-		"Tier": 2,
-	},{
-		"Name": "Chloroform",
-		"Label": "Chloroform",
-		"Items": ["Fluid"],
-		"Tier": 3,
-	},{
-		"Name": "Chlorodifluoromethane",
-		"Label": "Chlorodifluoromethane",
-		"Items": ["Fluid"],
-		"Tier": 4,
-	},{
-		"Name": "Tetrafluoroethylene",
-		"Label": "Tetrafluoroethylene",
-		"Items": ["Fluid"],
-		"Tier": 4,
-	},{
-		"Name": "Polytetrafluoroethylene",
-		"Label": "Polytetrafluoroethylene",
-		"Items": ["Sheet"],
-		"Tier": 5,
 	},
 	#,{
 	#	"Name": "Nickel",
@@ -587,28 +552,6 @@ materials = [
 		"Items": ["Dust", "Block", "Plate", "Wire"],
 		"Smelting": ["InductionFurnace"],
 		"Tier": 4,
-	},{
-		"Name": "Neodymium",
-		"Label": "Neodymium",
-		"Items": ["Dust", "Block", "Plate"],
-		"Smelting": ["ArcFurnace"],
-		"Tier": 4,
-	},{
-		"Name": "Niobium",
-		"Label": "Niobium",
-		"Items": ["Dust", "Block", "Plate", "Wire"],
-		"Smelting": ["ArcFurnace"],
-		"Tier": 4,
-	},{
-		"Name": "CalciumFluoride",
-		"Label": "Calcium Fluoride",
-		"Items": ["Dust"],
-		"Tier": 3,
-	},{
-		"Name": "MicaFlakes",
-		"Label": "Mica Flakes",
-		"Items": ["Exact"],
-		"Tier": 3,
 	},{
 		"Name": "Tantalum",
 		"Label": "Tantalum",
@@ -698,7 +641,7 @@ materials = [
 		"Items": ["Fluid"],
 		"Tier": 0,
 		"Burnable": {
-			"BurnTime": 800
+			"BurnTime": 200
 		},
 		"Color":[0.1,0.1,0.1]
 	},
@@ -824,6 +767,11 @@ materials = [
 		"Items": ["Exact"],
 		"Tier": 2
 	},{
+		"Name": "MicaFlakes",
+		"Label": "Mica Flakes",
+		"Items": ["Exact"],
+		"Tier": 4
+	},{
 		"Name": "Signal",
 		"Label": "Signal",
 		"Items": ["Exact"],
@@ -909,11 +857,6 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 	},{
-		"Name": "AdvancedCatalyst",
-		"Label": "Advanced Catalyst Cell",
-		"StackSize": 32,
-		"Items": ["Exact"],
-	},{
 		"Name": "UltimateCatalyst",
 		"Label": "Ultimate Catalyst Cell",
 		"StackSize": 32,
@@ -993,11 +936,6 @@ materials = [
 		"Name": "HotMercury",
 		"Label": "Hot Mercury",
 		"Items": ["Fluid"]
-	},{
-		"Name": "FilteringCell",
-		"Label": "Filtering Cell",
-		"StackSize": 32,
-		"Items": ["Exact"],
 	},{
 		"Name": "CarbonPrecursor",
 		"Label": "Carbon Precursor",

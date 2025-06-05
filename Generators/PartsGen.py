@@ -549,7 +549,7 @@ for material in materials:
 			"MulMask": "T_Material" + material["Name"],
 			"AddMask": ["T_" + "Dust" + additive_ico],
 		}
-		if material["Name"] == "Rhodium" or material["Name"] == "Platinum":
+		if material["Name"] == "Platinum":
 			dustItem["AddMask"].append("T_" + "Shiny" + additive_ico)
 		images.append(dustItem)
 

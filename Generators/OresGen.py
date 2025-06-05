@@ -41,6 +41,7 @@ ore_types = [
 		"Name": "Pyrite",
 		"Processing":{
 			"OreWasher": "IronDust",
+			"ChemicalBath": ["SulfuricAcid", "TantalumSludge"],
 			"Separator": ["PyriteDust", "Sulfur"],
 			"Macerator": "PyriteOreDust",
 			"Furnace": "IronPlate",
@@ -81,27 +82,13 @@ ore_types = [
 		"Name": "Ruby",
 		"Processing":{
 			"OreWasher": "ChromiumDust",
-			"Sifter": ["RubyOreDust", "RubyDust", "RubyCrystal"],
+			"Sifter": ["RubyOreDust", "MicaFlakes", "RubyCrystal"],
 			"ChemicalBath": ["SulfuricAcid", "ChromiumDust"],
 			"Separator": ["RubyDust", "ChromiumDust"],
 			"Macerator": "RubyOreDust",
 			"Furnace": "RubyDust",
 		},
 		"Formula": "CrAl203",
-		"Crystal": True,
-		"Color": [.5/2.0, .5/2.0, 1/2.0],
-		"Drops": "BauxiteOre",
-		"Tier": 3,
-	},{
-		"Name": "Apatite",
-		"Processing":{
-			"OreWasher": "BerylliumDust",
-			"Sifter": ["ApatiteOreDust", "ApatiteDust", "ApatiteCrystal"],
-			"Separator": ["ApatiteDust", "AluminiumOxideDust"],
-			"Macerator": "ApatiteOreDust",
-			"Furnace": "ApatiteDust",
-		},
-		"Formula": "BeCa2AlPO4",
 		"Crystal": True,
 		"Color": [.5/2.0, .5/2.0, 1/2.0],
 		"Drops": "BauxiteOre",
@@ -117,6 +104,7 @@ ore_types = [
 		"Formula": "HgS",
 		"Processing":{
 			"OreWasher": "Sulfur",
+			"ChemicalBath": ["NitricAcid", "RareEarthSludge"],
 			"Separator": ["CinnabarDust", "Sulfur"],
 			"Macerator": "CinnabarOreDust",
 			"Furnace": "Sulfur",
@@ -126,7 +114,7 @@ ore_types = [
 		"Processing":{
 			"OreWasher": "UraniumDust",
 			"Separator": ["ThoriumDust", "UraniumDust"],
-			"Washing": "Uranium238Dust",
+			"ChemicalBath": ["SulfuricAcid", "RareEarthSludge"],
 			"Sifter": ["ThoriumDust", "UraniumDust", "ThorianiteCrystal"],
 			"Furnace": "ThoriumDust",
 			"Macerator": "ThorianiteOreDust",
@@ -141,6 +129,7 @@ ore_types = [
 		"Processing":{
 			"OreWasher": "GoldDust",
 			"Separator": ["PyroplatiteDust", "GoldDust"],
+			"ChemicalBath": ["NitricAcid", "PlatinumSolution"],
 			"Washing": "PyroplatiteDust",
 			"Furnace": "PyroplatiteDust",
 			"Macerator": "PyroplatiteOreDust",
@@ -168,34 +157,6 @@ ore_types = [
 		"Burnable": {
 			"BurnTime": 800
 		},
-	},{
-		"Name": "Niobite",
-		"Formula": "FeNb2O3+FeTa2O3",
-		"Processing": {
-			"OreWasher": "IronDust",
-			"Separator": ["NiobiteDust", "IronDust"],
-			"ChemicalBath": ["HydrofluoricAcid", "TantalumSludge"],
-			"Macerator": "NiobiteOreDust",
-			"Furnace": "IronPlate",
-		},
-		"Color": [0.25, 0.25, 0.3],
-		"Drops": "NiobiteOre",
-		"Tier": 4,
-	},{
-		"Name": "Monazite",
-		"Processing": {
-			"OreWasher": "MicaFlakes",
-			"Separator": ["ThoriumDust", "MicaFlakes"],
-			"Sifter": ["ThoriumDust", "MicaFlakes", "MicaCrystal"],
-			"ChemicalBath": ["SulfuricAcid", "RareEarthSludge"],
-			"Macerator": "MonaziteOreDust",
-			"Furnace": "ThoriumDust"
-		},
-		"Color": [0.15, 0.10, 0.03],
-		"Drops": "MonaziteOre",
-		"Crystal": True,
-		"Formula": "ThPO4+NdPO4+YPO4",
-		"Tier": 3
 	},{
 		"Name": "Clay",
 		"NotOre": True,
