@@ -591,7 +591,7 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "Resistor3",
 	"LabelParts": [["Resistor", "parts"], ["III", "common"]],
-	"RequiredResearch": ["Resistor2", "Tetrafluoroethylene", "CrudeNiobium"],
+	"RequiredResearch": ["Resistor2", "Polyethylene", "CrudeTantalum"],
 	"Levels": [2,2],
 	"Unlocks": [[assembler_r_dict, "Resistor4"]],
 	"CostMul":4.5,
@@ -674,7 +674,7 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "DopedSiliconWafer",
 	"LabelParts": [["DopedSiliconWafer", "parts"]],
-	"RequiredResearch": ["SiliconWafer", "PlatinumRhodiumSolution"],
+	"RequiredResearch": ["SiliconWafer", "PlatinumSolution"],
 	"Unlocks": [["IndustrialSmelter"+r_dict, "DopedSiliconMonocrystal"],[assembler_r_dict, "DopedSiliconWafer"]],
 	"Levels": [6,6]
 })
@@ -720,7 +720,7 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "Capacitor4",
 	"LabelParts": [["Capacitor", "parts"], ["IV", "common"]],
-	"RequiredResearch": ["Capacitor3", "Tetrafluoroethylene"],
+	"RequiredResearch": ["Capacitor3", "Polyethylene"],
 	"Levels": [3,3],
 	"Unlocks": [[assembler_r_dict, "Capacitor4"]],
 	"CostMul":12,
@@ -822,53 +822,12 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
-	"Name": "HydrochloricAcid",
-	"LabelParts": [["HydrochloricAcid", "parts"]],
+	"Name": "PlatinumSolution",
+	"LabelParts": [["PlatinumSolution", "parts"]],
 	"RequiredResearch": ["NitricAcid"],
 	"Levels": [5,5],
-	"Unlocks": [[ic_reactor_r_dict, "HydrochloricAcid"]],
-	"CostMul": 0.4,
-	"MainResearch": True,
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "AquaRegia",
-	"LabelParts": [["AquaRegia", "parts"]],
-	"RequiredResearch": ["HydrochloricAcid"],
-	"Levels": [5,5],
-	"Unlocks": [[ic_reactor_r_dict, "AquaRegia"]],
-	"CostMul": 0.8,
-	"MainResearch": True,
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "PlatinumRhodiumSolution",
-	"LabelParts": [["PlatinumRhodiumSolution", "parts"]],
-	"RequiredResearch": ["AquaRegia"],
-	"Levels": [5,5],
-	"Unlocks": [[ic_reactor_r_dict, "PlatinumRhodiumSolution"],[ic_reactor_r_dict, "AmmoniumChloride"],[ic_reactor_r_dict, "RhodiumSolution"]],
+	"Unlocks": [[ic_reactor_r_dict, "PlatinumSolution"],[ic_reactor_r_dict, "AmmoniumChloride"]],
 	"CostMul": 1.2,
-	"MainResearch": True,
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "RhodiumDust",
-	"LabelParts": [["RhodiumDust", "parts"]],
-	"RequiredResearch": ["AdvancedCatalyst"],
-	"Levels": [5,5],
-	"Unlocks": [[ic_reactor_r_dict, "RhodiumDust"], [ic_reactor_r_dict,"MesitylOxide"], 
-			 [ic_reactor_r_dict, "MethylIsobutylKetone"], [assembler_r_dict, "RhodiumFoil"]],
-	"CostMul": 3.0,
-	"MainResearch": True,
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "RhodiumReflector",
-	"LabelParts": [["RhodiumReflector", "parts"]],
-	"RequiredResearch": ["RhodiumDust"],
-	"Levels": [5,5],
-	"Unlocks": [[h_r_dict, "RhodiumReflector"], [assembler_r_dict, "RhodiumReflector"]],
-	"CostMul": 6,
 	"MainResearch": True,
 })
 append_levels({
@@ -900,6 +859,16 @@ append_levels({
 	"Unlocks": [["Hand" + r_dict, "QuantumCircuit"],[assembler_r_dict, "QuantumCircuit"]],
 	"MainResearch": True,
 	"CostMul": 0.5,
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "QuantumCircuit2",
+	"LabelParts": [["QuantumCircuit", "parts"], ["II", "common"]],
+	"RequiredResearch": ["QuantumCircuit"],
+	"Levels": [5,5],
+	"Unlocks": [[assembler_r_dict, "QuantumCircuit2"]],
+	"MainResearch": False,
+	"CostMul": 1,
 })
 append_levels({
 	"Class": research_recipe,
@@ -950,11 +919,20 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "QuantumProcessor2",
+	"LabelParts": [["QuantumProcessor", "parts"], ["II", "common"]],
+	"RequiredResearch": ["QuantumProcessor"],
+	"Levels": [5,5],
+	"Unlocks": [[assembler_r_dict, "QuantumProcessor2"]],
+	"CostMul":5,
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "BrainMatrix",
 	"LabelParts": [["BrainMatrix", "parts"]],
 	"RequiredResearch": ["QuantumProcessor"],
 	"Levels": [6,6],
-	"Unlocks": [["Hand" + r_dict, "BrainMatrix"]],
+	"Unlocks": [["Hand" + r_dict, "BrainMatrix"],[assembler_r_dict, "BrainMatrix"]],
 	"MainResearch": True,
 	"CostMul":1.5,
 })
@@ -1012,7 +990,7 @@ append_levels({
 	"Name": "Catalyst",
 	"LabelParts": [["Catalyst", "parts"]],
 	"RequiredResearch": ["IndustrialChemReactor"],
-	"Unlocks": [["Hand" + r_dict, "Catalyst"],[assembler_r_dict, "Catalyst"]],
+	"Unlocks": [["Hand" + r_dict, "Catalyst"]],
 	"Levels": [4,4],
 	"MainResearch": True,
 	"CostMul":1,
@@ -1025,16 +1003,6 @@ append_levels({
 	"Unlocks": [[assembler_r_dict, "Catalyst2"]],
 	"Levels": [4,4],
 	"CostMul":1.5,
-	"MainResearch": True,
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "AdvancedCatalyst",
-	"LabelParts": [["AdvancedCatalyst", "parts"]],
-	"RequiredResearch": ["Catalyst2", "PlatinumRhodiumSolution"],
-	"Unlocks": [[assembler_r_dict, "AdvancedCatalyst"]],
-	"Levels": [6,6],
-	"CostMul": 1.75,
 	"MainResearch": True,
 })
 append_levels({
@@ -1234,7 +1202,7 @@ append_levels({
 	"LabelParts": [["PrimitiveBattery", "parts"]],
 	"RequiredResearch": ["BatteryBox"],
 	"Levels": [3,3],
-	"Unlocks": [[assembler_r_dict, "PrimitiveBattery"],["Hand" + r_dict, "PrimitiveBattery"]],
+	"Unlocks": [[assembler_r_dict, "PrimitiveBattery"]],
 	"CostMul": 2,
 	"MainResearch": True,
 })
@@ -1243,7 +1211,7 @@ append_levels({
 	"Name": "CarbonFiber",
 	"LabelParts": [["CarbonFiber", "parts"]],
 	"RequiredResearch": ["PyrolysisUnit", "IndustrialChemReactor1"],
-	"Unlocks": [["PyrolysisUnit"+r_dict,"CarbonFiber"]],
+	"Unlocks": [["PyrolysisUnit"+r_dict,"CarbonFiber"], [ic_reactor_r_dict, "CarbonPrecursor"]],
 	"Levels": [5,5],
 	"MainResearch": True,
 	"CostMul": 0.3,
@@ -1262,7 +1230,7 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "KrollProcess",
 	"LabelParts": [["KrollProcess", "researches"]],
-	"RequiredResearch": ["IndustrialSmelting"],
+	"RequiredResearch": ["IndustrialSmelting", "NitricAcid"],
 	"Unlocks": [["IndustrialSmelter"+r_dict,"SpongeToPlate"],["IndustrialChemReactor" + r_dict, "TitaniumSponge"],["IndustrialChemReactor" + r_dict, "TitaniumTetrachloride"]],
 	"Levels": [5,5],
 	"MainResearch": True,
@@ -1314,59 +1282,20 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
-	"Name": "Tetrafluoroethylene",
-	"LabelParts": [["Tetrafluoroethylene", "parts"]],
+	"Name": "CrudeTantalum",
+	"LabelParts": [["CrudeTantalum", "researches"]],
 	"RequiredResearch": ["Polyethylene"],
-	"Levels": [5,5],
-	"Unlocks": [[ic_reactor_r_dict, "PolytetrafluoroethyleneSheet"], ["PyrolysisUnit"+r_dict, "Tetrafluoroethylene"], [ic_reactor_r_dict, "Chlorodifluoromethane"], [ic_reactor_r_dict, "Chloroform"]],
-	"MainResearch": True,
-	"CostMul": 2.25
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "CrudeNiobium",
-	"LabelParts": [["CrudeNiobium", "researches"]],
-	"RequiredResearch": ["Tetrafluoroethylene"],
 	"Levels": [5,5],
 	"Unlocks": [["IndustrialSmelter" + r_dict, "TantalumSludge"], [h_r_dict, "NiobiumWire"]],
 	"CostMul": 5.5
 })
 append_levels({
 	"Class": research_recipe,
-	"Name": "NiobiumDust",
-	"LabelParts": [["NiobiumDust", "parts"]],
-	"RequiredResearch": ["CrudeNiobium"],
-	"Levels": [5,5],
-	"Unlocks": [[ic_reactor_r_dict, "TantalumSludge2"], [assembler_r_dict, "NiobiumWire2"]],
-	"CostMul": 7
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "TantalumDust",
-	"LabelParts": [["TantalumDust", "parts"]],
-	"RequiredResearch": ["NiobiumDust"],
-	"Levels": [5,5],
-	"Unlocks": [[ic_reactor_r_dict, "TantalumSolution"], [assembler_r_dict, "TantalumWire2"], [assembler_r_dict, "TantalumFoil"],
-			 [h_r_dict, "TantalumWire"], [h_r_dict, "TantalumFoil"]],
-	"CostMul": 9
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "Tetrafluoroethylene2",
-	"LabelParts": [["Tetrafluoroethylene", "parts"], ["II", "common"]],
-	"RequiredResearch": ["Tetrafluoroethylene"],
-	"Levels": [5,5],
-	"Unlocks": [[ic_reactor_r_dict, "Chlorodifluoromethane2"]],
-	"MainResearch": True,
-	"CostMul": 8
-})
-append_levels({
-	"Class": research_recipe,
 	"Name": "CompositePlate",
 	"LabelParts": [["CompositePlate", "parts"]],
-	"RequiredResearch": ["TitaniumProduction", "CarbonFiberSheet", "Tetrafluoroethylene"],
+	"RequiredResearch": ["TitaniumProduction", "CarbonFiberSheet", "Polyethylene"],
 	"Levels": [6,6],
-	"Unlocks": [[assembler_r_dict, "CompositePlate"]],
+	"Unlocks": [[assembler_r_dict, "CompositePlate"]] + get_parts_unlocks(tier_material[6]),
 	"MainResearch": True,
 	"CostMul": 2.25
 })
@@ -1382,9 +1311,18 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "PlatinumReflector",
+	"LabelParts": [["PlatinumReflector", "parts"]],
+	"RequiredResearch": ["PlatinumSolution"],
+	"Unlocks": [["Hand" + r_dict, "PlatinumReflector"] ],
+	"Levels": [6,6],
+	"MainResearch": True,
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "FusionReactor",
 	"LabelParts": [["FusionReactor", "machines"]],
-	"RequiredResearch": ["CompositePlate", "RhodiumReflector"],
+	"RequiredResearch": ["CompositePlate", "PlatinumReflector"],
 	"Unlocks": [["Hand" + r_dict, "%Material%FusionReactor"] ],
 	"Levels": [6,7],
 	"MainResearch": True,
@@ -1403,7 +1341,7 @@ append_levels({
 	"Name": "UltimateCatalyst",
 	"LabelParts": [["UltimateCatalyst", "parts"]],
 	"RequiredResearch": ["NeutroniumProduction"],
-	"Unlocks": [["Hand" + r_dict, "UltimateCatalyst"],[assembler_r_dict, "UltimateCatalyst"]],
+	"Unlocks": [["Hand" + r_dict, "UltimateCatalyst"]],
 	"Levels": [6,6],
 	"MainResearch": True,
 })
@@ -1431,7 +1369,7 @@ append_levels({
 	"LabelParts": [["UraniumCell", "parts"]],
 	"RequiredResearch": ["TitaniumProduction"],
 	"Levels": [5,5],
-	"Unlocks": [["Hand" + r_dict, "UraniumCell"],[assembler_r_dict, "UraniumCell"]],
+	"Unlocks": [["Hand" + r_dict, "UraniumCell"]],
 })
 append_nuclear([7,-7], append_levels, researches)
 append_levels({

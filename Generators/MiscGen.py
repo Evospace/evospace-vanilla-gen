@@ -324,7 +324,7 @@ for one in simple_blocks:
 	objects_array.append({ "Class": "StaticItem",
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
-		"ItemLogic": building_plane_logic,
+		"ItemLogic": building_cube_logic,
 		"Object": one["Name"] + static_block,
 		"StackSize": 999,
 		"LabelParts":[[one["Name"],"misc"]],

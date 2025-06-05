@@ -286,7 +286,7 @@ recipes_assembler.append({
 	"Name":"Resistor4",
 	"Input": items([
 		["NiobiumWire"],
-		["PolytetrafluoroethyleneSheet"],
+		["PolyethyleneSheet"],
 	]),
 	"Output": one_item("Resistor", 8),
 	"Ticks" : 60,
@@ -297,7 +297,7 @@ recipes_assembler.append({
 	"Name":"Resistor5",
 	"Input": items([
 		["TantalumWire"],
-		["PolytetrafluoroethyleneSheet"],
+		["PolyethyleneSheet"],
 	]),
 	"Output": one_item("Resistor", 16),
 	"Ticks" : 60,
@@ -412,7 +412,7 @@ recipes_assembler.append({
     "Name": "Capacitor4",
     "Input": items([
         ["TantalumFoil", 2],
-        ["PolytetrafluoroethyleneSheet", 1]
+        ["PolyethyleneSheet", 1]
     ]),
     "Output": one_item("Capacitor", 8),
     "Ticks": 60,
@@ -545,77 +545,6 @@ recipes_assembler.append({
 })
 
 recipes_industrial_chemreactor.append({
-	"Name":"Chloroform",
-	"Input": items([
-		["Methane", 200],
-		["Chlorine", 200],
-		["Catalyst", 1, 0]
-	]),
-	"Output": one_item("Chloroform", 300),
-	"Ticks" : 400,
-	"Tier": 4,
-	"Colors": [[0.8,0.1,0.1,0.5],[0.8,0.4,0.1,0.6]],
-})
-
-recipes_industrial_chemreactor.append({
-	"Name":"Chlorodifluoromethane",
-	"Input": items([
-		["Chloroform", 300],
-		["Fluorine", 600],
-		["Catalyst", 1, 0]
-	]),
-	"Output": one_item("Chlorodifluoromethane", 300),
-	"Ticks" : 100,
-	"Tier": 5,
-	"Colors": [[0.8,0.4,0.1,0.0],[0.8,0.4,0.1,0.6]],
-})
-
-recipes_industrial_chemreactor.append({
-	"Name":"Chlorodifluoromethane2",
-	"Input": items([
-		["Chloroform", 300],
-		["Fluorine", 600],
-		["UltimateCatalyst"]
-	]),
-	"Output": one_item("Chlorodifluoromethane", 600),
-	"Ticks" : 600,
-	"Tier": 5,
-})
-
-recipes_pyro.append({
-	"Name":"Tetrafluoroethylene",
-	"Input": items([
-		["Chlorodifluoromethane", 1000]
-	]),
-	"Output": one_item("Tetrafluoroethylene", 800),
-	"Ticks" : 600,
-	"Tier": 5,
-	"Colors": [[0.5,0.5,0.0]]
-})
-
-recipes_industrial_chemreactor.append({
-	"Name":"MesitylOxide",
-	"Input": items([
-		["Acetone", 1000],
-		["AdvancedCatalyst", 1, 0]
-	]),
-	"Output": one_item("MesitylOxide", 200),
-	"Ticks" : 300,
-	"Tier": 6,
-})
-
-recipes_industrial_chemreactor.append({
-	"Name":"MethylIsobutylKetone",
-	"Input": items([
-		["MesitylOxide", 300],
-		["Hydrogen", 200]
-	]),
-	"Output": one_item("MethylIsobutylKetone", 400),
-	"Ticks" : 300,
-	"Tier": 6,
-})
-
-recipes_industrial_chemreactor.append({
 	"Name":"PolyethyleneSheet",
 	"Input": items([
 		["Ethylene", 1000],
@@ -624,29 +553,6 @@ recipes_industrial_chemreactor.append({
 	"Output": one_item("PolyethyleneSheet", 10),
 	"Ticks" : 600,
 	"Tier": 3,
-})
-
-recipes_industrial_chemreactor.append({
-	"Name":"PolytetrafluoroethyleneSheet",
-	"Input": items([
-		["Tetrafluoroethylene", 1000],
-		["Catalyst", 1, 0]
-	]),
-	"Output": one_item("PolytetrafluoroethyleneSheet", 10),
-	"Ticks" : 600,
-	"Tier": 5,
-	"Colors": [[0.5,0.5,0.0,0.8],[0.5,0.5,0.0,0.0]],
-})
-
-recipes_industrial_chemreactor.append({
-	"Name":"BrainMatrix",
-	"Input":  items([
-		["CarbonFiberSheet"],
-		["PolytetrafluoroethyleneSheet"]
-	]),
-	"Output": one_item("BrainMatrix"),
-	"Ticks" : 200,
-	"Tier": 5,
 })
 
 recipes_hand.append({
@@ -674,7 +580,7 @@ recipes_assembler.append({
 	"Tier": 6,
 })
 
-append_recipe({
+recipes_hand.append({
 	"Name":"UltimateCatalyst",
 	"Input": items([
 		["Cell"],
@@ -686,7 +592,7 @@ append_recipe({
 	"Tier": 7,
 })
 
-append_recipe({
+recipes_hand.append({
 	"Name":"Catalyst",
 	"Input": items([
 		["Cell"],
@@ -710,19 +616,7 @@ recipes_assembler.append({
 	"Tier": 4
 })
 
-recipes_assembler.append({
-	"Name":"AdvancedCatalyst",
-	"Input": items([
-		["Cell"],
-		["PlatinumWire", 10],
-		["CarbonFiberSheet", 2]
-	]),
-	"Output": one_item("AdvancedCatalyst"),
-	"Ticks" : 200,
-	"Tier": 6
-})
-
-append_recipe({
+recipes_hand.append({
 	"Name": "PrimitiveBattery",
 	"Input": items([
 		["Coke"],
@@ -735,7 +629,7 @@ append_recipe({
 })
 		
 for level, name, copm_name in zip(range(0, 4), ["BasicBattery", "AdvancedBattery", "SuperiorBattery", "UltimateBattery"], ["Battery", "BasicBattery", "AdvancedBattery", "SuperiorBattery"]):
-	append_recipe({
+	recipes_hand.append({
 		"Name": name,
 		"Input":{
 			"Items":[
@@ -753,7 +647,7 @@ for level, name, copm_name in zip(range(0, 4), ["BasicBattery", "AdvancedBattery
 		"Ticks" : 100 * (level + 1),
 	})
 
-append_recipe({
+recipes_hand.append({
 	"Name":"Cell",
 	"Input": items([
 		["StainlessSteelPlate"],
@@ -761,7 +655,72 @@ append_recipe({
 	]),
 	"Output": one_item("Cell"),
 	"Ticks" : 200,
-	
+})
+
+recipes_hand.append({
+	"Name":"BasicCoil",
+	"Input": items([
+		["CopperWire", 16],
+		["SteelPlate", 2]
+	]),
+	"Output": one_item("BasicCoil"),
+	"Ticks" : 200,
+	"Tier": 2,
+})
+
+recipes_hand.append({
+	"Name":"AdvancedCoil",
+	"Input": items([
+		["BasicCoil", 3],
+		["StainlessSteelPlate", 2]
+	]),
+	"Output": one_item("AdvancedCoil"),
+	"Ticks" : 200,
+	"Tier": 3,
+})
+
+recipes_hand.append({
+	"Name":"PowerCoil",
+	"Input": items([
+		["AdvancedCoil", 3],
+		["Processor", 2]
+	]),
+	"Output": one_item("PowerCoil"),
+	"Ticks" : 200,
+	"Tier": 5,
+})
+
+recipes_hand.append({
+	"Name":"BasicFrame",
+	"Input": items([
+		["SteelPlate", 4],
+		["SteelParts", 4]
+	]),
+	"Output": one_item("BasicFrame"),
+	"Ticks" : 200,
+	"Tier": 2,
+})
+
+recipes_hand.append({
+	"Name":"ReinforcedFrame",
+	"Input": items([
+		["BasicFrame", 3],
+		["AluminiumParts", 6]
+	]),
+	"Output": one_item("ReinforcedFrame"),
+	"Ticks" : 200,
+	"Tier": 3,
+})
+
+recipes_hand.append({
+	"Name":"ModularFrame",
+	"Input": items([
+		["ReinforcedFrame", 3],
+		["StainlessSteelParts", 10]
+	]),
+	"Output": one_item("ModularFrame"),
+	"Ticks" : 200,
+	"Tier": 5,
 })
 
 recipes_assembler.append({
@@ -778,7 +737,7 @@ recipes_assembler.append({
 	"Ticks" : 200*3
 })
 
-append_recipe({
+recipes_hand.append({
 	"Name":"UraniumCell",
 	"Input":{
 		"Items":[
@@ -808,7 +767,7 @@ append_recipe({
 	
 })
 
-append_recipe({
+recipes_hand.append({
 	"Name":"ThoriumCell",
 	"Input":{
 		"Items":[
@@ -827,7 +786,7 @@ append_recipe({
 	
 })
 
-append_recipe({
+recipes_hand.append({
 	"Name":"Uranium233Cell",
 	"Input":{
 		"Items":[
@@ -846,7 +805,7 @@ append_recipe({
 	
 })
 
-append_recipe({
+recipes_hand.append({
 	"Name":"PlutoniumCell",
 	"Input":{
 		"Items":[
@@ -861,32 +820,6 @@ append_recipe({
 		]
 	},
 	"Output": one_item("PlutoniumCell"),
-	"Ticks" : 200,
-	
-})
-
-append_recipe({
-	"Name":"FilteringCell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Coal",
-				"Count": 10
-			},
-			{
-				"Name": "Cell",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "FilteringCell",
-				"Count": 1
-			}
-		]
-	},
 	"Ticks" : 200,
 	
 })
@@ -908,7 +841,7 @@ recipes_assembler.append({
 	"Input": items([
 		["TitaniumPlate", 1],
 		["CarbonFiberSheet", 1],
-		["PolytetrafluoroethyleneSheet", 1]
+		["PolyethyleneSheet", 1]
 	]),
 	"Output": one_item("CompositePlate"),
 	"Ticks" : 300,
@@ -920,7 +853,7 @@ recipes_assembler.append({
 	"Input": items([
 		["TitaniumPlate", 1],
 		["CarbonFiberSheet", 1],
-		["PolytetrafluoroethyleneSheet", 1],
+		["PolyethyleneSheet", 1],
 		["NeutroniumParts", 1]
 	]),
 	"Output": one_item("CompositePlate", 4),
@@ -946,12 +879,12 @@ append_recipe({
 })
 
 append_recipe({
-	"Name":"RhodiumReflector",
+	"Name":"PlatinumReflector",
 	"Input": items([
 		["Cell"],
-		["RhodiumFoil"]
+		["PlatinumFoil"]
 	]),
-	"Output": one_item("RhodiumReflector"),
+	"Output": one_item("PlatinumReflector"),
 	"Ticks" : 100,
 	"Tier": 6
 })
@@ -960,7 +893,7 @@ append_recipe({
 	"Name":"BrainMatrix",
 	"Input": items([
 		["CarbonFiberSheet"],
-		["RhodiumFoil"]
+		["PlatinumFoil"]
 	]),
 	"Output": one_item("BrainMatrix"),
 	"Ticks" : 100,
@@ -1523,7 +1456,7 @@ recipes_electrolyzer.append({
 				"Count": 1
 			},{
 				"Name": "Mercury",
-				"Count": 1000
+				"Count": 200
 			}
 		],
 	},
@@ -1848,14 +1781,6 @@ recipes_macerator.append({
 	"Ticks" : 200
 })
 
-recipes_macerator.append({
-	"Name": "Apatite",
-	"Input": one_item("ApatiteCrystal"),
-	"Output": one_item("ApatiteDust", 4),
-	"Tier": 5,
-	"Ticks" : 80,
-})
-
 for material in {"Ruby", "Malachite"}:
 	recipes_macerator.append({
 		"Name": material+"Crystal",
@@ -1953,7 +1878,7 @@ recipes_indu.append({
 			["Mercury", 1000]
 		]),
 	"Output": items([
-			["NiobiumPlate"],
+			["TantalumPlate"],
 			["HotMercury", 1000]
 		]),
 	"Ticks" : 200,
@@ -2158,53 +2083,6 @@ recipes_electrolyzer.append({
 	},
 	"Ticks" : 200,
 	"Tier":2,
-})
-
-recipes_electrolyzer.append({
-	"Name":"ApatiteDust",
-	"Input": one_item("ApatiteDust", 11),
-	"Output":{
-		"Items":[
-			{
-				"Name": "BerylliumDust",
-				"Count": 1
-			},
-			{
-				"Name": "CalciumFluorideDust",
-				"Count": 2
-			}
-		]
-	},
-	"Ticks" : 200,
-	"Tier":2,
-})
-
-recipes_industrial_chemreactor.append({
-	"Name":"HydrofluoricAcid",
-	"Input": items([
-		["CalciumFluorideDust", 1],
-		["SulfuricAcid", 200]
-	]),
-	"Output": items([
-		["HydrofluoricAcid", 400]
-	]),
-	"Ticks" : 100,
-	"Tier":5,
-	"Colors": [[0.8,0.8,0.1,0.3],[0.8,0.8,0.1,0.0]],
-})
-
-recipes_industrial_chemreactor.append({
-	"Name":"Fluorine",
-	"Input": items([
-		["ApatiteDust", 1],
-		["SulfuricAcid", 100]
-	]),
-	"Output": items([
-		["Fluorine", 100]
-	]),
-	"Ticks" : 100,
-	"Tier":2,
-	"Colors": [[0.8,0.8,0.1,0.3],[0.8,0.8,0.1,0.0]],
 })
 
 recipes_electrolyzer.append({
@@ -2519,17 +2397,6 @@ recipes_pyro.append({
 	"Ticks" : 200,
 	"Tier": 3,
 })
-recipes_pyro.append({
-	"Name": "FbToAcetone",
-	"Input": one_item("FermentedBiomass", 1000),
-	"Output": items([
-		["Acetone", 100],
-		["Ash", 4]
-	]),
-	"Tier": 5,
-	"Ticks" : 200,
-	"Tier": 3,
-})
 recipes_industrial_chemreactor.append({
 	"Name": "RocketFuel",
 	"Input":{
@@ -2656,33 +2523,6 @@ recipes_industrial_chemreactor.append({
 })
 
 recipes_industrial_chemreactor.append({
-	"Name":"TantalumSludge2",
-	"Input": items([
-			["TantalumSludge", 1],
-			["MethylIsobutylKetone", 500]
-		]),
-	"Output": items([
-			["NiobiumDust"],
-			["TantalumSolution", 300]
-		]),
-	"Ticks" : 200,
-	"Tier": 6
-})
-
-recipes_industrial_chemreactor.append({
-	"Name":"TantalumSolution",
-	"Input": items([
-			["TantalumSolution", 1000],
-			["Ammonia", 500]
-		]),
-	"Output": items([
-			["TantalumDust"]
-		]),
-	"Ticks" : 200,
-	"Tier": 6
-})
-
-recipes_industrial_chemreactor.append({
 	"Name": "SulfuricAcid",
 	"Input": {
 		"Items":[
@@ -2715,43 +2555,11 @@ recipes_industrial_chemreactor.append({
 })
 
 recipes_industrial_chemreactor.append({
-	"Name": "HydrochloricAcid",
-	"Input": {
-		"Items":[
-			{
-				"Name": "Chlorine",
-				"Count": 500
-			},
-			{
-				"Name": "Hydrogen",
-				"Count": 300
-			},
-			{
-				"Name": "Catalyst",
-				"Count": 1,
-				"Probability": 0
-			},
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "HydrochloricAcid",
-				"Count": 300
-			},		
-		]
-	},
-	"Ticks" : 200,
-	"Colors": [[0.0,0.0,0.3,0.2],[0.8,0.8,0.1,0.3]],
-	"Tier": 3,
-})
-
-recipes_industrial_chemreactor.append({
 	"Name": "RapeseedOil",
 	"Input": items([
 		["RapeseedOil", 1000],
 		["Ethanol", 150],
-		["SodiumHydroxideDust",1]
+		["Catalyst", 1, 0]
 	]),
 	"Output":{
 		"Items":[	
@@ -2861,52 +2669,28 @@ recipes_industrial_chemreactor.append({
 })
 
 recipes_industrial_chemreactor.append({
-	"Name": "AquaRegia",
-	"Input": items([
-		["NitricAcid", 500],
-		["HydrochloricAcid", 1500]
-	]),
-	"Output": one_item("AquaRegia", 1000),
-	"Ticks" : 60,
-	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]]
-})
-
-recipes_industrial_chemreactor.append({
-	"Name": "PlatinumRhodiumSolution",
+	"Name": "PlatinumSolution",
 	"Input": items([
 		["PyroplatiteDust", 10],
-		["AquaRegia", 1000]
+		["NitricAcid", 1000]
 	]),
-	"Output": one_item("PlatinumRhodiumSolution", 1000),
+	"Output": one_item("PlatinumSolution", 1),
 	"Ticks" : 800,
 	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]]
 })
 
 recipes_industrial_chemreactor.append({
-	"Name": "RhodiumSolution",
+	"Name": "Platinum",
 	"Input": items([
-		["PlatinumRhodiumSolution", 1300],
+		["PlatinumSolution", 1300],
 		["AmmoniumChloride"]
 	]),
 	"Output": items([
-		["PlatinumDust"],
-		["RhodiumSolution", 200]
+		["PlatinumDust"]
 	]),
 	"Ticks" : 400,
 	"Tier": 5,
 	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]]
-})
-
-recipes_industrial_chemreactor.append({
-	"Name": "RhodiumDust",
-	"Input": items([
-		["RhodiumSolution", 1000],
-		["MethylIsobutylKetone", 300]
-	]),
-	"Output": one_item("RhodiumDust"),
-	"Ticks" : 400,
-	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]],
-	"Tier":6,
 })
 
 recipes_industrial_chemreactor.append({
@@ -2944,11 +2728,6 @@ recipes_industrial_chemreactor.append({
 				"Count": 1000
 			},
 			{
-				"Name": "FilteringCell",
-				"Count": 32,
-				"Probability": 0,
-			},
-			{
 				"Name": "Catalyst",
 				"Count": 1,
 				"Probability": 0,
@@ -2974,11 +2753,6 @@ recipes_industrial_chemreactor.append({
 			{
 				"Name": "HighCetaneDiesel",
 				"Count": 1000
-			},
-			{
-				"Name": "FilteringCell",
-				"Count": 32,
-				"Probability": 0,
 			},
 			{
 				"Name": "UltimateCatalyst",
@@ -3028,26 +2802,11 @@ recipes_chemical_bath.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "CarbonPrecursor",
-	"Input":{
-		"Items":[
-			{
-				"Name": "HeavyOil",
-				"Count": 1000
-			},
-			{
-				"Name": "SulfuricAcid",
-				"Count": 100
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "CarbonPrecursor",
-				"Count": 1000
-			}
-		]
-	},
+	"Input": items([
+		["HeavyOil", 1000],
+		["SulfuricAcid", 100]
+	]),
+	"Output": one_item("CarbonPrecursor", 1000),
 	"Ticks" : 200
 })
 
