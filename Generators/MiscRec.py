@@ -285,7 +285,7 @@ recipes_assembler.append({
 recipes_assembler.append({
 	"Name":"Resistor4",
 	"Input": items([
-		["NiobiumWire"],
+		["TantalumWire"],
 		["PolyethyleneSheet"],
 	]),
 	"Output": one_item("Resistor", 8),
@@ -297,6 +297,7 @@ recipes_assembler.append({
 	"Name":"Resistor5",
 	"Input": items([
 		["TantalumWire"],
+		["CarbonFiberSheet"],
 		["PolyethyleneSheet"],
 	]),
 	"Output": one_item("Resistor", 16),
@@ -412,6 +413,7 @@ recipes_assembler.append({
     "Name": "Capacitor4",
     "Input": items([
         ["TantalumFoil", 2],
+		["CarbonFiberSheet", 1],
         ["PolyethyleneSheet", 1]
     ]),
     "Output": one_item("Capacitor", 8),

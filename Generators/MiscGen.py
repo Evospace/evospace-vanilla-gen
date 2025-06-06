@@ -340,6 +340,7 @@ for one in simple_blocks:
 		"Name": one["Name"] + static_block,
 		"Item" : one["Name"],
 		"Tesselator": one["Name"] + tesselator,
+		"BuildingMode": "Plane",
 	})
 	
 for one in static_mesh_block:
