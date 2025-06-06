@@ -1202,7 +1202,7 @@ append_levels({
 	"LabelParts": [["PrimitiveBattery", "parts"]],
 	"RequiredResearch": ["BatteryBox"],
 	"Levels": [3,3],
-	"Unlocks": [[assembler_r_dict, "PrimitiveBattery"]],
+	"Unlocks": [[h_r_dict, "PrimitiveBattery"]],
 	"CostMul": 2,
 	"MainResearch": True,
 })
@@ -1286,7 +1286,7 @@ append_levels({
 	"LabelParts": [["CrudeTantalum", "researches"]],
 	"RequiredResearch": ["Polyethylene"],
 	"Levels": [5,5],
-	"Unlocks": [["IndustrialSmelter" + r_dict, "TantalumSludge"], [h_r_dict, "NiobiumWire"]],
+	"Unlocks": [["IndustrialSmelter" + r_dict, "TantalumSludge"], [h_r_dict, "TantalumWire"], [h_r_dict, "TantalumFoil"]],
 	"CostMul": 5.5
 })
 append_levels({
@@ -1605,7 +1605,7 @@ csv.append(["KrollProcess", "Kroll Process"])
 csv.append(["AluminiumReduction", "Aluminium Reduction"])
 csv.append(["AdvancedAlloys", "Advanced Alloys"])
 csv.append(["LithiumBattery", "Lithium Battery"])
-csv.append(["CrudeNiobium", "Crude Niobium"])
+csv.append(["CrudeTantalum", "Crude Tantalum"])
 
 write_file("Generated/Researches/basic.json", data)
 write_file("Loc/source/researches.json", csv)
