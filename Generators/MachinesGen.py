@@ -35,7 +35,7 @@ for machine in machines:
 			low_tier = tier - 1
 			if low_tier > 2:
 				return "SteelParts"
-			return tier_material[max(low_tier, 0)] + "Parts"
+			return tier_material[max(low_tier, 1)] + "Parts"
 		
 		def part():
 			return tier_material[tier] + "Parts"
