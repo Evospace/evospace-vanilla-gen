@@ -2954,28 +2954,28 @@ recipes_portal.append({
 
 append_recipe_hand({
 	"Name": "Column",
-	"Input": one_item("StoneSurface"),
+	"Input": one_item("BuildingMaterial"),
 	"Output": one_item("Column"),
 	"Ticks" : 20
 })
 
 append_recipe_hand({
 	"Name": "FluetedColumn",
-	"Input": one_item("Column"),
+	"Input": one_item("BuildingMaterial"),
 	"Output": one_item("FluetedColumn"),
 	"Ticks" : 20
 })
 
 append_recipe_hand({
 	"Name":"GlassBlock",
-	"Input": one_item("Glass"),
+	"Input": one_item("BuildingMaterial"),
 	"Output": one_item("GlassBlock"),
 	"Ticks" : 10
 })
 
 append_recipe_hand({
 	"Name":"PlasticBlock",
-	"Input": one_item("Plastic"),
+	"Input": one_item("BuildingMaterial"),
 	"Output": one_item("PlasticBlock"),
 	"Ticks" : 10
 })
