@@ -712,7 +712,6 @@ for prop in props:
 			"Name": prop["Name"] + variation_helper[variation],
 			"StackSize": 32,
 			"Image": image,
-			"Object": prop["Name"] + variation_helper[variation],
 			"Category": "Terrain",
 			"LabelParts": [[prop["Name"], "props"]],
 			"DescriptionParts":[["WorldObject","common"]],

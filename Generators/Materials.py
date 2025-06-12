@@ -252,21 +252,16 @@ materials = [
 	#	"Tier": 2
 	#}
 	,{
-		"Name": "Cobalt",
-		"Label": "Cobalt",
-		"Smelting": ["InductionFurnace"],
-		"Items": ["Dust", "Block"],
-		"Tier": 5
-	},{
-		"Name": "CobaltOxide",
-		"Label": "Cobalt Oxide",
-		"Items": ["Dust"],
-		"Tier": 5
-	},{
 		"Name": "Stone",
 		"Label": "Stone",
 		"Tier": 0,
 		"Items": ["Exact"],
+	},{
+		"Name": "BuildingMaterial",
+		"Label": "Building Material",
+		"Tier": 0,
+		"Items": ["Exact"],
+		"StackSize": 999,
 	},{
 		"Name": "Sulfur",
 		"Label": "Sulfur",

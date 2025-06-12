@@ -1089,21 +1089,6 @@ machines = [
 		"BlockLogic":"ComputerBlockLogic",
 		"Description": ["ElectricInput"],
 	},{
-		"Name": "Radiator",
-		"Label": "Radiator",
-		"StartTier": 3,
-		"EndTier": 7,
-		"BlockLogic":"SelectCrafter",
-		"BlockCreation":"""
-        local a = self:new_resource_accessor("Input")
-		a:SetSidePos(Vec3i.down, Vec3i.zero)
-        local res = self:get_resource_component()
-		a:Bind(res)
-        res.input = 20
-        res.input_item = StaticItem.find("Heat")
-		""",
-		"Description": ["HeatInput"],
-	},{
 		"Name": "Diode",
 		"Label": "Diode",
 		"StartTier": 2,

@@ -255,7 +255,6 @@ building_cube_logic = "BuildingSurfaceBlockItemLogic"
 building_single_logic = "BuildingSingleBlockItemLogic"
 building_drill_logic = "BuildingDrillBlockItemLogic"
 building_plane_logic = "BuildingPlaneBlockItemLogic"
-building_decoration_logic = "BuildingDecorationItemLogic"
 
 cover_item_logic = "CoverItemLogic"
 

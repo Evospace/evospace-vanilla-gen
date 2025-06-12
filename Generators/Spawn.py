@@ -17,7 +17,7 @@ data = {
 			},
 			{
 				"Name": "BasicPlatform",
-				"Count": 99
+				"Count": 999
 			}
 		]
 	}

@@ -17,7 +17,9 @@ parts = [
 	},{
 		"Label": "Solar Cell",
 		"Name": "SolarCell",
-		"StackSize": 32
+		"StackSize": 32,
+		"Mesh": "/Game/Models/ingot",
+		"Materials": ["", "/Game/CoreContent/solar"]
 	},{
 		"Label": "Sheet",
 		"Name": "Sheet",
@@ -139,10 +141,6 @@ tools = [
 		"Name": "UpgradeBlueprint",
 		"Label": "Upgrade Blueprint",
         "ItemLogic": "/Game/Equipped/BlueprintToolBP.BlueprintToolBP_C",
-	},{
-		"Name": "DecorationTool",
-		"Label": "Decoration Tool",
-		"ItemLogic": "/Game/Equipped/DecorationToolBP.DecorationToolBP_C",
 	}
 	#{
 	#	"Name": "BuildTool",

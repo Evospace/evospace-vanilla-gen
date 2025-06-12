@@ -148,7 +148,7 @@ for object in mapgen_objects:
 		"Mesh": "/Game/Models/piece",
 		"Materials" : ["/Game/Materials/" + object["Drops"]],
 		"Color": object["Item"],
-		"Object": object["Name"] + "Surface",
+		"Block": object["Name"] + "Surface",
 		"StackSize": 999,
 		"LabelParts": [[object["Name"]+ "Surface", "mapgen_core"]],
 	})
