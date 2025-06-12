@@ -992,14 +992,14 @@ for machine in machines:
 		if machine["Name"] == "Portal":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input": items[
+				"Input": items([
 					["UltimateCatalyst", 10],
 					[plate(), 40],
 					["ModularFrame", 20],
 					[wire(), 100],
 					[circuit(), 15 + 5 * level],
 					["BuildingMaterial", 256]
-				],
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 300
 			})
