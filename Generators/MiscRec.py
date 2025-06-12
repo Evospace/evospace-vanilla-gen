@@ -109,19 +109,8 @@ def append_recipe(recipe):
 	recipes_hand.append(recipe)
 	recipes_assembler.append(recipe)
 
-def append_recipe_hand_press(recipe):
-	item_count = 0
-	for item in recipe["Input"]["Items"]:
-		item_count = item_count + item["Count"]
-	
-	dec_recipe = copy.deepcopy(recipe)
-
-	recipes_hand.append(recipe)
-	
-	output = copy.deepcopy(dec_recipe["Input"])
-	
-	dec_recipe["Ticks"] = 60
-	recipes_press.append(dec_recipe)		
+def append_recipe_hand(recipe):
+	recipes_hand.append(recipe)	
 
 recipes_industrial_steam_turbine.append({
 	"Name": "Rotating",
@@ -681,6 +670,16 @@ for miscBlock in ["ReinforcedConcrete", "ReinforcedConcreteTiles", "ReinforcedCo
 		"Tier": 3
 	})
 
+for miscBlock in ["Chair", "CopperChair", "Ladder", "Door", "Window", "PlasticWindow", "Table", "Bed", "Rack", "WoodenStairs", "Fence", "SteelFence", "StainlessSteelFence"]:
+	recipes_hand.append({
+		"Name": miscBlock,
+		"Input": items([
+			["BuildingMaterial", 2]
+		]),
+		"Output": one_item(miscBlock),
+		"Ticks" : 20,
+		"Tier": 1
+	})
 		
 for level, name, copm_name in zip(range(0, 4), ["BasicBattery", "AdvancedBattery", "SuperiorBattery", "UltimateBattery"], ["Battery", "BasicBattery", "AdvancedBattery", "SuperiorBattery"]):
 	recipes_hand.append({
@@ -2935,7 +2934,8 @@ recipes_pyro.append({
 	"Ticks" : 200,
 	"Tier": 5,
 })
-append_recipe({
+
+append_recipe_hand({
 	"Name": "CarbonFiberSheet",
 	"Input": one_item("CarbonFiber", 2),
 	"Output": one_item("CarbonFiberSheet"),
@@ -2952,35 +2952,35 @@ recipes_portal.append({
 	"Ticks" : 1000
 })
 
-append_recipe_hand_press({
+append_recipe_hand({
 	"Name": "Column",
 	"Input": one_item("StoneSurface"),
 	"Output": one_item("Column"),
 	"Ticks" : 20
 })
 
-append_recipe_hand_press({
+append_recipe_hand({
 	"Name": "FluetedColumn",
 	"Input": one_item("Column"),
 	"Output": one_item("FluetedColumn"),
 	"Ticks" : 20
 })
 
-append_recipe_hand_press({
+append_recipe_hand({
 	"Name":"GlassBlock",
 	"Input": one_item("Glass"),
 	"Output": one_item("GlassBlock"),
 	"Ticks" : 10
 })
 
-append_recipe_hand_press({
+append_recipe_hand({
 	"Name":"PlasticBlock",
 	"Input": one_item("Plastic"),
 	"Output": one_item("PlasticBlock"),
 	"Ticks" : 10
 })
 
-append_recipe_hand_press({
+append_recipe_hand({
 	"Name": "BuildingMaterial",
 	"Input": one_item("StoneSurface"),
 	"Output": one_item("BuildingMaterial"),
