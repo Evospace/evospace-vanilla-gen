@@ -202,6 +202,36 @@ recipes_smelter.append({
 })
 
 # other		
+
+recipes_hand.append({
+	"Name":"CircuitBoard",
+	"Input": one_item("Log"),
+	"Output": one_item("CircuitBoard"),
+	"Ticks" : 20,
+	"Tier": 1
+})
+
+recipes_assembler.append({
+	"Name":"CircuitBoard2",
+	"Input": items([
+		["Log", 1],
+		["PolyethyleneSheet", 2]
+	]),
+	"Output": one_item("CircuitBoard", 4),
+	"Ticks" : 20,
+	"Tier": 4
+})
+
+recipes_assembler.append({
+	"Name":"CircuitBoard3",
+	"Input": items([
+		["CarbonFiberSheet", 1],
+		["PolyethyleneSheet", 2],
+	]),
+	"Output": one_item("CircuitBoard", 8),
+	"Ticks" : 20,
+	"Tier": 5
+})
 		
 recipes_hand.append({
 	"Name":"Circuit",

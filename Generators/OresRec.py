@@ -143,7 +143,7 @@ for ore_type in ore_types:
 			out_items.append({
 				"Name": ore_type["Processing"]["OreWasher"],
 				"Count": 1,
-				"Probability": 10,
+				"Bonus": True
 			})
 		recipes_ore_washer.append({
 			"Name": "OreWasher" + ore_name + "OreImpureGravel",
@@ -168,6 +168,7 @@ for ore_type in ore_types:
 			},
 			"Ticks" : 200,
 			"Tier": material_tier,
+			"Productivity": 50
 		})
 			
 		# Industrial Separator
@@ -195,28 +196,14 @@ for ore_type in ore_types:
 		if "ChemicalBath" in processing:
 			recipes_chemical_bath.append({
 				"Name": ore_type["Name"] + "ImpureOreGravel",
-				"Input": {
-					"Items": [
-						{
-							"Name": ore_type["Name"] + "OreImpureGravel",
-							"Count": 1
-						},{
-							"Name": processing["ChemicalBath"][0],
-							"Count": 250
-						}
-					]
-				},
-				"Output": {
-					"Items": [
-						{
-							"Name": ore_type["Name"] + "OreGravel",
-							"Count": 1
-						},{
-							"Name": processing["ChemicalBath"][1],
-							"Count": 1
-						},
-					]
-				},
+				"Input": items([
+					[ore_type["Name"] + "OreImpureGravel"],
+					[processing["ChemicalBath"][0], 250]
+				]),
+				"Output": items([
+					[processing["ChemicalBath"][1]],
+					[processing["ChemicalBath"][2]]
+				]),
 				"Ticks" : 200,
 				"Tier": 3,
 			})	
