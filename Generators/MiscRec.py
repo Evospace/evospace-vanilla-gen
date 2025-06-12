@@ -629,6 +629,58 @@ recipes_hand.append({
 	"Ticks" : 100,
 	"Tier": 3
 })
+
+recipes_hand.append({
+	"Name": "BasicPlatform",
+	"Input": items([
+		["BuildingMaterial"]
+	]),
+	"Output": one_item("BasicPlatform"),
+	"Ticks" : 10,
+	"Tier": 0
+})
+
+recipes_hand.append({
+	"Name": "Bricks",
+	"Input": items([
+		["BuildingMaterial"]
+	]),
+	"Output": one_item("Bricks"),
+	"Ticks" : 10,
+	"Tier": 0
+})
+
+for miscBlock in ["WoodenPlanks", "StoneTiles", "RedTiles", "DarkTiles", "Terracotta", "TerracottaTiles", "RedBricks", "DarkBricks", "TerracottaBricks"]:
+	recipes_hand.append({
+		"Name": miscBlock,
+		"Input": items([
+			["BuildingMaterial", 2]
+		]),
+		"Output": one_item(miscBlock),
+		"Ticks" : 10,
+		"Tier": 1
+	})
+for miscBlock in ["Concrete", "ConcreteBricks", "ConcreteTiles", "ConcreteSmallTiles"]:
+	recipes_hand.append({
+		"Name": miscBlock,
+		"Input": items([
+			["BuildingMaterial", 4]
+		]),
+		"Output": one_item(miscBlock),
+		"Ticks" : 10,
+		"Tier": 2
+	})
+for miscBlock in ["ReinforcedConcrete", "ReinforcedConcreteTiles", "ReinforcedConcreteSmallTiles", "ReinforcedConcreteBricks", "DangerBlock"]:
+	recipes_hand.append({
+		"Name": miscBlock,
+		"Input": items([
+			["BuildingMaterial", 8]
+		]),
+		"Output": one_item(miscBlock),
+		"Ticks" : 10,
+		"Tier": 3
+	})
+
 		
 for level, name, copm_name in zip(range(0, 4), ["BasicBattery", "AdvancedBattery", "SuperiorBattery", "UltimateBattery"], ["Battery", "BasicBattery", "AdvancedBattery", "SuperiorBattery"]):
 	recipes_hand.append({
@@ -1681,6 +1733,70 @@ recipes_mixer.append({
 		]
 	},
 	"Ticks" : 400,
+})
+
+recipes_mixer.append({
+	"Name": "BuildingMaterial2",
+	"Input": items([
+		["GravelSurface"],
+		["SandSurface"],
+		["Clay"]
+	]),
+	"Output": one_item("BuildingMaterial", 10),
+	"Ticks" : 60,
+	"Tier": 2,
+})
+
+recipes_mixer.append({
+	"Name": "BuildingMaterial3",
+	"Input": items([
+		["GravelSurface"],
+		["SandSurface"],
+		["Clay"],
+		["SteelParts", 2]
+	]),
+	"Output": one_item("BuildingMaterial", 20),
+	"Ticks" : 60,
+	"Tier": 3,
+})
+
+recipes_mixer.append({
+	"Name": "BuildingMaterial4",
+	"Input": items([
+		["GravelSurface"],
+		["SandSurface"],
+		["Clay"],
+		["TitaniumParts", 2]
+	]),
+	"Output": one_item("BuildingMaterial", 40),
+	"Ticks" : 60,
+	"Tier": 4,
+})
+
+recipes_mixer.append({
+	"Name": "BuildingMaterial5",
+	"Input": items([
+		["GravelSurface"],
+		["SandSurface"],
+		["Clay"],
+		["CompositeParts", 2]
+	]),
+	"Output": one_item("BuildingMaterial", 80),
+	"Ticks" : 60,
+	"Tier": 5,
+})
+
+recipes_mixer.append({
+	"Name": "BuildingMaterial6",
+	"Input": items([
+		["GravelSurface"],
+		["SandSurface"],
+		["Clay"],
+		["NeutroniumParts", 2]
+	]),
+	"Output": one_item("BuildingMaterial", 160),
+	"Ticks" : 60,
+	"Tier": 6,
 })
 
 recipes_mixer.append({
@@ -2865,9 +2981,9 @@ append_recipe_hand_press({
 })
 
 append_recipe_hand_press({
-	"Name": "BasicPlatform",
-	"Input": one_item("SandSurface"),
-	"Output": one_item("BasicPlatform"),
+	"Name": "BuildingMaterial",
+	"Input": one_item("StoneSurface"),
+	"Output": one_item("BuildingMaterial"),
 	"Ticks" : 10
 })
 

@@ -234,12 +234,6 @@ equipped = [
 		"Name": "Flashlight",
 		"ItemLogic": "/Game/Equipped/FlashlightBP.FlashlightBP_C"
 	},{
-		"Name": "NightVision",
-		"ItemLogic": "/Game/Equipped/NightVisionBP.NightVisionBP_C"
-	},{
-		"Name": "AdvancedNightVision",
-		"ItemLogic": "/Game/Equipped/AdvancedNightVisionBP.AdvancedNightVisionBP_C"
-	},{
 		"Name": "Steampack",
 		"ItemLogic": "/Game/Equipped/SteampackBP.SteampackBP_C"
 	},{
@@ -269,7 +263,7 @@ for one in wooden_misc:
 	item = { "Class": "StaticItem",
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
-		"Object": one["Name"],
+		"Block": one["Name"],
 		"StackSize": 32,
 		"LabelParts":[[one["Name"],"misc"]],
 		"ItemLogic": building_single_logic
@@ -297,10 +291,9 @@ for one in simple_single:
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_single_logic,
-		"Object": one["Name"],
+		"Block": one["Name"],
 		"StackSize": 32,
 		"LabelParts":[[one["Name"],"misc"]],
-		"Object": one["Name"],
 		"Tier": one["Tier"] if "Tier" in one else 0
 	})	
 	
@@ -325,7 +318,7 @@ for one in simple_blocks:
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_cube_logic,
-		"Object": one["Name"] + static_block,
+		"Block": one["Name"] + static_block,
 		"StackSize": 999,
 		"LabelParts":[[one["Name"],"misc"]],
 		"Category": "Block",
@@ -341,6 +334,7 @@ for one in simple_blocks:
 		"Item" : one["Name"],
 		"Tesselator": one["Name"] + tesselator,
 		"BuildingMode": "Plane",
+		"Minable": {"Result": one["Name"]},
 	})
 	
 for one in static_mesh_block:
@@ -350,7 +344,7 @@ for one in static_mesh_block:
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_single_logic,
-		"Object": one["Name"] + static_block,
+		"Block": one["Name"] + static_block,
 		"StackSize": 32,
 		"LabelParts":[[one["Name"],"misc"]],
 	})	

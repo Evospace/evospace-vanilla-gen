@@ -89,45 +89,45 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
-	"Class": "StaticResearchDecorationUnlock",
+	"Class": research_recipe,
 	"Name": "BasicPlatform",
 	"LabelParts": [["BasicPlatform", "parts"]],
 	"RequiredResearch": ["MineralsScan"],
-	"Decoration": "BasicPlatform",
+	"Unlocks": [["Hand" + r_dict, "BasicPlatform"], ["Hand" + r_dict, "BuildingMaterial"]],
 	"CompleteByDefault": True,
 })
 append_levels({
-	"Class": "StaticResearchDecorationUnlock",
+	"Class": research_recipe,
 	"Name": "Bricks",
 	"LabelParts": [["Bricks", "misc"]],
 	"RequiredResearch": ["BasicPlatform"],
-	"Decoration": "Bricks",
+	"Unlocks": [["Hand" + r_dict, "Bricks"]],
 })
 for miscBlock in ["WoodenPlanks", "StoneTiles", "RedTiles", "DarkTiles", "Terracotta", "TerracottaTiles", "RedBricks", "DarkBricks", "TerracottaBricks"]:
 	append_levels({
-		"Class": "StaticResearchDecorationUnlock",
+		"Class": research_recipe,
 		"Name": miscBlock,
 		"LabelParts": [[miscBlock, "misc"]],
 		"RequiredResearch": ["Bricks"],
-		"Decoration": miscBlock,
+		"Unlocks": [["Hand" + r_dict, miscBlock]],
 		"Levels": [1,1]
 	})
 for miscBlock in ["Concrete", "ConcreteBricks", "ConcreteTiles", "ConcreteSmallTiles"]:
 	append_levels({
-		"Class": "StaticResearchDecorationUnlock",
+		"Class": research_recipe,
 		"Name": miscBlock,
 		"LabelParts": [[miscBlock, "misc"]],
 		"RequiredResearch": ["StoneTiles"],
-		"Decoration": miscBlock,
+		"Unlocks": [["Hand" + r_dict, miscBlock]],
 		"Levels": [2,2]
 	})
 for miscBlock in ["ReinforcedConcrete", "ReinforcedConcreteTiles", "ReinforcedConcreteSmallTiles", "ReinforcedConcreteBricks", "DangerBlock"]:
 	append_levels({
-		"Class": "StaticResearchDecorationUnlock",
+		"Class": research_recipe,
 		"Name": miscBlock,
 		"LabelParts": [[miscBlock, "misc"]],
 		"RequiredResearch": ["Concrete"],
-		"Decoration": miscBlock,
+		"Unlocks": [["Hand" + r_dict, miscBlock]],
 		"Levels": [3,3]
 	})
 append_levels({
@@ -439,14 +439,6 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
-	"Name": "Radiator",
-	"LabelParts": [["Radiator", "machines"]],
-	"RequiredResearch": ["HeatTransferring"],
-	"Levels": [3,7],
-	"Unlocks": [["Hand" + r_dict, "%Material%Radiator"] ],
-})
-append_levels({
-	"Class": research_recipe,
 	"Name": "AtmosphericCondenser",
 	"LabelParts": [["AtmosphericCondenser", "machines"]],
 	"RequiredResearch": ["AutomaticFarm"],
@@ -553,19 +545,6 @@ append_levels({
 	"Unlocks": [["Hand" + r_dict, "%Material%SteamEngine"]],
 	"Levels": [2,7],
 	"MainResearch": True,
-	"CostMul": 1.5,
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "LogicCircuit",
-	"LabelParts": [["LogicCircuit", "machines"]],
-	"RequiredResearch": ["Circuit"],
-	"Unlocks": [["Hand" + r_dict, "SteelLogicCircuit"] ,
-	["Hand" + r_dict, "SteelLogicController"] ,
-	["Hand" + r_dict, "SteelLogicInterface"] ,
-	["Hand" + r_dict, "SteelLogicDisplay"] ,
-	["Hand" + r_dict, "SteelLogicWire"] ],
-	"Levels": [2,2],
 	"CostMul": 1.5,
 })
 append_levels({

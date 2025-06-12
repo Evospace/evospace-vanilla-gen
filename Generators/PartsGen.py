@@ -38,11 +38,11 @@ def generate_part(name, material_dict):
 		
 		"Category": "Parts",
 	}
-	if "ItemLogic" in part:
-		item["ItemLogic"] = part["ItemLogic"]
-		
 	if "Mesh" in part:
 		item["Mesh"] = part["Mesh"]
+
+	if "ItemLogic" in part:
+		item["ItemLogic"] = part["ItemLogic"]
 		
 	if "Materials" in part:
 		dict = copy.deepcopy(part["Materials"])
@@ -350,7 +350,7 @@ for material in materials:
 			"LabelParts": [[material["Name"] + "Block", "parts"]],
 			"Category": "Block",
 			"ItemLogic": building_cube_logic,
-			"Object": material["Name"] + "Block",
+			"Block": material["Name"] + "Block",
 		}
 		
 		if "Category" in material:

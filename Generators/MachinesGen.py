@@ -127,7 +127,7 @@ for machine in machines:
 		item = { "Class": "StaticItem",
 			"Name": block_name,
 			"Image": ("T_" + image) if "ExactName" in machine else ("T_" + tier_material[tier] + image),
-			"Object": block_name,
+			"Block": block_name,
 			"StackSize": 32,
 			"LabelParts": labelParts,
 			"LabelFormat": labelFormat,
