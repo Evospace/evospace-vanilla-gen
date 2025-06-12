@@ -491,6 +491,24 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "CircuitBoard2",
+	"LabelParts": [["CircuitBoard", "parts"], ["II", "common"]],
+	"RequiredResearch": ["CircuitBoard", "Polyethylene"],
+	"Levels": [4,4],
+	"Unlocks": [[assembler_r_dict, "CircuitBoard2"]],
+	"CostMul":1.0
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "CircuitBoard3",
+	"LabelParts": [["CircuitBoard", "parts"], ["III", "common"]],
+	"RequiredResearch": ["CircuitBoard2", "CarbonFiber"],
+	"Levels": [5,5],
+	"Unlocks": [[assembler_r_dict, "CircuitBoard3"]],
+	"CostMul":0.5
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "Triod",
 	"LabelParts": [["Triod", "parts"]],
 	"RequiredResearch": ["CircuitBoard"],
