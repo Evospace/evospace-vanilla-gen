@@ -13,7 +13,7 @@ cvs = []
 
 def plate_frame_component(tier, count):
 	if tier == 0:
-		return {"Name": "StoneSurface", "Count": count}
+		return {"Name": "BuildingMaterial", "Count": count}
 	else:
 		return {"Name": tier_material[tier] + "Plate", "Count": count}
 
@@ -92,9 +92,6 @@ for machine in machines:
 		def robotarm():
 			return tier_material[tier] + "RobotArm"
 		
-		def isolator():
-			return heat_isolators[tier]
-		
 		def append_recipe(recipe):
 			recipe["Tier"] = tier
 			recipes_hand.append(recipe)
@@ -109,7 +106,7 @@ for machine in machines:
 			return {"Name": tier_material[tier] + "Parts", "Count": count}
 		
 		def isolators_count(count):
-			return {"Name": heat_isolators[tier], "Count": count}
+			return {"Name": "BuildingMaterial", "Count": count}
 		
 		def plates_count(count):
 			return plate_frame_component(tier, count)
@@ -288,7 +285,7 @@ for machine in machines:
 				"Input":{
 					"Items":[
 						{
-							"Name": tier_material[tier] + "Plate" if tier != 0 else "StoneSurface",
+							"Name": tier_material[tier] + "Plate" if tier != 0 else "BuildingMaterial",
 							"Count": 1
 						}
 					]
@@ -375,7 +372,7 @@ for machine in machines:
 					wire_count(32),
 					[plate(), 12],
 					frame_pair(3),
-					[isolator(), 12]
+					["BuildingMaterial", 64]
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 80
@@ -734,7 +731,7 @@ for machine in machines:
 				"Input":{
 					"Items":[
 						{
-							"Name": tier_material[tier] + "Plate" if tier != 0 else "StoneSurface",
+							"Name": tier_material[tier] + "Plate" if tier != 0 else "BuildingMaterial",
 							"Count": 5
 						}
 					]
@@ -781,7 +778,7 @@ for machine in machines:
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([
-					["StoneSurface", 10],
+					["BuildingMaterial", 10],
 					[tiered("Pipe"), 10]
 				], level),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -792,7 +789,7 @@ for machine in machines:
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([
-					["StoneSurface", 20],
+					["BuildingMaterial", 20],
 					[tiered("Pipe"), 20]
 				], level),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -840,7 +837,7 @@ for machine in machines:
 				"Input":{
 					"Items":[
 						{
-							"Name": tier_material[tier] + "Plate"+ static_item if tier > 0 else "StoneSurface",
+							"Name": tier_material[tier] + "Plate"+ static_item if tier > 0 else "BuildingMaterial",
 							"Count": 4
 						}
 					]
@@ -970,7 +967,8 @@ for machine in machines:
 					["CopperHeatPipe", 25],
 					[plate(), 100],
 					[part(), 100],
-					[circuit(), 20 + 5 * level]
+					[circuit(), 10 + 5 * level],
+					["BuildingMaterial", 128]
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
@@ -984,7 +982,8 @@ for machine in machines:
 					[plate(), 40],
 					[wire(), 100],
 					[circuit(), 15 + 5 * level],
-					["PlatinumReflector", 40]
+					["PlatinumReflector", 40],
+					["BuildingMaterial", 128]
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 300
@@ -993,27 +992,14 @@ for machine in machines:
 		if machine["Name"] == "Portal":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": "UltimateCatalyst",
-							"Count": 10
-						},
-						plates_count(40),
-						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 50
-						},
-						{
-							"Name": wire(),
-							"Count": 100
-						},
-						{
-							"Name": circuits[tier],
-							"Count": 15 + 5 * level
-						}
-					]
-				},
+				"Input": items[
+					["UltimateCatalyst", 10],
+					[plate(), 40],
+					["ModularFrame", 20],
+					[wire(), 100],
+					[circuit(), 15 + 5 * level],
+					["BuildingMaterial", 256]
+				],
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 300
 			})
@@ -1241,7 +1227,7 @@ for machine in machines:
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([
-					[isolator(), 6],
+					["BuildingMaterial", 32],
 					[part(), 4],
 					wire_count(5)
 				]),

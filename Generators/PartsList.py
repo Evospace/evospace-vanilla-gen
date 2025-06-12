@@ -85,17 +85,6 @@ cables = [
 	"CopperConnector",
 ]
 
-heat_isolators = [
-	"StoneSurface",
-	"StoneSurface",
-	"StoneSurface",
-	"StoneSurface",
-	"StoneSurface",
-	"StoneSurface",
-	"StoneSurface",
-	"StoneSurface",
-]
-
 tools = [
 	{
 		"Name": "Multitool",
