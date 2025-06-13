@@ -157,16 +157,6 @@ ore_types = [
 		"Burnable": {
 			"BurnTime": 800
 		},
-	},{
-		"Name": "Clay",
-		"NotOre": True,
-		"Color": [0.3, 0.1, 0.05],
-		"Drops": "Clay",
-		"Crystal": True,
-		"Formula": "",
-		"Processing": {
-		},
-		"Tier": 3
 	}
 ]
 

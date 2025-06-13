@@ -66,27 +66,6 @@ recipes_hand.append({
 	"Ticks": 20,
 })
 
-recipes_hand.append({
-	"Name":"CircuitBoard",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Log",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "CircuitBoard",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 20
-})
-
 append_recipe_hand({
 	"Name": "WoodenPlanks",
 	"Input":{
