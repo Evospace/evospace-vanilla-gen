@@ -229,7 +229,7 @@ generators.extend([
 	},{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "ClayLayering",
-		"Blocks": ["ClayOre" + static_surface, "ClayOre" + static_surface, "DarkStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["ClaySurface" + static_surface, "ClaySurface" + static_surface, "DarkStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
 		"Starts": [0, 2, 6, 9, 12, 16, 19, 23, 30]
 	},{
 		"Name":"BogPropsBase",
@@ -300,12 +300,12 @@ generators.extend([
 	},{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "SeaBottomLayeringCopper",
-		"Blocks": ["ClayOre" + static_surface, "LimestoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["ClaySurface" + static_surface, "LimestoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
 		"Starts": [0, 2, 9, 12, 16, 19, 23, 30]
 	},{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "SeaBottomLayeringClay",
-		"Blocks": ["ClayOre" + static_surface, "LimestoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["ClaySurface" + static_surface, "LimestoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
 		"Starts": [0, 2, 9, 12, 16, 19, 23, 30]
 	},{
 		"Name": "IslesPropsBase",

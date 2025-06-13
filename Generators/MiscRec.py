@@ -649,27 +649,7 @@ recipes_hand.append({
 	"Tier": 3
 })
 
-recipes_hand.append({
-	"Name": "BasicPlatform",
-	"Input": items([
-		["BuildingMaterial"]
-	]),
-	"Output": one_item("BasicPlatform"),
-	"Ticks" : 10,
-	"Tier": 0
-})
-
-recipes_hand.append({
-	"Name": "Bricks",
-	"Input": items([
-		["BuildingMaterial"]
-	]),
-	"Output": one_item("Bricks"),
-	"Ticks" : 10,
-	"Tier": 0
-})
-
-for miscBlock in ["WoodenPlanks", "StoneTiles", "RedTiles", "DarkTiles", "Terracotta", "TerracottaTiles", "RedBricks", "DarkBricks", "TerracottaBricks"]:
+for miscBlock in ["BasicPlatform", "Bricks", "GlassBlock", "WoodenPlanks", "StoneTiles", "RedTiles", "DarkTiles", "Terracotta", "TerracottaTiles", "RedBricks", "DarkBricks", "TerracottaBricks"]:
 	recipes_hand.append({
 		"Name": miscBlock,
 		"Input": items([
@@ -679,7 +659,7 @@ for miscBlock in ["WoodenPlanks", "StoneTiles", "RedTiles", "DarkTiles", "Terrac
 		"Ticks" : 10,
 		"Tier": 1
 	})
-for miscBlock in ["Concrete", "ConcreteBricks", "ConcreteTiles", "ConcreteSmallTiles"]:
+for miscBlock in ["Concrete", "ConcreteBricks", "ConcreteTiles", "ConcreteSmallTiles", "PlasticBlock"]:
 	recipes_hand.append({
 		"Name": miscBlock,
 		"Input": items([
@@ -700,11 +680,11 @@ for miscBlock in ["ReinforcedConcrete", "ReinforcedConcreteTiles", "ReinforcedCo
 		"Tier": 3
 	})
 
-for miscBlock in ["Chair", "CopperChair", "Ladder", "Door", "Window", "PlasticWindow", "Table", "Bed", "Rack", "WoodenStairs", "Fence", "SteelFence", "StainlessSteelFence"]:
+for miscBlock in ["Column", "FluetedColumn", "Chair", "CopperChair", "Ladder", "Door", "Window", "PlasticWindow", "Table", "Bed", "Rack", "WoodenStairs", "Fence", "SteelFence", "StainlessSteelFence"]:
 	recipes_hand.append({
 		"Name": miscBlock,
 		"Input": items([
-			["BuildingMaterial", 2]
+			["BuildingMaterial", 3]
 		]),
 		"Output": one_item(miscBlock),
 		"Ticks" : 20,
@@ -1669,27 +1649,6 @@ recipes_oven.append({
 	"Ticks": 2*2*20*3,
 })
 
-recipes_oven.append({
-	"Name": "Terracotta",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Clay",
-				"Count": 10
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Terracotta",
-				"Count": 10
-			},
-		]
-	},
-	"Ticks": 100,
-})
-
 for fuel_type, bonus in zip(["Coke"], [1.0]):	
 	recipes_blast_furnace.append({
 		"Name": "IronDustSmelting",
@@ -1769,7 +1728,7 @@ recipes_mixer.append({
 	"Input": items([
 		["GravelSurface"],
 		["SandSurface"],
-		["Clay"]
+		["Water", 500]
 	]),
 	"Output": one_item("BuildingMaterial", 10),
 	"Ticks" : 60,
@@ -1781,7 +1740,7 @@ recipes_mixer.append({
 	"Input": items([
 		["GravelSurface"],
 		["SandSurface"],
-		["Clay"],
+		["Water", 500],
 		["SteelParts", 2]
 	]),
 	"Output": one_item("BuildingMaterial", 20),
@@ -1794,7 +1753,7 @@ recipes_mixer.append({
 	"Input": items([
 		["GravelSurface"],
 		["SandSurface"],
-		["Clay"],
+		["Water", 500],
 		["TitaniumParts", 2]
 	]),
 	"Output": one_item("BuildingMaterial", 40),
@@ -1807,7 +1766,7 @@ recipes_mixer.append({
 	"Input": items([
 		["GravelSurface"],
 		["SandSurface"],
-		["Clay"],
+		["Water", 500],
 		["CompositeParts", 2]
 	]),
 	"Output": one_item("BuildingMaterial", 80),
@@ -1820,7 +1779,7 @@ recipes_mixer.append({
 	"Input": items([
 		["GravelSurface"],
 		["SandSurface"],
-		["Clay"],
+		["Water", 500],
 		["NeutroniumParts", 2]
 	]),
 	"Output": one_item("BuildingMaterial", 160),
@@ -1936,13 +1895,6 @@ for material in {"Ruby", "Malachite"}:
 		"Tier": 3,
 		"Ticks" : 80,
 	})
-
-recipes_macerator.append({
-	"Name": "Clay",
-	"Input": one_item("DirtSurface"),
-	"Output": one_item("Clay"),
-	"Ticks" : 200
-})
 recipes_macerator.append({
 	"Name": "Coal",
 	"Input": one_item("Coal"),
@@ -2980,34 +2932,6 @@ recipes_portal.append({
 	},
 	"Output": one_item("MothershipPing"),
 	"Ticks" : 1000
-})
-
-append_recipe_hand({
-	"Name": "Column",
-	"Input": one_item("BuildingMaterial"),
-	"Output": one_item("Column"),
-	"Ticks" : 20
-})
-
-append_recipe_hand({
-	"Name": "FluetedColumn",
-	"Input": one_item("BuildingMaterial"),
-	"Output": one_item("FluetedColumn"),
-	"Ticks" : 20
-})
-
-append_recipe_hand({
-	"Name":"GlassBlock",
-	"Input": one_item("BuildingMaterial"),
-	"Output": one_item("GlassBlock"),
-	"Ticks" : 10
-})
-
-append_recipe_hand({
-	"Name":"PlasticBlock",
-	"Input": one_item("BuildingMaterial"),
-	"Output": one_item("PlasticBlock"),
-	"Ticks" : 10
 })
 
 append_recipe_hand({

@@ -90,6 +90,13 @@ mapgen_objects = [
 		"Drops": "Dirt",
 		"Hardness": 1
 	},{
+		"Name": "Clay",
+		"Color": [0.3, 0.1, 0.05],
+		"Side": [0.3, 0.1, 0.05],
+		"Item": [0.3, 0.1, 0.05],
+		"Drops": "Sand",
+		"Hardness": 1.0
+	},{
 		"Name": "Limestone",
 		"Color": [161 / 255., 156 / 255., 135 / 255.],
 		"Side": [161 / 255., 156 / 255., 135 / 255.],

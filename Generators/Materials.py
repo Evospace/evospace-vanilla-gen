@@ -530,12 +530,6 @@ materials = [
 		"Label": "Ammonia",
 		"Items": ["Fluid"]
 	},{
-		"Name": "Clay",
-		"Label": "Clay",
-		"Tier": 0,
-		"Items": ["Exact"],
-		"Mesh": "/Game/Models/Piece"
-	},{
 		"Name": "RareEarthSludge",
 		"Label": "Rare Earth Sludge",
 		"Items": ["Exact"],
