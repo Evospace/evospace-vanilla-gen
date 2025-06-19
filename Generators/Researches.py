@@ -1546,6 +1546,14 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "Flashlight",
+	"LabelParts": [["Flashlight", "misc"]],
+	"RequiredResearch": ["Lamp1"],
+	"Unlocks": [["Hand" + r_dict, "Flashlight"]],
+	"Levels": [2,2],
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "Sign",
 	"LabelParts": [["Sign", "machines"]],
 	"RequiredResearch": ["Lamp"],

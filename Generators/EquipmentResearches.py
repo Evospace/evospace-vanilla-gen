@@ -40,16 +40,6 @@ def append_equipment(xy, append_levels, researches):
 	})
 	append_levels({
 		"Class": research_recipe,
-		"Name": "Flashlight",
-		"LabelParts": [["Flashlight", "misc"]],
-		"RequiredResearch": ["Multitool"],
-		"Unlocks": [["Hand" + r_dict, "Flashlight"]],
-		
-		
-		"Levels": [1,1],
-	})
-	append_levels({
-		"Class": research_recipe,
 		"Name": "Jetpack",
 		"LabelParts": [["Jetpack", "misc"]],
 		"RequiredResearch": ["AdvancedCircuit", "Steampack", "ElectricEngine1"],
