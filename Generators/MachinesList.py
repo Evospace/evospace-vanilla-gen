@@ -76,7 +76,7 @@ machines = [
 			"StorageCapacity": 30000,
 			"StorageDrain": 0,
 		},
-		"PowerOutput": 100,
+		"PowerOutput": 200,
 	},{
 		"Name": "Pipe",
 		"Label": "Pipe",
@@ -445,7 +445,7 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
-		"PowerOutput": 100 * 5 * 2,
+		"PowerOutput": 200 * 5 * 2,
 		 
 	},{
 		"Name": "IndustrialGenerator",
@@ -581,7 +581,7 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["FluidInput", "KineticOutput","PowerOutput"],
-		"PowerOutput": 100 * 5 * 2,
+		"PowerOutput": 200 * 5 * 2,
 	},{
 		"Name": "IndustrialSteamTurbine",
 		"Label": "Industrial Steam Turbine",
