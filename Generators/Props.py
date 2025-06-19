@@ -748,25 +748,41 @@ for prop in props:
 			
 		objects_array.append(temp_prop)
 
+def convert_proplists(proplists, DensityMultiplier=0.6):
+    for proplist in proplists:
+        proplist_datas = []
+        raw_chances = [item["Chance"] * DensityMultiplier for item in proplist["Array"]]
+        scale = 10000
+        total_weight = 0
 
-DensityMultiplier = 0.6
+        for subitem, chance in zip(proplist["Array"], raw_chances):
+            props_array = []
+            if "Props" in subitem:
+                for prop_name in subitem["Props"]:
+                    for variation in range(named_prop(prop_name)["Variations"]):
+                        props_array.append(prop_name + variation_helper[variation])
 
-for proplist in proplists:
-	proplist_datas = []
-	for subitem in proplist["Array"]:
-		props_array = []
-		if "Props" in subitem:
-			for prop_name in subitem["Props"]:
-				for variation in range(0, named_prop(prop_name)["Variations"]):
-					props_array.append(prop_name + variation_helper[variation])
-		proplist_datas.append({
-			"Props": props_array,
-			"Chance": subitem["Chance"] * DensityMultiplier
-		})
-	objects_array.append({ "Class": "StaticPropList",
-		"Name": proplist["Name"],
-		"Array": proplist_datas
-	})
+            weight = int(round(chance * scale))
+            total_weight += weight
+
+            proplist_datas.append({
+                "Props": props_array,
+                "Weight": weight
+            })
+
+        if total_weight < scale:
+            proplist_datas.append({
+                "Props": [],
+                "Weight": scale - total_weight
+            })
+
+        objects_array.append({
+            "Class": "StaticPropList",
+            "Name": proplist["Name"],
+            "Array": proplist_datas
+        })
+
+convert_proplists(proplists)
 	
 data = {
 	"Objects": objects_array
