@@ -267,7 +267,7 @@ append_levels({
 	"Name": "AluminiumProduction",
 	"LabelParts": [["AluminiumProduction", "researches"]],
 	"RequiredResearch": ["AdvancedSmelting", "AluminiumReduction"],
-	"Unlocks": get_parts_unlocks(tier_material[3]) + [["Hand" + r_dict, "AluminiumFoil"],["Assembler" + r_dict, "AluminiumFoil"]],
+	"Unlocks": get_parts_unlocks(tier_material[3]) + [["Hand" + r_dict, "AluminiumFoil"],["Assembler" + r_dict, "AluminiumFoil"],["Hand" + r_dict, "Cell"]],
 	"Levels": [3,3],
 	"MainResearch": True,
 })
@@ -823,7 +823,7 @@ append_levels({
 	"LabelParts": [["PlatinumSolution", "parts"]],
 	"RequiredResearch": ["NitricAcid"],
 	"Levels": [5,5],
-	"Unlocks": [[ic_reactor_r_dict, "PlatinumSolution"],[ic_reactor_r_dict, "AmmoniumChloride"]],
+	"Unlocks": [[ic_reactor_r_dict, "PlatinumSolution"],[ic_reactor_r_dict, "AmmoniumChloride"],[ic_reactor_r_dict, "Platinum"]],
 	"CostMul": 1.2,
 	"MainResearch": True,
 })
@@ -990,7 +990,7 @@ append_levels({
 	"Unlocks": [["Hand" + r_dict, "Catalyst"]],
 	"Levels": [4,4],
 	"MainResearch": True,
-	"CostMul":1,
+	"CostMul": 1,
 })
 append_levels({
 	"Class": research_recipe,
@@ -999,7 +999,7 @@ append_levels({
 	"RequiredResearch": ["Catalyst"],
 	"Unlocks": [[assembler_r_dict, "Catalyst2"]],
 	"Levels": [4,4],
-	"CostMul":1.5,
+	"CostMul": 1.5,
 	"MainResearch": True,
 })
 append_levels({
@@ -1180,7 +1180,7 @@ append_levels({
 	"Name": "StainlessSteelProduction",
 	"LabelParts": [["StainlessSteelProduction", "researches"]],
 	"RequiredResearch": ["AdvancedAlloys"],
-	"Unlocks": get_parts_unlocks(tier_material[4]) + [["Hand" + r_dict, "Cell"]],
+	"Unlocks": get_parts_unlocks(tier_material[4]) + [],
 	"Levels": [4,4],
 	"MainResearch": True,
 })
@@ -1468,7 +1468,7 @@ append_levels({
 	"LabelParts": [["PyrolysisUnit", "machines"]],
 	"RequiredResearch": ["Mixer"],
 	"Unlocks": [["Hand" + r_dict, "%Material%PyrolysisUnit"] ],
-	"Levels": [3,7],
+	"Levels": [4,7],
 	"MainResearch": True,
 })
 append_levels({
@@ -1476,7 +1476,7 @@ append_levels({
 	"Name": "PreciseTemperaturePyrolysis",
 	"LabelParts": [["PreciseTemperaturePyrolysis", "researches"]],
 	"RequiredResearch": ["PyrolysisUnit"],
-	"Unlocks": [["PyrolysisUnit" + r_dict, "RawOil"]],
+	"Unlocks": [["PyrolysisUnit" + r_dict, f"RawOil{i}"] for i in range(len(oil_crack_array(0)))],
 	"Levels": [4,4]
 })	
 append_levels({

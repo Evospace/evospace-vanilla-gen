@@ -420,7 +420,7 @@ machines = [
 		"Name": "PyrolysisUnit",
 		"Label": "Pyrolysis Unit",
 		"Positions": [[0,0,0],[0,0,1],[0,1,0],[0,2,0]],
-		"StartTier": 3,
+		"StartTier": 4,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["HeatInput", "PowerInput"],

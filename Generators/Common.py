@@ -197,6 +197,9 @@ def create_item(name, count=1):
 def one_item(item_name, count=1):
     return {"Items": [create_item(item_name, count)]}
 
+def no_items():
+	return { "Items":[] }
+
 def items(array, tier=0):
 	items = []
 	for entry in array:
@@ -307,3 +310,37 @@ tiers_res_item = [
 ]
 
 euler = 2.718281
+
+def oil_crack_array(input_count):
+	return [
+		{
+			"Name": "HeavyOil",
+			"Count": 1000 * (input_count / 15000.0)
+		},
+		{
+			"Name": "Diesel",
+			"Count": 4000 * (input_count / 15000.0)
+		},
+		{
+			"Name": "Gasoline",
+			"Count": 1000 * (input_count / 15000.0)
+		},
+		{
+			"Name": "Ethylene",
+			"Count": 5000 * (input_count / 15000.0)
+		},
+		{
+			"Name": "Methane",
+			"Count": 5000 * (input_count / 15000.0)
+		},
+		{
+			"Name": "Hydrogen",
+			"Count": 2500 * (input_count / 15000.0)
+		}]
+
+def oil_crack_recipe(index, input_count):
+	outputs = oil_crack_array(input_count)
+	if index == -1:
+		return outputs
+
+	return outputs[index]
