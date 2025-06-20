@@ -97,8 +97,8 @@ for ore_type in ore_types:
 						}
 					]
 				},
-				"Ticks" : 300,
-				"Productivity": 33,
+				"Ticks" : 132,
+				"Productivity": 50,
 				"Tier": material_tier,
 			})
 			recipes_mac.append({
