@@ -494,9 +494,9 @@ append_levels({
 	"Name": "CircuitBoard2",
 	"LabelParts": [["CircuitBoard", "parts"], ["II", "common"]],
 	"RequiredResearch": ["CircuitBoard", "Polyethylene"],
-	"Levels": [4,4],
+	"Levels": [3,3],
 	"Unlocks": [[assembler_r_dict, "CircuitBoard2"]],
-	"CostMul":1.0
+	"CostMul":1.5
 })
 append_levels({
 	"Class": research_recipe,
@@ -573,34 +573,34 @@ append_levels({
 	"Levels": [2,2],
 	"Unlocks": [["Hand" + r_dict, "Resistor"],[assembler_r_dict, "Resistor2"]],
 	"MainResearch": True,
-	"CostMul":1.5,
+	"CostMul": 1.5,
 })
 append_levels({
 	"Class": research_recipe,
 	"Name": "Resistor2",
 	"LabelParts": [["Resistor", "parts"], ["II", "common"]],
 	"RequiredResearch": ["Resistor", "Polyethylene"],
-	"Levels": [2,2],
+	"Levels": [3,3],
 	"Unlocks": [[assembler_r_dict, "Resistor3"]],
-	"CostMul":2.5,
+	"CostMul": 1,
 })
 append_levels({
 	"Class": research_recipe,
 	"Name": "Resistor3",
 	"LabelParts": [["Resistor", "parts"], ["III", "common"]],
 	"RequiredResearch": ["Resistor2", "Polyethylene", "CrudeTantalum"],
-	"Levels": [2,2],
+	"Levels": [4,4],
 	"Unlocks": [[assembler_r_dict, "Resistor4"]],
-	"CostMul":4.5,
+	"CostMul": 1,
 })
 append_levels({
 	"Class": research_recipe,
 	"Name": "Resistor4",
 	"LabelParts": [["Resistor", "parts"], ["IV", "common"]],
 	"RequiredResearch": ["Resistor3", "TantalumDust"],
-	"Levels": [2,2],
+	"Levels": [5,5],
 	"Unlocks": [[assembler_r_dict, "Resistor5"]],
-	"CostMul":8.5,
+	"CostMul": 1,
 })
 append_levels({
 	"Class": research_recipe,
