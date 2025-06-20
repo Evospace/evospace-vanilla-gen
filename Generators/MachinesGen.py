@@ -381,19 +381,11 @@ for machine in machines:
 		if machine["Name"] == "PyrolysisUnit":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(5),
-						{
-							"Name": "CopperPipe",
-							"Count": 5 + parts_ramp(level, 5)
-						},
-						{
-							"Name": tier_material[tier] + "Container",
-							"Count": 3
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 6],
+					["CopperPipe", 5 + parts_ramp(level, 5)],
+					frame_pair(2)
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})	
@@ -401,20 +393,12 @@ for machine in machines:
 		if machine["Name"] == "PneumaticInput":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(3),
-						parts_count(1),
-						{
-							"Name": "BrassDetails",
-							"Count": 1
-						},
-						{
-							"Name": "BrassReductor",
-							"Count": 1
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 3],
+					[part(), 1],
+					["BrassDetails", 1],
+					["BrassReductor", 1]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -422,19 +406,11 @@ for machine in machines:
 		if machine["Name"] == "Electrolyzer":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(3), 
-						{
-							"Name": "Coal",
-							"Count": 2
-						},
-						{
-							"Name": cables[tier],
-							"Count": 2 + parts_ramp(level)
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 3],
+					["Coal", 2],
+					[cables[tier], 2 + parts_ramp(level)]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -442,12 +418,10 @@ for machine in machines:
 		if machine["Name"] == "Fermenter":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(2), 
-						parts_count(6 + parts_ramp(level))
-					]
-				},
+				"Input": items([
+					[plate(), 2],
+					[part(), 6 + parts_ramp(level)]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})

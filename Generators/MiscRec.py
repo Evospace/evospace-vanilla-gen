@@ -71,40 +71,6 @@ recipes_hand = []
 
 oil_crack = []
 
-def oil_crack_recipe(index, input_count):
-	outputs = [{
-			"Name": "ExtraHeavyOil",
-			"Count": 800 * (input_count / 15000.0)
-		},
-		{
-			"Name": "HeavyOil",
-			"Count": 1000 * (input_count / 15000.0)
-		},
-		{
-			"Name": "Diesel",
-			"Count": 4000 * (input_count / 15000.0)
-		},
-		{
-			"Name": "Gasoline",
-			"Count": 1000 * (input_count / 15000.0)
-		},
-		{
-			"Name": "Ethylene",
-			"Count": 5000 * (input_count / 15000.0)
-		},
-		{
-			"Name": "Methane",
-			"Count": 5000 * (input_count / 15000.0)
-		},
-		{
-			"Name": "Hydrogen",
-			"Count": 2500 * (input_count / 15000.0)
-		}]
-	if index == -1:
-		return outputs
-
-	return outputs[index]
-
 def append_recipe(recipe):
 	recipes_hand.append(recipe)
 	recipes_assembler.append(recipe)
@@ -114,14 +80,8 @@ def append_recipe_hand(recipe):
 
 recipes_industrial_steam_turbine.append({
 	"Name": "Rotating",
-	"Input":{
-		"Items":[
-		]
-	},
-	"Output":{
-		"Items":[
-		]
-	},
+	"Input": no_items(),
+	"Output": no_items(),
 	"Ticks" : 200,
 	"Loss": 10,
 })
@@ -129,37 +89,20 @@ recipes_industrial_steam_turbine.append({
 recipes_industrial_boiler.append({
 	"Name":"Boiling",
 	"Input": one_item("Water", 2000),
-	"Output":{
-		"Items":[
-		]
-	},
+	"Output": no_items(),
 	"Ticks" : 200,
 })
 
 recipes_fusion_reactor.append({
 	"Name":"HotNeutroniumPlate1",
-	"Input":{
-		"Items":[
-			{
-				"Name": "ProducerGas",
-				"Count": 1000
-			}
-		]
-	},
+	"Input": one_item("ProducerGas", 1000),
 	"Output": one_item("HotNeutroniumPlate", 1),
 	"Ticks" : 200,
 })
 
 recipes_fusion_reactor.append({
 	"Name":"HotNeutroniumPlate2",
-	"Input":{
-		"Items":[
-			{
-				"Name": "ProducerGas",
-				"Count": 3000
-			}
-		]
-	},
+	"Input": one_item("ProducerGas", 3000),
 	"Output": one_item("HotNeutroniumPlate", 3),
 	"Ticks" : 300,
 })
@@ -617,7 +560,7 @@ recipes_hand.append({
 	"Name":"Catalyst",
 	"Input": items([
 		["Cell"],
-		["GoldWire", 10],
+		["CopperWire", 40],
 		["Coal", 4]
 	]),
 	"Output": one_item("Catalyst"),
@@ -629,7 +572,7 @@ recipes_assembler.append({
 	"Name":"Catalyst2",
 	"Input": items([
 		["Cell"],
-		["CopperWire", 40],
+		["GoldWire", 10],
 		["Coal", 4]
 	]),
 	"Output": one_item("Catalyst"),
@@ -713,11 +656,12 @@ for level, name, copm_name in zip(range(0, 4), ["BasicBattery", "AdvancedBattery
 recipes_hand.append({
 	"Name":"Cell",
 	"Input": items([
-		["StainlessSteelPlate"],
-		["StainlessSteelParts"]
+		["AluminiumPlate"],
+		["AluminiumParts"]
 	]),
 	"Output": one_item("Cell"),
-	"Ticks" : 200,
+	"Ticks": 200,
+	"Tier": 3
 })
 
 recipes_hand.append({
@@ -1022,20 +966,14 @@ append_recipe({
 
 recipes_condens.append({
 	"Name":"Water",
-	"Input":{
-		"Items":[
-		]
-	},
+	"Input": no_items(),
 	"Output": one_item("Water", 500),
 	"Ticks" : 40,
 })
 
 recipes_condens.append({
 	"Name":"Nitrogen",
-	"Input":{
-		"Items":[
-		]
-	},
+	"Input": no_items(),
 	"Output" :one_item("Nitrogen", 500),
 	"Ticks" : 20,
 })
@@ -1050,14 +988,7 @@ recipes_farm.append({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Log",
-				"Count": 15
-			}
-		]
-	},
+	"Output": one_item("Log", 15),
 	"Ticks" : 2000,
 })
 
@@ -1071,14 +1002,7 @@ recipes_farm.append({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Pumpkin",
-				"Count": 10
-			}
-		]
-	},
+	"Output": one_item("Pumpkin", 10),
 	"Ticks" : 2000,
 })
 
@@ -1096,14 +1020,7 @@ recipes_farm.append({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "GrassSurface",
-				"Count": 5
-			}
-		]
-	},
+	"Output": one_item("GrassSurface", 5),
 	"Ticks" : 200,
 })
 
@@ -1397,14 +1314,7 @@ recipes_fission.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "DepletedUraniumCell",
-				"Count": 1,
-			}
-		]
-	},
+	"Output": one_item("DepletedUraniumCell"),
 	"Ticks" : 2000,
 })
 
@@ -1423,14 +1333,7 @@ recipes_fission.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "DepletedUraniumCell",
-				"Count": 2,
-			}
-		]
-	},
+	"Output": one_item("DepletedUraniumCell", 2),
 	"Ticks" : 2000,
 })
 
@@ -1449,69 +1352,27 @@ recipes_fission.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "DepletedUraniumCell",
-				"Count": 4,
-			}
-		]
-	},
+	"Output": one_item("DepletedUraniumCell", 4),
 	"Ticks" : 2000,
 })
 
 recipes_electrolyzer.append({
 	"Name":"Hydrogen",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Water",
-				"Count": 800
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Hydrogen",
-				"Count": 400
-			}
-		],
-	},
+	"Input": one_item("Water", 800),
+	"Output": one_item("Hydrogen", 400),
 	"Ticks" : 200,
 	"Tier": 4,
 })
 recipes_electrolyzer.append({
 	"Name":"Oxygen",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Water",
-				"Count": 800
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Oxygen",
-				"Count": 200
-			}
-		],
-	},
+	"Input": one_item("Water", 800),
+	"Output": one_item("Oxygen", 200),
 	"Ticks" : 200,
 	"Tier": 4,
 })
 recipes_electrolyzer.append({
 	"Name":"CinnabarDust",
-	"Input":{
-		"Items":[
-			{
-				"Name": "CinnabarDust",
-				"Count": 2
-			}
-		]
-	},
+	"Input": one_item("CinnabarDust", 2),
 	"Output":{
 		"Items":[
 			{
@@ -1528,18 +1389,8 @@ recipes_electrolyzer.append({
 })
 recipes_boiler.append({
 	"Name": "Boiling",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Water",
-				"Count": 50
-			}
-		],
-	},
-	"Output":{
-		"Items":[
-		]
-	},
+	"Input": one_item("Water", 50),
+	"Output": no_items(),
 	"Ticks" : 200,
 	"Loss": 10,
 })
@@ -1547,28 +1398,16 @@ recipes_boiler.append({
 # Using this for all converters
 recipes_generator.append({
 	"Name": "Generating",
-	"Input":{
-		"Items":[
-		]
-	},
-	"Output":{
-		"Items":[
-		]
-	},
+	"Input": no_items(),
+	"Output": no_items(),
 	"Ticks" : 200,
 	"Loss": 10,
 })
 
 recipes_industrial_electric_engine.append({
 	"Name": "Rotating",
-	"Input":{
-		"Items":[
-		]
-	},
-	"Output":{
-		"Items":[
-		]
-	},
+	"Input": no_items(),
+	"Output": no_items(),
 	"Loss": 10,
 	"Ticks": 200,
 })
@@ -1576,14 +1415,7 @@ recipes_industrial_electric_engine.append({
 for item, mul in [["Coal", 1], ["CoalDust", 1], ["CoalOreDust", 1], ["CoalOreGravel", 1.5], ["CoalOreImpureGravel", 1.5], ["CoalOre", 2]]:
 	recipes_oven.append({
 		"Name": item+"ToCoke",
-		"Input":{
-			"Items":[
-				{
-					"Name": item,
-					"Count": 10
-				}
-			]
-		},
+		"Input": one_item(item, 10),
 		"Output":{
 			"Items":[
 				{
@@ -1601,14 +1433,7 @@ for item, mul in [["Coal", 1], ["CoalDust", 1], ["CoalOreDust", 1], ["CoalOreGra
 
 recipes_oven.append({
 	"Name": "LogToCoal",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Log",
-				"Count": 10
-			}
-		]
-	},
+	"Input": one_item("Log", 10),
 	"Output":{
 		"Items":[
 			{
@@ -1828,28 +1653,14 @@ recipes_sep.append({
 recipes_sep.append({
 	"Name":"Sand",
 	"Input": one_item("SandSurface"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "SiliconOxide",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("SiliconOxide"),
 	"Ticks" : 100
 })
 
 recipes_arc_furnace.append({
 	"Name": "SandSurfaceSmelting",
 	"Input": one_item("SandSurface"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "Glass",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("Glass"),
 	"Ticks" : 100
 })	
 
@@ -2016,22 +1827,8 @@ for material in materials:
 
 recipes_sep.append({
 	"Name":"SiliconOxide",
-	"Input":{
-		"Items":[
-			{
-				"Name": "SandSurface",
-				"Count": 2
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "SiliconOxide",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("SandSurface", 2),
+	"Output": one_item("SiliconOxide"),
 	"Ticks" : 10*20
 })
 
@@ -2049,14 +1846,7 @@ recipes_mixer.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Biomass",
-				"Count": 500
-			}
-		]
-	},
+	"Output": one_item("Biomass", 500),
 	"Ticks": 200,
 })
 
@@ -2172,14 +1962,7 @@ recipes_electrolyzer.append({
 recipes_electrolyzer.append({
 	"Name":"AluminiumOxideDust",
 	"Input": one_item("AluminiumOxideDust"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "AluminiumDust",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("AluminiumDust"),
 	"Ticks" : 200,
 	"Tier":2,
 })
@@ -2187,14 +1970,7 @@ recipes_electrolyzer.append({
 recipes_electrolyzer.append({
 	"Name":"SandElectrolyze",
 	"Input": one_item("SiliconOxide"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "Silicon",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("Silicon"),
 	"Ticks" : 200,
 	"Tier":2,
 })
@@ -2202,15 +1978,7 @@ recipes_electrolyzer.append({
 recipes_electrolyzer.append({
 	"Name":"SaltElectrolyze",
 	"Input": one_item("Salt"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "Chlorine",
-				"Count": 1000
-			}
-			
-		]
-	},
+	"Output": one_item("Chlorine", 1000),
 	"Ticks" : 200,
 	"Tier":2,
 })
@@ -2236,14 +2004,7 @@ recipes_ferm.append({
 
 recipes_ferm.append({
 	"Name": "MethaneFromBiomass",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Biomass",
-				"Count": 500
-			},
-		]
-	},
+	"Input": one_item("Biomass", 500),
 	"Output":{
 		"Items":[
 			{
@@ -2263,53 +2024,28 @@ recipes_ferm.append({
 recipes_ferm.append({
 	"Name": "MethaneFromPumpkin",
 	"Input": one_item("Pumpkin"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "Methane",
-				"Count": 200
-			}
-		]
-	},
+	"Output": one_item("Methane", 200),
 	"Ticks" : 200
 })
 
 recipes_radiator.append({
 	"Name": "Working",
-	"Input":{
-		"Items":[
-		],
-	},
-	"Output":{
-		"Items":[
-		]
-	},
+	"Input": no_items(),
+	"Output": no_items(),
 	"Ticks" : 200,
 })
 
 recipes_solar.append({
 	"Name": "Working",
-	"Input":{
-		"Items":[
-		]
-	},
-	"Output":{
-		"Items":[
-		]
-	},
+	"Input": no_items(),
+	"Output": no_items(),
 	"Ticks" : 60,
 })
 
 recipes_riteg.append({
 	"Name": "Working",
-	"Input":{
-		"Items":[
-		]
-	},
-	"Output":{
-		"Items":[
-		]
-	},
+	"Input": no_items(),
+	"Output": no_items(),
 	"Ticks" : 60,
 })
 
@@ -2345,14 +2081,7 @@ recipes_industrial_chemreactor.append({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Mercury",
-				"Count": 1000
-			}
-		]
-	},
+	"Output": one_item("Mercury", 1000),
 	"Ticks" : 600,
 	"Colors": [[20,5,0],[0.5,0.5,0.5]]
 })
@@ -2371,14 +2100,7 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "TitaniumTetrachloride",
-				"Count": 1000
-			}
-		]
-	},
+	"Output": one_item("TitaniumTetrachloride", 1000),
 	"Ticks" : 200,
 	"Colors": [[0.8,0.8,0,0.3],[.3,0,0.3]]
 })
@@ -2397,27 +2119,13 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "TitaniumSponge",
-				"Count": 1
-			},
-		],
-	},
+	"Output": one_item("TitaniumSponge"),
 	"Ticks" : 200
 })
 
 oil_crack.append({
 	"Name": "RawOil",
-	"Input":{
-		"Items":[
-			{
-				"Name": "RawOil",
-				"Count": 15000
-			},
-		]
-	},
+	"Input": one_item("RawOil", 15000),
 	"Output":{
 		"Items": oil_crack_recipe(-1, 15000)
 	},
@@ -2426,17 +2134,20 @@ oil_crack.append({
 	"Tier": 4
 })
 
+recipes_industrial_chemreactor.append({
+	"Name": "ProducerGas",
+	"Input": one_item("Coal"),
+	"Output": items([
+		["Ash"],
+		["ProducerGas", 200]
+	]),
+	"Ticks" : 400,
+	"Tier": 3,
+})
+
 recipes_pyro.append({
 	"Name": "Coal",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Coal",
-				"Count": 1
-			},
-			
-		]
-	},
+	"Input": one_item("Coal"),
 	"Output":{
 		"Items":[
 			{
@@ -2458,7 +2169,7 @@ recipes_pyro.append({
 	"Tier": 3,
 })
 
-for i in range(0, 7):
+for i in range(0, len(oil_crack_array(0))):
 	recipes_pyro.append({
 		"Name": "RawOil"+str(i),
 		"Input": one_item("RawOil", 2000),
@@ -2673,7 +2384,7 @@ recipes_industrial_chemreactor.append({
 })
 
 recipes_industrial_chemreactor.append({
-	"Name": "ProducerGas",
+	"Name": "Hydrogen",
 	"Input": one_item("ProducerGas", 1000),
 	"Output":{
 		"Items":[	

@@ -695,15 +695,6 @@ materials = [
 		"Burnable": {
 			"BurnTime": 300
 		}
-	},{
-		"Name": "ExtraHeavyOil",
-		"Label": "Extra Heavy Oil",
-		"Items": ["Gas"],
-		"Tier": 2,
-		"Burnable": {
-			"BurnTime": 800
-		},
-		"Color":[0.01,.01,0.01]
 	},
 	{
 		"Name": "HeavyOil",
