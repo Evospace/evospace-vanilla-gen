@@ -1272,7 +1272,7 @@ append_levels({
 	"Name": "Polyethylene",
 	"LabelParts": [["PolyethyleneSheet", "parts"]],
 	"RequiredResearch": ["IndustrialChemReactor"],
-	"Levels": [4,4],
+	"Levels": [3,3],
 	"Unlocks": [[ic_reactor_r_dict, "PolyethyleneSheet"]],
 	"MainResearch": True,
 	"CostMul": 1.25
