@@ -35,7 +35,7 @@ def generate_part(name, material_dict):
 			"/Game/Materials/" + material
 		],
 		"Mesh": "/Game/Models/"+name+"Crate",
-		
+		"Tier": tier,
 		"Category": "Parts",
 	}
 	if "Mesh" in part:
@@ -201,6 +201,9 @@ for material in materials:
 			"LabelParts": [[m_name, "parts"]],
 			"Type": "Abstract"
 		}
+
+		if "Tier" in material:
+			item["Tier"] = material["Tier"]
 		
 		if "Unit" in material:
 			item["Unit"] = material["Unit"]
@@ -225,6 +228,9 @@ for material in materials:
 			"StackSize": 64 if material["Name"] != "Signal" else 214748364,
 			"LabelParts": [[material["Name"], "parts"]],
 		}
+
+		if "Tier" in material:
+			item["Tier"] = material["Tier"]
 
 		if "CustomData" in material:
 			item["CustomData"] = material["CustomData"]
@@ -291,6 +297,9 @@ for material in materials:
 			"LabelParts": [[material["Name"] + "Plate", "parts"]],
 			"Category": "Plate",
 		}
+
+		if "Tier" in material:
+			item["Tier"] = material["Tier"]
 		
 		if "Category" in material:
 			item["Category"] = material["Category"]
@@ -353,6 +362,9 @@ for material in materials:
 			"Block": material["Name"] + "Block",
 		}
 		
+		if "Tier" in material:
+			item["Tier"] = material["Tier"]
+
 		if "Category" in material:
 			item["Category"] = material["Category"]
 			
@@ -416,6 +428,9 @@ for material in materials:
 			"DescriptionParts":[["Fluid","common"],["ByPipes","common"]],
 			"Type": "Fluid"
 		}
+
+		if "Tier" in material:
+			item["Tier"] = material["Tier"]
 		
 		if "Category" in material:
 			item["Category"] = material["Category"]
@@ -476,6 +491,9 @@ for material in materials:
 			"DescriptionParts":[["Gas","common"],["ByPipes","common"]],
 			"Type": "Fluid"
 		}
+
+		if "Tier" in material:
+			item["Tier"] = material["Tier"]
 		
 		if "Category" in material:
 			item["Category"] = material["Category"]
@@ -534,6 +552,9 @@ for material in materials:
 			"UnitMul": 1,
 			"Category": "Dust",
 		}
+
+		if "Tier" in material:
+			item["Tier"] = material["Tier"]
 		
 		if "Category" in material:
 			item["Category"] = material["Category"]

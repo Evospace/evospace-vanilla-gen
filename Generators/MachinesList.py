@@ -903,7 +903,7 @@ machines = [
 			[0,-2,1],[-1,-2,1],[-2,-2,1],
 		],
 		"Description": ["ElectricInput", "PowerInput"],
-        "PowerInput": 80,
+        "PowerInput": 160,
 	},{
 		"Name": "Constructor",
 		"Label": "Constructor",
@@ -918,7 +918,7 @@ machines = [
 		],
 		"BlockLogic":"SelectCrafter",
 		"Description": ["ElectricInput", "PowerInput"],
-        "PowerInput": 20,
+        "PowerInput": 40,
 	},{
 		"Name": "Destroyer",
 		"Label": "Destroyer",
@@ -1330,7 +1330,7 @@ machines = [
 			[0,1,3],[-1,1,3],[-2,1,3],[-3,1,3],[-4,1,3],
 			[0,-1,3],[-1,-1,3],[-2,-1,3],[-3,-1,3],[-4,-1,3],
 		],
-		"StartTier": 3,
+		"StartTier": 4,
 		"EndTier": 7,	
 		"Description": ["KineticInput", "FluidOutput"],		
 	},
