@@ -404,9 +404,9 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "Pumpjack",
 	"LabelParts": [["Pumpjack", "machines"]],
-	"RequiredResearch": ["AutomaticMining"],
+	"RequiredResearch": ["AutomaticMining2"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Pumpjack"] ],
-	"Levels": [3,7],
+	"Levels": [4,7],
 })
 append_levels({
 	"Class": research_recipe,

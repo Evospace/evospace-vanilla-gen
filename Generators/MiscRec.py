@@ -840,7 +840,7 @@ recipes_assembler.append({
 	]),
 	"Output": one_item("Battery"),
 	"Ticks" : 200,
-	
+	"Tier": 4,
 })
 
 recipes_assembler.append({
@@ -2329,7 +2329,8 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"Ticks" : 200,
-	"Colors": [[0.0,0.2,0.0,0.9],[0.0,0.0,0.0,0.2]]
+	"Colors": [[0.0,0.2,0.0,0.9],[0.0,0.0,0.0,0.2]],
+	"Tier": 4,
 })
 
 recipes_industrial_chemreactor.append({
@@ -2486,7 +2487,8 @@ recipes_industrial_chemreactor.append({
 	]),
 	"Output": one_item("PlatinumSolution", 1),
 	"Ticks" : 800,
-	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]]
+	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]],
+	"Tier": 5,
 })
 
 recipes_industrial_chemreactor.append({

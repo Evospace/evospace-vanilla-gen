@@ -130,7 +130,7 @@ for machine in machines:
 			"LabelFormat": labelFormat,
 			"DescriptionParts": [["tier", "common", tier],[machine["Name"], "machines_description"]],
 			"ItemLogic": building_single_logic if "ItemLogic" not in machine else machine["ItemLogic"],
-			
+			"Tier": tier,
 			"Category": machine["Category"] if "Category" in machine else CamelToSpaces(tier_material[tier]),
 		}
 
@@ -1036,38 +1036,14 @@ for machine in machines:
 				"Ticks" : 20
 			})
 			
-		if machine["Name"] == "CuttingMachine":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(4),
-						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 1
-						},
-					]
-				},
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 20
-			})
-			
 		if machine["Name"] == "OreWasher":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(7),
-						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 3
-						},
-						{
-							"Name": tier_material[tier] + "Pipe",
-							"Count": 2
-						}
-					]
-				},
+				"Input": items([
+					[plate(), 7],
+					[pipe(), 2],
+					frame_pair(2)
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -1075,11 +1051,7 @@ for machine in machines:
 		if machine["Name"] == "Pipe":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(1)
-					]
-				},
+				"Input": one_item(plate()),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 5
 			})
@@ -1087,15 +1059,10 @@ for machine in machines:
 		if machine["Name"] == "Vent":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + "Pipe",
-							"Count": 1
-						},
-						parts_count(2)
-					]
-				},
+				"Input": items([
+					[pipe()],
+					[part(), 2]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -1119,20 +1086,11 @@ for machine in machines:
 		if machine["Name"] == "Conveyor":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(1),
-						parts_count(1 + parts_ramp(level, 1))
-					]
-				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1,
-						}
-					]
-				},
+				"Input": items([
+					[plate()],
+					[part(), 1 + parts_ramp(level, 1)]
+				]),
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
 			
@@ -1151,14 +1109,7 @@ for machine in machines:
 						},
 					]
 				},
-				"Output":{
-					"Items":[
-						{
-							"Name": tier_material[tier] + machine["Name"],
-							"Count": 1,
-						}
-					]
-				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
 			

@@ -100,7 +100,7 @@ materials = [
 		"Name": "PowerCoil",
 		"Label": "Power Coil",
 		"Items": ["Exact"],
-		"Tier": 5,
+		"Tier": 4,
 	},{
 		"Name": "BasicFrame",
 		"Label": "Basic Frame",
@@ -119,7 +119,7 @@ materials = [
 		"Name": "ModularFrame",
 		"Label": "Modular Frame",
 		"Items": ["Exact"],
-		"Tier": 5,
+		"Tier": 4,
 		"Mesh": "/Game/Models/FrameCrate",
 		"Materials": ["/Game/Materials/BlackSteel", "/Game/Materials/StainlessSteel"]
 	},{
@@ -127,7 +127,7 @@ materials = [
 		"Label": "Copper",
 		"Items": tiered_parts_list + ["Wire"],
 		"Smelting": ["Smelter", "ArcFurnace"],
-		"Tier": 1,
+		"Tier": 0,
 	},{
 		"Name": "Gold",
 		"Label": "Gold",
@@ -149,10 +149,12 @@ materials = [
 		"Name": "PlatinumSolution",
 		"Label": "Platinum Solution",
 		"Items": ["Fluid"],
+		"Tier": 5,
 	},{
 		"Name": "AmmoniumChloride",
 		"Label": "Ammonium Chloride",
 		"Items": ["Exact"],
+		"Tier": 5,
 	},{
 		"Name": "Iron",
 		"Label": "Iron",
@@ -165,40 +167,38 @@ materials = [
 		"Items": ["Exact"],
 		"Mesh":"/Game/Models/BoardCrate",
 		"Materials":["/Game/Materials/Plastic"],
+		"Tier": 1,
 	},{
 		"Name": "Triod",
 		"Label": "Triod",
 		"Items": ["Exact"],
-		"Mesh":"/Game/Models/TriodeCrate"
+		"Mesh":"/Game/Models/TriodeCrate",
+		"Tier": 1,
 	},{
 		"Name": "Resistor",
 		"Label": "Resistor",
 		"Items": ["Exact"],
 		"Mesh":"/Game/Models/BoardCrate",
 		"Materials":["/Game/Materials/Plastic"],
+		"Tier": 1,
 	},{
 		"Name": "Transistor",
 		"Label": "Transistor",
 		"Items": ["Exact"],
 		"Mesh":"/Game/Models/TransistorCrate",
-	},{
-		"Name": "Plastic",
-		"Label": "Plastic",
-		"Items": ["Exact"],
-		"Mesh": "/Game/Models/Ingot",
-		"Materials": ["/Game/Materials/GreenPlastic"],
+		"Tier": 1,
 	},{
 		"Name": "Steel",
 		"Label": "Steel",
 		"Smelting": ["ArcFurnace"],
 		"Items": tiered_parts_list,
-		"Tier": 2,
+		"Tier": 1,
 	},{
 		"Name": "Aluminium",
 		"Label": "Aluminium",
 		"Items": tiered_parts_list + ["Foil"],
 		"Smelting": ["ArcFurnace"],
-		"Tier": 3,
+		"Tier": 2,
 	},{
 		"Name": "AluminiumOxide",
 		"Label": "Aluminium Oxide",
@@ -208,17 +208,18 @@ materials = [
 		"Label": "Stainless Steel",
 		"Smelting": ["ArcFurnace"],
 		"Items": tiered_parts_list,
-		"Tier": 4,
+		"Tier": 3,
 	},{
 		"Name": "Titanium",
 		"Label": "Titanium",
 		"Smelting": ["InductionFurnace"],
 		"Items": tiered_parts_list,
-		"Tier": 5,
+		"Tier": 4,
 	},{
 		"Name": "TitaniumTetrachloride",
 		"Label": "Titanium Tetrachloride",
-		"Items": ["Fluid"]
+		"Items": ["Fluid"],
+		"Tier": 4,
 	},{
 		"Name": "TitaniumSponge",
 		"Label": "Titanium Sponge",
@@ -226,32 +227,26 @@ materials = [
 		"Items": ["Exact"],		
 		"Mesh":"/Game/Models/SpongeCrate",
         "Materials":["/Game/Materials/GreenPlastic", "/Game/Materials/TitaniumOreGravel"],
+		"Tier": 4,
 	},{
 		"Name": "TitaniumOxide",
 		"Label": "Titanium Oxide",
 		"Items": ["Dust"],
+		"Tier": 4,
 	},{
 		"Name": "PreparedTitaniumOxide",
 		"Label": "Prepared Titanium Oxide",
 		"Items": ["Dust"],
+		"Tier": 4,
 	},{
 		"Name": "HotNeutroniumPlate",
 		"Label": "Hot Neutronium Plate",
 		"Smelting": ["InductionFurnace"],
 		"Items": ["Exact"],
-		"Tier": 5,
+		"Tier": 6,
         "Mesh":"/Game/Models/Ingot",
         "Materials":["/Game/Materials/VeryHotMetal"],
-	}
-	#,{
-	#	"Name": "Rubber",
-	#	"Label": "Rubber",
-	#	"SmeltLevel": 0,
-	#	"IsMetal": True,
-	#	"Items": ["Dust"],
-	#	"Tier": 2
-	#}
-	,{
+	},{
 		"Name": "Stone",
 		"Label": "Stone",
 		"Tier": 0,
@@ -262,47 +257,15 @@ materials = [
 		"Tier": 0,
 		"Items": ["Exact"],
 		"StackSize": 999,
+		"Tier": 0,
 	},{
 		"Name": "Sulfur",
 		"Label": "Sulfur",
-		"Tier": 0,
+		"Tier": 4,
 		"Items": ["Exact"],
 		"Mesh": "/Game/Models/DustCrate",
-		"Materials": ["/Game/Materials/Black", "/Game/Materials/Sulfur"]
-	},	
-	#},{
-	#	"Name": "Bronze",
-	#	"Label": "Bronze",
-	#	"SmeltLevel": 2,
-	#	"IsMetal": True,
-	#	"Items": ["Dust"],
-	#	
-	#	"IsBlock": True
-	#},{
-	#	"Name": "Brass",
-	#	"Label": "Brass",
-	#	"SmeltLevel": 2,
-	#	"IsMetal": True,
-	#	"Items": ["Dust"],
-	#	
-	#	"IsBlock": True
-	#},{
-	#	"Name": "BrassDetails",
-	#	"Label": "Brass Parts",
-	#	
-	#	"Items": ["Exact"],
-	#	"Category": "Component"
-	#},{
-	#	"Name": "BrassReductor",
-	#	"Label": "Brass Reductor",
-	#	
-	#	"Items": ["Exact"],
-	#	"Category": "Component"
-	#},
-	{
-		"Name": "Cement",
-		"Label": "Cement",
-		"Items": ["Dust"],
+		"Materials": ["/Game/Materials/Black", "/Game/Materials/Sulfur"],
+		"Tier": 1,
 	},{
 		"Name": "Chromium",
 		"Label": "Chromium",
@@ -363,13 +326,15 @@ materials = [
 		"Items": ["Gas"],
 		"Unit": "J",
 		"UnitMul": 1,
-		"Color":[1,1,1]
+		"Color":[1,1,1],
+		"Tier": 2,
 	},{
 		"Name": "Chlorine",
 		"Label": "Chlorine",
 		"Items": ["Gas"],
 		"Tier": 4,
 		"Color": [1,1,0],
+		"Tier": 2,
 	},{
 		"Name": "Peat",
 		"Label": "Peat",
@@ -390,7 +355,8 @@ materials = [
 		"Tier": 0,
 		"StackSize": 64,
 		"Color":[0.0,0.0,0.0],
-		"Mesh": "/Game/Models/Piece"
+		"Mesh": "/Game/Models/Piece",
+		"Tier": 0,
 	},{
 		"Name": "Coke",
 		"Label": "Coke",
@@ -400,7 +366,8 @@ materials = [
 			"BurnTime": 1200
 		},
 		"Color":[0.0,0.0,0.0],
-		"Mesh": "/Game/Models/Piece"
+		"Mesh": "/Game/Models/Piece",
+		"Tier": 1,
 	},{
 		"Name": "Creosote",
 		"Label": "Creosote",
@@ -410,7 +377,8 @@ materials = [
 		},
 		"Tier": 0,
 		"Color":[0.0,0.0,0.0],
-		"Mesh": "/Game/Models/Piece"
+		"Mesh": "/Game/Models/Piece",
+		"Tier": 1,
 	},{
 		"Name": "ProducerGas",
 		"Label": "Producer Gas",
@@ -419,7 +387,8 @@ materials = [
 			"BurnTime": 400
 		},
 		"Color": [1,1,1],
-		"MoreEfficientIn":"GasTurbine"
+		"MoreEfficientIn":"GasTurbine",
+		"Tier": 3,
 	},{
 		"Name": "CarbonMonoxide",
 		"Label": "Carbon Monoxide",
@@ -433,11 +402,12 @@ materials = [
 		"Name": "SulfuricAcid",
 		"Label": "Sulfuric Acid",
 		"Items": ["Fluid"],
-		"Tier": 3
+		"Tier": 4
 	},{
 		"Name": "NitricAcid",
 		"Label": "Nitric Acid",
 		"Items": ["Fluid"],
+		"Tier": 4,
 	},{
 		"Name": "Ash",
 		"Label": "Ash",
@@ -450,7 +420,7 @@ materials = [
 		"Burnable": {
 			"BurnTime": 400
 		},
-		"Tier": 2,
+		"Tier": 3,
 	},{
 		"Name": "Ethanol",
 		"Label": "Ethanol",
@@ -528,7 +498,8 @@ materials = [
 	},{
 		"Name": "Ammonia",
 		"Label": "Ammonia",
-		"Items": ["Fluid"]
+		"Items": ["Fluid"],
+		"Tier": 3,
 	},{
 		"Name": "RareEarthSludge",
 		"Label": "Rare Earth Sludge",
@@ -725,7 +696,7 @@ materials = [
 		"Name": "Nitrogen",
 		"Label": "Nitrogen",
 		"Items": ["Gas"],
-		"Tier": 4
+		"Tier": 1
 	},{
 		"Name": "Beryllium",
 		"Label": "Beryllium",
@@ -762,7 +733,8 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
-		"Mesh": "/Game/Models/CircuitCrate"
+		"Mesh": "/Game/Models/CircuitCrate",
+		"Tier": 1,
 	},{
 		"Name": "AdvancedCircuit",
 		"Label": "Advanced Circuit",
@@ -770,7 +742,8 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
-		"Mesh": "/Game/Models/Circuit2Crate"
+		"Mesh": "/Game/Models/Circuit2Crate",
+		"Tier": 2,
 	},{
 		"Name": "Processor",
 		"Label": "Processor",
@@ -778,7 +751,8 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
-		"Mesh": "/Game/Models/Circuit3Crate"
+		"Mesh": "/Game/Models/Circuit3Crate",
+		"Tier": 3,
 	},{
 		"Name": "QuantumCircuit",
 		"Label": "Quantum Circuit",
@@ -786,7 +760,8 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
-		"Mesh": "/Game/Models/QuantumCircuitCrate"
+		"Mesh": "/Game/Models/QuantumCircuitCrate",
+		"Tier": 4,
 	},{
 		"Name": "QuantumProcessor",
 		"Label": "Quantum Processor",
@@ -794,14 +769,16 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
-		"Mesh": "/Game/Models/Circuit3Crate"
+		"Mesh": "/Game/Models/Circuit3Crate",
+		"Tier": 5,
 	},{
 		"Name": "QuantumCore",
 		"Label": "Quantum Core",
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Category": "Parts",
-		"Mesh": "/Game/Models/QuantumCoreCrate"
+		"Mesh": "/Game/Models/QuantumCoreCrate",
+		"Tier": 4,
 	},{
 		"Name": "DecisionResonator",
 		"Label": "Decision Resonator",
@@ -809,14 +786,16 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Mesh": "/Game/Models/QuantumCoreCrate",
-		"Materials": ["/Game/Materials/BlackSteel", "/Game/Materials/ArrowWhite"]
+		"Materials": ["/Game/Materials/BlackSteel", "/Game/Materials/ArrowWhite"],
+		"Tier": 5,
 	},{
 		"Name": "BrainMatrix",
 		"Label": "Brain Matrix",
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Category": "Parts",
-		"Mesh": "/Game/Models/QuantumCoreCrate"
+		"Mesh": "/Game/Models/QuantumCoreCrate",
+		"Tier": 6,
 	},{
 		"Name": "QuantumBrain",
 		"Label": "Quantum Brain",
@@ -824,7 +803,8 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Description":[["Circuit","common"]],
-		"Mesh": "/Game/Models/Circuit3Crate"
+		"Mesh": "/Game/Models/Circuit3Crate",
+		"Tier": 6,
 	},{
 		"Name": "Cell",
 		"Label": "Cell",

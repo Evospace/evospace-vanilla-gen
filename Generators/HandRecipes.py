@@ -66,27 +66,6 @@ recipes_hand.append({
 	"Ticks": 20,
 })
 
-append_recipe_hand({
-	"Name": "WoodenPlanks",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Log",
-				"Count": 1
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "WoodenPlanks",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 20
-})
-
 recipes_hand.append({
 	"Name": "Steampack",
 	"Input":{
