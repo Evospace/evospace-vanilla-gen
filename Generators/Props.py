@@ -693,15 +693,6 @@ ore_props = []
 for ore in ore_types:
 	ore_props.append(ore["Name"]+"Cluster")
 
-ores_biome = {	
-	"Name": "OreProps",
-	"Array": [{
-		"Props": ore_props,
-		"Chance": 1.0
-	}]
-}
-proplists.append(ores_biome)
-
 objects_array = []
 
 for prop in props: 
@@ -770,7 +761,7 @@ def convert_proplists(proplists, DensityMultiplier=0.6):
                 "Weight": weight
             })
 
-        if total_weight < scale:
+        if scale - total_weight > 0.0001:
             proplist_datas.append({
                 "Props": [],
                 "Weight": scale - total_weight
@@ -783,6 +774,15 @@ def convert_proplists(proplists, DensityMultiplier=0.6):
         })
 
 convert_proplists(proplists)
+
+objects_array.append({
+    "Class": "StaticPropList",
+	"Name": "OreProps",
+	"Array": [{
+		"Props": ore_props,
+		"Weight": 1
+	}]
+})
 	
 data = {
 	"Objects": objects_array
