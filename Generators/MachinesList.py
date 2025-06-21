@@ -387,7 +387,7 @@ machines = [
 		"Name": "CombustionEngine",
 		"Label": "Combustion Engine",
 		"BlockLogic": "SelectCrafter",
-		"StartTier": 3,
+		"StartTier": 4,
 		"EndTier": 7,
 		"Description": ["FluidInput", "KineticOutput"],
 		"BlockLogic": "SelectCrafter",

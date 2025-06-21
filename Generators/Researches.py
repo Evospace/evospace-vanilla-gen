@@ -1161,7 +1161,7 @@ append_levels({
 	"Name": "CombustionEngine",
 	"LabelParts": [["CombustionEngine", "machines"]],
 	"RequiredResearch": ["Catalyst"],
-	"Levels": [3,7],
+	"Levels": [4,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%CombustionEngine"] ],
 	
 })
