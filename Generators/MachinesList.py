@@ -138,50 +138,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SignBlockLogic",
 	},{
-		"Name": "TransformerLVMV",
-		"Label": "Transformer (LV -> MV)",
-		"StartTier": 1,
-		"EndTier": 1,
-		"BlockLogic": "TransformerLVMV",
-        "ExactName": True,
-        "Category": "Network",
-        "ReplaceTag": "Cable",
-        "Description": ["ElectricOutput", "ElectricInput", "PowerOutput"],
-		"PowerOutput": 400
-	},{
-		"Name": "TransformerMVLV",
-		"Label": "Transformer (MV -> LV)",
-		"StartTier": 1,
-		"EndTier": 1,
-		"BlockLogic": "TransformerMVLV",
-        "ExactName": True,
-        "Category": "Network",
-        "ReplaceTag": "Cable",
-        "Description": ["ElectricOutput", "ElectricInput", "PowerOutput"],
-		"PowerOutput": 400
-	},{
-		"Name": "AdvancedTransformerLVMV",
-		"Label": "AdvancedTransformer (LV -> MV)",
-		"StartTier": 2,
-		"EndTier": 2,
-		"BlockLogic": "TransformerLVMV",
-        "ExactName": True,
-        "Category": "Network",
-        "ReplaceTag": "Cable",
-        "Description": ["ElectricOutput", "ElectricInput", "PowerOutput"],
-		"PowerOutput": 4000
-	},{
-		"Name": "AdvancedTransformerMVLV",
-		"Label": "Advanced Transformer (MV -> LV)",
-		"StartTier": 2,
-		"EndTier": 2,
-		"BlockLogic": "TransformerMVLV",
-        "ExactName": True,
-        "Category": "Network",
-        "ReplaceTag": "Cable",
-        "Description": ["ElectricOutput", "ElectricInput", "PowerOutput"],
-		"PowerOutput": 4000
-	},{
 		"Name": "CopperConnector",
 		"Label": "Copper Cable",
 		"StartTier": 0,
@@ -486,7 +442,7 @@ machines = [
 		"BlockLogic": "SelectCrafter",
         "Selector": "Blocks/ElectricEngineBP.ElectricEngineBP_C",
 		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
-		"PowerOutput": 55,
+		"PowerOutput": 100,
         "DefaultRotation": [-1, 0, 0, 0]
 	},{
 		"Name": "BiElectricEngine",
@@ -1012,7 +968,7 @@ machines = [
 		],
 		"StartTier": 1,
 		"EndTier": 7,
-		"BlockLogic":"SelectCrafter",
+		"BlockLogic":"FarmBlockLogic",
 		"Description": ["FluidInput"],
 	},{
 		"Name": "AtmosphericCondenser",

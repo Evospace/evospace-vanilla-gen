@@ -7,67 +7,14 @@ tier_materials = ("/Game/Materials/Stone", "/Game/Materials/Copper", "/Game/Mate
 
 covers = [
     {
-        "Name": "CopperConnector",
+        "Name": "CableSide",
         "Mesh": "/Game/Covers/CableSide",
         "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/Copper"]
     },
     {
-        "Name": "OFCCable",
-        "Mesh": "/Game/Covers/CableSide",
-        "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/OFC"]
-    },
-    {
-        "Name": "SCable",
-        "Mesh": "/Game/Covers/MVCable",
-        "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/Steel"]
-    },
-    {
-        "Name": "GCable",
-        "Mesh": "/Game/Covers/MVCable",
-        "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/Gold"]
-    },
-    {
-        "Name": "ACable",
-        "Mesh": "/Game/Covers/MVCable",
-        "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/Aluminium"]
-    },
-    {
-        "Name": "YBCOCable",
-        "Mesh": "/Game/Covers/MVCable",
-        "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/YBCO"]
-    },
-    {
-        "Name": "PCable",
-        "Mesh": "/Game/Covers/CableSide",
-        "Materials": ["/Game/Materials/RubberHV", "/Game/Materials/GlowHV1"]
-    },
-    {
-        "Name": "TNCable",
-        "Mesh": "/Game/Covers/CableSide",
-        "Materials": ["/Game/Materials/RubberHV", "/Game/Materials/GlowHV2"]
-    },
-    {
-        "Name": "ABCCOCable",
-        "Mesh": "/Game/Covers/CableSide",
-        "Materials": ["/Game/Materials/RubberHV", "/Game/Materials/GlowHV3"]
-    },
-    {
-        "Name": "CableSide",
-        "Mesh": "/Game/Covers/MVCable",
-        "Materials": ["/Game/Materials/Rubber2"]
-    },
-    {
-        "Name": "CableCenterLV",
+        "Name": "CableCenter",
         "Mesh": "/Game/Covers/PipeCenter",
         "Materials": ["/Game/Materials/Rubber2"]
-    },{
-        "Name": "CableCenterMV",
-        "Mesh": "/Game/Covers/PipeCenter",
-        "Materials": ["/Game/Materials/RubberMV"]
-    },{
-        "Name": "CableCenterHV",
-        "Mesh": "/Game/Covers/PipeCenter",
-        "Materials": ["/Game/Materials/RubberHV"]
     },{
         "Name": "HeatSide",
         "Mesh": "/Game/Covers/HeatSide",
@@ -92,18 +39,6 @@ covers = [
 		"Name": "BuildingBox",
 		"Mesh": "/Game/BoxStaticMesh",
         "Materials": [],
-        "NoCollision": True
-	},{
-		"Name": "HVInput",
-		"Mesh": "/Game/Covers/HVIn",
-        "NoCollision": True
-	},{
-		"Name": "MVInput",
-		"Mesh": "/Game/Covers/MVIn",
-        "NoCollision": True
-	},{
-		"Name": "MVOutput",
-		"Mesh": "/Game/Covers/MVOut",
         "NoCollision": True
 	},{
 		"Name": "ElectricityInput",
