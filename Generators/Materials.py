@@ -418,7 +418,7 @@ materials = [
 		"Label": "Hydrogen",
 		"Items": ["Gas"],
 		"Burnable": {
-			"BurnTime": 400
+			"BurnTime": 500
 		},
 		"Tier": 3,
 	},{
@@ -426,7 +426,7 @@ materials = [
 		"Label": "Ethanol",
 		"Items": ["Gas"],
 		"Burnable": {
-			"BurnTime": 500
+			"BurnTime": 700
 		},
 		"Tier": 2,
 	},{
@@ -434,7 +434,7 @@ materials = [
 		"Label": "Methane",
 		"Items": ["Gas"],
 		"Burnable": {
-			"BurnTime": 400
+			"BurnTime": 600
 		},
 		"Tier": 2,
 	},{
@@ -442,7 +442,7 @@ materials = [
 		"Label": "Ethylene",
 		"Items": ["Gas"],
 		"Burnable": {
-			"BurnTime": 400
+			"BurnTime": 600
 		},
 		"Tier": 2,
 	},{
@@ -485,7 +485,7 @@ materials = [
 		"Mesh": "/Game/Models/Piece",
 		"Description":[["Organics","common"]],
 		"Burnable": {
-			"BurnTime": 40
+			"BurnTime": 60
 		},
 	},{
 		"Name": "Biomass",
@@ -536,7 +536,7 @@ materials = [
 		"Items": ["Exact"],
 		"Tier": 0,
 		"Burnable": {
-			"BurnTime": 400
+			"BurnTime": 500
 		},
 		"Color":[0.9,0.9,0.9],
 		"Mesh":"/Game/Models/LogCrate",
@@ -601,7 +601,7 @@ materials = [
 		"Items": ["Fluid"],
 		"Tier": 0,
 		"Burnable": {
-			"BurnTime": 200
+			"BurnTime": 300
 		},
 		"Color":[0.1,0.1,0.1]
 	},
@@ -611,7 +611,7 @@ materials = [
 		"Items": ["Fluid"],
 		"Tier": 0,
 		"Burnable": {
-			"BurnTime": 400
+			"BurnTime": 500
 		},
 		"Color":[0.01,0.01,0.01]
 	},
@@ -627,7 +627,7 @@ materials = [
 		"Items": ["Gas"],
 		"Tier": 1,
 		"Burnable": {
-			"BurnTime": 400
+			"BurnTime": 800
 		},
 		"Color":[.5,.5,0.2]
 	},{
@@ -636,7 +636,7 @@ materials = [
 		"Items": ["Fluid"],
 		"Tier": 1,
 		"Burnable": {
-			"BurnTime": 800
+			"BurnTime": 1200
 		},
 		"Color":[.2,.2,0.2]
 	},{
@@ -646,7 +646,7 @@ materials = [
 		"Tier": 1,
 		"Color":[.1,.1,0.1],
 		"Burnable": {
-			"BurnTime": 1600
+			"BurnTime": 2000
 		}
 	},{
 		"Name": "Superfuel",
@@ -655,7 +655,7 @@ materials = [
 		"Tier": 1,
 		"Color":[1,1,0.5],
 		"Burnable": {
-			"BurnTime": 2000
+			"BurnTime": 2500
 		}
 	},{
 		"Name": "RocketFuel",
@@ -664,7 +664,7 @@ materials = [
 		"Tier": 1,
 		"Color":[0,1,0],
 		"Burnable": {
-			"BurnTime": 300
+			"BurnTime": 400
 		}
 	},
 	{
@@ -673,7 +673,7 @@ materials = [
 		"Items": ["Gas"],
 		"Tier": 2,
 		"Burnable": {
-			"BurnTime": 400
+			"BurnTime": 800
 		},
 		"Color":[0.2,.5,0.2]
 	},

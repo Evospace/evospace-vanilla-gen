@@ -25,6 +25,8 @@ recipes_hammer = []
 recipes_mixer = []
 recipes_chem = []
 
+pumpjack = []
+
 recipes_sep = []
 recipes_press = []
 
@@ -780,7 +782,7 @@ recipes_hand.append({
 		"Items":[
 			{
 				"Name": "ThoriumDust",
-				"Count": 20
+				"Count": 40
 			},
 			{
 				"Name": "Cell",
@@ -1657,6 +1659,13 @@ recipes_sep.append({
 	"Ticks" : 100
 })
 
+pumpjack.append({
+	"Name": "RawOil",
+	"Input": no_items(),
+	"Output": one_item("RawOil", 200),
+	"Ticks" : 20
+})	
+
 recipes_arc_furnace.append({
 	"Name": "SandSurfaceSmelting",
 	"Input": one_item("SandSurface"),
@@ -1698,7 +1707,29 @@ recipes_macerator.append({
 	"Ticks" : 200
 })
 
-for material in {"Ruby", "Malachite"}:
+recipes_electrolyzer.append({
+	"Name": "MalachiteCrystal",
+	"Input": one_item("MalachiteCrystal"),
+	"Output": items([
+		["MalachiteDust", 3],
+		["BerylliumDust"]
+	]),
+	"Tier": 3,
+	"Ticks" : 80,
+})
+
+recipes_electrolyzer.append({
+	"Name": "ThorianiteCrystal",
+	"Input": one_item("ThorianiteCrystal"),
+	"Output": items([
+		["UraniumDust", 3],
+		["Uranium235Dust"]
+	]),
+	"Tier": 3,
+	"Ticks" : 80,
+})
+
+for material in {"Ruby"}:
 	recipes_macerator.append({
 		"Name": material+"Crystal",
 		"Input": one_item(material+"Crystal"),
@@ -1998,7 +2029,7 @@ recipes_hand.append({
 recipes_ferm.append({
 	"Name": "Rapseed",
 	"Input": one_item("Rapeseed"),
-	"Output": one_item("RapeseedOil", 500),
+	"Output": one_item("RapeseedOil", 750),  # Increased from 500 to 750 to make it more competitive
 	"Ticks" : 200
 })
 
@@ -2009,7 +2040,7 @@ recipes_ferm.append({
 		"Items":[
 			{
 				"Name": "Methane",
-				"Count": 500
+				"Count": 750  # Increased from 500 to 750 to make it more competitive
 			},
 			{
 				"Name": "FermentedBiomass",
@@ -2017,14 +2048,13 @@ recipes_ferm.append({
 			}
 		]
 	},
-	
 	"Ticks" : 200
 })
 
 recipes_ferm.append({
 	"Name": "MethaneFromPumpkin",
 	"Input": one_item("Pumpkin"),
-	"Output": one_item("Methane", 200),
+	"Output": one_item("Methane", 300),  # Increased from 200 to 300 to make it more competitive
 	"Ticks" : 200
 })
 
@@ -2156,11 +2186,11 @@ recipes_pyro.append({
 			},
 			{
 				"Name": "RawOil",
-				"Count": 100
+				"Count": 150  # Increased from 100 to 150 to make it more rewarding
 			},
 			{
 				"Name": "ProducerGas",
-				"Count": 100
+				"Count": 150  # Increased from 100 to 150 to make it more rewarding
 			},
 			
 		]
@@ -2169,12 +2199,31 @@ recipes_pyro.append({
 	"Tier": 3,
 })
 
+recipes_pyro.append({
+	"Name": "HeavyOilPyrolysis",
+	"Input": one_item("HeavyOil", 1000),
+	"Output":{
+		"Items":[
+			{
+				"Name": "ProducerGas",
+				"Count": 1300  # Balanced to provide same total burn time as input HeavyOil
+			},
+			{
+				"Name": "Ash",
+				"Count": 2  # Small amount of ash as byproduct
+			}
+		]
+	},
+	"Ticks" : 200,  # Relatively quick process
+	"Tier": 3,  # Same tier as other pyrolysis recipes
+})
+
 for i in range(0, len(oil_crack_array(0))):
 	recipes_pyro.append({
 		"Name": "RawOil"+str(i),
 		"Input": one_item("RawOil", 2000),
 		"Output": { "Items":[ oil_crack_recipe(i, 2000) ] },
-		"Ticks" : 150,
+		"Ticks" : 120,  # Reduced from 150 to 120 to make it more efficient
 		"Tier": 3,
 	})
 
@@ -2854,6 +2903,11 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": "FractionatingColumn" + r_dict,
 	"Recipes": oil_crack
+})
+
+objects_array.append({ "Class": r_dict,
+	"Name": "Pumpjack" + r_dict,
+	"Recipes": pumpjack
 })
 
 objects_array.append({ "Class": r_dict,

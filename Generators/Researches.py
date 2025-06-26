@@ -1055,29 +1055,8 @@ append_levels({
 	"RequiredResearch": ["ElectricEngine1"],
 	"Levels": [3,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%Generator"]],
-	"UnlockFirst": [["Hand" + r_dict, "SCable"]],
 	"MainResearchArr": [True, False, False, False, False, False, False],
 	"CostMul": 2.5,
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "GoldCable",
-	"LabelParts": [["GoldCable", "parts"]],
-	"RequiredResearch": ["Generator"],
-	"Levels": [3,3],
-	"Unlocks": [[h_r_dict, "GCable"]],
-	"MainResearch": True,
-	"CostMul": 4,
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "AluminiumCable",
-	"LabelParts": [["GoldCable", "parts"]],
-	"RequiredResearch": ["GoldCable"],
-	"Levels": [3,3],
-	"Unlocks": [[h_r_dict, "ACable"]],
-	"MainResearch": True,
-	"CostMul": 8,
 })
 append_levels({
 	"Class": research_recipe,
