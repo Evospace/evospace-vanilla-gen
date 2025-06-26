@@ -236,7 +236,7 @@ def battery_mul(level):
 	
 f_machine_bonus = 1.5
 
-fission_fullpower = 7100 * 3.3 * 2 * 1.1 * 2
+fission_fullpower = 7100
 
 tiers_numlist = [0,1,2,3,4,5,6,7]
 
@@ -315,27 +315,15 @@ def oil_crack_array(input_count):
 	return [
 		{
 			"Name": "HeavyOil",
-			"Count": 1000 * (input_count / 15000.0)
+			"Count": 2000 * (input_count / 15000.0)
 		},
 		{
 			"Name": "Diesel",
-			"Count": 4000 * (input_count / 15000.0)
+			"Count": 5000 * (input_count / 15000.0)
 		},
 		{
 			"Name": "Gasoline",
-			"Count": 1000 * (input_count / 15000.0)
-		},
-		{
-			"Name": "Ethylene",
-			"Count": 5000 * (input_count / 15000.0)
-		},
-		{
-			"Name": "Methane",
-			"Count": 5000 * (input_count / 15000.0)
-		},
-		{
-			"Name": "Hydrogen",
-			"Count": 2500 * (input_count / 15000.0)
+			"Count": 3000 * (input_count / 15000.0)
 		}]
 
 def oil_crack_recipe(index, input_count):

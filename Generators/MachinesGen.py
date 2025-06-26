@@ -128,7 +128,7 @@ for machine in machines:
 			"StackSize": 32,
 			"LabelParts": labelParts,
 			"LabelFormat": labelFormat,
-			"DescriptionParts": [["tier", "common", tier],[machine["Name"], "machines_description"]],
+			"DescriptionParts": [[machine["Name"], "machines_description"]],
 			"ItemLogic": building_single_logic if "ItemLogic" not in machine else machine["ItemLogic"],
 			"Tier": tier,
 			"Category": machine["Category"] if "Category" in machine else CamelToSpaces(tier_material[tier]),
@@ -1145,36 +1145,6 @@ for machine in machines:
 					"Items":[
 						{
 							"Name": "CopperWire",
-							"Count": 1
-						}
-					]
-				},
-				"Output": one_item(machine["Name"]),
-				"Ticks" : 5
-			})
-
-		if machine["Name"] == "GCable":
-			append_recipe({
-				"Name": machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": "GoldWire",
-							"Count": 1
-						}
-					]
-				},
-				"Output": one_item(machine["Name"]),
-				"Ticks" : 5
-			})
-
-		if machine["Name"] == "SCable":
-			append_recipe({
-				"Name": machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": "IronPlate",
 							"Count": 1
 						}
 					]
