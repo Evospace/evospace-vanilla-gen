@@ -28,7 +28,7 @@ def generate_part(name, material_dict):
 	cvs.append([material + part["Name"], CamelToSpaces(material) + " " + part["Label"]])
 	item = { "Class": "StaticItem",
 		"Name": material + part["Name"],
-		"LabelParts": [[material + part["Name"], "parts"]],
+		"Label": [material + part["Name"], "parts"],
 		"Image": "T_" + material + part["Name"],
 		"StackSize": part["StackSize"],
 		"Materials" : [
@@ -198,7 +198,7 @@ for material in materials:
 			"Image": "T_" + m_name,
 			
 			"StackSize": 1,
-			"LabelParts": [[m_name, "parts"]],
+			"Label": [m_name, "parts"],
 			"Type": "Abstract"
 		}
 
@@ -226,7 +226,7 @@ for material in materials:
 			"Name": material["Name"],
 			"Image": "T_" + material["Name"],
 			"StackSize": 64 if material["Name"] != "Signal" else 214748364,
-			"LabelParts": [[material["Name"], "parts"]],
+			"Label": [material["Name"], "parts"],
 		}
 
 		if "Tier" in material:
@@ -294,7 +294,7 @@ for material in materials:
 				"",
 				"/Game/Materials/" + material["Name"]
 			],			
-			"LabelParts": [[material["Name"] + "Plate", "parts"]],
+			"Label": [material["Name"] + "Plate", "parts"],
 			"Category": "Plate",
 		}
 
@@ -356,7 +356,7 @@ for material in materials:
 			"Materials" : [
 				"/Game/Materials/" + material["Name"]
 			],			
-			"LabelParts": [[material["Name"] + "Block", "parts"]],
+			"Label": [material["Name"] + "Block", "parts"],
 			"Category": "Block",
 			"ItemLogic": building_cube_logic,
 			"Block": material["Name"] + "Block",
@@ -420,7 +420,7 @@ for material in materials:
 			
 			"StackSize": 1000,
 			"Category": "",
-			"LabelParts": [[material["Name"], "parts"]],
+			"Label": [material["Name"], "parts"],
 			
 			"UnitMul": 1.0 / 1000.0,
 			
@@ -483,7 +483,7 @@ for material in materials:
 			
 			"StackSize": 1000,
 			"Category": "",
-			"LabelParts": [[material["Name"], "parts"]],
+			"Label": [material["Name"], "parts"],
 			
 			"UnitMul": 1.0 / 1000.0,
 			
@@ -543,7 +543,7 @@ for material in materials:
 			
 			"StackSize": 64,
 			
-			"LabelParts": [[material["Name"] + "Dust", "parts"]],
+			"Label": [material["Name"] + "Dust", "parts"],
 			"Mesh": "/Game/Models/DustCrate",
 			"Materials": [
 				"",
@@ -601,7 +601,7 @@ for tool in tools:
 		"Image": "T_" + item_name,
 		"ItemLogic": tool["ItemLogic"],
 		"StackSize": 1,
-		"LabelParts": [[tool["Name"], "parts"]],
+		"Label": [tool["Name"], "parts"],
 	}
 		
 	objects_array.append(item)

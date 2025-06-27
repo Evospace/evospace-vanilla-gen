@@ -174,7 +174,7 @@ for ore_type in ore_types:
 		"Image": "T_" + ore_type["Name"] + "Ore",
 		"StackSize": 64, 
 		"Category": "Ore",
-		"LabelParts": [[ore_type["Name"]+"Ore", "ores"]],
+		"Label": [ore_type["Name"]+"Ore", "ores"],
 		"DescriptionParts": description,
 		"Materials" : [
 			"/Game/Materials/" + ore_type["Name"] + "OreImpureGravel"
@@ -214,7 +214,7 @@ for ore_type in ore_types:
 				"/Game/Materials/" + ore_type["Name"] + "OreImpureGravel"
 			],
 			"Category": "Ore",
-			"LabelParts": [[ore_type["Name"]+"OreImpureGravel", "ores"]],
+			"Label": [ore_type["Name"]+"OreImpureGravel", "ores"],
 			"DescriptionParts": description,
 		}
 
@@ -237,7 +237,7 @@ for ore_type in ore_types:
 				"/Game/Materials/" + ore_type["Name"] + "OreGravel"
 			],
 			"Category": "Ore",
-			"LabelParts": [[ore_type["Name"]+"OreGravel", "ores"]],
+			"Label": [ore_type["Name"]+"OreGravel", "ores"],
 			"DescriptionParts": description,
 		}
 
@@ -257,7 +257,7 @@ for ore_type in ore_types:
 			"Image": "T_" + ore_type["Name"] + "OreDust",
 			"StackSize": 64,
 			"Category": "Ore",
-			"LabelParts": [[ore_type["Name"]+"OreDust", "ores"]],
+			"Label": [ore_type["Name"]+"OreDust", "ores"],
 			"DescriptionParts": description,
 			"Materials" : [
 				"",
@@ -281,7 +281,7 @@ for ore_type in ore_types:
 			"Image": "T_" + ore_type["Name"] + "Dust",
 			"StackSize": 64,
 			"Category": "Ore",
-			"LabelParts": [[ore_type["Name"]+"Dust", "ores"]],
+			"Label": [ore_type["Name"]+"Dust", "ores"],
 			"DescriptionParts": description,
 			"Materials" : [
 				"",
@@ -308,7 +308,7 @@ for ore_type in ore_types:
 				"Image": "T_" + ore_type["Name"] + "Crystal",
 				"StackSize": 64,
 				"Category": "Ore",
-				"LabelParts": [[ore_type["Name"]+"Crystal", "ores"]],
+				"Label": [ore_type["Name"]+"Crystal", "ores"],
 				"DescriptionParts": description,
 				"Mesh": "/Game/Models/CrystalCrate",
 				"Materials" : [
