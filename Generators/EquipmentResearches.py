@@ -5,7 +5,7 @@ def append_equipment(xy, append_levels, researches):
 	append_levels({
 		"Class": research_recipe,
 		"Name": "Steampack",
-		"LabelParts": [["Steampack", "misc"]],
+		"Label": ["Steampack", "misc"],
 		"RequiredResearch": ["Circuit"],
 		"Unlocks": [["Hand" + r_dict, "Steampack"]],
 		"Levels": [1,1],
@@ -13,7 +13,7 @@ def append_equipment(xy, append_levels, researches):
 	append_levels({
 		"Class": research_recipe,
 		"Name": "HighPressureSteampack",
-		"LabelParts": [["HighPressureSteampack", "misc"]],
+		"Label": ["HighPressureSteampack", "misc"],
 		"RequiredResearch": ["Steampack"],
 		"Unlocks": [["Hand" + r_dict, "HighPressureSteampack"]],
 		"Levels": [2,2],
@@ -21,7 +21,7 @@ def append_equipment(xy, append_levels, researches):
 	append_levels({
 		"Class": research_recipe,
 		"Name": "HighCapacitySteampack",
-		"LabelParts": [["HighCapacitySteampack", "misc"]],
+		"Label": ["HighCapacitySteampack", "misc"],
 		"RequiredResearch": ["Steampack"],
 		"Unlocks": [["Hand" + r_dict, "HighCapacitySteampack"]],
 		
@@ -31,7 +31,7 @@ def append_equipment(xy, append_levels, researches):
 	append_levels({
 		"Class": research_recipe,
 		"Name": "AdvancedSteampack",
-		"LabelParts": [["AdvancedSteampack", "misc"]],
+		"Label": ["AdvancedSteampack", "misc"],
 		"RequiredResearch": ["HighCapacitySteampack", "HighPressureSteampack"],
 		"Unlocks": [["Hand" + r_dict, "AdvancedSteampack"]],
 		
@@ -41,7 +41,7 @@ def append_equipment(xy, append_levels, researches):
 	append_levels({
 		"Class": research_recipe,
 		"Name": "Jetpack",
-		"LabelParts": [["Jetpack", "misc"]],
+		"Label": ["Jetpack", "misc"],
 		"RequiredResearch": ["AdvancedCircuit", "Steampack", "ElectricEngine1"],
 		"Unlocks": [["Hand" + r_dict, "Jetpack"]],
 		
@@ -51,7 +51,7 @@ def append_equipment(xy, append_levels, researches):
 	append_levels({
 		"Class": research_recipe,
 		"Name": "AdvancedJetpack",
-		"LabelParts": [["AdvancedJetpack", "misc"]],
+		"Label": ["AdvancedJetpack", "misc"],
 		"RequiredResearch": ["Jetpack", "Processor", "ElectricEngine2"],
 		"Unlocks": [["Hand" + r_dict, "AdvancedJetpack"]],
 		
@@ -61,7 +61,7 @@ def append_equipment(xy, append_levels, researches):
 	append_levels({
 		"Class": research_recipe,
 		"Name": "AntigravityUnit",
-		"LabelParts": [["AntigravityUnit", "misc"]],
+		"Label": ["AntigravityUnit", "misc"],
 		"RequiredResearch": ["AdvancedJetpack", "QuantumProcessor", "Catalyst"],
 		"Unlocks": [["Hand" + r_dict, "AntigravityUnit"]],
 		

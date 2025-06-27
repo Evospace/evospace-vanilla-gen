@@ -341,26 +341,6 @@ machines = [
 		"PowerOutput": 100,
         "DefaultRotation": [-1, 0, 0, 0]
 	},{
-		"Name": "BiElectricEngine",
-		"Label": "Bi-Directional Electric Engine",
-		"StartTier": 2,
-		"EndTier": 7,
-		"BlockLogic": "SelectCrafter",
-		"BlockCreation":"""
-		local a = self:CreateAccessor(Class.find("KineticOutputAccessor"))
-		a:SetSidePos(Vec3i.back, Vec3i.zero)
-		a:Bind(self:GetOutputContainer())
-		local a = self:CreateAccessor(Class.find("KineticOutputAccessor"))
-		a:SetSidePos(Vec3i.front, Vec3i.zero)
-		a:Bind(self:GetOutputContainer())
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
-		a:SetSidePos(Vec3i.down, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
-        """,
-		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
-		"PowerOutput": 55,
-        "DefaultRotation": [-1, 0, 0, 0]
-	},{
 		"Name": "IndustrialElectricEngine",
 		"Label": "Industrial Electric Engine",
 		"StartTier": 4,
@@ -1186,99 +1166,7 @@ machines = [
 		"StartTier": 4,
 		"EndTier": 7,	
 		"Description": ["KineticInput", "FluidOutput"],		
-	},
-	##,{
-	##	"Name": "PneumaticPipe",
-	##	"Label": "Pneumatic Pipe",
-	##	"StartTier": 3,
-	##	"EndTier": 5,
-	##	"CommonTextKeys":[
-	##		
-	##	],
-    ##
-	##}
-	##,{
-	##	"Name": "PneumaticInput",
-	##	"Label": "Pneumatic Input",
-	##	"StartTier": 3,
-	##	"EndTier": 5,
-	##	"CommonTextKeys":[
-	##		
-	##	],
-	##	
-	##}
-	#{
-	#	"Name": "DistributionBox",
-	#	"Label": "Distribution Box",
-	#	"StartTier": 2,
-	#	"EndTier": 7,
-	#	"CommonTextKeys":[
-	#		"Chest"
-	#	],
-	#},
-	#{
-	#	"Name": "HeatExchanger",
-	#	"Label": "Heat Exchanger",
-	#	"StartTier": 3,
-	#	"EndTier": 7,
-	#	"BlockLogic":"SelectCrafter",
-	#	"BlockCreation":"""
-	#	
-	#	
-	#	local a = self:CreateAccessor(Class.find("FluidInputAccessor"))
-	#	a:SetSidePos(Vec3i.left, Vec3i.zero)
-	#	a:Bind(self:GetInputContainer())
-	#	
-	#	local a = self:CreateAccessor(Class.find("FluidOutputAccessor"))
-	#	a:SetSidePos(Vec3i.right, Vec3i.zero)
-	#	a:Bind(self:GetOutputContainer())
-	#	
-	#	local a = self:CreateAccessor(Class.find("HeatOutputAccessor"))
-	#	a:SetSidePos(Vec3i.up, Vec3i.zero)
-	#	a:Bind(self:GetOutputContainer())
-	#	""",
-	#	"RequiredResearch":["HeatTransferring"+static_research],
-	#}
-	#,{
-	#	"Name": "InverseHeatExchanger",
-	#	"Label": "Inverse Heat Exchanger",
-	#	"StartTier": 1,
-	#	"EndTier": 7,
-	#	"BlockLogic":"SelectCrafter",
-	#	"BlockCreation":"""
-	#	
-	#	
-	#	local a = self:CreateAccessor(Class.find("FluidInputAccessor"))
-	#	a:SetSidePos(Vec3i.left, Vec3i.zero)
-	#	a:Bind(self:GetInputContainer())
-	#	
-	#	local a = self:CreateAccessor(Class.find("FluidOutputAccessor"))
-	#	a:SetSidePos(Vec3i.right, Vec3i.zero)
-	#	a:Bind(self:GetOutputContainer())
-	#	
-	#	local a = self:CreateAccessor(Class.find("HeatInputAccessor"))
-	#	a:SetSidePos(Vec3i.down, Vec3i.zero)
-	#	a:Bind(self:GetInputContainer())
-	#	""",
-	#	"RequiredResearch":["HeatTransferring"+static_research],
-	#}
-	#,{
-	#	"Name": "IndustrialOven",
-	#	"Label": "Industrial Oven",
-	#	"StartTier": 3,
-	#	"EndTier": 7,
-	#	"CommonTextKeys":[
-	#		"Dryer",
-	#		"CokeOven"
-	#	],
-	#	
-	#	"Positions": [
-	#		[0,0,0],[-1,0,0],
-	#		[0,1,0],[-1,1,0],
-	#	],
-	#	
-	#}
-	{
+	},{
 		"Name": "IndustrialSmelter",
 		"Label": "Industrial Smelter",
 		"StartTier": 4,
@@ -1306,36 +1194,6 @@ machines = [
 		"EndTier": 7,
 		"Description": ["DataInput", "DataOutput"],
 	},{
-		"Name": "LogicCircuit",
-		"Label": "Logic Circuit",
-		"StartTier": 2,
-		"EndTier": 2,
-		"Description": ["DataInput", "DataOutput"],
-	},{
-		"Name": "LogicInterface",
-		"Label": "Logic Interface",
-		"StartTier": 2,
-		"EndTier": 2,
-		"Description": ["DataOutput"],
-	},{
-		"Name": "LogicController",
-		"Label": "Logic Controller",
-		"StartTier": 2,
-		"EndTier": 2,
-		"Description": ["DataInput"],
-	},{
-		"Name": "LogicDisplay",
-		"Label": "Logic Display",
-		"StartTier": 2,
-		"EndTier": 2,
-		"Description": ["DataInput"],
-	},{
-		"Name": "Button",
-		"Label": "Button",
-		"StartTier": 2,
-		"EndTier": 2,		
-		"Description": ["DataOutput"],
-	},{
 		"Name": "TeslaTower",
 		"Label": "TeslaTower",
 		"StartTier": 5,
@@ -1348,12 +1206,6 @@ machines = [
             [0,0,3],[1,0,3],[0,1,3],[1,1,3],
             [0,0,4],[1,0,4],[0,1,4],[1,1,4],
 		]
-	},{
-		"Name": "ToggleButton",
-		"Label": "Toggle Button",
-		"StartTier": 2,
-		"EndTier": 2,		
-		"Description": ["DataOutput"],
 	},{
         "Name": "KineticHeater",
         "Label": "Kinetic Heater",

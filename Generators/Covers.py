@@ -149,13 +149,11 @@ for cover in covers:
     if "HasItem" in cover:
         objects_array.append({ "Class": "StaticItem",
             "Name": cover["Name"],
-            
             "StackSize": 32,
             "Image": "T_" + cover["Name"],
             "ItemLogic": cover_item_logic,
             "Category": "Terrain",
-            
-            "LabelParts": [[cover["Name"], "props"]],
+            "Label": [cover["Name"], "props"],
             "DescriptionParts":[["WorldObject","common"]],
         })
     staticCover = { "Class": static_cover,

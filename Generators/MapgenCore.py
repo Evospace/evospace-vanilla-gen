@@ -157,7 +157,7 @@ for object in mapgen_objects:
 		"Color": object["Item"],
 		"Block": object["Name"] + "Surface",
 		"StackSize": 999,
-		"LabelParts": [[object["Name"]+ "Surface", "mapgen_core"]],
+		"Label": [object["Name"]+ "Surface", "mapgen_core"],
 	})
 	objects_array.append({ "Class": "TesselatorMarching",
 		"Name": object["Name"] + "Surface" + tesselator,

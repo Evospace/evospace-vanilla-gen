@@ -265,7 +265,7 @@ for one in wooden_misc:
 		"Image": "T_" + one["Name"],
 		"Block": one["Name"],
 		"StackSize": 32,
-		"LabelParts":[[one["Name"],"misc"]],
+		"Label":[one["Name"],"misc"],
 		"ItemLogic": building_single_logic
 	}
 		
@@ -293,7 +293,7 @@ for one in simple_single:
 		"ItemLogic": building_single_logic,
 		"Block": one["Name"],
 		"StackSize": 32,
-		"LabelParts":[[one["Name"],"misc"]],
+		"Label":[one["Name"],"misc"],
 		"Tier": one["Tier"] if "Tier" in one else 0
 	})	
 	
@@ -320,7 +320,7 @@ for one in simple_blocks:
 		"ItemLogic": building_cube_logic,
 		"Block": one["Name"] + static_block,
 		"StackSize": 999,
-		"LabelParts":[[one["Name"],"misc"]],
+		"Label":[one["Name"],"misc"],
 		"Category": "Block",
 		"DescriptionParts": [["BuildingBlock", "common"]],
 	})
@@ -346,7 +346,7 @@ for one in static_mesh_block:
 		"ItemLogic": building_single_logic,
 		"Block": one["Name"] + static_block,
 		"StackSize": 32,
-		"LabelParts":[[one["Name"],"misc"]],
+		"Label":[one["Name"],"misc"],
 	})	
 	objects_array.append({
 		"Class": "StaticBlock",
@@ -399,7 +399,7 @@ for one in equipped:
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"StackSize": 32,
-		"LabelParts":[[one["Name"],"misc"]],
+		"Label":[one["Name"],"misc"],
 	}
 	if "ItemLogic" in one:
 		equ["ItemLogic"] = one["ItemLogic"]

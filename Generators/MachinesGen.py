@@ -115,19 +115,16 @@ for machine in machines:
 
 		image = machine["Image"] if "Image" in machine else machine["Name"]
 
-		labelParts = [[tier_material[tier], "common"],[machine["Name"], "machines"]]
-		labelFormat = ["machines_label_format","common"]
+		labelParts = ["machines_label_format", "common", [tier_material[tier], "common"], [machine["Name"], "machines"]]
 		if "ExactName" in machine:
-			labelParts = [[machine["Name"], "machines"]]
-			labelFormat = ""
+			labelParts = [machine["Name"], "machines"]
 
 		item = { "Class": "StaticItem",
 			"Name": block_name,
 			"Image": ("T_" + image) if "ExactName" in machine else ("T_" + tier_material[tier] + image),
 			"Block": block_name,
 			"StackSize": 32,
-			"LabelParts": labelParts,
-			"LabelFormat": labelFormat,
+			"Label": labelParts,
 			"DescriptionParts": [[machine["Name"], "machines_description"]],
 			"ItemLogic": building_single_logic if "ItemLogic" not in machine else machine["ItemLogic"],
 			"Tier": tier,
@@ -194,20 +191,12 @@ for machine in machines:
 		objects_wiki_array[tier_material[tier]+machine["Name"]] = wiki_item
 		# wiki json generation
 
-		if machine["Name"] == "BiElectricEngine":
-			images.append({
-				"Base": "T_" + "ElectricEngine",
-				"NewName": "T_" + tier_material[tier] + "BiElectricEngine",
-				"MulMask": "T_Material" + named_material(tier_material[tier])["Name"],
-				"AddMask": "T_GreenCircle" + additive_ico,
-			})
-		else:
-			images.append({ 
-				"NewName": "T_" + tier_material[tier] + image,
-				"Base": "T_" + image,
-				"MulMask": "T_Material" + named_material(tier_material[tier])["Name"],
-				"AddMask": "T_" + image + additive_ico,
-			})
+		images.append({ 
+			"NewName": "T_" + tier_material[tier] + image,
+			"Base": "T_" + image,
+			"MulMask": "T_Material" + named_material(tier_material[tier])["Name"],
+			"AddMask": "T_" + image + additive_ico,
+		})
 
 		block = {
 			"Name": block_name,
@@ -1151,18 +1140,6 @@ for machine in machines:
 				},
 				"Output": one_item(machine["Name"]),
 				"Ticks" : 5
-			})
-			
-		if machine["Name"] == "ElectricEngine" or machine["Name"] == "BiElectricEngine":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input": items([
-					frame_pair(),
-					[plate(), 2],
-					coil_pair(),
-				]),
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "IndustrialElectricEngine":

@@ -704,7 +704,7 @@ for prop in props:
 			"StackSize": 32,
 			"Image": image,
 			"Category": "Terrain",
-			"LabelParts": [[prop["Name"], "props"]],
+			"Label": [prop["Name"], "props"],
 			"DescriptionParts":[["WorldObject","common"]],
 		})
 		
