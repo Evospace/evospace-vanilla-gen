@@ -49,8 +49,6 @@ recipes_pyro = []
 
 recipes_assembler = []
 
-recipes_gasturb = []
-
 recipes_industrial_chemreactor = []
 
 recipes_chemical_bath = []
@@ -2853,11 +2851,6 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": assembler_r_dict,
 	"Recipes": recipes_assembler,
-})
-
-objects_array.append({ "Class": r_dict,
-	"Name": "GasTurbine" + r_dict,
-	"Recipes": recipes_gasturb
 })
 
 objects_array.append({ "Class": r_dict,

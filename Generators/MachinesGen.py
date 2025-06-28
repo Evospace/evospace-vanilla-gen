@@ -1272,26 +1272,6 @@ for machine in machines:
 				"Ticks" : 20
 			})
 			
-		if machine["Name"] == "GasTurbine":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(8),
-						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 2
-						},
-						{
-							"Name": tier_material[tier] + "Pipe",
-							"Count": 4
-						}
-					]
-				},
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 20
-			})
-			
 		if machine["Name"] == "HeatExchanger":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
