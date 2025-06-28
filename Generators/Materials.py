@@ -449,6 +449,7 @@ materials = [
 		"Items": ["Sheet"],
 		"Tier": 3,
 		"Color": [.2,.5,.2],
+		"Materials":["", "/Game/Materials/Polyethylene"],
 	},
 	#,{
 	#	"Name": "Nickel",
@@ -898,6 +899,7 @@ materials = [
 		"Label": "Carbon Fiber",
 		"StackSize": 32,
 		"Items": ["Exact", "Sheet"],
+		"Materials":["", "/Game/Materials/CarbonFiber"],
 	},{
 		"Name": "Graphene",
 		"Label": "Graphene",
