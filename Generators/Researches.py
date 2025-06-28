@@ -270,14 +270,6 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
-	"Name": "GasTurbine",
-	"Label": ["GasTurbine", "machines"],
-	"RequiredResearch": ["StainlessSteelProduction"],
-	"Levels": [4,7],
-	"Unlocks": [["Hand" + r_dict, "%Material%GasTurbine"] ],
-})
-append_levels({
-	"Class": research_recipe,
 	"Name": "Smelting",
 	"Label": ["Smelting", "researches"],
 	"RequiredResearch": ["MineralsScan"],
@@ -1258,7 +1250,7 @@ append_levels({
 	"Name": "PlatinumReflector",
 	"Label": ["PlatinumReflector", "parts"],
 	"RequiredResearch": ["PlatinumSolution"],
-	"Unlocks": [["Hand" + r_dict, "PlatinumReflector"] ],
+	"Unlocks": [["Hand" + r_dict, "PlatinumReflector"],[assembler_r_dict, "PlatinumReflector"]],
 	"Levels": [6,6],
 	"MainResearch": True,
 })

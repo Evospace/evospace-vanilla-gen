@@ -426,25 +426,6 @@ machines = [
 		"Description": ["FluidInput", "KineticOutput", "PowerOutput"],
 		"PowerOutput": fission_fullpower,
 	},{
-		"Name": "GasTurbine",
-		"Label": "Gas Turbine",
-		"Positions": [[0,0,0],[-1,0,0],[-2,0,0],[-3,0,0],[0,-1,0],[-1,-1,0],[-2,-1,0],[-3,-1,0],[0,0,1],[-1,0,1],[-2,0,1],[-3,0,1],[0,-1,1],[-1,-1,1],[-2,-1,1],[-3,-1,1]],
-		"StartTier": 4,
-		"EndTier": 7,
-		"BlockLogic":"AutoCrafter",
-		"BlockCreation":"""
-		local a = self:CreateAccessor(Class.find("FluidInputAccessor"))
-		a:SetSidePos(Vec3i.up, Vec3i.new( -2, 0, 1 ))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("FluidInputAccessor"))
-		a:SetSidePos(Vec3i.back, Vec3i.new( -1, -1, 1 ))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("KineticOutputAccessor"))
-		a:SetSidePos(Vec3i.right, Vec3i.new( -3, -1, 0 ))
-		a:Bind(self:GetOutputContainer())
-		""",
-		"Description": ["FluidInput", "KineticOutput"],
-	},{
 		"Name": "Riteg",
 		"Label": "RTG",
 		"Positions": [
@@ -617,6 +598,7 @@ machines = [
 	},{
 		 "Name": "Portal",
 		 "Label": "Portal",
+         "Description": ["PowerInput"],
 		 "StartTier": 7,
 		 "EndTier": 7,
 		 "Positions": [
@@ -660,20 +642,6 @@ machines = [
 			[0,-4,3],[-1,-4,3],[-2,-4,3],[-3,-4,3],[-4,-4,3],[-5,-4,3],[-6,-4,4],
 			[0,-5,3],[-1,-5,3],[-2,-5,3],[-3,-5,3],[-4,-5,3],[-5,-5,3],[-6,-5,4]
 		],
-		"BlockCreation":"""
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
-		a:SetSidePos(Vec3i.front, Vec3i.new(0,1,1))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
-		a:SetSidePos(Vec3i.left, Vec3i.new(0,1,1))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
-		a:SetSidePos(Vec3i.front, Vec3i.new(0,-5,1))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
-		a:SetSidePos(Vec3i.right, Vec3i.new(0,-5,1))
-		a:Bind(self:GetInputContainer())
-		""",
 	},
 	{
 		"Name": "DrillingRig",
@@ -973,6 +941,7 @@ machines = [
 	},{
 		"Name": "FusionReactor",
 		"Label": "Fusion Reactor",
+        "Description": ["PowerInput"],
 		"StartTier": 6,
 		"EndTier": 7,
 		"Positions": [
@@ -1001,20 +970,6 @@ machines = [
 			[0,-3,3],[-1,-3,3],[-2,-3,3],[-3,-3,3],[-4,-3,3],
 		],
 		"BlockLogic":"FusionReactorBlockLogic",
-		"BlockCreation":"""
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
-		a:SetSidePos(Vec3i.front, Vec3i.new(0, 1, 0))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
-		a:SetSidePos(Vec3i.left, Vec3i.new(0, 1, 0))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
-		a:SetSidePos(Vec3i.front, Vec3i.new(0, -3, 0))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
-		a:SetSidePos(Vec3i.right, Vec3i.new(0, -3, 0))
-		a:Bind(self:GetInputContainer())
-		""",
 	},{
 		"Name": "IndustrialBoiler",
 		"Label": "Industrial Boiler",

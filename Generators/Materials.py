@@ -387,7 +387,6 @@ materials = [
 			"BurnTime": 400
 		},
 		"Color": [1,1,1],
-		"MoreEfficientIn":"GasTurbine",
 		"Tier": 3,
 	},{
 		"Name": "CarbonMonoxide",
@@ -396,8 +395,7 @@ materials = [
 		"Burnable": {
 			"BurnTime": 200
 		},
-		"Color": [0.5,0.5,0.5],
-		"MoreEfficientIn":"GasTurbine"
+		"Color": [0.5,0.5,0.5]
 	},{
 		"Name": "SulfuricAcid",
 		"Label": "Sulfuric Acid",
@@ -712,11 +710,6 @@ materials = [
 		"Label": "Salt",
 		"Items": ["Exact"],
 		"Tier": 4
-	},{
-		"Name": "PortalBase",
-		"Label": "Portal Base",
-		"Items": ["Exact"],
-		"Tier": 2
 	},{
 		"Name": "MicaFlakes",
 		"Label": "Mica Flakes",

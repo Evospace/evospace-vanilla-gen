@@ -17,8 +17,6 @@ recipes_smelt = []
 recipes_gasfurn = []
 recipes_disassembler = []
 
-recipes_gasturb = []
-
 cvs = []
 
 def generate_part(name, material_dict):
@@ -60,15 +58,6 @@ def generate_part(name, material_dict):
 		"MulMask": "T_Material" + material,
 		"AddMask": "T_" + part["Name"] + additive_ico,
 	})
-	
-def append_gas_burning(recipe):
-	gas2 = copy.deepcopy(recipe)
-	gas2["Input"]["Items"].append({ "Name": "Oxygen", "Count": gas2["Input"]["Items"][0]["Count"]})
-	gas2["Output"]["Items"][0]["Count"] = gas2["Output"]["Items"][0]["Count"] * 2
-	gas2["Output"]["Items"] = [gas2["Output"]["Items"][0]]
-	recipes_gasturb.append(gas2) 
-	
-	recipes_gasturb.append(recipe)
 
 for material in materials:
 	material_tier = 0 if "Tier" not in material else material["Tier"]
