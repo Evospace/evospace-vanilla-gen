@@ -46,9 +46,7 @@ cvs.append(["HeatStorage", "Stores heat energy<img id=\"Heat2\"></>"])
 
 cvs.append(["ElectricInput", "<img id=\"Electricity\"></>Consumes electricity<img id=\"Electricity2\"></>"])
 cvs.append(["ElectricOutput", "<img id=\"Electricity\"></>Produces electricity<img id=\"Electricity2\"></>"])
-cvs.append(["ElectricConductor", "<img id=\"Electricity\"></>Conducts electricity up to 1kV (LV)<img id=\"Electricity2\"></>"])
-cvs.append(["ElectricConductorMV", "<img id=\"Electricity\"></>Conducts electricity up to 10kV (MV)<img id=\"Electricity2\"></>"])
-cvs.append(["ElectricConductorHV", "<img id=\"Electricity\"></>Conducts electricity< up to 100kV (HV)<img id=\"Electricity2\"></>"])
+cvs.append(["ElectricConductor", "<img id=\"Electricity\"></>Conducts electricity<img id=\"Electricity2\"></>"])
 cvs.append(["ElectricStorage", "Stores electricity<img id=\"Electricity2\"></>"])
 
 cvs.append(["DataInput", "Read data"])
