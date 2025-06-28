@@ -309,16 +309,6 @@ machines = [
 		"StartTier": 5,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
-		"BlockCreation":"""local res = self:get_resource_component()
-        res.input_item = StaticItem.find("Kinetic")
-        res.output_item = StaticItem.find("Electricity")
-		local a = self:new_resource_accessor("KineticInputAccessor")
-		a:SetSidePos(Vec3i.right, Vec3i.new( 0, -2, 0 ))
-		a:bind_input(res)
-		local a = self:new_resource_accessor("ElectricOutputAccessor")
-		a:SetSidePos(Vec3i.left, Vec3i.new( 0, 1, 0 ))		
-		a:bind_output(res)
-		""",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
 		"PowerOutput": 240*20,
 		 
@@ -433,15 +423,7 @@ machines = [
 		"StartTier": 5,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
-		"BlockCreation":"""
-		local a = self:CreateAccessor(Class.find("FluidInputAccessor"))
-		a:SetSidePos(Vec3i.front, Vec3i.new(0, 0, 0))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("KineticOutputAccessor"))
-		a:SetSidePos(Vec3i.back, Vec3i.new(-5, -1, 0))
-		a:Bind(self:GetOutputContainer())
-		""",
-		"Description": ["FluidInput", "KineticOutput","PowerOutput"],
+		"Description": ["FluidInput", "KineticOutput", "PowerOutput"],
 		"PowerOutput": fission_fullpower,
 	},{
 		"Name": "GasTurbine",
@@ -982,38 +964,12 @@ machines = [
 		"StartTier": 5,
 		"EndTier": 7,
 		"BlockLogic":"NuclearReactorBlockLogic",
-		"BlockCreation":"""
-		local a = self:CreateAccessor(Class.find("HeatOutputAccessor"))
-		a:SetSidePos(Vec3i.left, Vec3i.new(0, 1, 0))
-		a:Bind(self:GetOutputContainer())
-		local a = self:CreateAccessor(Class.find("HeatOutputAccessor"))
-		a:SetSidePos(Vec3i.front, Vec3i.new(0, 1, 0))
-		a:Bind(self:GetOutputContainer())
-		local a = self:CreateAccessor(Class.find("HeatOutputAccessor"))
-		a:SetSidePos(Vec3i.front, Vec3i.new(0, -2, 0))
-		a:Bind(self:GetOutputContainer())
-		local a = self:CreateAccessor(Class.find("HeatOutputAccessor"))
-		a:SetSidePos(Vec3i.right, Vec3i.new(0, -2, 0))
-		a:Bind(self:GetOutputContainer())
-		local a = self:CreateAccessor(Class.find("HeatOutputAccessor"))
-		a:SetSidePos(Vec3i.left, Vec3i.new(-3, 1, 0)) 
-		a:Bind(self:GetOutputContainer())
-		local a = self:CreateAccessor(Class.find("HeatOutputAccessor"))
-		a:SetSidePos(Vec3i.back, Vec3i.new(-3, 1, 0))
-		a:Bind(self:GetOutputContainer())
-		local a = self:CreateAccessor(Class.find("HeatOutputAccessor"))
-		a:SetSidePos(Vec3i.back, Vec3i.new(-3, -2, 0))
-		a:Bind(self:GetOutputContainer())
-		local a = self:CreateAccessor(Class.find("HeatOutputAccessor"))
-		a:SetSidePos(Vec3i.right, Vec3i.new(-3, -2, 0))
-		a:Bind(self:GetOutputContainer())
-		""",
 		"CustomData":{
 			"LoadIndependent": True,
 			"StorageCapacity": 10000000,
 			"StorageDrain": 80,
 		},
-		"Description": ["HeatOutput"],
+		"Description": ["HeatOutput", "PowerOutput"],
 	},{
 		"Name": "FusionReactor",
 		"Label": "Fusion Reactor",
@@ -1078,26 +1034,6 @@ machines = [
 			[0,-2,2],[-1,-2,2],[-2,-2,2],[-3,-2,2],
 		],
 		"BlockLogic":"NuclearReactorBlockLogic",
-		"BlockCreation":"""
-		local a = self:CreateAccessor(Class.find("FluidInputAccessor"))
-		a:SetSidePos(Vec3i.up, Vec3i.new(0, -1, 2))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("HeatInputAccessor"))
-		a:SetSidePos(Vec3i.down, Vec3i.new(0, -1, 0))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("HeatInputAccessor"))
-		a:SetSidePos(Vec3i.down, Vec3i.new(-1, -1, 0))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("HeatInputAccessor"))
-		a:SetSidePos(Vec3i.down, Vec3i.new(-2, -1, 0))
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("HeatInputAccessor"))
-		a:SetSidePos(Vec3i.down, Vec3i.new(-3, -1, 0))
-		a:Bind(self:GetInputContainer())
-		a = self:CreateAccessor(Class.find("FluidOutputAccessor"))
-		a:SetSidePos(Vec3i.back, Vec3i.new(-3, 0, 0))
-		a:Bind(self:GetOutputContainer())
-		""",
 		"Description": ["FluidInput", "FluidOutput","PowerOutput"],
 		"PowerOutput": fission_fullpower,
 		"CustomData":{
