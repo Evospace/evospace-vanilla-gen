@@ -207,7 +207,8 @@ append_levels({
 	"Label": ["SteelProduction", "researches"],
 	"RequiredResearch": ["Oven"],
 	"Levels": [1,7],
-	"Unlocks": [["Hand" + r_dict, "%Material%BlastFurnace"] ] + get_parts_unlocks(tier_material[2]),
+	"Unlocks": [["Hand" + r_dict, "%Material%BlastFurnace"]],
+	"UnlockFirst": get_parts_unlocks(tier_material[2]),
 	"MainResearch": True,
 	"CostMuls": [5, 2.5, 1.5, 1, 1, 1, 1, 1]
 })
@@ -1320,6 +1321,15 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "IndustrialSteelProduction",
+	"Label": ["IndustrialSteelProduction", "researches"],
+	"RequiredResearch": ["IndustrialSmelting"],
+	"Levels": [4,4],
+	"Unlocks": [["IndustrialSmelter" + r_dict, "Steel"]],
+	"CostMul":2,
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "Fermentation",
 	"Label": ["Fermentation", "researches"],
 	"Levels": [3,7],
@@ -1523,6 +1533,7 @@ csv.append(["Container", "Fluid Storage"])
 csv.append(["SingleTypeStorage", "Single Type Storage"])
 csv.append(["DistributedComputing", "Distributed Computing"])
 csv.append(["Sign", "Sign"])
+csv.append(["IndustrialSteelProduction", "Industrial Steel Production"])
 csv.append(["SteelProduction", "Steel Production"])
 csv.append(["AutomaticMining", "Automatic Mining"])
 csv.append(["MetalConstructions", "Metal Constructions"])	

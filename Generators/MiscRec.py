@@ -93,6 +93,20 @@ recipes_industrial_boiler.append({
 })
 
 recipes_industrial_chemreactor.append({
+	"Name":"NeutroniumPlate",
+	"Input": items([
+		["HotNeutroniumPlate"],
+		["Mercury", 2000]
+	]),
+	"Output": items([
+		["NeutroniumPlate"],
+		["HotMercury", 2000]
+	]),
+	"Ticks" : 200,
+	"Tier": 6
+})
+
+recipes_industrial_chemreactor.append({
 	"Name":"SyntesisCell",
 	"Input": items([
 		["Cell"],
@@ -1621,18 +1635,19 @@ pumpjack.append({
 
 recipes_arc_furnace.append({
 	"Name": "SandSurfaceSmelting",
-	"Input": one_item("SandSurface"),
-	"Output": one_item("Glass"),
+	"Input": one_item("SandSurface", 10),
+	"Output": one_item("Glass", 10),
 	"Ticks" : 100
 })	
 
 for material in materials:
 	if "Items" in material and "Plate" in material["Items"]:
 		if "Smelting" in material and "ArcFurnace" in material["Smelting"]:
+			mul = 10 if (material["Name"] == "Iron" or material["Name"] == "Gold" or material["Name"] == "Copper") else 1
 			recipes_arc_furnace.append({
 				"Name": material["Name"] + "Plate",
-				"Input": one_item(material["Name"] + "Dust"),
-				"Output": one_item(material["Name"] + "Plate"),
+				"Input": one_item(material["Name"] + "Dust", mul),
+				"Output": one_item(material["Name"] + "Plate", mul),
 				"Tier": extract_tier(material),
 				"Ticks" : 100
 			})
@@ -1724,6 +1739,19 @@ recipes_pump.append({
 		]
 	},
 	"Ticks" : 6*20,
+})
+
+recipes_indu.append({
+	"Name":"Steel",
+	"Input": items([
+		["IronDust", 10],
+		["CoalDust", 5],
+		["Oxygen", 1000]
+	]),
+	"Output": items([
+		["SteelPlate", 10]
+	]),
+	"Ticks" : 200,
 })
 
 recipes_indu.append({

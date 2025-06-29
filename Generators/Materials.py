@@ -223,7 +223,7 @@ materials = [
 	},{
 		"Name": "TitaniumSponge",
 		"Label": "Titanium Sponge",
-		"Smelting": ["InductionFurnace"],
+		"Smelting": [],
 		"Items": ["Exact"],		
 		"Mesh":"/Game/Models/SpongeCrate",
         "Materials":["/Game/Materials/GreenPlastic", "/Game/Materials/TitaniumOreGravel"],
@@ -241,7 +241,7 @@ materials = [
 	},{
 		"Name": "HotNeutroniumPlate",
 		"Label": "Hot Neutronium Plate",
-		"Smelting": ["InductionFurnace"],
+		"Smelting": [],
 		"Items": ["Exact"],
 		"Tier": 6,
         "Mesh":"/Game/Models/Ingot",
