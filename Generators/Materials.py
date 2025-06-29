@@ -807,8 +807,8 @@ materials = [
 		"Category": "Parts",
 		"Tier": 3,
 	},{
-		"Name": "SyntesisCell",
-		"Label": "Syntesis Cell",
+		"Name": "SynthesisCell",
+		"Label": "Synthesis Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Category": "Parts",
