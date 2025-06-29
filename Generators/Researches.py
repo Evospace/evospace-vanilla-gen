@@ -227,7 +227,7 @@ append_levels({
 	"Label": ["SmallSolarPanel", "machines"],
 	"RequiredResearch": ["SiliconWafer"],
 	"Levels": [3,7],
-	"Unlocks": [["Hand" + r_dict, "%Material%SmallSolarPanel"] ],
+	"Unlocks": [["Hand" + r_dict, "%Material%SmallSolarPanel"], ["Hand" + r_dict, "%Material%SolarCell"]],
 	"CostMul": 2
 })
 append_levels({

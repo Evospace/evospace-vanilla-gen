@@ -18,7 +18,6 @@ recipes_generator = []
 recipes_pump = []
 recipes_electrolyzer = []
 recipes_cutter = []
-recipes_furnace = []
 recipes_ferm = []
 recipes_toolarm = []
 recipes_hammer = []
@@ -93,48 +92,46 @@ recipes_industrial_boiler.append({
 	"Ticks" : 200,
 })
 
+recipes_industrial_chemreactor.append({
+	"Name":"SyntesisCell",
+	"Input": items([
+		["Cell"],
+		["ProducerGas", 3000]
+	]),
+	"Output": one_item("SyntesisCell"),
+	"Ticks" : 200,
+	"Tier": 6
+})
+
 recipes_fusion_reactor.append({
 	"Name":"HotNeutroniumPlate1",
-	"Input": one_item("ProducerGas", 1000),
-	"Output": one_item("HotNeutroniumPlate", 1),
-	"Ticks" : 200,
+	"Input": one_item("SyntesisCell", 2),
+	"Output": items([
+		["Cell"],
+		["HotNeutroniumPlate"]
+	]),
+	"Ticks" : 200
 })
 
 recipes_fusion_reactor.append({
 	"Name":"HotNeutroniumPlate2",
-	"Input": one_item("ProducerGas", 3000),
-	"Output": one_item("HotNeutroniumPlate", 3),
-	"Ticks" : 300,
-})
-
-recipes_fusion_reactor.append({
-	"Name":"HotNeutroniumPlate4",
 	"Input":{
 		"Items":[
 			{
+				"Name": "SyntesisCell",
+				"Count": 1
+			},{
 				"Name": "UltimateCatalyst",
 				"Count": 1,
 				"Probability":0
 			}
 		]
 	},
-	"Output": one_item("HotNeutroniumPlate", 1),
+	"Output": items([
+		["Cell"],
+		["HotNeutroniumPlate"]
+	]),
 	"Ticks" : 200,
-})
-
-recipes_fusion_reactor.append({
-	"Name":"HotNeutroniumPlate3",
-	"Input":{
-		"Items":[
-			{
-				"Name": "UltimateCatalyst",
-				"Count": 3,
-				"Probability":0
-			}
-		]
-	},
-	"Output": one_item("HotNeutroniumPlate", 3),
-	"Ticks" : 300,
 })
 
 recipes_smelter.append({
@@ -741,7 +738,8 @@ recipes_assembler.append({
 		]
 	},
 	"Output": one_item("Cell"),
-	"Ticks" : 200*3
+	"Ticks" : 200*3,
+	"Tier": 5,
 })
 
 recipes_hand.append({
@@ -771,7 +769,7 @@ recipes_hand.append({
 		]
 	},
 	"Ticks" : 200,
-	
+	"Tier": 5,
 })
 
 recipes_hand.append({
@@ -790,7 +788,7 @@ recipes_hand.append({
 	},
 	"Output": one_item("ThoriumCell"),
 	"Ticks" : 200,
-	
+	"Tier": 6,
 })
 
 recipes_hand.append({
@@ -1058,6 +1056,7 @@ recipes_centrifuge.append({
 		]
 	},
 	"Ticks" : 2000,
+	"Tier": 5,
 })
 
 recipes_fission.append({
@@ -1078,7 +1077,7 @@ recipes_fission.append({
 			}
 		]
 	},
-	"Ticks" : 2000,
+	"Ticks" : uranium_rod_output() / fission_output(),
 })
 
 recipes_fission.append({
@@ -1104,7 +1103,7 @@ recipes_fission.append({
 			}
 		]
 	},
-	"Ticks" : 2000,
+	"Ticks" : (uranium_rod_output() / fission_output()) * 2.1,
 })
 
 recipes_fission.append({
@@ -1117,7 +1116,7 @@ recipes_fission.append({
 			},
 			{
 				"Name": "ControlCell",
-				"Count": 1,
+				"Count": 2,
 				"Probability": 0,
 			}
 		]
@@ -1130,52 +1129,7 @@ recipes_fission.append({
 			}
 		]
 	},
-	"Ticks" : 2000,
-})
-
-recipes_fission.append({
-	"Name":"UraniumCell4",
-	"Input":{
-		"Items":[
-			{
-				"Name": "UraniumCell",
-				"Count": 3
-			},
-			{
-				"Name": "ControlCell",
-				"Count": 5,
-				"Probability": 0,
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "DepletedUraniumCell",
-				"Count": 3
-			}
-		]
-	},
-	"Ticks" : 2000 * 2,
-})
-
-recipes_fission.append({
-	"Name":"ControlCell3",
-	"Input":{
-		"Items":[
-			{
-				"Name": "UraniumCell",
-				"Count": 1
-			},
-			{
-				"Name": "ControlCell",
-				"Count": 3,
-				"Probability": 0,
-			}
-		]
-	},
-	"Output": one_item("DepletedUraniumCell"),
-	"Ticks" : 8000 * .9 * .9,
+	"Ticks" : (uranium_rod_output() / fission_output()) * 3.2,
 })
 
 recipes_fission.append({
@@ -1209,7 +1163,7 @@ recipes_fission.append({
 			}
 		]
 	},
-	"Ticks" : 2000,
+	"Ticks" : 1000,
 })
 
 recipes_fission.append({
@@ -1243,7 +1197,7 @@ recipes_fission.append({
 			}
 		]
 	},
-	"Ticks" : 2000,
+	"Ticks" : 400,
 })
 
 recipes_fission.append({
@@ -1277,7 +1231,7 @@ recipes_fission.append({
 			}
 		]
 	},
-	"Ticks" : 2000,
+	"Ticks" : 400,
 })
 
 recipes_fission.append({
@@ -1296,7 +1250,7 @@ recipes_fission.append({
 		]
 	},
 	"Output": one_item("DepletedUraniumCell"),
-	"Ticks" : 4000 * 0.9,
+	"Ticks" : (uranium_rod_output() / fission_output()) * 1.07,
 })
 
 recipes_fission.append({
@@ -1648,6 +1602,7 @@ recipes_sep.append({
 		]
 	},
 	"Ticks": 400,
+	"Tier": 5,
 })	
 
 recipes_sep.append({
@@ -2757,10 +2712,6 @@ objects_array.append({ "Class": r_dict,
 	"Recipes": recipes_cutter
 })
 
-objects_array.append({ "Class": r_dict,
-	"Name": "Furnace" + r_dict,
-	"Recipes": recipes_furnace
-})
 
 objects_array.append({ "Class": r_dict,
 	"Name": "ElectricFurnace" + r_dict,
