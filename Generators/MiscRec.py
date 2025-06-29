@@ -107,19 +107,19 @@ recipes_industrial_chemreactor.append({
 })
 
 recipes_industrial_chemreactor.append({
-	"Name":"SyntesisCell",
+	"Name":"SynthesisCell",
 	"Input": items([
 		["Cell"],
 		["ProducerGas", 3000]
 	]),
-	"Output": one_item("SyntesisCell"),
+	"Output": one_item("SynthesisCell"),
 	"Ticks" : 200,
 	"Tier": 6
 })
 
 recipes_fusion_reactor.append({
 	"Name":"HotNeutroniumPlate1",
-	"Input": one_item("SyntesisCell", 2),
+	"Input": one_item("SynthesisCell", 2),
 	"Output": items([
 		["Cell"],
 		["HotNeutroniumPlate"]
@@ -132,7 +132,7 @@ recipes_fusion_reactor.append({
 	"Input":{
 		"Items":[
 			{
-				"Name": "SyntesisCell",
+				"Name": "SynthesisCell",
 				"Count": 1
 			},{
 				"Name": "UltimateCatalyst",
