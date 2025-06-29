@@ -24,28 +24,10 @@ def append_nuclear(xy, append_levels, researches):
 	})
 	append_levels({
 		"Class": research_recipe,
-		"Name": "ReactionThrottling",
-		"Label": ["ReactionThrottling", "researches"],
-		"RequiredResearch": ["ControlCell"],
-		"Unlocks": [["FissionReactor" + r_dict, "ControlCell3"]],
-		
-		
-		"Levels": [5,5],
-	})
-	append_levels({
-		"Class": research_recipe,
 		"Name": "AdvancedReflection",
 		"Label": ["AdvancedReflection", "researches"],
 		"RequiredResearch": ["ReflectorCell"],
 		"Unlocks": [["FissionReactor" + r_dict, "UraniumCell3"]],
-		"Levels": [5,5],
-	})
-	append_levels({
-		"Class": research_recipe,
-		"Name": "AdvancedReflection2",
-		"Label": ["TwoWorldsFormat", "common", ["AdvancedReflection", "researches"], ["II", "common"]],
-		"RequiredResearch": ["AdvancedReflection"],
-		"Unlocks": [["FissionReactor" + r_dict, "UraniumCell4"]],
 		"Levels": [5,5],
 	})
 	append_levels({

@@ -67,35 +67,43 @@ for material in materials:
 		print("Material "+ m_name +" has no Items")
 		continue
 
-	if "SolarCell" in material["Items"]:
+	if "SolarCell" in material["Items"] and material_tier > 1:
 		generate_part("SolarCell", material)
-		inp = [{
-			"Name": a_wires[material_tier],
-			"Count": 2
-		}]
-		if material_tier > 3:
-			inp.append({
-				"Name": tier_material[material_tier - 1] + "SolarCell",
-				"Count": 2
+
+		if material_tier == 2:
+			recipes_hand.append({
+				"Name": m_name + "SolarCell",
+				"Input": items([
+					["Silicon", 15],
+					["CopperWire", 5]
+				]),
+				"Output": one_item(m_name + "SolarCell"),
+				"Ticks" : 80,
+				"Tier": material_tier
+			})
+		elif material_tier == 3:
+			recipes_hand.append({
+				"Name": m_name + "SolarCell",
+				"Input": items([
+					["SiliconWafer", 5],
+					["CopperWire", 5]
+				]),
+				"Output": one_item(m_name + "SolarCell"),
+				"Ticks" : 80,
+				"Tier": material_tier
 			})
 		else:
-			inp.append({
-			"Name": "SiliconWafer",
-			"Count": 2
+			recipes_hand.append({
+				"Name": m_name + "SolarCell",
+				"Input": items([
+					[tier_material[material_tier]+"SolarCell", 4],
+					["CopperWire", 2],
+					["Processor" if material_tier > 3 else {}]
+				]),
+				"Output": one_item(m_name + "SolarCell"),
+				"Ticks" : 80,
+				"Tier": material_tier
 			})
-			inp.append({
-				"Name": "AluminiumPlate",
-				"Count": 1
-			})
-		recipes_assembler.append({
-			"Name": m_name + "SolarCell",
-			"Input":{
-				"Items": inp
-			},
-			"Output": one_item(m_name + "SolarCell"),
-			"Ticks" : 80,
-			"Tier": material_tier
-		})
 	
 	if "Foil" in material["Items"]:
 		generate_part("Foil", material)
@@ -265,9 +273,9 @@ for material in materials:
 					],
 					
 				},
-				"Ticks" : material["Burnable"]["BurnTime"],
+				"Ticks" : fuel_burn_time(material, furnace_output()),
 			})
-			item["DescriptionParts"] = [["burnable", "common", material["Burnable"]["BurnTime"]*50]]
+			item["DescriptionParts"] = [["burnable", "common", fuel_value(material)]]
 			
 		objects_array.append(item)
 
@@ -551,9 +559,6 @@ for material in materials:
 		if "Burnable" in material:
 			item["DescriptionParts"].append(["burnable", "common", material["Burnable"]["BurnTime"]*50])
 		
-			
-		objects_array.append(item)
-		
 		dustItem = { "NewName": "T_" + material["Name"] + "Dust",
 			"Base": "T_" + "Dust",
 			"MulMask": "T_Material" + material["Name"],
@@ -565,6 +570,7 @@ for material in materials:
 
 		if "Burnable" in material:
 			recipes_furnace.append({
+				"Name": material["Name"] + "Dust",
 				"Input":{
 					"Items":[
 						{
@@ -577,9 +583,11 @@ for material in materials:
 					"Items":[
 					],
 				},
-				"Ticks" : material["Burnable"]["BurnTime"],
-				"Name": material["Name"] + "Dust",
+				"Ticks" : fuel_burn_time(material, furnace_output()),
 			})
+			item["DescriptionParts"] = [["burnable", "common", fuel_value(material)]]
+
+		objects_array.append(item)
 			
 # tools	
 for tool in tools:

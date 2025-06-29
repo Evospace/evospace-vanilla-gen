@@ -298,14 +298,18 @@ machines = [
 		"BlockLogic": "SelectCrafter",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
 		"PowerOutput": 200 * 5 * 2,
-		 
 	},{
 		"Name": "IndustrialGenerator",
 		"Label": "Industrial Generator",
-		"Positions": [[0,0,0],[1,0,0],[-1,0,0],[0,1,0],[1,1,0],[-1,1,0],[0,-1,0],[1,-1,0],[-1,-1,0],
-		[0,0,1],[1,0,1],[-1,0,1],[0,1,1],[1,1,1],[-1,1,1],[0,-1,1],[1,-1,1],[-1,-1,1],
-		[0,0,2],[1,0,2],[-1,0,2],[0,1,2],[1,1,2],[-1,1,2],[0,-1,2],[1,-1,2],[-1,-1,2],
-        [-1,-2,0],[0,-2,0],[1,-2,0],[-1,-2,1],[0,-2,1],[1,-2,1],[-1,-2,2],[0,-2,2],[1,-2,2]],
+		"Positions": [
+            [0, 0, 0], [0, 2, 0], [1, 2, 0], [-1, 2, 0], [0, 3, 0], [1, 3, 0], [-1, 3, 0],
+			[0, 1, 0], [1, 1, 0], [-1, 1, 0],
+			[0, 2, 1], [1, 2, 1], [-1, 2, 1], [0, 3, 1], [1, 3, 1], [-1, 3, 1],
+			[0, 1, 1], [1, 1, 1], [-1, 1, 1],
+			[0, 2, 2], [1, 2, 2], [-1, 2, 2], [0, 3, 2], [1, 3, 2], [-1, 3, 2],
+			[0, 1, 2], [1, 1, 2], [-1, 1, 2],
+			[-1, 0, 0], [1, 0, 0], [-1, 0, 1], [0, 0, 1], [1, 0, 1],
+			[-1, 0, 2], [0, 0, 2], [1, 0, 2]],
 		"StartTier": 5,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
@@ -424,7 +428,7 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["FluidInput", "KineticOutput", "PowerOutput"],
-		"PowerOutput": fission_fullpower,
+		"PowerOutput": fission_output(),
 	},{
 		"Name": "Riteg",
 		"Label": "RTG",
@@ -989,7 +993,7 @@ machines = [
 		],
 		"BlockLogic":"NuclearReactorBlockLogic",
 		"Description": ["FluidInput", "FluidOutput","PowerOutput"],
-		"PowerOutput": fission_fullpower,
+		"PowerOutput": fission_output(),
 		"CustomData":{
 			"StorageCapacity": 6000000,
 			"StorageDrain": 0
@@ -1013,7 +1017,7 @@ machines = [
 		],
 		"StartTier": 3,
 		"EndTier": 7,
-		"BlockLogic":"BigSolarPanel",
+		"BlockLogic":"SelectCrafter",
 		"Description": ["ElectricOutput", "PowerOutput"],
 		"PowerOutput": 800
 	},
@@ -1028,7 +1032,7 @@ machines = [
 		],
 		"StartTier": 3,
 		"EndTier": 7,
-		"BlockLogic":"SolarPanel",
+		"BlockLogic":"SelectCrafter",
 		"Description": ["ElectricOutput", "PowerOutput"],
 		"PowerOutput": 80
 	},

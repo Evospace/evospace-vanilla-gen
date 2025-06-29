@@ -301,7 +301,7 @@ materials = [
 		"Tier": 5,
 		"Items": ["Exact"],
 		"StackSize": 32,
-		"Description":[["NuclearFuel", "common"]],
+		"Description":[["NuclearFuel", "common"], ["Burnable", "common", uranium_rod_output() * 20]],
 	},{
 		"Name": "PlutoniumCell",
 		"Label": "Plutonium Cell",
@@ -805,6 +805,14 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Category": "Parts",
+		"Tier": 3,
+	},{
+		"Name": "SyntesisCell",
+		"Label": "Syntesis Cell",
+		"StackSize": 32,
+		"Items": ["Exact"],
+		"Category": "Parts",
+		"Tier": 6,
 	},{
 		"Name": "Catalyst",
 		"Label": "Catalyst Cell",
@@ -910,13 +918,13 @@ materials = [
 		"Label": "Composite",
 		"Smelting": ["InductionFurnace"],
 		"Items": tiered_parts_list,
-		"Tier": 6,
+		"Tier": 5,
 	},{
 		"Name": "Neutronium",
 		"Label": "Neutronium",
 		"Smelting": ["InductionFurnace"],
 		"Items": tiered_parts_list,
-		"Tier": 7,
+		"Tier": 6,
 	},{
 		"Name": "Capacity",
 		"Label": "Capacity",

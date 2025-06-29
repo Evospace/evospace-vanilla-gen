@@ -204,7 +204,9 @@ def items(array, tier=0):
 	items = []
 	for entry in array:
 		chance = 100  # reset chance per entry
-		if len(entry) == 1:
+		if len(entry) == 0:
+			continue
+		elif len(entry) == 1:
 			item, count_fn = entry[0], 1
 		elif len(entry) == 3:
 			item, count_fn = entry[0], entry[1]
@@ -235,8 +237,6 @@ def battery_mul(level):
 	return 4 * pow(5, level)
 	
 f_machine_bonus = 1.5
-
-fission_fullpower = 7100
 
 tiers_numlist = [0,1,2,3,4,5,6,7]
 
@@ -310,6 +310,21 @@ tiers_res_item = [
 ]
 
 euler = 2.718281
+
+def furnace_output():
+	return 50
+
+def fission_output():
+	return 200 * 20 * 8
+
+def uranium_rod_output():
+	return fission_output() * 2000
+
+def fuel_value(material):
+	return material["Burnable"]["BurnTime"] * 50
+
+def fuel_burn_time(material, machine_output):
+	return fuel_value(material) / machine_output 
 
 def oil_crack_array(input_count):
 	return [
