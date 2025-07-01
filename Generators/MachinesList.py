@@ -444,14 +444,6 @@ machines = [
 		"StartTier": 5,
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
-		"BlockCreation":"""
-		local a = self:CreateAccessor(Class.find("HeatOutputAccessor"))
-		a:SetSidePos(Vec3i.down, Vec3i.new( 0, 0, 0 ))
-		a:Bind(self:GetOutputContainer())
-		a = self:CreateAccessor(Class.find("HeatOutputAccessor"))
-		a:SetSidePos(Vec3i.up, Vec3i.new( 0, 0, 1 ))
-		a:Bind(self:GetOutputContainer())
-		""",
 		"Description": ["HeatOutput", "PowerOutput"],
 		"PowerOutput": 500,
 	},{
@@ -871,7 +863,7 @@ machines = [
 		"Name": "Computer",
 		"Label": "Computer",
 		"StartTier": 1,
-		"EndTier": 7,
+		"EndTier": 6,
 		"BlockLogic":"ComputerBlockLogic",
 		"Description": ["ElectricInput"],
 	},{

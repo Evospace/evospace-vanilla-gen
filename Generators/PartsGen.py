@@ -162,31 +162,6 @@ for material in materials:
 			"Ticks" : 20,
 		})
 
-	if "Gearbox" in material["Items"]:
-		generate_part("Gearbox", material)
-		if material_tier == 1:
-			recipes_hand.append({
-				"Name": m_name + "Gearbox",
-				"Input": items([
-					[m_name + "Plate"],
-					[m_name + "Parts", 3],
-				], material_tier),
-				"Output": one_item(m_name + "Gearbox", 1),
-				"Tier": material_tier,
-				"Ticks": 200
-			})
-		else:
-			recipes_hand.append({
-				"Name": m_name + "Gearbox",
-				"Input": items([
-					[m_name + "Plate", 3],
-					[m_name + "Parts", 6],
-				], material_tier),
-				"Output": one_item(m_name + "Gearbox", 1),
-				"Tier": material_tier,
-				"Ticks": 200
-			})
-
 	# abstract
 	if "Abstract" in material["Items"]:
 		cvs.append([m_name, material["Label"]])
