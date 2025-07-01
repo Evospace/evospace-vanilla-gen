@@ -291,18 +291,6 @@ props = [
 		"AdditiveElevation": 0,
 		"IsBig": False,
 	},{
-		"Name": "Diptero",
-		"ScaleMin": .8,
-		"ScaleMax": 1.3,
-		"Variations": 2,
-		"ProjectToTerrainPower": 0,
-		"AdditiveElevation": 0,
-		"Count": 1,
-		"IsBig": True,
-		"Drops": "Log",
-		"Count": 5,
-		"BreakChance": 10
-	},{
 		"Name": "DryGrass",
 		"ScaleMin": 1,
 		"ScaleMax": 2,
@@ -410,9 +398,6 @@ proplists = [
 		"Name": "DipteroPropList",
 		"Array": [
 			{
-				"Props": ["Diptero"],
-				"Chance": 0.001
-			},{
 				"Props": ["Broadleaf", "Broadleaf", "Conifer", "Shrub", "BigBush"],
 				"Chance": 0.01
 			},{

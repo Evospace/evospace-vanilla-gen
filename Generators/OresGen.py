@@ -90,6 +90,7 @@ ore_types = [
 		},
 		"Formula": "CrAl203",
 		"Crystal": True,
+		"CrystalIcoGen": True,
 		"Color": [.5/2.0, .5/2.0, 1/2.0],
 		"Drops": "BauxiteOre",
 		"Tier": 3,
@@ -120,6 +121,7 @@ ore_types = [
 			"Macerator": "ThorianiteOreDust",
 		},
 		"Crystal": True,
+		"CrystalIcoGen": True,
 		"Color": [0.3/2.0, 0.7/2.0, 0.3/2.0],
 		"Drops": "ThorianiteOre",
 		"Formula": "ThO2+UO2",
@@ -317,12 +319,13 @@ for ore_type in ore_types:
 				],
 			}
 			objects_array.append(item)
-			images.append({
-				"Base": "T_" + "Crystal",
-				"NewName": "T_" + ore_type["Name"] + "Crystal",
-				"MulMask": "T_Material" + ore_type["Name"],
-				"AddMask": "T_" + "CrystalAdditive"
-			})
+			if "CrystalIcoGen" in ore_type:
+				images.append({
+					"Base": "T_" + "Crystal",
+					"NewName": "T_" + ore_type["Name"] + "Crystal",
+					"MulMask": "T_Material" + ore_type["Name"],
+					"AddMask": "T_" + "CrystalAdditive"
+				})
 			
 data = {
 	"Objects": objects_array

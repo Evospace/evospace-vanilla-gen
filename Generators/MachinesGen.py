@@ -126,7 +126,7 @@ for machine in machines:
 			"DescriptionParts": [[machine["Name"], "description"]],
 			"ItemLogic": building_single_logic if "ItemLogic" not in machine else machine["ItemLogic"],
 			"Tier": tier,
-			"Category": machine["Category"] if "Category" in machine else CamelToSpaces(tier_material[tier]),
+			"Category": machine["Category"] if "Category" in machine else tier_material[tier],
 		}
 
 		conv_speed_d = [1.66,2.5,3.33,5,6.66,10,20]

@@ -264,7 +264,7 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "CompositeJetpack",
+				"Name": "AdvancedJetpack",
 				"Count": 1
 			}
 		]
