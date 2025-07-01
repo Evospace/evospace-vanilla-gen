@@ -77,14 +77,6 @@ def append_recipe(recipe):
 def append_recipe_hand(recipe):
 	recipes_hand.append(recipe)	
 
-recipes_industrial_steam_turbine.append({
-	"Name": "Rotating",
-	"Input": no_items(),
-	"Output": no_items(),
-	"Ticks" : 200,
-	"Loss": 10,
-})
-
 recipes_industrial_boiler.append({
 	"Name":"Boiling",
 	"Input": one_item("Water", 2000),
@@ -1001,7 +993,7 @@ recipes_farm.append({
 		]
 	},
 	"Output": one_item("Log", 15),
-	"Ticks" : 2000,
+	"Ticks" : 1200,
 })
 
 recipes_farm.append({
@@ -1015,7 +1007,7 @@ recipes_farm.append({
 		]
 	},
 	"Output": one_item("Pumpkin", 10),
-	"Ticks" : 2000,
+	"Ticks" : 1200,
 })
 
 recipes_farm.append({
@@ -1028,12 +1020,12 @@ recipes_farm.append({
 			},
 			{
 				"Name": "DirtSurface",
-				"Count": 5
+				"Count": 15
 			}
 		]
 	},
-	"Output": one_item("GrassSurface", 5),
-	"Ticks" : 200,
+	"Output": one_item("GrassSurface", 15),
+	"Ticks" : 1200,
 })
 
 recipes_farm.append({
@@ -1050,11 +1042,11 @@ recipes_farm.append({
 		"Items":[
 			{
 				"Name": "Rapeseed",
-				"Count": 10
+				"Count": 15
 			}
 		]
 	},
-	"Ticks" : 1000,
+	"Ticks" : 1200,
 })
 
 recipes_centrifuge.append({
@@ -2053,13 +2045,6 @@ recipes_solar.append({
 	"Ticks" : 60,
 })
 
-recipes_riteg.append({
-	"Name": "Working",
-	"Input": no_items(),
-	"Output": no_items(),
-	"Ticks" : 60,
-})
-
 recipes_industrial_chemreactor.append({
 	"Name": "MineralWater",
 	"Input":{
@@ -2845,16 +2830,6 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": "ChemicalBath" + r_dict,
 	"Recipes": recipes_chemical_bath
-})
-
-objects_array.append({ "Class": r_dict,
-	"Name": "Riteg" + r_dict,
-	"Recipes": recipes_riteg
-})
-
-objects_array.append({ "Class": r_dict,
-	"Name": "IndustrialSteamTurbine" + r_dict,
-	"Recipes": recipes_industrial_steam_turbine
 })
 
 objects_array.append({ "Class": r_dict,

@@ -453,7 +453,7 @@ append_levels({
 	"Label": ["DistributedComputing", "researches"],
 	"RequiredResearchArr": [["PowerGeneration"], ["AdvancedCircuit"], ["Processor"], ["QuantumCircuit"], ["QuantumProcessor"], ["QuantumBrain"]],
 	"Unlocks": [["Hand" + r_dict, "%Material%Computer"] ],
-	"Levels": [1,7],
+	"Levels": [1,6],
 	"CompleteByDefault": True,
 	"MainResearchArr": [True,True,True,True,True,True,True],
 	

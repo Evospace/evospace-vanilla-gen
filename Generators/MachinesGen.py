@@ -42,9 +42,7 @@ for machine in machines:
 		
 		def plate():
 			return tier_material[tier] + "Plate"
-		
-		def gearbox():
-			return tier_material[tier] + "Gearbox"
+	
 		
 		def coil_pair(mul = 1):
 			if tier <= 2:
@@ -125,7 +123,7 @@ for machine in machines:
 			"Block": block_name,
 			"StackSize": 32,
 			"Label": labelParts,
-			"DescriptionParts": [[machine["Name"], "machines_description"]],
+			"DescriptionParts": [[machine["Name"], "description"]],
 			"ItemLogic": building_single_logic if "ItemLogic" not in machine else machine["ItemLogic"],
 			"Tier": tier,
 			"Category": machine["Category"] if "Category" in machine else CamelToSpaces(tier_material[tier]),
@@ -859,7 +857,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([
 					[plate(), 5],
-					[gearbox(), 2 + parts_ramp(level, 2)],
+					[part(), (2 + parts_ramp(level, 2))*8],
 					[pipe(), 5],
 					[circuit(), 3]
 				]),
@@ -1071,8 +1069,8 @@ for machine in machines:
 							"Count": 2,
 						},
 						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 1
+							"Name": tier_material[tier] + "Parts",
+							"Count": 8
 						},
 					]
 				},
@@ -1106,8 +1104,8 @@ for machine in machines:
 					"Items":[
 						plates_count(10),
 						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 1
+							"Name": tier_material[tier] + "Parts",
+							"Count": 8
 						}
 					]
 				},
@@ -1161,7 +1159,7 @@ for machine in machines:
 					wire_count(30),
 					[circuit(), 1],
 					[plate(), 12],
-					[tier_material[tier] + "Gearbox", 3]
+					[tier_material[tier] + "Parts", 3*8]
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 100
@@ -1172,7 +1170,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([
 					[plate(), 10],
-					[gearbox(), 3],
+					[part(), 3*8],
 					[circuit(), 3],
 					["Catalyst"]
 				]),
@@ -1247,8 +1245,8 @@ for machine in machines:
 					"Items":[
 						plates_count(8),
 						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 2
+							"Name": tier_material[tier] + "Parts",
+							"Count": 2*8
 						},
 						{
 							"Name": tier_material[tier] + "Pipe",
@@ -1267,8 +1265,8 @@ for machine in machines:
 					"Items":[
 						plates_count(50),
 						{
-							"Name": tier_material[tier] + "Gearbox",
-							"Count": 4
+							"Name": tier_material[tier] + "Parts",
+							"Count": 4*8
 						},
 						{
 							"Name": tier_material[tier] + "Pipe",

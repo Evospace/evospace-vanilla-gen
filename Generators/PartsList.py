@@ -11,10 +11,6 @@ parts = [
 		"Mesh":"/Game/Models/PartsCrate",
 		"Materials":["/Game/Materials/Pine","/Game/Materials/%Material%"],
 	},{
-		"Label": "Gearbox",
-		"Name": "Gearbox",
-		"StackSize": 32
-	},{
 		"Label": "Solar Cell",
 		"Name": "SolarCell",
 		"StackSize": 32,
