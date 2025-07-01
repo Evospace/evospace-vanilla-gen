@@ -988,7 +988,7 @@ recipes_farm.append({
 		"Items":[
 			{
 				"Name": "Water",
-				"Count": 625
+				"Count": 1000
 			}
 		]
 	},
@@ -1002,7 +1002,7 @@ recipes_farm.append({
 		"Items":[
 			{
 				"Name": "Water",
-				"Count": 625
+				"Count": 1000
 			}
 		]
 	},
@@ -1016,7 +1016,7 @@ recipes_farm.append({
 		"Items":[
 			{
 				"Name": "Water",
-				"Count": 100
+				"Count": 1000
 			},
 			{
 				"Name": "DirtSurface",
@@ -1034,7 +1034,7 @@ recipes_farm.append({
 		"Items":[
 			{
 				"Name": "Water",
-				"Count": 625
+				"Count": 1000
 			}
 		]
 	},
