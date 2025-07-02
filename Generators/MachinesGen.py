@@ -586,7 +586,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([
 					[plate(), 4],
-					[part(), 4 + parts_ramp(level)],
+					frame_pair(1 if machine["Name"] == "SmallSolarPanel" else 3),
 					[tier_material[tier] + "SolarCell", 1 if machine["Name"] == "SmallSolarPanel" else 10]
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -946,16 +946,12 @@ for machine in machines:
 		if machine["Name"] == "Riteg":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": "PlutoniumCell",
-							"Count": 1,
-						},
-						plates_count(8),
-						parts_count(20 + 5 * level)
-					]
-				},
+				"Input": items([
+					["PlutoniumCell"],
+					frame_pair(2),
+					[plate(), 8],
+					["CopperPipe", 20 + 5 * level]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 100
 		})

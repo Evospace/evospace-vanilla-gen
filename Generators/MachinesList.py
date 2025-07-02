@@ -200,18 +200,21 @@ machines = [
 		],
 		"Selector": "Blocks/ArrowConvBP.ArrowConvBP_C",
 		"PathFinding": True,
+        "ReplaceTag": "Conveyor",
 	},{
 		"Name": "Splitter",
 		"Label": "Splitter",
 		"StartTier": 1,
 		"EndTier": 7,
 		"Description": ["Splitter"],
+        "ReplaceTag": "Conveyor",
 	},{
 		"Name": "Sorter",
 		"Label": "Sorter",
 		"StartTier": 2,
 		"EndTier": 7,
 		"Description": ["Splitter", "Sorter"],
+        "ReplaceTag": "Conveyor",
 	},{
 		"Name": "Container",
 		"Label": "Container",

@@ -652,10 +652,11 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "SiliconWafer",
 	"Label": ["SiliconWafer", "parts"],
-	"RequiredResearch": ["AdvancedCircuit"],
+	"RequiredResearch": ["IndustrialSmelting"],
 	"Unlocks": [["IndustrialSmelter"+r_dict, "SiliconMonocrystal"],[assembler_r_dict, "SiliconWafer"]],
-	"Levels": [3,3],
-	"MainResearch": True
+	"Levels": [4,4],
+	"MainResearch": True,
+	"CostMul": 1.5,
 })
 append_levels({
 	"Class": research_recipe,
@@ -669,7 +670,7 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "Processor",
 	"Label": ["Processor", "parts"],
-	"RequiredResearch": ["SiliconWafer"],
+	"RequiredResearch": ["AdvancedCircuit"],
 	"Unlocks": [["Hand" + r_dict, "Processor"]],
 	"Levels": [3,3],
 	"MainResearch": True,
@@ -919,7 +920,7 @@ append_levels({
 	"Label": ["BrainMatrix", "parts"],
 	"RequiredResearch": ["QuantumProcessor"],
 	"Levels": [6,6],
-	"Unlocks": [["Hand" + r_dict, "BrainMatrix"],[assembler_r_dict, "BrainMatrix"]],
+	"Unlocks": [["Hand" + r_dict, "BrainMatrix"]],
 	"MainResearch": True,
 	"CostMul":1.5,
 })
@@ -978,9 +979,9 @@ append_levels({
 	"Label": ["Catalyst", "parts"],
 	"RequiredResearch": ["IndustrialChemReactor"],
 	"Unlocks": [["Hand" + r_dict, "Catalyst"]],
-	"Levels": [4,4],
+	"Levels": [3,3],
 	"MainResearch": True,
-	"CostMul": 1,
+	"CostMul": 1.5,
 })
 append_levels({
 	"Class": research_recipe,
@@ -988,8 +989,8 @@ append_levels({
 	"Label": ["TwoWorldsFormat", "common", ["Catalyst", "parts"],["II", "common"]],
 	"RequiredResearch": ["Catalyst"],
 	"Unlocks": [[assembler_r_dict, "Catalyst2"]],
-	"Levels": [4,4],
-	"CostMul": 1.5,
+	"Levels": [3,3],
+	"CostMul": 3,
 	"MainResearch": True,
 })
 append_levels({
@@ -1251,7 +1252,7 @@ append_levels({
 	"Name": "PlatinumReflector",
 	"Label": ["PlatinumReflector", "parts"],
 	"RequiredResearch": ["PlatinumSolution"],
-	"Unlocks": [["Hand" + r_dict, "PlatinumReflector"],[assembler_r_dict, "PlatinumReflector"]],
+	"Unlocks": [["Hand" + r_dict, "PlatinumReflector"]],
 	"Levels": [6,6],
 	"MainResearch": True,
 })
@@ -1266,9 +1267,18 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "FusionReaction",
+	"Label": ["FusionReaction", "researches"],
+	"RequiredResearch": ["FusionReactor"],
+	"Unlocks": [[ic_reactor_r_dict, "SynthesisCell"], ["FusionReactor" + r_dict, "HotNeutroniumPlate1"], [ic_reactor_r_dict, "NeutroniumPlate"]],
+	"Levels": [6,6],
+	"MainResearch": True,
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "NeutroniumProduction",
 	"Label": ["NeutroniumProduction", "researches"],
-	"RequiredResearch": ["FusionReactor"],
+	"RequiredResearch": ["FusionReaction"],
 	"Unlocks": get_parts_unlocks(tier_material[7]),
 	"Levels": [6,6],
 	"MainResearch": True,
@@ -1283,6 +1293,15 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
+	"Class": research_recipe,
+	"Name": "NeutroniumProduction2",
+	"Label": ["TwoWorldsFormat", "common", ["NeutroniumProduction", "researches"], ["II", "common"]],
+	"RequiredResearch": ["UltimateCatalyst"],
+	"Unlocks": [["FusionReactor" + r_dict, "HotNeutroniumPlate2"]],
+	"Levels": [6,6],
+	"CostMul": 2
+})
+append_levels({
 	 "Class": research_recipe,
 	 "Name": "Portal",
 	 "Label": ["Portal", "machines"],
@@ -1290,7 +1309,7 @@ append_levels({
 	 "Unlocks": [["Hand" + r_dict, "%Material%Portal"] ],
 	 "Levels": [7,7],
 	 "MainResearch": True,
-	 "CostMul": 5
+	 "CostMul": 2
  })
 append_levels({
 	"Class": research_recipe,
@@ -1317,7 +1336,7 @@ append_levels({
 	"Levels": [4,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%IndustrialSmelter"] ],
 	"MainResearch": True,
-	"CostMul":5,
+	"CostMul": 3,
 })
 append_levels({
 	"Class": research_recipe,
@@ -1561,6 +1580,7 @@ csv.append(["AluminiumReduction", "Aluminium Reduction"])
 csv.append(["AdvancedAlloys", "Advanced Alloys"])
 csv.append(["LithiumBattery", "Lithium Battery"])
 csv.append(["CrudeTantalum", "Crude Tantalum"])
+csv.append(["FusionReaction", "Fusion Reaction"])
 
 write_file("Generated/Researches/basic.json", data)
 write_file("Loc/source/researches.json", csv)
