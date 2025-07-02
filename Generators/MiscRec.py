@@ -113,8 +113,8 @@ recipes_fusion_reactor.append({
 	"Name":"HotNeutroniumPlate1",
 	"Input": one_item("SynthesisCell", 2),
 	"Output": items([
+		["HotNeutroniumPlate"],
 		["Cell"],
-		["HotNeutroniumPlate"]
 	]),
 	"Ticks" : 200
 })
@@ -134,8 +134,8 @@ recipes_fusion_reactor.append({
 		]
 	},
 	"Output": items([
+		["HotNeutroniumPlate"],
 		["Cell"],
-		["HotNeutroniumPlate"]
 	]),
 	"Ticks" : 200,
 })
@@ -255,7 +255,7 @@ recipes_assembler.append({
 	]),
 	"Output": one_item("Resistor", 8),
 	"Ticks" : 60,
-	"Tier": 4
+	"Tier": 5
 })
 
 recipes_assembler.append({
@@ -371,7 +371,7 @@ recipes_assembler.append({
     ]),
     "Output": one_item("Capacitor", 4),
     "Ticks": 60,
-    "Tier": 3,
+    "Tier": 5,
 })
 
 recipes_assembler.append({
@@ -383,7 +383,7 @@ recipes_assembler.append({
     ]),
     "Output": one_item("Capacitor", 8),
     "Ticks": 60,
-    "Tier": 4,
+    "Tier": 5,
 })
 
 recipes_assembler.append({
@@ -879,7 +879,7 @@ recipes_assembler.append({
 	"Ticks" : 100,
 })
 
-append_recipe({
+recipes_hand.append({
 	"Name":"ReflectorCell",
 	"Input": items([
 		["Cell"],
@@ -889,7 +889,7 @@ append_recipe({
 	"Ticks" : 100,
 })
 
-append_recipe({
+recipes_hand.append({
 	"Name":"PlatinumReflector",
 	"Input": items([
 		["Cell"],
@@ -900,7 +900,7 @@ append_recipe({
 	"Tier": 6
 })
 
-append_recipe({
+recipes_hand.append({
 	"Name":"BrainMatrix",
 	"Input": items([
 		["CarbonFiberSheet"],
@@ -1796,6 +1796,7 @@ recipes_indu.append({
 			["HotMercury", 1000]
 		]),
 	"Ticks" : 200,
+	"Tier": 5
 })
 
 recipes_indu.append({
