@@ -50,7 +50,8 @@ def named_material(name):
 
 # https://ru.wikipedia.org/wiki/%D0%A3%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%82%D0%B5%D0%BF%D0%BB%D0%BE%D1%82%D0%B0_%D1%81%D0%B3%D0%BE%D1%80%D0%B0%D0%BD%D0%B8%D1%8F burning
 
-tiered_parts_list = ["Plate", "Dust", "Block", "Parts", "SolarCell"]
+tiered_parts_list_no_dust = ["Plate", "Block", "Parts", "SolarCell"]
+tiered_parts_list = tiered_parts_list_no_dust + ["Dust"]
 
 materials = [
 	{
@@ -917,13 +918,13 @@ materials = [
 		"Name": "Composite",
 		"Label": "Composite",
 		"Smelting": ["InductionFurnace"],
-		"Items": tiered_parts_list,
+		"Items": tiered_parts_list_no_dust,
 		"Tier": 5,
 	},{
 		"Name": "Neutronium",
 		"Label": "Neutronium",
 		"Smelting": ["InductionFurnace"],
-		"Items": tiered_parts_list,
+		"Items": tiered_parts_list_no_dust,
 		"Tier": 6,
 	},{
 		"Name": "Capacity",

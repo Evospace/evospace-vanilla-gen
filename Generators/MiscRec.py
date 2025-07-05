@@ -1814,7 +1814,7 @@ recipes_indu.append({
 })
 
 for material in materials:
-	if "Smelting" in material and "InductionFurnace" in material["Smelting"]:
+	if "Smelting" in material and "InductionFurnace" in material["Smelting"] and "Dust" in material["Items"]:
 		m_name = material["Name"]
 		recipes_indu.append({
 			"Name": m_name+"Dust",
