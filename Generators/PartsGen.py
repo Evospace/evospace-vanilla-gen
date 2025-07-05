@@ -251,6 +251,7 @@ for material in materials:
 				"Ticks" : fuel_burn_time(material, furnace_output()),
 			})
 			item["DescriptionParts"] = [["burnable", "common", fuel_value(material)]]
+			item["Tags"] = fuel_tags()
 			
 		objects_array.append(item)
 
@@ -386,7 +387,8 @@ for material in materials:
 		#	item["ExplicitKey"] = ex_cvs[explicites.index(item["MaterialKey"] + " " + item["Key"])][0]
 		
 		if "Burnable" in material:
-			item["DescriptionParts"].append(["burnable", "common", material["Burnable"]["BurnTime"]*200])
+			item["DescriptionParts"].append(["burnable", "common", fuel_value(material)])
+			item["Tags"] = fuel_tags()
 
 		objects_array.append(item)
 		
@@ -403,12 +405,13 @@ for material in materials:
 			item["Color"] = material["Color"]
 		
 		if "Burnable" in material:
+			duration, count = fluid_furnace_pair(material)
 			recipes_gasfurn.append({
 				"Input":{
 					"Items":[
 						{
 							"Name": material["Name"] + "",
-							"Count": 1000
+							"Count": count
 						}
 					]
 				},
@@ -417,7 +420,7 @@ for material in materials:
 					],
 					
 				},
-				"Ticks" : material["Burnable"]["BurnTime"],
+				"Ticks" : duration,
 				"Name": material["Name"] + "",
 			})
 	
@@ -453,6 +456,7 @@ for material in materials:
 
 		if "Burnable" in material:
 			item["DescriptionParts"].append(["burnable", "common", fuel_value(material)])
+			item["Tags"] = fuel_tags()
 		
 		objects_array.append(item)
 		
@@ -463,12 +467,13 @@ for material in materials:
 		})
 		
 		if "Burnable" in material:
+			duration, count = fluid_furnace_pair(material)
 			recipes_gasfurn.append({
 				"Input":{
 					"Items":[
 						{
 							"Name": material["Name"] + "",
-							"Count": 1000
+							"Count": count
 						}
 					]
 				},
@@ -477,7 +482,7 @@ for material in materials:
 					],
 					
 				},
-				"Ticks" : fuel_value(material) / 200,
+				"Ticks": duration,
 				"Name": material["Name"],
 			})
 	
@@ -508,6 +513,7 @@ for material in materials:
 
 		if "Burnable" in material:
 			item["DescriptionParts"].append(["burnable", "common", fuel_value(material)])
+			item["Tags"] = fuel_tags()
 		
 		dustItem = { "NewName": "T_" + material["Name"] + "Dust",
 			"Base": "T_" + "Dust",
@@ -536,6 +542,7 @@ for material in materials:
 				"Ticks" : fuel_burn_time(material, furnace_output()),
 			})
 			item["DescriptionParts"] = [["burnable", "common", fuel_value(material)]]
+			item["Tags"] = fuel_tags()
 
 		objects_array.append(item)
 			

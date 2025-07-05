@@ -311,6 +311,12 @@ tiers_res_item = [
 
 euler = 2.718281
 
+def fuel_tags():
+	return "FuelBurn"
+
+def fluid_furnace_output():
+	return 200
+
 def furnace_output():
 	return 50
 
@@ -340,6 +346,15 @@ def oil_crack_array(input_count):
 			"Name": "Gasoline",
 			"Count": 3000 * (input_count / 15000.0)
 		}]
+
+def fluid_furnace_pair(material):
+	duration = fuel_burn_time(material, fluid_furnace_output())
+	count = 100
+	if duration < 200:
+		count = count * 10
+		duration = duration * 10
+
+	return duration, count
 
 def oil_crack_recipe(index, input_count):
 	outputs = oil_crack_array(input_count)

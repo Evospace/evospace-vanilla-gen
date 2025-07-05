@@ -644,7 +644,7 @@ for level, name, copm_name in zip(range(0, 4), ["BasicBattery", "AdvancedBattery
 			"Items":[
 				{
 					"Name": copm_name,
-					"Count": battery_mul(0) if level == 0 else 4
+					"Count": battery_mul(0) if level == 0 else 5
 				},
 				{
 					"Name": circuits[level + 1],
@@ -2002,8 +2002,8 @@ recipes_hand.append({
 
 recipes_ferm.append({
 	"Name": "Rapseed",
-	"Input": one_item("Rapeseed"),
-	"Output": one_item("RapeseedOil", 750),  # Increased from 500 to 750 to make it more competitive
+	"Input": one_item("Rapeseed", 10),
+	"Output": one_item("RapeseedOil", 800),
 	"Ticks" : 200
 })
 
@@ -2014,7 +2014,7 @@ recipes_ferm.append({
 		"Items":[
 			{
 				"Name": "Methane",
-				"Count": 750  # Increased from 500 to 750 to make it more competitive
+				"Count": 750
 			},
 			{
 				"Name": "FermentedBiomass",
@@ -2255,8 +2255,9 @@ recipes_industrial_chemreactor.append({
 			},		
 		]
 	},
-	"Ticks" : 1500,
-	"Colors": [[0.3,0.2,0,1],[1,1,0.5,1]]
+	"Ticks" : 200*3,
+	"Colors": [[0.3,0.2,0,1],[1,1,0.5,1]],
+	"Tier": 4
 })
 
 recipes_industrial_chemreactor.append({
@@ -2291,8 +2292,9 @@ recipes_industrial_chemreactor.append({
 			},		
 		]
 	},
-	"Ticks" : 1500,
-	"Colors": [[0.3,0.2,0,1],[1,1,0.5,1]]
+	"Ticks" : 200*3,
+	"Colors": [[0.3,0.2,0,1],[1,1,0.5,1]],
+	"Tier": 7
 })
 
 recipes_industrial_chemreactor.append({
@@ -2544,7 +2546,8 @@ recipes_industrial_chemreactor.append({
 		]
 	},
 	"Ticks" : 300,
-	"Colors": [[0.4,0.4,0.0,0.15],[0.4,0.2,0.0,0.15]]
+	"Colors": [[0.4,0.4,0.0,0.15],[0.4,0.2,0.0,0.15]],
+	"Tier": 5
 })
 
 recipes_industrial_chemreactor.append({
@@ -2669,6 +2672,16 @@ append_recipe_hand({
 	"Output": one_item("BuildingMaterial"),
 	"Ticks" : 10
 })
+
+for fuel in {"Superfuel", "Gasoline", "Diesel", "HighCetaneDiesel"}:
+	material = named_material(fuel)
+	recipes_combustion.append({
+		"Name": fuel,
+		"Input": one_item(fuel, 1000),
+		"Output": no_items(),
+		"Ticks": fuel_burn_time(material, 32000 / 2),
+		"Tier": 4
+	})
 
 objects_array.append({ "Class": r_dict,
 	"Name": "BlastFurnace" + r_dict,
