@@ -241,18 +241,10 @@ machines = [
 	},{
 		"Name": "CombustionEngine",
 		"Label": "Combustion Engine",
-		"BlockLogic": "SelectCrafter",
+		"BlockLogic": "AutoCrafter",
 		"StartTier": 4,
 		"EndTier": 7,
-		"Description": ["FluidInput", "KineticOutput"],
-		"BlockLogic": "SelectCrafter",
-		"BlockCreation":"""local a = self:new_resource_accessor("Output")
-		a:SetSidePos(Vec3i.right, Vec3i.new(-1,0,0))
-        local res = self:get_resource_component()
-		a:bind_output(res)
-        res.output = 20
-        res.output_item = StaticItem.find("Kinetic")
-		""",
+        "Description": ["FluidInput", "KineticOutput", "PowerOutput"],
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,2,0],[-1,2,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,2,1],[-1,2,1]],
 	},{
 		"Name": "FractionatingColumn",

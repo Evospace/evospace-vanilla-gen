@@ -998,18 +998,32 @@ append_levels({
 	"Name": "FuelChemistry",
 	"Label": ["FuelChemistry", "researches"],
 	"RequiredResearch": ["Catalyst"],
-	"Unlocks": [["IndustrialChemReactor" + r_dict, "Superfuel"], ["IndustrialChemReactor" + r_dict, "RocketFuel"]],
+	"Unlocks": [[ic_reactor_r_dict, "RocketFuel"]],
 	"Levels": [3,3],
-	
 })
 append_levels({
 	"Class": research_recipe,
 	"Name": "FuelChemistry2",
-	"Label": ["FuelChemistry2", "researches"],
-	"RequiredResearch": ["FuelChemistry"],
-	"Unlocks": [["IndustrialChemReactor" + r_dict, "RocketFuel2"], ["IndustrialChemReactor" + r_dict, "Superfuel2"]],
-	"Levels": [3,3],
-	
+	"Label": ["TwoWorldsFormat", "common", ["FuelChemistry", "researches"], ["II", "common"]],
+	"RequiredResearch": ["FuelChemistry", "NitricAcid"],
+	"Unlocks": [[ic_reactor_r_dict, "HighCetaneDiesel"]],
+	"Levels": [4,4],
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "FuelChemistry3",
+	"Label": ["TwoWorldsFormat", "common", ["FuelChemistry", "researches"], ["III", "common"]],
+	"RequiredResearch": ["FuelChemistry2", "IndustrialChemReactor2"],
+	"Unlocks": [[ic_reactor_r_dict, "Superfuel"]],
+	"Levels": [5,5],
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "FuelChemistry4",
+	"Label": ["TwoWorldsFormat", "common", ["FuelChemistry", "researches"], ["IV", "common"]],
+	"RequiredResearch": ["FuelChemistry3", "UltimateCatalyst"],
+	"Unlocks": [[ic_reactor_r_dict, "RocketFuel2"], [ic_reactor_r_dict, "Superfuel2"]],
+	"Levels": [6,6],
 })
 append_levels({
 	"Class": research_recipe,
@@ -1570,7 +1584,6 @@ csv.append(["Metalwork", "Metalwork"])
 csv.append(["AdvancedReflection", "Advanced Reflection"])
 csv.append(["ReactionThrottling", "Reaction Throttling"])
 csv.append(["FuelChemistry", "Fuel Chemistry"])
-csv.append(["FuelChemistry2", "Fuel Chemistry II"])
 csv.append(["SulfurSynthesis", "Sulfur Synthesis"])
 csv.append(["SulfuricAcidSynthesis", "Sulfuric Acid Synthesis"])
 csv.append(["PreciseTemperaturePyrolysis", "Precise Temperature Pyrolysis"])

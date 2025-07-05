@@ -601,44 +601,44 @@ materials = [
 		"Items": ["Fluid"],
 		"Tier": 0,
 		"Burnable": {
-			"BurnTime": 300
+			"BurnTime": 300 * 10
 		},
 		"Color":[0.1,0.1,0.1]
-	},
-	{
+	},{
+		"Name": "MineralWater",
+		"Label": "Mineral Water",
+		"Items": ["Fluid"],
+		"Tier": 0
+	},{
 		"Name": "RawOil",
 		"Label": "Raw Oil",
 		"Items": ["Fluid"],
 		"Tier": 0,
 		"Burnable": {
-			"BurnTime": 500
+			"BurnTime": 500 * 15
 		},
-		"Color":[0.01,0.01,0.01]
-	},
-	{
-		"Name": "MineralWater",
-		"Label": "Mineral Water",
-		"Items": ["Fluid"],
-		"Tier": 0
-	},
-	{
+		"Color":[0.01,0.01,0.01],
+		"Tier": 4
+	},{
 		"Name": "Gasoline",
 		"Label": "Gasoline",
 		"Items": ["Gas"],
 		"Tier": 1,
 		"Burnable": {
-			"BurnTime": 800
+			"BurnTime": 800 * 30
 		},
-		"Color":[.5,.5,0.2]
+		"Color":[.5,.5,0.2],
+		"Tier": 4
 	},{
 		"Name": "Diesel",
 		"Label": "Diesel",
 		"Items": ["Fluid"],
 		"Tier": 1,
 		"Burnable": {
-			"BurnTime": 1200
+			"BurnTime": 1200 * 30
 		},
-		"Color":[.2,.2,0.2]
+		"Color":[.2,.2,0.2],
+		"Tier": 4,
 	},{
 		"Name": "HighCetaneDiesel",
 		"Label": "High Cetane Diesel",
@@ -646,8 +646,9 @@ materials = [
 		"Tier": 1,
 		"Color":[.1,.1,0.1],
 		"Burnable": {
-			"BurnTime": 2000
-		}
+			"BurnTime": 2000 * 30
+		},
+		"Tier": 5
 	},{
 		"Name": "Superfuel",
 		"Label": "Superfuel",
@@ -655,8 +656,9 @@ materials = [
 		"Tier": 1,
 		"Color":[1,1,0.5],
 		"Burnable": {
-			"BurnTime": 2500
-		}
+			"BurnTime": 2500 * 30
+		},
+		"Tier": 6
 	},{
 		"Name": "RocketFuel",
 		"Label": "Rocket Fuel",
@@ -664,8 +666,9 @@ materials = [
 		"Tier": 1,
 		"Color":[0,1,0],
 		"Burnable": {
-			"BurnTime": 400
-		}
+			"BurnTime": 400 * 30
+		},
+		"Tier": 4
 	},
 	{
 		"Name": "HeavyOil",
@@ -673,7 +676,7 @@ materials = [
 		"Items": ["Gas"],
 		"Tier": 2,
 		"Burnable": {
-			"BurnTime": 800
+			"BurnTime": 800 * 10
 		},
 		"Color":[0.2,.5,0.2]
 	},
@@ -819,11 +822,13 @@ materials = [
 		"Label": "Catalyst Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
+		"Tier": 3
 	},{
 		"Name": "UltimateCatalyst",
 		"Label": "Ultimate Catalyst Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
+		"Tier": 7
 	},{
 		"Name": "MothershipPing",
 		"Label": "Mothership Ping",
