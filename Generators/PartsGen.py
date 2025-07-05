@@ -283,40 +283,41 @@ for material in materials:
 			"MulMask": "T_Material" + material["Name"],
 			"AddMask": "T_" + "Plate" + additive_ico,
 		})
-		
-		if "Smelting" in material and "Smelter" in material["Smelting"]:
-			recipes_smelt.append({
-				"Name": material["Name"] + "Plate",
-				"Input": one_item(material["Name"] + "Dust"),
-				"Output": one_item(material["Name"] + "Plate"),
-				"Ticks" : 100,
-			})
 			
-		recipes_macerator.append({
-			"Name": material["Name"] + "Plate",
-			"Input":{
-				"Items":[
-					{
-						"Name": material["Name"] + "Plate",
-						"Count": 1
-					},
-				]
-			},
-			"ResourceInput":{
-				"Name": "Kinetic",
-				"Count": 15
-			},
-			"Output":{
-				"Items":[
-					{
-						"Name": material["Name"] + "Dust",
-						"Count": 1
-					}
-				]
-			},
-			"Ticks" : 80,
-			"Tier": material_tier,
-		})
+		if "Dust" in material["Items"]:
+			if "Smelting" in material and "Smelter" in material["Smelting"]:
+				recipes_smelt.append({
+					"Name": material["Name"] + "Plate",
+					"Input": one_item(material["Name"] + "Dust"),
+					"Output": one_item(material["Name"] + "Plate"),
+					"Ticks" : 100,
+				})
+		
+			recipes_macerator.append({
+				"Name": material["Name"] + "Plate",
+				"Input":{
+					"Items":[
+						{
+							"Name": material["Name"] + "Plate",
+							"Count": 1
+						},
+					]
+				},
+				"ResourceInput":{
+					"Name": "Kinetic",
+					"Count": 15
+				},
+				"Output":{
+					"Items":[
+						{
+							"Name": material["Name"] + "Dust",
+							"Count": 1
+						}
+					]
+				},
+				"Ticks" : 80,
+				"Tier": material_tier,
+			})
 			
 	# block
 	if "Block" in material["Items"]:
@@ -355,32 +356,6 @@ for material in materials:
 			"Name": material["Name"] + "Block" + static_block,
 			"Item" : material["Name"] + "Block",
 			"Tesselator": material["Name"] + "Block" + tesselator,
-		})
-		
-		recipes_press.append({
-			"Name": material["Name"] + "Block",
-			"Input":{
-				"Items":[
-					{
-						"Name": material["Name"] + "Dust",
-						"Count": 4
-					}
-				],
-				
-			},
-			"ResourceInput":{
-					"Name": "Kinetic",
-					"Count": 10,
-				},
-			"Output":{
-				"Items":[
-					{
-						"Name": material["Name"] + "Block",
-						"Count": 1
-					}
-				]
-			},
-			"Ticks" : 200,
 		})
 	
 	# fluid
@@ -477,7 +452,7 @@ for material in materials:
 			item["Color"] = material["Color"]
 
 		if "Burnable" in material:
-			item["DescriptionParts"].append(["burnable", "common", material["Burnable"]["BurnTime"]*200])
+			item["DescriptionParts"].append(["burnable", "common", fuel_value(material)])
 		
 		objects_array.append(item)
 		
@@ -502,7 +477,7 @@ for material in materials:
 					],
 					
 				},
-				"Ticks" : material["Burnable"]["BurnTime"],
+				"Ticks" : fuel_value(material) / 200,
 				"Name": material["Name"],
 			})
 	
@@ -532,7 +507,7 @@ for material in materials:
 			item["Category"] = material["Category"]
 
 		if "Burnable" in material:
-			item["DescriptionParts"].append(["burnable", "common", material["Burnable"]["BurnTime"]*50])
+			item["DescriptionParts"].append(["burnable", "common", fuel_value(material)])
 		
 		dustItem = { "NewName": "T_" + material["Name"] + "Dust",
 			"Base": "T_" + "Dust",

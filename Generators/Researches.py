@@ -133,7 +133,7 @@ for miscBlock in ["ReinforcedConcrete", "ReinforcedConcreteTiles", "ReinforcedCo
 append_levels({
 	"Class": research_recipe,
 	"Name": "Chest",
-	"Label": ["Chest", "blocks"],
+	"Label": ["Chest", "machines"],
 	"RequiredResearch": ["MineralsScan"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Chest"] ],
 	"Levels":[0,7],
@@ -243,7 +243,7 @@ append_levels({
 append_levels({
 	"Class": research_recipe,
 	"Name": "Electrolyzer",
-	"Label": ["Electrolyzer", "researches"],
+	"Label": ["Electrolyzer", "machines"],
 	"RequiredResearch": ["SteelProduction"], 
 	"Levels": [2,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%Electrolyzer"] ],
