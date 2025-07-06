@@ -70,7 +70,7 @@ machines = [
 		"CommonTextKeys":[
 			"Autocrafter"
 		],
-		"BlockLogic":"NuclearReactorBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"Description": ["HeatInput", "FluidInput", "FluidOutput", "PowerOutput"],
 		"CustomData":{
 			"StorageCapacity": 30000,
@@ -922,7 +922,7 @@ machines = [
 		],
 		"StartTier": 5,
 		"EndTier": 7,
-		"BlockLogic":"NuclearReactorBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"CustomData":{
 			"LoadIndependent": True,
 			"StorageCapacity": 10000000,
@@ -978,7 +978,7 @@ machines = [
 			[0,-1,2],[-1,-1,2],[-2,-1,2],[-3,-1,2],
 			[0,-2,2],[-1,-2,2],[-2,-2,2],[-3,-2,2],
 		],
-		"BlockLogic":"NuclearReactorBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"Description": ["FluidInput", "FluidOutput","PowerOutput"],
 		"PowerOutput": fission_output(),
 		"CustomData":{
