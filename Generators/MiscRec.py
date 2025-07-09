@@ -53,8 +53,6 @@ recipes_industrial_chemreactor = []
 recipes_chemical_bath = []
 
 recipes_centrifuge = []
-
-recipes_riteg = []
 	
 recipes_industrial_steam_turbine = []	
 
