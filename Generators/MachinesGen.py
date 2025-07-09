@@ -85,7 +85,9 @@ for machine in machines:
 			return ["ModularFrame", mul*2]
 				
 		def engine():
-			return tier_material[tier] + "ElectricEngine"
+			if tier > 1:
+				return tier_material[tier] + "ElectricEngine"
+			return "CopperParts"
 		
 		def robotarm():
 			return tier_material[tier] + "RobotArm"
@@ -796,7 +798,6 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([
 					[plate(), 4],
-					[part(), 4],
 					[robotarm(), 1 + level],
 					frame_pair(3),
 				]),
@@ -962,6 +963,19 @@ for machine in machines:
 				"Input": items([
 					[plate(), 1],
 					[part_low(), 2**(level+1)]
+				]),
+				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Ticks" : 20
+			})
+
+		if machine["Name"] == "Loader":
+			append_recipe({
+				"Name": tier_material[tier] + machine["Name"],
+				"Input": items([
+					[robotarm(), 5],
+					[engine(), 1],
+					[circuit(), 2],
+					frame_pair()
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
@@ -1146,19 +1160,6 @@ for machine in machines:
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
-			})
-			
-		if machine["Name"] == "IndustrialElectricEngine":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input": items([
-					wire_count(30),
-					[circuit(), 1],
-					[plate(), 12],
-					[tier_material[tier] + "Parts", 3*8]
-				]),
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 100
 			})
 
 		if machine["Name"] == "CombustionEngine":

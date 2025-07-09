@@ -365,6 +365,16 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "Loader",
+	"Label": ["Loader", "machines"],
+	"RequiredResearch": ["Automatization"],
+	"Levels": [1,7],
+	"Unlocks": [["Hand" + r_dict, "%Material%Loader"]],
+	"CostMul": 2,
+	"MainResearch": True,
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "Sorter",
 	"Label": ["Sorter", "machines"],
 	"RequiredResearch": ["Automatization1"],
