@@ -226,7 +226,7 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "SmallSolarPanel",
 	"Label": ["SmallSolarPanel", "machines"],
-	"RequiredResearch": ["SiliconWafer"],
+	"RequiredResearchArr": [["Electrolyzer1"], ["SiliconWafer"], [], [], [], [], [], [], [], [], []],
 	"Levels": [3,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%SmallSolarPanel"], ["Hand" + r_dict, "%Material%SolarCell"]],
 	"CostMul": 2
@@ -1368,14 +1368,6 @@ append_levels({
 	"Levels": [3,7],
 	"RequiredResearch": ["ElectricEngine"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Fermenter"] ],
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "IndustrialElectricEngine",
-	"Label": ["IndustrialElectricEngine", "machines"],
-	"RequiredResearch": ["IndustrialSmelting"],
-	"Levels": [4,7],
-	"Unlocks": [["Hand" + r_dict, "%Material%IndustrialElectricEngine"]],
 })
 append_levels({
 	"Class": research_recipe,
