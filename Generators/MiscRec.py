@@ -62,8 +62,6 @@ recipes_fusion_reactor = []
 
 recipes_industrial_boiler = []
 
-recipes_industrial_electric_engine = []
-
 recipes_portal = []
 
 recipes_hand = []
@@ -1006,7 +1004,7 @@ recipes_farm.append({
 			}
 		]
 	},
-	"Output": one_item("Pumpkin", 10),
+	"Output": one_item("Pumpkin", 15),
 	"Ticks" : 1200,
 })
 
@@ -1362,14 +1360,6 @@ recipes_generator.append({
 	"Output": no_items(),
 	"Ticks" : 200,
 	"Loss": 10,
-})
-
-recipes_industrial_electric_engine.append({
-	"Name": "Rotating",
-	"Input": no_items(),
-	"Output": no_items(),
-	"Loss": 10,
-	"Ticks": 200,
 })
 
 for item, mul in [["Coal", 1], ["CoalDust", 1], ["CoalOreDust", 1], ["CoalOreGravel", 1.5], ["CoalOreImpureGravel", 1.5], ["CoalOre", 2]]:
@@ -2854,11 +2844,6 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": "IndustrialBoiler" + r_dict,
 	"Recipes": recipes_industrial_boiler
-})
-
-objects_array.append({ "Class": r_dict,
-	"Name": "IndustrialElectricEngine" + r_dict,
-	"Recipes": recipes_industrial_electric_engine
 })
 
 objects_array.append({ "Class": r_dict,

@@ -330,29 +330,6 @@ machines = [
 		"PowerOutput": 100,
         "DefaultRotation": [-1, 0, 0, 0]
 	},{
-		"Name": "IndustrialElectricEngine",
-		"Label": "Industrial Electric Engine",
-		"StartTier": 4,
-		"EndTier": 7,
-		"Positions": [[0,0,0],[1,0,0],[0,1,0],[1,1,0],[0,0,1],[1,0,1],[0,1,1],[1,1,1]],
-		"BlockLogic": "SelectCrafter",
-		"BlockCreation":"""
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
-		a:SetSidePos(Vec3i.back, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("KineticOutputAccessor"))
-		a:SetSidePos(Vec3i.front, Vec3i.new(1,0,0))
-		a:Bind(self:GetOutputContainer())
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
-		a:SetSidePos(Vec3i.down, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
-		a:SetSidePos(Vec3i.right, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
-		""",
-		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
-		"PowerOutput": 55*50,
-	},{
 		"Name": "Loader",
 		"Label": "Loader",
 		"StartTier": 1,

@@ -1329,19 +1329,12 @@ for machine in machines:
 		if machine["Name"] == "AutomaticFarm":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						{
-							"Name": "DirtSurface",
-							"Count": 4
-						},
-						{
-							"Name": tier_material[tier] + "RobotArm",
-							"Count": 2
-						},
-						plates_count(6),
-					]
-				},
+				"Input": items([
+					["DirtSurface", 4],
+					[tier_material[tier] + "RobotArm", 2],
+					frame_pair(2),
+					[] if tier <= 4 else [circuit(), 4]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
