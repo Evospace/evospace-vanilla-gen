@@ -730,7 +730,7 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Category": "Parts",
-		"Description":[["Circuit","common"]],
+		"Circuit": True,
 		"Mesh": "/Game/Models/CircuitCrate",
 		"Tier": 1,
 	},{
@@ -739,7 +739,7 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Category": "Parts",
-		"Description":[["Circuit","common"]],
+		"Circuit": True,
 		"Mesh": "/Game/Models/Circuit2Crate",
 		"Tier": 2,
 	},{
@@ -748,7 +748,7 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Category": "Parts",
-		"Description":[["Circuit","common"]],
+		"Circuit": True,
 		"Mesh": "/Game/Models/Circuit3Crate",
 		"Tier": 3,
 	},{
@@ -757,7 +757,7 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Category": "Parts",
-		"Description":[["Circuit","common"]],
+		"Circuit": True,
 		"Mesh": "/Game/Models/QuantumCircuitCrate",
 		"Tier": 4,
 	},{
@@ -766,7 +766,7 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Category": "Parts",
-		"Description":[["Circuit","common"]],
+		"Circuit": True,
 		"Mesh": "/Game/Models/Circuit3Crate",
 		"Tier": 5,
 	},{
@@ -800,7 +800,7 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Category": "Parts",
-		"Description":[["Circuit","common"]],
+		"Circuit": True,
 		"Mesh": "/Game/Models/Circuit3Crate",
 		"Tier": 6,
 	},{

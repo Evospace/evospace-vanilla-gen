@@ -225,6 +225,9 @@ for material in materials:
 				"/Game/Materials/" + material["Name"]
 			]
 
+		if "Circuit" in material:
+			item["DescriptionParts"] = [["circuit", "common"], ["computation", "common", pow(10, material_tier - 1)*30*20]]
+
 		if "MaxCharge" in material:
 			item["MaxCharge"] = material["MaxCharge"]
 			item["DescriptionParts"] = [["battery", "common", material["MaxCharge"]]]
