@@ -14,10 +14,6 @@ wooden_misc = [
 	},{
 		"Name": "Rack"
 	},{
-		"Name": "Bed",
-		"Positions": [[0,0,0], [-1,0,0]],
-		"BlockLogic": "BedBlockLogic",
-	},{
 		"Name": "Ladder"
 	},{
 		"Name": "Door",

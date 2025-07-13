@@ -345,6 +345,10 @@ def oil_crack_array(input_count):
 		{
 			"Name": "Gasoline",
 			"Count": 3000 * (input_count / 15000.0)
+		},
+		{
+			"Name": "Ethylene",
+			"Count": 3000 * (input_count / 15000.0)
 		}]
 
 def fluid_furnace_pair(material):
