@@ -656,7 +656,7 @@ materials = [
 		"Tier": 1,
 		"Color":[1,1,0.5],
 		"Burnable": {
-			"BurnTime": 2500 * 30
+			"BurnTime": 2800 * 30
 		},
 		"Tier": 6
 	},{

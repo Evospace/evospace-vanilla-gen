@@ -1041,6 +1041,16 @@ for machine in machines:
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
+
+		if machine["Name"] == "Spawner":
+			append_recipe({
+				"Name": tier_material[tier] + machine["Name"],
+				"Input": items([
+					[plate(), 10]
+				]),
+				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Ticks" : 20
+			})
 			
 		if machine["Name"] == "Computer":
 			append_recipe({

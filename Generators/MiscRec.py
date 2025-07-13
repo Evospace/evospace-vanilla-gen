@@ -2557,11 +2557,11 @@ recipes_industrial_chemreactor.append({
 		"Items":[	
 			{
 				"Name": "Superfuel",
-				"Count": 800
+				"Count": 1000
 			},		
 		]
 	},
-	"Ticks" : 300,
+	"Ticks" : 3000,
 	"Colors": [[0.4,0.2,0.0,0.15],[0.7,0.6,0.25,0.15]]
 })
 

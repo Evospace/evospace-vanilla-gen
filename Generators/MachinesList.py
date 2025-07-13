@@ -47,6 +47,12 @@ machines = [
 		"BlockLogic": "BlockLogic",
 		"Description": ["BuildingBlock"],
 	},{
+		"Name": "Spawner",
+		"Label": "Spawner",
+		"StartTier": 1,
+		"EndTier": 1,
+		"BlockLogic": "BedBlockLogic",
+	},{
 		"Name": "Corner",
 		"Label": "Corner",
 		"StartTier": 1,
@@ -251,18 +257,18 @@ machines = [
 		"Label": "Fractionating Column",
 		"StartTier": 4,
 		"EndTier": 7,
-		"Description": ["ElectricInput", "FluidInput", "FluidOutput"],
-		"BlockLogic": "FractionatingColumn",
-		"Positions": [[0,0,0],[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[1,1,0],[-1,-1,0],[1,-1,0],[-1,1,0],
-                [0,0,1],[1,0,1],[-1,0,1],[0,1,1],[0,-1,1],[1,1,1],[-1,-1,1],[1,-1,1],[-1,1,1]],
-        "BlockCreation":"""
-        local a = self:new_resource_accessor("Input")
-		a:SetSidePos(Vec3i.back, Vec3i.new( -1, 0, 0 ))
-        local res = self:get_resource_component()
-		a:bind_input(res)
-        res.input = 20
-        res.input_item = StaticItem.find("Electricity")
-		""",
+		"Description": ["ElectricInput", "PowerInput", "FluidInput", "FluidOutput"],
+		"BlockLogic": "SelectCrafter",
+		"Positions": [
+            [0,0,0],[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[1,1,0],[-1,-1,0],[1,-1,0],[-1,1,0],
+            [0,0,1],[1,0,1],[-1,0,1],[0,1,1],[0,-1,1],[1,1,1],[-1,-1,1],[1,-1,1],[-1,1,1],
+            
+			[0,0,2],[1,0,2],[-1,0,2],[0,1,2],[0,-1,2],[1,1,2],[-1,-1,2],[1,-1,2],[-1,1,2],
+            [0,0,3],[1,0,3],[-1,0,3],[0,1,3],[0,-1,3],[1,1,3],[-1,-1,3],[1,-1,3],[-1,1,3],
+            
+			[0,0,4],[1,0,4],[-1,0,4],[0,1,4],[0,-1,4],[1,1,4],[-1,-1,4],[1,-1,4],[-1,1,4],
+            [0,0,5],[1,0,5],[-1,0,5],[0,1,5],[0,-1,5],[1,1,5],[-1,-1,5],[1,-1,5],[-1,1,5]
+        ]
 	},{
 		"Name": "PyrolysisUnit",
 		"Label": "Pyrolysis Unit",
