@@ -1,9 +1,9 @@
 from Common import *
 
 paint_colors = ("PaintYellow",)
-paint_metals = ("Copper", "Steel", "Aluminium", "StainlessSteel", "Titanium", "HardMetal", "Neutronium")
-paint_tiers = ("Stone", "Copper", "Steel", "Aluminium", "StainlessSteel", "Titanium", "HardMetal", "Neutronium")
-tier_materials = ("/Game/Materials/Stone", "/Game/Materials/Copper", "/Game/Materials/Steel", "/Game/Materials/Aluminium", "/Game/Materials/StainlessSteel", "/Game/Materials/Titanium", "/Game/Materials/HardMetal", "/Game/Materials/Neutronium")
+paint_metals = ("Copper", "Steel", "Aluminium", "StainlessSteel", "Titanium", "Composite", "Neutronium")
+paint_tiers = ("Stone", "Copper", "Steel", "Aluminium", "StainlessSteel", "Titanium", "Composite", "Neutronium")
+tier_materials = ("/Game/Materials/Stone", "/Game/Materials/Copper", "/Game/Materials/Steel", "/Game/Materials/Aluminium", "/Game/Materials/StainlessSteel", "/Game/Materials/Titanium", "/Game/Materials/Composite", "/Game/Materials/Neutronium")
 
 covers = [
     {
