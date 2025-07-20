@@ -2491,7 +2491,7 @@ recipes_industrial_chemreactor.append({
 		["PyroplatiteDust", 10],
 		["NitricAcid", 1000]
 	]),
-	"Output": one_item("PlatinumSolution", 1),
+	"Output": one_item("PlatinumSolution", 1000),
 	"Ticks" : 800,
 	"Colors": [[0.0,0.5,0.25,0.3],[0.9,0.5,0.25,0.3]],
 	"Tier": 5,
