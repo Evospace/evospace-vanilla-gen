@@ -172,14 +172,15 @@ for ore_type in ore_types:
 	
 	item = { "Class": "StaticItem",
 		"Name": item_name,
-		"Mesh": "/Game/Models/Ore",
+		"Mesh": "/Game/Models/OreCrate",
 		"Image": "T_" + ore_type["Name"] + "Ore",
 		"StackSize": 64, 
 		"Category": "Ore",
 		"Label": [ore_type["Name"]+"Ore", "ores"],
 		"DescriptionParts": description,
 		"Materials" : [
-			"/Game/Materials/" + ore_type["Name"] + "OreImpureGravel"
+			"",
+			"/Game/Materials/" + ore_type["Name"]
 		],
 	}
 	
