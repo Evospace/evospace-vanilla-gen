@@ -131,7 +131,6 @@ ore_types = [
 		"Processing":{
 			"OreWasher": "GoldDust",
 			"Separator": ["PyroplatiteDust", "GoldDust"],
-			"ChemicalBath": ["NitricAcid", "SiliconOxide", "PlatinumSolution"],
 			"Washing": "PyroplatiteDust",
 			"Furnace": "PyroplatiteDust",
 			"Macerator": "PyroplatiteOreDust",
