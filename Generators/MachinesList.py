@@ -373,7 +373,7 @@ machines = [
 		"StartTier": 0,
 		"EndTier": 2,
 		"BlockLogic":"AutoCrafter",
-		"Description": ["HeatInput"],
+		"Description": ["HeatInput", "PowerInput"],
 		"CustomData":{
 			"Capacity":32
 		}

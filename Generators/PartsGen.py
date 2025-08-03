@@ -174,6 +174,10 @@ for material in materials:
 			"Type": "Abstract"
 		}
 
+		images.append({ "NewName": "T_" + material["Name"] + "",
+			"Base": "T_" + material["Name"]
+		})
+
 		if "Tier" in material:
 			item["Tier"] = material["Tier"]
 		
@@ -200,6 +204,10 @@ for material in materials:
 			"StackSize": 64 if material["Name"] != "Signal" else 214748364,
 			"Label": [material["Name"], "parts"],
 		}
+
+		images.append({ "NewName": "T_" + material["Name"] + "",
+			"Base": "T_" + material["Name"]
+		})
 
 		if "Tier" in material:
 			item["Tier"] = material["Tier"]
@@ -395,10 +403,8 @@ for material in materials:
 
 		objects_array.append(item)
 		
-		images.append({ "NewName": "T_" + material["Name"] + "",
-			"Base": "T_" + "",
-			"MulMask": "T_Material" + material["Name"],
-			"AddMask": "T_" + "" + additive_ico,
+		images.append({ "NewName": "T_" + material["Name"],
+			"Base": "T_" + material["Name"]
 		})
 		
 		if "UnitMul" in material:
@@ -463,10 +469,8 @@ for material in materials:
 		
 		objects_array.append(item)
 		
-		images.append({ "NewName": "T_" + material["Name"] + "",
-			"Base": "T_" + "",
-			"MulMask": "T_Material" + material["Name"],
-			"AddMask": "T_" + "" + additive_ico,
+		images.append({ "NewName": "T_" + material["Name"],
+			"Base": "T_" + material["Name"]
 		})
 		
 		if "Burnable" in material:
