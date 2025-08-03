@@ -29,8 +29,6 @@ pumpjack = []
 recipes_sep = []
 recipes_press = []
 
-recipes_elfurn = []
-
 recipes_radiator = []
 recipes_solar = []
 recipes_fission = []
@@ -2725,12 +2723,6 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": "CuttingMachine" + r_dict,
 	"Recipes": recipes_cutter
-})
-
-
-objects_array.append({ "Class": r_dict,
-	"Name": "ElectricFurnace" + r_dict,
-	"Recipes": recipes_elfurn
 })
 
 objects_array.append({ "Class": r_dict,

@@ -6,7 +6,6 @@ from functools import partial
 
 images = []
 objects_array = []
-objects_wiki_array = {}
 recipes_hand = []
 
 cvs = []
@@ -97,7 +96,7 @@ for machine in machines:
 			recipes_hand.append(recipe)
 
 		def wire():
-			return a_wires[tier]
+			return a_wires[tier][0]
 			
 		def wire_count(count):
 			return [a_wires[tier][0], count * a_wires[tier][1]]
@@ -181,15 +180,7 @@ for machine in machines:
 		if machine["Name"] == "SmallBattery":
 			item["DescriptionParts"].append(["battery", "common", machine["CustomData"]["BaseCapacity"] + machine["CustomData"]["BonusCapacity"] * level])
 
-		# wiki json generation ------------------------------------------------
 		objects_array.append(item)
-
-		wiki_item = {}
-		wiki_item["DescriptionParts"] = item["DescriptionParts"]
-		wiki_item["Level"] = level
-
-		objects_wiki_array[tier_material[tier]+machine["Name"]] = wiki_item
-		# wiki json generation
 
 		images.append({ 
 			"NewName": "T_" + tier_material[tier] + image,
@@ -740,16 +731,11 @@ for machine in machines:
 		if machine["Name"] == "ElectricFurnace":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(3),
-						{
-							"Name": wire(),
-							"Count": 6 + level*3
-						},
-						isolators_count(6)
-					]
-				},
+				"Input": items([
+					[plate(), 3],
+					[wire(), 6 + level*3],
+					["BuildingMaterial", 6]
+				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
@@ -1387,7 +1373,7 @@ data = {
 	"Objects": objects_array
 }
 
-write_file("Generated/Resources/machines.json", data);
+write_file("Generated/Resources/machines.json", data)
 
 objects_array = []
 
@@ -1401,11 +1387,5 @@ data = {
 }
 
 write_file("Generated/Recipes/machines.json", data)
-
-data = {
-	"Objects": objects_wiki_array
-}
-
-write_file("Generated/Wiki/machines_wiki.json", data)
 
 write_file("Loc/source/machines.json", cvs)
