@@ -1106,5 +1106,19 @@ machines = [
         "CustomData":{
 			"SplineMesh": "/Game/CoreContent/Rail2",
 		}
+	},{
+		"Name": "LogicInterface",
+		"Label": "Logic Interface",
+		"StartTier": 2,
+		"EndTier": 2,		
+        "BlockLogic":"LogicCircuitBlockLogic",
+		"Description": []
+	},{
+		"Name": "DataCable",
+		"Label": "Data Cable",
+		"StartTier": 2,
+		"EndTier": 2,		
+        "BlockLogic": "DataConductorBlockLogic",
+		"Description": []
 	}
 ]
