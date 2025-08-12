@@ -976,6 +976,21 @@ materials = [
 		"Label": "Percent",
 		"Items": ["Exact"],
 		"Category": "Signal"
+	},{
+		"Name": "Any",
+		"Label": "Any",
+		"Items": ["Exact"],
+		"Category": "Signal"
+	},{
+		"Name": "All",
+		"Label": "All",
+		"Items": ["Exact"],
+		"Category": "Signal"
+	},{
+		"Name": "Empty",
+		"Label": "Empty",
+		"Items": ["Exact"],
+		"Category": "Signal"
 	}
 ]
 
