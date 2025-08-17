@@ -523,6 +523,38 @@ proplists = [
 
 		]
 	},{ 
+		"Name": "FertileForestProps",
+		"Array": [
+			{
+				"Props": ["Broadleaf", "Broadleaf", "Conifer", "Shrub", "BigBush"],
+				"Chance": 0.02
+			},{
+				"Props": ["SmallRock"],
+				"Chance": 0.005
+			},{
+				"Props": ["Fern"],
+				"Chance": 0.06
+			},{
+				"Props": ["Dandaleon"],
+				"Chance": 0.45
+			},{
+				"Props": ["YellowFlower"],
+				"Chance": 0.1
+			},{
+				"Props": ["WhiteFlower"],
+				"Chance": 0.1
+			},{
+				"Props": ["LongGrass"],
+				"Chance": 0.8
+			},{
+				"Props": ["TallGrass"],
+				"Chance": 0.1
+			},{
+				"Props": ["Shroom"],
+				"Chance": 0.02
+			}
+		]
+	},{ 
 		"Name": "PineForestProps",
 		"Array": [
 			{
