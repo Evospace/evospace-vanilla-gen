@@ -102,6 +102,7 @@ families.extend([
 			"ForestBiome",
 			"PlainsBiome",
 			"BushlandBiome",
+			"FertileForestBiome",
 		],
 		"ChildFrequency": biome_family_size,
 	},{
@@ -279,6 +280,10 @@ generators.extend([
 		"Name":"PineForestPropsBase",
 		"Class":"PropsGenerator",
 		"PropList": "PineForestProps"
+	},{
+		"Name":"FertileForestPropsBase",
+		"Class":"PropsGenerator",
+		"PropList":"FertileForestProps"
 	},
 	
 	# sea
@@ -538,6 +543,12 @@ biomes.extend([
 		"Name":"BushlandBiome",
 		"Layering":"GrassLayering",
 		"Props":"BushlandPropsBase",
+		"Color":[204/255.0, 255/255.0, 153/255.0]
+	},{
+		"Class":"Biome",
+		"Name":"FertileForestBiome",
+		"Layering":"GrassLayering",
+		"Props":"FertileForestPropsBase",
 		"Color":[204/255.0, 255/255.0, 153/255.0]
 	},
 	
