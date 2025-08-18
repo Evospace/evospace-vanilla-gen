@@ -26,6 +26,7 @@ global_family.append({
 			"SwampBiomeFamily", 
 			"SeaBiomeFamily",
 			"VolcanicBiomeFamily",
+            "FertileForestBiome"
 		]
 	})
 global_family.append({
@@ -43,6 +44,7 @@ global_family.append({
 			"SwampBiomeFamily", 
 			"SeaBiomeFamily",
 			"VolcanicBiomeFamily",
+            "FertileForestBiome"
 		]
 	})
 global_family.append({
@@ -60,6 +62,7 @@ global_family.append({
 			"SwampBiomeFamily", 
 			"SeaBiomeFamily",
 			"VolcanicBiomeFamily",
+            "FertileForestBiome"
 		]
 	})
 	
@@ -101,8 +104,7 @@ families.extend([
 		[
 			"ForestBiome",
 			"PlainsBiome",
-			"BushlandBiome",
-			"FertileForestBiome",
+			"BushlandBiome"
 		],
 		"ChildFrequency": biome_family_size,
 	},{
