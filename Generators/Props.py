@@ -59,6 +59,19 @@ props = [
 		"AdditiveElevation": 15
 	},
 	{
+		"Name": "YellowGrass",
+		"ScaleMin": 3.5,
+		"ScaleMax": 4,
+		"Variations": 2,
+		"ProjectToTerrainPower": 1,
+		"Drops": "Organics",
+		"Count": 1,
+		"IsBig": False,
+		"CullBegin": 10000,
+		"CullEnd": 12000,
+		"AdditiveElevation": 15
+	},
+	{
 		"Name": "SeaPlant",
 		"ScaleMin": 2,
 		"ScaleMax": 4,
@@ -386,7 +399,7 @@ proplists = [
 				"Props": ["DryGrass"],
 				"Chance": 0.35
 			},{
-				"Props": ["LongGrass"],
+				"Props": ["YellowGrass"],
 				"Chance": 0.35
 			},{
 				"Props": ["Broadleaf", "Broadleaf", "Conifer", "BigBush"],
