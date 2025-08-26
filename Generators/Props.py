@@ -351,6 +351,31 @@ props = [
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
 		"IsBig": False,
+	},{
+		"Name": "SteamStream",
+		"ScaleMin": 2,
+		"ScaleMax": 4,
+		"Variations": 1,
+		"ProjectToTerrainPower": 0,
+		"Drops": "Organics",
+		"Count": 1,
+		"CullBegin": 10000,
+		"CullEnd": 12000,
+		"AdditiveElevation": 0,
+		"IsBig": False,
+	},{
+		"Name": "FloatingIce", 
+		"ScaleMin": 1,
+		"ScaleMax": 3,
+		"Variations": 1,
+		"ProjectToTerrainPower": 0,
+		"Drops": "Organics",
+		"Count": 1,
+		"CullBegin": 7000,
+		"CullEnd": 8000,
+		"AdditiveElevation": 70,
+		"Floating": True,
+		"IsBig": False,
 	}
 ]
 
@@ -680,7 +705,7 @@ proplists = [
 		"Name": "ClayBeachProps",
 		"Array": [
 			{
-				"Props": ["LongGrass"],
+				"Props": ["YellowGrass"],
 				"Chance": 0.07
 			},{
 				"Props": ["Broadleaf", "BigBush"],
@@ -701,6 +726,9 @@ proplists = [
 			{
 				"Props": ["SnowyRock"],
 				"Chance": 0.01
+			},{
+				"Props": ["FloatingIce"],
+				"Chance": 0.3
 			}
 		]
 	},
@@ -710,10 +738,12 @@ proplists = [
 			{
 				"Props": ["SnowyGrass"],
 				"Chance": 0.2
-			},
-			{
+			},{
 				"Props": ["SnowyPine"],
 				"Chance": 0.005
+			},{
+				"Props": ["FloatingIce"],
+				"Chance": 0.3
 			}
 		]
 	}
