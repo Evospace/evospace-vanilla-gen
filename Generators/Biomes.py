@@ -8,7 +8,7 @@ generators = []
 complexbiomes = []
 
 
-mega_boime_size = 0.007
+mega_boime_size = 0.003
 biome_family_size = 0.016
 
 global_family.append({
@@ -27,7 +27,8 @@ global_family.append({
 			"SeaBiomeFamily",
 			"VolcanicBiomeFamily",
             "FertileForestBiome"
-		]
+		],
+        "ChildFrequency": mega_boime_size,
 	})
 global_family.append({
 		"Name":"GlobalBiomeMegaFamily2",
@@ -45,7 +46,8 @@ global_family.append({
 			"SeaBiomeFamily",
 			"VolcanicBiomeFamily",
             "FertileForestBiome"
-		]
+		],
+        "ChildFrequency": mega_boime_size,
 	})
 global_family.append({
 		"Name":"GlobalBiomeMegaFamily3",
@@ -63,7 +65,8 @@ global_family.append({
 			"SeaBiomeFamily",
 			"VolcanicBiomeFamily",
             "FertileForestBiome"
-		]
+		],
+        "ChildFrequency": mega_boime_size,
 	})
 	
 	#Tundra = 0, // (84, 234, 247)
