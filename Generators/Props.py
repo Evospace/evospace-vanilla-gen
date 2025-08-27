@@ -367,7 +367,7 @@ props = [
 		"Name": "FloatingIce", 
 		"ScaleMin": 1,
 		"ScaleMax": 3,
-		"Variations": 1,
+		"Variations": 2,
 		"ProjectToTerrainPower": 0,
 		"Drops": "Organics",
 		"Count": 1,
