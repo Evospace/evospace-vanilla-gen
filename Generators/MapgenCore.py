@@ -9,134 +9,134 @@ mapgen_objects = [
 		"Name": "Sand",
 		"Color": "#fbeebf",
 		"Side": "#928c76",
-		"Item": [200 / 255., 200 / 255.,  50 / 255.],
+		"Item": "#c8c832",
 		"Drops": "Sand",
 		"Hardness": 1
 	},{
 		"Name": "Sandstone",
 		"Color": "#fbeebf",
 		"Side": "#928c76",
-		"Item": [200 / 255., 200 / 255.,  50 / 255.],
+		"Item": "#c8c832",
 		"Drops": "Sand",
 		"Hardness": 1
 	},{
 		"Name": "Stone",
 		"Color": "#928c76",
 		"Side": "#928c76",
-		"Item": [128 / 255., 128 / 255.,  128 / 255.],
+		"Item": "#808080",
 		"Drops": "Stone",
 		"Hardness": 2
 	},{
 		"Name": "DesertSand",
 		"Color": "#fde489",
 		"Side": "#fde489",
-		"Item": [172 / 255., 138 / 255.,  88 / 255.],
+		"Item": "#ac8a58",
 		"Drops": "Sand",
 		"Hardness": 1
 	},{
 		"Name": "Grass",
-		"Color": [85 / 255. / 5, 100 / 255. / 5, 29 / 255. / 5],
-		"Side": [134 / 255. / 5, 102 / 255. / 5,  64 / 255. / 5],
-		"Item": [102 / 255., 51 / 255.,  0 / 255.],
+		"Color": "#0b0a05",
+		"Side": "#1a1a14",
+		"Item": "#663300",
 		"Drops": "Dirt",
 		"Hardness": 1
 	},{
 		"Name": "Lava",
-		"Color": [104 / 255., 104 / 255., 104 / 255.],
-		"Side": [65 / 255., 65 / 255., 65 / 255.],
-		"Item": [127 / 255., 127 / 255.,  127 / 255.],
+		"Color": "#686868",
+		"Side": "#414141",
+		"Item": "#7f7f7f",
 		"Drops": "Basalt",
 		"Hardness": 5
 	},{
 		"Name": "Basalt",
-		"Color": [105 / 255., 105 / 255., 105 / 255.],
-		"Side": [65 / 255., 65 / 255., 65 / 255.],
-		"Item": [128 / 255., 128 / 255.,  128 / 255.],
+		"Color": "#696969",
+		"Side": "#414141",
+		"Item": "#808080",
 		"Drops": "Basalt",
 		"Hardness": 2
 	},{
 		"Name": "Bog",
-		"Color": [109 / 255. / 3, 108 / 255. / 3,  20 / 255. / 3],
-		"Side": [134 / 255. / 3, 132 / 255. / 3,  64 / 255. / 3],
-		"Item": [102 / 255., 51 / 255.,  0 / 255.],
+		"Color": "#24120a",
+		"Side": "#2c2215",
+		"Item": "#663300",
 		"Drops": "Dirt",
 		"Hardness": 1
 	},{
 		"Name": "PineForest",
-		"Color": [87 / 255., 66 / 255., 38 / 255.],
-		"Side": [87 / 255., 66 / 255.,  38 / 255.],
-		"Item": [102 / 255., 51 / 255.,  0 / 255.],
+		"Color": "#574226",
+		"Side": "#574226",
+		"Item": "#663300",
 		"Drops": "Dirt",
 		"Hardness": 1
 	},{
 		"Name": "Dirt",
-		"Color": [134 / 255., 102 / 255.,  64 / 255.],
-		"Side": [134 / 255., 102 / 255.,  64 / 255.],
-		"Item": [102 / 255., 51 / 255.,  0 / 255.],
+		"Color": "#866640",
+		"Side": "#866640",
+		"Item": "#663300",
 		"Drops": "Dirt",
 		"Hardness": 1
 	},{
 		"Name": "Gravel",
 		"Color": "#e9ddb1",
 		"Side": "#e9ddb1",
-		"Item": [200 / 255., 200 / 255.,  50 / 255.],
+		"Item": "#c8c832",
 		"Drops": "Gravel",
 		"Hardness": 1
 	},{
 		"Name": "DryGrass",
-		"Color": [85 / 255., 50 / 255., 29 / 255.],
-		"Side": [134 / 255., 102 / 255.,  65 / 255.],
-		"Item": [102 / 255., 51 / 255.,  0 / 255.],
+		"Color": "#55321d",
+		"Side": "#866641",
+		"Item": "#663300",
 		"Drops": "Dirt",
 		"Hardness": 1
 	},{
 		"Name": "Clay",
-		"Color": [0.3, 0.1, 0.05],
-		"Side": [0.3, 0.1, 0.05],
-		"Item": [0.3, 0.1, 0.05],
+		"Color": "#4d1a0d",
+		"Side": "#4d1a0d",
+		"Item": "#4d1a0d",
 		"Drops": "Sand",
 		"Hardness": 1.0
 	},{
 		"Name": "Limestone",
-		"Color": [161 / 255., 156 / 255., 135 / 255.],
-		"Side": [161 / 255., 156 / 255., 135 / 255.],
-		"Item": [161 / 255., 156 / 255., 135 / 255.],
+		"Color": "#a19c87",
+		"Side": "#a19c87",
+		"Item": "#a19c87",
 		"Drops": "Gravel",
 		"Hardness": 1.5
 	},{
 		"Name": "RedStone",
-		"Color": [91 / 255., 56 / 255., 35 / 255.],
-		"Side": [91 / 255., 56 / 255., 35 / 255.],
-		"Item": [91 / 255., 56 / 255., 35 / 255.],
+		"Color": "#5b3823",
+		"Side": "#5b3823",
+		"Item": "#5b3823",
 		"Drops": "RedStone",
 		"Hardness": 2
 	},{
 		"Name": "DarkStone",
-		"Color": [12 / 255., 8 / 255., 12 / 255.],
-		"Side": [12 / 255., 8 / 255., 12 / 255.],
-		"Item": [12 / 255., 8 / 255., 12 / 255.],
+		"Color": "#0c080c",
+		"Side": "#0c080c",
+		"Item": "#0c080c",
 		"Drops": "DarkStone",
 		"Hardness": 2
 	},{
 		"Name": "Snow",
-		"Color": [253 / 255., 252 / 255., 254 / 255.],
-		"Side": [133 / 255., 101 / 255.,  64 / 255.],
-		"Item": [255 / 255., 255 / 255., 255 / 255.],
+		"Color": "#fdfcfe",
+		"Side": "#856540",
+		"Item": "#ffffff",
 		"Drops": "Snow",
 		"Hardness": 1
 	},{
 		"Name": "Granite",
-		"Color": [111 / 255., 106 / 255., 85 / 255.],
-		"Side": [111 / 255., 106 / 255., 85 / 255.],
-		"Item": [128 / 255., 128 / 255.,  128 / 255.],
+		"Color": "#6f6a55",
+		"Side": "#6f6a55",
+		"Item": "#808080",
 		"Drops": "Granite",
 		"Hardness": 4,
 		"Unbreakable": True
 	},{
 		"Name": "Peat",
-		"Color": [109 / 255. / 7, 108 / 255. / 7,  20 / 255. / 7],
-		"Side": [134 / 255. / 7, 102 / 255. / 7,  64 / 255. / 7],
-		"Item": [102 / 255., 51 / 255.,  0 / 255.],
+		"Color": "#0f0f05",
+		"Side": "#12120e",
+		"Item": "#663300",
 		"Drops": "Peat",
 		"Hardness": 1
 	},
