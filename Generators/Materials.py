@@ -977,13 +977,13 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Signal"
 	},{
-		"Name": "Any",
-		"Label": "Any",
+		"Name": "Anything",
+		"Label": "Anything",
 		"Items": ["Exact"],
 		"Category": "Signal"
 	},{
-		"Name": "All",
-		"Label": "All",
+		"Name": "Everything",
+		"Label": "Everything",
 		"Items": ["Exact"],
 		"Category": "Signal"
 	},{
