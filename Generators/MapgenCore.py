@@ -35,7 +35,7 @@ mapgen_objects = [
 		"Hardness": 1
 	},{
 		"Name": "Grass",
-		"Color": "#205913",
+		"Color": "#20591e3",
 		"Side": "#55321d",
 		"Item": "#663300",
 		"Drops": "Dirt",

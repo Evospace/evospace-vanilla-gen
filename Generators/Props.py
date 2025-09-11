@@ -56,7 +56,8 @@ props = [
 		"IsBig": False,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
-		"AdditiveElevation": 15
+		"AdditiveElevation": 15,
+		"HighDetailShadow": True
 	},
 	{
 		"Name": "YellowGrass",
@@ -69,7 +70,8 @@ props = [
 		"IsBig": False,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
-		"AdditiveElevation": 15
+		"AdditiveElevation": 15,
+		"HighDetailShadow": True
 	},
 	{
 		"Name": "SeaPlant",
@@ -84,6 +86,7 @@ props = [
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
 		"MaximumHeight": -1,
+		"HighDetailShadow": True
 	},
 	{
 		"Name": "SeaGrass",
@@ -98,6 +101,7 @@ props = [
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
 		"MaximumHeight": -1,
+		"HighDetailShadow": True
 	},
 	{
 		"Name": "TallGrass",
@@ -110,7 +114,8 @@ props = [
 		"IsBig": False,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
-		"AdditiveElevation": 0
+		"AdditiveElevation": 0,
+		"HighDetailShadow": True
 	},
 	{
 		"Name": "Broadleaf",
@@ -146,7 +151,8 @@ props = [
 		"Drops": "StoneSurface",
 		"Count": 5,
 		"AdditiveElevation": 0,
-		"BreakChance": 15
+		"BreakChance": 15,
+		"HighDetailShadow": True
 	},
 	{
 		"Name": "Pine",
@@ -203,7 +209,8 @@ props = [
 		"Count": 1,
 		"CullBegin": 7000,
 		"CullEnd": 8000,
-		"AdditiveElevation": 0
+		"AdditiveElevation": 0,
+		"HighDetailShadow": True
 	},{
 		"Name": "Lily", 
 		"ScaleMin": 1,
@@ -217,6 +224,7 @@ props = [
 		"AdditiveElevation": 70,
 		"Floating": True,
 		"IsBig": False,
+		"HighDetailShadow": True
 	},{
 		"Name": "LilyFlower",
 		"ScaleMin": 1,
@@ -242,6 +250,7 @@ props = [
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"IsBig": False,
+		"HighDetailShadow": True
 	},{
 		"Name": "YellowFlower",
 		"ScaleMin": 1,
@@ -254,6 +263,7 @@ props = [
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
 		"IsBig": False,
+		"HighDetailShadow": True
 	},{
 		"Name": "RedFlower",
 		"ScaleMin": 1,
@@ -266,6 +276,7 @@ props = [
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
 		"IsBig": False,
+		"HighDetailShadow": True
 	},{
 		"Name": "WhiteFlower",
 		"ScaleMin": 1,
@@ -278,6 +289,7 @@ props = [
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
 		"IsBig": False,
+		"HighDetailShadow": True
 	},{
 		"Name": "BigBush",
 		"ScaleMin": 1.5,
@@ -315,6 +327,7 @@ props = [
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
 		"IsBig": False,
+		"HighDetailShadow": True
 	},{
 		"Name": "VolcanicRock",
 		"ScaleMin": .5,
@@ -351,6 +364,7 @@ props = [
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
 		"IsBig": False,
+		"HighDetailShadow": True
 	},{
 		"Name": "SteamStream",
 		"ScaleMin": 2,
@@ -376,6 +390,7 @@ props = [
 		"AdditiveElevation": 70,
 		"Floating": True,
 		"IsBig": False,
+		"HighDetailShadow": True
 	}
 ]
 
@@ -795,7 +810,9 @@ for prop in props:
 		if "MaximumHeight" in prop:
 			temp_prop["MaximumHeight"] = prop["MaximumHeight"]	
 		if "MinimumHeight" in prop:
-			temp_prop["MinimumHeight"] = prop["MinimumHeight"]	
+			temp_prop["MinimumHeight"] = prop["MinimumHeight"]
+		if "HighDetailShadow" in prop:
+			temp_prop["HighDetailShadow"] = prop["HighDetailShadow"]	
 			
 		objects_array.append(temp_prop)
 
