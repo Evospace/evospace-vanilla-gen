@@ -600,22 +600,22 @@ data = {
 	"Objects": generators
 }
 
-write_file("Generated/Generators/vanilla.json", data);
+write_file("Generated/Generators/vanilla.json", data)
 
 data = {
 	"Objects": biomes
 }
 
-write_file("Generated/Biomes/vanilla.json", data);
+write_file("Generated/Biomes/vanilla.json", data)
 
 data = {
 	"Objects": families
 }
 
-write_file("Generated/BiomeFamilies/vanilla.json", data);
+write_file("Generated/BiomeFamilies/vanilla.json", data)
 
 data = {
 	"Objects": global_family
 }
 
-write_file("Generated/GlobalBiomFamily/vanilla.json", data);
+write_file("Generated/GlobalBiomFamily/vanilla.json", data)
