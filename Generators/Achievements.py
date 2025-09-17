@@ -130,6 +130,8 @@ for a in ach:
         record["Image"] = a["Image"]
     if "Steam" in a:
         record["SteamKey"] = a["Name"]
+        record["Label"] = [a["Name"], "parts"]
+        record["Image"] = "T_"+a["Name"]
     converted.append(record)
 
 data = {
