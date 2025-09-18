@@ -174,9 +174,7 @@ for material in materials:
 			"Type": "Abstract"
 		}
 
-		images.append({ "NewName": "T_" + material["Name"] + "",
-			"Base": "T_" + material["Name"]
-		})
+    # removed empty generator for wiki; uploader will collect direct Image refs
 
 		if "Tier" in material:
 			item["Tier"] = material["Tier"]
@@ -205,9 +203,7 @@ for material in materials:
 			"Label": [material["Name"], "parts"],
 		}
 
-		images.append({ "NewName": "T_" + material["Name"] + "",
-			"Base": "T_" + material["Name"]
-		})
+    # removed empty generator for wiki; uploader will collect direct Image refs
 
 		if "Tier" in material:
 			item["Tier"] = material["Tier"]
@@ -403,9 +399,7 @@ for material in materials:
 
 		objects_array.append(item)
 		
-		images.append({ "NewName": "T_" + material["Name"],
-			"Base": "T_" + material["Name"]
-		})
+        # removed empty generator to avoid duplicate base icons; wiki uploader collects direct Image refs
 		
 		if "UnitMul" in material:
 			item["UnitMul"] = material["UnitMul"]
@@ -469,9 +463,7 @@ for material in materials:
 		
 		objects_array.append(item)
 		
-		images.append({ "NewName": "T_" + material["Name"],
-			"Base": "T_" + material["Name"]
-		})
+        # removed empty generator to avoid duplicate base icons; wiki uploader collects direct Image refs
 		
 		if "Burnable" in material:
 			duration, count = fluid_furnace_pair(material)
@@ -567,11 +559,7 @@ for tool in tools:
 		
 	objects_array.append(item)
 	
-	images.append({ "NewName": "T_" + item_name,
-		"Base": "T_" + tool["Name"],
-		"MulMask": "T_Material" + "StainlessSteel",
-		"AddMask": "T_" + tool["Name"] + additive_ico
-	})
+    # removed tool generator to avoid duplicate with shipped base PNG icons
 					
 data = {
 	"Objects": objects_array

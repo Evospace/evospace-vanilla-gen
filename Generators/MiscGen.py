@@ -254,13 +254,9 @@ equipped = [
 ]
 
 for one in wooden_misc:
-	cvs.append([one["Name"], "Wooden " + CamelToSpaces(one["Name"])])
+    cvs.append([one["Name"], "Wooden " + CamelToSpaces(one["Name"])])
 
-	images.append({ "NewName": "T_" + one["Name"],
-		"Base": "T_" + one["Name"]
-	})
-
-	item = { "Class": "StaticItem",
+    item = { "Class": "StaticItem",
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"Block": one["Name"],
@@ -269,9 +265,9 @@ for one in wooden_misc:
 		"ItemLogic": building_single_logic
 	}
 		
-	objects_array.append(item)
+    objects_array.append(item)
 	
-	block = {
+    block = {
 		"Name": one["Name"] + static_block,
 		"Item" : one["Name"],
 		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
@@ -279,19 +275,15 @@ for one in wooden_misc:
 		"Class": "StaticBlock",
 	}
 	
-	if "Positions" in one:
-		block["Positions"] = one["Positions"]
+    if "Positions" in one:
+        block["Positions"] = one["Positions"]
 		
-	objects_array.append(block)
+    objects_array.append(block)
 
 for one in simple_single:
-	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
-
-	images.append({ "NewName": "T_" + one["Name"],
-		"Base": "T_" + one["Name"]
-	})
+    cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
-	objects_array.append({ "Class": "StaticItem",
+    objects_array.append({ "Class": "StaticItem",
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_single_logic,
@@ -301,7 +293,7 @@ for one in simple_single:
 		"Tier": one["Tier"] if "Tier" in one else 0
 	})	
 	
-	block = {
+    block = {
 		"Class": "StaticBlock",
 		"Name": one["Name"],
 		"Item" : one["Name"],
@@ -310,19 +302,15 @@ for one in simple_single:
 		"Minable": {"Result": one["Name"]},
 	}
 	
-	if "Positions" in one:
-		block["Positions"] = one["Positions"]
+    if "Positions" in one:
+        block["Positions"] = one["Positions"]
 		
-	objects_array.append(block)
+    objects_array.append(block)
 	
 for one in simple_blocks:
-	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
-
-	images.append({ "NewName": "T_" + one["Name"],
-		"Base": "T_" + one["Name"]
-	})
+    cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
-	objects_array.append({ "Class": "StaticItem",
+    objects_array.append({ "Class": "StaticItem",
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_cube_logic,
@@ -332,12 +320,12 @@ for one in simple_blocks:
 		"Category": "Block",
 		"DescriptionParts": [["BuildingBlock", "common"]],
 	})
-	objects_array.append({ "Class": tesselator_cube,
+    objects_array.append({ "Class": tesselator_cube,
 		"Name": one["Name"] + tesselator,
 		"Material" : "/Game/Materials/" + one["Name"],
 		"Transparent": one["Transparent"] if "Transparent" in one else False
 	})
-	objects_array.append({ "Class": "StaticBlock",
+    objects_array.append({ "Class": "StaticBlock",
 		"Name": one["Name"] + static_block,
 		"Item" : one["Name"],
 		"Tesselator": one["Name"] + tesselator,
@@ -346,13 +334,9 @@ for one in simple_blocks:
 	})
 	
 for one in static_mesh_block:
-	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
-
-	images.append({ "NewName": "T_" + one["Name"],
-		"Base": "T_" + one["Name"]
-	})
+    cvs.append([one["Name"], CamelToSpaces(one["Name"])])
 	
-	objects_array.append({ "Class": "StaticItem",
+    objects_array.append({ "Class": "StaticItem",
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
 		"ItemLogic": building_single_logic,
@@ -360,7 +344,7 @@ for one in static_mesh_block:
 		"StackSize": 32,
 		"Label":[one["Name"],"misc"],
 	})	
-	objects_array.append({
+    objects_array.append({
 		"Class": "StaticBlock",
 		"Name": one["Name"] + static_block,
 		"Item" : one["Name"],
