@@ -1120,5 +1120,12 @@ machines = [
 		"EndTier": 2,		
         "BlockLogic": "DataConductorBlockLogic",
 		"Description": []
+	},{
+		"Name": "Storate Core",
+		"Label": "Storate Core",
+		"StartTier": 2,
+		"EndTier": 2,		
+        "BlockLogic": "ItemRack",
+		"Description": []
 	}
 ]
