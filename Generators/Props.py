@@ -126,7 +126,9 @@ props = [
 		"IsBig": True,
 		"Drops": "Log",
 		"Count": 3,
-		"BreakChance": 15
+		"BreakChance": 15,
+		"DamageEffect": "/Game/EffectActors/TreeDamageEffect.TreeDamageEffect_C",
+		"BreakEffect": "/Game/EffectActors/TreeBreakEffect.TreeBreakEffect_C"
 	},
 	{
 		"Name": "Shrub",
@@ -163,7 +165,9 @@ props = [
 		"IsBig": True,
 		"Drops": "Log",
 		"Count": 3,
-		"BreakChance": 15
+		"BreakChance": 15,
+		"DamageEffect": "/Game/EffectActors/TreeDamageEffect.TreeDamageEffect_C",
+		"BreakEffect": "/Game/EffectActors/TreeBreakEffect.TreeBreakEffect_C"
 	},
 	{
 		"Name": "SnowyPine",
@@ -174,7 +178,9 @@ props = [
 		"IsBig": True,
 		"Drops": "Log",
 		"Count": 3,
-		"BreakChance": 15
+		"BreakChance": 15,
+		"DamageEffect": "/Game/EffectActors/TreeDamageEffect.TreeDamageEffect_C",
+		"BreakEffect": "/Game/EffectActors/TreeBreakEffect.TreeBreakEffect_C"
 	},
 	{
 		"Name": "Conifer",
@@ -185,7 +191,9 @@ props = [
 		"IsBig": True,
 		"Drops": "Log",
 		"Count": 2,
-		"BreakChance": 25
+		"BreakChance": 25,
+		"DamageEffect": "/Game/EffectActors/TreeDamageEffect.TreeDamageEffect_C",
+		"BreakEffect": "/Game/EffectActors/TreeBreakEffect.TreeBreakEffect_C"
 	},
 	{
 		"Name": "Palm",
@@ -196,7 +204,9 @@ props = [
 		"IsBig": True,
 		"Drops": "Log",
 		"Count": 2,
-		"BreakChance": 25
+		"BreakChance": 25,
+		"DamageEffect": "/Game/EffectActors/TreeDamageEffect.TreeDamageEffect_C",
+		"BreakEffect": "/Game/EffectActors/TreeBreakEffect.TreeBreakEffect_C"
 	},
 	{
 		"Name": "Rogoz",
@@ -797,6 +807,10 @@ for prop in props:
 			"IsBig": prop["IsBig"]
 		}
 		
+		if "DamageEffect" in prop:
+			temp_prop["DamageEffect"] = prop["DamageEffect"]
+		if "BreakEffect" in prop:
+			temp_prop["BreakEffect"] = prop["BreakEffect"]
 		if "BreakChance" in prop:
 			temp_prop["BreakChance"] = prop["BreakChance"]
 		if "CullBegin" in prop:
