@@ -3,119 +3,148 @@ from Common import *
 ach = [
     {
         "Name": "CopperPlate",
-        "Steam": True
+        "Steam": True,
+        "Label": ["CopperPlate","parts"],
     },
     {
         "Name": "SteelPlate",
-        "Steam": True
+        "Steam": True,
+        "Label": ["SteelPlate","parts"],
     },
     {
         "Name": "TitaniumPlate",
-        "Steam": True
+        "Steam": True,
+        "Label": ["TitaniumPlate","parts"],
     },
     {
         "Name": "StainlessSteelPlate",
-        "Steam": True
+        "Steam": True,
+        "Label": ["StainlessSteelPlate","parts"],
     },
     {
         "Name": "AluminiumPlate",
-        "Steam": True
+        "Steam": True,
+        "Label": ["AluminiumPlate","parts"],
     },
     {
         "Name": "MalachiteOre",
-        "Steam": True
+        "Steam": True,
+        "Label": ["MalachiteOre","ores"],
     },
     {
         "Name": "MagnetiteOre",
-        "Steam": True
+        "Steam": True,
+        "Label": ["MagnetiteOre","ores"],
     },
     {
         "Name": "BauxiteOre",
-        "Steam": True
+        "Steam": True,
+        "Label": ["BauxiteOre","ores"],
     },
     {
         "Name": "ThorianiteOre",
-        "Steam": True
+        "Steam": True,
+        "Label": ["ThorianiteOre","ores"],
     },
     {
         "Name": "CoalOre",
-        "Steam": True
+        "Steam": True,
+        "Label": ["CoalOre","ores"],
     },
     {
         "Name": "NeutroniumPlate",
-        "Steam": True
+        "Steam": True,
+        "Label": ["NeutroniumPlate","parts"],
     },
     {
         "Name": "CompositePlate",
-        "Steam": True
+        "Steam": True,
+        "Label": ["CompositePlate","parts"],
     },  
     {
         "Name": "GoldPlate",
-        "Steam": True
+        "Steam": True,
+        "Label": ["GoldPlate","parts"],
     },
     {
         "Name": "YttriumDust",
-        "Steam": True
+        "Steam": True,
+        "Label": ["YttriumDust","parts"],
     },
     {
         "Name": "Battery",
-        "Steam": True
+        "Steam": True,
+        "Label": ["Battery","parts"],
     },
     {
         "Name": "NeutroniumPortal",
-        "Steam": True
+        "Steam": True,
+        "Label": ["NeutroniumPortal","machines"],
     },
     {
         "Name": "CompositeFusionReactor",
-        "Steam": True
+        "Steam": True,
+        "Label": ["CompositeFusionReactor","machines"],
     },
     {
         "Name": "TitaniumFissionReactor",
-        "Steam": True
+        "Steam": True,
+        "Label": ["TitaniumFissionReactor","machines"],
     },
     {
         "Name": "SteelLogicCircuit",
-        "Steam": True
+        "Steam": True,
+        "Label": ["SteelLogicCircuit","machines"],
     },
     {
         "Name": "Torch",
-        "Steam": True
+        "Steam": True,
+        "Label": ["",""],
     },
     {
         "Name": "Ping",
-        "Steam": True
+        "Steam": True,
+        "Label": ["",""],
     },
     {
         "Name": "PolyethyleneSheet",
-        "Steam": True
+        "Steam": True,
+        "Label": ["PolyethyleneSheet","parts"],
     },
     {
         "Name": "SilverGod",
-        "Steam": True
+        "Steam": True,
+        "Label": ["",""],
     },
     {
         "Name": "GoldenGod",
-        "Steam": True
+        "Steam": True,
+        "Label": ["",""],
     },
     {
         "Name": "RubyOre",
-        "Steam": True
+        "Steam": True,
+        "Label": ["RubyOre","ores"],
     },
     {
         "Name": "CinnabarOre",
-        "Steam": True
+        "Steam": True,
+        "Label": ["CinnabarOre","ores"],
     },
     {
         "Name": "PyroplatiteOre",
-        "Steam": True
+        "Steam": True,
+        "Label": ["PyroplatiteOre","ores"],
     },
     {
         "Name": "PyriteOre",
-        "Steam": True
+        "Steam": True,
+        "Label": ["PyriteOre","ores"],
     },
     {
         "Name": "ChalcopyriteOre",
-        "Steam": True
+        "Steam": True,
+        "Label": ["ChalcopyriteOre","ores"],
     },
 ]
 
@@ -125,12 +154,12 @@ for a in ach:
     record = {
         "Class": "StaticAchievement",
         "Name": a["Name"],
+        "Label": a["Label"]
     }
     if "Image" in a:
         record["Image"] = a["Image"]
     if "Steam" in a:
         record["SteamKey"] = a["Name"]
-        record["Label"] = [a["Name"], "parts"]
         record["Image"] = "T_"+a["Name"]
     converted.append(record)
 
