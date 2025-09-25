@@ -482,7 +482,7 @@ machines = [
 		"StartTier": 0,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
-        "Selector": "019/FurnaceSelector.FurnaceSelector_C",
+        "Selector": "Models/FurnaceSelector.FurnaceSelector_C",
 		"Description": ["HeatOutput", "PowerOutput"],
         "PowerOutput": 50,
 	},{
