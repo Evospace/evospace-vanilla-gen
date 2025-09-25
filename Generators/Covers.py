@@ -29,11 +29,11 @@ covers = [
         "Materials": [""]
 	},{
 		"Name": "StoneFurnace",
-		"Mesh": "/Game/019/FurnaceRound",
-        "Materials": ["/Game/019/StoneFurnaceMaterial"]
+		"Mesh": "/Game/Models/FurnaceRound",
+        "Materials": ["/Game/Materials/StoneFurnaceMaterial"]
 	},{
 		"Name": "RobotArmBase",
-		"Mesh": "/Game/019/RobotArmBase",
+		"Mesh": "/Game/Models/RobotArmBase",
         "Materials": []
 	},{
 		"Name": "BuildingBox",
@@ -134,23 +134,23 @@ for mat, num in zip(paint_tiers, range(0,7+1)):
 for mat, num in zip(paint_metals, range(1,7+1)):
     covers.append({
 		"Name": mat+"Furnace",
-		"Mesh": "/Game/019Content/FurnaceRound",
-        "Materials": ["/Game/019/FurnaceMaterial"]
+		"Mesh": "/Game/Models/FurnaceRound",
+        "Materials": ["/Game/Models/FurnaceMaterial"]
 	})
     covers.append({
 		"Name": mat+"Conveyor",
-		"Mesh": "/Game/019/conveyor_end",
+		"Mesh": "/Game/Models/conveyor_end",
         "Materials": ["/Game/Materials/RubberWithTierParam", tier_materials[num]]
 	})
     covers.append({
 		"Name": mat+"ConveyorBox",
-		"Mesh": "/Game/019/conveyor_box",
+		"Mesh": "/Game/Models/conveyor_box",
         "Materials": [tier_materials[num]]
 	})
     covers.append({
 		"Name": mat+"ElectricEngine",
-		"Mesh": "/Game/019/ElectricEngine",
-        "Materials": ["/Game/019/ElectricEngineMaterial"]
+		"Mesh": "/Game/Models/ElectricEngine",
+        "Materials": ["/Game/Materials/ElectricEngineMaterial"]
 	})
 	
 for cover in covers:

@@ -125,8 +125,8 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
 		"Drops": "Log",
-		"Count": 3,
-		"BreakChance": 15,
+		"Count": 25,
+		"HitsToBreak": 10,
 		"DamageEffect": "/Game/EffectActors/TreeDamageEffect.TreeDamageEffect_C",
 		"BreakEffect": "/Game/EffectActors/TreeBreakEffect.TreeBreakEffect_C"
 	},
@@ -151,10 +151,12 @@ props = [
 		"ProjectToTerrainPower": 1,
 		"IsBig": True,
 		"Drops": "StoneSurface",
-		"Count": 5,
+		"Count": 20,
 		"AdditiveElevation": 0,
-		"BreakChance": 15,
-		"HighDetailShadow": True
+		"HitsToBreak": 8,
+		"HighDetailShadow": True,
+		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C"
 	},
 	{
 		"Name": "Pine",
@@ -164,8 +166,8 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
 		"Drops": "Log",
-		"Count": 3,
-		"BreakChance": 15,
+		"Count": 20,
+		"HitsToBreak": 8,
 		"DamageEffect": "/Game/EffectActors/TreeDamageEffect.TreeDamageEffect_C",
 		"BreakEffect": "/Game/EffectActors/TreeBreakEffect.TreeBreakEffect_C"
 	},
@@ -177,8 +179,8 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
 		"Drops": "Log",
-		"Count": 3,
-		"BreakChance": 15,
+		"Count": 20,
+		"HitsToBreak": 8,
 		"DamageEffect": "/Game/EffectActors/TreeDamageEffect.TreeDamageEffect_C",
 		"BreakEffect": "/Game/EffectActors/TreeBreakEffect.TreeBreakEffect_C"
 	},
@@ -190,8 +192,8 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
 		"Drops": "Log",
-		"Count": 2,
-		"BreakChance": 25,
+		"Count": 20,
+		"HitsToBreak": 8,
 		"DamageEffect": "/Game/EffectActors/TreeDamageEffect.TreeDamageEffect_C",
 		"BreakEffect": "/Game/EffectActors/TreeBreakEffect.TreeBreakEffect_C"
 	},
@@ -203,8 +205,8 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
 		"Drops": "Log",
-		"Count": 2,
-		"BreakChance": 25,
+		"Count": 10,
+		"HitsToBreak": 4,
 		"DamageEffect": "/Game/EffectActors/TreeDamageEffect.TreeDamageEffect_C",
 		"BreakEffect": "/Game/EffectActors/TreeBreakEffect.TreeBreakEffect_C"
 	},
@@ -312,7 +314,7 @@ props = [
 		"AdditiveElevation": 0,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
-		"BreakChance": 25
+		"HitsToBreak": 2,
 	},{
 		"Name": "SmallRock",
 		"ScaleMin": 1,
@@ -320,11 +322,14 @@ props = [
 		"Variations": 1,
 		"ProjectToTerrainPower": 1,
 		"Drops": "StoneSurface",
-		"Count": 10,
+		"Count": 2,
+		"HitsToBreak": 1,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
 		"IsBig": False,
+		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C"
 	},{
 		"Name": "DryGrass",
 		"ScaleMin": 1,
@@ -347,8 +352,10 @@ props = [
 		"Drops": "BasaltSurface",
 		"IsBig": True,
 		"AdditiveElevation": 0,
-		"Count": 3,
-		"BreakChance": 5
+		"Count": 20,
+		"HitsToBreak": 15,
+		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C"
 	},{
 		"Name": "SnowyRock",
 		"ScaleMin": .5,
@@ -360,8 +367,10 @@ props = [
 		"CullEnd": 12000,
 		"IsBig": True,
 		"AdditiveElevation": 0,
-		"Count": 3,
-		"BreakChance": 10
+		"Count": 20,
+		"HitsToBreak": 8,
+		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C"
 	},{
 		"Name": "SnowyGrass",
 		"ScaleMin": 2,
@@ -418,7 +427,9 @@ for ore in ore_types:
 		"AdditiveElevation": 0,
 		"IsBig": True,
 		"Image": "T_Error",
-		"BreakChance": 0
+		"HitsToBreak": -1,
+		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C"
 	})
 
 def named_prop(name):
@@ -811,8 +822,8 @@ for prop in props:
 			temp_prop["DamageEffect"] = prop["DamageEffect"]
 		if "BreakEffect" in prop:
 			temp_prop["BreakEffect"] = prop["BreakEffect"]
-		if "BreakChance" in prop:
-			temp_prop["BreakChance"] = prop["BreakChance"]
+		if "HitsToBreak" in prop:
+			temp_prop["HitsToBreak"] = prop["HitsToBreak"]
 		if "CullBegin" in prop:
 			temp_prop["CullBegin"] = prop["CullBegin"]
 		if "Floating" in prop:
