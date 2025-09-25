@@ -72,7 +72,7 @@ def append_levels(research_base):
 		research.update({
 			"Level": this_level,
 			"Levels": [i, i],
-			"DataPoints": {"Items": [{"Name": "Computations", "Count": cost}]}
+			"Complexity": cost
 		})
 
 		researches.append(research)
