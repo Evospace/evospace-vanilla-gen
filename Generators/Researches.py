@@ -1213,7 +1213,7 @@ append_levels({
 	"Name": "IndustrialBoiler",
 	"Label": ["IndustrialBoiler", "machines"],
 	"RequiredResearch": ["TitaniumProduction"],
-	"Unlocks": [["Hand" + r_dict, "%Material%IndustrialBoiler"],["Connector" + r_dict, "%Material%IndustrialBoiler"]],
+	"Unlocks": [["Hand" + r_dict, "%Material%IndustrialBoiler"]],
 	"Levels": [5,7],
 })
 append_levels({
@@ -1221,7 +1221,7 @@ append_levels({
 	"Name": "IndustrialSteamTurbine",
 	"Label": ["IndustrialSteamTurbine", "machines"],
 	"RequiredResearch": ["IndustrialBoiler"],
-	"Unlocks": [["Hand" + r_dict, "%Material%IndustrialSteamTurbine"],["Connector" + r_dict, "%Material%IndustrialSteamTurbine"]],
+	"Unlocks": [["Hand" + r_dict, "%Material%IndustrialSteamTurbine"]],
 	"Levels": [5,7],
 })
 append_levels({
@@ -1229,7 +1229,7 @@ append_levels({
 	"Name": "IndustrialGenerator",
 	"Label": ["IndustrialGenerator", "machines"],
 	"RequiredResearch": ["IndustrialSteamTurbine"],
-	"Unlocks": [["Hand" + r_dict, "%Material%IndustrialGenerator"],["Connector" + r_dict, "%Material%IndustrialGenerator"]],
+	"Unlocks": [["Hand" + r_dict, "%Material%IndustrialGenerator"]],
 	"Levels": [5,7],
 })
 append_levels({
@@ -1468,7 +1468,7 @@ append_levels({
 	"Name": "DecorativeWood",
 	"RequiredResearch": ["Bricks"],
 	"Label": ["DecorativeWood", "researches"],
-	"Unlocks": [["Hand" + r_dict, "WoodenPlanks"],["Hand" + r_dict, "WoodenStairs"],["Hand" + r_dict, "Bed"],["Hand" + r_dict, "Door"]],
+	"Unlocks": [["Hand" + r_dict, "WoodenPlanks"],["Hand" + r_dict, "WoodenStairs"],["Hand" + r_dict, "Door"]],
 	"Levels": [1,1],
 })
 append_levels({

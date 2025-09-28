@@ -482,7 +482,6 @@ machines = [
 		"StartTier": 0,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
-        "Selector": "Models/FurnaceSelector.FurnaceSelector_C",
 		"Description": ["HeatOutput", "PowerOutput"],
         "PowerOutput": 50,
 	},{
@@ -1111,7 +1110,7 @@ machines = [
 		"Label": "Logic Interface",
 		"StartTier": 2,
 		"EndTier": 2,		
-        "BlockLogic":"LogicCircuitBlockLogic",
+        "BlockLogic":"LogicInterfaceBlockLogic",
 		"Description": []
 	},{
 		"Name": "DataCable",
@@ -1121,8 +1120,8 @@ machines = [
         "BlockLogic": "DataConductorBlockLogic",
 		"Description": []
 	},{
-		"Name": "Storate Core",
-		"Label": "Storate Core",
+		"Name": "StorageCore",
+		"Label": "Storage Core",
 		"StartTier": 2,
 		"EndTier": 2,		
         "BlockLogic": "ItemRack",
