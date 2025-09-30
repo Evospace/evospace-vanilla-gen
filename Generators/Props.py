@@ -329,7 +329,7 @@ props = [
 		"AdditiveElevation": 0,
 		"IsBig": False,
 		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
-		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C"
+		"BreakEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C"
 	},{
 		"Name": "DryGrass",
 		"ScaleMin": 1,
