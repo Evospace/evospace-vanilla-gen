@@ -2,6 +2,7 @@ from Common import *
 from MachinesList import *
 from MiscGen import *
 from PartsList import circuits
+from OresGen import ore_types
 import copy
 
 objects_array = []
@@ -25,6 +26,7 @@ recipes_mixer = []
 recipes_chem = []
 
 pumpjack = []
+drilling_rig = []
 
 recipes_sep = []
 recipes_press = []
@@ -1608,8 +1610,16 @@ pumpjack.append({
 	"Name": "RawOil",
 	"Input": no_items(),
 	"Output": one_item("RawOil", 200),
-	"Ticks" : 20
+	"Ticks" : 100
 })	
+
+for ore in ore_types:
+	drilling_rig.append({
+		"Name": ore["Drops"],
+		"Input": no_items(),
+		"Output": one_item(ore["Drops"], 1),
+		"Ticks" : 100
+	})	
 
 recipes_arc_furnace.append({
 	"Name": "SandSurfaceSmelting",
@@ -2108,12 +2118,12 @@ recipes_industrial_chemreactor.append({
 
 oil_crack.append({
 	"Name": "RawOil",
-	"Input": one_item("RawOil", 15000),
+	"Input": one_item("RawOil", 7500),
 	"Output":{
-		"Items": oil_crack_recipe(-1, 15000)
+		"Items": oil_crack_recipe(-1, 7500)
 	},
 	
-	"Ticks" : 600,
+	"Ticks" : 300,
 	"Tier": 4
 })
 
@@ -2176,7 +2186,7 @@ for i in range(0, len(oil_crack_array(0))):
 		"Name": "RawOil"+str(i),
 		"Input": one_item("RawOil", 2000),
 		"Output": { "Items":[ oil_crack_recipe(i, 2000) ] },
-		"Ticks" : 120,  # Reduced from 150 to 120 to make it more efficient
+		"Ticks" : 120,
 		"Tier": 3,
 	})
 
@@ -2844,6 +2854,11 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": "Pumpjack" + r_dict,
 	"Recipes": pumpjack
+})
+
+objects_array.append({ "Class": r_dict,
+	"Name": "DrillingRig" + r_dict,
+	"Recipes": drilling_rig
 })
 
 objects_array.append({ "Class": r_dict,
