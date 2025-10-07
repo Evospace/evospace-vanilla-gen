@@ -92,7 +92,7 @@ ore_types = [
 		"Crystal": True,
 		"CrystalIcoGen": True,
 		"Color": [.5/2.0, .5/2.0, 1/2.0],
-		"Drops": "BauxiteOre",
+		"Drops": "RubyOre",
 		"Tier": 3,
 	},{
 		"Name": "Cinnabar",
