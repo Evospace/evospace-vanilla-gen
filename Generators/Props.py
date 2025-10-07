@@ -420,7 +420,7 @@ for ore in ore_types:
 		"ScaleMax": 2,
 		"Variations": 1,
 		"ProjectToTerrainPower": 1,
-		"Drops": ore["Name"] + "Ore",
+		"Drops": ore["Drops"],
 		"Count": 1,
 		"CullBegin": 90000,
 		"CullEnd": 100000,

@@ -1618,7 +1618,7 @@ for ore in ore_types:
 		"Name": ore["Drops"],
 		"Input": no_items(),
 		"Output": one_item(ore["Drops"], 1),
-		"Ticks" : 100
+		"Ticks" : 60
 	})	
 
 recipes_arc_furnace.append({
