@@ -12,7 +12,7 @@ props = [
 		"Name": "Cactus",
 		"ScaleMin": .5,
 		"ScaleMax": 2,
-		"Variations": 3,
+		"Variations": 2,
 		"ProjectToTerrainPower": 1,
 		"IsBig": True,
 		"Drops": "Organics",
