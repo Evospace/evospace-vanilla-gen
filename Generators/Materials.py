@@ -115,14 +115,14 @@ materials = [
 		"Items": ["Exact"],
 		"Tier": 3,
 		"Mesh": "/Game/Models/FrameCrate",
-		"Materials": ["/Game/Materials/BlackSteel", "/Game/Materials/BlackSteel"]
+		"Materials": ["", "/Game/Materials/BlackSteel"]
 	},{
 		"Name": "ModularFrame",
 		"Label": "Modular Frame",
 		"Items": ["Exact"],
 		"Tier": 4,
 		"Mesh": "/Game/Models/FrameCrate",
-		"Materials": ["/Game/Materials/BlackSteel", "/Game/Materials/StainlessSteel"]
+		"Materials": ["", "/Game/Materials/StainlessSteel"]
 	},{
 		"Name": "Copper",
 		"Label": "Copper",
@@ -179,8 +179,8 @@ materials = [
 		"Name": "Resistor",
 		"Label": "Resistor",
 		"Items": ["Exact"],
-		"Mesh":"/Game/Models/BoardCrate",
-		"Materials":["/Game/Materials/Plastic"],
+		"Mesh":"/Game/Models/ResistorCrate",
+		"Materials":[],
 		"Tier": 1,
 	},{
 		"Name": "Transistor",
@@ -227,7 +227,7 @@ materials = [
 		"Smelting": [],
 		"Items": ["Exact"],		
 		"Mesh":"/Game/Models/SpongeCrate",
-        "Materials":["/Game/Materials/GreenPlastic", "/Game/Materials/TitaniumOreGravel"],
+        "Materials":["", "/Game/Materials/TitaniumOreGravel"],
 		"Tier": 4,
 	},{
 		"Name": "TitaniumOxide",
@@ -246,7 +246,7 @@ materials = [
 		"Items": ["Exact"],
 		"Tier": 6,
         "Mesh":"/Game/Models/Ingot",
-        "Materials":["/Game/Materials/VeryHotMetal"],
+        "Materials":["", "/Game/Materials/VeryHotMetal"],
 	},{
 		"Name": "Stone",
 		"Label": "Stone",
@@ -263,9 +263,12 @@ materials = [
 		"Name": "Sulfur",
 		"Label": "Sulfur",
 		"Tier": 4,
+		"Burnable": {
+			"BurnTime": 600
+		},
 		"Items": ["Exact"],
 		"Mesh": "/Game/Models/DustCrate",
-		"Materials": ["/Game/Materials/Black", "/Game/Materials/Sulfur"],
+		"Materials": ["", "/Game/Materials/Sulfur"],
 		"Tier": 1,
 	},{
 		"Name": "Chromium",
