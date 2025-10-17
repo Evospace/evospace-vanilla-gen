@@ -700,7 +700,7 @@ recipes_hand.append({
 	"Name":"BasicFrame",
 	"Input": items([
 		["SteelPlate", 4],
-		["SteelParts", 4]
+		["SteelParts", 2]
 	]),
 	"Output": one_item("BasicFrame"),
 	"Ticks" : 200,
@@ -711,7 +711,7 @@ recipes_hand.append({
 	"Name":"ReinforcedFrame",
 	"Input": items([
 		["BasicFrame", 3],
-		["AluminiumParts", 6]
+		["AluminiumParts", 3]
 	]),
 	"Output": one_item("ReinforcedFrame"),
 	"Ticks" : 200,
@@ -722,7 +722,7 @@ recipes_hand.append({
 	"Name":"ModularFrame",
 	"Input": items([
 		["ReinforcedFrame", 3],
-		["StainlessSteelParts", 10]
+		["StainlessSteelParts", 5]
 	]),
 	"Output": one_item("ModularFrame"),
 	"Ticks" : 200,
@@ -861,7 +861,7 @@ recipes_assembler.append({
 		["TitaniumPlate", 1],
 		["CarbonFiberSheet", 1],
 		["PolyethyleneSheet", 1],
-		["NeutroniumParts", 1]
+		["NeutroniumPlate", 1]
 	]),
 	"Output": one_item("CompositePlate", 4),
 	"Ticks" : 300,

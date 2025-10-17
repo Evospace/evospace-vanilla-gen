@@ -844,7 +844,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([
 					[plate(), 5],
-					[part(), (2 + parts_ramp(level, 2))*8],
+					[part(), (2 + parts_ramp(level, 2))*4],
 					[pipe(), 5],
 					[circuit(), 3]
 				]),
