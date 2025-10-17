@@ -127,21 +127,15 @@ for material in materials:
 		generate_part("Parts", material)
 		recipes_hand.append({
 			"Name": m_name + "Parts",
-			"Input": one_item(m_name + "Plate"),
+			"Input": one_item(m_name + "Plate", 2),
 			"Output": { "Items": [
 				{
 					"Name": m_name + "Parts",
 					"Count": 1
-				},
-				{
-					"Name": m_name + "Parts",
-					"Count": 1,
-					"Bonus": True
 				}
 			]},
 			"Ticks" : 80,
-			"Tier": material_tier,
-			"Productivity": 50,
+			"Tier": material_tier
 		})
 
 	if "Sheet" in material["Items"]:
