@@ -547,7 +547,7 @@ recipes_hand.append({
 	"Name":"UltimateCatalyst",
 	"Input": items([
 		["Cell"],
-		["NeutroniumParts", 2],
+		["NeutroniumParts", 1],
 		["Coke", 10]
 	]),
 	"Output": one_item("UltimateCatalyst"),

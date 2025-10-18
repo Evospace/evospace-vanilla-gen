@@ -370,19 +370,6 @@ for machine in machines:
 				"Ticks" : 20
 			})	
 			
-		if machine["Name"] == "PneumaticInput":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input": items([
-					[plate(), 3],
-					[part(), 1],
-					["BrassDetails", 1],
-					["BrassReductor", 1]
-				]),
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 20
-			})
-			
 		if machine["Name"] == "Electrolyzer":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
@@ -833,7 +820,7 @@ for machine in machines:
 					[robotarm(), 4],
 					[plate(), 3],
 					frame_pair(2),
-					[circuit(), 3 + level*2]
+					[circuit(), 4]
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
@@ -880,7 +867,7 @@ for machine in machines:
 					[robotarm(), 1],
 					[plate(), 3],
 					frame_pair(1),
-					[circuit(), 1 + level]
+					[circuit(), 2]
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
@@ -893,7 +880,7 @@ for machine in machines:
 					["CopperHeatPipe", 25],
 					[plate(), 100],
 					[part(), 100],
-					[circuit(), 10 + 5 * level],
+					[circuit(), 10 + 3 * level],
 					["BuildingMaterial", 128]
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -923,7 +910,7 @@ for machine in machines:
 					[plate(), 40],
 					["ModularFrame", 20],
 					[wire(), 100],
-					[circuit(), 15 + 5 * level],
+					[circuit(), 25],
 					["BuildingMaterial", 256]
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -973,17 +960,6 @@ for machine in machines:
 				"Input": one_item(plate(), 4),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 10
-			})
-
-		if machine["Name"] == "OverflowPump":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input": items([
-					[circuit(), 3],
-					[tier_material[tier] + "Pump"]
-				]),
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "Pump":
@@ -1046,7 +1022,7 @@ for machine in machines:
 						plates_count(1),
 						{
 							"Name": circuits[tier],
-							"Count": 5
+							"Count": 4
 						}
 					]
 				},
@@ -1095,7 +1071,7 @@ for machine in machines:
 						},
 						{
 							"Name": circuits[tier],
-							"Count": 6,
+							"Count": 3,
 						}
 					]
 				},
@@ -1164,7 +1140,7 @@ for machine in machines:
 				"Input": items([
 					[plate(), 10],
 					[part(), 3*8],
-					[circuit(), 3],
+					[circuit(), 1],
 					["Catalyst"]
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
@@ -1267,7 +1243,7 @@ for machine in machines:
 						},
 						{
 							"Name": circuits[tier],
-							"Count": 5
+							"Count": 2
 						}
 					]
 				},
@@ -1359,7 +1335,7 @@ data = {
 	"Objects": objects_array
 }
 
-write_file("Generated/Mixed/machines.json", data);
+write_file("Generated/Mixed/machines.json", data)
 
 objects_array = []
 
