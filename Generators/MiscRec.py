@@ -472,7 +472,7 @@ recipes_hand.append({
 recipes_assembler.append({
 	"Name":"QuantumCircuit2",
 	"Input": items([
-		["QuantumCore", 6],
+		["QuantumCore", 4],
 		["Processor", 2],
 		["Resistor", 6],
 		["Transistor", 6]
