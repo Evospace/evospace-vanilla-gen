@@ -449,11 +449,24 @@ recipes_hand.append({
 recipes_assembler.append({
 	"Name":"QuantumCore",
 	"Input":items([
-		["YttriumDust", 2],
-		["CompositePlate", 1]
+		["YttriumDust", 1],
+		["CopperParts", 3]
 	]),
-	"Output": one_item("QuantumCore", 2),
+	"Output": {
+		"Items": [
+			{
+				"Name": "QuantumCore",
+				"Count": 1
+			},
+			{
+				"Name": "QuantumCore",
+				"Count": 1,
+				"Bonus": True
+			}
+		]
+	},
 	"Ticks" : 100,
+	"Productivity": 10,
 	"Tier": 5,
 })
 
