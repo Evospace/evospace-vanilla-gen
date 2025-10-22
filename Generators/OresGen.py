@@ -17,7 +17,7 @@ ore_types = [
 			"Furnace": "CopperPlate",
 		},
 		"Formula": "CuFeS2",
-		"Color": [0.8/2.0,.3/2.0,.3/2.0],
+		"Color": [0.6,0.3,.1],
 		"Drops": "ChalcopyriteOre",
 		"Tier": 0,
 	},{
@@ -75,7 +75,7 @@ ore_types = [
 			"Furnace": "BauxiteDust",
 		},
 		"Formula": "Al2O3+TiO2",
-		"Color": [.5/2.0, .5/2.0, 1/2.0],
+		"Color": [.8, .5, 0.05],
 		"Drops": "BauxiteOre",
 		"Tier": 3,
 	},{
@@ -152,7 +152,6 @@ ore_types = [
 			"Furnace": "Coal",
 			"Macerator": "CoalOreDust",
 		},
-		"Color": [.5,.5,.5],
 		"Drops": "CoalOre",
 		"Tier": 0,
 		"Burnable": {

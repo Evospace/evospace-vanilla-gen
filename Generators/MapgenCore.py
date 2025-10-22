@@ -91,9 +91,9 @@ mapgen_objects = [
 		"Hardness": 1
 	},{
 		"Name": "Clay",
-		"Color": "#4d1a0d",
-		"Side": "#4d1a0d",
-		"Item": "#4d1a0d",
+		"Color": "#8d5a2d",
+		"Side": "#8d5a2d",
+		"Item": "#8d5a2d",
 		"Drops": "Sand",
 		"Hardness": 1.0
 	},{
