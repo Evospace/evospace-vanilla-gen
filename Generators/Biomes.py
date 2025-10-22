@@ -217,7 +217,7 @@ generators.extend([
 	{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "SnowLayering",
-		"Blocks": ["SnowSurface" + static_surface, "DirtSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["SnowSurface", "DirtSurface", "StoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
 	},
 	
@@ -225,17 +225,17 @@ generators.extend([
 	{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "BogGrassLayeringGrass",
-		"Blocks": ["BogSurface" + static_surface, "DirtSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface],
+		"Blocks": ["BogSurface", "DirtSurface", "StoneSurface", "StoneSurface", "DarkStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface"],
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
 	},{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "PeatLayering",
-		"Blocks": ["CoalOre" + static_surface, "CoalOre" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["PeatSurface", "PeatSurface", "StoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 2, 4, 9, 12, 16, 19, 23, 30]
 	},{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "ClayLayering",
-		"Blocks": ["ClaySurface" + static_surface, "ClaySurface" + static_surface, "DarkStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["ClaySurface", "ClaySurface", "DarkStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 2, 6, 9, 12, 16, 19, 23, 30]
 	},{
 		"Name":"BogPropsBase",

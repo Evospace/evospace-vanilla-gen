@@ -10,9 +10,9 @@ ore_types = [
 		# https://en.wikipedia.org/wiki/List_of_copper_ores
 		"Name": "Chalcopyrite",
 		"Processing":{
-			"OreWasher": "PyriteDust",
-			"ChemicalBath": ["Mercury", "GoldDust", "ChalcopyriteOreGravel"],
-			"Separator": ["ChalcopyriteDust", "PyriteDust"],
+			"OreWasher": "IronDust",
+			"ChemicalBath": ["SulfuricAcid", "TantalumSludge", "SiliconOxide"],
+			"Separator": ["ChalcopyriteDust", "IronDust"],
 			"Macerator": "ChalcopyriteOreDust",
 			"Furnace": "CopperPlate",
 		},
@@ -33,23 +33,9 @@ ore_types = [
 		},
 		"Formula": "CuCO3",
 		"Crystal": True,
-		"Color": [0.8/2.0,.3/2.0,.3/2.0],
+		"Color": "#598a90",
 		"Drops": "MalachiteOre",
 		"Tier": 0,
-	},{
-		# https://en.wikipedia.org/wiki/Iron_ore
-		"Name": "Pyrite",
-		"Processing":{
-			"OreWasher": "IronDust",
-			"ChemicalBath": ["SulfuricAcid", "TantalumSludge", "SiliconOxide"],
-			"Separator": ["PyriteDust", "Sulfur"],
-			"Macerator": "PyriteOreDust",
-			"Furnace": "IronPlate",
-		},
-		"Formula": "FeS2",
-		"Color": [111 / 255./2.0, 106 / 255./2.0, 81 / 255./2.0],
-		"Drops": "PyriteOre",
-		"Tier": 2,
 	},{
 		# https://en.wikipedia.org/wiki/Iron_ore
 		"Name": "Magnetite",
@@ -75,7 +61,7 @@ ore_types = [
 			"Furnace": "BauxiteDust",
 		},
 		"Formula": "Al2O3+TiO2",
-		"Color": [.8, .5, 0.05],
+		"Color": "#bdad8a",
 		"Drops": "BauxiteOre",
 		"Tier": 3,
 	},{

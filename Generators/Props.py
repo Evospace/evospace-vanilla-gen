@@ -254,7 +254,7 @@ props = [
 		"Name": "Shroom",
 		"ScaleMin": 1,
 		"ScaleMax": 2,
-		"Variations": 6,
+		"Variations": 4,
 		"ProjectToTerrainPower": 0,
 		"Drops": "Organics",
 		"Count": 10,

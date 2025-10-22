@@ -197,8 +197,6 @@ for material in materials:
 			"Label": [material["Name"], "parts"],
 		}
 
-    # removed empty generator for wiki; uploader will collect direct Image refs
-
 		if "Tier" in material:
 			item["Tier"] = material["Tier"]
 

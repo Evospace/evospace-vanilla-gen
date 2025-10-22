@@ -330,24 +330,21 @@ materials = [
 		"Items": ["Gas"],
 		"Unit": "J",
 		"UnitMul": 1,
-		"Color":[1,1,1],
 		"Tier": 2,
 	},{
 		"Name": "Chlorine",
 		"Label": "Chlorine",
 		"Items": ["Gas"],
 		"Tier": 4,
-		"Color": [1,1,0],
 		"Tier": 2,
 	},{
 		"Name": "Peat",
 		"Label": "Peat",
 		"Items": ["Exact"],
 		"Burnable": {
-			"BurnTime": 400
+			"BurnTime": 600
 		},
 		"Tier": 0,
-		"Color":[0.2,0.2,0.0],
 		"Mesh": "/Game/Models/Piece"
 	},{
 		"Name": "Coal",
@@ -358,7 +355,6 @@ materials = [
 		},
 		"Tier": 0,
 		"StackSize": 64,
-		"Color":[0.0,0.0,0.0],
 		"Mesh": "/Game/Models/Piece",
 		"Tier": 0,
 	},{
@@ -369,7 +365,6 @@ materials = [
 		"Burnable": {
 			"BurnTime": 1200
 		},
-		"Color":[0.0,0.0,0.0],
 		"Mesh": "/Game/Models/Piece",
 		"Tier": 1,
 	},{
@@ -380,7 +375,6 @@ materials = [
 			"BurnTime": 800
 		},
 		"Tier": 0,
-		"Color":[0.0,0.0,0.0],
 		"Mesh": "/Game/Models/Piece",
 		"Tier": 1,
 	},{
@@ -390,7 +384,6 @@ materials = [
 		"Burnable": {
 			"BurnTime": 400
 		},
-		"Color": [1,1,1],
 		"Tier": 3,
 	},{
 		"Name": "CarbonMonoxide",
@@ -399,7 +392,6 @@ materials = [
 		"Burnable": {
 			"BurnTime": 200
 		},
-		"Color": [0.5,0.5,0.5]
 	},{
 		"Name": "SulfuricAcid",
 		"Label": "Sulfuric Acid",
@@ -452,7 +444,6 @@ materials = [
 		"Label": "Polyethylene",
 		"Items": ["Sheet"],
 		"Tier": 3,
-		"Color": [.2,.5,.2],
 		"Materials":["", "/Game/Materials/Polyethylene"],
 	},
 	#,{
@@ -541,7 +532,6 @@ materials = [
 		"Burnable": {
 			"BurnTime": 500
 		},
-		"Color":[0.9,0.9,0.9],
 		"Mesh":"/Game/Models/LogCrate",
 	},{
 		"Name": "SiliconOxide",
@@ -596,8 +586,7 @@ materials = [
 		"Name": "Rapeseed",
 		"Label": "Rapeseed",
 		"Items": ["Exact"],
-		"Tier": 0,
-		"Color":[0.1,0.1,0.1]
+		"Tier": 0
 	},{
 		"Name": "RapeseedOil",
 		"Label": "Rapeseed Oil",
@@ -605,8 +594,7 @@ materials = [
 		"Tier": 0,
 		"Burnable": {
 			"BurnTime": 300 * 10
-		},
-		"Color":[0.1,0.1,0.1]
+		}
 	},{
 		"Name": "MineralWater",
 		"Label": "Mineral Water",
@@ -620,7 +608,6 @@ materials = [
 		"Burnable": {
 			"BurnTime": 500 * 15
 		},
-		"Color":[0.01,0.01,0.01],
 		"Tier": 4
 	},{
 		"Name": "Gasoline",
@@ -630,7 +617,6 @@ materials = [
 		"Burnable": {
 			"BurnTime": 800 * 30
 		},
-		"Color":[.5,.5,0.2],
 		"Tier": 4
 	},{
 		"Name": "Diesel",
@@ -640,14 +626,12 @@ materials = [
 		"Burnable": {
 			"BurnTime": 1200 * 30
 		},
-		"Color":[.2,.2,0.2],
 		"Tier": 4,
 	},{
 		"Name": "HighCetaneDiesel",
 		"Label": "High Cetane Diesel",
 		"Items": ["Fluid"],
 		"Tier": 1,
-		"Color":[.1,.1,0.1],
 		"Burnable": {
 			"BurnTime": 2000 * 30
 		},
@@ -657,7 +641,6 @@ materials = [
 		"Label": "Superfuel",
 		"Items": ["Fluid"],
 		"Tier": 1,
-		"Color":[1,1,0.5],
 		"Burnable": {
 			"BurnTime": 2800 * 30
 		},
@@ -667,7 +650,6 @@ materials = [
 		"Label": "Rocket Fuel",
 		"Items": ["Fluid"],
 		"Tier": 1,
-		"Color":[0,1,0],
 		"Burnable": {
 			"BurnTime": 400 * 30
 		},
@@ -680,8 +662,7 @@ materials = [
 		"Tier": 2,
 		"Burnable": {
 			"BurnTime": 800 * 10
-		},
-		"Color":[0.2,.5,0.2]
+		}
 	},
 	{
 		"Name": "Battery",
