@@ -28,7 +28,8 @@ mapgen_objects = [
 		"Color": "#fde489",
 		"Side": "#fde489",
 		"Drops": "Sand",
-		"Hardness": 1
+		"Hardness": 1,
+		"BreakEffect": "/Game/EffectActors/SandBreakEffect.SandBreakEffect_C"
 	},{
 		"Name": "Grass",
 		"Color": "#525c27",
@@ -143,7 +144,7 @@ for object in mapgen_objects:
 		"Name": object["Name"] + "Surface" + tesselator,
 		"Material": "/Game/Materials/Triplanar/" + object["Name"] + "Material"
 	})
-	objects_array.append({
+	staticBlock = {
 		"Class": "StaticBlock",
 		"Name": object["Name"] + "Surface" + static_surface,
 		"Tesselator": object["Name"] + "Surface" + tesselator,
@@ -152,7 +153,10 @@ for object in mapgen_objects:
 		"ColorTop": object["Color"],
 		"Minable": {"Minable": False} if "Unbreakable" in object else {"Result": object["Drops"] + "Surface"},
 		"Surface": True
-	})
+	}
+	if "BreakEffect" in object:
+		staticBlock["BreakEffect"] = object["BreakEffect"]
+	objects_array.append(staticBlock)
 	
 data = {
 	"Objects": objects_array
