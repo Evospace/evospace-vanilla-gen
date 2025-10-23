@@ -17,7 +17,7 @@ ore_types = [
 			"Furnace": "CopperPlate",
 		},
 		"Formula": "CuFeS2",
-		"Color": [0.6,0.3,.1],
+		"Color": "#994c19",
 		"Drops": "ChalcopyriteOre",
 		"Tier": 0,
 	},{
@@ -47,7 +47,7 @@ ore_types = [
 			"Furnace": "IronPlate",
 		},
 		"Formula": "Fe3O4+Au",
-		"Color": [111 / 255./2.0, 106 / 255./2.0, 81 / 255./2.0],
+		"Color": "#323228",
 		"Drops": "MagnetiteOre",
 		"Tier": 2,
 	},{
@@ -77,7 +77,7 @@ ore_types = [
 		"Formula": "CrAl203",
 		"Crystal": True,
 		"CrystalIcoGen": True,
-		"Color": [.5/2.0, .5/2.0, 1/2.0],
+		"Color": "#323228",
 		"Drops": "RubyOre",
 		"Tier": 3,
 	},{
@@ -89,6 +89,7 @@ ore_types = [
 		"Drops": "CinnabarOre",
 		"Tier": 1,
 		"Formula": "HgS",
+		"Color": "#423228",
 		"Processing":{
 			"OreWasher": "Sulfur",
 			"ChemicalBath": ["NitricAcid", "RareEarthSludge", "SiliconOxide"],
@@ -108,7 +109,7 @@ ore_types = [
 		},
 		"Crystal": True,
 		"CrystalIcoGen": True,
-		"Color": [0.3/2.0, 0.7/2.0, 0.3/2.0],
+		"Color": "#324228",
 		"Drops": "ThorianiteOre",
 		"Formula": "ThO2+UO2",
 		"Tier": 4,
@@ -121,7 +122,7 @@ ore_types = [
 			"Furnace": "PyroplatiteDust",
 			"Macerator": "PyroplatiteOreDust",
 		},
-		"Color": [0.3/2.0, 0.7/2.0, 0.3/2.0],
+		"Color": "#324258",
 		"Drops": "PyroplatiteOre",
 		"Formula": "AuS2+PtS2+RhS2",
 		"Tier": 4,
