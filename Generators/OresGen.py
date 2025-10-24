@@ -10,9 +10,9 @@ ore_types = [
 		# https://en.wikipedia.org/wiki/List_of_copper_ores
 		"Name": "Chalcopyrite",
 		"Processing":{
-			"OreWasher": "IronDust",
-			"ChemicalBath": ["SulfuricAcid", "TantalumSludge", "SiliconOxide"],
-			"Separator": ["ChalcopyriteDust", "IronDust"],
+			"OreWasher": "PyriteDust",
+			"ChemicalBath": ["Mercury", "GoldDust", "ChalcopyriteOreGravel"],
+			"Separator": ["ChalcopyriteDust", "PyriteDust"],
 			"Macerator": "ChalcopyriteOreDust",
 			"Furnace": "CopperPlate",
 		},
@@ -20,6 +20,20 @@ ore_types = [
 		"Color": "#994c19",
 		"Drops": "ChalcopyriteOre",
 		"Tier": 0,
+	},{
+		# https://en.wikipedia.org/wiki/Iron_ore
+		"Name": "Pyrite",
+		"Processing":{
+			"OreWasher": "IronDust",
+			"ChemicalBath": ["SulfuricAcid", "TantalumSludge", "SiliconOxide"],
+			"Separator": ["PyriteDust", "Sulfur"],
+			"Macerator": "PyriteOreDust",
+			"Furnace": "IronPlate",
+		},
+		"Formula": "FeS2",
+		"Color": [111 / 255./2.0, 106 / 255./2.0, 81 / 255./2.0],
+		"Drops": "PyriteOre",
+		"Tier": 2,
 	},{
 		# https://en.wikipedia.org/wiki/List_of_copper_ores
 		"Name": "Malachite",

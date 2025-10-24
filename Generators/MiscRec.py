@@ -1797,7 +1797,7 @@ recipes_indu.append({
 	"Name":"TantalumSludge",
 	"Input": items([
 			["TantalumSludge", 2],
-			["AluminiumDust"],
+			["AluminiumDust", 6],
 			["Mercury", 1000]
 		]),
 	"Output": items([
@@ -1863,7 +1863,23 @@ recipes_mixer.append({
 	"Output": one_item("Biomass", 500),
 	"Ticks": 200,
 })
-
+recipes_electrolyzer.append({
+	"Name": "ElectrolyzerPyriteDust",
+	"Input": one_item("PyriteDust", 2),
+	"Output":{
+		"Items": [
+			{
+				"Name": "IronDust",
+				"Count": 1
+			},{
+				"Name": "Sulfur",
+				"Count": 1
+			}
+		]
+	},
+	"Ticks": 200,
+	"Tier":2,
+})	
 recipes_electrolyzer.append({
 	"Name": "ElectrolyzerChalcopyriteDust",
 	"Input": one_item("ChalcopyriteDust", 2),
