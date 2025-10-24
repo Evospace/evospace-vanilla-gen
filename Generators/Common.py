@@ -121,7 +121,7 @@ tiers_name_helper = [
 	"12"
 ]
 
-tbcm = 0.8
+tbcm = 0.9
 
 tiers_base_cost = [
  	20, # stone
