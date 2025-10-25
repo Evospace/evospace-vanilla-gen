@@ -235,30 +235,6 @@ for machine in machines:
 			}]
 		})
 
-		if machine["Name"] == "Beam":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(3),
-					]
-				},
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 20,
-			})
-			
-		if machine["Name"] == "Corner":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(1)
-					]
-				},
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 20
-			})
-
 		if machine["Name"] == "Sign":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
@@ -321,12 +297,12 @@ for machine in machines:
 				"Ticks" : 20
 			})
 
-		if machine["Name"] == "Scaffold":
+		if machine["Name"] == "Scaffold" or machine["Name"] == "Corner" or machine["Name"] == "Beam":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
 					"Items":[
-						parts_count(4),
+						parts_count(1),
 					]
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
