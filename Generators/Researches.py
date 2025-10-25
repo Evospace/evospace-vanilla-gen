@@ -963,7 +963,6 @@ append_levels({
 	["Hand" + r_dict, "%Material%Beam"]],
 	"Levels": [1,7],
 	"Chapter":"Decorations"+static_chapter,
-	
 })
 append_levels({
 	"Class": research_recipe,
@@ -972,7 +971,6 @@ append_levels({
 	"RequiredResearch": ["MetalConstructions"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Scaffold"] ],
 	"Levels": [1,7],
-	
 })
 append_levels({
 	"Class": research_recipe,
