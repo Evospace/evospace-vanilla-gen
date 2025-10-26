@@ -9,6 +9,7 @@ cover_meshes = [
     # {"Mesh": "/Game/Covers/PipeSide", "Name": "PipeSide", "Materials": ["/Game/Materials/Steel"]},
 
     {"Mesh": "/Game/Covers/WireCover", "Name": "WireCover", "Materials": []},    
+    {"Mesh": "/Game/Covers/GlassPipeCover", "Name": "GlassPipeCover", "Materials": []},    
 ]
 
 def derive_name(path: str) -> str:

@@ -1466,7 +1466,7 @@ append_levels({
 	"Name": "DecorativeWood",
 	"RequiredResearch": ["Bricks"],
 	"Label": ["DecorativeWood", "researches"],
-	"Unlocks": [["Hand" + r_dict, "WoodenPlanks"],["Hand" + r_dict, "WoodenStairs"],["Hand" + r_dict, "Door"]],
+	"Unlocks": [["Hand" + r_dict, "WoodenPlanks"],["Hand" + r_dict, "Door"]],
 	"Levels": [1,1],
 })
 append_levels({
