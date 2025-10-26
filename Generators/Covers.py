@@ -96,6 +96,9 @@ covers = [
 		"Name": "FluidInput2",
 		"Mesh": "/Game/Covers/FluidIn2",
         "NoCollision": True
+	},{
+		"Name": "Stairs",
+		"Mesh": "/Game/Covers/Stairs"
 	}
 ]
 

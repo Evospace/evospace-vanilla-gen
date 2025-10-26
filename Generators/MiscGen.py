@@ -29,8 +29,6 @@ simple_single = [
 	{
 		"Name": "CeramicRoof",
 	},{
-		"Name": "Stairs",
-	},{
 		"Name": "ConcreteRamp",
 	},{
 		"Name": "ConcreteRamp2",
@@ -40,8 +38,6 @@ simple_single = [
 		"Name": "ConcreteBeam",
 	},{
 		"Name": "ConcreteBeam2",
-	},{
-		"Name": "WoodenStairs",
 	},{
 		"Name": "CopperChair",		
 	},{
