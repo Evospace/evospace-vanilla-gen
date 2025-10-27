@@ -114,6 +114,14 @@ tools = [
 		"Name": "ConstructionBlueprint",
 		"Label": "Construction Blueprint",
         "ItemLogic": "/Game/Equipped/BlueprintToolBP.BlueprintToolBP_C",
+	},{
+		"Name": "DesignTool",
+		"Label": "Design Tool",
+        "ItemLogic": "/Game/Equipped/DesignToolBP.DesignToolBP_C",
+	},{
+		"Name": "CrowbarTool",
+		"Label": "Crowbar Tool",
+        "ItemLogic": "/Game/Equipped/CrowbarToolBP.CrowbarToolBP_C",
 	}
 	#{
 	#	"Name": "BuildTool",
