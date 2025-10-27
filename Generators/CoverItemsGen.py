@@ -33,7 +33,8 @@ for entry in cover_meshes:
     cover_proto = {
         "Class": static_cover,
         "Name": name,
-        "Mesh": mesh
+        "Mesh": mesh,
+        "NumCustomData": 3
     }
     if materials:
         cover_proto["Materials"] = materials
