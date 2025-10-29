@@ -6,18 +6,36 @@ from Common import *
 designables = [
 	{
 		"Name": "Stairs",
-		"Category": "Terrain",
+		"Category": "Decoration",
 		"Label": ["Stairs", "blocks"],
 		"Selector": "Blocks/StairsBP.StairsBP_C",
 		"Covers": [
 			"Stairs",
-			"WireCover",
-			"WireCover"
+			"Stairs",
+			"Stairs"
+		]
+	},{
+		"Name": "Corner",
+		"Category": "Decoration",
+		"Label": ["Corner", "blocks"],
+		"Selector": "Blocks/CornerBP.CornerBP_C",
+		"Covers": [
+			"Corner",
+			"PaintedCorner"
+		]
+	},{
+		"Name": "Beam",
+		"Category": "Decoration",
+		"Label": ["Beam", "blocks"],
+		"Selector": "Blocks/BeamBP.BeamBP_C",
+		"Covers": [
+			"Beam",
+			"PaintedBeam"
 		]
 	},
 	{
 		"Name": "Ladder",
-		"Category": "Terrain",
+		"Category": "Decoration",
 		"Label": ["Ladder", "blocks"],
 		"Selector": "Blocks/StairsBP.StairsBP_C",
 		"Covers": [
@@ -26,7 +44,7 @@ designables = [
 	},
 	{
 		"Name": "Chair",
-		"Category": "Terrain",
+		"Category": "Decoration",
 		"Label": ["Chair", "blocks"],
 		"Selector": "Blocks/StairsBP.StairsBP_C",
 		"Covers": [
@@ -35,7 +53,7 @@ designables = [
 	},
 	{
 		"Name": "Table",
-		"Category": "Terrain",
+		"Category": "Decoration",
 		"Label": ["Table", "blocks"],
 		"Selector": "Blocks/StairsBP.StairsBP_C",
 		"Covers": [
@@ -49,7 +67,7 @@ objects_array = []
 for d in designables:
 	name = d["Name"]
 	covers = d.get("Covers", ["Cover"])  # fallback to basic cover
-	category = d.get("Category", "Terrain")
+	category = d.get("Category", "Decoration")
 	label = d.get("Label", [name, "misc"])
 
 	# StaticCoverSet defining the available designs

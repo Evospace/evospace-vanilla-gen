@@ -956,19 +956,9 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
-	"Name": "MetalConstructions",
-	"Label": ["MetalConstructions", "researches"],
-	"RequiredResearch": ["Bricks"],
-	"Unlocks": [["Hand" + r_dict, "%Material%Corner"],
-	["Hand" + r_dict, "%Material%Beam"]],
-	"Levels": [1,7],
-	"Chapter":"Decorations"+static_chapter,
-})
-append_levels({
-	"Class": research_recipe,
 	"Name": "Scaffold",
 	"Label": ["Scaffold", "researches"],
-	"RequiredResearch": ["MetalConstructions"],
+	"RequiredResearch": ["Bricks"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Scaffold"] ],
 	"Levels": [1,7],
 })
