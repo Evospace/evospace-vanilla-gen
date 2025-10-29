@@ -297,18 +297,6 @@ for machine in machines:
 				"Ticks" : 20
 			})
 
-		if machine["Name"] == "Scaffold" or machine["Name"] == "Corner" or machine["Name"] == "Beam" or machine["Name"] == "Wire":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						parts_count(1),
-					]
-				},
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 20
-			})
-
 		if machine["Name"] == "Container":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],

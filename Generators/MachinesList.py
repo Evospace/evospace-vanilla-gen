@@ -53,13 +53,6 @@ machines = [
 		"EndTier": 1,
 		"BlockLogic": "BedBlockLogic",
 	},{
-		"Name": "Corner",
-		"Label": "Corner",
-		"StartTier": 1,
-		"EndTier": 7,
-		"BlockLogic": "SimpleInstancedBlockLogic",
-		"Description": ["BuildingBlock"]
-	},{
 		"Name": "AutomaticHammer",
 		"Label": "Automatic Hammer",
 		"Positions": [[0,0,0],[0,0,1]],
