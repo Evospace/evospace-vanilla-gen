@@ -32,6 +32,15 @@ designables = [
 			"Beam",
 			"PaintedBeam"
 		]
+	},{
+		"Name": "Scaffold",
+		"Category": "Decoration",
+		"Label": ["Scaffold", "blocks"],
+		"Selector": "Blocks/ScaffoldBP.ScaffoldBP_C",
+		"Covers": [
+			"Scaffold",
+			"PaintedScaffold"
+		]
 	},
 	{
 		"Name": "Ladder",

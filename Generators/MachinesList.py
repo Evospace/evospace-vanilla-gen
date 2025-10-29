@@ -118,13 +118,6 @@ machines = [
 		"PathFinding": True,
         "Category": "Network",
 	},{
-		"Name": "Scaffold",
-		"Label": "Scaffold",
-		"StartTier": 1,
-		"EndTier": 7,
-		"BlockLogic": "SimpleInstancedBlockLogic",
-		"Description": ["BuildingBlock"],
-	},{
 		"Name": "Sign",
 		"Label": "Sign",
 		"StartTier": 0,

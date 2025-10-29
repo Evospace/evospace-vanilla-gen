@@ -101,19 +101,27 @@ covers = [
 		"Mesh": "/Game/Covers/Stairs"
 	},{
         "Name": "Corner",
-        "Mesh": "/Game/CoreContent/Corner",
+        "Mesh": "/Game/Covers/Corner",
         "Materials": ["/Game/Materials/Steel"]
     },{
         "Name": "PaintedCorner",
-        "Mesh": "/Game/CoreContent/Corner",
+        "Mesh": "/Game/Covers/Corner",
         "Materials": ["/Game/Materials/Paint"]
     },{
         "Name": "Beam",
-        "Mesh": "/Game/CoreContent/Beam",
+        "Mesh": "/Game/Covers/Beam",
         "Materials": ["/Game/Materials/Steel"]
     },{
         "Name": "PaintedBeam",
-        "Mesh": "/Game/CoreContent/Beam",
+        "Mesh": "/Game/Covers/Beam",
+        "Materials": ["/Game/Materials/Paint"]
+    },{
+        "Name": "Scaffold",
+        "Mesh": "/Game/Covers/Scaffold",
+        "Materials": ["/Game/Materials/Steel"]
+    },{
+        "Name": "PaintedScaffold",
+        "Mesh": "/Game/Covers/Scaffold",
         "Materials": ["/Game/Materials/Paint"]
     }
 ]
@@ -138,11 +146,6 @@ for mat, num in zip(paint_tiers, range(0,7+1)):
         "Mesh": "/Game/Covers/PipeSide",
         "Materials": ["/Game/Materials/"+mat],
         "Item": mat+"Pipe"
-    })
-    covers.append({
-        "Name": mat+"Scaffold",
-        "Mesh": "/Game/Models/Scafold",
-        "Materials": ["/Game/Materials/"+mat]
     })
 
 for mat, num in zip(paint_metals, range(1,7+1)):
