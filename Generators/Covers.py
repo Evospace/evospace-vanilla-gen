@@ -98,31 +98,48 @@ covers = [
         "NoCollision": True
 	},{
 		"Name": "Stairs",
-		"Mesh": "/Game/Covers/Stairs"
+		"Mesh": "/Game/Covers/Stairs",
+        "NumCustomData": 3,
 	},{
         "Name": "Corner",
         "Mesh": "/Game/Covers/Corner",
-        "Materials": ["/Game/Materials/Steel"]
+        "Materials": ["/Game/Materials/Steel"],
+        "NumCustomData": 3,
     },{
         "Name": "PaintedCorner",
         "Mesh": "/Game/Covers/Corner",
-        "Materials": ["/Game/Materials/Paint"]
+        "Materials": ["/Game/Materials/Paint"],
+        "NumCustomData": 3,
     },{
         "Name": "Beam",
         "Mesh": "/Game/Covers/Beam",
-        "Materials": ["/Game/Materials/Steel"]
+        "Materials": ["/Game/Materials/Steel"],
+        "NumCustomData": 3,
     },{
         "Name": "PaintedBeam",
         "Mesh": "/Game/Covers/Beam",
-        "Materials": ["/Game/Materials/Paint"]
+        "Materials": ["/Game/Materials/Paint"],
+        "NumCustomData": 3,
     },{
         "Name": "Scaffold",
         "Mesh": "/Game/Covers/Scaffold",
-        "Materials": ["/Game/Materials/Steel"]
+        "Materials": ["/Game/Materials/Steel"],
+        "NumCustomData": 3,
     },{
         "Name": "PaintedScaffold",
         "Mesh": "/Game/Covers/Scaffold",
-        "Materials": ["/Game/Materials/Paint"]
+        "Materials": ["/Game/Materials/Paint"],
+        "NumCustomData": 3,
+    },{
+        "Name": "Chair",
+        "Mesh": "/Game/Covers/Chair",
+        "Materials": [""],
+        "NumCustomData": 3,
+    },{
+        "Name": "Table",
+        "Mesh": "/Game/Covers/Table",
+        "Materials": [""],
+        "NumCustomData": 3,
     }
 ]
 
@@ -185,8 +202,12 @@ for cover in covers:
         "Name": cover["Name"],
         "Mesh": cover["Mesh"]
     }
+    
     if "Materials" in cover:
          staticCover["Materials"] = cover["Materials"]
+
+    if "NumCustomData" in cover:
+         staticCover["NumCustomData"] = cover["NumCustomData"]
 
     if "NoCollision" in cover:
         staticCover["NoCollision"] = cover["NoCollision"]

@@ -40,13 +40,6 @@ machines = [
 		"Description": ["KineticInput", "PowerInput"],
         "PowerInput": 80,
 	},{
-		"Name": "Beam",
-		"Label": "Beam",
-		"StartTier": 1,
-		"EndTier": 7,
-		"BlockLogic": "BlockLogic",
-		"Description": ["BuildingBlock"],
-	},{
 		"Name": "Spawner",
 		"Label": "Spawner",
 		"StartTier": 1,
@@ -901,6 +894,7 @@ machines = [
 		"Name": "FusionReactor",
 		"Label": "Fusion Reactor",
         "Description": ["PowerInput"],
+        "BlockLogic":"SelectCrafter",
 		"StartTier": 6,
 		"EndTier": 7,
 		"Positions": [

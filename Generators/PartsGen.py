@@ -205,9 +205,11 @@ for material in materials:
 				
 		if "Category" in material:
 			item["Category"] = material["Category"]
+
+		item["DescriptionParts"]= []
 			
 		if "Description" in material:
-			item["DescriptionParts"] = material["Description"]
+			item["DescriptionParts"].extend(material["Description"])
 			
 		if "Unit" in material:
 			item["Unit"] = material["Unit"]
@@ -221,12 +223,15 @@ for material in materials:
 				"/Game/Materials/" + material["Name"]
 			]
 
+		if "Category" in material and material["Category"] == "Parts":
+			item["DescriptionParts"].extend([["Part","common"]])
+
 		if "Circuit" in material:
-			item["DescriptionParts"] = [["circuit", "common"], ["computation", "common", pow(10, material_tier - 1)*30*20]]
+			item["DescriptionParts"].extend([["circuit", "common"], ["computation", "common", pow(10, material_tier - 1)*30*20]])
 
 		if "MaxCharge" in material:
 			item["MaxCharge"] = material["MaxCharge"]
-			item["DescriptionParts"] = [["battery", "common", material["MaxCharge"]]]
+			item["DescriptionParts"].extend([["battery", "common", material["MaxCharge"]]])
 			
 		if "Materials" in material:
 			item["Materials"] = material["Materials"]
@@ -249,7 +254,7 @@ for material in materials:
 				},
 				"Ticks" : fuel_burn_time(material, furnace_output()),
 			})
-			item["DescriptionParts"] = [["burnable", "common", fuel_value(material)]]
+			item["DescriptionParts"].extend([["burnable", "common", fuel_value(material)]])
 			item["Tags"] = fuel_tags()
 			
 		objects_array.append(item)

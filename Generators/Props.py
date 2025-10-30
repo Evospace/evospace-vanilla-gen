@@ -57,7 +57,8 @@ props = [
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 15,
-		"HighDetailShadow": True
+		"HighDetailShadow": True,
+		"Image": "T_TerrainGrass",
 	},
 	{
 		"Name": "YellowGrass",
@@ -71,7 +72,8 @@ props = [
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 15,
-		"HighDetailShadow": True
+		"HighDetailShadow": True,
+		"Image": "T_TerrainGrass",
 	},
 	{
 		"Name": "SeaPlant",
@@ -101,7 +103,8 @@ props = [
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
 		"MaximumHeight": -1,
-		"HighDetailShadow": True
+		"HighDetailShadow": True,
+		"Image": "T_TerrainGrass",
 	},
 	{
 		"Name": "TallGrass",
@@ -115,7 +118,8 @@ props = [
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
-		"HighDetailShadow": True
+		"HighDetailShadow": True,
+		"Image": "T_TerrainGrass",
 	},
 	{
 		"Name": "Broadleaf",
@@ -156,7 +160,8 @@ props = [
 		"HitsToBreak": 8,
 		"HighDetailShadow": True,
 		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
-		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C"
+		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C",
+		"Image": "T_TerrainRock",
 	},
 	{
 		"Name": "Pine",
@@ -329,7 +334,8 @@ props = [
 		"AdditiveElevation": 0,
 		"IsBig": False,
 		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
-		"BreakEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C"
+		"BreakEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+		"Image": "T_TerrainRock",
 	},{
 		"Name": "DryGrass",
 		"ScaleMin": 1,
@@ -342,7 +348,8 @@ props = [
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
 		"IsBig": False,
-		"HighDetailShadow": True
+		"HighDetailShadow": True,
+		"Image": "T_TerrainGrass",
 	},{
 		"Name": "VolcanicRock",
 		"ScaleMin": .5,
@@ -355,7 +362,8 @@ props = [
 		"Count": 20,
 		"HitsToBreak": 15,
 		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
-		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C"
+		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C",
+		"Image": "T_TerrainRock",
 	},{
 		"Name": "SnowyRock",
 		"ScaleMin": .5,
@@ -370,7 +378,8 @@ props = [
 		"Count": 20,
 		"HitsToBreak": 8,
 		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
-		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C"
+		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C",
+		"Image": "T_TerrainRock",
 	},{
 		"Name": "SnowyGrass",
 		"ScaleMin": 2,
@@ -383,7 +392,8 @@ props = [
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
 		"IsBig": False,
-		"HighDetailShadow": True
+		"HighDetailShadow": True,
+		"Image": "T_TerrainGrass",
 	},{
 		"Name": "SteamStream",
 		"ScaleMin": 2,
@@ -429,7 +439,8 @@ for ore in ore_types:
 		"Image": "T_Error",
 		"HitsToBreak": -1,
 		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
-		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C"
+		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C",
+		"Image": "T_TerrainCluster",
 	})
 
 def named_prop(name):

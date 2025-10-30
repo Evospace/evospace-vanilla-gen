@@ -91,16 +91,19 @@ materials = [
 		"Name": "BasicCoil",
 		"Label": "Basic Coil",
 		"Items": ["Exact"],
+		"Category": "Parts",
 		"Tier": 2,
 	},{
 		"Name": "AdvancedCoil",
 		"Label": "Advanced Coil",
 		"Items": ["Exact"],
+		"Category": "Parts",
 		"Tier": 3,
 	},{
 		"Name": "PowerCoil",
 		"Label": "Power Coil",
 		"Items": ["Exact"],
+		"Category": "Parts",
 		"Tier": 4,
 	},{
 		"Name": "BasicFrame",
@@ -108,21 +111,24 @@ materials = [
 		"Items": ["Exact"],
 		"Tier": 2,
 		"Mesh": "/Game/Models/FrameCrate",
-		"Materials": ["", ""]
+		"Materials": ["", ""],
+		"Category": "Parts",
 	},{
 		"Name": "ReinforcedFrame",
 		"Label": "Reinforced Frame",
 		"Items": ["Exact"],
 		"Tier": 3,
 		"Mesh": "/Game/Models/FrameCrate",
-		"Materials": ["", "/Game/Materials/BlackSteel"]
+		"Materials": ["", "/Game/Materials/BlackSteel"],
+		"Category": "Parts",
 	},{
 		"Name": "ModularFrame",
 		"Label": "Modular Frame",
 		"Items": ["Exact"],
 		"Tier": 4,
 		"Mesh": "/Game/Models/FrameCrate",
-		"Materials": ["", "/Game/Materials/StainlessSteel"]
+		"Materials": ["", "/Game/Materials/StainlessSteel"],
+		"Category": "Parts",
 	},{
 		"Name": "Copper",
 		"Label": "Copper",
@@ -169,12 +175,14 @@ materials = [
 		"Mesh":"/Game/Models/BoardCrate",
 		"Materials":["/Game/Materials/Plastic"],
 		"Tier": 1,
+		"Category": "Parts",
 	},{
 		"Name": "Triod",
 		"Label": "Triod",
 		"Items": ["Exact"],
 		"Mesh":"/Game/Models/TriodeCrate",
 		"Tier": 1,
+		"Category": "Parts",
 	},{
 		"Name": "Resistor",
 		"Label": "Resistor",
@@ -182,12 +190,14 @@ materials = [
 		"Mesh":"/Game/Models/ResistorCrate",
 		"Materials":[],
 		"Tier": 1,
+		"Category": "Parts",
 	},{
 		"Name": "Transistor",
 		"Label": "Transistor",
 		"Items": ["Exact"],
 		"Mesh":"/Game/Models/TransistorCrate",
 		"Tier": 1,
+		"Category": "Parts",
 	},{
 		"Name": "Steel",
 		"Label": "Steel",
@@ -274,24 +284,24 @@ materials = [
 		"Name": "Chromium",
 		"Label": "Chromium",
 		"Smelting": ["ArcFurnace"],
-		"Items": ["Dust", "Plate"],
+		"Items": ["Dust"],
 		"Tier": 3
 	},{
 		"Name": "Plutonium",
 		"Label": "Plutonium",
-		"Items": ["Dust", "Block", "Plate"],
+		"Items": ["Dust", "Block"],
 	},{
 		"Name": "Uranium",
 		"Label": "Uranium-238",
-		"Items": ["Dust", "Plate"],
+		"Items": ["Dust"],
 	},{
 		"Name": "Uranium235",
 		"Label": "Uranium-235",
-		"Items": ["Dust", "Plate"],
+		"Items": ["Dust"],
 	},{
 		"Name": "Uranium233",
 		"Label": "Uranium-233",
-		"Items": ["Dust", "Plate"],
+		"Items": ["Dust"],
 	},{
 		"Name": "Uranium233Cell",
 		"Label": "Uranium 233 Cell",
@@ -323,7 +333,7 @@ materials = [
 	},{
 		"Name": "Thorium",
 		"Label": "Thorium",
-		"Items": ["Dust", "Plate", "Block"],
+		"Items": ["Dust", "Block"],
 	},{
 		"Name": "Steam",
 		"Label": "Steam",
@@ -582,6 +592,7 @@ materials = [
 		"Items": ["Exact"],
 		"Tier": 3,
 		"Mesh":"/Game/Models/CapacitorCrate",
+		"Category": "Parts",
 	},{
 		"Name": "Rapeseed",
 		"Label": "Rapeseed",
@@ -892,10 +903,12 @@ materials = [
 		"Name": "CarbonPrecursor",
 		"Label": "Carbon Precursor",
 		"Items": ["Fluid"],
+		"Tier": 5,
 	},{
 		"Name": "CarbonFiber",
 		"Label": "Carbon Fiber",
 		"StackSize": 32,
+		"Tier": 5,
 		"Items": ["Exact", "Sheet"],
 		"Materials":["", "/Game/Materials/CarbonFiber"],
 	},{
