@@ -4,6 +4,7 @@ import copy
 from NuclearResearches import *
 from EquipmentResearches import *
 from PartsResearchHelper import *
+import re
 
 researches = []
 
@@ -25,6 +26,151 @@ tier_researches = [
 
 csv = []
 
+# Mapping system for item patterns to research dependencies
+# Maps item name patterns to tier research names
+item_to_research_mapping = {
+	# Metal parts by tier
+	"CopperParts": "Metalwork",
+	"SteelParts": "SteelProduction",
+	"AluminiumParts": "AluminiumProduction",
+	"StainlessSteelParts": "StainlessSteelProduction",
+	"TitaniumParts": "TitaniumProduction",
+	"CompositeParts": "CompositePlate",
+	"NeutroniumParts": "NeutroniumProduction",
+	
+	# Frames by tier
+	"BasicFrame": "BasicFrame",
+	"ReinforcedFrame": "ReinforcedFrame",
+	"ModularFrame": "ModularFrame",
+	
+	# Coils by tier
+	"BasicCoil": "BasicCoil",
+	"AdvancedCoil": "AdvancedCoil",
+	"PowerCoil": "PowerCoil",
+}
+
+# Helper function to extract tier from item name based on tier_material
+def get_item_tier(item_name):
+	"""Extract tier from item name based on tier_material prefixes"""
+	for i in range(len(tier_material)):
+		if item_name.startswith(tier_material[i]):
+			return i
+	return None
+
+# Helper function to check if item matches a pattern and get required research
+def get_research_for_item(item_name):
+	"""Get required research for an item based on mapping or tier detection"""
+	# Check direct mapping first
+	if item_name in item_to_research_mapping:
+		return item_to_research_mapping[item_name]
+	
+	# Check for metal parts pattern (e.g., "SteelParts", "AluminiumParts")
+	for i in range(len(tier_material)):
+		if item_name == tier_material[i] + "Parts":
+			if i < len(tier_researches):
+				return tier_researches[i]
+	
+	# Check for frames pattern (specific frame names)
+	frame_mapping = {
+		"BasicFrame": "SteelProduction",
+		"ReinforcedFrame": "AluminiumProduction",
+		"ModularFrame": "StainlessSteelProduction",
+	}
+	if item_name in frame_mapping:
+		return frame_mapping[item_name]
+	
+	# Check for coils pattern (specific coil names)
+	coil_mapping = {
+		"BasicCoil": "SteelProduction",
+		"AdvancedCoil": "AluminiumProduction",
+		"PowerCoil": "StainlessSteelProduction",
+	}
+	if item_name in coil_mapping:
+		return coil_mapping[item_name]
+	
+	# Check for frames/coils with tier material prefix (if any)
+	if item_name.endswith("Frame"):
+		tier = get_item_tier(item_name)
+		if tier is not None and tier < len(tier_researches):
+			return tier_researches[tier]
+	
+	if item_name.endswith("Coil"):
+		tier = get_item_tier(item_name)
+		if tier is not None and tier < len(tier_researches):
+			return tier_researches[tier]
+	
+	return None
+
+# Helper function to extract items from recipe Input/Output
+def extract_items_from_recipe(recipe):
+	"""Extract all item names from recipe Input and Output"""
+	items = []
+	
+	if isinstance(recipe, dict):
+		# Check Input
+		if "Input" in recipe and isinstance(recipe["Input"], dict):
+			if "Items" in recipe["Input"]:
+				for item in recipe["Input"]["Items"]:
+					if isinstance(item, dict) and "Name" in item:
+						items.append(item["Name"])
+		
+		# Check Output
+		if "Output" in recipe and isinstance(recipe["Output"], dict):
+			if "Items" in recipe["Output"]:
+				for item in recipe["Output"]["Items"]:
+					if isinstance(item, dict) and "Name" in item:
+						items.append(item["Name"])
+	
+	return items
+
+# Helper function to find required researches from recipe items
+def find_required_researches_from_items(items):
+	"""Find required researches based on items in recipe"""
+	required_researches = set()
+	
+	for item_name in items:
+		research = get_research_for_item(item_name)
+		if research:
+			required_researches.add(research)
+	
+	return list(required_researches)
+
+# Global registry for machine recipes (loaded from MachinesGen.py)
+# Try to import machine recipes data from MachinesGen
+try:
+	from MachinesGen import machine_recipes_data
+	machine_recipes_registry = machine_recipes_data
+except ImportError:
+	# If MachinesGen hasn't been imported yet, use empty dict
+	machine_recipes_registry = {}
+
+def register_machine_recipe(recipe_name, recipe_dict):
+	"""Register a machine recipe for later lookup (backward compatibility)"""
+	machine_recipes_registry[recipe_name] = recipe_dict
+
+def get_recipes_for_research(research, tier=None):
+	"""Get all recipes that are unlocked by this research"""
+	recipes = []
+	
+	if "Unlocks" in research:
+		for unlock in research["Unlocks"]:
+			if isinstance(unlock, list) and len(unlock) >= 2:
+				recipe_dict_name = unlock[0]
+				recipe_name = unlock[1]
+				
+				# Replace %Material% placeholder if tier is provided
+				if tier is not None:
+					recipe_name = recipe_name.replace("%Material%", tier_material[tier])
+				
+				# Try to find recipe in registry
+				recipe_key = recipe_dict_name + ":" + recipe_name
+				if recipe_key in machine_recipes_registry:
+					recipes.append(machine_recipes_registry[recipe_key])
+				elif recipe_name in machine_recipes_registry:
+					recipes.append(machine_recipes_registry[recipe_name])
+	
+	return recipes
+
 def append_levels(research_base):
 	mini, maxi = 0, 1
 	if "Levels" in research_base:
@@ -44,7 +190,40 @@ def append_levels(research_base):
 				"Name": research["Name"] + str(this_level),
 				"RequiredResearch": [research_base["Name"] + str(this_level - 1)] if i != mini + 1 else [research_base["Name"]],
 			})
-			research["RequiredResearch"].append(tier_researches[i])
+			
+			# Check for items in recipe Input/Output to determine dependencies
+			recipe_items = []
+			
+			# Extract items from research recipe Input/Output if present
+			if "Input" in research:
+				recipe_items.extend(extract_items_from_recipe({"Input": research["Input"]}))
+			if "Output" in research:
+				recipe_items.extend(extract_items_from_recipe({"Output": research["Output"]}))
+			
+			# Get machine recipes unlocked by this research
+			machine_recipes = get_recipes_for_research(research, tier=i)
+			for recipe in machine_recipes:
+				recipe_items.extend(extract_items_from_recipe(recipe))
+			
+			# Extract items from Unlocks field (check recipe names or item names)
+			if "Unlocks" in research:
+				for unlock in research["Unlocks"]:
+					if isinstance(unlock, list) and len(unlock) >= 2:
+						# unlock[1] might be a recipe name or item name
+						recipe_name = unlock[1].replace("%Material%", tier_material[i])
+						# Check if it's an item that matches our patterns
+						research_dep = get_research_for_item(recipe_name)
+						if research_dep:
+							recipe_items.append(recipe_name)
+			
+			# Find required researches based on items found
+			required_researches_from_items = find_required_researches_from_items(recipe_items)
+			
+			# Add dependencies from items if found, otherwise fall back to tier-based dependency
+			if required_researches_from_items:
+				for req_research in required_researches_from_items:
+					if req_research not in research["RequiredResearch"]:
+						research["RequiredResearch"].append(req_research)
 
 		if "RequiredResearchArr" in research and len(research["RequiredResearchArr"]) > this_level:
 			research["RequiredResearch"].extend(research["RequiredResearchArr"][this_level])
@@ -1035,6 +1214,60 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "BasicFrame",
+	"Label": ["BasicFrame", "parts"],
+	"RequiredResearch": ["SteelProduction"],
+	"Unlocks": [["Hand" + r_dict, "BasicFrame"] ],
+	"Levels": [2,2],
+	"CostMul": 2,
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "ReinforcedFrame",
+	"Label": ["ReinforcedFrame", "parts"],
+	"RequiredResearch": ["AluminiumProduction"],
+	"Unlocks": [["Hand" + r_dict, "ReinforcedFrame"] ],
+	"Levels": [3,3],
+	"CostMul": 2,
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "ModularFrame",
+	"Label": ["ReinforcedFrame", "parts"],
+	"RequiredResearch": ["StainlessSteelProduction"],
+	"Unlocks": [["Hand" + r_dict, "ModularFrame"] ],
+	"Levels": [4,4],
+	"CostMul": 2,
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "BasicCoil",
+	"Label": ["BasicCoil", "parts"],
+	"RequiredResearch": ["SteelProduction"],
+	"Unlocks": [["Hand" + r_dict, "BasicCoil"] ],
+	"Levels": [2,2],
+	"CostMul": 2,
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "AdvancedCoil",
+	"Label": ["AdvancedCoil", "parts"],
+	"RequiredResearch": ["StainlessSteelProduction"],
+	"Unlocks": [["Hand" + r_dict, "AdvancedCoil"] ],
+	"Levels": [4,4],
+	"CostMul": 2,
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "PowerCoil",
+	"Label": ["PowerCoil", "parts"],
+	"RequiredResearch": ["Processor"],
+	"Unlocks": [["Hand" + r_dict, "PowerCoil"] ],
+	"Levels": [5,5],
+	"CostMul": 2,
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "ElectricEngine",
 	"Label": ["ElectricEngine", "machines"],
 	"RequiredResearch": ["SteelProduction"],
@@ -1325,6 +1558,15 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "Riteg",
+	"Label": ["Riteg", "machines"],
+	"RequiredResearch": ["FissionReactor"],
+	"Levels": [5,7],
+	"Unlocks": [["Hand" + r_dict, "%Material%Riteg"] ],
+	"CostMul": 3.5
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "UraniumCell",
 	"Label": ["UraniumCell", "parts"],
 	"RequiredResearch": ["TitaniumProduction"],
@@ -1456,7 +1698,7 @@ append_levels({
 	"Name": "DecorativeWood2",
 	"Label": ["TwoWorldsFormat", "common", ["DecorativeWood", "researches"], [level_labels[1], "common"]],
 	"RequiredResearch": ["DecorativeWood"],
-	"Unlocks": [["Hand" + r_dict, "Chair"],["Hand" + r_dict, "Fence"],["Hand" + r_dict, "Ladder"],["Hand" + r_dict, "Rack"],["Hand" + r_dict, "Table"]],
+	"Unlocks": [["Hand" + r_dict, "Fence"],["Hand" + r_dict, "Ladder"],["Hand" + r_dict, "Rack"]],
 	"Levels": [2,2],
 })
 append_levels({

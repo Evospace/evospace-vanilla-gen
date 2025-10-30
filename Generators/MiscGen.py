@@ -7,11 +7,6 @@ images = []
 
 wooden_misc = [
 	{
-		"Name": "Chair"
-	},{
-		"Name": "Table",
-		"Positions": [[0,0,0], [-1,0,0]]
-	},{
 		"Name": "Rack"
 	},{
 		"Name": "Ladder"

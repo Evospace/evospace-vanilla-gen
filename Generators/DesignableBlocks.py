@@ -7,17 +7,15 @@ designables = [
 	{
 		"Name": "Stairs",
 		"Category": "Decoration",
-		"Label": ["Stairs", "blocks"],
+		"Label": ["Stairs", "misc"],
 		"Selector": "Blocks/StairsBP.StairsBP_C",
 		"Covers": [
-			"Stairs",
-			"Stairs",
 			"Stairs"
 		]
 	},{
 		"Name": "Corner",
 		"Category": "Decoration",
-		"Label": ["Corner", "blocks"],
+		"Label": ["Corner", "misc"],
 		"Selector": "Blocks/CornerBP.CornerBP_C",
 		"Covers": [
 			"Corner",
@@ -26,7 +24,7 @@ designables = [
 	},{
 		"Name": "Beam",
 		"Category": "Decoration",
-		"Label": ["Beam", "blocks"],
+		"Label": ["Beam", "misc"],
 		"Selector": "Blocks/BeamBP.BeamBP_C",
 		"Covers": [
 			"Beam",
@@ -35,7 +33,7 @@ designables = [
 	},{
 		"Name": "Scaffold",
 		"Category": "Decoration",
-		"Label": ["Scaffold", "blocks"],
+		"Label": ["Scaffold", "misc"],
 		"Selector": "Blocks/ScaffoldBP.ScaffoldBP_C",
 		"Covers": [
 			"Scaffold",
@@ -45,29 +43,30 @@ designables = [
 	{
 		"Name": "Ladder",
 		"Category": "Decoration",
-		"Label": ["Ladder", "blocks"],
-		"Selector": "Blocks/StairsBP.StairsBP_C",
+		"Label": ["Ladder", "misc"],
+		"Selector": "Blocks/LadderBP.LadderBP_C",
 		"Covers": [
-			"WireCover"
+			"Ladder"
 		]
 	},
 	{
 		"Name": "Chair",
 		"Category": "Decoration",
-		"Label": ["Chair", "blocks"],
-		"Selector": "Blocks/StairsBP.StairsBP_C",
+		"Label": ["Chair", "misc"],
+		"Selector": "Blocks/ChairBP.ChairBP_C",
 		"Covers": [
-			"WireCover"
+			"Chair"
 		]
 	},
 	{
 		"Name": "Table",
 		"Category": "Decoration",
-		"Label": ["Table", "blocks"],
-		"Selector": "Blocks/StairsBP.StairsBP_C",
+		"Label": ["Table", "misc"],
+		"Selector": "Blocks/TableBP.TableBP_C",
 		"Covers": [
-			"WireCover"
-		]
+			"Table"
+		],
+		"Positions": [[0,0,0], [-1,0,0]]
 	}
 ]
 
@@ -94,7 +93,8 @@ for d in designables:
 		"StackSize": 32,
 		"ItemLogic": building_single_logic,
 		"Category": category,
-		"Label": label
+		"Label": label,
+		"Image": "T_"+name
 	})
 
 	# Block prototype with designable cover logic
@@ -109,8 +109,13 @@ for d in designables:
 		"Tier": 0,
 		"Level": 0
 	}
+
 	if "Selector" in d:
 		block["Selector"] = d["Selector"]
+
+	if "Positions" in d:
+		block["Positions"] = d["Positions"]
+
 	objects_array.append(block)
 
 data = { "Objects": objects_array }

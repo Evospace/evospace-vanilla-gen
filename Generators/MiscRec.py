@@ -635,7 +635,7 @@ for miscBlock in ["ReinforcedConcrete", "ReinforcedConcreteTiles", "ReinforcedCo
 		"Tier": 3
 	})
 
-for miscBlock in ["Column", "FluetedColumn", "Chair", "CopperChair", "Ladder", "Door", "Window", "PlasticWindow", "Table", "Rack", "Fence", "SteelFence", "StainlessSteelFence"]:
+for miscBlock in ["Column", "FluetedColumn", "CopperChair", "Ladder", "Door", "Window", "PlasticWindow", "Rack", "Fence", "SteelFence", "StainlessSteelFence"]:
 	recipes_hand.append({
 		"Name": miscBlock,
 		"Input": items([
@@ -2646,7 +2646,8 @@ recipes_industrial_chemreactor.append({
 		["SulfuricAcid", 100]
 	]),
 	"Output": one_item("CarbonPrecursor", 1000),
-	"Ticks" : 200
+	"Ticks" : 200,
+	"Tier": 5,
 })
 
 recipes_pyro.append({
@@ -2661,7 +2662,8 @@ append_recipe_hand({
 	"Name": "CarbonFiberSheet",
 	"Input": one_item("CarbonFiber", 2),
 	"Output": one_item("CarbonFiberSheet"),
-	"Ticks" : 200
+	"Ticks" : 200,
+	"Tier": 5,
 })
 
 recipes_portal.append({

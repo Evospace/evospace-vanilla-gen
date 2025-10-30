@@ -10,13 +10,15 @@ mapgen_objects = [
 		"Color": "#fbeebf",
 		"Side": "#928c76",
 		"Drops": "Sand",
-		"Hardness": 1
+		"Hardness": 1,
+		"BreakEffect": "/Game/EffectActors/SandBreakEffect.SandBreakEffect_C"
 	},{
 		"Name": "Sandstone",
 		"Color": "#fbeebf",
 		"Side": "#928c76",
 		"Drops": "Sand",
-		"Hardness": 1
+		"Hardness": 1,
+		"BreakEffect": "/Game/EffectActors/SandBreakEffect.SandBreakEffect_C"
 	},{
 		"Name": "Stone",
 		"Color": "#928c76",
@@ -83,7 +85,8 @@ mapgen_objects = [
 		"Color": "#6f452e",
 		"Side": "#6f452e",
 		"Drops": "Sand",
-		"Hardness": 1.0
+		"Hardness": 1.0,
+		"BreakEffect": "/Game/EffectActors/ClayBreakEffect.ClayBreakEffect_C"
 	},{
 		"Name": "Limestone",
 		"Color": "#a19c87",
@@ -120,7 +123,8 @@ mapgen_objects = [
 		"Color": "#0f0f05",
 		"Side": "#12120e",
 		"Drops": "Peat",
-		"Hardness": 1
+		"Hardness": 1,
+		"BreakEffect": "/Game/EffectActors/PeatBreakEffect.PeatBreakEffect_C"
 	},
 ]
 
