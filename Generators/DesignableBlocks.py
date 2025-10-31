@@ -10,7 +10,8 @@ designables = [
 		"Label": ["Stairs", "misc"],
 		"Selector": "Blocks/StairsBP.StairsBP_C",
 		"Covers": [
-			"Stairs"
+			"Stairs",
+			"StairsGridLamp"
 		]
 	},{
 		"Name": "Corner",

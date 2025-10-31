@@ -140,6 +140,11 @@ covers = [
         "Mesh": "/Game/Covers/Table",
         "Materials": [""],
         "NumCustomData": 3,
+    },{
+        "Name": "StairsGridLamp",
+        "Mesh": "/Game/Covers/StairsGridLamp",
+        "Materials": [""],
+        "NumCustomData": 3,
     }
 ]
 
