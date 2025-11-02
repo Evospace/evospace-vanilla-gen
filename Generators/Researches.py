@@ -1233,7 +1233,7 @@ append_levels({
 append_levels({
 	"Class": research_recipe,
 	"Name": "ModularFrame",
-	"Label": ["ReinforcedFrame", "parts"],
+	"Label": ["ModularFrame", "parts"],
 	"RequiredResearch": ["StainlessSteelProduction"],
 	"Unlocks": [["Hand" + r_dict, "ModularFrame"] ],
 	"Levels": [4,4],
