@@ -785,7 +785,7 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "AdvancedCircuit",
 	"Label": ["AdvancedCircuit", "parts"],
-	"RequiredResearch": ["Separator", "Resistor"],
+	"RequiredResearch": ["Resistor"],
 	"Levels": [2,2],
 	"Unlocks": [["Hand" + r_dict, "AdvancedCircuit"],[assembler_r_dict, "AdvancedCircuit"]],
 	"CostMul":1.6,

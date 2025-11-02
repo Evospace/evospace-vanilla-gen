@@ -212,8 +212,7 @@ recipes_hand.append({
 	"Name":"Resistor",
 	"Input": items([
 		["CoalDust"],
-		["Organics"],
-		["CopperWire", 1]
+		["CopperWire", 4]
 	]),
 	"Output": one_item("Resistor"),
 	"Ticks" : 60,
@@ -224,10 +223,9 @@ recipes_assembler.append({
 	"Name":"Resistor2",
 	"Input": items([
 		["CoalDust"],
-		["Organics"],
-		["GoldWire"]
+		["CopperWire", 3]
 	]),
-	"Output": one_item("Resistor", 2),
+	"Output": one_item("Resistor", 1),
 	"Ticks" : 60,
 	"Tier": 2,
 })
@@ -235,10 +233,10 @@ recipes_assembler.append({
 recipes_assembler.append({
 	"Name":"Resistor3",
 	"Input": items([
-		["GoldWire"],
+		["CopperWire", 4],
 		["PolyethyleneSheet"],
 	]),
-	"Output": one_item("Resistor", 4),
+	"Output": one_item("Resistor", 2),
 	"Ticks" : 60,
 	"Tier": 3,
 })
@@ -249,7 +247,7 @@ recipes_assembler.append({
 		["TantalumWire"],
 		["PolyethyleneSheet"],
 	]),
-	"Output": one_item("Resistor", 8),
+	"Output": one_item("Resistor", 4),
 	"Ticks" : 60,
 	"Tier": 5
 })
@@ -261,7 +259,7 @@ recipes_assembler.append({
 		["CarbonFiberSheet"],
 		["PolyethyleneSheet"],
 	]),
-	"Output": one_item("Resistor", 16),
+	"Output": one_item("Resistor", 8),
 	"Ticks" : 60,
 	"Tier": 5,
 })
@@ -275,7 +273,7 @@ recipes_hand.append({
 	]),
 	"Output": one_item("AdvancedCircuit"),
 	"Ticks" : 200,
-	"Tier": 1,
+	"Tier": 2,
 })
 
 recipes_assembler.append({
@@ -403,7 +401,7 @@ recipes_hand.append({
 	"Input": items([
 		["CircuitBoard"],
 		["AdvancedCircuit", 3],
-		["Resistor", 2],
+		["Resistor", 5],
 	]),
 	"Output": one_item("Processor"),
 	"Ticks" : 200,
