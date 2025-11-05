@@ -175,6 +175,18 @@ machines = [
 		"Description": ["KineticInput", "PowerInput"],
         "PowerInput": 20,
 	},{
+		"Name": "CargoConveyor",
+		"Label": "Cargo Conveyor",
+		"StartTier": 1,
+		"EndTier": 7,
+		"CommonTextKeys":[
+			"Conveyor",
+			"Transporter"
+		],
+		"Selector": "Blocks/ArrowConvBP.ArrowConvBP_C",
+		"PathFinding": True,
+        "ReplaceTag": "Conveyor",
+	},{
 		"Name": "Conveyor",
 		"Label": "Conveyor",
 		"StartTier": 1,
