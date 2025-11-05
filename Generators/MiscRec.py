@@ -303,7 +303,7 @@ recipes_assembler.append({
     "Name": "Transistor2",
     "Input": items([
         ["Silicon", 1],
-        ["GoldWire", 1],
+        ["CopperWire", 3],
         ["PolyethyleneSheet", 1]
     ]),
     "Output": one_item("Transistor", 2),
@@ -315,10 +315,10 @@ recipes_assembler.append({
     "Name": "Transistor3",
     "Input": items([
         ["SiliconWafer", 1],
-        ["GoldWire", 4],
+        ["CopperWire", 4],
         ["PolyethyleneSheet", 1]
     ]),
-    "Output": one_item("Transistor", 8),
+    "Output": one_item("Transistor", 4),
     "Ticks": 60,
     "Tier": 3,
 })
@@ -327,10 +327,10 @@ recipes_assembler.append({
     "Name": "Transistor4",
     "Input": items([
         ["DopedSiliconWafer", 1],
-        ["PlatinumWire", 2],
+        ["CopperWire", 6],
         ["PolyethyleneSheet", 1]
     ]),
-    "Output": one_item("Transistor", 16),
+    "Output": one_item("Transistor", 8),
     "Ticks": 60,
     "Tier": 4,
 })
