@@ -37,6 +37,14 @@ item_to_research_mapping = {
 	"TitaniumParts": "TitaniumProduction",
 	"CompositeParts": "CompositePlate",
 	"NeutroniumParts": "NeutroniumProduction",
+
+	"CopperIngot": "Metalwork",
+	"SteelIngot": "SteelProduction",
+	"AluminiumIngot": "AluminiumProduction",
+	"StainlessSteelIngot": "StainlessSteelProduction",
+	"TitaniumIngot": "TitaniumProduction",
+	"CompositeIngot": "CompositePlate",
+	"NeutroniumIngot": "NeutroniumProduction",
 	
 	# Frames by tier
 	"BasicFrame": "BasicFrame",
