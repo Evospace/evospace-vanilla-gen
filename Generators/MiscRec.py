@@ -571,7 +571,7 @@ recipes_hand.append({
 	"Input": items([
 		["Cell"],
 		["CopperWire", 40],
-		["Coal", 4]
+		["CoalDust", 4]
 	]),
 	"Output": one_item("Catalyst"),
 	"Ticks" : 200,
@@ -583,7 +583,7 @@ recipes_assembler.append({
 	"Input": items([
 		["Cell"],
 		["GoldWire", 10],
-		["Coal", 4]
+		["CoalDust", 4]
 	]),
 	"Output": one_item("Catalyst"),
 	"Ticks" : 200,
@@ -2139,7 +2139,7 @@ oil_crack.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "ProducerGas",
-	"Input": one_item("Coal"),
+	"Input": one_item("CoalDust"),
 	"Output": items([
 		["Ash"],
 		["ProducerGas", 200]
@@ -2159,11 +2159,35 @@ recipes_pyro.append({
 			},
 			{
 				"Name": "RawOil",
-				"Count": 150  # Increased from 100 to 150 to make it more rewarding
+				"Count": 150
 			},
 			{
 				"Name": "ProducerGas",
-				"Count": 150  # Increased from 100 to 150 to make it more rewarding
+				"Count": 150
+			},
+			
+		]
+	},
+	"Ticks" : 400,
+	"Tier": 3,
+})
+
+recipes_pyro.append({
+	"Name": "CoalDust",
+	"Input": one_item("CoalDust"),
+	"Output":{
+		"Items":[
+			{
+				"Name": "Coke",
+				"Count": 1
+			},
+			{
+				"Name": "RawOil",
+				"Count": 70
+			},
+			{
+				"Name": "ProducerGas",
+				"Count": 200
 			},
 			
 		]

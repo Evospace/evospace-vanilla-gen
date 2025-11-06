@@ -351,7 +351,7 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([
 					[plate(), 3],
-					["Coal", 2],
+					["CoalDust", 2],
 					[cables[tier], 2 + parts_ramp(level)]
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
