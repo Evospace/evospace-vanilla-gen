@@ -11,7 +11,8 @@ designables = [
 		"Selector": "Blocks/StairsBP.StairsBP_C",
 		"Covers": [
 			"Stairs",
-			"StairsGridLamp"
+			"StairsGridLamp",
+			"StairsGrid"
 		]
 	},{
 		"Name": "Corner",
@@ -39,6 +40,26 @@ designables = [
 		"Covers": [
 			"Scaffold",
 			"PaintedScaffold"
+		]
+	},{
+		"Name": "Column",
+		"Category": "Decoration",
+		"Label": ["Column", "misc"],
+		"Selector": "Blocks/ColumnBP.ColumnBP_C",
+		"Covers": [
+			"Column",
+			"ThinColumn",
+			"WideColumn",
+			"NormalToThinColumn",
+			"WideToNormalColumn"
+		]
+	},{
+		"Name": "Floor",
+		"Category": "Decoration",
+		"Label": ["Floor", "misc"],
+		"Selector": "Blocks/FloorBP.FloorBP_C",
+		"Covers": [
+			"ThinWireFloor",
 		]
 	},
 	{
