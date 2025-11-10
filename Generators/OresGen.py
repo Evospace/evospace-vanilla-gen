@@ -111,6 +111,7 @@ ore_types = [
 			"Macerator": "CinnabarOreDust",
 			"Furnace": "Sulfur",
 		},
+		"ExpensiveChemicalBath": 16,
 	},{
 		"Name": "Thorianite",
 		"Processing":{
@@ -121,6 +122,7 @@ ore_types = [
 			"Furnace": "ThoriumDust",
 			"Macerator": "ThorianiteOreDust",
 		},
+		"ExpensiveChemicalBath": 8,
 		"Crystal": True,
 		"CrystalIcoGen": True,
 		"Color": "#324228",
