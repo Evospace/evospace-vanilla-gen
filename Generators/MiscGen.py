@@ -209,8 +209,7 @@ simple_blocks = [
 ]
 
 static_mesh_block = [
-	{"Name": "Column"},
-	{"Name": "FluetedColumn"}
+	# moved to designable blocks
 ]
 
 equipped = [

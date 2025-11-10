@@ -112,7 +112,8 @@ recipes_fusion_reactor.append({
 		["HotNeutroniumPlate"],
 		["Cell"],
 	]),
-	"Ticks" : 200
+	"Ticks" : 400,
+	"Tier": 6
 })
 
 recipes_fusion_reactor.append({
@@ -133,7 +134,8 @@ recipes_fusion_reactor.append({
 		["HotNeutroniumPlate"],
 		["Cell"],
 	]),
-	"Ticks" : 200,
+	"Ticks" : 350,
+	"Tier": 6
 })
 
 recipes_smelter.append({
@@ -497,7 +499,7 @@ recipes_hand.append({
 	"Name":"QuantumProcessor",
 	"Input": items([
 		["QuantumCircuit", 3],
-		["DecisionResonator", 1],
+		["DecisionResonator", 6],
 		["Capacitor", 6]
 	]),
 	"Output": one_item("QuantumProcessor"),
@@ -509,7 +511,7 @@ recipes_assembler.append({
 	"Name":"QuantumProcessor2",
 	"Input": items([
 		["QuantumCircuit", 2],
-		["DecisionResonator", 1],
+		["DecisionResonator", 6],
 		["Capacitor", 6],
 		["Transistor", 6]
 	]),
@@ -633,7 +635,7 @@ for miscBlock in ["ReinforcedConcrete", "ReinforcedConcreteTiles", "ReinforcedCo
 		"Tier": 3
 	})
 
-for miscBlock in ["Column", "FluetedColumn", "CopperChair", "Ladder", "Door", "Window", "PlasticWindow", "Rack", "Fence", "SteelFence", "StainlessSteelFence"]:
+for miscBlock in ["CopperChair", "Ladder", "Door", "Window", "PlasticWindow", "Rack", "Fence", "SteelFence", "StainlessSteelFence"]:
 	recipes_hand.append({
 		"Name": miscBlock,
 		"Input": items([

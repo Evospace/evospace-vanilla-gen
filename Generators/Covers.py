@@ -146,6 +146,11 @@ covers = [
         "Materials": [""],
         "NumCustomData": 3,
     },{
+        "Name": "StairsGrid",
+        "Mesh": "/Game/Covers/StairsGrid",
+        "Materials": [""],
+        "NumCustomData": 3,
+    },{
         "Name": "FenceHalf",
         "Mesh": "/Game/Covers/FenceHalf",
         "NumCustomData": 3,
@@ -156,6 +161,41 @@ covers = [
     },{
         "Name": "MetalFenceSideLamp",
         "Mesh": "/Game/Covers/MetalFenceSideLamp",
+        "NumCustomData": 3,
+    },{
+        "Name": "Column",
+        "Mesh": "/Game/Covers/Column",
+        "Materials": [""],
+        "NumCustomData": 3,
+    },{
+        "Name": "WideColumn",
+        "Mesh": "/Game/Covers/WideColumn",
+        "Materials": [""],
+        "NumCustomData": 3,
+    },{
+        "Name": "ThinColumn",
+        "Mesh": "/Game/Covers/ThinColumn",
+        "Materials": [""],
+        "NumCustomData": 3,
+    },{
+        "Name": "WideToNormalColumn",
+        "Mesh": "/Game/Covers/WideToNormalColumn",
+        "Materials": [""],
+        "NumCustomData": 3,
+    },{
+        "Name": "NormalToThinColumn",
+        "Mesh": "/Game/Covers/NormalToThinColumn",
+        "Materials": [""],
+        "NumCustomData": 3,
+    },{
+        "Name": "Ladder",
+        "Mesh": "/Game/Covers/Ladder",
+        "Materials": [""],
+        "NumCustomData": 3,
+    },{
+        "Name": "ThinWireFloor",
+        "Mesh": "/Game/Covers/ThinWireFloor",
+        "Materials": [""],
         "NumCustomData": 3,
     }
 ]
