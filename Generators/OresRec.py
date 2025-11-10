@@ -205,7 +205,7 @@ for ore_type in ore_types:
 			recipes_chemical_bath.append({
 				"Name": ore_type["Name"] + "ImpureOreGravel",
 				"Input": items([
-					[ore_type["Name"] + "OreImpureGravel"],
+					[ore_type["Name"] + "OreImpureGravel", ore_type["ExpensiveChemicalBath"] if "ExpensiveChemicalBath" in ore_type else 1 ],
 					[processing["ChemicalBath"][0], 250]
 				]),
 				"Output": items([
