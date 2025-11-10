@@ -343,7 +343,7 @@ append_levels({
 	"RequiredResearchArr": [["Chest"],["Chest1"],["Chest2"],["Chest3"],["Chest4"],["Chest5"],["Chest6"],[],[],[],[],[],[],[]],
 	"Unlocks": [],
 	"Levels": [0,7],
-	"CostMul": 10,
+	"CostMul": 100,
 })
 append_levels({
 	"Class": research_recipe,

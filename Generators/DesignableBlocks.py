@@ -68,6 +68,18 @@ designables = [
 			"Table"
 		],
 		"Positions": [[0,0,0], [-1,0,0]]
+	},
+	{
+		"Name": "Fence",
+		"Category": "Decoration",
+		"Selector": "Blocks/FenceBP.FenceBP_C",
+		"Label": ["Fence", "misc"],
+		"Tier": 0,
+		"BlockLogic": "DesignableFenceBlockLogic",
+		"Covers": [
+			"FenceHalf",
+			"MetalFenceSideLamp"
+		]
 	}
 ]
 
@@ -75,18 +87,21 @@ objects_array = []
 
 for d in designables:
 	name = d["Name"]
-	covers = d.get("Covers", ["Cover"])  # fallback to basic cover
 	category = d.get("Category", "Decoration")
 	label = d.get("Label", [name, "misc"])
+	tier = d.get("Tier", 0)
+	covers = d.get("Covers")
+	block_logic = d.get("BlockLogic", "DesignableCoverBlockLogic")
 
-	# StaticCoverSet defining the available designs
-	objects_array.append({
-		"Class": "StaticCoverSet",
-		"Name": name,
-		"Covers": covers
-	})
+	# StaticCoverSet (if covers specified)
+	if covers:
+		objects_array.append({
+			"Class": "StaticCoverSet",
+			"Name": name,
+			"Covers": covers
+		})
 
-	# Placement item stub
+	# Placement item
 	objects_array.append({
 		"Class": "StaticItem",
 		"Name": name,
@@ -95,25 +110,27 @@ for d in designables:
 		"ItemLogic": building_single_logic,
 		"Category": category,
 		"Label": label,
-		"Image": "T_"+name
+		"Image": "T_" + name,
+		"Tier": tier
 	})
 
-	# Block prototype with designable cover logic
+	# Block prototype
 	block = {
 		"Class": "StaticBlock",
 		"Name": name,
 		"Item": name,
-		"BlockLogic": "DesignableCoverBlockLogic",
-		"CoverSet": name,
+		"BlockLogic": block_logic,
 		"NoActorRenderable": True,
 		"Minable": { "Result": name },
-		"Tier": 0,
+		"Tier": tier,
 		"Level": 0
 	}
-
+	if covers:
+		block["CoverSet"] = name
 	if "Selector" in d:
 		block["Selector"] = d["Selector"]
-
+	if "Actor" in d:
+		block["Actor"] = d["Actor"]
 	if "Positions" in d:
 		block["Positions"] = d["Positions"]
 

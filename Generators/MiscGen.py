@@ -48,9 +48,6 @@ simple_single = [
 		"Name": "StainlessSteelFence",
 		"BlockLogic": "FenceBlockLogic",
 		"Tier": 2
-	},{
-		"Name": "Fence",
-		"BlockLogic": "FenceBlockLogic",
 	}
 ]
 
