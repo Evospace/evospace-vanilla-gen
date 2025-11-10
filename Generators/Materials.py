@@ -540,7 +540,7 @@ materials = [
 		"Items": ["Exact"],
 		"Tier": 0,
 		"Burnable": {
-			"BurnTime": 500
+			"BurnTime": 200
 		},
 		"Mesh":"/Game/Models/LogCrate",
 	},{

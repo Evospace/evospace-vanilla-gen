@@ -145,6 +145,18 @@ covers = [
         "Mesh": "/Game/Covers/StairsGridLamp",
         "Materials": [""],
         "NumCustomData": 3,
+    },{
+        "Name": "FenceHalf",
+        "Mesh": "/Game/Covers/FenceHalf",
+        "NumCustomData": 3,
+    },{
+        "Name": "FenceCenter",
+        "Mesh": "/Game/Covers/FenceCenter",
+        "NumCustomData": 3,
+    },{
+        "Name": "MetalFenceSideLamp",
+        "Mesh": "/Game/Covers/MetalFenceSideLamp",
+        "NumCustomData": 3,
     }
 ]
 
@@ -213,6 +225,12 @@ for cover in covers:
 
     if "NumCustomData" in cover:
          staticCover["NumCustomData"] = cover["NumCustomData"]
+         # Auto-fill DefaultColors if not specified: one white RGB per slot
+         if "DefaultColors" in cover:
+             staticCover["DefaultColors"] = cover["DefaultColors"]
+         else:
+             slots = max(1, int(cover["NumCustomData"] // 3))
+             staticCover["DefaultColors"] = [[1,1,1] for _ in range(slots)]
 
     if "NoCollision" in cover:
         staticCover["NoCollision"] = cover["NoCollision"]
