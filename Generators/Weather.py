@@ -11,7 +11,9 @@ weathers = [
 		"Precipitation01": 0.0,
 		"Fog01": 0.0,
 		"Storminess01": 0.0,
-		"WindSpeed": 0.5
+		"WindSpeed": 0.5,
+		"MinDurationSeconds": 90,
+		"MaxDurationSeconds": 240,
 	},
 	{
 		"Name": "SlightlyCloudy",
@@ -19,7 +21,9 @@ weathers = [
 		"Precipitation01": 0.0,
 		"Fog01": 0.05,
 		"Storminess01": 0.0,
-		"WindSpeed": 0.7
+		"WindSpeed": 0.7,
+		"MinDurationSeconds": 90,
+		"MaxDurationSeconds": 240,
 	},
 	{
 		"Name": "PartlyCloudy",
@@ -27,7 +31,9 @@ weathers = [
 		"Precipitation01": 0.0,
 		"Fog01": 0.05,
 		"Storminess01": 0.0,
-		"WindSpeed": 1.0
+		"WindSpeed": 1.0,
+		"MinDurationSeconds": 90,
+		"MaxDurationSeconds": 240,
 	},
 	{
 		"Name": "Overcast",
@@ -35,7 +41,9 @@ weathers = [
 		"Precipitation01": 0.0,
 		"Fog01": 0.1,
 		"Storminess01": 0.0,
-		"WindSpeed": 1.5
+		"WindSpeed": 1.5,
+		"MinDurationSeconds": 1,
+		"MaxDurationSeconds": 30,
 	},
 	{
 		"Name": "LightRain",
@@ -43,7 +51,9 @@ weathers = [
 		"Precipitation01": 0.25,
 		"Fog01": 0.15,
 		"Storminess01": 0.1,
-		"WindSpeed": 2.0
+		"WindSpeed": 2.0,
+		"MinDurationSeconds": 1,
+		"MaxDurationSeconds": 30,
 	},
 	{
 		"Name": "Rain",
@@ -51,7 +61,9 @@ weathers = [
 		"Precipitation01": 0.5,
 		"Fog01": 0.25,
 		"Storminess01": 0.3,
-		"WindSpeed": 3.0
+		"WindSpeed": 3.0,
+		"MinDurationSeconds": 1,
+		"MaxDurationSeconds": 30,
 	},
 	{
 		"Name": "Storm",
@@ -59,7 +71,9 @@ weathers = [
 		"Precipitation01": 0.85,
 		"Fog01": 0.35,
 		"Storminess01": 1.0,
-		"WindSpeed": 6.0
+		"WindSpeed": 6.0,
+		"MinDurationSeconds": 1,
+		"MaxDurationSeconds": 30,
 	},
 	{
 		"Name": "Foggy",
@@ -67,7 +81,9 @@ weathers = [
 		"Precipitation01": 0.0,
 		"Fog01": 0.8,
 		"Storminess01": 0.0,
-		"WindSpeed": 0.2
+		"WindSpeed": 0.2,
+		"MinDurationSeconds": 1,
+		"MaxDurationSeconds": 30,
 	},
 	{
 		"Name": "ExtremeFoggy",
@@ -75,7 +91,9 @@ weathers = [
 		"Precipitation01": 0.0,
 		"Fog01": 1.0,
 		"Storminess01": 0.05,
-		"WindSpeed": 0.01
+		"WindSpeed": 0.01,
+		"MinDurationSeconds": 1,
+		"MaxDurationSeconds": 30,
 	}
 ]
 
@@ -93,7 +111,9 @@ for w in weathers:
 		"Precipitation01": clamp(w["Precipitation01"], 0.0, 1.0),
 		"Fog01": clamp(w["Fog01"], 0.0, 1.0),
 		"Storminess01": clamp(w["Storminess01"], 0.0, 1.0),
-		"WindSpeed": max(0.0, w["WindSpeed"])
+		"WindSpeed": max(0.0, w["WindSpeed"]),
+		"MinDurationSeconds": w["MinDurationSeconds"],
+		"MaxDurationSeconds": w["MaxDurationSeconds"],
 	})
 
 data = {
