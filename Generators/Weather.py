@@ -14,6 +14,14 @@ weathers = [
 		"WindSpeed": 0.5
 	},
 	{
+		"Name": "SlightlyCloudy",
+		"Cloudiness01": 0.15,
+		"Precipitation01": 0.0,
+		"Fog01": 0.05,
+		"Storminess01": 0.0,
+		"WindSpeed": 0.7
+	},
+	{
 		"Name": "PartlyCloudy",
 		"Cloudiness01": 0.35,
 		"Precipitation01": 0.0,
@@ -62,28 +70,12 @@ weathers = [
 		"WindSpeed": 0.2
 	},
 	{
-		"Name": "LightSnow",
-		"Cloudiness01": 0.9,
-		"Precipitation01": 0.3,
-		"Fog01": 0.2,
-		"Storminess01": 0.1,
-		"WindSpeed": 1.5
-	},
-	{
-		"Name": "Snow",
-		"Cloudiness01": 0.95,
-		"Precipitation01": 0.55,
-		"Fog01": 0.3,
-		"Storminess01": 0.2,
-		"WindSpeed": 2.0
-	},
-	{
-		"Name": "Blizzard",
-		"Cloudiness01": 1.0,
-		"Precipitation01": 0.9,
-		"Fog01": 0.6,
-		"Storminess01": 1.0,
-		"WindSpeed": 7.5
+		"Name": "ExtremeFoggy",
+		"Cloudiness01": 0.8,
+		"Precipitation01": 0.0,
+		"Fog01": 1.0,
+		"Storminess01": 0.05,
+		"WindSpeed": 0.01
 	}
 ]
 

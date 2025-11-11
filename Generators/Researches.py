@@ -1486,7 +1486,7 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "CompositePlate2",
 	"Label": ["TwoWorldsFormat", "common", ["CompositePlate", "parts"], ["II", "common"]],
-	"RequiredResearch": ["CompositePlate", "Polyethylene"],
+	"RequiredResearch": ["CompositePlate"],
 	"Levels": [6,6],
 	"Unlocks": [[assembler_r_dict, "CompositePlate2"]],
 	"MainResearch": True,
