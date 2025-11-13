@@ -120,8 +120,8 @@ mapgen_objects = [
 		"Unbreakable": True
 	},{
 		"Name": "Peat",
-		"Color": "#0f0f05",
-		"Side": "#12120e",
+		"Color": "#574226",
+		"Side": "#574226",
 		"Drops": "Peat",
 		"Hardness": 1,
 		"BreakEffect": "/Game/EffectActors/PeatBreakEffect.PeatBreakEffect_C"
