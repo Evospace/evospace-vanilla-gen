@@ -283,10 +283,10 @@ recipes_assembler.append({
 	"Input": items([
 		["CircuitBoard"],
 		["Transistor", 2],
-		["Resistor", 3],
+		["Resistor", 5],
 	]),
 	"Output": one_item("AdvancedCircuit"),
-	"Ticks" : 200,
+	"Ticks" : 90,
 	"Tier": 2,
 })
 

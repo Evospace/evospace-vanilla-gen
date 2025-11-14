@@ -337,6 +337,22 @@ props = [
 		"BreakEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
 		"Image": "T_TerrainRock",
 	},{
+		"Name": "SmallVolcanicRock",
+		"ScaleMin": 1,
+		"ScaleMax": 3,
+		"Variations": 1,
+		"ProjectToTerrainPower": 1,
+		"Drops": "StoneSurface",
+		"Count": 2,
+		"HitsToBreak": 1,
+		"CullBegin": 10000,
+		"CullEnd": 12000,
+		"AdditiveElevation": 0,
+		"IsBig": False,
+		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+		"BreakEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+		"Image": "T_TerrainRock",
+	},{
 		"Name": "DryGrass",
 		"ScaleMin": 1,
 		"ScaleMax": 2,
@@ -420,6 +436,22 @@ props = [
 		"Floating": True,
 		"IsBig": False,
 		"HighDetailShadow": True
+	},{
+		"Name": "CanyonRock",
+		"ScaleMin": 1,
+		"ScaleMax": 3,
+		"Variations": 1,
+		"ProjectToTerrainPower": 1,
+		"Drops": "StoneSurface",
+		"Count": 2,
+		"HitsToBreak": 1,
+		"CullBegin": 10000,
+		"CullEnd": 12000,
+		"AdditiveElevation": 0,
+		"IsBig": False,
+		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+		"BreakEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+		"Image": "T_TerrainRock",
 	}
 ]
 
@@ -497,10 +529,10 @@ proplists = [
 			}
 		]
 	},{ 
-		"Name": "SmallRocksProps",
+		"Name": "VolcanicProps",
 		"Array": [
 			{
-				"Props": ["SmallRock"],
+				"Props": ["SmallVolcanicRock"],
 				"Chance": 0.06
 			},
 			{
@@ -679,7 +711,7 @@ proplists = [
 			}
 		]
 	},{	
-		"Name": "IslandProps",
+		"Name": "SeaPlantProps",
 		"Array": [
 			{
 				"Props": ["SmallRock"],
@@ -690,7 +722,7 @@ proplists = [
 			}
 		]
 	},{	
-		"Name": "SeagrassProps",
+		"Name": "SeaGrassProps",
 		"Array": [
 			{
 				"Props": ["SmallRock"],
