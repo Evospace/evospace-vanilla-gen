@@ -110,7 +110,8 @@ mapgen_objects = [
 		"Color": "#fdfcfe",
 		"Side": "#856540",
 		"Drops": "Snow",
-		"Hardness": 1
+		"Hardness": 1,
+		"BreakEffect": "/Game/EffectActors/SnowBreakEffect.SnowBreakEffect_C"
 	},{
 		"Name": "Granite",
 		"Color": "#6f6a55",
