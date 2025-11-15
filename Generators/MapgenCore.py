@@ -27,8 +27,8 @@ mapgen_objects = [
 		"Hardness": 2
 	},{
 		"Name": "DesertSand",
-		"Color": "#fde489",
-		"Side": "#fde489",
+		"Color": "#a9884a",
+		"Side": "#a9884a",
 		"Drops": "Sand",
 		"Hardness": 1,
 		"BreakEffect": "/Game/EffectActors/SandBreakEffect.SandBreakEffect_C"
