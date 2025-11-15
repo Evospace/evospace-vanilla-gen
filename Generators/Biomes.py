@@ -80,7 +80,7 @@ families.extend([
 			"DesertBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain"]
+		"Weather": ["Clear", "SlightlyCloudy"]
 	},	{
 		"Name":"ForestBiomeFamily",
 		"Class":"BiomeFamily",
