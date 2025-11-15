@@ -20,12 +20,12 @@ global_family.append({
 			"SnowBiomeFamily",
 			"PrairieBiomeFamily",
 			"PineForestBiomeFamily",
-			"PlainBiomeFamily", 
+			"PlainBiomeFamily",
 			"SandBiomeFamily",
 			"ForestBiomeFamily",
-			"SwampBiomeFamily", 
+			"SwampBiomeFamily",
 			"VolcanicBiomeFamily",
-            "FertileForestBiome"
+            "FertileForestBiomeFamily"
 		],
         "ChildFrequency": mega_boime_size,
 	})
@@ -38,12 +38,12 @@ global_family.append({
 			"SnowBiomeFamily",
 			"PrairieBiomeFamily",
 			"PineForestBiomeFamily",
-			"PlainBiomeFamily", 
+			"PlainBiomeFamily",
 			"SandBiomeFamily",
 			"ForestBiomeFamily",
-			"SwampBiomeFamily", 
+			"SwampBiomeFamily",
 			"VolcanicBiomeFamily",
-            "FertileForestBiome"
+            "FertileForestBiomeFamily"
 		],
         "ChildFrequency": mega_boime_size,
 	})
@@ -71,7 +71,8 @@ families.extend([
 			"PrairiePlainsBiome",
 		],
 		"ChildFrequency": biome_family_size,
-	},{
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain"]
+	},	{
 		"Name":"SandBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -79,7 +80,8 @@ families.extend([
 			"DesertBiome"
 		],
 		"ChildFrequency": biome_family_size,
-	},{
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain"]
+	},	{
 		"Name":"ForestBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -89,7 +91,8 @@ families.extend([
 			"BushlandBiome"
 		],
 		"ChildFrequency": biome_family_size,
-	},{
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Foggy"]
+	},	{
 		"Name":"PineForestBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -97,7 +100,8 @@ families.extend([
 			"PineForestBiome"
 		],
 		"ChildFrequency": biome_family_size,
-	},{
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Foggy"]
+	},	{
 		"Name":"SeaBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -108,7 +112,8 @@ families.extend([
             "GravelSeaBiome"
 		],
 		"ChildFrequency": biome_family_size,
-	},{
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "LightRain", "Foggy"]
+	},	{
 		"Name":"VolcanicBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -117,7 +122,8 @@ families.extend([
 			"BrokenLandBiome"
 		],
 		"ChildFrequency": biome_family_size,
-	},{
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Storm"]
+	},	{
 		"Name":"SwampBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -128,7 +134,8 @@ families.extend([
 			"ClayBiome",
 		],
 		"ChildFrequency": biome_family_size,
-	},{
+		"Weather": ["Overcast", "LightRain", "Rain", "Foggy", "ExtremeFoggy"]
+	},	{
 		"Name":"PlainBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -139,7 +146,8 @@ families.extend([
 			"YellowPlainsBiome"
 		],
 		"ChildFrequency": biome_family_size,
-	},{
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain"]
+	},	{
 		"Name":"SnowBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -149,6 +157,17 @@ families.extend([
 			"SnowForestBiome"
 		],
 		"ChildFrequency": biome_family_size,
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Foggy", "ExtremeFoggy"]
+	},
+	{
+		"Name":"FertileForestBiomeFamily",
+		"Class":"BiomeFamily",
+		"Childs":
+		[
+			"FertileForestBiome"
+		],
+		"ChildFrequency": biome_family_size,
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Foggy"]
 	}
 ])
 
