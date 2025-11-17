@@ -84,13 +84,13 @@ recipes_industrial_chemreactor.append({
 	"Name":"NeutroniumPlate",
 	"Input": items([
 		["HotNeutroniumPlate"],
-		["Mercury", 2000]
+		["Mercury", 4000]
 	]),
 	"Output": items([
 		["NeutroniumPlate"],
-		["HotMercury", 2000]
+		["HotMercury", 4000]
 	]),
-	"Ticks" : 200,
+	"Ticks" : 400,
 	"Tier": 6
 })
 
