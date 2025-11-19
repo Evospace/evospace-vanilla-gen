@@ -167,7 +167,7 @@ for machine in machines:
 			item["DescriptionParts"].append(["item_rack", "common", 2048*(level+1)])
 			
 		if machine["Name"] == "Computer":
-			item["DescriptionParts"].append(["computations", "common", 2**level * 3 * 10 / 20.0])
+			item["DescriptionParts"].append(["computations", "common", 2**level])
 			item["DescriptionParts"].append(["power_input", "common", 2**level * 20 * 10])
 			item["DescriptionParts"].append(["electric_drain", "common", 2**level * 20])
 			
