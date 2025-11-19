@@ -47,6 +47,24 @@ global_family.append({
 		],
         "ChildFrequency": mega_boime_size,
 	})
+global_family.append({
+		"Name":"GlobalBiomeMegaFamily3",
+		"Class":"GlobalBiomeFamily3",
+		"Childs":
+		[
+			"SeaBiomeFamily",
+			"SnowBiomeFamily",
+			"PrairieBiomeFamily",
+			"PineForestBiomeFamily",
+			"PlainBiomeFamily",
+			"SandBiomeFamily",
+			"ForestBiomeFamily",
+			"SwampBiomeFamily",
+			"VolcanicBiomeFamily",
+            "FertileForestBiomeFamily"
+		],
+        "ChildFrequency": mega_boime_size,
+	})
 	
 	#Sea = 0,
 	#Taiga = 1,
