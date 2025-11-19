@@ -34,6 +34,7 @@ ore_types = [
 		"Color": [111 / 255./2.0, 106 / 255./2.0, 81 / 255./2.0],
 		"Drops": "PyriteOre",
 		"Tier": 2,
+		"ExpensiveChemicalBath": 8,
 	},{
 		# https://en.wikipedia.org/wiki/List_of_copper_ores
 		"Name": "Malachite",

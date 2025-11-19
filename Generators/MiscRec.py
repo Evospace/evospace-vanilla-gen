@@ -216,7 +216,7 @@ recipes_hand.append({
 		["CoalDust"],
 		["CopperWire", 4]
 	]),
-	"Output": one_item("Resistor"),
+	"Output": one_item("Resistor", 1),
 	"Ticks" : 60,
 	"Tier": 1,
 })
@@ -236,6 +236,7 @@ recipes_assembler.append({
 	"Name":"Resistor3",
 	"Input": items([
 		["CopperWire", 4],
+		["CoalDust"],
 		["PolyethyleneSheet"],
 	]),
 	"Output": one_item("Resistor", 2),
@@ -246,6 +247,7 @@ recipes_assembler.append({
 recipes_assembler.append({
 	"Name":"Resistor4",
 	"Input": items([
+		["CopperWire", 4],
 		["TantalumWire"],
 		["PolyethyleneSheet"],
 	]),
@@ -257,13 +259,13 @@ recipes_assembler.append({
 recipes_assembler.append({
 	"Name":"Resistor5",
 	"Input": items([
-		["TantalumWire"],
+		["CopperWire", 6],
+		["TantalumWire", 1],
 		["CarbonFiberSheet"],
-		["PolyethyleneSheet"],
 	]),
 	"Output": one_item("Resistor", 8),
 	"Ticks" : 60,
-	"Tier": 5,
+	"Tier": 6,
 })
 
 recipes_hand.append({
@@ -373,9 +375,8 @@ recipes_assembler.append({
 recipes_assembler.append({
     "Name": "Capacitor4",
     "Input": items([
-        ["TantalumFoil", 2],
-		["CarbonFiberSheet", 1],
-        ["PolyethyleneSheet", 1]
+        ["TantalumFoil", 3],
+		["CarbonFiberSheet", 2],
     ]),
     "Output": one_item("Capacitor", 8),
     "Ticks": 60,
@@ -427,8 +428,8 @@ recipes_assembler.append({
 	"Name":"Processor3",
 	"Input": items([
 		["CircuitBoard"],
+		["AdvancedCircuit"],
 		["DopedSiliconWafer", 1],
-		["Resistor", 2],
 		["Capacitor", 3],
 	]),
 	"Output": one_item("Processor", 2),
