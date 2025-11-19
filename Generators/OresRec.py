@@ -206,11 +206,11 @@ for ore_type in ore_types:
 				"Name": ore_type["Name"] + "ImpureOreGravel",
 				"Input": items([
 					[ore_type["Name"] + "OreImpureGravel", ore_type["ExpensiveChemicalBath"] if "ExpensiveChemicalBath" in ore_type else 1 ],
-					[processing["ChemicalBath"][0], 250]
+					[processing["ChemicalBath"][0], 500 if "ExpensiveChemicalBath" in ore_type else 250 ]
 				]),
 				"Output": items([
 					[processing["ChemicalBath"][1]],
-					[processing["ChemicalBath"][2]]
+					[processing["ChemicalBath"][2], ore_type["ExpensiveChemicalBath"] if "ExpensiveChemicalBath" in ore_type else 1 ]
 				]),
 				"Ticks" : 200,
 				"Tier": 3,
