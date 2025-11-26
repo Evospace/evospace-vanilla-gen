@@ -74,7 +74,7 @@ machines = [
 		"Label": "Pipe",
 		"StartTier": 1,
 		"EndTier": 7,
-		"BlockLogic": "ConductorBlockLogic",
+		"BlockLogic": "FluidConductorBlockLogic",
 		"Description": ["FluidConductor"],
 		"PathFinding": True,
         "NoActorRenderable": True,
