@@ -112,8 +112,7 @@ for material in materials:
 			"Input": one_item(m_name + "Plate"),
 			"Output": one_item(m_name + "Foil", 3),
 			"Ticks" : 80,
-			"Tier": material_tier,
-			"Productivity": 50,
+			"Tier": material_tier
 		})
 		recipes_hand.append({
 			"Name":m_name+"Foil",

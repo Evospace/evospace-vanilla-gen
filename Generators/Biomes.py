@@ -186,6 +186,14 @@ families.extend([
 		],
 		"ChildFrequency": biome_family_size,
 		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Foggy"]
+	},
+	{
+		# Flat concrete wasteland world: keep weather variants strictly clear-only
+		"Name":"WastelandBiomeFamily",
+		"Class":"BiomeFamily",
+		"Childs": [],
+		"ChildFrequency": biome_family_size,
+		"Weather": ["Clear"]
 	}
 ])
 
