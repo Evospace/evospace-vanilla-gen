@@ -74,7 +74,7 @@ machines = [
 		"Label": "Pipe",
 		"StartTier": 1,
 		"EndTier": 7,
-		"BlockLogic": "FluidConductorBlockLogic",
+		"BlockLogic": "ConductorBlockLogic",
 		"Description": ["FluidConductor"],
 		"PathFinding": True,
         "NoActorRenderable": True,
@@ -349,16 +349,6 @@ machines = [
 		"Selector": "Blocks/ArrowBP.ArrowBP_C",
 		"Description": ["FluidInput", "FluidOutput"],
 	},{
-		"Name": "OverflowPump",
-		"Label": "Overflow Pump",
-		"StartTier": 1,
-		"EndTier": 7,
-		"CustomData":{
-			"ItemPortion": 1000
-		},
-		"Selector": "Blocks/ArrowBP.ArrowBP_C",
-		"Description": ["FluidInput", "FluidOutput"],
-	},{
 		"Name": "Smelter",
 		"Label": "Smelter",
 		"StartTier": 0,
@@ -526,14 +516,6 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "AutoCrafter",
-		"BlockCreation":"""
-		local a = self:CreateAccessor(Class.find("FluidInputAccessor"))
-		a:SetSidePos(Vec3i.back, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("HeatOutputAccessor"))
-		a:SetSidePos(Vec3i.up, Vec3i.zero)
-		a:Bind(self:GetOutputContainer())
-		""",
 		"Description": ["FluidInput", "HeatOutput", "PowerOutput"],
         "PowerOutput": 200,
 	},{
@@ -542,14 +524,6 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
-		"BlockCreation":"""
-		local a = self:CreateAccessor(Class.find("ElectricInputAccessor"))
-		a:SetSidePos(Vec3i.back, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("HeatOutputAccessor"))
-		a:SetSidePos(Vec3i.up, Vec3i.zero)
-		a:Bind(self:GetOutputContainer())
-		""",
 		"Description": ["ElectricInput", "HeatOutput", "PowerOutput"],
 		"PowerOutput": 250,
 	},{
@@ -557,7 +531,7 @@ machines = [
 		"Label": "Battery Box",
 		"StartTier": 3,
 		"EndTier": 7,
-        "BlockLogic": "BatteryContainerBlockLogic",
+        "BlockLogic": "ElectricityContainerBlockLogic",
 		"Description": ["ElectricConductor", "ElectricStorage"]
 	},{
 		 "Name": "Portal",
