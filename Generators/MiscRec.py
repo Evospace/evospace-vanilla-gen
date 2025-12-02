@@ -2136,7 +2136,7 @@ oil_crack.append({
 		"Items": oil_crack_recipe(-1, 7500)
 	},
 	
-	"Ticks" : 300,
+	"Ticks" : 500,
 	"Tier": 4
 })
 
