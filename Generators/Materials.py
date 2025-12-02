@@ -474,6 +474,8 @@ materials = [
 	},{
 		"Name": "Glass",
 		"Label": "Glass",
+		"Mesh": "/Game/Models/GlassCrate",
+		"Materials":["", ""],
 		"Items": ["Exact"],
 		"Tier": 0,
 	},{
