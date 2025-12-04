@@ -12,7 +12,8 @@ designables = [
 		"Covers": [
 			"Stairs",
 			"StairsGridLamp",
-			"StairsGrid"
+			"StairsGrid",
+			"WireBlock"
 		]
 	},{
 		"Name": "Corner",

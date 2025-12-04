@@ -197,6 +197,11 @@ covers = [
         "Mesh": "/Game/Covers/ThinWireFloor",
         "Materials": [""],
         "NumCustomData": 3,
+    },{
+        "Name": "WireBlock",
+        "Mesh": "/Game/Covers/WireCover",
+        "Materials": [""],
+        "NumCustomData": 3,
     }
 ]
 
