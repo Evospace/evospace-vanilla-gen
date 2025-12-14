@@ -13,7 +13,9 @@ designables = [
 			"Stairs",
 			"StairsGridLamp",
 			"StairsGrid",
-			"WireBlock"
+			"StairsFancy",
+			"StairsTech",
+			"StairsMinimal"
 		]
 	},{
 		"Name": "Corner",
@@ -61,6 +63,8 @@ designables = [
 		"Selector": "Blocks/FloorBP.FloorBP_C",
 		"Covers": [
 			"ThinWireFloor",
+			"Polycarbo",
+			"RoofMetal"
 		]
 	},
 	{

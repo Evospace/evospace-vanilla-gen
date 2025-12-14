@@ -151,6 +151,21 @@ covers = [
         "Materials": [""],
         "NumCustomData": 3,
     },{
+        "Name": "StairsFancy",
+        "Mesh": "/Game/Covers/StairsFancy",
+        "Materials": [""],
+        "NumCustomData": 3,
+    },{
+        "Name": "StairsTech",
+        "Mesh": "/Game/Covers/StairsTech",
+        "Materials": [""],
+        "NumCustomData": 3,
+    },{
+        "Name": "StairsMinimal",
+        "Mesh": "/Game/Covers/StairsMinimal",
+        "Materials": [""],
+        "NumCustomData": 3,
+    },{
         "Name": "FenceHalf",
         "Mesh": "/Game/Covers/FenceHalf",
         "NumCustomData": 3,
@@ -198,9 +213,19 @@ covers = [
         "Materials": [""],
         "NumCustomData": 3,
     },{
-        "Name": "WireBlock",
+        "Name": "WireCover",
         "Mesh": "/Game/Covers/WireCover",
         "Materials": [""],
+        "NumCustomData": 3,
+    },{
+        "Name": "Polycarbo",
+        "Mesh": "/Game/Covers/polycarbo",
+        "Materials": [""],
+        "NumCustomData": 3,
+    },{
+        "Name": "RoofMetal",
+        "Mesh": "/Game/Covers/polycarbo",
+        "Materials": ["/Game/Materials/RoofMetal"],
         "NumCustomData": 3,
     }
 ]
