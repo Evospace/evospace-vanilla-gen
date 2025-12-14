@@ -356,7 +356,7 @@ recipes_assembler.append({
         ["AluminiumFoil", 2],
         ["MicaFlakes", 1]
     ]),
-    "Output": one_item("Capacitor", 2),
+    "Output": one_item("Capacitor", 4),
     "Ticks": 60,
     "Tier": 2,
 })
@@ -367,7 +367,7 @@ recipes_assembler.append({
         ["TantalumFoil", 2],
         ["PolyethyleneSheet", 1]
     ]),
-    "Output": one_item("Capacitor", 4),
+    "Output": one_item("Capacitor", 8),
     "Ticks": 60,
     "Tier": 5,
 })
@@ -378,7 +378,7 @@ recipes_assembler.append({
         ["TantalumFoil", 3],
 		["CarbonFiberSheet", 2],
     ]),
-    "Output": one_item("Capacitor", 8),
+    "Output": one_item("Capacitor", 16),
     "Ticks": 60,
     "Tier": 5,
 })
