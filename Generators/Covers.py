@@ -103,32 +103,32 @@ covers = [
 	},{
         "Name": "Corner",
         "Mesh": "/Game/Covers/Corner",
-        "Materials": ["/Game/Materials/Steel"],
+        "Materials": ["/Game/Materials/Steel_InstanceColor_0"],
         "NumCustomData": 3,
     },{
         "Name": "PaintedCorner",
         "Mesh": "/Game/Covers/Corner",
-        "Materials": ["/Game/Materials/Paint"],
+        "Materials": ["/Game/Materials/Paint_InstanceColor_0"],
         "NumCustomData": 3,
     },{
         "Name": "Beam",
         "Mesh": "/Game/Covers/Beam",
-        "Materials": ["/Game/Materials/Steel"],
+        "Materials": ["/Game/Materials/Steel_InstanceColor_0"],
         "NumCustomData": 3,
     },{
         "Name": "PaintedBeam",
         "Mesh": "/Game/Covers/Beam",
-        "Materials": ["/Game/Materials/Paint"],
+        "Materials": ["/Game/Materials/Paint_InstanceColor_0"],
         "NumCustomData": 3,
     },{
         "Name": "Scaffold",
         "Mesh": "/Game/Covers/Scaffold",
-        "Materials": ["/Game/Materials/Steel"],
+        "Materials": ["/Game/Materials/Steel_InstanceColor_0"],
         "NumCustomData": 3,
     },{
         "Name": "PaintedScaffold",
         "Mesh": "/Game/Covers/Scaffold",
-        "Materials": ["/Game/Materials/Paint"],
+        "Materials": ["/Game/Materials/Paint_InstanceColor_0"],
         "NumCustomData": 3,
     },{
         "Name": "Chair",
