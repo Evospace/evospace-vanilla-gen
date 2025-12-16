@@ -41,13 +41,7 @@ simple_single = [
 		"Name": "PlasticWindow",
 		"Positions": [[0,0,0], [0,0,1]]
 	},{
-		"Name": "SteelFence",
-		"BlockLogic": "FenceBlockLogic",
-		"Tier": 1
-	},{
-		"Name": "StainlessSteelFence",
-		"BlockLogic": "FenceBlockLogic",
-		"Tier": 2
+        "Name": "Spotlight"
 	}
 ]
 
