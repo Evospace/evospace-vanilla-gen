@@ -118,6 +118,10 @@ tools = [
 		"Name": "CrowbarTool",
 		"Label": "Crowbar Tool",
         "ItemLogic": "/Game/Equipped/CrowbarToolBP.CrowbarToolBP_C",
+	},{
+		"Name": "UpgradeTool",
+		"Label": "Upgrade Tool",
+        "ItemLogic": "/Game/Equipped/UpgradeToolBP.UpgradeToolBP_C",
 	}
 	#{
 	#	"Name": "BuildTool",
