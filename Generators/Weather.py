@@ -102,20 +102,22 @@ objects_array = []
 loc_entries = []
 
 selection_weights = {
-	"Clear": 4.0,
-	"SlightlyCloudy": 3.0,
-	"PartlyCloudy": 3.0,
-	"Overcast": 2.0,
-    "LightRain": 0.5,
-	"Rain": 0.2,
-	"Storm": 0.1,
-	"Foggy": 2.0,
-	"ExtremeFoggy": 1.2,
+	"Clear": 40,
+	"SlightlyCloudy": 30,
+	"PartlyCloudy": 30,
+	"Overcast": 20,
+	# Дождевые пресеты сделаны заметно реже для ваниллы.
+	# В особых мирах/биомах (например, Добота) можно задать свои веса через моды.
+	"LightRain": 5,
+	"Rain": 2,
+	"Storm": 1,
+	"Foggy": 20,
+	"ExtremeFoggy": 12,
 }
 
 for w in weathers:
 	name = w["Name"]
-	weight = selection_weights.get(name, 1.0)
+	weight = selection_weights.get(name, 10)
 	objects_array.append({
 		"Class": "StaticWeather",
 		"Name": name,
