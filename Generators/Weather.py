@@ -106,13 +106,11 @@ selection_weights = {
 	"SlightlyCloudy": 30,
 	"PartlyCloudy": 30,
 	"Overcast": 20,
-	# Дождевые пресеты сделаны заметно реже для ваниллы.
-	# В особых мирах/биомах (например, Добота) можно задать свои веса через моды.
 	"LightRain": 5,
-	"Rain": 2,
-	"Storm": 1,
-	"Foggy": 20,
-	"ExtremeFoggy": 12,
+	"Rain": 5,
+	"Storm": 3,
+	"Foggy": 15,
+	"ExtremeFoggy": 3,
 }
 
 for w in weathers:
