@@ -56,7 +56,8 @@ def append_equipment(xy, append_levels, researches):
 		"Unlocks": [["Hand" + r_dict, "AdvancedJetpack"]],
 		
 		
-		"Levels": [3,3],
+		"Levels": [4,4],
+		"CostMul": 2.5,
 	})
 	append_levels({
 		"Class": research_recipe,
