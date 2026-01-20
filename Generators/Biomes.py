@@ -185,7 +185,8 @@ families.extend([
 			"FertileForestBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Foggy"]
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "Foggy"],
+		"WeatherWeights": [10, 15, 20, 20, 30, 35, 10]
 	},
 	{
 		# Flat concrete wasteland world: keep weather variants strictly clear-only
