@@ -639,7 +639,7 @@ proplists = [
 			}
 
 		]
-	},{ 
+	},	{ 
 		"Name": "FertileForestProps",
 		"Array": [
 			{
@@ -650,7 +650,7 @@ proplists = [
 				"Chance": 0.005
 			},{
 				"Props": ["Fern"],
-				"Chance": 0.06
+				"Chance": 0.02
 			},{
 				"Props": ["Dandaleon"],
 				"Chance": 0.45
@@ -853,6 +853,7 @@ for prop in props:
 			"ScaleMin": prop["ScaleMin"],
 			"ScaleMax": prop["ScaleMax"],
 			"ProjectToTerrainPower": prop["ProjectToTerrainPower"],
+			"AdditiveElevation": 20,
 			"Item": prop["Name"],
 			"Minable": {
 				"Result": prop["Drops"],
@@ -873,8 +874,6 @@ for prop in props:
 			temp_prop["Floating"] = prop["Floating"]
 		if "CullEnd" in prop:
 			temp_prop["CullEnd"] = prop["CullEnd"]
-		if "AdditiveElevation" in prop:
-			temp_prop["AdditiveElevation"] = prop["AdditiveElevation"]	
 		if "MaximumHeight" in prop:
 			temp_prop["MaximumHeight"] = prop["MaximumHeight"]	
 		if "MinimumHeight" in prop:
