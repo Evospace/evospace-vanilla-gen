@@ -955,43 +955,6 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
-	"Name": "BasicBattery",
-	"Label": ["BasicBattery", "parts"],
-	"RequiredResearch": ["Battery", "BatteryBox"],
-	"Levels": [4,4],
-	"Unlocks": [[assembler_r_dict, "BasicBattery"],["Hand" + r_dict, "BasicBattery"]],
-	"MainResearch": True,
-	"CostMul": 0.5,
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "AdvancedBattery",
-	"Label": ["AdvancedBattery", "parts"],
-	"RequiredResearch": ["BasicBattery"],
-	"Levels": [4,4],
-	"Unlocks": [[assembler_r_dict, "AdvancedBattery"],["Hand" + r_dict, "AdvancedBattery"]],
-	"CostMul": 4,
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "SuperiorBattery",
-	"Label": ["SuperiorBattery", "parts"],
-	"RequiredResearch": ["AdvancedBattery"],
-	"Levels": [4,4],
-	"Unlocks": [[assembler_r_dict, "SuperiorBattery"],["Hand" + r_dict, "SuperiorBattery"]],
-	"CostMul": 8,
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "UltimateBattery",
-	"Label": ["UltimateBattery", "parts"],
-	"RequiredResearch": ["SuperiorBattery"],
-	"Levels": [4,4],
-	"Unlocks": [[assembler_r_dict, "UltimateBattery"],["Hand" + r_dict, "UltimateBattery"]],
-	"CostMul": 16,
-})
-append_levels({
-	"Class": research_recipe,
 	"Name": "Battery",
 	"Label": ["Battery", "parts"],
 	"RequiredResearch": ["SulfuricAcid"],
@@ -1393,16 +1356,6 @@ append_levels({
 	"RequiredResearch": ["AluminiumProduction"],
 	"Levels": [3,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%BatteryBox"] ],
-	"MainResearch": True,
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "PrimitiveBattery",
-	"Label": ["PrimitiveBattery", "parts"],
-	"RequiredResearch": ["BatteryBox"],
-	"Levels": [3,3],
-	"Unlocks": [[h_r_dict, "PrimitiveBattery"]],
-	"CostMul": 2,
 	"MainResearch": True,
 })
 append_levels({

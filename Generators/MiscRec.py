@@ -593,18 +593,6 @@ recipes_assembler.append({
 	"Tier": 4
 })
 
-recipes_hand.append({
-	"Name": "PrimitiveBattery",
-	"Input": items([
-		["Coke"],
-		["AluminiumParts"],
-		["SteelPlate"]
-	]),
-	"Output": one_item("PrimitiveBattery"),
-	"Ticks" : 100,
-	"Tier": 3
-})
-
 for miscBlock in ["BasicPlatform", "Bricks", "GlassBlock", "WoodenPlanks", "StoneTiles", "RedTiles", "DarkTiles", "Terracotta", "TerracottaTiles", "RedBricks", "DarkBricks", "TerracottaBricks"]:
 	recipes_hand.append({
 		"Name": miscBlock,
@@ -647,25 +635,6 @@ for miscBlock in ["CopperChair", "Ladder", "Door", "Window", "PlasticWindow", "R
 		"Tier": 1
 	})
 		
-for level, name, copm_name in zip(range(0, 4), ["BasicBattery", "AdvancedBattery", "SuperiorBattery", "UltimateBattery"], ["Battery", "BasicBattery", "AdvancedBattery", "SuperiorBattery"]):
-	recipes_hand.append({
-		"Name": name,
-		"Input":{
-			"Items":[
-				{
-					"Name": copm_name,
-					"Count": battery_mul(0) if level == 0 else 5
-				},
-				{
-					"Name": circuits[level + 1],
-					"Count": 1
-				}
-			]
-		},
-		"Output": one_item(name),
-		"Ticks" : 100 * (level + 1),
-	})
-
 recipes_hand.append({
 	"Name":"Cell",
 	"Input": items([
