@@ -2414,7 +2414,7 @@ recipes_industrial_chemreactor.append({
 	},
 	"Ticks" : 200,
 	"Colors": [[0.0,0.0,0.3,0.2],[0.8,0.8,0.1,0.3]],
-	"Tier": 4,
+	"Tier": 3,
 })
 
 recipes_industrial_chemreactor.append({
