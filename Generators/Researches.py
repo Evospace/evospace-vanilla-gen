@@ -1740,16 +1740,8 @@ append_levels({
 	"Name": "Fence",
 	"Label": ["Fence", "misc"],
 	"RequiredResearch": ["DecorativeWood2"],
-	"Unlocks": [["Hand" + r_dict, "SteelFence"]],
+	"Unlocks": [["Hand" + r_dict, "Fence"]],
 	"Levels": [2,2],
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "Fence1",
-	"Label": ["TwoWorldsFormat", "common", ["Fence", "misc"], [level_labels[1], "common"]],
-	"RequiredResearch": ["Fence"],
-	"Unlocks": [["Hand" + r_dict, "StainlessSteelFence"]],
-	"Levels": [3,3],
 })
 append_levels({
 	"Class": research_recipe,

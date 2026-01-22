@@ -1304,8 +1304,7 @@ for machine in machines:
 				"Ticks" : 20
 			})
 
-		if not has_hand_recipe(recipes_hand, tier_material[tier] + machine["Name"]):
-			print("No recipe for "+machine["Name"])
+		# Validation moved to ValidateTiers
 
 data = {
 	"Objects": objects_array
