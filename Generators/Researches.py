@@ -900,7 +900,7 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "Capacitor3",
 	"Label": ["TwoWorldsFormat", "common", ["Capacitor", "parts"], ["III", "common"]],
-	"RequiredResearch": ["Capacitor2", "Polyethylene"],
+	"RequiredResearch": ["Capacitor2", "Polyethylene", "CrudeTantalum"],
 	"Levels": [3,3],
 	"Unlocks": [[assembler_r_dict, "Capacitor3"]],
 	"CostMul":6,
@@ -909,7 +909,7 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "Capacitor4",
 	"Label": ["TwoWorldsFormat", "common", ["Capacitor", "parts"], ["IV", "common"]],
-	"RequiredResearch": ["Capacitor3", "CarbonFiberSheet"],
+	"RequiredResearch": ["Capacitor3", "CarbonFiberSheet", "CrudeTantalum"],
 	"Levels": [3,3],
 	"Unlocks": [[assembler_r_dict, "Capacitor4"]],
 	"CostMul":12,
@@ -1486,13 +1486,14 @@ append_levels({
 	"RequiredResearch": ["Polyethylene"],
 	"Levels": [5,5],
 	"Unlocks": [
+		["IndustrialSmelter" + r_dict, "TantalumDust"],
 		["IndustrialSmelter" + r_dict, "TantalumSludge"],
 		["Hand" + r_dict, "TantalumWire"],
 		[assembler_r_dict, "TantalumWire2"],
 		["Hand" + r_dict, "TantalumFoil"],
 		[assembler_r_dict, "TantalumFoil"],
 	],
-	"CostMul": 5.5
+	"CostMul": 2.5
 })
 append_levels({
 	"Class": research_recipe,
