@@ -265,7 +265,7 @@ recipes_assembler.append({
 	]),
 	"Output": one_item("Resistor", 8),
 	"Ticks" : 60,
-	"Tier": 6,
+	"Tier": 5,
 })
 
 recipes_hand.append({
@@ -1826,7 +1826,7 @@ recipes_indu.append({
 for material in materials:
 	if "Smelting" in material and "InductionFurnace" in material["Smelting"] and "Dust" in material["Items"]:
 		m_name = material["Name"]
-		recipes_indu.append({
+		recipe = {
 			"Name": m_name+"Dust",
 			"Input": items([
 				[m_name + "Dust"],
@@ -1838,7 +1838,8 @@ for material in materials:
 			]),
 			"Tier": 5,
 			"Ticks" : 200,
-		})
+		}
+		recipes_indu.append(recipe)
 
 recipes_sep.append({
 	"Name":"SiliconOxide",
