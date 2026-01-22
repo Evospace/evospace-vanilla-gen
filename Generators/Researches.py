@@ -840,7 +840,7 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "AdvancedCircuit2",
 	"Label": ["TwoWorldsFormat", "common", ["AdvancedCircuit", "parts"], ["II", "common"]],
-	"RequiredResearch": ["Transistor"],
+	"RequiredResearch": ["Transistor", "Assembler"],
 	"Levels": [2,2],
 	"Unlocks": [[assembler_r_dict, "AdvancedCircuit2"]],
 	"CostMul":2.5,
