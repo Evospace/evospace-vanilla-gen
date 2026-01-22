@@ -395,7 +395,11 @@ append_levels({
 	"RequiredResearch": ["Oven"],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%BlastFurnace"]],
-	"UnlockFirst": get_parts_unlocks(tier_material[2]),
+	"UnlockFirst": get_parts_unlocks(tier_material[2]) + [
+		["Hand" + r_dict, "GoldWire"],
+		[assembler_r_dict, "GoldWire"],
+		[assembler_r_dict, "GoldWire2"],
+	],
 	"MainResearch": True,
 	"CostMuls": [5, 2.5, 1.5, 1, 1, 1, 1, 1]
 })
@@ -1011,7 +1015,15 @@ append_levels({
 	"Label": ["PlatinumSolution", "parts"],
 	"RequiredResearch": ["NitricAcid"],
 	"Levels": [5,5],
-	"Unlocks": [[ic_reactor_r_dict, "PlatinumSolution"],[ic_reactor_r_dict, "AmmoniumChloride"],[ic_reactor_r_dict, "Platinum"]],
+	"Unlocks": [
+		[ic_reactor_r_dict, "PlatinumSolution"],
+		[ic_reactor_r_dict, "AmmoniumChloride"],
+		[ic_reactor_r_dict, "Platinum"],
+		["Hand" + r_dict, "PlatinumWire"],
+		[assembler_r_dict, "PlatinumWire2"],
+		["Hand" + r_dict, "PlatinumFoil"],
+		[assembler_r_dict, "PlatinumFoil"],
+	],
 	"CostMul": 1.2,
 	"MainResearch": True,
 })
@@ -1021,7 +1033,11 @@ append_levels({
 	"Label": ["RareEarthSludge", "parts"],
 	"RequiredResearch": ["SulfuricAcid"],
 	"Levels": [4,4],
-	"Unlocks": [["ChemicalBath" + r_dict, "RareEarthSludge"]],
+	"Unlocks": [
+		["ChemicalBath" + r_dict, "RareEarthSludge"],
+		["Hand" + r_dict, "YttriumWire"],
+		[assembler_r_dict, "YttriumWire2"],
+	],
 	"MainResearch": True,
 	"CostMul": 1.5,
 })
@@ -1469,7 +1485,13 @@ append_levels({
 	"Label": ["CrudeTantalum", "researches"],
 	"RequiredResearch": ["Polyethylene"],
 	"Levels": [5,5],
-	"Unlocks": [["IndustrialSmelter" + r_dict, "TantalumSludge"], [h_r_dict, "TantalumWire"], [h_r_dict, "TantalumFoil"]],
+	"Unlocks": [
+		["IndustrialSmelter" + r_dict, "TantalumSludge"],
+		["Hand" + r_dict, "TantalumWire"],
+		[assembler_r_dict, "TantalumWire2"],
+		["Hand" + r_dict, "TantalumFoil"],
+		[assembler_r_dict, "TantalumFoil"],
+	],
 	"CostMul": 5.5
 })
 append_levels({
@@ -1579,7 +1601,10 @@ append_levels({
 	"Label": ["UraniumCell", "parts"],
 	"RequiredResearch": ["TitaniumProduction"],
 	"Levels": [5,5],
-	"Unlocks": [["Hand" + r_dict, "UraniumCell"]],
+	"Unlocks": [
+		["Hand" + r_dict, "UraniumCell"],
+		[assembler_r_dict, "Cell2"],
+	],
 })
 append_nuclear([7,-7], append_levels, researches)
 append_levels({

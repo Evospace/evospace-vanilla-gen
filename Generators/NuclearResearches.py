@@ -35,7 +35,11 @@ def append_nuclear(xy, append_levels, researches):
 		"Name": "ThoriumReaction",
 		"Label": ["ThoriumReaction", "researches"],
 		"RequiredResearch": ["AdvancedReflection"],
-		"Unlocks": [["FissionReactor" + r_dict, "ThoriumCell"]],
+		"Unlocks": [
+			["FissionReactor" + r_dict, "ThoriumCell"],
+			["Hand" + r_dict, "ThoriumCell"],
+			["Hand" + r_dict, "Uranium233Cell"],
+		],
 		"Levels": [5,5],
 	})
 	append_levels({
@@ -43,7 +47,10 @@ def append_nuclear(xy, append_levels, researches):
 		"Name": "PlutoniumReaction",
 		"Label": ["PlutoniumReaction", "researches"],
 		"RequiredResearch": ["ThoriumReaction"],
-		"Unlocks": [["FissionReactor" + r_dict, "PlutoniumCell"]],
+		"Unlocks": [
+			["FissionReactor" + r_dict, "PlutoniumCell"],
+			["Hand" + r_dict, "PlutoniumCell"],
+		],
 		
 		
 		"Levels": [5,5],
