@@ -533,7 +533,7 @@ proplists = [
 		"Array": [
 			{
 				"Props": ["SmallVolcanicRock"],
-				"Chance": 0.06
+				"Chance": 0.02
 			},
 			{
 				"Props": ["VolcanicRock"],
