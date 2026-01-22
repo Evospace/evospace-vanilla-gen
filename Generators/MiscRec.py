@@ -636,7 +636,7 @@ for miscBlock in ["ReinforcedConcrete", "ReinforcedConcreteTiles", "ReinforcedCo
 		"Tier": 3
 	})
 
-for miscBlock in ["CopperChair", "Ladder", "Door", "Window", "PlasticWindow", "Rack", "Fence", "SteelFence", "StainlessSteelFence"]:
+for miscBlock in ["CopperChair", "Ladder", "Door", "Window", "PlasticWindow", "Rack", "Fence"]:
 	recipes_hand.append({
 		"Name": miscBlock,
 		"Input": items([
