@@ -1132,6 +1132,10 @@ for machine in machines:
 							"Name": cables[tier],
 							"Count": 2 * (level + 1)
 						},
+						{
+							"Name": "Battery",
+							"Count": 10 + level * 3
+						},
 						plates_count(2),
 						{
 							"Name": circuits[tier],
