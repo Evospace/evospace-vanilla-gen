@@ -1441,7 +1441,7 @@ append_levels({
 	"Name": "TitaniumProduction",
 	"Label": ["TitaniumProduction", "researches"],
 	"RequiredResearch": ["KrollProcess"],
-	"Unlocks": get_parts_unlocks(tier_material[5]),
+	"Unlocks": get_parts_unlocks(tier_material[5]) + [["Mixer" + r_dict, "PreparedTitaniumOxideCraft"]],
 	"Levels": [5,5],
 	"MainResearch": True,
 })
