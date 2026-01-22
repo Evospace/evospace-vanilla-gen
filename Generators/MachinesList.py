@@ -1067,13 +1067,6 @@ machines = [
         "BlockLogic":"LogicInterfaceBlockLogic",
 		"Description": []
 	},{
-		"Name": "DataCable",
-		"Label": "Data Cable",
-		"StartTier": 2,
-		"EndTier": 2,		
-        "BlockLogic": "DataConductorBlockLogic",
-		"Description": []
-	},{
 		"Name": "StorageCore",
 		"Label": "Storage Core",
 		"StartTier": 2,
