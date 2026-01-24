@@ -1311,7 +1311,7 @@ for machine in machines:
 		# Validation moved to ValidateTiers
 
 data = {
-	"Objects": order_items_blocks(objects_array)
+	"Objects": objects_array
 }
 
 write_file("Generated/Mixed/machines.json", data)

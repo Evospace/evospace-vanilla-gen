@@ -162,7 +162,7 @@ for d in designables:
 
 	objects_array.append(block)
 
-data = { "Objects": order_items_blocks(objects_array) }
+data = { "Objects": objects_array }
 
 # Single consolidated output; extend 'designables' above to add more blocks.
 write_file("Generated/Mixed/designable_blocks.json", data)

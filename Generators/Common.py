@@ -41,12 +41,6 @@ def round_25(x):
 def write_file(filename, data):
 	generated_files[filename] = data
 
-def order_items_blocks(objects):
-	items = [obj for obj in objects if obj.get("Class") == "StaticItem"]
-	blocks = [obj for obj in objects if obj.get("Class") == "StaticBlock"]
-	rest = [obj for obj in objects if obj.get("Class") not in ("StaticItem", "StaticBlock")]
-	return items + blocks + rest
-
 def write_text_file(filename, data):
 	generated_text_files[filename] = data
 
