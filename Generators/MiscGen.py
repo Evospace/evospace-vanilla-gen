@@ -383,7 +383,7 @@ for one in equipped:
 
 	
 data = {
-	"Objects": order_items_blocks(objects_array)
+	"Objects": objects_array
 }
 
 write_file("Generated/Mixed/misc.json", data);
