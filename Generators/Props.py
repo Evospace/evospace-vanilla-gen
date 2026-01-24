@@ -929,7 +929,7 @@ objects_array.append({
 })
 	
 data = {
-	"Objects": order_items_blocks(objects_array)
+	"Objects": objects_array
 }
 
 write_file("Generated/Mixed/props.json", data); 
