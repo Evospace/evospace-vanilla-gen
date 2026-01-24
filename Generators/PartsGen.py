@@ -558,7 +558,7 @@ for tool in tools:
     # removed tool generator to avoid duplicate with shipped base PNG icons
 					
 data = {
-	"Objects": objects_array
+	"Objects": order_items_blocks(objects_array)
 }
 
 write_file("Generated/Mixed/parts.json", data);

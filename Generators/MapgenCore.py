@@ -164,7 +164,7 @@ for object in mapgen_objects:
 	objects_array.append(staticBlock)
 	
 data = {
-	"Objects": objects_array
+	"Objects": order_items_blocks(objects_array)
 }
 
 write_file("Generated/Mixed/mapgen_core.json", data);
