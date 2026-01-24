@@ -331,7 +331,7 @@ for ore_type in ore_types:
 				})
 			
 data = {
-	"Objects": objects_array
+	"Objects": order_items_blocks(objects_array)
 }
 filename = "Generated/Mixed/ores.json"
 
