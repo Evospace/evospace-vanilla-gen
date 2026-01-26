@@ -18,6 +18,7 @@ ore_types = [
 		},
 		"Formula": "CuFeS2",
 		"Color": "#994c19",
+		"ItemColor": "#b48a3a",
 		"Drops": "ChalcopyriteOre",
 		"Tier": 0,
 	},{
@@ -32,6 +33,7 @@ ore_types = [
 		},
 		"Formula": "FeS2",
 		"Color": [111 / 255./2.0, 106 / 255./2.0, 81 / 255./2.0],
+		"ItemColor": "#c6c6c6",
 		"Drops": "PyriteOre",
 		"Tier": 2,
 		"ExpensiveChemicalBath": 8,
@@ -49,6 +51,7 @@ ore_types = [
 		"Formula": "CuCO3",
 		"Crystal": True,
 		"Color": "#598a90",
+		"ItemColor": "#3aaf6b",
 		"Drops": "MalachiteOre",
 		"Tier": 0,
 	},{
@@ -63,6 +66,7 @@ ore_types = [
 		},
 		"Formula": "Fe3O4+Au",
 		"Color": "#323228",
+		"ItemColor": "#585858",
 		"Drops": "MagnetiteOre",
 		"Tier": 2,
 	},{
@@ -77,6 +81,7 @@ ore_types = [
 		},
 		"Formula": "Al2O3+TiO2",
 		"Color": "#bdad8a",
+		"ItemColor": "#8c4a3a",
 		"Drops": "BauxiteOre",
 		"Tier": 3,
 	},{
@@ -93,11 +98,12 @@ ore_types = [
 		"Crystal": True,
 		"CrystalIcoGen": True,
 		"Color": "#323228",
+		"ItemColor": "#d35a4a",
 		"Drops": "RubyOre",
 		"Tier": 3,
 	},{
 		"Name": "Cinnabar",
-		"Color": [202 / 255., 115 / 512., 43 / 512.],
+		"ItemColor": "#e29a2f",
 		"Side": [202 / 255., 115 / 512., 43 / 512.],
 		"Item": [202 / 255., 115 / 512.,  43 / 512.],
 		"Crystal": True,
@@ -127,6 +133,7 @@ ore_types = [
 		"Crystal": True,
 		"CrystalIcoGen": True,
 		"Color": "#324228",
+		"ItemColor": "#2f4b2a",
 		"Drops": "ThorianiteOre",
 		"Formula": "ThO2+UO2",
 		"Tier": 4,
@@ -140,12 +147,14 @@ ore_types = [
 			"Macerator": "PyroplatiteOreDust",
 		},
 		"Color": "#324258",
+		"ItemColor": "#2bb9cf",
 		"Drops": "PyroplatiteOre",
 		"Formula": "AuS2+PtS2+RhS2",
 		"Tier": 4,
 	},{
 		"Name": "Coal",
 		"Color": [.06, .06, .06],
+		"ItemColor": "#2b2b2b",
 		"Side": [.06, .06, .06],
 		"Item": [.06, .06, .06],
 		"Formula": "C",
@@ -180,6 +189,7 @@ for ore_type in ore_types:
 		"Category": "Ore",
 		"Label": [ore_type["Name"]+"Ore", "ores"],
 		"DescriptionParts": description,
+		"Color": ore_type["ItemColor"],
 		"Materials" : [
 			"",
 			"/Game/Materials/" + ore_type["Name"]
@@ -221,6 +231,7 @@ for ore_type in ore_types:
 			"Category": "Ore",
 			"Label": [ore_type["Name"]+"OreImpureGravel", "ores"],
 			"DescriptionParts": description,
+			"Color": ore_type["ItemColor"],
 		}
 
 		objects_array.append(item)
@@ -244,6 +255,7 @@ for ore_type in ore_types:
 			"Category": "Ore",
 			"Label": [ore_type["Name"]+"OreGravel", "ores"],
 			"DescriptionParts": description,
+			"Color": ore_type["ItemColor"],
 		}
 
 		objects_array.append(item)
@@ -264,6 +276,7 @@ for ore_type in ore_types:
 			"Category": "Ore",
 			"Label": [ore_type["Name"]+"OreDust", "ores"],
 			"DescriptionParts": description,
+			"Color": ore_type["ItemColor"],
 			"Materials" : [
 				"",
 				"/Game/Materials/" + ore_type["Name"] + "Dust"
@@ -288,6 +301,7 @@ for ore_type in ore_types:
 			"Category": "Ore",
 			"Label": [ore_type["Name"]+"Dust", "ores"],
 			"DescriptionParts": description,
+			"Color": ore_type["ItemColor"],
 			"Materials" : [
 				"",
 				"/Game/Materials/" + ore_type["Name"] + "Dust"
@@ -316,6 +330,7 @@ for ore_type in ore_types:
 				"Label": [ore_type["Name"]+"Crystal", "ores"],
 				"DescriptionParts": description,
 				"Mesh": "/Game/Models/CrystalCrate",
+				"Color": ore_type["ItemColor"],
 				"Materials" : [
 					"",
 					"/Game/Materials/" + ore_type["Name"]
