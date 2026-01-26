@@ -37,7 +37,8 @@ mapgen_objects = [
 		"Color": "#525c27",
 		"Side": "#55321d",
 		"Drops": "Dirt",
-		"Hardness": 1
+		"Hardness": 1,
+		"BreakEffect": "/Game/EffectActors/DirtBreakEffect.DirtBreakEffect_C"
 	},{
 		"Name": "Lava",
 		"Color": "#686868",
@@ -55,19 +56,22 @@ mapgen_objects = [
 		"Color": "#24120a",
 		"Side": "#2c2215",
 		"Drops": "Dirt",
-		"Hardness": 1
+		"Hardness": 1,
+		"BreakEffect": "/Game/EffectActors/DirtBreakEffect.DirtBreakEffect_C"
 	},{
 		"Name": "PineForest",
 		"Color": "#574226",
 		"Side": "#574226",
 		"Drops": "Dirt",
-		"Hardness": 1
+		"Hardness": 1,
+		"BreakEffect": "/Game/EffectActors/DirtBreakEffect.DirtBreakEffect_C"
 	},{
 		"Name": "Dirt",
 		"Color": "#866640",
 		"Side": "#866640",
 		"Drops": "Dirt",
-		"Hardness": 1
+		"Hardness": 1,
+		"BreakEffect": "/Game/EffectActors/DirtBreakEffect.DirtBreakEffect_C"
 	},{
 		"Name": "Gravel",
 		"Color": "#e9ddb1",
@@ -79,7 +83,8 @@ mapgen_objects = [
 		"Color": "#55321d",
 		"Side": "#866641",
 		"Drops": "Dirt",
-		"Hardness": 1
+		"Hardness": 1,
+		"BreakEffect": "/Game/EffectActors/DirtBreakEffect.DirtBreakEffect_C"
 	},{
 		"Name": "Clay",
 		"Color": "#6f452e",

@@ -89,7 +89,7 @@ families.extend([
 			"PrairiePlainsBiome",
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain"]
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "LightLowFog"]
 	},	{
 		"Name":"SandBiomeFamily",
 		"Class":"BiomeFamily",
@@ -98,7 +98,7 @@ families.extend([
 			"DesertBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy"]
+		"Weather": ["Clear", "SlightlyCloudy", "LightLowFog"]
 	},	{
 		"Name":"ForestBiomeFamily",
 		"Class":"BiomeFamily",
@@ -109,7 +109,7 @@ families.extend([
 			"BushlandBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Foggy"]
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Foggy", "LightLowFog"]
 	},	{
 		"Name":"PineForestBiomeFamily",
 		"Class":"BiomeFamily",
@@ -118,7 +118,7 @@ families.extend([
 			"PineForestBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Foggy"]
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Foggy", "LightLowFog"]
 	},	{
 		"Name":"SeaBiomeFamily",
 		"Class":"BiomeFamily",
@@ -130,7 +130,7 @@ families.extend([
             "GravelSeaBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "LightRain", "Foggy"]
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "LightRain", "Foggy", "LightLowFog"]
 	},	{
 		"Name":"VolcanicBiomeFamily",
 		"Class":"BiomeFamily",
@@ -140,7 +140,7 @@ families.extend([
 			"BrokenLandBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Storm"]
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Storm", "LightLowFog"]
 	},	{
 		"Name":"SwampBiomeFamily",
 		"Class":"BiomeFamily",
@@ -152,7 +152,7 @@ families.extend([
 			"ClayBiome",
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Overcast", "LightRain", "Rain", "Foggy", "ExtremeFoggy"]
+		"Weather": ["Overcast", "LightRain", "Rain", "Foggy", "ExtremeFoggy", "DenseLowFog"]
 	},	{
 		"Name":"PlainBiomeFamily",
 		"Class":"BiomeFamily",
@@ -164,7 +164,7 @@ families.extend([
 			"YellowPlainsBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain"]
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "LightLowFog"]
 	},	{
 		"Name":"SnowBiomeFamily",
 		"Class":"BiomeFamily",
@@ -175,7 +175,7 @@ families.extend([
 			"SnowForestBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Foggy", "ExtremeFoggy"]
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Foggy", "ExtremeFoggy", "DenseLowFog"]
 	},
 	{
 		"Name":"FertileForestBiomeFamily",
@@ -185,8 +185,8 @@ families.extend([
 			"FertileForestBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "Foggy"],
-		"WeatherWeights": [10, 15, 20, 20, 30, 35, 10]
+		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "Foggy", "LightLowFog"],
+		"WeatherWeights": [10, 15, 20, 20, 30, 35, 10, 8]
 	},
 	{
 		# Flat concrete wasteland world: keep weather variants strictly clear-only

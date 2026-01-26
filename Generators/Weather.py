@@ -2,7 +2,7 @@ from Common import *
 
 # Weather presets in Evospace content-generation style
 # Fields map to UStaticWeather DeserializeJson:
-#   Cloudiness01, Precipitation01, Fog01, Storminess01, WindSpeed
+#   Cloudiness01, Precipitation01, Fog01, SecondFog01, Storminess01, WindSpeed
 
 weathers = [
 	{
@@ -10,6 +10,7 @@ weathers = [
 		"Cloudiness01": 0.05,
 		"Precipitation01": 0.0,
 		"Fog01": 0.0,
+		"SecondFog01": 0.0,
 		"Storminess01": 0.0,
 		"WindSpeed": 0.5,
 		"MinDurationSeconds": 90,
@@ -20,6 +21,7 @@ weathers = [
 		"Cloudiness01": 0.15,
 		"Precipitation01": 0.0,
 		"Fog01": 0.05,
+		"SecondFog01": 0.0,
 		"Storminess01": 0.0,
 		"WindSpeed": 0.7,
 		"MinDurationSeconds": 90,
@@ -30,6 +32,7 @@ weathers = [
 		"Cloudiness01": 0.35,
 		"Precipitation01": 0.0,
 		"Fog01": 0.05,
+		"SecondFog01": 0.0,
 		"Storminess01": 0.0,
 		"WindSpeed": 1.0,
 		"MinDurationSeconds": 90,
@@ -40,6 +43,7 @@ weathers = [
 		"Cloudiness01": 0.9,
 		"Precipitation01": 0.0,
 		"Fog01": 0.1,
+		"SecondFog01": 0.0,
 		"Storminess01": 0.0,
 		"WindSpeed": 1.5,
 		"MinDurationSeconds": 1,
@@ -50,6 +54,7 @@ weathers = [
 		"Cloudiness01": 0.85,
 		"Precipitation01": 0.25,
 		"Fog01": 0.15,
+		"SecondFog01": 0.0,
 		"Storminess01": 0.1,
 		"WindSpeed": 2.0,
 		"MinDurationSeconds": 1,
@@ -60,6 +65,7 @@ weathers = [
 		"Cloudiness01": 0.95,
 		"Precipitation01": 0.5,
 		"Fog01": 0.25,
+		"SecondFog01": 0.0,
 		"Storminess01": 0.3,
 		"WindSpeed": 3.0,
 		"MinDurationSeconds": 1,
@@ -70,6 +76,7 @@ weathers = [
 		"Cloudiness01": 1.0,
 		"Precipitation01": 0.85,
 		"Fog01": 0.35,
+		"SecondFog01": 0.0,
 		"Storminess01": 1.0,
 		"WindSpeed": 6.0,
 		"MinDurationSeconds": 1,
@@ -80,6 +87,7 @@ weathers = [
 		"Cloudiness01": 0.6,
 		"Precipitation01": 0.0,
 		"Fog01": 0.8,
+		"SecondFog01": 0.6,
 		"Storminess01": 0.0,
 		"WindSpeed": 0.2,
 		"MinDurationSeconds": 1,
@@ -90,8 +98,31 @@ weathers = [
 		"Cloudiness01": 0.8,
 		"Precipitation01": 0.0,
 		"Fog01": 1.0,
+		"SecondFog01": 0.85,
 		"Storminess01": 0.05,
 		"WindSpeed": 0.01,
+		"MinDurationSeconds": 1,
+		"MaxDurationSeconds": 30,
+	},
+	{
+		"Name": "DenseLowFog",
+		"Cloudiness01": 0.35,
+		"Precipitation01": 0.0,
+		"Fog01": 0.15,
+		"SecondFog01": 1.0,
+		"Storminess01": 0.0,
+		"WindSpeed": 0.05,
+		"MinDurationSeconds": 1,
+		"MaxDurationSeconds": 30,
+	},
+	{
+		"Name": "LightLowFog",
+		"Cloudiness01": 0.25,
+		"Precipitation01": 0.0,
+		"Fog01": 0.15,
+		"SecondFog01": 0.35,
+		"Storminess01": 0.0,
+		"WindSpeed": 0.1,
 		"MinDurationSeconds": 1,
 		"MaxDurationSeconds": 30,
 	}
@@ -111,6 +142,8 @@ selection_weights = {
 	"Storm": 3,
 	"Foggy": 15,
 	"ExtremeFoggy": 3,
+	"DenseLowFog": 2,
+	"LightLowFog": 8,
 }
 
 for w in weathers:
@@ -123,6 +156,7 @@ for w in weathers:
 		"Cloudiness01": clamp(w["Cloudiness01"], 0.0, 1.0),
 		"Precipitation01": clamp(w["Precipitation01"], 0.0, 1.0),
 		"Fog01": clamp(w["Fog01"], 0.0, 1.0),
+		"SecondFog01": clamp(w.get("SecondFog01", 0.0), 0.0, 1.0),
 		"Storminess01": clamp(w["Storminess01"], 0.0, 1.0),
 		"WindSpeed": max(0.0, w["WindSpeed"]),
 		"SelectionWeight": max(0.0, weight),
