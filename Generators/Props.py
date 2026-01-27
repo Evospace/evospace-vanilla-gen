@@ -14,7 +14,7 @@ props = [
 		"ScaleMax": 2,
 		"Variations": 2,
 		"ProjectToTerrainPower": 1,
-		"IsBig": True,
+		"IsBig": False,
 		"Drops": "Organics",
 		"Count": 30,
 		"AdditiveElevation": 0
