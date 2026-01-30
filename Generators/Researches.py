@@ -1677,8 +1677,17 @@ append_levels({
 	"Name": "DecorativeWood",
 	"RequiredResearch": ["Bricks"],
 	"Label": ["DecorativeWood", "researches"],
-	"Unlocks": [["Hand" + r_dict, "WoodenPlanks"],["Hand" + r_dict, "Door"]],
+	"Unlocks": [["Hand" + r_dict, "WoodenPlanks"]],
 	"Levels": [1,1],
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "Door",
+	"RequiredResearch": ["DecorativeWood"],
+	"Label": ["DecorativeWood", "researches"],
+	"Unlocks": [["Hand" + r_dict, "Door"]],
+	"Levels": [1,1],
+	"CostMul": 2.0,
 })
 append_levels({
 	"Class": research_recipe,
@@ -1754,6 +1763,74 @@ append_levels({
 	"Levels": [2,7]
 })
 	
+def build_research_graph(research_entries):
+	research_map = {}
+	for research in research_entries:
+		name = research.get("Name")
+		if name:
+			research_map[name] = research
+	
+	graph = {}
+	for name, research in research_map.items():
+		required = research.get("RequiredResearch", [])
+		graph[name] = [dep for dep in required if isinstance(dep, str) and dep]
+	
+	return graph
+
+def build_reachable_cache(graph):
+	reachable_cache = {}
+	
+	def visit(node, visiting):
+		if node in reachable_cache:
+			return reachable_cache[node]
+		if node in visiting:
+			return set()
+		visiting.add(node)
+		reachable = set()
+		for neighbor in graph.get(node, []):
+			reachable.add(neighbor)
+			reachable.update(visit(neighbor, visiting))
+		visiting.remove(node)
+		reachable_cache[node] = reachable
+		return reachable
+	
+	for node in graph:
+		visit(node, set())
+	
+	return reachable_cache
+
+def remove_redundant_required_research(research_entries):
+	graph = build_research_graph(research_entries)
+	reachable_cache = build_reachable_cache(graph)
+	
+	for research in research_entries:
+		required = research.get("RequiredResearch", [])
+		if not required:
+			continue
+		
+		unique_required = []
+		seen = set()
+		for dep in required:
+			if dep not in seen:
+				unique_required.append(dep)
+				seen.add(dep)
+		
+		redundant = set()
+		for dep in unique_required:
+			for other in unique_required:
+				if dep == other:
+					continue
+				if dep in reachable_cache.get(other, set()):
+					redundant.add(dep)
+					break
+		
+		if redundant:
+			research["RequiredResearch"] = [dep for dep in unique_required if dep not in redundant]
+		else:
+			research["RequiredResearch"] = unique_required
+
+remove_redundant_required_research(researches)
+
 data = {
 	"Objects": researches
 }
