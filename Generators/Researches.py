@@ -8,22 +8,6 @@ import re
 
 researches = []
 
-tier_researches = [
-	"MineralsScan",
-	"Metalwork",
-	"SteelProduction",
-	"AluminiumProduction",
-	"StainlessSteelProduction",
-	"TitaniumProduction",
-	"CompositePlate",
-	"NeutroniumProduction",
-	"NeutroniumProduction",
-	"NeutroniumProduction",
-	"NeutroniumProduction",
-	"NeutroniumProduction",
-	"NeutroniumProduction",
-]
-
 csv = []
 
 # Mapping system for item patterns to research dependencies
@@ -72,12 +56,6 @@ def get_research_for_item(item_name):
 	if item_name in item_to_research_mapping:
 		return item_to_research_mapping[item_name]
 	
-	# Check for metal parts pattern (e.g., "SteelParts", "AluminiumParts")
-	for i in range(len(tier_material)):
-		if item_name == tier_material[i] + "Parts":
-			if i < len(tier_researches):
-				return tier_researches[i]
-	
 	# Check for frames pattern (specific frame names)
 	frame_mapping = {
 		"BasicFrame": "SteelProduction",
@@ -95,17 +73,6 @@ def get_research_for_item(item_name):
 	}
 	if item_name in coil_mapping:
 		return coil_mapping[item_name]
-	
-	# Check for frames/coils with tier material prefix (if any)
-	if item_name.endswith("Frame"):
-		tier = get_item_tier(item_name)
-		if tier is not None and tier < len(tier_researches):
-			return tier_researches[tier]
-	
-	if item_name.endswith("Coil"):
-		tier = get_item_tier(item_name)
-		if tier is not None and tier < len(tier_researches):
-			return tier_researches[tier]
 	
 	return None
 
