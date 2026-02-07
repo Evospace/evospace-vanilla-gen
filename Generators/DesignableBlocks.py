@@ -68,15 +68,6 @@ designables = [
 		]
 	},
 	{
-		"Name": "Ladder",
-		"Category": "Decoration",
-		"Label": ["Ladder", "misc"],
-		"Selector": "Blocks/LadderBP.LadderBP_C",
-		"Covers": [
-			"Ladder"
-		]
-	},
-	{
 		"Name": "Chair",
 		"Category": "Decoration",
 		"Label": ["Chair", "misc"],
