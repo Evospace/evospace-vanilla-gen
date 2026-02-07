@@ -1073,5 +1073,12 @@ machines = [
 		"EndTier": 2,		
         "BlockLogic": "ItemRack",
 		"Description": []
+	},{
+		"Name": "Ladder",
+		"Label": "Ladder",
+		"StartTier": 2,
+		"EndTier": 2,		
+        "BlockLogic": "BlockLogic",
+		"Description": []
 	}
 ]
