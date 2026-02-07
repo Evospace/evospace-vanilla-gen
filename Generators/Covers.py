@@ -203,11 +203,6 @@ covers = [
         "Materials": [""],
         "NumCustomData": 3,
     },{
-        "Name": "Ladder",
-        "Mesh": "/Game/Covers/Ladder",
-        "Materials": [""],
-        "NumCustomData": 3,
-    },{
         "Name": "ThinWireFloor",
         "Mesh": "/Game/Covers/ThinWireFloor",
         "Materials": [""],

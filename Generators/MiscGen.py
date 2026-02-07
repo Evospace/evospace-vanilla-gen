@@ -9,6 +9,8 @@ wooden_misc = [
 	{
 		"Name": "Rack"
 	},{
+		"Name": "Ladder"
+	},{
 		"Name": "Door",
 		"Positions": [[0,0,0], [0,0,1]],
 		"BlockLogic": "DoorBlockLogic",
@@ -247,7 +249,7 @@ for one in wooden_misc:
     objects_array.append(item)
 	
     block = {
-		"Name": one["Name"] + static_block,
+		"Name": one["Name"],
 		"Item" : one["Name"],
 		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
