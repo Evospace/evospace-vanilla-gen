@@ -542,14 +542,6 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
-	"Name": "OverflowPump",
-	"Label": ["OverflowPump", "machines"],
-	"RequiredResearch": ["Pump"],
-	"Unlocks": [["Hand" + r_dict, "%Material%OverflowPump"]],
-	"Levels": [1,7],
-})
-append_levels({
-	"Class": research_recipe,
 	"Name": "AutomaticMining",
 	"Label": ["AutomaticMining", "researches"],
 	"RequiredResearch": ["Automatization"],
