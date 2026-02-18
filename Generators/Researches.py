@@ -161,7 +161,6 @@ def append_levels(research_base):
 			research.update({
 				"IsUpgrade": True,
 				"MainResearch": False,
-				"CompleteByDefault": False,
 				"Name": research["Name"] + str(this_level),
 				"RequiredResearch": [research_base["Name"] + str(this_level - 1)] if i != mini + 1 else [research_base["Name"]],
 			})
@@ -239,7 +238,6 @@ append_levels({
 	"Label": ["MineralsScan", "researches"],
 	"RequiredResearch": [],
 	"Unlocks": [["Hand" + r_dict, tier_material[0] + "Furnace"],["Hand" + r_dict, "SandSurface"],["Hand" + r_dict, "GravelSurface"],["Hand" + r_dict, "Dirt"],["Hand" + r_dict, "CopperSpawner"]],
-	"CompleteByDefault": True,
 	"MainResearch": True,
 })
 append_levels({
@@ -248,7 +246,6 @@ append_levels({
 	"Label": ["BasicPlatform", "parts"],
 	"RequiredResearch": ["MineralsScan"],
 	"Unlocks": [["Hand" + r_dict, "BasicPlatform"], ["Hand" + r_dict, "BuildingMaterial"]],
-	"CompleteByDefault": True,
 })
 append_levels({
 	"Class": research_recipe,
@@ -291,7 +288,6 @@ append_levels({
 	"RequiredResearch": ["MineralsScan"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Chest"] ],
 	"Levels":[0,7],
-	"CompleteByDefault": True,
 	"CostMul": 3,
 })
 append_levels({
@@ -318,7 +314,6 @@ append_levels({
 	"Label": ["Electricity", "researches"],
 	"RequiredResearch": ["MineralsScan"],
 	"Unlocks": [["Hand" + r_dict, "CopperConnector"],["Hand" + r_dict, "CopperHandGenerator"]],
-	"CompleteByDefault": True,
 	"MainResearch": True,
 })
 append_levels({
@@ -352,7 +347,6 @@ append_levels({
 	"RequiredResearch": ["Electricity", "Metalwork"],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%CompactGenerator"],["Hand" + r_dict, "%Material%StirlingEngine"]],
-	"CompleteByDefault": True,
 	"MainResearch": True,
 })
 append_levels({
@@ -434,7 +428,6 @@ append_levels({
 	"RequiredResearch": ["MineralsScan"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Smelter"]],
 	"Levels": [0,2],
-	"CompleteByDefault": True,
 	"MainResearch": True
 })
 append_equipment([-1,3], append_levels, researches)
@@ -445,7 +438,6 @@ append_levels({
 	"RequiredResearch": ["Smelting"],
 	"Unlocks": get_parts_unlocks(tier_material[1]),
 	"Levels": [1,1],
-	"CompleteByDefault": True,
 	"MainResearch": True
 })
 append_levels({
@@ -614,7 +606,6 @@ append_levels({
 	"RequiredResearchArr": [["PowerGeneration"], ["AdvancedCircuit"], ["Processor"], ["QuantumCircuit"], ["QuantumProcessor"], ["QuantumBrain"]],
 	"Unlocks": [["Hand" + r_dict, "%Material%Computer"] ],
 	"Levels": [1,6],
-	"CompleteByDefault": True,
 	"MainResearchArr": [True,True,True,True,True,True,True],
 	
 })
@@ -625,7 +616,6 @@ append_levels({
 	"RequiredResearch": ["DistributedComputing"],
 	"Levels": [1,1],
 	"Unlocks": [["Hand" + r_dict, "CopperWire"],[assembler_r_dict, "CopperWire"]],
-	"CompleteByDefault": True,
 	"MainResearch": True,
 	"CostMul": 0.125
 })
