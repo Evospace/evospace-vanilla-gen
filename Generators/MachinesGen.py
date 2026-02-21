@@ -225,7 +225,7 @@ for machine in machines:
 			block["BlockLogic"] = machine["BlockLogic"]
 
 		if "NoActorRenderable" not in machine:
-			block["Actor"] = "Blocks/" + machine["Name"] + "BP." + machine["Name"] + "BP_C"
+			block["Actor"] = machine.get("Actor", "Blocks/" + machine["Name"] + "BP." + machine["Name"] + "BP_C")
 
 		if "Selector" in machine:
 			block["Selector"] = machine["Selector"]
