@@ -475,6 +475,26 @@ for ore in ore_types:
 		"Image": "T_TerrainCluster",
 	})
 
+# Oil deposit spawns like ore, yields RawOil for pumpjacks
+props.append({
+	"Name": "OilCluster",
+	"ScaleMin": 2,
+	"ScaleMax": 2,
+	"Variations": 1,
+	"ProjectToTerrainPower": 1,
+	"Drops": "RawOil",
+	"Count": 1,
+	"CullBegin": 90000,
+	"CullEnd": 100000,
+	"AdditiveElevation": 0,
+	"IsBig": True,
+	"Image": "T_Error",
+	"HitsToBreak": -1,
+	"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+	"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C",
+	"Image": "T_TerrainCluster",
+})
+
 def named_prop(name):
 	return [x for x in props if x["Name"] == name][0]
 
@@ -831,6 +851,7 @@ proplists = [
 ore_props = []
 for ore in ore_types:
 	ore_props.append(ore["Name"]+"Cluster")
+ore_props.append("OilCluster")
 
 objects_array = []
 
