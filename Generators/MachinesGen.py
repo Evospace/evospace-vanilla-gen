@@ -1263,22 +1263,6 @@ for machine in machines:
 				"Ticks" : 20
 			})
 
-		if machine["Name"] == "HandGenerator":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input":{
-					"Items":[
-						plates_count(2),
-						{
-							"Name": "CopperParts",
-							"Count": 4
-						}
-					]
-				},
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 20
-			})
-			
 		if machine["Name"] == "AutomaticFarm":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],

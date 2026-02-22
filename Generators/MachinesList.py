@@ -258,18 +258,6 @@ machines = [
 		"Description": ["HeatInput", "PowerInput"],
         "PowerInput": 50,
 	},{
-        "Name": "HandGenerator",
-        "Label": "Hand Generator",
-        "StartTier": 1,
-        "EndTier": 1,
-        "Description": ["KineticOutput", "PowerOutput"],
-        "PowerOutput": 9,
-        "Positions": [
-            [0, 0, 0],
-            [0, 0, 1],
-            [0, 0, 2],
-        ],
-    },{
 		"Name": "Generator",
 		"Label": "Generator",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
