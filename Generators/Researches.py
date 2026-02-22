@@ -313,7 +313,7 @@ append_levels({
 	"Name": "Electricity",
 	"Label": ["Electricity", "researches"],
 	"RequiredResearch": ["MineralsScan"],
-	"Unlocks": [["Hand" + r_dict, "CopperConnector"],["Hand" + r_dict, "CopperHandGenerator"]],
+	"Unlocks": [["Hand" + r_dict, "CopperConnector"]],
 	"MainResearch": True,
 })
 append_levels({
