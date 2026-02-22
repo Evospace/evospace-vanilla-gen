@@ -970,7 +970,8 @@ machines = [
 		],
 		"StartTier": 4,
 		"EndTier": 7,	
-		"Description": ["KineticInput", "FluidOutput"],		
+		"Description": ["KineticInput", "FluidOutput"],
+		"ItemLogic": "/Game/Equipped/DrillBP.DrillBP_C",
 	},{
 		"Name": "Pumpjack_leg",
 		"Label": "Legacy Pumpjack (remove me)",
