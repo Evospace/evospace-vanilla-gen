@@ -796,7 +796,7 @@ append_levels({
 	"RequiredResearch": ["Transistor", "Assembler"],
 	"Levels": [2,2],
 	"Unlocks": [[assembler_r_dict, "AdvancedCircuit2"]],
-	"CostMul":2.5,
+	"CostExact": 25000,
 })
 append_levels({
 	"Class": research_recipe,
