@@ -582,7 +582,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"Description": ["KineticInput", "ItemOutput"],
-        "ItemLogic": "/Game/Equipped/DrillBP.DrillBP_C",
+        "ItemLogic": "/Game/Equipped/DrillBuildingTool.DrillBuildingTool_C",
 	},{
 		"Name": "Assembler",
 		"Label": "Assembler",
@@ -971,7 +971,7 @@ machines = [
 		"StartTier": 4,
 		"EndTier": 7,	
 		"Description": ["KineticInput", "FluidOutput"],
-		"ItemLogic": "/Game/Equipped/DrillBP.DrillBP_C",
+		"ItemLogic": "/Game/Equipped/PumpjackBuildingTool.PumpjackBuildingTool_C",
 	},{
 		"Name": "Pumpjack_leg",
 		"Label": "Legacy Pumpjack (remove me)",
