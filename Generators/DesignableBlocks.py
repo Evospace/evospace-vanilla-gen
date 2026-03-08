@@ -100,7 +100,9 @@ designables = [
 	}
 ]
 
-objects_array = []
+cover_sets = []
+items = []
+blocks = []
 
 for d in designables:
 	name = d["Name"]
@@ -112,14 +114,14 @@ for d in designables:
 
 	# StaticCoverSet (if covers specified)
 	if covers:
-		objects_array.append({
+		cover_sets.append({
 			"Class": "StaticCoverSet",
 			"Name": name,
 			"Covers": covers
 		})
 
 	# Placement item
-	objects_array.append({
+	items.append({
 		"Class": "StaticItem",
 		"Name": name,
 		"Block": name,
@@ -151,7 +153,9 @@ for d in designables:
 	if "Positions" in d:
 		block["Positions"] = d["Positions"]
 
-	objects_array.append(block)
+	blocks.append(block)
+
+objects_array = cover_sets + items + blocks
 
 data = { "Objects": objects_array }
 

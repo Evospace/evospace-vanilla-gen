@@ -855,10 +855,11 @@ ore_props.append("OilCluster")
 
 objects_array = []
 
-for prop in props: 
+for prop in props:
 	cvs.append([prop["Name"], CamelToSpaces(prop["Name"])])
+	image = "T_" + prop["Name"] if "Image" not in prop else prop["Image"]
+
 	for variation in range(0, prop["Variations"]):
-		image = "T_" + prop["Name"] if "Image" not in prop else prop["Image"]
 		objects_array.append({ "Class": "StaticItem",
 			"Name": prop["Name"] + variation_helper[variation],
 			"StackSize": 32,
@@ -867,7 +868,8 @@ for prop in props:
 			"Label": [prop["Name"], "props"],
 			"DescriptionParts":[["WorldObject","common"]],
 		})
-		
+
+	for variation in range(0, prop["Variations"]):
 		temp_prop = { "Class": "StaticProp",
 			"Name": prop["Name"] + variation_helper[variation],
 			"Mesh": "/Game/Props/" + prop["Name"] + "/" + prop["Name"] + variation_helper[variation],
@@ -882,7 +884,6 @@ for prop in props:
 			},
 			"IsBig": prop["IsBig"]
 		}
-		
 		if "DamageEffect" in prop:
 			temp_prop["DamageEffect"] = prop["DamageEffect"]
 		if "BreakEffect" in prop:
@@ -896,12 +897,11 @@ for prop in props:
 		if "CullEnd" in prop:
 			temp_prop["CullEnd"] = prop["CullEnd"]
 		if "MaximumHeight" in prop:
-			temp_prop["MaximumHeight"] = prop["MaximumHeight"]	
+			temp_prop["MaximumHeight"] = prop["MaximumHeight"]
 		if "MinimumHeight" in prop:
 			temp_prop["MinimumHeight"] = prop["MinimumHeight"]
 		if "HighDetailShadow" in prop:
-			temp_prop["HighDetailShadow"] = prop["HighDetailShadow"]	
-			
+			temp_prop["HighDetailShadow"] = prop["HighDetailShadow"]
 		objects_array.append(temp_prop)
 
 def convert_proplists(proplists, DensityMultiplier=0.6):
