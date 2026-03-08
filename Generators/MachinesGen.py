@@ -19,6 +19,10 @@ def plate_frame_component(tier, count):
 	else:
 		return {"Name": tier_material[tier] + "Plate", "Count": count}
 
+machine_items = []
+machine_blocks = []
+machine_dicts = []
+
 for machine in machines:
 	cvs.append([machine["Name"], machine["Label"]])
 	for tier in range(machine["StartTier"], machine["EndTier"] + 1):
@@ -192,7 +196,7 @@ for machine in machines:
 		if machine["Name"] == "SmallBattery":
 			item["DescriptionParts"].append(["battery", "common", machine["CustomData"]["BaseCapacity"] + machine["CustomData"]["BonusCapacity"] * level])
 
-		objects_array.append(item)
+		machine_items.append(item)
 
 		images.append({ 
 			"NewName": "T_" + tier_material[tier] + image,
@@ -236,9 +240,9 @@ for machine in machines:
 		if "Positions" in machine:
 			block["Positions"] = machine["Positions"]
 			
-		objects_array.append(block)
+		machine_blocks.append(block)
 
-		objects_array.append({ 
+		machine_dicts.append({ 
 			"Class": r_dict,
 			"Name": machine["Name"] + r_dict,
 			"UsedIn": [{
@@ -829,7 +833,7 @@ for machine in machines:
 			})
 			
 		if machine["Name"] == "Constructor":
-			objects_array.append({ 
+			machine_dicts.append({ 
 				"Class": r_dict,
 				"Name": "Hand" + r_dict,
 				"UsedIn": [{
@@ -1293,6 +1297,10 @@ for machine in machines:
 			})
 
 		# Validation moved to ValidateTiers
+
+objects_array.extend(machine_items)
+objects_array.extend(machine_blocks)
+objects_array.extend(machine_dicts)
 
 data = {
 	"Objects": objects_array

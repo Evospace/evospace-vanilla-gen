@@ -290,7 +290,6 @@ for one in simple_single:
 	
 for one in simple_blocks:
     cvs.append([one["Name"], CamelToSpaces(one["Name"])])
-	
     objects_array.append({ "Class": "StaticItem",
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
@@ -301,11 +300,15 @@ for one in simple_blocks:
 		"Category": "Block",
 		"DescriptionParts": [["BuildingBlock", "common"]],
 	})
+	
+for one in simple_blocks:
     objects_array.append({ "Class": tesselator_cube,
 		"Name": one["Name"] + tesselator,
 		"Material" : "/Game/Materials/" + one["Name"],
 		"Transparent": one["Transparent"] if "Transparent" in one else False
 	})
+
+for one in simple_blocks:
     objects_array.append({ "Class": "StaticBlock",
 		"Name": one["Name"] + static_block,
 		"Item" : one["Name"],
