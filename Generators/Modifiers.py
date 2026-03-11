@@ -5,12 +5,18 @@ cvs = []
 
 objects_array.append({
     "Class": "StaticModifier",
-    "Name": "ToolLevelStaticModifier",
+    "Name": "DrillingRigProductivityStaticModifier",
     "Image": "T_Multitool",
-    "Label": ["Multitool", "parts"],
-    "Description": ["MultitoolSpeedDescription", "modifiers"]
+    "Label": ["DrillingRigProductivity", "modifiers"],
+    "Description": ["DrillingRigProductivityDescription", "modifiers"]
 })
-cvs.append(["MultitoolDescription", ""])
+objects_array.append({
+    "Class": "StaticModifier",
+    "Name": "PumpjackProductivityStaticModifier",
+    "Image": "T_Multitool",
+    "Label": ["PumpjackProductivity", "modifiers"],
+    "Description": ["PumpjackProductivityDescription", "modifiers"]
+})
 
 data = {
 	"Objects": objects_array
