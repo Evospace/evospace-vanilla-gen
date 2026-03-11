@@ -8,8 +8,6 @@ import re
 
 researches = []
 
-csv = []
-
 # Mapping system for item patterns to research dependencies
 # Maps item name patterns to tier research names
 item_to_research_mapping = {
@@ -1802,47 +1800,4 @@ data = {
 	"Objects": researches
 }
 
-csv.append(["InventoryUpgrade", "Inventory Upgrade"])
-csv.append(["PlutoniumReaction", "Plutonium Reaction"])
-csv.append(["ThoriumReaction", "Thorium Reaction"])
-csv.append(["PowerGeneration", "Power Generation"])
-csv.append(["Automatization", "Automatization"])
-csv.append(["HeatTransferring", "Heat Transferring"])
-csv.append(["BasicMachines", "Basic Machines"])
-csv.append(["Container", "Fluid Storage"])
-csv.append(["SingleTypeStorage", "Single Type Storage"])
-csv.append(["DistributedComputing", "Distributed Computing"])
-csv.append(["Sign", "Sign"])
-csv.append(["IndustrialSteelProduction", "Industrial Steel Production"])
-csv.append(["SteelProduction", "Steel Production"])
-csv.append(["AutomaticMining", "Automatic Mining"])
-csv.append(["DrillingRigProductivity", "Drilling Rig Productivity"])
-csv.append(["PumpjackProductivity", "Pumpjack Productivity"])
-csv.append(["MetalConstructions", "Metal Constructions"])	
-csv.append(["AdvancedSmelting", "Advanced Smelting"])
-csv.append(["IndustrialSmelting", "Industrial Smelting"])
-csv.append(["Fermentation", "Fermentation"])
-csv.append(["NeutroniumProduction", "Neutronium Production"])
-csv.append(["AluminiumProduction", "Aluminium Production"])
-csv.append(["StainlessSteelProduction", "Stainless Steel Production"])
-csv.append(["TitaniumProduction", "Titanium Production"])
-csv.append(["MineralsScan", "Minerals Scan"])
-csv.append(["Electricity", "Electricity"])
-csv.append(["Smelting", "Smelting"])
-csv.append(["Metalwork", "Metalwork"])
-csv.append(["AdvancedReflection", "Advanced Reflection"])
-csv.append(["ReactionThrottling", "Reaction Throttling"])
-csv.append(["FuelChemistry", "Fuel Chemistry"])
-csv.append(["SulfurSynthesis", "Sulfur Synthesis"])
-csv.append(["SulfuricAcidSynthesis", "Sulfuric Acid Synthesis"])
-csv.append(["PreciseTemperaturePyrolysis", "Precise Temperature Pyrolysis"])
-csv.append(["SteamPyrolysis", "Steam Pyrolysis"])
-csv.append(["KrollProcess", "Kroll Process"])
-csv.append(["AluminiumReduction", "Aluminium Reduction"])
-csv.append(["AdvancedAlloys", "Advanced Alloys"])
-csv.append(["LithiumBattery", "Lithium Battery"])
-csv.append(["CrudeTantalum", "Crude Tantalum"])
-csv.append(["FusionReaction", "Fusion Reaction"])
-
 write_file("Generated/Researches/basic.json", data)
-write_file("Loc/source/researches.json", csv)

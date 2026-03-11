@@ -11,8 +11,6 @@ images = []
 objects_array = []
 recipes_hand = []
 
-cvs = []
-
 def plate_frame_component(tier, count):
 	if tier == 0:
 		return {"Name": "BuildingMaterial", "Count": count}
@@ -24,7 +22,6 @@ machine_blocks = []
 machine_dicts = []
 
 for machine in machines:
-	cvs.append([machine["Name"], machine["Label"]])
 	for tier in range(machine["StartTier"], machine["EndTier"] + 1):
 		level = tier - machine["StartTier"]
 
@@ -1334,5 +1331,3 @@ data = {
 }
 
 write_file("Generated/Recipes/machines.json", data)
-
-write_file("Loc/source/machines.json", cvs)

@@ -2,8 +2,6 @@ from Common import *
 
 objects_array = []
 
-csv = []
-
 mapgen_objects = [
 	{
 		"Name": "Sand",
@@ -137,8 +135,6 @@ mapgen_objects = [
 pickaxe_recipes = []
 
 for object in mapgen_objects:
-	csv.append([object["Name"] + "Surface", CamelToSpaces(object["Name"])])
-
 	objects_array.append({ "Class": "StaticItem",
 		"Name": object["Name"] + "Surface",
 		"Image": "T_" + object["Name"],
@@ -172,5 +168,4 @@ data = {
 	"Objects": objects_array
 }
 
-write_file("Generated/Mixed/mapgen_core.json", data);
-write_file("Loc/source/mapgen_core.json", csv)
+write_file("Generated/Mixed/mapgen_core.json", data)

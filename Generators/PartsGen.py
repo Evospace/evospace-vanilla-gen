@@ -17,13 +17,10 @@ recipes_smelt = []
 recipes_gasfurn = []
 recipes_disassembler = []
 
-cvs = []
-
 def generate_part(name, material_dict):
 	part = named_part(name)
 	material = material_dict["Name"]
 	tier = material_dict["Tier"] if "Tier" in material_dict else 0
-	cvs.append([material + part["Name"], CamelToSpaces(material) + " " + part["Label"]])
 	item = { "Class": "StaticItem",
 		"Name": material + part["Name"],
 		"Label": [material + part["Name"], "parts"],
@@ -157,7 +154,6 @@ for material in materials:
 
 	# abstract
 	if "Abstract" in material["Items"]:
-		cvs.append([m_name, material["Label"]])
 		item = { "Class": "StaticItem",
 			"Name": m_name,
 			"Image": "T_" + m_name,
@@ -188,7 +184,6 @@ for material in materials:
 	
 	# exact
 	if "Exact" in material["Items"]:
-		cvs.append([material["Name"], material["Label"]])
 		item = { "Class": "StaticItem",
 			"Name": material["Name"],
 			"Image": "T_" + material["Name"],
@@ -260,7 +255,6 @@ for material in materials:
 
 	# plate
 	if "Plate" in material["Items"]:
-		cvs.append([material["Name"] + "Plate", material["Label"] + " Plate"])
 		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "Plate",
 			"Image": "T_" + material["Name"] + "Plate",
@@ -325,7 +319,6 @@ for material in materials:
 			
 	# block
 	if "Block" in material["Items"]:
-		cvs.append([material["Name"] + "Block", material["Label"] + " Block"])
 		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "Block",
 			"Image": "T_" + material["Name"] + "Block",
@@ -364,7 +357,6 @@ for material in materials:
 	
 	# fluid
 	if "Fluid" in material["Items"]:
-		cvs.append([material["Name"], material["Label"]])
 		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "",
 			"Image": "T_" + material["Name"] + "",
@@ -425,7 +417,6 @@ for material in materials:
 	
 	# gas
 	if "Gas" in material["Items"]:
-		cvs.append([material["Name"], material["Label"]])
 		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "",
 			"Image": "T_" + material["Name"] + "",
@@ -483,7 +474,6 @@ for material in materials:
 	
 	# dust
 	if "Dust" in material["Items"]:
-		cvs.append([material["Name"] + "Dust", material["Label"] + " Dust"])
 		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "Dust",
 			"Image": "T_" + material["Name"] + "Dust",
@@ -543,7 +533,6 @@ for material in materials:
 			
 # tools	
 for tool in tools:
-	cvs.append([tool["Name"], tool["Label"]])
 	item_name = tool["Name"]
 	item = { "Class": "StaticItem",
 		"Name": item_name,
@@ -629,6 +618,4 @@ data = {
 	"Objects": objects_array
 }
 
-write_file("Generated/Recipes/parts.json", data);
-
-write_file("Loc/source/parts.json", cvs)
+write_file("Generated/Recipes/parts.json", data)
