@@ -1,8 +1,6 @@
 from Common import *
 from OresGen import ore_types
 
-cvs = []
-
 variation_helper = [
 	"", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22"
 ]
@@ -856,7 +854,6 @@ ore_props.append("OilCluster")
 objects_array = []
 
 for prop in props:
-	cvs.append([prop["Name"], CamelToSpaces(prop["Name"])])
 	image = "T_" + prop["Name"] if "Image" not in prop else prop["Image"]
 
 	for variation in range(0, prop["Variations"]):
@@ -953,9 +950,4 @@ data = {
 	"Objects": objects_array
 }
 
-write_file("Generated/Mixed/props.json", data); 
-
-objects_array = []
-
-
-write_file("Loc/source/props.json", cvs)
+write_file("Generated/Mixed/props.json", data)

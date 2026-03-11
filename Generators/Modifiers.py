@@ -1,7 +1,6 @@
 from Common import *
 
 objects_array = []
-cvs = []
 
 objects_array.append({
     "Class": "StaticModifier",
@@ -23,4 +22,3 @@ data = {
 }
 
 write_file("Generated/Mixed/modifiers.json", data)
-write_file("Loc/source/modifiers.json", cvs)

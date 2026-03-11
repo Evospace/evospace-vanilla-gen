@@ -2,7 +2,6 @@ from Common import *
 from MachinesList import *
 
 objects_array = []
-cvs = []
 images = []
 
 wooden_misc = [
@@ -235,8 +234,6 @@ equipped = [
 ]
 
 for one in wooden_misc:
-    cvs.append([one["Name"], "Wooden " + CamelToSpaces(one["Name"])])
-
     item = { "Class": "StaticItem",
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
@@ -262,8 +259,6 @@ for one in wooden_misc:
     objects_array.append(block)
 
 for one in simple_single:
-    cvs.append([one["Name"], CamelToSpaces(one["Name"])])
-	
     objects_array.append({ "Class": "StaticItem",
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
@@ -289,7 +284,6 @@ for one in simple_single:
     objects_array.append(block)
 	
 for one in simple_blocks:
-    cvs.append([one["Name"], CamelToSpaces(one["Name"])])
     objects_array.append({ "Class": "StaticItem",
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
@@ -318,8 +312,6 @@ for one in simple_blocks:
 	})
 	
 for one in static_mesh_block:
-    cvs.append([one["Name"], CamelToSpaces(one["Name"])])
-	
     objects_array.append({ "Class": "StaticItem",
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
@@ -371,8 +363,6 @@ images.append({
 	})
 	
 for one in equipped:
-	cvs.append([one["Name"], CamelToSpaces(one["Name"])])
-	
 	equ = { "Class": "StaticItem",
 		"Name": one["Name"],
 		"Image": "T_" + one["Name"],
@@ -389,9 +379,7 @@ data = {
 	"Objects": objects_array
 }
 
-write_file("Generated/Mixed/misc.json", data);
-
-write_file("Loc/source/misc.json", cvs)
+write_file("Generated/Mixed/misc.json", data)
 
 objects_array = []
 

@@ -3,8 +3,6 @@ from Common import *
 
 objects_array = []
 
-cvs = []
-
 ore_types = [
 	{
 		# https://en.wikipedia.org/wiki/List_of_copper_ores
@@ -179,8 +177,6 @@ for ore_type in ore_types:
 	item_name = ore_type["Name"] + "Ore"
 	description = [[ore_type["Formula"], "ores"]] if "Formula" in ore_type else []
 	
-	cvs.append([ore_type["Name"]+"Ore", ore_type["Name"]+" Ore"])
-	
 	item = { "Class": "StaticItem",
 		"Name": item_name,
 		"Mesh": "/Game/Models/OreCrate",
@@ -219,7 +215,6 @@ for ore_type in ore_types:
 
 	if "NotOre" not in ore_type:		
 		# impure gravel		
-		cvs.append([ore_type["Name"]+"OreImpureGravel", ore_type["Name"]+" Impure Ore Gravel"])
 		item = { "Class": "StaticItem",
 			"Name": ore_type["Name"] + "OreImpureGravel",
 			"Mesh": "/Game/Models/Gravel",
@@ -243,7 +238,6 @@ for ore_type in ore_types:
 		})
 
 		# gravel
-		cvs.append([ore_type["Name"]+"OreGravel", ore_type["Name"]+" Ore Gravel"])
 		item = { "Class": "StaticItem",
 			"Name": ore_type["Name"] + "OreGravel",
 			"Mesh": "/Game/Models/Gravel",
@@ -267,7 +261,6 @@ for ore_type in ore_types:
 		})
 			
 		# impure dust
-		cvs.append([ore_type["Name"] + "OreDust", ore_type["Name"]+" Ore Dust"])
 		item = { "Class": "StaticItem",
 			"Name": ore_type["Name"] + "OreDust",
 			"Mesh": "/Game/Models/DustCrate",
@@ -292,7 +285,6 @@ for ore_type in ore_types:
 		})
 
 		# dust
-		cvs.append([ore_type["Name"] + "Dust", ore_type["Name"]+" Dust"])
 		item = { "Class": "StaticItem",
 			"Name": ore_type["Name"] + "Dust",
 			"Mesh": "/Game/Models/DustCrate",
@@ -320,7 +312,6 @@ for ore_type in ore_types:
 
 		# crystal
 		if "Crystal" in ore_type:
-			cvs.append([ore_type["Name"] + "Crystal", ore_type["Name"]+" Crystal"])
 			item = { "Class": "StaticItem",
 				"Name": ore_type["Name"] + "Crystal",
 				
@@ -364,20 +355,4 @@ data = {
 	"Objects": objects_array
 }
 
-cvs.append(["FeS2", "FeS₂"])
-cvs.append(["CuFeS2", "CuFeS₂"])
-cvs.append(["CuCO3", "CuCO₃"])
-cvs.append(["Fe3O4+Au", "Fe₃O₄ + Au"])
-cvs.append(["HgS", "HgS"])
-cvs.append(["CrAl203", "CrAl₂0₃"])
-cvs.append(["C", "C"])
-cvs.append(["BeCa2AlPO4", "BeCa₂Al(PO₄)₃"])
-cvs.append(["Al2O3+TiO2", "Al₂O₃ + TiO₂"])
-cvs.append(["ThO2+UO2", "ThO₂ + UO₂"])
-cvs.append(["AuS2+PtS2+RhS2", "AuS₂ + PtS₂ + RhS₂"])
-cvs.append(["FeNb2O3+FeTa2O3", "FeNb₂O₃ + FeTa₂O₃"])
-cvs.append(["ThPO4+NdPO4+YPO4", "ThPO₄ + NdPO₄ + YPO₄"])
-
 write_file("Generated/Resources/ores.json", data)
-
-write_file("Loc/source/ores.json", cvs)
