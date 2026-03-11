@@ -543,6 +543,24 @@ append_levels({
 	"MainResearch": True
 })
 append_levels({
+	"Class": "StaticResearchModifier",
+	"Name": "DrillingRigProductivity",
+	"Label": ["DrillingRigProductivity", "researches"],
+	"RequiredResearch": ["AutomaticMining1"],
+	"Modifier": "DrillingRigProductivityStaticModifier",
+	"BonusValue": 10,
+	"Levels": [1, 1],
+})
+append_levels({
+	"Class": "StaticResearchModifier",
+	"Name": "PumpjackProductivity",
+	"Label": ["PumpjackProductivity", "researches"],
+	"RequiredResearch": ["Pumpjack"],
+	"Modifier": "PumpjackProductivityStaticModifier",
+	"BonusValue": 10,
+	"Levels": [1, 1],
+})
+append_levels({
 	"Class": research_recipe,
 	"Name": "Pumpjack",
 	"Label": ["Pumpjack", "machines"],
@@ -1798,6 +1816,8 @@ csv.append(["Sign", "Sign"])
 csv.append(["IndustrialSteelProduction", "Industrial Steel Production"])
 csv.append(["SteelProduction", "Steel Production"])
 csv.append(["AutomaticMining", "Automatic Mining"])
+csv.append(["DrillingRigProductivity", "Drilling Rig Productivity"])
+csv.append(["PumpjackProductivity", "Pumpjack Productivity"])
 csv.append(["MetalConstructions", "Metal Constructions"])	
 csv.append(["AdvancedSmelting", "Advanced Smelting"])
 csv.append(["IndustrialSmelting", "Industrial Smelting"])
