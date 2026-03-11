@@ -482,6 +482,7 @@ props.append({
 	"ProjectToTerrainPower": 1,
 	"Drops": "RawOil",
 	"Count": 1,
+	"Minable": False,
 	"CullBegin": 90000,
 	"CullEnd": 100000,
 	"AdditiveElevation": 0,
@@ -867,6 +868,7 @@ for prop in props:
 		})
 
 	for variation in range(0, prop["Variations"]):
+		minable = {"Minable": False} if prop.get("Minable") is False else {"Result": prop["Drops"], "Count": prop["Count"]}
 		temp_prop = { "Class": "StaticProp",
 			"Name": prop["Name"] + variation_helper[variation],
 			"Mesh": "/Game/Props/" + prop["Name"] + "/" + prop["Name"] + variation_helper[variation],
@@ -875,10 +877,7 @@ for prop in props:
 			"ProjectToTerrainPower": prop["ProjectToTerrainPower"],
 			"AdditiveElevation": 20,
 			"Item": prop["Name"],
-			"Minable": {
-				"Result": prop["Drops"],
-				"Count": prop["Count"]
-			},
+			"Minable": minable,
 			"IsBig": prop["IsBig"]
 		}
 		if "DamageEffect" in prop:
