@@ -4,17 +4,15 @@ objects_array = []
 
 objects_array.append({
     "Class": "StaticModifier",
-    "Name": "DrillingRigProductivityStaticModifier",
+    "Name": "DrillingRigProductivity",
     "Image": "T_Multitool",
-    "Label": ["DrillingRigProductivity", "modifiers"],
-    "Description": ["DrillingRigProductivityDescription", "modifiers"]
+    "Label": ["DrillingRigProductivity", "modifiers"]
 })
 objects_array.append({
     "Class": "StaticModifier",
-    "Name": "PumpjackProductivityStaticModifier",
+    "Name": "PumpjackProductivity",
     "Image": "T_Multitool",
-    "Label": ["PumpjackProductivity", "modifiers"],
-    "Description": ["PumpjackProductivityDescription", "modifiers"]
+    "Label": ["PumpjackProductivity", "modifiers"]
 })
 
 data = {

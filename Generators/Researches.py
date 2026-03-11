@@ -543,20 +543,22 @@ append_levels({
 append_levels({
 	"Class": "StaticResearchModifier",
 	"Name": "DrillingRigProductivity",
-	"Label": ["DrillingRigProductivity", "researches"],
+	"Label": ["DrillingRigProductivity", "modifiers"],
 	"RequiredResearch": ["AutomaticMining1"],
-	"Modifier": "DrillingRigProductivityStaticModifier",
-	"BonusValue": 10,
-	"Levels": [1, 1],
+	"Modifier": "DrillingRigProductivity",
+	"BonusValue": 5,
+	"Levels": [1, 8],
+	"CostMul": 11,
 })
 append_levels({
 	"Class": "StaticResearchModifier",
 	"Name": "PumpjackProductivity",
-	"Label": ["PumpjackProductivity", "researches"],
+	"Label": ["PumpjackProductivity", "modifiers"],
 	"RequiredResearch": ["Pumpjack"],
-	"Modifier": "PumpjackProductivityStaticModifier",
-	"BonusValue": 10,
-	"Levels": [1, 1],
+	"Modifier": "PumpjackProductivity",
+	"BonusValue": 5,
+	"Levels": [1, 8],
+	"CostMul": 11,
 })
 append_levels({
 	"Class": research_recipe,
