@@ -2480,7 +2480,7 @@ recipes_industrial_chemreactor.append({
 })
 
 recipes_industrial_chemreactor.append({
-	"Name": "Methanol",
+	"Name": "Ethanol",
 	"Input": items([
 		["CarbonMonoxide", 250],
 		["Hydrogen", 750]
