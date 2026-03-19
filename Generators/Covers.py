@@ -264,6 +264,11 @@ for mat, num in zip(paint_metals, range(1,7+1)):
         "Materials": [tier_materials[num]]
 	})
     covers.append({
+		"Name": mat+"ConveyorSide",
+		"Mesh": "/Game/Models/conveyor",
+        "Materials": ["/Game/Materials/RubberWithTierParam", tier_materials[num]]
+	})
+    covers.append({
 		"Name": mat+"ElectricEngine",
 		"Mesh": "/Game/Models/ElectricEngine",
         "Materials": ["/Game/Materials/ElectricEngineMaterial"]
