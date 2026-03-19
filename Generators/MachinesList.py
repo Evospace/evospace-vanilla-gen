@@ -185,6 +185,7 @@ machines = [
 		],
 		"Selector": "Blocks/ArrowConvBP.ArrowConvBP_C",
 		"PathFinding": True,
+        "NoActorRenderable": True,
         "ReplaceTag": "Conveyor",
 	},{
 		"Name": "Splitter",
