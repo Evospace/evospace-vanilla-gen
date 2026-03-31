@@ -65,6 +65,10 @@ covers = [
 		"Mesh": "/Game/Covers/HeatOut",
         "NoCollision": True
 	},{
+		"Name": "ItemOutput",
+		"Mesh": "/Game/Covers/ItemOut",
+        "NoCollision": True
+	},{
 		"Name": "FluidInput",
 		"Mesh": "/Game/Covers/FluidIn",
         "NoCollision": True
