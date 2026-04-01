@@ -868,7 +868,12 @@ for prop in props:
 		})
 
 	for variation in range(0, prop["Variations"]):
-		minable = {"Minable": False} if prop.get("Minable") is False else {"Result": prop["Drops"], "Count": prop["Count"]}
+		# Non-minable props (e.g. OilCluster) still need Result for map icons and USourceData::Item in OreGenerator
+		minable = (
+			{"Minable": False, "Result": prop["Drops"], "Count": prop["Count"]}
+			if prop.get("Minable") is False
+			else {"Result": prop["Drops"], "Count": prop["Count"]}
+		)
 		temp_prop = { "Class": "StaticProp",
 			"Name": prop["Name"] + variation_helper[variation],
 			"Mesh": "/Game/Props/" + prop["Name"] + "/" + prop["Name"] + variation_helper[variation],
