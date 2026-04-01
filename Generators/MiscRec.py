@@ -962,7 +962,7 @@ recipes_condens.append({
 })
 
 recipes_farm.append({
-	"Name":"Logs",
+	"Name": "Log",
 	"Input":{
 		"Items":[
 			{
@@ -976,7 +976,7 @@ recipes_farm.append({
 })
 
 recipes_farm.append({
-	"Name":"Pumpkin",
+	"Name": "Pumpkin",
 	"Input":{
 		"Items":[
 			{
@@ -990,7 +990,7 @@ recipes_farm.append({
 })
 
 recipes_farm.append({
-	"Name":"Grass",
+	"Name": "GrassSurface",
 	"Input":{
 		"Items":[
 			{
@@ -1008,7 +1008,7 @@ recipes_farm.append({
 })
 
 recipes_farm.append({
-	"Name":"Rapeseed",
+	"Name": "Rapeseed",
 	"Input":{
 		"Items":[
 			{
@@ -1017,14 +1017,7 @@ recipes_farm.append({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Rapeseed",
-				"Count": 15
-			}
-		]
-	},
+	"Output": one_item("Rapeseed", 15),
 	"Ticks" : 1200,
 })
 

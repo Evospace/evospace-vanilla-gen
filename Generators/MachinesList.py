@@ -709,7 +709,7 @@ machines = [
 		],
 		"StartTier": 1,
 		"EndTier": 7,
-		"BlockLogic":"FarmBlockLogic",
+		"BlockLogic":"SelectCrafter",
 		"Description": ["FluidInput"],
 	},{
 		"Name": "AtmosphericCondenser",
