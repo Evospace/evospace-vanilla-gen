@@ -140,7 +140,6 @@ for object in mapgen_objects:
 	objects_array.append({ "Class": "StaticItem",
 		"Name": object["Name"] + "Surface",
 		"Image": "T_" + object["Name"],
-		
 		"ItemLogic": building_brush_slot_logic,
 		"Mesh": "/Game/Models/piece",
 		"Materials" : ["/Game/Materials/" + object["Drops"]],
@@ -148,10 +147,14 @@ for object in mapgen_objects:
 		"StackSize": 999,
 		"Label": [object["Name"]+ "Surface", "mapgen_core"],
 	})
+
+for object in mapgen_objects:
 	objects_array.append({ "Class": "TesselatorMarching",
 		"Name": object["Name"] + "Surface" + tesselator,
 		"Material": "/Game/Materials/Triplanar/" + object["Name"] + "Material"
 	})
+
+for object in mapgen_objects:
 	mine_drop = object["MineResult"] if "MineResult" in object else object["Drops"] + "Surface"
 	staticBlock = {
 		"Class": "StaticBlock",
