@@ -112,9 +112,9 @@ ach = [
         "Description": FirstItemAcq
     },
     {
-        "Name": "SteelLogicCircuit",
+        "Name": "SteelLogicInterface",
         "Steam": True,
-        "Label": ["SteelLogicCircuit","machines"],
+        "Label": ["SteelLogicInterface","machines"],
         "Description": FirstItemAcq
     },
     {

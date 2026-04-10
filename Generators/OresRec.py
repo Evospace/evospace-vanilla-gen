@@ -218,32 +218,58 @@ for ore_type in ore_types:
 
 		# Sifter
 		if "Sifter" in processing:
-			for gravel in {"OreImpureGravel"}:
-				recipes_sifter.append({
-					"Name": ore_type["Name"] + gravel,
-					"Input": one_item(ore_type["Name"] + gravel),
-					"Output":{
-						"Items": [
-							{
-								"Name": ore_type["Processing"]["Sifter"][0],
-								"Count": 1,
-								"Probability": 80,
-							},
-							{
-								"Name": ore_type["Processing"]["Sifter"][1],
-								"Count": 1,
-								"Probability": 20,
-							},
-							{
-								"Name": ore_type["Processing"]["Sifter"][2],
-								"Count": 1,
-								"Probability": 2,
-							},
-						]
-					},
-					"Ticks" : 40,
-					"Tier": material_tier,
-				})	
+			sifter_tier = ore_type["SifterTier"] if "SifterTier" in ore_type else material_tier
+			sf = ore_type["Processing"]["Sifter"]
+			recipes_sifter.append({
+				"Name": ore_type["Name"] + "OreImpureGravel",
+				"Input": one_item(ore_type["Name"] + "OreImpureGravel"),
+				"Output":{
+					"Items": [
+						{
+							"Name": sf[0],
+							"Count": 1,
+							"Probability": 80,
+						},
+						{
+							"Name": sf[1],
+							"Count": 1,
+							"Probability": 20,
+						},
+						{
+							"Name": sf[2],
+							"Count": 1,
+							"Probability": 2,
+						},
+					]
+				},
+				"Ticks" : 100,
+				"Tier": sifter_tier,
+			})
+			recipes_sifter.append({
+				"Name": ore_type["Name"] + "OreImpureGravelDense",
+				"Input": one_item(ore_type["Name"] + "OreImpureGravel", 6),
+				"Output":{
+					"Items": [
+						{
+							"Name": sf[0],
+							"Count": 1,
+							"Probability": 70,
+						},
+						{
+							"Name": sf[1],
+							"Count": 1,
+							"Probability": 20,
+						},
+						{
+							"Name": sf[2],
+							"Count": 1,
+							"Probability": 10,
+						},
+					]
+				},
+				"Ticks" : 400,
+				"Tier": sifter_tier,
+			})
 
 		if "Burnable" in ore_type:
 			for item, timeMul in [["Dust", 0.9], ["OreDust", 0.8], ["Ore", 0.9], ["OreGravel", 0.9], ["OreImpureGravel", 0.8]]:

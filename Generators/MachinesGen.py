@@ -236,6 +236,9 @@ for machine in machines:
 			
 		if "Positions" in machine:
 			block["Positions"] = machine["Positions"]
+
+		if "LogicExports" in machine:
+			block["ExportOptions"] = machine["LogicExports"]
 			
 		machine_blocks.append(block)
 
@@ -290,7 +293,7 @@ for machine in machines:
 				"Ticks" : 20
 			})
 			
-		if machine["Name"] == "LogicCircuit" or machine["Name"] == "LogicDisplay" or machine["Name"] == "LogicController":
+		if machine["Name"] == "LogicInterface" or machine["Name"] == "LogicDisplay" or machine["Name"] == "LogicController":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{

@@ -135,6 +135,7 @@ ore_types = [
 		"Drops": "ThorianiteOre",
 		"Formula": "ThO2+UO2",
 		"Tier": 4,
+		"SifterTier": 4,
 	},{
 		"Name": "Pyroplatite",
 		"Processing":{
