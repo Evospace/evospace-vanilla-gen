@@ -6,7 +6,6 @@ from Materials import *
 machines = [
 	{
 		"Name": "Macerator",
-		"Label": "Macerator",
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "AutoCrafter",
@@ -15,7 +14,6 @@ machines = [
 	}
 	#,{
 	#	"Name": "RollerMachine",
-	#	"Label": "Roller Machine",
 	#	
 	#	"StartTier": 2,
 	#	"EndTier": 4,
@@ -23,7 +21,6 @@ machines = [
 	#}
 	,{
 		"Name": "Fermenter",
-		"Label": "Fermenter",
 		"StartTier": 3,
 		"EndTier": 7,
 		"Positions": [[0,0,0],[0,0,1]],
@@ -33,7 +30,6 @@ machines = [
         "PowerInput": 20,
 	},{
 		"Name": "Separator",
-		"Label": "Separator",
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
@@ -41,13 +37,11 @@ machines = [
         "PowerInput": 80,
 	},{
 		"Name": "Spawner",
-		"Label": "Spawner",
 		"StartTier": 1,
 		"EndTier": 1,
 		"BlockLogic": "BedBlockLogic",
 	},{
 		"Name": "AutomaticHammer",
-		"Label": "Automatic Hammer",
 		"Positions": [[0,0,0],[0,0,1]],
 		"StartTier": 1,
 		"EndTier": 7,
@@ -56,7 +50,6 @@ machines = [
         "PowerInput": 30,
 	},{
 		"Name": "Boiler",
-		"Label": "Boiler",
 		"StartTier": 2,
 		"EndTier": 7,
 		"CommonTextKeys":[
@@ -71,7 +64,6 @@ machines = [
 		"PowerOutput": 200,
 	},{
 		"Name": "Pipe",
-		"Label": "Pipe",
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "ConductorBlockLogic",
@@ -82,7 +74,6 @@ machines = [
         "Category": "Network",
 	},{
 		"Name": "HeatPipe",
-		"Label": "Heat Pipe",
 		"StartTier": 1,
 		"EndTier": 1,
 		"BlockLogic": "HeatConductorBlockLogic",
@@ -92,7 +83,6 @@ machines = [
         "Category": "Network",
 	},{
 		"Name": "PlasmaPipe",
-		"Label": "Plasma Pipe",
 		"StartTier": 4,
 		"EndTier": 4,
 		"BlockLogic": "PlasmaConductorBlockLogic",
@@ -103,7 +93,6 @@ machines = [
         "Category": "Network",
 	},{
 		"Name": "Flywheel",
-		"Label": "Flywheel",
 		"StartTier": 2,
 		"EndTier": 2,
 		"BlockLogic": "KineticConductorBlockLogic",
@@ -112,19 +101,16 @@ machines = [
         "Category": "Network",
 	},{
 		"Name": "Sign",
-		"Label": "Sign",
 		"StartTier": 0,
 		"EndTier": 7,
 		"BlockLogic": "SignBlockLogic",
 	},{
 		"Name": "AdvancedSign",
-		"Label": "Advanced Sign",
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic": "SignBlockLogic",
 	},{
 		"Name": "CopperConnector",
-		"Label": "Copper Cable",
 		"StartTier": 0,
 		"EndTier": 0,
 		"BlockLogic": "ConductorBlockLogic",
@@ -137,20 +123,18 @@ machines = [
         "ReplaceTag": "Cable",
 	},{
 		"Name": "Chest",
-		"Label": "Chest",
 		"StartTier": 0,
 		"EndTier": 7,
         "Description": ["ItemInput", "ItemStorage"],
+		"LogicExports": ["ChestExportInventory"],
 	},{
 		"Name": "ItemRack",
-		"Label": "Item Rack",
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
 		"StartTier": 1,
 		"EndTier": 7,
         "Description": ["ItemInput", "ItemStorage"],
 	},{
 		"Name": "Vent",
-		"Label": "Valve",
 		"StartTier": 1,
 		"EndTier": 1,
 		"CommonTextKeys":[
@@ -160,14 +144,12 @@ machines = [
 		"Description": ["FluidConductor"],
 	},{
 		"Name": "ElectricalSwitch",
-		"Label": "Switch",
 		"StartTier": 2,
 		"EndTier": 2,
 		"BlockLogic": "ElectricitySwitchBlockLogic",
 		"Description": ["ElectricConductor"],
 	},{
 		"Name": "OreWasher",
-		"Label": "Ore Washer",
 		"Positions": [[0,0,0],[0,1,0],[-1,0,0],[-1,1,0],[-2,0,0],[-2,1,0],[0,0,1],[0,1,1],[-1,0,1],[-1,1,1],[-2,0,1],[-2,1,1]],
 		"StartTier": 2,
 		"EndTier": 7,
@@ -176,7 +158,6 @@ machines = [
         "PowerInput": 20,
 	},{
 		"Name": "Conveyor",
-		"Label": "Conveyor",
 		"StartTier": 1,
 		"EndTier": 7,
 		"CommonTextKeys":[
@@ -189,28 +170,24 @@ machines = [
         "ReplaceTag": "Conveyor",
 	},{
 		"Name": "Splitter",
-		"Label": "Splitter",
 		"StartTier": 1,
 		"EndTier": 7,
 		"Description": ["Splitter"],
         "ReplaceTag": "Conveyor",
 	},{
 		"Name": "Sorter",
-		"Label": "Sorter",
 		"StartTier": 2,
 		"EndTier": 7,
 		"Description": ["Splitter", "Sorter"],
         "ReplaceTag": "Conveyor",
 	},{
 		"Name": "Container",
-		"Label": "Container",
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "FluidContainerBlockLogic",
 		"Description": ["FluidConductor", "FluidStorage"],
 	},{
 		"Name": "StirlingEngine",
-		"Label": "Stirling Engine",
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
@@ -218,7 +195,6 @@ machines = [
 		"PowerOutput": 50,
 	},{
 		"Name": "SteamEngine",
-		"Label": "Steam Engine",
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
@@ -226,7 +202,6 @@ machines = [
 		"PowerOutput": 200,
 	},{
 		"Name": "CombustionEngine",
-		"Label": "Combustion Engine",
 		"BlockLogic": "AutoCrafter",
 		"StartTier": 4,
 		"EndTier": 7,
@@ -234,7 +209,6 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,2,0],[-1,2,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,2,1],[-1,2,1]],
 	},{
 		"Name": "FractionatingColumn",
-		"Label": "Fractionating Column",
 		"StartTier": 4,
 		"EndTier": 7,
 		"Description": ["ElectricInput", "PowerInput", "FluidInput", "FluidOutput"],
@@ -251,7 +225,6 @@ machines = [
         ]
 	},{
 		"Name": "PyrolysisUnit",
-		"Label": "Pyrolysis Unit",
 		"Positions": [[0,0,0],[0,0,1],[0,1,0],[0,2,0]],
 		"StartTier": 4,
 		"EndTier": 7,
@@ -260,7 +233,6 @@ machines = [
         "PowerInput": 50,
 	},{
 		"Name": "Generator",
-		"Label": "Generator",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 7,
@@ -269,7 +241,6 @@ machines = [
 		"PowerOutput": 200 * 5 * 2,
 	},{
 		"Name": "IndustrialGenerator",
-		"Label": "Industrial Generator",
 		"Positions": [
             [0, 0, 0], [0, 2, 0], [1, 2, 0], [-1, 2, 0], [0, 3, 0], [1, 3, 0], [-1, 3, 0],
 			[0, 1, 0], [1, 1, 0], [-1, 1, 0],
@@ -287,7 +258,6 @@ machines = [
 		 
 	},{
 		"Name": "CompactGenerator",
-		"Label": "Compact Generator",
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
@@ -295,7 +265,6 @@ machines = [
 		"PowerOutput": 50,
 	},{
 		"Name": "ElectricEngine",
-		"Label": "Electric Engine",
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
@@ -305,19 +274,16 @@ machines = [
         "DefaultRotation": [-1, 0, 0, 0]
 	},{
 		"Name": "Loader",
-		"Label": "Loader",
 		"StartTier": 1,
 		"EndTier": 7,
 		"Selector": "Blocks/ArrowBP.ArrowBP_C",
 	},{
 		"Name": "RobotArm",
-		"Label": "Robot Arm",
 		"StartTier": 1,
 		"EndTier": 7,
 		"Selector": "Blocks/ArrowBP.ArrowBP_C",
 	},{
 		"Name": "Pump",
-		"Label": "Pump",
 		"StartTier": 1,
 		"EndTier": 7,
 		"CustomData":{
@@ -327,7 +293,6 @@ machines = [
 		"Description": ["FluidInput", "FluidOutput"],
 	},{
 		"Name": "Smelter",
-		"Label": "Smelter",
 		"StartTier": 0,
 		"EndTier": 2,
 		"BlockLogic":"AutoCrafter",
@@ -337,7 +302,6 @@ machines = [
 		}
 	},{
 		"Name": "SteamTurbine",
-		"Label": "Steam Turbine",
 		"Positions": [[0,0,0],[-1,0,0],[-2,0,0],[0,-1,0],[-1,-1,0],[-2,-1,0],[0,0,1],[-1,0,1],[-2,0,1],[0,-1,1],[-1,-1,1],[-2,-1,1]],
 		"StartTier": 3,
 		"EndTier": 7,
@@ -346,7 +310,6 @@ machines = [
 		"PowerOutput": 200 * 5 * 2,
 	},{
 		"Name": "IndustrialSteamTurbine",
-		"Label": "Industrial Steam Turbine",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],   [-3,0,0], [-4,0,0], [-5,0,0],
 			[0,-1,0],[-1,-1,0],[-2,-1,0],[-3,-1,0],[-4,-1,0],[-5,-1,0],
@@ -367,7 +330,6 @@ machines = [
 		"PowerOutput": fission_output(),
 	},{
 		"Name": "Riteg",
-		"Label": "RTG",
 		"Positions": [
 		    [0,0,0],[-1,0,0],[1,0,0],
 			[0,1,0],[-1,1,0],[1,1,0],
@@ -384,7 +346,6 @@ machines = [
 		"PowerOutput": 500,
 	},{
 		"Name": "DroneStation",
-		"Label": "Drone Station",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,0,2],[-1,0,2],[0,1,2],[-1,1,2]],
 		"StartTier": 2,
 		"EndTier": 7,
@@ -393,7 +354,6 @@ machines = [
         "PowerInput": 50,
 	},{
 		"Name": "ArcSmelter",
-		"Label": "Arc Smelter",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,0,2],[-1,0,2],[0,1,2],[-1,1,2]],
 		"StartTier": 2,
 		"EndTier": 7,
@@ -402,7 +362,6 @@ machines = [
         "PowerInput": 100,
 	},{
 		"Name": "ChemicalBath",
-		"Label": "Chemical Bath",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 7,
@@ -419,7 +378,6 @@ machines = [
         "PowerInput": 100,
 	},{
 		"Name": "Sifter",
-		"Label": "Sifter",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 7,
@@ -428,7 +386,6 @@ machines = [
         "PowerInput": 50,
 	},{
 		"Name": "IndustrialChemReactor",
-		"Label": "Chemical Reactor",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 7,
@@ -436,7 +393,6 @@ machines = [
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "Furnace",
-		"Label": "Furnace",
 		"StartTier": 0,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
@@ -444,7 +400,6 @@ machines = [
         "PowerOutput": 50,
 	},{
 		"Name": "Oven",
-		"Label": "Oven",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],
 			[0,1,0],[-2,1,0],
@@ -465,7 +420,6 @@ machines = [
         "PowerInput": 100,
 	},{
 		"Name": "BlastFurnace",
-		"Label": "Blast Furnace",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],
 			[0,1,0],[-1,1,0],[-2,1,0],
@@ -489,7 +443,6 @@ machines = [
 		"Description": ["SpeedBonus"],
 	},{
 		"Name": "FluidFurnace",
-		"Label": "Fluid Furnace",
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "AutoCrafter",
@@ -497,7 +450,6 @@ machines = [
         "PowerOutput": 200,
 	},{
 		"Name": "ElectricFurnace",
-		"Label": "Electric Furnace",
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
@@ -505,14 +457,12 @@ machines = [
 		"PowerOutput": 250,
 	},{
 		"Name": "BatteryBox",
-		"Label": "Battery Box",
 		"StartTier": 3,
 		"EndTier": 7,
         "BlockLogic": "ElectricityContainerBlockLogic",
 		"Description": ["ElectricConductor", "ElectricStorage"]
 	},{
 		 "Name": "Portal",
-		 "Label": "Portal",
          "Description": ["PowerInput"],
 		 "StartTier": 7,
 		 "EndTier": 7,
@@ -560,7 +510,6 @@ machines = [
 	},
 	{
 		"Name": "DrillingRig",
-		"Label": "Drilling Rig",
         "BlockLogic": "DrillingRig",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],
@@ -586,7 +535,6 @@ machines = [
         "ItemLogic": "/Game/Equipped/DrillBuildingTool.DrillBuildingTool_C",
 	},{
 		"Name": "Assembler",
-		"Label": "Assembler",
 		"StartTier": 3,
 		"EndTier": 7,
 		"Positions": [
@@ -603,7 +551,6 @@ machines = [
         "PowerInput": 160,
 	},{
 		"Name": "Constructor",
-		"Label": "Constructor",
 		"StartTier": 1,
 		"EndTier": 7,
 		"Positions": [
@@ -618,7 +565,6 @@ machines = [
         "PowerInput": 40,
 	},{
 		"Name": "Destroyer",
-		"Label": "Recycler",
 		"Positions": [
 			[0,0,0],[0,1,0],[0,2,0],
             [1,0,0],[1,1,0],[1,2,0],
@@ -632,56 +578,47 @@ machines = [
 		"Description": ["FluidInput"],
 	},{
 		"Name": "Lamp",
-		"Label": "Lamp",
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "LampBlockLogic",
 	},{
 		"Name": "AdminElectricGenerator",
-		"Label": "Creative Electric Generator",
 		"StartTier": 7,
 		"EndTier": 7,
 		"Description": ["ElectricOutput"],
 	},{
 		"Name": "AdminItemGenerator",
-		"Label": "Creative Item Generator",
 		"StartTier": 7,
 		"EndTier": 7,
 		"Description": ["ItemOutput"],
 	},{
 		"Name": "AdminKineticGenerator",
-		"Label": "Creative Kinetic Generator",
 		"StartTier": 7,
 		"EndTier": 7,
 		"Description": ["KineticOutput"],
 	},{
 		"Name": "AdminHeatGenerator",
-		"Label": "Creative Heat Generator",
 		"StartTier": 7,
 		"EndTier": 7,
 		"Description": ["HeatOutput"],
 	},{
 		"Name": "AdminFluidGenerator",
-		"Label": "Creative Fluid Generator",
 		"StartTier": 7,
 		"EndTier": 7,
 		"Description": ["FluidOutput"],
 	},{
 		"Name": "AdminExterminator",
-		"Label": "Creative Exterminator",
 		"StartTier": 7,
 		"EndTier": 7,
 		"Description": ["KineticInput", "HeatInput", "FluidInput", "ItemInput", "KineticInput"],
 	},{
 		"Name": "Electrolyzer",
-		"Label": "Electrolyzer",
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "Mixer",
-		"Label": "Mixer",
 		"StartTier": 2,
 		"EndTier": 7,
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
@@ -690,7 +627,6 @@ machines = [
         "PowerInput": 15,
 	},{
 		"Name": "AutomaticFarm",
-		"Label": "Automatic Farm",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],[-3,0,0],
 			[0,1,0],[-1,1,0],[-2,1,0],[-3,1,0],
@@ -713,7 +649,6 @@ machines = [
 		"Description": ["FluidInput"],
 	},{
 		"Name": "AtmosphericCondenser",
-		"Label": "Atmospheric Condenser",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],
 			[0,-1,0],[-1,-1,0],[-2,-1,0],
@@ -729,13 +664,11 @@ machines = [
 		"Description": ["FluidOutput"],
 	},{
 		"Name": "Terminal",
-		"Label": "Terminal",
 		"StartTier": 4,
 		"EndTier": 4,
 		"BlockLogic": "MonitorBlockLogic",
 	},{
 		"Name": "BigTerminal",
-		"Label": "Big Terminal",
 		"StartTier": 5,
 		"EndTier": 5,
 		"Image": "Terminal",
@@ -743,7 +676,6 @@ machines = [
 		"BlockLogic": "MonitorBlockLogic",
 	},{
 		"Name": "HugeTerminal",
-		"Label": "Huge Terminal",
 		"StartTier": 6,
 		"EndTier": 6,
 		"Image": "Terminal",
@@ -751,13 +683,11 @@ machines = [
 		"BlockLogic": "MonitorBlockLogic",
 	},{
 		"Name": "FlatTerminal",
-		"Label": "Flat Terminal",
 		"StartTier": 4,
 		"EndTier": 4,
 		"BlockLogic": "MonitorBlockLogic",
 	},{
 		"Name": "BigFlatTerminal",
-		"Label": "Big Flat Terminal",
 		"StartTier": 5,
 		"EndTier": 5,
 		"Image": "FlatTerminal",
@@ -765,14 +695,12 @@ machines = [
 		"BlockLogic": "MonitorBlockLogic",
 	},{
 		"Name": "RailStation",
-		"Label": "Rail Station",
 		"StartTier": 3,
 		"EndTier": 7,
 		"Positions": [[0,0,0],[-1,0,0],[-2,0,0],[-3,0,0]],
 		"BlockLogic": "RailStationBlockLogic",
 	},{
 		"Name": "HugeFlatTerminal",
-		"Label": "Huge Flat Terminal",
 		"StartTier": 6,
 		"EndTier": 6,
 		"Image": "FlatTerminal",
@@ -780,21 +708,18 @@ machines = [
 		"BlockLogic": "MonitorBlockLogic",
 	},{
 		"Name": "Computer",
-		"Label": "Computer",
 		"StartTier": 1,
 		"EndTier": 6,
 		"BlockLogic":"ComputerBlockLogic",
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "Diode",
-		"Label": "Diode",
 		"StartTier": 2,
 		"EndTier": 7,
 		"Description": ["ElectricInput", "ElectricOutput"],
 	},
 	#,{
 	#	"Name": "Tank",
-	#	"Label": "Tank",
 	#	"Positions": [
 	#		[0,0,0],[-1,0,0],[-2,0,0],
 	#		[0,1,0],[-1,1,0],[-2,1,0],
@@ -817,7 +742,6 @@ machines = [
 	#},
 	{
 		"Name": "FissionReactor",
-		"Label": "Fission Reactor",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],[-3,0,0],
 			[0,1,0],[-1,1,0],[-2,1,0],[-3,1,0],
@@ -855,7 +779,6 @@ machines = [
 		"Description": ["HeatOutput", "PowerOutput"],
 	},{
 		"Name": "FusionReactor",
-		"Label": "Fusion Reactor",
         "Description": ["PowerInput"],
         "BlockLogic":"SelectCrafter",
 		"StartTier": 6,
@@ -887,7 +810,6 @@ machines = [
 		],
 	},{
 		"Name": "IndustrialBoiler",
-		"Label": "Industrial Boiler",
 		"StartTier": 5,
 		"EndTier": 7,
 		"Positions": [
@@ -913,7 +835,6 @@ machines = [
 	},
 	{
 		"Name": "SolarPanel",
-		"Label": "Solar Panel",
 		"Positions": [
 			[0,0,0],[-1,0,0],[1,0,0],
 			[0,1,0],[-1,1,0],[1,1,0],
@@ -935,7 +856,6 @@ machines = [
 	},
 	{
 		"Name": "SmallSolarPanel",
-		"Label": "Small Solar Panel",
 		"Positions": [
 			[0,0,0],
 			[0,-1,0],
@@ -950,7 +870,6 @@ machines = [
 	},
 	{
 		"Name": "Pumpjack",
-		"Label": "Pumpjack",
         "BlockLogic":"Pumpjack",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],[-3,0,0],[-4,0,0],
@@ -975,7 +894,6 @@ machines = [
 		"ItemLogic": "/Game/Equipped/PumpjackBuildingTool.PumpjackBuildingTool_C",
 	},{
 		"Name": "Pumpjack_leg",
-		"Label": "Legacy Pumpjack (remove me)",
 		"ExactName": True,
 		"BlockLogic":"Pumpjack",
 		"Actor": "Blocks/PumpjackBP.PumpjackBP_C",
@@ -1001,7 +919,6 @@ machines = [
 		"Description": ["KineticInput", "FluidOutput"],
 	},{
 		"Name": "IndustrialSmelter",
-		"Label": "Industrial Smelter",
 		"StartTier": 4,
 		"EndTier": 7,
 		"Positions": [
@@ -1022,13 +939,11 @@ machines = [
         "PowerInput": 1000,
 	},{
 		"Name": "CreativeController",
-		"Label": "Creative Controller",
 		"StartTier": 7,
 		"EndTier": 7,
 		"Description": ["DataInput", "DataOutput"],
 	},{
 		"Name": "TeslaTower",
-		"Label": "TeslaTower",
 		"StartTier": 5,
 		"EndTier": 7,		
         "BlockLogic":"SelectCrafter",
@@ -1041,7 +956,6 @@ machines = [
 		]
 	},{
         "Name": "KineticHeater",
-        "Label": "Kinetic Heater",
         "StartTier": 1,
         "EndTier": 7,
         "Description": ["KineticInput", "HeatOutput", "PowerOutput"],
@@ -1056,18 +970,7 @@ machines = [
 		a:Bind(self:GetOutputContainer())
 		""",
     },{
-		"Name": "CableBundle",
-		"Label": "Cable Bundle",
-		"StartTier": 1,
-		"EndTier": 1,		
-        "BlockLogic":"CableBundleBlockLogic",
-		"Description": ["ElectricConductor"],
-        "CustomData":{
-			"SplineMesh": "/Game/CoreContent/Rail2",
-		}
-	},{
 		"Name": "Rails",
-		"Label": "Rails",
 		"StartTier": 2,
 		"EndTier": 2,		
         "BlockLogic":"CableBundleBlockLogic",
@@ -1077,14 +980,12 @@ machines = [
 		}
 	},{
 		"Name": "LogicInterface",
-		"Label": "Logic Interface",
 		"StartTier": 2,
 		"EndTier": 2,		
         "BlockLogic":"LogicInterfaceBlockLogic",
 		"Description": []
 	},{
 		"Name": "StorageCore",
-		"Label": "Storage Core",
 		"StartTier": 2,
 		"EndTier": 2,		
         "BlockLogic": "ItemRack",
