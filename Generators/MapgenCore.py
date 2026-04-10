@@ -127,6 +127,8 @@ mapgen_objects = [
 		"Color": "#554024",
 		"Side": "#554424",
 		"Drops": "Peat",
+		# Drop the material StaticItem (fuel/tooltip from PartsGen), not PeatSurface
+		"MineResult": "Peat",
 		"Hardness": 1,
 		"BreakEffect": "/Game/EffectActors/PeatBreakEffect.PeatBreakEffect_C"
 	},
@@ -150,6 +152,7 @@ for object in mapgen_objects:
 		"Name": object["Name"] + "Surface" + tesselator,
 		"Material": "/Game/Materials/Triplanar/" + object["Name"] + "Material"
 	})
+	mine_drop = object["MineResult"] if "MineResult" in object else object["Drops"] + "Surface"
 	staticBlock = {
 		"Class": "StaticBlock",
 		"Name": object["Name"] + "Surface" + static_surface,
@@ -157,7 +160,7 @@ for object in mapgen_objects:
 		"Item" : object["Name"] + "Surface",
 		"ColorSide": object["Side"],
 		"ColorTop": object["Color"],
-		"Minable": {"Minable": False} if "Unbreakable" in object else {"Result": object["Drops"] + "Surface"},
+		"Minable": {"Minable": False} if "Unbreakable" in object else {"Result": mine_drop},
 		"Surface": True
 	}
 	if "BreakEffect" in object:
