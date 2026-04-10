@@ -76,7 +76,7 @@ machines = [
 		"Name": "HeatPipe",
 		"StartTier": 1,
 		"EndTier": 1,
-		"BlockLogic": "HeatConductorBlockLogic",
+		"BlockLogic": "ConductorBlockLogic",
 		"Description": ["HeatConductor", "HeatStorage"],
 		"PathFinding": True,
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
@@ -85,7 +85,7 @@ machines = [
 		"Name": "PlasmaPipe",
 		"StartTier": 4,
 		"EndTier": 4,
-		"BlockLogic": "PlasmaConductorBlockLogic",
+		"BlockLogic": "ConductorBlockLogic",
 		"Description": ["HeatConductor", "HeatStorage"],
 		"PathFinding": True,
         "ExactName": True,
@@ -961,14 +961,6 @@ machines = [
         "Description": ["KineticInput", "HeatOutput", "PowerOutput"],
         "PowerOutput": 20,
         "BlockLogic":"SelectCrafter",
-        "BlockCreation":"""
-		local a = self:CreateAccessor(Class.find("KineticInputAccessor"))
-		a:SetSidePos(Vec3i.left, Vec3i.zero)
-		a:Bind(self:GetInputContainer())
-		local a = self:CreateAccessor(Class.find("HeatOutputAccessor"))
-		a:SetSidePos(Vec3i.right, Vec3i.zero)
-		a:Bind(self:GetOutputContainer())
-		""",
     },{
 		"Name": "Rails",
 		"StartTier": 2,
@@ -988,7 +980,7 @@ machines = [
 		"Name": "LogicWire",
 		"StartTier": 2,
 		"EndTier": 2,
-		"BlockLogic": "DataConductorBlockLogic",
+		"BlockLogic": "ConductorBlockLogic",
 		"Description": ["DataConductor"],
 		"PathFinding": True,
         "NoActorRenderable": True,
