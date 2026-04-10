@@ -10,7 +10,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "AutoCrafter",
 		"Description": ["KineticInput", "PowerInput"],
-        "PowerInput": 20,
 	}
 	#,{
 	#	"Name": "RollerMachine",
@@ -27,14 +26,12 @@ machines = [
 		"BlockLogic":"SelectCrafter",
 		"RequiredResearch":["Fermentation"],
 		"Description": ["ElectricInput", "PowerInput"],
-        "PowerInput": 20,
 	},{
 		"Name": "Separator",
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
 		"Description": ["KineticInput", "PowerInput"],
-        "PowerInput": 80,
 	},{
 		"Name": "Spawner",
 		"StartTier": 1,
@@ -47,7 +44,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
 		"Description": ["KineticInput", "PowerInput"],
-        "PowerInput": 30,
 	},{
 		"Name": "Boiler",
 		"StartTier": 2,
@@ -61,7 +57,6 @@ machines = [
 			"StorageCapacity": 30000,
 			"StorageDrain": 0,
 		},
-		"PowerOutput": 200,
 	},{
 		"Name": "Pipe",
 		"StartTier": 1,
@@ -155,7 +150,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
 		"Description": ["KineticInput", "PowerInput"],
-        "PowerInput": 20,
 	},{
 		"Name": "Conveyor",
 		"StartTier": 1,
@@ -192,14 +186,12 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["HeatInput", "KineticOutput","PowerOutput"],
-		"PowerOutput": 50,
 	},{
 		"Name": "SteamEngine",
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["FluidInput", "KineticOutput", "PowerOutput"],
-		"PowerOutput": 200,
 	},{
 		"Name": "CombustionEngine",
 		"BlockLogic": "AutoCrafter",
@@ -230,7 +222,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["HeatInput", "PowerInput"],
-        "PowerInput": 50,
 	},{
 		"Name": "Generator",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
@@ -238,7 +229,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
-		"PowerOutput": 200 * 5 * 2,
 	},{
 		"Name": "IndustrialGenerator",
 		"Positions": [
@@ -254,7 +244,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
-		"PowerOutput": 240*20,
 		 
 	},{
 		"Name": "CompactGenerator",
@@ -262,7 +251,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
-		"PowerOutput": 50,
 	},{
 		"Name": "ElectricEngine",
 		"StartTier": 2,
@@ -270,7 +258,6 @@ machines = [
 		"BlockLogic": "SelectCrafter",
         "Selector": "Blocks/ElectricEngineBP.ElectricEngineBP_C",
 		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
-		"PowerOutput": 100,
         "DefaultRotation": [-1, 0, 0, 0]
 	},{
 		"Name": "Loader",
@@ -307,7 +294,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["FluidInput", "KineticOutput","PowerOutput"],
-		"PowerOutput": 200 * 5 * 2,
 	},{
 		"Name": "IndustrialSteamTurbine",
 		"Positions": [
@@ -327,7 +313,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["FluidInput", "KineticOutput", "PowerOutput"],
-		"PowerOutput": fission_output(),
 	},{
 		"Name": "Riteg",
 		"Positions": [
@@ -343,7 +328,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
 		"Description": ["HeatOutput", "PowerOutput"],
-		"PowerOutput": 500,
 	},{
 		"Name": "DroneStation",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,0,2],[-1,0,2],[0,1,2],[-1,1,2]],
@@ -351,7 +335,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic":"DroneStationBlockLogic",
 		"Description": ["ElectricInput", "PowerInput"],
-        "PowerInput": 50,
 	},{
 		"Name": "ArcSmelter",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,0,2],[-1,0,2],[0,1,2],[-1,1,2]],
@@ -359,7 +342,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
 		"Description": ["ElectricInput", "PowerInput"],
-        "PowerInput": 100,
 	},{
 		"Name": "ChemicalBath",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
@@ -375,7 +357,6 @@ machines = [
         res.input_item = StaticItem.find("Kinetic")
 		""",
 		"Description": ["KineticInput", "PowerInput"],
-        "PowerInput": 100,
 	},{
 		"Name": "Sifter",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
@@ -383,7 +364,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
 		"Description": ["KineticInput", "PowerInput"],
-        "PowerInput": 50,
 	},{
 		"Name": "IndustrialChemReactor",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
@@ -397,7 +377,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
 		"Description": ["HeatOutput", "PowerOutput"],
-        "PowerOutput": 50,
 	},{
 		"Name": "Oven",
 		"Positions": [
@@ -417,7 +396,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
 		"Description": ["SpeedBonus", "HeatInput", "PowerInput"],
-        "PowerInput": 100,
 	},{
 		"Name": "BlastFurnace",
 		"Positions": [
@@ -447,14 +425,12 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "AutoCrafter",
 		"Description": ["FluidInput", "HeatOutput", "PowerOutput"],
-        "PowerOutput": 200,
 	},{
 		"Name": "ElectricFurnace",
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
 		"Description": ["ElectricInput", "HeatOutput", "PowerOutput"],
-		"PowerOutput": 250,
 	},{
 		"Name": "BatteryBox",
 		"StartTier": 3,
@@ -548,7 +524,6 @@ machines = [
 			[0,-2,1],[-1,-2,1],[-2,-2,1],
 		],
 		"Description": ["ElectricInput", "PowerInput"],
-        "PowerInput": 160,
 	},{
 		"Name": "Constructor",
 		"StartTier": 1,
@@ -562,7 +537,6 @@ machines = [
 		],
 		"BlockLogic":"SelectCrafter",
 		"Description": ["ElectricInput", "PowerInput"],
-        "PowerInput": 40,
 	},{
 		"Name": "Destroyer",
 		"Positions": [
@@ -624,7 +598,6 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
 		"BlockLogic":"SelectCrafter",
 		"Description": ["KineticInput", "PowerInput"],
-        "PowerInput": 15,
 	},{
 		"Name": "AutomaticFarm",
 		"Positions": [
@@ -827,7 +800,6 @@ machines = [
 		],
 		"BlockLogic":"SelectCrafter",
 		"Description": ["FluidInput", "FluidOutput","PowerOutput"],
-		"PowerOutput": fission_output(),
 		"CustomData":{
 			"StorageCapacity": 6000000,
 			"StorageDrain": 0
@@ -852,7 +824,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
 		"Description": ["ElectricOutput", "PowerOutput"],
-		"PowerOutput": 800
 	},
 	{
 		"Name": "SmallSolarPanel",
@@ -866,7 +837,6 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
 		"Description": ["ElectricOutput", "PowerOutput"],
-		"PowerOutput": 80
 	},
 	{
 		"Name": "Pumpjack",
@@ -936,7 +906,6 @@ machines = [
 		],
 		"BlockLogic":"SelectCrafter",
 		"Description": ["HeatInput", "PowerInput"],
-        "PowerInput": 1000,
 	},{
 		"Name": "CreativeController",
 		"StartTier": 7,
@@ -959,7 +928,6 @@ machines = [
         "StartTier": 1,
         "EndTier": 7,
         "Description": ["KineticInput", "HeatOutput", "PowerOutput"],
-        "PowerOutput": 20,
         "BlockLogic":"SelectCrafter",
     },{
 		"Name": "Rails",
