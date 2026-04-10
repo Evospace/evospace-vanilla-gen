@@ -4,6 +4,7 @@ from Common import *
 import copy
 
 objects_array = []
+block_materials = []
 
 images = []
 recipes_cutter = []
@@ -339,21 +340,13 @@ for material in materials:
 			item["Category"] = material["Category"]
 			
 		objects_array.append(item)
+		block_materials.append(material)
 		
 		images.append({ "NewName": "T_" + material["Name"] + "Block",
 				"Base": "T_" + "Block",
 				"MulMask": "T_Material" + material["Name"],
 				"AddMask": "T_" + "Block" + additive_ico,
 			})
-		objects_array.append({ "Class": tesselator_cube,
-			"Name": material["Name"] + "Block" + tesselator,
-			"Material" : "/Game/Materials/" + material["Name"]
-		})
-		objects_array.append({ "Class": "StaticBlock",
-			"Name": material["Name"] + "Block" + static_block,
-			"Item" : material["Name"] + "Block",
-			"Tesselator": material["Name"] + "Block" + tesselator,
-		})
 	
 	# fluid
 	if "Fluid" in material["Items"]:
@@ -530,6 +523,19 @@ for material in materials:
 			item["Tags"] = fuel_tags()
 
 		objects_array.append(item)
+
+for material in block_materials:
+	objects_array.append({ "Class": tesselator_cube,
+		"Name": material["Name"] + "Block" + tesselator,
+		"Material" : "/Game/Materials/" + material["Name"]
+	})
+
+for material in block_materials:
+	objects_array.append({ "Class": "StaticBlock",
+		"Name": material["Name"] + "Block" + static_block,
+		"Item" : material["Name"] + "Block",
+		"Tesselator": material["Name"] + "Block" + tesselator,
+	})
 			
 # tools	
 for tool in tools:
