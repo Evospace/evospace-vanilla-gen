@@ -226,6 +226,16 @@ covers = [
         "Mesh": "/Game/Covers/polycarbo",
         "Materials": ["/Game/Materials/RoofMetal"],
         "NumCustomData": 3,
+    },{
+        "Name": "DataSide",
+        "Mesh": "/Game/Covers/DataSide",
+        "Materials": [""],
+        "NumCustomData": 0,
+    },{
+        "Name": "DataCenter",
+        "Mesh": "/Game/Covers/DataCenter",
+        "Materials": [""],
+        "NumCustomData": 0,
     }
 ]
 
