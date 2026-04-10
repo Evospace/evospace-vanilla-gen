@@ -381,7 +381,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 7,
-		"BlockLogic":"AutoCrafter",
+		"BlockLogic":"SelectCrafter",
 		"Description": ["KineticInput", "PowerInput"],
         "PowerInput": 50,
 	},{
@@ -981,9 +981,19 @@ machines = [
 	},{
 		"Name": "LogicInterface",
 		"StartTier": 2,
-		"EndTier": 2,		
-        "BlockLogic":"LogicInterfaceBlockLogic",
+		"EndTier": 2,
+        "BlockLogic": "LogicInterfaceBlockLogic",
 		"Description": []
+	},{
+		"Name": "LogicWire",
+		"StartTier": 2,
+		"EndTier": 2,
+		"BlockLogic": "DataConductorBlockLogic",
+		"Description": ["DataConductor"],
+		"PathFinding": True,
+        "NoActorRenderable": True,
+        "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
+        "Category": "Network",
 	},{
 		"Name": "StorageCore",
 		"StartTier": 2,

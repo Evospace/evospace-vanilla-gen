@@ -1159,6 +1159,19 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "FastSifting",
+	"Label": ["FastSifting", "researches"],
+	"RequiredResearch": ["Sifter2"],
+	"Unlocks": [
+		["Sifter" + r_dict, "MalachiteOreImpureGravelDense"],
+		["Sifter" + r_dict, "RubyOreImpureGravelDense"],
+		["Sifter" + r_dict, "ThorianiteOreImpureGravelDense"],
+	],
+	"Levels": [5, 5],
+	"MainResearch": True,
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "Separator",
 	"Label": ["Separator", "machines"],
 	"RequiredResearch": ["ElectricEngine"],
