@@ -668,12 +668,12 @@ materials = [
 		},
 		"Tier": 4
 	},{
-		"Name": "RocketFuelHydrocarbon",
+		"Name": "HydrocarbonBlend",
 		"Label": "Rocket Fuel Hydrocarbon Blend",
 		"Items": ["Gas"],
 		"Tier": 4,
 	},{
-		"Name": "RocketFuelOxidizer",
+		"Name": "OxidizerBlend",
 		"Label": "Rocket Fuel Oxidizer Mix",
 		"Items": ["Gas"],
 		"Tier": 4,
