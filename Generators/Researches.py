@@ -1121,7 +1121,11 @@ append_levels({
 	"Name": "FuelChemistry",
 	"Label": ["FuelChemistry", "researches"],
 	"RequiredResearch": ["Catalyst"],
-	"Unlocks": [[ic_reactor_r_dict, "RocketFuel"]],
+	"Unlocks": [
+		[ic_reactor_r_dict, "RocketFuelHydrocarbon"],
+		[ic_reactor_r_dict, "RocketFuelOxidizer"],
+		[ic_reactor_r_dict, "RocketFuel"],
+	],
 	"Levels": [3,3],
 })
 append_levels({
@@ -1145,7 +1149,12 @@ append_levels({
 	"Name": "FuelChemistry4",
 	"Label": ["TwoWorldsFormat", "common", ["FuelChemistry", "researches"], ["IV", "common"]],
 	"RequiredResearch": ["FuelChemistry3", "UltimateCatalyst"],
-	"Unlocks": [[ic_reactor_r_dict, "RocketFuel2"], [ic_reactor_r_dict, "Superfuel2"]],
+	"Unlocks": [
+		[ic_reactor_r_dict, "RocketFuelHydrocarbon2"],
+		[ic_reactor_r_dict, "RocketFuelOxidizer2"],
+		[ic_reactor_r_dict, "RocketFuel2"],
+		[ic_reactor_r_dict, "Superfuel2"],
+	],
 	"Levels": [6,6],
 })
 append_levels({

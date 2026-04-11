@@ -2220,77 +2220,67 @@ recipes_pyro.append({
 	"Tier": 3,
 })
 recipes_industrial_chemreactor.append({
-	"Name": "RocketFuel",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Chlorine",
-				"Count": 1000
-			},{
-				"Name": "Ammonia",
-				"Count": 1000
-			},{
-				"Name": "Ethanol",
-				"Count": 2000
-			},{
-				"Name": "Gasoline",
-				"Count": 4000
-			},
-			{
-				"Name": "Catalyst",
-				"Count": 1,
-				"Probability": 0,
-			},
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "RocketFuel",
-				"Count": 6000,
-			},		
-		]
-	},
-	"Ticks" : 200*3,
+	"Name": "RocketFuelHydrocarbon",
+	"Input": items([
+		["Ethanol", 2000],
+		["Gasoline", 4000],
+		["Catalyst", 1, 0],
+	]),
+	"Output": one_item("RocketFuelHydrocarbon", 6000),
+	"Ticks" : 200,
 	"Colors": [[0.3,0.2,0,1],[1,1,0.5,1]],
-	"Tier": 4
+	"Tier": 6
 })
 
 recipes_industrial_chemreactor.append({
-	"Name": "RocketFuel2",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Chlorine",
-				"Count": 1000
-			},{
-				"Name": "Ammonia",
-				"Count": 1000
-			},{
-				"Name": "Ethanol",
-				"Count": 2000
-			},{
-				"Name": "Gasoline",
-				"Count": 3000
-			},
-			{
-				"Name": "UltimateCatalyst",
-				"Count": 1,
-				"Probability": 0,
-			},
-		]
-	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "RocketFuel",
-				"Count": 8000,
-			},		
-		]
-	},
-	"Ticks" : 200*3,
+	"Name": "RocketFuelHydrocarbon2",
+	"Input": items([
+		["Ethanol", 2000],
+		["Gasoline", 3000],
+		["UltimateCatalyst", 1, 0],
+	]),
+	"Output": one_item("RocketFuelHydrocarbon", 5000),
+	"Ticks" : 200,
 	"Colors": [[0.3,0.2,0,1],[1,1,0.5,1]],
 	"Tier": 7
+})
+
+recipes_industrial_chemreactor.append({
+	"Name": "RocketFuelOxidizer",
+	"Input": items([
+		["Chlorine", 1000],
+		["Ammonia", 1000],
+		["Catalyst", 1, 0],
+	]),
+	"Output": one_item("RocketFuelOxidizer", 1800),
+	"Ticks" : 200,
+	"Colors": [[0.3,0.2,0,1],[1,1,0.5,1]],
+	"Tier": 6
+})
+
+recipes_industrial_chemreactor.append({
+	"Name": "RocketFuelOxidizer2",
+	"Input": items([
+		["Chlorine", 1000],
+		["Ammonia", 1000],
+		["UltimateCatalyst", 1, 0],
+	]),
+	"Output": one_item("RocketFuelOxidizer", 2000),
+	"Ticks" : 200,
+	"Colors": [[0.3,0.2,0,1],[1,1,0.5,1]],
+	"Tier": 7
+})
+
+recipes_industrial_chemreactor.append({
+	"Name": "RocketFuel",
+	"Input": items([
+		["RocketFuelHydrocarbon", 6000],
+		["RocketFuelOxidizer", 2000],
+	]),
+	"Output": one_item("RocketFuel", 6000),
+	"Ticks" : 200*3,
+	"Colors": [[0.3,0.2,0,1],[1,1,0.5,1]],
+	"Tier": 6
 })
 
 recipes_industrial_chemreactor.append({
