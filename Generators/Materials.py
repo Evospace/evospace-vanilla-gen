@@ -309,6 +309,7 @@ materials = [
 		"Items": ["Exact"],
 		"StackSize": 32,
 		"Description":[["NuclearFuel", "common"]],
+		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "UraniumCell",
 		"Label": "Uranium Cell",
@@ -316,6 +317,7 @@ materials = [
 		"Items": ["Exact"],
 		"StackSize": 32,
 		"Description":[["NuclearFuel", "common"], ["Burnable", "common", uranium_rod_output() * 20]],
+		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "PlutoniumCell",
 		"Label": "Plutonium Cell",
@@ -323,6 +325,7 @@ materials = [
 		"Items": ["Exact"],
 		"StackSize": 32,
 		"Description":[["NuclearFuel", "common"]],
+		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "DepletedUraniumCell",
 		"Label": "Depleted Uranium Cell",
@@ -330,6 +333,7 @@ materials = [
 		"Items": ["Exact"],
 		"StackSize": 32,
 		"Description":[["NuclearFuel", "common"]],
+		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "Thorium",
 		"Label": "Thorium",
@@ -817,6 +821,7 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Tier": 3,
+		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "SynthesisCell",
 		"Label": "Synthesis Cell",
@@ -824,18 +829,21 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Tier": 6,
+		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "Catalyst",
 		"Label": "Catalyst Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
-		"Tier": 3
+		"Tier": 3,
+		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "UltimateCatalyst",
 		"Label": "Ultimate Catalyst Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
-		"Tier": 7
+		"Tier": 7,
+		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "MothershipPing",
 		"Label": "Mothership Ping",
@@ -853,21 +861,25 @@ materials = [
 		"Label": "Control Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
+		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "ReflectorCell",
 		"Label": "Reflector Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
+		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "ThoriumCell",
 		"Label": "Thorium Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
+		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "MixedOxideCell",
 		"Label": "Mixed-Oxide Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
+		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "Mercury",
 		"Label": "Mercury",
