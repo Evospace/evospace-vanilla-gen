@@ -263,7 +263,7 @@ for ore_type in ore_types:
 						{
 							"Name": sf[2],
 							"Count": 1,
-							"Probability": 10,
+							"Probability": 11,
 						},
 					]
 				},
