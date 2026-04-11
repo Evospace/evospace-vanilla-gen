@@ -667,6 +667,16 @@ materials = [
 			"BurnTime": 400 * 30
 		},
 		"Tier": 4
+	},{
+		"Name": "RocketFuelHydrocarbon",
+		"Label": "Rocket Fuel Hydrocarbon Blend",
+		"Items": ["Gas"],
+		"Tier": 4,
+	},{
+		"Name": "RocketFuelOxidizer",
+		"Label": "Rocket Fuel Oxidizer Mix",
+		"Items": ["Gas"],
+		"Tier": 4,
 	},
 	{
 		"Name": "HeavyOil",
