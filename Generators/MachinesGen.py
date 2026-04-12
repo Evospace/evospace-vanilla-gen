@@ -469,7 +469,7 @@ for machine in machines:
 				"Ticks" : 20
 			})
 			
-		if machine["Name"] == "Terminal":
+		if machine["Name"] == "Monitor":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([
@@ -481,19 +481,7 @@ for machine in machines:
 				"Ticks" : 20
 			})
 			
-		if machine["Name"] == "FlatTerminal":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input": items([
-					[plate(), 3],
-					["Glass", 4],
-					[cables[tier], 1]
-				]),
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 20
-			})
-			
-		if machine["Name"] == "BigTerminal":
+		if machine["Name"] == "BigMonitor":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([
@@ -505,31 +493,7 @@ for machine in machines:
 				"Ticks" : 20
 			})
 			
-		if machine["Name"] == "BigFlatTerminal":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input": items([
-					[plate(), 6],
-					["Glass", 8],
-					[cables[tier], 2]
-				]),
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 20
-			})
-			
-		if machine["Name"] == "HugeTerminal":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input": items([
-					[plate(), 9],
-					["Glass", 12],
-					[cables[tier], 3]
-				]),
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 20
-			})
-			
-		if machine["Name"] == "HugeFlatTerminal":
+		if machine["Name"] == "HugeMonitor":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([

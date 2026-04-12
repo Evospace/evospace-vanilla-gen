@@ -1579,19 +1579,11 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
-	"Name": "Terminal",
-	"Label": ["Terminal", "machines"],
+	"Name": "Monitor",
+	"Label": ["Monitor", "machines"],
 	"Levels": [4,4],
 	"RequiredResearch": ["StainlessSteelProduction"],
-	"Unlocks": [["Hand" + r_dict, tier_material[4] + "Terminal"]],
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "FlatTerminal",
-	"Label": ["FlatTerminal", "machines"],
-	"Levels": [4,4],
-	"RequiredResearch": ["Terminal"],
-	"Unlocks": [["Hand" + r_dict, tier_material[4] + "FlatTerminal"]],
+	"Unlocks": [["Hand" + r_dict, tier_material[4] + "Monitor"]],
 })
 append_levels({
 	"Class": research_recipe,
@@ -1614,36 +1606,20 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
-	"Name": "BigTerminal",
-	"Label": ["BigTerminal", "machines"],
-	"RequiredResearch": ["Terminal"],
-	"Unlocks": [["Hand" + r_dict, tier_material[5] + "BigTerminal"]],
+	"Name": "BigMonitor",
+	"Label": ["BigMonitor", "machines"],
+	"RequiredResearch": ["Monitor"],
+	"Unlocks": [["Hand" + r_dict, tier_material[5] + "BigMonitor"]],
 	"Levels": [4,4],
 })
 append_levels({
 	"Class": research_recipe,
-	"Name": "BigFlatTerminal",
-	"Label": ["BigFlatTerminal", "machines"],
-	"RequiredResearch": ["BigTerminal"],
-	"Unlocks": [["Hand" + r_dict, tier_material[5] + "BigFlatTerminal"]],
-	"Levels": [4,4],
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "HugeTerminal",
-	"Label": ["HugeTerminal", "machines"],
-	"RequiredResearch": ["BigTerminal"],
-	"Unlocks": [["Hand" + r_dict, tier_material[6] + "HugeTerminal"]],
+	"Name": "HugeMonitor",
+	"Label": ["HugeMonitor", "machines"],
+	"RequiredResearch": ["BigMonitor"],
+	"Unlocks": [["Hand" + r_dict, tier_material[6] + "HugeMonitor"]],
 	"Levels": [5,5],
 })
-append_levels({
-	"Class": research_recipe,
-	"Name": "HugeFlatTerminal",
-	"Label": ["HugeFlatTerminal", "machines"],
-	"RequiredResearch": ["HugeTerminal"],
-	"Unlocks": [["Hand" + r_dict, tier_material[6] + "HugeFlatTerminal"]],
-	"Levels": [5,5],
-}) 
 append_levels({
 	"Class": research_recipe,
 	"Name": "PyrolysisUnit",
