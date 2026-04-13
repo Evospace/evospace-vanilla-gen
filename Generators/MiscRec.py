@@ -624,13 +624,24 @@ for miscBlock in ["ReinforcedConcrete", "ReinforcedConcreteTiles", "ReinforcedCo
 		"Tier": 3
 	})
 
-for miscBlock in ["CopperChair", "Ladder", "Door", "Window", "PlasticWindow", "Rack", "Fence"]:
+for miscBlock in ["CopperChair", "Ladder", "Door", "Window", "PlasticWindow", "Rack"]:
 	recipes_hand.append({
 		"Name": miscBlock,
 		"Input": items([
 			["BuildingMaterial", 3]
 		]),
 		"Output": one_item(miscBlock),
+		"Ticks" : 20,
+		"Tier": 1
+	})
+
+for designableBlock in ["Stairs", "Corner", "Beam", "Scaffold", "Column", "Floor", "Chair", "Table", "Fence"]:
+	recipes_hand.append({
+		"Name": designableBlock,
+		"Input": items([
+			["BuildingMaterial", 3]
+		]),
+		"Output": one_item(designableBlock),
 		"Ticks" : 20,
 		"Tier": 1
 	})
