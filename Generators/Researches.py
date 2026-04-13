@@ -281,6 +281,30 @@ for miscBlock in ["ReinforcedConcrete", "ReinforcedConcreteTiles", "ReinforcedCo
 	})
 append_levels({
 	"Class": research_recipe,
+	"Name": "Designable",
+	"Label": ["Designable", "researches"],
+	"RequiredResearch": ["Bricks"],
+	"Unlocks": [["Hand" + r_dict, "Stairs"], ["Hand" + r_dict, "Corner"], ["Hand" + r_dict, "Beam"], ["Hand" + r_dict, "Scaffold"]],
+	"Levels": [1,1],
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "Designable2",
+	"Label": ["TwoWorldsFormat", "common", ["Designable", "researches"], [level_labels[1], "common"]],
+	"RequiredResearch": ["Designable"],
+	"Unlocks": [["Hand" + r_dict, "Column"], ["Hand" + r_dict, "Floor"], ["Hand" + r_dict, "Fence"]],
+	"Levels": [2,2],
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "Designable3",
+	"Label": ["TwoWorldsFormat", "common", ["Designable", "researches"], [level_labels[2], "common"]],
+	"RequiredResearch": ["Designable2"],
+	"Unlocks": [["Hand" + r_dict, "Chair"], ["Hand" + r_dict, "Table"]],
+	"Levels": [3,3],
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "Chest",
 	"Label": ["Chest", "machines"],
 	"RequiredResearch": ["MineralsScan"],
@@ -1659,15 +1683,7 @@ append_levels({
 	"Name": "DecorativeWood2",
 	"Label": ["TwoWorldsFormat", "common", ["DecorativeWood", "researches"], [level_labels[1], "common"]],
 	"RequiredResearch": ["DecorativeWood"],
-	"Unlocks": [["Hand" + r_dict, "Fence"],["Hand" + r_dict, "Ladder"],["Hand" + r_dict, "Rack"]],
-	"Levels": [2,2],
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "Fence",
-	"Label": ["Fence", "misc"],
-	"RequiredResearch": ["DecorativeWood2"],
-	"Unlocks": [["Hand" + r_dict, "Fence"]],
+	"Unlocks": [["Hand" + r_dict, "Ladder"],["Hand" + r_dict, "Rack"]],
 	"Levels": [2,2],
 })
 append_levels({
