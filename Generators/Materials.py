@@ -918,31 +918,6 @@ materials = [
 		"Items": tiered_parts_list_no_dust,
 		"Tier": 6,
 	},{
-		"Name": "Capacity",
-		"Label": "Capacity",
-		"Items": ["Exact"],
-		"Category": "Signal"
-	},{
-		"Name": "InputError",
-		"Label": "Input Error",
-		"Items": ["Exact"],
-		"Category": "Signal"
-	},{
-		"Name": "OutputError",
-		"Label": "Output Error",
-		"Items": ["Exact"],
-		"Category": "Signal"
-	},{
-		"Name": "Progress",
-		"Label": "Progress",
-		"Items": ["Exact"],
-		"Category": "Signal"
-	},{
-		"Name": "SwitchOn", 
-		"Label": "Switch On",
-		"Items": ["Exact"],
-		"Category": "Signal"
-	},{
 		"Name": "Drain",
 		"Label": "Drain",
 		"Items": ["Exact"],
