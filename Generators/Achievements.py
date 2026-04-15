@@ -118,7 +118,7 @@ ach = [
         "Description": FirstItemAcq
     },
     {
-        "Name": "Torch",
+        "Name": "Flashlight",
         "Steam": True,
         "Label": ["",""],
     },

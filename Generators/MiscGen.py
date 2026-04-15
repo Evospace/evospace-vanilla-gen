@@ -230,6 +230,12 @@ equipped = [
 	},{
 		"Name": "AntigravityUnit",
 		"ItemLogic": "/Game/Equipped/AntigravityUnitBP.AntigravityUnitBP_C"
+	},{
+		"Name": "NightVision",
+		"ItemLogic": "/Game/Equipped/NightVisionBP.NightVisionBP_C"
+	},{
+		"Name": "AdvancedNightVision",
+		"ItemLogic": "/Game/Equipped/AdvancedNightVisionBP.AdvancedNightVisionBP_C"
 	}
 ]
 
@@ -368,11 +374,24 @@ for one in equipped:
 		"Image": "T_" + one["Name"],
 		"StackSize": 32,
 		"Label":[one["Name"],"misc"],
+		"EquipmentItem": True,
 	}
 	if "ItemLogic" in one:
 		equ["ItemLogic"] = one["ItemLogic"]
 		
 	objects_array.append(equ)
+
+# Default light slot when empty: logic class only (no crafting recipe; not a normal pickup)
+objects_array.append({
+	"Class": "StaticItem",
+	"Name": "BuiltinFlashlight",
+	"Image": "T_BuiltinFlashlight",
+	"StackSize": 1,
+	"Label": ["BuiltinFlashlight", "misc"],
+	"Type": "Abstract",
+	"ItemLogic": "/Game/Equipped/BuiltinFlashlightBP.BuiltinFlashlightBP_C",
+	"EquipmentItem": True,
+})
 
 	
 data = {

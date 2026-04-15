@@ -1729,6 +1729,22 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "NightVision",
+	"Label": ["NightVision", "misc"],
+	"RequiredResearch": ["Flashlight"],
+	"Unlocks": [["Hand" + r_dict, "NightVision"]],
+	"Levels": [3,3],
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "AdvancedNightVision",
+	"Label": ["AdvancedNightVision", "misc"],
+	"RequiredResearch": ["NightVision"],
+	"Unlocks": [["Hand" + r_dict, "AdvancedNightVision"]],
+	"Levels": [4,4],
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "Sign",
 	"Label": ["Sign", "machines"],
 	"RequiredResearch": ["Lamp"],
