@@ -239,6 +239,8 @@ for machine in machines:
 
 		if "LogicExports" in machine:
 			block["ExportOptions"] = machine["LogicExports"]
+		if "LogicImports" in machine:
+			block["ImportOptions"] = machine["LogicImports"]
 
 		crafter_logic_types = {"SelectCrafter", "AutoCrafter", "DumpCrafterBlockLogic", "AssemblerBlockLogic"}
 		effective_logic = machine.get("BlockLogic", machine["Name"] + "BlockLogic")
