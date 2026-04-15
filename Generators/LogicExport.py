@@ -6,6 +6,34 @@ logic_exports = [
         "Enabled": True,
         "Label": ["ExportInventory", "ui"],
         "Tooltip": ["ExportInventoryTooltip", "ui"]
+    },
+    {
+        "Name": "CrafterWorking",
+        "UseSignal": True,
+        "Signal": "W",
+        "Enabled": False,
+        "Label": ["ExportWorking", "ui"],
+        "Tooltip": ["ExportWorkingTooltip", "ui"]
+    },
+    {
+        "Name": "CrafterProgress",
+        "UseSignal": True,
+        "Signal": "P",
+        "Enabled": False,
+        "Label": ["ExportProgress", "ui"],
+        "Tooltip": ["ExportProgressTooltip", "ui"]
+    },
+    {
+        "Name": "CrafterInputInventory",
+        "Enabled": False,
+        "Label": ["ExportInputInventory", "ui"],
+        "Tooltip": ["ExportInputInventoryTooltip", "ui"]
+    },
+    {
+        "Name": "CrafterOutputInventory",
+        "Enabled": False,
+        "Label": ["ExportOutputInventory", "ui"],
+        "Tooltip": ["ExportOutputInventoryTooltip", "ui"]
     }
 ]
 
