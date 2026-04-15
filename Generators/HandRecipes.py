@@ -338,6 +338,64 @@ recipes_hand.append({
 	"Ticks" : 20
 })
 
+recipes_hand.append({
+	"Name": "NightVision",
+	"Input":{
+		"Items":[
+			{
+				"Name": "SteelParts",
+				"Count": 32
+			},
+			{
+				"Name": "Circuit",
+				"Count": 16
+			},
+			{
+				"Name": "Glass",
+				"Count": 10
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "NightVision",
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 400
+})
+
+recipes_hand.append({
+	"Name": "AdvancedNightVision",
+	"Input":{
+		"Items":[
+			{
+				"Name": "StainlessSteelParts",
+				"Count": 64
+			},
+			{
+				"Name": "Processor",
+				"Count": 16
+			},
+			{
+				"Name": "Glass",
+				"Count": 10
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "AdvancedNightVision",
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 400
+})
+
 for r in recipes_hand:
 	r["Locked"] = True
 
