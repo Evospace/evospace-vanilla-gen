@@ -1,6 +1,15 @@
 from Common import *
 
-logic_imports = []
+logic_imports = [
+    {
+        "Name": "CrafterSwitch",
+        "UseSignal": True,
+        "Signal": "W",
+        "Enabled": False,
+        "Label": ["ImportWorking", "ui"],
+        "Tooltip": ["ImportWorkingTooltip", "ui"]
+    }
+]
 
 objects_array = []
 

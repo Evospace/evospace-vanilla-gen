@@ -27,6 +27,7 @@ generator_files = [
 	"Covers.py",
 	"DesignableBlocks.py",
 	"HandRecipes.py",
+	"LogicImport.py",
 	"LogicExport.py",
 	"MachinesGen.py",
 	"MapgenCore.py",
