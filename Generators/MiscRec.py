@@ -91,7 +91,8 @@ recipes_industrial_chemreactor.append({
 		["HotMercury", 4000]
 	]),
 	"Ticks" : 400,
-	"Tier": 6
+	"Tier": 6,
+	"Colors": [[0.5,0.5,0.5],[20,5,0]]
 })
 
 recipes_industrial_chemreactor.append({
