@@ -3,12 +3,18 @@
 from Common import *
 from Materials import *
 
+# Crafter block logics: list in each machine below (no implicit defaults in MachinesGen).
+CRAFTING_LOGIC_EXPORTS = ["CrafterWorking", "CrafterProgress", "CrafterInputInventory", "CrafterOutputInventory"]
+CRAFTING_LOGIC_IMPORTS = ["WorkingSwitch"]
+
 machines = [
 	{
 		"Name": "Macerator",
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "AutoCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["KineticInput", "PowerInput"],
 	}
 	#,{
@@ -24,6 +30,8 @@ machines = [
 		"EndTier": 7,
 		"Positions": [[0,0,0],[0,0,1]],
 		"BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"RequiredResearch":["Fermentation"],
 		"Description": ["ElectricInput", "PowerInput"],
 	},{
@@ -31,6 +39,8 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["KineticInput", "PowerInput"],
 	},{
 		"Name": "Spawner",
@@ -43,6 +53,8 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["KineticInput", "PowerInput"],
 	},{
 		"Name": "Boiler",
@@ -52,6 +64,8 @@ machines = [
 			"Autocrafter"
 		],
 		"BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["HeatInput", "FluidInput", "FluidOutput", "PowerOutput"],
 		"CustomData":{
 			"StorageCapacity": 30000,
@@ -154,6 +168,8 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["KineticInput", "PowerInput"],
 	},{
 		"Name": "Conveyor",
@@ -184,22 +200,29 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "FluidContainerBlockLogic",
+		"LogicExports": ["ExportInventory"],
 		"Description": ["FluidConductor", "FluidStorage"],
 	},{
 		"Name": "StirlingEngine",
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["HeatInput", "KineticOutput","PowerOutput"],
 	},{
 		"Name": "SteamEngine",
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["FluidInput", "KineticOutput", "PowerOutput"],
 	},{
 		"Name": "CombustionEngine",
 		"BlockLogic": "AutoCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"StartTier": 4,
 		"EndTier": 7,
         "Description": ["FluidInput", "KineticOutput", "PowerOutput"],
@@ -210,6 +233,8 @@ machines = [
 		"EndTier": 7,
 		"Description": ["ElectricInput", "PowerInput", "FluidInput", "FluidOutput"],
 		"BlockLogic": "SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Positions": [
             [0,0,0],[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[1,1,0],[-1,-1,0],[1,-1,0],[-1,1,0],
             [0,0,1],[1,0,1],[-1,0,1],[0,1,1],[0,-1,1],[1,1,1],[-1,-1,1],[1,-1,1],[-1,1,1],
@@ -226,6 +251,8 @@ machines = [
 		"StartTier": 4,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["HeatInput", "PowerInput"],
 	},{
 		"Name": "Generator",
@@ -233,6 +260,8 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
 	},{
 		"Name": "IndustrialGenerator",
@@ -248,6 +277,8 @@ machines = [
 		"StartTier": 5,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
 		 
 	},{
@@ -255,12 +286,16 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
 	},{
 		"Name": "ElectricEngine",
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
         "Selector": "Blocks/ElectricEngineBP.ElectricEngineBP_C",
 		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
         "DefaultRotation": [-1, 0, 0, 0]
@@ -274,6 +309,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"Selector": "Blocks/ArrowBP.ArrowBP_C",
+		"LogicImports": ["WorkingSwitch"],
 	},{
 		"Name": "Pump",
 		"StartTier": 1,
@@ -289,6 +325,8 @@ machines = [
 		"StartTier": 0,
 		"EndTier": 2,
 		"BlockLogic":"AutoCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["HeatInput", "PowerInput"],
 		"CustomData":{
 			"Capacity":32
@@ -299,6 +337,8 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["FluidInput", "KineticOutput","PowerOutput"],
 	},{
 		"Name": "IndustrialSteamTurbine",
@@ -318,6 +358,8 @@ machines = [
 		"StartTier": 5,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["FluidInput", "KineticOutput", "PowerOutput"],
 	},{
 		"Name": "Riteg",
@@ -333,6 +375,8 @@ machines = [
 		"StartTier": 5,
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["HeatOutput", "PowerOutput"],
 	},{
 		"Name": "DroneStation",
@@ -347,6 +391,8 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["ElectricInput", "PowerInput"],
 	},{
 		"Name": "ChemicalBath",
@@ -354,6 +400,8 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"BlockCreation":"""
         local a = self:new_resource_accessor("Input")
 		a:SetSidePos(Vec3i.front, Vec3i.new( 0, 0, 0 ))
@@ -369,6 +417,8 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["KineticInput", "PowerInput"],
 	},{
 		"Name": "IndustrialChemReactor",
@@ -376,12 +426,16 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "Furnace",
 		"StartTier": 0,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["HeatOutput", "PowerOutput"],
 	},{
 		"Name": "Oven",
@@ -401,6 +455,8 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["SpeedBonus", "HeatInput", "PowerInput"],
 	},{
 		"Name": "BlastFurnace",
@@ -424,24 +480,31 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["SpeedBonus"],
 	},{
 		"Name": "FluidFurnace",
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "AutoCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["FluidInput", "HeatOutput", "PowerOutput"],
 	},{
 		"Name": "ElectricFurnace",
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["ElectricInput", "HeatOutput", "PowerOutput"],
 	},{
 		"Name": "BatteryBox",
 		"StartTier": 3,
 		"EndTier": 7,
         "BlockLogic": "ElectricityContainerBlockLogic",
+		"LogicExports": ["ExportInventory"],
 		"Description": ["ElectricConductor", "ElectricStorage"]
 	},{
 		 "Name": "Portal",
@@ -542,6 +605,8 @@ machines = [
 			[0,-1,1],[-1,-1,1],
 		],
 		"BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["ElectricInput", "PowerInput"],
 	},{
 		"Name": "Destroyer",
@@ -555,6 +620,8 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic":"DumpCrafterBlockLogic",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["FluidInput"],
 	},{
 		"Name": "Lamp",
@@ -596,6 +663,8 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "Mixer",
@@ -603,6 +672,8 @@ machines = [
 		"EndTier": 7,
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
 		"BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["KineticInput", "PowerInput"],
 	},{
 		"Name": "AutomaticFarm",
@@ -625,6 +696,8 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["FluidInput"],
 	},{
 		"Name": "AtmosphericCondenser",
@@ -640,6 +713,8 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["FluidOutput"],
 	},{
 		"Name": "Monitor",
@@ -734,6 +809,8 @@ machines = [
 		"StartTier": 5,
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"CustomData":{
 			"LoadIndependent": True,
 			"StorageCapacity": 10000000,
@@ -744,6 +821,8 @@ machines = [
 		"Name": "FusionReactor",
         "Description": ["PowerInput"],
         "BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"StartTier": 6,
 		"EndTier": 7,
 		"Positions": [
@@ -789,6 +868,8 @@ machines = [
 			[0,-2,2],[-1,-2,2],[-2,-2,2],[-3,-2,2],
 		],
 		"BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["FluidInput", "FluidOutput","PowerOutput"],
 		"CustomData":{
 			"StorageCapacity": 6000000,
@@ -813,6 +894,8 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["ElectricOutput", "PowerOutput"],
 	},
 	{
@@ -826,6 +909,8 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["ElectricOutput", "PowerOutput"],
 	},
 	{
@@ -895,6 +980,8 @@ machines = [
 			[0,-1,2],[-1,-1,2],[-2,-1,2],
 		],
 		"BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["HeatInput", "PowerInput"],
 	},{
 		"Name": "CreativeController",
@@ -906,6 +993,8 @@ machines = [
 		"StartTier": 5,
 		"EndTier": 7,		
         "BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
         "Positions": [
 			[0,0,0],[1,0,0],[0,1,0],[1,1,0],
             [0,0,1],[1,0,1],[0,1,1],[1,1,1],
@@ -919,11 +1008,14 @@ machines = [
         "EndTier": 7,
         "Description": ["KineticInput", "HeatOutput", "PowerOutput"],
         "BlockLogic":"SelectCrafter",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
     },{
 		"Name": "Rails",
 		"StartTier": 2,
 		"EndTier": 2,		
         "BlockLogic":"CableBundleBlockLogic",
+		"LogicExports": ["ExportInventory"],
 		"Description": ["ElectricConductor"],
         "CustomData":{
 			"SplineMesh": "/Game/CoreContent/Rail2",

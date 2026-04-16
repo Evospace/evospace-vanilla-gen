@@ -242,13 +242,6 @@ for machine in machines:
 		if "LogicImports" in machine:
 			block["ImportOptions"] = machine["LogicImports"]
 
-		crafter_logic_types = {"SelectCrafter", "AutoCrafter", "DumpCrafterBlockLogic", "AssemblerBlockLogic"}
-		effective_logic = machine.get("BlockLogic", machine["Name"] + "BlockLogic")
-		if "ExportOptions" not in block and effective_logic in crafter_logic_types:
-			block["ExportOptions"] = ["CrafterWorking", "CrafterProgress", "CrafterInputInventory", "CrafterOutputInventory"]
-		if "ImportOptions" not in block and effective_logic in crafter_logic_types:
-			block["ImportOptions"] = ["WorkingSwitch"]
-
 		machine_blocks.append(block)
 
 		machine_dicts.append({ 
