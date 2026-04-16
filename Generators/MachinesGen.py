@@ -247,7 +247,7 @@ for machine in machines:
 		if "ExportOptions" not in block and effective_logic in crafter_logic_types:
 			block["ExportOptions"] = ["CrafterWorking", "CrafterProgress", "CrafterInputInventory", "CrafterOutputInventory"]
 		if "ImportOptions" not in block and effective_logic in crafter_logic_types:
-			block["ImportOptions"] = ["CrafterSwitch"]
+			block["ImportOptions"] = ["WorkingSwitch"]
 
 		machine_blocks.append(block)
 

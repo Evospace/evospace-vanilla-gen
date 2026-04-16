@@ -2,7 +2,7 @@ from Common import *
 
 logic_exports = [
     {
-        "Name": "ChestExportInventory",
+        "Name": "ExportInventory",
         "Enabled": True,
         "Label": ["ExportInventory", "ui"],
         "Tooltip": ["ExportInventoryTooltip", "ui"]

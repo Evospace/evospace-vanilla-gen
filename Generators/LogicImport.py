@@ -2,10 +2,10 @@ from Common import *
 
 logic_imports = [
     {
-        "Name": "CrafterSwitch",
+        "Name": "WorkingSwitch",
         "UseSignal": True,
         "Signal": "W",
-        "Enabled": False,
+        "Enabled": True,
         "Label": ["ImportWorking", "ui"],
         "Tooltip": ["ImportWorkingTooltip", "ui"]
     }
