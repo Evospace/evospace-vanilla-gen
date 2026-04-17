@@ -2,38 +2,38 @@ from Common import *
 
 logic_exports = [
     {
-        "Name": "ExportInventory",
+        "Name": "Storage",
         "Enabled": True,
-        "Label": ["ExportInventory", "ui"],
-        "Tooltip": ["ExportInventoryTooltip", "ui"]
+        "Label": ["Storage", "logic_export"],
+        "Tooltip": ["StorageTooltip", "logic_export"]
     },
     {
-        "Name": "CrafterWorking",
+        "Name": "Working",
         "UseSignal": True,
         "Signal": "W",
         "Enabled": False,
-        "Label": ["ExportWorking", "ui"],
-        "Tooltip": ["ExportWorkingTooltip", "ui"]
+        "Label": ["Working", "logic_export"],
+        "Tooltip": ["WorkingTooltip", "logic_export"]
     },
     {
-        "Name": "CrafterProgress",
+        "Name": "Progress",
         "UseSignal": True,
         "Signal": "P",
         "Enabled": False,
-        "Label": ["ExportProgress", "ui"],
-        "Tooltip": ["ExportProgressTooltip", "ui"]
+        "Label": ["Progress", "logic_export"],
+        "Tooltip": ["ProgressTooltip", "logic_export"]
     },
     {
-        "Name": "CrafterInputInventory",
+        "Name": "InputInventory",
         "Enabled": False,
-        "Label": ["ExportInputInventory", "ui"],
-        "Tooltip": ["ExportInputInventoryTooltip", "ui"]
+        "Label": ["InputInventory", "logic_export"],
+        "Tooltip": ["InputInventoryTooltip", "logic_export"]
     },
     {
-        "Name": "CrafterOutputInventory",
+        "Name": "OutputInventory",
         "Enabled": False,
-        "Label": ["ExportOutputInventory", "ui"],
-        "Tooltip": ["ExportOutputInventoryTooltip", "ui"]
+        "Label": ["OutputInventory", "logic_export"],
+        "Tooltip": ["OutputInventoryTooltip", "logic_export"]
     }
 ]
 
