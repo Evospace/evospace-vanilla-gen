@@ -4,8 +4,8 @@ from Common import *
 from Materials import *
 
 # Crafter block logics: list in each machine below (no implicit defaults in MachinesGen).
-CRAFTING_LOGIC_EXPORTS = ["CrafterWorking", "CrafterProgress", "CrafterInputInventory", "CrafterOutputInventory"]
-CRAFTING_LOGIC_IMPORTS = ["WorkingSwitch"]
+CRAFTING_LOGIC_EXPORTS = ["Working", "Progress", "InputInventory", "OutputInventory"]
+CRAFTING_LOGIC_IMPORTS = ["Working"]
 
 machines = [
 	{
@@ -76,7 +76,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "ConductorBlockLogic",
-		"LogicExports": ["ExportInventory"],
+		"LogicExports": ["Storage"],
 		"Description": ["FluidConductor"],
 		"PathFinding": True,
         "NoActorRenderable": True,
@@ -106,7 +106,7 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 2,
 		"BlockLogic": "KineticConductorBlockLogic",
-		"LogicExports": ["ExportInventory"],
+		"LogicExports": ["Storage"],
 		"Description": ["KineticConductor", "KineticStorage"],
 		"PathFinding": True,
         "Category": "Network",
@@ -125,7 +125,7 @@ machines = [
 		"StartTier": 0,
 		"EndTier": 0,
 		"BlockLogic": "ConductorBlockLogic",
-		"LogicExports": ["ExportInventory"],
+		"LogicExports": ["Storage"],
         "Description": ["ElectricConductor"],
 		"PathFinding": True,
         "ExactName": True,
@@ -138,7 +138,7 @@ machines = [
 		"StartTier": 0,
 		"EndTier": 7,
         "Description": ["ItemInput", "ItemStorage"],
-		"LogicExports": ["ExportInventory"],
+		"LogicExports": ["Storage"],
 	},{
 		"Name": "ItemRack",
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
@@ -154,14 +154,14 @@ machines = [
 		],
 		"BlockLogic": "FluidSwitchBlockLogic",
 		"Description": ["FluidConductor"],
-		"LogicImports": ["WorkingSwitch"],
+		"LogicImports": ["Working"],
 	},{
 		"Name": "ElectricalSwitch",
 		"StartTier": 2,
 		"EndTier": 2,
 		"BlockLogic": "ElectricitySwitchBlockLogic",
 		"Description": ["ElectricConductor"],
-		"LogicImports": ["WorkingSwitch"],
+		"LogicImports": ["Working"],
 	},{
 		"Name": "OreWasher",
 		"Positions": [[0,0,0],[0,1,0],[-1,0,0],[-1,1,0],[-2,0,0],[-2,1,0],[0,0,1],[0,1,1],[-1,0,1],[-1,1,1],[-2,0,1],[-2,1,1]],
@@ -200,7 +200,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "FluidContainerBlockLogic",
-		"LogicExports": ["ExportInventory"],
+		"LogicExports": ["Storage"],
 		"Description": ["FluidConductor", "FluidStorage"],
 	},{
 		"Name": "StirlingEngine",
@@ -309,7 +309,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"Selector": "Blocks/ArrowBP.ArrowBP_C",
-		"LogicImports": ["WorkingSwitch"],
+		"LogicImports": ["Working"],
 	},{
 		"Name": "Pump",
 		"StartTier": 1,
@@ -319,7 +319,7 @@ machines = [
 		},
 		"Selector": "Blocks/ArrowBP.ArrowBP_C",
 		"Description": ["FluidInput", "FluidOutput"],
-		"LogicImports": ["WorkingSwitch"],
+		"LogicImports": ["Working"],
 	},{
 		"Name": "Smelter",
 		"StartTier": 0,
@@ -504,7 +504,7 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 7,
         "BlockLogic": "ElectricityContainerBlockLogic",
-		"LogicExports": ["ExportInventory"],
+		"LogicExports": ["Storage"],
 		"Description": ["ElectricConductor", "ElectricStorage"]
 	},{
 		 "Name": "Portal",
@@ -1015,7 +1015,7 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 2,		
         "BlockLogic":"CableBundleBlockLogic",
-		"LogicExports": ["ExportInventory"],
+		"LogicExports": ["Storage"],
 		"Description": ["ElectricConductor"],
         "CustomData":{
 			"SplineMesh": "/Game/CoreContent/Rail2",
@@ -1031,7 +1031,7 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 2,
 		"BlockLogic": "DataConductorBlockLogic",
-		"LogicExports": ["ExportInventory"],
+		"LogicExports": ["Storage"],
 		"Description": ["DataConductor"],
 		"PathFinding": True,
         "NoActorRenderable": True,
