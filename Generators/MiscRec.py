@@ -768,14 +768,7 @@ recipes_hand.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "UraniumCell",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("UraniumCell"),
 	"Ticks" : 200,
 	"Tier": 5,
 })
@@ -1047,15 +1040,9 @@ recipes_farm.append({
 recipes_centrifuge.append({
 	"Name":"DepletedUraniumCell",
 	"Input": one_item("DepletedUraniumCell"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "PlutoniumDust",
-				"Count": 1,
-				"Probability": 10,
-			}
-		]
-	},
+	"Output": items([
+		["PlutoniumDust", 1, 10],
+	]),
 	"Ticks" : 2000,
 	"Tier": 5,
 })
@@ -1070,14 +1057,7 @@ recipes_fission.append({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "DepletedUraniumCell",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("DepletedUraniumCell"),
 	"Ticks" : uranium_rod_output() / fission_output(),
 })
 
@@ -1096,14 +1076,7 @@ recipes_fission.append({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "DepletedUraniumCell",
-				"Count": 2
-			}
-		]
-	},
+	"Output": one_item("DepletedUraniumCell", 2),
 	"Ticks" : (uranium_rod_output() / fission_output()) * 2.1,
 })
 
@@ -1122,14 +1095,7 @@ recipes_fission.append({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "DepletedUraniumCell",
-				"Count": 3
-			}
-		]
-	},
+	"Output": one_item("DepletedUraniumCell", 3),
 	"Ticks" : (uranium_rod_output() / fission_output()) * 3.2,
 })
 
@@ -1436,14 +1402,7 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 				},
 			]
 		},
-		"Output":{
-			"Items":[
-				{
-					"Name": "SteelPlate",
-					"Count": 10
-				}
-			]
-		},
+		"Output": one_item("SteelPlate", 10),
 		"Ticks" : 10*5*20*2
 	})
 	recipes_blast_furnace.append({
@@ -1460,14 +1419,7 @@ for fuel_type, bonus in zip(["Coke"], [1.0]):
 				},
 			]
 		},
-		"Output":{
-			"Items":[
-				{
-					"Name": "SteelPlate",
-					"Count": 10
-				}
-			]
-		},
+		"Output": one_item("SteelPlate", 10),
 		"Ticks" : 10*5*20*2
 	})
 recipes_mixer.append({
@@ -1484,14 +1436,7 @@ recipes_mixer.append({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "StainlessSteelDust",
-				"Count": 4
-			}
-		]
-	},
+	"Output": one_item("StainlessSteelDust", 4),
 	"Ticks" : 400,
 })
 
@@ -2051,14 +1996,7 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Salt",
-				"Count": 1
-			}
-		]
-	},
+	"Output": one_item("Salt"),
 	
 	"Ticks" : 400,
 })
@@ -2321,14 +2259,7 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "Ethylene",
-				"Count": 1000,
-			},		
-		]
-	},
+	"Output": one_item("Ethylene", 1000),
 	"Ticks" : 200,
 	"Colors": [[0.2,0.2,0.2,0.5],[0.2,0.5,0.2,0.5]]
 })
@@ -2347,14 +2278,7 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "Sulfur",
-				"Count": 1
-			},		
-		]
-	},
+	"Output": one_item("Sulfur"),
 	"Ticks" : 200,
 	"Colors": [[0.0,0.2,0.0,0.9],[0.0,0.0,0.0,0.2]],
 	"Tier": 4,
@@ -2379,14 +2303,7 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "SulfuricAcid",
-				"Count": 300
-			},		
-		]
-	},
+	"Output": one_item("SulfuricAcid", 300),
 	"Ticks" : 200,
 	"Colors": [[0.0,0.0,0.3,0.2],[0.8,0.8,0.1,0.3]],
 	"Tier": 3,
@@ -2399,14 +2316,7 @@ recipes_industrial_chemreactor.append({
 		["Ethanol", 150],
 		["Catalyst", 1, 0]
 	]),
-	"Output":{
-		"Items":[	
-			{
-				"Name": "Diesel",
-				"Count": 400
-			}
-		]
-	},
+	"Output": one_item("Diesel", 400),
 	"Ticks" : 400,
 	"Colors": [[0.4,0.4,0.0,1.0],[0.4,0.4,0.0,0.15]]
 })
@@ -2414,28 +2324,14 @@ recipes_industrial_chemreactor.append({
 recipes_industrial_chemreactor.append({
 	"Name": "Hydrogen",
 	"Input": one_item("ProducerGas", 1000),
-	"Output":{
-		"Items":[	
-			{
-				"Name": "Hydrogen",
-				"Count": 750
-			},		
-		]
-	},
+	"Output": one_item("Hydrogen", 750),
 	"Ticks" : 200
 })
 
 recipes_industrial_chemreactor.append({
 	"Name": "Coal",
 	"Input": one_item("Ash", 3),
-	"Output":{
-		"Items":[	
-			{
-				"Name": "Coal",
-				"Count": 1
-			},		
-		]
-	},
+	"Output": one_item("Coal"),
 	"Ticks" : 10
 })
 
@@ -2445,14 +2341,7 @@ recipes_industrial_chemreactor.append({
 		["Nitrogen", 250],
 		["Hydrogen", 750]
 	]),
-	"Output":{
-		"Items":[	
-			{
-				"Name": "Ammonia",
-				"Count": 1000
-			},		
-		]
-	},
+	"Output": one_item("Ammonia", 1000),
 	"Ticks" : 200,
 	"Colors": [[0.4,0.4,0.8,0.5],[0.5,0.2,0.5,0.3]]
 })
@@ -2463,14 +2352,7 @@ recipes_industrial_chemreactor.append({
 		["CoalDust"],
 		["Oxygen", 500]
 	]),
-	"Output":{
-		"Items":[	
-			{
-				"Name": "CarbonMonoxide",
-				"Count": 250
-			},		
-		]
-	},
+	"Output": one_item("CarbonMonoxide", 250),
 	"Ticks" : 100
 })
 
@@ -2546,14 +2428,7 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "HighCetaneDiesel",
-				"Count": 1000
-			},		
-		]
-	},
+	"Output": one_item("HighCetaneDiesel", 1000),
 	"Ticks" : 300,
 	"Colors": [[0.4,0.4,0.0,0.15],[0.4,0.2,0.0,0.15]],
 	"Tier": 5
@@ -2574,14 +2449,7 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "Superfuel",
-				"Count": 1000
-			},		
-		]
-	},
+	"Output": one_item("Superfuel", 1000),
 	"Ticks" : 3000,
 	"Colors": [[0.4,0.2,0.0,0.15],[0.7,0.6,0.25,0.15]]
 })
@@ -2601,14 +2469,7 @@ recipes_industrial_chemreactor.append({
 			},
 		]
 	},
-	"Output":{
-		"Items":[	
-			{
-				"Name": "Superfuel",
-				"Count": 1000
-			},		
-		]
-	},
+	"Output": one_item("Superfuel", 1000),
 	"Ticks" : 300,
 	"Colors": [[0.4,0.2,0.0,0.15],[0.7,0.6,0.25,0.15]]
 })
@@ -2627,14 +2488,7 @@ recipes_chemical_bath.append({
 			}
 		]
 	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "YttriumDust",
-				"Count": 2
-			}
-		]
-	},
+	"Output": one_item("YttriumDust", 2),
 	"Tier":4,
 	"Ticks" : 200,
 	"Colors": [[0.8,0.8,0.1,0.3],[0.7,0.2,0.7,0.8]]
