@@ -547,6 +547,10 @@ for tool in tools:
 		"StackSize": 1,
 		"Label": [tool["Name"], "parts"],
 	}
+	if "CommonTextKeys" in tool:
+		item["CommonTextKeys"] = tool["CommonTextKeys"]
+	if "CustomData" in tool:
+		item["CustomData"] = tool["CustomData"]
 		
 	objects_array.append(item)
 	
