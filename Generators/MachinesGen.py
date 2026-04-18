@@ -295,7 +295,26 @@ for machine in machines:
 				"Ticks" : 20
 			})
 			
-		if machine["Name"] == "LogicInterface" or machine["Name"] == "LogicDisplay" or machine["Name"] == "LogicController" or machine["Name"] == "LogicSensor":
+		if machine["Name"] == "LogicInterface":
+			append_recipe({
+				"Name": tier_material[tier] + machine["Name"],
+				"Input":{
+					"Items":[
+						{
+							"Name": tier_material[tier] + "LogicSensor",
+							"Count": 2
+						},
+						{
+							"Name": circuits[tier],
+							"Count": 1
+						}
+					]
+				},
+				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Ticks" : 20
+			})
+
+		if machine["Name"] == "LogicDisplay" or machine["Name"] == "LogicController" or machine["Name"] == "LogicSensor":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
