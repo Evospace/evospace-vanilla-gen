@@ -80,6 +80,9 @@ global_family.append({
 # biome families
 families.extend([
 	{
+		# Dry steppe / prairie: continental climate, many fair days,
+		# occasional convective showers in summer, thin radiation fog
+		# on cool calm mornings. No heavy storms, no deep fog banks.
 		"Name":"PrairieBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -89,8 +92,12 @@ families.extend([
 			"PrairiePlainsBiome",
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "LightLowFog"]
+		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "LightLowFog"],
+		"WeatherWeights": [     32,               24,             16,         10,          8,      3,             7],
 	},	{
+		# Hot desert: overwhelming clear sky, some haze, essentially no rain.
+		# Rare sandstorm mapped to "Storm" for wind/visibility spike.
+		# Ground fog and drizzle are omitted on purpose.
 		"Name":"SandBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -98,8 +105,11 @@ families.extend([
 			"DesertBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "LightLowFog"]
+		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Storm"],
+		"WeatherWeights": [     62,               28,              6,       4],
 	},	{
+		# Temperate mixed forest: balanced sky states, regular but
+		# moderate rain, morning/valley fog fairly common.
 		"Name":"ForestBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -109,8 +119,12 @@ families.extend([
 			"BushlandBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Foggy", "LightLowFog"]
+		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "Foggy", "LightLowFog"],
+		"WeatherWeights": [     16,               16,             16,         14,         10,      6,      10,            12],
 	},	{
+		# Taiga / cool conifer belt: fewer truly clear days, dominant
+		# overcast/low cloud, frequent drizzle, persistent valley fog.
+		# No big thunderstorms (cold air is stable).
 		"Name":"PineForestBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -118,8 +132,12 @@ families.extend([
 			"PineForestBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Foggy", "LightLowFog"]
+		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "Foggy", "LightLowFog"],
+		"WeatherWeights": [     10,               14,             16,         20,         12,      6,      12,            10],
 	},	{
+		# Coast / open sea: strong maritime character - persistent sea fog,
+		# drizzle, and proper storms with wind. Blue skies exist but are
+		# less durable than inland.
 		"Name":"SeaBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -130,8 +148,12 @@ families.extend([
             "GravelSeaBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "LightRain", "Foggy", "LightLowFog"]
+		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "Storm", "Foggy"],
+		"WeatherWeights": [     10,               12,             14,         14,         12,     10,       6,      22],
 	},	{
+		# Volcanic zone: ash-loaded atmosphere, dominant overcast/haze,
+		# frequent violent thunderstorms triggered by heat, occasional
+		# ashfall episodes mapped to fog layers. Almost no serene skies.
 		"Name":"VolcanicBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -140,8 +162,12 @@ families.extend([
 			"BrokenLandBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Storm", "LightLowFog"]
+		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Storm", "Foggy", "ExtremeFoggy"],
+		"WeatherWeights": [      6,               14,             12,         24,          8,      22,      10,              4],
 	},	{
+		# Wetland / swamp: saturated air, dominant overcast with steady
+		# rain and multiple fog layers at ground level. Fair weather is
+		# essentially absent. Occasional summer thunderstorm.
 		"Name":"SwampBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -152,8 +178,11 @@ families.extend([
 			"ClayBiome",
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Overcast", "LightRain", "Rain", "Foggy", "ExtremeFoggy", "DenseLowFog"]
+		"Weather":        ["PartlyCloudy", "Overcast", "LightRain", "Rain", "Storm", "Foggy", "ExtremeFoggy", "DenseLowFog", "LightLowFog"],
+		"WeatherWeights": [             5,         12,          18,     15,       3,      18,              8,            10,            11],
 	},	{
+		# Open plains / grassland: similar to prairie but more humid -
+		# more showers, occasional thunderstorm, brief morning ground fog.
 		"Name":"PlainBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -164,8 +193,12 @@ families.extend([
 			"YellowPlainsBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "LightLowFog"]
+		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "Storm", "LightLowFog"],
+		"WeatherWeights": [     26,               20,             18,         12,         10,      5,       2,             7],
 	},	{
+		# Cold / snow regions: crisp clear days alternate with low overcast.
+		# No rain (would look wrong on snow); instead frequent ice fog
+		# and ground-hugging dense fog in valleys.
 		"Name":"SnowBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -175,9 +208,13 @@ families.extend([
 			"SnowForestBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Foggy", "ExtremeFoggy", "DenseLowFog"]
+		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Foggy", "ExtremeFoggy", "DenseLowFog", "LightLowFog"],
+		"WeatherWeights": [     18,               16,             14,         14,      12,              8,             8,            10],
 	},
 	{
+		# Humid productive / subtropical forest: very wet, frequent
+		# showers and thunderstorms, dense canopy fog after rain.
+		# Long dry spells are rare.
 		"Name":"FertileForestBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -185,8 +222,8 @@ families.extend([
 			"FertileForestBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "Foggy", "LightLowFog"],
-		"WeatherWeights": [10, 15, 20, 20, 30, 35, 10, 8]
+		"Weather":        ["SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "Storm", "Foggy", "LightLowFog"],
+		"WeatherWeights": [               5,             10,         15,         20,     20,      10,      12,             8],
 	},
 	{
 		# Flat concrete wasteland world: keep weather variants strictly clear-only
@@ -194,7 +231,8 @@ families.extend([
 		"Class":"BiomeFamily",
 		"Childs": [],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear"]
+		"Weather": ["Clear"],
+		"WeatherWeights": [1],
 	}
 ])
 
