@@ -129,26 +129,13 @@ weathers = [
 ]
 
 # Build objects in standard "Objects" array layout
+# Selection weights for random weather are defined per BiomeFamily (WeatherWeights), not on StaticWeather.
+
 objects_array = []
 loc_entries = []
 
-selection_weights = {
-	"Clear": 40,
-	"SlightlyCloudy": 30,
-	"PartlyCloudy": 30,
-	"Overcast": 20,
-	"LightRain": 5,
-	"Rain": 5,
-	"Storm": 3,
-	"Foggy": 15,
-	"ExtremeFoggy": 3,
-	"DenseLowFog": 2,
-	"LightLowFog": 8,
-}
-
 for w in weathers:
 	name = w["Name"]
-	weight = selection_weights.get(name, 10)
 	objects_array.append({
 		"Class": "StaticWeather",
 		"Name": name,
@@ -159,7 +146,6 @@ for w in weathers:
 		"SecondFog01": clamp(w.get("SecondFog01", 0.0), 0.0, 1.0),
 		"Storminess01": clamp(w["Storminess01"], 0.0, 1.0),
 		"WindSpeed": max(0.0, w["WindSpeed"]),
-		"SelectionWeight": max(0.0, weight),
 		"MinDurationSeconds": w["MinDurationSeconds"],
 		"MaxDurationSeconds": w["MaxDurationSeconds"],
 	})
