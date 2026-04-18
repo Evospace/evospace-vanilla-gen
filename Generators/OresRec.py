@@ -24,19 +24,10 @@ for ore_type in ore_types:
 		recipes_hammer.append({
 			"Name": "Hammer" + ore_name + "Ore",
 			"Input": one_item(ore_name + "Ore"),
-			"Output":{
-				"Items": [
-					{
-						"Name": ore_name + "OreImpureGravel",
-						"Count": 1
-					},
-					{
-						"Name": ore_name + "OreImpureGravel",
-						"Count": 1,
-						"Bonus": True
-					}
-				]
-			},
+			"Output": items([
+				[ore_name + "OreImpureGravel", 1],
+				[ore_name + "OreImpureGravel", 1, True],
+			]),
 			"Ticks": 100,
 			"Tier": max(1, material_tier),
 			"Productivity": 50,
@@ -92,88 +83,45 @@ for ore_type in ore_types:
 			recipes_mac.append({
 				"Name": ore_name + "OreImpureGravel",
 				"Input": one_item(ore_name + "OreImpureGravel"),
-				"Output":{
-					"Items": [
-						{
-							"Name": processing["Macerator"],
-							"Count": 1
-						},
-						{
-							"Name": processing["Macerator"],
-							"Count": 1,
-							"Bonus": True
-						}
-					]
-				},
+				"Output": items([
+					[processing["Macerator"], 1],
+					[processing["Macerator"], 1, True],
+				]),
 				"Ticks" : 132,
 				"Productivity": 50,
 				"Tier": material_tier,
 			})
 			recipes_mac.append({
 				"Name": ore_name + "OreGravel",
-				"Input":{
-					"Items":[
-						{
-							"Name": ore_name + "OreGravel",
-							"Count": 1
-						},
-					]
-				},
+				"Input": one_item(ore_name + "OreGravel"),
 				"ResourceInput":{
 					"Name": "Kinetic",
 					"Count": 10
 				},
-				"Output":{
-					"Items": [
-						{
-							"Name": processing["Macerator"],
-							"Count": 1
-						},
-						{
-							"Name": processing["Macerator"],
-							"Count": 1,
-							"Bonus": True
-						}
-					]
-				},
+				"Output": items([
+					[processing["Macerator"], 1],
+					[processing["Macerator"], 1, True],
+				]),
 				"Ticks" : 200,
 				"Productivity": 25,
 				"Tier": material_tier,
 			})
 
 		# OreWasher
-		out_items = []
-		out_items.append({
-			"Name": ore_type["Name"] + "OreGravel",
-			"Count": 1
-		})
+		washer_out = [[ore_type["Name"] + "OreGravel", 1]]
 		if "OreWasher" in ore_type["Processing"]:
-			out_items.append({
-				"Name": ore_type["Processing"]["OreWasher"],
-				"Count": 1,
-				"Bonus": True
-			})
+			washer_out.append([ore_type["Processing"]["OreWasher"], 1, True])
 		recipes_ore_washer.append({
 			"Name": ore_name + "OreImpureGravel",
-			"Input":{
-				"Items":[
-					{
-						"Name": ore_name + "OreImpureGravel",
-						"Count": 1
-					},
-					{
-						"Name": "Water",
-						"Count": 250
-					}
-				]
-			},
+			"Input": items([
+				[ore_name + "OreImpureGravel", 1],
+				["Water", 250],
+			]),
 			"ResourceInput":{
 				"Name": "Kinetic",
 				"Count": 10
 			},
-			"Output":{
-				"Items": out_items
-			},
+			"Output": items(washer_out),
 			"Ticks" : 200,
 			"Tier": material_tier,
 			"Productivity": 50
@@ -184,18 +132,10 @@ for ore_type in ore_types:
 			recipes_sep.append({
 				"Name": "Separator" + ore_name + "OreDust",
 				"Input": one_item(ore_name + "OreDust"),
-				"Output":{
-					"Items": [
-						{
-							"Name": processing["Separator"][0],
-							"Count": 1
-						}, {
-							"Name": processing["Separator"][1],
-							"Count": 1,
-							"Probability": 14
-						}
-					],
-				},
+				"Output": items([
+					[processing["Separator"][0], 1],
+					[processing["Separator"][1], 1, 14],
+				]),
 				"Ticks" : 60,
 				"Tier": material_tier,
 			})	
@@ -223,50 +163,22 @@ for ore_type in ore_types:
 			recipes_sifter.append({
 				"Name": ore_type["Name"] + "OreImpureGravel",
 				"Input": one_item(ore_type["Name"] + "OreImpureGravel"),
-				"Output":{
-					"Items": [
-						{
-							"Name": sf[0],
-							"Count": 1,
-							"Probability": 80,
-						},
-						{
-							"Name": sf[1],
-							"Count": 1,
-							"Probability": 20,
-						},
-						{
-							"Name": sf[2],
-							"Count": 1,
-							"Probability": 2,
-						},
-					]
-				},
+				"Output": items([
+					[sf[0], 1, 80],
+					[sf[1], 1, 20],
+					[sf[2], 1, 2],
+				]),
 				"Ticks" : 100,
 				"Tier": sifter_tier,
 			})
 			recipes_sifter.append({
 				"Name": ore_type["Name"] + "OreImpureGravelDense",
 				"Input": one_item(ore_type["Name"] + "OreImpureGravel", 6),
-				"Output":{
-					"Items": [
-						{
-							"Name": sf[0],
-							"Count": 1,
-							"Probability": 70,
-						},
-						{
-							"Name": sf[1],
-							"Count": 1,
-							"Probability": 20,
-						},
-						{
-							"Name": sf[2],
-							"Count": 1,
-							"Probability": 11,
-						},
-					]
-				},
+				"Output": items([
+					[sf[0], 1, 70],
+					[sf[1], 1, 20],
+					[sf[2], 1, 11],
+				]),
 				"Ticks" : 400,
 				"Tier": sifter_tier,
 			})
@@ -276,11 +188,7 @@ for ore_type in ore_types:
 				recipes_furnace.append({
 					"Name": ore_type["Name"]+item,
 					"Input": one_item(ore_type["Name"] + item),
-					"Output":{
-						"Items":[
-						],
-						
-					},
+					"Output": no_items(),
 					"Ticks" : ore_type["Burnable"]["BurnTime"] * timeMul,
 				})
 	
