@@ -710,6 +710,19 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "LogicNetworking",
+	"Label": ["LogicNetworking", "researches"],
+	"RequiredResearch": ["Circuit"],
+	"Levels": [1, 1],
+	"Unlocks": [
+		["Hand" + r_dict, "SteelLogicWire"],
+		["Hand" + r_dict, "SteelLogicInterface"],
+	],
+	"MainResearch": True,
+	"CostMul": 2.0,
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "Circuit2",
 	"Label": ["TwoWorldsFormat", "common", ["Circuit", "parts"], ["II", "common"]],
 	"RequiredResearch": ["Circuit", "Transistor"],
