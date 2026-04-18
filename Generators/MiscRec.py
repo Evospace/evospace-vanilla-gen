@@ -594,7 +594,18 @@ recipes_assembler.append({
 	"Tier": 4
 })
 
-for miscBlock in ["BasicPlatform", "Bricks", "GlassBlock", "WoodenPlanks", "StoneTiles", "RedTiles", "DarkTiles", "Terracotta", "TerracottaTiles", "RedBricks", "DarkBricks", "TerracottaBricks"]:
+for miscBlock in ["BasicPlatform", "Bricks", "WoodenPlanks", "StoneTiles", "RedTiles", "DarkTiles", "Terracotta", "TerracottaTiles", "RedBricks", "DarkBricks", "TerracottaBricks"]:
+	recipes_hand.append({
+		"Name": miscBlock,
+		"Input": items([
+			["BuildingMaterial", 2]
+		]),
+		"Output": one_item(miscBlock),
+		"Ticks" : 10,
+		"Tier": 1
+	})
+# GlassBlock: same cost as other decorative cubes; unlocked by Bricks-tier research (see Researches.py), not with starter platform/bricks
+for miscBlock in ["GlassBlock"]:
 	recipes_hand.append({
 		"Name": miscBlock,
 		"Input": items([
