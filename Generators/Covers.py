@@ -37,7 +37,7 @@ covers = [
         "Materials": []
 	},{
 		"Name": "BuildingBox",
-		"Mesh": "/Game/BoxStaticMesh",
+		"Mesh": "/Game/Models/BoxStaticMesh",
         "Materials": [],
         "NoCollision": True
 	},{
