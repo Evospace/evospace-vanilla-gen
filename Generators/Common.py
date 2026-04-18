@@ -211,33 +211,37 @@ def no_items():
 	return { "Items":[] }
 
 def items(array, tier=0):
-	items = []
+	out = []
 	for entry in array:
 		chance = 100  # reset chance per entry
+		bonus = False
 		if len(entry) == 0:
 			continue
 		elif len(entry) == 1:
 			item, count_fn = entry[0], 1
 		elif len(entry) == 3:
 			item, count_fn = entry[0], entry[1]
-			chance = entry[2]
+			third = entry[2]
+			if isinstance(third, bool):
+				bonus = third
+				chance = 100
+			else:
+				chance = third
 		else:
 			item, count_fn = entry
 		count = count_fn(tier) if callable(count_fn) else count_fn
 
-		if count > 0 and chance != 100:
-			items.append({
-				"Name": item,
-				"Count": count,
-				"Probability": chance
-			})
-		elif count > 0:
-			items.append({
-				"Name": item,
-				"Count": count
-			})
+		if count <= 0:
+			continue
 
-	return {"Items": items}
+		row = {"Name": item, "Count": count}
+		if chance != 100:
+			row["Probability"] = chance
+		if bonus:
+			row["Bonus"] = True
+		out.append(row)
+
+	return {"Items": out}
 
 single_battery_cell_charge = 100000
 
