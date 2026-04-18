@@ -173,7 +173,7 @@ for machine in machines:
 			item["DescriptionParts"].append(["electric_drain", "common", 2**level * 20])
 			
 		if machine["Name"] == "DrillingRig":
-			item["DescriptionParts"].append(["power_input", "common", 2**level * 20 * 30])
+			item["DescriptionParts"].append(["power_input", "common", 2**level * 20 * 48])
 			
 		if machine["Name"] == "FissionReactor":
 			item["DescriptionParts"].append(["heat_drain", "common", 80*20])
@@ -295,7 +295,7 @@ for machine in machines:
 				"Ticks" : 20
 			})
 			
-		if machine["Name"] == "LogicInterface" or machine["Name"] == "LogicDisplay" or machine["Name"] == "LogicController":
+		if machine["Name"] == "LogicInterface" or machine["Name"] == "LogicDisplay" or machine["Name"] == "LogicController" or machine["Name"] == "LogicSensor":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
@@ -1238,9 +1238,9 @@ for machine in machines:
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([
 					["DirtSurface", 4],
-					[tier_material[tier] + "RobotArm", 2],
-					frame_pair(2),
-					[] if tier <= 4 else [circuit(), 4]
+					[tier_material[tier] + "RobotArm", 4],
+					frame_pair(3),
+					[circuit(), 6]
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20

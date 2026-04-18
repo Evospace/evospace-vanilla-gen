@@ -1027,6 +1027,12 @@ machines = [
         "BlockLogic": "LogicInterfaceBlockLogic",
 		"Description": []
 	},{
+		"Name": "LogicSensor",
+		"StartTier": 2,
+		"EndTier": 2,
+        "BlockLogic": "LogicSensorBlockLogic",
+		"Description": []
+	},{
 		"Name": "LogicWire",
 		"StartTier": 2,
 		"EndTier": 2,
