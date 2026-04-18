@@ -119,18 +119,10 @@ recipes_fusion_reactor.append({
 
 recipes_fusion_reactor.append({
 	"Name":"HotNeutroniumPlate2",
-	"Input":{
-		"Items":[
-			{
-				"Name": "SynthesisCell",
-				"Count": 1
-			},{
-				"Name": "UltimateCatalyst",
-				"Count": 1,
-				"Probability":0
-			}
-		]
-	},
+	"Input": items([
+		["SynthesisCell", 1],
+		["UltimateCatalyst", 1, 0],
+	]),
 	"Output": items([
 		["HotNeutroniumPlate"],
 		["Cell"],
@@ -454,19 +446,10 @@ recipes_assembler.append({
 		["YttriumDust", 1],
 		["CopperParts", 3]
 	]),
-	"Output": {
-		"Items": [
-			{
-				"Name": "QuantumCore",
-				"Count": 1
-			},
-			{
-				"Name": "QuantumCore",
-				"Count": 1,
-				"Bonus": True
-			}
-		]
-	},
+	"Output": items([
+		["QuantumCore", 1],
+		["QuantumCore", 1, True],
+	]),
 	"Ticks" : 100,
 	"Productivity": 10,
 	"Tier": 5,
@@ -737,14 +720,7 @@ recipes_hand.append({
 
 recipes_assembler.append({
 	"Name":"Cell2",
-	"Input":{
-		"Items":[
-			{
-				"Name": "DepletedUraniumCell",
-				"Count": 1
-			},
-		]
-	},
+	"Input": one_item("DepletedUraniumCell"),
 	"Output": one_item("Cell"),
 	"Ticks" : 200*3,
 	"Tier": 5,
@@ -752,22 +728,11 @@ recipes_assembler.append({
 
 recipes_hand.append({
 	"Name":"UraniumCell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Uranium235Dust",
-				"Count": 3
-			},
-			{
-				"Name": "UraniumDust",
-				"Count": 20
-			},
-			{
-				"Name": "Cell",
-				"Count": 1
-			},
-		]
-	},
+	"Input": items([
+		["Uranium235Dust", 3],
+		["UraniumDust", 20],
+		["Cell", 1],
+	]),
 	"Output": one_item("UraniumCell"),
 	"Ticks" : 200,
 	"Tier": 5,
@@ -775,18 +740,10 @@ recipes_hand.append({
 
 recipes_hand.append({
 	"Name":"ThoriumCell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "ThoriumDust",
-				"Count": 40
-			},
-			{
-				"Name": "Cell",
-				"Count": 1
-			},
-		]
-	},
+	"Input": items([
+		["ThoriumDust", 40],
+		["Cell", 1],
+	]),
 	"Output": one_item("ThoriumCell"),
 	"Ticks" : 200,
 	"Tier": 6,
@@ -794,18 +751,10 @@ recipes_hand.append({
 
 recipes_hand.append({
 	"Name":"Uranium233Cell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Uranium233Dust",
-				"Count": 3
-			},
-			{
-				"Name": "Cell",
-				"Count": 1
-			},
-		]
-	},
+	"Input": items([
+		["Uranium233Dust", 3],
+		["Cell", 1],
+	]),
 	"Output": one_item("Uranium233Cell"),
 	"Ticks" : 200,
 	
@@ -813,18 +762,10 @@ recipes_hand.append({
 
 recipes_hand.append({
 	"Name":"PlutoniumCell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "PlutoniumDust",
-				"Count": 3
-			},
-			{
-				"Name": "Cell",
-				"Count": 1
-			},
-		]
-	},
+	"Input": items([
+		["PlutoniumDust", 3],
+		["Cell", 1],
+	]),
 	"Output": one_item("PlutoniumCell"),
 	"Ticks" : 200,
 	
@@ -979,60 +920,31 @@ recipes_condens.append({
 
 recipes_farm.append({
 	"Name": "Log",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Water",
-				"Count": 1000
-			}
-		]
-	},
+	"Input": one_item("Water", 1000),
 	"Output": one_item("Log", 15),
 	"Ticks" : 1200,
 })
 
 recipes_farm.append({
 	"Name": "Pumpkin",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Water",
-				"Count": 1000
-			}
-		]
-	},
+	"Input": one_item("Water", 1000),
 	"Output": one_item("Pumpkin", 15),
 	"Ticks" : 1200,
 })
 
 recipes_farm.append({
 	"Name": "GrassSurface",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Water",
-				"Count": 1000
-			},
-			{
-				"Name": "DirtSurface",
-				"Count": 15
-			}
-		]
-	},
+	"Input": items([
+		["Water", 1000],
+		["DirtSurface", 15],
+	]),
 	"Output": one_item("GrassSurface", 15),
 	"Ticks" : 1200,
 })
 
 recipes_farm.append({
 	"Name": "Rapeseed",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Water",
-				"Count": 1000
-			}
-		]
-	},
+	"Input": one_item("Water", 1000),
 	"Output": one_item("Rapeseed", 15),
 	"Ticks" : 1200,
 })
@@ -1049,230 +961,109 @@ recipes_centrifuge.append({
 
 recipes_fission.append({
 	"Name":"UraniumCell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "UraniumCell",
-				"Count": 1
-			}
-		]
-	},
+	"Input": one_item("UraniumCell"),
 	"Output": one_item("DepletedUraniumCell"),
 	"Ticks" : uranium_rod_output() / fission_output(),
 })
 
 recipes_fission.append({
 	"Name":"UraniumCell2",
-	"Input":{
-		"Items":[
-			{
-				"Name": "UraniumCell",
-				"Count": 2
-			},
-			{
-				"Name": "ControlCell",
-				"Count": 1,
-				"Probability": 0,
-			}
-		]
-	},
+	"Input": items([
+		["UraniumCell", 2],
+		["ControlCell", 1, 0],
+	]),
 	"Output": one_item("DepletedUraniumCell", 2),
 	"Ticks" : (uranium_rod_output() / fission_output()) * 2.1,
 })
 
 recipes_fission.append({
 	"Name":"UraniumCell3",
-	"Input":{
-		"Items":[
-			{
-				"Name": "UraniumCell",
-				"Count": 3
-			},
-			{
-				"Name": "ControlCell",
-				"Count": 2,
-				"Probability": 0,
-			}
-		]
-	},
+	"Input": items([
+		["UraniumCell", 3],
+		["ControlCell", 2, 0],
+	]),
 	"Output": one_item("DepletedUraniumCell", 3),
 	"Ticks" : (uranium_rod_output() / fission_output()) * 3.2,
 })
 
 recipes_fission.append({
 	"Name":"ThoriumCell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "UraniumCell",
-				"Count": 3,
-			},
-			{
-				"Name": "ReflectorCell",
-				"Count": 4,
-				"Probability": 0,
-			},
-			{
-				"Name": "ThoriumCell",
-				"Count": 2,
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "DepletedUraniumCell",
-				"Count": 3
-			},
-			{
-				"Name": "Uranium233Cell",
-				"Count": 2,
-			}
-		]
-	},
+	"Input": items([
+		["UraniumCell", 3],
+		["ReflectorCell", 4, 0],
+		["ThoriumCell", 2],
+	]),
+	"Output": items([
+		["DepletedUraniumCell", 3],
+		["Uranium233Cell", 2],
+	]),
 	"Ticks" : 1000,
 })
 
 recipes_fission.append({
 	"Name":"PlutoniumCell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "PlutoniumCell",
-				"Count": 1,
-			},
-			{
-				"Name": "ReflectorCell",
-				"Count": 4,
-				"Probability": 0,
-			},
-			{
-				"Name": "ThoriumCell",
-				"Count": 3,
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Uranium233Cell",
-				"Count": 3,
-			},
-			{
-				"Name": "DepletedUraniumCell",
-				"Count": 1
-			}
-		]
-	},
+	"Input": items([
+		["PlutoniumCell", 1],
+		["ReflectorCell", 4, 0],
+		["ThoriumCell", 3],
+	]),
+	"Output": items([
+		["Uranium233Cell", 3],
+		["DepletedUraniumCell", 1],
+	]),
 	"Ticks" : 400,
 })
 
 recipes_fission.append({
 	"Name":"PlutoniumCell2",
-	"Input":{
-		"Items":[
-			{
-				"Name": "PlutoniumCell",
-				"Count": 1,
-			},
-			{
-				"Name": "ReflectorCell",
-				"Count": 8,
-				"Probability": 0,
-			},
-			{
-				"Name": "ThoriumCell",
-				"Count": 6,
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Uranium233Cell",
-				"Count": 6,
-			},
-			{
-				"Name": "DepletedUraniumCell",
-				"Count": 1
-			}
-		]
-	},
+	"Input": items([
+		["PlutoniumCell", 1],
+		["ReflectorCell", 8, 0],
+		["ThoriumCell", 6],
+	]),
+	"Output": items([
+		["Uranium233Cell", 6],
+		["DepletedUraniumCell", 1],
+	]),
 	"Ticks" : 400,
 })
 
 recipes_fission.append({
 	"Name":"ControlCell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "UraniumCell",
-				"Count": 1
-			},
-			{
-				"Name": "ControlCell",
-				"Count": 1,
-				"Probability": 0,
-			}
-		]
-	},
+	"Input": items([
+		["UraniumCell", 1],
+		["ControlCell", 1, 0],
+	]),
 	"Output": one_item("DepletedUraniumCell"),
 	"Ticks" : (uranium_rod_output() / fission_output()) * 1.07,
 })
 
 recipes_fission.append({
 	"Name":"Uranium233Cell",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Uranium233Cell",
-				"Count": 1,
-			},
-			{
-				"Name": "ControlCell",
-				"Count": 1,
-				"Probability": 0,
-			},
-		]
-	},
+	"Input": items([
+		["Uranium233Cell", 1],
+		["ControlCell", 1, 0],
+	]),
 	"Output": one_item("DepletedUraniumCell"),
 	"Ticks" : 2000,
 })
 
 recipes_fission.append({
 	"Name":"Uranium233Cell2",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Uranium233Cell",
-				"Count": 2,
-			},
-			{
-				"Name": "ControlCell",
-				"Count": 1,
-				"Probability": 0,
-			},
-		]
-	},
+	"Input": items([
+		["Uranium233Cell", 2],
+		["ControlCell", 1, 0],
+	]),
 	"Output": one_item("DepletedUraniumCell", 2),
 	"Ticks" : 2000,
 })
 
 recipes_fission.append({
 	"Name":"Uranium233Cell3",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Uranium233Cell",
-				"Count": 4,
-			},
-			{
-				"Name": "ControlCell",
-				"Count": 1,
-				"Probability": 0,
-			},
-		]
-	},
+	"Input": items([
+		["Uranium233Cell", 4],
+		["ControlCell", 1, 0],
+	]),
 	"Output": one_item("DepletedUraniumCell", 4),
 	"Ticks" : 2000,
 })
@@ -1294,17 +1085,10 @@ recipes_electrolyzer.append({
 recipes_electrolyzer.append({
 	"Name":"CinnabarDust",
 	"Input": one_item("CinnabarDust", 2),
-	"Output":{
-		"Items":[
-			{
-				"Name": "Sulfur",
-				"Count": 1
-			},{
-				"Name": "Mercury",
-				"Count": 200
-			}
-		],
-	},
+	"Output": items([
+		["Sulfur", 1],
+		["Mercury", 200],
+	]),
 	"Ticks" : 200,
 	"Tier":2,
 })
@@ -1329,113 +1113,58 @@ for item, mul in [["Coal", 1], ["CoalDust", 1], ["CoalOreDust", 1], ["CoalOreGra
 	recipes_oven.append({
 		"Name": item+"ToCoke",
 		"Input": one_item(item, 10),
-		"Output":{
-			"Items":[
-				{
-					"Name": "Coke",
-					"Count": 10 * mul
-				},
-				{
-					"Name": "Creosote",
-					"Count": 500 * mul
-				},
-			]
-		},
+		"Output": items([
+			["Coke", 10 * mul],
+			["Creosote", 500 * mul],
+		]),
 		"Ticks": 5*2*20*3 * mul,
 	})
 
 recipes_oven.append({
 	"Name": "LogToCoal",
 	"Input": one_item("Log", 10),
-	"Output":{
-		"Items":[
-			{
-				"Name": "Coal",
-				"Count": 10
-			},
-			{
-				"Name": "Creosote",
-				"Count": 250
-			},
-		]
-	},
+	"Output": items([
+		["Coal", 10],
+		["Creosote", 250],
+	]),
 	"Ticks": 5*2*20*3,
 })
 
 recipes_oven.append({
 	"Name": "OrgToCoal",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Organics",
-				"Count": 10
-			}
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "Coal",
-				"Count": 2
-			},
-			{
-				"Name": "Creosote",
-				"Count": 100
-			},
-		]
-	},
+	"Input": one_item("Organics", 10),
+	"Output": items([
+		["Coal", 2],
+		["Creosote", 100],
+	]),
 	"Ticks": 2*2*20*3,
 })
 
 for fuel_type, bonus in zip(["Coke"], [1.0]):	
 	recipes_blast_furnace.append({
 		"Name": "IronDustSmelting",
-		"Input":{
-			"Items":[
-				{
-					"Name": fuel_type,
-					"Count": 10
-				},
-				{
-					"Name": "IronDust",
-					"Count": 10
-				},
-			]
-		},
+		"Input": items([
+			[fuel_type, 10],
+			["IronDust", 10],
+		]),
 		"Output": one_item("SteelPlate", 10),
 		"Ticks" : 10*5*20*2
 	})
 	recipes_blast_furnace.append({
 		"Name": "IronPlateSmelting",
-		"Input":{
-			"Items":[
-				{
-					"Name": fuel_type,
-					"Count": 10
-				},
-				{
-					"Name": "IronPlate",
-					"Count": 10
-				},
-			]
-		},
+		"Input": items([
+			[fuel_type, 10],
+			["IronPlate", 10],
+		]),
 		"Output": one_item("SteelPlate", 10),
 		"Ticks" : 10*5*20*2
 	})
 recipes_mixer.append({
 	"Name": "SSCraft",
-	"Input":{
-		"Items":[
-			{
-				"Name": "IronDust",
-				"Count": 4
-			},
-			{
-				"Name": "ChromiumDust",
-				"Count": 1
-			}
-		]
-	},
+	"Input": items([
+		["IronDust", 4],
+		["ChromiumDust", 1],
+	]),
 	"Output": one_item("StainlessSteelDust", 4),
 	"Ticks" : 400,
 })
@@ -1506,18 +1235,10 @@ recipes_mixer.append({
 
 recipes_mixer.append({
 	"Name": "PreparedTitaniumOxideCraft",
-	"Input":{
-		"Items":[
-			{
-				"Name": "TitaniumOxideDust",
-				"Count": 1
-			},
-			{
-				"Name": "Coke",
-				"Count": 2
-			},
-		],
-	},
+	"Input": items([
+		["TitaniumOxideDust", 1],
+		["Coke", 2],
+	]),
 	"Output": one_item("PreparedTitaniumOxideDust"),
 	"Ticks" : 200,
 	"Scaled": False,
@@ -1526,19 +1247,10 @@ recipes_mixer.append({
 recipes_sep.append({
 	"Name": "PlutoniumDust",
 	"Input": one_item("DepletedUraniumCell"),
-	"Output":{
-		"Items": [
-			{
-				"Name":"Cell",
-				"Count":1
-			},
-			{
-				"Name": "PlutoniumDust",
-				"Count": 1,
-				"Probability":50
-			}
-		]
-	},
+	"Output": items([
+		["Cell", 1],
+		["PlutoniumDust", 1, 50],
+	]),
 	"Ticks": 400,
 	"Tier": 5,
 })	
@@ -1594,14 +1306,7 @@ recipes_macerator.append({
 
 recipes_macerator.append({
 	"Name": "Rapeseed",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Rapeseed",
-				"Count": 2
-			},
-		]
-	},
+	"Input": one_item("Rapeseed", 2),
 	"Output": one_item("Organics"),
 	"Tier": 0,
 	"Ticks" : 200
@@ -1662,14 +1367,8 @@ recipes_hammer.append({
 
 recipes_pump.append({
 	"Name":"Water",
-	"Input":{
-		"Items":[
-		]
-	},
-	"Output":{
-		"Items":[
-		]
-	},
+	"Input": no_items(),
+	"Output": no_items(),
 	"Ticks" : 6*20,
 })
 
@@ -1780,126 +1479,72 @@ recipes_sep.append({
 
 recipes_mixer.append({
 	"Name": "Organics",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Organics",
-				"Count": 1
-			},
-			{
-				"Name": "Water",
-				"Count": 500
-			},
-		]
-	},
+	"Input": items([
+		["Organics", 1],
+		["Water", 500],
+	]),
 	"Output": one_item("Biomass", 500),
 	"Ticks": 200,
 })
 recipes_electrolyzer.append({
 	"Name": "ElectrolyzerPyriteDust",
 	"Input": one_item("PyriteDust", 2),
-	"Output":{
-		"Items": [
-			{
-				"Name": "IronDust",
-				"Count": 1
-			},{
-				"Name": "Sulfur",
-				"Count": 1
-			}
-		]
-	},
+	"Output": items([
+		["IronDust", 1],
+		["Sulfur", 1],
+	]),
 	"Ticks": 200,
 	"Tier":2,
 })	
 recipes_electrolyzer.append({
 	"Name": "ElectrolyzerChalcopyriteDust",
 	"Input": one_item("ChalcopyriteDust", 2),
-	"Output":{
-		"Items": [
-			{
-				"Name": "CopperDust",
-				"Count": 1
-			},{
-				"Name": "Sulfur",
-				"Count": 1
-			}
-		]
-	},
+	"Output": items([
+		["CopperDust", 1],
+		["Sulfur", 1],
+	]),
 	"Ticks": 100*2,
 	"Tier":2,
 })
 recipes_electrolyzer.append({
 	"Name": "ElectrolyzerMagnetiteDust",
 	"Input": one_item("MagnetiteDust", 2),
-	"Output":{
-		"Items": [
-			{
-				"Name": "IronDust",
-				"Count": 1
-			},{
-				"Name": "Oxygen",
-				"Count": 1000
-			}
-		]
-	},
+	"Output": items([
+		["IronDust", 1],
+		["Oxygen", 1000],
+	]),
 	"Ticks": 200,
 	"Tier":2,
 })
 recipes_electrolyzer.append({
 	"Name": "ElectrolyzerMalachiteDust",
 	"Input": one_item("MalachiteDust", 2),
-	"Output":{
-		"Items": [
-			{
-				"Name": "CopperDust",
-				"Count": 1
-			},{
-				"Name": "Oxygen",
-				"Count": 1000
-			}
-		]
-	},
+	"Output": items([
+		["CopperDust", 1],
+		["Oxygen", 1000],
+	]),
 	"Ticks": 200,
 	"Tier":2,
 })
 recipes_electrolyzer.append({
 	"Name": "ElectrolyzerBauxiteDust",
 	"Input": one_item("BauxiteDust", 12),
-	"Output":{
-		"Items": [
-			{
-				"Name": "AluminiumOxideDust",
-				"Count": 6
-			},{
-				"Name": "TitaniumOxideDust",
-				"Count": 1
-			},{
-				"Name": "Oxygen",
-				"Count": 5000
-			}
-		]
-	},
+	"Output": items([
+		["AluminiumOxideDust", 6],
+		["TitaniumOxideDust", 1],
+		["Oxygen", 5000],
+	]),
 	"Ticks": 200,
 	"Tier":2,
 })
 recipes_electrolyzer.append({
 	"Name": "ElectrolyzerRubyDust",
 	"Input": one_item("RubyDust", 8),
-	"Output":{
-		"Items": [
-			{
-				"Name": "AluminiumOxideDust",
-				"Count": 4
-			},{
-				"Name": "ChromiumDust",
-				"Count": 1
-			},{
-				"Name": "Oxygen",
-				"Count": 3000
-			}
-		]
-	},
+	"Output": items([
+		["AluminiumOxideDust", 4],
+		["ChromiumDust", 1],
+		["Oxygen", 3000],
+	]),
 	"Ticks": 200,
 	"Tier":2,
 })
@@ -1950,18 +1595,10 @@ recipes_ferm.append({
 recipes_ferm.append({
 	"Name": "MethaneFromBiomass",
 	"Input": one_item("Biomass", 500),
-	"Output":{
-		"Items":[
-			{
-				"Name": "Methane",
-				"Count": 750
-			},
-			{
-				"Name": "FermentedBiomass",
-				"Count": 500
-			}
-		]
-	},
+	"Output": items([
+		["Methane", 750],
+		["FermentedBiomass", 500],
+	]),
 	"Ticks" : 200
 })
 
@@ -1988,14 +1625,7 @@ recipes_solar.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "MineralWater",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Water",
-				"Count": 1000
-			},
-		]
-	},
+	"Input": one_item("Water", 1000),
 	"Output": one_item("Salt"),
 	
 	"Ticks" : 400,
@@ -2003,14 +1633,7 @@ recipes_industrial_chemreactor.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "HotMercury",
-	"Input":{
-		"Items":[
-			{
-				"Name": "HotMercury",
-				"Count": 1000
-			}
-		]
-	},
+	"Input": one_item("HotMercury", 1000),
 	"Output": one_item("Mercury", 1000),
 	"Ticks" : 600,
 	"Colors": [[20,5,0],[0.5,0.5,0.5]]
@@ -2018,18 +1641,10 @@ recipes_industrial_chemreactor.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "TitaniumTetrachloride",
-	"Input":{
-		"Items":[
-			{
-				"Name": "PreparedTitaniumOxideDust",
-				"Count": 1
-			},
-			{
-				"Name": "Chlorine",
-				"Count": 1000
-			},
-		]
-	},
+	"Input": items([
+		["PreparedTitaniumOxideDust", 1],
+		["Chlorine", 1000],
+	]),
 	"Output": one_item("TitaniumTetrachloride", 1000),
 	"Ticks" : 200,
 	"Colors": [[0.8,0.8,0,0.3],[.3,0,0.3]]
@@ -2037,18 +1652,10 @@ recipes_industrial_chemreactor.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "TitaniumSponge",
-	"Input":{
-		"Items":[
-			{
-				"Name": "TitaniumTetrachloride",
-				"Count": 1000
-			},
-			{
-				"Name": "AluminiumDust",
-				"Count": 1
-			},
-		]
-	},
+	"Input": items([
+		["TitaniumTetrachloride", 1000],
+		["AluminiumDust", 1],
+	]),
 	"Output": one_item("TitaniumSponge"),
 	"Ticks" : 200
 })
@@ -2056,9 +1663,7 @@ recipes_industrial_chemreactor.append({
 oil_crack.append({
 	"Name": "RawOil",
 	"Input": one_item("RawOil", 7500),
-	"Output":{
-		"Items": oil_crack_recipe(-1, 7500)
-	},
+	"Output": {"Items": oil_crack_recipe(-1, 7500)},
 	
 	"Ticks" : 500,
 	"Tier": 4
@@ -2078,23 +1683,11 @@ recipes_industrial_chemreactor.append({
 recipes_pyro.append({
 	"Name": "Coal",
 	"Input": one_item("Coal"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "Coke",
-				"Count": 1
-			},
-			{
-				"Name": "RawOil",
-				"Count": 150
-			},
-			{
-				"Name": "ProducerGas",
-				"Count": 150
-			},
-			
-		]
-	},
+	"Output": items([
+		["Coke", 1],
+		["RawOil", 150],
+		["ProducerGas", 150],
+	]),
 	"Ticks" : 400,
 	"Tier": 3,
 })
@@ -2102,23 +1695,11 @@ recipes_pyro.append({
 recipes_pyro.append({
 	"Name": "CoalDust",
 	"Input": one_item("CoalDust"),
-	"Output":{
-		"Items":[
-			{
-				"Name": "Coke",
-				"Count": 1
-			},
-			{
-				"Name": "RawOil",
-				"Count": 70
-			},
-			{
-				"Name": "ProducerGas",
-				"Count": 200
-			},
-			
-		]
-	},
+	"Output": items([
+		["Coke", 1],
+		["RawOil", 70],
+		["ProducerGas", 200],
+	]),
 	"Ticks" : 400,
 	"Tier": 3,
 })
@@ -2126,27 +1707,20 @@ recipes_pyro.append({
 recipes_pyro.append({
 	"Name": "HeavyOilPyrolysis",
 	"Input": one_item("HeavyOil", 1000),
-	"Output":{
-		"Items":[
-			{
-				"Name": "ProducerGas",
-				"Count": 1300  # Balanced to provide same total burn time as input HeavyOil
-			},
-			{
-				"Name": "Ash",
-				"Count": 2  # Small amount of ash as byproduct
-			}
-		]
-	},
-	"Ticks" : 200,  # Relatively quick process
-	"Tier": 3,  # Same tier as other pyrolysis recipes
+	# ProducerGas balanced to same total burn time as input HeavyOil; Ash as byproduct
+	"Output": items([
+		["ProducerGas", 1300],
+		["Ash", 2],
+	]),
+	"Ticks" : 200,
+	"Tier": 3,
 })
 
 for i in range(0, len(oil_crack_array(0))):
 	recipes_pyro.append({
 		"Name": "RawOil"+str(i),
 		"Input": one_item("RawOil", 2000),
-		"Output": { "Items":[ oil_crack_recipe(i, 2000) ] },
+		"Output": {"Items": oil_crack_recipe(i, 2000)},
 		"Ticks" : 120,
 		"Tier": 3,
 	})
@@ -2246,19 +1820,10 @@ recipes_industrial_chemreactor.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "Ethylene",
-	"Input":{
-		"Items":[
-			{
-				"Name": "ProducerGas",
-				"Count": 1000
-			},
-			{
-				"Name": "Catalyst",
-				"Count": 1,
-				"Probability": 0,
-			},
-		]
-	},
+	"Input": items([
+		["ProducerGas", 1000],
+		["Catalyst", 1, 0],
+	]),
 	"Output": one_item("Ethylene", 1000),
 	"Ticks" : 200,
 	"Colors": [[0.2,0.2,0.2,0.5],[0.2,0.5,0.2,0.5]]
@@ -2266,18 +1831,10 @@ recipes_industrial_chemreactor.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "Sulfur",
-	"Input":{
-		"Items":[
-			{
-				"Name": "HeavyOil",
-				"Count": 150
-			},
-			{
-				"Name": "Water",
-				"Count": 250
-			},
-		]
-	},
+	"Input": items([
+		["HeavyOil", 150],
+		["Water", 250],
+	]),
 	"Output": one_item("Sulfur"),
 	"Ticks" : 200,
 	"Colors": [[0.0,0.2,0.0,0.9],[0.0,0.0,0.0,0.2]],
@@ -2286,23 +1843,11 @@ recipes_industrial_chemreactor.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "SulfuricAcid",
-	"Input": {
-		"Items":[
-			{
-				"Name": "Sulfur",
-				"Count": 1
-			},
-			{
-				"Name": "Water",
-				"Count": 1000
-			},
-			{
-				"Name": "Catalyst",
-				"Count": 1,
-				"Probability": 0
-			},
-		]
-	},
+	"Input": items([
+		["Sulfur", 1],
+		["Water", 1000],
+		["Catalyst", 1, 0],
+	]),
 	"Output": one_item("SulfuricAcid", 300),
 	"Ticks" : 200,
 	"Colors": [[0.0,0.0,0.3,0.2],[0.8,0.8,0.1,0.3]],
@@ -2416,18 +1961,10 @@ recipes_industrial_chemreactor.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "HighCetaneDiesel",
-	"Input":{
-		"Items":[
-			{
-				"Name": "Diesel",
-				"Count": 900
-			},
-			{
-				"Name": "NitricAcid",
-				"Count": 100
-			},
-		]
-	},
+	"Input": items([
+		["Diesel", 900],
+		["NitricAcid", 100],
+	]),
 	"Output": one_item("HighCetaneDiesel", 1000),
 	"Ticks" : 300,
 	"Colors": [[0.4,0.4,0.0,0.15],[0.4,0.2,0.0,0.15]],
@@ -2436,19 +1973,10 @@ recipes_industrial_chemreactor.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "Superfuel",
-	"Input":{
-		"Items":[
-			{
-				"Name": "HighCetaneDiesel",
-				"Count": 1000
-			},
-			{
-				"Name": "Catalyst",
-				"Count": 1,
-				"Probability": 0,
-			},
-		]
-	},
+	"Input": items([
+		["HighCetaneDiesel", 1000],
+		["Catalyst", 1, 0],
+	]),
 	"Output": one_item("Superfuel", 1000),
 	"Ticks" : 3000,
 	"Colors": [[0.4,0.2,0.0,0.15],[0.7,0.6,0.25,0.15]]
@@ -2456,19 +1984,10 @@ recipes_industrial_chemreactor.append({
 
 recipes_industrial_chemreactor.append({
 	"Name": "Superfuel2",
-	"Input":{
-		"Items":[
-			{
-				"Name": "HighCetaneDiesel",
-				"Count": 1000
-			},
-			{
-				"Name": "UltimateCatalyst",
-				"Count": 1,
-				"Probability": 0,
-			},
-		]
-	},
+	"Input": items([
+		["HighCetaneDiesel", 1000],
+		["UltimateCatalyst", 1, 0],
+	]),
 	"Output": one_item("Superfuel", 1000),
 	"Ticks" : 300,
 	"Colors": [[0.4,0.2,0.0,0.15],[0.7,0.6,0.25,0.15]]
@@ -2476,18 +1995,10 @@ recipes_industrial_chemreactor.append({
 
 recipes_chemical_bath.append({
 	"Name":"RareEarthSludge",
-	"Input":{
-		"Items":[
-			{
-				"Name": "RareEarthSludge",
-				"Count": 1
-			},
-			{
-				"Name": "Ammonia",
-				"Count": 300
-			}
-		]
-	},
+	"Input": items([
+		["RareEarthSludge", 1],
+		["Ammonia", 300],
+	]),
 	"Output": one_item("YttriumDust", 2),
 	"Tier":4,
 	"Ticks" : 200,
@@ -2523,10 +2034,7 @@ append_recipe_hand({
 
 recipes_portal.append({
 	"Name":"Ping",
-	"Input":{
-		"Items":[
-		]
-	},
+	"Input": no_items(),
 	"Output": one_item("MothershipPing"),
 	"Ticks" : 1000
 })
