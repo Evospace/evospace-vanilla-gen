@@ -122,6 +122,10 @@ tools = [
 		"Name": "UpgradeTool",
 		"Label": "Upgrade Tool",
         "ItemLogic": "/Game/Equipped/UpgradeToolBP.UpgradeToolBP_C",
+	},{
+		"Name": "LinkTool",
+		"Label": "Link Tool",
+		"ItemLogic": "/Game/Equipped/LinkToolBP.LinkToolBP_C",
 	}
 	#{
 	#	"Name": "BuildTool",
