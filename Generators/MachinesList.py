@@ -386,6 +386,24 @@ machines = [
 		"BlockLogic":"DroneStationBlockLogic",
 		"Description": ["ElectricInput", "PowerInput"],
 	},{
+		"Name": "RailNode",
+		"Positions": [[0,0,0]],
+		"StartTier": 1,
+		"EndTier": 7,
+		"Image": "Conveyor",
+		"BlockLogic": "RailNodeBlockLogic",
+		"Description": ["ElectricInput"],
+		"Category": "Network",
+	},{
+		"Name": "RailStation",
+		"Positions": [[0,0,0],[-1,0,0],[-2,0,0],[-3,0,0]],
+		"StartTier": 2,
+		"EndTier": 7,
+		"Image": "DroneStation",
+		"BlockLogic": "RailStationBlockLogic",
+		"Description": ["ElectricInput", "PowerInput", "ItemInput", "ItemOutput"],
+		"Category": "Network",
+	},{
 		"Name": "ArcSmelter",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,0,2],[-1,0,2],[0,1,2],[-1,1,2]],
 		"StartTier": 2,
@@ -739,12 +757,6 @@ machines = [
 		"BlockLogic": "MonitorBlockLogic",
 		"Actor": "Blocks/HugeMonitorBP.HugeMonitorBP_C",
 	},{
-		"Name": "RailStation",
-		"StartTier": 3,
-		"EndTier": 7,
-		"Positions": [[0,0,0],[-1,0,0],[-2,0,0],[-3,0,0]],
-		"BlockLogic": "RailStationBlockLogic",
-	},{
 		"Name": "Computer",
 		"StartTier": 1,
 		"EndTier": 6,
@@ -1011,16 +1023,6 @@ machines = [
 		"LogicExports": CRAFTING_LOGIC_EXPORTS,
 		"LogicImports": CRAFTING_LOGIC_IMPORTS,
     },{
-		"Name": "Rails",
-		"StartTier": 2,
-		"EndTier": 2,		
-        "BlockLogic":"CableBundleBlockLogic",
-		"LogicExports": ["Storage"],
-		"Description": ["ElectricConductor"],
-        "CustomData":{
-			"SplineMesh": "/Game/CoreContent/Rail2",
-		}
-	},{
 		"Name": "LogicInterface",
 		"StartTier": 2,
 		"EndTier": 2,

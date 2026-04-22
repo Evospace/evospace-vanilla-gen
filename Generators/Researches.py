@@ -531,7 +531,11 @@ append_levels({
 	"Label": ["Automatization", "researches"],
 	"RequiredResearch": ["BasicMachines"],
 	"Levels": [1,7],
-	"Unlocks": [["Hand" + r_dict, "%Material%RobotArm"], ["Hand" + r_dict, "%Material%Conveyor"], ["Hand" + r_dict, "%Material%Splitter"]],
+	"Unlocks": [
+		["Hand" + r_dict, "%Material%RobotArm"],
+		["Hand" + r_dict, "%Material%Conveyor"],
+		["Hand" + r_dict, "%Material%Splitter"],
+	],
 	"CostMul":0.25,
 	"MainResearch": True,
 })
