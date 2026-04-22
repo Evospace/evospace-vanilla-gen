@@ -126,6 +126,10 @@ tools = [
 		"Name": "LinkTool",
 		"Label": "Link Tool",
 		"ItemLogic": "/Game/Equipped/LinkToolBP.LinkToolBP_C",
+	},{
+		"Name": "RailLinkTool",
+		"Label": "Rail Link Tool",
+		"ItemLogic": "/Game/Equipped/RailLinkToolBP.RailLinkToolBP_C",
 	}
 	#{
 	#	"Name": "BuildTool",
