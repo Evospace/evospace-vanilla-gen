@@ -24,6 +24,14 @@ logic_exports = [
         "Tooltip": ["ProgressTooltip", "logic_export"]
     },
     {
+        "Name": "TimePassed",
+        "UseSignal": True,
+        "Signal": "P",
+        "Enabled": True,
+        "Label": ["TimePassed", "logic_export"],
+        "Tooltip": ["TimePassedTooltip", "logic_export"]
+    },
+    {
         "Name": "InputInventory",
         "Enabled": False,
         "Label": ["InputInventory", "logic_export"],

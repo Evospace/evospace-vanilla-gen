@@ -401,7 +401,8 @@ machines = [
 		"EndTier": 7,
 		"Image": "DroneStation",
 		"BlockLogic": "RailStationBlockLogic",
-		"Description": ["ElectricInput", "PowerInput", "ItemInput", "ItemOutput"],
+		"LogicExports": ["Storage", "TimePassed"],
+		"Description": [],
 		"Category": "Network",
 	},{
 		"Name": "ArcSmelter",
