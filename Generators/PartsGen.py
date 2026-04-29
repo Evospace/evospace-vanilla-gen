@@ -150,7 +150,7 @@ for material in materials:
 			"Name":m_name+"Wire",
 			"Input": one_item(m_name+"Plate", 1),
 			"Output": one_item(m_name+"Wire", 1),
-			"Ticks" : 20,
+			"Ticks" : 80,
 		})
 
 	# abstract
