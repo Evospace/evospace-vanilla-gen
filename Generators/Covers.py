@@ -239,7 +239,7 @@ covers = [
     },{
         "Name": "LogicLinkWire",
         "Mesh": "/Game/Covers/LogicLinkWireCylinder",
-        "Materials": ["/Game/Materials/Rubber2"],
+        "Materials": [""],
         "NumCustomData": 0,
         "NoCollision": True,
     }
