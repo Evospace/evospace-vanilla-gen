@@ -130,6 +130,10 @@ tools = [
 		"Name": "RailLinkTool",
 		"Label": "Rail Link Tool",
 		"ItemLogic": "/Game/Equipped/RailLinkToolBP.RailLinkToolBP_C",
+	},{
+		"Name": "GroundLevelingTool",
+		"Label": "Ground Leveling Tool",
+		"ItemLogic": "/Game/Equipped/GroundLevelingToolBP.GroundLevelingToolBP_C",
 	}
 	#{
 	#	"Name": "BuildTool",
