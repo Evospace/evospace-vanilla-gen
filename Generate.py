@@ -37,6 +37,7 @@ generator_files = [
 	"OresGen.py",
 	"OresRec.py",
 	"PartsGen.py",
+	"Planets.py",
 	"Props.py",
 	"Researches.py",
 	"Spawn.py",
