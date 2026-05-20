@@ -4,6 +4,67 @@ from PartsList import *
 import copy
 from functools import partial
 
+BOILER_PER_TICK = 200
+INDUSTRIAL_BOILER_PER_TICK = BOILER_PER_TICK * 20 * 8
+
+# Base per-tick energy before tier scaling (matches former Vanilla block lua).
+MACHINE_ENERGY = {
+	"ArcSmelter": {"consumption": 100},
+	"Assembler": {"consumption": 160},
+	"AutomaticHammer": {"consumption": 30},
+	"BiElectricEngine": {"consumption": 55, "production": 55},
+	"Boiler": {"consumption": BOILER_PER_TICK, "production": BOILER_PER_TICK},
+	"ChemicalBath": {"consumption": 100},
+	"CombustionEngine": {"consumption": INDUSTRIAL_BOILER_PER_TICK // 2},
+	"CompactGenerator": {"consumption": 50, "production": 50},
+	"Computer": {"consumption": 20},
+	"Constructor": {"consumption": 40},
+	"DrillingRig": {"consumption": 96, "scaling": "linear"},
+	"ElectricEngine": {"consumption": 100, "production": 100},
+	"ElectricFurnace": {"consumption": 250, "production": 250},
+	"Electrolyzer": {"consumption": 80},
+	"Fermenter": {"consumption": 20},
+	"FissionReactor": {"consumption": INDUSTRIAL_BOILER_PER_TICK},
+	"FluidFurnace": {"consumption": 200},
+	"FractionatingColumn": {"consumption": 200},
+	"FusionReactor": {"consumption": INDUSTRIAL_BOILER_PER_TICK * 2},
+	"Furnace": {"production": 50},
+	"Generator": {"consumption": BOILER_PER_TICK * 5 * 2, "production": BOILER_PER_TICK * 5 * 2},
+	"IndustrialBoiler": {"consumption": INDUSTRIAL_BOILER_PER_TICK, "production": INDUSTRIAL_BOILER_PER_TICK},
+	"IndustrialChemReactor": {"consumption": 100},
+	"IndustrialGenerator": {"consumption": INDUSTRIAL_BOILER_PER_TICK, "production": INDUSTRIAL_BOILER_PER_TICK},
+	"IndustrialSmelter": {"consumption": 1000},
+	"IndustrialSteamTurbine": {"consumption": INDUSTRIAL_BOILER_PER_TICK, "production": INDUSTRIAL_BOILER_PER_TICK},
+	"KineticHeater": {"consumption": 20, "production": 20},
+	"Macerator": {"consumption": 20},
+	"Mixer": {"consumption": 15},
+	"OreWasher": {"consumption": 20},
+	"Oven": {"consumption": 100},
+	"Portal": {"consumption": INDUSTRIAL_BOILER_PER_TICK * 4 * 2},
+	"Pumpjack": {"consumption": 60, "scaling": "linear"},
+	"PyrolysisUnit": {"consumption": 50},
+	"Riteg": {"consumption": 400},
+	"Separator": {"consumption": 80},
+	"Sifter": {"consumption": 400},
+	"Smelter": {"consumption": 20},
+	"SmallSolarPanel": {"production": 50},
+	"SolarPanel": {"production": 500},
+	"SteamEngine": {"consumption": BOILER_PER_TICK, "production": BOILER_PER_TICK},
+	"SteamTurbine": {"consumption": BOILER_PER_TICK * 5 * 2, "production": BOILER_PER_TICK * 5 * 2},
+	"StirlingEngine": {"consumption": 50, "production": 50},
+	"TeslaTower": {"consumption": 1000},
+}
+
+def scale_energy_per_tick(base, level, scaling="exponential"):
+	if base <= 0:
+		return 0
+	if scaling == "linear":
+		return base * (level + 1)
+	return (2 ** level) * base
+
+def energy_watts(per_tick_base, level, scaling="exponential"):
+	return scale_energy_per_tick(per_tick_base, level, scaling) * 20
+
 # Intermediate structure for machine recipes (exported for Researches.py)
 machine_recipes_data = {}
 
@@ -151,10 +212,18 @@ for machine in machines:
 				if ss == "SpeedBonus":
 					if level != 0:
 						item["DescriptionParts"].append(["speedbonus", "common", round(2**level * 10) / 10])
-				elif ss == "PowerOutput": 
-					item["DescriptionParts"].append(["power_output", "common", [block_name, "data"]])		
-				elif ss == "PowerInput": 
-					item["DescriptionParts"].append(["power_input", "common", [block_name, "data"]])			
+				elif ss == "PowerOutput":
+					energy_cfg = MACHINE_ENERGY.get(machine["Name"], {})
+					prod = energy_cfg.get("production", 0)
+					scaling = energy_cfg.get("scaling", "exponential")
+					if prod > 0:
+						item["DescriptionParts"].append(["power_output", "common", energy_watts(prod, level, scaling)])
+				elif ss == "PowerInput":
+					energy_cfg = MACHINE_ENERGY.get(machine["Name"], {})
+					cons = energy_cfg.get("consumption", 0)
+					scaling = energy_cfg.get("scaling", "exponential")
+					if cons > 0:
+						item["DescriptionParts"].append(["power_input", "common", energy_watts(cons, level, scaling)])
 				else:
 					item["DescriptionParts"].append([ss, "common"])	
 
@@ -173,7 +242,8 @@ for machine in machines:
 			item["DescriptionParts"].append(["electric_drain", "common", 2**level * 20])
 			
 		if machine["Name"] == "DrillingRig":
-			item["DescriptionParts"].append(["power_input", "common", 2**level * 20 * 48])
+			energy_cfg = MACHINE_ENERGY["DrillingRig"]
+			item["DescriptionParts"].append(["power_input", "common", energy_watts(energy_cfg["consumption"], level, energy_cfg.get("scaling", "exponential"))])
 			
 		if machine["Name"] == "FissionReactor":
 			item["DescriptionParts"].append(["heat_drain", "common", 80*20])
@@ -212,6 +282,16 @@ for machine in machines:
 			"Tier": tier,
 			"Level": tier - machine["StartTier"]
 		}
+
+		energy_cfg = MACHINE_ENERGY.get(machine["Name"])
+		if energy_cfg:
+			scaling = energy_cfg.get("scaling", "exponential")
+			if "consumption" in energy_cfg:
+				block["EnergyConsumptionPerTick"] = scale_energy_per_tick(
+					energy_cfg["consumption"], level, scaling)
+			if "production" in energy_cfg:
+				block["EnergyProductionPerTick"] = scale_energy_per_tick(
+					energy_cfg["production"], level, scaling)
 
 		if "PathFinding" in machine:
 			block["BuildingMode"]  = "PathFinding"
