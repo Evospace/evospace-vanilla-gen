@@ -20,7 +20,7 @@ MACHINE_ENERGY = {
 	"Computer": {"consumption": 20},
 	"Constructor": {"consumption": 40},
 	"DrillingRig": {"consumption": 96, "scaling": "linear"},
-	"ElectricEngine": {"consumption": 100, "production": 100},
+	"ElectricEngine": {"consumption": 150, "production": 150},
 	"ElectricFurnace": {"consumption": 250, "production": 250},
 	"Electrolyzer": {"consumption": 80},
 	"Fermenter": {"consumption": 20},
@@ -228,7 +228,9 @@ for machine in machines:
 			
 		if machine["Name"] == "Computer":
 			item["DescriptionParts"].append(["computations", "common", 2**level])
-			item["DescriptionParts"].append(["electric_drain", "common", 2**level * 20])
+			computer_consumption = scale_energy_per_tick(MACHINE_ENERGY["Computer"]["consumption"], level)
+			computer_drain = max(1, computer_consumption // 8)
+			item["DescriptionParts"].append(["electric_drain", "common", computer_drain * 20])
 			
 		if machine["Name"] == "FissionReactor":
 			item["DescriptionParts"].append(["heat_drain", "common", 80*20])
