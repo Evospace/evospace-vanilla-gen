@@ -209,21 +209,11 @@ for machine in machines:
 
 		if "Description" in machine:
 			for ss in machine["Description"]:
+				if ss in ("PowerInput", "PowerOutput"):
+					continue
 				if ss == "SpeedBonus":
 					if level != 0:
 						item["DescriptionParts"].append(["speedbonus", "common", round(2**level * 10) / 10])
-				elif ss == "PowerOutput":
-					energy_cfg = MACHINE_ENERGY.get(machine["Name"], {})
-					prod = energy_cfg.get("production", 0)
-					scaling = energy_cfg.get("scaling", "exponential")
-					if prod > 0:
-						item["DescriptionParts"].append(["power_output", "common", energy_watts(prod, level, scaling)])
-				elif ss == "PowerInput":
-					energy_cfg = MACHINE_ENERGY.get(machine["Name"], {})
-					cons = energy_cfg.get("consumption", 0)
-					scaling = energy_cfg.get("scaling", "exponential")
-					if cons > 0:
-						item["DescriptionParts"].append(["power_input", "common", energy_watts(cons, level, scaling)])
 				else:
 					item["DescriptionParts"].append([ss, "common"])	
 
@@ -238,12 +228,7 @@ for machine in machines:
 			
 		if machine["Name"] == "Computer":
 			item["DescriptionParts"].append(["computations", "common", 2**level])
-			item["DescriptionParts"].append(["power_input", "common", 2**level * 20 * 10])
 			item["DescriptionParts"].append(["electric_drain", "common", 2**level * 20])
-			
-		if machine["Name"] == "DrillingRig":
-			energy_cfg = MACHINE_ENERGY["DrillingRig"]
-			item["DescriptionParts"].append(["power_input", "common", energy_watts(energy_cfg["consumption"], level, energy_cfg.get("scaling", "exponential"))])
 			
 		if machine["Name"] == "FissionReactor":
 			item["DescriptionParts"].append(["heat_drain", "common", 80*20])
