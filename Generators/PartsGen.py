@@ -18,6 +18,19 @@ recipes_smelt = []
 recipes_gasfurn = []
 recipes_disassembler = []
 
+def append_metal_macerator_recipe(material_name, part_suffix, input_count, dust_count, material_tier):
+	recipes_macerator.append({
+		"Name": material_name + part_suffix,
+		"Input": one_item(material_name + part_suffix, input_count),
+		"ResourceInput": {
+			"Name": "Kinetic",
+			"Count": 15
+		},
+		"Output": one_item(material_name + "Dust", dust_count),
+		"Ticks": 80,
+		"Tier": material_tier,
+	})
+
 def generate_part(name, material_dict):
 	part = named_part(name)
 	material = material_dict["Name"]
@@ -292,31 +305,13 @@ for material in materials:
 					"Ticks" : 100,
 				})
 		
-			recipes_macerator.append({
-				"Name": material["Name"] + "Plate",
-				"Input":{
-					"Items":[
-						{
-							"Name": material["Name"] + "Plate",
-							"Count": 1
-						},
-					]
-				},
-				"ResourceInput":{
-					"Name": "Kinetic",
-					"Count": 15
-				},
-				"Output":{
-					"Items":[
-						{
-							"Name": material["Name"] + "Dust",
-							"Count": 1
-						}
-					]
-				},
-				"Ticks" : 80,
-				"Tier": material_tier,
-			})
+			append_metal_macerator_recipe(material["Name"], "Plate", 1, 1, material_tier)
+			if "Wire" in material["Items"]:
+				append_metal_macerator_recipe(material["Name"], "Wire", 2, 1, material_tier)
+			if "Foil" in material["Items"]:
+				append_metal_macerator_recipe(material["Name"], "Foil", 3, 1, material_tier)
+			if "Parts" in material["Items"]:
+				append_metal_macerator_recipe(material["Name"], "Parts", 1, 2, material_tier)
 			
 	# block
 	if "Block" in material["Items"]:
