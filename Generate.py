@@ -39,6 +39,7 @@ generator_files = [
 	"PartsGen.py",
 	"Planets.py",
 	"Props.py",
+	"Quests.py",
 	"Researches.py",
 	"Spawn.py",
 	"Weather.py",
