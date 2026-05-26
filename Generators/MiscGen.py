@@ -40,7 +40,8 @@ simple_single = [
 		"Name": "PlasticWindow",
 		"Positions": [[0,0,0], [0,0,1]]
 	},{
-        "Name": "Spotlight"
+        "Name": "Spotlight",
+        "BlockLogic": "SpotlightBlockLogic",
 	}
 ]
 
