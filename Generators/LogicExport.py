@@ -42,6 +42,46 @@ logic_exports = [
         "Enabled": False,
         "Label": ["OutputInventory", "logic_export"],
         "Tooltip": ["OutputInventoryTooltip", "logic_export"]
+    },
+    {
+        "Name": "SpotlightAimX",
+        "UseSignal": True,
+        "Signal": "X",
+        "Enabled": False,
+        "Label": ["SpotlightAimX", "logic_export"],
+        "Tooltip": ["SpotlightAimXTooltip", "logic_export"]
+    },
+    {
+        "Name": "SpotlightAimY",
+        "UseSignal": True,
+        "Signal": "Y",
+        "Enabled": False,
+        "Label": ["SpotlightAimY", "logic_export"],
+        "Tooltip": ["SpotlightAimYTooltip", "logic_export"]
+    },
+    {
+        "Name": "SpotlightColorR",
+        "UseSignal": True,
+        "Signal": "R",
+        "Enabled": False,
+        "Label": ["SpotlightColorR", "logic_export"],
+        "Tooltip": ["SpotlightColorRTooltip", "logic_export"]
+    },
+    {
+        "Name": "SpotlightColorG",
+        "UseSignal": True,
+        "Signal": "G",
+        "Enabled": False,
+        "Label": ["SpotlightColorG", "logic_export"],
+        "Tooltip": ["SpotlightColorGTooltip", "logic_export"]
+    },
+    {
+        "Name": "SpotlightColorB",
+        "UseSignal": True,
+        "Signal": "B",
+        "Enabled": False,
+        "Label": ["SpotlightColorB", "logic_export"],
+        "Tooltip": ["SpotlightColorBTooltip", "logic_export"]
     }
 ]
 
