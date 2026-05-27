@@ -42,6 +42,20 @@ simple_single = [
 	},{
         "Name": "Spotlight",
         "BlockLogic": "SpotlightBlockLogic",
+        "LogicExports": [
+            "SpotlightAimX",
+            "SpotlightAimY",
+            "SpotlightColorR",
+            "SpotlightColorG",
+            "SpotlightColorB",
+        ],
+        "LogicImports": [
+            "SpotlightAimX",
+            "SpotlightAimY",
+            "SpotlightColorR",
+            "SpotlightColorG",
+            "SpotlightColorB",
+        ],
 	}
 ]
 
@@ -287,6 +301,11 @@ for one in simple_single:
 	
     if "Positions" in one:
         block["Positions"] = one["Positions"]
+
+    if "LogicExports" in one:
+        block["ExportOptions"] = one["LogicExports"]
+    if "LogicImports" in one:
+        block["ImportOptions"] = one["LogicImports"]
 		
     objects_array.append(block)
 	

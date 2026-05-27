@@ -42,6 +42,7 @@ MACHINE_ENERGY = {
 	"Oven": {"consumption": 100},
 	"Portal": {"consumption": INDUSTRIAL_BOILER_PER_TICK * 4 * 2},
 	"Pumpjack": {"consumption": 60, "scaling": "linear"},
+	"Pumpjack_leg": {"consumption": 60, "scaling": "linear"},
 	"PyrolysisUnit": {"consumption": 50},
 	"Riteg": {"production": 400},
 	"Separator": {"consumption": 80},
