@@ -379,4 +379,4 @@ def oil_crack_recipe(index, input_count):
 	if index == -1:
 		return outputs
 
-	return outputs[index]
+	return [outputs[index]]
