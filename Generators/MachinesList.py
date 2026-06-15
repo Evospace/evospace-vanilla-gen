@@ -145,6 +145,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
         "Description": ["ItemInput", "ItemStorage"],
+		"LogicExports": ["Storage"],
 	},{
 		"Name": "Vent",
 		"StartTier": 1,
