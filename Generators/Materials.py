@@ -776,6 +776,14 @@ materials = [
 		"Mesh": "/Game/Models/Circuit3Crate",
 		"Tier": 5,
 	},{
+		"Name": "StorageCore",
+		"Label": "Storage Core",
+		"StackSize": 32,
+		"Items": ["Exact"],
+		"Category": "Parts",
+		"Mesh": "/Game/Models/QuantumCoreCrate",
+		"Tier": 4,
+	},{
 		"Name": "QuantumCore",
 		"Label": "Quantum Core",
 		"StackSize": 32,

@@ -226,7 +226,10 @@ for machine in machines:
 
 		if machine["Name"] == "ItemRack":
 			item["DescriptionParts"].append(["item_rack", "common", 2048*(level+1)])
-			
+
+		if machine["Name"] == "DeepStorage":
+			item["DescriptionParts"].append(["item_rack", "common", 32768*(level+1)])
+
 		if machine["Name"] == "Computer":
 			item["DescriptionParts"].append(["computations", "common", 2**level])
 			computer_consumption = scale_energy_per_tick(MACHINE_ENERGY["Computer"]["consumption"], level)
@@ -1347,6 +1350,19 @@ for machine in machines:
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
+			})
+
+		if machine["Name"] == "DeepStorage":
+			append_recipe({
+				"Name": tier_material[tier] + machine["Name"],
+				"Input": items([
+					["StorageCore", 1],
+					[plate(), 8],
+					frame_pair(2),
+					[circuit(), 2]
+				]),
+				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Ticks" : 60
 			})
 
 		# Validation moved to ValidateTiers

@@ -146,6 +146,7 @@ machines = [
 		"EndTier": 7,
         "Description": ["ItemInput", "ItemStorage"],
 		"LogicExports": ["Storage"],
+        "ReplaceTag": "ItemRack",
 	},{
 		"Name": "Vent",
 		"StartTier": 1,
@@ -1053,10 +1054,13 @@ machines = [
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
         "Category": "Network",
 	},{
-		"Name": "StorageCore",
-		"StartTier": 2,
-		"EndTier": 2,		
-        "BlockLogic": "ItemRack",
-		"Description": []
+		"Name": "DeepStorage",
+		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
+		"StartTier": 4,
+		"EndTier": 7,
+		"BlockLogic": "ItemRack",
+		"LogicExports": ["Storage"],
+		"Description": ["ItemInput", "ItemStorage"],
+        "ReplaceTag": "ItemRack",
 	}
 ]

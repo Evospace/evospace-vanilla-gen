@@ -322,6 +322,24 @@ append_levels({
 	"Unlocks": [["Hand" + r_dict, "%Material%ItemRack"] ],
 })
 append_levels({
+	"Class": research_recipe,
+	"Name": "StorageCore",
+	"Label": ["StorageCore", "parts"],
+	"RequiredResearch": ["SingleTypeStorage"],
+	"Levels": [4,4],
+	"Unlocks": [["Hand" + r_dict, "StorageCore"]],
+	"CostMul": 3,
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "DeepStorage",
+	"Label": ["DeepStorage", "machines"],
+	"RequiredResearch": ["StorageCore"],
+	"Levels": [4,7],
+	"Unlocks": [["Hand" + r_dict, "%Material%DeepStorage"]],
+	"CostMul": 5,
+})
+append_levels({
 	"Class": "StaticResearchBonusInventory",
 	"Name": "InventoryUpgrade",
 	"Label": ["InventoryUpgrade", "researches"],

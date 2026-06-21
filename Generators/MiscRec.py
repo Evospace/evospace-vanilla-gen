@@ -456,6 +456,18 @@ recipes_assembler.append({
 })
 
 recipes_hand.append({
+	"Name":"StorageCore",
+	"Input":items([
+		["QuantumCore", 1],
+		["Processor", 2],
+		["StainlessSteelParts", 4]
+	]),
+	"Output": one_item("StorageCore"),
+	"Ticks" : 100,
+	"Tier": 4,
+})
+
+recipes_hand.append({
 	"Name":"QuantumCircuit",
 	"Input": items([
 		["QuantumCore", 6],
