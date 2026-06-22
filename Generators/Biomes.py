@@ -452,6 +452,53 @@ generators.extend([
 	}
 ])
 
+# ---- Per-biome terrain height (biome_plan.md) ----
+# Each leaf biome adds detail on top of the shared reference base elevation.
+# A NoiseGenerator maps raw simplex [-1,1] into [Min,Max]; a HeightGenerator
+# sums its noises. SeedOffset decorrelates layers within a stack. Loaded from
+# the "Generators" content dir (before "Biomes"), so biomes can reference them.
+height_noises = []
+height_gens = []
+
+def add_height(name, layers):
+	noise_names = []
+	for i, l in enumerate(layers):
+		nn = name + "Noise" + str(i)
+		height_noises.append({
+			"Class": "NoiseGenerator",
+			"Name": nn,
+			"NoiseType": l.get("type", "SimplexFractal"),
+			"Frequency": l["freq"],
+			"FractalOctaves": l.get("oct", 4),
+			"Min": l["min"],
+			"Max": l["max"],
+			"SeedOffset": l.get("seed", i * 911 + 17),
+		})
+		noise_names.append(nn)
+	height_gens.append({
+		"Class": "HeightGenerator",
+		"Name": name,
+		"Noises": noise_names,
+	})
+
+# climate-scale relief; amplitudes are detail added on top of the global backbone
+add_height("PlainHeight",        [{"freq": 0.012, "oct": 3, "min": 0,  "max": 5}])
+add_height("PrairieHeight",      [{"freq": 0.010, "oct": 4, "min": 0,  "max": 9}])
+add_height("PrairieHillsHeight", [{"freq": 0.013, "oct": 4, "min": 2,  "max": 22}])
+add_height("ForestHeight",       [{"freq": 0.009, "oct": 4, "min": 0,  "max": 16},
+                                  {"freq": 0.030, "oct": 3, "min": 0,  "max": 4}])
+add_height("PineForestHeight",   [{"freq": 0.008, "oct": 4, "min": 0,  "max": 20}])
+add_height("SnowHeight",         [{"freq": 0.004, "oct": 5, "min": 0,  "max": 40},
+                                  {"freq": 0.020, "oct": 3, "min": 0,  "max": 7}])
+add_height("SandHeight",         [{"freq": 0.020, "oct": 2, "min": 0,  "max": 11}])
+add_height("SwampHeight",        [{"freq": 0.020, "oct": 3, "min": -2, "max": 3}])
+add_height("VolcanicHeight",     [{"freq": 0.006, "oct": 5, "min": 0,  "max": 36},
+                                  {"freq": 0.050, "oct": 2, "min": 0,  "max": 6}])
+add_height("FertileForestHeight",[{"freq": 0.009, "oct": 4, "min": 0,  "max": 18}])
+
+# noises + height generators load first (single-pass-safe ordering)
+generators = height_noises + height_gens + generators
+
 #biomes
 biomes.extend([
 	# prairie
@@ -652,6 +699,40 @@ biomes.extend([
 		"Layering":"RiverLayeringSand"
 	}
 ])
+
+# Assign a height generator to each leaf biome (sea biomes stay flat: omitted,
+# so they contribute zero detail and remain at the reference sea floor).
+biome_height = {
+	"PrairieDryPlainsBiome": "PrairieHeight",
+	"PrairiePlainsBiome":    "PrairieHeight",
+	"PrairieDryHillsBiome":  "PrairieHillsHeight",
+	"PineForestBiome":       "PineForestHeight",
+	"ForestBiome":           "ForestHeight",
+	"SnowBiome":             "SnowHeight",
+	"SnowGrassBiome":        "SnowHeight",
+	"SnowForestBiome":       "SnowHeight",
+	"DipteroBiome":          "ForestHeight",
+	"BrokenLandBiome":       "VolcanicHeight",
+	"VolcanoBiome":          "VolcanicHeight",
+	"HillsBiome":            "ForestHeight",
+	"MountainsBiome":        "SnowHeight",
+	"BogBiome":              "SwampHeight",
+	"PeatBiome":             "SwampHeight",
+	"ClayBiome":             "SwampHeight",
+	"BogForestBiome":        "SwampHeight",
+	"BushlandBiome":         "ForestHeight",
+	"FertileForestBiome":    "FertileForestHeight",
+	"PlainsBiome":           "PlainHeight",
+	"RedPlainsBiome":        "PlainHeight",
+	"WhitePlainsBiome":      "PlainHeight",
+	"YellowPlainsBiome":     "PlainHeight",
+	"DesertBiome":           "SandHeight",
+	"RiverBiome":            "PlainHeight",
+}
+for b in biomes:
+	h = biome_height.get(b["Name"])
+	if h:
+		b["Height"] = h
 
 data = {
 	"Objects": generators
