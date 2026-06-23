@@ -454,9 +454,9 @@ generators.extend([
 
 # ---- Per-biome terrain height (biome_plan.md) ----
 # Each leaf biome adds detail on top of the shared reference base elevation.
-# A NoiseGenerator maps raw simplex [-1,1] into [Min,Max]; a HeightGenerator
-# sums its noises. SeedOffset decorrelates layers within a stack. Loaded from
-# the "Generators" content dir (before "Biomes"), so biomes can reference them.
+# A NoiseGenerator maps raw noise [-1,1] into [Min,Max]; a HeightGenerator
+# sums its noises. Layer dict keys match JSON (CamelCase). SeedOffset
+# decorrelates layers within a stack. Loaded from the "Generators" content
 height_noises = []
 height_gens = []
 
@@ -464,16 +464,24 @@ def add_height(name, layers):
 	noise_names = []
 	for i, l in enumerate(layers):
 		nn = name + "Noise" + str(i)
-		height_noises.append({
+		noise_type = l.get("NoiseType", "SimplexFractal")
+		entry = {
 			"Class": "NoiseGenerator",
 			"Name": nn,
-			"NoiseType": l.get("type", "SimplexFractal"),
-			"Frequency": l["freq"],
-			"FractalOctaves": l.get("oct", 4),
-			"Min": l["min"],
-			"Max": l["max"],
-			"SeedOffset": l.get("seed", i * 911 + 17),
-		})
+			"NoiseType": noise_type,
+			"Frequency": l["Frequency"],
+			"FractalOctaves": l.get("FractalOctaves", 4),
+			"Min": l["Min"],
+			"Max": l["Max"],
+			"SeedOffset": l.get("SeedOffset", i * 911 + 17),
+		}
+		if noise_type == "Cellular" or "CellularReturnType" in l:
+			entry["CellularReturnType"] = l.get("CellularReturnType", "Distance")
+		if "CellularDistanceFunction" in l:
+			entry["CellularDistanceFunction"] = l["CellularDistanceFunction"]
+		if "CellularJitter" in l:
+			entry["CellularJitter"] = l["CellularJitter"]
+		height_noises.append(entry)
 		noise_names.append(nn)
 	height_gens.append({
 		"Class": "HeightGenerator",
@@ -482,19 +490,20 @@ def add_height(name, layers):
 	})
 
 # climate-scale relief; amplitudes are detail added on top of the global backbone
-add_height("PlainHeight",        [{"freq": 0.012, "oct": 3, "min": 0,  "max": 5}])
-add_height("PrairieHeight",      [{"freq": 0.010, "oct": 4, "min": 0,  "max": 9}])
-add_height("PrairieHillsHeight", [{"freq": 0.013, "oct": 4, "min": 2,  "max": 22}])
-add_height("ForestHeight",       [{"freq": 0.009, "oct": 4, "min": 0,  "max": 16},
-                                  {"freq": 0.030, "oct": 3, "min": 0,  "max": 4}])
-add_height("PineForestHeight",   [{"freq": 0.008, "oct": 4, "min": 0,  "max": 20}])
-add_height("SnowHeight",         [{"freq": 0.004, "oct": 5, "min": 0,  "max": 40},
-                                  {"freq": 0.020, "oct": 3, "min": 0,  "max": 7}])
-add_height("SandHeight",         [{"freq": 0.020, "oct": 2, "min": 0,  "max": 11}])
-add_height("SwampHeight",        [{"freq": 0.020, "oct": 3, "min": -2, "max": 3}])
-add_height("VolcanicHeight",     [{"freq": 0.006, "oct": 5, "min": 0,  "max": 36},
-                                  {"freq": 0.050, "oct": 2, "min": 0,  "max": 6}])
-add_height("FertileForestHeight",[{"freq": 0.009, "oct": 4, "min": 0,  "max": 18}])
+add_height("PlainHeight",        [{"Frequency": 0.012, "FractalOctaves": 2, "Min": 0,  "Max": 4}])
+add_height("PrairieHeight",      [{"Frequency": 0.010, "FractalOctaves": 2, "Min": 0,  "Max": 4}])
+add_height("PrairieHillsHeight", [{"Frequency": 0.013, "FractalOctaves": 2, "Min": 2,  "Max": 4}])
+add_height("ForestHeight",       [{"Frequency": 0.009, "FractalOctaves": 2, "Min": 0,  "Max": 4},
+                                  {"Frequency": 0.030, "FractalOctaves": 2, "Min": 0,  "Max": 4}])
+add_height("PineForestHeight",   [{"Frequency": 0.008, "FractalOctaves": 2, "Min": 0,  "Max": 4}])
+add_height("SnowHeight",         [{"Frequency": 0.004, "FractalOctaves": 2, "Min": 0,  "Max": 4},
+                                  {"Frequency": 0.020, "FractalOctaves": 2, "Min": 0,  "Max": 7}])
+add_height("SandHeight",         [{"NoiseType": "Cellular", "FractalOctaves": 2, "Frequency": 0.040, "CellularReturnType": "Distance",
+                                  "CellularDistanceFunction": "Natural", "CellularJitter": 0.75, "Min": -2, "Max": 2}])
+add_height("SwampHeight",        [{"Frequency": 0.020, "FractalOctaves": 2, "Min": -2, "Max": 3}])
+add_height("VolcanicHeight",     [{"Frequency": 0.006, "FractalOctaves": 2, "Min": 0,  "Max": 4},
+                                  {"Frequency": 0.050, "FractalOctaves": 2, "Min": 0,  "Max": 6}])
+add_height("FertileForestHeight",[{"Frequency": 0.009, "FractalOctaves": 2, "Min": 0,  "Max": 4}])
 
 # noises + height generators load first (single-pass-safe ordering)
 generators = height_noises + height_gens + generators
