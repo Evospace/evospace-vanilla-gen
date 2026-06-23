@@ -65,6 +65,25 @@ global_family.append({
 		],
         "ChildFrequency": mega_boime_size,
 	})
+# Dedicated family for UWorldGeneratorConfigurable (deep copy of MegaFamily2).
+global_family.append({
+		"Name":"GlobalBiomeMegaFamilyConfigurable",
+		"Class":"GlobalBiomeFamilyConfigurable",
+		"Childs":
+		[
+			"SeaBiomeFamily",
+			"SnowBiomeFamily",
+			"PrairieBiomeFamily",
+			"PineForestBiomeFamily",
+			"PlainBiomeFamily",
+			"SandBiomeFamily",
+			"ForestBiomeFamily",
+			"SwampBiomeFamily",
+			"VolcanicBiomeFamily",
+            "FertileForestBiomeFamily"
+		],
+        "ChildFrequency": mega_boime_size,
+	})
 	
 	#Sea = 0,
 	#Taiga = 1,
@@ -481,6 +500,8 @@ def add_height(name, layers):
 			entry["CellularDistanceFunction"] = l["CellularDistanceFunction"]
 		if "CellularJitter" in l:
 			entry["CellularJitter"] = l["CellularJitter"]
+		if "Power" in l:
+			entry["Power"] = l["Power"]
 		height_noises.append(entry)
 		noise_names.append(nn)
 	height_gens.append({
@@ -501,8 +522,8 @@ add_height("SnowHeight",         [{"Frequency": 0.004, "FractalOctaves": 2, "Min
 add_height("SandHeight",         [{"NoiseType": "Cellular", "FractalOctaves": 2, "Frequency": 0.040, "CellularReturnType": "Distance",
                                   "CellularDistanceFunction": "Natural", "CellularJitter": 0.75, "Min": -2, "Max": 2}])
 add_height("SwampHeight",        [{"Frequency": 0.020, "FractalOctaves": 2, "Min": -2, "Max": 3}])
-add_height("VolcanicHeight",     [{"Frequency": 0.006, "FractalOctaves": 2, "Min": 0,  "Max": 4},
-                                  {"Frequency": 0.050, "FractalOctaves": 2, "Min": 0,  "Max": 6}])
+add_height("VolcanicHeight",     [{"Frequency": 0.01, "FractalOctaves": 5, "Min": -4,  "Max": 4},
+                                  {"Frequency": 0.05, "FractalOctaves": 2, "Min": 1,  "Max": 10, "Power": 10}])
 add_height("FertileForestHeight",[{"Frequency": 0.009, "FractalOctaves": 2, "Min": 0,  "Max": 4}])
 
 # noises + height generators load first (single-pass-safe ordering)
