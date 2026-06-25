@@ -25,7 +25,9 @@ global_family.append({
 			"ForestBiomeFamily",
 			"SwampBiomeFamily",
 			"VolcanicBiomeFamily",
-            "FertileForestBiomeFamily"
+            "FertileForestBiomeFamily",
+			"HillsBiomeFamily",
+			"MountainsBiomeFamily",
 		],
         "ChildFrequency": mega_boime_size,
 	})
@@ -43,7 +45,9 @@ global_family.append({
 			"ForestBiomeFamily",
 			"SwampBiomeFamily",
 			"VolcanicBiomeFamily",
-            "FertileForestBiomeFamily"
+            "FertileForestBiomeFamily",
+			"HillsBiomeFamily",
+			"MountainsBiomeFamily",
 		],
         "ChildFrequency": mega_boime_size,
 	})
@@ -61,7 +65,9 @@ global_family.append({
 			"ForestBiomeFamily",
 			"SwampBiomeFamily",
 			"VolcanicBiomeFamily",
-            "FertileForestBiomeFamily"
+            "FertileForestBiomeFamily",
+			"HillsBiomeFamily",
+			"MountainsBiomeFamily",
 		],
         "ChildFrequency": mega_boime_size,
 	})
@@ -80,7 +86,9 @@ global_family.append({
 			"ForestBiomeFamily",
 			"SwampBiomeFamily",
 			"VolcanicBiomeFamily",
-            "FertileForestBiomeFamily"
+            "FertileForestBiomeFamily",
+			"HillsBiomeFamily",
+			"MountainsBiomeFamily",
 		],
         "ChildFrequency": mega_boime_size,
 	})
@@ -252,7 +260,33 @@ families.extend([
 		"ChildFrequency": biome_family_size,
 		"Weather": ["Clear"],
 		"WeatherWeights": [1],
-	}
+	},
+	{
+		# Rolling hills: moderate relief, grass-covered slopes, occasional showers.
+		"Name":"HillsBiomeFamily",
+		"Class":"BiomeFamily",
+		"Childs":
+		[
+			"HillsBiome",
+			"HillsForestBiome",
+		],
+		"ChildFrequency": biome_family_size * 0.85,
+		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "LightLowFog"],
+		"WeatherWeights": [     22,               18,             16,         12,         10,      5,             7],
+	},
+	{
+		# High mountains: cold, crisp air, sparse vegetation, snow caps at altitude.
+		"Name":"MountainsBiomeFamily",
+		"Class":"BiomeFamily",
+		"Childs":
+		[
+			"MountainsBiome",
+			"MountainsSnowBiome",
+		],
+		"ChildFrequency": biome_family_size * 0.70,
+		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Foggy", "ExtremeFoggy", "LightLowFog"],
+		"WeatherWeights": [     20,               14,             12,         16,      14,              8,            16],
+	},
 ])
 
 # generators
@@ -468,6 +502,46 @@ generators.extend([
 		"Name": "SnowForestGenerator",
 		"Class": "PropsGenerator",
 		"PropList": "SnowForestProps"
+	},
+
+	# hills / mountains
+	{
+		"Class": "SimpleLayeringGenerator",
+		"Name": "HillsLayering",
+		"Blocks": ["GrassSurface" + static_surface, "DirtSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Starts": [0, 2, 5, 9, 12, 16, 19, 23, 30]
+	},
+	{
+		"Class": "SimpleLayeringGenerator",
+		"Name": "MountainLayering",
+		"Blocks": ["StoneSurface" + static_surface, "DirtSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Starts": [0, 2, 5, 9, 12, 16, 19, 23]
+	},
+	{
+		"Class": "SimpleLayeringGenerator",
+		"Name": "MountainSnowLayering",
+		"Blocks": ["SnowSurface", "StoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
+		"Starts": [0, 2, 5, 9, 12, 16, 19, 23]
+	},
+	{
+		"Name": "HillsProps",
+		"Class": "PropsGenerator",
+		"PropList": "GrasslandProps"
+	},
+	{
+		"Name": "HillsForestProps",
+		"Class": "PropsGenerator",
+		"PropList": "BushlandProps"
+	},
+	{
+		"Name": "MountainProps",
+		"Class": "PropsGenerator",
+		"PropList": "PineForestProps"
+	},
+	{
+		"Name": "MountainSnowProps",
+		"Class": "PropsGenerator",
+		"PropList": "SnowProps"
 	}
 ])
 
@@ -500,6 +574,8 @@ def add_height(name, layers):
 			entry["CellularDistanceFunction"] = l["CellularDistanceFunction"]
 		if "CellularJitter" in l:
 			entry["CellularJitter"] = l["CellularJitter"]
+		if "FractalType" in l:
+			entry["FractalType"] = l["FractalType"]
 		if "Power" in l:
 			entry["Power"] = l["Power"]
 		height_noises.append(entry)
@@ -525,6 +601,13 @@ add_height("SwampHeight",        [{"Frequency": 0.020, "FractalOctaves": 2, "Min
 add_height("VolcanicHeight",     [{"Frequency": 0.01, "FractalOctaves": 5, "Min": -4,  "Max": 4},
                                   {"Frequency": 0.05, "FractalOctaves": 2, "Min": 1,  "Max": 10, "Power": 10}])
 add_height("FertileForestHeight",[{"Frequency": 0.009, "FractalOctaves": 2, "Min": 0,  "Max": 4}])
+
+# Moderate rolling hills (gameplay_mountains_plan: foothill relief, rounded silhouettes).
+add_height("HillsHeight",        [{"Frequency": 0.010, "FractalOctaves": 4, "Min": -8,  "Max": 12},
+                                  {"Frequency": 0.025, "FractalOctaves": 2, "Min": -4,  "Max": 8}])
+# Ridged + terraced mountain profile within the vertical budget (~60–80 blocks detail).
+add_height("MountainsHeight",    [{"Frequency": 0.006, "FractalOctaves": 5, "FractalType": "Ridged", "Min": -10, "Max": 40},
+                                  {"Frequency": 0.015, "FractalOctaves": 3, "Min": -10,  "Max": 10, "Power": 4}])
 
 # noises + height generators load first (single-pass-safe ordering)
 generators = height_noises + height_gens + generators
@@ -638,12 +721,25 @@ biomes.extend([
 	,{
 		"Class":"Biome",
 		"Name":"HillsBiome",
-		"Layering":"GrassLayering",
-		"Props":"GrasslandProps"
+		"Layering":"HillsLayering",
+		"Props":"HillsProps",
+		"Color":[184/255.0, 255/255.0, 133/255.0]
+	},{
+		"Class":"Biome",
+		"Name":"HillsForestBiome",
+		"Layering":"HillsLayering",
+		"Props":"HillsForestProps",
+		"Color":[184/255.0, 255/255.0, 133/255.0]
 	},{
 		"Class":"Biome",
 		"Name":"MountainsBiome",
-		"Layering":"GrassLayering"
+		"Layering":"MountainLayering",
+		"Props":"MountainProps"
+	},{
+		"Class":"Biome",
+		"Name":"MountainsSnowBiome",
+		"Layering":"MountainSnowLayering",
+		"Props":"MountainSnowProps"
 	},{
 		"Class":"Biome",
 		"Name":"BogBiome",
@@ -744,8 +840,10 @@ biome_height = {
 	"DipteroBiome":          "ForestHeight",
 	"BrokenLandBiome":       "VolcanicHeight",
 	"VolcanoBiome":          "VolcanicHeight",
-	"HillsBiome":            "ForestHeight",
-	"MountainsBiome":        "SnowHeight",
+	"HillsBiome":            "HillsHeight",
+	"HillsForestBiome":      "HillsHeight",
+	"MountainsBiome":        "MountainsHeight",
+	"MountainsSnowBiome":    "MountainsHeight",
 	"BogBiome":              "SwampHeight",
 	"PeatBiome":             "SwampHeight",
 	"ClayBiome":             "SwampHeight",
