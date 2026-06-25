@@ -41,7 +41,8 @@ props = [
 		"IsBig": False,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
-		"AdditiveElevation": 0
+		"AdditiveElevation": 0,
+		"MinimumHeight": 0
 	},
 	{
 		"Name": "LongGrass",
@@ -55,6 +56,7 @@ props = [
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 15,
+		"MinimumHeight": 0,
 		"HighDetailShadow": True,
 		"Image": "T_TerrainGrass",
 	},
@@ -70,6 +72,7 @@ props = [
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 15,
+		"MinimumHeight": 0,
 		"HighDetailShadow": True,
 		"Image": "T_TerrainGrass",
 	},
@@ -85,7 +88,7 @@ props = [
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
-		"MaximumHeight": -1,
+		"MaximumHeight": 0,
 		"HighDetailShadow": True
 	},
 	{
@@ -100,7 +103,7 @@ props = [
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
-		"MaximumHeight": -1,
+		"MaximumHeight": 0,
 		"HighDetailShadow": True,
 		"Image": "T_TerrainGrass",
 	},
@@ -116,6 +119,7 @@ props = [
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
+		"MinimumHeight": 0,
 		"HighDetailShadow": True,
 		"Image": "T_TerrainGrass",
 	},
@@ -236,7 +240,7 @@ props = [
 		"Count": 1,
 		"CullBegin": 7000,
 		"CullEnd": 8000,
-		"AdditiveElevation": 70,
+		"AdditiveElevation": -40,
 		"Floating": True,
 		"IsBig": False,
 		"HighDetailShadow": True
@@ -250,7 +254,7 @@ props = [
 		"Count": 1,
 		"CullBegin": 7000,
 		"CullEnd": 8000,
-		"AdditiveElevation": 70,
+		"AdditiveElevation": -40,
 		"Floating": True,
 		"IsBig": False,
 	},{
@@ -430,7 +434,7 @@ props = [
 		"Count": 1,
 		"CullBegin": 7000,
 		"CullEnd": 8000,
-		"AdditiveElevation": 70,
+		"AdditiveElevation": 0,
 		"Floating": True,
 		"IsBig": False,
 		"HighDetailShadow": True
@@ -880,7 +884,7 @@ for prop in props:
 			"ScaleMin": prop["ScaleMin"],
 			"ScaleMax": prop["ScaleMax"],
 			"ProjectToTerrainPower": prop["ProjectToTerrainPower"],
-			"AdditiveElevation": 20,
+			"AdditiveElevation": prop.get("AdditiveElevation", 0),
 			"Item": prop["Name"],
 			"Minable": minable,
 			"IsBig": prop["IsBig"]
