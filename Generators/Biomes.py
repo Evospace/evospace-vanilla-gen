@@ -570,7 +570,11 @@ add_height("SnowHeight",         [{"Frequency": 0.004, "FractalOctaves": 2, "Min
                                   {"Frequency": 0.020, "FractalOctaves": 2, "Min": 0,  "Max": 7}])
 add_height("SandHeight",         [{"NoiseType": "Cellular", "FractalOctaves": 2, "Frequency": 0.040, "CellularReturnType": "Distance",
                                   "CellularDistanceFunction": "Natural", "CellularJitter": 0.75, "Min": -2, "Max": 2}])
-add_height("SwampHeight",        [{"Frequency": 0.020, "FractalOctaves": 2, "Min": -2, "Max": 3}])
+# Flat wetland base plus rare circular lake basins carved by a sparse cellular field.
+add_height("SwampHeight",        [{"Frequency": 0.020, "FractalOctaves": 2, "Min": -2, "Max": 3},
+                                  {"NoiseType": "Cellular", "Frequency": 0.0035, "FractalOctaves": 1,
+                                   "CellularReturnType": "Distance2Cave", "CellularDistanceFunction": "Natural",
+                                   "CellularJitter": 0.55, "Min": 0, "Max": -7, "Power": 5, "SeedOffset": 4201}])
 add_height("VolcanicHeight",     [{"Frequency": 0.01, "FractalOctaves": 5, "Min": -4,  "Max": 4},
                                   {"Frequency": 0.05, "FractalOctaves": 2, "Min": 1,  "Max": 10, "Power": 10}])
 add_height("FertileForestHeight",[{"Frequency": 0.009, "FractalOctaves": 2, "Min": 0,  "Max": 4}])
