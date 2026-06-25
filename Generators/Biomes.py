@@ -11,85 +11,49 @@ complexbiomes = []
 mega_boime_size = 0.003
 biome_family_size = 0.016
 
+# Legacy mega families (WorldGeneratorBiome / Rivers / Plains): unchanged pre-hills set.
+legacy_mega_family_childs = [
+	"SeaBiomeFamily",
+	"SnowBiomeFamily",
+	"PrairieBiomeFamily",
+	"PineForestBiomeFamily",
+	"PlainBiomeFamily",
+	"SandBiomeFamily",
+	"ForestBiomeFamily",
+	"SwampBiomeFamily",
+	"VolcanicBiomeFamily",
+	"FertileForestBiomeFamily",
+]
+
+# UWorldGeneratorConfigurable only: legacy set plus dedicated hills/mountains families.
+configurable_mega_family_childs = legacy_mega_family_childs + [
+	"HillsBiomeFamily",
+	"MountainsBiomeFamily",
+]
+
 global_family.append({
 		"Name":"GlobalBiomeMegaFamily",
 		"Class":"GlobalBiomeFamily",
-		"Childs":
-		[
-			"SeaBiomeFamily",
-			"SnowBiomeFamily",
-			"PrairieBiomeFamily",
-			"PineForestBiomeFamily",
-			"PlainBiomeFamily",
-			"SandBiomeFamily",
-			"ForestBiomeFamily",
-			"SwampBiomeFamily",
-			"VolcanicBiomeFamily",
-            "FertileForestBiomeFamily",
-			"HillsBiomeFamily",
-			"MountainsBiomeFamily",
-		],
+		"Childs": legacy_mega_family_childs,
         "ChildFrequency": mega_boime_size,
 	})
 global_family.append({
 		"Name":"GlobalBiomeMegaFamily2",
 		"Class":"GlobalBiomeFamily2",
-		"Childs":
-		[
-			"SeaBiomeFamily",
-			"SnowBiomeFamily",
-			"PrairieBiomeFamily",
-			"PineForestBiomeFamily",
-			"PlainBiomeFamily",
-			"SandBiomeFamily",
-			"ForestBiomeFamily",
-			"SwampBiomeFamily",
-			"VolcanicBiomeFamily",
-            "FertileForestBiomeFamily",
-			"HillsBiomeFamily",
-			"MountainsBiomeFamily",
-		],
+		"Childs": legacy_mega_family_childs,
         "ChildFrequency": mega_boime_size,
 	})
 global_family.append({
 		"Name":"GlobalBiomeMegaFamily3",
 		"Class":"GlobalBiomeFamily3",
-		"Childs":
-		[
-			"SeaBiomeFamily",
-			"SnowBiomeFamily",
-			"PrairieBiomeFamily",
-			"PineForestBiomeFamily",
-			"PlainBiomeFamily",
-			"SandBiomeFamily",
-			"ForestBiomeFamily",
-			"SwampBiomeFamily",
-			"VolcanicBiomeFamily",
-            "FertileForestBiomeFamily",
-			"HillsBiomeFamily",
-			"MountainsBiomeFamily",
-		],
+		"Childs": legacy_mega_family_childs,
         "ChildFrequency": mega_boime_size,
 	})
 # Dedicated family for UWorldGeneratorConfigurable (deep copy of MegaFamily2).
 global_family.append({
 		"Name":"GlobalBiomeMegaFamilyConfigurable",
 		"Class":"GlobalBiomeFamilyConfigurable",
-		"Childs":
-		[
-			"SeaBiomeFamily",
-			"SnowBiomeFamily",
-			"PrairieBiomeFamily",
-			"PineForestBiomeFamily",
-			"PlainBiomeFamily",
-			"SandBiomeFamily",
-			"ForestBiomeFamily",
-			"SwampBiomeFamily",
-			"VolcanicBiomeFamily",
-            "FertileForestBiomeFamily",
-			"HillsBiomeFamily",
-			"MountainsBiomeFamily",
-		],
+		"Childs": configurable_mega_family_childs,
         "ChildFrequency": mega_boime_size,
 	})
 	
