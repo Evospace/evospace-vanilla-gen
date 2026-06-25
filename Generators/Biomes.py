@@ -727,11 +727,12 @@ biomes.extend([
 		"Name":"MountainsSnowBiome",
 		"Layering":"MountainSnowLayering",
 		"Props":"MountainSnowProps"
-	},{
+	},	{
 		"Class":"Biome",
 		"Name":"BogBiome",
 		"Layering":"BogGrassLayeringGrass",
 		"Props":"BogProps",
+		"WaterMurkiness": 1.0,
 		"Color":[204/255.0, 255/255.0, 153/255.0]
 	},{
 		"Class":"Biome",
