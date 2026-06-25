@@ -244,7 +244,9 @@ families.extend([
 		"Class":"BiomeFamily",
 		"Childs":
 		[
-			"MountainsBiome",
+			"MountainsStoneBiome",
+			"MountainsDarkStoneBiome",
+			"MountainsLayeredBiome",
 			"MountainsSnowBiome",
 		],
 		"ChildFrequency": biome_family_size * 0.70,
@@ -477,9 +479,21 @@ generators.extend([
 	},
 	{
 		"Class": "SimpleLayeringGenerator",
-		"Name": "MountainLayering",
-		"Blocks": ["StoneSurface" + static_surface, "DirtSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Name": "MountainStoneLayering",
+		"Blocks": ["StoneSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
 		"Starts": [0, 2, 5, 9, 12, 16, 19, 23]
+	},
+	{
+		"Class": "SimpleLayeringGenerator",
+		"Name": "MountainDarkStoneLayering",
+		"Blocks": ["DarkStoneSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Starts": [0, 2, 5, 9, 12, 16, 19, 23]
+	},
+	{
+		"Class": "SimpleLayeringGenerator",
+		"Name": "MountainLayeredLayering",
+		"Blocks": ["StoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "DarkStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "DarkStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Starts": [0, 2, 4, 6, 8, 10, 12, 16, 20, 24, 30]
 	},
 	{
 		"Class": "SimpleLayeringGenerator",
@@ -496,11 +510,6 @@ generators.extend([
 		"Name": "HillsForestProps",
 		"Class": "PropsGenerator",
 		"PropList": "BushlandProps"
-	},
-	{
-		"Name": "MountainProps",
-		"Class": "PropsGenerator",
-		"PropList": "PineForestProps"
 	},
 	{
 		"Name": "MountainSnowProps",
@@ -570,8 +579,8 @@ add_height("FertileForestHeight",[{"Frequency": 0.009, "FractalOctaves": 2, "Min
 add_height("HillsHeight",        [{"Frequency": 0.010, "FractalOctaves": 4, "Min": -8,  "Max": 12},
                                   {"Frequency": 0.025, "FractalOctaves": 2, "Min": -4,  "Max": 8}])
 # Ridged + terraced mountain profile within the vertical budget (~60–80 blocks detail).
-add_height("MountainsHeight",    [{"Frequency": 0.006, "FractalOctaves": 5, "FractalType": "Ridged", "Min": -10, "Max": 40},
-                                  {"Frequency": 0.015, "FractalOctaves": 3, "Min": -10,  "Max": 10, "Power": 4}])
+add_height("MountainsHeight",    [{"Frequency": 0.006, "FractalOctaves": 5, "FractalType": "Ridged", "Min": -10, "Max": 40, "Power": 2},
+                                  {"Frequency": 0.015, "FractalOctaves": 3, "Min": -10,  "Max": 10, "Power": 1}])
 
 # noises + height generators load first (single-pass-safe ordering)
 generators = height_noises + height_gens + generators
@@ -696,9 +705,19 @@ biomes.extend([
 		"Color":[184/255.0, 255/255.0, 133/255.0]
 	},{
 		"Class":"Biome",
-		"Name":"MountainsBiome",
-		"Layering":"MountainLayering",
-		"Props":"MountainProps"
+		"Name":"MountainsStoneBiome",
+		"Layering":"MountainStoneLayering",
+		"Props":"EmptySeaProps"
+	},{
+		"Class":"Biome",
+		"Name":"MountainsDarkStoneBiome",
+		"Layering":"MountainDarkStoneLayering",
+		"Props":"EmptySeaProps"
+	},{
+		"Class":"Biome",
+		"Name":"MountainsLayeredBiome",
+		"Layering":"MountainLayeredLayering",
+		"Props":"EmptySeaProps"
 	},{
 		"Class":"Biome",
 		"Name":"MountainsSnowBiome",
@@ -806,8 +825,10 @@ biome_height = {
 	"VolcanoBiome":          "VolcanicHeight",
 	"HillsBiome":            "HillsHeight",
 	"HillsForestBiome":      "HillsHeight",
-	"MountainsBiome":        "MountainsHeight",
-	"MountainsSnowBiome":    "MountainsHeight",
+	"MountainsStoneBiome":     "MountainsHeight",
+	"MountainsDarkStoneBiome": "MountainsHeight",
+	"MountainsLayeredBiome":   "MountainsHeight",
+	"MountainsSnowBiome":      "MountainsHeight",
 	"BogBiome":              "SwampHeight",
 	"PeatBiome":             "SwampHeight",
 	"ClayBiome":             "SwampHeight",
