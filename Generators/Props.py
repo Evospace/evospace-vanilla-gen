@@ -702,23 +702,39 @@ proplists = [
 		"Name": "PineForestProps",
 		"Array": [
 			{
+				# Canopy: pine-dominant, an occasional conifer breaks up the identical silhouettes
+				"Props": ["Pine", "Pine", "Pine", "Conifer"],
+				"Chance": 0.016
+			},{
+				# Understory: young growth / brush filling the clearings between trunks
+				"Props": ["Shrub", "BigBush"],
+				"Chance": 0.012
+			},{
 				"Props": ["Rock"],
-				"Chance": 0.002
+				"Chance": 0.003
 			},{
 				"Props": ["SmallRock"],
-				"Chance": 0.01
+				"Chance": 0.02
 			},{
-				"Props": ["Pine"],
-				"Chance": 0.01
+				# Classic boreal forest-floor fern undergrowth (grows in patches)
+				"Props": ["Fern"],
+				"Chance": 0.08
 			},{
 				"Props": ["DryGrass"],
-				"Chance": 0.1
+				"Chance": 0.35
+			},{
+				# Greener tufts among the needle litter
+				"Props": ["LongGrass"],
+				"Chance": 0.2
+			},{
+				"Props": ["Dandaleon"],
+				"Chance": 0.06
 			},{
 				"Props": ["Shroom"],
-				"Chance": 0.01
+				"Chance": 0.04
 			}
 		]
-	},{	
+	},{
 		"Name": "UnimplementedProps",
 		"Array": [
 			{
