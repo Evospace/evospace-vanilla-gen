@@ -221,7 +221,7 @@ props = [
 	},
 	{
 		"Name": "Rogoz",
-		"ScaleMin": 1,
+		"ScaleMin": 2,
 		"ScaleMax": 3,
 		"Variations": 5,
 		"ProjectToTerrainPower": 0,
@@ -230,9 +230,9 @@ props = [
 		"Count": 1,
 		"CullBegin": 7000,
 		"CullEnd": 8000,
-		"AdditiveElevation": 0,
+		"AdditiveElevation": 24,
 		"SurfaceHeightMin": -1,
-		"SurfaceHeightMax": 1,
+		"SurfaceHeightMax": 0,
 		"HighDetailShadow": True
 	},{
 		"Name": "Lily", 
@@ -800,6 +800,9 @@ proplists = [
 				"Props": ["Fern"],
 				"Chance": 0.05
 			},{
+				"Props": ["Rogoz"],
+				"Chance": 0.5
+			},{
 				"Props": ["Broadleaf", "BigBush"],
 				"Chance": 0.01
 			},{
@@ -813,6 +816,9 @@ proplists = [
 			{
 				"Props": ["YellowGrass"],
 				"Chance": 0.07
+			},{
+				"Props": ["Rogoz"],
+				"Chance": 0.5
 			},{
 				"Props": ["Broadleaf", "BigBush"],
 				"Chance": 0.01
@@ -919,6 +925,11 @@ DENSITY_MUL = 0.6
 
 TREE_PROPS = {"Broadleaf", "Conifer", "Pine", "SnowyPine", "Palm"}
 
+CLUSTER_PROPS = {
+	"Shrub", "BigBush", "Fern", "Cactus",
+	"Rock", "SmallRock", "VolcanicRock", "SmallVolcanicRock", "SnowyRock", "CanyonRock",
+}
+
 DEFAULT_CLUSTER = {
 	"MinRadius": 2,
 	"MaxRadius": 7,
@@ -927,13 +938,6 @@ DEFAULT_CLUSTER = {
 	"CenterSpacing": 14,
 	"Jitter": 1.5,
 	"DensityThreshold": 0.5,
-}
-
-FOREST_CLUSTER = {
-	**DEFAULT_CLUSTER,
-	"MinCount": 4,
-	"MaxCount": 12,
-	"CenterSpacing": 16,
 }
 
 SPARSE_CLUSTER = {
@@ -950,6 +954,16 @@ DESERT_CLUSTER = {
 	"MaxCount": 4,
 	"CenterSpacing": 18,
 	"DensityThreshold": 0.48,
+}
+
+PROP_CLUSTER_SETTINGS = {
+	"Cactus": DESERT_CLUSTER,
+	"Rock": SPARSE_CLUSTER,
+	"SmallRock": SPARSE_CLUSTER,
+	"VolcanicRock": SPARSE_CLUSTER,
+	"SmallVolcanicRock": SPARSE_CLUSTER,
+	"SnowyRock": SPARSE_CLUSTER,
+	"CanyonRock": SPARSE_CLUSTER,
 }
 
 # PropsGenerator name -> legacy StaticPropList name (Biomes.py references generator by name).
@@ -998,21 +1012,16 @@ def emit_static_proplist(list_name, prop_names):
 		}],
 	})
 
-def cluster_settings_for(prop_names, chance):
-	if any(p in {"Palm", "Cactus"} for p in prop_names):
-		return DESERT_CLUSTER
-	if chance <= 0.002:
-		return SPARSE_CLUSTER
-	return FOREST_CLUSTER
+def cluster_settings_for(prop_names):
+	for prop_name in prop_names:
+		if prop_name in PROP_CLUSTER_SETTINGS:
+			return PROP_CLUSTER_SETTINGS[prop_name]
+	return DEFAULT_CLUSTER
 
-def is_cluster_layer(prop_names, chance):
+def is_cluster_layer(prop_names):
 	if any(p in TREE_PROPS for p in prop_names):
-		return True
-	if any(p in {"VolcanicRock", "Cactus", "Palm"} for p in prop_names):
-		return True
-	if len(prop_names) > 1 and any(p in {"Shrub", "BigBush"} for p in prop_names) and chance <= 0.02:
-		return True
-	return False
+		return False
+	return any(p in CLUSTER_PROPS for p in prop_names)
 
 def layers_from_legacy_proplist(generator_name, legacy_plist):
 	layers = []
@@ -1025,11 +1034,11 @@ def layers_from_legacy_proplist(generator_name, legacy_plist):
 		chance = entry["Chance"]
 		list_name = f"{generator_name}_L{index}_{prop_names[0]}"
 		emit_static_proplist(list_name, prop_names)
-		if is_cluster_layer(prop_names, chance):
+		if is_cluster_layer(prop_names):
 			layers.append({
 				"Mode": "Cluster",
 				"PropList": list_name,
-				"Cluster": cluster_settings_for(prop_names, chance),
+				"Cluster": cluster_settings_for(prop_names),
 			})
 		else:
 			layers.append({
