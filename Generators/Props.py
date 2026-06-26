@@ -42,7 +42,7 @@ props = [
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
-		"MinimumHeight": 0
+		"SurfaceHeightMin": 0
 	},
 	{
 		"Name": "LongGrass",
@@ -56,7 +56,7 @@ props = [
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 15,
-		"MinimumHeight": 0,
+		"SurfaceHeightMin": 0,
 		"HighDetailShadow": True,
 		"Image": "T_TerrainGrass",
 	},
@@ -72,7 +72,7 @@ props = [
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 15,
-		"MinimumHeight": 0,
+		"SurfaceHeightMin": 0,
 		"HighDetailShadow": True,
 		"Image": "T_TerrainGrass",
 	},
@@ -88,7 +88,8 @@ props = [
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
-		"MaximumHeight": 0,
+		"SurfaceHeightMax": 0,
+		"TopHeightMax": 0,
 		"HighDetailShadow": True
 	},
 	{
@@ -103,7 +104,8 @@ props = [
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
-		"MaximumHeight": 0,
+		"SurfaceHeightMax": 0,
+		"TopHeightMax": 0,
 		"HighDetailShadow": True,
 		"Image": "T_TerrainGrass",
 	},
@@ -119,7 +121,7 @@ props = [
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"AdditiveElevation": 0,
-		"MinimumHeight": 0,
+		"SurfaceHeightMin": 0,
 		"HighDetailShadow": True,
 		"Image": "T_TerrainGrass",
 	},
@@ -229,6 +231,8 @@ props = [
 		"CullBegin": 7000,
 		"CullEnd": 8000,
 		"AdditiveElevation": 0,
+		"SurfaceHeightMin": -1,
+		"SurfaceHeightMax": 1,
 		"HighDetailShadow": True
 	},{
 		"Name": "Lily", 
@@ -901,10 +905,12 @@ for prop in props:
 			temp_prop["Floating"] = prop["Floating"]
 		if "CullEnd" in prop:
 			temp_prop["CullEnd"] = prop["CullEnd"]
-		if "MaximumHeight" in prop:
-			temp_prop["MaximumHeight"] = prop["MaximumHeight"]
-		if "MinimumHeight" in prop:
-			temp_prop["MinimumHeight"] = prop["MinimumHeight"]
+		if "SurfaceHeightMax" in prop:
+			temp_prop["SurfaceHeightMax"] = prop["SurfaceHeightMax"]
+		if "SurfaceHeightMin" in prop:
+			temp_prop["SurfaceHeightMin"] = prop["SurfaceHeightMin"]
+		if "TopHeightMax" in prop:
+			temp_prop["TopHeightMax"] = prop["TopHeightMax"]
 		if "HighDetailShadow" in prop:
 			temp_prop["HighDetailShadow"] = prop["HighDetailShadow"]
 		objects_array.append(temp_prop)
