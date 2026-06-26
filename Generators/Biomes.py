@@ -452,7 +452,9 @@ add_height("PrairieHeight",      [{"Frequency": 0.010, "FractalOctaves": 2, "Min
 add_height("PrairieHillsHeight", [{"Frequency": 0.013, "FractalOctaves": 2, "Min": 2,  "Max": 4}])
 add_height("ForestHeight",       [{"Frequency": 0.009, "FractalOctaves": 2, "Min": 0,  "Max": 4},
                                   {"Frequency": 0.030, "FractalOctaves": 2, "Min": 0,  "Max": 4}])
-add_height("PineForestHeight",   [{"Frequency": 0.008, "FractalOctaves": 2, "Min": 0,  "Max": 4}])
+# Gently rolling, morainic relief: a broad swell plus low hummocks under the canopy
+add_height("PineForestHeight",   [{"Frequency": 0.006, "FractalOctaves": 3, "Min": -3, "Max": 6},
+                                  {"Frequency": 0.022, "FractalOctaves": 2, "Min": 0,  "Max": 3}])
 add_height("SnowHeight",         [{"Frequency": 0.004, "FractalOctaves": 2, "Min": 0,  "Max": 4},
                                   {"Frequency": 0.020, "FractalOctaves": 2, "Min": 0,  "Max": 7}])
 add_height("SandHeight",         [{"NoiseType": "Cellular", "FractalOctaves": 2, "Frequency": 0.040, "CellularReturnType": "Distance",
