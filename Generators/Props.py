@@ -915,41 +915,140 @@ for prop in props:
 			temp_prop["HighDetailShadow"] = prop["HighDetailShadow"]
 		objects_array.append(temp_prop)
 
-def convert_proplists(proplists, DensityMultiplier=0.6):
-    for proplist in proplists:
-        proplist_datas = []
-        raw_chances = [item["Chance"] * DensityMultiplier for item in proplist["Array"]]
-        scale = 10000
-        total_weight = 0
+DENSITY_MUL = 0.6
 
-        for subitem, chance in zip(proplist["Array"], raw_chances):
-            props_array = []
-            if "Props" in subitem:
-                for prop_name in subitem["Props"]:
-                    for variation in range(named_prop(prop_name)["Variations"]):
-                        props_array.append(prop_name + variation_helper[variation])
+TREE_PROPS = {"Broadleaf", "Conifer", "Pine", "SnowyPine", "Palm"}
 
-            weight = int(round(chance * scale))
-            total_weight += weight
+DEFAULT_CLUSTER = {
+	"MinRadius": 2,
+	"MaxRadius": 7,
+	"MinCount": 3,
+	"MaxCount": 10,
+	"CenterSpacing": 14,
+	"Jitter": 1.5,
+	"DensityThreshold": 0.5,
+}
 
-            proplist_datas.append({
-                "Props": props_array,
-                "Weight": weight
-            })
+FOREST_CLUSTER = {
+	**DEFAULT_CLUSTER,
+	"MinCount": 4,
+	"MaxCount": 12,
+	"CenterSpacing": 16,
+}
 
-        if scale - total_weight > 0.0001:
-            proplist_datas.append({
-                "Props": [],
-                "Weight": scale - total_weight
-            })
+SPARSE_CLUSTER = {
+	**DEFAULT_CLUSTER,
+	"MinCount": 2,
+	"MaxCount": 5,
+	"CenterSpacing": 20,
+	"DensityThreshold": 0.45,
+}
 
-        objects_array.append({
-            "Class": "StaticPropList",
-            "Name": proplist["Name"],
-            "Array": proplist_datas
-        })
+DESERT_CLUSTER = {
+	**DEFAULT_CLUSTER,
+	"MinCount": 2,
+	"MaxCount": 4,
+	"CenterSpacing": 18,
+	"DensityThreshold": 0.48,
+}
 
-convert_proplists(proplists)
+# PropsGenerator name -> legacy StaticPropList name (Biomes.py references generator by name).
+PROPS_GENERATOR_SOURCES = [
+	("PrairieDryProps", "PrairieDryPropList"),
+	("PrairieProps", "PrairiePropList"),
+	("DipteroProps", "DipteroPropList"),
+	("BogProps", "SwampProps"),
+	("BogForestProps", "SwampForestProps"),
+	("OreProps", "ClayBeachProps"),
+	("GrasslandProps", "GrasslandProps"),
+	("GrasslandPropsRed", "RedFlowersProps"),
+	("GrasslandPropsWhite", "WhiteFlowersProps"),
+	("GrasslandPropsYellow", "YellowFlowersProps"),
+	("BushlandProps", "BushlandProps"),
+	("ForestProps", "ForestProps"),
+	("PineForestProps", "PineForestProps"),
+	("FertileForestProps", "FertileForestProps"),
+	("SeaPlantProps", "SeaPlantProps"),
+	("SeaGrassProps", "SeaGrassProps"),
+	("EmptySeaProps", "EmptySeaProps"),
+	("VolcanicProps", "VolcanicProps"),
+	("SandlandProps", "DesertProps"),
+	("SnowProps", "SnowProps"),
+	("SnowGrassGenerator", "SnowGrassProps"),
+	("SnowForestGenerator", "SnowForestProps"),
+	("HillsProps", "GrasslandProps"),
+	("HillsForestProps", "BushlandProps"),
+	("MountainSnowProps", "SnowProps"),
+]
+
+def expand_prop_variations(prop_names):
+	result = []
+	for prop_name in prop_names:
+		for variation in range(named_prop(prop_name)["Variations"]):
+			result.append(prop_name + variation_helper[variation])
+	return result
+
+def emit_static_proplist(list_name, prop_names):
+	objects_array.append({
+		"Class": "StaticPropList",
+		"Name": list_name,
+		"Array": [{
+			"Props": expand_prop_variations(prop_names),
+			"Weight": 1,
+		}],
+	})
+
+def cluster_settings_for(prop_names, chance):
+	if any(p in {"Palm", "Cactus"} for p in prop_names):
+		return DESERT_CLUSTER
+	if chance <= 0.002:
+		return SPARSE_CLUSTER
+	return FOREST_CLUSTER
+
+def is_cluster_layer(prop_names, chance):
+	if any(p in TREE_PROPS for p in prop_names):
+		return True
+	if any(p in {"VolcanicRock", "Cactus", "Palm"} for p in prop_names):
+		return True
+	if len(prop_names) > 1 and any(p in {"Shrub", "BigBush"} for p in prop_names) and chance <= 0.02:
+		return True
+	return False
+
+def layers_from_legacy_proplist(generator_name, legacy_plist):
+	layers = []
+	for index, entry in enumerate(legacy_plist["Array"]):
+		if "Attaches" in entry:
+			continue
+		prop_names = entry.get("Props", [])
+		if not prop_names:
+			continue
+		chance = entry["Chance"]
+		list_name = f"{generator_name}_L{index}_{prop_names[0]}"
+		emit_static_proplist(list_name, prop_names)
+		if is_cluster_layer(prop_names, chance):
+			layers.append({
+				"Mode": "Cluster",
+				"PropList": list_name,
+				"Cluster": cluster_settings_for(prop_names, chance),
+			})
+		else:
+			layers.append({
+				"Mode": "Scatter",
+				"PropList": list_name,
+				"Density": round(chance * DENSITY_MUL, 6),
+			})
+	return layers
+
+proplist_by_name = {entry["Name"]: entry for entry in proplists}
+
+for generator_name, legacy_name in PROPS_GENERATOR_SOURCES:
+	legacy_plist = proplist_by_name[legacy_name]
+	layers = layers_from_legacy_proplist(generator_name, legacy_plist)
+	objects_array.append({
+		"Class": "PropsGenerator",
+		"Name": generator_name,
+		"Layers": layers,
+	})
 
 objects_array.append({
     "Class": "StaticPropList",

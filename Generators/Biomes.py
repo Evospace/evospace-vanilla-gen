@@ -271,27 +271,12 @@ generators.extend([
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
 	},
 	
-	# prairie
-	{
-		"Name":"PrairieDryProps",
-		"Class": "PropsGenerator",
-		"PropList": "PrairieDryPropList"
-	},{
-		"Name":"PrairieProps",
-		"Class": "PropsGenerator",
-		"PropList": "PrairiePropList"
-	},
-	
 	# jungle
 	{
 		"Class": "SimpleLayeringGenerator",
 		"Name": "DipteroLayering",
 		"Blocks": ["GrassSurface" + static_surface, "DirtSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
-	},{
-		"Name":"DipteroProps",
-		"Class": "PropsGenerator",
-		"PropList": "DipteroPropList"
 	},
 	
 	# snow
@@ -318,18 +303,6 @@ generators.extend([
 		"Name": "ClayLayering",
 		"Blocks": ["ClaySurface", "ClaySurface", "DarkStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 2, 6, 9, 12, 16, 19, 23, 30]
-	},{
-		"Name":"BogProps",
-		"Class": "PropsGenerator",
-		"PropList": "SwampProps"
-	},{
-		"Name":"BogForestProps",
-		"Class": "PropsGenerator",
-		"PropList": "SwampForestProps"
-	},{
-		"Name":"OreProps",
-		"Class": "PropsGenerator",
-		"PropList": "ClayBeachProps"
 	},
 	
 	# grass
@@ -338,38 +311,6 @@ generators.extend([
 		"Name": "JustGrassLayeringPine",
 		"Blocks": ["PineForestSurface" + static_surface, "DirtSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
-	},{
-		"Name":"GrasslandProps",
-		"Class":"PropsGenerator",
-		"PropList": "GrasslandProps"
-	},{
-		"Name":"GrasslandPropsRed",
-		"Class":"PropsGenerator",
-		"PropList": "RedFlowersProps"
-	},{
-		"Name":"GrasslandPropsWhite",
-		"Class":"PropsGenerator",
-		"PropList": "WhiteFlowersProps"
-	},{
-		"Name":"GrasslandPropsYellow",
-		"Class":"PropsGenerator",
-		"PropList": "YellowFlowersProps"
-	},{
-		"Name":"BushlandProps",
-		"Class":"PropsGenerator",
-		"PropList": "BushlandProps"
-	},{
-		"Name":"ForestProps",
-		"Class":"PropsGenerator",
-		"PropList": "ForestProps"
-	},{
-		"Name":"PineForestProps",
-		"Class":"PropsGenerator",
-		"PropList": "PineForestProps"
-	},{
-		"Name":"FertileForestProps",
-		"Class":"PropsGenerator",
-		"PropList":"FertileForestProps"
 	},
 	
 	# sea
@@ -393,18 +334,6 @@ generators.extend([
 		"Name": "SeaBottomLayeringClay",
 		"Blocks": ["ClaySurface" + static_surface, "LimestoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
 		"Starts": [0, 2, 9, 12, 16, 19, 23, 30]
-	},{
-		"Name": "SeaPlantProps",
-		"Class": "PropsGenerator",
-		"PropList": "SeaPlantProps"
-	},{
-		"Name": "SeaGrassProps",
-		"Class": "PropsGenerator",
-		"PropList": "SeaGrassProps"
-	},{
-		"Name": "EmptySeaProps",
-		"Class": "PropsGenerator",
-		"PropList": "EmptySeaProps"
 	},
 	
 	# volcanic
@@ -419,11 +348,6 @@ generators.extend([
 		"Name": "BrokenLandLayeringBasalt",
 		"Blocks": ["BasaltSurface" + static_surface, "LavaSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface],
 		"Starts": [0, 4, 9, 12, ]
-	},
-	{
-		"Name":"VolcanicProps",
-		"Class":"PropsGenerator",
-		"PropList": "VolcanicProps"
 	},
 	
 	# river
@@ -447,29 +371,7 @@ generators.extend([
 		"Blocks": ["DesertSandSurface" + static_surface, "SandstoneSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
 	},
-	{
-		"Name": "SandlandProps",
-		"Class": "PropsGenerator",
-		"PropList": "DesertProps"
-	},
 	
-	# snow 
-	{
-		"Name": "SnowProps",
-		"Class": "PropsGenerator",
-		"PropList": "SnowProps"
-	},
-	{
-		"Name": "SnowGrassGenerator",
-		"Class": "PropsGenerator",
-		"PropList": "SnowGrassProps"
-	},
-	{
-		"Name": "SnowForestGenerator",
-		"Class": "PropsGenerator",
-		"PropList": "SnowForestProps"
-	},
-
 	# hills / mountains
 	{
 		"Class": "SimpleLayeringGenerator",
@@ -500,21 +402,6 @@ generators.extend([
 		"Name": "MountainSnowLayering",
 		"Blocks": ["SnowSurface", "StoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 2, 5, 9, 12, 16, 19, 23]
-	},
-	{
-		"Name": "HillsProps",
-		"Class": "PropsGenerator",
-		"PropList": "GrasslandProps"
-	},
-	{
-		"Name": "HillsForestProps",
-		"Class": "PropsGenerator",
-		"PropList": "BushlandProps"
-	},
-	{
-		"Name": "MountainSnowProps",
-		"Class": "PropsGenerator",
-		"PropList": "SnowProps"
 	}
 ])
 
