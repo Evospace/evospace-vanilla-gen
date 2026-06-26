@@ -868,6 +868,16 @@ ore_props.append("OilCluster")
 
 objects_array = []
 
+# Small, dense, decorative foliage is streamed around the player (UGrassStreamingSubsystem)
+# instead of being instanced per-column. Tag by name; everything else stays column-instanced.
+streamed_prop_names = {
+	"Dandaleon", "Fern", "LongGrass", "YellowGrass", "DryGrass",
+	"TallGrass", "SeaGrass", "SeaPlant",
+}
+for prop in props:
+	if prop["Name"] in streamed_prop_names:
+		prop["Streamed"] = True
+
 for prop in props:
 	image = "T_" + prop["Name"] if "Image" not in prop else prop["Image"]
 
@@ -919,6 +929,8 @@ for prop in props:
 			temp_prop["TopHeightMax"] = prop["TopHeightMax"]
 		if "HighDetailShadow" in prop:
 			temp_prop["HighDetailShadow"] = prop["HighDetailShadow"]
+		if "Streamed" in prop:
+			temp_prop["Streamed"] = prop["Streamed"]
 		objects_array.append(temp_prop)
 
 DENSITY_MUL = 0.6
