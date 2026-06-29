@@ -64,6 +64,7 @@ global_family.append({
         "ChildFrequency": mega_boime_size,
 	})
 	
+	# ENaturalBiome ordinals match legacy_mega_family_childs indices 0..9, then configurable adds:
 	#Sea = 0,
 	#Taiga = 1,
 	#Steppe = 2,
@@ -71,9 +72,12 @@ global_family.append({
 	#Grassland = 4,
 	#Desert = 5,
 	#Forest = 6,
-	#TropicalForest = 7,
+	#Swamp = 7,
 	#Volcano = 8,
-    #FertileForest = 9,
+	#FertileForest = 9,
+	#Hills = 10,
+	#Mountains = 11,
+	#Wasteland = 12,  # flat/concrete worlds only (not in mega family childs)
 
 # biome families
 families.extend([
