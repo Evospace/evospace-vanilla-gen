@@ -882,6 +882,37 @@ for ore in ore_types:
 	ore_props.append(ore["Name"]+"Cluster")
 ore_props.append("OilCluster")
 
+# Distance bands for surface ore deposits (blocks). Kept in sync with OreGenerator.cpp constants.
+ORE_R_START = 256
+ORE_R_SPAN = 3072
+
+ore_prop_tiers = [
+	{
+		"MinDist": 0,
+		"Weight": 1,
+		"FarWeight": 1,
+		"Props": ["ChalcopyriteCluster", "MalachiteCluster", "CoalCluster"],
+	},
+	{
+		"MinDist": ORE_R_START,
+		"Weight": 1,
+		"FarWeight": 2,
+		"Props": ["MagnetiteCluster", "PyriteCluster", "OilCluster", "CinnabarCluster"],
+	},
+	{
+		"MinDist": ORE_R_START + ORE_R_SPAN // 3,
+		"Weight": 1,
+		"FarWeight": 3,
+		"Props": ["BauxiteCluster", "RubyCluster"],
+	},
+	{
+		"MinDist": ORE_R_START + (ORE_R_SPAN * 2) // 3,
+		"Weight": 1,
+		"FarWeight": 4,
+		"Props": ["ThorianiteCluster", "PyroplatiteCluster"],
+	},
+]
+
 objects_array = []
 
 # Small, dense, decorative foliage is streamed around the player (UGrassStreamingSubsystem)
@@ -1090,10 +1121,7 @@ for generator_name, legacy_name in PROPS_GENERATOR_SOURCES:
 objects_array.append({
     "Class": "StaticPropList",
 	"Name": "OreProps",
-	"Array": [{
-		"Props": ore_props,
-		"Weight": 1
-	}]
+	"Array": ore_prop_tiers,
 })
 	
 data = {
