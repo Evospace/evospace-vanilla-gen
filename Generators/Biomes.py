@@ -25,7 +25,8 @@ legacy_mega_family_childs = [
 	"FertileForestBiomeFamily",
 ]
 
-# UWorldGeneratorConfigurable only: legacy set plus dedicated hills/mountains families.
+# UWorldGeneratorConfigurable only: legacy cellular set plus dedicated hills/mountains families.
+# Snow and MountainsBiomeFamily are excluded from cellular picking in C++ (height / regional mask).
 configurable_mega_family_childs = legacy_mega_family_childs + [
 	"HillsBiomeFamily",
 	"MountainsBiomeFamily",
@@ -496,9 +497,9 @@ add_height("FertileForestHeight",[{"Frequency": 0.009, "FractalOctaves": 2, "Min
 # Moderate rolling hills (gameplay_mountains_plan: foothill relief, rounded silhouettes).
 add_height("HillsHeight",        [{"Frequency": 0.010, "FractalOctaves": 4, "Min": -8,  "Max": 12},
                                   {"Frequency": 0.025, "FractalOctaves": 2, "Min": -4,  "Max": 8}])
-# Ridged + terraced mountain profile within the vertical budget (~60–80 blocks detail).
-add_height("MountainsHeight",    [{"Frequency": 0.006, "FractalOctaves": 5, "FractalType": "Ridged", "Min": -10, "Max": 40, "Power": 2},
-                                  {"Frequency": 0.015, "FractalOctaves": 3, "Min": -10,  "Max": 10, "Power": 1}])
+# Ridged foothill / mountain detail for MountainsBiomeFamily (configurable generator).
+add_height("MountainsHeight",    [{"Frequency": 0.006, "FractalOctaves": 5, "FractalType": "Ridged", "Min": -2, "Max": 18, "Power": 2},
+                                  {"Frequency": 0.015, "FractalOctaves": 3, "Min": -3,  "Max": 8, "Power": 1}])
 add_height("MoonCraterHeight",   [{"NoiseType": "Cellular", "FractalOctaves": 2, "Frequency": 0.035,
                                   "CellularReturnType": "Distance2Sub", "Min": -6, "Max": 2},
                                  {"Frequency": 0.01, "FractalOctaves": 3, "Min": -1, "Max": 1}])
