@@ -8,7 +8,8 @@ objects_array = [
 		"Class": "StaticPlanet",
 		"Name": "Temperate",
 		"DayLengthTicks": 144000,
-		"PhaseOffsetTicks": 0,
+		# Epoch shift so game tick 0 lands at 07:00 morning (7/24 * 144000). No per-save offset / time skip needed.
+		"PhaseOffsetTicks": 42000,
 		"DawnPhaseTicks": 24000,
 		"SolarNoonPhaseTicks": 72000,
 		"SunsetPhaseTicks": 120000,
