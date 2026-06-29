@@ -104,8 +104,8 @@ mapgen_objects = [
 		"Hardness": 2
 	},{
 		"Name": "DarkStone",
-		"Color": "#0c080c",
-		"Side": "#0c080c",
+		"Color": "#5a4550",
+		"Side": "#4a3840",
 		"Drops": "DarkStone",
 		"Hardness": 2
 	},{
