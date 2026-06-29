@@ -394,6 +394,7 @@ machines = [
 		"EndTier": 7,
 		"Image": "Conveyor",
 		"BlockLogic": "RailNodeBlockLogic",
+		"ItemLogic": "RailNodeBuilderItemLogic",
 		"Description": ["ElectricInput"],
 		"Category": "Network",
 	},{
