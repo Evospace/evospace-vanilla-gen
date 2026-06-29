@@ -56,6 +56,12 @@ global_family.append({
 		"Childs": configurable_mega_family_childs,
         "ChildFrequency": mega_boime_size,
 	})
+global_family.append({
+		"Name":"GlobalBiomeMegaFamilyMoon",
+		"Class":"GlobalBiomeFamily",
+		"Childs": ["MoonBiomeFamily"],
+        "ChildFrequency": mega_boime_size,
+	})
 	
 	#Sea = 0,
 	#Taiga = 1,
@@ -239,6 +245,18 @@ families.extend([
 		"WeatherWeights": [     22,               18,             16,         12,         10,      5,             7],
 	},
 	{
+		# Airless gray regolith: clear sky only, no weather drama.
+		"Name":"MoonBiomeFamily",
+		"Class":"BiomeFamily",
+		"Childs":
+		[
+			"MoonRegolithBiome",
+		],
+		"ChildFrequency": biome_family_size,
+		"Weather":        ["Clear"],
+		"WeatherWeights": [1],
+	},
+	{
 		# High mountains: cold, crisp air, sparse vegetation, snow caps at altitude.
 		"Name":"MountainsBiomeFamily",
 		"Class":"BiomeFamily",
@@ -402,6 +420,13 @@ generators.extend([
 		"Name": "MountainSnowLayering",
 		"Blocks": ["SnowSurface", "StoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 2, 5, 9, 12, 16, 19, 23]
+	},
+	{
+		"Class": "SimpleLayeringGenerator",
+		"Name": "RegolithLayering",
+		"Blocks": ["GravelSurface" + static_surface, "StoneSurface" + static_surface,
+		           "DarkStoneSurface" + static_surface, "StoneSurface" + static_surface],
+		"Starts": [0, 2, 8, 20]
 	}
 ])
 
@@ -474,6 +499,9 @@ add_height("HillsHeight",        [{"Frequency": 0.010, "FractalOctaves": 4, "Min
 # Ridged + terraced mountain profile within the vertical budget (~60–80 blocks detail).
 add_height("MountainsHeight",    [{"Frequency": 0.006, "FractalOctaves": 5, "FractalType": "Ridged", "Min": -10, "Max": 40, "Power": 2},
                                   {"Frequency": 0.015, "FractalOctaves": 3, "Min": -10,  "Max": 10, "Power": 1}])
+add_height("MoonCraterHeight",   [{"NoiseType": "Cellular", "FractalOctaves": 2, "Frequency": 0.035,
+                                  "CellularReturnType": "Distance2Sub", "Min": -6, "Max": 2},
+                                 {"Frequency": 0.01, "FractalOctaves": 3, "Min": -1, "Max": 1}])
 
 # noises + height generators load first (single-pass-safe ordering)
 generators = height_noises + height_gens + generators
@@ -694,6 +722,14 @@ biomes.extend([
 		"Layering":"SandDesertLayeringSand",
 		"Props":"SandlandProps"
 	},
+
+	# moon
+	{
+		"Class":"Biome",
+		"Name":"MoonRegolithBiome",
+		"Layering":"RegolithLayering",
+		"Color":[0.62, 0.62, 0.64]
+	},
 	
 	# river
 	{
@@ -735,6 +771,7 @@ biome_height = {
 	"YellowPlainsBiome":     "PlainHeight",
 	"DesertBiome":           "SandHeight",
 	"RiverBiome":            "PlainHeight",
+	"MoonRegolithBiome":     "MoonCraterHeight",
 }
 for b in biomes:
 	h = biome_height.get(b["Name"])
