@@ -14,6 +14,15 @@ objects_array = [
 		"SolarNoonPhaseTicks": 72000,
 		"SunsetPhaseTicks": 120000,
 	},
+	{
+		"Class": "StaticPlanet",
+		"Name": "Moon",
+		"DayLengthTicks": 708000,
+		"PhaseOffsetTicks": 0,
+		"DawnPhaseTicks": 118000,
+		"SolarNoonPhaseTicks": 354000,
+		"SunsetPhaseTicks": 590000,
+	},
 ]
 
 data = {"Objects": objects_array}
