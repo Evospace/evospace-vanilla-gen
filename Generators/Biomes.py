@@ -326,6 +326,19 @@ generators.extend([
 		"Name": "ClayLayering",
 		"Blocks": ["ClaySurface", "ClaySurface", "DarkStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
 		"Starts": [0, 2, 6, 9, 12, 16, 19, 23, 30]
+	},{
+		# Clay only fills the carved basins (the lowlands): where ClayBasinHeight
+		# drops below -2 the "Low" clay stack is used, otherwise the boggy grass
+		# swells. Threshold matches SwampHeight's basin carve so clay reads as wet
+		# bottoms instead of blanketing the whole clay sub-biome.
+		"Class": "LowlandLayeringGenerator",
+		"Name": "ClayLowlandLayering",
+		"Blocks": ["BogSurface", "DirtSurface", "StoneSurface", "StoneSurface", "DarkStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface"],
+		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30],
+		"LowBlocks": ["ClaySurface", "ClaySurface", "DarkStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "RedStoneSurface", "StoneSurface", "DarkStoneSurface"],
+		"LowStarts": [0, 2, 6, 9, 12, 16, 19, 23, 30],
+		"Height": "ClayBasinHeight",
+		"Below": -2.0,
 	},
 	
 	# grass
@@ -507,6 +520,14 @@ add_height("MountainsHeight",    [{"Frequency": 0.006, "FractalOctaves": 5, "Fra
 add_height("MoonCraterHeight",   [{"NoiseType": "Cellular", "FractalOctaves": 2, "Frequency": 0.035,
                                   "CellularReturnType": "Distance2Sub", "Min": -6, "Max": 2},
                                  {"Frequency": 0.01, "FractalOctaves": 3, "Min": -1, "Max": 1}])
+# Basin-only field for the clay biome's lowland layering. MUST mirror SwampHeight's
+# second (basin) layer exactly — same noise params AND SeedOffset — so the clay
+# patches line up with the actual carved basins of the clay terrain (ClayBiome
+# uses SwampHeight). The flat fbm layer of SwampHeight is intentionally omitted
+# here so only the real depressions read as "lowland" (not random fbm dips).
+add_height("ClayBasinHeight",    [{"NoiseType": "Cellular", "Frequency": 0.0035, "FractalOctaves": 1,
+                                   "CellularReturnType": "Distance2Cave", "CellularDistanceFunction": "Natural",
+                                   "CellularJitter": 0.55, "Min": 0, "Max": -7, "Power": 5, "SeedOffset": 4201}])
 
 # noises + height generators load first (single-pass-safe ordering)
 generators = height_noises + height_gens + generators
@@ -633,17 +654,17 @@ biomes.extend([
 		"Class":"Biome",
 		"Name":"MountainsStoneBiome",
 		"Layering":"MountainStoneLayering",
-		"Props":"EmptySeaProps"
+		"Props":"MountainProps"
 	},{
 		"Class":"Biome",
 		"Name":"MountainsDarkStoneBiome",
 		"Layering":"MountainDarkStoneLayering",
-		"Props":"EmptySeaProps"
+		"Props":"MountainDarkProps"
 	},{
 		"Class":"Biome",
 		"Name":"MountainsLayeredBiome",
 		"Layering":"MountainLayeredLayering",
-		"Props":"EmptySeaProps"
+		"Props":"MountainProps"
 	},{
 		"Class":"Biome",
 		"Name":"MountainsSnowBiome",
@@ -664,8 +685,8 @@ biomes.extend([
 	},{
 		"Class":"Biome",
 		"Name":"ClayBiome",
-		"Layering":"ClayLayering",
-		"Props":"OreProps"
+		"Layering":"ClayLowlandLayering",
+		"Props":"ClayProps"
 	},{
 		"Class":"Biome",
 		"Name":"BogForestBiome",
