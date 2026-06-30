@@ -843,6 +843,67 @@ proplists = [
 				"Chance": 0.01
 			}
 		]
+	},{
+		# Clay sub-biome cover. The clay itself now sits only in the carved basins
+		# (see ClayLowlandLayering); the swells are boggy grass. Reeds (Rogoz) are
+		# kept sparse so they read as the odd wet patch instead of carpeting the
+		# whole biome, which looked wrong on the clay flats.
+		"Name": "ClayProps",
+		"Array": [
+			{
+				"Props": ["YellowGrass"],
+				"Chance": 0.12
+			},{
+				"Props": ["LongGrass"],
+				"Chance": 0.2
+			},{
+				"Props": ["Rogoz"],
+				"Chance": 0.06
+			},{
+				"Props": ["SmallRock"],
+				"Chance": 0.02
+			}
+		]
+	},{
+		# High stone mountains: rounded boulders and a little hardy vegetation in
+		# the pockets. Sparse, but enough that bare stone slopes no longer feel
+		# empty. Greener/softer than the dark-stone peaks.
+		"Name": "MountainProps",
+		"Array": [
+			{
+				"Props": ["Rock"],
+				"Chance": 0.04
+			},{
+				"Props": ["SmallRock"],
+				"Chance": 0.08
+			},{
+				"Props": ["DryGrass"],
+				"Chance": 0.1
+			},{
+				"Props": ["Shrub"],
+				"Chance": 0.015
+			}
+		]
+	},{
+		# Dark-stone peaks: a deliberately different, barren-jagged look. Sharp
+		# CanyonRock spires dominate, dark volcanic rubble scattered between, and
+		# almost no vegetation — reads as harsher / higher than the stone slopes.
+		"Name": "MountainDarkProps",
+		"Array": [
+			{
+				"Props": ["CanyonRock"],
+				"Chance": 0.07
+			},{
+				"Props": ["VolcanicRock"],
+				"Chance": 0.025
+			},{
+				"Props": ["SmallVolcanicRock"],
+				"Chance": 0.05
+			},{
+				"Props": ["DryGrass"],
+				"Chance": 0.03
+			}
+		]
 	},
 	{	
 		"Name": "SnowGrassProps",
@@ -1033,6 +1094,9 @@ PROPS_GENERATOR_SOURCES = [
 	("BogProps", "SwampProps"),
 	("BogForestProps", "SwampForestProps"),
 	("OreProps", "ClayBeachProps"),
+	("ClayProps", "ClayProps"),
+	("MountainProps", "MountainProps"),
+	("MountainDarkProps", "MountainDarkProps"),
 	("GrasslandProps", "GrasslandProps"),
 	("GrasslandPropsRed", "RedFlowersProps"),
 	("GrasslandPropsWhite", "WhiteFlowersProps"),
