@@ -39,7 +39,7 @@ ore_types = [
 		# https://en.wikipedia.org/wiki/List_of_copper_ores
 		"Name": "Malachite",
 		"Processing":{
-			"OreWasher": "IronDust",
+			"OreWasher": "MalachiteDust",
 			"ChemicalBath": ["NitricAcid", "CopperDust", "SiliconOxide"],
 			"Separator": ["MalachiteDust", "IronDust"],
 			"Macerator": "MalachiteOreDust",
