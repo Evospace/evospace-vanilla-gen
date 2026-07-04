@@ -130,6 +130,10 @@ tools = [
 		"Name": "GroundLevelingTool",
 		"Label": "Ground Leveling Tool",
 		"ItemLogic": "/Game/Equipped/GroundLevelingToolBP.GroundLevelingToolBP_C",
+	},{
+		"Name": "Mop",
+		"Label": "Mop",
+		"ItemLogic": "/Game/Equipped/MopToolBP.MopToolBP_C",
 	}
 	#{
 	#	"Name": "BuildTool",
