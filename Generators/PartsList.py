@@ -134,6 +134,11 @@ tools = [
 		"Name": "Mop",
 		"Label": "Mop",
 		"ItemLogic": "/Game/Equipped/MopToolBP.MopToolBP_C",
+	},{
+		"Name": "GhostReplacerTool",
+		"Label": "Ghost Replacer Tool",
+		"ItemLogic": "GhostReplacerToolItemLogic",
+		"Image": "T_LinkTool",
 	}
 	#{
 	#	"Name": "BuildTool",
