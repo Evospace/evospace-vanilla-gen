@@ -537,7 +537,7 @@ for tool in tools:
 	item_name = tool["Name"]
 	item = { "Class": "StaticItem",
 		"Name": item_name,
-		"Image": "T_" + item_name,
+		"Image": tool["Image"] if "Image" in tool else "T_" + item_name,
 		"ItemLogic": tool["ItemLogic"],
 		"StackSize": 1,
 		"Label": [tool["Name"], "parts"],

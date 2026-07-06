@@ -413,6 +413,28 @@ objects_array.append({
 	"EquipmentItem": True,
 })
 
+# Ghost building: one universal placeholder block; the target machine is stored
+# per-instance in GhostBlockLogic. The item exists only because every block needs one
+# (naming, network signal fallback) — abstract, never obtainable.
+objects_array.append({
+	"Class": "StaticItem",
+	"Name": "Ghost",
+	"Image": "T_ConstructionBlueprint",
+	"StackSize": 1,
+	"Label": ["Ghost", "misc"],
+	"Type": "Abstract",
+	"Block": "Ghost",
+})
+objects_array.append({
+	"Class": "GhostStaticBlock",
+	"Name": "Ghost",
+	"Item": "Ghost",
+	# Breakable by hand (= cancel the ghost) but drops nothing: no Result, zero count.
+	"Minable": {
+		"Count": 0,
+	},
+})
+
 	
 data = {
 	"Objects": objects_array
