@@ -127,6 +127,12 @@ tools = [
 		"Label": "Rail Link Tool",
 		"ItemLogic": "/Game/Equipped/RailLinkToolBP.RailLinkToolBP_C",
 	},{
+		"Name": "Train",
+		"Label": "Train",
+		"ItemLogic": "TrainPlacerItemLogic",
+		# TODO: dedicated T_Train icon; SteamEngine is a placeholder
+		"Image": "T_SteamEngine",
+	},{
 		"Name": "GroundLevelingTool",
 		"Label": "Ground Leveling Tool",
 		"ItemLogic": "/Game/Equipped/GroundLevelingToolBP.GroundLevelingToolBP_C",
