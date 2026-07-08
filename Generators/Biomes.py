@@ -654,22 +654,27 @@ biomes.extend([
 		"Class":"Biome",
 		"Name":"MountainsStoneBiome",
 		"Layering":"MountainStoneLayering",
-		"Props":"MountainProps"
+		"Props":"MountainProps",
+		"SurfaceRockDetail": 2.5
 	},{
 		"Class":"Biome",
 		"Name":"MountainsDarkStoneBiome",
 		"Layering":"MountainDarkStoneLayering",
-		"Props":"MountainDarkProps"
+		"Props":"MountainDarkProps",
+		"SurfaceRockDetail": 2.5
 	},{
 		"Class":"Biome",
 		"Name":"MountainsLayeredBiome",
 		"Layering":"MountainLayeredLayering",
-		"Props":"MountainProps"
+		"Props":"MountainProps",
+		"SurfaceRockDetail": 2.5
 	},{
 		"Class":"Biome",
 		"Name":"MountainsSnowBiome",
 		"Layering":"MountainSnowLayering",
-		"Props":"MountainSnowProps"
+		"Props":"MountainSnowProps",
+		# snow cover softens the crags a bit
+		"SurfaceRockDetail": 1.5
 	},	{
 		"Class":"Biome",
 		"Name":"BogBiome",
