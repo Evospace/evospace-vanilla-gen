@@ -388,13 +388,15 @@ machines = [
 		"BlockLogic":"DroneStationBlockLogic",
 		"Description": ["ElectricInput", "PowerInput"],
 	},{
-		"Name": "RailNode",
+		"Name": "SteelRail",
+		"ExactName": True,
 		"Positions": [[0,0,0]],
 		"StartTier": 1,
-		"EndTier": 7,
+		"EndTier": 1,
 		"Image": "Conveyor",
+		"Actor": "Blocks/RailNodeBP.RailNodeBP_C",
 		"BlockLogic": "RailNodeBlockLogic",
-		"ItemLogic": "RailNodeBuilderItemLogic",
+		"ItemLogic": "SteelRailItemLogic",
 		"Description": ["ElectricInput"],
 		"Category": "Network",
 	},{

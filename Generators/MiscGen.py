@@ -395,6 +395,7 @@ for one in equipped:
 		"StackSize": 32,
 		"Label":[one["Name"],"misc"],
 		"EquipmentItem": True,
+		"Category": "Equipment",
 	}
 	if "ItemLogic" in one:
 		equ["ItemLogic"] = one["ItemLogic"]
@@ -411,6 +412,7 @@ objects_array.append({
 	"Type": "Abstract",
 	"ItemLogic": "/Game/Equipped/BuiltinFlashlightBP.BuiltinFlashlightBP_C",
 	"EquipmentItem": True,
+	"Category": "Equipment",
 })
 
 # Ghost building: one universal placeholder block; the target machine is stored
