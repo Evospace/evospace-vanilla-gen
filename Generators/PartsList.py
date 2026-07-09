@@ -123,10 +123,6 @@ tools = [
 		"Label": "Upgrade Tool",
         "ItemLogic": "/Game/Equipped/UpgradeToolBP.UpgradeToolBP_C",
 	},{
-		"Name": "RailLinkTool",
-		"Label": "Rail Link Tool",
-		"ItemLogic": "/Game/Equipped/RailLinkToolBP.RailLinkToolBP_C",
-	},{
 		"Name": "Train",
 		"Label": "Train",
 		"ItemLogic": "TrainPlacerItemLogic",
