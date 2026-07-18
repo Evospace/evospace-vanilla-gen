@@ -657,7 +657,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic":"DumpCrafterBlockLogic",
-		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicExports": ["Working", "InputInventory", "OutputInventory"],
 		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["FluidInput"],
 	},{
