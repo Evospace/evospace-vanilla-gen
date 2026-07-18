@@ -185,18 +185,21 @@ machines = [
 		"PathFinding": True,
         "NoActorRenderable": True,
         "ReplaceTag": "Conveyor",
+		"LogicImports": ["Working"],
 	},{
 		"Name": "Splitter",
 		"StartTier": 1,
 		"EndTier": 7,
 		"Description": ["Splitter"],
         "ReplaceTag": "Conveyor",
+		"LogicImports": ["Working"],
 	},{
 		"Name": "Sorter",
 		"StartTier": 2,
 		"EndTier": 7,
 		"Description": ["Splitter", "Sorter"],
         "ReplaceTag": "Conveyor",
+		"LogicImports": ["Working"],
 	},{
 		"Name": "Container",
 		"StartTier": 1,
@@ -306,6 +309,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"Selector": "Blocks/ArrowBP.ArrowBP_C",
+		"LogicImports": ["Working"],
 	},{
 		"Name": "RobotArm",
 		"StartTier": 1,
@@ -607,6 +611,8 @@ machines = [
 		"EndTier": 7,
 		"Description": ["KineticInput", "ItemOutput"],
         "ItemLogic": "/Game/Equipped/DrillBuildingTool.DrillBuildingTool_C",
+		"LogicExports": ["Working", "Progress", "OutputInventory"],
+		"LogicImports": ["Working"],
 	},{
 		"Name": "Assembler",
 		"StartTier": 3,
@@ -621,6 +627,8 @@ machines = [
 			[0,-2,0],[-1,-2,0],[-2,-2,0],
 			[0,-2,1],[-1,-2,1],[-2,-2,1],
 		],
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["ElectricInput", "PowerInput"],
 	},{
 		"Name": "Constructor",
@@ -957,9 +965,11 @@ machines = [
 			[0,-1,3],[-1,-1,3],[-2,-1,3],[-3,-1,3],[-4,-1,3],
 		],
 		"StartTier": 4,
-		"EndTier": 7,	
+		"EndTier": 7,
 		"Description": ["KineticInput", "FluidOutput"],
 		"ItemLogic": "/Game/Equipped/PumpjackBuildingTool.PumpjackBuildingTool_C",
+		"LogicExports": ["Working", "Progress", "OutputInventory"],
+		"LogicImports": ["Working"],
 	},{
 		"Name": "Pumpjack_leg",
 		"ExactName": True,
@@ -985,6 +995,8 @@ machines = [
 		"StartTier": 4,
 		"EndTier": 4,
 		"Description": ["KineticInput", "FluidOutput"],
+		"LogicExports": ["Working", "Progress", "OutputInventory"],
+		"LogicImports": ["Working"],
 	},{
 		"Name": "IndustrialSmelter",
 		"StartTier": 4,
