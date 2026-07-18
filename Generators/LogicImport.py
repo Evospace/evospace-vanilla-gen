@@ -5,7 +5,7 @@ logic_imports = [
         "Name": "Working",
         "UseSignal": True,
         "Signal": "W",
-        "Enabled": True,
+        "Enabled": False,
         "Label": ["Working", "logic_import"],
         "Tooltip": ["WorkingTooltip", "logic_import"]
     },
