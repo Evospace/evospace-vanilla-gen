@@ -349,7 +349,7 @@ for machine in machines:
 							"Count": 1
 						},
 						{
-							"Name": circuits[tier],
+							"Name": circuits[min(tier, 4)],
 							"Count": 1
 						}
 					]
