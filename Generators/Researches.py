@@ -751,7 +751,7 @@ append_levels({
 	"Unlocks": [[assembler_r_dict, "Circuit2"]],
 	"Levels": [1,1],
 	"MainResearch": True,
-	"CostMul": 1.5,
+	"CostExact": 8000,
 })
 append_levels({
 	"Class": research_recipe,
@@ -1431,7 +1431,7 @@ append_levels({
 	"Name": "KrollProcess",
 	"Label": ["KrollProcess", "researches"],
 	"RequiredResearch": ["IndustrialSmelting", "NitricAcid"],
-	"Unlocks": [["IndustrialSmelter"+r_dict,"SpongeToPlate"],["IndustrialChemReactor" + r_dict, "TitaniumSponge"],["IndustrialChemReactor" + r_dict, "TitaniumTetrachloride"]],
+	"Unlocks": [["IndustrialSmelter"+r_dict,"SpongeToPlate"],["IndustrialChemReactor" + r_dict, "TitaniumSponge"],["IndustrialChemReactor" + r_dict, "TitaniumTetrachloride"],["Mixer" + r_dict, "PreparedTitaniumOxideCraft"]],
 	"Levels": [5,5],
 	"MainResearch": True,
 	"CostMul": 0.5,
@@ -1442,7 +1442,7 @@ append_levels({
 	"Name": "TitaniumProduction",
 	"Label": ["TitaniumProduction", "researches"],
 	"RequiredResearch": ["KrollProcess"],
-	"Unlocks": get_parts_unlocks(tier_material[5]) + [["Mixer" + r_dict, "PreparedTitaniumOxideCraft"]],
+	"Unlocks": get_parts_unlocks(tier_material[5]),
 	"Levels": [5,5],
 	"MainResearch": True,
 })
