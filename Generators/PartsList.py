@@ -141,6 +141,12 @@ tools = [
 		"Label": "Ghost Replacer Tool",
 		"ItemLogic": "GhostReplacerToolItemLogic",
 		"Image": "T_LinkTool",
+	},{
+		"Name": "OffroadVehicle",
+		"Label": "Offroad Vehicle",
+		"ItemLogic": "VehicleItemLogic",
+		# TODO: dedicated T_OffroadVehicle icon; SteamEngine is a placeholder
+		"Image": "T_SteamEngine",
 	}
 	#{
 	#	"Name": "BuildTool",

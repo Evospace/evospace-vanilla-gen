@@ -396,6 +396,47 @@ recipes_hand.append({
 	"Ticks" : 400
 })
 
+recipes_hand.append({
+	"Name": "OffroadVehicle",
+	"Input":{
+		"Items":[
+			{
+				"Name": "SteelPlate",
+				"Count": 40
+			},
+			{
+				"Name": "SteelParts",
+				"Count": 60
+			},
+			{
+				"Name": "SteelPipe",
+				"Count": 20
+			},
+			{
+				"Name": "SteelElectricEngine",
+				"Count": 4
+			},
+			{
+				"Name": "BasicFrame",
+				"Count": 8
+			},
+			{
+				"Name": "Circuit",
+				"Count": 20
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "OffroadVehicle",
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 600
+})
+
 for r in recipes_hand:
 	r["Locked"] = True
 
