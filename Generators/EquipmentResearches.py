@@ -44,9 +44,20 @@ def append_equipment(xy, append_levels, researches):
 		"Label": ["Jetpack", "misc"],
 		"RequiredResearch": ["AdvancedCircuit", "Steampack", "ElectricEngine1"],
 		"Unlocks": [["Hand" + r_dict, "Jetpack"]],
-		
-		
+
+
 		"Levels": [2,2],
+	})
+	append_levels({
+		"Class": research_recipe,
+		"Name": "OffroadVehicle",
+		"Label": ["OffroadVehicle", "misc"],
+		"RequiredResearch": ["SteelProduction", "ElectricEngine1"],
+		"Unlocks": [["Hand" + r_dict, "OffroadVehicle"]],
+
+
+		"Levels": [2,2],
+		"CostMul": 2.5,
 	})
 	append_levels({
 		"Class": research_recipe,
