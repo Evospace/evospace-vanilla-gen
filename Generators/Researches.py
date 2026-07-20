@@ -4,145 +4,10 @@ import copy
 from NuclearResearches import *
 from EquipmentResearches import *
 from PartsResearchHelper import *
-import re
+
+from MachinesGen import machine_recipes_data
 
 researches = []
-
-# Mapping system for item patterns to research dependencies
-# Maps item name patterns to tier research names
-item_to_research_mapping = {
-	# Metal parts by tier
-	"CopperParts": "Metalwork",
-	"SteelParts": "SteelProduction",
-	"AluminiumParts": "AluminiumProduction",
-	"StainlessSteelParts": "StainlessSteelProduction",
-	"TitaniumParts": "TitaniumProduction",
-	"CompositeParts": "CompositePlate",
-	"NeutroniumParts": "NeutroniumProduction",
-
-	"CopperIngot": "Metalwork",
-	"SteelIngot": "SteelProduction",
-	"AluminiumIngot": "AluminiumProduction",
-	"StainlessSteelIngot": "StainlessSteelProduction",
-	"TitaniumIngot": "TitaniumProduction",
-	"CompositeIngot": "CompositePlate",
-	"NeutroniumIngot": "NeutroniumProduction",
-	
-	# Frames by tier
-	"BasicFrame": "BasicFrame",
-	"ReinforcedFrame": "ReinforcedFrame",
-	"ModularFrame": "ModularFrame",
-	
-	# Coils by tier
-	"BasicCoil": "BasicCoil",
-	"AdvancedCoil": "AdvancedCoil",
-	"PowerCoil": "PowerCoil",
-}
-
-# Helper function to extract tier from item name based on tier_material
-def get_item_tier(item_name):
-	"""Extract tier from item name based on tier_material prefixes"""
-	for i in range(len(tier_material)):
-		if item_name.startswith(tier_material[i]):
-			return i
-	return None
-
-# Helper function to check if item matches a pattern and get required research
-def get_research_for_item(item_name):
-	"""Get required research for an item based on mapping or tier detection"""
-	# Check direct mapping first
-	if item_name in item_to_research_mapping:
-		return item_to_research_mapping[item_name]
-	
-	# Check for frames pattern (specific frame names)
-	frame_mapping = {
-		"BasicFrame": "SteelProduction",
-		"ReinforcedFrame": "AluminiumProduction",
-		"ModularFrame": "StainlessSteelProduction",
-	}
-	if item_name in frame_mapping:
-		return frame_mapping[item_name]
-	
-	# Check for coils pattern (specific coil names)
-	coil_mapping = {
-		"BasicCoil": "SteelProduction",
-		"AdvancedCoil": "AluminiumProduction",
-		"PowerCoil": "StainlessSteelProduction",
-	}
-	if item_name in coil_mapping:
-		return coil_mapping[item_name]
-	
-	return None
-
-# Helper function to extract items from recipe Input/Output
-def extract_items_from_recipe(recipe):
-	"""Extract all item names from recipe Input and Output"""
-	items = []
-	
-	if isinstance(recipe, dict):
-		# Check Input
-		if "Input" in recipe and isinstance(recipe["Input"], dict):
-			if "Items" in recipe["Input"]:
-				for item in recipe["Input"]["Items"]:
-					if isinstance(item, dict) and "Name" in item:
-						items.append(item["Name"])
-		
-		# Check Output
-		if "Output" in recipe and isinstance(recipe["Output"], dict):
-			if "Items" in recipe["Output"]:
-				for item in recipe["Output"]["Items"]:
-					if isinstance(item, dict) and "Name" in item:
-						items.append(item["Name"])
-	
-	return items
-
-# Helper function to find required researches from recipe items
-def find_required_researches_from_items(items):
-	"""Find required researches based on items in recipe"""
-	required_researches = set()
-	
-	for item_name in items:
-		research = get_research_for_item(item_name)
-		if research:
-			required_researches.add(research)
-	
-	return list(required_researches)
-
-# Global registry for machine recipes (loaded from MachinesGen.py)
-# Try to import machine recipes data from MachinesGen
-try:
-	from MachinesGen import machine_recipes_data
-	machine_recipes_registry = machine_recipes_data
-except ImportError:
-	# If MachinesGen hasn't been imported yet, use empty dict
-	machine_recipes_registry = {}
-
-def register_machine_recipe(recipe_name, recipe_dict):
-	"""Register a machine recipe for later lookup (backward compatibility)"""
-	machine_recipes_registry[recipe_name] = recipe_dict
-
-def get_recipes_for_research(research, tier=None):
-	"""Get all recipes that are unlocked by this research"""
-	recipes = []
-	
-	if "Unlocks" in research:
-		for unlock in research["Unlocks"]:
-			if isinstance(unlock, list) and len(unlock) >= 2:
-				recipe_dict_name = unlock[0]
-				recipe_name = unlock[1]
-				
-				# Replace %Material% placeholder if tier is provided
-				if tier is not None:
-					recipe_name = recipe_name.replace("%Material%", tier_material[tier])
-				
-				# Try to find recipe in registry
-				recipe_key = recipe_dict_name + ":" + recipe_name
-				if recipe_key in machine_recipes_registry:
-					recipes.append(machine_recipes_registry[recipe_key])
-				elif recipe_name in machine_recipes_registry:
-					recipes.append(machine_recipes_registry[recipe_name])
-	
-	return recipes
 
 def append_levels(research_base):
 	mini, maxi = 0, 1
@@ -162,40 +27,6 @@ def append_levels(research_base):
 				"Name": research["Name"] + str(this_level),
 				"RequiredResearch": [research_base["Name"] + str(this_level - 1)] if i != mini + 1 else [research_base["Name"]],
 			})
-			
-			# Check for items in recipe Input/Output to determine dependencies
-			recipe_items = []
-			
-			# Extract items from research recipe Input/Output if present
-			if "Input" in research:
-				recipe_items.extend(extract_items_from_recipe({"Input": research["Input"]}))
-			if "Output" in research:
-				recipe_items.extend(extract_items_from_recipe({"Output": research["Output"]}))
-			
-			# Get machine recipes unlocked by this research
-			machine_recipes = get_recipes_for_research(research, tier=i)
-			for recipe in machine_recipes:
-				recipe_items.extend(extract_items_from_recipe(recipe))
-			
-			# Extract items from Unlocks field (check recipe names or item names)
-			if "Unlocks" in research:
-				for unlock in research["Unlocks"]:
-					if isinstance(unlock, list) and len(unlock) >= 2:
-						# unlock[1] might be a recipe name or item name
-						recipe_name = unlock[1].replace("%Material%", tier_material[i])
-						# Check if it's an item that matches our patterns
-						research_dep = get_research_for_item(recipe_name)
-						if research_dep:
-							recipe_items.append(recipe_name)
-			
-			# Find required researches based on items found
-			required_researches_from_items = find_required_researches_from_items(recipe_items)
-			
-			# Add dependencies from items if found, otherwise fall back to tier-based dependency
-			if required_researches_from_items:
-				for req_research in required_researches_from_items:
-					if req_research not in research["RequiredResearch"]:
-						research["RequiredResearch"].append(req_research)
 
 		if "RequiredResearchArr" in research and len(research["RequiredResearchArr"]) > this_level:
 			research["RequiredResearch"].extend(research["RequiredResearchArr"][this_level])
@@ -1795,6 +1626,68 @@ append_levels({
 	"Levels": [2,7]
 })
 	
+def recipe_io_items(recipe, key):
+	block = recipe.get(key) if isinstance(recipe, dict) else None
+	if not isinstance(block, dict):
+		return []
+	return [item["Name"] for item in block.get("Items", []) if isinstance(item, dict) and "Name" in item]
+
+def unlocked_recipe(unlock):
+	if isinstance(unlock, list) and len(unlock) >= 2:
+		return machine_recipes_data.get(unlock[0] + ":" + unlock[1])
+	return None
+
+def add_ingredient_required_research(research_entries):
+	unlocked_by = {}
+	for research in research_entries:
+		name = research.get("Name")
+		if not name:
+			continue
+		for unlock in research.get("Unlocks", []):
+			if not (isinstance(unlock, list) and len(unlock) >= 2):
+				continue
+			recipe = unlocked_recipe(unlock)
+			outputs = recipe_io_items(recipe, "Output") if recipe else [unlock[1]]
+			for item in outputs:
+				unlocked_by.setdefault(item, name)
+
+	graph = {}
+	for research in research_entries:
+		name = research.get("Name")
+		if name:
+			graph[name] = list(research.get("RequiredResearch", []))
+
+	def depends_on(start, target):
+		stack = [start]
+		seen = set()
+		while stack:
+			node = stack.pop()
+			if node == target:
+				return True
+			if node in seen:
+				continue
+			seen.add(node)
+			stack.extend(graph.get(node, []))
+		return False
+
+	for research in research_entries:
+		name = research.get("Name")
+		if not name:
+			continue
+		required = research.setdefault("RequiredResearch", [])
+		for unlock in research.get("Unlocks", []):
+			recipe = unlocked_recipe(unlock)
+			if not recipe:
+				continue
+			for item in recipe_io_items(recipe, "Input"):
+				dep = unlocked_by.get(item)
+				if not dep or dep == name or dep in required:
+					continue
+				if depends_on(dep, name):
+					continue
+				required.append(dep)
+				graph[name].append(dep)
+
 def build_research_graph(research_entries):
 	research_map = {}
 	for research in research_entries:
@@ -1861,6 +1754,7 @@ def remove_redundant_required_research(research_entries):
 		else:
 			research["RequiredResearch"] = unique_required
 
+add_ingredient_required_research(researches)
 remove_redundant_required_research(researches)
 
 data = {
