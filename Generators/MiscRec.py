@@ -1698,7 +1698,6 @@ recipes_pyro.append({
 	"Output": items([
 		["Coke", 1],
 		["RawOil", 150],
-		["ProducerGas", 150],
 	]),
 	"Ticks" : 400,
 	"Tier": 3,
@@ -1710,7 +1709,6 @@ recipes_pyro.append({
 	"Output": items([
 		["Coke", 1],
 		["RawOil", 70],
-		["ProducerGas", 200],
 	]),
 	"Ticks" : 400,
 	"Tier": 3,
