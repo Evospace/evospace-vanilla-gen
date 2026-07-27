@@ -804,11 +804,11 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "SulfuricAcid",
 	"Label": ["SulfuricAcidSynthesis", "researches"],
-	"RequiredResearch": ["Sulfur", "Catalyst"],
+	"RequiredResearch": ["Catalyst"],
 	"Levels": [4,4],
 	"Unlocks": [["IndustrialChemReactor" + r_dict, "SulfuricAcid"]],
 	"MainResearch": True,
-	"CostMul": 0.75,
+	"CostMul": 0.4,
 })
 append_levels({
 	"Class": research_recipe,
@@ -818,6 +818,7 @@ append_levels({
 	"Levels": [4,4],
 	"Unlocks": [[assembler_r_dict, "Battery"],["Hand" + r_dict, "Battery"]],
 	"MainResearch": True,
+	"CostMul": 0.45,
 })
 append_levels({
 	"Class": research_recipe,
@@ -1236,6 +1237,7 @@ append_levels({
 	"Levels": [3,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%BatteryBox"] ],
 	"MainResearch": True,
+	"CostMuls": [5, 1, 1, 1, 1],
 })
 append_levels({
 	"Class": research_recipe,
