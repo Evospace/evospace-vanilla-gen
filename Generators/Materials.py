@@ -45,7 +45,7 @@ def named_material(name):
 	
 	raise Exception(f"{name} is not a material")
 	
-tiered_parts_list_no_dust = ["Plate", "Block", "Parts", "SolarCell"]
+tiered_parts_list_no_dust = ["Plate", "Block", "Parts", "SolarCell", "Alternator"]
 tiered_parts_list = tiered_parts_list_no_dust + ["Dust"]
 
 materials = [

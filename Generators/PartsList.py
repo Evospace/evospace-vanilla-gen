@@ -17,6 +17,12 @@ parts = [
 		"Mesh": "/Game/Models/ingot",
 		"Materials": ["", "/Game/CoreContent/solar"]
 	},{
+		"Label": "Alternator",
+		"Name": "Alternator",
+		"StackSize": 16,
+		"Mesh":"/Game/Models/PartsCrate",
+		"Materials":["/Game/Materials/Copper","/Game/Materials/%Material%"],
+	},{
 		"Label": "Sheet",
 		"Name": "Sheet",
 		"StackSize": 128

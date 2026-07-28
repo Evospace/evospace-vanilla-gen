@@ -957,8 +957,8 @@ machines = [
 	{
 		"Name": "WindTurbine",
 		"Positions": [
-			[0,0,0],[0,0,1],[0,0,2],[0,0,3],
-			[0,0,4],[0,0,5],[0,0,6],[0,0,7],
+			[0,0,0],[0,0,1],[0,0,2],[0,0,3],[0,0,4],
+			[0,0,5],[0,0,6],[0,0,7],[0,0,8],[0,0,9],
 		],
 		"StartTier": 2,
 		"EndTier": 7,
@@ -966,11 +966,12 @@ machines = [
 		"NoActorRenderable": True,
 		"CoverParts": [
 			{"Cover": "WindTurbineMast"},
-			{"Cover": "WindTurbineRotor", "Offset": [0,0,7]},
+			{"Cover": "WindTurbineRotor", "Offset": [0,0,10]},
 		],
 		"LogicExports": CRAFTING_LOGIC_EXPORTS,
 		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["ElectricOutput", "PowerOutput"],
+        "Selector": "Blocks/WindTurbineBP.WindTurbineBP_C",
 	},
 	{
 		"Name": "Pumpjack",

@@ -621,7 +621,7 @@ for machine in machines:
 				"Input": items([
 					[plate(), 8],
 					frame_pair(4),
-					[part_low(), 4 + parts_ramp(level, 2)],
+					[tiered("Alternator"), 1],
 					[cables[tier], 4]
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),

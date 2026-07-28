@@ -115,7 +115,38 @@ for material in materials:
 				"Ticks" : 80,
 				"Tier": material_tier
 			})
-	
+
+	if "Alternator" in material["Items"] and material_tier > 0:
+		generate_part("Alternator", material)
+
+		machine_tier = material_tier + 1
+		if material_tier == 1:
+			recipes_hand.append({
+				"Name": m_name + "Alternator",
+				"Input": items([
+					["CopperWire", 24],
+					[m_name + "Parts", 4],
+					[tier_material[machine_tier] + "ElectricEngine", 1],
+					[circuits[machine_tier], 1]
+				]),
+				"Output": one_item(m_name + "Alternator"),
+				"Ticks" : 120,
+				"Tier": machine_tier
+			})
+		else:
+			recipes_hand.append({
+				"Name": m_name + "Alternator",
+				"Input": items([
+					[tier_material[material_tier] + "Alternator", 4],
+					["CopperWire", 24],
+					[tier_material[machine_tier] + "ElectricEngine", 1],
+					[circuits[machine_tier], 1]
+				]),
+				"Output": one_item(m_name + "Alternator"),
+				"Ticks" : 120,
+				"Tier": machine_tier
+			})
+
 	if "Foil" in material["Items"]:
 		generate_part("Foil", material)
 		recipes_assembler.append({

@@ -1145,6 +1145,15 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "WindTurbine",
+	"Label": ["WindTurbine", "machines"],
+	"RequiredResearch": ["ElectricEngine"],
+	"Levels": [2,7],
+	"Unlocks": [["Hand" + r_dict, "%Material%WindTurbine"], ["Hand" + r_dict, "%Material%Alternator"]],
+	"CostMul": 2,
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "Generator",
 	"Label": ["Generator", "machines"],
 	"RequiredResearch": ["ElectricEngine1"],

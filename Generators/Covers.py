@@ -320,7 +320,7 @@ for mat, num in zip(paint_metals, range(1,7+1)):
 	})
     covers.append({
 		"Name": mat+"WindTurbineMast",
-		"Mesh": "/Game/Covers/WindTurbineMast",
+		"Mesh": "/Game/CoreContent/WindTurbineMast",
         "Materials": [tier_materials[num]],
         "NoCollision": True
 	})
