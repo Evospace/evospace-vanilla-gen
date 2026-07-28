@@ -50,6 +50,7 @@ MACHINE_ENERGY = {
 	"Smelter": {"consumption": 20},
 	"SmallSolarPanel": {"production": 50},
 	"SolarPanel": {"production": 500},
+	"WindTurbine": {"production": 300},
 	"SteamEngine": {"consumption": BOILER_PER_TICK, "production": BOILER_PER_TICK},
 	"SteamTurbine": {"consumption": BOILER_PER_TICK * 5 * 2, "production": BOILER_PER_TICK * 5 * 2},
 	"StirlingEngine": {"consumption": 50, "production": 50},
@@ -295,6 +296,11 @@ for machine in machines:
 
 		if "BlockLogic" in machine:
 			block["BlockLogic"] = machine["BlockLogic"]
+
+		if "CoverParts" in machine:
+			block["CoverParts"] = [
+				dict(part, Cover=tier_material[tier] + part["Cover"]) for part in machine["CoverParts"]
+			]
 
 		if "NoActorRenderable" not in machine:
 			block["Actor"] = machine.get("Actor", "Blocks/" + machine["Name"] + "BP." + machine["Name"] + "BP_C")
@@ -609,6 +615,19 @@ for machine in machines:
 				"Ticks" : 20
 			})
 			
+		if machine["Name"] == "WindTurbine":
+			append_recipe({
+				"Name": tier_material[tier] + machine["Name"],
+				"Input": items([
+					[plate(), 8],
+					frame_pair(4),
+					[part_low(), 4 + parts_ramp(level, 2)],
+					[cables[tier], 4]
+				]),
+				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Ticks" : 20
+			})
+
 		if machine["Name"] == "StirlingEngine":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],

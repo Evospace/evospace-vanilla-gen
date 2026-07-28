@@ -287,6 +287,50 @@ for mat, num in zip(paint_metals, range(1,7+1)):
 		"Mesh": "/Game/Models/ElectricEngine",
         "Materials": ["/Game/Materials/ElectricEngineMaterial"]
 	})
+
+# Animated machine parts: one instanced mesh per moving piece, rotation lives in the material (WPO).
+# Mesh paths are placeholders until the real assets are hooked up.
+for mat, num in zip(paint_metals, range(1,7+1)):
+    covers.append({
+		"Name": mat+"SolarPanelBase",
+		"Mesh": "/Game/CoreContent/SolarBase",
+        "Materials": [tier_materials[num]],
+        "NoCollision": True
+	})
+    covers.append({
+		"Name": mat+"SolarPanelPillar",
+		"Mesh": "/Game/CoreContent/solar_big",
+        "Materials": ["/Game/Materials/SolarPillarTracking"],
+        "NoCollision": True,
+        "WorldPositionOffsetDisableDistance": 20000
+	})
+    covers.append({
+		"Name": mat+"SolarPanelCell",
+		"Mesh": "/Game/CoreContent/SolarPlate",
+        "Materials": ["/Game/Materials/SolarCellTracking", tier_materials[num]],
+        "NoCollision": True,
+        "WorldPositionOffsetDisableDistance": 20000
+	})
+    covers.append({
+		"Name": mat+"SmallSolarPanelCell",
+		"Mesh": "/Game/CoreContent/solar_mini",
+        "Materials": ["/Game/Materials/SolarCellTracking", tier_materials[num]],
+        "NoCollision": True,
+        "WorldPositionOffsetDisableDistance": 20000
+	})
+    covers.append({
+		"Name": mat+"WindTurbineMast",
+		"Mesh": "/Game/Covers/PipeCenter",
+        "Materials": [tier_materials[num]],
+        "NoCollision": True
+	})
+    covers.append({
+		"Name": mat+"WindTurbineRotor",
+		"Mesh": "/Game/CoreContent/GasTurbineRotor",
+        "Materials": ["/Game/Materials/WindTurbineRotorSpin", tier_materials[num]],
+        "NoCollision": True,
+        "WorldPositionOffsetDisableDistance": 40000
+	})
 	
 for cover in covers:
     if "HasItem" in cover:
@@ -318,6 +362,9 @@ for cover in covers:
 
     if "NoCollision" in cover:
         staticCover["NoCollision"] = cover["NoCollision"]
+
+    if "WorldPositionOffsetDisableDistance" in cover:
+        staticCover["WorldPositionOffsetDisableDistance"] = cover["WorldPositionOffsetDisableDistance"]
 
     objects_array.append(staticCover)
 

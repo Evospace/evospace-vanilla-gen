@@ -14,6 +14,9 @@ objects_array = [
 		"DawnPhaseTicks": 4000,
 		"SolarNoonPhaseTicks": 12000,
 		"SunsetPhaseTicks": 20000,
+		"LatitudeDeg": 52.0,
+		"DayOfYear": 172,
+		"OvercastInsolation01": 0.15,
 	},
 	{
 		"Class": "StaticPlanet",
@@ -23,6 +26,10 @@ objects_array = [
 		"DawnPhaseTicks": 118000,
 		"SolarNoonPhaseTicks": 354000,
 		"SunsetPhaseTicks": 590000,
+		"LatitudeDeg": 0.0,
+		"DayOfYear": 172,
+		# No atmosphere: cloud cover never dims the sun.
+		"OvercastInsolation01": 1.0,
 	},
 ]
 
