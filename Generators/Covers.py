@@ -320,13 +320,13 @@ for mat, num in zip(paint_metals, range(1,7+1)):
 	})
     covers.append({
 		"Name": mat+"WindTurbineMast",
-		"Mesh": "/Game/Covers/PipeCenter",
+		"Mesh": "/Game/Covers/WindTurbineMast",
         "Materials": [tier_materials[num]],
         "NoCollision": True
 	})
     covers.append({
 		"Name": mat+"WindTurbineRotor",
-		"Mesh": "/Game/CoreContent/GasTurbineRotor",
+		"Mesh": "/Game/CoreContent/WindTurbineRotor",
         "Materials": ["/Game/Materials/WindTurbineRotorSpin", tier_materials[num]],
         "NoCollision": True,
         "WorldPositionOffsetDisableDistance": 40000
