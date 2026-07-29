@@ -1,8 +1,9 @@
 from Common import *
 
-# Weather presets in Evospace content-generation style
+# Look presets in Evospace content-generation style. A look is how a biome shows one severity band
+# of the global weather cycle; wind and severity come from the simulation, not from here.
 # Fields map to UStaticWeather DeserializeJson:
-#   Cloudiness01, Precipitation01, Fog01, SecondFog01, Storminess01, WindSpeed
+#   Cloudiness01, Precipitation01, Fog01, SecondFog01, Storminess01
 
 weathers = [
 	{
@@ -12,9 +13,6 @@ weathers = [
 		"Fog01": 0.0,
 		"SecondFog01": 0.0,
 		"Storminess01": 0.0,
-		"WindSpeed": 2,
-		"MinDurationSeconds": 90,
-		"MaxDurationSeconds": 240,
 	},
 	{
 		"Name": "SlightlyCloudy",
@@ -23,9 +21,6 @@ weathers = [
 		"Fog01": 0.05,
 		"SecondFog01": 0.0,
 		"Storminess01": 0.0,
-		"WindSpeed": 5,
-		"MinDurationSeconds": 90,
-		"MaxDurationSeconds": 240,
 	},
 	{
 		"Name": "PartlyCloudy",
@@ -34,9 +29,6 @@ weathers = [
 		"Fog01": 0.05,
 		"SecondFog01": 0.0,
 		"Storminess01": 0.0,
-		"WindSpeed": 4,
-		"MinDurationSeconds": 90,
-		"MaxDurationSeconds": 240,
 	},
 	{
 		"Name": "Overcast",
@@ -45,9 +37,6 @@ weathers = [
 		"Fog01": 0.1,
 		"SecondFog01": 0.0,
 		"Storminess01": 0.0,
-		"WindSpeed": 2,
-		"MinDurationSeconds": 1,
-		"MaxDurationSeconds": 30,
 	},
 	{
 		"Name": "LightRain",
@@ -56,9 +45,7 @@ weathers = [
 		"Fog01": 0.15,
 		"SecondFog01": 0.0,
 		"Storminess01": 0.1,
-		"WindSpeed": 5,
-		"MinDurationSeconds": 1,
-		"MaxDurationSeconds": 30,
+		"Effect": "Rain",
 	},
 	{
 		"Name": "Rain",
@@ -67,9 +54,7 @@ weathers = [
 		"Fog01": 0.25,
 		"SecondFog01": 0.0,
 		"Storminess01": 0.3,
-		"WindSpeed": 6,
-		"MinDurationSeconds": 1,
-		"MaxDurationSeconds": 30,
+		"Effect": "Rain",
 	},
 	{
 		"Name": "Storm",
@@ -78,9 +63,7 @@ weathers = [
 		"Fog01": 0.35,
 		"SecondFog01": 0.0,
 		"Storminess01": 1.0,
-		"WindSpeed": 7,
-		"MinDurationSeconds": 1,
-		"MaxDurationSeconds": 30,
+		"Effect": "Rain",
 	},
 	{
 		"Name": "Foggy",
@@ -89,9 +72,6 @@ weathers = [
 		"Fog01": 0.8,
 		"SecondFog01": 0.6,
 		"Storminess01": 0.0,
-		"WindSpeed": 2,
-		"MinDurationSeconds": 1,
-		"MaxDurationSeconds": 30,
 	},
 	{
 		"Name": "ExtremeFoggy",
@@ -100,9 +80,6 @@ weathers = [
 		"Fog01": 1.0,
 		"SecondFog01": 0.85,
 		"Storminess01": 0.05,
-		"WindSpeed": 0.0,
-		"MinDurationSeconds": 1,
-		"MaxDurationSeconds": 30,
 	},
 	{
 		"Name": "DenseLowFog",
@@ -111,9 +88,6 @@ weathers = [
 		"Fog01": 0.15,
 		"SecondFog01": 1.0,
 		"Storminess01": 0.0,
-		"WindSpeed": 0.0,
-		"MinDurationSeconds": 1,
-		"MaxDurationSeconds": 30,
 	},
 	{
 		"Name": "LightLowFog",
@@ -122,14 +96,51 @@ weathers = [
 		"Fog01": 0.15,
 		"SecondFog01": 0.35,
 		"Storminess01": 0.0,
-		"WindSpeed": 0.1,
-		"MinDurationSeconds": 1,
-		"MaxDurationSeconds": 30,
+	},
+	{
+		"Name": "Snowfall",
+		"Cloudiness01": 0.9,
+		"Precipitation01": 0.0,
+		"EffectIntensity01": 0.35,
+		"Fog01": 0.2,
+		"SecondFog01": 0.1,
+		"Storminess01": 0.1,
+		"Effect": "Snow",
+	},
+	{
+		"Name": "Blizzard",
+		"Cloudiness01": 1.0,
+		"Precipitation01": 0.0,
+		"EffectIntensity01": 0.85,
+		"Fog01": 0.6,
+		"SecondFog01": 0.4,
+		"Storminess01": 0.9,
+		"Effect": "Snow",
+	},
+	{
+		"Name": "DustHaze",
+		"Cloudiness01": 0.3,
+		"Precipitation01": 0.0,
+		"EffectIntensity01": 0.3,
+		"Fog01": 0.5,
+		"SecondFog01": 0.2,
+		"Storminess01": 0.3,
+		"Effect": "Dust",
+	},
+	{
+		"Name": "SandStorm",
+		"Cloudiness01": 0.5,
+		"Precipitation01": 0.0,
+		"EffectIntensity01": 0.9,
+		"Fog01": 0.9,
+		"SecondFog01": 0.5,
+		"Storminess01": 0.9,
+		"Effect": "Dust",
 	}
 ]
 
 # Build objects in standard "Objects" array layout
-# Selection weights for random weather are defined per BiomeFamily (WeatherWeights), not on StaticWeather.
+# Which look a biome shows in each severity band is defined per biome family in Biomes.py.
 
 objects_array = []
 loc_entries = []
@@ -145,9 +156,8 @@ for w in weathers:
 		"Fog01": clamp(w["Fog01"], 0.0, 1.0),
 		"SecondFog01": clamp(w.get("SecondFog01", 0.0), 0.0, 1.0),
 		"Storminess01": clamp(w["Storminess01"], 0.0, 1.0),
-		"WindSpeed": max(0.0, w["WindSpeed"]),
-		"MinDurationSeconds": w["MinDurationSeconds"],
-		"MaxDurationSeconds": w["MaxDurationSeconds"],
+		"Effect": w.get("Effect", "None"),
+		"EffectIntensity01": clamp(w.get("EffectIntensity01", w["Precipitation01"]), 0.0, 1.0),
 	})
 
 data = {

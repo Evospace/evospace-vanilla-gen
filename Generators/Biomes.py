@@ -94,8 +94,7 @@ families.extend([
 			"PrairiePlainsBiome",
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "LightLowFog"],
-		"WeatherWeights": [     32,               24,             16,         10,          8,      3,             7],
+		"WeatherLooks": ["Clear", "SlightlyCloudy", "Overcast", "LightRain", "Rain"],
 	},	{
 		# Hot desert: overwhelming clear sky, some haze, essentially no rain.
 		# Rare sandstorm mapped to "Storm" for wind/visibility spike.
@@ -107,8 +106,7 @@ families.extend([
 			"DesertBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Storm"],
-		"WeatherWeights": [     62,               28,              6,       4],
+		"WeatherLooks": ["Clear", "Clear", "SlightlyCloudy", "DustHaze", "SandStorm"],
 	},	{
 		# Temperate mixed forest: balanced sky states, regular but
 		# moderate rain, morning/valley fog fairly common.
@@ -121,8 +119,7 @@ families.extend([
 			"BushlandBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "Foggy", "LightLowFog"],
-		"WeatherWeights": [     16,               16,             16,         14,         10,      6,      10,            12],
+		"WeatherLooks": ["Clear", "SlightlyCloudy", "Overcast", "LightRain", "Rain"],
 	},	{
 		# Taiga / cool conifer belt: fewer truly clear days, dominant
 		# overcast/low cloud, frequent drizzle, persistent valley fog.
@@ -134,8 +131,7 @@ families.extend([
 			"PineForestBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "Foggy", "LightLowFog"],
-		"WeatherWeights": [     10,               14,             16,         20,         12,      6,      12,            10],
+		"WeatherLooks": ["SlightlyCloudy", "LightLowFog", "Overcast", "LightRain", "Rain"],
 	},	{
 		# Coast / open sea: strong maritime character - persistent sea fog,
 		# drizzle, and proper storms with wind. Blue skies exist but are
@@ -150,8 +146,7 @@ families.extend([
             "GravelSeaBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "Storm", "Foggy"],
-		"WeatherWeights": [     10,               12,             14,         14,         12,     10,       6,      22],
+		"WeatherLooks": ["Clear", "SlightlyCloudy", "Overcast", "Rain", "Storm"],
 	},	{
 		# Volcanic zone: ash-loaded atmosphere, dominant overcast/haze,
 		# frequent violent thunderstorms triggered by heat, occasional
@@ -164,8 +159,7 @@ families.extend([
 			"BrokenLandBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Storm", "Foggy", "ExtremeFoggy"],
-		"WeatherWeights": [      6,               14,             12,         24,          8,      22,      10,              4],
+		"WeatherLooks": ["SlightlyCloudy", "PartlyCloudy", "Overcast", "Foggy", "Storm"],
 	},	{
 		# Wetland / swamp: saturated air, dominant overcast with steady
 		# rain and multiple fog layers at ground level. Fair weather is
@@ -180,8 +174,7 @@ families.extend([
 			"ClayBiome",
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather":        ["PartlyCloudy", "Overcast", "LightRain", "Rain", "Storm", "Foggy", "ExtremeFoggy", "DenseLowFog", "LightLowFog"],
-		"WeatherWeights": [             5,         12,          18,     15,       3,      18,              8,            10,            11],
+		"WeatherLooks": ["PartlyCloudy", "Overcast", "LightRain", "Rain", "Storm"],
 	},	{
 		# Open plains / grassland: similar to prairie but more humid -
 		# more showers, occasional thunderstorm, brief morning ground fog.
@@ -195,8 +188,7 @@ families.extend([
 			"YellowPlainsBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "Storm", "LightLowFog"],
-		"WeatherWeights": [     26,               20,             18,         12,         10,      5,       2,             7],
+		"WeatherLooks": ["Clear", "SlightlyCloudy", "Overcast", "LightRain", "Storm"],
 	},	{
 		# Cold / snow regions: crisp clear days alternate with low overcast.
 		# No rain (would look wrong on snow); instead frequent ice fog
@@ -210,8 +202,7 @@ families.extend([
 			"SnowForestBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Foggy", "ExtremeFoggy", "DenseLowFog", "LightLowFog"],
-		"WeatherWeights": [     18,               16,             14,         14,      12,              8,             8,            10],
+		"WeatherLooks": ["Clear", "SlightlyCloudy", "Overcast", "Snowfall", "Blizzard"],
 	},
 	{
 		# Humid productive / subtropical forest: very wet, frequent
@@ -224,8 +215,7 @@ families.extend([
 			"FertileForestBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather":        ["SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "Storm", "Foggy", "LightLowFog"],
-		"WeatherWeights": [               5,             10,         15,         20,     20,      10,      12,             8],
+		"WeatherLooks": ["SlightlyCloudy", "PartlyCloudy", "Overcast", "Rain", "Storm"],
 	},
 	{
 		# Flat concrete wasteland world: keep weather variants strictly clear-only
@@ -233,8 +223,7 @@ families.extend([
 		"Class":"BiomeFamily",
 		"Childs": [],
 		"ChildFrequency": biome_family_size,
-		"Weather": ["Clear"],
-		"WeatherWeights": [1],
+		"WeatherLooks": ["Clear", "Clear", "Clear", "Clear", "Clear"],
 	},
 	{
 		# Rolling hills: moderate relief, grass-covered slopes, occasional showers.
@@ -246,8 +235,7 @@ families.extend([
 			"HillsForestBiome",
 		],
 		"ChildFrequency": biome_family_size * 0.85,
-		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "LightRain", "Rain", "LightLowFog"],
-		"WeatherWeights": [     22,               18,             16,         12,         10,      5,             7],
+		"WeatherLooks": ["Clear", "SlightlyCloudy", "Overcast", "LightRain", "Rain"],
 	},
 	{
 		# Airless gray regolith: clear sky only, no weather drama.
@@ -258,8 +246,7 @@ families.extend([
 			"MoonRegolithBiome",
 		],
 		"ChildFrequency": biome_family_size,
-		"Weather":        ["Clear"],
-		"WeatherWeights": [1],
+		"WeatherLooks": ["Clear", "Clear", "Clear", "Clear", "Clear"],
 	},
 	{
 		# High mountains: cold, crisp air, sparse vegetation, snow caps at altitude.
@@ -273,8 +260,7 @@ families.extend([
 			"MountainsSnowBiome",
 		],
 		"ChildFrequency": biome_family_size * 0.70,
-		"Weather":        ["Clear", "SlightlyCloudy", "PartlyCloudy", "Overcast", "Foggy", "ExtremeFoggy", "LightLowFog"],
-		"WeatherWeights": [     20,               14,             12,         16,      14,              8,            16],
+		"WeatherLooks": ["Clear", "SlightlyCloudy", "Overcast", "Foggy", "ExtremeFoggy"],
 	},
 ])
 
@@ -808,6 +794,16 @@ for b in biomes:
 	h = biome_height.get(b["Name"])
 	if h:
 		b["Height"] = h
+
+# Looks are authored per family, but the weather controller asks the leaf biome under the camera.
+looks_by_biome = {}
+for f in families:
+	for child in f.get("Childs", []):
+		looks_by_biome.setdefault(child, f["WeatherLooks"])
+
+default_looks = ["Clear", "SlightlyCloudy", "Overcast", "LightRain", "Rain"]
+for b in biomes:
+	b["WeatherLooks"] = looks_by_biome.get(b["Name"], default_looks)
 
 data = {
 	"Objects": generators
