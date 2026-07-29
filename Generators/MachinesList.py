@@ -966,7 +966,7 @@ machines = [
 		"NoActorRenderable": True,
 		"CoverParts": [
 			{"Cover": "WindTurbineMast"},
-			{"Cover": "WindTurbineRotor", "Offset": [0,0,10]},
+			{"Cover": "WindTurbineRotor", "Offset": [0,0,10], "IgnoreBlockRotation": True},
 		],
 		"LogicExports": CRAFTING_LOGIC_EXPORTS,
 		"LogicImports": CRAFTING_LOGIC_IMPORTS,
