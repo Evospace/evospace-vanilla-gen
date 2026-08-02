@@ -29,8 +29,11 @@ weathers = [
 		"FogTint": [0.50, 0.60, 0.72],
 	},
 	{
+		# Fair-weather cumulus for the Light severity band. Kept high enough that
+		# CloudCoverage = Lerp(0, 0.8, Cloudiness) still reads as real scattered clouds,
+		# not the sparse wisps left by the old 0.15 value.
 		"Name": "SlightlyCloudy",
-		"Cloudiness01": 0.15,
+		"Cloudiness01": 0.48,
 		"Precipitation01": 0.0,
 		"Storminess01": 0.0,
 		"FogDensity": 0.0038,
@@ -39,7 +42,7 @@ weathers = [
 	},
 	{
 		"Name": "PartlyCloudy",
-		"Cloudiness01": 0.35,
+		"Cloudiness01": 0.68,
 		"Precipitation01": 0.0,
 		"Storminess01": 0.0,
 		"FogDensity": 0.005,
@@ -120,7 +123,7 @@ weathers = [
 	},
 	{
 		"Name": "DenseLowFog",
-		"Cloudiness01": 0.35,
+		"Cloudiness01": 0.48,
 		"Precipitation01": 0.0,
 		"Storminess01": 0.0,
 		"FogDensity": 0.004,
@@ -131,8 +134,9 @@ weathers = [
 		"FogTint": [0.70, 0.73, 0.77],
 	},
 	{
+		# Pine Light band: valley fog plus a readable broken cloud deck above it.
 		"Name": "LightLowFog",
-		"Cloudiness01": 0.25,
+		"Cloudiness01": 0.42,
 		"Precipitation01": 0.0,
 		"Storminess01": 0.0,
 		"FogDensity": 0.003,

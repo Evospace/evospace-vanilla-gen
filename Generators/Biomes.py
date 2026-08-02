@@ -96,9 +96,9 @@ families.extend([
 		"ChildFrequency": biome_family_size,
 		"WeatherLooks": ["Clear", "SlightlyCloudy", "Overcast", "LightRain", "Rain"],
 	},	{
-		# Hot desert: overwhelming clear sky, some haze, essentially no rain.
-		# Rare sandstorm mapped to "Storm" for wind/visibility spike.
-		# Ground fog and drizzle are omitted on purpose.
+		# Hot desert: mostly clear, then fair-weather clouds on Light, thicker
+		# broken cover on Overcast, dust for the wet bands. No rain/fog looks —
+		# precipitation maps to DustHaze / SandStorm instead.
 		"Name":"SandBiomeFamily",
 		"Class":"BiomeFamily",
 		"Childs":
@@ -106,7 +106,7 @@ families.extend([
 			"DesertBiome"
 		],
 		"ChildFrequency": biome_family_size,
-		"WeatherLooks": ["Clear", "Clear", "SlightlyCloudy", "DustHaze", "SandStorm"],
+		"WeatherLooks": ["Clear", "SlightlyCloudy", "PartlyCloudy", "DustHaze", "SandStorm"],
 	},	{
 		# Temperate mixed forest: balanced sky states, regular but
 		# moderate rain, morning/valley fog fairly common.
