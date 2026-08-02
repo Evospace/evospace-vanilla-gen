@@ -32,11 +32,11 @@ weathers = [
 	},
 	{
 		"Name": "Overcast",
-		"Cloudiness01": 0.9,
+		"Cloudiness01": 0.95,
 		"Precipitation01": 0.0,
-		"Fog01": 0.1,
+		"Fog01": 0.02,
 		"SecondFog01": 0.0,
-		"Storminess01": 0.0,
+		"Storminess01": 0.15,
 	},
 	{
 		"Name": "LightRain",
