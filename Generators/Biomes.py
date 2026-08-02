@@ -484,8 +484,10 @@ add_height("ForestHeight",       [{"Frequency": 0.009, "FractalOctaves": 2, "Min
 # Gently rolling, morainic relief: a broad swell plus low hummocks under the canopy
 add_height("PineForestHeight",   [{"Frequency": 0.006, "FractalOctaves": 3, "Min": -3, "Max": 6},
                                   {"Frequency": 0.022, "FractalOctaves": 2, "Min": 0,  "Max": 3}])
-add_height("SnowHeight",         [{"Frequency": 0.004, "FractalOctaves": 2, "Min": 0,  "Max": 4},
-                                  {"Frequency": 0.020, "FractalOctaves": 2, "Min": 0,  "Max": 7}])
+# Snowfields are rock under snow: a broad swell, ridged outcrops through it, and loose stony detail
+add_height("SnowHeight",         [{"Frequency": 0.004, "FractalOctaves": 3, "Min": -4, "Max": 8},
+                                  {"Frequency": 0.012, "FractalOctaves": 4, "FractalType": "Ridged", "Min": -2, "Max": 12, "Power": 2},
+                                  {"Frequency": 0.050, "FractalOctaves": 2, "Min": -3, "Max": 4}])
 add_height("SandHeight",         [{"NoiseType": "Cellular", "FractalOctaves": 2, "Frequency": 0.040, "CellularReturnType": "Distance",
                                   "CellularDistanceFunction": "Natural", "CellularJitter": 0.75, "Min": -2, "Max": 2}])
 # Flat wetland base plus rare circular lake basins carved by a sparse cellular field.
