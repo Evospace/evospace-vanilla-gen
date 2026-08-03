@@ -803,6 +803,10 @@ for f in families:
 	for child in f.get("Childs", []):
 		looks_by_biome.setdefault(child, f["WeatherLooks"])
 
+# Snow-capped mountains share the mountain family height/props, but their
+# precipitation bands are snow (same as SnowBiomeFamily), not plain fog.
+looks_by_biome["MountainsSnowBiome"] = ["Clear", "SlightlyCloudy", "Overcast", "Snowfall", "Blizzard"]
+
 default_looks = ["Clear", "SlightlyCloudy", "Overcast", "LightRain", "Rain"]
 for b in biomes:
 	b["WeatherLooks"] = looks_by_biome.get(b["Name"], default_looks)

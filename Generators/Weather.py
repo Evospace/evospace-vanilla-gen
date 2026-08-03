@@ -147,9 +147,10 @@ weathers = [
 		"FogTint": [0.62, 0.67, 0.73],
 	},
 	{
+		# Snow biome Precipitation band: UDW Snow particles, not Rain.
 		"Name": "Snowfall",
 		"Cloudiness01": 0.9,
-		"Precipitation01": 0.0,
+		"Precipitation01": 0.35,
 		"EffectIntensity01": 0.35,
 		"Storminess01": 0.1,
 		"FogDensity": 0.025,
@@ -161,9 +162,10 @@ weathers = [
 		"Effect": "Snow",
 	},
 	{
+		# Snow biome Extreme band.
 		"Name": "Blizzard",
 		"Cloudiness01": 1.0,
-		"Precipitation01": 0.0,
+		"Precipitation01": 0.85,
 		"EffectIntensity01": 0.85,
 		"Storminess01": 0.9,
 		"FogDensity": 0.085,
@@ -175,9 +177,10 @@ weathers = [
 		"Effect": "Snow",
 	},
 	{
+		# Desert Precipitation band: UDW Dust particles instead of rain.
 		"Name": "DustHaze",
 		"Cloudiness01": 0.3,
-		"Precipitation01": 0.0,
+		"Precipitation01": 0.3,
 		"EffectIntensity01": 0.3,
 		"Storminess01": 0.3,
 		"FogDensity": 0.028,
@@ -186,9 +189,10 @@ weathers = [
 		"Effect": "Dust",
 	},
 	{
+		# Desert Extreme band.
 		"Name": "SandStorm",
 		"Cloudiness01": 0.5,
-		"Precipitation01": 0.0,
+		"Precipitation01": 0.9,
 		"EffectIntensity01": 0.9,
 		"Storminess01": 0.9,
 		"FogDensity": 0.12,
