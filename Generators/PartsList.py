@@ -153,6 +153,12 @@ tools = [
 		"ItemLogic": "VehicleItemLogic",
 		# TODO: dedicated T_OffroadVehicle icon; SteamEngine is a placeholder
 		"Image": "T_SteamEngine",
+	},{
+		"Name": "Boat",
+		"Label": "Boat",
+		"ItemLogic": "/Game/Equipped/BoatItemBP.BoatItemBP_C",
+		# TODO: dedicated T_Boat icon; SteamEngine is a placeholder
+		"Image": "T_SteamEngine",
 	}
 	#{
 	#	"Name": "BuildTool",
