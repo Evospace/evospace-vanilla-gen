@@ -2,14 +2,12 @@ import json
 import os
 import errno
 import sys
-import csv
 import re
 import shutil
 
 our_path = os.path.dirname(sys.argv[0])
 
 generated_files = {}
-generated_text_files = {}
 
 def res_cost(level, mul = 1):
 	arr = []
@@ -41,9 +39,6 @@ def round_25(x):
 def write_file(filename, data):
 	generated_files[filename] = data
 
-def write_text_file(filename, data):
-	generated_text_files[filename] = data
-
 def get_generated_files():
 	return generated_files
 
@@ -59,20 +54,6 @@ def flush_generated_files():
 		with open(full_path, "w") as data_file:
 			data_file.write(json.dumps(data, indent=4, sort_keys=True))
 
-	for filename, data in generated_text_files.items():
-		full_path = os.path.join(our_path, "..", "Content", filename)
-		if not os.path.exists(os.path.dirname(full_path)):
-			try:
-				os.makedirs(os.path.dirname(full_path))
-			except OSError as exc:
-				if exc.errno != errno.EEXIST:
-					raise
-		with open(full_path, "w", newline="", encoding="utf-8") as csvfile:
-			spamwriter = csv.writer(csvfile, delimiter=",")
-			spamwriter.writerow(["Key", "SourceString"])
-			for x in data:
-				spamwriter.writerow(x)
-			
 def CamelToSpaces(name):
 	return re.sub(r"([a-z])([A-Z])", r"\g<1> \g<2>", name)
 	

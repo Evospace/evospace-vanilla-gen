@@ -35,9 +35,13 @@ def generate_part(name, material_dict):
 	part = named_part(name)
 	material = material_dict["Name"]
 	tier = material_dict["Tier"] if "Tier" in material_dict else 0
+	if "Composed" in part:
+		label = ["machines_label_format", "common", [material, "common"], [part["Name"], "parts"]]
+	else:
+		label = [material + part["Name"], "parts"]
 	item = { "Class": "StaticItem",
 		"Name": material + part["Name"],
-		"Label": [material + part["Name"], "parts"],
+		"Label": label,
 		"Image": "T_" + material + part["Name"],
 		"StackSize": part["StackSize"],
 		"Materials" : [

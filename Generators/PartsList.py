@@ -19,6 +19,7 @@ parts = [
 	},{
 		"Label": "Alternator",
 		"Name": "Alternator",
+		"Composed": True,
 		"StackSize": 16,
 		"Mesh":"/Game/Models/PartsCrate",
 		"Materials":["/Game/Materials/Copper","/Game/Materials/%Material%"],
