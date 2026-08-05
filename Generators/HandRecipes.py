@@ -470,6 +470,32 @@ recipes_hand.append({
 	"Ticks" : 400
 })
 
+recipes_hand.append({
+	"Name": "SteelRail",
+	"Input":{
+		"Items":[
+			{
+				"Name": "SteelPlate",
+				"Count": 1
+			},
+			{
+				"Name": "SteelParts",
+				"Count": 2
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "SteelRail",
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 20,
+	"Tier" : 1
+})
+
 for r in recipes_hand:
 	r["Locked"] = True
 

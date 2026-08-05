@@ -105,7 +105,7 @@ weathers = [
 		# Snow biome Extreme band.
 		"Name": "Blizzard",
 		"CloudCoverage": 9.8,
-		"Thunder": 9,
+		"Thunder": 0,
 		"EffectIntensity": 8.5,
 		"Fog": 9.0,
 		"Effect": "Snow",
