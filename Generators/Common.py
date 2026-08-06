@@ -15,13 +15,6 @@ def res_cost(level, mul = 1):
 		
 	return arr
 
-def FixMinTier(recipes, tier):
-	for recipe in recipes:
-		if "Tier" in recipe and recipe["Tier"] >= tier:
-			continue
-		else:
-			recipe["Tier"] = tier
-
 def copyDirectory(src, dest):
     try:
         shutil.copytree(src, dest)
@@ -261,6 +254,7 @@ building_brush_slot_logic = "BuildingBrushItemLogic"
 assembler_r_dict = "AssemblerRecipeDictionary"
 h_r_dict = "HandRecipeDictionary"
 r_dict = "RecipeDictionary"
+HAND_START_TIER = 1
 breaking_recipe = "RecipeDictionary"
 ico_generator = "IcoGenerator"
 

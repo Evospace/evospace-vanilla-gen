@@ -50,13 +50,13 @@ for filename in generator_files:
 	run_generator(full_path)
 	print("Done")
 
-try:
-	item_count, recipe_count = validate_generated(
-		get_generated_files(),
-		validate_tiers=True,
-		validate_machine_recipes=True
-	)
-	print(f"ValidateTiers: ok ({item_count} item tiers, {recipe_count} recipes)")
-except Exception as e:
-	print(f"ValidateTiers: {e}")
+dictionary_count, recipe_count, clamped_count, warnings = validate_generated(
+	get_generated_files(),
+	validate_tiers=True,
+	validate_machine_recipes=True
+)
+print(f"ValidateTiers: ok ({dictionary_count} dictionary start tiers, {recipe_count} recipes, {clamped_count} clamped to their start tier)")
+for warning in warnings:
+	print(f"ValidateTiers warning: {warning}")
+
 flush_generated_files()

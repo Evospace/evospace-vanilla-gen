@@ -2056,14 +2056,15 @@ append_recipe_hand({
 	"Ticks" : 10
 })
 
+COMBUSTION_FUEL_DRAIN = 32000 / 32
+
 for fuel in {"Superfuel", "Gasoline", "Diesel", "HighCetaneDiesel"}:
 	material = named_material(fuel)
 	recipes_combustion.append({
 		"Name": fuel,
 		"Input": one_item(fuel, 1000),
 		"Output": no_items(),
-		"Ticks": fuel_burn_time(material, 32000 / 2),
-		"Tier": 4
+		"Ticks": fuel_burn_time(material, COMBUSTION_FUEL_DRAIN)
 	})
 
 objects_array.append({ "Class": r_dict,
@@ -2081,7 +2082,6 @@ objects_array.append({ "Class": r_dict,
 	"Recipes": recipes_smelter
 })
 
-FixMinTier(recipes_macerator, 1)
 objects_array.append({ "Class": r_dict,
 	"Name": "Macerator" + r_dict,
 	"Recipes": recipes_macerator,
@@ -2132,7 +2132,6 @@ objects_array.append({ "Class": r_dict,
 	"Recipes": recipes_toolarm
 })
 
-FixMinTier(recipes_hammer, 1)
 objects_array.append({ "Class": r_dict,
 	"Name": "AutomaticHammer" + r_dict,
 	"Recipes": recipes_hammer,

@@ -321,9 +321,10 @@ for machine in machines:
 
 		machine_blocks.append(block)
 
-		machine_dicts.append({ 
+		machine_dicts.append({
 			"Class": r_dict,
 			"Name": machine["Name"] + r_dict,
+			"StartTier": machine["StartTier"],
 			"UsedIn": [{
 				"Item": block_name,
 				"Tier": tier
@@ -1414,6 +1415,7 @@ objects_array = []
 
 objects_array.append({ "Class": r_dict,
 	"Name": "Hand" + r_dict,
+	"StartTier": HAND_START_TIER,
 	"Recipes": recipes_hand
 })
 

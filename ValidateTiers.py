@@ -1,6 +1,7 @@
 import importlib.util
 import os
-import sys
+
+MAX_TIER = 7
 
 
 def iter_objects(data):
@@ -9,20 +10,6 @@ def iter_objects(data):
 		for obj in objects:
 			if isinstance(obj, dict):
 				yield obj
-
-
-def collect_item_tiers(generated_files):
-	item_tiers = {}
-	for data in generated_files.values():
-		if not isinstance(data, dict):
-			continue
-		for obj in iter_objects(data):
-			name = obj.get("Name")
-			tier = obj.get("Tier")
-			if name is None or tier is None:
-				continue
-			item_tiers[name] = tier
-	return item_tiers
 
 
 def extract_item_names(io_block):
@@ -71,41 +58,54 @@ def load_generators_module(filename, module_name):
 	return module
 
 
-def validate_recipes(generated_files, item_tiers):
-	errors = []
-	checked = 0
-	for filename, data in generated_files.items():
-		if not filename.startswith("Generated/Recipes/"):
-			continue
+def collect_dictionary_start_tiers(generated_files):
+	start_tiers = {}
+	for data in generated_files.values():
 		if not isinstance(data, dict):
 			continue
 		for obj in iter_objects(data):
-			recipes = obj.get("Recipes")
-			if not isinstance(recipes, list):
+			if obj.get("Class") != "RecipeDictionary":
 				continue
-			dictionary_name = obj.get("Name", filename)
+			name = obj.get("Name")
+			start_tier = obj.get("StartTier")
+			if name is None or start_tier is None:
+				continue
+			declared = start_tiers.setdefault(name, start_tier)
+			if declared != start_tier:
+				raise RuntimeError(f"{name} declares StartTier {declared} and {start_tier}")
+	return start_tiers
+
+
+def validate_recipes(generated_files, start_tiers):
+	errors = []
+	clamped = 0
+	checked = 0
+	for data in generated_files.values():
+		if not isinstance(data, dict):
+			continue
+		for obj in iter_objects(data):
+			if obj.get("Class") != "RecipeDictionary":
+				continue
+			recipes = obj.get("Recipes")
+			if not isinstance(recipes, list) or not recipes:
+				continue
+			dictionary_name = obj.get("Name")
+			start_tier = start_tiers.get(dictionary_name)
 			for recipe in recipes:
 				if not isinstance(recipe, dict):
 					continue
 				checked += 1
+				tier = recipe.get("Tier")
+				if tier is None:
+					continue
 				recipe_name = recipe.get("Name", "UnnamedRecipe")
-				recipe_tier = recipe.get("Tier")
-				item_tier = -1
-				for item_name in extract_item_names(recipe.get("Input")) + extract_item_names(recipe.get("Output")):
-					if item_name in item_tiers:
-						item_tier = max(item_tier, item_tiers[item_name])
-				if item_tier <= 0:
-					continue
-				if recipe_tier is None:
-					errors.append(
-						f"{dictionary_name}:{recipe_name} missing Tier (min {item_tier})"
-					)
-					continue
-				if recipe_tier < item_tier:
-					errors.append(
-						f"{dictionary_name}:{recipe_name} Tier {recipe_tier} < item tier {item_tier}"
-					)
-	return errors, checked
+				if start_tier is None:
+					errors.append(f"{dictionary_name}:{recipe_name} has Tier {tier} but the dictionary declares no StartTier")
+				elif tier > MAX_TIER:
+					errors.append(f"{dictionary_name}:{recipe_name} Tier {tier} above {MAX_TIER}")
+				elif tier < start_tier:
+					clamped += 1
+	return errors, clamped, checked
 
 def validate_machine_hand_recipes(generated_files):
 	machines_module = load_generators_module("MachinesList.py", "validate_machines_list")
@@ -126,22 +126,24 @@ def validate_generated(generated_files, validate_tiers=True, validate_machine_re
 	if not generated_files:
 		raise RuntimeError("Generated files map is empty")
 
-	item_tiers = collect_item_tiers(generated_files)
-	if not item_tiers:
-		raise RuntimeError("No item tiers found in generated files")
+	start_tiers = collect_dictionary_start_tiers(generated_files)
+	if not start_tiers:
+		raise RuntimeError("No dictionary start tiers found in generated files")
 
 	errors = []
+	warnings = []
+	clamped = 0
 	checked = 0
 	if validate_tiers:
-		recipe_errors, checked = validate_recipes(generated_files, item_tiers)
+		recipe_errors, clamped, checked = validate_recipes(generated_files, start_tiers)
 		errors.extend(recipe_errors)
 	if validate_machine_recipes:
-		errors.extend(validate_machine_hand_recipes(generated_files))
+		warnings.extend(validate_machine_hand_recipes(generated_files))
 	if errors:
 		errors_text = "\n".join(errors)
 		raise RuntimeError(f"Tier validation failed:\n{errors_text}")
 
-	return len(item_tiers), checked
+	return len(start_tiers), checked, clamped, warnings
 
 
 if __name__ == "__main__":
