@@ -42,13 +42,6 @@ simple_single = [
 	},{
         "Name": "Spotlight",
         "BlockLogic": "SpotlightBlockLogic",
-        "LogicExports": [
-            "SpotlightAimX",
-            "SpotlightAimY",
-            "SpotlightColorR",
-            "SpotlightColorG",
-            "SpotlightColorB",
-        ],
         "LogicImports": [
             "SpotlightAimX",
             "SpotlightAimY",
