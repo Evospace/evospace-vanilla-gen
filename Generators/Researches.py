@@ -230,7 +230,6 @@ append_levels({
 	"UnlockFirst": get_parts_unlocks(tier_material[2]) + [
 		["Hand" + r_dict, "GoldWire"],
 		["Hand" + r_dict, "SteelRail"],
-		[assembler_r_dict, "GoldWire"],
 		[assembler_r_dict, "GoldWire2"],
 	],
 	"MainResearch": True,

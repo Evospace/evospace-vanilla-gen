@@ -820,13 +820,6 @@ recipes_assembler.append({
 	"Tier": 7,
 })
 
-recipes_assembler.append({
-	"Name":"GoldWire",
-	"Input": one_item("GoldPlate"),
-	"Output": one_item("GoldWire", 2),
-	"Ticks" : 100,
-})
-
 recipes_hand.append({
 	"Name":"ReflectorCell",
 	"Input": items([
