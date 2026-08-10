@@ -83,7 +83,7 @@ append_levels({
 	"RequiredResearch": ["BasicPlatform"],
 	"Unlocks": [["Hand" + r_dict, "Bricks"]],
 })
-for miscBlock in ["GlassBlock", "WoodenPlanks", "StoneTiles", "RedTiles", "DarkTiles", "Terracotta", "TerracottaTiles", "RedBricks", "DarkBricks", "TerracottaBricks"]:
+for miscBlock in ["GlassBlock", "StoneTiles", "RedTiles", "DarkTiles", "Terracotta", "TerracottaTiles", "RedBricks", "DarkBricks", "TerracottaBricks"]:
 	append_levels({
 		"Class": research_recipe,
 		"Name": miscBlock,
