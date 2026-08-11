@@ -986,6 +986,19 @@ for prop in props:
 	if prop["Name"] in streamed_prop_names:
 		prop["Streamed"] = True
 
+# A bush or a boulder keeps its silhouette long after grass has stopped reading, so it fades out
+# further than the grass range it was authored with.
+cull_mul_by_name = {
+	"Shrub": 2.5, "BigBush": 2.5,
+	"SmallRock": 2.5, "SmallVolcanicRock": 2.5, "SnowyRock": 2.5, "CanyonRock": 2.5,
+}
+for prop in props:
+	mul = cull_mul_by_name.get(prop["Name"])
+	if not mul:
+		continue
+	prop["CullBegin"] = int(prop["CullBegin"] * mul)
+	prop["CullEnd"] = int(prop["CullEnd"] * mul)
+
 for prop in props:
 	image = "T_" + prop["Name"] if "Image" not in prop else prop["Image"]
 
