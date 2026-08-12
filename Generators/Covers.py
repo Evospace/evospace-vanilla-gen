@@ -36,11 +36,6 @@ covers = [
 		"Mesh": "/Game/Models/RobotArmBase",
         "Materials": []
 	},{
-		"Name": "BuildingBox",
-		"Mesh": "/Game/Models/BoxStaticMesh",
-        "Materials": [],
-        "NoCollision": True
-	},{
 		"Name": "ElectricityInput",
 		"Mesh": "/Game/Covers/ElectricityIn",
         "NoCollision": True
