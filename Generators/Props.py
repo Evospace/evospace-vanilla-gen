@@ -446,7 +446,7 @@ props = [
 		"Name": "CanyonRock",
 		"ScaleMin": 1,
 		"ScaleMax": 3,
-		"Variations": 1,
+		"Variations": 2,
 		"ProjectToTerrainPower": 1,
 		"Drops": "StoneSurface",
 		"Count": 2,
@@ -501,6 +501,53 @@ props.append({
 	"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C",
 	"Image": "T_TerrainCluster",
 })
+
+# Bog thickets. The pack meshes sit outside /Game/Props and are modelled at natural size, so they
+# carry their own paths and a scale near one instead of the stretch the older grass meshes need.
+props.append({
+	"Name": "Bush",
+	"Meshes": [
+		"/Game/NaturePackage/Meshes/flora/bush01",
+		"/Game/NaturePackage/Meshes/flora/bush02",
+		"/Game/NaturePackage/Meshes/flora/bush03",
+		"/Game/NaturePackage/Meshes/flora/bush04",
+	],
+	"ScaleMin": 0.5,
+	"ScaleMax": 0.9,
+	"ProjectToTerrainPower": 1,
+	"IsBig": True,
+	"Drops": "Log",
+	"Count": 1,
+	"CullBegin": 10000,
+	"CullEnd": 12000,
+	"TimeMul": 1,
+	"Image": "T_Shrub",
+})
+
+# Bog hummocks. The pack's moss meshes are metre-high mounds rather than ground cover, so they are
+# scattered as single objects and left near their own size.
+props.append({
+	"Name": "Moss",
+	"Meshes": [
+		"/Game/NaturePackage/Meshes/flora/moss01",
+		"/Game/NaturePackage/Meshes/flora/moss02",
+		"/Game/NaturePackage/Meshes/flora/moss03",
+	],
+	"ScaleMin": 0.6,
+	"ScaleMax": 1.0,
+	"ProjectToTerrainPower": 1,
+	"IsBig": False,
+	"Drops": "Organics",
+	"Count": 1,
+	"CullBegin": 10000,
+	"CullEnd": 12000,
+	"AdditiveElevation": 0,
+	"Image": "T_TerrainGrass",
+})
+
+for prop in props:
+	if "Meshes" in prop:
+		prop["Variations"] = len(prop["Meshes"])
 
 def named_prop(name):
 	return [x for x in props if x["Name"] == name][0]
@@ -746,6 +793,9 @@ proplists = [
 		"Name": "DesertProps",
 		"Array": [
 			{
+				"Props": ["CanyonRock"],
+				"Chance": 0.01
+			},{
 				"Props": ["Cactus"],
 				"Chance": 0.01
 			},{
@@ -789,6 +839,12 @@ proplists = [
 			{
 				"Props": ["SmallRock"],
 				"Chance": 0.01
+			},{
+				"Props": ["Bush"],
+				"Chance": 0.05
+			},{
+				"Props": ["Moss"],
+				"Chance": 0.6
 			},{
 				"Props": ["LongGrass"],
 				"Chance": 0.75
@@ -1021,7 +1077,8 @@ for prop in props:
 		)
 		temp_prop = { "Class": "StaticProp",
 			"Name": prop["Name"] + variation_helper[variation],
-			"Mesh": "/Game/Props/" + prop["Name"] + "/" + prop["Name"] + variation_helper[variation],
+			"Mesh": prop["Meshes"][variation] if "Meshes" in prop
+				else "/Game/Props/" + prop["Name"] + "/" + prop["Name"] + variation_helper[variation],
 			"ScaleMin": prop["ScaleMin"],
 			"ScaleMax": prop["ScaleMax"],
 			"ProjectToTerrainPower": prop["ProjectToTerrainPower"],
@@ -1059,7 +1116,7 @@ DENSITY_MUL = 0.6
 TREE_PROPS = {"Broadleaf", "Conifer", "Pine", "SnowyPine", "Palm"}
 
 CLUSTER_PROPS = {
-	"Shrub", "BigBush", "Fern", "Cactus",
+	"Shrub", "BigBush", "Bush", "Fern", "Cactus",
 	"Rock", "SmallRock", "VolcanicRock", "SmallVolcanicRock", "SnowyRock", "CanyonRock",
 }
 

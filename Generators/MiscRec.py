@@ -1339,7 +1339,7 @@ recipes_electrolyzer.append({
 	"Ticks" : 80,
 })
 
-for material in {"Ruby"}:
+for material in ["Ruby"]:
 	recipes_macerator.append({
 		"Name": material+"Crystal",
 		"Input": one_item(material+"Crystal"),
@@ -1366,6 +1366,14 @@ recipes_hammer.append({
 	"Name": "StoneToGravel",
 	"Input": one_item("StoneSurface"),
 	"Output": one_item("GravelSurface"),
+	"Tier": 1,
+	"Ticks": 100,
+})
+
+recipes_hammer.append({
+	"Name": "BasaltToGravel",
+	"Input": one_item("BasaltSurface"),
+	"Output": one_item("GravelSurface", 2),
 	"Tier": 1,
 	"Ticks": 100,
 })
@@ -2051,7 +2059,7 @@ append_recipe_hand({
 
 COMBUSTION_FUEL_DRAIN = 32000 / 32
 
-for fuel in {"Superfuel", "Gasoline", "Diesel", "HighCetaneDiesel"}:
+for fuel in ["Superfuel", "Gasoline", "Diesel", "HighCetaneDiesel"]:
 	material = named_material(fuel)
 	recipes_combustion.append({
 		"Name": fuel,

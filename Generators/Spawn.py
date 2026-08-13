@@ -6,20 +6,7 @@ from Common import *
 data = {
 	"PlayerStartInventory":
 	{
-		"Items": [
-			{
-				"Name": "StoneSurface",
-				"Count": 99
-			},
-			{
-				"Name": "Log",
-				"Count": 15
-			},
-			{
-				"Name": "BasicPlatform",
-				"Count": 999
-			}
-		]
+		"Items": []
 	}
 }
 
