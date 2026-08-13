@@ -184,7 +184,16 @@ append_levels({
 	"Name": "Electricity",
 	"Label": ["Electricity", "researches"],
 	"RequiredResearch": ["MineralsScan"],
+	"Unlocks": [],
+	"MainResearch": True,
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "PowerTransmission",
+	"Label": ["PowerTransmission", "researches"],
+	"RequiredResearch": ["PowerGeneration"],
 	"Unlocks": [["Hand" + r_dict, "CopperConnector"]],
+	"Levels": [0, 0],
 	"MainResearch": True,
 })
 append_levels({
@@ -307,8 +316,18 @@ append_levels({
 	"Name": "Metalwork",
 	"Label": ["Metalwork", "researches"],
 	"RequiredResearch": ["Smelting"],
-	"Unlocks": get_parts_unlocks(tier_material[1]),
+	"Unlocks": get_parts_unlocks(tier_material[1], False),
 	"Levels": [1,1],
+	"MainResearch": True
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "FluidTransfer",
+	"Label": ["FluidTransfer", "researches"],
+	"RequiredResearch": ["Metalwork"],
+	"Unlocks": [["Hand" + r_dict, "CopperPipe"], ["Constructor" + r_dict, "CopperPipe"]],
+	"Levels": [1,1],
+	"CostMul": 0.5,
 	"MainResearch": True
 })
 append_levels({
