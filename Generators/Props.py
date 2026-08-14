@@ -63,8 +63,8 @@ props = [
 	},
 	{
 		"Name": "YellowGrass",
-		"ScaleMin": 3.5,
-		"ScaleMax": 4,
+		"ScaleMin": 3.1,
+		"ScaleMax": 3.8,
 		"Variations": 2,
 		"ProjectToTerrainPower": 1,
 		"Drops": "Organics",
