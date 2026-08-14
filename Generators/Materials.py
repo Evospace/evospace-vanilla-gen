@@ -51,6 +51,7 @@ tiered_parts_list = tiered_parts_list_no_dust + ["Dust"]
 materials = [
 	{
 		"Name": "Hand",
+		"Category": "Resource",
 		"Label": "Hand",
 		"Items": ["Exact"],
 	},{
@@ -58,11 +59,13 @@ materials = [
 		"Label": "NoMaterial",
 	},{
 		"Name":"Computations",
+		"Category": "Resource",
 		"Label":"Computations",
 		"Items": ["Abstract"],
 		"Description" : [["calculations", "common"]],
 	},{
 		"Name": "Heat",
+		"Category": "Resource",
 		"Label": "Heat",
 		"Items": ["Abstract"],
 		"Unit": "J",
@@ -70,6 +73,7 @@ materials = [
 		"UnitMul" : 1,
 	},{
 		"Name": "Electricity",
+		"Category": "Resource",
 		"Label": "Electricity",
 		"Items": ["Abstract"],
 		"Unit": "J",
@@ -77,6 +81,7 @@ materials = [
 		"UnitMul" : 1,
 	},{
 		"Name": "Kinetic",
+		"Category": "Resource",
 		"Label": "Kinetic",
 		"Items": ["Abstract"],
 		"Unit": "J",
@@ -144,6 +149,7 @@ materials = [
 		"Tier": 5,
 	},{
 		"Name": "PlatinumReflector",
+		"Category": "Parts",
 		"Label": "Platinum Reflector",
 		"Items": ["Exact"],
 		"Tier": 6,
@@ -154,6 +160,7 @@ materials = [
 		"Tier": 5,
 	},{
 		"Name": "AmmoniumChloride",
+		"Category": "Chemical",
 		"Label": "Ammonium Chloride",
 		"Items": ["Exact"],
 		"Tier": 5,
@@ -228,6 +235,7 @@ materials = [
 		"Tier": 4,
 	},{
 		"Name": "TitaniumSponge",
+		"Category": "Chemical",
 		"Label": "Titanium Sponge",
 		"Smelting": [],
 		"Items": ["Exact"],		
@@ -246,6 +254,7 @@ materials = [
 		"Tier": 4,
 	},{
 		"Name": "HotNeutroniumPlate",
+		"Category": "Plate",
 		"Label": "Hot Neutronium Plate",
 		"Smelting": [],
 		"Items": ["Exact"],
@@ -254,11 +263,13 @@ materials = [
         "Materials":["", "/Game/Materials/VeryHotMetal"],
 	},{
 		"Name": "Stone",
+		"Category": "Ore",
 		"Label": "Stone",
 		"Tier": 0,
 		"Items": ["Exact"],
 	},{
 		"Name": "BuildingMaterial",
+		"Category": "Plate",
 		"Label": "Building Material",
 		"Tier": 0,
 		"Items": ["Exact"],
@@ -266,6 +277,7 @@ materials = [
 		"Tier": 0,
 	},{
 		"Name": "Sulfur",
+		"Category": "Chemical",
 		"Label": "Sulfur",
 		"Tier": 4,
 		"Burnable": {
@@ -299,6 +311,7 @@ materials = [
 		"Items": ["Dust"],
 	},{
 		"Name": "Uranium233Cell",
+		"Category": "Nuclear",
 		"Label": "Uranium 233 Cell",
 		"Tier": 5,
 		"Items": ["Exact"],
@@ -307,6 +320,7 @@ materials = [
 		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "UraniumCell",
+		"Category": "Nuclear",
 		"Label": "Uranium Cell",
 		"Tier": 5,
 		"Items": ["Exact"],
@@ -315,6 +329,7 @@ materials = [
 		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "PlutoniumCell",
+		"Category": "Nuclear",
 		"Label": "Plutonium Cell",
 		"Tier": 5,
 		"Items": ["Exact"],
@@ -323,6 +338,7 @@ materials = [
 		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "DepletedUraniumCell",
+		"Category": "Nuclear",
 		"Label": "Depleted Uranium Cell",
 		"Tier": 5,
 		"Items": ["Exact"],
@@ -348,6 +364,7 @@ materials = [
 		"Tier": 2,
 	},{
 		"Name": "Peat",
+		"Category": "Organic",
 		"Label": "Peat",
 		"Items": ["Exact"],
 		"Burnable": {
@@ -357,6 +374,7 @@ materials = [
 		"Mesh": "/Game/Models/Piece"
 	},{
 		"Name": "Coal",
+		"Category": "Organic",
 		"Label": "Coal",
 		"Items": ["Exact"],
 		"Burnable": {
@@ -368,6 +386,7 @@ materials = [
 		"Tier": 0,
 	},{
 		"Name": "Coke",
+		"Category": "Organic",
 		"Label": "Coke",
 		"Items": ["Exact"],
 		"StackSize": 64,
@@ -413,6 +432,7 @@ materials = [
 		"Tier": 4,
 	},{
 		"Name": "Ash",
+		"Category": "Chemical",
 		"Label": "Ash",
 		"Items": ["Exact"],
 		"Tier": 0
@@ -472,6 +492,7 @@ materials = [
 		"Tier": 0
 	},{
 		"Name": "Glass",
+		"Category": "Parts",
 		"Label": "Glass",
 		"Mesh": "/Game/Models/GlassCrate",
 		"Materials":["", ""],
@@ -479,11 +500,13 @@ materials = [
 		"Tier": 0,
 	},{
 		"Name": "Lense",
+		"Category": "Parts",
 		"Label": "Lense",
 		"Items": ["Exact"],
 		"Tier": 0,
 	},{
 		"Name": "Organics",
+		"Category": "Organic",
 		"Label": "Organics",
 		"Items": ["Exact"],
 		"Tier": 0,
@@ -507,6 +530,7 @@ materials = [
 		"Tier": 3,
 	},{
 		"Name": "RareEarthSludge",
+		"Category": "Chemical",
 		"Label": "Rare Earth Sludge",
 		"Items": ["Exact"],
 		"Mesh":"/Game/Models/SpongeCrate",
@@ -525,6 +549,7 @@ materials = [
 		"Tier": 5,
 	},{
 		"Name": "TantalumSludge",
+		"Category": "Chemical",
 		"Label": "Tantalum Sludge",
 		"Items": ["Exact"],
 		"Tier": 6,
@@ -532,11 +557,13 @@ materials = [
         "Materials":["/Game/Materials/GreenPlastic", "/Game/Materials/Tantalum"],
 	},{
 		"Name": "TantalumSolution",
+		"Category": "Chemical",
 		"Label": "Tantalum Solution",
 		"Items": ["Exact"],
 		"Tier": 6,
 	},{
 		"Name": "Log",
+		"Category": "Organic",
 		"Label": "Log",
 		"Items": ["Exact"],
 		"Tier": 0,
@@ -546,6 +573,7 @@ materials = [
 		"Mesh":"/Game/Models/LogCrate",
 	},{
 		"Name": "SiliconOxide",
+		"Category": "Chemical",
 		"Label": "Silicon Oxide",
 		"Items": ["Exact"],
 		"Tier": 1,
@@ -556,6 +584,7 @@ materials = [
 		],
 	},{
 		"Name": "Silicon",
+		"Category": "Chemical",
 		"Label": "Silicon",
 		"Items": ["Exact"],
 		"Tier": 3,
@@ -566,22 +595,26 @@ materials = [
 		],
 	},{
 		"Name": "SiliconMonocrystal",
+		"Category": "Parts",
 		"Label": "Silicon Monocrystal",
 		"Items": ["Exact"],
 		"Tier": 3
 	},{
 		"Name": "DopedSiliconMonocrystal",
+		"Category": "Parts",
 		"Label": "Doped Silicon Monocrystal",
 		"Items": ["Exact"],
 		"Tier": 4
 	},{
 		"Name": "SiliconWafer",
+		"Category": "Parts",
 		"Label": "Silicon Wafer",
 		"Items": ["Exact"],
 		"Tier": 4,
 		"Mesh": "/Game/Models/WaferCrate",
 	},{
 		"Name": "DopedSiliconWafer",
+		"Category": "Parts",
 		"Label": "Doped Silicon Wafer",
 		"Items": ["Exact"],
 		"Tier": 5,
@@ -596,6 +629,7 @@ materials = [
 		"Category": "Parts",
 	},{
 		"Name": "Rapeseed",
+		"Category": "Organic",
 		"Label": "Rapeseed",
 		"Items": ["Exact"],
 		"Tier": 0
@@ -688,11 +722,13 @@ materials = [
 	},
 	{
 		"Name": "Battery",
+		"Category": "Parts",
 		"Label": "Battery Cell",
 		"Items": ["Exact"],
 		"Tier": 3
 	},{
 		"Name": "Pumpkin",
+		"Category": "Organic",
 		"Label": "Pumpkin",
 		"Items": ["Exact"],
 		"Tier": 0
@@ -718,16 +754,19 @@ materials = [
 		"Tier": 4
 	},{
 		"Name": "Salt",
+		"Category": "Chemical",
 		"Label": "Salt",
 		"Items": ["Exact"],
 		"Tier": 4
 	},{
 		"Name": "MicaFlakes",
+		"Category": "Chemical",
 		"Label": "Mica Flakes",
 		"Items": ["Exact"],
 		"Tier": 4
 	},{
 		"Name": "Signal",
+		"Category": "Signal",
 		"Label": "Signal",
 		"Items": ["Exact"],
 	},{
@@ -835,6 +874,7 @@ materials = [
 		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "Catalyst",
+		"Category": "Chemical",
 		"Label": "Catalyst Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
@@ -842,6 +882,7 @@ materials = [
 		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "UltimateCatalyst",
+		"Category": "Chemical",
 		"Label": "Ultimate Catalyst Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
@@ -849,11 +890,13 @@ materials = [
 		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "MothershipPing",
+		"Category": "Resource",
 		"Label": "Mothership Ping",
 		"StackSize": 32,
 		"Items": ["Exact"],
 	},{
 		"Name": "Canister",
+		"Category": "Parts",
 		"Label": "Canister",
 		"StackSize": 1,
 		"Items": ["Exact"],
@@ -861,24 +904,28 @@ materials = [
 		"MaxCharge": single_canister_capacity
 	},{
 		"Name": "ControlCell",
+		"Category": "Nuclear",
 		"Label": "Control Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "ReflectorCell",
+		"Category": "Nuclear",
 		"Label": "Reflector Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "ThoriumCell",
+		"Category": "Nuclear",
 		"Label": "Thorium Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Mesh": "/Game/Models/CellCrate",
 	},{
 		"Name": "MixedOxideCell",
+		"Category": "Nuclear",
 		"Label": "Mixed-Oxide Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
@@ -898,6 +945,7 @@ materials = [
 		"Tier": 5,
 	},{
 		"Name": "CarbonFiber",
+		"Category": "Parts",
 		"Label": "Carbon Fiber",
 		"StackSize": 32,
 		"Tier": 5,
@@ -905,6 +953,7 @@ materials = [
 		"Materials":["", "/Game/Materials/CarbonFiber"],
 	},{
 		"Name": "Graphene",
+		"Category": "Parts",
 		"Label": "Graphene",
 		"StackSize": 32,
 		"Items": ["Exact"],

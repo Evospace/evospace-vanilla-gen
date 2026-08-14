@@ -146,6 +146,7 @@ for object in mapgen_objects:
 		"Block": object["Name"] + "Surface",
 		"StackSize": 999,
 		"Label": [object["Name"]+ "Surface", "mapgen_core"],
+		"Category": "Terrain",
 	})
 
 for object in mapgen_objects:

@@ -254,9 +254,10 @@ for one in wooden_misc:
 		"Block": one["Name"],
 		"StackSize": 32,
 		"Label":[one["Name"],"misc"],
-		"ItemLogic": building_single_logic
+		"ItemLogic": building_single_logic,
+		"Category": "Decoration",
 	}
-		
+
     objects_array.append(item)
 	
     block = {
@@ -280,8 +281,9 @@ for one in simple_single:
 		"Block": one["Name"],
 		"StackSize": 32,
 		"Label":[one["Name"],"misc"],
-		"Tier": one["Tier"] if "Tier" in one else 0
-	})	
+		"Tier": one["Tier"] if "Tier" in one else 0,
+		"Category": "Decoration",
+	})
 	
     block = {
 		"Class": "StaticBlock",
@@ -419,6 +421,7 @@ objects_array.append({
 	"Label": ["Ghost", "misc"],
 	"Type": "Abstract",
 	"Block": "Ghost",
+	"Category": "Block",
 })
 objects_array.append({
 	"Class": "GhostStaticBlock",

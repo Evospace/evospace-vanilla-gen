@@ -576,7 +576,7 @@ for tool in tools:
 		"ItemLogic": tool["ItemLogic"],
 		"StackSize": 1,
 		"Label": [tool["Name"], "parts"],
-		"Category": "Tools",
+		"Category": tool["Category"] if "Category" in tool else "Tools",
 	}
 	if "CommonTextKeys" in tool:
 		item["CommonTextKeys"] = tool["CommonTextKeys"]

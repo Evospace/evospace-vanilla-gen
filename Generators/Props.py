@@ -1,3 +1,5 @@
+import zlib
+
 from Common import *
 from OresGen import ore_types
 
@@ -55,7 +57,6 @@ props = [
 		"IsBig": False,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
-		"AdditiveElevation": 15,
 		"SurfaceHeightMin": 0,
 		"HighDetailShadow": True,
 		"Image": "T_TerrainGrass",
@@ -71,7 +72,6 @@ props = [
 		"IsBig": False,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
-		"AdditiveElevation": 15,
 		"SurfaceHeightMin": 0,
 		"HighDetailShadow": True,
 		"Image": "T_TerrainGrass",
@@ -131,6 +131,7 @@ props = [
 		"ScaleMax": 3,
 		"Variations": 3,
 		"ProjectToTerrainPower": 0,
+		"SurfaceHeightMin": 0,
 		"IsBig": True,
 		"Drops": "Log",
 		"Count": 25,
@@ -173,6 +174,7 @@ props = [
 		"ScaleMax": 1.4,
 		"Variations": 3,
 		"ProjectToTerrainPower": 0,
+		"SurfaceHeightMin": 0,
 		"IsBig": True,
 		"Drops": "Log",
 		"Count": 20,
@@ -186,6 +188,7 @@ props = [
 		"ScaleMax": 1.2,
 		"Variations": 3,
 		"ProjectToTerrainPower": 0,
+		"SurfaceHeightMin": 0,
 		"IsBig": True,
 		"Drops": "Log",
 		"Count": 20,
@@ -199,6 +202,7 @@ props = [
 		"ScaleMax": 1.4,
 		"Variations": 2,
 		"ProjectToTerrainPower": 0,
+		"SurfaceHeightMin": 0,
 		"IsBig": True,
 		"Drops": "Log",
 		"Count": 20,
@@ -212,6 +216,7 @@ props = [
 		"ScaleMax": 1.3,
 		"Variations": 2,
 		"ProjectToTerrainPower": 0,
+		"SurfaceHeightMin": 0,
 		"IsBig": True,
 		"Drops": "Log",
 		"Count": 10,
@@ -230,7 +235,6 @@ props = [
 		"Count": 1,
 		"CullBegin": 7000,
 		"CullEnd": 8000,
-		"AdditiveElevation": 24,
 		"SurfaceHeightMin": -1,
 		"SurfaceHeightMax": 0,
 		"HighDetailShadow": True
@@ -267,9 +271,9 @@ props = [
 		"ScaleMax": 2,
 		"Variations": 4,
 		"ProjectToTerrainPower": 0,
+		"SurfaceHeightMin": 0,
 		"Drops": "Organics",
 		"Count": 10,
-		"AdditiveElevation": 20,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
 		"IsBig": False,
@@ -319,6 +323,7 @@ props = [
 		"ScaleMax": 3,
 		"Variations": 1,
 		"ProjectToTerrainPower": 1,
+		"SurfaceHeightMin": 0,
 		"IsBig": False,
 		"Drops": "Log",
 		"Count": 1,
@@ -453,7 +458,9 @@ props = [
 		"HitsToBreak": 1,
 		"CullBegin": 10000,
 		"CullEnd": 12000,
-		"AdditiveElevation": 0,
+		"AdditiveElevation": -20,
+		"Count": 10,
+		"HitsToBreak": 4,
 		"IsBig": False,
 		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
 		"BreakEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
@@ -515,6 +522,7 @@ props.append({
 	"ScaleMin": 0.5,
 	"ScaleMax": 0.9,
 	"ProjectToTerrainPower": 1,
+	"SurfaceHeightMin": 0,
 	"IsBig": True,
 	"Drops": "Log",
 	"Count": 1,
@@ -536,6 +544,7 @@ props.append({
 	"ScaleMin": 0.6,
 	"ScaleMax": 1.0,
 	"ProjectToTerrainPower": 1,
+	"SurfaceHeightMin": 0,
 	"IsBig": False,
 	"Drops": "Organics",
 	"Count": 1,
@@ -844,7 +853,7 @@ proplists = [
 				"Chance": 0.05
 			},{
 				"Props": ["Moss"],
-				"Chance": 0.6
+				"Chance": 0.08
 			},{
 				"Props": ["LongGrass"],
 				"Chance": 0.75
@@ -1008,13 +1017,13 @@ ore_prop_tiers = [
 		"MinDist": 0,
 		"Weight": 1,
 		"FarWeight": 1,
-		"Props": ["ChalcopyriteCluster", "MalachiteCluster", "CoalCluster"],
+		"Props": ["ChalcopyriteCluster", "CoalCluster", "PyriteCluster"],
 	},
 	{
 		"MinDist": ORE_R_START,
 		"Weight": 1,
 		"FarWeight": 2,
-		"Props": ["MagnetiteCluster", "PyriteCluster", "OilCluster", "CinnabarCluster"],
+		"Props": ["MagnetiteCluster", "MalachiteCluster", "OilCluster", "CinnabarCluster"],
 	},
 	{
 		"MinDist": ORE_R_START + ORE_R_SPAN // 3,
@@ -1047,6 +1056,7 @@ for prop in props:
 cull_mul_by_name = {
 	"Shrub": 2.5, "BigBush": 2.5,
 	"SmallRock": 2.5, "SmallVolcanicRock": 2.5, "SnowyRock": 2.5, "CanyonRock": 2.5,
+	"SeaPlant": 2.5, "SeaGrass": 2.5, "Rogoz": 2.5,
 }
 for prop in props:
 	mul = cull_mul_by_name.get(prop["Name"])
@@ -1116,7 +1126,7 @@ DENSITY_MUL = 0.6
 TREE_PROPS = {"Broadleaf", "Conifer", "Pine", "SnowyPine", "Palm"}
 
 CLUSTER_PROPS = {
-	"Shrub", "BigBush", "Bush", "Fern", "Cactus",
+	"Shrub", "BigBush", "Bush", "Moss", "Fern", "Cactus",
 	"Rock", "SmallRock", "VolcanicRock", "SmallVolcanicRock", "SnowyRock", "CanyonRock",
 }
 
@@ -1216,6 +1226,13 @@ def is_cluster_layer(prop_names):
 		return False
 	return any(p in CLUSTER_PROPS for p in prop_names)
 
+# Every layer rolls its own placement. Without a seed of its own each layer of a generator draws the
+# same numbers for the same cell, so cluster layers put their centers on top of each other and dense
+# scatter layers swallow the sparse ones. Keyed by list name, so a layer keeps its world when an
+# unrelated one is added.
+def layer_seed_offset(list_name):
+	return zlib.crc32(list_name.encode("utf-8")) & 0x03FFFFFF
+
 def layers_from_legacy_proplist(generator_name, legacy_plist):
 	layers = []
 	for index, entry in enumerate(legacy_plist["Array"]):
@@ -1232,12 +1249,14 @@ def layers_from_legacy_proplist(generator_name, legacy_plist):
 				"Mode": "Cluster",
 				"PropList": list_name,
 				"Cluster": cluster_settings_for(prop_names),
+				"SeedOffset": layer_seed_offset(list_name),
 			})
 		else:
 			layers.append({
 				"Mode": "Scatter",
 				"PropList": list_name,
 				"Density": round(chance * DENSITY_MUL, 6),
+				"SeedOffset": layer_seed_offset(list_name),
 			})
 	return layers
 

@@ -135,6 +135,7 @@ tools = [
 		"ItemLogic": "TrainPlacerItemLogic",
 		# TODO: dedicated T_Train icon; SteamEngine is a placeholder
 		"Image": "T_SteamEngine",
+		"Category": "Vehicles",
 	},{
 		"Name": "GroundLevelingTool",
 		"Label": "Ground Leveling Tool",
@@ -154,12 +155,14 @@ tools = [
 		"ItemLogic": "VehicleItemLogic",
 		# TODO: dedicated T_OffroadVehicle icon; SteamEngine is a placeholder
 		"Image": "T_SteamEngine",
+		"Category": "Vehicles",
 	},{
 		"Name": "Boat",
 		"Label": "Boat",
 		"ItemLogic": "/Game/Equipped/BoatItemBP.BoatItemBP_C",
 		# TODO: dedicated T_Boat icon; SteamEngine is a placeholder
 		"Image": "T_SteamEngine",
+		"Category": "Vehicles",
 	}
 	#{
 	#	"Name": "BuildTool",
