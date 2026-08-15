@@ -388,8 +388,8 @@ for material in materials:
 			"Category": "",
 			"Label": [material["Name"], "parts"],
 			
-			"UnitMul": 1.0 / 1000.0,
-			
+			"UnitMul": fluid_unit_mul(),
+
 			"Category": "Fluid",
 			"DescriptionParts":[["Fluid","common"],["ByPipes","common"]],
 			"Type": "Fluid"
@@ -405,11 +405,11 @@ for material in materials:
 		#	item["ExplicitKey"] = ex_cvs[explicites.index(item["MaterialKey"] + " " + item["Key"])][0]
 		
 		if "Burnable" in material:
-			item["DescriptionParts"].append(["burnable", "common", fuel_value(material)])
+			item["DescriptionParts"].append(["burnable", "common", fluid_fuel_value(material)])
 			item["Tags"] = fuel_tags()
 
 		objects_array.append(item)
-		
+
         # removed empty generator to avoid duplicate base icons; wiki uploader collects direct Image refs
 		
 		if "UnitMul" in material:
@@ -448,8 +448,8 @@ for material in materials:
 			"Category": "",
 			"Label": [material["Name"], "parts"],
 			
-			"UnitMul": 1.0 / 1000.0,
-			
+			"UnitMul": fluid_unit_mul(),
+
 			"Category": "Fluid",
 			"DescriptionParts":[["Gas","common"],["ByPipes","common"]],
 			"Type": "Fluid"
@@ -468,9 +468,9 @@ for material in materials:
 			item["Color"] = material["Color"]
 
 		if "Burnable" in material:
-			item["DescriptionParts"].append(["burnable", "common", fuel_value(material)])
+			item["DescriptionParts"].append(["burnable", "common", fluid_fuel_value(material)])
 			item["Tags"] = fuel_tags()
-		
+
 		objects_array.append(item)
 		
         # removed empty generator to avoid duplicate base icons; wiki uploader collects direct Image refs

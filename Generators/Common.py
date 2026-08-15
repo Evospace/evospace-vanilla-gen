@@ -349,6 +349,14 @@ def fluid_furnace_pair(material):
 
 	return duration, count
 
+def fluid_unit_mul():
+	return 1.0 / 1000.0
+
+def fluid_fuel_value(material):
+	duration, count = fluid_furnace_pair(material)
+	unit_mul = material.get("UnitMul", fluid_unit_mul())
+	return int(round(duration * fluid_furnace_output() / count / unit_mul))
+
 def oil_crack_recipe(index, input_count):
 	outputs = oil_crack_array(input_count)
 	if index == -1:
