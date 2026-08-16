@@ -2,6 +2,10 @@ from Common import *
 
 FirstItemAcq = ["FirstItemAcquired", "ui"]
 
+
+def machine_label(tier, machine):
+    return ["machines_label_format", "common", [tier, "common"], [machine, "machines"]]
+
 ach = [
     {
         "Name": "CopperPlate",
@@ -96,25 +100,25 @@ ach = [
     {
         "Name": "NeutroniumPortal",
         "Steam": True,
-        "Label": ["NeutroniumPortal","machines"],
+        "Label": machine_label("Neutronium", "Portal"),
         "Description": FirstItemAcq
     },
     {
         "Name": "CompositeFusionReactor",
         "Steam": True,
-        "Label": ["CompositeFusionReactor","machines"],
+        "Label": machine_label("Composite", "FusionReactor"),
         "Description": FirstItemAcq
     },
     {
         "Name": "TitaniumFissionReactor",
         "Steam": True,
-        "Label": ["TitaniumFissionReactor","machines"],
+        "Label": machine_label("Titanium", "FissionReactor"),
         "Description": FirstItemAcq
     },
     {
         "Name": "SteelLogicInterface",
         "Steam": True,
-        "Label": ["SteelLogicInterface","machines"],
+        "Label": machine_label("Steel", "LogicInterface"),
         "Description": FirstItemAcq
     },
     {

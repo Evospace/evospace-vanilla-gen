@@ -72,7 +72,7 @@ append_levels({
 append_levels({
 	"Class": research_recipe,
 	"Name": "BasicPlatform",
-	"Label": ["BasicPlatform", "parts"],
+	"Label": ["BasicPlatform", "misc"],
 	"RequiredResearch": ["MineralsScan"],
 	"Unlocks": [["Hand" + r_dict, "BasicPlatform"], ["Hand" + r_dict, "BuildingMaterial"]],
 })
@@ -506,7 +506,7 @@ append_levels({
 append_levels({
 	"Class": research_recipe,
 	"Name": "Oven",
-	"Label": ["Oven", "researches"],
+	"Label": ["Oven", "machines"],
 	"RequiredResearch": ["Furnace",],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%Oven"] ],
