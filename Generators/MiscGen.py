@@ -49,6 +49,10 @@ simple_single = [
             "SpotlightColorG",
             "SpotlightColorB",
         ],
+	},{
+        "Name": "LandingPad",
+        "BlockLogic": "LandingPadBlockLogic",
+        "Positions": [[x, y, 0] for x in range(-2, 3) for y in range(-2, 3)],
 	}
 ]
 
@@ -216,7 +220,7 @@ static_mesh_block = [
 equipped = [
 	{
 		"Name": "Flashlight",
-		"ItemLogic": "/Game/Equipped/FlashlightBP.FlashlightBP_C",
+		"ItemLogic": "/Script/Evospace.FlashlightItemLogic",
 		"EquipmentSlot": "Light"
 	},{
 		"Name": "Steampack",
@@ -361,6 +365,12 @@ for one in static_mesh_block:
 	})
 	
 images.append({
+		"Base": "T_" + "BasicPlatform",
+		"NewName": "T_" + "LandingPad",
+		"AddMask": "T_GreenCircle" + additive_ico,
+	})
+	
+images.append({
 		"Base": "T_" + "JetpackBase",
 		"NewName": "T_" + "Jetpack",
 		"MulMask": "T_Material" + "Aluminium",
@@ -417,7 +427,7 @@ objects_array.append({
 	"StackSize": 1,
 	"Label": ["BuiltinFlashlight", "misc"],
 	"Type": "Abstract",
-	"ItemLogic": "/Game/Equipped/BuiltinFlashlightBP.BuiltinFlashlightBP_C",
+	"ItemLogic": "/Script/Evospace.FlashlightItemLogic",
 	"EquipmentItem": True,
 	"EquipmentSlot": "Light",
 	"Category": "Equipment",
