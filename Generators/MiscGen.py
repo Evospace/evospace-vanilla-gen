@@ -216,34 +216,44 @@ static_mesh_block = [
 equipped = [
 	{
 		"Name": "Flashlight",
-		"ItemLogic": "/Game/Equipped/FlashlightBP.FlashlightBP_C"
+		"ItemLogic": "/Game/Equipped/FlashlightBP.FlashlightBP_C",
+		"EquipmentSlot": "Light"
 	},{
 		"Name": "Steampack",
-		"ItemLogic": "/Game/Equipped/SteampackBP.SteampackBP_C"
+		"ItemLogic": "/Game/Equipped/SteampackBP.SteampackBP_C",
+		"EquipmentSlot": "Jetpack"
 	},{
 		"Name": "HighPressureSteampack",
-		"ItemLogic": "/Game/Equipped/HighPresSteampackBP.HighPresSteampackBP_C"
+		"ItemLogic": "/Game/Equipped/HighPresSteampackBP.HighPresSteampackBP_C",
+		"EquipmentSlot": "Jetpack"
 	},{
 		"Name": "HighCapacitySteampack",
-		"ItemLogic": "/Game/Equipped/HighCapSteampackBP.HighCapSteampackBP_C"
+		"ItemLogic": "/Game/Equipped/HighCapSteampackBP.HighCapSteampackBP_C",
+		"EquipmentSlot": "Jetpack"
 	},{
 		"Name": "AdvancedSteampack",
-		"ItemLogic": "/Game/Equipped/AdvancedSteampackBP.AdvancedSteampackBP_C"
+		"ItemLogic": "/Game/Equipped/AdvancedSteampackBP.AdvancedSteampackBP_C",
+		"EquipmentSlot": "Jetpack"
 	},{
 		"Name": "Jetpack",
-		"ItemLogic": "/Game/Equipped/JetpackBP.JetpackBP_C"
+		"ItemLogic": "/Game/Equipped/JetpackBP.JetpackBP_C",
+		"EquipmentSlot": "Jetpack"
 	},{
 		"Name": "AdvancedJetpack",
-		"ItemLogic": "/Game/Equipped/AdvancedJetpackBP.AdvancedJetpackBP_C"
+		"ItemLogic": "/Game/Equipped/AdvancedJetpackBP.AdvancedJetpackBP_C",
+		"EquipmentSlot": "Jetpack"
 	},{
 		"Name": "AntigravityUnit",
-		"ItemLogic": "/Game/Equipped/AntigravityUnitBP.AntigravityUnitBP_C"
+		"ItemLogic": "/Game/Equipped/AntigravityUnitBP.AntigravityUnitBP_C",
+		"EquipmentSlot": "Jetpack"
 	},{
 		"Name": "NightVision",
-		"ItemLogic": "/Game/Equipped/NightVisionBP.NightVisionBP_C"
+		"ItemLogic": "/Game/Equipped/NightVisionBP.NightVisionBP_C",
+		"EquipmentSlot": "Light"
 	},{
 		"Name": "AdvancedNightVision",
-		"ItemLogic": "/Game/Equipped/AdvancedNightVisionBP.AdvancedNightVisionBP_C"
+		"ItemLogic": "/Game/Equipped/AdvancedNightVisionBP.AdvancedNightVisionBP_C",
+		"EquipmentSlot": "Light"
 	}
 ]
 
@@ -394,7 +404,9 @@ for one in equipped:
 	}
 	if "ItemLogic" in one:
 		equ["ItemLogic"] = one["ItemLogic"]
-		
+	if "EquipmentSlot" in one:
+		equ["EquipmentSlot"] = one["EquipmentSlot"]
+
 	objects_array.append(equ)
 
 # Default light slot when empty: logic class only (no crafting recipe; not a normal pickup)
@@ -407,6 +419,7 @@ objects_array.append({
 	"Type": "Abstract",
 	"ItemLogic": "/Game/Equipped/BuiltinFlashlightBP.BuiltinFlashlightBP_C",
 	"EquipmentItem": True,
+	"EquipmentSlot": "Light",
 	"Category": "Equipment",
 })
 
