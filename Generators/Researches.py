@@ -194,6 +194,7 @@ append_levels({
 	"RequiredResearch": ["PowerGeneration"],
 	"Unlocks": [["Hand" + r_dict, "CopperConnector"]],
 	"Levels": [0, 0],
+	"CostExact": 100,
 	"MainResearch": True,
 })
 append_levels({
@@ -346,7 +347,7 @@ append_levels({
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%Macerator"],
 	["Hand" + r_dict, "%Material%AutomaticHammer"]],
-	"CostMul":0.25,
+	"CostMul":[0.1, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25],
 	"MainResearch": True,
 	"Description": [["BasicMachinesDescription", "ui"]]
 })
@@ -404,7 +405,7 @@ append_levels({
 		["Hand" + r_dict, "%Material%Conveyor"],
 		["Hand" + r_dict, "%Material%Splitter"],
 	],
-	"CostMul":0.25,
+	"CostMul":[0.1, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25],
 	"MainResearch": True,
 })
 append_levels({
@@ -433,7 +434,7 @@ append_levels({
 	"RequiredResearch": ["Automatization"],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%DrillingRig"] ],
-	"CostMuls":[0.5, 0.75, 2.0, 3.0, 4.0, 5.0, 6.0],
+	"CostMuls":[0.1, 0.75, 2.0, 3.0, 4.0, 5.0, 6.0],
 	"MainResearch": True
 })
 append_levels({
