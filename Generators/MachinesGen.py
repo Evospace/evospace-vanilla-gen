@@ -13,6 +13,7 @@ MACHINE_ENERGY = {
 	"Assembler": {"consumption": 160},
 	"AutomaticHammer": {"consumption": 30},
 	"BiElectricEngine": {"consumption": 55, "production": 55},
+	"Booster": {"consumption": 200},
 	"Boiler": {"consumption": BOILER_PER_TICK, "production": BOILER_PER_TICK},
 	"ChemicalBath": {"consumption": 100},
 	"CombustionEngine": {"production": INDUSTRIAL_BOILER_PER_TICK // 2},
@@ -47,7 +48,7 @@ MACHINE_ENERGY = {
 	"Riteg": {"production": 400},
 	"Separator": {"consumption": 80},
 	"Sifter": {"consumption": 400},
-	"Smelter": {"consumption": 20},
+	"Smelter": {"consumption": 50},
 	"SmallSolarPanel": {"production": 50},
 	"SolarPanel": {"production": 500},
 	"WindTurbine": {"production": 300},
@@ -243,6 +244,9 @@ for machine in machines:
 		if machine["Name"] == "HeatPipe":
 			item["DescriptionParts"].append(["heat_drain", "common", 20])
 			
+		if machine["Name"] == "Booster":
+			item["DescriptionParts"].append(["booster", "common", 50 * (level + 1)])
+
 		if machine["Name"] == "Flywheel":
 			item["DescriptionParts"].append(["kinetic_drain", "common", 40])
 			
@@ -539,6 +543,24 @@ for machine in machines:
 				"Ticks" : 40
 			})
 			
+		if machine["Name"] == "Booster":
+			if level > 0:
+				booster_input = [
+					[tier_material[tier - 1] + machine["Name"], 3],
+					[circuits[tier], 1],
+				]
+			else:
+				booster_input = [
+					[plate(), 4],
+					["ModularFrame", 1],
+				]
+			append_recipe({
+				"Name": tier_material[tier] + machine["Name"],
+				"Input": items(booster_input),
+				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Ticks" : 20
+			})
+
 		if machine["Name"] == "Mixer":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],

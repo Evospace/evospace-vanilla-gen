@@ -337,7 +337,7 @@ for material in materials:
 					"Name": material["Name"] + "Plate",
 					"Input": one_item(material["Name"] + "Dust"),
 					"Output": one_item(material["Name"] + "Plate"),
-					"Ticks" : 100,
+					"Ticks" : 60,
 				})
 		
 			append_metal_macerator_recipe(material["Name"], "Plate", 1, 1, material_tier)

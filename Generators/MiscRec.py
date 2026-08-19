@@ -1298,7 +1298,8 @@ for material in materials:
 				"Input": one_item(material["Name"] + "Dust", mul),
 				"Output": one_item(material["Name"] + "Plate", mul),
 				"Tier": extract_tier(material),
-				"Ticks" : 100
+				"Ticks" : 240 * mul,
+				"Productivity": 50,
 			})
 
 recipes_macerator.append({

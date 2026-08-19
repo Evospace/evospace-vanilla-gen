@@ -1104,6 +1104,18 @@ machines = [
         "Category": "Network",
         "NoCellAim": True,
 	},{
+		"Name": "Booster",
+		"StartTier": 6,
+		"EndTier": 7,
+		"Positions": [[0,0,0],[0,-1,0]],
+		"BlockLogic": "BoosterBlockLogic",
+		"NoActorRenderable": True,
+		"CoverParts": [
+			{"Cover": "BoosterBody"},
+			{"Cover": "BoosterBody", "Offset": [0,-1,0]},
+		],
+		"Description": ["ElectricInput"],
+	},{
 		"Name": "DeepStorage",
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
 		"StartTier": 4,
