@@ -739,8 +739,7 @@ biomes.extend([
 		"Class":"Biome",
 		"Name":"DesertBiome",
 		"Layering":"SandDesertLayeringSand",
-		"Props":"SandlandProps",
-		"HeatHaze": 1.0
+		"Props":"SandlandProps"
 	},
 
 	# moon

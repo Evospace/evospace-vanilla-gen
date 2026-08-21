@@ -28,8 +28,7 @@ props = [
 		"Drops": "Organics",
 		"Count": 1,
 		"IsBig": False,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"AdditiveElevation": 0
 	},
 	{
@@ -41,8 +40,7 @@ props = [
 		"Drops": "Organics",
 		"Count": 2,
 		"IsBig": False,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"AdditiveElevation": 0,
 		"SurfaceHeightMin": 0
 	},
@@ -55,8 +53,7 @@ props = [
 		"Drops": "Organics",
 		"Count": 1,
 		"IsBig": False,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"SurfaceHeightMin": 0,
 		"HighDetailShadow": True,
 		"Image": "T_TerrainGrass",
@@ -70,8 +67,7 @@ props = [
 		"Drops": "Organics",
 		"Count": 1,
 		"IsBig": False,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"SurfaceHeightMin": 0,
 		"HighDetailShadow": True,
 		"Image": "T_TerrainGrass",
@@ -85,8 +81,7 @@ props = [
 		"Drops": "Organics",
 		"Count": 10,
 		"IsBig": False,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"AdditiveElevation": 0,
 		"SurfaceHeightMax": 0,
 		"TopHeightMax": 0,
@@ -101,8 +96,7 @@ props = [
 		"Drops": "Organics",
 		"Count": 1,
 		"IsBig": False,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"AdditiveElevation": 0,
 		"SurfaceHeightMax": 0,
 		"TopHeightMax": 0,
@@ -118,8 +112,7 @@ props = [
 		"Drops": "Organics",
 		"Count": 1,
 		"IsBig": False,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"AdditiveElevation": 0,
 		"SurfaceHeightMin": 0,
 		"HighDetailShadow": True,
@@ -148,8 +141,7 @@ props = [
 		"IsBig": True,
 		"Drops": "Log",
 		"Count": 1,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"TimeMul": 1
 	},
 	{
@@ -233,8 +225,7 @@ props = [
 		"Drops": "Organics",
 		"IsBig": False,
 		"Count": 1,
-		"CullBegin": 7000,
-		"CullEnd": 8000,
+		"RangeMul": 0.7,
 		"SurfaceHeightMin": -1,
 		"SurfaceHeightMax": 0,
 		"HighDetailShadow": True
@@ -246,8 +237,7 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"Drops": "Organics",
 		"Count": 1,
-		"CullBegin": 7000,
-		"CullEnd": 8000,
+		"RangeMul": 0.7,
 		"AdditiveElevation": -40,
 		"Floating": True,
 		"IsBig": False,
@@ -260,8 +250,7 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"Drops": "Organics",
 		"Count": 1,
-		"CullBegin": 7000,
-		"CullEnd": 8000,
+		"RangeMul": 0.7,
 		"AdditiveElevation": -40,
 		"Floating": True,
 		"IsBig": False,
@@ -274,8 +263,7 @@ props = [
 		"SurfaceHeightMin": 0,
 		"Drops": "Organics",
 		"Count": 10,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"IsBig": False,
 		"HighDetailShadow": True
 	},{
@@ -286,8 +274,7 @@ props = [
 		"ProjectToTerrainPower": 1,
 		"Drops": "Organics",
 		"Count": 1,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"AdditiveElevation": 0,
 		"IsBig": False,
 		"HighDetailShadow": True
@@ -299,8 +286,7 @@ props = [
 		"ProjectToTerrainPower": 1,
 		"Drops": "Organics",
 		"Count": 1,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"AdditiveElevation": 0,
 		"IsBig": False,
 		"HighDetailShadow": True
@@ -312,8 +298,7 @@ props = [
 		"ProjectToTerrainPower": 1,
 		"Drops": "Organics",
 		"Count": 1,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"AdditiveElevation": 0,
 		"IsBig": False,
 		"HighDetailShadow": True
@@ -328,8 +313,7 @@ props = [
 		"Drops": "Log",
 		"Count": 1,
 		"AdditiveElevation": 0,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"HitsToBreak": 2,
 	},{
 		"Name": "SmallRock",
@@ -340,8 +324,7 @@ props = [
 		"Drops": "StoneSurface",
 		"Count": 2,
 		"HitsToBreak": 1,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"AdditiveElevation": 0,
 		"IsBig": False,
 		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
@@ -356,8 +339,7 @@ props = [
 		"Drops": "StoneSurface",
 		"Count": 2,
 		"HitsToBreak": 1,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"AdditiveElevation": 0,
 		"IsBig": False,
 		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
@@ -371,8 +353,7 @@ props = [
 		"ProjectToTerrainPower": 1,
 		"Drops": "Organics",
 		"Count": 1,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"AdditiveElevation": 0,
 		"IsBig": False,
 		"HighDetailShadow": True,
@@ -398,8 +379,7 @@ props = [
 		"Variations": 4,
 		"ProjectToTerrainPower": 1,
 		"Drops": "BasaltSurface",
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"IsBig": True,
 		"AdditiveElevation": 0,
 		"Count": 20,
@@ -415,8 +395,7 @@ props = [
 		"ProjectToTerrainPower": 1,
 		"Drops": "Organics",
 		"Count": 1,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"AdditiveElevation": 0,
 		"IsBig": False,
 		"HighDetailShadow": True,
@@ -429,8 +408,7 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"Drops": "Organics",
 		"Count": 1,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"AdditiveElevation": 0,
 		"IsBig": False,
 	},{
@@ -441,8 +419,7 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"Drops": "Organics",
 		"Count": 1,
-		"CullBegin": 7000,
-		"CullEnd": 8000,
+		"RangeMul": 0.7,
 		"AdditiveElevation": 0,
 		"Floating": True,
 		"IsBig": False,
@@ -456,8 +433,7 @@ props = [
 		"Drops": "StoneSurface",
 		"Count": 2,
 		"HitsToBreak": 1,
-		"CullBegin": 10000,
-		"CullEnd": 12000,
+		"RangeMul": 1,
 		"AdditiveElevation": -20,
 		"Count": 10,
 		"HitsToBreak": 4,
@@ -477,8 +453,7 @@ for ore in ore_types:
 		"ProjectToTerrainPower": 1,
 		"Drops": ore["Drops"],
 		"Count": 1,
-		"CullBegin": 90000,
-		"CullEnd": 100000,
+		"RangeMul": 8,
 		"AdditiveElevation": 0,
 		"IsBig": True,
 		"Image": "T_Error",
@@ -498,8 +473,7 @@ props.append({
 	"Drops": "RawOil",
 	"Count": 1,
 	"Minable": False,
-	"CullBegin": 90000,
-	"CullEnd": 100000,
+	"RangeMul": 8,
 	"AdditiveElevation": 0,
 	"IsBig": True,
 	"Image": "T_Error",
@@ -526,8 +500,7 @@ props.append({
 	"IsBig": True,
 	"Drops": "Log",
 	"Count": 1,
-	"CullBegin": 10000,
-	"CullEnd": 12000,
+	"RangeMul": 1,
 	"TimeMul": 1,
 	"Image": "T_Shrub",
 })
@@ -548,8 +521,7 @@ props.append({
 	"IsBig": False,
 	"Drops": "Organics",
 	"Count": 1,
-	"CullBegin": 10000,
-	"CullEnd": 12000,
+	"RangeMul": 1,
 	"AdditiveElevation": 0,
 	"Image": "T_TerrainGrass",
 })
@@ -1052,18 +1024,17 @@ for prop in props:
 		prop["Streamed"] = True
 
 # A bush or a boulder keeps its silhouette long after grass has stopped reading, so it fades out
-# further than the grass range it was authored with.
-cull_mul_by_name = {
+# further than the grass range it is authored against.
+range_mul_by_name = {
 	"Shrub": 2.5, "BigBush": 2.5,
 	"SmallRock": 2.5, "SmallVolcanicRock": 2.5, "SnowyRock": 2.5, "CanyonRock": 2.5,
-	"SeaPlant": 2.5, "SeaGrass": 2.5, "Rogoz": 2.5,
+	"Rogoz": 2.5,
 }
 for prop in props:
-	mul = cull_mul_by_name.get(prop["Name"])
+	mul = range_mul_by_name.get(prop["Name"])
 	if not mul:
 		continue
-	prop["CullBegin"] = int(prop["CullBegin"] * mul)
-	prop["CullEnd"] = int(prop["CullEnd"] * mul)
+	prop["RangeMul"] = round(prop["RangeMul"] * mul, 2)
 
 for prop in props:
 	image = "T_" + prop["Name"] if "Image" not in prop else prop["Image"]
@@ -1103,12 +1074,10 @@ for prop in props:
 			temp_prop["BreakEffect"] = prop["BreakEffect"]
 		if "HitsToBreak" in prop:
 			temp_prop["HitsToBreak"] = prop["HitsToBreak"]
-		if "CullBegin" in prop:
-			temp_prop["CullBegin"] = prop["CullBegin"]
+		if "RangeMul" in prop:
+			temp_prop["RangeMul"] = prop["RangeMul"]
 		if "Floating" in prop:
 			temp_prop["Floating"] = prop["Floating"]
-		if "CullEnd" in prop:
-			temp_prop["CullEnd"] = prop["CullEnd"]
 		if "SurfaceHeightMax" in prop:
 			temp_prop["SurfaceHeightMax"] = prop["SurfaceHeightMax"]
 		if "SurfaceHeightMin" in prop:
