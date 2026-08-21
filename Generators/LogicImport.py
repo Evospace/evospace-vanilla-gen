@@ -48,6 +48,38 @@ logic_imports = [
         "Enabled": False,
         "Label": ["SpotlightColorB", "logic_import"],
         "Tooltip": ["SpotlightColorBTooltip", "logic_import"]
+    },
+    {
+        "Name": "LedActive",
+        "UseSignal": True,
+        "Signal": "A",
+        "Enabled": True,
+        "Label": ["LedActive", "logic_import"],
+        "Tooltip": ["LedActiveTooltip", "logic_import"]
+    },
+    {
+        "Name": "LedColorR",
+        "UseSignal": True,
+        "Signal": "R",
+        "Enabled": False,
+        "Label": ["LedColorR", "logic_import"],
+        "Tooltip": ["LedColorRTooltip", "logic_import"]
+    },
+    {
+        "Name": "LedColorG",
+        "UseSignal": True,
+        "Signal": "G",
+        "Enabled": False,
+        "Label": ["LedColorG", "logic_import"],
+        "Tooltip": ["LedColorGTooltip", "logic_import"]
+    },
+    {
+        "Name": "LedColorB",
+        "UseSignal": True,
+        "Signal": "B",
+        "Enabled": False,
+        "Label": ["LedColorB", "logic_import"],
+        "Tooltip": ["LedColorBTooltip", "logic_import"]
     }
 ]
 

@@ -590,6 +590,7 @@ append_levels({
 	"Unlocks": [
 		["Hand" + r_dict, "SteelLogicWire"],
 		["Hand" + r_dict, "SteelLogicInterface"],
+		["Hand" + r_dict, "Led"],
 	],
 	"MainResearch": True,
 	"CostMul": 2.0,

@@ -50,6 +50,17 @@ simple_single = [
             "SpotlightColorB",
         ],
 	},{
+        "Name": "Led",
+        "Tier": 2,
+        "BlockLogic": "LedBlockLogic",
+        "LogicImports": [
+            "LedActive",
+            "LedColorR",
+            "LedColorG",
+            "LedColorB",
+        ],
+        "Category": "Network",
+	},{
         "Name": "LandingPad",
         "BlockLogic": "LandingPadBlockLogic",
         "Positions": [[x, y, 0] for x in range(-2, 3) for y in range(-2, 3)],
@@ -296,7 +307,7 @@ for one in simple_single:
 		"StackSize": 32,
 		"Label":[one["Name"],"misc"],
 		"Tier": one["Tier"] if "Tier" in one else 0,
-		"Category": "Decoration",
+		"Category": one["Category"] if "Category" in one else "Decoration",
 	})
 	
     block = {

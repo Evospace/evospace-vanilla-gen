@@ -642,6 +642,18 @@ for miscBlock in ["CopperChair", "Ladder", "Door", "Window", "PlasticWindow", "R
 		"Tier": 1
 	})
 
+recipes_hand.append({
+	"Name": "Led",
+	"Input": items([
+		["Circuit"],
+		["SteelPlate"],
+		["CopperWire", 2]
+	]),
+	"Output": one_item("Led"),
+	"Ticks" : 60,
+	"Tier": 2
+})
+
 for designableBlock in ["Stairs", "Corner", "Beam", "Scaffold", "Column", "Floor", "Chair", "Table", "Fence"]:
 	recipes_hand.append({
 		"Name": designableBlock,
