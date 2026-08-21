@@ -589,7 +589,17 @@ recipes_assembler.append({
 	"Tier": 4
 })
 
-for miscBlock in ["BasicPlatform", "Bricks", "WoodenPlanks", "StoneTiles", "RedTiles", "DarkTiles", "Terracotta", "TerracottaTiles", "RedBricks", "DarkBricks", "TerracottaBricks"]:
+recipes_hand.append({
+	"Name": "BasicPlatform",
+	"Input": items([
+		["BuildingMaterial", 1]
+	]),
+	"Output": one_item("BasicPlatform"),
+	"Ticks" : 10,
+	"Tier": 1
+})
+
+for miscBlock in ["Bricks", "WoodenPlanks", "StoneTiles", "RedTiles", "DarkTiles", "Terracotta", "TerracottaTiles", "RedBricks", "DarkBricks", "TerracottaBricks"]:
 	recipes_hand.append({
 		"Name": miscBlock,
 		"Input": items([
@@ -1308,7 +1318,10 @@ for material in materials:
 			recipes_arc_furnace.append({
 				"Name": material["Name"] + "Plate",
 				"Input": one_item(material["Name"] + "Dust", mul),
-				"Output": one_item(material["Name"] + "Plate", mul),
+				"Output": items([
+					[material["Name"] + "Plate", mul],
+					[material["Name"] + "Plate", mul, True],
+				]),
 				"Tier": extract_tier(material),
 				"Ticks" : 240 * mul,
 				"Productivity": 50,
@@ -1387,6 +1400,23 @@ recipes_hammer.append({
 	"Name": "BasaltToGravel",
 	"Input": one_item("BasaltSurface"),
 	"Output": one_item("GravelSurface", 2),
+	"Tier": 1,
+	"Ticks": 100,
+})
+
+for stone in ["RedStone", "DarkStone"]:
+	recipes_hammer.append({
+		"Name": stone + "ToGravel",
+		"Input": one_item(stone + "Surface"),
+		"Output": one_item("GravelSurface", 2),
+		"Tier": 1,
+		"Ticks": 100,
+	})
+
+recipes_hammer.append({
+	"Name": "DirtToBuildingMaterial",
+	"Input": one_item("DirtSurface"),
+	"Output": one_item("BuildingMaterial"),
 	"Tier": 1,
 	"Ticks": 100,
 })

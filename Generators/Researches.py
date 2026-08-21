@@ -541,7 +541,7 @@ append_levels({
 	"RequiredResearch": ["CopperWire"],
 	"Levels": [1,1],
 	"Unlocks": [["Hand" + r_dict, "CircuitBoard"]],
-	"CostMul":0.3,
+	"CostExact": 60,
 	"MainResearch": True
 })
 append_levels({
@@ -569,6 +569,7 @@ append_levels({
 	"RequiredResearch": ["CircuitBoard"],
 	"Unlocks": [["Hand" + r_dict, "Triod"],[assembler_r_dict, "Triod"]],
 	"Levels": [1,1],
+	"CostExact": 70,
 	"MainResearch": True
 })
 append_levels({
@@ -579,7 +580,7 @@ append_levels({
 	"Unlocks": [["Hand" + r_dict, "Circuit"],[assembler_r_dict, "Circuit"]],
 	"Levels": [1,1],
 	"MainResearch": True,
-	"CostMul": 1.5,
+	"CostExact": 80,
 })
 append_levels({
 	"Class": research_recipe,

@@ -46,7 +46,10 @@ for ore_type in ore_types:
 				recipes_arc_furnace.append({
 					"Name": ore_name + form,
 					"Input": one_item(ore_name + form),
-					"Output": one_item(processing["Furnace"]),
+					"Output": items([
+						[processing["Furnace"], 1],
+						[processing["Furnace"], 1, True],
+					]),
 					"Ticks" : 240,
 					"Productivity": 50,
 					"Tier": material_tier,

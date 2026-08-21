@@ -543,23 +543,23 @@ for machine in machines:
 				"Ticks" : 40
 			})
 			
-		if machine["Name"] == "Booster":
-			if level > 0:
-				booster_input = [
-					[tier_material[tier - 1] + machine["Name"], 3],
-					[circuits[tier], 1],
-				]
-			else:
-				booster_input = [
-					[plate(), 4],
-					["ModularFrame", 1],
-				]
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input": items(booster_input),
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 20
-			})
+		# if machine["Name"] == "Booster":
+		# 	if level > 0:
+		# 		booster_input = [
+		# 			[tier_material[tier - 1] + machine["Name"], 3],
+		# 			[circuits[tier], 1],
+		# 		]
+		# 	else:
+		# 		booster_input = [
+		# 			[plate(), 4],
+		# 			["ModularFrame", 1],
+		# 		]
+		# 	append_recipe({
+		# 		"Name": tier_material[tier] + machine["Name"],
+		# 		"Input": items(booster_input),
+		# 		"Output": one_item(tier_material[tier] + machine["Name"]),
+		# 		"Ticks" : 20
+		# 	})
 
 		if machine["Name"] == "Mixer":
 			append_recipe({
