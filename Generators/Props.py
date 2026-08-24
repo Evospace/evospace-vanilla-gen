@@ -981,8 +981,8 @@ for ore in ore_types:
 ore_props.append("OilCluster")
 
 # Distance bands for surface ore deposits (blocks). Kept in sync with OreGenerator.cpp constants.
-ORE_R_START = 256
-ORE_R_SPAN = 3072
+ORE_R_START = 200
+ORE_R_LATE = 300
 
 ore_prop_tiers = [
 	{
@@ -998,13 +998,13 @@ ore_prop_tiers = [
 		"Props": ["MagnetiteCluster", "MalachiteCluster", "OilCluster", "CinnabarCluster"],
 	},
 	{
-		"MinDist": ORE_R_START + ORE_R_SPAN // 3,
+		"MinDist": ORE_R_START,
 		"Weight": 1,
 		"FarWeight": 3,
 		"Props": ["BauxiteCluster", "RubyCluster"],
 	},
 	{
-		"MinDist": ORE_R_START + (ORE_R_SPAN * 2) // 3,
+		"MinDist": ORE_R_LATE,
 		"Weight": 1,
 		"FarWeight": 4,
 		"Props": ["ThorianiteCluster", "PyroplatiteCluster"],
