@@ -675,7 +675,7 @@ proplists = [
 		"Array": [
 			{
 				"Props": ["Broadleaf", "Broadleaf", "Conifer", "Shrub", "BigBush"],
-				"Chance": 0.01
+				"Chance": 0.007
 			},{
 				"Props": ["SmallRock"],
 				"Chance": 0.01
@@ -684,13 +684,13 @@ proplists = [
 				"Chance": 0.05
 			},{
 				"Props": ["Dandaleon"],
-				"Chance": 0.5
+				"Chance": 0.35
 			},{
 				"Props": ["LongGrass"],
-				"Chance": 0.9
+				"Chance": 0.63
 			},{
 				"Props": ["Shroom"],
-				"Chance": 0.01
+				"Chance": 0.007
 			}
 
 		]
