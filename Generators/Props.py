@@ -893,16 +893,19 @@ proplists = [
 		"Array": [
 			{
 				"Props": ["YellowGrass"],
-				"Chance": 0.07
+				"Chance": 0.28
 			},{
 				"Props": ["Rogoz"],
 				"Chance": 0.5
 			},{
-				"Props": ["Broadleaf", "BigBush"],
-				"Chance": 0.01
+				"Props": ["BroadleafSmall"],
+				"Chance": 0.0075
+			},{
+				"Props": ["Conifer", "BigBush"],
+				"Chance": 0.0045
 			},{
 				"Props": ["Shroom"],
-				"Chance": 0.01
+				"Chance": 0.02
 			}
 		]
 	},{
