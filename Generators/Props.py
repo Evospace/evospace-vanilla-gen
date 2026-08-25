@@ -732,7 +732,7 @@ proplists = [
 			{
 				# Canopy: pine-dominant, an occasional conifer breaks up the identical silhouettes
 				"Props": ["Pine", "Pine", "Pine", "Conifer"],
-				"Chance": 0.016
+				"Chance": 0.0096
 			},{
 				# Understory: young growth / brush filling the clearings between trunks
 				"Props": ["Shrub", "BigBush"],
@@ -749,11 +749,11 @@ proplists = [
 				"Chance": 0.08
 			},{
 				"Props": ["DryGrass"],
-				"Chance": 0.35
+				"Chance": 0.245
 			},{
 				# Greener tufts among the needle litter
 				"Props": ["LongGrass"],
-				"Chance": 0.2
+				"Chance": 0.14
 			},{
 				"Props": ["Dandaleon"],
 				"Chance": 0.06
