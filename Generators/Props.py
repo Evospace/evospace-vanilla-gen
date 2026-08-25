@@ -133,6 +133,25 @@ props = [
 		"BreakEffect": "/Game/EffectActors/TreeBreakEffect.TreeBreakEffect_C"
 	},
 	{
+		"Name": "BroadleafSmall",
+		"Meshes": [
+			"/Game/Props/Broadleaf/Broadleaf",
+			"/Game/Props/Broadleaf/Broadleaf1",
+			"/Game/Props/Broadleaf/Broadleaf2",
+		],
+		"ItemFrom": "Broadleaf",
+		"ScaleMin": 0.5,
+		"ScaleMax": 1.1,
+		"ProjectToTerrainPower": 0,
+		"SurfaceHeightMin": 0,
+		"IsBig": True,
+		"Drops": "Log",
+		"Count": 8,
+		"HitsToBreak": 5,
+		"DamageEffect": "/Game/EffectActors/TreeDamageEffect.TreeDamageEffect_C",
+		"BreakEffect": "/Game/EffectActors/TreeBreakEffect.TreeBreakEffect_C"
+	},
+	{
 		"Name": "Shrub",
 		"ScaleMin": 1.5,
 		"ScaleMax": 2.5,
@@ -859,14 +878,17 @@ proplists = [
 				"Props": ["Rogoz"],
 				"Chance": 0.5
 			},{
-				"Props": ["Broadleaf", "BigBush"],
-				"Chance": 0.01
+				"Props": ["BroadleafSmall"],
+				"Chance": 0.009
+			},{
+				"Props": ["Conifer", "BigBush"],
+				"Chance": 0.0045
 			},{
 				"Props": ["Shroom"],
 				"Chance": 0.01
 			}
 		]
-	},{	
+	},{
 		"Name": "ClayBeachProps",
 		"Array": [
 			{
@@ -1042,15 +1064,16 @@ for prop in props:
 for prop in props:
 	image = "T_" + prop["Name"] if "Image" not in prop else prop["Image"]
 
-	for variation in range(0, prop["Variations"]):
-		objects_array.append({ "Class": "StaticItem",
-			"Name": prop["Name"] + variation_helper[variation],
-			"StackSize": 32,
-			"Image": image,
-			"Category": "Terrain",
-			"Label": [prop["Name"], "props"],
-			"DescriptionParts":[["WorldObject","common"]],
-		})
+	if "ItemFrom" not in prop:
+		for variation in range(0, prop["Variations"]):
+			objects_array.append({ "Class": "StaticItem",
+				"Name": prop["Name"] + variation_helper[variation],
+				"StackSize": 32,
+				"Image": image,
+				"Category": "Terrain",
+				"Label": [prop["Name"], "props"],
+				"DescriptionParts":[["WorldObject","common"]],
+			})
 
 	for variation in range(0, prop["Variations"]):
 		# Non-minable props (e.g. OilCluster) still need Result for map icons and USourceData::Item in OreGenerator
@@ -1067,7 +1090,7 @@ for prop in props:
 			"ScaleMax": prop["ScaleMax"],
 			"ProjectToTerrainPower": prop["ProjectToTerrainPower"],
 			"AdditiveElevation": prop.get("AdditiveElevation", 0),
-			"Item": prop["Name"],
+			"Item": prop.get("ItemFrom", prop["Name"]),
 			"Minable": minable,
 			"IsBig": prop["IsBig"]
 		}
