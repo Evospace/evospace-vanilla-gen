@@ -298,6 +298,9 @@ for machine in machines:
 		if "NoCellAim" in machine:
 			block["NoCellAim"] = True
 
+		if "NoGroundSnap" in machine:
+			block["NoGroundSnap"] = True
+
 		if "BlockLogic" in machine and (machine["BlockLogic"] == "SimpleInstancedBlockLogic" or machine["BlockLogic"] == "SelectCrafterInstanced" or machine["BlockLogic"] == "AutoCrafterInstanced"):
 			block["Cover"] = tier_material[tier] + machine["Name"] + static_cover
 
