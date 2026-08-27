@@ -282,11 +282,6 @@ for mat, num in zip(paint_metals, range(1,7+1)):
 		"Mesh": "/Game/Models/ElectricEngine",
         "Materials": ["/Game/Materials/ElectricEngineMaterial"]
 	})
-    covers.append({
-		"Name": mat+"BoosterBody",
-		"Mesh": "/Game/Covers/SimpleCover",
-        "Materials": [tier_materials[num]]
-	})
 
 # Animated machine parts: one instanced mesh per moving piece, rotation lives in the material (WPO).
 # Mesh paths are placeholders until the real assets are hooked up.

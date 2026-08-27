@@ -9,53 +9,52 @@ INDUSTRIAL_BOILER_PER_TICK = BOILER_PER_TICK * 20 * 8
 
 # Base per-tick energy before tier scaling (matches former Vanilla block lua).
 MACHINE_ENERGY = {
-	"ArcSmelter": {"consumption": 100},
-	"Assembler": {"consumption": 160},
-	"AutomaticHammer": {"consumption": 30},
-	"BiElectricEngine": {"consumption": 55, "production": 55},
-	"Booster": {"consumption": 200},
-	"Boiler": {"consumption": BOILER_PER_TICK, "production": BOILER_PER_TICK},
-	"ChemicalBath": {"consumption": 100},
-	"CombustionEngine": {"production": INDUSTRIAL_BOILER_PER_TICK // 2},
-	"CompactGenerator": {"consumption": 50, "production": 50},
-	"Computer": {"consumption": 20},
-	"Constructor": {"consumption": 40},
-	"DrillingRig": {"consumption": 96, "scaling": "linear"},
-	"ElectricEngine": {"consumption": 150, "production": 150},
-	"ElectricFurnace": {"consumption": 250, "production": 250},
-	"Electrolyzer": {"consumption": 80},
-	"Fermenter": {"consumption": 20},
-	"FissionReactor": {"production": INDUSTRIAL_BOILER_PER_TICK},
-	"FluidFurnace": {"production": 200},
-	"FractionatingColumn": {"consumption": 200},
-	"FusionReactor": {"consumption": INDUSTRIAL_BOILER_PER_TICK * 2},
-	"Furnace": {"production": 50},
-	"Generator": {"consumption": BOILER_PER_TICK * 5 * 2, "production": BOILER_PER_TICK * 5 * 2},
-	"IndustrialBoiler": {"consumption": INDUSTRIAL_BOILER_PER_TICK, "production": INDUSTRIAL_BOILER_PER_TICK},
-	"IndustrialChemReactor": {"consumption": 100},
-	"IndustrialGenerator": {"consumption": INDUSTRIAL_BOILER_PER_TICK, "production": INDUSTRIAL_BOILER_PER_TICK},
-	"IndustrialSmelter": {"consumption": 1000},
-	"IndustrialSteamTurbine": {"consumption": INDUSTRIAL_BOILER_PER_TICK, "production": INDUSTRIAL_BOILER_PER_TICK},
-	"KineticHeater": {"consumption": 20, "production": 20},
-	"Macerator": {"consumption": 20},
-	"Mixer": {"consumption": 15},
-	"OreWasher": {"consumption": 20},
-	"Oven": {"consumption": 100},
-	"Portal": {"consumption": INDUSTRIAL_BOILER_PER_TICK * 4 * 2},
-	"Pumpjack": {"consumption": 60, "scaling": "linear"},
-	"Pumpjack_leg": {"consumption": 60, "scaling": "linear"},
-	"PyrolysisUnit": {"consumption": 50},
-	"Riteg": {"production": 400},
-	"Separator": {"consumption": 80},
-	"Sifter": {"consumption": 400},
-	"Smelter": {"consumption": 50},
-	"SmallSolarPanel": {"production": 50},
-	"SolarPanel": {"production": 500},
-	"WindTurbine": {"production": 300},
-	"SteamEngine": {"consumption": BOILER_PER_TICK, "production": BOILER_PER_TICK},
-	"SteamTurbine": {"consumption": BOILER_PER_TICK * 5 * 2, "production": BOILER_PER_TICK * 5 * 2},
-	"StirlingEngine": {"consumption": 50, "production": 50},
-	"TeslaTower": {"consumption": 1000},
+	"ArcSmelter": {"consumption": 100, "consumption_item": "Electricity"},
+	"Assembler": {"consumption": 160, "consumption_item": "Electricity"},
+	"AutomaticHammer": {"consumption": 30, "consumption_item": "Kinetic"},
+	"BiElectricEngine": {"consumption": 55, "consumption_item": "Electricity", "production": 55, "production_item": "Kinetic"},
+	"Boiler": {"consumption": BOILER_PER_TICK, "consumption_item": "Heat", "production": BOILER_PER_TICK, "production_item": "Steam"},
+	"ChemicalBath": {"consumption": 100, "consumption_item": "Kinetic"},
+	"CombustionEngine": {"production": INDUSTRIAL_BOILER_PER_TICK // 2, "production_item": "Kinetic"},
+	"CompactGenerator": {"consumption": 50, "consumption_item": "Kinetic", "production": 50, "production_item": "Electricity"},
+	"Computer": {"consumption": 20, "consumption_item": "Electricity"},
+	"Constructor": {"consumption": 40, "consumption_item": "Electricity"},
+	"DrillingRig": {"consumption": 96, "consumption_item": "Kinetic", "scaling": "linear"},
+	"ElectricEngine": {"consumption": 150, "consumption_item": "Electricity", "production": 150, "production_item": "Kinetic"},
+	"ElectricFurnace": {"consumption": 250, "consumption_item": "Electricity", "production": 250, "production_item": "Heat"},
+	"Electrolyzer": {"consumption": 80, "consumption_item": "Electricity"},
+	"Fermenter": {"consumption": 20, "consumption_item": "Electricity"},
+	"FissionReactor": {"production": INDUSTRIAL_BOILER_PER_TICK, "production_item": "Heat"},
+	"FluidFurnace": {"production": 200, "production_item": "Heat"},
+	"FractionatingColumn": {"consumption": 200, "consumption_item": "Electricity"},
+	"FusionReactor": {"consumption": INDUSTRIAL_BOILER_PER_TICK * 2, "consumption_item": "Electricity"},
+	"Furnace": {"production": 50, "production_item": "Heat"},
+	"Generator": {"consumption": BOILER_PER_TICK * 5 * 2, "consumption_item": "Kinetic", "production": BOILER_PER_TICK * 5 * 2, "production_item": "Electricity"},
+	"IndustrialBoiler": {"consumption": INDUSTRIAL_BOILER_PER_TICK, "consumption_item": "Heat", "production": INDUSTRIAL_BOILER_PER_TICK, "production_item": "Steam"},
+	"IndustrialChemReactor": {"consumption": 100, "consumption_item": "Electricity"},
+	"IndustrialGenerator": {"consumption": INDUSTRIAL_BOILER_PER_TICK, "consumption_item": "Kinetic", "production": INDUSTRIAL_BOILER_PER_TICK, "production_item": "Electricity"},
+	"IndustrialSmelter": {"consumption": 1000, "consumption_item": "Heat"},
+	"IndustrialSteamTurbine": {"consumption": INDUSTRIAL_BOILER_PER_TICK, "consumption_item": "Steam", "production": INDUSTRIAL_BOILER_PER_TICK, "production_item": "Kinetic"},
+	"KineticHeater": {"consumption": 20, "consumption_item": "Kinetic", "production": 20, "production_item": "Heat"},
+	"Macerator": {"consumption": 20, "consumption_item": "Kinetic"},
+	"Mixer": {"consumption": 15, "consumption_item": "Kinetic"},
+	"OreWasher": {"consumption": 20, "consumption_item": "Kinetic"},
+	"Oven": {"consumption": 100, "consumption_item": "Heat"},
+	"Portal": {"consumption": INDUSTRIAL_BOILER_PER_TICK * 4 * 2, "consumption_item": "Electricity"},
+	"Pumpjack": {"consumption": 60, "consumption_item": "Kinetic", "scaling": "linear"},
+	"Pumpjack_leg": {"consumption": 60, "consumption_item": "Kinetic", "scaling": "linear"},
+	"PyrolysisUnit": {"consumption": 50, "consumption_item": "Heat"},
+	"Riteg": {"production": 400, "production_item": "Heat"},
+	"Separator": {"consumption": 80, "consumption_item": "Kinetic"},
+	"Sifter": {"consumption": 400, "consumption_item": "Kinetic"},
+	"Smelter": {"consumption": 50, "consumption_item": "Heat"},
+	"SmallSolarPanel": {"production": 50, "production_item": "Electricity"},
+	"SolarPanel": {"production": 500, "production_item": "Electricity"},
+	"WindTurbine": {"production": 300, "production_item": "Electricity"},
+	"SteamEngine": {"consumption": BOILER_PER_TICK, "consumption_item": "Steam", "production": BOILER_PER_TICK, "production_item": "Kinetic"},
+	"SteamTurbine": {"consumption": BOILER_PER_TICK * 5 * 2, "consumption_item": "Steam", "production": BOILER_PER_TICK * 5 * 2, "production_item": "Kinetic"},
+	"StirlingEngine": {"consumption": 50, "consumption_item": "Heat", "production": 50, "production_item": "Kinetic"},
+	"TeslaTower": {"consumption": 1000, "consumption_item": "Electricity"},
 }
 
 def scale_energy_per_tick(base, level, scaling="exponential"):
@@ -244,9 +243,6 @@ for machine in machines:
 		if machine["Name"] == "HeatPipe":
 			item["DescriptionParts"].append(["heat_drain", "common", 20])
 			
-		if machine["Name"] == "Booster":
-			item["DescriptionParts"].append(["booster", "common", 50 * (level + 1)])
-
 		if machine["Name"] == "Flywheel":
 			item["DescriptionParts"].append(["kinetic_drain", "common", 40])
 			
@@ -285,9 +281,11 @@ for machine in machines:
 			if "consumption" in energy_cfg:
 				block["EnergyConsumptionPerTick"] = scale_energy_per_tick(
 					energy_cfg["consumption"], level, scaling)
+				block["EnergyConsumptionItem"] = energy_cfg["consumption_item"]
 			if "production" in energy_cfg:
 				block["EnergyProductionPerTick"] = scale_energy_per_tick(
 					energy_cfg["production"], level, scaling)
+				block["EnergyProductionItem"] = energy_cfg["production_item"]
 
 		if "PathFinding" in machine:
 			block["BuildingMode"]  = "PathFinding"
@@ -320,6 +318,9 @@ for machine in machines:
 
 		if "DefaultRotation" in machine:
 			block["DefaultRotation"] = machine["DefaultRotation"]
+
+		if "RotationLocks" in machine:
+			block["RotationLocks"] = machine["RotationLocks"]
 			
 		if "Positions" in machine:
 			block["Positions"] = machine["Positions"]
@@ -546,24 +547,6 @@ for machine in machines:
 				"Ticks" : 40
 			})
 			
-		# if machine["Name"] == "Booster":
-		# 	if level > 0:
-		# 		booster_input = [
-		# 			[tier_material[tier - 1] + machine["Name"], 3],
-		# 			[circuits[tier], 1],
-		# 		]
-		# 	else:
-		# 		booster_input = [
-		# 			[plate(), 4],
-		# 			["ModularFrame", 1],
-		# 		]
-		# 	append_recipe({
-		# 		"Name": tier_material[tier] + machine["Name"],
-		# 		"Input": items(booster_input),
-		# 		"Output": one_item(tier_material[tier] + machine["Name"]),
-		# 		"Ticks" : 20
-		# 	})
-
 		if machine["Name"] == "Mixer":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],

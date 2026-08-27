@@ -130,11 +130,16 @@ tools = [
 		"Label": "Upgrade Tool",
         "ItemLogic": "/Game/Equipped/UpgradeToolBP.UpgradeToolBP_C",
 	},{
-		"Name": "Train",
-		"Label": "Train",
+		"Name": "CargoWagon",
+		"Label": "Cargo Wagon",
 		"ItemLogic": "TrainPlacerItemLogic",
-		# TODO: dedicated T_Train icon; SteamEngine is a placeholder
-		"Image": "T_SteamEngine",
+		"Image": "T_CargoWagon",
+		"Category": "Vehicles",
+	},{
+		"Name": "Locomotive",
+		"Label": "Locomotive",
+		"ItemLogic": "TrainPlacerItemLogic",
+		"Image": "T_Locomotive",
 		"Category": "Vehicles",
 	},{
 		"Name": "GroundLevelingTool",
@@ -153,8 +158,7 @@ tools = [
 		"Name": "OffroadVehicle",
 		"Label": "Offroad Vehicle",
 		"ItemLogic": "VehicleItemLogic",
-		# TODO: dedicated T_OffroadVehicle icon; SteamEngine is a placeholder
-		"Image": "T_SteamEngine",
+		"Image": "T_OffroadVehicle",
 		"Category": "Vehicles",
 	},{
 		"Name": "Boat",

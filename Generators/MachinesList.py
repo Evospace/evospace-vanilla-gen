@@ -76,6 +76,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "ConductorBlockLogic",
+		"RotationLocks": [1,1,1],
 		"LogicExports": ["Storage"],
 		"Description": ["FluidConductor"],
 		"PathFinding": True,
@@ -89,6 +90,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 1,
 		"BlockLogic": "HeatContainerBlockLogic",
+		"RotationLocks": [1,1,1],
 		"Description": ["HeatConductor", "HeatStorage"],
 		"PathFinding": True,
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
@@ -100,6 +102,7 @@ machines = [
 		"StartTier": 4,
 		"EndTier": 4,
 		"BlockLogic": "HeatContainerBlockLogic",
+		"RotationLocks": [1,1,1],
 		"Description": ["HeatConductor", "HeatStorage"],
 		"PathFinding": True,
         "ExactName": True,
@@ -112,6 +115,7 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 2,
 		"BlockLogic": "KineticConductorBlockLogic",
+		"RotationLocks": [1,1,1],
 		"LogicExports": ["Storage"],
 		"Description": ["KineticConductor", "KineticStorage"],
 		"PathFinding": True,
@@ -131,6 +135,7 @@ machines = [
 		"StartTier": 0,
 		"EndTier": 0,
 		"BlockLogic": "ConductorBlockLogic",
+		"RotationLocks": [1,1,1],
 		"LogicExports": ["Storage"],
         "Description": ["ElectricConductor"],
 		"PathFinding": True,
@@ -163,6 +168,7 @@ machines = [
 			"Valve"
 		],
 		"BlockLogic": "FluidSwitchBlockLogic",
+		"RotationLocks": [1,1,1],
 		"Description": ["FluidConductor"],
 		"LogicImports": ["Working"],
 	},{
@@ -170,6 +176,7 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 2,
 		"BlockLogic": "ElectricitySwitchBlockLogic",
+		"RotationLocks": [1,1,1],
 		"Description": ["ElectricConductor"],
 		"LogicImports": ["Working"],
 	},{
@@ -215,6 +222,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "FluidContainerBlockLogic",
+		"RotationLocks": [1,1,1],
 		"LogicExports": ["Storage"],
 		"Description": ["FluidConductor", "FluidStorage"],
 	},{
@@ -544,6 +552,7 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 7,
         "BlockLogic": "ElectricityContainerBlockLogic",
+		"RotationLocks": [1,1,1],
 		"LogicExports": ["Storage"],
 		"Description": ["ElectricConductor", "ElectricStorage"]
 	},{
@@ -932,6 +941,7 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 7,
 		"BlockLogic":"EnvironmentCrafter",
+		"RotationLocks": [0,0,1],
 		"NoActorRenderable": True,
 		"CoverParts": [
 			{"Cover": "SolarPanelBase"},
@@ -953,6 +963,7 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 7,
 		"BlockLogic":"EnvironmentCrafter",
+		"RotationLocks": [0,0,1],
 		"NoActorRenderable": True,
 		"CoverParts": [
 			{"Cover": "SmallSolarPanelCell"},
@@ -970,6 +981,7 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic":"EnvironmentCrafter",
+		"RotationLocks": [0,0,1],
 		"NoActorRenderable": True,
 		"CoverParts": [
 			{"Cover": "WindTurbineMast"},
@@ -1098,6 +1110,7 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 2,
 		"BlockLogic": "DataConductorBlockLogic",
+		"RotationLocks": [1,1,1],
 		"LogicExports": ["Storage"],
 		"Description": ["DataConductor"],
 		"PathFinding": True,
@@ -1106,18 +1119,6 @@ machines = [
         "Category": "Network",
         "NoCellAim": True,
         "NoGroundSnap": True,
-	},{
-		"Name": "Booster",
-		"StartTier": 6,
-		"EndTier": 7,
-		"Positions": [[0,0,0],[0,-1,0]],
-		"BlockLogic": "BoosterBlockLogic",
-		"NoActorRenderable": True,
-		"CoverParts": [
-			{"Cover": "BoosterBody"},
-			{"Cover": "BoosterBody", "Offset": [0,-1,0]},
-		],
-		"Description": ["ElectricInput"],
 	},{
 		"Name": "DeepStorage",
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
