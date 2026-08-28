@@ -43,17 +43,18 @@ for ore_type in ore_types:
 					"Ticks" : 60,
 					"Tier": material_tier,
 				})
-				recipes_arc_furnace.append({
+				arc_output = [[processing["Furnace"], 1]]
+				arc_recipe = {
 					"Name": ore_name + form,
 					"Input": one_item(ore_name + form),
-					"Output": items([
-						[processing["Furnace"], 1],
-						[processing["Furnace"], 1, True],
-					]),
 					"Ticks" : 240,
-					"Productivity": 50,
 					"Tier": material_tier,
-				})
+				}
+				if form != "Dust":
+					arc_output.append([processing["Furnace"], 1, True])
+					arc_recipe["Productivity"] = 50
+				arc_recipe["Output"] = items(arc_output)
+				recipes_arc_furnace.append(arc_recipe)
 
 		# Macerator
 		if "Macerator" in processing:

@@ -1318,13 +1318,9 @@ for material in materials:
 			recipes_arc_furnace.append({
 				"Name": material["Name"] + "Plate",
 				"Input": one_item(material["Name"] + "Dust", mul),
-				"Output": items([
-					[material["Name"] + "Plate", mul],
-					[material["Name"] + "Plate", mul, True],
-				]),
+				"Output": one_item(material["Name"] + "Plate", mul),
 				"Tier": extract_tier(material),
 				"Ticks" : 240 * mul,
-				"Productivity": 50,
 			})
 
 recipes_macerator.append({
