@@ -168,7 +168,6 @@ machines = [
 			"Valve"
 		],
 		"BlockLogic": "FluidSwitchBlockLogic",
-		"RotationLocks": [1,1,1],
 		"Description": ["FluidConductor"],
 		"LogicImports": ["Working"],
 	},{
@@ -176,7 +175,6 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 2,
 		"BlockLogic": "ElectricitySwitchBlockLogic",
-		"RotationLocks": [1,1,1],
 		"Description": ["ElectricConductor"],
 		"LogicImports": ["Working"],
 	},{
@@ -985,6 +983,7 @@ machines = [
 		"NoActorRenderable": True,
 		"CoverParts": [
 			{"Cover": "WindTurbineMast"},
+			{"Cover": "WindTurbineStator", "Offset": [0,0,10], "IgnoreBlockRotation": True},
 			{"Cover": "WindTurbineRotor", "Offset": [0,0,10], "IgnoreBlockRotation": True},
 		],
 		"LogicExports": CRAFTING_LOGIC_EXPORTS,

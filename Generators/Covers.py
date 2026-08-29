@@ -326,6 +326,13 @@ for mat, num in zip(paint_metals, range(1,7+1)):
         "NoCollision": True,
         "WorldPositionOffsetDisableDistance": 40000
 	})
+    covers.append({
+		"Name": mat+"WindTurbineStator",
+		"Mesh": "/Game/CoreContent/wind_turbine_stator",
+        "Materials": ["/Game/Materials/M_WindTurbineStator"],
+        "NoCollision": True,
+        "WorldPositionOffsetDisableDistance": 40000
+	})
 	
 for cover in covers:
     if "HasItem" in cover:
