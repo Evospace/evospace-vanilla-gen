@@ -1045,11 +1045,15 @@ objects_array = []
 # instead of being instanced per-column. Tag by name; everything else stays column-instanced.
 streamed_prop_names = {
 	"Dandaleon", "Fern", "LongGrass", "YellowGrass", "DryGrass",
-	"TallGrass", "SeaGrass", "SeaPlant",
+	"TallGrass", "SeaGrass", "SeaPlant", "SnowyGrass",
+	"YellowFlower", "RedFlower", "WhiteFlower",
+	"Shroom", "Moss", "Rogoz",
+	"SmallRock", "SmallVolcanicRock",
 }
 for prop in props:
 	if prop["Name"] in streamed_prop_names:
 		prop["Streamed"] = True
+		prop["NoCollision"] = True
 
 # A bush or a boulder keeps its silhouette long after grass has stopped reading, so it fades out
 # further than the grass range it is authored against.
@@ -1117,6 +1121,8 @@ for prop in props:
 			temp_prop["HighDetailShadow"] = prop["HighDetailShadow"]
 		if "Streamed" in prop:
 			temp_prop["Streamed"] = prop["Streamed"]
+		if "NoCollision" in prop:
+			temp_prop["NoCollision"] = prop["NoCollision"]
 		objects_array.append(temp_prop)
 
 DENSITY_MUL = 0.6
