@@ -283,35 +283,25 @@ for mat, num in zip(paint_metals, range(1,7+1)):
         "Materials": ["/Game/Materials/ElectricEngineMaterial"]
 	})
 
-# Animated machine parts: one instanced mesh per moving piece, rotation lives in the material (WPO).
-# Mesh paths are placeholders until the real assets are hooked up.
 for mat, num in zip(paint_metals, range(1,7+1)):
     covers.append({
 		"Name": mat+"SolarPanelBase",
-		"Mesh": "/Game/CoreContent/SolarBase",
-        "Materials": [tier_materials[num]],
+		"Mesh": "/Game/Models/SolarBig_Base",
+        "Materials": ["/Game/Materials/PaintDarkGray", tier_materials[num], "/Game/Materials/PaintYellow", "/Game/Materials/Accessor"],
         "NoCollision": True
 	})
     covers.append({
-		"Name": mat+"SolarPanelPillar",
-		"Mesh": "/Game/CoreContent/solar_big",
-        "Materials": ["/Game/Materials/SolarPillarTracking"],
-        "NoCollision": True,
-        "WorldPositionOffsetDisableDistance": 20000
-	})
-    covers.append({
 		"Name": mat+"SolarPanelCell",
-		"Mesh": "/Game/CoreContent/SolarPlate",
-        "Materials": ["/Game/Materials/SolarCellTracking", tier_materials[num]],
+		"Mesh": "/Game/Models/SolarBig_Panel",
+        "Materials": ["/Game/Materials/SolarPanelTracking"] * 4,
         "NoCollision": True,
         "WorldPositionOffsetDisableDistance": 20000
 	})
     covers.append({
 		"Name": mat+"SmallSolarPanelCell",
 		"Mesh": "/Game/CoreContent/solar_mini",
-        "Materials": ["/Game/Materials/SolarCellTracking", tier_materials[num]],
-        "NoCollision": True,
-        "WorldPositionOffsetDisableDistance": 20000
+        "Materials": ["/Game/Materials/PaintYellow", "/Game/Materials/solar", tier_materials[num], "/Game/Materials/Accessor", "/Game/Materials/Rubber2"],
+        "NoCollision": True
 	})
     covers.append({
 		"Name": mat+"WindTurbineMast",

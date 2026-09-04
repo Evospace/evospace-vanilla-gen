@@ -942,9 +942,8 @@ machines = [
 		"RotationLocks": [0,0,1],
 		"NoActorRenderable": True,
 		"CoverParts": [
-			{"Cover": "SolarPanelBase"},
-			{"Cover": "SolarPanelPillar"},
-			{"Cover": "SolarPanelCell", "Offset": [0,0,2]},
+			{"Cover": "SolarPanelBase", "Offset": [-1,1,-0.5]},
+			{"Cover": "SolarPanelCell", "Offset": [0,0,1.365]},
 		],
 		"LogicExports": CRAFTING_LOGIC_EXPORTS,
 		"LogicImports": CRAFTING_LOGIC_IMPORTS,
