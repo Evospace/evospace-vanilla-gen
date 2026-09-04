@@ -293,7 +293,7 @@ for mat, num in zip(paint_metals, range(1,7+1)):
     covers.append({
 		"Name": mat+"SolarPanelCell",
 		"Mesh": "/Game/Models/SolarBig_Panel",
-        "Materials": ["/Game/Materials/SolarPanelTracking"] * 4,
+        "Materials": ["/Game/Materials/SolarPanelTracking"],
         "NoCollision": True,
         "WorldPositionOffsetDisableDistance": 20000
 	})
