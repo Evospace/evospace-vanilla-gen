@@ -79,7 +79,7 @@ weathers = [
 	{
 		"Name": "ExtremeFoggy",
 		"CloudCoverage": 6.6,
-		"Thunder": 0.5,
+		"Thunder": 0,
 		"Fog": 10.0,
 	},
 	{
@@ -99,7 +99,7 @@ weathers = [
 		# Snow biome Precipitation band: UDW Snow particles, not Rain.
 		"Name": "Snowfall",
 		"CloudCoverage": 7.5,
-		"Thunder": 1,
+		"Thunder": 0,
 		"EffectIntensity": 3.5,
 		"Fog": 6.2,
 		"Effect": "Snow",
@@ -117,7 +117,7 @@ weathers = [
 		# Desert Precipitation band: UDW Dust particles instead of rain.
 		"Name": "DustHaze",
 		"CloudCoverage": 4.7,
-		"Thunder": 3,
+		"Thunder": 0,
 		"EffectIntensity": 3,
 		"Fog": 6.4,
 		"Effect": "Dust",
@@ -126,7 +126,7 @@ weathers = [
 		# Desert Extreme band.
 		"Name": "SandStorm",
 		"CloudCoverage": 9.4,
-		"Thunder": 9,
+		"Thunder": 0,
 		"EffectIntensity": 9,
 		"Fog": 9.0,
 		"Effect": "Dust",
