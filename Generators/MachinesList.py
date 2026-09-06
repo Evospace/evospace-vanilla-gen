@@ -84,7 +84,6 @@ machines = [
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
         "Category": "Network",
         "NoCellAim": True,
-        "NoGroundSnap": True,
 	},{
 		"Name": "HeatPipe",
 		"StartTier": 1,
@@ -96,7 +95,6 @@ machines = [
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
         "Category": "Network",
         "NoCellAim": True,
-        "NoGroundSnap": True,
 	},{
 		"Name": "PlasmaPipe",
 		"StartTier": 4,
@@ -109,7 +107,6 @@ machines = [
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
         "Category": "Network",
         "NoCellAim": True,
-        "NoGroundSnap": True,
 	},{
 		"Name": "Flywheel",
 		"StartTier": 2,
@@ -145,7 +142,6 @@ machines = [
         "Category": "Network",
         "ReplaceTag": "Cable",
         "NoCellAim": True,
-        "NoGroundSnap": True,
 	},{
 		"Name": "Chest",
 		"StartTier": 0,
@@ -198,7 +194,6 @@ machines = [
 		"PathFinding": True,
         "NoActorRenderable": True,
         "NoCellAim": True,
-        "NoGroundSnap": True,
         "ReplaceTag": "Conveyor",
 		"LogicImports": ["Working"],
 	},{
@@ -1116,7 +1111,6 @@ machines = [
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
         "Category": "Network",
         "NoCellAim": True,
-        "NoGroundSnap": True,
 	},{
 		"Name": "DeepStorage",
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
