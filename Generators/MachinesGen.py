@@ -329,15 +329,16 @@ for machine in machines:
 
 		machine_blocks.append(block)
 
-		machine_dicts.append({
-			"Class": r_dict,
-			"Name": machine["Name"] + r_dict,
-			"StartTier": machine["StartTier"],
-			"UsedIn": [{
-				"Item": block_name,
-				"Tier": tier
-			}]
-		})
+		if "NoRecipes" not in machine:
+			machine_dicts.append({
+				"Class": r_dict,
+				"Name": machine["Name"] + r_dict,
+				"StartTier": machine["StartTier"],
+				"UsedIn": [{
+					"Item": block_name,
+					"Tier": tier
+				}]
+			})
 
 		if machine["Name"] == "Sign":
 			append_recipe({

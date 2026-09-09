@@ -2,7 +2,6 @@ from Common import *
 from MachinesList import *
 from MiscGen import *
 from PartsList import circuits
-from OresGen import ore_types
 import copy
 
 objects_array = []
@@ -24,9 +23,6 @@ recipes_toolarm = []
 recipes_hammer = []
 recipes_mixer = []
 recipes_chem = []
-
-pumpjack = []
-drilling_rig = []
 
 recipes_sep = []
 recipes_press = []
@@ -1289,21 +1285,6 @@ recipes_sep.append({
 	"Ticks" : 100
 })
 
-pumpjack.append({
-	"Name": "RawOil",
-	"Input": no_items(),
-	"Output": one_item("RawOil", 200),
-	"Ticks" : 100
-})	
-
-for ore in ore_types:
-	drilling_rig.append({
-		"Name": ore["Drops"],
-		"Input": no_items(),
-		"Output": one_item(ore["Drops"], 1),
-		"Ticks" : 60
-	})	
-
 recipes_arc_furnace.append({
 	"Name": "SandSurfaceSmelting",
 	"Input": one_item("SandSurface", 10),
@@ -2275,16 +2256,6 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": "FractionatingColumn" + r_dict,
 	"Recipes": oil_crack
-})
-
-objects_array.append({ "Class": r_dict,
-	"Name": "Pumpjack" + r_dict,
-	"Recipes": pumpjack
-})
-
-objects_array.append({ "Class": r_dict,
-	"Name": "DrillingRig" + r_dict,
-	"Recipes": drilling_rig
 })
 
 objects_array.append({ "Class": r_dict,
