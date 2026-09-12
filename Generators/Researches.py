@@ -54,6 +54,7 @@ def append_levels(research_base):
 		research.update({
 			"Level": this_level,
 			"Levels": [i, i],
+			"Tier": i,
 			"Complexity": cost
 		})
 
