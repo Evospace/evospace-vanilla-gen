@@ -112,9 +112,10 @@ for ore_type in ore_types:
 				"Input": one_item(ore_name + "OreDust"),
 				"Output": items([
 					[processing["Separator"][0], 1],
-					[processing["Separator"][1], 1, 14],
+					[processing["Separator"][1], 1, True],
 				]),
 				"Ticks" : 60,
+				"Productivity": 14,
 				"Tier": material_tier,
 			})	
 
@@ -140,24 +141,25 @@ for ore_type in ore_types:
 			sf = ore_type["Processing"]["Sifter"]
 			recipes_sifter.append({
 				"Name": ore_type["Name"] + "OreImpureGravel",
-				"Input": one_item(ore_type["Name"] + "OreImpureGravel"),
+				"Input": one_item(ore_type["Name"] + "OreImpureGravel", 5),
 				"Output": items([
-					[sf[0], 1, 80],
-					[sf[1], 1, 20],
-					[sf[2], 1, 2],
+					[sf[0], 4],
+					[sf[1], 1],
+					[sf[2], 1, True],
 				]),
-				"Ticks" : 100,
+				"Ticks" : 500,
+				"Productivity": 10,
 				"Tier": sifter_tier,
 			})
 			recipes_sifter.append({
 				"Name": ore_type["Name"] + "OreImpureGravelDense",
 				"Input": one_item(ore_type["Name"] + "OreImpureGravel", 6),
 				"Output": items([
-					[sf[0], 1, 70],
-					[sf[1], 1, 20],
-					[sf[2], 1, 11],
+					[sf[0], 5],
+					[sf[2], 1, True],
 				]),
 				"Ticks" : 400,
+				"Productivity": 25,
 				"Tier": sifter_tier,
 			})
 

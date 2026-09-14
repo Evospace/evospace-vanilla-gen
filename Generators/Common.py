@@ -187,7 +187,7 @@ def no_items():
 def items(array, tier=0):
 	out = []
 	for entry in array:
-		chance = 100  # reset chance per entry
+		catalyst = False
 		bonus = False
 		if len(entry) == 0:
 			continue
@@ -198,9 +198,12 @@ def items(array, tier=0):
 			third = entry[2]
 			if isinstance(third, bool):
 				bonus = third
-				chance = 100
+			elif third == 0:
+				catalyst = True
 			else:
-				chance = third
+				raise ValueError(
+					"%s: a fractional output is written as a Bonus row with the recipe's Productivity" % item
+				)
 		else:
 			item, count_fn = entry
 		count = count_fn(tier) if callable(count_fn) else count_fn
@@ -209,8 +212,8 @@ def items(array, tier=0):
 			continue
 
 		row = {"Name": item, "Count": count}
-		if chance != 100:
-			row["Probability"] = chance
+		if catalyst:
+			row["Probability"] = 0
 		if bonus:
 			row["Bonus"] = True
 		out.append(row)

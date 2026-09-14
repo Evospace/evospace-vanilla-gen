@@ -976,9 +976,10 @@ recipes_centrifuge.append({
 	"Name":"DepletedUraniumCell",
 	"Input": one_item("DepletedUraniumCell"),
 	"Output": items([
-		["PlutoniumDust", 1, 10],
+		["PlutoniumDust", 1, True],
 	]),
 	"Ticks" : 2000,
+	"Productivity": 10,
 	"Tier": 5,
 })
 
@@ -1272,9 +1273,10 @@ recipes_sep.append({
 	"Input": one_item("DepletedUraniumCell"),
 	"Output": items([
 		["Cell", 1],
-		["PlutoniumDust", 1, 50],
+		["PlutoniumDust", 1, True],
 	]),
 	"Ticks": 400,
+	"Productivity": 50,
 	"Tier": 5,
 })	
 
