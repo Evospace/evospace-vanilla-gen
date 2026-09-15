@@ -126,10 +126,6 @@ tools = [
 		"Label": "Crowbar Tool",
         "ItemLogic": "/Game/Equipped/CrowbarToolBP.CrowbarToolBP_C",
 	},{
-		"Name": "UpgradeTool",
-		"Label": "Upgrade Tool",
-        "ItemLogic": "/Game/Equipped/UpgradeToolBP.UpgradeToolBP_C",
-	},{
 		"Name": "CargoWagon",
 		"Label": "Cargo Wagon",
 		"ItemLogic": "TrainPlacerItemLogic",
