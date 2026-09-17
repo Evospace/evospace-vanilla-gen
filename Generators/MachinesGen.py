@@ -206,7 +206,6 @@ for machine in machines:
 			"Category": machine["Category"] if "Category" in machine else tier_material[tier],
 		}
 
-		conv_speed_d = [1.66,2.5,3.33,5,6.66,10,20]
 		arm_speed_d = [300/2,450/2,600/2,900/2,1200/2,1800/2,3600/2]
 
 		if "Description" in machine:
@@ -222,9 +221,6 @@ for machine in machines:
 		if machine["Name"] == "RobotArm":
 			item["DescriptionParts"].append(["dps", "common", arm_speed_d[level]])		
 			
-		if machine["Name"] == "Conveyor":
-			item["DescriptionParts"].append(["ips", "common", conv_speed_d[level]])
-
 		if machine["Name"] == "ItemRack":
 			item["DescriptionParts"].append(["item_rack", "common", 2048*(level+1)])
 
