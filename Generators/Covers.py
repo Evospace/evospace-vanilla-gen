@@ -243,18 +243,16 @@ for mat in paint_colors + paint_tiers:
         "Materials": [mat]
 	})
      
+pipe_fitting_material = "/Game/Materials/GraySteel"
+pipe_pieces = ("Arm", "Center", "StraightSingleFlange", "StraightNoFlanges", "Elbow", "DeadEnd", "Isolated")
+
 for mat, num in zip(paint_tiers, range(0,7+1)):
-    covers.append({
-        "Name": mat+"PipeCenter",
-        "Mesh": "/Game/Covers/PipeCenter",
-        "Materials": ["/Game/Materials/"+mat]
-    })
-    covers.append({
-        "Name": mat+"PipeSide",
-        "Mesh": "/Game/Covers/PipeSide",
-        "Materials": ["/Game/Materials/"+mat],
-        "Item": mat+"Pipe"
-    })
+    for piece in pipe_pieces:
+        covers.append({
+            "Name": mat+"Pipe"+piece,
+            "Mesh": "/Game/Covers/Pipe/Pipe"+piece,
+            "Materials": ["/Game/Materials/"+mat, pipe_fitting_material]
+        })
 
 for mat, num in zip(paint_metals, range(1,7+1)):
     covers.append({
