@@ -243,6 +243,36 @@ for mat in paint_colors + paint_tiers:
         "Materials": [mat]
 	})
      
+battery_pieces = {
+    "Single": ["Body", "Frame", "Copper", "Insulator"],
+    "Top": ["Body", "Frame", "Copper", "Insulator"],
+    "Bottom": ["Body", "Frame", "Insulator"],
+    "Middle": ["Body", "Frame", "Insulator"],
+}
+
+for mat in paint_tiers[3:]:
+    for piece, slots in battery_pieces.items():
+        covers.append({
+            "Name": mat + "BatteryBox" + piece,
+            "Mesh": "/Game/Covers/Battery/Battery" + piece,
+            "Materials": ["", "/Game/Materials/" + mat, "", ""]
+        })
+
+tank_pieces = {
+    "Single": ["Body", "Frame", "Fitting", "Insulator"],
+    "Top": ["Body", "Frame", "Fitting", "Insulator"],
+    "Bottom": ["Body", "Frame", "Fitting", "Insulator"],
+    "Middle": ["Body", "Frame"],
+}
+
+for mat in paint_tiers[1:]:
+    for piece, slots in tank_pieces.items():
+        covers.append({
+            "Name": mat + "Container" + piece,
+            "Mesh": "/Game/Covers/Tank/Tank" + piece,
+            "Materials": ["/Game/Materials/" + mat, ""]
+        })
+
 pipe_fitting_material = "/Game/Materials/GraySteel"
 pipe_pieces = ("Arm", "Center", "StraightSingleFlange", "StraightNoFlanges", "Elbow", "DeadEnd", "Isolated")
 

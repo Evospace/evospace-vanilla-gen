@@ -211,6 +211,7 @@ machines = [
 		"EndTier": 7,
 		"BlockLogic": "FluidContainerBlockLogic",
 		"RotationLocks": [1,1,1],
+		"NoActorRenderable": True,
 		"LogicExports": ["Storage"],
 		"Description": ["FluidConductor", "FluidStorage"],
 	},{
@@ -541,6 +542,7 @@ machines = [
 		"EndTier": 7,
         "BlockLogic": "ElectricityContainerBlockLogic",
 		"RotationLocks": [1,1,1],
+        "NoActorRenderable": True,
 		"LogicExports": ["Storage"],
 		"Description": ["ElectricConductor", "ElectricStorage"]
 	},{
