@@ -19,6 +19,7 @@ MACHINE_ENERGY = {
 	"CompactGenerator": {"consumption": 50, "consumption_item": "Kinetic", "production": 50, "production_item": "Electricity"},
 	"Computer": {"consumption": 20, "consumption_item": "Electricity"},
 	"Constructor": {"consumption": 40, "consumption_item": "Electricity"},
+	"DeepStorage": {"consumption": 25, "consumption_item": "Electricity"},
 	"DrillingRig": {"consumption": 96, "consumption_item": "Kinetic", "scaling": "linear"},
 	"ElectricEngine": {"consumption": 150, "consumption_item": "Electricity", "production": 150, "production_item": "Kinetic"},
 	"ElectricFurnace": {"consumption": 250, "consumption_item": "Electricity", "production": 250, "production_item": "Heat"},
@@ -225,7 +226,7 @@ for machine in machines:
 			item["DescriptionParts"].append(["item_rack", "common", 2048*(level+1)])
 
 		if machine["Name"] == "DeepStorage":
-			item["DescriptionParts"].append(["item_rack", "common", 32768*(level+1)])
+			item["DescriptionParts"].append(["item_rack", "common", 8192 * 2 * 4**level])
 
 		if machine["Name"] == "Computer":
 			item["DescriptionParts"].append(["computations", "common", 2**level])
@@ -1378,7 +1379,7 @@ for machine in machines:
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
 				"Input": items([
-					["StorageCore", 1],
+					["StorageCore", 1+level],
 					[plate(), 8],
 					frame_pair(2),
 					[circuit(), 2]

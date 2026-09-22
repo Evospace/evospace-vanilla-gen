@@ -1112,12 +1112,10 @@ machines = [
         "Category": "Network",
 	},{
 		"Name": "DeepStorage",
-		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
 		"StartTier": 4,
 		"EndTier": 7,
-		"BlockLogic": "ItemRack",
+		"Actor": "Blocks/InfiniteStorageBP.InfiniteStorageBP_C",
 		"LogicExports": ["Storage"],
-		"Description": ["ItemInput", "ItemStorage"],
-        "ReplaceTag": "ItemRack",
+		"Description": ["ItemInput", "ElectricInput", "ItemStorage"],
 	}
 ]

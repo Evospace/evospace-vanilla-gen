@@ -454,7 +454,7 @@ recipes_assembler.append({
 recipes_hand.append({
 	"Name":"StorageCore",
 	"Input":items([
-		["QuantumCore", 1],
+		["QuantumCore", 8],
 		["Processor", 2],
 		["StainlessSteelParts", 4]
 	]),
