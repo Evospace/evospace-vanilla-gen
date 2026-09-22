@@ -324,6 +324,14 @@ def fuel_value(material):
 def fuel_burn_time(material, machine_output):
 	return fuel_value(material) / machine_output 
 
+ORE_FUEL_TIME_MUL = {"Dust": 0.9, "OreDust": 0.8, "Ore": 0.9, "OreGravel": 0.9, "OreImpureGravel": 0.8}
+
+def ore_fuel_ticks(ore_type, form):
+	return ore_type["Burnable"]["BurnTime"] * ORE_FUEL_TIME_MUL[form]
+
+def ore_fuel_value(ore_type, form):
+	return int(round(ore_fuel_ticks(ore_type, form) * furnace_output()))
+
 def oil_crack_array(input_count):
 	return [
 		{

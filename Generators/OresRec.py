@@ -164,12 +164,12 @@ for ore_type in ore_types:
 			})
 
 		if "Burnable" in ore_type:
-			for item, timeMul in [["Dust", 0.9], ["OreDust", 0.8], ["Ore", 0.9], ["OreGravel", 0.9], ["OreImpureGravel", 0.8]]:
+			for item in ORE_FUEL_TIME_MUL:
 				recipes_furnace.append({
 					"Name": ore_type["Name"]+item,
 					"Input": one_item(ore_type["Name"] + item),
 					"Output": no_items(),
-					"Ticks" : ore_type["Burnable"]["BurnTime"] * timeMul,
+					"Ticks" : ore_fuel_ticks(ore_type, item),
 				})
 	
 objects_array.append({ "Class": r_dict,

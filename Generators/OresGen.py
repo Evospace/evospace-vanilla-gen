@@ -177,6 +177,8 @@ images = []
 for ore_type in ore_types:
 	item_name = ore_type["Name"] + "Ore"
 	description = [[ore_type["Formula"], "ores"]] if "Formula" in ore_type else []
+	def form_description(form):
+		return [["burnable", "common", ore_fuel_value(ore_type, form)]] if "Burnable" in ore_type else description
 	
 	item = { "Class": "StaticItem",
 		"Name": item_name,
@@ -185,7 +187,7 @@ for ore_type in ore_types:
 		"StackSize": 64, 
 		"Category": "Ore",
 		"Label": [ore_type["Name"]+"Ore", "ores"],
-		"DescriptionParts": description,
+		"DescriptionParts": form_description("Ore"),
 		"Color": ore_type["ItemColor"],
 		"Materials" : [
 			"",
@@ -226,7 +228,7 @@ for ore_type in ore_types:
 			],
 			"Category": "Ore",
 			"Label": [ore_type["Name"]+"OreImpureGravel", "ores"],
-			"DescriptionParts": description,
+			"DescriptionParts": form_description("OreImpureGravel"),
 			"Color": ore_type["ItemColor"],
 		}
 
@@ -249,7 +251,7 @@ for ore_type in ore_types:
 			],
 			"Category": "Ore",
 			"Label": [ore_type["Name"]+"OreGravel", "ores"],
-			"DescriptionParts": description,
+			"DescriptionParts": form_description("OreGravel"),
 			"Color": ore_type["ItemColor"],
 		}
 
@@ -269,7 +271,7 @@ for ore_type in ore_types:
 			"StackSize": 64,
 			"Category": "Ore",
 			"Label": [ore_type["Name"]+"OreDust", "ores"],
-			"DescriptionParts": description,
+			"DescriptionParts": form_description("OreDust"),
 			"Color": ore_type["ItemColor"],
 			"Materials" : [
 				"",
@@ -293,7 +295,7 @@ for ore_type in ore_types:
 			"StackSize": 64,
 			"Category": "Ore",
 			"Label": [ore_type["Name"]+"Dust", "ores"],
-			"DescriptionParts": description,
+			"DescriptionParts": form_description("Dust"),
 			"Color": ore_type["ItemColor"],
 			"Materials" : [
 				"",
@@ -308,8 +310,6 @@ for ore_type in ore_types:
 			"MulMask": "T_Material" + ore_type["Name"],
 			"AddMask": "T_" + "DustAdditive"
 		})
-		if "Burnable" in ore_type:
-			item["DescriptionParts"] = [["burnable", "common"]]
 
 		# crystal
 		if "Crystal" in ore_type:
