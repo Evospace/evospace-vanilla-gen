@@ -1074,7 +1074,7 @@ append_levels({
 append_levels({
 	"Class": research_recipe,
 	"Name": "Sifter",
-	"Label": [["Sifter", "machines"]],
+	"Label": ["Sifter", "machines"],
 	"RequiredResearch": ["ElectricEngine"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Sifter"] ],
 	"Levels": [3,7],
@@ -1597,7 +1597,7 @@ append_levels({
 append_levels({
 	"Class": research_recipe,
 	"Name": "DecorativeWood3",
-	"Label": [["DecorativeWood", "researches"], [level_labels[2], "common"]],
+	"Label": ["TwoWorldsFormat", "common", ["DecorativeWood", "researches"], [level_labels[2], "common"]],
 	"RequiredResearch": ["DecorativeWood2", "AdvancedSmelting"],
 	"Unlocks": [["Hand" + r_dict, "Window"]],
 	"Levels": [3,3],
