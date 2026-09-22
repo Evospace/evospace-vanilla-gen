@@ -31,10 +31,12 @@ def append_metal_macerator_recipe(material_name, part_suffix, input_count, dust_
 		"Tier": material_tier,
 	})
 
-def generate_part(name, material_dict):
+def generate_part(name, material_dict, tier_override=None):
 	part = named_part(name)
 	material = material_dict["Name"]
 	tier = material_dict["Tier"] if "Tier" in material_dict else 0
+	if tier_override is not None:
+		tier = tier_override
 	if "Composed" in part:
 		label = ["machines_label_format", "common", [material, "common"], [part["Name"], "parts"]]
 	else:
@@ -83,7 +85,8 @@ for material in materials:
 		continue
 
 	if "SolarCell" in material["Items"] and material_tier > 1:
-		generate_part("SolarCell", material)
+		cell_tier = material_tier + 1
+		generate_part("SolarCell", material, cell_tier)
 
 		if material_tier == 2:
 			recipes_hand.append({
@@ -94,7 +97,7 @@ for material in materials:
 				]),
 				"Output": one_item(m_name + "SolarCell"),
 				"Ticks" : 80,
-				"Tier": material_tier
+				"Tier": cell_tier
 			})
 		elif material_tier == 3:
 			recipes_hand.append({
@@ -105,7 +108,7 @@ for material in materials:
 				]),
 				"Output": one_item(m_name + "SolarCell"),
 				"Ticks" : 80,
-				"Tier": material_tier
+				"Tier": cell_tier
 			})
 		else:
 			recipes_hand.append({
@@ -117,13 +120,12 @@ for material in materials:
 				]),
 				"Output": one_item(m_name + "SolarCell"),
 				"Ticks" : 80,
-				"Tier": material_tier
+				"Tier": cell_tier
 			})
 
 	if "Alternator" in material["Items"] and material_tier > 0:
-		generate_part("Alternator", material)
-
 		machine_tier = material_tier + 1
+		generate_part("Alternator", material, machine_tier)
 		if material_tier == 1:
 			recipes_hand.append({
 				"Name": m_name + "Alternator",
