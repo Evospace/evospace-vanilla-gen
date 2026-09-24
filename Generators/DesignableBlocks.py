@@ -1,8 +1,5 @@
 from Common import *
 
-# Universal generator for designable blocks (use UDesignableCoverBlockLogic).
-# Configure blocks below; each entry may specify a custom covers list.
-
 designables = [
 	{
 		"Name": "Stairs",
@@ -20,6 +17,7 @@ designables = [
 	},{
 		"Name": "Corner",
 		"Category": "Decoration",
+		"Minable": decor_minable(1, "SteelPlate"),
 		"Label": ["Corner", "misc"],
 		"Selector": "Blocks/CornerBP.CornerBP_C",
 		"Covers": [
@@ -29,6 +27,7 @@ designables = [
 	},{
 		"Name": "Beam",
 		"Category": "Decoration",
+		"Minable": decor_minable(1, "SteelPlate"),
 		"Label": ["Beam", "misc"],
 		"Selector": "Blocks/BeamBP.BeamBP_C",
 		"Covers": [
@@ -38,6 +37,7 @@ designables = [
 	},{
 		"Name": "Scaffold",
 		"Category": "Decoration",
+		"Minable": decor_minable(1, "SteelPlate"),
 		"Label": ["Scaffold", "misc"],
 		"Selector": "Blocks/ScaffoldBP.ScaffoldBP_C",
 		"Covers": [
@@ -59,6 +59,7 @@ designables = [
 	},{
 		"Name": "Floor",
 		"Category": "Decoration",
+		"Minable": decor_minable(1, "SteelPlate"),
 		"Label": ["Floor", "misc"],
 		"Selector": "Blocks/FloorBP.FloorBP_C",
 		"Covers": [
@@ -70,6 +71,7 @@ designables = [
 	{
 		"Name": "Chair",
 		"Category": "Decoration",
+		"Minable": decor_minable(3, "Log"),
 		"Label": ["Chair", "misc"],
 		"Selector": "Blocks/ChairBP.ChairBP_C",
 		"Covers": [
@@ -79,6 +81,7 @@ designables = [
 	{
 		"Name": "Table",
 		"Category": "Decoration",
+		"Minable": decor_minable(3, "Log"),
 		"Label": ["Table", "misc"],
 		"Selector": "Blocks/TableBP.TableBP_C",
 		"Covers": [
@@ -112,7 +115,6 @@ for d in designables:
 	covers = d.get("Covers")
 	block_logic = d.get("BlockLogic", "DesignableCoverBlockLogic")
 
-	# StaticCoverSet (if covers specified)
 	if covers:
 		cover_sets.append({
 			"Class": "StaticCoverSet",
@@ -120,7 +122,6 @@ for d in designables:
 			"Covers": covers
 		})
 
-	# Placement item
 	items.append({
 		"Class": "StaticItem",
 		"Name": name,
@@ -133,14 +134,13 @@ for d in designables:
 		"Tier": tier
 	})
 
-	# Block prototype
 	block = {
 		"Class": "StaticBlock",
 		"Name": name,
 		"Item": name,
 		"BlockLogic": block_logic,
 		"NoActorRenderable": True,
-		"Minable": { "Result": name },
+		"Minable": d.get("Minable", decor_minable(3)),
 		"Tier": tier,
 		"Level": 0
 	}
@@ -159,7 +159,6 @@ objects_array = cover_sets + items + blocks
 
 data = { "Objects": objects_array }
 
-# Single consolidated output; extend 'designables' above to add more blocks.
 write_file("Generated/Mixed/designable_blocks.json", data)
 
 

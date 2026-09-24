@@ -8,7 +8,7 @@ data = {
 	{
 		"Items": [
 			{
-				"Name": "BasicPlatform",
+				"Name": "BuildingMaterial",
 				"Count": 100
 			}
 		]

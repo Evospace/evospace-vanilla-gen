@@ -43,6 +43,9 @@ def append_levels(research_base):
 		if "UnlockFirst" in research and this_level == 0:
 			research["Unlocks"].extend([j[0], j[1].replace("%Material%", tier_material[i])] for j in research["UnlockFirst"])
 
+		if "DecorationsArr" in research:
+			research["Decorations"] = research.pop("DecorationsArr")[this_level]
+
 		cost_mul = research.get("CostMul", 1)
 		if isinstance(cost_mul, list):
 			cost_mul = cost_mul[this_level]
@@ -67,72 +70,97 @@ append_levels({
 	"Name": "MineralsScan",
 	"Label": ["MineralsScan", "researches"],
 	"RequiredResearch": [],
-	"Unlocks": [["Hand" + r_dict, tier_material[0] + "Furnace"],["Hand" + r_dict, "SandSurface"],["Hand" + r_dict, "GravelSurface"],["Hand" + r_dict, "Dirt"],["Hand" + r_dict, "CopperSpawner"]],
+	"Unlocks": [["Hand" + r_dict, tier_material[0] + "Furnace"],["Hand" + r_dict, "SandSurface"],["Hand" + r_dict, "GravelSurface"],["Hand" + r_dict, "Dirt"],["Hand" + r_dict, "CopperSpawner"],["Hand" + r_dict, "BuildingMaterial"]],
 	"MainResearch": True,
 })
 append_levels({
-	"Class": research_recipe,
+	"Class": research_decoration,
 	"Name": "BasicPlatform",
 	"Label": ["BasicPlatform", "misc"],
 	"RequiredResearch": ["MineralsScan"],
-	"Unlocks": [["Hand" + r_dict, "BasicPlatform"], ["Hand" + r_dict, "BuildingMaterial"]],
+	"Decorations": ["BasicPlatform", "PlasticBlock"],
 })
 append_levels({
-	"Class": research_recipe,
+	"Class": research_decoration,
 	"Name": "Bricks",
 	"Label": ["Bricks", "misc"],
 	"RequiredResearch": ["BasicPlatform"],
-	"Unlocks": [["Hand" + r_dict, "Bricks"]],
+	"Decorations": ["Bricks", "FireCup"],
 })
+decoration_extras = {
+	"Terracotta": ["CeramicRoof"],
+	"Concrete": ["ConcreteRamp", "ConcreteRamp2", "ConcreteRamp3", "ConcreteBeam", "ConcreteBeam2"],
+}
 for miscBlock in ["GlassBlock", "StoneTiles", "RedTiles", "DarkTiles", "Terracotta", "TerracottaTiles", "RedBricks", "DarkBricks", "TerracottaBricks"]:
 	append_levels({
-		"Class": research_recipe,
+		"Class": research_decoration,
 		"Name": miscBlock,
 		"Label": [miscBlock, "misc"],
 		"RequiredResearch": ["Bricks"],
-		"Unlocks": [["Hand" + r_dict, miscBlock]],
+		"Decorations": [miscBlock] + decoration_extras.get(miscBlock, []),
 		"Levels": [1,1]
 	})
 for miscBlock in ["Concrete", "ConcreteBricks", "ConcreteTiles", "ConcreteSmallTiles"]:
 	append_levels({
-		"Class": research_recipe,
+		"Class": research_decoration,
 		"Name": miscBlock,
 		"Label": [miscBlock, "misc"],
 		"RequiredResearch": ["StoneTiles"],
-		"Unlocks": [["Hand" + r_dict, miscBlock]],
+		"Decorations": [miscBlock] + decoration_extras.get(miscBlock, []),
 		"Levels": [2,2]
 	})
 for miscBlock in ["ReinforcedConcrete", "ReinforcedConcreteTiles", "ReinforcedConcreteSmallTiles", "ReinforcedConcreteBricks", "DangerBlock"]:
 	append_levels({
-		"Class": research_recipe,
+		"Class": research_decoration,
 		"Name": miscBlock,
 		"Label": [miscBlock, "misc"],
 		"RequiredResearch": ["Concrete"],
-		"Unlocks": [["Hand" + r_dict, miscBlock]],
+		"Decorations": [miscBlock],
 		"Levels": [3,3]
 	})
 append_levels({
-	"Class": research_recipe,
+	"Class": research_decoration,
+	"Name": "DecorativePaint",
+	"Label": ["DecorativePaint", "researches"],
+	"RequiredResearch": ["Bricks"],
+	"Decorations": ["Paint" + color for color in ["White", "Gray", "Black", "Red", "Green", "Blue", "Yellow", "Magenta", "Cyan", "Copper", "Steel", "StainlessSteel", "Titanium", "HardMetal", "Gold"]],
+	"Levels": [1,1],
+})
+metal_block_decorations = [[] for _ in tier_material]
+for material in materials:
+	if "Block" in material.get("Items", []):
+		metal_block_decorations[metal_block_level(material)].append(material["Name"] + "Block")
+append_levels({
+	"Class": research_decoration,
+	"Name": "MetalBlocks",
+	"Label": ["MetalBlocks", "researches"],
+	"RequiredResearch": ["Bricks"],
+	"DecorationsArr": metal_block_decorations[1:8],
+	"Levels": [1,7],
+	"CostMul": 0.1,
+})
+append_levels({
+	"Class": research_decoration,
 	"Name": "Designable",
 	"Label": ["Designable", "researches"],
 	"RequiredResearch": ["Bricks"],
-	"Unlocks": [["Hand" + r_dict, "Stairs"], ["Hand" + r_dict, "Corner"], ["Hand" + r_dict, "Beam"], ["Hand" + r_dict, "Scaffold"]],
+	"Decorations": ["Stairs", "Corner", "Beam", "Scaffold"],
 	"Levels": [1,1],
 })
 append_levels({
-	"Class": research_recipe,
+	"Class": research_decoration,
 	"Name": "Designable2",
 	"Label": ["TwoWorldsFormat", "common", ["Designable", "researches"], [level_labels[1], "common"]],
 	"RequiredResearch": ["Designable"],
-	"Unlocks": [["Hand" + r_dict, "Column"], ["Hand" + r_dict, "Floor"], ["Hand" + r_dict, "Fence"]],
+	"Decorations": ["Column", "Floor", "Fence"],
 	"Levels": [2,2],
 })
 append_levels({
-	"Class": research_recipe,
+	"Class": research_decoration,
 	"Name": "Designable3",
 	"Label": ["TwoWorldsFormat", "common", ["Designable", "researches"], [level_labels[2], "common"]],
 	"RequiredResearch": ["Designable2"],
-	"Unlocks": [["Hand" + r_dict, "Chair"], ["Hand" + r_dict, "Table"]],
+	"Decorations": ["Chair", "Table"],
 	"Levels": [3,3],
 })
 append_levels({
@@ -1562,52 +1590,52 @@ append_levels({
 	"Levels": [4,4]
 })	
 append_levels({
-	"Class": research_recipe,
+	"Class": research_decoration,
 	"Name": "DecorativeWood",
 	"RequiredResearch": ["Bricks"],
 	"Label": ["DecorativeWood", "researches"],
-	"Unlocks": [["Hand" + r_dict, "WoodenPlanks"]],
+	"Decorations": ["WoodenPlanks"],
 	"Levels": [1,1],
 })
 append_levels({
-	"Class": research_recipe,
+	"Class": research_decoration,
 	"Name": "Door",
 	"RequiredResearch": ["DecorativeWood"],
 	"Label": ["DecorativeWood", "researches"],
-	"Unlocks": [["Hand" + r_dict, "Door"]],
+	"Decorations": ["Door"],
 	"Levels": [1,1],
 	"CostMul": 2.0,
 })
 append_levels({
-	"Class": research_recipe,
+	"Class": research_decoration,
 	"Name": "DecorativeWood2",
 	"Label": ["TwoWorldsFormat", "common", ["DecorativeWood", "researches"], [level_labels[1], "common"]],
 	"RequiredResearch": ["DecorativeWood"],
-	"Unlocks": [["Hand" + r_dict, "Ladder"],["Hand" + r_dict, "Rack"]],
+	"Decorations": ["Ladder", "Rack"],
 	"Levels": [2,2],
 })
 append_levels({
-	"Class": research_recipe,
+	"Class": research_decoration,
 	"Name": "DecorativeWood4",
 	"Label": ["TwoWorldsFormat", "common", ["DecorativeWood", "researches"], [level_labels[3], "common"]],
 	"RequiredResearch": ["DecorativeWood2"],
-	"Unlocks": [["Hand" + r_dict, "CopperChair"]],
+	"Decorations": ["CopperChair"],
 	"Levels": [3,3],
 })
 append_levels({
-	"Class": research_recipe,
+	"Class": research_decoration,
 	"Name": "DecorativeWood3",
 	"Label": ["TwoWorldsFormat", "common", ["DecorativeWood", "researches"], [level_labels[2], "common"]],
 	"RequiredResearch": ["DecorativeWood2", "AdvancedSmelting"],
-	"Unlocks": [["Hand" + r_dict, "Window"]],
+	"Decorations": ["Window"],
 	"Levels": [3,3],
 })
 append_levels({
-	"Class": research_recipe,
+	"Class": research_decoration,
 	"Name": "DecorativePlastic",
 	"Label": ["DecorativePlastic", "researches"],
 	"RequiredResearch": ["IndustrialChemReactor", "PyrolysisUnit", "DecorativeWood3"],
-	"Unlocks": [["Hand" + r_dict, "PlasticWindow"]],
+	"Decorations": ["PlasticWindow"],
 	"Levels": [4,4],
 })
 append_levels({

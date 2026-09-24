@@ -134,7 +134,6 @@ recipes_smelter.append({
 	"Ticks" : 100,
 })
 
-# other		
 
 recipes_hand.append({
 	"Name":"CircuitBoard",
@@ -586,69 +585,6 @@ recipes_assembler.append({
 })
 
 recipes_hand.append({
-	"Name": "BasicPlatform",
-	"Input": items([
-		["BuildingMaterial", 1]
-	]),
-	"Output": one_item("BasicPlatform"),
-	"Ticks" : 10,
-	"Tier": 1
-})
-
-for miscBlock in ["Bricks", "WoodenPlanks", "StoneTiles", "RedTiles", "DarkTiles", "Terracotta", "TerracottaTiles", "RedBricks", "DarkBricks", "TerracottaBricks"]:
-	recipes_hand.append({
-		"Name": miscBlock,
-		"Input": items([
-			["BuildingMaterial", 2]
-		]),
-		"Output": one_item(miscBlock),
-		"Ticks" : 10,
-		"Tier": 1
-	})
-# GlassBlock: same cost as other decorative cubes; unlocked by Bricks-tier research (see Researches.py), not with starter platform/bricks
-for miscBlock in ["GlassBlock"]:
-	recipes_hand.append({
-		"Name": miscBlock,
-		"Input": items([
-			["BuildingMaterial", 2]
-		]),
-		"Output": one_item(miscBlock),
-		"Ticks" : 10,
-		"Tier": 1
-	})
-for miscBlock in ["Concrete", "ConcreteBricks", "ConcreteTiles", "ConcreteSmallTiles", "PlasticBlock"]:
-	recipes_hand.append({
-		"Name": miscBlock,
-		"Input": items([
-			["BuildingMaterial", 4]
-		]),
-		"Output": one_item(miscBlock),
-		"Ticks" : 10,
-		"Tier": 2
-	})
-for miscBlock in ["ReinforcedConcrete", "ReinforcedConcreteTiles", "ReinforcedConcreteSmallTiles", "ReinforcedConcreteBricks", "DangerBlock"]:
-	recipes_hand.append({
-		"Name": miscBlock,
-		"Input": items([
-			["BuildingMaterial", 8]
-		]),
-		"Output": one_item(miscBlock),
-		"Ticks" : 10,
-		"Tier": 3
-	})
-
-for miscBlock in ["CopperChair", "Ladder", "Door", "Window", "PlasticWindow", "Rack"]:
-	recipes_hand.append({
-		"Name": miscBlock,
-		"Input": items([
-			["BuildingMaterial", 3]
-		]),
-		"Output": one_item(miscBlock),
-		"Ticks" : 20,
-		"Tier": 1
-	})
-
-recipes_hand.append({
 	"Name": "Led",
 	"Input": items([
 		["Circuit"],
@@ -660,17 +596,6 @@ recipes_hand.append({
 	"Tier": 2
 })
 
-for designableBlock in ["Stairs", "Corner", "Beam", "Scaffold", "Column", "Floor", "Chair", "Table", "Fence"]:
-	recipes_hand.append({
-		"Name": designableBlock,
-		"Input": items([
-			["BuildingMaterial", 3]
-		]),
-		"Output": one_item(designableBlock),
-		"Ticks" : 20,
-		"Tier": 1
-	})
-		
 recipes_hand.append({
 	"Name":"Cell",
 	"Input": items([
@@ -1124,7 +1049,6 @@ recipes_boiler.append({
 	"Loss": 10,
 })
 
-# Using this for all converters
 recipes_generator.append({
 	"Name": "Generating",
 	"Input": no_items(),
@@ -1608,7 +1532,6 @@ recipes_electrolyzer.append({
 	"Tier":2,
 })
 
-# burning
 
 recipes_hand.append({
 	"Name": "Dirt",
@@ -1640,7 +1563,7 @@ recipes_ferm.append({
 recipes_ferm.append({
 	"Name": "MethaneFromPumpkin",
 	"Input": one_item("Pumpkin"),
-	"Output": one_item("Methane", 300),  # Increased from 200 to 300 to make it more competitive
+	"Output": one_item("Methane", 300),
 	"Ticks" : 200
 })
 
@@ -1740,7 +1663,6 @@ recipes_pyro.append({
 recipes_pyro.append({
 	"Name": "HeavyOilPyrolysis",
 	"Input": one_item("HeavyOil", 1000),
-	# ProducerGas balanced to same total burn time as input HeavyOil; Ash as byproduct
 	"Output": items([
 		["ProducerGas", 1300],
 		["Ash", 2],

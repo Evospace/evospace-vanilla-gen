@@ -200,7 +200,6 @@ for material in materials:
 			"Ticks" : 80,
 		})
 
-	# abstract
 	if "Abstract" in material["Items"]:
 		item = { "Class": "StaticItem",
 			"Name": m_name,
@@ -211,7 +210,6 @@ for material in materials:
 			"Type": "Abstract"
 		}
 
-    # removed empty generator for wiki; uploader will collect direct Image refs
 
 		if "Tier" in material:
 			item["Tier"] = material["Tier"]
@@ -230,7 +228,6 @@ for material in materials:
 			
 		objects_array.append(item)
 	
-	# exact
 	if "Exact" in material["Items"]:
 		item = { "Class": "StaticItem",
 			"Name": material["Name"],
@@ -301,7 +298,6 @@ for material in materials:
 			
 		objects_array.append(item)
 
-	# plate
 	if "Plate" in material["Items"]:
 		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "Plate",
@@ -347,7 +343,6 @@ for material in materials:
 			if "Parts" in material["Items"]:
 				append_metal_macerator_recipe(material["Name"], "Parts", 1, 2, material_tier)
 			
-	# block
 	if "Block" in material["Items"]:
 		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "Block",
@@ -377,7 +372,6 @@ for material in materials:
 				"AddMask": "T_" + "Block" + additive_ico,
 			})
 	
-	# fluid
 	if "Fluid" in material["Items"]:
 		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "",
@@ -400,8 +394,6 @@ for material in materials:
 		if "Category" in material:
 			item["Category"] = material["Category"]
 		
-		#if item["MaterialKey"] + " " + item["Key"] in explicites:
-		#	item["ExplicitKey"] = ex_cvs[explicites.index(item["MaterialKey"] + " " + item["Key"])][0]
 		
 		if "Burnable" in material:
 			item["DescriptionParts"].append(["burnable", "common", fluid_fuel_value(material)])
@@ -409,7 +401,6 @@ for material in materials:
 
 		objects_array.append(item)
 
-        # removed empty generator to avoid duplicate base icons; wiki uploader collects direct Image refs
 		
 		if "UnitMul" in material:
 			item["UnitMul"] = material["UnitMul"]
@@ -437,7 +428,6 @@ for material in materials:
 				"Name": material["Name"] + "",
 			})
 	
-	# gas
 	if "Gas" in material["Items"]:
 		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "",
@@ -472,7 +462,6 @@ for material in materials:
 
 		objects_array.append(item)
 		
-        # removed empty generator to avoid duplicate base icons; wiki uploader collects direct Image refs
 		
 		if "Burnable" in material:
 			duration, count = fluid_furnace_pair(material)
@@ -494,7 +483,6 @@ for material in materials:
 				"Name": material["Name"],
 			})
 	
-	# dust
 	if "Dust" in material["Items"]:
 		item = { "Class": "StaticItem",
 			"Name": material["Name"] + "Dust",
@@ -564,9 +552,9 @@ for material in block_materials:
 		"Name": material["Name"] + "Block" + static_block,
 		"Item" : material["Name"] + "Block",
 		"Tesselator": material["Name"] + "Block" + tesselator,
+		"Minable": decor_minable(6, material["Name"] + ("Plate" if "Plate" in material["Items"] else "Dust")),
 	})
 			
-# tools	
 for tool in tools:
 	item_name = tool["Name"]
 	item = { "Class": "StaticItem",
@@ -584,7 +572,6 @@ for tool in tools:
 		
 	objects_array.append(item)
 	
-    # removed tool generator to avoid duplicate with shipped base PNG icons
 					
 data = {
 	"Objects": objects_array

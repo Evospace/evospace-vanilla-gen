@@ -44,7 +44,10 @@ def named_material(name):
 		return list[0]
 	
 	raise Exception(f"{name} is not a material")
-	
+
+def metal_block_level(material):
+	return material["Tier"] + 1 if "Tier" in material else material["BlockLevel"]
+
 tiered_parts_list_no_dust = ["Plate", "Block", "Parts", "SolarCell", "Alternator"]
 tiered_parts_list = tiered_parts_list_no_dust + ["Dust"]
 
@@ -216,6 +219,7 @@ materials = [
 		"Name": "AluminiumOxide",
 		"Label": "Aluminium Oxide",
 		"Items": ["Dust", "Block"],
+		"BlockLevel": 3,
 	},{
 		"Name": "StainlessSteel",
 		"Label": "Stainless Steel",
@@ -297,6 +301,7 @@ materials = [
 		"Name": "Plutonium",
 		"Label": "Plutonium",
 		"Items": ["Dust", "Block"],
+		"BlockLevel": 5,
 	},{
 		"Name": "Uranium",
 		"Label": "Uranium-238",
@@ -349,6 +354,7 @@ materials = [
 		"Name": "Thorium",
 		"Label": "Thorium",
 		"Items": ["Dust", "Block"],
+		"BlockLevel": 5,
 	},{
 		"Name": "Steam",
 		"Label": "Steam",
@@ -475,16 +481,6 @@ materials = [
 		"Tier": 3,
 		"Materials":["", "/Game/Materials/Polyethylene"],
 	},
-	#,{
-	#	"Name": "Nickel",
-	#	"Label": "Nickel",
-	#	"SmeltLevel": 0,
-	#	"IsMetal": True,
-	#	"Items": ["Dust"],
-	#	"IsLiquidMetal": True,
-	#	"IsBlock": True,
-	#	"Tier": 3
-	#}
 	{
 		"Name": "Water",
 		"Label": "Water",

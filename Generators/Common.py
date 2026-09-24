@@ -18,10 +18,8 @@ def res_cost(level, mul = 1):
 def copyDirectory(src, dest):
     try:
         shutil.copytree(src, dest)
-    # Directories are the same
     except shutil.Error as e:
         print('Directory not copied. Error: %s' % e)
-    # Any error saying that the directory doesn't exist
     except OSError as e:
         print('Directory not copied. Error: %s' % e)
 
@@ -108,14 +106,14 @@ tiers_name_helper = [
 tbcm = 1.0
 
 tiers_base_cost = [
- 	20, # stone
- 	200 * tbcm**1, # copper
- 	2000 * tbcm**2, # steel
- 	20000 * tbcm**3, # alum
- 	200000 * tbcm**4, # ss
- 	2000000 * tbcm**5, # tita
- 	20000000 * tbcm**6, # hm
- 	80000000 * tbcm**7, # neu
+ 	20,
+ 	200 * tbcm**1,
+ 	2000 * tbcm**2,
+ 	20000 * tbcm**3,
+ 	200000 * tbcm**4,
+ 	2000000 * tbcm**5,
+ 	20000000 * tbcm**6,
+ 	80000000 * tbcm**7,
  	80000000*2 * tbcm**7,
  	80000000*4 * tbcm**7,
  	80000000*6 * tbcm**7,
@@ -245,6 +243,7 @@ static_cover = "StaticCover"
 slot_logic = "ItemLogic"
 
 research_recipe = "StaticResearchRecipe"
+research_decoration = "StaticResearchDecorationUnlock"
 building_cube_logic = "BuildingSurfaceBlockItemLogic"
 building_single_logic = "BuildingSingleBlockItemLogic"
 building_drill_logic = "BuildingDrillBlockItemLogic"
@@ -270,6 +269,9 @@ basic_slot_widget_c = "Gui/BasicStackedSlotWidget.BasicStackedSlotWidget_C"
 
 ico = ""
 additive_ico = "Additive"
+
+def decor_minable(count, result = "BuildingMaterial"):
+	return {"Result": result, "Count": count}
 
 
 def parts_ramp(level, factor = 5):

@@ -6,15 +6,19 @@ images = []
 
 wooden_misc = [
 	{
-		"Name": "Rack"
+		"Name": "Rack",
+		"Cost": 3,
 	},{
-		"Name": "Ladder"
+		"Name": "Ladder",
+		"Cost": 3,
 	},{
 		"Name": "Door",
+		"Cost": 3,
 		"Positions": [[0,0,0], [0,0,1]],
 		"BlockLogic": "DoorBlockLogic",
 	},{
 		"Name": "Window",
+		"Cost": 3,
 		"Positions": [[0,0,0], [0,0,1]]
 	}
 ]
@@ -22,22 +26,34 @@ wooden_misc = [
 simple_single = [
 	{
 		"Name": "CeramicRoof",
+		"Cost": 3,
 	},{
 		"Name": "ConcreteRamp",
+		"Cost": 3,
 	},{
 		"Name": "ConcreteRamp2",
+		"Cost": 3,
+		"Label": ["TwoWorldsFormat", "common", ["ConcreteRamp", "misc"], ["II", "common"]],
 	},{
 		"Name": "ConcreteRamp3",
+		"Cost": 3,
+		"Label": ["TwoWorldsFormat", "common", ["ConcreteRamp", "misc"], ["III", "common"]],
 	},{
 		"Name": "ConcreteBeam",
+		"Cost": 3,
 	},{
 		"Name": "ConcreteBeam2",
+		"Cost": 3,
+		"Label": ["TwoWorldsFormat", "common", ["ConcreteBeam", "misc"], ["II", "common"]],
 	},{
-		"Name": "CopperChair",		
+		"Name": "CopperChair",
+		"Cost": 3,
 	},{
 		"Name": "FireCup",
+		"Cost": 3,
 	},{
 		"Name": "PlasticWindow",
+		"Cost": 3,
 		"Positions": [[0,0,0], [0,0,1]]
 	},{
         "Name": "Spotlight",
@@ -70,6 +86,7 @@ simple_single = [
 simple_blocks = [
 	{
 		"Name": "WoodenPlanks",
+		"Minable": decor_minable(2, "Log"),
 		"Label": "Wooden Planks",
 		"Tier": 0
 	},{
@@ -78,154 +95,189 @@ simple_blocks = [
 		"Tier": 0
 	},{
 		"Name": "StoneTiles",
+		"Cost": 2,
 		"Label": "Stone Tiles",
 		"Tier": 0
 	},{
 		"Name": "RedTiles",
+		"Cost": 2,
 		"Label": "Red Tiles",
 		"Tier": 0
 	},{
 		"Name": "DarkTiles",
+		"Cost": 2,
 		"Label": "Dark Tiles",
 		"Tier": 0
 	},{
 		"Name": "Terracotta",
+		"Cost": 2,
 		"Label": "Terracotta",
 		"Tier": 0
 	},{
 		"Name": "TerracottaTiles",
+		"Cost": 2,
 		"Label": "Terracotta Tiles",
 		"Tier": 0
 	},{
 		"Name": "Bricks",
+		"Cost": 2,
 		"Label": "Bricks",
 		"Tier": 0
 	},{
 		"Name": "RedBricks",
+		"Cost": 2,
 		"Label": "Red Bricks",
 		"Tier": 0
 	},{
 		"Name": "DarkBricks",
+		"Cost": 2,
 		"Label": "Black Bricks",
 		"Tier": 0
 	},{
 		"Name": "TerracottaBricks",
+		"Cost": 2,
 		"Label": "Terracotta Bricks",
 		"Tier": 0
 	},{
 		"Name": "Concrete",
+		"Cost": 4,
 		"Label": "Concrete",
 		"Tier": 2
 	},{
 		"Name": "ConcreteBricks",
+		"Cost": 4,
 		"Label": "Concrete Bricks",
 		"Tier": 2
 	},{
 		"Name": "ConcreteTiles",
+		"Cost": 4,
 		"Label": "Concrete Tiles",
 		"Tier": 2
 	},{
 		"Name": "ConcreteSmallTiles",
+		"Cost": 4,
 		"Label": "Concrete Small Tiles",
 		"Tier": 2
 	},{
 		"Name": "ReinforcedConcrete",
+		"Cost": 8,
 		"Label": "Reinforced Concrete",
 		"Tier": 2
 	},{
 		"Name": "ReinforcedConcreteTiles",
+		"Cost": 8,
 		"Label": "Reinforced Concrete Tiles",
 		"Tier": 2
 	},{
 		"Name": "ReinforcedConcreteSmallTiles",
+		"Cost": 8,
 		"Label": "Reinforced Concrete Small Tiles",
 		"Tier": 2
 	},{
 		"Name": "ReinforcedConcreteBricks",
+		"Cost": 8,
 		"Label": "Reinforced Concrete Bricks",
 		"Tier": 2
 	},{
 		"Name":"DangerBlock",
+		"Cost": 8,
 		"Label":"Danger Block",
 		"Tier": 2
 	},{
 		"Name":"BasicPlatform",
+		"Cost": 1,
 		"Label":"Basic Platform",
 		"Tier": 0
 	},{
 		"Name":"PlasticBlock",
+		"Cost": 4,
 		"Label":"Plastic Block",
 		"Tier": 0
 	},{
 		"Name":"GlassBlock",
+		"Cost": 2,
 		"Label":"Glass Block",
 		"Tier": 0,
 		"Transparent": True
 	},{
 		"Name":"PaintWhite",
+		"Cost": 2,
 		"Label":"Paint White",
 		"Tier": 0
 	},{
 		"Name":"PaintGray",
+		"Cost": 2,
 		"Label":"Paint Gray",
 		"Tier": 0
 	},{
 		"Name":"PaintBlack",
+		"Cost": 2,
 		"Label":"Paint Black",
 		"Tier": 0
 	},{
 		"Name":"PaintGreen",
+		"Cost": 2,
 		"Label":"Paint Green",
 		"Tier": 0
 	},{
 		"Name":"PaintRed",
+		"Cost": 2,
 		"Label":"Paint Red",
 		"Tier": 0
 	},{
 		"Name":"PaintBlue",
+		"Cost": 2,
 		"Label":"Paint Blue",
 		"Tier": 0
 	},{
 		"Name":"PaintCopper",
+		"Cost": 2,
 		"Label":"Paint Copper",
 		"Tier": 0
 	},{
 		"Name":"PaintSteel",
+		"Cost": 2,
 		"Label":"Paint Steel",
 		"Tier": 0
 	},{
 		"Name":"PaintStainlessSteel",
+		"Cost": 2,
 		"Label":"Paint StainlessSteel",
 		"Tier": 0
 	},{
 		"Name":"PaintTitanium",
+		"Cost": 2,
 		"Label":"Paint Titanium",
 		"Tier": 0
 	},{
 		"Name":"PaintHardMetal",
+		"Cost": 2,
 		"Label":"Paint Hard Metal",
 		"Tier": 0
 	},{
 		"Name":"PaintGold",
+		"Cost": 2,
 		"Label":"Paint Gold",
 		"Tier": 0
 	},{
 		"Name":"PaintYellow",
+		"Cost": 2,
 		"Label":"Paint Yellow",
 		"Tier": 0
 	},{
 		"Name":"PaintMagenta",
+		"Cost": 2,
 		"Label":"Paint Magenta",
 		"Tier": 0
 	},{
 		"Name":"PaintCyan",
+		"Cost": 2,
 		"Label":"Paint Cyan",
 		"Tier": 0
 	}
 ]
 
 static_mesh_block = [
-	# moved to designable blocks
 ]
 
 equipped = [
@@ -291,6 +343,7 @@ for one in wooden_misc:
 		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
 		"Class": "StaticBlock",
+		"Minable": decor_minable(one["Cost"], "Log"),
 	}
 	
     if "Positions" in one:
@@ -305,18 +358,18 @@ for one in simple_single:
 		"ItemLogic": building_single_logic,
 		"Block": one["Name"],
 		"StackSize": 32,
-		"Label":[one["Name"],"misc"],
+		"Label": one.get("Label", [one["Name"], "misc"]),
 		"Tier": one["Tier"] if "Tier" in one else 0,
 		"Category": one["Category"] if "Category" in one else "Decoration",
 	})
-	
+
     block = {
 		"Class": "StaticBlock",
 		"Name": one["Name"],
 		"Item" : one["Name"],
 		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
-		"Minable": {"Result": one["Name"]},
+		"Minable": decor_minable(one["Cost"]) if "Cost" in one else {"Result": one["Name"]},
 	}
 	
     if "Positions" in one:
@@ -354,7 +407,7 @@ for one in simple_blocks:
 		"Item" : one["Name"],
 		"Tesselator": one["Name"] + tesselator,
 		"BuildingMode": "Plane",
-		"Minable": {"Result": one["Name"]},
+		"Minable": one.get("Minable", decor_minable(one["Cost"]) if "Cost" in one else {"Result": one["Name"]}),
 	})
 	
 for one in static_mesh_block:
@@ -430,7 +483,6 @@ for one in equipped:
 
 	objects_array.append(equ)
 
-# Default light slot when empty: logic class only (no crafting recipe; not a normal pickup)
 objects_array.append({
 	"Class": "StaticItem",
 	"Name": "BuiltinFlashlight",
@@ -444,9 +496,6 @@ objects_array.append({
 	"Category": "Equipment",
 })
 
-# Ghost building: one universal placeholder block; the target machine is stored
-# per-instance in GhostBlockLogic. The item exists only because every block needs one
-# (naming, network signal fallback) — abstract, never obtainable.
 objects_array.append({
 	"Class": "StaticItem",
 	"Name": "Ghost",
@@ -461,7 +510,6 @@ objects_array.append({
 	"Class": "GhostStaticBlock",
 	"Name": "Ghost",
 	"Item": "Ghost",
-	# Breakable by hand (= cancel the ghost) but drops nothing: no Result, zero count.
 	"Minable": {
 		"Count": 0,
 	},
