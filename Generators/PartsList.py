@@ -104,16 +104,6 @@ tools = [
 			"Screwdriver"
 		]
 	},{
-		"Name": "PaintTool",
-		"Label": "Paint Tool",
-		"ItemLogic": "/Game/Equipped/PaintToolBP.PaintToolBP_C",
-		"CommonTextKeys": [
-			"Multitool"
-		],
-		"CustomData":{
-			"PaintMaterial":"Amethyst"
-		}
-	},{
 		"Name": "ConstructionTool",
 		"Label": "Construction Tool",
 		"ItemLogic": "/Game/Equipped/ConstructionToolBP.ConstructionToolBP_C",
