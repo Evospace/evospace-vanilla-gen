@@ -267,17 +267,15 @@ materials = [
         "Materials":["", "/Game/Materials/VeryHotMetal"],
 	},{
 		"Name": "Stone",
-		"Category": "Ore",
-		"Label": "Stone",
 		"Tier": 0,
-		"Items": ["Exact"],
+		"Items": [],
 	},{
 		"Name": "BuildingMaterial",
 		"Category": "Plate",
 		"Label": "Building Material",
 		"Tier": 0,
 		"Items": ["Exact"],
-		"StackSize": 999,
+		"StackSize": 9999,
 		"Tier": 0,
 	},{
 		"Name": "Sulfur",
