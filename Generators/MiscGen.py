@@ -86,7 +86,7 @@ simple_single = [
 simple_blocks = [
 	{
 		"Name": "WoodenPlanks",
-		"Minable": decor_minable(2, "Log"),
+		"Cost": 2,
 		"Label": "Wooden Planks",
 		"Tier": 0
 	},{
@@ -343,7 +343,7 @@ for one in wooden_misc:
 		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
 		"Class": "StaticBlock",
-		"Minable": decor_minable(one["Cost"], "Log"),
+		"Minable": decor_minable(one["Cost"]),
 	}
 	
     if "Positions" in one:
@@ -407,7 +407,7 @@ for one in simple_blocks:
 		"Item" : one["Name"],
 		"Tesselator": one["Name"] + tesselator,
 		"BuildingMode": "Plane",
-		"Minable": one.get("Minable", decor_minable(one["Cost"]) if "Cost" in one else {"Result": one["Name"]}),
+		"Minable": decor_minable(one["Cost"]) if "Cost" in one else {"Result": one["Name"]},
 	})
 	
 for one in static_mesh_block:

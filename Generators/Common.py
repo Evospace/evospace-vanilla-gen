@@ -270,8 +270,8 @@ basic_slot_widget_c = "Gui/BasicStackedSlotWidget.BasicStackedSlotWidget_C"
 ico = ""
 additive_ico = "Additive"
 
-def decor_minable(count, result = "BuildingMaterial"):
-	return {"Result": result, "Count": count}
+def decor_minable(count):
+	return {"Result": "BuildingMaterial", "Count": count}
 
 
 def parts_ramp(level, factor = 5):

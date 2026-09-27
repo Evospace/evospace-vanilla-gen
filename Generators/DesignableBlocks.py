@@ -17,7 +17,6 @@ designables = [
 	},{
 		"Name": "Corner",
 		"Category": "Decoration",
-		"Minable": decor_minable(1, "SteelPlate"),
 		"Label": ["Corner", "misc"],
 		"Selector": "Blocks/CornerBP.CornerBP_C",
 		"Covers": [
@@ -27,7 +26,6 @@ designables = [
 	},{
 		"Name": "Beam",
 		"Category": "Decoration",
-		"Minable": decor_minable(1, "SteelPlate"),
 		"Label": ["Beam", "misc"],
 		"Selector": "Blocks/BeamBP.BeamBP_C",
 		"Covers": [
@@ -37,7 +35,6 @@ designables = [
 	},{
 		"Name": "Scaffold",
 		"Category": "Decoration",
-		"Minable": decor_minable(1, "SteelPlate"),
 		"Label": ["Scaffold", "misc"],
 		"Selector": "Blocks/ScaffoldBP.ScaffoldBP_C",
 		"Covers": [
@@ -59,7 +56,6 @@ designables = [
 	},{
 		"Name": "Floor",
 		"Category": "Decoration",
-		"Minable": decor_minable(1, "SteelPlate"),
 		"Label": ["Floor", "misc"],
 		"Selector": "Blocks/FloorBP.FloorBP_C",
 		"Covers": [
@@ -71,7 +67,6 @@ designables = [
 	{
 		"Name": "Chair",
 		"Category": "Decoration",
-		"Minable": decor_minable(3, "Log"),
 		"Label": ["Chair", "misc"],
 		"Selector": "Blocks/ChairBP.ChairBP_C",
 		"Covers": [
@@ -81,7 +76,6 @@ designables = [
 	{
 		"Name": "Table",
 		"Category": "Decoration",
-		"Minable": decor_minable(3, "Log"),
 		"Label": ["Table", "misc"],
 		"Selector": "Blocks/TableBP.TableBP_C",
 		"Covers": [
@@ -140,7 +134,7 @@ for d in designables:
 		"Item": name,
 		"BlockLogic": block_logic,
 		"NoActorRenderable": True,
-		"Minable": d.get("Minable", decor_minable(3)),
+		"Minable": decor_minable(3),
 		"Tier": tier,
 		"Level": 0
 	}

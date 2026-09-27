@@ -552,7 +552,7 @@ for material in block_materials:
 		"Name": material["Name"] + "Block" + static_block,
 		"Item" : material["Name"] + "Block",
 		"Tesselator": material["Name"] + "Block" + tesselator,
-		"Minable": decor_minable(6, material["Name"] + ("Plate" if "Plate" in material["Items"] else "Dust")),
+		"Minable": decor_minable(16),
 	})
 			
 for tool in tools:
