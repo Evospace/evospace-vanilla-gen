@@ -9,7 +9,7 @@ data = {
 		"Items": [
 			{
 				"Name": "BuildingMaterial",
-				"Count": 100
+				"Count": 1000
 			}
 		]
 	}
