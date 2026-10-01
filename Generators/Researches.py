@@ -438,6 +438,14 @@ append_levels({
 	"MainResearch": True,
 })
 append_levels({
+	"Class": "StaticResearchToolUnlock",
+	"Name": "ConstructionTool",
+	"Label": ["ConstructionTool", "parts"],
+	"RequiredResearch": ["Automatization"],
+	"Tool": "ConstructionTool",
+	"Levels": [1,1],
+})
+append_levels({
 	"Class": research_recipe,
 	"Name": "Loader",
 	"Label": ["Loader", "machines"],
