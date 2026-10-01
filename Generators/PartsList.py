@@ -107,6 +107,7 @@ tools = [
 		"Name": "ConstructionTool",
 		"Label": "Blueprint Tool",
 		"ItemLogic": "/Game/Equipped/ConstructionToolBP.ConstructionToolBP_C",
+		"Image": "T_ConstructionBlueprint",
 	},{
 		"Name": "ConstructionBlueprint",
 		"Label": "Construction Blueprint",
