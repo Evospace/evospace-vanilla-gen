@@ -284,6 +284,16 @@ for mat, num in zip(paint_tiers, range(0,7+1)):
             "Materials": ["/Game/Materials/"+mat, pipe_fitting_material]
         })
 
+conveyor_node_pieces = ("Core", "Input", "Output", "Window")
+
+for mat, num in zip(paint_metals, range(1,7+1)):
+    for piece in conveyor_node_pieces:
+        covers.append({
+            "Name": mat+"ConveyorNode"+piece,
+            "Mesh": "/Game/Covers/Conveyor/ConveyorNode"+piece,
+            "Materials": [tier_materials[num]]
+        })
+
 for mat, num in zip(paint_metals, range(1,7+1)):
     covers.append({
 		"Name": mat+"Furnace",
@@ -294,11 +304,6 @@ for mat, num in zip(paint_metals, range(1,7+1)):
 		"Name": mat+"Conveyor",
 		"Mesh": "/Game/Models/conveyor_end",
         "Materials": ["/Game/Materials/RubberWithTierParam", tier_materials[num]]
-	})
-    covers.append({
-		"Name": mat+"ConveyorBox",
-		"Mesh": "/Game/Models/conveyor_box",
-        "Materials": [tier_materials[num]]
 	})
     covers.append({
 		"Name": mat+"ConveyorSide",
