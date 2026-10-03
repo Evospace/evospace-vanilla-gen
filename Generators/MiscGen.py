@@ -56,6 +56,12 @@ simple_single = [
 		"Cost": 3,
 		"Positions": [[0,0,0], [0,0,1]]
 	},{
+		"Name": "RoadCone",
+		"Cost": 3,
+	},{
+		"Name": "WarningBarrier",
+		"Cost": 3,
+	},{
         "Name": "Spotlight",
         "BlockLogic": "SpotlightBlockLogic",
         "LogicImports": [
