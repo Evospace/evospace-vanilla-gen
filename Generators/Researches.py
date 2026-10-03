@@ -1627,6 +1627,14 @@ append_levels({
 })
 append_levels({
 	"Class": research_decoration,
+	"Name": "MetalDoors",
+	"Label": ["MetalDoors", "researches"],
+	"RequiredResearch": ["Door", "SteelProduction"],
+	"Decorations": ["SlidingDoor", "LiftDoor"],
+	"Levels": [2,2],
+})
+append_levels({
+	"Class": research_decoration,
 	"Name": "DecorativeWood2",
 	"Label": ["TwoWorldsFormat", "common", ["DecorativeWood", "researches"], [level_labels[1], "common"]],
 	"RequiredResearch": ["DecorativeWood"],

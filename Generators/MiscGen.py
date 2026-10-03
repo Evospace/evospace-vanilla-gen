@@ -62,6 +62,16 @@ simple_single = [
 		"Name": "WarningBarrier",
 		"Cost": 3,
 	},{
+		"Name": "SlidingDoor",
+		"Cost": 8,
+		"Positions": [[0,0,0], [-1,0,0], [0,0,1], [-1,0,1]],
+		"BlockLogic": "DoorBlockLogic",
+	},{
+		"Name": "LiftDoor",
+		"Cost": 8,
+		"Positions": [[0,0,0], [-1,0,0], [0,0,1], [-1,0,1]],
+		"BlockLogic": "DoorBlockLogic",
+	},{
         "Name": "Spotlight",
         "BlockLogic": "SpotlightBlockLogic",
         "LogicImports": [
