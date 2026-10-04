@@ -109,6 +109,14 @@ tools = [
 		"ItemLogic": "/Game/Equipped/ConstructionToolBP.ConstructionToolBP_C",
 		"Image": "T_ConstructionBlueprint",
 	},{
+		"Name": "DeconstructionTool",
+		"Label": "Deconstruction Tool",
+		"ItemLogic": "DeconstructionTool",
+	},{
+		"Name": "UpgradeTool",
+		"Label": "Upgrade Tool",
+		"ItemLogic": "UpgradeTool",
+	},{
 		"Name": "ConstructionBlueprint",
 		"Label": "Construction Blueprint",
         "ItemLogic": "/Game/Equipped/BlueprintToolBP.BlueprintToolBP_C",

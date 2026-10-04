@@ -455,6 +455,22 @@ append_levels({
 	"Levels": [1,1],
 })
 append_levels({
+	"Class": "StaticResearchToolUnlock",
+	"Name": "DeconstructionTool",
+	"Label": ["DeconstructionTool", "parts"],
+	"RequiredResearch": ["ConstructionTool"],
+	"Tool": "DeconstructionTool",
+	"Levels": [1,1],
+})
+append_levels({
+	"Class": "StaticResearchToolUnlock",
+	"Name": "UpgradeTool",
+	"Label": ["UpgradeTool", "parts"],
+	"RequiredResearch": ["ConstructionTool", "Automatization1"],
+	"Tool": "UpgradeTool",
+	"Levels": [2,2],
+})
+append_levels({
 	"Class": research_recipe,
 	"Name": "Loader",
 	"Label": ["Loader", "machines"],
