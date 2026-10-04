@@ -1068,6 +1068,15 @@ for prop in props:
 		continue
 	prop["RangeMul"] = round(prop["RangeMul"] * mul, 2)
 
+vehicle_break_speed_by_name = {
+	"Shrub": 200, "BigBush": 200, "Bush": 200, "Cactus": 200,
+	"BroadleafSmall": 500, "Palm": 500,
+	"Broadleaf": 900, "Pine": 900, "SnowyPine": 900, "Conifer": 900,
+}
+for prop in props:
+	if prop["Name"] in vehicle_break_speed_by_name:
+		prop["VehicleBreakSpeed"] = vehicle_break_speed_by_name[prop["Name"]]
+
 for prop in props:
 	image = "T_" + prop["Name"] if "Image" not in prop else prop["Image"]
 
@@ -1123,6 +1132,8 @@ for prop in props:
 			temp_prop["Streamed"] = prop["Streamed"]
 		if "NoCollision" in prop:
 			temp_prop["NoCollision"] = prop["NoCollision"]
+		if "VehicleBreakSpeed" in prop:
+			temp_prop["VehicleBreakSpeed"] = prop["VehicleBreakSpeed"]
 		objects_array.append(temp_prop)
 
 DENSITY_MUL = 0.6
