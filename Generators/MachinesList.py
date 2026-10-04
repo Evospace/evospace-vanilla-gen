@@ -980,7 +980,7 @@ machines = [
 		"RotationLocks": [0,0,1],
 		"NoActorRenderable": True,
 		"CoverParts": [
-			{"Cover": "SmallSolarPanelCell"},
+			{"Cover": "SmallSolarPanelCell", "Offset": [0,0,-0.5]},
 		],
 		"LogicExports": CRAFTING_LOGIC_EXPORTS,
 		"LogicImports": CRAFTING_LOGIC_IMPORTS,
