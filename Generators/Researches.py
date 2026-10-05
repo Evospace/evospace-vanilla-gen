@@ -78,7 +78,7 @@ append_levels({
 	"Name": "BasicPlatform",
 	"Label": ["BasicPlatform", "misc"],
 	"RequiredResearch": ["MineralsScan"],
-	"Decorations": ["BasicPlatform", "PlasticBlock"],
+	"Decorations": ["BasicPlatform"],
 })
 append_levels({
 	"Class": research_decoration,
@@ -1407,6 +1407,14 @@ append_levels({
 	"Unlocks": [[ic_reactor_r_dict, "PolyethyleneSheet"]],
 	"MainResearch": True,
 	"CostMul": 1.25
+})
+append_levels({
+	"Class": research_decoration,
+	"Name": "PlasticBlock",
+	"Label": ["PlasticBlock", "misc"],
+	"RequiredResearch": ["Polyethylene"],
+	"Decorations": ["PlasticBlock"],
+	"Levels": [3,3],
 })
 append_levels({
 	"Class": research_recipe,

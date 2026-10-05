@@ -213,8 +213,7 @@ simple_blocks = [
 		"Name":"GlassBlock",
 		"Cost": 2,
 		"Label":"Glass Block",
-		"Tier": 0,
-		"Transparent": True
+		"Tier": 0
 	},{
 		"Name":"PaintWhite",
 		"Cost": 2,
@@ -414,7 +413,6 @@ for one in simple_blocks:
     objects_array.append({ "Class": tesselator_cube,
 		"Name": one["Name"] + tesselator,
 		"Material" : "/Game/Materials/" + one["Name"],
-		"Transparent": one["Transparent"] if "Transparent" in one else False
 	})
 
 for one in simple_blocks:
