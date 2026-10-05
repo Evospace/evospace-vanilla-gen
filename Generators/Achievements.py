@@ -166,6 +166,12 @@ ach = [
         "Description": FirstItemAcq
     },
     {
+        "Name": "PyriteOre",
+        "Steam": True,
+        "Label": ["PyriteOre","ores"],
+        "Description": FirstItemAcq
+    },
+    {
         "Name": "ChalcopyriteOre",
         "Steam": True,
         "Label": ["ChalcopyriteOre","ores"],
