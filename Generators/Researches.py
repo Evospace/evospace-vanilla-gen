@@ -669,6 +669,7 @@ append_levels({
 		["Hand" + r_dict, "Led"],
 		["Hand" + r_dict, "SteelButton"],
 		["Hand" + r_dict, "SteelToggleButton"],
+		["Hand" + r_dict, "SteelPressurePlate"],
 	],
 	"CostMul": 2.0,
 })

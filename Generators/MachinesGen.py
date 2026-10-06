@@ -395,6 +395,17 @@ for machine in machines:
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
 			})
+
+		if machine["Name"] == "PressurePlate":
+			append_recipe({
+				"Name": tier_material[tier] + machine["Name"],
+				"Input": items([
+					[plate(), 2],
+					[tier_material[tier] + "LogicWire", 1]
+				]),
+				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Ticks" : 20
+			})
 			
 		if machine["Name"] == "LogicInterface":
 			append_recipe({

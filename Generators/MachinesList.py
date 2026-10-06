@@ -1149,6 +1149,14 @@ machines = [
 		"LogicExports": ["Pressed"],
 		"Category": "Network",
 	},{
+		"Name": "PressurePlate",
+		"StartTier": 2,
+		"EndTier": 2,
+		"Description": ["DataOutput"],
+		"LogicExports": ["Pressed"],
+		"RotationLocks": [0,0,1],
+		"Category": "Network",
+	},{
 		"Name": "DeepStorage",
 		"StartTier": 4,
 		"EndTier": 7,
