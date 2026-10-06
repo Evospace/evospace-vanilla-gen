@@ -655,9 +655,21 @@ append_levels({
 	"Unlocks": [
 		["Hand" + r_dict, "SteelLogicWire"],
 		["Hand" + r_dict, "SteelLogicInterface"],
-		["Hand" + r_dict, "Led"],
 	],
 	"MainResearch": True,
+	"CostMul": 2.0,
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "LogicDevices",
+	"Label": ["LogicDevices", "researches"],
+	"RequiredResearch": ["LogicNetworking"],
+	"Levels": [1, 1],
+	"Unlocks": [
+		["Hand" + r_dict, "Led"],
+		["Hand" + r_dict, "SteelButton"],
+		["Hand" + r_dict, "SteelToggleButton"],
+	],
 	"CostMul": 2.0,
 })
 append_levels({

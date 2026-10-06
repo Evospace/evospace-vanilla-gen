@@ -1135,6 +1135,20 @@ machines = [
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
         "Category": "Network",
 	},{
+		"Name": "Button",
+		"StartTier": 2,
+		"EndTier": 2,
+		"Description": ["DataOutput"],
+		"LogicExports": ["Pressed"],
+		"Category": "Network",
+	},{
+		"Name": "ToggleButton",
+		"StartTier": 2,
+		"EndTier": 2,
+		"Description": ["DataOutput"],
+		"LogicExports": ["Pressed"],
+		"Category": "Network",
+	},{
 		"Name": "DeepStorage",
 		"StartTier": 4,
 		"EndTier": 7,

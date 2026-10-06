@@ -372,6 +372,29 @@ for machine in machines:
 				"Output": one_item(tier_material[tier] + "LogicWire"),
 				"Ticks" : 20
 			})
+
+		if machine["Name"] == "Button":
+			append_recipe({
+				"Name": tier_material[tier] + machine["Name"],
+				"Input": items([
+					[plate(), 1],
+					[tier_material[tier] + "LogicWire", 1]
+				]),
+				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Ticks" : 20
+			})
+
+		if machine["Name"] == "ToggleButton":
+			append_recipe({
+				"Name": tier_material[tier] + machine["Name"],
+				"Input": items([
+					[plate(), 1],
+					[part(), 1],
+					[tier_material[tier] + "LogicWire", 1]
+				]),
+				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Ticks" : 20
+			})
 			
 		if machine["Name"] == "LogicInterface":
 			append_recipe({
