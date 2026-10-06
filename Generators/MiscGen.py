@@ -66,11 +66,13 @@ simple_single = [
 		"Cost": 8,
 		"Positions": [[0,0,0], [-1,0,0], [0,0,1], [-1,0,1]],
 		"BlockLogic": "DoorBlockLogic",
+		"LogicImports": ["DoorOpen"],
 	},{
 		"Name": "LiftDoor",
 		"Cost": 8,
 		"Positions": [[0,0,0], [-1,0,0], [0,0,1], [-1,0,1]],
 		"BlockLogic": "DoorBlockLogic",
+		"LogicImports": ["DoorOpen"],
 	},{
         "Name": "Spotlight",
         "BlockLogic": "SpotlightBlockLogic",
