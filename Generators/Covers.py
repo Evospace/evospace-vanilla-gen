@@ -207,6 +207,24 @@ covers = [
         "Materials": [""],
         "NumCustomData": 3,
     },{
+        "Name": "FoundationTop",
+        "Mesh": "/Game/Covers/Pedestal/PedestalFloor",
+    },{
+        "Name": "FoundationColumn",
+        "Mesh": "/Game/Covers/Pedestal/PedestalColumn",
+    },{
+        "Name": "FoundationHeavyTop",
+        "Mesh": "/Game/Covers/Pedestal/PedestalHeavyTop",
+    },{
+        "Name": "FoundationHeavyColumn",
+        "Mesh": "/Game/Covers/Pedestal/PedestalHeavyColumn",
+    },{
+        "Name": "FoundationPipeHolder",
+        "Mesh": "/Game/Covers/Pedestal/PedestalPipeHolder",
+    },{
+        "Name": "FoundationPipePost",
+        "Mesh": "/Game/Covers/Pedestal/PedestalPipePost",
+    },{
         "Name": "WireCover",
         "Mesh": "/Game/Covers/WireCover",
         "Materials": [""],

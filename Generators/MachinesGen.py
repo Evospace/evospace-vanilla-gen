@@ -58,6 +58,57 @@ MACHINE_ENERGY = {
 	"TeslaTower": {"consumption": 1000, "consumption_item": "Electricity"},
 }
 
+FOUNDATION = {
+	"Top": [
+		{"Cover": "FoundationTop", "Offset": [0, 0, -0.5]},
+	],
+	"Column": [
+		{"Cover": "FoundationColumn", "Offset": [0, 0, -0.5]},
+	],
+}
+
+FOUNDATION_HEAVY = {
+	"Top": [
+		{"Cover": "FoundationHeavyTop", "Offset": [0, 0, -0.5]},
+	],
+	"Column": [
+		{"Cover": "FoundationHeavyColumn", "Offset": [0, 0, -0.5]},
+	],
+}
+
+FOUNDATION_PIPE = {
+	"Every": 3,
+	"Top": [
+		{"Cover": "FoundationPipeHolder", "Offset": [0, 0, 0.5]},
+		{"Cover": "FoundationPipePost", "Offset": [0, 0, -0.5]},
+	],
+	"Column": [
+		{"Cover": "FoundationPipePost", "Offset": [0, 0, -0.5]},
+	],
+}
+
+FOUNDATION_LOGICS = ("AutoCrafter", "SelectCrafter", "DumpCrafterBlockLogic")
+FOUNDATION_MACHINES = {
+	"Assembler": FOUNDATION,
+	"DrillingRig": FOUNDATION_HEAVY,
+	"Pumpjack": FOUNDATION,
+	"DroneStation": FOUNDATION,
+	"SolarPanel": FOUNDATION,
+	"SmallSolarPanel": FOUNDATION,
+	"WindTurbine": FOUNDATION,
+	"RailStation": FOUNDATION,
+	"Portal": FOUNDATION,
+	"ItemRack": FOUNDATION,
+	"Chest": FOUNDATION,
+	"DeepStorage": FOUNDATION,
+	"Container": FOUNDATION,
+	"BatteryBox": FOUNDATION,
+	"Computer": FOUNDATION,
+	"Spawner": FOUNDATION,
+	"SteelRail": FOUNDATION,
+	"Pipe": FOUNDATION_PIPE,
+}
+
 def scale_energy_per_tick(base, level, scaling="exponential"):
 	if base <= 0:
 		return 0
@@ -297,6 +348,11 @@ for machine in machines:
 			block["CoverParts"] = [
 				dict(part, Cover=tier_material[tier] + part["Cover"]) for part in machine["CoverParts"]
 			]
+
+		if machine["Name"] in FOUNDATION_MACHINES:
+			block["Foundation"] = FOUNDATION_MACHINES[machine["Name"]]
+		elif machine.get("BlockLogic") in FOUNDATION_LOGICS:
+			block["Foundation"] = FOUNDATION
 
 		if "NoActorRenderable" not in machine:
 			block["Actor"] = machine.get("Actor", "Blocks/" + machine["Name"] + "BP." + machine["Name"] + "BP_C")
