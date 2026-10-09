@@ -271,7 +271,7 @@ materials = [
 		"Items": [],
 	},{
 		"Name": "BuildingMaterial",
-		"Category": "Plate",
+		"Category": "Decoration",
 		"Label": "Building Material",
 		"Tier": 0,
 		"Items": ["Exact"],
