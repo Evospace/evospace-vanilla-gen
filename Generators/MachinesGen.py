@@ -482,7 +482,7 @@ for machine in machines:
 				"Ticks" : 20
 			})
 
-		if machine["Name"] == "LogicDisplay" or machine["Name"] == "LogicController" or machine["Name"] == "LogicSensor":
+		if machine["Name"] == "LogicDisplay" or machine["Name"] == "LogicController" or machine["Name"] == "LogicSensor" or machine["Name"] == "LogicTransceiver":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{

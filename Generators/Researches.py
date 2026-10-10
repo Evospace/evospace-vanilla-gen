@@ -678,6 +678,7 @@ append_levels({
 	"Name": "Circuit2",
 	"Label": ["TwoWorldsFormat", "common", ["Circuit", "parts"], ["II", "common"]],
 	"RequiredResearch": ["Circuit", "Transistor"],
+		["Hand" + r_dict, "SteelLogicTransceiver"],
 	"Unlocks": [[assembler_r_dict, "Circuit2"]],
 	"Levels": [1,1],
 	"MainResearch": True,

@@ -1149,6 +1149,14 @@ machines = [
 		"LogicExports": ["Pressed"],
 		"Category": "Network",
 	},{
+		"Name": "LogicTransceiver",
+		"StartTier": 2,
+		"EndTier": 2,
+		"Description": ["DataInput", "DataOutput"],
+		"Image": "LogicInterface",
+		"Actor": "Blocks/LogicTransceiverBP.LogicTransceiverBP_C",
+		"Category": "Network",
+	},{
 		"Name": "PressurePlate",
 		"StartTier": 2,
 		"EndTier": 2,
