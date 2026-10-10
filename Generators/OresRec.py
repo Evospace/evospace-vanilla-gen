@@ -33,29 +33,6 @@ for ore_type in ore_types:
 			"Productivity": 50,
 		})
 
-		# Smelter
-		if "Furnace" in processing:
-			for form in ["Ore", "Dust", "OreDust", "OreImpureGravel", "OreGravel"]:
-				recipes_smelt.append({
-					"Name": ore_name + form,
-					"Input": one_item(ore_name + form),
-					"Output": one_item(processing["Furnace"]),
-					"Ticks" : 60,
-					"Tier": material_tier,
-				})
-				arc_output = [[processing["Furnace"], 1]]
-				arc_recipe = {
-					"Name": ore_name + form,
-					"Input": one_item(ore_name + form),
-					"Ticks" : 240,
-					"Tier": material_tier,
-				}
-				if form != "Dust":
-					arc_output.append([processing["Furnace"], 1, True])
-					arc_recipe["Productivity"] = 50
-				arc_recipe["Output"] = items(arc_output)
-				recipes_arc_furnace.append(arc_recipe)
-
 		# Macerator
 		if "Macerator" in processing:
 			recipes_mac.append({
@@ -172,6 +149,42 @@ for ore_type in ore_types:
 					"Ticks" : ore_fuel_ticks(ore_type, item),
 				})
 	
+for family in ore_families():
+	product = family["Product"]
+	recipes_smelt.append({
+		"Name": family["Key"] + "OreSmelting",
+		"Input": one_item(family["OreGroup"]),
+		"Output": one_item(product),
+		"Ticks" : 60,
+		"Tier": family["Tier"],
+	})
+	recipes_arc_furnace.append({
+		"Name": family["Key"] + "OreSmelting",
+		"Input": one_item(family["OreGroup"]),
+		"Output": items([
+			[product, 1],
+			[product, 1, True],
+		]),
+		"Ticks" : 240,
+		"Tier": family["Tier"],
+		"Productivity": 50,
+	})
+	if family["DustInput"]:
+		recipes_smelt.append({
+			"Name": family["Key"] + "DustSmelting",
+			"Input": one_item(family["DustInput"]),
+			"Output": one_item(product),
+			"Ticks" : 60,
+			"Tier": family["Tier"],
+		})
+		recipes_arc_furnace.append({
+			"Name": family["Key"] + "DustSmelting",
+			"Input": one_item(family["DustInput"]),
+			"Output": one_item(product),
+			"Ticks" : 240,
+			"Tier": family["Tier"],
+		})
+
 objects_array.append({ "Class": r_dict,
 	"Name": "Macerator" + r_dict,
 	"Recipes": recipes_mac

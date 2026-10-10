@@ -337,6 +337,45 @@ for ore_type in ore_types:
 					"AddMask": "T_" + "CrystalAdditive"
 				})
 			
+ORE_SMELT_FORMS = ["Ore", "OreDust", "OreImpureGravel", "OreGravel"]
+
+def ore_families():
+	families = {}
+	for ore_type in ore_types:
+		if "NotOre" in ore_type or "Furnace" not in ore_type["Processing"]:
+			continue
+		product = ore_type["Processing"]["Furnace"]
+		families.setdefault(product, []).append(ore_type)
+	result = []
+	for product, ores in families.items():
+		key = product.removesuffix("Plate") if len(ores) > 1 else ores[0]["Name"]
+		dusts = [ore["Name"] + "Dust" for ore in ores if ore["Name"] + "Dust" != product]
+		result.append({
+			"Key": key,
+			"Product": product,
+			"Tier": ores[0]["Tier"],
+			"OreGroup": key + "OreAnyForm",
+			"OreMembers": [ore["Name"] + form for ore in ores for form in ORE_SMELT_FORMS],
+			"DustInput": (key + "MineralDust") if len(dusts) > 1 else (dusts[0] if dusts else None),
+			"DustMembers": dusts,
+		})
+	return result
+
+for family in ore_families():
+	objects_array.append({ "Class": "ItemGroup",
+		"Name": family["OreGroup"],
+		"Label": [family["OreGroup"], "ores"],
+		"Members": family["OreMembers"],
+		"StackSize": 64,
+	})
+	if len(family["DustMembers"]) > 1:
+		objects_array.append({ "Class": "ItemGroup",
+			"Name": family["DustInput"],
+			"Label": [family["DustInput"], "ores"],
+			"Members": family["DustMembers"],
+			"StackSize": 64,
+		})
+
 data = {
 	"Objects": objects_array
 }

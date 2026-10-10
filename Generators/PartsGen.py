@@ -571,7 +571,13 @@ for tool in tools:
 		item["CustomData"] = tool["CustomData"]
 		
 	objects_array.append(item)
-	
+
+objects_array.append({ "Class": "ItemGroup",
+	"Name": "IronDustOrPlate",
+	"Label": ["IronDustOrPlate", "parts"],
+	"Members": ["IronDust", "IronPlate"],
+	"StackSize": 64,
+})
 					
 data = {
 	"Objects": objects_array

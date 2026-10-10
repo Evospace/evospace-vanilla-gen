@@ -1088,25 +1088,15 @@ recipes_oven.append({
 	"Ticks": 2*2*20*3,
 })
 
-for fuel_type, bonus in zip(["Coke"], [1.0]):	
-	recipes_blast_furnace.append({
-		"Name": "IronDustSmelting",
-		"Input": items([
-			[fuel_type, 10],
-			["IronDust", 10],
-		]),
-		"Output": one_item("SteelPlate", 10),
-		"Ticks" : 10*5*20*2
-	})
-	recipes_blast_furnace.append({
-		"Name": "IronPlateSmelting",
-		"Input": items([
-			[fuel_type, 10],
-			["IronPlate", 10],
-		]),
-		"Output": one_item("SteelPlate", 10),
-		"Ticks" : 10*5*20*2
-	})
+recipes_blast_furnace.append({
+	"Name": "IronSmelting",
+	"Input": items([
+		["Coke", 10],
+		["IronDustOrPlate", 10],
+	]),
+	"Output": one_item("SteelPlate", 10),
+	"Ticks" : 10*5*20*2
+})
 recipes_mixer.append({
 	"Name": "SSCraft",
 	"Input": items([
