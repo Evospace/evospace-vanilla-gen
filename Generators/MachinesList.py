@@ -487,14 +487,6 @@ machines = [
 		"BlockLogic":"SelectCrafter",
 		"LogicExports": CRAFTING_LOGIC_EXPORTS,
 		"LogicImports": CRAFTING_LOGIC_IMPORTS,
-		"BlockCreation":"""
-        local a = self:new_resource_accessor("Input")
-		a:SetSidePos(Vec3i.front, Vec3i.new( 0, 0, 0 ))
-        local res = self:get_resource_component()
-		a:bind_input(res)
-        res.input = 20
-        res.input_item = StaticItem.find("Kinetic")
-		""",
 		"Description": ["KineticInput", "PowerInput"],
 	},{
 		"Name": "Sifter",

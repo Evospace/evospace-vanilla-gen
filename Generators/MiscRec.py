@@ -1217,7 +1217,7 @@ for material in materials:
 				"Input": one_item(material["Name"] + "Dust", mul),
 				"Output": one_item(material["Name"] + "Plate", mul),
 				"Tier": extract_tier(material),
-				"Ticks" : 240 * mul,
+				"Ticks" : 240,
 			})
 
 recipes_macerator.append({
@@ -1963,7 +1963,7 @@ append_recipe_hand({
 	"Name": "BuildingMaterial",
 	"Input": one_item("RockOrSoil"),
 	"Output": one_item("BuildingMaterial"),
-	"Ticks" : 10
+	"Ticks" : 60
 })
 
 COMBUSTION_FUEL_DRAIN = 32000 / 32
