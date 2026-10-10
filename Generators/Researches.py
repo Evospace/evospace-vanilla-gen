@@ -149,6 +149,14 @@ append_levels({
 })
 append_levels({
 	"Class": research_decoration,
+	"Name": "WireCover",
+	"Label": ["WireCover", "props"],
+	"RequiredResearch": ["PowerTransmission"],
+	"Decorations": ["WireCover"],
+	"Levels": [1,1],
+})
+append_levels({
+	"Class": research_decoration,
 	"Name": "Designable",
 	"Label": ["Designable", "researches"],
 	"RequiredResearch": ["Bricks"],
@@ -670,6 +678,7 @@ append_levels({
 		["Hand" + r_dict, "SteelButton"],
 		["Hand" + r_dict, "SteelToggleButton"],
 		["Hand" + r_dict, "SteelPressurePlate"],
+		["Hand" + r_dict, "SteelLogicTransceiver"],
 	],
 	"CostMul": 2.0,
 })
@@ -678,7 +687,6 @@ append_levels({
 	"Name": "Circuit2",
 	"Label": ["TwoWorldsFormat", "common", ["Circuit", "parts"], ["II", "common"]],
 	"RequiredResearch": ["Circuit", "Transistor"],
-		["Hand" + r_dict, "SteelLogicTransceiver"],
 	"Unlocks": [[assembler_r_dict, "Circuit2"]],
 	"Levels": [1,1],
 	"MainResearch": True,

@@ -229,6 +229,7 @@ covers = [
         "Mesh": "/Game/Covers/WireCover",
         "Materials": [""],
         "NumCustomData": 3,
+        "Minable": decor_minable(1),
     },{
         "Name": "Polycarbo",
         "Mesh": "/Game/Covers/polycarbo",
@@ -408,6 +409,9 @@ for cover in covers:
 
     if "WorldPositionOffsetDisableDistance" in cover:
         staticCover["WorldPositionOffsetDisableDistance"] = cover["WorldPositionOffsetDisableDistance"]
+
+    if "Minable" in cover:
+        staticCover["Minable"] = cover["Minable"]
 
     objects_array.append(staticCover)
 

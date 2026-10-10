@@ -24,7 +24,7 @@ for entry in cover_meshes:
         "StackSize": 32,
         "Image": image,
         "ItemLogic": cover_item_logic,
-        "Category": "Terrain",
+        "Category": "Decoration",
         "Label": [name, "props"],
         "DescriptionParts": [["WorldObject", "common"]],
         "Cover": name
