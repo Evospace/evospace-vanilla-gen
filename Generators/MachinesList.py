@@ -3,6 +3,9 @@
 from Common import *
 from Materials import *
 
+BOILER_PER_TICK = 200
+INDUSTRIAL_BOILER_PER_TICK = BOILER_PER_TICK * 20 * 8
+
 # Crafter block logics: list in each machine below (no implicit defaults in MachinesGen).
 CRAFTING_LOGIC_EXPORTS = ["Working", "Progress", "InputInventory", "OutputInventory"]
 CRAFTING_LOGIC_IMPORTS = ["Working"]
@@ -10,6 +13,7 @@ CRAFTING_LOGIC_IMPORTS = ["Working"]
 machines = [
 	{
 		"Name": "Macerator",
+		"Energy": {"consumption": 20, "consumption_item": "Kinetic"},
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "AutoCrafter",
@@ -26,6 +30,7 @@ machines = [
 	#}
 	,{
 		"Name": "Fermenter",
+		"Energy": {"consumption": 20, "consumption_item": "Electricity"},
 		"StartTier": 3,
 		"EndTier": 7,
 		"Positions": [[0,0,0],[0,0,1]],
@@ -36,6 +41,7 @@ machines = [
 		"Description": ["ElectricInput", "PowerInput"],
 	},{
 		"Name": "Separator",
+		"Energy": {"consumption": 80, "consumption_item": "Kinetic"},
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
@@ -49,6 +55,7 @@ machines = [
 		"BlockLogic": "BedBlockLogic",
 	},{
 		"Name": "AutomaticHammer",
+		"Energy": {"consumption": 30, "consumption_item": "Kinetic"},
 		"Positions": [[0,0,0],[0,0,1]],
 		"StartTier": 1,
 		"EndTier": 7,
@@ -58,6 +65,7 @@ machines = [
 		"Description": ["KineticInput", "PowerInput"],
 	},{
 		"Name": "Boiler",
+		"Energy": {"consumption": BOILER_PER_TICK, "consumption_item": "Heat", "production": BOILER_PER_TICK, "production_item": "Steam"},
 		"StartTier": 2,
 		"EndTier": 7,
 		"CommonTextKeys":[
@@ -171,6 +179,7 @@ machines = [
 		"LogicImports": ["Working"],
 	},{
 		"Name": "OreWasher",
+		"Energy": {"consumption": 20, "consumption_item": "Kinetic"},
 		"Positions": [[0,0,0],[0,1,0],[-1,0,0],[-1,1,0],[-2,0,0],[-2,1,0],[0,0,1],[0,1,1],[-1,0,1],[-1,1,1],[-2,0,1],[-2,1,1]],
 		"StartTier": 2,
 		"EndTier": 7,
@@ -216,6 +225,7 @@ machines = [
 		"Description": ["FluidConductor", "FluidStorage"],
 	},{
 		"Name": "StirlingEngine",
+		"Energy": {"consumption": 50, "consumption_item": "Heat", "production": 50, "production_item": "Kinetic"},
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
@@ -224,6 +234,7 @@ machines = [
 		"Description": ["HeatInput", "KineticOutput","PowerOutput"],
 	},{
 		"Name": "SteamEngine",
+		"Energy": {"consumption": BOILER_PER_TICK, "consumption_item": "Steam", "production": BOILER_PER_TICK, "production_item": "Kinetic"},
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
@@ -232,6 +243,7 @@ machines = [
 		"Description": ["FluidInput", "KineticOutput", "PowerOutput"],
 	},{
 		"Name": "CombustionEngine",
+		"Energy": {"production": INDUSTRIAL_BOILER_PER_TICK // 2, "production_item": "Kinetic"},
 		"BlockLogic": "AutoCrafter",
 		"LogicExports": CRAFTING_LOGIC_EXPORTS,
 		"LogicImports": CRAFTING_LOGIC_IMPORTS,
@@ -241,6 +253,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,2,0],[-1,2,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,2,1],[-1,2,1]],
 	},{
 		"Name": "FractionatingColumn",
+		"Energy": {"consumption": 200, "consumption_item": "Electricity"},
 		"StartTier": 4,
 		"EndTier": 7,
 		"Description": ["ElectricInput", "PowerInput", "FluidInput", "FluidOutput"],
@@ -259,6 +272,7 @@ machines = [
         ]
 	},{
 		"Name": "PyrolysisUnit",
+		"Energy": {"consumption": 50, "consumption_item": "Heat"},
 		"Positions": [[0,0,0],[0,0,1],[0,1,0],[0,2,0]],
 		"StartTier": 4,
 		"EndTier": 7,
@@ -268,6 +282,7 @@ machines = [
 		"Description": ["HeatInput", "PowerInput"],
 	},{
 		"Name": "Generator",
+		"Energy": {"consumption": BOILER_PER_TICK * 5 * 2, "consumption_item": "Kinetic", "production": BOILER_PER_TICK * 5 * 2, "production_item": "Electricity"},
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 7,
@@ -277,6 +292,7 @@ machines = [
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
 	},{
 		"Name": "IndustrialGenerator",
+		"Energy": {"consumption": INDUSTRIAL_BOILER_PER_TICK, "consumption_item": "Kinetic", "production": INDUSTRIAL_BOILER_PER_TICK, "production_item": "Electricity"},
 		"Positions": [
             [0, 0, 0], [0, 2, 0], [1, 2, 0], [-1, 2, 0], [0, 3, 0], [1, 3, 0], [-1, 3, 0],
 			[0, 1, 0], [1, 1, 0], [-1, 1, 0],
@@ -295,6 +311,7 @@ machines = [
 		 
 	},{
 		"Name": "CompactGenerator",
+		"Energy": {"consumption": 50, "consumption_item": "Kinetic", "production": 50, "production_item": "Electricity"},
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
@@ -303,6 +320,7 @@ machines = [
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
 	},{
 		"Name": "ElectricEngine",
+		"Energy": {"consumption": 150, "consumption_item": "Electricity", "production": 150, "production_item": "Kinetic"},
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
@@ -335,6 +353,7 @@ machines = [
 		"LogicImports": ["Working"],
 	},{
 		"Name": "Smelter",
+		"Energy": {"consumption": 50, "consumption_item": "Heat"},
 		"StartTier": 0,
 		"EndTier": 2,
 		"BlockLogic":"AutoCrafter",
@@ -346,6 +365,7 @@ machines = [
 		}
 	},{
 		"Name": "SteamTurbine",
+		"Energy": {"consumption": BOILER_PER_TICK * 5 * 2, "consumption_item": "Steam", "production": BOILER_PER_TICK * 5 * 2, "production_item": "Kinetic"},
 		"Positions": [[0,0,0],[-1,0,0],[-2,0,0],[0,-1,0],[-1,-1,0],[-2,-1,0],[0,0,1],[-1,0,1],[-2,0,1],[0,-1,1],[-1,-1,1],[-2,-1,1]],
 		"StartTier": 3,
 		"EndTier": 7,
@@ -355,6 +375,7 @@ machines = [
 		"Description": ["FluidInput", "KineticOutput","PowerOutput"],
 	},{
 		"Name": "IndustrialSteamTurbine",
+		"Energy": {"consumption": INDUSTRIAL_BOILER_PER_TICK, "consumption_item": "Steam", "production": INDUSTRIAL_BOILER_PER_TICK, "production_item": "Kinetic"},
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],   [-3,0,0], [-4,0,0], [-5,0,0],
 			[0,-1,0],[-1,-1,0],[-2,-1,0],[-3,-1,0],[-4,-1,0],[-5,-1,0],
@@ -376,6 +397,7 @@ machines = [
 		"Description": ["FluidInput", "KineticOutput", "PowerOutput"],
 	},{
 		"Name": "Riteg",
+		"Energy": {"production": 400, "production_item": "Heat"},
 		"Positions": [
 		    [0,0,0],[-1,0,0],[1,0,0],
 			[0,1,0],[-1,1,0],[1,1,0],
@@ -448,6 +470,7 @@ machines = [
 		"Category": "Network",
 	},{
 		"Name": "ArcSmelter",
+		"Energy": {"consumption": 200, "consumption_item": "Electricity"},
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,0,2],[-1,0,2],[0,1,2],[-1,1,2]],
 		"StartTier": 2,
 		"EndTier": 7,
@@ -457,6 +480,7 @@ machines = [
 		"Description": ["ElectricInput", "PowerInput"],
 	},{
 		"Name": "ChemicalBath",
+		"Energy": {"consumption": 100, "consumption_item": "Kinetic"},
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 7,
@@ -474,6 +498,7 @@ machines = [
 		"Description": ["KineticInput", "PowerInput"],
 	},{
 		"Name": "Sifter",
+		"Energy": {"consumption": 400, "consumption_item": "Kinetic"},
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 7,
@@ -483,6 +508,7 @@ machines = [
 		"Description": ["KineticInput", "PowerInput"],
 	},{
 		"Name": "IndustrialChemReactor",
+		"Energy": {"consumption": 100, "consumption_item": "Electricity"},
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
 		"EndTier": 7,
@@ -492,6 +518,7 @@ machines = [
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "Furnace",
+		"Energy": {"production": 50, "production_item": "Heat"},
 		"StartTier": 0,
 		"EndTier": 7,
 		"BlockLogic":"AutoCrafter",
@@ -500,6 +527,7 @@ machines = [
 		"Description": ["HeatOutput", "PowerOutput"],
 	},{
 		"Name": "Oven",
+		"Energy": {"consumption": 100, "consumption_item": "Heat"},
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],
 			[0,1,0],[-2,1,0],
@@ -546,6 +574,7 @@ machines = [
 		"Description": ["SpeedBonus"],
 	},{
 		"Name": "FluidFurnace",
+		"Energy": {"production": 200, "production_item": "Heat"},
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "AutoCrafter",
@@ -554,6 +583,7 @@ machines = [
 		"Description": ["FluidInput", "HeatOutput", "PowerOutput"],
 	},{
 		"Name": "ElectricFurnace",
+		"Energy": {"consumption": 250, "consumption_item": "Electricity", "production": 250, "production_item": "Heat"},
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic": "SelectCrafter",
@@ -571,6 +601,7 @@ machines = [
 		"Description": ["ElectricConductor", "ElectricStorage"]
 	},{
 		 "Name": "Portal",
+		 "Energy": {"consumption": INDUSTRIAL_BOILER_PER_TICK * 4 * 2, "consumption_item": "Electricity"},
          "Description": ["PowerInput"],
 		 "StartTier": 7,
 		 "EndTier": 7,
@@ -618,6 +649,7 @@ machines = [
 	},
 	{
 		"Name": "DrillingRig",
+		"Energy": {"consumption": 96, "consumption_item": "Kinetic", "scaling": "linear"},
         "BlockLogic": "DrillingRig",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],
@@ -646,6 +678,7 @@ machines = [
 		"LogicImports": ["Working"],
 	},{
 		"Name": "Assembler",
+		"Energy": {"consumption": 160, "consumption_item": "Electricity"},
 		"StartTier": 3,
 		"EndTier": 7,
 		"Positions": [
@@ -663,6 +696,7 @@ machines = [
 		"Description": ["ElectricInput", "PowerInput"],
 	},{
 		"Name": "Constructor",
+		"Energy": {"consumption": 40, "consumption_item": "Electricity"},
 		"StartTier": 1,
 		"EndTier": 7,
 		"Positions": [
@@ -728,6 +762,7 @@ machines = [
 		"Description": ["KineticInput", "HeatInput", "FluidInput", "ItemInput", "KineticInput"],
 	},{
 		"Name": "Electrolyzer",
+		"Energy": {"consumption": 80, "consumption_item": "Electricity"},
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic":"SelectCrafter",
@@ -736,6 +771,7 @@ machines = [
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "Mixer",
+		"Energy": {"consumption": 15, "consumption_item": "Kinetic"},
 		"StartTier": 2,
 		"EndTier": 7,
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
@@ -808,6 +844,7 @@ machines = [
 		"Actor": "Blocks/HugeMonitorBP.HugeMonitorBP_C",
 	},{
 		"Name": "Computer",
+		"Energy": {"consumption": 20, "consumption_item": "Electricity"},
 		"StartTier": 1,
 		"EndTier": 6,
 		"BlockLogic":"ComputerBlockLogic",
@@ -842,6 +879,7 @@ machines = [
 	#},
 	{
 		"Name": "FissionReactor",
+		"Energy": {"production": INDUSTRIAL_BOILER_PER_TICK, "production_item": "Heat"},
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],[-3,0,0],
 			[0,1,0],[-1,1,0],[-2,1,0],[-3,1,0],
@@ -881,6 +919,7 @@ machines = [
 		"Description": ["HeatOutput", "PowerOutput"],
 	},{
 		"Name": "FusionReactor",
+		"Energy": {"consumption": INDUSTRIAL_BOILER_PER_TICK * 2, "consumption_item": "Electricity"},
         "Description": ["PowerInput"],
         "BlockLogic":"SelectCrafter",
 		"LogicExports": CRAFTING_LOGIC_EXPORTS,
@@ -914,6 +953,7 @@ machines = [
 		],
 	},{
 		"Name": "IndustrialBoiler",
+		"Energy": {"consumption": INDUSTRIAL_BOILER_PER_TICK, "consumption_item": "Heat", "production": INDUSTRIAL_BOILER_PER_TICK, "production_item": "Steam"},
 		"StartTier": 5,
 		"EndTier": 7,
 		"Positions": [
@@ -940,6 +980,7 @@ machines = [
 	},
 	{
 		"Name": "SolarPanel",
+		"Energy": {"production": 500, "production_item": "Electricity"},
 		"Positions": [
 			[0,0,0],[-1,0,0],[1,0,0],
 			[0,1,0],[-1,1,0],[1,1,0],
@@ -968,6 +1009,7 @@ machines = [
 	},
 	{
 		"Name": "SmallSolarPanel",
+		"Energy": {"production": 50, "production_item": "Electricity"},
 		"Positions": [
 			[0,0,0],
 			[0,-1,0],
@@ -988,6 +1030,7 @@ machines = [
 	},
 	{
 		"Name": "WindTurbine",
+		"Energy": {"production": 300, "production_item": "Electricity"},
 		"Positions": [
 			[0,0,0],[0,0,1],[0,0,2],[0,0,3],[0,0,4],
 			[0,0,5],[0,0,6],[0,0,7],[0,0,8],[0,0,9],
@@ -1009,6 +1052,7 @@ machines = [
 	},
 	{
 		"Name": "Pumpjack",
+		"Energy": {"consumption": 60, "consumption_item": "Kinetic", "scaling": "linear"},
         "BlockLogic":"Pumpjack",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],[-3,0,0],[-4,0,0],
@@ -1036,6 +1080,7 @@ machines = [
 		"LogicImports": ["Working"],
 	},{
 		"Name": "Pumpjack_leg",
+		"Energy": {"consumption": 60, "consumption_item": "Kinetic", "scaling": "linear"},
 		"ExactName": True,
 		"BlockLogic":"Pumpjack",
 		"Actor": "Blocks/PumpjackBP.PumpjackBP_C",
@@ -1064,6 +1109,7 @@ machines = [
 		"LogicImports": ["Working"],
 	},{
 		"Name": "IndustrialSmelter",
+		"Energy": {"consumption": 1000, "consumption_item": "Heat"},
 		"StartTier": 4,
 		"EndTier": 7,
 		"Positions": [
@@ -1090,6 +1136,7 @@ machines = [
 		"Description": ["DataInput", "DataOutput"],
 	},{
 		"Name": "TeslaTower",
+		"Energy": {"consumption": 1000, "consumption_item": "Electricity"},
 		"StartTier": 5,
 		"EndTier": 7,		
         "BlockLogic":"SelectCrafter",
@@ -1104,6 +1151,7 @@ machines = [
 		]
 	},{
         "Name": "KineticHeater",
+        "Energy": {"consumption": 20, "consumption_item": "Kinetic", "production": 20, "production_item": "Heat"},
         "StartTier": 1,
         "EndTier": 7,
         "Description": ["KineticInput", "HeatOutput", "PowerOutput"],
@@ -1166,6 +1214,7 @@ machines = [
 		"Category": "Network",
 	},{
 		"Name": "DeepStorage",
+		"Energy": {"consumption": 25, "consumption_item": "Electricity"},
 		"StartTier": 4,
 		"EndTier": 7,
 		"Actor": "Blocks/InfiniteStorageBP.InfiniteStorageBP_C",
