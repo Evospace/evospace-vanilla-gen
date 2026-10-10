@@ -1292,34 +1292,9 @@ recipes_macerator.append({
 })
 
 recipes_hammer.append({
-	"Name": "StoneToGravel",
-	"Input": one_item("StoneSurface"),
-	"Output": one_item("GravelSurface"),
-	"Tier": 1,
-	"Ticks": 100,
-})
-
-recipes_hammer.append({
-	"Name": "BasaltToGravel",
-	"Input": one_item("BasaltSurface"),
-	"Output": one_item("GravelSurface", 2),
-	"Tier": 1,
-	"Ticks": 100,
-})
-
-for stone in ["RedStone", "DarkStone"]:
-	recipes_hammer.append({
-		"Name": stone + "ToGravel",
-		"Input": one_item(stone + "Surface"),
-		"Output": one_item("GravelSurface", 2),
-		"Tier": 1,
-		"Ticks": 100,
-	})
-
-recipes_hammer.append({
-	"Name": "DirtToBuildingMaterial",
-	"Input": one_item("DirtSurface"),
-	"Output": one_item("BuildingMaterial"),
+	"Name": "RockOrSoilToBuildingMaterial",
+	"Input": one_item("RockOrSoil"),
+	"Output": one_item("BuildingMaterial", 2),
 	"Tier": 1,
 	"Ticks": 100,
 })
@@ -1996,7 +1971,7 @@ recipes_portal.append({
 
 append_recipe_hand({
 	"Name": "BuildingMaterial",
-	"Input": one_item("StoneSurface"),
+	"Input": one_item("RockOrSoil"),
 	"Output": one_item("BuildingMaterial"),
 	"Ticks" : 10
 })

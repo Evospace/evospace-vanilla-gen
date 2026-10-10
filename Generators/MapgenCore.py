@@ -170,6 +170,13 @@ for object in mapgen_objects:
 	if "BreakEffect" in object:
 		staticBlock["BreakEffect"] = object["BreakEffect"]
 	objects_array.append(staticBlock)
+
+objects_array.append({ "Class": "ItemGroup",
+	"Name": "RockOrSoil",
+	"Label": ["RockOrSoil", "mapgen_core"],
+	"Members": ["StoneSurface", "BasaltSurface", "RedStoneSurface", "DarkStoneSurface", "GravelSurface", "SandSurface", "DirtSurface"],
+	"StackSize": 999,
+})
 	
 data = {
 	"Objects": objects_array
