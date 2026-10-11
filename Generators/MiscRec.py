@@ -739,6 +739,20 @@ recipes_assembler.append({
 })
 
 recipes_assembler.append({
+	"Name":"Rocket",
+	"Input": items([
+		["RocketFuel", 10000],
+		["CompositePlate", 40],
+		["TitaniumPlate", 60],
+		["TitaniumElectricEngine", 4],
+		["Processor", 20],
+	]),
+	"Output": one_item("Rocket"),
+	"Ticks" : 1200,
+	"Tier": 5,
+})
+
+recipes_assembler.append({
 	"Name":"CompositePlate",
 	"Input": items([
 		["TitaniumPlate", 1],

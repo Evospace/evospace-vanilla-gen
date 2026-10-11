@@ -207,6 +207,12 @@ simple_blocks = [
 		"Label":"Basic Platform",
 		"Tier": 0
 	},{
+		"Name":"OrbitalPlatform",
+		"Cost": 16,
+		"Label":"Orbital Platform",
+		"Tier": 5,
+		"Material": "/Game/Materials/PaintTitanium",
+	},{
 		"Name":"PlasticBlock",
 		"Cost": 4,
 		"Label":"Plastic Block",
@@ -414,7 +420,7 @@ for one in simple_blocks:
 for one in simple_blocks:
     objects_array.append({ "Class": tesselator_cube,
 		"Name": one["Name"] + tesselator,
-		"Material" : "/Game/Materials/" + one["Name"],
+		"Material" : one.get("Material", "/Game/Materials/" + one["Name"]),
 	})
 
 for one in simple_blocks:
@@ -448,6 +454,13 @@ images.append({
 		"Base": "T_" + "BasicPlatform",
 		"NewName": "T_" + "LandingPad",
 		"AddMask": "T_GreenCircle" + additive_ico,
+	})
+
+images.append({
+		"Base": "T_" + "BasicPlatform",
+		"NewName": "T_" + "OrbitalPlatform",
+		"MulMask": "T_Material" + "Titanium",
+		"AddMask": "T_BlueCircle" + additive_ico,
 	})
 	
 images.append({

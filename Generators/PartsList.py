@@ -157,6 +157,12 @@ tools = [
 		# TODO: dedicated T_Boat icon; SteamEngine is a placeholder
 		"Image": "T_SteamEngine",
 		"Category": "Vehicles",
+	},{
+		"Name": "Rocket",
+		"Label": "Rocket",
+		"ItemLogic": "RocketItemLogic",
+		"Image": "T_Rocket",
+		"Category": "Vehicles",
 	}
 	#{
 	#	"Name": "BuildTool",

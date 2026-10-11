@@ -120,6 +120,14 @@ for miscBlock in ["ReinforcedConcrete", "ReinforcedConcreteTiles", "ReinforcedCo
 	})
 append_levels({
 	"Class": research_decoration,
+	"Name": "OrbitalPlatform",
+	"Label": ["OrbitalPlatform", "misc"],
+	"RequiredResearch": ["Rocket"],
+	"Decorations": ["OrbitalPlatform"],
+	"Levels": [6,6]
+})
+append_levels({
+	"Class": research_decoration,
 	"Name": "Roadwork",
 	"Label": ["Roadwork", "researches"],
 	"RequiredResearch": ["Concrete", "SteelProduction"],

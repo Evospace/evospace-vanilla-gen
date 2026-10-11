@@ -30,6 +30,22 @@ objects_array = [
 		"DayOfYear": 172,
 		# No atmosphere: cloud cover never dims the sun.
 		"OvercastInsolation01": 1.0,
+		"GeneratorName": "WorldGeneratorMoon",
+	},
+	{
+		"Class": "StaticPlanet",
+		"Name": "Orbit",
+		"DayLengthTicks": 6000,
+		"PhaseOffsetTicks": 1500,
+		"DawnPhaseTicks": 1000,
+		"SolarNoonPhaseTicks": 3000,
+		"SunsetPhaseTicks": 5000,
+		"LatitudeDeg": 0.0,
+		"DayOfYear": 172,
+		"OvercastInsolation01": 1.0,
+		"WeatherSeverityMin": 0.0,
+		"WeatherSeverityMax": 0.0,
+		"GeneratorName": "WorldGeneratorOrbit",
 	},
 ]
 
