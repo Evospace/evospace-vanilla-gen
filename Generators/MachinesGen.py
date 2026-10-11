@@ -24,8 +24,11 @@ FOUNDATION_HEAVY = {
 
 FOUNDATION_PIPE = {
 	"Every": 3,
+	"Ceiling": True,
+	"Holder": [
+		{"Cover": "FoundationPipeHolder", "Offset": [0, 0, -0.5]},
+	],
 	"Top": [
-		{"Cover": "FoundationPipeHolder", "Offset": [0, 0, 0.5]},
 		{"Cover": "FoundationPipePost", "Offset": [0, 0, -0.5]},
 	],
 	"Column": [
@@ -53,6 +56,8 @@ FOUNDATION_MACHINES = {
 	"Spawner": FOUNDATION,
 	"SteelRail": FOUNDATION,
 	"Pipe": FOUNDATION_PIPE,
+	"CopperConnector": FOUNDATION_PIPE,
+	"LogicWire": FOUNDATION_PIPE,
 }
 
 def scale_energy_per_tick(base, level, scaling="exponential"):
