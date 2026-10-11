@@ -17,6 +17,8 @@ objects_array = [
 		"LatitudeDeg": 52.0,
 		"DayOfYear": 172,
 		"OvercastInsolation01": 0.15,
+		"RadiusMeters": 600000.0,
+		"OrbitAltitudeMeters": 100000.0,
 	},
 	{
 		"Class": "StaticPlanet",
