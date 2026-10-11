@@ -31,6 +31,7 @@ objects_array = [
 		# No atmosphere: cloud cover never dims the sun.
 		"OvercastInsolation01": 1.0,
 		"GeneratorName": "WorldGeneratorMoon",
+		"MusicPlaylist": "cosmos",
 	},
 	{
 		"Class": "StaticPlanet",
@@ -46,6 +47,7 @@ objects_array = [
 		"WeatherSeverityMin": 0.0,
 		"WeatherSeverityMax": 0.0,
 		"GeneratorName": "WorldGeneratorOrbit",
+		"MusicPlaylist": "cosmos",
 	},
 ]
 
