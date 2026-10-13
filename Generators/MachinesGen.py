@@ -306,7 +306,7 @@ for machine in machines:
 			block["Foundation"] = FOUNDATION
 
 		if "NoActorRenderable" not in machine:
-			block["Actor"] = machine.get("Actor", "Blocks/" + machine["Name"] + "BP." + machine["Name"] + "BP_C")
+			block["Actor"] = machine.get("Actor", block_actor(machine["Name"]))
 
 		if "Selector" in machine:
 			block["Selector"] = machine["Selector"]

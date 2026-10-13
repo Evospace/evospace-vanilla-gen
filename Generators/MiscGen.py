@@ -357,7 +357,7 @@ for one in wooden_misc:
     block = {
 		"Name": one["Name"],
 		"Item" : one["Name"],
-		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
+		"Actor" : block_actor(one["Name"]),
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
 		"Class": "StaticBlock",
 		"Minable": decor_minable(one["Cost"]),
@@ -384,7 +384,7 @@ for one in simple_single:
 		"Class": "StaticBlock",
 		"Name": one["Name"],
 		"Item" : one["Name"],
-		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
+		"Actor" : block_actor(one["Name"]),
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
 		"Minable": decor_minable(one["Cost"]) if "Cost" in one else {"Result": one["Name"]},
 	}
@@ -439,7 +439,7 @@ for one in static_mesh_block:
 		"Class": "StaticBlock",
 		"Name": one["Name"] + static_block,
 		"Item" : one["Name"],
-		"Actor" : "Blocks/" + one["Name"] + "BP." + one["Name"] + "BP_C",
+		"Actor" : block_actor(one["Name"]),
 		"BlockLogic": "BlockLogic",
 		"Minable": {"Result": one["Name"]},
 	})
