@@ -18,7 +18,7 @@ designables = [
 		"Name": "Corner",
 		"Category": "Decoration",
 		"Label": ["Corner", "misc"],
-		"Selector": "Blocks/CornerBP.CornerBP_C",
+		"Selector": "Blocks/Corner/BP_Corner.BP_Corner_C",
 		"Covers": [
 			"Corner",
 			"PaintedCorner"
@@ -27,7 +27,7 @@ designables = [
 		"Name": "Beam",
 		"Category": "Decoration",
 		"Label": ["Beam", "misc"],
-		"Selector": "Blocks/BeamBP.BeamBP_C",
+		"Selector": "Blocks/Beam/BP_Beam.BP_Beam_C",
 		"Covers": [
 			"Beam",
 			"PaintedBeam"
@@ -45,7 +45,7 @@ designables = [
 		"Name": "Column",
 		"Category": "Decoration",
 		"Label": ["Column", "misc"],
-		"Selector": "Blocks/ColumnBP.ColumnBP_C",
+		"Selector": "Blocks/Column/BP_Column.BP_Column_C",
 		"Covers": [
 			"Column",
 			"ThinColumn",
@@ -57,7 +57,7 @@ designables = [
 		"Name": "Floor",
 		"Category": "Decoration",
 		"Label": ["Floor", "misc"],
-		"Selector": "Blocks/FloorBP.FloorBP_C",
+		"Selector": "Blocks/Floor/BP_Floor.BP_Floor_C",
 		"Covers": [
 			"ThinWireFloor",
 			"Polycarbo",
@@ -68,7 +68,7 @@ designables = [
 		"Name": "Chair",
 		"Category": "Decoration",
 		"Label": ["Chair", "misc"],
-		"Selector": "Blocks/ChairBP.ChairBP_C",
+		"Selector": "Blocks/Chair/BP_Chair.BP_Chair_C",
 		"Covers": [
 			"Chair"
 		]
@@ -77,7 +77,7 @@ designables = [
 		"Name": "Table",
 		"Category": "Decoration",
 		"Label": ["Table", "misc"],
-		"Selector": "Blocks/TableBP.TableBP_C",
+		"Selector": "Blocks/Table/BP_Table.BP_Table_C",
 		"Covers": [
 			"Table"
 		],

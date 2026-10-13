@@ -326,7 +326,7 @@ machines = [
 		"BlockLogic": "SelectCrafter",
 		"LogicExports": CRAFTING_LOGIC_EXPORTS,
 		"LogicImports": CRAFTING_LOGIC_IMPORTS,
-        "Selector": "Blocks/ElectricEngineBP.ElectricEngineBP_C",
+        "Selector": "Blocks/ElectricEngine/BP_ElectricEngine.BP_ElectricEngine_C",
 		"Description": ["ElectricInput", "KineticOutput", "PowerOutput"],
         "DefaultRotation": [-1, 0, 0, 0]
 	},{
@@ -427,7 +427,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 1,
 		"Image": "Conveyor",
-		"Actor": "Blocks/RailNodeBP.RailNodeBP_C",
+		"Actor": "Blocks/RailNode/BP_RailNode.BP_RailNode_C",
 		"BlockLogic": "RailNodeBlockLogic",
 		"ItemLogic": "SteelRailItemLogic",
 		"Description": ["ElectricInput"],
@@ -1011,7 +1011,6 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 7,
 		"BlockLogic":"EnvironmentCrafter",
-		"RotationLocks": [0,0,1],
 		"NoActorRenderable": True,
 		"CoverParts": [
 			{"Cover": "SmallSolarPanelCell", "Offset": [0,0,-0.5]},
@@ -1194,7 +1193,7 @@ machines = [
 		"EndTier": 2,
 		"Description": ["DataInput", "DataOutput"],
 		"Image": "LogicInterface",
-		"Actor": "Blocks/LogicTransceiverBP.LogicTransceiverBP_C",
+		"Actor": "Blocks/LogicTransceiver/BP_LogicTransceiver.BP_LogicTransceiver_C",
 		"Category": "Network",
 	},{
 		"Name": "PressurePlate",
@@ -1209,7 +1208,7 @@ machines = [
 		"Energy": {"consumption": 25, "consumption_item": "Electricity"},
 		"StartTier": 4,
 		"EndTier": 7,
-		"Actor": "Blocks/InfiniteStorageBP.InfiniteStorageBP_C",
+		"Actor": "Blocks/InfiniteStorage/BP_InfiniteStorage.BP_InfiniteStorage_C",
 		"LogicExports": ["Storage"],
 		"Description": ["ItemInput", "ElectricInput", "ItemStorage"],
 	}

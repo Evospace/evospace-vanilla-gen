@@ -101,22 +101,22 @@ covers = [
         "NumCustomData": 3,
 	},{
         "Name": "Corner",
-        "Mesh": "/Game/Covers/Corner",
+        "Mesh": "/Game/Blocks/Corner/SM_Corner",
         "Materials": ["/Game/Materials/Steel_InstanceColor_0"],
         "NumCustomData": 3,
     },{
         "Name": "PaintedCorner",
-        "Mesh": "/Game/Covers/Corner",
+        "Mesh": "/Game/Blocks/Corner/SM_Corner",
         "Materials": ["/Game/Materials/Paint_InstanceColor_0"],
         "NumCustomData": 3,
     },{
         "Name": "Beam",
-        "Mesh": "/Game/Covers/Beam",
+        "Mesh": "/Game/Blocks/Beam/SM_Beam",
         "Materials": ["/Game/Materials/Steel_InstanceColor_0"],
         "NumCustomData": 3,
     },{
         "Name": "PaintedBeam",
-        "Mesh": "/Game/Covers/Beam",
+        "Mesh": "/Game/Blocks/Beam/SM_Beam",
         "Materials": ["/Game/Materials/Paint_InstanceColor_0"],
         "NumCustomData": 3,
     },{
@@ -131,12 +131,12 @@ covers = [
         "NumCustomData": 3,
     },{
         "Name": "Chair",
-        "Mesh": "/Game/Covers/Chair",
+        "Mesh": "/Game/Blocks/Chair/SM_Chair",
         "Materials": [""],
         "NumCustomData": 3,
     },{
         "Name": "Table",
-        "Mesh": "/Game/Covers/Table",
+        "Mesh": "/Game/Blocks/Table/SM_Table",
         "Materials": [""],
         "NumCustomData": 3,
     },{
@@ -203,7 +203,7 @@ covers = [
         "NumCustomData": 3,
     },{
         "Name": "ThinWireFloor",
-        "Mesh": "/Game/Covers/ThinWireFloor",
+        "Mesh": "/Game/Blocks/Floor/SM_Floor_ThinWire",
         "Materials": [""],
         "NumCustomData": 3,
     },{
@@ -331,7 +331,7 @@ for mat, num in zip(paint_metals, range(1,7+1)):
 	})
     covers.append({
 		"Name": mat+"ElectricEngine",
-		"Mesh": "/Game/Models/ElectricEngine",
+		"Mesh": "/Game/Blocks/ElectricEngine/SM_ElectricEngine",
         "Materials": ["/Game/Materials/ElectricEngineMaterial"]
 	})
 
