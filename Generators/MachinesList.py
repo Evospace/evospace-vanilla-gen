@@ -1040,7 +1040,7 @@ machines = [
 		"LogicExports": CRAFTING_LOGIC_EXPORTS,
 		"LogicImports": CRAFTING_LOGIC_IMPORTS,
 		"Description": ["ElectricOutput", "PowerOutput"],
-        "Selector": "Blocks/WindTurbineBP.WindTurbineBP_C",
+        "Selector": "Blocks/WindTurbine/BP_WindTurbine.BP_WindTurbine_C",
 	},
 	{
 		"Name": "Pumpjack",
@@ -1075,7 +1075,7 @@ machines = [
 		"Energy": {"consumption": 60, "consumption_item": "Kinetic", "scaling": "linear"},
 		"ExactName": True,
 		"BlockLogic":"Pumpjack",
-		"Actor": "Blocks/PumpjackBP.PumpjackBP_C",
+		"Actor": "Blocks/Pumpjack/BP_Pumpjack.BP_Pumpjack_C",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],[-3,0,0],[-4,0,0],
 			[0,1,0],[-1,1,0],[-2,1,0],[-3,1,0],[-4,1,0],
