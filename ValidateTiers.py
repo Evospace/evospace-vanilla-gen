@@ -116,7 +116,7 @@ def validate_machine_hand_recipes(generated_files):
 	errors = []
 	for machine in machines:
 		for tier in range(machine["StartTier"], machine["EndTier"] + 1):
-			name = tier_material[tier] + machine["Name"]
+			name = machine["Name"] if "ExactName" in machine else tier_material[tier] + machine["Name"]
 			if not has_hand_recipe(recipes_hand, name):
 				errors.append(f"No recipe for {machine['Name']}")
 	return errors

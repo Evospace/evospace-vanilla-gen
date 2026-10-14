@@ -1013,7 +1013,43 @@ for machine in machines:
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 300
 			})
-			
+
+		if machine["Name"] == "SteelRail":
+			append_recipe({
+				"Name": block_name,
+				"Input": items([
+					["SteelPlate", 1],
+					["SteelParts", 2]
+				]),
+				"Output": one_item(block_name),
+				"Ticks" : 20
+			})
+
+		if machine["Name"] == "RailStation":
+			append_recipe({
+				"Name": block_name,
+				"Input": items([
+					["SteelPlate", 8],
+					["SteelParts", 8],
+					["BuildingMaterial", 16]
+				]),
+				"Output": one_item(block_name),
+				"Ticks" : 100
+			})
+
+		if machine["Name"] == "RailSignal" or machine["Name"] == "RailChainSignal":
+			append_recipe({
+				"Name": block_name,
+				"Input": items([
+					["SteelPlate", 1],
+					["SteelParts", 2],
+					["Circuit", 1 if machine["Name"] == "RailSignal" else 2],
+					["CopperWire", 4]
+				]),
+				"Output": one_item(block_name),
+				"Ticks" : 20
+			})
+
 		if machine["Name"] == "Riteg":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],

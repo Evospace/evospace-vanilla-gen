@@ -72,6 +72,31 @@ def append_equipment(xy, append_levels, researches):
 	})
 	append_levels({
 		"Class": research_recipe,
+		"Name": "Railway",
+		"Label": ["Railway", "researches"],
+		"RequiredResearch": ["SteelProduction", "BasicFrame"],
+		"Unlocks": [
+			["Hand" + r_dict, "SteelRail"],
+			["Hand" + r_dict, "RailStation"],
+			["Hand" + r_dict, "CargoWagon"],
+			["Hand" + r_dict, "Locomotive"],
+		],
+		"Levels": [2,2],
+		"CostMul": 1.5,
+	})
+	append_levels({
+		"Class": research_recipe,
+		"Name": "RailSignals",
+		"Label": ["RailSignals", "researches"],
+		"RequiredResearch": ["Railway", "Circuit"],
+		"Unlocks": [
+			["Hand" + r_dict, "RailSignal"],
+			["Hand" + r_dict, "RailChainSignal"],
+		],
+		"Levels": [2,2],
+	})
+	append_levels({
+		"Class": research_recipe,
 		"Name": "AdvancedJetpack",
 		"Label": ["AdvancedJetpack", "misc"],
 		"RequiredResearch": ["Jetpack", "Processor", "ElectricEngine2"],

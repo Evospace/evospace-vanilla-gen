@@ -430,7 +430,7 @@ machines = [
 		"Actor": "Blocks/RailNode/BP_RailNode.BP_RailNode_C",
 		"BlockLogic": "RailNodeBlockLogic",
 		"ItemLogic": "SteelRailItemLogic",
-		"Description": ["ElectricInput"],
+		"Description": [],
 		"Category": "Network",
 	},{
 		"Name": "RailStation",

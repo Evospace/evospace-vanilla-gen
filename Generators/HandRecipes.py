@@ -471,15 +471,19 @@ recipes_hand.append({
 })
 
 recipes_hand.append({
-	"Name": "SteelRail",
+	"Name": "CargoWagon",
 	"Input":{
 		"Items":[
 			{
 				"Name": "SteelPlate",
-				"Count": 1
+				"Count": 20
 			},
 			{
 				"Name": "SteelParts",
+				"Count": 10
+			},
+			{
+				"Name": "BasicFrame",
 				"Count": 2
 			}
 		]
@@ -487,13 +491,45 @@ recipes_hand.append({
 	"Output":{
 		"Items":[
 			{
-				"Name": "SteelRail",
+				"Name": "CargoWagon",
 				"Count": 1
 			}
 		]
 	},
-	"Ticks" : 20,
-	"Tier" : 1
+	"Ticks" : 200
+})
+
+recipes_hand.append({
+	"Name": "Locomotive",
+	"Input":{
+		"Items":[
+			{
+				"Name": "SteelPlate",
+				"Count": 30
+			},
+			{
+				"Name": "SteelParts",
+				"Count": 20
+			},
+			{
+				"Name": "SteelPipe",
+				"Count": 10
+			},
+			{
+				"Name": "BasicFrame",
+				"Count": 4
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "Locomotive",
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 400
 })
 
 for r in recipes_hand:
