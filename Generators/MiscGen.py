@@ -75,6 +75,7 @@ simple_single = [
 		"LogicImports": ["DoorOpen"],
 	},{
         "Name": "Spotlight",
+        "Tier": 2,
         "BlockLogic": "SpotlightBlockLogic",
         "LogicImports": [
             "SpotlightAimX",

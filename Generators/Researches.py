@@ -1729,6 +1729,14 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "Spotlight",
+	"Label": ["Spotlight", "misc"],
+	"RequiredResearch": ["Lamp1", "Circuit"],
+	"Unlocks": [["Hand" + r_dict, "Spotlight"]],
+	"Levels": [2,2],
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "NightVision",
 	"Label": ["NightVision", "misc"],
 	"RequiredResearch": ["Flashlight"],

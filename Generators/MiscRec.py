@@ -597,6 +597,19 @@ recipes_hand.append({
 })
 
 recipes_hand.append({
+	"Name": "Spotlight",
+	"Input": items([
+		["SteelPlate", 2],
+		["Glass", 2],
+		["Circuit"],
+		["CopperWire", 4]
+	]),
+	"Output": one_item("Spotlight"),
+	"Ticks" : 60,
+	"Tier": 2
+})
+
+recipes_hand.append({
 	"Name":"Cell",
 	"Input": items([
 		["AluminiumPlate"],
