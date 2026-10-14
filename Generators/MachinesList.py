@@ -102,17 +102,6 @@ machines = [
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
         "Category": "Network",
 	},{
-		"Name": "PlasmaPipe",
-		"StartTier": 4,
-		"EndTier": 4,
-		"BlockLogic": "HeatContainerBlockLogic",
-		"RotationLocks": [1,1,1],
-		"Description": ["HeatConductor", "HeatStorage"],
-		"PathFinding": True,
-        "ExactName": True,
-        "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
-        "Category": "Network",
-	},{
 		"Name": "Flywheel",
 		"StartTier": 2,
 		"EndTier": 2,
@@ -416,8 +405,8 @@ machines = [
 	},{
 		"Name": "DroneStation",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,0,2],[-1,0,2],[0,1,2],[-1,1,2]],
-		"StartTier": 2,
-		"EndTier": 7,
+		"StartTier": 3,
+		"EndTier": 3,
 		"BlockLogic":"DroneStationBlockLogic",
 		"Description": ["ElectricInput", "PowerInput"],
 	},{
@@ -1070,35 +1059,6 @@ machines = [
 		"LogicExports": ["Working", "Progress", "OutputInventory"],
 		"LogicImports": ["Working"],
 	},{
-		"Name": "Pumpjack_leg",
-		"Energy": {"consumption": 60, "consumption_item": "Kinetic", "scaling": "linear"},
-		"ExactName": True,
-		"BlockLogic":"Pumpjack",
-		"Actor": "Blocks/Pumpjack/BP_Pumpjack.BP_Pumpjack_C",
-		"Positions": [
-			[0,0,0],[-1,0,0],[-2,0,0],[-3,0,0],[-4,0,0],
-			[0,1,0],[-1,1,0],[-2,1,0],[-3,1,0],[-4,1,0],
-			[0,-1,0],[-1,-1,0],[-2,-1,0],[-3,-1,0],[-4,-1,0],
-			
-			[0,0,1],[-1,0,1],[-2,0,1],[-3,0,1],[-4,0,1],
-			[0,1,1],[-1,1,1],[-2,1,1],[-3,1,1],[-4,1,1],
-			[0,-1,1],[-1,-1,1],[-2,-1,1],[-3,-1,1],[-4,-1,1],
-			
-			[0,0,2],[-1,0,2],[-2,0,2],[-3,0,2],[-4,0,2],
-			[0,1,2],[-1,1,2],[-2,1,2],[-3,1,2],[-4,1,2],
-			[0,-1,2],[-1,-1,2],[-2,-1,2],[-3,-1,2],[-4,-1,2],
-			
-			[0,0,3],[-1,0,3],[-2,0,3],[-3,0,3],[-4,0,3],
-			[0,1,3],[-1,1,3],[-2,1,3],[-3,1,3],[-4,1,3],
-			[0,-1,3],[-1,-1,3],[-2,-1,3],[-3,-1,3],[-4,-1,3],
-		],
-		"StartTier": 4,
-		"EndTier": 4,
-		"NoRecipes": True,
-		"Description": ["KineticInput", "FluidOutput"],
-		"LogicExports": ["Working", "Progress", "OutputInventory"],
-		"LogicImports": ["Working"],
-	},{
 		"Name": "IndustrialSmelter",
 		"Energy": {"consumption": 1000, "consumption_item": "Heat"},
 		"StartTier": 4,
@@ -1128,8 +1088,8 @@ machines = [
 	},{
 		"Name": "TeslaTower",
 		"Energy": {"consumption": 1000, "consumption_item": "Electricity"},
-		"StartTier": 5,
-		"EndTier": 7,		
+		"StartTier": 4,
+		"EndTier": 4,
         "BlockLogic":"SelectCrafter",
 		"LogicExports": CRAFTING_LOGIC_EXPORTS,
 		"LogicImports": CRAFTING_LOGIC_IMPORTS,
