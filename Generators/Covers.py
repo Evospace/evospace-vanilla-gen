@@ -9,12 +9,14 @@ covers = [
     {
         "Name": "CableSide",
         "Mesh": "/Game/Covers/CableSide",
-        "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/Copper"]
+        "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/Copper"],
+        "MergedShadow": True
     },
     {
         "Name": "CableCenter",
         "Mesh": "/Game/Covers/PipeCenter",
-        "Materials": ["/Game/Materials/Rubber2"]
+        "Materials": ["/Game/Materials/Rubber2"],
+        "MergedShadow": True
     },{
         "Name": "HeatSide",
         "Mesh": "/Game/Covers/HeatSide",
@@ -245,11 +247,13 @@ covers = [
         "Mesh": "/Game/Covers/DataSide",
         "Materials": [""],
         "NumCustomData": 0,
+        "MergedShadow": True,
     },{
         "Name": "DataCenter",
         "Mesh": "/Game/Covers/DataCenter",
         "Materials": [""],
         "NumCustomData": 0,
+        "MergedShadow": True,
     }
 ]
 
@@ -300,7 +304,8 @@ for mat, num in zip(paint_tiers, range(0,7+1)):
         covers.append({
             "Name": mat+"Pipe"+piece,
             "Mesh": "/Game/Covers/Pipe/Pipe"+piece,
-            "Materials": ["/Game/Materials/"+mat, pipe_fitting_material]
+            "Materials": ["/Game/Materials/"+mat, pipe_fitting_material],
+            "MergedShadow": True
         })
 
 conveyor_node_pieces = ("Core", "Input", "Output", "Window")
@@ -310,7 +315,8 @@ for mat, num in zip(paint_metals, range(1,7+1)):
         covers.append({
             "Name": mat+"ConveyorNode"+piece,
             "Mesh": "/Game/Covers/Conveyor/ConveyorNode"+piece,
-            "Materials": [tier_materials[num]]
+            "Materials": [tier_materials[num]],
+            "MergedShadow": True
         })
 
 for mat, num in zip(paint_metals, range(1,7+1)):
@@ -322,12 +328,14 @@ for mat, num in zip(paint_metals, range(1,7+1)):
     covers.append({
 		"Name": mat+"Conveyor",
 		"Mesh": "/Game/Models/conveyor_end",
-        "Materials": ["/Game/Materials/RubberWithTierParam", tier_materials[num]]
+        "Materials": ["/Game/Materials/RubberWithTierParam", tier_materials[num]],
+        "MergedShadow": True
 	})
     covers.append({
 		"Name": mat+"ConveyorSide",
 		"Mesh": "/Game/Models/conveyor",
-        "Materials": ["/Game/Materials/RubberWithTierParam", tier_materials[num]]
+        "Materials": ["/Game/Materials/RubberWithTierParam", tier_materials[num]],
+        "MergedShadow": True
 	})
     covers.append({
 		"Name": mat+"ElectricEngine",
@@ -406,6 +414,9 @@ for cover in covers:
 
     if "NoCollision" in cover:
         staticCover["NoCollision"] = cover["NoCollision"]
+
+    if "MergedShadow" in cover:
+        staticCover["MergedShadow"] = cover["MergedShadow"]
 
     if "WorldPositionOffsetDisableDistance" in cover:
         staticCover["WorldPositionOffsetDisableDistance"] = cover["WorldPositionOffsetDisableDistance"]
