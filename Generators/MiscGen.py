@@ -97,7 +97,7 @@ simple_single = [
 	},{
         "Name": "LandingPad",
         "BlockLogic": "LandingPadBlockLogic",
-        "Positions": [[x, y, 0] for x in range(-2, 3) for y in range(-2, 3)],
+        "Positions": [[0, 0, 0]] + [[x, y, 0] for x in range(-2, 3) for y in range(-2, 3) if x or y],
 	}
 ]
 
