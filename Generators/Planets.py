@@ -47,6 +47,7 @@ objects_array = [
 			"Clouds": True,
 			"CloudCover": 0.45,
 			"StormInRadii": 0.35,
+			"Planetshine": [0.201, 0.218, 0.226],
 		},
 		"FarMap": {
 			"Material": "/Game/Materials/FarMap/M_FarMap.M_FarMap",
@@ -94,6 +95,7 @@ objects_array = [
 			"Regolith": True,
 			"Atmosphere": False,
 			"Clouds": False,
+			"Planetshine": [0.088, 0.083, 0.082],
 		},
 		"FarMap": {
 			"Material": "/Game/Materials/FarMap/Moon/MI_FarMapMoon.MI_FarMapMoon",
