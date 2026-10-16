@@ -48,6 +48,27 @@ objects_array = [
 			"CloudCover": 0.45,
 			"StormInRadii": 0.35,
 		},
+		"FarMap": {
+			"Material": "/Game/Materials/FarMap/M_FarMap.M_FarMap",
+			"Layers": ["L_BasaltTop", "L_Bog", "L_DarkStone", "L_DesertSand", "L_DryGrass", "L_Grass",
+			           "L_Gravel", "L_Peat", "L_PineForest", "L_Sand", "L_Snow", "L_Stone"],
+			"Materials": {
+				"BasaltMaterial": "L_BasaltTop",
+				"BogMaterial": "L_Bog",
+				"DarkStoneMaterial": "L_DarkStone",
+				"DesertSandMaterial": "L_DesertSand",
+				"DryGrassMaterial": "L_DryGrass",
+				"GrassMaterial": "L_Grass",
+				"GravelMaterial": "L_Gravel",
+				"PeatMaterial": "L_Peat",
+				"PineForestMaterial": "L_PineForest",
+				"SandMaterial": "L_Sand",
+				"SnowMaterial": "L_Snow",
+				"StoneMaterial": "L_Stone",
+				"ClayMaterial": "L_Peat",
+				"DirtMaterial": "L_Peat",
+			},
+		},
 	},
 	{
 		"Class": "StaticPlanet",
@@ -73,6 +94,14 @@ objects_array = [
 			"Regolith": True,
 			"Atmosphere": False,
 			"Clouds": False,
+		},
+		"FarMap": {
+			"Material": "/Game/Materials/FarMap/Moon/MI_FarMapMoon.MI_FarMapMoon",
+			"Layers": ["L_MoonHighland", "L_MoonMare"],
+			"Materials": {
+				"LimestoneMaterial": "L_MoonHighland",
+				"BasaltMaterial": "L_MoonMare",
+			},
 		},
 	},
 	{

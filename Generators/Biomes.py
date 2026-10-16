@@ -60,8 +60,9 @@ global_family.append({
 global_family.append({
 		"Name":"GlobalBiomeMegaFamilyMoon",
 		"Class":"GlobalBiomeFamilyMoon",
-		"Childs": ["MoonBiomeFamily"],
+		"Childs": ["MoonHighlandBiome", "MoonMareBiome"],
         "ChildFrequency": mega_boime_size,
+		"WeatherLooks": ["Clear", "Clear", "Clear", "Clear", "Clear"],
 	})
 	
 	# ENaturalBiome ordinals match legacy_mega_family_childs indices 0..9, then configurable adds:
@@ -236,17 +237,6 @@ families.extend([
 		],
 		"ChildFrequency": biome_family_size * 0.85,
 		"WeatherLooks": ["Clear", "SlightlyCloudy", "Overcast", "LightRain", "Rain"],
-	},
-	{
-		# Airless gray regolith: clear sky only, no weather drama.
-		"Name":"MoonBiomeFamily",
-		"Class":"BiomeFamily",
-		"Childs":
-		[
-			"MoonRegolithBiome",
-		],
-		"ChildFrequency": biome_family_size,
-		"WeatherLooks": ["Clear", "Clear", "Clear", "Clear", "Clear"],
 	},
 	{
 		# High mountains: cold, crisp air, sparse vegetation, snow caps at altitude.
@@ -427,10 +417,17 @@ generators.extend([
 	},
 	{
 		"Class": "SimpleLayeringGenerator",
-		"Name": "RegolithLayering",
-		"Blocks": ["GravelSurface" + static_surface, "StoneSurface" + static_surface,
+		"Name": "MoonHighlandLayering",
+		"Blocks": ["LimestoneSurface" + static_surface, "StoneSurface" + static_surface,
 		           "DarkStoneSurface" + static_surface, "StoneSurface" + static_surface],
-		"Starts": [0, 2, 8, 20]
+		"Starts": [0, 3, 10, 22]
+	},
+	{
+		"Class": "SimpleLayeringGenerator",
+		"Name": "MoonMareLayering",
+		"Blocks": ["BasaltSurface" + static_surface, "DarkStoneSurface" + static_surface,
+		           "StoneSurface" + static_surface],
+		"Starts": [0, 6, 18]
 	}
 ])
 
@@ -505,9 +502,6 @@ add_height("HillsHeight",        [{"Frequency": 0.010, "FractalOctaves": 4, "Min
 # Ridged foothill / mountain detail for MountainsBiomeFamily (configurable generator).
 add_height("MountainsHeight",    [{"Frequency": 0.006, "FractalOctaves": 5, "FractalType": "Ridged", "Min": -2, "Max": 24, "Power": 2},
                                   {"Frequency": 0.015, "FractalOctaves": 3, "Min": -3,  "Max": 12, "Power": 1}])
-add_height("MoonCraterHeight",   [{"NoiseType": "Cellular", "FractalOctaves": 2, "Frequency": 0.035,
-                                  "CellularReturnType": "Distance2Sub", "Min": -6, "Max": 2},
-                                 {"Frequency": 0.01, "FractalOctaves": 3, "Min": -1, "Max": 1}])
 # Basin-only field for the clay biome's lowland layering. MUST mirror SwampHeight's
 # second (basin) layer exactly — same noise params AND SeedOffset — so the clay
 # patches line up with the actual carved basins of the clay terrain (ClayBiome
@@ -745,10 +739,17 @@ biomes.extend([
 	# moon
 	{
 		"Class":"Biome",
-		"Name":"MoonRegolithBiome",
-		"Layering":"RegolithLayering",
+		"Name":"MoonHighlandBiome",
+		"Layering":"MoonHighlandLayering",
 		"Color":[0.62, 0.62, 0.64]
 	},
+	{
+		"Class":"Biome",
+		"Name":"MoonMareBiome",
+		"Layering":"MoonMareLayering",
+		"Color":[0.32, 0.32, 0.34]
+	},
+
 	
 	# river
 	{
@@ -790,7 +791,6 @@ biome_height = {
 	"YellowPlainsBiome":     "PlainHeight",
 	"DesertBiome":           "SandHeight",
 	"RiverBiome":            "PlainHeight",
-	"MoonRegolithBiome":     "MoonCraterHeight",
 }
 for b in biomes:
 	h = biome_height.get(b["Name"])
@@ -799,7 +799,7 @@ for b in biomes:
 
 # Looks are authored per family, but the weather controller asks the leaf biome under the camera.
 looks_by_biome = {}
-for f in families:
+for f in families + [g for g in global_family if "WeatherLooks" in g]:
 	for child in f.get("Childs", []):
 		looks_by_biome.setdefault(child, f["WeatherLooks"])
 
