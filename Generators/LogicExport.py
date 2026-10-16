@@ -8,6 +8,22 @@ logic_exports = [
         "Tooltip": ["StorageTooltip", "logic_export"]
     },
     {
+        "Name": "Capacity",
+        "UseSignal": True,
+        "Signal": "C",
+        "Enabled": False,
+        "Label": ["Capacity", "logic_export"],
+        "Tooltip": ["CapacityTooltip", "logic_export"]
+    },
+    {
+        "Name": "Fill",
+        "UseSignal": True,
+        "Signal": "F",
+        "Enabled": False,
+        "Label": ["Fill", "logic_export"],
+        "Tooltip": ["FillTooltip", "logic_export"]
+    },
+    {
         "Name": "Working",
         "UseSignal": True,
         "Signal": "W",
