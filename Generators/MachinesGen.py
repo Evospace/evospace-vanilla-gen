@@ -36,7 +36,7 @@ FOUNDATION_PIPE = {
 	],
 }
 
-FOUNDATION_LOGICS = ("AutoCrafter", "SelectCrafter", "DumpCrafterBlockLogic")
+FOUNDATION_LOGICS = ("AutoCrafter", "SelectCrafter", "SingleRecipeCrafter", "DumpCrafterBlockLogic")
 FOUNDATION_MACHINES = {
 	"Assembler": FOUNDATION,
 	"DrillingRig": FOUNDATION_HEAVY,
