@@ -97,6 +97,7 @@ machines = [
 		"EndTier": 1,
 		"BlockLogic": "HeatContainerBlockLogic",
 		"RotationLocks": [1,1,1],
+		"LogicExports": ["Storage", "Capacity", "Fill"],
 		"Description": ["HeatConductor", "HeatStorage"],
 		"PathFinding": True,
         "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
