@@ -208,7 +208,6 @@ for machine in machines:
 		item = { "Class": "StaticItem",
 			"Name": block_name,
 			"Image": ("T_" + image) if "ExactName" in machine else ("T_" + tier_material[tier] + image),
-			"Block": block_name,
 			"StackSize": 32,
 			"Label": labelParts,
 			"DescriptionParts": [[machine["Name"], "description"]],
@@ -261,6 +260,9 @@ for machine in machines:
 			
 		if machine["Name"] == "SmallBattery":
 			item["DescriptionParts"].append(["battery", "common", machine["CustomData"]["BaseCapacity"] + machine["CustomData"]["BonusCapacity"] * level])
+
+		if "NoBlock" not in machine:
+			item["Block"] = block_name
 
 		machine_items.append(item)
 
@@ -333,7 +335,8 @@ for machine in machines:
 		if "LogicImports" in machine:
 			block["ImportOptions"] = machine["LogicImports"]
 
-		machine_blocks.append(block)
+		if "NoBlock" not in machine:
+			machine_blocks.append(block)
 
 		if "NoRecipes" not in machine:
 			machine_dicts.append({
