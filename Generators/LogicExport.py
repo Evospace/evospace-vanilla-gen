@@ -48,6 +48,14 @@ logic_exports = [
         "Tooltip": ["TimePassedTooltip", "logic_export"]
     },
     {
+        "Name": "Fuel",
+        "UseSignal": True,
+        "Signal": "F",
+        "Enabled": True,
+        "Label": ["Fuel", "logic_export"],
+        "Tooltip": ["FuelTooltip", "logic_export"]
+    },
+    {
         "Name": "Pressed",
         "UseSignal": True,
         "Signal": "B",

@@ -435,7 +435,7 @@ machines = [
 		"EndTier": 1,
 		"Image": "DroneStation",
 		"BlockLogic": "RailStationBlockLogic",
-		"LogicExports": ["Storage", "TimePassed"],
+		"LogicExports": ["Storage", "TimePassed", "Fuel"],
 		"Description": [],
 		"Category": "Network",
 	},{
