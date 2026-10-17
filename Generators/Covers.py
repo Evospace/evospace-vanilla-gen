@@ -209,6 +209,9 @@ covers = [
         "Materials": [""],
         "NumCustomData": 3,
     },{
+        "Name": "RailNode",
+        "Mesh": "/Game/Blocks/RailNode/SM_RailNode",
+    },{
         "Name": "FoundationTop",
         "Mesh": "/Game/Covers/Pedestal/PedestalFloor",
     },{

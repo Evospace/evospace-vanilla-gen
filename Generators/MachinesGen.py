@@ -307,7 +307,7 @@ for machine in machines:
 
 		if "CoverParts" in machine:
 			block["CoverParts"] = [
-				dict(part, Cover=tier_material[tier] + part["Cover"]) for part in machine["CoverParts"]
+				part if "ExactName" in machine else dict(part, Cover=tier_material[tier] + part["Cover"]) for part in machine["CoverParts"]
 			]
 
 		if machine["Name"] in FOUNDATION_MACHINES:

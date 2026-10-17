@@ -417,9 +417,12 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 1,
 		"Image": "Conveyor",
-		"Actor": "Blocks/RailNode/BP_RailNode.BP_RailNode_C",
 		"BlockLogic": "RailNodeBlockLogic",
 		"LogicImports": ["Working"],
+		"NoActorRenderable": True,
+		"CoverParts": [
+			{"Cover": "RailNode"},
+		],
 		"ItemLogic": "SteelRailItemLogic",
 		"Description": [],
 		"Category": "Network",
