@@ -8,98 +8,98 @@ tier_materials = ("/Game/Materials/Stone", "/Game/Materials/Copper", "/Game/Mate
 covers = [
     {
         "Name": "CableSide",
-        "Mesh": "/Game/Covers/CableSide",
+        "Mesh": "/Game/Blocks/CopperConnector/SM_CopperConnector_Side",
         "Materials": ["/Game/Materials/Rubber2", "/Game/Materials/Copper"],
         "MergedShadow": True
     },
     {
         "Name": "CableCenter",
-        "Mesh": "/Game/Covers/PipeCenter",
+        "Mesh": "/Game/Shared/Blocks/SM_Connector_Center",
         "Materials": ["/Game/Materials/Rubber2"],
         "MergedShadow": True
     },{
         "Name": "HeatSide",
-        "Mesh": "/Game/Covers/HeatSide",
+        "Mesh": "/Game/Blocks/HeatPipe/SM_HeatPipe_Side",
         "Materials": ["/Game/Materials/HeatingCopper"]
     },{
         "Name": "HeatCenter",
-        "Mesh": "/Game/Covers/HeatCenter",
+        "Mesh": "/Game/Blocks/HeatPipe/SM_HeatPipe_Center",
         "Materials": ["/Game/Materials/HeatingCopper"]
     },{
 		"Name": "Cover",
-		"Mesh": "/Game/Covers/SimpleCover",
+		"Mesh": "/Game/Shared/Covers/SM_Cover_Simple",
         "Materials": [""]
 	},{
 		"Name": "StoneFurnace",
-		"Mesh": "/Game/Models/FurnaceRound",
-        "Materials": ["/Game/Materials/StoneFurnaceMaterial"]
+		"Mesh": "/Game/Blocks/Furnace/SM_Furnace",
+        "Materials": ["/Game/Blocks/Furnace/M_Furnace_Stone"]
 	},{
 		"Name": "RobotArmBase",
-		"Mesh": "/Game/Models/RobotArmBase",
+		"Mesh": "/Game/Shared/Blocks/SM_RobotArm_Base",
         "Materials": []
 	},{
 		"Name": "ElectricityInput",
-		"Mesh": "/Game/Covers/ElectricityIn",
+		"Mesh": "/Game/Shared/Covers/SM_Port_ElectricityIn",
         "NoCollision": True
 	},{
 		"Name": "ElectricityOutput",
-		"Mesh": "/Game/Covers/ElectricityOut",
+		"Mesh": "/Game/Shared/Covers/SM_Port_ElectricityOut",
         "NoCollision": True
 	},{
 		"Name": "KineticInput",
-		"Mesh": "/Game/Covers/KineticIn",
+		"Mesh": "/Game/Shared/Covers/SM_Port_KineticIn",
         "NoCollision": True
 	},{
 		"Name": "KineticOutput",
-		"Mesh": "/Game/Covers/KineticOut",
+		"Mesh": "/Game/Shared/Covers/SM_Port_KineticOut",
         "NoCollision": True
 	},{
 		"Name": "HeatInput",
-		"Mesh": "/Game/Covers/HeatIn",
+		"Mesh": "/Game/Shared/Covers/SM_Port_HeatIn",
         "NoCollision": True
 	},{
 		"Name": "HeatOutput",
-		"Mesh": "/Game/Covers/HeatOut",
+		"Mesh": "/Game/Shared/Covers/SM_Port_HeatOut",
         "NoCollision": True
 	},{
 		"Name": "ItemOutput",
-		"Mesh": "/Game/Covers/ItemOut",
+		"Mesh": "/Game/Shared/Covers/SM_Port_ItemOut",
         "NoCollision": True
 	},{
 		"Name": "FluidInput",
-		"Mesh": "/Game/Covers/FluidIn",
+		"Mesh": "/Game/Shared/Covers/SM_Port_FluidIn",
         "NoCollision": True
 	},{
 		"Name": "FluidOutput",
-		"Mesh": "/Game/Covers/FluidOut",
+		"Mesh": "/Game/Shared/Covers/SM_Port_FluidOut",
         "NoCollision": True
 	},{
 		"Name": "FluidOutput1",
-		"Mesh": "/Game/Covers/FluidOut1",
+		"Mesh": "/Game/Shared/Covers/SM_Port_FluidOut1",
         "NoCollision": True
 	},{
 		"Name": "FluidOutput2",
-		"Mesh": "/Game/Covers/FluidOut2",
+		"Mesh": "/Game/Shared/Covers/SM_Port_FluidOut2",
         "NoCollision": True
 	},{
 		"Name": "FluidOutput3",
-		"Mesh": "/Game/Covers/FluidOut3",
+		"Mesh": "/Game/Shared/Covers/SM_Port_FluidOut3",
         "NoCollision": True
 	},{
 		"Name": "FluidOutput4",
-		"Mesh": "/Game/Covers/FluidOut4",
+		"Mesh": "/Game/Shared/Covers/SM_Port_FluidOut4",
         "NoCollision": True
 	},{
 		"Name": "FluidInput1",
-		"Mesh": "/Game/Covers/FluidIn1",
+		"Mesh": "/Game/Shared/Covers/SM_Port_FluidIn1",
         "NoCollision": True
 	},{
 		"Name": "FluidInput2",
-		"Mesh": "/Game/Covers/FluidIn2",
+		"Mesh": "/Game/Shared/Covers/SM_Port_FluidIn2",
         "NoCollision": True
 	},{
 		"Name": "Stairs",
-		"Mesh": "/Game/Covers/Stairs",
+		"Mesh": "/Game/Shared/Blocks/SM_Stairs",
         "NumCustomData": 3,
 	},{
         "Name": "Corner",
@@ -123,12 +123,12 @@ covers = [
         "NumCustomData": 3,
     },{
         "Name": "Scaffold",
-        "Mesh": "/Game/Covers/Scaffold",
+        "Mesh": "/Game/Blocks/Scaffold/SM_Scaffold",
         "Materials": ["/Game/Materials/Steel_InstanceColor_0"],
         "NumCustomData": 3,
     },{
         "Name": "PaintedScaffold",
-        "Mesh": "/Game/Covers/Scaffold",
+        "Mesh": "/Game/Blocks/Scaffold/SM_Scaffold",
         "Materials": ["/Game/Materials/Paint_InstanceColor_0"],
         "NumCustomData": 3,
     },{
@@ -143,64 +143,64 @@ covers = [
         "NumCustomData": 3,
     },{
         "Name": "StairsGridLamp",
-        "Mesh": "/Game/Covers/StairsGridLamp",
+        "Mesh": "/Game/Blocks/Stairs/SM_Stairs_GridLamp",
         "Materials": [""],
         "NumCustomData": 3,
     },{
         "Name": "StairsGrid",
-        "Mesh": "/Game/Covers/StairsGrid",
+        "Mesh": "/Game/Blocks/Stairs/SM_Stairs_Grid",
         "Materials": [""],
         "NumCustomData": 3,
     },{
         "Name": "StairsFancy",
-        "Mesh": "/Game/Covers/StairsFancy",
+        "Mesh": "/Game/Blocks/Stairs/SM_Stairs_Fancy",
         "Materials": [""],
         "NumCustomData": 3,
     },{
         "Name": "StairsTech",
-        "Mesh": "/Game/Covers/StairsTech",
+        "Mesh": "/Game/Blocks/Stairs/SM_Stairs_Tech",
         "Materials": [""],
         "NumCustomData": 3,
     },{
         "Name": "StairsMinimal",
-        "Mesh": "/Game/Covers/StairsMinimal",
+        "Mesh": "/Game/Blocks/Stairs/SM_Stairs_Minimal",
         "Materials": [""],
         "NumCustomData": 3,
     },{
         "Name": "FenceHalf",
-        "Mesh": "/Game/Covers/FenceHalf",
+        "Mesh": "/Game/Blocks/Fence/SM_Fence_Half",
         "NumCustomData": 3,
     },{
         "Name": "FenceCenter",
-        "Mesh": "/Game/Covers/FenceCenter",
+        "Mesh": "/Game/Blocks/Fence/SM_Fence_Center",
         "NumCustomData": 3,
     },{
         "Name": "MetalFenceSideLamp",
-        "Mesh": "/Game/Covers/MetalFenceSideLamp",
+        "Mesh": "/Game/Blocks/Fence/SM_Fence_SideLamp",
         "NumCustomData": 3,
     },{
         "Name": "Column",
-        "Mesh": "/Game/Covers/Column",
+        "Mesh": "/Game/Blocks/Column/SM_Column_Normal",
         "Materials": [""],
         "NumCustomData": 3,
     },{
         "Name": "WideColumn",
-        "Mesh": "/Game/Covers/WideColumn",
+        "Mesh": "/Game/Blocks/Column/SM_Column_Wide",
         "Materials": [""],
         "NumCustomData": 3,
     },{
         "Name": "ThinColumn",
-        "Mesh": "/Game/Covers/ThinColumn",
+        "Mesh": "/Game/Blocks/Column/SM_Column_Thin",
         "Materials": [""],
         "NumCustomData": 3,
     },{
         "Name": "WideToNormalColumn",
-        "Mesh": "/Game/Covers/WideToNormalColumn",
+        "Mesh": "/Game/Blocks/Column/SM_Column_WideToNormal",
         "Materials": [""],
         "NumCustomData": 3,
     },{
         "Name": "NormalToThinColumn",
-        "Mesh": "/Game/Covers/NormalToThinColumn",
+        "Mesh": "/Game/Blocks/Column/SM_Column_NormalToThin",
         "Materials": [""],
         "NumCustomData": 3,
     },{
@@ -213,47 +213,47 @@ covers = [
         "Mesh": "/Game/Blocks/RailNode/SM_RailNode",
     },{
         "Name": "FoundationTop",
-        "Mesh": "/Game/Covers/Pedestal/PedestalFloor",
+        "Mesh": "/Game/Shared/Stands/SM_Stand_Top",
     },{
         "Name": "FoundationColumn",
-        "Mesh": "/Game/Covers/Pedestal/PedestalColumn",
+        "Mesh": "/Game/Shared/Stands/SM_Stand_Column",
     },{
         "Name": "FoundationHeavyTop",
-        "Mesh": "/Game/Covers/Pedestal/PedestalHeavyTop",
+        "Mesh": "/Game/Shared/Stands/SM_Stand_HeavyTop",
     },{
         "Name": "FoundationHeavyColumn",
-        "Mesh": "/Game/Covers/Pedestal/PedestalHeavyColumn",
+        "Mesh": "/Game/Shared/Stands/SM_Stand_HeavyColumn",
     },{
         "Name": "FoundationPipeHolder",
-        "Mesh": "/Game/Covers/Pedestal/PedestalPipeHolder",
+        "Mesh": "/Game/Shared/Stands/SM_Stand_PipeHolder",
     },{
         "Name": "FoundationPipePost",
-        "Mesh": "/Game/Covers/Pedestal/PedestalPipePost",
+        "Mesh": "/Game/Shared/Stands/SM_Stand_PipePost",
     },{
         "Name": "WireCover",
-        "Mesh": "/Game/Covers/WireCover",
+        "Mesh": "/Game/Shared/Covers/SM_Cover_Wire",
         "Materials": [""],
         "NumCustomData": 3,
         "Minable": decor_minable(1),
     },{
         "Name": "Polycarbo",
-        "Mesh": "/Game/Covers/polycarbo",
+        "Mesh": "/Game/Blocks/Floor/SM_Floor_Polycarbo",
         "Materials": [""],
         "NumCustomData": 3,
     },{
         "Name": "RoofMetal",
-        "Mesh": "/Game/Covers/polycarbo",
-        "Materials": ["/Game/Materials/RoofMetal"],
+        "Mesh": "/Game/Blocks/Floor/SM_Floor_Polycarbo",
+        "Materials": ["/Game/Blocks/Floor/M_Floor_RoofMetal"],
         "NumCustomData": 3,
     },{
         "Name": "DataSide",
-        "Mesh": "/Game/Covers/DataSide",
+        "Mesh": "/Game/Blocks/LogicWire/SM_LogicWire_Side",
         "Materials": [""],
         "NumCustomData": 0,
         "MergedShadow": True,
     },{
         "Name": "DataCenter",
-        "Mesh": "/Game/Covers/DataCenter",
+        "Mesh": "/Game/Blocks/LogicWire/SM_LogicWire_Center",
         "Materials": [""],
         "NumCustomData": 0,
         "MergedShadow": True,
@@ -265,7 +265,7 @@ objects_array = []
 for mat in paint_colors + paint_tiers:
 	covers.append({
 		"Name": "Cover" + mat,
-		"Mesh": "/Game/Covers/SimpleCover",
+		"Mesh": "/Game/Shared/Covers/SM_Cover_Simple",
         "Materials": [mat]
 	})
      
@@ -280,7 +280,7 @@ for mat in paint_tiers[3:]:
     for piece, slots in battery_pieces.items():
         covers.append({
             "Name": mat + "BatteryBox" + piece,
-            "Mesh": "/Game/Covers/Battery/Battery" + piece,
+            "Mesh": "/Game/Blocks/BatteryBox/SM_BatteryBox_" + piece,
             "Materials": ["", "/Game/Materials/" + mat, "", ""]
         })
 
@@ -295,7 +295,7 @@ for mat in paint_tiers[1:]:
     for piece, slots in tank_pieces.items():
         covers.append({
             "Name": mat + "Container" + piece,
-            "Mesh": "/Game/Covers/Tank/Tank" + piece,
+            "Mesh": "/Game/Blocks/Container/SM_Container_" + piece,
             "Materials": ["/Game/Materials/" + mat, ""]
         })
 
@@ -306,7 +306,7 @@ for mat, num in zip(paint_tiers, range(0,7+1)):
     for piece in pipe_pieces:
         covers.append({
             "Name": mat+"Pipe"+piece,
-            "Mesh": "/Game/Covers/Pipe/Pipe"+piece,
+            "Mesh": "/Game/Blocks/Pipe/SM_Pipe_"+piece,
             "Materials": ["/Game/Materials/"+mat, pipe_fitting_material],
             "MergedShadow": True
         })
@@ -317,7 +317,7 @@ for mat, num in zip(paint_metals, range(1,7+1)):
     for piece in conveyor_node_pieces:
         covers.append({
             "Name": mat+"ConveyorNode"+piece,
-            "Mesh": "/Game/Covers/Conveyor/ConveyorNode"+piece,
+            "Mesh": "/Game/Blocks/Conveyor/SM_Conveyor_Node"+piece,
             "Materials": [tier_materials[num]],
             "MergedShadow": True
         })
@@ -325,44 +325,44 @@ for mat, num in zip(paint_metals, range(1,7+1)):
 for mat, num in zip(paint_metals, range(1,7+1)):
     covers.append({
 		"Name": mat+"Furnace",
-		"Mesh": "/Game/Models/FurnaceRound",
+		"Mesh": "/Game/Blocks/Furnace/SM_Furnace",
         "Materials": ["/Game/Models/FurnaceMaterial"]
 	})
     covers.append({
 		"Name": mat+"Conveyor",
-		"Mesh": "/Game/Models/conveyor_end",
-        "Materials": ["/Game/Materials/RubberWithTierParam", tier_materials[num]],
+		"Mesh": "/Game/Blocks/Conveyor/SM_Conveyor_End",
+        "Materials": ["/Game/Blocks/Conveyor/M_Conveyor_RubberTier", tier_materials[num]],
         "MergedShadow": True
 	})
     covers.append({
 		"Name": mat+"ConveyorSide",
-		"Mesh": "/Game/Models/conveyor",
-        "Materials": ["/Game/Materials/RubberWithTierParam", tier_materials[num]],
+		"Mesh": "/Game/Blocks/Conveyor/SM_Conveyor_Side",
+        "Materials": ["/Game/Blocks/Conveyor/M_Conveyor_RubberTier", tier_materials[num]],
         "MergedShadow": True
 	})
     covers.append({
 		"Name": mat+"ElectricEngine",
 		"Mesh": "/Game/Blocks/ElectricEngine/SM_ElectricEngine",
-        "Materials": ["/Game/Materials/ElectricEngineMaterial"]
+        "Materials": ["/Game/Blocks/ElectricEngine/M_ElectricEngine"]
 	})
 
 for mat, num in zip(paint_metals, range(1,7+1)):
     covers.append({
 		"Name": mat+"SolarPanelBase",
-		"Mesh": "/Game/Models/SolarBig_Base",
+		"Mesh": "/Game/Blocks/SolarPanel/SM_SolarPanel_Base",
         "Materials": ["/Game/Materials/PaintDarkGray", tier_materials[num], "/Game/Materials/PaintYellow", "/Game/Materials/Accessor"],
         "NoCollision": True
 	})
     covers.append({
 		"Name": mat+"SolarPanelCell",
-		"Mesh": "/Game/Models/SolarBig_Panel",
-        "Materials": ["/Game/Materials/SolarPanelTracking"],
+		"Mesh": "/Game/Blocks/SolarPanel/SM_SolarPanel_Cell",
+        "Materials": ["/Game/Blocks/SolarPanel/M_SolarPanel_Tracking"],
         "NoCollision": True,
         "WorldPositionOffsetDisableDistance": 20000
 	})
     covers.append({
 		"Name": mat+"SmallSolarPanelCell",
-		"Mesh": "/Game/CoreContent/solar_mini",
+		"Mesh": "/Game/Blocks/SmallSolarPanel/SM_SmallSolarPanel",
         "Materials": ["/Game/Materials/PaintYellow", "/Game/Materials/solar", tier_materials[num], "/Game/Materials/Accessor", "/Game/Materials/Rubber2"],
         "NoCollision": True
 	})
@@ -381,8 +381,8 @@ for mat, num in zip(paint_metals, range(1,7+1)):
 	})
     covers.append({
 		"Name": mat+"WindTurbineStator",
-		"Mesh": "/Game/CoreContent/wind_turbine_stator",
-        "Materials": ["/Game/Materials/M_WindTurbineStator"],
+		"Mesh": "/Game/Blocks/WindTurbine/SM_WindTurbine_Stator",
+        "Materials": ["/Game/Blocks/WindTurbine/M_WindTurbine_Stator"],
         "NoCollision": True,
         "WorldPositionOffsetDisableDistance": 40000
 	})
@@ -408,7 +408,6 @@ for cover in covers:
 
     if "NumCustomData" in cover:
          staticCover["NumCustomData"] = cover["NumCustomData"]
-         # Auto-fill DefaultColors if not specified: one white RGB per slot
          if "DefaultColors" in cover:
              staticCover["DefaultColors"] = cover["DefaultColors"]
          else:
