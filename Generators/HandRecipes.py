@@ -500,6 +500,39 @@ recipes_hand.append({
 })
 
 recipes_hand.append({
+	"Name": "TankWagon",
+	"Input":{
+		"Items":[
+			{
+				"Name": "SteelPlate",
+				"Count": 30
+			},
+			{
+				"Name": "SteelParts",
+				"Count": 10
+			},
+			{
+				"Name": "SteelPipe",
+				"Count": 4
+			},
+			{
+				"Name": "BasicFrame",
+				"Count": 2
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "TankWagon",
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 200
+})
+
+recipes_hand.append({
 	"Name": "Locomotive",
 	"Input":{
 		"Items":[

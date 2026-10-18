@@ -130,6 +130,12 @@ tools = [
 		"Image": "T_CargoWagon",
 		"Category": "Vehicles",
 	},{
+		"Name": "TankWagon",
+		"Label": "Tank Wagon",
+		"ItemLogic": "TrainPlacerItemLogic",
+		"Image": "T_TankWagon",
+		"Category": "Vehicles",
+	},{
 		"Name": "Locomotive",
 		"Label": "Locomotive",
 		"ItemLogic": "TrainPlacerItemLogic",

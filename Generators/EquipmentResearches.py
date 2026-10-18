@@ -79,6 +79,7 @@ def append_equipment(xy, append_levels, researches):
 			["Hand" + r_dict, "SteelRail"],
 			["Hand" + r_dict, "RailStation"],
 			["Hand" + r_dict, "CargoWagon"],
+			["Hand" + r_dict, "TankWagon"],
 			["Hand" + r_dict, "Locomotive"],
 		],
 		"Levels": [2,2],
