@@ -160,8 +160,7 @@ tools = [
 		"Name": "Boat",
 		"Label": "Boat",
 		"ItemLogic": "/Game/Equipped/BoatItemBP.BoatItemBP_C",
-		# TODO: dedicated T_Boat icon; SteamEngine is a placeholder
-		"Image": "T_SteamEngine",
+		"Image": "T_Boat",
 		"Category": "Vehicles",
 	}
 	#{
