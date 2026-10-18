@@ -89,7 +89,7 @@ machines = [
 		"Description": ["FluidConductor"],
 		"PathFinding": True,
         "NoActorRenderable": True,
-        "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
+        "Selector": "Blocks/AllSidesPipe/BP_AllSidesPipe.BP_AllSidesPipe_C",
         "Category": "Network",
 	},{
 		"Name": "HeatPipe",
@@ -100,7 +100,7 @@ machines = [
 		"LogicExports": ["Storage", "Capacity", "Fill"],
 		"Description": ["HeatConductor", "HeatStorage"],
 		"PathFinding": True,
-        "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
+        "Selector": "Blocks/AllSidesPipe/BP_AllSidesPipe.BP_AllSidesPipe_C",
         "Category": "Network",
 	},{
 		"Name": "Flywheel",
@@ -133,7 +133,7 @@ machines = [
 		"PathFinding": True,
         "ExactName": True,
         "NoActorRenderable": True,
-        "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
+        "Selector": "Blocks/AllSidesPipe/BP_AllSidesPipe.BP_AllSidesPipe_C",
         "Category": "Network",
         "ReplaceTag": "Cable",
 	},{
@@ -185,7 +185,7 @@ machines = [
 			"Conveyor",
 			"Transporter"
 		],
-		"Selector": "Blocks/ArrowConvBP.ArrowConvBP_C",
+		"Selector": "Blocks/ArrowConv/BP_ArrowConv.BP_ArrowConv_C",
 		"PathFinding": True,
         "NoActorRenderable": True,
         "ReplaceTag": "Conveyor",
@@ -323,13 +323,13 @@ machines = [
 		"Name": "Loader",
 		"StartTier": 1,
 		"EndTier": 7,
-		"Selector": "Blocks/ArrowBP.ArrowBP_C",
+		"Selector": "Blocks/Arrow/BP_Arrow.BP_Arrow_C",
 		"LogicImports": ["Working"],
 	},{
 		"Name": "RobotArm",
 		"StartTier": 1,
 		"EndTier": 7,
-		"Selector": "Blocks/ArrowBP.ArrowBP_C",
+		"Selector": "Blocks/Arrow/BP_Arrow.BP_Arrow_C",
 		"LogicImports": ["Working"],
 	},{
 		"Name": "Pump",
@@ -338,7 +338,7 @@ machines = [
 		"CustomData":{
 			"ItemPortion": 1000
 		},
-		"Selector": "Blocks/ArrowBP.ArrowBP_C",
+		"Selector": "Blocks/Arrow/BP_Arrow.BP_Arrow_C",
 		"Description": ["FluidInput", "FluidOutput"],
 		"LogicImports": ["Working"],
 	},{
@@ -803,7 +803,7 @@ machines = [
 		"StartTier": 4,
 		"EndTier": 4,
 		"BlockLogic": "MonitorBlockLogic",
-		"Actor": "Blocks/MonitorBP.MonitorBP_C",
+		"Actor": "Blocks/Monitor/BP_Monitor.BP_Monitor_C",
 	},{
 		"Name": "BigMonitor",
 		"StartTier": 5,
@@ -811,7 +811,7 @@ machines = [
 		"Image": "Monitor",
 		"Positions": [[0,0,0],[0,-1,0],[0,0,1],[0,-1,1]],
 		"BlockLogic": "MonitorBlockLogic",
-		"Actor": "Blocks/BigMonitorBP.BigMonitorBP_C",
+		"Actor": "Blocks/BigMonitor/BP_BigMonitor.BP_BigMonitor_C",
 	},{
 		"Name": "HugeMonitor",
 		"StartTier": 6,
@@ -819,7 +819,7 @@ machines = [
 		"Image": "Monitor",
 		"Positions": [[0,0,0],[0,-1,0],[0,-2,0],[0,0,1],[0,-1,1],[0,-2,1],[0,0,2],[0,-1,2],[0,-2,2]],
 		"BlockLogic": "MonitorBlockLogic",
-		"Actor": "Blocks/HugeMonitorBP.HugeMonitorBP_C",
+		"Actor": "Blocks/HugeMonitor/BP_HugeMonitor.BP_HugeMonitor_C",
 	},{
 		"Name": "Computer",
 		"Energy": {"consumption": 20, "consumption_item": "Electricity"},
@@ -1128,7 +1128,7 @@ machines = [
 		"Description": ["DataConductor"],
 		"PathFinding": True,
         "NoActorRenderable": True,
-        "Selector": "Blocks/AllSidesPipeBP.AllSidesPipeBP_C",
+        "Selector": "Blocks/AllSidesPipe/BP_AllSidesPipe.BP_AllSidesPipe_C",
         "Category": "Network",
 	},{
 		"Name": "Button",

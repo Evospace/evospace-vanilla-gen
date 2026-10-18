@@ -31,9 +31,7 @@ def write_file(filename, data):
 	generated_files[filename] = data
 
 def block_actor(name):
-	if os.path.exists(os.path.join(our_path, "..", "Content", "Blocks", name, "BP_" + name + ".uasset")):
-		return "Blocks/" + name + "/BP_" + name + ".BP_" + name + "_C"
-	return "Blocks/" + name + "BP." + name + "BP_C"
+	return "Blocks/" + name + "/BP_" + name + ".BP_" + name + "_C"
 
 def get_generated_files():
 	return generated_files

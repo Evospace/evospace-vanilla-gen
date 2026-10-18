@@ -5,7 +5,7 @@ designables = [
 		"Name": "Stairs",
 		"Category": "Decoration",
 		"Label": ["Stairs", "misc"],
-		"Selector": "Blocks/StairsBP.StairsBP_C",
+		"Selector": "Blocks/Stairs/BP_Stairs.BP_Stairs_C",
 		"Covers": [
 			"Stairs",
 			"StairsGridLamp",
@@ -36,7 +36,7 @@ designables = [
 		"Name": "Scaffold",
 		"Category": "Decoration",
 		"Label": ["Scaffold", "misc"],
-		"Selector": "Blocks/ScaffoldBP.ScaffoldBP_C",
+		"Selector": "Blocks/Scaffold/BP_Scaffold.BP_Scaffold_C",
 		"Covers": [
 			"Scaffold",
 			"PaintedScaffold"
@@ -86,7 +86,7 @@ designables = [
 	{
 		"Name": "Fence",
 		"Category": "Decoration",
-		"Selector": "Blocks/FenceBP.FenceBP_C",
+		"Selector": "Blocks/Fence/BP_Fence.BP_Fence_C",
 		"Label": ["Fence", "misc"],
 		"Tier": 0,
 		"BlockLogic": "DesignableFenceBlockLogic",
