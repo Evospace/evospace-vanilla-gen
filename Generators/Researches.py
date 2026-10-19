@@ -696,7 +696,7 @@ append_levels({
 	"RequiredResearch": ["PowerGeneration"],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%Furnace"] ],
-	"MainResearchArr": [True,True,True,True,True,True,True],
+	"MainResearchArr": [True,True,False,False,False,False,False],
 	"CostMul": 2.5,
 })
 append_levels({
