@@ -88,6 +88,13 @@ logic_imports = [
         "Enabled": True,
         "Label": ["DoorOpen", "logic_import"],
         "Tooltip": ["DoorOpenTooltip", "logic_import"]
+    },
+    {
+        "Name": "SetFilter",
+        "UseSignal": False,
+        "Enabled": False,
+        "Label": ["SetFilter", "logic_import"],
+        "Tooltip": ["SetFilterTooltip", "logic_import"]
     }
 ]
 

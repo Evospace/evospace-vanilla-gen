@@ -324,13 +324,13 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"Selector": "Blocks/Arrow/BP_Arrow.BP_Arrow_C",
-		"LogicImports": ["Working"],
+		"LogicImports": ["Working", "SetFilter"],
 	},{
 		"Name": "RobotArm",
 		"StartTier": 1,
 		"EndTier": 7,
 		"Selector": "Blocks/Arrow/BP_Arrow.BP_Arrow_C",
-		"LogicImports": ["Working"],
+		"LogicImports": ["Working", "SetFilter"],
 	},{
 		"Name": "Pump",
 		"StartTier": 1,
