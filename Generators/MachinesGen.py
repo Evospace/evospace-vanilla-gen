@@ -78,9 +78,6 @@ def scale_energy_per_tick(base, level, scaling="exponential"):
 def energy_watts(per_tick_base, level, scaling="exponential"):
 	return scale_energy_per_tick(per_tick_base, level, scaling) * 20
 
-# Intermediate structure for machine recipes (exported for Researches.py)
-machine_recipes_data = {}
-
 images = []
 objects_array = []
 recipes_hand = []
@@ -172,15 +169,6 @@ for machine in machines:
 		def append_recipe(recipe):
 			recipe["Tier"] = tier
 			recipes_hand.append(recipe)
-			
-			# Store recipe in intermediate structure for Researches.py
-			if "Name" in recipe:
-				recipe_name = recipe["Name"]
-				# Store with dictionary prefix
-				dict_key = h_r_dict + ":" + recipe_name
-				machine_recipes_data[dict_key] = recipe
-				# Also store by name only for easier lookup
-				machine_recipes_data[recipe_name] = recipe
 
 		def wire():
 			return a_wires[tier][0]

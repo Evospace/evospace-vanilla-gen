@@ -5,8 +5,6 @@ from NuclearResearches import *
 from EquipmentResearches import *
 from PartsResearchHelper import *
 
-from MachinesGen import machine_recipes_data
-
 researches = []
 
 def append_levels(research_base):
@@ -1774,61 +1772,142 @@ def recipe_io_items(recipe, key):
 		return []
 	return [item["Name"] for item in block.get("Items", []) if isinstance(item, dict) and "Name" in item]
 
-def unlocked_recipe(unlock):
+def recipe_inputs(recipe):
+	return [item["Name"] for item in recipe.get("Input", {}).get("Items", []) if item.get("Count", 1) > 0]
+
+def recipe_products(recipe):
+	outputs = recipe_io_items(recipe, "Output")
+	if not outputs and not recipe_inputs(recipe):
+		return [recipe["Name"]]
+	return outputs
+
+def unlock_key(unlock):
 	if isinstance(unlock, list) and len(unlock) >= 2:
-		return machine_recipes_data.get(unlock[0] + ":" + unlock[1])
+		return unlock[0] + ":" + unlock[1]
 	return None
 
+def generated_recipes():
+	recipes = {}
+	used_in = {}
+	world_drops = set()
+	for data in get_generated_files().values():
+		for obj in data.get("Objects", []) if isinstance(data, dict) else []:
+			if obj.get("Class") == r_dict:
+				for recipe in obj.get("Recipes", []):
+					recipes[obj["Name"] + ":" + recipe["Name"]] = (obj["Name"], recipe)
+				used_in.setdefault(obj["Name"], []).extend(use["Item"] for use in obj.get("UsedIn", []))
+			elif obj.get("Class") == "StaticProp":
+				minable = obj.get("Minable")
+				if isinstance(minable, dict) and minable.get("Minable") is not False and "Result" in minable:
+					world_drops.add(minable["Result"])
+	return recipes, used_in, world_drops
+
 def add_ingredient_required_research(research_entries):
-	unlocked_by = {}
+	recipes, used_in, world_drops = generated_recipes()
+
+	unlockers = {}
 	for research in research_entries:
-		name = research.get("Name")
-		if not name:
-			continue
 		for unlock in research.get("Unlocks", []):
-			if not (isinstance(unlock, list) and len(unlock) >= 2):
-				continue
-			recipe = unlocked_recipe(unlock)
-			outputs = recipe_io_items(recipe, "Output") if recipe else [unlock[1]]
-			for item in outputs:
-				unlocked_by.setdefault(item, name)
+			key = unlock_key(unlock)
+			if key:
+				names = unlockers.setdefault(key, [])
+				if research["Name"] not in names:
+					names.append(research["Name"])
 
 	graph = {}
 	for research in research_entries:
-		name = research.get("Name")
-		if name:
-			graph[name] = list(research.get("RequiredResearch", []))
+		graph[research["Name"]] = list(research.get("RequiredResearch", []))
 
-	def depends_on(start, target):
-		stack = [start]
-		seen = set()
+	def ancestors_of(start):
+		found, stack = set(), list(graph.get(start, []))
 		while stack:
 			node = stack.pop()
-			if node == target:
-				return True
-			if node in seen:
+			if node not in found:
+				found.add(node)
+				stack.extend(graph.get(node, []))
+		return found
+
+	initial_ancestors = {name: ancestors_of(name) for name in graph}
+	complexity = {research["Name"]: research.get("Complexity", 0) for research in research_entries}
+	costs = {}
+	def cost(gate):
+		if gate not in costs:
+			found = set(gate)
+			for name in gate:
+				found |= initial_ancestors.get(name, set())
+			costs[gate] = (sum(complexity.get(name, 0) for name in found), len(found))
+		return costs[gate]
+
+	producers = {}
+	consumed = set()
+	for key, (_, recipe) in recipes.items():
+		for item in recipe_products(recipe):
+			producers.setdefault(item, []).append(key)
+		consumed.update(recipe_inputs(recipe))
+
+	gates = {item: frozenset() for item in world_drops | {"Hand"} | (consumed - set(producers))}
+
+	def machine_gate(dictionary):
+		options = [gates[machine] for machine in used_in.get(dictionary, []) if machine in gates]
+		return min(options, key=cost) if options else None
+
+	def recipe_gate(key):
+		dictionary, recipe = recipes[key]
+		machine = machine_gate(dictionary)
+		if machine is None:
+			return None
+		if key in unlockers:
+			return machine | {min(unlockers[key], key=lambda name: cost(frozenset([name])))}
+		parts = [gates.get(item) for item in recipe_inputs(recipe)]
+		if None in parts:
+			return None
+		return machine.union(*parts)
+
+	settled = False
+	while not settled:
+		settled = True
+		for key in recipes:
+			gate = recipe_gate(key)
+			if gate is None:
 				continue
-			seen.add(node)
-			stack.extend(graph.get(node, []))
+			for item in recipe_products(recipes[key][1]):
+				if item not in gates or cost(gate) < cost(gates[item]):
+					gates[item] = gate
+					settled = False
+
+	def satisfied(reached, item):
+		for key in producers.get(item, []):
+			dictionary, recipe = recipes[key]
+			machine = machine_gate(dictionary)
+			if machine is None or not machine <= reached:
+				continue
+			if key in unlockers:
+				if any(name in reached for name in unlockers[key]):
+					return True
+				continue
+			parts = [gates.get(other) for other in recipe_inputs(recipe)]
+			if None not in parts and all(part <= reached for part in parts):
+				return True
 		return False
 
 	for research in research_entries:
-		name = research.get("Name")
-		if not name:
-			continue
+		name = research["Name"]
 		required = research.setdefault("RequiredResearch", [])
+		reached = ancestors_of(name) | {name}
 		for unlock in research.get("Unlocks", []):
-			recipe = unlocked_recipe(unlock)
-			if not recipe:
+			entry = recipes.get(unlock_key(unlock))
+			if not entry:
 				continue
-			for item in recipe_io_items(recipe, "Input"):
-				dep = unlocked_by.get(item)
-				if not dep or dep == name or dep in required:
+			for item in recipe_inputs(entry[1]):
+				gate = gates.get(item)
+				if not gate or gate <= reached or satisfied(reached, item):
 					continue
-				if depends_on(dep, name):
-					continue
-				required.append(dep)
-				graph[name].append(dep)
+				for dep in sorted(gate - reached):
+					if name in ancestors_of(dep):
+						continue
+					required.append(dep)
+					graph[name].append(dep)
+					reached |= {dep} | ancestors_of(dep)
 
 def build_research_graph(research_entries):
 	research_map = {}
