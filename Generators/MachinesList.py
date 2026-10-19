@@ -456,7 +456,7 @@ machines = [
 		"Category": "Network",
 	},{
 		"Name": "ArcSmelter",
-		"Energy": {"consumption": 200, "consumption_item": "Electricity"},
+		"Energy": {"consumption": 400, "consumption_item": "Electricity"},
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,0,2],[-1,0,2],[0,1,2],[-1,1,2]],
 		"StartTier": 2,
 		"EndTier": 7,
