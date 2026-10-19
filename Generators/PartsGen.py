@@ -268,10 +268,6 @@ for material in materials:
 		if "Circuit" in material:
 			item["DescriptionParts"].extend([["Circuit", "common"], ["computation", "common", pow(10, material_tier - 1)*30*20]])
 
-		if "MaxCharge" in material:
-			item["MaxCharge"] = material["MaxCharge"]
-			item["DescriptionParts"].extend([["battery", "common", material["MaxCharge"]]])
-			
 		if "Materials" in material:
 			item["Materials"] = material["Materials"]
 		

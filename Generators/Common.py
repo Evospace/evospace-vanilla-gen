@@ -221,13 +221,6 @@ def items(array, tier=0):
 
 	return {"Items": out}
 
-single_battery_cell_charge = 100000
-
-single_canister_capacity = 10000
-
-def battery_mul(level):
-	return 4 * pow(5, level)
-	
 f_machine_bonus = 1.5
 
 tiers_numlist = [0,1,2,3,4,5,6,7]

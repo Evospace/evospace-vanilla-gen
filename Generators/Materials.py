@@ -889,14 +889,6 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 	},{
-		"Name": "Canister",
-		"Category": "Parts",
-		"Label": "Canister",
-		"StackSize": 1,
-		"Items": ["Exact"],
-		"CustomData": True,
-		"MaxCharge": single_canister_capacity
-	},{
 		"Name": "ControlCell",
 		"Category": "Nuclear",
 		"Label": "Control Cell",
