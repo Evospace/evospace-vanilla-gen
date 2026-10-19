@@ -804,15 +804,6 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
-	"Name": "AdvancedCircuit2",
-	"Label": ["TwoWorldsFormat", "common", ["AdvancedCircuit", "parts"], ["II", "common"]],
-	"RequiredResearch": ["Transistor", "Assembler"],
-	"Levels": [2,2],
-	"Unlocks": [[assembler_r_dict, "AdvancedCircuit2"]],
-	"CostExact": 25000,
-})
-append_levels({
-	"Class": research_recipe,
 	"Name": "SiliconWafer",
 	"Label": ["SiliconWafer", "parts"],
 	"RequiredResearch": ["IndustrialSmelting"],
@@ -843,9 +834,9 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "Capacitor",
 	"Label": ["Capacitor", "parts"],
-	"RequiredResearch": ["Processor"],
+	"RequiredResearch": ["Processor", "Assembler"],
 	"Levels": [3,3],
-	"Unlocks": [["Hand" + r_dict, "Capacitor"]],
+	"Unlocks": [["Hand" + r_dict, "Capacitor"], [assembler_r_dict, "Processor1"]],
 	"MainResearch": True,
 	"CostMul":1.5,
 })
@@ -880,7 +871,7 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "Processor2",
 	"Label": ["TwoWorldsFormat", "common", ["Processor", "parts"], ["II", "common"]],
-	"RequiredResearch": ["Capacitor"],
+	"RequiredResearch": ["Capacitor", "SiliconWafer"],
 	"Unlocks": [[assembler_r_dict, "Processor2"]],
 	"Levels": [3,3],
 	"MainResearch": True,
@@ -1603,8 +1594,9 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "Assembler",
 	"Label": ["Assembler", "machines"],
-	"RequiredResearch": ["AdvancedCircuit"],
+	"RequiredResearch": ["AdvancedCircuit", "Transistor"],
 	"Unlocks": [["Hand" + r_dict, "%Material%Assembler"]],
+	"UnlockFirst": [[assembler_r_dict, "AdvancedCircuit2"]],
 	"Levels": [3,7],
 	"MainResearch": True,
 })

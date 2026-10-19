@@ -400,6 +400,18 @@ recipes_hand.append({
 })
 
 recipes_assembler.append({
+	"Name":"Processor1",
+	"Input": items([
+		["CircuitBoard"],
+		["AdvancedCircuit", 2],
+		["Capacitor", 2],
+	]),
+	"Output": one_item("Processor"),
+	"Ticks" : 200,
+	"Tier": 3,
+})
+
+recipes_assembler.append({
 	"Name":"Processor2",
 	"Input": items([
 		["CircuitBoard"],
@@ -407,7 +419,7 @@ recipes_assembler.append({
 		["SiliconWafer", 1],
 		["Capacitor", 2],
 	]),
-	"Output": one_item("Processor"),
+	"Output": one_item("Processor", 2),
 	"Ticks" : 200,
 	"Tier": 4,
 })
@@ -420,7 +432,7 @@ recipes_assembler.append({
 		["DopedSiliconWafer", 1],
 		["Capacitor", 3],
 	]),
-	"Output": one_item("Processor", 2),
+	"Output": one_item("Processor", 4),
 	"Ticks" : 200,
 	"Tier": 5,
 })
