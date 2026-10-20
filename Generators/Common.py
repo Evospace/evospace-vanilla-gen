@@ -38,7 +38,7 @@ def get_generated_files():
 
 def flush_generated_files():
 	for filename, data in generated_files.items():
-		full_path = os.path.join(our_path, "..", "Content", filename)
+		full_path = os.path.join(our_path, "..", "Content", "Mods", "Vanilla", filename)
 		if not os.path.exists(os.path.dirname(full_path)):
 			try:
 				os.makedirs(os.path.dirname(full_path))
