@@ -956,16 +956,6 @@ materials = [
 		"Items": tiered_parts_list_no_dust,
 		"Tier": 6,
 	},{
-		"Name": "Drain",
-		"Label": "Drain",
-		"Items": ["Exact"],
-		"Category": "Signal"
-	},{
-		"Name": "HeatLoss",
-		"Label": "Heat Loss",
-		"Items": ["Exact"],
-		"Category": "Signal"
-	},{
 		"Name": "Storage",
 		"Label": "Storage",
 		"Items": ["Exact"],
