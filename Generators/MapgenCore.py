@@ -177,6 +177,13 @@ objects_array.append({ "Class": "ItemGroup",
 	"Members": ["StoneSurface", "BasaltSurface", "RedStoneSurface", "DarkStoneSurface", "GravelSurface", "SandSurface", "DirtSurface"],
 	"StackSize": 999,
 })
+
+objects_array.append({ "Class": "ItemGroup",
+	"Name": "RockOrGravel",
+	"Label": ["RockOrGravel", "mapgen_core"],
+	"Members": ["StoneSurface", "BasaltSurface", "RedStoneSurface", "DarkStoneSurface", "GravelSurface"],
+	"StackSize": 999,
+})
 	
 data = {
 	"Objects": objects_array

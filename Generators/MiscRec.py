@@ -14,7 +14,6 @@ recipes_macerator = []
 recipes_boiler = []
 recipes_farm = []
 recipes_condens = []
-recipes_generator = []
 recipes_pump = []
 recipes_electrolyzer = []
 recipes_cutter = []
@@ -27,8 +26,6 @@ recipes_chem = []
 recipes_sep = []
 recipes_press = []
 
-recipes_radiator = []
-recipes_solar = []
 recipes_fission = []
 
 recipes_coil = []
@@ -1074,14 +1071,6 @@ recipes_boiler.append({
 	"Loss": 10,
 })
 
-recipes_generator.append({
-	"Name": "Generating",
-	"Input": no_items(),
-	"Output": no_items(),
-	"Ticks" : 200,
-	"Loss": 10,
-})
-
 for item, mul in [["Coal", 1], ["CoalDust", 1], ["CoalOreDust", 1], ["CoalOreGravel", 1.5], ["CoalOreImpureGravel", 1.5], ["CoalOre", 2]]:
 	recipes_oven.append({
 		"Name": item+"ToCoke",
@@ -1135,7 +1124,7 @@ recipes_mixer.append({
 recipes_mixer.append({
 	"Name": "BuildingMaterial2",
 	"Input": items([
-		["GravelSurface"],
+		["RockOrGravel"],
 		["SandSurface"],
 		["Water", 500]
 	]),
@@ -1147,7 +1136,7 @@ recipes_mixer.append({
 recipes_mixer.append({
 	"Name": "BuildingMaterial3",
 	"Input": items([
-		["GravelSurface"],
+		["RockOrGravel"],
 		["SandSurface"],
 		["Water", 500],
 		["SteelParts", 2]
@@ -1160,7 +1149,7 @@ recipes_mixer.append({
 recipes_mixer.append({
 	"Name": "BuildingMaterial4",
 	"Input": items([
-		["GravelSurface"],
+		["RockOrGravel"],
 		["SandSurface"],
 		["Water", 500],
 		["TitaniumParts", 2]
@@ -1173,7 +1162,7 @@ recipes_mixer.append({
 recipes_mixer.append({
 	"Name": "BuildingMaterial5",
 	"Input": items([
-		["GravelSurface"],
+		["RockOrGravel"],
 		["SandSurface"],
 		["Water", 500],
 		["CompositeParts", 2]
@@ -1186,7 +1175,7 @@ recipes_mixer.append({
 recipes_mixer.append({
 	"Name": "BuildingMaterial6",
 	"Input": items([
-		["GravelSurface"],
+		["RockOrGravel"],
 		["SandSurface"],
 		["Water", 500],
 		["NeutroniumParts", 2]
@@ -1299,13 +1288,6 @@ recipes_macerator.append({
 	"Tier": 0
 })
 			
-recipes_macerator.append({
-	"Name": "GravelToSand",
-	"Input": one_item("GravelSurface"),
-	"Output": one_item("SandSurface"),
-	"Ticks" : 100
-})
-
 recipes_hammer.append({
 	"Name": "RockOrSoilToBuildingMaterial",
 	"Input": one_item("RockOrSoil"),
@@ -1318,6 +1300,7 @@ recipes_pump.append({
 	"Name":"Water",
 	"Input": no_items(),
 	"Output": no_items(),
+	"Icon": "Water",
 	"Ticks" : 6*20,
 })
 
@@ -1557,19 +1540,6 @@ recipes_ferm.append({
 	"Ticks" : 200
 })
 
-recipes_radiator.append({
-	"Name": "Working",
-	"Input": no_items(),
-	"Output": no_items(),
-	"Ticks" : 200,
-})
-
-recipes_solar.append({
-	"Name": "Working",
-	"Input": no_items(),
-	"Output": no_items(),
-	"Ticks" : 60,
-})
 
 recipes_industrial_chemreactor.append({
 	"Name": "MineralWater",
@@ -2027,10 +1997,20 @@ objects_array.append({ "Class": r_dict,
 	"Recipes": recipes_boiler
 })
 
-objects_array.append({ "Class": r_dict,
-	"Name": "Generator" + r_dict,
-	"Recipes": recipes_generator
-})
+energy_converters = ["StirlingEngine", "SteamEngine", "Generator", "IndustrialGenerator", "CompactGenerator", "ElectricEngine", "SteamTurbine", "IndustrialSteamTurbine", "Riteg", "ElectricFurnace", "KineticHeater", "SolarPanel", "SmallSolarPanel", "WindTurbine"]
+
+for machine in machines:
+	if machine["Name"] in energy_converters:
+		objects_array.append({ "Class": r_dict,
+			"Name": machine["Name"] + r_dict,
+			"Recipes": [{
+				"Name": "Generating",
+				"Input": no_items(),
+				"Output": no_items(),
+				"Icon": machine["Energy"]["production_item"],
+				"Ticks" : 200,
+			}]
+		})
 
 objects_array.append({ "Class": r_dict,
 	"Name": "Pump" + r_dict,
@@ -2075,16 +2055,6 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": "Mixer" + r_dict,
 	"Recipes": recipes_mixer
-})
-
-objects_array.append({ "Class": r_dict,
-	"Name": "Radiator" + r_dict,
-	"Recipes": recipes_radiator
-})
-
-objects_array.append({ "Class": r_dict,
-	"Name": "SolarPanel" + r_dict,
-	"Recipes": recipes_solar
 })
 
 objects_array.append({ "Class": r_dict,

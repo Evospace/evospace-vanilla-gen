@@ -592,6 +592,7 @@ biomes.extend([
 	},{
 		"Class":"Biome",
 		"Name":"BrokenLandBiome",
+		"DrillSource":"BasaltSurface",
 		"Layering":"BrokenLandLayeringBasalt",
 		"Props":"VolcanicProps"
 	}
@@ -600,6 +601,7 @@ biomes.extend([
 	,{
 		"Class":"Biome",
 		"Name":"VolcanoBiome",
+		"DrillSource":"BasaltSurface",
 		"Layering":"VolcanicLayeringBasalt"
 	}
 	
@@ -607,16 +609,19 @@ biomes.extend([
 	,{
 		"Class":"Biome",
 		"Name":"SeaBiome",
+		"DrillSource":"SandSurface",
 		"Layering":"SeaBottomLayeringSand",
 		"Props":"SeaPlantProps"
 	},{
 		"Class":"Biome",
 		"Name":"SeaGrassBiome",
+		"DrillSource":"SandSurface",
 		"Layering":"SeaBottomLayeringSand",
 		"Props":"SeaGrassProps"
 	},{
 		"Class":"Biome",
 		"Name":"EmptySeaBiome",
+		"DrillSource":"SandSurface",
 		"Layering":"SeaBottomLayeringSand",
 		"Props":"EmptySeaProps"
 	},{
@@ -626,6 +631,7 @@ biomes.extend([
 	},{
 		"Class":"Biome",
 		"Name":"SeaPlantBiome",
+		"DrillSource":"SandSurface",
 		"Layering":"SeaBottomLayeringSand",
 		"Props":"SeaPlantProps"
 	}
@@ -743,6 +749,7 @@ biomes.extend([
 	{
 		"Class":"Biome",
 		"Name":"DesertBiome",
+		"DrillSource":"SandSurface",
 		"Layering":"SandDesertLayeringSand",
 		"Props":"SandlandProps"
 	},
@@ -757,6 +764,7 @@ biomes.extend([
 	{
 		"Class":"Biome",
 		"Name":"MoonMareBiome",
+		"DrillSource":"BasaltSurface",
 		"Layering":"MoonMareLayering",
 		"Color":[0.32, 0.32, 0.34]
 	},
@@ -766,6 +774,7 @@ biomes.extend([
 	{
 		"Class":"Biome",
 		"Name":"RiverBiome",
+		"DrillSource":"SandSurface",
 		"Layering":"RiverLayeringSand"
 	}
 ])

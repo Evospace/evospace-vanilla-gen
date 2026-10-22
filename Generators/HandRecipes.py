@@ -22,49 +22,7 @@ def append_recipe_hand(recipe):
 	
 	dec_recipe["Ticks"] = 60
 	dec_recipe["ResourceInput"] = { "Name": "Kinetic", "Count": 100 }
-	recipes_press.append(dec_recipe)	
-
-recipes_hand.append({
-	"Name": "SandSurface",
-	"Input":{
-		"Items":[
-			{
-				"Name": "GravelSurface",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "SandSurface",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks" : 20
-})
-
-recipes_hand.append({
-	"Name": "GravelSurface",
-	"Input":{
-		"Items":[
-			{
-				"Name": "StoneSurface",
-				"Count": 1
-			},
-		]
-	},
-	"Output":{
-		"Items":[
-			{
-				"Name": "GravelSurface",
-				"Count": 1
-			}
-		]
-	},
-	"Ticks": 20,
-})
+	recipes_press.append(dec_recipe)
 
 recipes_hand.append({
 	"Name": "Steampack",
