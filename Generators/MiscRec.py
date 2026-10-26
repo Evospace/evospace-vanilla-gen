@@ -1287,11 +1287,18 @@ recipes_macerator.append({
 	"Ticks" : 100,
 	"Tier": 0
 })
-			
+
+recipes_macerator.append({
+	"Name": "GravelToSand",
+	"Input": one_item("GravelSurface"),
+	"Output": one_item("SandSurface"),
+	"Ticks" : 100
+})
+
 recipes_hammer.append({
-	"Name": "RockOrSoilToBuildingMaterial",
-	"Input": one_item("RockOrSoil"),
-	"Output": one_item("BuildingMaterial", 2),
+	"Name": "StoneToGravel",
+	"Input": one_item("AnyStone"),
+	"Output": one_item("GravelSurface"),
 	"Tier": 1,
 	"Ticks": 100,
 })
