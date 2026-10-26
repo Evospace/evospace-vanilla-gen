@@ -120,10 +120,6 @@ tools = [
 		"Label": "Construction Blueprint",
         "ItemLogic": "/Game/Equipped/BlueprintToolBP.BlueprintToolBP_C",
 	},{
-		"Name": "CrowbarTool",
-		"Label": "Crowbar Tool",
-        "ItemLogic": "/Game/Equipped/CrowbarToolBP.CrowbarToolBP_C",
-	},{
 		"Name": "CargoWagon",
 		"Label": "Cargo Wagon",
 		"ItemLogic": "TrainPlacerItemLogic",
