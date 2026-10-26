@@ -56,6 +56,30 @@ logic_exports = [
         "Tooltip": ["FuelTooltip", "logic_export"]
     },
     {
+        "Name": "CargoFull",
+        "UseSignal": True,
+        "Signal": "L",
+        "Enabled": True,
+        "Label": ["CargoFull", "logic_export"],
+        "Tooltip": ["CargoFullTooltip", "logic_export"]
+    },
+    {
+        "Name": "CargoEmpty",
+        "UseSignal": True,
+        "Signal": "E",
+        "Enabled": True,
+        "Label": ["CargoEmpty", "logic_export"],
+        "Tooltip": ["CargoEmptyTooltip", "logic_export"]
+    },
+    {
+        "Name": "Inactivity",
+        "UseSignal": True,
+        "Signal": "I",
+        "Enabled": True,
+        "Label": ["Inactivity", "logic_export"],
+        "Tooltip": ["InactivityTooltip", "logic_export"]
+    },
+    {
         "Name": "Pressed",
         "UseSignal": True,
         "Signal": "B",
