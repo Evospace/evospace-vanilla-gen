@@ -759,11 +759,6 @@ materials = [
 		"Items": ["Exact"],
 		"Tier": 4
 	},{
-		"Name": "Signal",
-		"Category": "Signal",
-		"Label": "Signal",
-		"Items": ["Exact"],
-	},{
 		"Name": "Circuit",
 		"Label": "Circuit",
 		"StackSize": 32,
@@ -956,16 +951,6 @@ materials = [
 		"Items": tiered_parts_list_no_dust,
 		"Tier": 6,
 	},{
-		"Name": "Storage",
-		"Label": "Storage",
-		"Items": ["Exact"],
-		"Category": "Signal"
-	},{
-		"Name": "Percent",
-		"Label": "Percent",
-		"Items": ["Exact"],
-		"Category": "Signal"
-	},{
 		"Name": "Anything",
 		"Label": "Anything",
 		"Items": ["Exact"],
@@ -973,11 +958,6 @@ materials = [
 	},{
 		"Name": "Everything",
 		"Label": "Everything",
-		"Items": ["Exact"],
-		"Category": "Signal"
-	},{
-		"Name": "Empty",
-		"Label": "Empty",
 		"Items": ["Exact"],
 		"Category": "Signal"
 	}
@@ -992,10 +972,3 @@ for a in list(string.ascii_uppercase):
 		"Items": ["Exact"],
 		"Category": "Signal",
 	})
-
-materials.append({
-	"Name": "ErrorString",
-	"Label": "Error String",
-	"Items": ["Exact"],
-	"Category": "Signal"
-})

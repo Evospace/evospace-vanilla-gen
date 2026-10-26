@@ -514,15 +514,16 @@ add_height("ClayBasinHeight",    [{"NoiseType": "Cellular", "Frequency": 0.0035,
 # noises + height generators load first (single-pass-safe ordering)
 generators = height_noises + height_gens + generators
 
-world_sources = {"OreList": "OreProps", "StoneSource": "StoneSurface", "WaterSource": "Water"}
+dry_sources = {"OreList": "OreProps", "StoneSource": "StoneSurface"}
+world_sources = {**dry_sources, "WaterSource": "Water"}
 generators.extend([
 	{"Class": "WorldGeneratorRivers", "Name": "WorldGeneratorRivers", "GlobalBiome": "GlobalBiomeMegaFamily2", "UnderworldBlock": "GraniteSurface", **world_sources},
 	{"Class": "WorldGeneratorLegacy", "Name": "WorldGeneratorBiome", "GlobalBiome": "GlobalBiomeMegaFamily", "UnderworldBlock": "GraniteSurface", **world_sources},
 	{"Class": "WorldGeneratorPlains", "Name": "WorldGeneratorPlains", "GlobalBiome": "GlobalBiomeMegaFamily3", "UnderworldBlock": "GraniteSurface", **world_sources},
-	{"Class": "WorldGeneratorMoon", "Name": "WorldGeneratorMoon", "GlobalBiome": "GlobalBiomeMegaFamilyMoon", "UnderworldBlock": "GraniteSurface", **world_sources},
+	{"Class": "WorldGeneratorMoon", "Name": "WorldGeneratorMoon", "GlobalBiome": "GlobalBiomeMegaFamilyMoon", "UnderworldBlock": "GraniteSurface", **dry_sources},
 	{"Class": "WorldGeneratorConfigurable", "Name": "WorldGeneratorConfigurable", "GlobalBiome": "GlobalBiomeMegaFamilyConfigurable", "UnderworldBlock": "GraniteSurface", **world_sources},
 	{"Class": "FlatWorldGenerator", "Name": "FlatWorldGenerator", "Layers": [{"Block": "ReinforcedConcrete", "Height": 3}], "Biome": "WastelandBiomeFamily", **world_sources},
-	{"Class": "WorldGeneratorOrbit", "Name": "WorldGeneratorOrbit", "PlatformBlock": "Concrete", "Biome": "WastelandBiomeFamily", **world_sources},
+	{"Class": "WorldGeneratorOrbit", "Name": "WorldGeneratorOrbit", "PlatformBlock": "Concrete", "Biome": "WastelandBiomeFamily", **dry_sources},
 ])
 
 #biomes

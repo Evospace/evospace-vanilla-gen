@@ -417,6 +417,7 @@ append_levels({
 	"RequiredResearch": ["Automatization"],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%Pump"] ],
+	"UnlockFirst": [["Hand" + r_dict, "WaterWell"]],
 	"CostMul":0.5,
 })
 append_levels({

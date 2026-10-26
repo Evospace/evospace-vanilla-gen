@@ -342,6 +342,16 @@ machines = [
 		"Description": ["FluidInput", "FluidOutput"],
 		"LogicImports": ["Working"],
 	},{
+		"Name": "WaterWell",
+		"ExactName": True,
+		"StartTier": 1,
+		"EndTier": 1,
+		"Image": "CopperPump",
+		"Actor": "Blocks/Pump/BP_Pump.BP_Pump_C",
+		"Selector": "Blocks/Arrow/BP_Arrow.BP_Arrow_C",
+		"Description": ["FluidOutput"],
+		"LogicImports": ["Working"],
+	},{
 		"Name": "Smelter",
 		"Energy": {"consumption": 50, "consumption_item": "Heat"},
 		"StartTier": 0,

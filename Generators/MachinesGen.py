@@ -1105,6 +1105,17 @@ for machine in machines:
 				"Ticks" : 20
 			})
 			
+		if machine["Name"] == "WaterWell":
+			append_recipe({
+				"Name": block_name,
+				"Input": items([
+					["CopperPump", 1],
+					[pipe(), 4]
+				]),
+				"Output": one_item(block_name),
+				"Ticks" : 20
+			})
+
 		if machine["Name"] == "OreWasher":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
