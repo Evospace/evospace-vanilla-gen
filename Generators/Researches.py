@@ -658,8 +658,8 @@ append_levels({
 	"RequiredResearch": ["Circuit"],
 	"Levels": [1, 1],
 	"Unlocks": [
-		["Hand" + r_dict, "SteelLogicWire"],
-		["Hand" + r_dict, "SteelLogicInterface"],
+		["Hand" + r_dict, "LogicWire"],
+		["Hand" + r_dict, "LogicInterface"],
 	],
 	"MainResearch": True,
 	"CostMul": 2.0,
@@ -675,7 +675,7 @@ append_levels({
 		["Hand" + r_dict, "SteelButton"],
 		["Hand" + r_dict, "SteelToggleButton"],
 		["Hand" + r_dict, "SteelPressurePlate"],
-		["Hand" + r_dict, "SteelLogicTransceiver"],
+		["Hand" + r_dict, "LogicTransceiver"],
 	],
 	"CostMul": 2.0,
 })

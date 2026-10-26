@@ -1108,18 +1108,24 @@ machines = [
 		"LogicImports": CRAFTING_LOGIC_IMPORTS,
     },{
 		"Name": "LogicInterface",
+		"ExactName": True,
+		"TieredImage": True,
 		"StartTier": 2,
 		"EndTier": 2,
         "BlockLogic": "LogicInterfaceBlockLogic",
 		"Description": []
 	},{
 		"Name": "LogicSensor",
+		"ExactName": True,
+		"TieredImage": True,
 		"StartTier": 2,
 		"EndTier": 2,
         "BlockLogic": "LogicSensorBlockLogic",
 		"Description": []
 	},{
 		"Name": "LogicWire",
+		"ExactName": True,
+		"TieredImage": True,
 		"StartTier": 2,
 		"EndTier": 2,
 		"BlockLogic": "DataConductorBlockLogic",
@@ -1146,6 +1152,8 @@ machines = [
 		"Category": "Network",
 	},{
 		"Name": "LogicTransceiver",
+		"ExactName": True,
+		"TieredImage": True,
 		"StartTier": 2,
 		"EndTier": 2,
 		"Description": ["DataInput", "DataOutput"],

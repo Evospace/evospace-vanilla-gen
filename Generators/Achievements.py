@@ -116,9 +116,9 @@ ach = [
         "Description": FirstItemAcq
     },
     {
-        "Name": "SteelLogicInterface",
+        "Name": "LogicInterface",
         "Steam": True,
-        "Label": machine_label("Steel", "LogicInterface"),
+        "Label": ["LogicInterface", "machines"],
         "Description": FirstItemAcq
     },
     {

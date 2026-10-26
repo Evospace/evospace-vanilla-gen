@@ -195,7 +195,7 @@ for machine in machines:
 
 		item = { "Class": "StaticItem",
 			"Name": block_name,
-			"Image": ("T_" + image) if "ExactName" in machine else ("T_" + tier_material[tier] + image),
+			"Image": ("T_" + image) if "ExactName" in machine and "TieredImage" not in machine else ("T_" + tier_material[tier] + image),
 			"StackSize": 32,
 			"Label": labelParts,
 			"DescriptionParts": [[machine["Name"], "description"]],
@@ -373,53 +373,53 @@ for machine in machines:
 
 		if machine["Name"] == "LogicWire":
 			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
+				"Name": block_name,
 				"Input": one_item(wire(), 2),
-				"Output": one_item(tier_material[tier] + "LogicWire"),
+				"Output": one_item("LogicWire"),
 				"Ticks" : 20
 			})
 
 		if machine["Name"] == "Button":
 			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
+				"Name": block_name,
 				"Input": items([
 					[plate(), 1],
-					[tier_material[tier] + "LogicWire", 1]
+					["LogicWire", 1]
 				]),
-				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Output": one_item(block_name),
 				"Ticks" : 20
 			})
 
 		if machine["Name"] == "ToggleButton":
 			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
+				"Name": block_name,
 				"Input": items([
 					[plate(), 1],
 					[part(), 1],
-					[tier_material[tier] + "LogicWire", 1]
+					["LogicWire", 1]
 				]),
-				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Output": one_item(block_name),
 				"Ticks" : 20
 			})
 
 		if machine["Name"] == "PressurePlate":
 			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
+				"Name": block_name,
 				"Input": items([
 					[plate(), 2],
-					[tier_material[tier] + "LogicWire", 1]
+					["LogicWire", 1]
 				]),
-				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Output": one_item(block_name),
 				"Ticks" : 20
 			})
 			
 		if machine["Name"] == "LogicInterface":
 			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
+				"Name": block_name,
 				"Input":{
 					"Items":[
 						{
-							"Name": tier_material[tier] + "LogicSensor",
+							"Name": "LogicSensor",
 							"Count": 2
 						},
 						{
@@ -428,13 +428,13 @@ for machine in machines:
 						}
 					]
 				},
-				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Output": one_item(block_name),
 				"Ticks" : 20
 			})
 
 		if machine["Name"] == "LogicDisplay" or machine["Name"] == "LogicController" or machine["Name"] == "LogicSensor" or machine["Name"] == "LogicTransceiver":
 			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
+				"Name": block_name,
 				"Input":{
 					"Items":[
 						plates_count(2),
@@ -443,12 +443,12 @@ for machine in machines:
 							"Count": 1
 						},
 						{
-							"Name": "SteelLogicWire",
+							"Name": "LogicWire",
 							"Count": 1
 						}
 					]
 				},
-				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Output": one_item(block_name),
 				"Ticks" : 20
 			})
 
