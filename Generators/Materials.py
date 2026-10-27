@@ -646,7 +646,7 @@ materials = [
 		"Items": ["Fluid"],
 		"Tier": 0,
 		"Burnable": {
-			"BurnTime": 500 * 15
+			"BurnTime": 1440
 		},
 		"Tier": 4
 	},{
@@ -655,7 +655,7 @@ materials = [
 		"Items": ["Gas"],
 		"Tier": 1,
 		"Burnable": {
-			"BurnTime": 800 * 30
+			"BurnTime": 4600
 		},
 		"Tier": 4
 	},{
@@ -664,7 +664,7 @@ materials = [
 		"Items": ["Fluid"],
 		"Tier": 1,
 		"Burnable": {
-			"BurnTime": 1200 * 30
+			"BurnTime": 6900
 		},
 		"Tier": 4,
 	},{
@@ -673,7 +673,7 @@ materials = [
 		"Items": ["Fluid"],
 		"Tier": 1,
 		"Burnable": {
-			"BurnTime": 2000 * 30
+			"BurnTime": 11560
 		},
 		"Tier": 5
 	},{
@@ -682,7 +682,7 @@ materials = [
 		"Items": ["Fluid"],
 		"Tier": 1,
 		"Burnable": {
-			"BurnTime": 2800 * 30
+			"BurnTime": 16160
 		},
 		"Tier": 6
 	},{
@@ -691,7 +691,7 @@ materials = [
 		"Items": ["Fluid"],
 		"Tier": 1,
 		"Burnable": {
-			"BurnTime": 400 * 30
+			"BurnTime": 2300
 		},
 		"Tier": 4
 	},{
@@ -711,7 +711,7 @@ materials = [
 		"Items": ["Gas"],
 		"Tier": 2,
 		"Burnable": {
-			"BurnTime": 800 * 10
+			"BurnTime": 1560
 		}
 	},
 	{
