@@ -563,6 +563,29 @@ objects_array.append({
 	},
 })
 
+objects_array.append({
+	"Class": "StaticItem",
+	"Name": "RocketPad",
+	"Image": "T_Rocket",
+	"StackSize": 1,
+	"Label": ["RocketPad", "parts"],
+	"ItemLogic": "BuildingSingleBlockItemLogic",
+	"Block": "RocketPad",
+	"Category": "Vehicles",
+	"Tier": 6,
+})
+objects_array.append({
+	"Class": "StaticBlock",
+	"Name": "RocketPad",
+	"Item": "RocketPad",
+	"BlockLogic": "RocketPadBlockLogic",
+	"Actor": block_actor("RocketPad"),
+	"Positions": [[0, 0, 0]] + [[x, y, z] for z in range(7) for x in range(0, -8, -1) for y in range(-4, 4) if [x, y, z] != [0, 0, 0]],
+	"Minable": {
+		"Result": "RocketPad",
+	},
+})
+
 	
 data = {
 	"Objects": objects_array

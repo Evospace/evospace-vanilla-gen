@@ -64,7 +64,7 @@ def append_equipment(xy, append_levels, researches):
 		"Name": "Rocket",
 		"Label": ["Rocket", "parts"],
 		"RequiredResearch": ["FuelChemistry", "CompositePlate"],
-		"Unlocks": [[assembler_r_dict, "Rocket"], [assembler_r_dict, "AntimatterTrap"]],
+		"Unlocks": [[assembler_r_dict, "RocketPad"], [assembler_r_dict, "AntimatterTrap"]],
 		"Levels": [6,6],
 		"CostMul": 3,
 	})

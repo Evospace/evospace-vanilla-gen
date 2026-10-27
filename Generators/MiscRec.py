@@ -761,14 +761,14 @@ recipes_assembler.append({
 })
 
 recipes_assembler.append({
-	"Name":"Rocket",
+	"Name":"RocketPad",
 	"Input": items([
-		["RocketFuel", 150000],
-		["CompositePlate", 60],
-		["TitaniumPlate", 120],
-		["QuantumCircuit", 8],
+		["ReinforcedFrame", 60],
+		["TitaniumPlate", 200],
+		["TitaniumRobotArm", 2],
+		["QuantumCircuit", 16],
 	]),
-	"Output": one_item("Rocket"),
+	"Output": one_item("RocketPad"),
 	"Ticks" : 1200,
 	"Tier": 6,
 })
@@ -2151,6 +2151,24 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": "Portal" + r_dict,
 	"Recipes": recipes_portal
+})
+
+objects_array.append({ "Class": r_dict,
+	"Name": "RocketPadStage" + r_dict,
+	"StartTier": 0,
+	"UsedIn": [{"Item": "RocketPad", "Tier": 0}],
+	"Recipes": [{
+		"Name": "RocketPadStage" + str(stage),
+		"Input": items(bill),
+		"Output": no_items(),
+		"Ticks": ticks,
+	} for stage, (bill, ticks) in enumerate([
+		([["TitaniumPlate", 60], ["TitaniumElectricEngine", 4]], 640),
+		([["TitaniumPlate", 60], ["QuantumCircuit", 8]], 720),
+		([["ReinforcedFrame", 20]], 720),
+		([["CompositePlate", 60]], 960),
+		([["RocketFuel", 150000]], 640),
+	])],
 })
 
 objects_array.append({ "Class": r_dict,

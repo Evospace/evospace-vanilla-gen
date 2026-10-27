@@ -891,13 +891,6 @@ materials = [
 		"Items": ["Exact"],
 		"Tier": 6,
 	},{
-		"Name": "Rocket",
-		"Category": "Vehicles",
-		"Label": "Rocket",
-		"StackSize": 1,
-		"Items": ["Exact"],
-		"Tier": 6,
-	},{
 		"Name": "ControlCell",
 		"Category": "Nuclear",
 		"Label": "Control Cell",
