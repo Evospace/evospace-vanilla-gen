@@ -101,26 +101,30 @@ recipes_industrial_chemreactor.append({
 
 recipes_fusion_reactor.append({
 	"Name":"HotNeutroniumPlate1",
-	"Input": one_item("SynthesisCell", 2),
-	"Output": items([
-		["HotNeutroniumPlate"],
-		["Cell"],
+	"Input": items([
+		["SynthesisCell", 50],
+		["AntimatterTrap", 1],
 	]),
-	"Ticks" : 400,
+	"Output": items([
+		["HotNeutroniumPlate", 25],
+		["Cell", 25],
+	]),
+	"Ticks" : 10000,
 	"Tier": 6
 })
 
 recipes_fusion_reactor.append({
 	"Name":"HotNeutroniumPlate2",
 	"Input": items([
-		["SynthesisCell", 1],
+		["SynthesisCell", 25],
+		["AntimatterTrap", 1],
 		["UltimateCatalyst", 1, 0],
 	]),
 	"Output": items([
-		["HotNeutroniumPlate"],
-		["Cell"],
+		["HotNeutroniumPlate", 25],
+		["Cell", 25],
 	]),
-	"Ticks" : 350,
+	"Ticks" : 8750,
 	"Tier": 6
 })
 
@@ -776,7 +780,7 @@ recipes_assembler.append({
 recipes_assembler.append({
 	"Name":"AntimatterTrap",
 	"Input": items([
-		["CopperPlate", 3000],
+		["AdvancedCoil", 120],
 		["PowerCoil", 20],
 	]),
 	"Output": one_item("AntimatterTrap"),
@@ -2166,8 +2170,8 @@ objects_array.append({ "Class": r_dict,
 		([["TitaniumPlate", 60], ["TitaniumElectricEngine", 4]], 640),
 		([["TitaniumPlate", 60], ["QuantumCircuit", 8]], 720),
 		([["ReinforcedFrame", 20]], 720),
-		([["CompositePlate", 60]], 960),
-		([["RocketFuel", 150000]], 640),
+		([["CompositePlate", 30]], 960),
+		([["RocketFuel", 75000]], 640),
 	])],
 })
 
@@ -2188,7 +2192,7 @@ objects_array.append({ "Class": r_dict,
 		[["AdvancedCoil", 90], ["StainlessSteelPlate", 300]],
 		[["PowerCoil", 120], ["QuantumCircuit", 120], ["Nitrogen", 75000]],
 		[["PlatinumReflector", 400], ["CompositePlate", 400], ["QuantumBrain", 32]],
-		[["NeutroniumPlate", 120], ["UltimateCatalyst", 12]],
+		[["NeutroniumPlate", 120], ["AntimatterTrap", 6]],
 		[["ReinforcedFrame", 2250], ["TitaniumPlate", 3000], ["NeutroniumPlate", 120]],
 	])],
 })
