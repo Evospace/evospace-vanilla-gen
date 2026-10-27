@@ -1527,6 +1527,17 @@ append_levels({
 	 "MainResearch": True,
 	 "CostMul": 2
  })
+for tier in range(8):
+	append_levels({
+		"Class": "StaticResearchMilestone",
+		"Name": "PortalTier" + str(tier),
+		"Label": ["machines_label_format", "common", [tier_material[tier], "common"], ["Portal", "machines"]],
+		"DescriptionParts": [["Portal", "description"]],
+		"Image": "T_Portal",
+		"Recipe": ["PortalStage" + r_dict, "PortalStage" + str(tier)],
+		"Levels": [tier, tier],
+		"CostExact": 0,
+	})
 append_levels({
 	"Class": research_recipe,
 	"Name": "FissionReactor",
@@ -1887,7 +1898,7 @@ def add_ingredient_required_research(research_entries):
 		name = research["Name"]
 		required = research.setdefault("RequiredResearch", [])
 		reached = ancestors_of(name) | {name}
-		for unlock in research.get("Unlocks", []):
+		for unlock in research.get("Unlocks", []) + ([research["Recipe"]] if "Recipe" in research else []):
 			entry = recipes.get(unlock_key(unlock))
 			if not entry:
 				continue
