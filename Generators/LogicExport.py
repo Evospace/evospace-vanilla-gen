@@ -80,6 +80,30 @@ logic_exports = [
         "Tooltip": ["InactivityTooltip", "logic_export"]
     },
     {
+        "Name": "SignalStop",
+        "UseSignal": True,
+        "Signal": "R",
+        "Enabled": True,
+        "Label": ["SignalStop", "logic_export"],
+        "Tooltip": ["SignalStopTooltip", "logic_export"]
+    },
+    {
+        "Name": "SignalCaution",
+        "UseSignal": True,
+        "Signal": "Y",
+        "Enabled": True,
+        "Label": ["SignalCaution", "logic_export"],
+        "Tooltip": ["SignalCautionTooltip", "logic_export"]
+    },
+    {
+        "Name": "SignalGo",
+        "UseSignal": True,
+        "Signal": "G",
+        "Enabled": True,
+        "Label": ["SignalGo", "logic_export"],
+        "Tooltip": ["SignalGoTooltip", "logic_export"]
+    },
+    {
         "Name": "Pressed",
         "UseSignal": True,
         "Signal": "B",

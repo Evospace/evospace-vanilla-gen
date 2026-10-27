@@ -427,6 +427,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 1,
 		"BlockLogic": "RailNodeBlockLogic",
+		"LogicExports": ["SignalStop", "SignalCaution", "SignalGo"],
 		"LogicImports": ["Working"],
 		"NoActorRenderable": True,
 		"CoverParts": [
