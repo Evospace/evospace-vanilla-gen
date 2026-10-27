@@ -452,6 +452,13 @@ images.append({
 	})
 	
 images.append({
+		"Base": "T_" + "ControlCell",
+		"NewName": "T_" + "AntimatterTrap",
+		"MulMask": "T_Material" + "Copper",
+		"AddMask": "T_BlueCircle" + additive_ico,
+	})
+
+images.append({
 		"Base": "T_" + "JetpackBase",
 		"NewName": "T_" + "Jetpack",
 		"MulMask": "T_Material" + "Aluminium",

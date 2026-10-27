@@ -884,6 +884,20 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 	},{
+		"Name": "AntimatterTrap",
+		"Category": "Parts",
+		"Label": "Antimatter Trap",
+		"StackSize": 32,
+		"Items": ["Exact"],
+		"Tier": 6,
+	},{
+		"Name": "Rocket",
+		"Category": "Vehicles",
+		"Label": "Rocket",
+		"StackSize": 1,
+		"Items": ["Exact"],
+		"Tier": 6,
+	},{
 		"Name": "ControlCell",
 		"Category": "Nuclear",
 		"Label": "Control Cell",

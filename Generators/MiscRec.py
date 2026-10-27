@@ -761,6 +761,30 @@ recipes_assembler.append({
 })
 
 recipes_assembler.append({
+	"Name":"Rocket",
+	"Input": items([
+		["RocketFuel", 150000],
+		["CompositePlate", 60],
+		["TitaniumPlate", 120],
+		["QuantumCircuit", 8],
+	]),
+	"Output": one_item("Rocket"),
+	"Ticks" : 1200,
+	"Tier": 6,
+})
+
+recipes_assembler.append({
+	"Name":"AntimatterTrap",
+	"Input": items([
+		["CopperPlate", 3000],
+		["PowerCoil", 20],
+	]),
+	"Output": one_item("AntimatterTrap"),
+	"Ticks" : 400,
+	"Tier": 6,
+})
+
+recipes_assembler.append({
 	"Name":"CompositePlate",
 	"Input": items([
 		["TitaniumPlate", 1],
