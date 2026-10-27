@@ -2171,6 +2171,7 @@ objects_array.append({ "Class": r_dict,
 		[["PowerCoil", 120], ["QuantumCircuit", 120], ["Nitrogen", 75000]],
 		[["PlatinumReflector", 400], ["CompositePlate", 400], ["QuantumBrain", 32]],
 		[["NeutroniumPlate", 120], ["UltimateCatalyst", 12]],
+		[["ReinforcedFrame", 2250], ["TitaniumPlate", 3000], ["NeutroniumPlate", 120]],
 	])],
 })
 
