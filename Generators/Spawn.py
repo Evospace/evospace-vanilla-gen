@@ -18,6 +18,10 @@ data = {
 					{
 						"Name": "BuildingMaterial",
 						"Count": 1000
+					},
+					{
+						"Name": "Portal",
+						"Count": 1
 					}
 				]
 			},

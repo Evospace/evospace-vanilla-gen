@@ -532,6 +532,30 @@ objects_array.append({
 	},
 })
 
+objects_array.append({
+	"Class": "StaticItem",
+	"Name": "Portal",
+	"Image": "T_Portal",
+	"StackSize": 1,
+	"Label": ["Portal", "machines"],
+	"DescriptionParts": [["Portal", "description"]],
+	"ItemLogic": "BuildingSingleBlockItemLogic",
+	"Block": "Portal",
+	"Category": "Stone",
+	"Tier": 0,
+})
+objects_array.append({
+	"Class": "StaticBlock",
+	"Name": "Portal",
+	"Item": "Portal",
+	"BlockLogic": "PortalProjectBlockLogic",
+	"Actor": "Blocks/Portal/BP_PortalProject.BP_PortalProject_C",
+	"Positions": [[0, 0, 0]] + [[x, y, z] for z in range(7) for x in range(0, -8, -1) for y in range(-4, 4) if [x, y, z] != [0, 0, 0]],
+	"Minable": {
+		"Result": "Portal",
+	},
+})
+
 	
 data = {
 	"Objects": objects_array

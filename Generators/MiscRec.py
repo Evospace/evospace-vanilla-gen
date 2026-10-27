@@ -2130,6 +2130,27 @@ objects_array.append({ "Class": r_dict,
 })
 
 objects_array.append({ "Class": r_dict,
+	"Name": "PortalStage" + r_dict,
+	"StartTier": 0,
+	"UsedIn": [{"Item": "Portal", "Tier": 0}],
+	"Recipes": [{
+		"Name": "PortalStage" + str(tier),
+		"Input": items(stage),
+		"Output": no_items(),
+		"Ticks": 1,
+	} for tier, stage in enumerate([
+		[["BuildingMaterial", 300], ["StoneSurface", 100]],
+		[["CopperPlate", 200], ["CopperWire", 300], ["CopperParts", 80], ["Water", 10000]],
+		[["SteelPlate", 250], ["SteelParts", 120], ["BuildingMaterial", 500], ["Water", 20000]],
+		[["AluminiumPlate", 300], ["AluminiumParts", 150], ["BasicFrame", 40], ["Circuit", 60], ["Ethylene", 20000]],
+		[["StainlessSteelPlate", 300], ["StainlessSteelParts", 150], ["ReinforcedFrame", 40], ["AdvancedCircuit", 60], ["Oxygen", 20000]],
+		[["TitaniumPlate", 300], ["TitaniumParts", 150], ["ReinforcedFrame", 80], ["Processor", 40], ["TitaniumTetrachloride", 20000]],
+		[["CompositePlate", 300], ["CompositeParts", 150], ["ModularFrame", 40], ["QuantumCircuit", 40], ["CarbonPrecursor", 20000]],
+		[["NeutroniumPlate", 300], ["NeutroniumParts", 150], ["ModularFrame", 80], ["QuantumBrain", 10], ["UltimateCatalyst", 10], ["Superfuel", 30000]],
+	])],
+})
+
+objects_array.append({ "Class": r_dict,
 	"Name": "ChemicalBath" + r_dict,
 	"Recipes": recipes_chemical_bath
 })
