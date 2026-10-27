@@ -719,6 +719,7 @@ machines = [
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "LampBlockLogic",
+		"LogicImports": ["Working", "SpotlightColorR", "SpotlightColorG", "SpotlightColorB"],
 	},{
 		"Name": "AdminElectricGenerator",
 		"StartTier": 7,
