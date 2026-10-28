@@ -8,20 +8,20 @@ parts = [
 		"Label": "Parts",
 		"Name": "Parts",
 		"StackSize": 64,
-		"Mesh":"/Game/Models/PartsCrate",
+		"Meshes":["/Game/Models/PartsCrate"],
 		"Materials":["/Game/Materials/Pine","/Game/Materials/%Material%"],
 	},{
 		"Label": "Solar Cell",
 		"Name": "SolarCell",
 		"StackSize": 32,
-		"Mesh": "/Game/Models/ingot",
+		"Meshes": ["/Game/Models/ingot"],
 		"Materials": ["", "/Game/CoreContent/solar"]
 	},{
 		"Label": "Alternator",
 		"Name": "Alternator",
 		"Composed": True,
 		"StackSize": 16,
-		"Mesh":"/Game/Models/PartsCrate",
+		"Meshes":["/Game/Models/PartsCrate"],
 		"Materials":["/Game/Materials/Copper","/Game/Materials/%Material%"],
 	},{
 		"Label": "Sheet",

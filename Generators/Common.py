@@ -30,6 +30,8 @@ def round_25(x):
 def write_file(filename, data):
 	generated_files[filename] = data
 
+plate_meshes = ["/Game/Models/Plate" + str(i) for i in range(1, 11)]
+
 def block_actor(name):
 	return "Blocks/" + name + "/BP_" + name + ".BP_" + name + "_C"
 

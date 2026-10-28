@@ -49,12 +49,14 @@ def generate_part(name, material_dict, tier_override=None):
 		"Materials" : [
 			"/Game/Materials/" + material
 		],
-		"Mesh": "/Game/Models/"+name+"Crate",
+		"Meshes": ["/Game/Models/"+name+"Crate"],
+		"ConveyorStack": 1,
 		"Tier": tier,
 		"Category": "Parts",
 	}
-	if "Mesh" in part:
-		item["Mesh"] = part["Mesh"]
+	if "Meshes" in part:
+		item["Meshes"] = part["Meshes"]
+		item["ConveyorStack"] = len(part["Meshes"])
 
 	if "ItemLogic" in part:
 		item["ItemLogic"] = part["ItemLogic"]
@@ -256,8 +258,9 @@ for material in materials:
 		if "StackSize" in material:
 			item["StackSize"] = material["StackSize"]
 			
-		if "Mesh" in material:
-			item["Mesh"] = material["Mesh"]
+		if "Meshes" in material:
+			item["Meshes"] = material["Meshes"]
+			item["ConveyorStack"] = len(material["Meshes"])
 			item["Materials"] =	[
 				"/Game/Materials/" + material["Name"]
 			]
@@ -299,7 +302,8 @@ for material in materials:
 			"Name": material["Name"] + "Plate",
 			"Image": "T_" + material["Name"] + "Plate",
 			"StackSize": 128,
-			"Mesh": "/Game/Models/Ingot",
+			"Meshes": plate_meshes,
+			"ConveyorStack": len(plate_meshes),
 			"Materials": [
 				"",
 				"/Game/Materials/" + material["Name"]
@@ -487,7 +491,8 @@ for material in materials:
 			"StackSize": 64,
 			
 			"Label": [material["Name"] + "Dust", "parts"],
-			"Mesh": "/Game/Models/DustCrate",
+			"Meshes": ["/Game/Models/DustCrate"],
+			"ConveyorStack": 1,
 			"Materials": [
 				"",
 				"/Game/Materials/" + material["Name"] + "Dust"

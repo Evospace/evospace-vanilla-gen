@@ -182,7 +182,8 @@ for ore_type in ore_types:
 	
 	item = { "Class": "StaticItem",
 		"Name": item_name,
-		"Mesh": "/Game/Models/OreCrate",
+		"Meshes": ["/Game/Models/OreCrate"],
+		"ConveyorStack": 1,
 		"Image": "T_" + ore_type["Name"] + "Ore",
 		"StackSize": 64, 
 		"Category": "Ore",
@@ -220,7 +221,8 @@ for ore_type in ore_types:
 		# impure gravel		
 		item = { "Class": "StaticItem",
 			"Name": ore_type["Name"] + "OreImpureGravel",
-			"Mesh": "/Game/Models/Gravel",
+			"Meshes": ["/Game/Models/Gravel"],
+			"ConveyorStack": 1,
 			"Image": "T_" + ore_type["Name"] + "OreImpureGravel",
 			"StackSize": 64, 
 			"Materials" : [
@@ -243,7 +245,8 @@ for ore_type in ore_types:
 		# gravel
 		item = { "Class": "StaticItem",
 			"Name": ore_type["Name"] + "OreGravel",
-			"Mesh": "/Game/Models/Gravel",
+			"Meshes": ["/Game/Models/Gravel"],
+			"ConveyorStack": 1,
 			"Image": "T_" + ore_type["Name"] + "OreGravel",
 			"StackSize": 64,
 			"Materials" : [
@@ -266,7 +269,8 @@ for ore_type in ore_types:
 		# impure dust
 		item = { "Class": "StaticItem",
 			"Name": ore_type["Name"] + "OreDust",
-			"Mesh": "/Game/Models/DustCrate",
+			"Meshes": ["/Game/Models/DustCrate"],
+			"ConveyorStack": 1,
 			"Image": "T_" + ore_type["Name"] + "OreDust",
 			"StackSize": 64,
 			"Category": "Ore",
@@ -290,7 +294,8 @@ for ore_type in ore_types:
 		# dust
 		item = { "Class": "StaticItem",
 			"Name": ore_type["Name"] + "Dust",
-			"Mesh": "/Game/Models/DustCrate",
+			"Meshes": ["/Game/Models/DustCrate"],
+			"ConveyorStack": 1,
 			"Image": "T_" + ore_type["Name"] + "Dust",
 			"StackSize": 64,
 			"Category": "Ore",
@@ -321,7 +326,8 @@ for ore_type in ore_types:
 				"Category": "Ore",
 				"Label": [ore_type["Name"]+"Crystal", "ores"],
 				"DescriptionParts": description,
-				"Mesh": "/Game/Models/CrystalCrate",
+				"Meshes": ["/Game/Models/CrystalCrate"],
+				"ConveyorStack": 1,
 				"Color": ore_type["ItemColor"],
 				"Materials" : [
 					"",

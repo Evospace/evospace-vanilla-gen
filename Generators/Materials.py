@@ -113,7 +113,7 @@ materials = [
 		"Label": "Basic Frame",
 		"Items": ["Exact"],
 		"Tier": 2,
-		"Mesh": "/Game/Models/FrameCrate",
+		"Meshes": ["/Game/Models/FrameCrate"],
 		"Materials": ["", ""],
 		"Category": "Parts",
 	},{
@@ -121,7 +121,7 @@ materials = [
 		"Label": "Reinforced Frame",
 		"Items": ["Exact"],
 		"Tier": 3,
-		"Mesh": "/Game/Models/FrameCrate",
+		"Meshes": ["/Game/Models/FrameCrate"],
 		"Materials": ["", "/Game/Materials/BlackSteel"],
 		"Category": "Parts",
 	},{
@@ -129,7 +129,7 @@ materials = [
 		"Label": "Modular Frame",
 		"Items": ["Exact"],
 		"Tier": 4,
-		"Mesh": "/Game/Models/FrameCrate",
+		"Meshes": ["/Game/Models/FrameCrate"],
 		"Materials": ["", "/Game/Materials/StainlessSteel"],
 		"Category": "Parts",
 	},{
@@ -177,7 +177,7 @@ materials = [
 		"Name": "CircuitBoard",
 		"Label": "Circuit Board",
 		"Items": ["Exact"],
-		"Mesh":"/Game/Models/BoardCrate",
+		"Meshes":["/Game/Models/BoardCrate"],
 		"Materials":["/Game/Materials/Plastic"],
 		"Tier": 1,
 		"Category": "Parts",
@@ -185,14 +185,14 @@ materials = [
 		"Name": "Triod",
 		"Label": "Triod",
 		"Items": ["Exact"],
-		"Mesh":"/Game/Models/TriodeCrate",
+		"Meshes":["/Game/Models/TriodeCrate"],
 		"Tier": 1,
 		"Category": "Parts",
 	},{
 		"Name": "Resistor",
 		"Label": "Resistor",
 		"Items": ["Exact"],
-		"Mesh":"/Game/Models/ResistorCrate",
+		"Meshes":["/Game/Models/ResistorCrate"],
 		"Materials":[],
 		"Tier": 1,
 		"Category": "Parts",
@@ -200,7 +200,7 @@ materials = [
 		"Name": "Transistor",
 		"Label": "Transistor",
 		"Items": ["Exact"],
-		"Mesh":"/Game/Models/TransistorCrate",
+		"Meshes":["/Game/Models/TransistorCrate"],
 		"Tier": 1,
 		"Category": "Parts",
 	},{
@@ -243,7 +243,7 @@ materials = [
 		"Label": "Titanium Sponge",
 		"Smelting": [],
 		"Items": ["Exact"],		
-		"Mesh":"/Game/Models/SpongeCrate",
+		"Meshes":["/Game/Models/SpongeCrate"],
         "Materials":["", "/Game/Materials/TitaniumOreGravel"],
 		"Tier": 4,
 	},{
@@ -263,7 +263,7 @@ materials = [
 		"Smelting": [],
 		"Items": ["Exact"],
 		"Tier": 6,
-        "Mesh":"/Game/Models/Ingot",
+        "Meshes": plate_meshes,
         "Materials":["", "/Game/Materials/VeryHotMetal"],
 	},{
 		"Name": "Stone",
@@ -286,7 +286,7 @@ materials = [
 			"BurnTime": 600
 		},
 		"Items": ["Exact"],
-		"Mesh": "/Game/Models/DustCrate",
+		"Meshes": ["/Game/Models/DustCrate"],
 		"Materials": ["", "/Game/Materials/Sulfur"],
 		"Tier": 1,
 	},{
@@ -320,7 +320,7 @@ materials = [
 		"Items": ["Exact"],
 		"StackSize": 32,
 		"Description":[["NuclearFuel", "common"]],
-		"Mesh": "/Game/Models/CellCrate",
+		"Meshes": ["/Game/Models/CellCrate"],
 	},{
 		"Name": "UraniumCell",
 		"Category": "Nuclear",
@@ -329,7 +329,7 @@ materials = [
 		"Items": ["Exact"],
 		"StackSize": 32,
 		"Description":[["NuclearFuel", "common"], ["Burnable", "common", uranium_rod_output() * 20]],
-		"Mesh": "/Game/Models/CellCrate",
+		"Meshes": ["/Game/Models/CellCrate"],
 	},{
 		"Name": "PlutoniumCell",
 		"Category": "Nuclear",
@@ -338,7 +338,7 @@ materials = [
 		"Items": ["Exact"],
 		"StackSize": 32,
 		"Description":[["NuclearFuel", "common"]],
-		"Mesh": "/Game/Models/CellCrate",
+		"Meshes": ["/Game/Models/CellCrate"],
 	},{
 		"Name": "DepletedUraniumCell",
 		"Category": "Nuclear",
@@ -347,7 +347,7 @@ materials = [
 		"Items": ["Exact"],
 		"StackSize": 32,
 		"Description":[["NuclearFuel", "common"]],
-		"Mesh": "/Game/Models/CellCrate",
+		"Meshes": ["/Game/Models/CellCrate"],
 	},{
 		"Name": "Thorium",
 		"Label": "Thorium",
@@ -375,7 +375,7 @@ materials = [
 			"BurnTime": 600
 		},
 		"Tier": 0,
-		"Mesh": "/Game/Models/Piece"
+		"Meshes": ["/Game/Models/Piece"]
 	},{
 		"Name": "Coal",
 		"Category": "Organic",
@@ -386,7 +386,7 @@ materials = [
 		},
 		"Tier": 0,
 		"StackSize": 64,
-		"Mesh": "/Game/Models/Piece",
+		"Meshes": ["/Game/Models/Piece"],
 		"Tier": 0,
 	},{
 		"Name": "Coke",
@@ -397,7 +397,7 @@ materials = [
 		"Burnable": {
 			"BurnTime": 1200
 		},
-		"Mesh": "/Game/Models/Piece",
+		"Meshes": ["/Game/Models/Piece"],
 		"Tier": 1,
 	},{
 		"Name": "Creosote",
@@ -407,7 +407,7 @@ materials = [
 			"BurnTime": 800
 		},
 		"Tier": 0,
-		"Mesh": "/Game/Models/Piece",
+		"Meshes": ["/Game/Models/Piece"],
 		"Tier": 1,
 	},{
 		"Name": "ProducerGas",
@@ -488,7 +488,7 @@ materials = [
 		"Name": "Glass",
 		"Category": "Parts",
 		"Label": "Glass",
-		"Mesh": "/Game/Models/GlassCrate",
+		"Meshes": ["/Game/Models/GlassCrate"],
 		"Materials":["", ""],
 		"Items": ["Exact"],
 		"Tier": 0,
@@ -504,7 +504,7 @@ materials = [
 		"Label": "Organics",
 		"Items": ["Exact"],
 		"Tier": 0,
-		"Mesh": "/Game/Models/Piece",
+		"Meshes": ["/Game/Models/Piece"],
 		"Description":[["Organics","common"]],
 		"Burnable": {
 			"BurnTime": 60
@@ -527,7 +527,7 @@ materials = [
 		"Category": "Chemical",
 		"Label": "Rare Earth Sludge",
 		"Items": ["Exact"],
-		"Mesh":"/Game/Models/SpongeCrate",
+		"Meshes":["/Game/Models/SpongeCrate"],
         "Materials":["/Game/Materials/GreenPlastic", "/Game/Materials/RareEarthElement"],
 	},{
 		"Name": "Yttrium",
@@ -547,7 +547,7 @@ materials = [
 		"Label": "Tantalum Sludge",
 		"Items": ["Exact"],
 		"Tier": 6,
-		"Mesh":"/Game/Models/SpongeCrate",
+		"Meshes":["/Game/Models/SpongeCrate"],
         "Materials":["/Game/Materials/GreenPlastic", "/Game/Materials/Tantalum"],
 	},{
 		"Name": "TantalumSolution",
@@ -564,14 +564,14 @@ materials = [
 		"Burnable": {
 			"BurnTime": 200
 		},
-		"Mesh":"/Game/Models/LogCrate",
+		"Meshes":["/Game/Models/LogCrate"],
 	},{
 		"Name": "SiliconOxide",
 		"Category": "Chemical",
 		"Label": "Silicon Oxide",
 		"Items": ["Exact"],
 		"Tier": 1,
-		"Mesh": "/Game/Models/CrystalCrate",
+		"Meshes": ["/Game/Models/CrystalCrate"],
 		"Materials" : [
 			"",
 			"/Game/Materials/SiliconOxide"
@@ -582,7 +582,7 @@ materials = [
 		"Label": "Silicon",
 		"Items": ["Exact"],
 		"Tier": 3,
-		"Mesh": "/Game/Models/CrystalCrate",
+		"Meshes": ["/Game/Models/CrystalCrate"],
 		"Materials" : [
 			"",
 			"/Game/Materials/Silicon"
@@ -605,21 +605,21 @@ materials = [
 		"Label": "Silicon Wafer",
 		"Items": ["Exact"],
 		"Tier": 4,
-		"Mesh": "/Game/Models/WaferCrate",
+		"Meshes": ["/Game/Models/WaferCrate"],
 	},{
 		"Name": "DopedSiliconWafer",
 		"Category": "Parts",
 		"Label": "Doped Silicon Wafer",
 		"Items": ["Exact"],
 		"Tier": 5,
-		"Mesh": "/Game/Models/WaferCrate",
+		"Meshes": ["/Game/Models/WaferCrate"],
 		"Materials": ["", "/Game/Materials/GrayMirror"]
 	},{
 		"Name": "Capacitor",
 		"Label": "Capacitor",
 		"Items": ["Exact"],
 		"Tier": 3,
-		"Mesh":"/Game/Models/CapacitorCrate",
+		"Meshes":["/Game/Models/CapacitorCrate"],
 		"Category": "Parts",
 	},{
 		"Name": "Rapeseed",
@@ -765,7 +765,7 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Circuit": True,
-		"Mesh": "/Game/Models/CircuitCrate",
+		"Meshes": ["/Game/Models/CircuitCrate"],
 		"Tier": 1,
 	},{
 		"Name": "AdvancedCircuit",
@@ -774,7 +774,7 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Circuit": True,
-		"Mesh": "/Game/Models/Circuit2Crate",
+		"Meshes": ["/Game/Models/Circuit2Crate"],
 		"Tier": 2,
 	},{
 		"Name": "Processor",
@@ -783,7 +783,7 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Circuit": True,
-		"Mesh": "/Game/Models/Circuit3Crate",
+		"Meshes": ["/Game/Models/Circuit3Crate"],
 		"Tier": 3,
 	},{
 		"Name": "QuantumCircuit",
@@ -792,7 +792,7 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Circuit": True,
-		"Mesh": "/Game/Models/QuantumCircuitCrate",
+		"Meshes": ["/Game/Models/QuantumCircuitCrate"],
 		"Tier": 4,
 	},{
 		"Name": "QuantumProcessor",
@@ -801,7 +801,7 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Circuit": True,
-		"Mesh": "/Game/Models/Circuit3Crate",
+		"Meshes": ["/Game/Models/Circuit3Crate"],
 		"Tier": 5,
 	},{
 		"Name": "StorageCore",
@@ -809,7 +809,7 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Category": "Parts",
-		"Mesh": "/Game/Models/QuantumCoreCrate",
+		"Meshes": ["/Game/Models/QuantumCoreCrate"],
 		"Tier": 4,
 	},{
 		"Name": "QuantumCore",
@@ -817,7 +817,7 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Category": "Parts",
-		"Mesh": "/Game/Models/QuantumCoreCrate",
+		"Meshes": ["/Game/Models/QuantumCoreCrate"],
 		"Tier": 4,
 	},{
 		"Name": "DecisionResonator",
@@ -825,7 +825,7 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Category": "Parts",
-		"Mesh": "/Game/Models/QuantumCoreCrate",
+		"Meshes": ["/Game/Models/QuantumCoreCrate"],
 		"Materials": ["/Game/Materials/BlackSteel", "/Game/Materials/ArrowWhite"],
 		"Tier": 5,
 	},{
@@ -834,7 +834,7 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Category": "Parts",
-		"Mesh": "/Game/Models/QuantumCoreCrate",
+		"Meshes": ["/Game/Models/QuantumCoreCrate"],
 		"Tier": 6,
 	},{
 		"Name": "QuantumBrain",
@@ -843,7 +843,7 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Circuit": True,
-		"Mesh": "/Game/Models/Circuit3Crate",
+		"Meshes": ["/Game/Models/Circuit3Crate"],
 		"Tier": 6,
 	},{
 		"Name": "Cell",
@@ -852,7 +852,7 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Tier": 3,
-		"Mesh": "/Game/Models/CellCrate",
+		"Meshes": ["/Game/Models/CellCrate"],
 	},{
 		"Name": "SynthesisCell",
 		"Label": "Synthesis Cell",
@@ -860,7 +860,7 @@ materials = [
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Tier": 6,
-		"Mesh": "/Game/Models/CellCrate",
+		"Meshes": ["/Game/Models/CellCrate"],
 	},{
 		"Name": "Catalyst",
 		"Category": "Chemical",
@@ -868,7 +868,7 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Tier": 3,
-		"Mesh": "/Game/Models/CellCrate",
+		"Meshes": ["/Game/Models/CellCrate"],
 	},{
 		"Name": "UltimateCatalyst",
 		"Category": "Chemical",
@@ -876,7 +876,7 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Tier": 7,
-		"Mesh": "/Game/Models/CellCrate",
+		"Meshes": ["/Game/Models/CellCrate"],
 	},{
 		"Name": "MothershipPing",
 		"Category": "Resource",
@@ -896,28 +896,28 @@ materials = [
 		"Label": "Control Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
-		"Mesh": "/Game/Models/CellCrate",
+		"Meshes": ["/Game/Models/CellCrate"],
 	},{
 		"Name": "ReflectorCell",
 		"Category": "Nuclear",
 		"Label": "Reflector Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
-		"Mesh": "/Game/Models/CellCrate",
+		"Meshes": ["/Game/Models/CellCrate"],
 	},{
 		"Name": "ThoriumCell",
 		"Category": "Nuclear",
 		"Label": "Thorium Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
-		"Mesh": "/Game/Models/CellCrate",
+		"Meshes": ["/Game/Models/CellCrate"],
 	},{
 		"Name": "MixedOxideCell",
 		"Category": "Nuclear",
 		"Label": "Mixed-Oxide Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
-		"Mesh": "/Game/Models/CellCrate",
+		"Meshes": ["/Game/Models/CellCrate"],
 	},{
 		"Name": "Mercury",
 		"Label": "Mercury",
