@@ -504,7 +504,7 @@ recipes_hand.append({
 	"Name":"QuantumProcessor",
 	"Input": items([
 		["QuantumCircuit", 3],
-		["DecisionResonator", 6],
+		["DecisionResonator", 3],
 		["Capacitor", 6]
 	]),
 	"Output": one_item("QuantumProcessor"),
@@ -516,7 +516,7 @@ recipes_assembler.append({
 	"Name":"QuantumProcessor2",
 	"Input": items([
 		["QuantumCircuit", 2],
-		["DecisionResonator", 6],
+		["DecisionResonator", 3],
 		["Capacitor", 6],
 		["Transistor", 6]
 	]),
@@ -848,7 +848,7 @@ recipes_hand.append({
 recipes_hand.append({
 	"Name":"DecisionResonator",
 	"Input": items([
-		["StainlessSteelParts", 4],
+		["StainlessSteelParts", 2],
 		["MicaFlakes"]
 	]),
 	"Output": one_item("DecisionResonator"),

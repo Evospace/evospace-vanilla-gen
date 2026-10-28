@@ -30,7 +30,7 @@ for ore_type in ore_types:
 			]),
 			"Ticks": 100,
 			"Tier": max(1, material_tier),
-			"Productivity": 50,
+			"Productivity": 25,
 		})
 
 		# Macerator
@@ -43,7 +43,7 @@ for ore_type in ore_types:
 					[processing["Macerator"], 1, True],
 				]),
 				"Ticks" : 132,
-				"Productivity": 50,
+				"Productivity": 25,
 				"Tier": material_tier,
 			})
 			recipes_mac.append({
@@ -79,7 +79,7 @@ for ore_type in ore_types:
 			"Output": items(washer_out),
 			"Ticks" : 200,
 			"Tier": material_tier,
-			"Productivity": 50
+			"Productivity": 25
 		})
 			
 		# Industrial Separator
@@ -167,7 +167,7 @@ for family in ore_families():
 		]),
 		"Ticks" : 240,
 		"Tier": family["Tier"],
-		"Productivity": 50,
+		"Productivity": 25,
 	})
 	if family["DustInput"]:
 		recipes_smelt.append({
