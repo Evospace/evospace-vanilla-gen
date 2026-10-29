@@ -4,64 +4,122 @@ import copy
 from NuclearResearches import *
 from EquipmentResearches import *
 from PartsResearchHelper import *
+from Technologies import *
 
 researches = []
+technologies = {}
+replaced_levels = {}
+bonus_slots = 11
+
+def level_cost(research_base, i, this_level):
+	cost_mul = research_base.get("CostMul", 1)
+	if isinstance(cost_mul, list):
+		cost_mul = cost_mul[this_level]
+	elif "CostMuls" in research_base:
+		cost_mul = research_base["CostMuls"][this_level]
+	return research_base.get("CostExact", tiers_base_cost[i] * cost_mul)
+
+def level_unlocks(research_base, i):
+	return [[j[0], j[1].replace("%Material%", tier_material[i])] for j in research_base.get("Unlocks", [])]
+
+def technology_entry(name):
+	return technologies.setdefault(name, {"Complexity": 0, "Replaces": [], "BonusSlots": 0})
 
 def append_levels(research_base):
 	mini, maxi = 0, 1
 	if "Levels" in research_base:
 		mini, maxi = research_base["Levels"][0], research_base["Levels"][1] + 1
 
-	for i in range(mini, maxi):
+	research = copy.deepcopy(research_base)
+	for key in ("RequiredResearchArr", "MainResearchArr", "DecorationsArr", "UnlockFirst", "CostMul", "CostMuls", "CostExact", "CostGrowth"):
+		research.pop(key, None)
+	research.setdefault("RequiredResearch", [])
+	research["RequiredResearch"].extend(research_base.get("RequiredResearchArr", [[]])[0])
+	if research_base.get("MainResearchArr", [False])[0]:
+		research["MainResearch"] = True
+	if "Unlocks" in research_base:
+		research["Unlocks"] = level_unlocks(research_base, mini) + [[j[0], j[1].replace("%Material%", tier_material[mini])] for j in research_base.get("UnlockFirst", [])]
+	if "DecorationsArr" in research_base:
+		research["Decorations"] = list(research_base["DecorationsArr"][0])
+	research.update({
+		"Levels": [mini, mini],
+		"Tier": mini,
+		"Complexity": level_cost(research_base, mini, 0),
+	})
+	if research_base.get("Infinite"):
+		research["Complexities"] = [research["Complexity"]]
+		research["CostGrowth"] = research_base.get("CostGrowth", 2)
+	researches.append(research)
+
+	for i in range(mini + 1, maxi):
 		this_level = i - mini
-		research = copy.deepcopy(research_base)
+		old_name = research_base["Name"] + str(this_level)
+		cost = level_cost(research_base, i, this_level)
+		unlocks = level_unlocks(research_base, i)
+		decorations = list(research_base["DecorationsArr"][this_level]) if "DecorationsArr" in research_base else []
+		inventory = research_base["Class"] == "StaticResearchBonusInventory"
 
-		research.setdefault("RequiredResearch", [])
+		if research_base.get("Infinite"):
+			research["Complexities"].append(cost)
+			research.setdefault("Replaces", []).append(old_name)
+			replaced_levels[old_name] = [research["Name"]]
+			continue
 
-		if i != mini:
-			research.update({
-				"IsUpgrade": True,
-				"MainResearch": False,
-				"Name": research["Name"] + str(this_level),
-				"RequiredResearch": [research_base["Name"] + str(this_level - 1)] if i != mini + 1 else [research_base["Name"]],
-			})
+		if i == 1:
+			research.setdefault("Unlocks", []).extend(unlocks)
+			if decorations:
+				research.setdefault("Decorations", []).extend(decorations)
+			if inventory:
+				research["BonusSlots"] = research.get("BonusSlots", bonus_slots) + bonus_slots
+			research["Complexity"] += cost
+			replaced_levels[old_name] = [research["Name"]]
+			continue
 
-		if "RequiredResearchArr" in research and len(research["RequiredResearchArr"]) > this_level:
-			research["RequiredResearch"].extend(research["RequiredResearchArr"][this_level])
+		technology = technology_for(research_base["Name"], i)
+		entry = technology_entry(technology)
+		entry["Complexity"] += cost
+		entry["Replaces"].append(old_name)
+		if inventory:
+			entry["BonusSlots"] += bonus_slots
+		version = {"Technology": technology}
+		if unlocks:
+			version["Unlocks"] = unlocks
+		if decorations:
+			version["Decorations"] = decorations
+		if len(version) > 1:
+			research.setdefault("Versions", []).append(version)
+		replaced_levels[old_name] = [research["Name"], technology]
 
-		if research.get("MainResearchArr", [False]*maxi)[this_level]:
-			research["MainResearch"] = True
+def append_technologies():
+	for line, entries in technology_lines.items():
+		for tier, name in entries:
+			if name not in technologies:
+				raise Exception(f"Technologies: {name} opens no machine version")
+			entry = technologies[name]
+			previous = technology_previous(name)
+			technology = {
+				"Class": "StaticResearchTechnology",
+				"Name": name,
+				"Label": [name, "researches"],
+				"RequiredResearch": ([previous] if previous else []) + [technology_metal[tier]],
+				"Levels": [tier, tier],
+				"Tier": tier,
+				"Complexity": entry["Complexity"],
+				"Replaces": entry["Replaces"],
+			}
+			if entry["BonusSlots"]:
+				technology["BonusSlots"] = entry["BonusSlots"]
+			researches.append(technology)
 
-		if "Unlocks" in research:
-			research["Unlocks"] = [
-				[j[0], j[1].replace("%Material%", tier_material[i])]
-				for j in research["Unlocks"]
-			]
+def replace_level_requirements():
+	for research in researches:
+		required = []
+		for name in research.get("RequiredResearch", []):
+			for replacement in replaced_levels.get(name, [name]):
+				if replacement not in required and replacement != research["Name"]:
+					required.append(replacement)
+		research["RequiredResearch"] = required
 
-		if "UnlockFirst" in research and this_level == 0:
-			research["Unlocks"].extend([j[0], j[1].replace("%Material%", tier_material[i])] for j in research["UnlockFirst"])
-
-		if "DecorationsArr" in research:
-			research["Decorations"] = research.pop("DecorationsArr")[this_level]
-
-		cost_mul = research.get("CostMul", 1)
-		if isinstance(cost_mul, list):
-			cost_mul = cost_mul[this_level]
-		elif "CostMuls" in research:
-			cost_mul = research["CostMuls"][this_level]
-
-		cost = research.get("CostExact", tiers_base_cost[i] * cost_mul)
-
-		research.update({
-			"Level": this_level,
-			"Levels": [i, i],
-			"Tier": i,
-			"Complexity": cost
-		})
-
-		researches.append(research)
-
-		
 
 append_levels({
 	"Class": research_recipe,
@@ -515,6 +573,7 @@ append_levels({
 	"BonusValue": 5,
 	"Levels": [1, 8],
 	"CostMul": 11,
+	"Infinite": True,
 })
 append_levels({
 	"Class": "StaticResearchModifier",
@@ -526,6 +585,7 @@ append_levels({
 	"BonusValue": 5,
 	"Levels": [1, 8],
 	"CostMul": 11,
+	"Infinite": True,
 })
 append_levels({
 	"Class": research_recipe,
@@ -1810,13 +1870,18 @@ def add_ingredient_required_research(research_entries):
 	recipes, used_in, world_drops = generated_recipes()
 
 	unlockers = {}
+	def add_unlocker(unlock, gate):
+		key = unlock_key(unlock)
+		if key:
+			gates_of = unlockers.setdefault(key, [])
+			if gate not in gates_of:
+				gates_of.append(gate)
 	for research in research_entries:
 		for unlock in research.get("Unlocks", []):
-			key = unlock_key(unlock)
-			if key:
-				names = unlockers.setdefault(key, [])
-				if research["Name"] not in names:
-					names.append(research["Name"])
+			add_unlocker(unlock, frozenset([research["Name"]]))
+		for version in research.get("Versions", []):
+			for unlock in version.get("Unlocks", []):
+				add_unlocker(unlock, frozenset([research["Name"], version["Technology"]]))
 
 	graph = {}
 	for research in research_entries:
@@ -1861,7 +1926,7 @@ def add_ingredient_required_research(research_entries):
 		if machine is None:
 			return None
 		if key in unlockers:
-			return machine | {min(unlockers[key], key=lambda name: cost(frozenset([name])))}
+			return machine | min(unlockers[key], key=cost)
 		parts = [gates.get(item) for item in recipe_inputs(recipe)]
 		if None in parts:
 			return None
@@ -1886,7 +1951,7 @@ def add_ingredient_required_research(research_entries):
 			if machine is None or not machine <= reached:
 				continue
 			if key in unlockers:
-				if any(name in reached for name in unlockers[key]):
+				if any(gate <= reached for gate in unlockers[key]):
 					return True
 				continue
 			parts = [gates.get(other) for other in recipe_inputs(recipe)]
@@ -1979,6 +2044,8 @@ def remove_redundant_required_research(research_entries):
 		else:
 			research["RequiredResearch"] = unique_required
 
+append_technologies()
+replace_level_requirements()
 add_ingredient_required_research(researches)
 remove_redundant_required_research(researches)
 
