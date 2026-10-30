@@ -61,6 +61,20 @@ technology_lines = {
 	],
 }
 
+technology_images = {
+	"RegenerativeFurnace",
+	"InterchangeableParts",
+	"BeltDrive",
+	"Dynamo",
+	"SheetRolling",
+	"MagnesiteRefractories",
+	"BallBearings",
+	"WaterTubeBoiler",
+	"CentrifugalPump",
+	"ThreePhaseCurrent",
+	"DieCasting",
+}
+
 technology_line_roots = {
 	"Heat": "RegenerativeFurnace",
 	"Chemistry": "InterchangeableParts",
@@ -75,6 +89,36 @@ technology_metal = {
 	6: "CompositePlate",
 	7: "NeutroniumProduction",
 }
+
+technology_splits = {
+	"AssemblyLine": ("RotaryDrilling", {"AutomaticMining", "Pumpjack", "AutomaticFarm"}),
+	"Hydraulics": ("Turbodrilling", {"AutomaticMining", "Pumpjack", "AutomaticFarm"}),
+	"IndustrialRobots": ("DiamondDrilling", {"AutomaticMining", "Pumpjack", "AutomaticFarm"}),
+	"CementedCarbide": ("FrothFlotation", {"Sifter", "Separator", "OreWasher"}),
+	"NumericalControl": ("MagneticSeparation", {"Sifter", "Separator", "OreWasher"}),
+	"LaserCutting": ("XRaySorting", {"Sifter", "Separator", "OreWasher"}),
+	"MolecularAssembly": ("IsotopeSeparation", {"Sifter", "Separator", "OreWasher"}),
+	"SupercriticalSteam": ("CeramicComposites", {"KineticHeater", "Boiler", "SteamEngine", "SteamTurbine"}),
+	"Magnetohydrodynamics": ("Nanofluids", {"KineticHeater", "Boiler", "SteamEngine", "SteamTurbine"}),
+	"CatalyticCracking": ("VacuumDistillation", {"Pump", "AtmosphericCondenser", "FractionatingColumn"}),
+	"PowerElectronics": ("NeodymiumMagnets", {"ElectricEngine", "WindTurbine", "CombustionEngine"}),
+	"FilamentWinding": ("MembraneSeparation", {"Pump", "AtmosphericCondenser", "FractionatingColumn"}),
+	"ThinFilmCells": ("GalliumNitride", {"Diode", "DistributedComputing"}),
+	"MachineVision": ("DirectionalDrilling", {"AutomaticMining", "Pumpjack", "AutomaticFarm"}),
+	"LevitationMelting": ("ElectronBeamMelting", {"ElectricFurnace", "AdvancedSmelting", "IndustrialSmelting"}),
+	"MagneticLevitation": ("PlasmaDrilling", {"AutomaticMining", "Pumpjack", "AutomaticFarm"}),
+	"NeutroniumLining": ("Superfluidity", {"Pump", "AtmosphericCondenser", "FractionatingColumn"}),
+	"Superconductivity": ("MagneticBearings", {"ElectricEngine", "WindTurbine", "CombustionEngine"}),
+}
+
+def technology_whole(name):
+	for whole, (half, _) in technology_splits.items():
+		if half == name:
+			return whole
+	return name
+
+def technology_names(whole):
+	return [whole] + ([technology_splits[whole][0]] if whole in technology_splits else [])
 
 series_lines = {
 	"Furnace": "Smelting",
@@ -156,19 +200,25 @@ def technology_for(series, tier):
 	line = technology_line(series, tier)
 	for line_tier, name in technology_lines[line]:
 		if line_tier == tier:
-			return name
+			split = technology_splits.get(name)
+			return split[0] if split and series in split[1] else name
 	raise Exception(f"Technologies: line {line} has no technology for tier {tier}, needed by {series}")
 
 def technology_previous(name):
+	whole = technology_whole(name)
 	for line, entries in technology_lines.items():
 		for index, (tier, entry) in enumerate(entries):
-			if entry == name:
-				return entries[index - 1][1] if index > 0 else technology_line_roots.get(line)
+			if entry == whole:
+				previous = entries[index - 1][1] if index > 0 else technology_line_roots.get(line)
+				if whole != name and previous in technology_splits and technology_splits[previous][1] & technology_splits[whole][1]:
+					return technology_splits[previous][0]
+				return previous
 	raise Exception(f"Technologies: {name} is in no line")
 
 def technology_tier(name):
+	whole = technology_whole(name)
 	for entries in technology_lines.values():
 		for tier, entry in entries:
-			if entry == name:
+			if entry == whole:
 				return tier
 	raise Exception(f"Technologies: {name} is in no line")

@@ -10,6 +10,7 @@ researches = []
 technologies = {}
 replaced_levels = {}
 bonus_slots = 11
+last_tier = 7
 
 def level_cost(research_base, i, this_level):
 	cost_mul = research_base.get("CostMul", 1)
@@ -22,6 +23,20 @@ def level_cost(research_base, i, this_level):
 def level_unlocks(research_base, i):
 	return [[j[0], j[1].replace("%Material%", tier_material[i])] for j in research_base.get("Unlocks", [])]
 
+def infinite_tail(research, cost):
+	tail = {key: value for key, value in research.items() if key not in ("Replaces", "Complexities", "RequiredResearch")}
+	tail.update({
+		"Name": research["Name"] + str(last_tier + 1),
+		"RequiredResearch": [research["Name"]],
+		"Levels": [last_tier + 1, last_tier + 1],
+		"Tier": last_tier + 1,
+		"Complexity": cost,
+		"Complexities": [],
+	})
+	research["MaxLevel"] = len(research["Complexities"])
+	researches.append(tail)
+	return tail
+
 def technology_entry(name):
 	return technologies.setdefault(name, {"Complexity": 0, "Replaces": [], "BonusSlots": 0})
 
@@ -31,7 +46,7 @@ def append_levels(research_base):
 		mini, maxi = research_base["Levels"][0], research_base["Levels"][1] + 1
 
 	research = copy.deepcopy(research_base)
-	for key in ("RequiredResearchArr", "MainResearchArr", "DecorationsArr", "UnlockFirst", "CostMul", "CostMuls", "CostExact", "CostGrowth"):
+	for key in ("RequiredResearchArr", "MainResearchArr", "DecorationsArr", "UnlockFirst", "CostMul", "CostMuls", "CostExact", "CostGrowth", "SeparateLevels"):
 		research.pop(key, None)
 	research.setdefault("RequiredResearch", [])
 	research["RequiredResearch"].extend(research_base.get("RequiredResearchArr", [[]])[0])
@@ -51,6 +66,7 @@ def append_levels(research_base):
 		research["CostGrowth"] = research_base.get("CostGrowth", 2)
 	researches.append(research)
 
+	tail = None
 	for i in range(mini + 1, maxi):
 		this_level = i - mini
 		old_name = research_base["Name"] + str(this_level)
@@ -60,9 +76,27 @@ def append_levels(research_base):
 		inventory = research_base["Class"] == "StaticResearchBonusInventory"
 
 		if research_base.get("Infinite"):
-			research["Complexities"].append(cost)
-			research.setdefault("Replaces", []).append(old_name)
-			replaced_levels[old_name] = [research["Name"]]
+			if i > last_tier and tail is None:
+				tail = infinite_tail(research, cost)
+			owner = tail if i > last_tier else research
+			owner["Complexities"].append(cost)
+			owner.setdefault("Replaces", []).append(old_name)
+			replaced_levels[old_name] = [owner["Name"]]
+			continue
+
+		if i in research_base.get("SeparateLevels", []):
+			previous_level = research_base["Name"] + str(this_level - 1)
+			researches.append({
+				"Class": research_base["Class"],
+				"Name": old_name,
+				"Label": research_base["Label"],
+				"Image": research_base["Image"],
+				"RequiredResearch": [previous_level if i - 1 in research_base["SeparateLevels"] else technology_for(research_base["Name"], i - 1)],
+				"Levels": [i, i],
+				"Tier": i,
+				"Complexity": cost,
+				"BonusSlots": bonus_slots,
+			})
 			continue
 
 		if i == 1:
@@ -92,24 +126,30 @@ def append_levels(research_base):
 
 def append_technologies():
 	for line, entries in technology_lines.items():
-		for tier, name in entries:
-			if name not in technologies:
-				raise Exception(f"Technologies: {name} opens no machine version")
-			entry = technologies[name]
-			previous = technology_previous(name)
-			technology = {
-				"Class": "StaticResearchTechnology",
-				"Name": name,
-				"Label": [name, "researches"],
-				"RequiredResearch": ([previous] if previous else []) + [technology_metal[tier]],
-				"Levels": [tier, tier],
-				"Tier": tier,
-				"Complexity": entry["Complexity"],
-				"Replaces": entry["Replaces"],
-			}
-			if entry["BonusSlots"]:
-				technology["BonusSlots"] = entry["BonusSlots"]
-			researches.append(technology)
+		for tier, whole in entries:
+			names = technology_names(whole)
+			for name in names:
+				if name not in technologies:
+					raise Exception(f"Technologies: {name} opens no machine version")
+			price = sum(technologies[name]["Complexity"] for name in names)
+			for name in names:
+				entry = technologies[name]
+				previous = technology_previous(name)
+				technology = {
+					"Class": "StaticResearchTechnology",
+					"Name": name,
+					"Label": [name, "researches"],
+					"RequiredResearch": ([previous] if previous else []) + [technology_metal[tier]],
+					"Levels": [tier, tier],
+					"Tier": tier,
+					"Complexity": price,
+					"Replaces": entry["Replaces"],
+				}
+				if entry["BonusSlots"]:
+					technology["BonusSlots"] = entry["BonusSlots"]
+				if name in technology_images:
+					technology["Image"] = "T_" + name
+				researches.append(technology)
 
 def replace_level_requirements():
 	for research in researches:
@@ -280,14 +320,7 @@ append_levels({
 	"Unlocks": [],
 	"Levels": [0,7],
 	"CostMul": 100,
-})
-append_levels({
-	"Class": research_recipe,
-	"Name": "Electricity",
-	"Label": ["Electricity", "researches"],
-	"RequiredResearch": ["MineralsScan"],
-	"Unlocks": [],
-	"MainResearch": True,
+	"SeparateLevels": [5, 6, 7],
 })
 append_levels({
 	"Class": research_recipe,
@@ -297,6 +330,16 @@ append_levels({
 	"Unlocks": [["Hand" + r_dict, "CopperConnector"]],
 	"Levels": [0, 0],
 	"CostExact": 100,
+	"MainResearch": True,
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "ResearchLaboratory",
+	"Label": ["ResearchLaboratory", "parts"],
+	"RequiredResearch": ["DistributedComputing"],
+	"Unlocks": [["Hand" + r_dict, "ResearchLaboratory"]],
+	"Levels": [0, 0],
+	"CostExact": 500,
 	"MainResearch": True,
 })
 append_levels({
@@ -327,7 +370,7 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "PowerGeneration",
 	"Label": ["PowerGeneration", "researches"],
-	"RequiredResearch": ["Electricity", "Metalwork"],
+	"RequiredResearch": ["Metalwork"],
 	"Levels": [1,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%CompactGenerator"],["Hand" + r_dict, "%Material%StirlingEngine"]],
 	"MainResearch": True,
@@ -450,7 +493,6 @@ append_levels({
 	["Hand" + r_dict, "%Material%AutomaticHammer"]],
 	"CostMul":[0.1, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25],
 	"MainResearch": True,
-	"Description": [["BasicMachinesDescription", "ui"]]
 })
 append_levels({
 	"Class": research_recipe,

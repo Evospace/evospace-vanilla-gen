@@ -25,7 +25,7 @@ data = {
 					}
 				]
 			},
-			"StartResearches": ["MineralsScan", "BasicPlatform", "Chest", "Electricity", "PowerGeneration", "Smelting", "Metalwork", "DistributedComputing", "CopperWire"]
+			"StartResearches": ["MineralsScan", "BasicPlatform", "Chest", "PowerGeneration", "Smelting", "Metalwork", "DistributedComputing", "CopperWire"]
 		}
 	]
 }

@@ -786,14 +786,35 @@ recipes_assembler.append({
 })
 
 recipes_assembler.append({
-	"Name":"AntimatterTrap",
+	"Name":"EmptyAntimatterTrap",
 	"Input": items([
 		["AdvancedCoil", 120],
 		["PowerCoil", 20],
 	]),
-	"Output": one_item("AntimatterTrap"),
+	"Output": one_item("EmptyAntimatterTrap"),
 	"Ticks" : 400,
 	"Tier": 6,
+})
+
+recipes_assembler.append({
+	"Name":"SteelTarget",
+	"Input": one_item("SteelPlate", 100),
+	"Output": one_item("SteelTarget"),
+	"Ticks" : 200,
+	"Tier": 7,
+})
+
+recipes_assembler.append({
+	"Name":"AntimatterCollector",
+	"Input": items([
+		["ReinforcedFrame", 40],
+		["CompositePlate", 60],
+		["PowerCoil", 40],
+		["QuantumCircuit", 16],
+	]),
+	"Output": one_item("AntimatterCollector"),
+	"Ticks" : 1200,
+	"Tier": 7,
 })
 
 recipes_assembler.append({
@@ -971,6 +992,7 @@ recipes_fission.append({
 	"Input": one_item("UraniumCell"),
 	"Output": one_item("DepletedUraniumCell"),
 	"Ticks" : uranium_rod_output() / fission_output(),
+	"EnergyProductionPercent": 100,
 })
 
 recipes_fission.append({
@@ -980,59 +1002,30 @@ recipes_fission.append({
 		["ControlCell", 1, 0],
 	]),
 	"Output": one_item("DepletedUraniumCell", 2),
-	"Ticks" : (uranium_rod_output() / fission_output()) * 2.1,
+	"Ticks" : uranium_rod_output() / fission_output(),
+	"EnergyProductionPercent": 220,
 })
 
 recipes_fission.append({
 	"Name":"UraniumCell3",
 	"Input": items([
 		["UraniumCell", 3],
-		["ControlCell", 2, 0],
+		["ControlCell", 1, 0],
 	]),
 	"Output": one_item("DepletedUraniumCell", 3),
-	"Ticks" : (uranium_rod_output() / fission_output()) * 3.2,
+	"Ticks" : uranium_rod_output() / fission_output(),
+	"EnergyProductionPercent": 330,
 })
 
 recipes_fission.append({
-	"Name":"ThoriumCell",
+	"Name":"UraniumCell4",
 	"Input": items([
 		["UraniumCell", 3],
-		["ReflectorCell", 4, 0],
-		["ThoriumCell", 2],
+		["ControlCell", 5, 0],
 	]),
-	"Output": items([
-		["DepletedUraniumCell", 3],
-		["Uranium233Cell", 2],
-	]),
-	"Ticks" : 1000,
-})
-
-recipes_fission.append({
-	"Name":"PlutoniumCell",
-	"Input": items([
-		["PlutoniumCell", 1],
-		["ReflectorCell", 4, 0],
-		["ThoriumCell", 3],
-	]),
-	"Output": items([
-		["Uranium233Cell", 3],
-		["DepletedUraniumCell", 1],
-	]),
-	"Ticks" : 400,
-})
-
-recipes_fission.append({
-	"Name":"PlutoniumCell2",
-	"Input": items([
-		["PlutoniumCell", 1],
-		["ReflectorCell", 8, 0],
-		["ThoriumCell", 6],
-	]),
-	"Output": items([
-		["Uranium233Cell", 6],
-		["DepletedUraniumCell", 1],
-	]),
-	"Ticks" : 400,
+	"Output": one_item("DepletedUraniumCell", 3),
+	"Ticks" : uranium_rod_output() / fission_output() * 2,
+	"EnergyProductionPercent": 165,
 })
 
 recipes_fission.append({
@@ -1042,7 +1035,64 @@ recipes_fission.append({
 		["ControlCell", 1, 0],
 	]),
 	"Output": one_item("DepletedUraniumCell"),
-	"Ticks" : (uranium_rod_output() / fission_output()) * 1.07,
+	"Ticks" : uranium_rod_output() / fission_output() * 1.8,
+	"EnergyProductionPercent": 50,
+})
+
+recipes_fission.append({
+	"Name":"ControlCell3",
+	"Input": items([
+		["UraniumCell", 1],
+		["ControlCell", 3, 0],
+	]),
+	"Output": one_item("DepletedUraniumCell"),
+	"Ticks" : uranium_rod_output() / fission_output() * 3.24,
+	"EnergyProductionPercent": 25,
+})
+
+recipes_fission.append({
+	"Name":"ThoriumCell",
+	"Input": items([
+		["UraniumCell", 3],
+		["ReflectorCell", 1, 0],
+		["ThoriumCell", 2],
+	]),
+	"Output": items([
+		["DepletedUraniumCell", 3],
+		["Uranium233Cell", 2],
+	]),
+	"Ticks" : uranium_rod_output() / fission_output(),
+	"EnergyProductionPercent": 3,
+})
+
+recipes_fission.append({
+	"Name":"PlutoniumCell",
+	"Input": items([
+		["PlutoniumCell", 1],
+		["ReflectorCell", 1, 0],
+		["ThoriumCell", 3],
+	]),
+	"Output": items([
+		["Uranium233Cell", 3],
+		["DepletedUraniumCell", 1],
+	]),
+	"Ticks" : uranium_rod_output() / fission_output(),
+	"EnergyProductionPercent": 3,
+})
+
+recipes_fission.append({
+	"Name":"PlutoniumCell2",
+	"Input": items([
+		["PlutoniumCell", 1],
+		["ReflectorCell", 2, 0],
+		["ThoriumCell", 6],
+	]),
+	"Output": items([
+		["Uranium233Cell", 6],
+		["DepletedUraniumCell", 1],
+	]),
+	"Ticks" : uranium_rod_output() / fission_output(),
+	"EnergyProductionPercent": 3,
 })
 
 recipes_fission.append({
@@ -1052,7 +1102,8 @@ recipes_fission.append({
 		["ControlCell", 1, 0],
 	]),
 	"Output": one_item("DepletedUraniumCell"),
-	"Ticks" : 2000,
+	"Ticks" : uranium_rod_output() / fission_output(),
+	"EnergyProductionPercent": 330,
 })
 
 recipes_fission.append({
@@ -1062,7 +1113,8 @@ recipes_fission.append({
 		["ControlCell", 1, 0],
 	]),
 	"Output": one_item("DepletedUraniumCell", 2),
-	"Ticks" : 2000,
+	"Ticks" : uranium_rod_output() / fission_output(),
+	"EnergyProductionPercent": 726,
 })
 
 recipes_fission.append({
@@ -1072,7 +1124,8 @@ recipes_fission.append({
 		["ControlCell", 1, 0],
 	]),
 	"Output": one_item("DepletedUraniumCell", 4),
-	"Ticks" : 2000,
+	"Ticks" : uranium_rod_output() / fission_output(),
+	"EnergyProductionPercent": 1452,
 })
 
 recipes_electrolyzer.append({
@@ -2184,6 +2237,38 @@ objects_array.append({ "Class": r_dict,
 })
 
 objects_array.append({ "Class": r_dict,
+	"Name": "AntimatterCollector" + r_dict,
+	"StartTier": 0,
+	"UsedIn": [{"Item": "AntimatterCollector", "Tier": 0}],
+	"Recipes": [{
+		"Name": "AntimatterTrap",
+		"Input": one_item("EmptyAntimatterTrap"),
+		"Output": one_item("AntimatterTrap"),
+		"Ticks": 3600,
+		"EnergyProductionPercent": 0,
+		"Surfaces": ["Orbit"],
+	},{
+		"Name": "HydrogenAnnihilation",
+		"Input": items([
+			["AntimatterTrap", 1],
+			["Hydrogen", 5000],
+		]),
+		"Output": one_item("EmptyAntimatterTrap"),
+		"Ticks": 2500,
+		"EnergyProductionPercent": 100,
+	},{
+		"Name": "SteelTargetAnnihilation",
+		"Input": items([
+			["AntimatterTrap", 1],
+			["SteelTarget", 20],
+		]),
+		"Output": one_item("EmptyAntimatterTrap"),
+		"Ticks": 2500,
+		"EnergyProductionPercent": 1000,
+	}],
+})
+
+objects_array.append({ "Class": r_dict,
 	"Name": "PortalStage" + r_dict,
 	"StartTier": 0,
 	"UsedIn": [{"Item": "Portal", "Tier": 0}],
@@ -2195,12 +2280,12 @@ objects_array.append({ "Class": r_dict,
 	} for tier, stage in enumerate([
 		[["BuildingMaterial", 300], ["StoneSurface", 100]],
 		[["CopperPlate", 75], ["CopperWire", 225]],
-		[["BasicFrame", 18]],
-		[["Capacitor", 600], ["Processor", 30]],
-		[["AdvancedCoil", 90], ["StainlessSteelPlate", 300]],
-		[["PowerCoil", 120], ["QuantumCircuit", 120], ["Nitrogen", 75000]],
-		[["PlatinumReflector", 400], ["CompositePlate", 400], ["QuantumBrain", 32]],
-		[["NeutroniumPlate", 120], ["AntimatterTrap", 6]],
+		[["BasicFrame", 90]],
+		[["Capacitor", 1200], ["Processor", 60]],
+		[["AdvancedCoil", 450], ["StainlessSteelPlate", 1500]],
+		[["PowerCoil", 240], ["QuantumCircuit", 240], ["Nitrogen", 150000]],
+		[["PlatinumReflector", 1200], ["CompositePlate", 1200], ["QuantumBrain", 192]],
+		[["NeutroniumPlate", 250], ["AntimatterTrap", 6]],
 		[["ReinforcedFrame", 2250], ["TitaniumPlate", 3000], ["NeutroniumPlate", 120]],
 	])],
 })

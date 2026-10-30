@@ -459,6 +459,19 @@ images.append({
 	})
 
 images.append({
+		"Base": "T_" + "ControlCell",
+		"NewName": "T_" + "EmptyAntimatterTrap",
+		"MulMask": "T_Material" + "Copper",
+	})
+
+images.append({
+		"Base": "T_" + "Plate",
+		"NewName": "T_" + "SteelTarget",
+		"MulMask": "T_Material" + "Steel",
+		"AddMask": "T_RedCircle" + additive_ico,
+	})
+
+images.append({
 		"Base": "T_" + "JetpackBase",
 		"NewName": "T_" + "Jetpack",
 		"MulMask": "T_Material" + "Aluminium",
@@ -586,7 +599,61 @@ objects_array.append({
 	},
 })
 
-	
+objects_array.append({
+	"Class": "StaticItem",
+	"Name": "AntimatterCollector",
+	"Image": "T_AntimatterCollector",
+	"StackSize": 1,
+	"Label": ["AntimatterCollector", "parts"],
+	"ItemLogic": "BuildingSingleBlockItemLogic",
+	"Block": "AntimatterCollector",
+	"Category": "Nuclear",
+	"Tier": 7,
+})
+objects_array.append({
+	"Class": "StaticBlock",
+	"Name": "AntimatterCollector",
+	"Item": "AntimatterCollector",
+	"BlockLogic": "SelectCrafter",
+	"Actor": block_actor("AntimatterCollector"),
+	"Tier": 7,
+	"EnergyProductionPerTick": 25600,
+	"EnergyProductionItem": "Heat",
+	"ExportOptions": CRAFTING_LOGIC_EXPORTS,
+	"ImportOptions": CRAFTING_LOGIC_IMPORTS,
+	"Positions": [[0, 0, 0]] + [[x, y, z] for z in range(4) for x in range(0, -4, -1) for y in range(-2, 2) if [x, y, z] != [0, 0, 0]],
+	"Minable": {
+		"Result": "AntimatterCollector",
+	},
+})
+
+objects_array.append({
+	"Class": "StaticItem",
+	"Name": "ResearchLaboratory",
+	"Image": "T_ResearchLaboratory",
+	"StackSize": 16,
+	"Label": ["ResearchLaboratory", "parts"],
+	"ItemLogic": "BuildingSingleBlockItemLogic",
+	"Block": "ResearchLaboratory",
+	"Category": "Copper",
+	"Tier": 1,
+})
+objects_array.append({
+	"Class": "StaticBlock",
+	"Name": "ResearchLaboratory",
+	"Item": "ResearchLaboratory",
+	"BlockLogic": "ResearchLaboratoryBlockLogic",
+	"Actor": block_actor("ResearchLaboratory"),
+	"Tier": 1,
+	"EnergyConsumptionPerTick": 40,
+	"EnergyConsumptionItem": "Electricity",
+	"Positions": [[0, 0, 0]] + [[x, y, z] for z in range(4) for x in range(0, -3, -1) for y in range(-2, 3) if [x, y, z] != [0, 0, 0]],
+	"Minable": {
+		"Result": "ResearchLaboratory",
+	},
+})
+
+
 data = {
 	"Objects": objects_array
 }

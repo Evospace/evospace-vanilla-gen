@@ -18,8 +18,16 @@ def append_nuclear(xy, append_levels, researches):
 		"Label": ["ReflectorCell", "parts"],
 		"RequiredResearch": ["ControlCell"],
 		"Unlocks": [[assembler_r_dict, "ReflectorCell"], ["Hand" + r_dict, "ReflectorCell"],["FissionReactor" + r_dict, "UraniumCell2"]],
-		
-		
+
+
+		"Levels": [5,5],
+	})
+	append_levels({
+		"Class": research_recipe,
+		"Name": "ReactionThrottling",
+		"Label": ["ReactionThrottling", "researches"],
+		"RequiredResearch": ["ControlCell"],
+		"Unlocks": [["FissionReactor" + r_dict, "ControlCell3"]],
 		"Levels": [5,5],
 	})
 	append_levels({
@@ -28,6 +36,14 @@ def append_nuclear(xy, append_levels, researches):
 		"Label": ["AdvancedReflection", "researches"],
 		"RequiredResearch": ["ReflectorCell"],
 		"Unlocks": [["FissionReactor" + r_dict, "UraniumCell3"]],
+		"Levels": [5,5],
+	})
+	append_levels({
+		"Class": research_recipe,
+		"Name": "AdvancedReflection2",
+		"Label": ["TwoWorldsFormat", "common", ["AdvancedReflection", "researches"], ["II", "common"]],
+		"RequiredResearch": ["AdvancedReflection"],
+		"Unlocks": [["FissionReactor" + r_dict, "UraniumCell4"]],
 		"Levels": [5,5],
 	})
 	append_levels({
