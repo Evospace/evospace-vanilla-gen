@@ -400,6 +400,11 @@ recipes_hand.append({
 	"Tier": 3,
 })
 
+processor_animation = {
+	"Mesh": "/Game/Blocks/Assembler/Processor/SK_ProcessorMechanism.SK_ProcessorMechanism",
+	"Sequence": "/Game/Blocks/Assembler/Processor/A_ProcessorProduction_Loop.A_ProcessorProduction_Loop",
+}
+
 recipes_assembler.append({
 	"Name":"Processor1",
 	"Input": items([
@@ -410,6 +415,7 @@ recipes_assembler.append({
 	"Output": one_item("Processor"),
 	"Ticks" : 200,
 	"Tier": 3,
+	"Animation": processor_animation,
 })
 
 recipes_assembler.append({
@@ -423,6 +429,7 @@ recipes_assembler.append({
 	"Output": one_item("Processor", 2),
 	"Ticks" : 200,
 	"Tier": 4,
+	"Animation": processor_animation,
 })
 
 recipes_assembler.append({
@@ -436,6 +443,7 @@ recipes_assembler.append({
 	"Output": one_item("Processor", 4),
 	"Ticks" : 200,
 	"Tier": 5,
+	"Animation": processor_animation,
 })
 
 recipes_hand.append({
