@@ -18,6 +18,11 @@ recipes_smelt = []
 recipes_gasfurn = []
 recipes_disassembler = []
 
+wire_animation = {
+	"Mesh": "/Game/Blocks/Assembler/Wire/SK_WireMechanism.SK_WireMechanism",
+	"Sequence": "/Game/Blocks/Assembler/Wire/A_WireProduction_Loop.A_WireProduction_Loop",
+}
+
 def append_metal_macerator_recipe(material_name, part_suffix, input_count, dust_count, material_tier):
 	recipes_macerator.append({
 		"Name": material_name + part_suffix,
@@ -194,6 +199,7 @@ for material in materials:
 			"Input": one_item(m_name+"Plate", 1),
 			"Output": one_item(m_name+"Wire", 2),
 			"Ticks" : 40,
+			"Animation": wire_animation,
 		})
 		recipes_hand.append({
 			"Name":m_name+"Wire",
