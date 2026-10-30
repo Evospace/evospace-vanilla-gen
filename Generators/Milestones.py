@@ -1,44 +1,76 @@
 from Common import *
 
+metal_milestones = {
+	0: "Start",
+	1: "Copper",
+	2: "Steel",
+	3: "Aluminium",
+	4: "StainlessSteel",
+	5: "Titanium",
+	6: "Composite",
+	7: "Fusion",
+}
+
 milestones = [
 	{
-		"Name": "Copper",
-		"Label": "Smelting",
+		"Name": "Start",
+		"Label": "MineralsScan",
 		"Position": [1, 0],
 		"Tree": [
 			["MineralsScan", ""],
 			["Smelting", "MineralsScan"],
 			["Metalwork", "Smelting"],
-			["Furnace", "Smelting"],
-			["Destroyer", "Furnace"],
-			["Lamp", "Smelting"],
-			["Sign", "Lamp"],
 			["Chest", "MineralsScan"],
-			["InventoryUpgrade", "Chest"],
-			["Container", "Chest"],
-			["SingleTypeStorage", "Container"],
-		],
-		"Exits": [["Lamp", "Electricity"], ["Metalwork", "Automation"]],
-		"Experiment": [],
-	},
-	{
-		"Name": "Electricity",
-		"Label": "Electricity",
-		"Position": [0, 0],
-		"Tree": [
-			["Electricity", ""],
+			["BasicPlatform", "MineralsScan"],
+			["Electricity", "MineralsScan"],
 			["PowerGeneration", "Electricity"],
-			["PowerTransmission", "PowerGeneration"],
 			["DistributedComputing", "PowerGeneration"],
 			["CopperWire", "DistributedComputing"],
 		],
-		"Exits": [["CopperWire", "Circuit"]],
-		"Experiment": [["CopperParts", 30], ["CopperPlate", 20]],
+		"Exits": [["Smelting", "Copper"]],
+		"Experiment": [],
+	},
+	{
+		"Name": "Copper",
+		"Label": "Furnace",
+		"Position": [1, 1],
+		"Tree": [
+			["Furnace", ""],
+			["Destroyer", "Furnace"],
+			["Lamp", "Furnace"],
+			["Container", "Furnace"],
+			["InventoryUpgrade", "Container"],
+			["SingleTypeStorage", "Container"],
+			["MetalBlocks", "Destroyer"],
+			["Bricks", "Furnace"],
+			["StoneTiles", "Bricks"],
+			["RedTiles", "StoneTiles"],
+			["DarkTiles", "StoneTiles"],
+			["RedBricks", "Bricks"],
+			["DarkBricks", "RedBricks"],
+		],
+		"Exits": [["Lamp", "Electricity"], ["Container", "Automation"]],
+		"Experiment": [["CopperPlate", 20], ["BuildingMaterial", 50]],
+	},
+	{
+		"Name": "Electricity",
+		"Label": "PowerTransmission",
+		"Position": [0, 1],
+		"Tree": [
+			["PowerTransmission", ""],
+			["WireCover", "PowerTransmission"],
+			["Sign", "PowerTransmission"],
+			["Spotlight", "PowerTransmission"],
+			["Flashlight", "Spotlight"],
+			["GlassBlock", "Spotlight"],
+		],
+		"Exits": [["Sign", "Circuit"]],
+		"Experiment": [["CopperParts", 30], ["CopperWire", 30]],
 	},
 	{
 		"Name": "Automation",
 		"Label": "Automatization",
-		"Position": [1, 1],
+		"Position": [1, 2],
 		"Tree": [
 			["BasicMachines", ""],
 			["Automatization", "BasicMachines"],
@@ -51,6 +83,9 @@ milestones = [
 			["AutomaticMining", "BasicMachines"],
 			["DrillingRigProductivity", "AutomaticMining"],
 			["AutomaticFarm", "AutomaticMining"],
+			["Designable", "DeconstructionTool"],
+			["DecorativeWood", "Constructor"],
+			["Door", "DecorativeWood"],
 		],
 		"Exits": [["Automatization", "Steel"], ["AutomaticFarm", "Pipes"]],
 		"Experiment": [["CopperParts", 40], ["IronPlate", 20]],
@@ -58,7 +93,7 @@ milestones = [
 	{
 		"Name": "Pipes",
 		"Label": "FluidTransfer",
-		"Position": [2, 1],
+		"Position": [2, 2],
 		"Tree": [
 			["FluidTransfer", ""],
 			["Pump", "FluidTransfer"],
@@ -70,6 +105,10 @@ milestones = [
 			["HeatTransferring", "FluidTransfer"],
 			["KineticHeater", "HeatTransferring"],
 			["FluidFurnace", "HeatTransferring"],
+			["Terracotta", "KineticHeater"],
+			["TerracottaTiles", "Terracotta"],
+			["TerracottaBricks", "TerracottaTiles"],
+			["DecorativePaint", "FluidTransfer"],
 		],
 		"Exits": [["Pump", "Steam"]],
 		"Experiment": [["CopperPlate", 40], ["BuildingMaterial", 20]],
@@ -77,7 +116,7 @@ milestones = [
 	{
 		"Name": "Circuit",
 		"Label": "Circuit",
-		"Position": [0, 1],
+		"Position": [0, 2],
 		"Tree": [
 			["CircuitBoard", ""],
 			["Triod", "CircuitBoard"],
@@ -86,8 +125,6 @@ milestones = [
 			["LogicNetworking", "Circuit"],
 			["LogicDevices", "LogicNetworking"],
 			["AdvancedSign", "LogicDevices"],
-			["Spotlight", "LogicNetworking"],
-			["Flashlight", "Spotlight"],
 		],
 		"Exits": [["Circuit", "Transistor"]],
 		"Experiment": [["CopperWire", 50], ["CopperParts", 20]],
@@ -95,7 +132,7 @@ milestones = [
 	{
 		"Name": "Steel",
 		"Label": "SteelProduction",
-		"Position": [1, 2],
+		"Position": [1, 3],
 		"Tree": [
 			["Oven", ""],
 			["SteelProduction", "Oven"],
@@ -104,6 +141,13 @@ milestones = [
 			["BasicFrame", "SteelProduction"],
 			["Railway", "BasicFrame"],
 			["RailSignals", "Railway"],
+			["Concrete", "BasicFrame"],
+			["ConcreteBricks", "Concrete"],
+			["ConcreteTiles", "Concrete"],
+			["ConcreteSmallTiles", "ConcreteTiles"],
+			["Roadwork", "Railway"],
+			["MetalDoors", "SteelProduction"],
+			["Designable2", "BasicFrame"],
 		],
 		"Exits": [["AdvancedSmelting", "Aluminium"], ["SteelProduction", "Steam"]],
 		"Experiment": [["IronDust", 100], ["CopperParts", 50]],
@@ -111,7 +155,7 @@ milestones = [
 	{
 		"Name": "Steam",
 		"Label": "SteamEngine",
-		"Position": [2, 2],
+		"Position": [2, 3],
 		"Tree": [
 			["Boiler", ""],
 			["SteamEngine", "Boiler"],
@@ -128,6 +172,7 @@ milestones = [
 			["Dynamo", "SteamTurbine"],
 			["RegenerativeFurnace", "Boiler"],
 			["SheetRolling", "RegenerativeFurnace"],
+			["DecorativeWood2", "SteamEngine"],
 		],
 		"Exits": [["ElectricEngine", "Chemistry"]],
 		"Experiment": [["SteelParts", 50], ["SteelPipe", 20]],
@@ -135,7 +180,7 @@ milestones = [
 	{
 		"Name": "Transistor",
 		"Label": "Processor",
-		"Position": [0, 2],
+		"Position": [0, 3],
 		"Tree": [
 			["Resistor", ""],
 			["Resistor2", "Resistor"],
@@ -157,7 +202,7 @@ milestones = [
 	{
 		"Name": "Aluminium",
 		"Label": "AluminiumProduction",
-		"Position": [1, 3],
+		"Position": [1, 4],
 		"Tree": [
 			["Electrolyzer", ""],
 			["AluminiumReduction", "Electrolyzer"],
@@ -169,6 +214,14 @@ milestones = [
 			["OreWasher", "Electrolyzer"],
 			["Separator", "OreWasher"],
 			["Sifter", "Separator"],
+			["ReinforcedConcrete", "ReinforcedFrame"],
+			["ReinforcedConcreteTiles", "ReinforcedConcrete"],
+			["ReinforcedConcreteSmallTiles", "ReinforcedConcreteTiles"],
+			["ReinforcedConcreteBricks", "ReinforcedConcrete"],
+			["DangerBlock", "ReinforcedConcrete"],
+			["DecorativeWood3", "AluminiumProduction"],
+			["Designable3", "DecorativeWood3"],
+			["DecorativeWood4", "Designable3"],
 		],
 		"Exits": [["AluminiumProduction", "StainlessSteel"]],
 		"Experiment": [["BauxiteDust", 100], ["SteelParts", 50]],
@@ -176,7 +229,7 @@ milestones = [
 	{
 		"Name": "Chemistry",
 		"Label": "IndustrialChemReactor",
-		"Position": [2, 3],
+		"Position": [2, 4],
 		"Tree": [
 			["IndustrialChemReactor", ""],
 			["Catalyst", "IndustrialChemReactor"],
@@ -191,6 +244,7 @@ milestones = [
 			["CentrifugalPump", "Fermentation"],
 			["WaterTubeBoiler", "IndustrialChemReactor"],
 			["MagnesiteRefractories", "WaterTubeBoiler"],
+			["PlasticBlock", "Polyethylene"],
 		],
 		"Exits": [["Catalyst", "Oil"]],
 		"Experiment": [["Sulfur", 100], ["SteelElectricEngine", 10]],
@@ -198,7 +252,7 @@ milestones = [
 	{
 		"Name": "Silicon",
 		"Label": "QuantumCircuit",
-		"Position": [0, 3],
+		"Position": [0, 4],
 		"Tree": [
 			["SiliconWafer", ""],
 			["Processor2", "SiliconWafer"],
@@ -226,7 +280,7 @@ milestones = [
 	{
 		"Name": "StainlessSteel",
 		"Label": "StainlessSteelProduction",
-		"Position": [1, 4],
+		"Position": [1, 5],
 		"Tree": [
 			["Mixer", ""],
 			["AdvancedAlloys", "Mixer"],
@@ -246,7 +300,7 @@ milestones = [
 	{
 		"Name": "Oil",
 		"Label": "FuelChemistry",
-		"Position": [2, 4],
+		"Position": [2, 5],
 		"Tree": [
 			["PyrolysisUnit", ""],
 			["PreciseTemperaturePyrolysis", "PyrolysisUnit"],
@@ -261,14 +315,15 @@ milestones = [
 			["Passivation", "FractionatingColumn"],
 			["SuperheatedSteam", "FuelChemistry2"],
 			["ElectricalSteel", "CombustionEngine"],
+			["DecorativePlastic", "PyrolysisUnit"],
 		],
-		"Exits": [["PreciseTemperaturePyrolysis", "Composite"]],
+		"Exits": [],
 		"Experiment": [["Coal", 200], ["SteelPipe", 50]],
 	},
 	{
 		"Name": "QuantumBrain",
 		"Label": "QuantumBrain",
-		"Position": [0, 4],
+		"Position": [0, 5],
 		"Tree": [
 			["BrainMatrix", ""],
 			["QuantumBrain", "BrainMatrix"],
@@ -290,7 +345,7 @@ milestones = [
 	{
 		"Name": "Titanium",
 		"Label": "TitaniumProduction",
-		"Position": [1, 5],
+		"Position": [1, 6],
 		"Tree": [
 			["NitricAcid", ""],
 			["KrollProcess", "NitricAcid"],
@@ -304,13 +359,13 @@ milestones = [
 			["Capacitor4", "CrudeTantalum"],
 			["Resistor4", "CrudeTantalum"],
 		],
-		"Exits": [["TitaniumProduction", "Fusion"], ["FastSifting", "Nuclear"]],
+		"Exits": [["TitaniumProduction", "Composite"], ["FastSifting", "Nuclear"]],
 		"Experiment": [["TitaniumOxideDust", 100], ["ModularFrame", 20]],
 	},
 	{
 		"Name": "Composite",
 		"Label": "CompositePlate",
-		"Position": [2, 5],
+		"Position": [1, 7],
 		"Tree": [
 			["CarbonFiber", ""],
 			["CarbonFiberSheet", "CarbonFiber"],
@@ -328,13 +383,13 @@ milestones = [
 			["SiliconSolarCell", "PlatinumReflector"],
 			["ThinFilmCells", "SiliconSolarCell"],
 		],
-		"Exits": [],
+		"Exits": [["PlatinumReflector", "Fusion"]],
 		"Experiment": [["PolyethyleneSheet", 100], ["Coke", 100]],
 	},
 	{
 		"Name": "Nuclear",
 		"Label": "FissionReactor",
-		"Position": [0, 5],
+		"Position": [0, 6],
 		"Tree": [
 			["UraniumCell", ""],
 			["FissionReactor", "UraniumCell"],
@@ -361,7 +416,7 @@ milestones = [
 	{
 		"Name": "Fusion",
 		"Label": "FusionReaction",
-		"Position": [1, 6],
+		"Position": [1, 8],
 		"Tree": [
 			["FusionReactor", ""],
 			["Rocket", "FusionReactor"],
@@ -625,7 +680,26 @@ outside = [r["Name"] for r in research_objects if r["Name"] not in owner]
 diagonal = sum(1 for m in milestones for name, up in m["Tree"] if up and abs(cells[m["Name"]][name][0] - cells[m["Name"]][up][0]) == 1 and abs(cells[m["Name"]][name][1] - cells[m["Name"]][up][1]) == 1)
 print(f"Milestones: {len(milestones)} milestones, {sum(len(m['Researches']) for m in milestones)} researches on the grid, {len(outside)} outside, {diagonal} diagonal links, long links {long_links}")
 
+metal_rows = [milestone_by_name[metal_milestones[tier]]["Position"][1] for tier in sorted(metal_milestones)]
+if any(a >= b for a, b in zip(metal_rows, metal_rows[1:])):
+	raise Exception(f"Milestones: metal milestones must go down a row per tier, rows {metal_rows}")
+last_row = max(m["Position"][1] for m in milestones)
+epochs = []
+for stage in sorted((r for r in research_objects if r["Class"] == "StaticResearchMilestone"), key=lambda r: r["Tier"]):
+	tier = stage["Tier"]
+	if tier not in metal_milestones:
+		raise Exception(f"Milestones: epoch {stage['Name']} has tier {tier}, which has no metal milestone")
+	epochs.append((stage["Name"], metal_rows[tier + 1] - 1 if tier + 1 < len(metal_rows) else last_row))
+print(f"Milestones: epochs below rows {[row for _, row in epochs]}")
+
 objects = []
+for name, row in epochs:
+	objects.append({
+		"Class": "StaticEpoch",
+		"Name": "Epoch" + name,
+		"Research": name,
+		"Row": row,
+	})
 for m in milestones:
 	objects.append({
 		"Class": "StaticMilestone",
