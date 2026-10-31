@@ -2294,7 +2294,7 @@ objects_array.append({ "Class": r_dict,
 		"Output": no_items(),
 		"Ticks": 1,
 	} for tier, stage in enumerate([
-		[["BuildingMaterial", 300], ["StoneSurface", 100]],
+		[["BuildingMaterial", 300]],
 		[["CopperPlate", 75], ["CopperWire", 225]],
 		[["BasicFrame", 90]],
 		[["Capacitor", 1200], ["Processor", 60]],

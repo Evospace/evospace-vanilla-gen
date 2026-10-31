@@ -73,6 +73,8 @@ def scale_energy_per_tick(base, level, scaling="exponential"):
 		return 0
 	if scaling == "linear":
 		return base * (level + 1)
+	if isinstance(scaling, float):
+		return round(base * (1 + scaling * level))
 	return (2 ** level) * base
 
 def energy_watts(per_tick_base, level, scaling="exponential"):
@@ -189,16 +191,17 @@ for machine in machines:
 
 		image = machine["Image"] if "Image" in machine else machine["Name"]
 
-		labelParts = ["machines_label_format", "common", [tier_material[tier], "common"], [machine["Name"], "machines"]]
+		label_section = machine.get("LabelSection", "machines")
+		labelParts = ["machines_label_format", "common", [tier_material[tier], "common"], [machine["Name"], label_section]]
 		if "ExactName" in machine:
-			labelParts = [machine["Name"], "machines"]
+			labelParts = [machine["Name"], label_section]
 
 		item = { "Class": "StaticItem",
 			"Name": block_name,
 			"Image": ("T_" + image) if "ExactName" in machine and "TieredImage" not in machine else ("T_" + tier_material[tier] + image),
 			"StackSize": 32,
 			"Label": labelParts,
-			"DescriptionParts": [[machine["Name"], "description"]],
+			"DescriptionParts": [] if "NoDescriptionText" in machine else [[machine["Name"], "description"]],
 			"ItemLogic": building_single_logic if "ItemLogic" not in machine else machine["ItemLogic"],
 			"Tier": tier,
 			"Category": machine["Category"] if "Category" in machine else tier_material[tier],
@@ -212,7 +215,8 @@ for machine in machines:
 					continue
 				if ss == "SpeedBonus":
 					if level != 0:
-						item["DescriptionParts"].append(["speedbonus", "common", round(2**level * 10) / 10])
+						speed = 1 + machine["SpeedStep"] * level if "SpeedStep" in machine else 2**level
+						item["DescriptionParts"].append(["speedbonus", "common", round(speed * 10) / 10])
 				else:
 					item["DescriptionParts"].append([ss, "common"])	
 
@@ -871,6 +875,18 @@ for machine in machines:
 					frame_pair(3),
 				]),
 				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Ticks" : 20
+			})
+
+		if machine["Name"] == "ResearchLaboratory":
+			append_recipe({
+				"Name": block_name,
+				"Input": items([
+					[plate(), 4],
+					frame_pair(3),
+					[tier_material[min(tier, 6)] + "Computer", 4],
+				]),
+				"Output": one_item(block_name),
 				"Ticks" : 20
 			})
 

@@ -24,7 +24,7 @@ def level_unlocks(research_base, i):
 	return [[j[0], j[1].replace("%Material%", tier_material[i])] for j in research_base.get("Unlocks", [])]
 
 def infinite_tail(research, cost):
-	tail = {key: value for key, value in research.items() if key not in ("Replaces", "Complexities", "RequiredResearch")}
+	tail = {key: value for key, value in research.items() if key not in ("Complexities", "RequiredResearch")}
 	tail.update({
 		"Name": research["Name"] + str(last_tier + 1),
 		"RequiredResearch": [research["Name"]],
@@ -38,7 +38,7 @@ def infinite_tail(research, cost):
 	return tail
 
 def technology_entry(name):
-	return technologies.setdefault(name, {"Complexity": 0, "Replaces": [], "BonusSlots": 0})
+	return technologies.setdefault(name, {"Complexity": 0, "BonusSlots": 0})
 
 def append_levels(research_base):
 	mini, maxi = 0, 1
@@ -80,7 +80,6 @@ def append_levels(research_base):
 				tail = infinite_tail(research, cost)
 			owner = tail if i > last_tier else research
 			owner["Complexities"].append(cost)
-			owner.setdefault("Replaces", []).append(old_name)
 			replaced_levels[old_name] = [owner["Name"]]
 			continue
 
@@ -112,7 +111,6 @@ def append_levels(research_base):
 		technology = technology_for(research_base["Name"], i)
 		entry = technology_entry(technology)
 		entry["Complexity"] += cost
-		entry["Replaces"].append(old_name)
 		if inventory:
 			entry["BonusSlots"] += bonus_slots
 		version = {"Technology": technology}
@@ -144,7 +142,6 @@ def append_technologies():
 					"Levels": [tier, tier],
 					"Tier": tier,
 					"Complexity": price,
-					"Replaces": entry["Replaces"],
 				}
 				if entry["BonusSlots"]:
 					technology["BonusSlots"] = entry["BonusSlots"]
@@ -338,9 +335,9 @@ append_levels({
 	"Name": "ResearchLaboratory",
 	"Label": ["ResearchLaboratory", "parts"],
 	"RequiredResearch": ["DistributedComputing"],
-	"Unlocks": [["Hand" + r_dict, "ResearchLaboratory"]],
-	"Levels": [0, 0],
-	"CostExact": 500,
+	"Unlocks": [["Hand" + r_dict, "%Material%ResearchLaboratory"]],
+	"Levels": [1, 7],
+	"CostMul": [2.5, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25],
 	"MainResearch": True,
 })
 append_levels({
@@ -490,8 +487,17 @@ append_levels({
 	"Label": ["BasicMachines", "researches"],
 	"RequiredResearch": ["Metalwork"],
 	"Levels": [1,7],
-	"Unlocks": [["Hand" + r_dict, "%Material%Macerator"],
-	["Hand" + r_dict, "%Material%AutomaticHammer"]],
+	"Unlocks": [["Hand" + r_dict, "%Material%AutomaticHammer"]],
+	"CostMul":[0.1, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25],
+	"MainResearch": True,
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "Macerator",
+	"Label": ["Macerator", "machines"],
+	"RequiredResearch": ["BasicMachines"],
+	"Levels": [1,7],
+	"Unlocks": [["Hand" + r_dict, "%Material%Macerator"]],
 	"CostMul":[0.1, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25],
 	"MainResearch": True,
 })
@@ -545,11 +551,27 @@ append_levels({
 	"Label": ["Automatization", "researches"],
 	"RequiredResearch": ["BasicMachines"],
 	"Levels": [1,7],
-	"Unlocks": [
-		["Hand" + r_dict, "%Material%RobotArm"],
-		["Hand" + r_dict, "%Material%Conveyor"],
-		["Hand" + r_dict, "%Material%Splitter"],
-	],
+	"Unlocks": [["Hand" + r_dict, "%Material%RobotArm"]],
+	"CostMul":[0.1, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25],
+	"MainResearch": True,
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "Conveyor",
+	"Label": ["Conveyor", "machines"],
+	"RequiredResearch": ["Automatization"],
+	"Levels": [1,7],
+	"Unlocks": [["Hand" + r_dict, "%Material%Conveyor"]],
+	"CostMul":[0.1, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25],
+	"MainResearch": True,
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "Splitter",
+	"Label": ["Splitter", "machines"],
+	"RequiredResearch": ["Conveyor"],
+	"Levels": [1,7],
+	"Unlocks": [["Hand" + r_dict, "%Material%Splitter"]],
 	"CostMul":[0.1, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25],
 	"MainResearch": True,
 })

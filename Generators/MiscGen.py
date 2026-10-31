@@ -627,32 +627,6 @@ objects_array.append({
 	},
 })
 
-objects_array.append({
-	"Class": "StaticItem",
-	"Name": "ResearchLaboratory",
-	"Image": "T_ResearchLaboratory",
-	"StackSize": 16,
-	"Label": ["ResearchLaboratory", "parts"],
-	"ItemLogic": "BuildingSingleBlockItemLogic",
-	"Block": "ResearchLaboratory",
-	"Category": "Copper",
-	"Tier": 1,
-})
-objects_array.append({
-	"Class": "StaticBlock",
-	"Name": "ResearchLaboratory",
-	"Item": "ResearchLaboratory",
-	"BlockLogic": "ResearchLaboratoryBlockLogic",
-	"Actor": block_actor("ResearchLaboratory"),
-	"Tier": 1,
-	"EnergyConsumptionPerTick": 40,
-	"EnergyConsumptionItem": "Electricity",
-	"Positions": [[0, 0, 0]] + [[x, y, z] for z in range(4) for x in range(0, -3, -1) for y in range(-2, 3) if [x, y, z] != [0, 0, 0]],
-	"Minable": {
-		"Result": "ResearchLaboratory",
-	},
-})
-
 
 data = {
 	"Objects": objects_array

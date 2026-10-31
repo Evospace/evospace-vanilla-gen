@@ -5,6 +5,7 @@ from Materials import *
 
 BOILER_PER_TICK = 200
 INDUSTRIAL_BOILER_PER_TICK = BOILER_PER_TICK * 20 * 8
+LABORATORY_SPEED_STEP = 0.1
 
 # Crafter block logics: list in each machine below (no implicit defaults in MachinesGen).
 CRAFTING_LOGIC_EXPORTS = ["Working", "Progress", "InputInventory", "OutputInventory"]
@@ -840,6 +841,18 @@ machines = [
 		"EndTier": 6,
 		"BlockLogic":"ComputerBlockLogic",
 		"Description": ["ElectricInput"],
+	},{
+		"Name": "ResearchLaboratory",
+		"Energy": {"consumption": 40, "consumption_item": "Electricity", "scaling": LABORATORY_SPEED_STEP},
+		"StartTier": 1,
+		"EndTier": 7,
+		"Positions": [[0, 0, 0]] + [[x, y, z] for z in range(4) for x in range(0, -3, -1) for y in range(-2, 3) if [x, y, z] != [0, 0, 0]],
+		"BlockLogic": "ResearchLaboratoryBlockLogic",
+		"NoRecipes": True,
+		"LabelSection": "parts",
+		"NoDescriptionText": True,
+		"SpeedStep": LABORATORY_SPEED_STEP,
+		"Description": ["ElectricInput", "SpeedBonus"],
 	},{
 		"Name": "Diode",
 		"StartTier": 2,

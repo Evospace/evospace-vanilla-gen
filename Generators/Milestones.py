@@ -1,4 +1,5 @@
 from Common import *
+from Materials import *
 
 metal_milestones = {
 	0: "Start",
@@ -40,31 +41,43 @@ milestones = [
 			["Lamp", "Smelting"],
 			["ResearchLaboratory", "CopperWire"],
 		],
-		"Exits": [["ResearchLaboratory", "Automation"]],
+		"Exits": [["ResearchLaboratory", "Machines"]],
 		"Experiments": 0,
 		"Experiment": [],
 	},
 	{
-		"Name": "Automation",
-		"Label": "Automatization",
+		"Name": "Machines",
+		"Label": "BasicMachines",
 		"Position": [1, 1],
 		"Tree": [
 			["BasicMachines", ""],
 			["Automatization", "BasicMachines"],
-			["Loader", "Automatization"],
-			["Sorter", "Loader"],
-			["ConstructionTool", "Automatization"],
+			["Conveyor", "Automatization"],
+			["AutomaticMining", "Automatization"],
+		],
+		"Exits": [["AutomaticMining", "Automation"]],
+		"Experiments": 10,
+		"Experiment": [["CopperStirlingEngine", 1], ["Coal", 2]],
+	},
+	{
+		"Name": "Automation",
+		"Label": "Automatization",
+		"Position": [1, 2],
+		"Tree": [
+			["Macerator", ""],
+			["Splitter", "Macerator"],
+			["Loader", "Splitter"],
+			["ConstructionTool", "Loader"],
 			["DeconstructionTool", "ConstructionTool"],
 			["UpgradeTool", "DeconstructionTool"],
-			["Constructor", "Automatization"],
-			["AutomaticMining", "Automatization"],
-			["DrillingRigProductivity", "AutomaticMining"],
-			["AutomaticFarm", "AutomaticMining"],
+			["Constructor", "Macerator"],
+			["AutomaticFarm", "Splitter"],
+			["DrillingRigProductivity", "AutomaticFarm"],
 			["Bricks", "Constructor"],
 			["DecorativeWood", "Designable"],
 			["Door", "DecorativeWood"],
 			["Designable", "Bricks"],
-			["Sign", "BasicMachines"],
+			["Sign", "Constructor"],
 			["StoneTiles", "Bricks"],
 			["RedTiles", "StoneTiles"],
 			["DarkTiles", "RedTiles"],
@@ -72,14 +85,14 @@ milestones = [
 			["DarkBricks", "RedBricks"],
 			["MetalBlocks", "DarkBricks"],
 		],
-		"Exits": [["Automatization", "Steel"], ["AutomaticFarm", "Pipes"], ["Sign", "Circuit"]],
+		"Exits": [["Loader", "Steel"], ["AutomaticFarm", "Pipes"], ["Sign", "Circuit"]],
 		"Experiments": 10,
-		"Experiment": [["CopperParts", 4], ["IronPlate", 2]],
+		"Experiment": [["CopperConveyor", 1], ["CopperRobotArm", 1]],
 	},
 	{
 		"Name": "Pipes",
 		"Label": "FluidTransfer",
-		"Position": [2, 1],
+		"Position": [2, 2],
 		"Tree": [
 			["FluidTransfer", ""],
 			["Pump", "FluidTransfer"],
@@ -103,7 +116,7 @@ milestones = [
 	{
 		"Name": "Circuit",
 		"Label": "Circuit",
-		"Position": [0, 1],
+		"Position": [0, 2],
 		"Tree": [
 			["CircuitBoard", ""],
 			["Triod", "CircuitBoard"],
@@ -119,18 +132,19 @@ milestones = [
 		],
 		"Exits": [["Circuit", "Transistor"]],
 		"Experiments": 10,
-		"Experiment": [["CopperWire", 5], ["CopperParts", 2]],
+		"Experiment": [["CopperWire", 5], ["Glass", 3], ["CopperPlate", 4]],
 	},
 	{
 		"Name": "Steel",
 		"Label": "SteelProduction",
-		"Position": [1, 2],
+		"Position": [1, 3],
 		"Tree": [
 			["Oven", ""],
 			["SteelProduction", "Oven"],
 			["AdvancedSmelting", "SteelProduction"],
 			["ElectricFurnace", "AdvancedSmelting"],
 			["BasicFrame", "SteelProduction"],
+			["Sorter", "Oven"],
 			["Railway", "BasicFrame"],
 			["RailSignals", "Railway"],
 			["Concrete", "BasicFrame"],
@@ -143,12 +157,12 @@ milestones = [
 		],
 		"Exits": [["AdvancedSmelting", "Aluminium"], ["SteelProduction", "Steam"]],
 		"Experiments": 25,
-		"Experiment": [["IronDust", 4], ["CopperParts", 2]],
+		"Experiment": [["Triod", 1], ["CopperPipe", 2], ["CopperConveyor", 1]],
 	},
 	{
 		"Name": "Steam",
 		"Label": "SteamEngine",
-		"Position": [2, 2],
+		"Position": [2, 3],
 		"Tree": [
 			["Boiler", ""],
 			["SteamEngine", "Boiler"],
@@ -169,12 +183,12 @@ milestones = [
 		],
 		"Exits": [["ElectricEngine", "Chemistry"]],
 		"Experiments": 25,
-		"Experiment": [["SteelParts", 2], ["SteelPipe", 1]],
+		"Experiment": [["CopperPump", 1], ["SteelPipe", 1]],
 	},
 	{
 		"Name": "Transistor",
 		"Label": "Processor",
-		"Position": [0, 2],
+		"Position": [0, 3],
 		"Tree": [
 			["Resistor", ""],
 			["Resistor2", "Resistor"],
@@ -197,7 +211,7 @@ milestones = [
 	{
 		"Name": "Aluminium",
 		"Label": "AluminiumProduction",
-		"Position": [1, 3],
+		"Position": [1, 4],
 		"Tree": [
 			["Electrolyzer", ""],
 			["AluminiumReduction", "Electrolyzer"],
@@ -225,12 +239,12 @@ milestones = [
 		],
 		"Exits": [["AluminiumProduction", "StainlessSteel"]],
 		"Experiments": 50,
-		"Experiment": [["BauxiteDust", 2], ["SteelParts", 1]],
+		"Experiment": [["SteelRail", 1], ["Coke", 2]],
 	},
 	{
 		"Name": "Chemistry",
 		"Label": "IndustrialChemReactor",
-		"Position": [2, 3],
+		"Position": [2, 4],
 		"Tree": [
 			["IndustrialChemReactor", ""],
 			["Catalyst", "IndustrialChemReactor"],
@@ -254,7 +268,7 @@ milestones = [
 	{
 		"Name": "Silicon",
 		"Label": "QuantumCircuit",
-		"Position": [0, 4],
+		"Position": [0, 5],
 		"Tree": [
 			["SiliconWafer", ""],
 			["Processor2", "SiliconWafer"],
@@ -279,7 +293,7 @@ milestones = [
 	{
 		"Name": "StainlessSteel",
 		"Label": "StainlessSteelProduction",
-		"Position": [1, 4],
+		"Position": [1, 5],
 		"Tree": [
 			["Mixer", ""],
 			["AdvancedAlloys", "Mixer"],
@@ -301,12 +315,12 @@ milestones = [
 		],
 		"Exits": [["IndustrialSmelting", "Titanium"]],
 		"Experiments": 100,
-		"Experiment": [["ChromiumDust", 10], ["AluminiumParts", 5]],
+		"Experiment": [["AluminiumElectricEngine", 1], ["AluminiumPipe", 4], ["AluminiumFoil", 6]],
 	},
 	{
 		"Name": "Oil",
 		"Label": "FuelChemistry",
-		"Position": [2, 4],
+		"Position": [2, 5],
 		"Tree": [
 			["PyrolysisUnit", ""],
 			["PreciseTemperaturePyrolysis", "PyrolysisUnit"],
@@ -325,12 +339,12 @@ milestones = [
 		],
 		"Exits": [],
 		"Experiments": 100,
-		"Experiment": [["Coal", 20], ["SteelPipe", 5]],
+		"Experiment": [["Battery", 6], ["PolyethyleneSheet", 6]],
 	},
 	{
 		"Name": "QuantumBrain",
 		"Label": "QuantumBrain",
-		"Position": [0, 6],
+		"Position": [0, 7],
 		"Tree": [
 			["BrainMatrix", ""],
 			["QuantumBrain", "BrainMatrix"],
@@ -349,7 +363,7 @@ milestones = [
 	{
 		"Name": "Titanium",
 		"Label": "TitaniumProduction",
-		"Position": [1, 5],
+		"Position": [1, 6],
 		"CostMul": 2,
 		"Tree": [
 			["NitricAcid", ""],
@@ -374,12 +388,12 @@ milestones = [
 		],
 		"Exits": [["TitaniumProduction", "Composite"], ["FastSifting", "Nuclear"]],
 		"Experiments": 125,
-		"Experiment": [["TitaniumOxideDust", 8], ["ModularFrame", 2]],
+		"Experiment": [["ModularFrame", 1], ["AdvancedCoil", 4], ["SiliconMonocrystal", 3]],
 	},
 	{
 		"Name": "Composite",
 		"Label": "CompositePlate",
-		"Position": [1, 6],
+		"Position": [1, 7],
 		"Tree": [
 			["CarbonFiber", ""],
 			["CarbonFiberSheet", "CarbonFiber"],
@@ -404,12 +418,12 @@ milestones = [
 		],
 		"Exits": [["PlatinumReflector", "Fusion"]],
 		"Experiments": 150,
-		"Experiment": [["TitaniumPlate", 20], ["PowerCoil", 3]],
+		"Experiment": [["PowerCoil", 4], ["TantalumWire", 4], ["PlatinumWire", 8]],
 	},
 	{
 		"Name": "Nuclear",
 		"Label": "FissionReactor",
-		"Position": [2, 5],
+		"Position": [2, 6],
 		"CostMul": 2,
 		"CostMulOf": {name: 4 for name in ["UraniumCell", "FissionReactor", "ControlCell", "ReflectorCell", "ReactionThrottling", "AdvancedReflection", "AdvancedReflection2", "ThoriumReaction", "PlutoniumReaction", "PlutoniumReaction2"]},
 		"Tree": [
@@ -433,12 +447,12 @@ milestones = [
 		],
 		"Exits": [],
 		"Experiments": 125,
-		"Experiment": [["UraniumDust", 16], ["TitaniumParts", 4]],
+		"Experiment": [["QuantumCircuit", 1], ["TitaniumPipe", 5], ["Cell", 9]],
 	},
 	{
 		"Name": "Fusion",
 		"Label": "FusionReaction",
-		"Position": [1, 7],
+		"Position": [1, 8],
 		"Tree": [
 			["FusionReactor", ""],
 			["Rocket", "FusionReactor"],
@@ -467,12 +481,12 @@ milestones = [
 		],
 		"Exits": [["Portal", "Infinite"]],
 		"Experiments": 200,
-		"Experiment": [["QuantumBrain", 1], ["ModularFrame", 1]],
+		"Experiment": [["QuantumBrain", 1], ["PlatinumReflector", 8], ["CompositePipe", 3]],
 	},
 	{
 		"Name": "Infinite",
 		"Label": "DrillingRigProductivity8",
-		"Position": [1, 8],
+		"Position": [1, 9],
 		"Tree": [
 			["DrillingRigProductivity8", ""],
 			["PumpjackProductivity8", "DrillingRigProductivity8"],
@@ -785,7 +799,7 @@ write_file("Generated/Recipes/laboratory.json", {"Objects": [{
 	"Class": r_dict,
 	"Name": laboratory_r_dict,
 	"StartTier": 0,
-	"UsedIn": [{"Item": "ResearchLaboratory", "Tier": 0}],
+	"UsedIn": [{"Item": tier_material[tier] + "ResearchLaboratory", "Tier": tier} for tier in range(1, 8)],
 	"Recipes": [{
 		"Name": m["Name"] + "Experiment",
 		"Input": items(m["Experiment"]),

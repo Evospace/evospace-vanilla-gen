@@ -272,18 +272,6 @@ recipes_hand.append({
 })
 
 recipes_hand.append({
-	"Name": "ResearchLaboratory",
-	"Input": items([
-		["CopperPlate", 10],
-		["CopperParts", 10],
-		["CopperWire", 10],
-		["BuildingMaterial", 20],
-	]),
-	"Output": one_item("ResearchLaboratory"),
-	"Ticks": 20,
-})
-
-recipes_hand.append({
 	"Name": "Flashlight",
 	"Input":{
 		"Items":[
