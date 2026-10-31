@@ -138,18 +138,21 @@ materials = [
 		"Items": tiered_parts_list + ["Wire"],
 		"Smelting": ["Smelter", "ArcFurnace"],
 		"Tier": 0,
+		"Color": [0.95, 0.63, 0.53],
 	},{
 		"Name": "Gold",
 		"Label": "Gold",
 		"Items": ["Plate", "Dust", "Block", "Wire"],
 		"Smelting": ["Smelter", "ArcFurnace"],
-		"Tier": 2
+		"Tier": 2,
+		"Color": [1.0, 0.765, 0.337],
 	},{
 		"Name": "Platinum",
 		"Label": "Platinum",
 		"Items": ["Plate", "Dust", "Block", "Wire", "Foil"],
 		"Smelting": ["ArcFurnace"],
 		"Tier": 5,
+		"Color": [0.926, 0.952, 1.0],
 	},{
 		"Name": "PlatinumReflector",
 		"Category": "Parts",
@@ -535,12 +538,14 @@ materials = [
 		"Items": ["Dust", "Block", "Plate", "Wire"],
 		"Smelting": ["InductionFurnace"],
 		"Tier": 4,
+		"Color": [0.182, 0.174, 0.136],
 	},{
 		"Name": "Tantalum",
 		"Label": "Tantalum",
 		"Items": ["Dust", "Block", "Plate", "Wire", "Foil"],
 		"Smelting": ["InductionFurnace"],
 		"Tier": 5,
+		"Color": [0.135, 0.082, 0.034],
 	},{
 		"Name": "TantalumSludge",
 		"Category": "Chemical",

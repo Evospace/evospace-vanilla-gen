@@ -200,6 +200,7 @@ for material in materials:
 			"Output": one_item(m_name+"Wire", 2),
 			"Ticks" : 40,
 			"Animation": wire_animation,
+			"Colors": [material["Color"]],
 		})
 		recipes_hand.append({
 			"Name":m_name+"Wire",
