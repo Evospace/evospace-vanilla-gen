@@ -180,6 +180,7 @@ recipes_hand.append({
 chip_animation = {
 	"Mesh": "/Game/Blocks/Assembler/SimpleChip/SK_SimpleChipMechanism.SK_SimpleChipMechanism",
 	"Sequence": "/Game/Blocks/Assembler/SimpleChip/A_SimpleChipProduction_Loop.A_SimpleChipProduction_Loop",
+	"Manipulators": ["loader_xy", "loader_z", "unloader_xy", "unloader_z", "bond_xy", "bond_z"],
 }
 
 recipes_assembler.append({
@@ -359,6 +360,7 @@ def capacitor_animation(variant):
     return {
         "Mesh": f"/Game/Blocks/Assembler/Capacitor/SK_CapacitorMechanism{variant}.SK_CapacitorMechanism{variant}",
         "Sequence": "/Game/Blocks/Assembler/Capacitor/A_CapacitorProduction_Loop.A_CapacitorProduction_Loop",
+        "Manipulators": ["pick_x", "pick_y", "pick_z", "lid_y", "lid_z"],
     }
 
 recipes_assembler.append({
@@ -400,6 +402,7 @@ recipes_assembler.append({
 wafer_animation = {
 	"Mesh": "/Game/Blocks/Assembler/Wafer/SK_WaferMechanism.SK_WaferMechanism",
 	"Sequence": "/Game/Blocks/Assembler/Wafer/A_WaferProduction_Loop.A_WaferProduction_Loop",
+	"Manipulators": ["x_carriage", "y_carriage", "ram", "polish_carriage"],
 }
 
 recipes_assembler.append({
@@ -435,6 +438,7 @@ recipes_hand.append({
 processor_animation = {
 	"Mesh": "/Game/Blocks/Assembler/Processor/SK_ProcessorMechanism.SK_ProcessorMechanism",
 	"Sequence": "/Game/Blocks/Assembler/Processor/A_ProcessorProduction_Loop.A_ProcessorProduction_Loop",
+	"Manipulators": ["wafer_stage", "scanner", "bond_press", "shuttle"],
 }
 
 recipes_assembler.append({
