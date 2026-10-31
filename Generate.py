@@ -40,7 +40,6 @@ generator_files = [
 	"Planets.py",
 	"Props.py",
 	"Researches.py",
-	"ResearchDescriptions.py",
 	"Milestones.py",
 	"Spawn.py",
 	"Weather.py",

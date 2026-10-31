@@ -139,6 +139,7 @@ def append_technologies():
 					"Class": "StaticResearchTechnology",
 					"Name": name,
 					"Label": [name, "researches"],
+					"DescriptionParts": [["Technology", "description"]],
 					"RequiredResearch": ([previous] if previous else []) + [technology_metal[tier]],
 					"Levels": [tier, tier],
 					"Tier": tier,
