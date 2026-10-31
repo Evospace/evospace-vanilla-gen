@@ -355,6 +355,12 @@ recipes_hand.append({
     "Tier": 1,
 })
 
+def capacitor_animation(variant):
+    return {
+        "Mesh": f"/Game/Blocks/Assembler/Capacitor/SK_CapacitorMechanism{variant}.SK_CapacitorMechanism{variant}",
+        "Sequence": "/Game/Blocks/Assembler/Capacitor/A_CapacitorProduction_Loop.A_CapacitorProduction_Loop",
+    }
+
 recipes_assembler.append({
     "Name": "Capacitor2",
     "Input": items([
@@ -364,6 +370,7 @@ recipes_assembler.append({
     "Output": one_item("Capacitor", 4),
     "Ticks": 60,
     "Tier": 2,
+    "Animation": capacitor_animation("Mica"),
 })
 
 recipes_assembler.append({
@@ -375,6 +382,7 @@ recipes_assembler.append({
     "Output": one_item("Capacitor", 8),
     "Ticks": 60,
     "Tier": 5,
+    "Animation": capacitor_animation(""),
 })
 
 recipes_assembler.append({
@@ -386,7 +394,13 @@ recipes_assembler.append({
     "Output": one_item("Capacitor", 16),
     "Ticks": 60,
     "Tier": 5,
+    "Animation": capacitor_animation("Carbon"),
 })
+
+wafer_animation = {
+	"Mesh": "/Game/Blocks/Assembler/Wafer/SK_WaferMechanism.SK_WaferMechanism",
+	"Sequence": "/Game/Blocks/Assembler/Wafer/A_WaferProduction_Loop.A_WaferProduction_Loop",
+}
 
 recipes_assembler.append({
 	"Name":"SiliconWafer",
@@ -394,6 +408,7 @@ recipes_assembler.append({
 	"Output": one_item("SiliconWafer", 16),
 	"Ticks" : 200,
 	"Tier": 3,
+	"Animation": wafer_animation,
 })
 
 recipes_assembler.append({
@@ -402,6 +417,7 @@ recipes_assembler.append({
 	"Output": one_item("DopedSiliconWafer", 16),
 	"Ticks" : 200,
 	"Tier": 4,
+	"Animation": wafer_animation,
 })
 
 recipes_hand.append({

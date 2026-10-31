@@ -23,6 +23,11 @@ wire_animation = {
 	"Sequence": "/Game/Blocks/Assembler/Wire/A_WireProduction_Loop.A_WireProduction_Loop",
 }
 
+foil_animation = {
+	"Mesh": "/Game/Blocks/Assembler/Foil/SK_FoilMechanism.SK_FoilMechanism",
+	"Sequence": "/Game/Blocks/Assembler/Foil/A_FoilProduction_Loop.A_FoilProduction_Loop",
+}
+
 def append_metal_macerator_recipe(material_name, part_suffix, input_count, dust_count, material_tier):
 	recipes_macerator.append({
 		"Name": material_name + part_suffix,
@@ -164,7 +169,8 @@ for material in materials:
 			"Input": one_item(m_name + "Plate"),
 			"Output": one_item(m_name + "Foil", 3),
 			"Ticks" : 80,
-			"Tier": material_tier
+			"Tier": material_tier,
+			"Animation": foil_animation,
 		})
 		recipes_hand.append({
 			"Name":m_name+"Foil",
