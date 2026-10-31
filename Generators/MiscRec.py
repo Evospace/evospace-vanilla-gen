@@ -188,6 +188,11 @@ recipes_assembler.append({
 	"Tier": 2,
 })
 
+triode_animation = {
+	"Mesh": "/Game/Blocks/Constructor/Triode/SK_TriodeMechanism.SK_TriodeMechanism",
+	"Sequence": "/Game/Blocks/Constructor/Triode/A_TriodeProduction_Loop.A_TriodeProduction_Loop",
+}
+
 recipes_hand.append({
 	"Name":"Triod",
 	"Input": items([
@@ -197,6 +202,7 @@ recipes_hand.append({
 	"Output": one_item("Triod"),
 	"Ticks" : 50,
 	"Tier": 1,
+	"Animation": triode_animation,
 })
 
 recipes_hand.append({
