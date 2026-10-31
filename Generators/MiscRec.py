@@ -177,6 +177,11 @@ recipes_hand.append({
 	"Tier": 1,
 })
 
+chip_animation = {
+	"Mesh": "/Game/Blocks/Assembler/SimpleChip/SK_SimpleChipMechanism.SK_SimpleChipMechanism",
+	"Sequence": "/Game/Blocks/Assembler/SimpleChip/A_SimpleChipProduction_Loop.A_SimpleChipProduction_Loop",
+}
+
 recipes_assembler.append({
 	"Name":"Circuit2",
 	"Input": items([
@@ -186,6 +191,7 @@ recipes_assembler.append({
 	"Output": one_item("Circuit"),
 	"Ticks" : 200,
 	"Tier": 2,
+	"Animation": chip_animation,
 })
 
 triode_animation = {
@@ -285,6 +291,7 @@ recipes_assembler.append({
 	"Output": one_item("AdvancedCircuit"),
 	"Ticks" : 90,
 	"Tier": 2,
+	"Animation": chip_animation,
 })
 
 recipes_hand.append({
@@ -308,6 +315,7 @@ recipes_assembler.append({
     "Output": one_item("Transistor", 2),
     "Ticks": 60,
     "Tier": 2,
+    "Animation": chip_animation,
 })
 
 recipes_assembler.append({
@@ -320,6 +328,7 @@ recipes_assembler.append({
     "Output": one_item("Transistor", 4),
     "Ticks": 60,
     "Tier": 3,
+    "Animation": chip_animation,
 })
 
 recipes_assembler.append({
@@ -332,6 +341,7 @@ recipes_assembler.append({
     "Output": one_item("Transistor", 8),
     "Ticks": 60,
     "Tier": 4,
+    "Animation": chip_animation,
 })
 
 recipes_hand.append({
