@@ -259,7 +259,7 @@ for machine in machines:
 
 		if machine["Name"] == "KineticAccumulator":
 			item["DescriptionParts"].append(["battery", "common", 256000 * 2**level])
-			item["DescriptionParts"].append(["kinetic_drain", "common", 40])
+			item["DescriptionParts"].append(["kinetic_drain", "common", 80])
 			
 		if machine["Name"] == "Chest":
 			item["DescriptionParts"].append(["chest", "common", 20+5*level])
