@@ -5,11 +5,24 @@ from Materials import *
 
 BOILER_PER_TICK = 200
 INDUSTRIAL_BOILER_PER_TICK = BOILER_PER_TICK * 20 * 8
-LABORATORY_SPEED_STEP = 0.1
 
 # Crafter block logics: list in each machine below (no implicit defaults in MachinesGen).
 CRAFTING_LOGIC_EXPORTS = ["Working", "Progress", "InputInventory", "OutputInventory"]
 CRAFTING_LOGIC_IMPORTS = ["Working"]
+
+laboratory = {
+	"Energy": {"consumption": 40, "consumption_item": "Electricity"},
+	"Positions": [[0, 0, 0]] + [[x, y, z] for z in range(4) for x in range(0, -3, -1) for y in range(-2, 3) if [x, y, z] != [0, 0, 0]],
+	"BlockLogic": "ResearchLaboratoryBlockLogic",
+	"Actor": block_actor("ResearchLaboratory"),
+	"Image": "ResearchLaboratory",
+	"NoRecipes": True,
+	"NoDescriptionText": True,
+	"Description": ["ElectricInput"],
+}
+
+def laboratory_label(field):
+	return ["machines_label_format", "common", field, ["ResearchLaboratory", "parts"]]
 
 machines = [
 	{
@@ -864,17 +877,35 @@ machines = [
 		"BlockLogic":"ComputerBlockLogic",
 		"Description": ["ElectricInput"],
 	},{
-		"Name": "ResearchLaboratory",
-		"Energy": {"consumption": 40, "consumption_item": "Electricity", "scaling": LABORATORY_SPEED_STEP},
+		"Name": "Beacon",
+		"Energy": {"consumption": 20, "consumption_item": "Electricity"},
 		"StartTier": 1,
-		"EndTier": 7,
-		"Positions": [[0, 0, 0]] + [[x, y, z] for z in range(4) for x in range(0, -3, -1) for y in range(-2, 3) if [x, y, z] != [0, 0, 0]],
-		"BlockLogic": "ResearchLaboratoryBlockLogic",
-		"NoRecipes": True,
-		"LabelSection": "parts",
+		"EndTier": 1,
+		"BlockLogic": "RadioReceiverBlockLogic",
+		"LogicExports": CRAFTING_LOGIC_EXPORTS,
+		"LogicImports": CRAFTING_LOGIC_IMPORTS,
+		"Image": "LogicInterface",
+		"Actor": "Blocks/LogicTransceiver/BP_LogicTransceiver.BP_LogicTransceiver_C",
 		"NoDescriptionText": True,
-		"SpeedStep": LABORATORY_SPEED_STEP,
-		"Description": ["ElectricInput", "SpeedBonus"],
+		"Description": ["ElectricInput"],
+	},{
+		"Name": "ElectronicsLaboratory",
+		"Label": laboratory_label(["Circuit", "parts"]),
+		"StartTier": 1,
+		"EndTier": 1,
+		**laboratory,
+	},{
+		"Name": "EngineeringLaboratory",
+		"Label": laboratory_label(["Metalwork", "researches"]),
+		"StartTier": 1,
+		"EndTier": 1,
+		**laboratory,
+	},{
+		"Name": "ChemicalLaboratory",
+		"Label": laboratory_label(["Chemical", "category"]),
+		"StartTier": 2,
+		"EndTier": 2,
+		**laboratory,
 	},{
 		"Name": "Diode",
 		"StartTier": 2,

@@ -580,6 +580,19 @@ for machine in machines:
 				"Ticks" : 40
 			})
 
+		if machine["Name"] == "Beacon":
+			append_recipe({
+				"Name": block_name,
+				"Input": items([
+					[plate(), 6],
+					wire_count(8),
+					["Triod", 2],
+					["Circuit", 2],
+				]),
+				"Output": one_item(block_name),
+				"Ticks" : 40
+			})
+
 		if machine["Name"] == "Sifter":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],

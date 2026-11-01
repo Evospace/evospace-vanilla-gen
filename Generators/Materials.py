@@ -822,7 +822,8 @@ materials = [
 		"StackSize": 32,
 		"Items": ["Exact"],
 		"Category": "Parts",
-		"Meshes": ["/Game/Models/QuantumCoreCrate"],
+		"Meshes": ["/Game/Models/QuantumCore/SM_QuantumCoreCrate"],
+		"Materials": [],
 		"Tier": 4,
 	},{
 		"Name": "DecisionResonator",

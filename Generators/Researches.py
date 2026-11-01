@@ -1646,6 +1646,15 @@ append_levels({
 	"CostMul": 2
 })
 append_levels({
+	"Class": research_recipe,
+	"Name": "SatelliteAntenna",
+	"Label": ["SatelliteAntenna", "parts"],
+	"RequiredResearch": ["Processor"],
+	"Unlocks": [["Hand" + r_dict, "SatelliteAntenna"]],
+	"Levels": [3,3],
+	"MainResearch": True,
+})
+append_levels({
 	 "Class": research_recipe,
 	 "Name": "Portal",
 	 "Label": ["Portal", "machines"],
@@ -1864,6 +1873,14 @@ append_levels({
 	"RequiredResearch": ["Lamp1", "Circuit"],
 	"Unlocks": [["Hand" + r_dict, "Spotlight"]],
 	"Levels": [2,2],
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "Beacon",
+	"Label": ["Beacon", "machines"],
+	"RequiredResearch": ["Triod"],
+	"Unlocks": [["Hand" + r_dict, "%Material%Beacon"]],
+	"Levels": [1,1],
 })
 append_levels({
 	"Class": research_recipe,

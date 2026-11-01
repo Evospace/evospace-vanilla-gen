@@ -34,6 +34,7 @@ milestones = [
 			["WireCover", "CircuitBoard"],
 			["Triod", "CircuitBoard"],
 			["Circuit", "Triod"],
+			["Beacon", "Triod"],
 			["LogicNetworking", "Circuit"],
 			["LogicDevices", "LogicNetworking"],
 			["AdvancedSign", "LogicDevices"],
@@ -155,14 +156,24 @@ milestones = [
 			["Circuit2", "Transistor"],
 			["Assembler", "Processor"],
 			["Processor", "Transistor"],
+			["SatelliteAntenna", "Processor"],
 			["Capacitor", "Assembler"],
 			["Capacitor2", "Capacitor"],
 			["InterchangeableParts", "Assembler"],
 			["BeltDrive", "InterchangeableParts"],
 		],
-		"Exits": [["Processor", "Silicon"]],
+		"Exits": [["SatelliteAntenna", "SatelliteAntenna"]],
 		"Experiments": 25,
 		"Experiment": [["Circuit", 4], ["CopperWire", 4]],
+	},
+	{
+		"Name": "SatelliteAntenna",
+		"Label": "SatelliteAntenna",
+		"Position": [0, 2],
+		"Build": "SatelliteAntenna",
+		"Tree": [],
+		"Exits": [["", "Silicon"]],
+		"Experiments": 1,
 	},
 	{
 		"Name": "Aluminium",
@@ -637,7 +648,8 @@ research_objects = objects_of(get_generated_files()["Generated/Researches/basic.
 research_by_name = {r["Name"]: r for r in research_objects}
 item_names = {o["Name"] for data in get_generated_files().values() for o in objects_of(data) if o.get("Class", "").startswith("StaticItem")}
 milestone_by_name = {m["Name"]: m for m in milestones}
-laboratory_tier = {machine["Name"]: machine["StartTier"] for machine in machines if machine.get("BlockLogic") == "ResearchLaboratoryBlockLogic"}
+stage_dicts = {o["Name"]: o for data in get_generated_files().values() for o in objects_of(data) if o.get("Class") == r_dict and o.get("Recipes")}
+laboratory_tier ={machine["Name"]: machine["StartTier"] for machine in machines if machine.get("BlockLogic") == "ResearchLaboratoryBlockLogic"}
 
 owner = {}
 positions = {}
@@ -647,11 +659,24 @@ for m in milestones:
 		raise Exception(f"Milestones: {m['Name']} and {positions[position]} share the cell {position}")
 	positions[position] = m["Name"]
 
+	built = "Build" in m
 	heads = [name for name, up in m["Tree"] if not up]
-	if len(heads) != 1:
-		raise Exception(f"Milestones: {m['Name']} needs exactly one head, has {heads}")
-	m["Head"] = heads[0]
+	if len(heads) != (0 if built else 1):
+		raise Exception(f"Milestones: {m['Name']} needs {'no head, it is built' if built else 'exactly one head'}, has {heads}")
+	m["Head"] = heads[0] if heads else ""
 	m["Researches"] = [name for name, _ in m["Tree"]]
+	if built:
+		stages = stage_dicts.get(m["Build"] + "Stage" + r_dict)
+		if m["Build"] not in item_names or not stages:
+			raise Exception(f"Milestones: {m['Name']} is built as {m['Build']}, which has no item or no stages")
+		if m["Experiments"] != 1:
+			raise Exception(f"Milestones: {m['Name']} is passed by one build, not {m['Experiments']}")
+		bill = {}
+		for stage in stages["Recipes"]:
+			for need in stage["Input"]["Items"]:
+				bill[need["Name"]] = bill.get(need["Name"], 0) + need["Count"]
+		m["Experiment"] = [[name, count] for name, count in bill.items()]
+		m["Stage"] = stages["Recipes"][-1]["Name"]
 	for name, up in m["Tree"]:
 		if name not in research_by_name:
 			raise Exception(f"Milestones: {m['Name']} names an unknown research {name}")
@@ -666,7 +691,7 @@ for m in milestones:
 			raise Exception(f"Milestones: CostMulOf of {m['Name']} names {name}, which is not in the milestone")
 	if m["Label"] not in research_by_name:
 		raise Exception(f"Milestones: {m['Name']} takes its label from an unknown research {m['Label']}")
-	if m["Experiments"] and m.get("Laboratory") not in laboratory_tier:
+	if m["Experiments"] and not built and m.get("Laboratory") not in laboratory_tier:
 		raise Exception(f"Milestones: {m['Name']} runs its experiment in an unknown laboratory {m.get('Laboratory')}")
 
 	for item, count in m["Experiment"]:
@@ -680,7 +705,7 @@ for m in milestones:
 entries = {m["Name"]: [] for m in milestones}
 for m in milestones:
 	for research, target in m["Exits"]:
-		if research not in m["Researches"]:
+		if research not in m["Researches"] and (research or m["Tree"]):
 			raise Exception(f"Milestones: exit {research} of {m['Name']} is not one of its researches")
 		if target not in milestone_by_name:
 			raise Exception(f"Milestones: exit of {m['Name']} leads to an unknown milestone {target}")
@@ -715,12 +740,15 @@ for m in milestones:
 		boxes[key_of(head)]["Entry"] = (box_of[parent[head]], parent[head], d)
 		boxes[box_of[parent[head]]]["Exits"].append((parent[head], d))
 
+def exit_box(milestone, research):
+	return box_of[research] if research else milestone
+
 for m in milestones:
 	for research, target in m["Exits"]:
-		boxes[box_of[research]]["Exits"].append((research, direction(m["Name"], target)))
+		boxes[exit_box(m["Name"], research)]["Exits"].append((research, direction(m["Name"], target)))
 	if entries[m["Name"]]:
 		source, research = entries[m["Name"]][0]
-		boxes[m["Name"]]["Entry"] = (box_of[research], research, axis(direction(source, m["Name"])))
+		boxes[m["Name"]]["Entry"] = (exit_box(source, research), research, axis(direction(source, m["Name"])))
 
 cell_of = {}
 origin_x = {}
@@ -742,6 +770,9 @@ def fits(nodes, cards, line):
 		if cell in node_at or cell in card_at or cell in line_at or cell in nodes:
 			return False
 	return True
+
+def exit_cell_of(source, research):
+	return cell_of[research] if research else card_of[source]
 
 def gap_column(source, e):
 	x = origin_x[source]
@@ -766,7 +797,7 @@ while queue:
 
 	if entry:
 		source, research, e = entry
-		exit_cell = cell_of[research]
+		exit_cell = exit_cell_of(source, research)
 		if e[0] == 0:
 			head_local = (cell_columns // 2, 0 if e[1] > 0 else rows - 1)
 			x0 = exit_cell[0] - head_local[0]
@@ -781,7 +812,7 @@ while queue:
 	reserved = through([anchor_local, head_local]) + [(x, head_local[1]) for x in range(cell_columns) if (x - head_local[0]) * e[0] < 0]
 	if carded:
 		reserved += [add(anchor_local, (dx, dy)) for dx in (-1, 0, 1) for dy in (-1, 0, 1)]
-	local, missed = layout({"Name": key, "Tree": box["Tree"], "Head": box["Head"]}, cell_columns, rows, head_local, exit_dirs, reserved)
+	local, missed = layout({"Name": key, "Tree": box["Tree"], "Head": box["Head"]}, cell_columns, rows, head_local, exit_dirs, reserved) if box["Tree"] else ({}, [])
 	long_links += [f"{key}:{n}" for n in missed]
 
 	for k in range(1000):
@@ -797,7 +828,7 @@ while queue:
 		head = add(anchor, scale(e, reach))
 		nodes = {name: add(head, (cell[0] - head_local[0], cell[1] - head_local[1])) for name, cell in local.items()}
 		cards = [anchor] if carded else []
-		line = through(points) + through([anchor, head])
+		line = through(points) + (through([anchor, head]) if box["Tree"] else [])
 		if fits(set(nodes.values()), cards, line):
 			break
 	else:
@@ -823,12 +854,12 @@ crossing = []
 for m in milestones:
 	for source, research in entries[m["Name"]][1:]:
 		e = axis(direction(source, m["Name"]))
-		exit_cell = cell_of[research]
+		exit_cell = exit_cell_of(source, research)
 		card = card_of[m["Name"]]
 		if e[0] == 0:
 			points = bends([exit_cell, (exit_cell[0], card[1]), card])
 		else:
-			gx = gap_column(box_of[research], e)
+			gx = gap_column(exit_box(source, research), e)
 			points = bends([exit_cell, (gx, exit_cell[1]), (gx, card[1]), card])
 		line = through(points)
 		if any(cell in node_at or cell in card_at for cell in line):
@@ -852,7 +883,7 @@ milestone_tier = {}
 for name in (key for key in done if key in milestone_by_name):
 	m = milestone_by_name[name]
 	own = sorted(research_by_name[r]["Tier"] for r in m["Researches"])
-	milestone_tier[name] = max([own[len(own) // 2]] + [milestone_tier.get(source, 0) for source, _ in entries[name]])
+	milestone_tier[name] = max(own[len(own) // 2:len(own) // 2 + 1] + [milestone_tier.get(source, 0) for source, _ in entries[name]])
 
 def price(m, name, floor):
 	research = research_by_name[name]
@@ -865,13 +896,15 @@ def price(m, name, floor):
 			price(m, child, cost)
 
 for m in milestones:
-	price(m, m["Head"], 0)
+	if m["Head"]:
+		price(m, m["Head"], 0)
 	for name in m["Researches"]:
 		research_by_name[name]["Complexity"] = round(research_by_name[name]["Complexity"] * tier_cost_mul.get(milestone_tier[m["Name"]], 1))
 print(f"Milestones: tiers {milestone_tier}")
 
 objects = []
 for m in milestones:
+	built = "Build" in m
 	objects.append({
 		"Class": "StaticMilestone",
 		"Name": m["Name"],
@@ -887,8 +920,11 @@ for m in milestones:
 		"Exits": m["Exits"],
 		"Experiments": m["Experiments"],
 		"Experiment": m["Experiment"],
-		"Recipe": [m["Laboratory"] + r_dict, m["Name"] + "Experiment"] if m["Experiments"] else [],
+		"Recipe": [m["Build"] + "Stage" + r_dict, m["Stage"]] if built else [m["Laboratory"] + r_dict, m["Name"] + "Experiment"] if m["Experiments"] else [],
 	})
+	if built:
+		objects[-1]["Build"] = m["Build"]
+		del objects[-1]["Head"]
 
 write_file("Generated/Researches/milestones.json", {"Objects": objects})
 

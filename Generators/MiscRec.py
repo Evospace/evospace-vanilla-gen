@@ -492,6 +492,13 @@ recipes_hand.append({
 	"Ticks" : 100,
 	"Tier": 4,
 })
+
+quantum_core_animation = {
+	"Mesh": "/Game/Blocks/Assembler/QuantumCore/SK_QuantumCoreMechanism.SK_QuantumCoreMechanism",
+	"Sequence": "/Game/Blocks/Assembler/QuantumCore/A_QuantumCoreProduction_Loop.A_QuantumCoreProduction_Loop",
+	"Manipulators": ["coil_x_carriage", "coil_z_stage", "coil_insertion_head", "cap_crimp_tool", "cap_feed_elevator"],
+}
+
 recipes_assembler.append({
 	"Name":"QuantumCore",
 	"Input":items([
@@ -505,6 +512,7 @@ recipes_assembler.append({
 	"Ticks" : 100,
 	"Productivity": 10,
 	"Tier": 5,
+	"Animation": quantum_core_animation,
 })
 
 recipes_hand.append({
@@ -819,6 +827,18 @@ recipes_assembler.append({
 	"Output": one_item("RocketPad"),
 	"Ticks" : 1200,
 	"Tier": 6,
+})
+
+recipes_hand.append({
+	"Name": "SatelliteAntenna",
+	"Input": items([
+		["SteelPlate", 20],
+		["CopperWire", 20],
+		["Circuit", 4],
+	]),
+	"Output": one_item("SatelliteAntenna"),
+	"Ticks" : 400,
+	"Tier": 3,
 })
 
 recipes_assembler.append({
@@ -2270,6 +2290,34 @@ objects_array.append({ "Class": r_dict,
 		([["CompositePlate", 30]], 960),
 		([["RocketFuel", 75000]], 640),
 	])],
+})
+
+objects_array.append({ "Class": r_dict,
+	"Name": "SatelliteAntennaStage" + r_dict,
+	"StartTier": 0,
+	"UsedIn": [{"Item": "SatelliteAntenna", "Tier": 0}],
+	"Recipes": [{
+		"Name": "SatelliteAntennaStage" + str(stage),
+		"Input": items(bill),
+		"Output": no_items(),
+		"Ticks": 1,
+	} for stage, bill in enumerate([
+		[["SteelPlate", 80], ["BasicFrame", 6], ["BuildingMaterial", 200]],
+		[["AluminiumPlate", 160], ["ReinforcedFrame", 4]],
+		[["CopperWire", 400], ["Capacitor", 150], ["Processor", 15]],
+		[["AluminiumElectricEngine", 6], ["AluminiumParts", 60]],
+	])],
+})
+
+objects_array.append({ "Class": r_dict,
+	"Name": "Beacon" + r_dict,
+	"Recipes": [{
+		"Name": "Beacon",
+		"Input": no_items(),
+		"Output": no_items(),
+		"Icon": "Electricity",
+		"Ticks" : 200,
+	}],
 })
 
 objects_array.append({ "Class": r_dict,
