@@ -567,6 +567,23 @@ for name, count, hits in [
 		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C",
 	})
 
+for name, item in [
+	("AncientCrackFern", "Fern"), ("AncientCrackWeed", "Bush"), ("AncientCrackSapling", "Bush"),
+	("AncientVineHanging", "Bush"), ("AncientVineDrape", "Bush"), ("AncientVineCreeper", "Bush"), ("AncientVinePillar", "Bush"),
+]:
+	props.append({
+		"Name": name,
+		"Meshes": ["/Game/Props/AncientOvergrowth/" + name],
+		"ItemFrom": item,
+		"ScaleMin": 1,
+		"ScaleMax": 1,
+		"ProjectToTerrainPower": 0,
+		"IsBig": False,
+		"Drops": "Organics",
+		"Count": 1,
+		"NoCollision": True,
+	})
+
 for prop in props:
 	if "Meshes" in prop:
 		prop["Variations"] = len(prop["Meshes"])
