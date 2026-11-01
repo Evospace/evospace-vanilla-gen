@@ -158,6 +158,10 @@ simple_blocks = [
 		"Label": "Terracotta Bricks",
 		"Tier": 0
 	},{
+		"Name": "AncientMasonry",
+		"Label": "Ancient Masonry",
+		"Tier": 0
+	},{
 		"Name": "Concrete",
 		"Cost": 4,
 		"Label": "Concrete",

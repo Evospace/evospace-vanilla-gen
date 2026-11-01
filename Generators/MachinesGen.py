@@ -22,6 +22,15 @@ FOUNDATION_HEAVY = {
 	],
 }
 
+FOUNDATION_RAIL = {
+	"Top": [
+		{"Cover": "FoundationRailTop", "Offset": [0, 0, -0.5]},
+	],
+	"Column": [
+		{"Cover": "FoundationColumn", "Offset": [0, 0, -0.5]},
+	],
+}
+
 FOUNDATION_PIPE = {
 	"Every": 3,
 	"Ceiling": True,
@@ -62,7 +71,7 @@ FOUNDATION_MACHINES = {
 	"BatteryBox": FOUNDATION,
 	"Computer": FOUNDATION,
 	"Spawner": FOUNDATION,
-	"SteelRail": FOUNDATION,
+	"SteelRail": FOUNDATION_RAIL,
 	"Pipe": FOUNDATION_PIPE,
 	"CopperConnector": FOUNDATION_PIPE,
 	"LogicWire": FOUNDATION_PIPE,

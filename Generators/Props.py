@@ -545,6 +545,28 @@ props.append({
 	"Image": "T_TerrainGrass",
 })
 
+for name, count, hits in [
+	("AncientPillar", 6, 12), ("AncientPillarBroken", 4, 10), ("AncientPillarStump", 2, 6), ("AncientPillarFallen", 4, 10),
+	("AncientLintel", 4, 10), ("AncientGate", 10, 16), ("AncientStairs", 2, 6), ("AncientWall", 6, 12),
+	("AncientWallBroken", 4, 10), ("AncientAltar", 6, 12), ("AncientStele", 4, 10), ("AncientRubble", 2, 4),
+	("AncientRubbleLarge", 4, 8),
+]:
+	props.append({
+		"Name": name,
+		"Meshes": ["/Game/Props/AncientRuin/" + name],
+		"ItemFrom": "Rock",
+		"ScaleMin": 1,
+		"ScaleMax": 1,
+		"ProjectToTerrainPower": 0,
+		"IsBig": True,
+		"Drops": "StoneSurface",
+		"Count": count,
+		"HitsToBreak": hits,
+		"HighDetailShadow": True,
+		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C",
+	})
+
 for prop in props:
 	if "Meshes" in prop:
 		prop["Variations"] = len(prop["Meshes"])

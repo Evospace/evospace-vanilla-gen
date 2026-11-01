@@ -224,6 +224,9 @@ covers = [
         "Name": "FoundationHeavyColumn",
         "Mesh": "/Game/Shared/Stands/SM_Stand_HeavyColumn",
     },{
+        "Name": "FoundationRailTop",
+        "Mesh": "/Game/Blocks/RailNode/SM_RailNode_PierTop",
+    },{
         "Name": "FoundationPipeHolder",
         "Mesh": "/Game/Shared/Stands/SM_Stand_PipeHolder",
     },{
