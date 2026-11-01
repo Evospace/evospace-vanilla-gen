@@ -289,6 +289,42 @@ for mat in paint_tiers[3:]:
             "Materials": ["", "/Game/Materials/" + mat, "", ""]
         })
 
+for piece in ("Straight", "StraightCoupled", "Arm"):
+    covers.append({
+        "Name": "Shaft" + piece,
+        "Mesh": "/Game/Blocks/Shaft/SM_Shaft_" + piece,
+        "Materials": ["/Game/Art/Material/MetalAtlasSpin"],
+        "NumCustomData": 2,
+        "WorldPositionOffsetDisableDistance": 6000
+    })
+
+covers.append({
+    "Name": "GearboxHousing",
+    "Mesh": "/Game/Blocks/Shaft/SM_Shaft_GearboxHousing",
+    "Materials": ["/Game/Art/Material/MetalAtlas"]
+})
+
+for mat in paint_metals[1:]:
+    covers.append({
+        "Name": mat + "KineticAccumulatorFrame",
+        "Mesh": "/Game/Blocks/KineticAccumulator/SM_KineticAccumulator_Frame",
+        "Materials": ["/Game/Materials/" + mat, "/Game/Art/Material/MetalAtlas"]
+    })
+    covers.append({
+        "Name": mat + "KineticAccumulatorRotor",
+        "Mesh": "/Game/Blocks/KineticAccumulator/SM_KineticAccumulator_Rotor",
+        "Materials": ["/Game/Art/Material/MetalAtlasSpin"],
+        "NumCustomData": 2,
+        "NoCollision": True,
+        "WorldPositionOffsetDisableDistance": 10000
+    })
+
+covers.append({
+    "Name": "FlywheelPort",
+    "Mesh": "/Game/Blocks/KineticAccumulator/SM_KineticAccumulator_Port",
+    "Materials": ["/Game/Art/Material/MetalAtlas"]
+})
+
 tank_pieces = {
     "Single": ["Body", "Frame", "Fitting", "Insulator"],
     "Top": ["Body", "Frame", "Fitting", "Insulator"],

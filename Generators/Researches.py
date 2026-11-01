@@ -508,8 +508,9 @@ append_levels({
 	"Name": "Flywheel",
 	"Label": ["Flywheel", "machines"],
 	"RequiredResearch": ["BasicMachines", "SteelProduction"],
-	"Unlocks": [["Hand" + r_dict, tier_material[2] + "Flywheel"]],
-	"Levels": [2,2],
+	"Unlocks": [["Hand" + r_dict, "%Material%KineticAccumulator"]],
+	"UnlockFirst": [["Hand" + r_dict, "%Material%Shaft"]],
+	"Levels": [2,7],
 })
 append_levels({
 	"Class": research_recipe,

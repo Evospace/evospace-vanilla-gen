@@ -69,10 +69,12 @@ FOUNDATION_MACHINES = {
 	"DeepStorage": FOUNDATION,
 	"Container": FOUNDATION,
 	"BatteryBox": FOUNDATION,
+	"KineticAccumulator": FOUNDATION,
 	"Computer": FOUNDATION,
 	"Spawner": FOUNDATION,
 	"SteelRail": FOUNDATION_RAIL,
 	"Pipe": FOUNDATION_PIPE,
+	"Shaft": FOUNDATION_PIPE,
 	"CopperConnector": FOUNDATION_PIPE,
 	"LogicWire": FOUNDATION_PIPE,
 }
@@ -201,7 +203,7 @@ for machine in machines:
 		image = machine["Image"] if "Image" in machine else machine["Name"]
 
 		label_section = machine.get("LabelSection", "machines")
-		labelParts = ["machines_label_format", "common", [tier_material[tier], "common"], [machine["Name"], label_section]]
+		labelParts = ["machines_label_format", "common", [tier_material[tier], "common"], [machine.get("LabelName", machine["Name"]), label_section]]
 		if "ExactName" in machine:
 			labelParts = [machine["Name"], label_section]
 		if "Label" in machine:
@@ -252,7 +254,12 @@ for machine in machines:
 		if machine["Name"] == "HeatPipe":
 			item["DescriptionParts"].append(["heat_drain", "common", 20])
 			
-		if machine["Name"] == "Flywheel":
+		if machine["Name"] == "Shaft":
+			item["DescriptionParts"].insert(0, ["Flywheel", "description"])
+			item["DescriptionParts"].append(["kinetic_drain", "common", 40])
+
+		if machine["Name"] == "KineticAccumulator":
+			item["DescriptionParts"].append(["battery", "common", 256000 * 2**level])
 			item["DescriptionParts"].append(["kinetic_drain", "common", 40])
 			
 		if machine["Name"] == "Chest":
@@ -962,7 +969,7 @@ for machine in machines:
 				"Ticks" : 20
 			})
 
-		if machine["Name"] == "Flywheel":
+		if machine["Name"] == "Shaft":
 			append_recipe({
 				"Name": tier_material[tier] + machine["Name"],
 				"Input":{
@@ -973,6 +980,19 @@ for machine in machines:
 				},
 				"Output": one_item(tier_material[tier] + machine["Name"]),
 				"Ticks" : 20
+			})
+
+		if machine["Name"] == "KineticAccumulator":
+			append_recipe({
+				"Name": tier_material[tier] + machine["Name"],
+				"Input": items([
+					[plate(), 8],
+					[part(), 8 + parts_ramp(level) * 2],
+					[tier_material[2] + "Shaft", 2],
+					frame_pair(2),
+				]),
+				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Ticks" : 40
 			})
 			
 		if machine["Name"] == "Constructor":

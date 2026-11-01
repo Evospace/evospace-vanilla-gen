@@ -159,6 +159,7 @@ series_lines = {
 	"Electrolyzer": "Chemistry",
 
 	"ElectricEngine": "Generation",
+	"Flywheel": "Generation",
 	"PowerGeneration": "Generation",
 	"Generator": "Generation",
 	"IndustrialGenerator": "Generation",
