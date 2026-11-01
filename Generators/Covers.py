@@ -20,11 +20,13 @@ covers = [
     },{
         "Name": "HeatSide",
         "Mesh": "/Game/Blocks/HeatPipe/SM_HeatPipe_Side",
-        "Materials": ["/Game/Materials/HeatingCopper"]
+        "Materials": ["/Game/Materials/HeatingCopper"],
+        "NumCustomData": 1
     },{
         "Name": "HeatCenter",
-        "Mesh": "/Game/Blocks/HeatPipe/SM_HeatPipe_Center",
-        "Materials": ["/Game/Materials/HeatingCopper"]
+        "Mesh": "/Game/CoreContent/heat_pipe_center",
+        "Materials": ["/Game/Materials/HeatingCopper"],
+        "NumCustomData": 1
     },{
 		"Name": "Cover",
 		"Mesh": "/Game/Shared/Covers/SM_Cover_Simple",

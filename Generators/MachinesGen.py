@@ -204,6 +204,8 @@ for machine in machines:
 		labelParts = ["machines_label_format", "common", [tier_material[tier], "common"], [machine["Name"], label_section]]
 		if "ExactName" in machine:
 			labelParts = [machine["Name"], label_section]
+		if "Label" in machine:
+			labelParts = machine["Label"]
 
 		item = { "Class": "StaticItem",
 			"Name": block_name,
@@ -887,7 +889,7 @@ for machine in machines:
 				"Ticks" : 20
 			})
 
-		if machine["Name"] == "ResearchLaboratory":
+		if machine.get("BlockLogic") == "ResearchLaboratoryBlockLogic":
 			append_recipe({
 				"Name": block_name,
 				"Input": items([

@@ -101,6 +101,7 @@ machines = [
 		"LogicExports": ["Storage", "Capacity", "Fill"],
 		"Description": ["HeatConductor", "HeatStorage"],
 		"PathFinding": True,
+        "NoActorRenderable": True,
         "Selector": "Blocks/AllSidesPipe/BP_AllSidesPipe.BP_AllSidesPipe_C",
         "Category": "Network",
 	},{
