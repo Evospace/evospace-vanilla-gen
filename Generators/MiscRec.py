@@ -103,7 +103,7 @@ recipes_fusion_reactor.append({
 	"Name":"HotNeutroniumPlate1",
 	"Input": items([
 		["SynthesisCell", 50],
-		["AntimatterTrap", 1],
+		["EmptyAntimatterTrap", 1],
 	]),
 	"Output": items([
 		["HotNeutroniumPlate", 25],
@@ -117,7 +117,7 @@ recipes_fusion_reactor.append({
 	"Name":"HotNeutroniumPlate2",
 	"Input": items([
 		["SynthesisCell", 25],
-		["AntimatterTrap", 1],
+		["EmptyAntimatterTrap", 1],
 		["UltimateCatalyst", 1, 0],
 	]),
 	"Output": items([
