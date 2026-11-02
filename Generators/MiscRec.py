@@ -2067,7 +2067,7 @@ recipes_industrial_chemreactor.append({
 		["NitricAcid", 100],
 	]),
 	"Output": one_item("HighCetaneDiesel", 1000),
-	"Ticks" : 3000,
+	"Ticks" : 1500,
 	"Colors": [[0.4,0.4,0.0,0.15],[0.4,0.2,0.0,0.15]],
 	"Tier": 5
 })
@@ -2090,8 +2090,9 @@ recipes_industrial_chemreactor.append({
 		["Catalyst", 1, 0],
 	]),
 	"Output": one_item("Superfuel", 1000),
-	"Ticks" : 15000,
-	"Colors": [[0.4,0.2,0.0,0.15],[0.7,0.6,0.25,0.15]]
+	"Ticks" : 1300,
+	"Colors": [[0.4,0.2,0.0,0.15],[0.7,0.6,0.25,0.15]],
+	"Tier": 5
 })
 
 recipes_industrial_chemreactor.append({
@@ -2101,8 +2102,9 @@ recipes_industrial_chemreactor.append({
 		["UltimateCatalyst", 1, 0],
 	]),
 	"Output": one_item("Superfuel", 1000),
-	"Ticks" : 3000,
-	"Colors": [[0.4,0.2,0.0,0.15],[0.7,0.6,0.25,0.15]]
+	"Ticks" : 65,
+	"Colors": [[0.4,0.2,0.0,0.15],[0.7,0.6,0.25,0.15]],
+	"Tier": 7
 })
 
 recipes_chemical_bath.append({
