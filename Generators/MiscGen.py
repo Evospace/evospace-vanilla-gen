@@ -75,6 +75,7 @@ simple_single = [
 		"LogicImports": ["DoorOpen"],
 	},{
         "Name": "Spotlight",
+        "Actor": "/Script/Evospace.SpotlightActor",
         "Tier": 2,
         "BlockLogic": "SpotlightBlockLogic",
         "LogicImports": [
@@ -389,7 +390,7 @@ for one in simple_single:
 		"Class": "StaticBlock",
 		"Name": one["Name"],
 		"Item" : one["Name"],
-		"Actor" : block_actor(one["Name"]),
+		"Actor" : one.get("Actor", block_actor(one["Name"])),
 		"BlockLogic": "BlockLogic" if "BlockLogic" not in one else one["BlockLogic"],
 		"Minable": decor_minable(one["Cost"]) if "Cost" in one else {"Result": one["Name"]},
 	}

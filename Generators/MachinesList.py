@@ -27,6 +27,7 @@ def laboratory_label(field):
 machines = [
 	{
 		"Name": "Macerator",
+		"Actor": "/Script/Evospace.MaceratorActor",
 		"Energy": {"consumption": 20, "consumption_item": "Kinetic"},
 		"StartTier": 1,
 		"EndTier": 7,
@@ -69,6 +70,7 @@ machines = [
 		"BlockLogic": "BedBlockLogic",
 	},{
 		"Name": "AutomaticHammer",
+		"Actor": "/Script/Evospace.AutomaticHammerActor",
 		"Energy": {"consumption": 30, "consumption_item": "Kinetic"},
 		"Positions": [[0,0,0],[0,0,1]],
 		"StartTier": 1,
@@ -79,6 +81,7 @@ machines = [
 		"Description": ["KineticInput", "PowerInput"],
 	},{
 		"Name": "Boiler",
+		"Actor": "/Script/Evospace.BoilerActor",
 		"Energy": {"consumption": BOILER_PER_TICK, "consumption_item": "Heat", "production": BOILER_PER_TICK, "production_item": "Steam"},
 		"StartTier": 2,
 		"EndTier": 7,
@@ -251,6 +254,7 @@ machines = [
 		"Description": ["FluidConductor", "FluidStorage"],
 	},{
 		"Name": "StirlingEngine",
+		"Actor": "/Script/Evospace.StirlingEngineActor",
 		"Energy": {"consumption": 50, "consumption_item": "Heat", "production": 50, "production_item": "Kinetic"},
 		"StartTier": 1,
 		"EndTier": 7,
@@ -260,6 +264,7 @@ machines = [
 		"Description": ["HeatInput", "KineticOutput","PowerOutput"],
 	},{
 		"Name": "SteamEngine",
+		"Actor": "/Script/Evospace.SteamEngineActor",
 		"Energy": {"consumption": BOILER_PER_TICK, "consumption_item": "Steam", "production": BOILER_PER_TICK, "production_item": "Kinetic"},
 		"StartTier": 2,
 		"EndTier": 7,
@@ -298,6 +303,7 @@ machines = [
         ]
 	},{
 		"Name": "PyrolysisUnit",
+		"Actor": "/Script/Evospace.PyrolysisUnitActor",
 		"Energy": {"consumption": 50, "consumption_item": "Heat"},
 		"Positions": [[0,0,0],[0,0,1],[0,1,0],[0,2,0]],
 		"StartTier": 4,
@@ -308,6 +314,7 @@ machines = [
 		"Description": ["HeatInput", "PowerInput"],
 	},{
 		"Name": "Generator",
+		"Actor": "/Script/Evospace.GeneratorActor",
 		"Energy": {"consumption": BOILER_PER_TICK * 5 * 2, "consumption_item": "Kinetic", "production": BOILER_PER_TICK * 5 * 2, "production_item": "Electricity"},
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
@@ -544,6 +551,7 @@ machines = [
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "Furnace",
+		"Actor": "/Script/Evospace.FurnaceActor",
 		"Energy": {"production": 50, "production_item": "Heat"},
 		"StartTier": 0,
 		"EndTier": 7,
@@ -553,6 +561,7 @@ machines = [
 		"Description": ["HeatOutput", "PowerOutput"],
 	},{
 		"Name": "Oven",
+		"Actor": "/Script/Evospace.OvenActor",
 		"Energy": {"consumption": 100, "consumption_item": "Heat"},
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],
@@ -575,6 +584,7 @@ machines = [
 		"Description": ["SpeedBonus", "HeatInput", "PowerInput"],
 	},{
 		"Name": "BlastFurnace",
+		"Actor": "/Script/Evospace.BlastFurnaceActor",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],
 			[0,1,0],[-1,1,0],[-2,1,0],
@@ -675,6 +685,7 @@ machines = [
 	},
 	{
 		"Name": "DrillingRig",
+		"Actor": "/Script/Evospace.DrillingRigActor",
 		"Energy": {"consumption": 96, "consumption_item": "Kinetic", "scaling": "linear"},
         "BlockLogic": "DrillingRig",
 		"Positions": [
@@ -704,6 +715,7 @@ machines = [
 		"LogicImports": ["Working"],
 	},{
 		"Name": "Assembler",
+		"Actor": "/Script/Evospace.AssemblerActor",
 		"Energy": {"consumption": 160, "consumption_item": "Electricity"},
 		"StartTier": 3,
 		"EndTier": 7,
@@ -722,6 +734,7 @@ machines = [
 		"Description": ["ElectricInput", "PowerInput"],
 	},{
 		"Name": "Constructor",
+		"Actor": "/Script/Evospace.ConstructorActor",
 		"Energy": {"consumption": 40, "consumption_item": "Electricity"},
 		"StartTier": 1,
 		"EndTier": 7,
@@ -936,6 +949,7 @@ machines = [
 	#},
 	{
 		"Name": "FissionReactor",
+		"Actor": "/Script/Evospace.FissionReactorActor",
 		"Energy": {"production": INDUSTRIAL_BOILER_PER_TICK, "production_item": "Heat"},
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],[-3,0,0],
@@ -1108,6 +1122,7 @@ machines = [
 	},
 	{
 		"Name": "Pumpjack",
+		"Actor": "/Script/Evospace.PumpjackActor",
 		"Energy": {"consumption": 60, "consumption_item": "Kinetic", "scaling": "linear"},
         "BlockLogic":"Pumpjack",
 		"Positions": [
