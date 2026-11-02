@@ -910,6 +910,12 @@ materials = [
 		"Items": ["Exact"],
 		"Tier": 7,
 	},{
+		"Name": "TrapElectrode",
+		"Category": "Parts",
+		"Label": "Trap Electrode",
+		"Items": ["Exact"],
+		"Tier": 6,
+	},{
 		"Name": "ControlCell",
 		"Category": "Nuclear",
 		"Label": "Control Cell",

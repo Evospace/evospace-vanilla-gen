@@ -856,10 +856,20 @@ recipes_hand.append({
 })
 
 recipes_assembler.append({
+	"Name":"TrapElectrode",
+	"Input": one_item("GoldPlate", 20),
+	"Output": one_item("TrapElectrode"),
+	"Ticks" : 200,
+	"Tier": 6,
+})
+
+recipes_assembler.append({
 	"Name":"EmptyAntimatterTrap",
 	"Input": items([
-		["AdvancedCoil", 120],
+		["AdvancedCoil", 60],
 		["PowerCoil", 20],
+		["TrapElectrode", 20],
+		["QuantumCircuit", 24],
 	]),
 	"Output": one_item("EmptyAntimatterTrap"),
 	"Ticks" : 400,

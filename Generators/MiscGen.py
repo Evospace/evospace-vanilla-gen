@@ -476,6 +476,12 @@ images.append({
 	})
 
 images.append({
+		"Base": "T_" + "HeatPipe",
+		"NewName": "T_" + "TrapElectrode",
+		"MulMask": "T_Material" + "Gold",
+	})
+
+images.append({
 		"Base": "T_" + "JetpackBase",
 		"NewName": "T_" + "Jetpack",
 		"MulMask": "T_Material" + "Aluminium",
