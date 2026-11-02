@@ -12,12 +12,21 @@ signals = [
 	{"Name": "Pulsar", "Frequency": 7.905, "Bandwidth": 6.0, "Power": 0.35, "Carrier": 0.0, "Fading": 0.1, "Sound": "Radio/pulsar.wav"},
 ]
 
-music = [
-	("CelestialSerenity", 3.255),
-	("DowntempoNeon", 4.875),
-	("FactoryMustGrow", 5.975),
-	("Classic", 6.07),
-	("CosmicEchoes", 7.39),
+def cosmos(track):
+	return "/Game/Music/Cosmos/" + track + "." + track
+
+cosmos_call = "Radio/cosmos_call.wav"
+
+cosmos_program = [
+	cosmos("Frozen_Echoes"), 1,
+	cosmos("Ppmp_Aah_Echoes"), 3,
+	cosmos("Echoes_of_the_Unknown"), 2,
+	cosmos("Cosmic_Echoes"), 1,
+	cosmos_call, 2,
+	cosmos("Starlight_Voyager"), 2,
+	cosmos("Tidim_Echoes"), 2,
+	cosmos("Pew_Pew_Echoes"), 3,
+	cosmos_call, 2,
 ]
 
 objects_array = [{
@@ -34,17 +43,16 @@ for signal in signals:
 		**signal,
 	})
 
-for key, frequency in music:
-	objects_array.append({
-		"Class": "StaticRadioSignal",
-		"Name": "Music" + key,
-		"Ether": ether,
-		"Frequency": frequency,
-		"Bandwidth": 5.0,
-		"Power": 0.8,
-		"Carrier": 0.6,
-		"Fading": 0.35,
-		"Sound": "Radio/Music/" + key + ".ogg",
-	})
+objects_array.append({
+	"Class": "StaticRadioSignal",
+	"Name": "Cosmos",
+	"Ether": ether,
+	"Frequency": 5.975,
+	"Bandwidth": 5.0,
+	"Power": 0.8,
+	"Carrier": 0.6,
+	"Fading": 0.35,
+	"Program": cosmos_program,
+})
 
 write_file("Generated/Mixed/radio.json", {"Objects": objects_array})
