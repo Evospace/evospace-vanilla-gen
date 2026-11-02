@@ -44,7 +44,7 @@ for key, frequency in music:
 		"Power": 0.8,
 		"Carrier": 0.6,
 		"Fading": 0.35,
-		"Sound": "Radio/Music/" + key + ".wav",
+		"Sound": "Radio/Music/" + key + ".ogg",
 	})
 
 write_file("Generated/Mixed/radio.json", {"Objects": objects_array})
