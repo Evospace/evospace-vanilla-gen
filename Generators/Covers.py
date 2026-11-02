@@ -293,7 +293,7 @@ for piece in ("Straight", "StraightCoupled", "Arm"):
     covers.append({
         "Name": "Shaft" + piece,
         "Mesh": "/Game/Blocks/Shaft/SM_Shaft_" + piece,
-        "Materials": ["/Game/Art/Material/MetalAtlasSpin"],
+        "Materials": ["/Game/Art/Material/MetalAtlasShaft"],
         "NumCustomData": 2,
         "WorldPositionOffsetDisableDistance": 6000
     })

@@ -566,7 +566,7 @@ recipes_hand.append({
 	"Name":"QuantumProcessor",
 	"Input": items([
 		["QuantumCircuit", 3],
-		["DecisionResonator", 3],
+		["DecisionResonator", 1],
 		["Capacitor", 6]
 	]),
 	"Output": one_item("QuantumProcessor"),
@@ -578,7 +578,7 @@ recipes_assembler.append({
 	"Name":"QuantumProcessor2",
 	"Input": items([
 		["QuantumCircuit", 2],
-		["DecisionResonator", 3],
+		["DecisionResonator", 1],
 		["Capacitor", 6],
 		["Transistor", 6]
 	]),
@@ -969,7 +969,8 @@ recipes_hand.append({
 recipes_hand.append({
 	"Name":"DecisionResonator",
 	"Input": items([
-		["StainlessSteelParts", 2],
+		["StainlessSteelParts", 1],
+		["CopperWire", 16],
 		["MicaFlakes"]
 	]),
 	"Output": one_item("DecisionResonator"),
@@ -980,7 +981,8 @@ recipes_hand.append({
 recipes_assembler.append({
 	"Name":"DecisionResonator2",
 	"Input": items([
-		["StainlessSteelParts", 4],
+		["StainlessSteelParts", 2],
+		["CopperWire", 32],
 		["RubyCrystal"]
 	]),
 	"Output": one_item("DecisionResonator", 2),
@@ -991,7 +993,8 @@ recipes_assembler.append({
 recipes_assembler.append({
 	"Name":"DecisionResonator3",
 	"Input": items([
-		["StainlessSteelParts", 4],
+		["StainlessSteelParts", 2],
+		["CopperWire", 32],
 		["SiliconWafer"],
 		["CompositePlate"]
 	]),
@@ -1003,7 +1006,8 @@ recipes_assembler.append({
 recipes_assembler.append({
 	"Name":"DecisionResonator4",
 	"Input": items([
-		["StainlessSteelParts", 4],
+		["StainlessSteelParts", 2],
+		["CopperWire", 128],
 		["DopedSiliconWafer"],
 		["CompositePlate"]
 	]),
