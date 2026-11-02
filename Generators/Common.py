@@ -252,6 +252,11 @@ cover_item_logic = "CoverItemLogic"
 ic_reactor_r_dict = "IndustrialChemReactorRecipeDictionary"
 building_brush_slot_logic = "BuildingBrushItemLogic"
 assembler_r_dict = "AssemblerRecipeDictionary"
+motor_animation = {
+	"Mesh": "/Game/Blocks/Assembler/Motor/SK_MotorMechanism.SK_MotorMechanism",
+	"Sequence": "/Game/Blocks/Assembler/Motor/A_MotorProduction_Loop.A_MotorProduction_Loop",
+	"Manipulators": ["needle_0", "needle_1", "needle_2"],
+}
 h_r_dict = "HandRecipeDictionary"
 r_dict = "RecipeDictionary"
 HAND_START_TIER = 1

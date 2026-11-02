@@ -223,6 +223,12 @@ recipes_hand.append({
 	"Tier": 1,
 })
 
+resistor_animation = {
+	"Mesh": "/Game/Blocks/Assembler/Resistor/SK_ResistorMechanism.SK_ResistorMechanism",
+	"Sequence": "/Game/Blocks/Assembler/Resistor/A_ResistorProduction_Loop.A_ResistorProduction_Loop",
+	"Manipulators": ["die_-1", "die_1", "weld_-1", "weld_1"],
+}
+
 recipes_assembler.append({
 	"Name":"Resistor2",
 	"Input": items([
@@ -232,6 +238,7 @@ recipes_assembler.append({
 	"Output": one_item("Resistor", 1),
 	"Ticks" : 60,
 	"Tier": 2,
+	"Animation": resistor_animation,
 })
 
 recipes_assembler.append({
@@ -244,6 +251,7 @@ recipes_assembler.append({
 	"Output": one_item("Resistor", 2),
 	"Ticks" : 60,
 	"Tier": 3,
+	"Animation": resistor_animation,
 })
 
 recipes_assembler.append({
@@ -255,7 +263,8 @@ recipes_assembler.append({
 	]),
 	"Output": one_item("Resistor", 4),
 	"Ticks" : 60,
-	"Tier": 5
+	"Tier": 5,
+	"Animation": resistor_animation,
 })
 
 recipes_assembler.append({
@@ -268,6 +277,7 @@ recipes_assembler.append({
 	"Output": one_item("Resistor", 8),
 	"Ticks" : 60,
 	"Tier": 5,
+	"Animation": resistor_animation,
 })
 
 recipes_hand.append({
@@ -717,6 +727,9 @@ recipes_hand.append({
 	"Ticks" : 200,
 	"Tier": 5,
 })
+
+for coil in recipes_hand[-3:]:
+	recipes_assembler.append(dict(coil, Animation=motor_animation))
 
 recipes_hand.append({
 	"Name":"BasicFrame",

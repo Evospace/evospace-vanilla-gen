@@ -1336,7 +1336,7 @@ append_levels({
 	"Name": "BasicCoil",
 	"Label": ["BasicCoil", "parts"],
 	"RequiredResearch": ["SteelProduction"],
-	"Unlocks": [["Hand" + r_dict, "BasicCoil"] ],
+	"Unlocks": [["Hand" + r_dict, "BasicCoil"], [assembler_r_dict, "BasicCoil"]],
 	"Levels": [2,2],
 	"CostMul": 2,
 })
@@ -1345,7 +1345,7 @@ append_levels({
 	"Name": "AdvancedCoil",
 	"Label": ["AdvancedCoil", "parts"],
 	"RequiredResearch": ["StainlessSteelProduction"],
-	"Unlocks": [["Hand" + r_dict, "AdvancedCoil"] ],
+	"Unlocks": [["Hand" + r_dict, "AdvancedCoil"], [assembler_r_dict, "AdvancedCoil"]],
 	"Levels": [4,4],
 	"CostMul": 2,
 })
@@ -1354,7 +1354,7 @@ append_levels({
 	"Name": "PowerCoil",
 	"Label": ["PowerCoil", "parts"],
 	"RequiredResearch": ["Processor"],
-	"Unlocks": [["Hand" + r_dict, "PowerCoil"] ],
+	"Unlocks": [["Hand" + r_dict, "PowerCoil"], [assembler_r_dict, "PowerCoil"]],
 	"Levels": [5,5],
 	"CostMul": 2,
 })
@@ -1374,7 +1374,7 @@ append_levels({
 	"Label": ["WindTurbine", "machines"],
 	"RequiredResearch": ["ElectricEngine"],
 	"Levels": [2,7],
-	"Unlocks": [["Hand" + r_dict, "%Material%WindTurbine"], ["Hand" + r_dict, "%Material%Alternator"]],
+	"Unlocks": [["Hand" + r_dict, "%Material%WindTurbine"], ["Hand" + r_dict, "%Material%Alternator"], [assembler_r_dict, "%Material%Alternator"]],
 	"CostMul": 2,
 })
 append_levels({

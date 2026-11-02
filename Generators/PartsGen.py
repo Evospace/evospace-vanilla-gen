@@ -161,6 +161,7 @@ for material in materials:
 				"Ticks" : 120,
 				"Tier": machine_tier
 			})
+		recipes_assembler.append(dict(recipes_hand[-1], Animation=motor_animation))
 
 	if "Foil" in material["Items"]:
 		generate_part("Foil", material)
