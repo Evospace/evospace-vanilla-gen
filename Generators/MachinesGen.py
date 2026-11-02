@@ -1076,8 +1076,9 @@ for machine in machines:
 			append_recipe({
 				"Name": block_name,
 				"Input": items([
-					["SteelPlate", 1],
-					["SteelParts", 2]
+					["SteelPlate", 2],
+					["SteelParts", 4],
+					["BuildingMaterial", 8]
 				]),
 				"Output": one_item(block_name),
 				"Ticks" : 20

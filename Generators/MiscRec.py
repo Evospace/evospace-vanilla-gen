@@ -817,6 +817,20 @@ recipes_assembler.append({
 })
 
 recipes_assembler.append({
+	"Name":"SteelRail2",
+	"Input": items([
+		["Log", 4],
+		["Creosote", 100],
+		["SteelPlate", 2],
+		["SteelParts", 3],
+		["BuildingMaterial", 8]
+	]),
+	"Output": one_item("SteelRail"),
+	"Ticks" : 20,
+	"Tier": 2,
+})
+
+recipes_assembler.append({
 	"Name":"RocketPad",
 	"Input": items([
 		["ReinforcedFrame", 60],

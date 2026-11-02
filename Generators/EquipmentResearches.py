@@ -86,6 +86,7 @@ def append_equipment(xy, append_levels, researches):
 		"RequiredResearch": ["SteelProduction", "BasicFrame"],
 		"Unlocks": [
 			["Hand" + r_dict, "SteelRail"],
+			[assembler_r_dict, "SteelRail2"],
 			["Hand" + r_dict, "RailStation"],
 			["Hand" + r_dict, "CargoWagon"],
 			["Hand" + r_dict, "TankWagon"],
