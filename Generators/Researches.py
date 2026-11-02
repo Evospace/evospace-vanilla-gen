@@ -1249,7 +1249,7 @@ append_levels({
 	"Name": "FuelChemistry2",
 	"Label": ["TwoWorldsFormat", "common", ["FuelChemistry", "researches"], ["II", "common"]],
 	"RequiredResearch": ["FuelChemistry", "NitricAcid"],
-	"Unlocks": [[ic_reactor_r_dict, "HighCetaneDiesel"]],
+	"Unlocks": [[ic_reactor_r_dict, "HighCetaneDiesel"], [ic_reactor_r_dict, "NitroBriquette"]],
 	"Levels": [4,4],
 })
 append_levels({

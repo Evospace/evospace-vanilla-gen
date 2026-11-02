@@ -403,6 +403,30 @@ materials = [
 		"Meshes": ["/Game/Models/Piece"],
 		"Tier": 1,
 	},{
+		"Name": "FuelBriquette",
+		"Category": "Organic",
+		"Label": "FuelBriquette",
+		"Items": ["Exact"],
+		"StackSize": 64,
+		"Burnable": {
+			"BurnTime": 1600,
+			"Efficiency": 125
+		},
+		"Meshes": ["/Game/Models/Piece"],
+		"Tier": 2,
+	},{
+		"Name": "NitroBriquette",
+		"Category": "Organic",
+		"Label": "NitroBriquette",
+		"Items": ["Exact"],
+		"StackSize": 64,
+		"Burnable": {
+			"BurnTime": 2400,
+			"Efficiency": 200
+		},
+		"Meshes": ["/Game/Models/Piece"],
+		"Tier": 4,
+	},{
 		"Name": "Creosote",
 		"Label": "Creosote",
 		"Items": ["Gas"],

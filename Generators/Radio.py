@@ -18,14 +18,14 @@ def cosmos(track):
 cosmos_call = "Radio/cosmos_call.wav"
 
 cosmos_program = [
-	cosmos("Frozen_Echoes"), 1,
-	cosmos("Ppmp_Aah_Echoes"), 3,
-	cosmos("Echoes_of_the_Unknown"), 2,
-	cosmos("Cosmic_Echoes"), 1,
+	cosmos("Cosmos_03"), 1,
+	cosmos("Cosmos_05"), 3,
+	cosmos("Cosmos_02"), 2,
+	cosmos("Cosmos_01"), 1,
 	cosmos_call, 2,
-	cosmos("Starlight_Voyager"), 2,
-	cosmos("Tidim_Echoes"), 2,
-	cosmos("Pew_Pew_Echoes"), 3,
+	cosmos("Cosmos_06"), 2,
+	cosmos("Cosmos_07"), 2,
+	cosmos("Cosmos_04"), 3,
 	cosmos_call, 2,
 ]
 

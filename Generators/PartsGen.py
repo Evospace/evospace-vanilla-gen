@@ -307,7 +307,9 @@ for material in materials:
 			})
 			item["DescriptionParts"].extend([["burnable", "common", fuel_value(material)]])
 			item["Tags"] = fuel_tags()
-			
+			if "Efficiency" in material["Burnable"]:
+				item["FuelEfficiency"] = material["Burnable"]["Efficiency"]
+
 		objects_array.append(item)
 
 	if "Plate" in material["Items"]:

@@ -819,11 +819,10 @@ recipes_assembler.append({
 recipes_assembler.append({
 	"Name":"SteelRail2",
 	"Input": items([
-		["Log", 4],
-		["Creosote", 100],
 		["SteelPlate", 2],
 		["SteelParts", 3],
-		["BuildingMaterial", 8]
+		["Log", 4],
+		["Creosote", 100]
 	]),
 	"Output": one_item("SteelRail"),
 	"Ticks" : 20,
@@ -1269,6 +1268,17 @@ recipes_oven.append({
 		["Creosote", 100],
 	]),
 	"Ticks": 2*2*20*3,
+})
+
+recipes_mixer.append({
+	"Name": "FuelBriquette",
+	"Input": items([
+		["CoalDust", 4],
+		["Creosote", 250],
+	]),
+	"Output": one_item("FuelBriquette", 3),
+	"Ticks" : 200,
+	"Tier": 2,
 })
 
 recipes_blast_furnace.append({
@@ -2060,6 +2070,17 @@ recipes_industrial_chemreactor.append({
 	"Ticks" : 3000,
 	"Colors": [[0.4,0.4,0.0,0.15],[0.4,0.2,0.0,0.15]],
 	"Tier": 5
+})
+
+recipes_industrial_chemreactor.append({
+	"Name": "NitroBriquette",
+	"Input": items([
+		["FuelBriquette", 4],
+		["NitricAcid", 250],
+	]),
+	"Output": one_item("NitroBriquette", 4),
+	"Ticks" : 200,
+	"Tier": 4,
 })
 
 recipes_industrial_chemreactor.append({
