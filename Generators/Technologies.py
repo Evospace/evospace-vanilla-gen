@@ -140,7 +140,7 @@ series_lines = {
 	"Riteg": "Heat",
 	"FusionReactor": "Heat",
 
-	"BasicMachines": "Mechanics",
+	"AutomaticHammer": "Mechanics",
 	"Macerator": "Mechanics",
 	"Constructor": "Mechanics",
 	"Assembler": "Mechanics",
