@@ -143,6 +143,8 @@ milestones = [
 	{
 		"Name": "Transistor",
 		"Label": "Processor",
+		"Title": "Microelectronics",
+		"Image": "T_Microelectronics",
 		"Position": [0, 1],
 		"Laboratory": "ElectronicsLaboratory",
 		"Tree": [
@@ -908,7 +910,7 @@ for m in milestones:
 	objects.append({
 		"Class": "StaticMilestone",
 		"Name": m["Name"],
-		"Label": research_by_name[m["Label"]]["Label"],
+		"Label": [m["Title"], "researches"] if "Title" in m else research_by_name[m["Label"]]["Label"],
 		"Icon": m["Label"],
 		"Tier": milestone_tier[m["Name"]],
 		"Position": m["Position"],
@@ -922,6 +924,8 @@ for m in milestones:
 		"Experiment": m["Experiment"],
 		"Recipe": [m["Build"] + "Stage" + r_dict, m["Stage"]] if built else [m["Laboratory"] + r_dict, m["Name"] + "Experiment"] if m["Experiments"] else [],
 	})
+	if "Image" in m:
+		objects[-1]["Image"] = m["Image"]
 	if built:
 		objects[-1]["Build"] = m["Build"]
 		del objects[-1]["Head"]
