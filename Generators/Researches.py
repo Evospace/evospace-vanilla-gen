@@ -1872,10 +1872,10 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
-	"Name": "Beacon",
-	"Label": ["Beacon", "machines"],
+	"Name": "Radio",
+	"Label": ["Radio", "machines"],
 	"RequiredResearch": ["Triod"],
-	"Unlocks": [["Hand" + r_dict, "%Material%Beacon"]],
+	"Unlocks": [["Hand" + r_dict, "%Material%Radio"]],
 	"Levels": [1,1],
 })
 append_levels({

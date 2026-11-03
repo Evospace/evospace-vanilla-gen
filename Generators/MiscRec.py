@@ -2374,9 +2374,9 @@ objects_array.append({ "Class": r_dict,
 })
 
 objects_array.append({ "Class": r_dict,
-	"Name": "Beacon" + r_dict,
+	"Name": "Radio" + r_dict,
 	"Recipes": [{
-		"Name": "Beacon",
+		"Name": "Radio",
 		"Input": no_items(),
 		"Output": no_items(),
 		"Icon": "Electricity",

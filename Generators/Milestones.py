@@ -33,7 +33,7 @@ milestones = [
 			["WireCover", "CircuitBoard"],
 			["Triod", "CircuitBoard"],
 			["Circuit", "Triod"],
-			["Beacon", "Triod"],
+			["Radio", "Triod"],
 			["CopperLamp", "Triod"],
 			["LogicNetworking", "Circuit"],
 			["LogicDevices", "LogicNetworking"],

@@ -604,7 +604,7 @@ for machine in machines:
 				"Ticks" : 40
 			})
 
-		if machine["Name"] == "Beacon":
+		if machine["Name"] == "Radio":
 			append_recipe({
 				"Name": block_name,
 				"Input": items([

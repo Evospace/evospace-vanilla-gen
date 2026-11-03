@@ -901,7 +901,7 @@ machines = [
 		"BlockLogic":"ComputerBlockLogic",
 		"Description": ["ElectricInput"],
 	},{
-		"Name": "Beacon",
+		"Name": "Radio",
 		"Energy": {"consumption": 20, "consumption_item": "Electricity"},
 		"StartTier": 1,
 		"EndTier": 1,
