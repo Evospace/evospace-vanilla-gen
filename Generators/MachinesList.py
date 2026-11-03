@@ -922,7 +922,7 @@ machines = [
 	},{
 		"Name": "EngineeringLaboratory",
 		"Tint": "#D8483A",
-		"Label": laboratory_label(["Metalwork", "researches"]),
+		"Label": laboratory_label(["Engineering", "parts"]),
 		"StartTier": 1,
 		"EndTier": 1,
 		**laboratory,
