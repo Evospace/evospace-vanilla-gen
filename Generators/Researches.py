@@ -1851,10 +1851,19 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "CopperLamp",
+	"Label": ["machines_label_format", "common", ["Copper", "common"], ["Lamp", "machines"]],
+	"RequiredResearch": ["Triod"],
+	"Levels": [1,1],
+	"Unlocks": [["Hand" + r_dict, "CopperLamp"]],
+	"CostMul": 0.1,
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "Lamp",
 	"Label": ["Lamp", "machines"],
-	"RequiredResearch": [],
-	"Levels": [1,7],
+	"RequiredResearch": ["CopperLamp"],
+	"Levels": [2,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%Lamp"] ],
 	"CostMul": 0.1,
 })
@@ -1862,7 +1871,7 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "Flashlight",
 	"Label": ["Flashlight", "misc"],
-	"RequiredResearch": ["Lamp1"],
+	"RequiredResearch": ["Lamp"],
 	"Unlocks": [["Hand" + r_dict, "Flashlight"]],
 	"Levels": [2,2],
 })
@@ -1870,7 +1879,7 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "Spotlight",
 	"Label": ["Spotlight", "misc"],
-	"RequiredResearch": ["Lamp1", "Circuit"],
+	"RequiredResearch": ["Lamp", "Circuit"],
 	"Unlocks": [["Hand" + r_dict, "Spotlight"]],
 	"Levels": [2,2],
 })

@@ -766,10 +766,21 @@ machines = [
 		"Description": ["FluidInput"],
 	},{
 		"Name": "Lamp",
-		"StartTier": 1,
+		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic": "LampBlockLogic",
 		"LogicImports": ["Working", "SpotlightColorR", "SpotlightColorG", "SpotlightColorB"],
+	},{
+		"Name": "CopperLamp",
+		"ExactName": True,
+		"Label": ["machines_label_format", "common", ["Copper", "common"], ["Lamp", "machines"]],
+		"DescriptionName": "Lamp",
+		"ReplaceTag": "Lamp",
+		"Actor": block_actor("CopperLamp"),
+		"StartTier": 1,
+		"EndTier": 1,
+		"BlockLogic": "CopperLampBlockLogic",
+		"LogicImports": ["Working"],
 	},{
 		"Name": "AdminElectricGenerator",
 		"StartTier": 7,

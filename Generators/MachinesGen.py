@@ -214,7 +214,7 @@ for machine in machines:
 			"Image": ("T_" + image) if "ExactName" in machine and "TieredImage" not in machine else ("T_" + tier_material[tier] + image),
 			"StackSize": 32,
 			"Label": labelParts,
-			"DescriptionParts": [] if "NoDescriptionText" in machine else [[machine["Name"], "description"]],
+			"DescriptionParts": [] if "NoDescriptionText" in machine else [[machine.get("DescriptionName", machine["Name"]), "description"]],
 			"ItemLogic": building_single_logic if "ItemLogic" not in machine else machine["ItemLogic"],
 			"Tier": tier,
 			"Category": machine["Category"] if "Category" in machine else tier_material[tier],
@@ -572,11 +572,27 @@ for machine in machines:
 				"Ticks" : 40
 			})
 
+		if machine["Name"] == "CopperLamp":
+			append_recipe({
+				"Name": block_name,
+				"Input": items([
+					[plate(), 2],
+					["Triod"],
+					["CopperWire", 2]
+				]),
+				"Output": one_item(block_name),
+				"Ticks" : 40
+			})
+
 		if machine["Name"] == "Lamp":
 			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input": one_item(plate(), 2),
-				"Output": one_item(tier_material[tier] + machine["Name"]),
+				"Name": block_name,
+				"Input": items([
+					[plate(), 2],
+					["Glass"],
+					wire_count(2)
+				]),
+				"Output": one_item(block_name),
 				"Ticks" : 40
 			})
 
