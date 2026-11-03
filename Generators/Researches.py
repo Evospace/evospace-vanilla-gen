@@ -4,11 +4,9 @@ import copy
 from NuclearResearches import *
 from EquipmentResearches import *
 from PartsResearchHelper import *
-from Technologies import *
 from MachinesList import machines
 
 researches = []
-technologies = {}
 replaced_levels = {}
 bonus_slots = 11
 last_tier = 7
@@ -38,8 +36,17 @@ def infinite_tail(research, cost):
 	researches.append(tail)
 	return tail
 
-def technology_entry(name):
-	return technologies.setdefault(name, {"Complexity": 0, "BonusSlots": 0})
+item_labels = {}
+
+def item_label(name):
+	if not item_labels:
+		for data in get_generated_files().values():
+			for obj in data.get("Objects", []) if isinstance(data, dict) else []:
+				if isinstance(obj, dict) and obj.get("Class", "").startswith("StaticItem") and "Label" in obj:
+					item_labels[obj["Name"]] = obj["Label"]
+	if name not in item_labels:
+		raise Exception(f"Researches: version card {name} names no item with a label")
+	return item_labels[name]
 
 def append_levels(research_base):
 	mini, maxi = 0, 1
@@ -47,7 +54,7 @@ def append_levels(research_base):
 		mini, maxi = research_base["Levels"][0], research_base["Levels"][1] + 1
 
 	research = copy.deepcopy(research_base)
-	for key in ("RequiredResearchArr", "MainResearchArr", "DecorationsArr", "UnlockFirst", "CostMul", "CostMuls", "CostExact", "CostGrowth", "SeparateLevels"):
+	for key in ("RequiredResearchArr", "MainResearchArr", "DecorationsArr", "UnlockFirst", "CostMul", "CostMuls", "CostExact", "CostGrowth"):
 		research.pop(key, None)
 	research.setdefault("RequiredResearch", [])
 	research["RequiredResearch"].extend(research_base.get("RequiredResearchArr", [[]])[0])
@@ -68,6 +75,7 @@ def append_levels(research_base):
 	researches.append(research)
 
 	tail = None
+	previous_card = research["Name"]
 	for i in range(mini + 1, maxi):
 		this_level = i - mini
 		old_name = research_base["Name"] + str(this_level)
@@ -84,21 +92,6 @@ def append_levels(research_base):
 			replaced_levels[old_name] = [owner["Name"]]
 			continue
 
-		if i in research_base.get("SeparateLevels", []):
-			previous_level = research_base["Name"] + str(this_level - 1)
-			researches.append({
-				"Class": research_base["Class"],
-				"Name": old_name,
-				"Label": research_base["Label"],
-				"Image": research_base["Image"],
-				"RequiredResearch": [previous_level if i - 1 in research_base["SeparateLevels"] else technology_for(research_base["Name"], i - 1)],
-				"Levels": [i, i],
-				"Tier": i,
-				"Complexity": cost,
-				"BonusSlots": bonus_slots,
-			})
-			continue
-
 		if i == 1:
 			research.setdefault("Unlocks", []).extend(unlocks)
 			if decorations:
@@ -109,46 +102,41 @@ def append_levels(research_base):
 			replaced_levels[old_name] = [research["Name"]]
 			continue
 
-		technology = technology_for(research_base["Name"], i)
-		entry = technology_entry(technology)
-		entry["Complexity"] += cost
 		if inventory:
-			entry["BonusSlots"] += bonus_slots
-		version = {"Technology": technology}
+			researches.append({
+				"Class": research_base["Class"],
+				"Name": old_name,
+				"Label": research_base["Label"],
+				"Image": research_base["Image"],
+				"RequiredResearch": [previous_card],
+				"Levels": [i, i],
+				"Tier": i,
+				"Complexity": cost,
+				"BonusSlots": bonus_slots,
+			})
+			previous_card = old_name
+			continue
+
+		if not unlocks and not decorations:
+			raise Exception(f"Researches: level {i} of {research_base['Name']} opens nothing")
+		card = unlocks[0][1] if unlocks else decorations[0]
+		researches.append({
+			"Class": "StaticResearchTechnology",
+			"Name": card,
+			"Label": item_label(card) if unlocks else research_base["Label"],
+			"RequiredResearch": [previous_card],
+			"Levels": [i, i],
+			"Tier": i,
+			"Complexity": cost,
+		})
+		version = {"Technology": card}
 		if unlocks:
 			version["Unlocks"] = unlocks
 		if decorations:
 			version["Decorations"] = decorations
-		if len(version) > 1:
-			research.setdefault("Versions", []).append(version)
-		replaced_levels[old_name] = [research["Name"], technology]
-
-def append_technologies():
-	for line, entries in technology_lines.items():
-		for tier, whole in entries:
-			names = technology_names(whole)
-			for name in names:
-				if name not in technologies:
-					raise Exception(f"Technologies: {name} opens no machine version")
-			price = sum(technologies[name]["Complexity"] for name in names)
-			for name in names:
-				entry = technologies[name]
-				previous = technology_previous(name)
-				technology = {
-					"Class": "StaticResearchTechnology",
-					"Name": name,
-					"Label": [name, "researches"],
-					"DescriptionParts": [["Technology", "description"]],
-					"RequiredResearch": ([previous] if previous else []) + [technology_metal[tier]],
-					"Levels": [tier, tier],
-					"Tier": tier,
-					"Complexity": price,
-				}
-				if entry["BonusSlots"]:
-					technology["BonusSlots"] = entry["BonusSlots"]
-				if name in technology_images:
-					technology["Image"] = "T_" + name
-				researches.append(technology)
+		research.setdefault("Versions", []).append(version)
+		replaced_levels[old_name] = [research["Name"], card]
+		previous_card = card
 
 def replace_level_requirements():
 	for research in researches:
@@ -319,7 +307,6 @@ append_levels({
 	"Unlocks": [],
 	"Levels": [0,7],
 	"CostMul": 100,
-	"SeparateLevels": [5, 6, 7],
 })
 append_levels({
 	"Class": research_recipe,
@@ -2138,7 +2125,6 @@ def remove_redundant_required_research(research_entries):
 		else:
 			research["RequiredResearch"] = unique_required
 
-append_technologies()
 replace_level_requirements()
 add_ingredient_required_research(researches)
 remove_redundant_required_research(researches)

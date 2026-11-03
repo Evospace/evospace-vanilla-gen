@@ -90,12 +90,25 @@ milestones = [
 		"Laboratory": "EngineeringLaboratory",
 		"Tree": [
 			["SteelProduction", ""],
-			["Separator", "SteelProduction"],
+			["SteelAutomaticHammer", "SteelProduction"],
+			["SteelMacerator", "SteelAutomaticHammer"],
+			["Separator", "SteelMacerator"],
 			["OreWasher", "Separator"],
 			["Mixer", "OreWasher"],
-			["InterchangeableParts", "SteelProduction"],
-			["BasicFrame", "InterchangeableParts"],
-			["Sorter", "SteelProduction"],
+			["SteelConstructor", "SteelAutomaticHammer"],
+			["BasicFrame", "SteelConstructor"],
+			["SteelItemRack", "SteelConstructor"],
+			["SteelChest", "SteelItemRack"],
+			["SteelContainer", "SteelChest"],
+			["InventoryUpgrade2", "SteelChest"],
+			["SteelDestroyer", "SteelItemRack"],
+			["SteelConveyor", "SteelProduction"],
+			["SteelSplitter", "SteelConveyor"],
+			["Sorter", "SteelSplitter"],
+			["SteelRobotArm", "SteelConveyor"],
+			["SteelLoader", "SteelRobotArm"],
+			["SteelDrillingRig", "SteelRobotArm"],
+			["SteelAutomaticFarm", "SteelDrillingRig"],
 			["Railway", "BasicFrame"],
 			["RailSignals", "Railway"],
 			["Concrete", "BasicFrame"],
@@ -105,6 +118,8 @@ milestones = [
 			["Roadwork", "Concrete"],
 			["MetalDoors", "BasicFrame"],
 			["Designable2", "MetalDoors"],
+			["SteelBlock", "Designable2"],
+			["SteelSign", "SteelBlock"],
 		],
 		"Exits": [["SteelProduction", "Steam"]],
 		"Experiments": 25,
@@ -122,11 +137,18 @@ milestones = [
 			["SteamTurbine", "SteamEngine"],
 			["Flywheel", "SteamEngine"],
 			["DecorativeWood2", "Flywheel"],
-			["Dynamo", "SteamEngine"],
-			["RegenerativeFurnace", "Boiler"],
-			["SheetRolling", "RegenerativeFurnace"],
+			["SteelCompactGenerator", "SteamEngine"],
+			["SteelComputer", "SteelCompactGenerator"],
+			["SteelFurnace", "Boiler"],
+			["SteelOven", "SteelFurnace"],
+			["SteelSmelter", "SteelFurnace"],
+			["SteelBlastFurnace", "SteelSmelter"],
+			["SteelFluidFurnace", "Boiler"],
+			["SteelKineticHeater", "SteelFluidFurnace"],
+			["SteelPump", "SteelFluidFurnace"],
+			["SteelAtmosphericCondenser", "SteelPump"],
 		],
-		"Exits": [["Dynamo", "Electricity"]],
+		"Exits": [["SteelCompactGenerator", "Electricity"]],
 		"Experiments": 25,
 		"Experiment": [["CopperPump", 1], ["SteelPipe", 3]],
 	},
@@ -180,7 +202,9 @@ milestones = [
 			["SatelliteAntenna", "Processor"],
 			["Capacitor", "Assembler"],
 			["Capacitor2", "Capacitor"],
-			["BeltDrive", "Assembler"],
+		],
+		"Versions": [
+			["Transistor", 3, ["Diode", "DistributedComputing"]],
 		],
 		"Exits": [["SatelliteAntenna", "SatelliteAntenna"]],
 		"Experiments": 25,
@@ -204,10 +228,10 @@ milestones = [
 			["AluminiumReduction", ""],
 			["AluminiumProduction", "AluminiumReduction"],
 			["ReinforcedFrame", "AluminiumProduction"],
-			["Boat", "ThreePhaseCurrent"],
+			["Boat", "AluminiumElectricEngine"],
 			["OffroadVehicle", "Boat"],
 			["Jetpack", "Boat"],
-			["Sifter", "ThreePhaseCurrent"],
+			["Sifter", "AluminiumSeparator"],
 			["ReinforcedConcrete", "ReinforcedFrame"],
 			["ReinforcedConcreteTiles", "ReinforcedConcrete"],
 			["ReinforcedConcreteSmallTiles", "ReinforcedConcreteTiles"],
@@ -216,11 +240,18 @@ milestones = [
 			["DecorativeWood3", "DangerBlock"],
 			["Designable3", "DecorativeWood3"],
 			["DecorativeWood4", "Designable3"],
-			["ThreePhaseCurrent", "AluminiumProduction"],
-			["BallBearings", "AluminiumProduction"],
-			["AssemblyLine", "BallBearings"],
-			["RotaryDrilling", "AssemblyLine"],
-			["DieCasting", "ReinforcedFrame"],
+			["InventoryUpgrade3", "AluminiumChest"],
+		],
+		"Rows": 10,
+		"Versions": [
+			["AluminiumReduction", 3, ["AutomaticHammer", "Macerator", "Constructor", "Separator", "OreWasher", "Mixer"], [-1, 0]],
+			["AluminiumMacerator", 3, ["Automatization", "Conveyor", "Splitter", "Loader", "Sorter"]],
+			["AluminiumConveyor", 3, ["AutomaticFarm", "AutomaticMining"]],
+			["AluminiumSeparator", 3, ["Pump", "AtmosphericCondenser", "Electrolyzer"]],
+			["AluminiumProduction", 3, ["PowerGeneration", "Flywheel", "ElectricEngine", "WindTurbine"]],
+			["AluminiumProduction", 3, ["MetalBlocks", "Lamp", "SingleTypeStorage", "Destroyer", "Sign", "AdvancedSign", "Chest", "Container"]],
+			["AluminiumMixer", 3, ["Furnace", "FluidFurnace", "ElectricFurnace", "AdvancedSmelting", "SteelProduction", "Oven"]],
+			["AluminiumElectricFurnace", 3, ["KineticHeater", "Boiler", "SteamEngine"]],
 		],
 		"Exits": [["AluminiumProduction", "StainlessSteel"]],
 		"Experiments": 30,
@@ -241,9 +272,6 @@ milestones = [
 			["Battery", "SulfuricAcid"],
 			["BatteryBox", "Battery"],
 			["Fermentation", "ChemicalBath"],
-			["CentrifugalPump", "Fermentation"],
-			["WaterTubeBoiler", "ChemicalBath"],
-			["MagnesiteRefractories", "WaterTubeBoiler"],
 			["PlasticBlock", "Polyethylene"],
 		],
 		"Exits": [["Catalyst", "Oil"]],
@@ -272,6 +300,9 @@ milestones = [
 			["QuantumProcessor", "DecisionResonator"],
 			["QuantumProcessor2", "QuantumProcessor"],
 		],
+		"Versions": [
+			["SiliconWafer", 4, ["Diode", "DistributedComputing", "BatteryBox", "SmallSolarPanel", "SolarPanel"]],
+		],
 		"Exits": [["QuantumProcessor", "QuantumBrain"]],
 		"Experiments": 50,
 		"Experiment": [["Processor", 1], ["AdvancedCircuit", 2]],
@@ -292,12 +323,16 @@ milestones = [
 			["AdvancedCoil", "StainlessSteelProduction"],
 			["AdvancedJetpack", "AdvancedCoil"],
 			["AdvancedSteampack", "AdvancedJetpack"],
-			["CementedCarbide", "ModularFrame"],
-			["FrothFlotation", "CementedCarbide"],
-			["SpotWelding", "ModularFrame"],
-			["Hydraulics", "StainlessSteelProduction"],
-			["Turbodrilling", "Hydraulics"],
-			["SeleniumPhotocell", "AdvancedNightVision"],
+			["InventoryUpgrade4", "StainlessSteelChest"],
+		],
+		"Rows": 6,
+		"Versions": [
+			["AdvancedAlloys", 4, ["AutomaticHammer", "Macerator", "Constructor", "Mixer", "Assembler"], [1, 0]],
+			["StainlessSteelMacerator", 4, ["Sifter", "Separator", "OreWasher"]],
+			["StainlessSteelMixer", 4, ["Automatization", "Conveyor", "Splitter", "Loader", "Sorter"]],
+			["StainlessSteelConveyor", 4, ["AutomaticFarm", "AutomaticMining"]],
+			["StainlessSteelProduction", 4, ["MetalBlocks", "Lamp", "SingleTypeStorage", "Destroyer", "Sign", "AdvancedSign", "Chest", "Container"]],
+			["StainlessSteelAssembler", 4, ["ElectricFurnace", "SteelProduction", "FluidFurnace", "AdvancedSmelting", "Furnace", "Oven"]],
 		],
 		"Exits": [["IndustrialSmelting", "Titanium"]],
 		"Experiments": 100,
@@ -314,15 +349,16 @@ milestones = [
 			["FuelChemistry", "PreciseTemperaturePyrolysis"],
 			["FuelChemistry2", "FuelChemistry"],
 			["FuelChemistry3", "FuelChemistry2"],
-			["FractionatingColumn", "Passivation"],
+			["FractionatingColumn", "FuelChemistry"],
 			["CombustionEngine", "FuelChemistry"],
 			["Pumpjack", "PyrolysisUnit"],
 			["PumpjackProductivity", "Pumpjack"],
-			["InductionMelting", "PyrolysisUnit"],
-			["Passivation", "FuelChemistry"],
-			["SuperheatedSteam", "FuelChemistry2"],
-			["ElectricalSteel", "CombustionEngine"],
 			["DecorativePlastic", "PyrolysisUnit"],
+		],
+		"Versions": [
+			["PyrolysisUnit", 4, ["Pump", "AtmosphericCondenser", "IndustrialChemReactor", "Fermentation", "Electrolyzer", "ChemicalBath"]],
+			["FuelChemistry2", 4, ["KineticHeater", "Boiler", "SteamTurbine", "SteamEngine"]],
+			["CombustionEngine", 4, ["PowerGeneration", "Flywheel", "ElectricEngine", "WindTurbine", "Generator"]],
 		],
 		"Exits": [],
 		"Experiments": 100,
@@ -358,22 +394,21 @@ milestones = [
 			["NitricAcid", ""],
 			["KrollProcess", "NitricAcid"],
 			["TitaniumProduction", "KrollProcess"],
-			["FastSifting", "MagneticSeparation"],
-			["MagneticSeparation", "NumericalControl"],
+			["FastSifting", "KrollProcess"],
 			["PowerCoil", "TitaniumProduction"],
-			["NumericalControl", "PowerCoil"],
 			["BigMonitor", "PowerCoil"],
-			["Anodizing", "BigMonitor"],
-			["IndustrialRobots", "NumericalControl"],
-			["DiamondDrilling", "IndustrialRobots"],
 			["PlatinumSolution", "NitricAcid"],
 			["CircuitBoard3", "PlatinumSolution"],
-			["SiliconSolarCell", "CatalyticCracking"],
-			["CatalyticCracking", "TitaniumProduction"],
-			["VacuumDistillation", "CatalyticCracking"],
 			["CrudeTantalum", "NitricAcid"],
 			["Capacitor4", "CrudeTantalum"],
 			["Resistor4", "CrudeTantalum"],
+		],
+		"Versions": [
+			["NitricAcid", 5, ["AutomaticHammer", "Macerator", "Constructor", "Mixer", "Assembler"], [-1, 0]],
+			["TitaniumMixer", 5, ["Sifter", "Separator", "OreWasher"]],
+			["TitaniumMacerator", 5, ["Automatization", "Conveyor", "Splitter", "Loader", "Sorter"]],
+			["TitaniumConveyor", 5, ["AutomaticFarm", "Pumpjack", "AutomaticMining"]],
+			["TitaniumAssembler", 5, ["MetalBlocks", "Lamp", "SingleTypeStorage", "Destroyer", "Sign", "AdvancedSign", "Chest", "Container", "DeepStorage"]],
 		],
 		"Exits": [["TitaniumProduction", "Composite"], ["FastSifting", "Nuclear"]],
 		"Experiments": 125,
@@ -390,21 +425,20 @@ milestones = [
 			["CompositePlate", "CarbonFiberSheet"],
 			["PlatinumReflector", "CompositePlate"],
 			["HugeMonitor", "CompositePlate"],
-			["FilamentWinding", "CompositePlate"],
-			["MembraneSeparation", "AutoclaveMolding"],
-			["AutoclaveMolding", "FilamentWinding"],
-			["InventoryUpgrade5", "AutoclaveMolding"],
-			["LaserCutting", "CompositePlate"],
-			["XRaySorting", "LaserCutting"],
-			["MachineVision", "HugeMonitor"],
-			["DirectionalDrilling", "MachineVision"],
-			["ThinFilmCells", "PlatinumReflector"],
-			["GalliumNitride", "ThinFilmCells"],
-			["SupercriticalSteam", "FilamentWinding"],
-			["CeramicComposites", "SupercriticalSteam"],
-			["PlasmaSpraying", "LaserCutting"],
-			["PowerElectronics", "GalliumNitride"],
-			["NeodymiumMagnets", "PowerElectronics"],
+			["InventoryUpgrade5", "CompositeChest"],
+		],
+		"Versions": [
+			["CarbonFiber", 6, ["AutomaticHammer", "Macerator", "Constructor", "Mixer", "Assembler"], [1, 0]],
+			["CompositeMixer", 6, ["Sifter", "Separator", "OreWasher"]],
+			["CompositeMacerator", 6, ["Automatization", "Conveyor", "Splitter", "Loader", "Sorter"]],
+			["CompositeLoader", 6, ["AutomaticFarm", "Pumpjack", "AutomaticMining"]],
+			["CompositeOreWasher", 6, ["MetalBlocks", "Lamp", "SingleTypeStorage", "Destroyer", "Sign", "AdvancedSign", "Chest", "Container", "DeepStorage"]],
+			["CompositeAutomaticHammer", 6, ["Pump", "AtmosphericCondenser", "FractionatingColumn", "IndustrialChemReactor", "Fermentation", "PyrolysisUnit", "Electrolyzer", "ChemicalBath"], [0, 1]],
+			["CompositePyrolysisUnit", 6, ["ElectricFurnace", "SteelProduction", "AdvancedSmelting", "FluidFurnace", "Furnace", "Oven", "IndustrialSmelting"]],
+			["CompositeChemicalBath", 6, ["KineticHeater", "Boiler", "SteamTurbine", "SteamEngine"], [0, 1]],
+			["CompositeBoiler", 6, ["IndustrialBoiler", "IndustrialSteamTurbine", "FissionReactor", "Riteg"]],
+			["CompositeSteamEngine", 6, ["PowerGeneration", "Flywheel", "IndustrialGenerator", "CombustionEngine", "ElectricEngine", "WindTurbine", "Generator"]],
+			["PlatinumReflector", 6, ["Diode", "DistributedComputing", "BatteryBox", "SmallSolarPanel", "SolarPanel"]],
 		],
 		"Exits": [["PlatinumReflector", "Fusion"]],
 		"Experiments": 150,
@@ -430,11 +464,15 @@ milestones = [
 			["IndustrialBoiler", "FissionReactor"],
 			["IndustrialSteamTurbine", "IndustrialBoiler"],
 			["IndustrialGenerator", "IndustrialSteamTurbine"],
-			["Superalloys", "IndustrialBoiler"],
-			["Turbocharging", "IndustrialGenerator"],
-			["VacuumArcRemelting", "FissionReactor"],
 			["ReactionThrottling", "ControlCell"],
 			["AdvancedReflection2", "ThoriumReaction"],
+		],
+		"Versions": [
+			["UraniumCell", 5, ["Pump", "AtmosphericCondenser", "FractionatingColumn", "IndustrialChemReactor", "Fermentation", "PyrolysisUnit", "Electrolyzer", "ChemicalBath"], [1, 0]],
+			["TitaniumAtmosphericCondenser", 5, ["KineticHeater", "Boiler", "SteamTurbine", "SteamEngine"]],
+			["TitaniumChemicalBath", 5, ["PowerGeneration", "Flywheel", "CombustionEngine", "ElectricEngine", "WindTurbine", "Generator"], [0, 1]],
+			["TitaniumElectricEngine", 5, ["Diode", "DistributedComputing", "BatteryBox", "SmallSolarPanel", "SolarPanel"]],
+			["TitaniumKineticAccumulator", 5, ["ElectricFurnace", "SteelProduction", "AdvancedSmelting", "FluidFurnace", "Furnace", "Oven", "IndustrialSmelting"]],
 		],
 		"Exits": [],
 		"Experiments": 125,
@@ -455,21 +493,20 @@ milestones = [
 			["UltimateCatalyst", "NeutroniumProduction"],
 			["FuelChemistry4", "UltimateCatalyst"],
 			["Portal", "UltimateCatalyst"],
-			["LevitationMelting", "NeutroniumProduction"],
-			["ElectronBeamMelting", "LevitationMelting"],
-			["DegenerateMatter", "NeutroniumProduction2"],
-			["Magnetohydrodynamics", "Superconductivity"],
-			["Nanofluids", "Magnetohydrodynamics"],
-			["Superconductivity", "NeutroniumProduction"],
-			["MagneticBearings", "Superconductivity"],
-			["MagneticLevitation", "Superconductivity"],
-			["PlasmaDrilling", "MagneticLevitation"],
-			["MolecularAssembly", "UltimateCatalyst"],
-			["IsotopeSeparation", "MolecularAssembly"],
-			["NeutroniumLining", "NeutroniumProduction2"],
-			["Superfluidity", "NeutroniumLining"],
-			["QuantumDots", "MolecularAssembly"],
-			["InventoryUpgrade6", "DegenerateMatter"],
+			["InventoryUpgrade6", "NeutroniumChest"],
+		],
+		"Versions": [
+			["FusionReactor", 7, ["AutomaticHammer", "Macerator", "Constructor", "Mixer", "Assembler"], [-1, 0]],
+			["NeutroniumMixer", 7, ["Sifter", "Separator", "OreWasher"]],
+			["NeutroniumMacerator", 7, ["Automatization", "Conveyor", "Splitter", "Loader", "Sorter"]],
+			["NeutroniumLoader", 7, ["AutomaticFarm", "Pumpjack", "AutomaticMining"]],
+			["NeutroniumOreWasher", 7, ["MetalBlocks", "Lamp", "SingleTypeStorage", "Destroyer", "Sign", "AdvancedSign", "Chest", "Container", "DeepStorage"]],
+			["NeutroniumAutomaticHammer", 7, ["Pump", "AtmosphericCondenser", "FractionatingColumn", "IndustrialChemReactor", "Fermentation", "PyrolysisUnit", "Electrolyzer", "ChemicalBath"], [0, 1]],
+			["NeutroniumPyrolysisUnit", 7, ["ElectricFurnace", "SteelProduction", "AdvancedSmelting", "FluidFurnace", "Furnace", "Oven", "IndustrialSmelting"]],
+			["NeutroniumChemicalBath", 7, ["KineticHeater", "Boiler", "SteamTurbine", "SteamEngine"], [0, 1]],
+			["NeutroniumBoiler", 7, ["IndustrialBoiler", "IndustrialSteamTurbine", "FusionReactor", "FissionReactor", "Riteg"]],
+			["NeutroniumSteamEngine", 7, ["PowerGeneration", "Flywheel", "IndustrialGenerator", "CombustionEngine", "ElectricEngine", "WindTurbine", "Generator"]],
+			["NeutroniumSteamTurbine", 7, ["Diode", "BatteryBox", "SmallSolarPanel", "SolarPanel"]],
 		],
 		"Exits": [["Portal", "Infinite"]],
 		"Experiments": 200,
@@ -615,8 +652,8 @@ def layout(m, columns, rows, head_cell, exit_dirs, entry):
 			put(b, best[1])
 			last = best[2]
 		d = axis((sign(sum(v[0] for v in exit_dirs[exit_name])), sign(sum(v[1] for v in exit_dirs[exit_name]))))
-		if exit_name in pos:
-			cell = (pos[exit_name][0] + d[0], pos[exit_name][1] + d[1])
+		for d in [d] if d != (0, 0) else sorted({axis(v) for v in exit_dirs[exit_name]}):
+			cell = (pos[exit_name][0] + d[0], pos[exit_name][1] + d[1]) if exit_name in pos else (-1, -1)
 			while inside(cell):
 				reserved.add(cell)
 				cell = (cell[0] + d[0], cell[1] + d[1])
@@ -666,6 +703,20 @@ item_names = {o["Name"] for data in get_generated_files().values() for o in obje
 milestone_by_name = {m["Name"]: m for m in milestones}
 stage_dicts = {o["Name"]: o for data in get_generated_files().values() for o in objects_of(data) if o.get("Class") == r_dict and o.get("Recipes")}
 laboratory_tier ={machine["Name"]: machine["StartTier"] for machine in machines if machine.get("BlockLogic") == "ResearchLaboratoryBlockLogic"}
+
+def version_card(series, tier):
+	for version in research_by_name[series].get("Versions", []):
+		if research_by_name[version["Technology"]]["Levels"][0] == tier:
+			return version["Technology"]
+	raise Exception(f"Milestones: {series} has no version of tier {tier}")
+
+for m in milestones:
+	for group in m.get("Versions", []):
+		up, tier, series = group[:3]
+		cards = [card for _, _, card in sorted((research_by_name[card]["Complexity"], i, card) for i, card in enumerate(version_card(s, tier) for s in series))]
+		m["Tree"] += [[card, cards[k - 1 - (k - 1) % 2] if k else up] for k, card in enumerate(cards)]
+		if len(group) > 3:
+			m.setdefault("Chunks", {})[cards[0]] = group[3]
 
 owner = {}
 positions = {}
@@ -717,6 +768,10 @@ for m in milestones:
 			raise Exception(f"Milestones: experiment of {m['Name']} takes {count} of {item}, a pack holds whole items")
 	if (m["Experiments"] > 0) != bool(m["Experiment"]):
 		raise Exception(f"Milestones: {m['Name']} has {m['Experiments']} experiments of {m['Experiment']}")
+
+unplaced = [r["Name"] for r in research_objects if r["Class"] == "StaticResearchTechnology" and r["Name"] not in owner]
+if unplaced:
+	raise Exception(f"Milestones: machine versions on no milestone: {unplaced}")
 
 entries = {m["Name"]: [] for m in milestones}
 for m in milestones:
@@ -828,10 +883,13 @@ while queue:
 	reserved = through([anchor_local, head_local]) + [(x, head_local[1]) for x in range(cell_columns) if (x - head_local[0]) * e[0] < 0]
 	if carded:
 		reserved += [add(anchor_local, (dx, dy)) for dx in (-1, 0, 1) for dy in (-1, 0, 1)]
-	local, missed = layout({"Name": key, "Tree": box["Tree"], "Head": box["Head"]}, cell_columns, rows, head_local, exit_dirs, reserved) if box["Tree"] else ({}, [])
-	long_links += [f"{key}:{n}" for n in missed]
+	local_layout = lambda extra: layout({"Name": key, "Tree": box["Tree"], "Head": box["Head"]}, cell_columns, rows, head_local, exit_dirs, reserved + extra) if box["Tree"] else ({}, [])
+	local, missed = local_layout([])
+	above = [(head_local[0], y) for y in range(head_local[1])] if entry and e[0] and not carded else []
 
 	for k in range(1000):
+		if k == 1 and above:
+			local, missed = local_layout(above)
 		if not entry:
 			anchor = (x0 + head_local[0], k)
 			points = []
@@ -849,6 +907,7 @@ while queue:
 			break
 	else:
 		raise Exception(f"Milestones: no room for {key}")
+	long_links += [f"{key}:{n}" for n in missed]
 
 	cell_of.update(nodes)
 	origin_x[key] = x0
