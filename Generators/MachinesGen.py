@@ -201,6 +201,7 @@ for machine in machines:
 		block_name = machine["Name"] if "ExactName" in machine else (tier_material[tier] + machine["Name"])
 
 		image = machine["Image"] if "Image" in machine else machine["Name"]
+		tier_image = ("T_" + block_name) if "Tint" in machine else ("T_" + tier_material[tier] + image)
 
 		label_section = machine.get("LabelSection", "machines")
 		labelParts = ["machines_label_format", "common", [tier_material[tier], "common"], [machine.get("LabelName", machine["Name"]), label_section]]
@@ -211,7 +212,7 @@ for machine in machines:
 
 		item = { "Class": "StaticItem",
 			"Name": block_name,
-			"Image": ("T_" + image) if "ExactName" in machine and "TieredImage" not in machine else ("T_" + tier_material[tier] + image),
+			"Image": ("T_" + image) if "ExactName" in machine and "TieredImage" not in machine else tier_image,
 			"StackSize": 32,
 			"Label": labelParts,
 			"DescriptionParts": [] if "NoDescriptionText" in machine else [[machine.get("DescriptionName", machine["Name"]), "description"]],
@@ -275,12 +276,16 @@ for machine in machines:
 
 		machine_items.append(item)
 
-		images.append({ 
-			"NewName": "T_" + tier_material[tier] + image,
+		ico = {
+			"NewName": tier_image,
 			"Base": "T_" + image,
-			"MulMask": "T_Material" + named_material(tier_material[tier])["Name"],
 			"AddMask": "T_" + image + additive_ico,
-		})
+		}
+		if "Tint" in machine:
+			ico["MulColor"] = machine["Tint"]
+		else:
+			ico["MulMask"] = "T_Material" + named_material(tier_material[tier])["Name"]
+		images.append(ico)
 
 		block = {
 			"Name": block_name,
@@ -292,6 +297,9 @@ for machine in machines:
 			"Tier": tier,
 			"Level": tier - machine["StartTier"]
 		}
+
+		if "Tint" in machine:
+			block["Tint"] = machine["Tint"]
 
 		energy_cfg = machine.get("Energy")
 		if energy_cfg:

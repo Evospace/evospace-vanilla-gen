@@ -914,18 +914,21 @@ machines = [
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "ElectronicsLaboratory",
+		"Tint": "#4CB848",
 		"Label": laboratory_label(["Circuit", "parts"]),
 		"StartTier": 1,
 		"EndTier": 1,
 		**laboratory,
 	},{
 		"Name": "EngineeringLaboratory",
+		"Tint": "#D8483A",
 		"Label": laboratory_label(["Metalwork", "researches"]),
 		"StartTier": 1,
 		"EndTier": 1,
 		**laboratory,
 	},{
 		"Name": "ChemicalLaboratory",
+		"Tint": "#3C78E0",
 		"Label": laboratory_label(["Chemical", "category"]),
 		"StartTier": 2,
 		"EndTier": 2,
