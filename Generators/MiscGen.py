@@ -626,7 +626,7 @@ objects_array.append({
 	"Name": "SatelliteAntenna",
 	"Item": "SatelliteAntenna",
 	"BlockLogic": "SatelliteAntennaBlockLogic",
-	"Actor": "Blocks/TeslaTower/BP_TeslaTower.BP_TeslaTower_C",
+	"Actor": block_actor("SatelliteAntenna"),
 	"Tier": 3,
 	"Positions": [[0, 0, 0]] + [[x, y, z] for z in range(7) for x in range(1, -5, -1) for y in range(-2, 4) if [x, y, z] != [0, 0, 0]],
 	"Minable": {
