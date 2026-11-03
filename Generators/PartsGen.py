@@ -595,6 +595,13 @@ objects_array.append({ "Class": "ItemGroup",
 	"Members": ["IronDust", "IronPlate"],
 	"StackSize": 64,
 })
+
+objects_array.append({ "Class": "ItemGroup",
+	"Name": "AnyCarbon",
+	"Label": ["AnyCarbon", "parts"],
+	"Members": ["CoalDust", "Coal", "Coke"],
+	"StackSize": 64,
+})
 					
 data = {
 	"Objects": objects_array

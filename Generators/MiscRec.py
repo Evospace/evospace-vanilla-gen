@@ -1510,8 +1510,8 @@ recipes_pump.append({
 recipes_indu.append({
 	"Name":"Steel",
 	"Input": items([
-		["IronDust", 10],
-		["CoalDust", 5],
+		["IronDustOrPlate", 10],
+		["AnyCarbon", 5],
 		["Oxygen", 1000]
 	]),
 	"Output": items([
