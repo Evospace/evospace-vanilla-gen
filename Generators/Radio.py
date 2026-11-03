@@ -90,6 +90,7 @@ objects_array.append({
 	"Power": 0.8,
 	"Carrier": 0.6,
 	"Fading": 0.35,
+	"Detune": -44.6144,
 	"Program": cosmos_program,
 })
 
