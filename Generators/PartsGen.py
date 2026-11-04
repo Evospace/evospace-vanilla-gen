@@ -142,8 +142,8 @@ for material in materials:
 			recipes_hand.append({
 				"Name": m_name + "Alternator",
 				"Input": items([
-					["CopperWire", 12],
-					["CopperPlate", 3]
+					["CopperWire", 48],
+					["CopperPlate", 12]
 				]),
 				"Output": one_item(m_name + "Alternator"),
 				"Ticks" : 120,
@@ -153,7 +153,7 @@ for material in materials:
 			recipes_hand.append({
 				"Name": m_name + "Alternator",
 				"Input": items([
-					[tier_material[material_tier] + "Alternator", 4],
+					[tier_material[material_tier] + "Alternator", 2],
 					["CopperWire", 12],
 					["Processor", 1]
 				]),

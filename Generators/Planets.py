@@ -1,15 +1,10 @@
-# StaticPlanet prototypes per playable surface (name matches ADimension::SurfaceFolderName for DB lookup).
-
 from Common import write_file
 
-# Temperate: default surface folder; day length and anchors in world tick space (evo::WorldDayCycle).
 objects_array = [
 	{
 		"Class": "StaticPlanet",
 		"Name": "Temperate",
-		# 24000 ticks / 20 TickRate = 1200 s = 20 min real-time day.
 		"DayLengthTicks": 24000,
-		# Epoch shift so game tick 0 lands at 07:00 morning (7/24 * 24000). No per-save offset / time skip needed.
 		"PhaseOffsetTicks": 7000,
 		"DawnPhaseTicks": 4000,
 		"SolarNoonPhaseTicks": 12000,
@@ -19,7 +14,6 @@ objects_array = [
 		"OvercastInsolation01": 0.15,
 		"RadiusMeters": 600000.0,
 		"OrbitAltitudeMeters": 100000.0,
-		# Seen from the platform: GPU-baked noise planet, colours are linear albedo.
 		"OrbitLook": {
 			"Seed": 7347,
 			"Ocean": True,
@@ -81,13 +75,12 @@ objects_array = [
 		"SunsetPhaseTicks": 590000,
 		"LatitudeDeg": 0.0,
 		"DayOfYear": 172,
-		# No atmosphere: cloud cover never dims the sun.
 		"OvercastInsolation01": 1.0,
+		"WindScale": 0.0,
 		"GeneratorName": "WorldGeneratorMoon",
 		"MusicPlaylist": "cosmos",
 		"RadiusMeters": 170000.0,
 		"OrbitAltitudeMeters": 30000.0,
-		# Airless grey body: craters and maria baked by their own shader, no water, no air.
 		"OrbitLook": {
 			"BakeMaterial": "/Game/Materials/M_MoonSurfaceBake.M_MoonSurfaceBake",
 			"Seed": 5507,
@@ -119,6 +112,7 @@ objects_array = [
 		"OvercastInsolation01": 1.0,
 		"WeatherSeverityMin": 0.0,
 		"WeatherSeverityMax": 0.0,
+		"WindScale": 0.0,
 		"GeneratorName": "WorldGeneratorOrbit",
 		"MusicPlaylist": "cosmos",
 	},
