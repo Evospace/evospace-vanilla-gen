@@ -42,6 +42,8 @@ interference = {
 	"Blackout": {"Absorb": 0.95},
 	"Aurora": {"Flutter": 0.8},
 	"Drift": {"Drift": 1.5},
+	"Lightning": {"Sound": noise("lightning"), "Level": 0.9, "Absorb": 0.2, "Once": True},
+	"Ionosonde": {"Sound": noise("ionosonde"), "Level": 0.7, "Once": True, "Sweep": 400},
 }
 
 def place(name, band=None, every=None, lasts=None, **overrides):
@@ -64,6 +66,11 @@ shortwave_interference = [
 	place("Blackout", None, 3600, 90),
 	place("Aurora", [5.5, 8.0], 2700, 90),
 	place("Drift", [3.4, 5.3], 2100, 60),
+	place("Lightning", None, 180, 3),
+	place("Blackout", [3.0, 5.5], 1200, 15, Absorb=0.9),
+	place("Drift", None, 480, 2, Drift=1.0),
+	place("Aurora", [4.0, 8.0], 360, 8, Flutter=0.6),
+	place("Ionosonde", [3.0, 8.0], 300, 6),
 ]
 
 objects_array = [{
