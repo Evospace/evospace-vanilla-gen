@@ -90,6 +90,7 @@ milestones = [
 			["Separator", "SteelMacerator"],
 			["OreWasher", "Separator"],
 			["Mixer", "OreWasher"],
+			["FuelBriquette", "Mixer"],
 			["SteelConstructor", "SteelAutomaticHammer"],
 			["BasicFrame", "SteelConstructor"],
 			["SteelItemRack", "SteelConstructor"],
@@ -120,6 +121,7 @@ milestones = [
 			["HighCapacitySteampack", "SteelRobotArm"],
 			["HighPressureSteampack", "HighCapacitySteampack"],
 		],
+		"Rows": 7,
 		"Exits": [["SteelProduction", "Steam"]],
 		"Experiments": 25,
 		"Experiment": [["Triod", 1], ["CopperPipe", 2], ["CopperConveyor", 1]],
@@ -393,6 +395,7 @@ milestones = [
 		"Tree": [
 			["NitricAcid", ""],
 			["KrollProcess", "NitricAcid"],
+			["NitroBriquette", "KrollProcess"],
 			["TitaniumProduction", "KrollProcess"],
 			["FastSifting", "KrollProcess"],
 			["PowerCoil", "TitaniumProduction"],

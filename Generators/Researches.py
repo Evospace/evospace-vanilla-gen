@@ -1044,6 +1044,14 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "NitroBriquette",
+	"Label": ["NitroBriquette", "parts"],
+	"RequiredResearch": ["NitricAcid"],
+	"Levels": [4,4],
+	"Unlocks": [[ic_reactor_r_dict, "NitroBriquette"]],
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "PlatinumSolution",
 	"Label": ["PlatinumSolution", "parts"],
 	"RequiredResearch": ["NitricAcid"],
@@ -1236,7 +1244,7 @@ append_levels({
 	"Name": "FuelChemistry2",
 	"Label": ["TwoWorldsFormat", "common", ["FuelChemistry", "researches"], ["II", "common"]],
 	"RequiredResearch": ["FuelChemistry", "NitricAcid"],
-	"Unlocks": [[ic_reactor_r_dict, "HighCetaneDiesel"], [ic_reactor_r_dict, "NitroBriquette"]],
+	"Unlocks": [[ic_reactor_r_dict, "HighCetaneDiesel"]],
 	"Levels": [4,4],
 })
 append_levels({
@@ -1401,7 +1409,15 @@ append_levels({
 	"Levels": [2,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%Mixer"] ],
 	"MainResearch": True,
-	
+
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "FuelBriquette",
+	"Label": ["FuelBriquette", "parts"],
+	"RequiredResearch": ["Mixer"],
+	"Levels": [2,2],
+	"Unlocks": [["Mixer" + r_dict, "FuelBriquette"]],
 })
 append_levels({
 	"Class": research_recipe,
