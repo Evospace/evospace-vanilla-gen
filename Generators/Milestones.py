@@ -161,7 +161,6 @@ milestones = [
 			["BasicCoil", ""],
 			["ElectricEngine", "BasicCoil"],
 			["WindTurbine", "ElectricEngine"],
-			["ChemicalLaboratory", "ElectricEngine"],
 			["Electrolyzer", "BasicCoil"],
 			["AdvancedSmelting", "Electrolyzer"],
 			["ElectricFurnace", "AdvancedSmelting"],
@@ -223,6 +222,7 @@ milestones = [
 			["AluminiumReduction", ""],
 			["AluminiumProduction", "AluminiumReduction"],
 			["ReinforcedFrame", "AluminiumProduction"],
+			["ChemicalLaboratory", "AluminiumProduction"],
 			["Boat", "AluminiumElectricEngine"],
 			["OffroadVehicle", "Boat"],
 			["Jetpack", "Boat"],
@@ -252,7 +252,7 @@ milestones = [
 			["AluminiumMixer", 3, ["Furnace", "FluidFurnace", "ElectricFurnace", "AdvancedSmelting", "SteelProduction", "Oven"]],
 			["AluminiumElectricFurnace", 3, ["KineticHeater", "Boiler", "SteamEngine"]],
 		],
-		"Exits": [["AluminiumProduction", "StainlessSteel"], ["AluminiumProduction", "Chemistry"]],
+		"Exits": [["AluminiumProduction", "StainlessSteel"], ["ChemicalLaboratory", "Chemistry"]],
 		"Experiments": 30,
 		"Experiment": [["SteelElectrolyzer", 1], ["SteelSeparator", 1]],
 	},
@@ -896,7 +896,8 @@ while queue:
 	anchor_local = add(head_local, scale(e, -reach))
 	reserved = through([anchor_local, head_local]) + [(x, head_local[1]) for x in range(cell_columns) if (x - head_local[0]) * e[0] < 0]
 	if carded:
-		reserved += [add(anchor_local, (dx, dy)) for dx in (-1, 0, 1) for dy in (-1, 0, 1)]
+		back = add(anchor_local, (e[0], 1)) if e[0] and any(axis(d) == (-e[0], 0) for _, d in box["Exits"]) else None
+		reserved += [cell for cell in (add(anchor_local, (dx, dy)) for dx in (-1, 0, 1) for dy in (-1, 0, 1)) if cell != back]
 	local_layout = lambda extra: layout({"Name": key, "Tree": box["Tree"], "Head": box["Head"]}, cell_columns, rows, head_local, exit_dirs, reserved + extra) if box["Tree"] else ({}, [])
 	local, missed = local_layout([])
 	above = [(head_local[0], y) for y in range(head_local[1])] if entry and e[0] and not carded else []
