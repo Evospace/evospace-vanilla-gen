@@ -142,6 +142,10 @@ tools = [
 		"Label": "Ground Leveling Tool",
 		"ItemLogic": "/Game/Equipped/GroundLevelingToolBP.GroundLevelingToolBP_C",
 	},{
+		"Name": "Scanner",
+		"Label": "Scanner",
+		"ItemLogic": "ScannerItemLogic",
+	},{
 		"Name": "GhostReplacerTool",
 		"Label": "Ghost Replacer Tool",
 		"ItemLogic": "GhostReplacerToolItemLogic",

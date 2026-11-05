@@ -10,7 +10,7 @@ data = {
 			"Name": "Player",
 			"HandRecipes": "HandRecipeDictionary",
 			"Hotbar": ["Multitool", "BasicPlatform"],
-			"Tools": ["Multitool", "Screwdriver", "GroundLevelingTool"],
+			"Tools": ["Multitool", "Screwdriver", "GroundLevelingTool", "Scanner"],
 			"Light": "BuiltinFlashlight",
 			"BlueprintItem": "ConstructionBlueprint",
 			"StartInventory": {

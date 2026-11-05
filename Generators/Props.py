@@ -590,6 +590,16 @@ props.append({
 
 ruin_hits = 2 * [x for x in props if x["Name"] == "Rock"][0]["HitsToBreak"]
 
+ruin_designs = {
+	"AncientGate": "AncientGate",
+	"AncientAltar": "AncientAltar",
+	"AncientStele": "AncientStele",
+	"AncientPillar": "AncientPillar",
+	"AncientPillarBroken": "AncientPillar",
+	"AncientPillarStump": "AncientPillar",
+	"AncientPillarFallen": "AncientPillar",
+}
+
 for name, count, plates in [
 	("AncientPillar", 12, 3), ("AncientPillarBroken", 8, 0), ("AncientPillarStump", 4, 0), ("AncientPillarFallen", 8, 0),
 	("AncientLintel", 8, 1), ("AncientGate", 20, 4), ("AncientStairs", 4, 0), ("AncientWall", 12, 0),
@@ -613,6 +623,8 @@ for name, count, plates in [
 	}
 	if plates:
 		ruin["Salvage"] = {"Name": "CopperPlate", "Count": plates}
+	if name in ruin_designs:
+		ruin["Design"] = ruin_designs[name]
 	props.append(ruin)
 
 for name, item in [
@@ -1186,6 +1198,8 @@ for prop in props:
 			temp_prop["HitYield"] = prop["HitYield"]
 		if "Salvage" in prop:
 			temp_prop["Salvage"] = prop["Salvage"]
+		if "Design" in prop:
+			temp_prop["Design"] = prop["Design"]
 		if "RangeMul" in prop:
 			temp_prop["RangeMul"] = prop["RangeMul"]
 		if "Floating" in prop:

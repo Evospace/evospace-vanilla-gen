@@ -97,6 +97,33 @@ designables = [
 	}
 ]
 
+ruins = [
+	("AncientGate", (3, 1, 5), ["AncientGate"]),
+	("AncientAltar", (2, 2, 2), ["AncientAltar"]),
+	("AncientStele", (1, 1, 4), ["AncientStele"]),
+	("AncientPillar", (1, 1, 4), ["AncientPillar"]),
+]
+
+design_covers = []
+
+for name, (sx, sy, sz), meshes in ruins:
+	cells = [[x - (sx - 1) // 2, y - (sy - 1) // 2, z] for z in range(sz) for y in range(sy) for x in range(sx)]
+	cells.sort(key=lambda c: c != [0, 0, 0])
+	offset = [0.5 if sx % 2 == 0 else 0, 0.5 if sy % 2 == 0 else 0, -0.5]
+	for mesh in meshes:
+		design_covers.append({
+			"Class": "StaticCover",
+			"Name": mesh,
+			"Mesh": "/Game/Props/AncientRuin/" + mesh,
+			"Offset": offset,
+		})
+	designables.append({
+		"Name": name,
+		"BlockLogic": "DesignPieceBlockLogic",
+		"Covers": meshes,
+		"Positions": cells,
+	})
+
 cover_sets = []
 items = []
 blocks = []
@@ -149,7 +176,7 @@ for d in designables:
 
 	blocks.append(block)
 
-objects_array = cover_sets + items + blocks
+objects_array = design_covers + cover_sets + items + blocks
 
 data = { "Objects": objects_array }
 
