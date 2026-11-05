@@ -590,13 +590,15 @@ props.append({
 	"Image": "T_TerrainGrass",
 })
 
-for name, count, hits in [
-	("AncientPillar", 6, 12), ("AncientPillarBroken", 4, 10), ("AncientPillarStump", 2, 6), ("AncientPillarFallen", 4, 10),
-	("AncientLintel", 4, 10), ("AncientGate", 10, 16), ("AncientStairs", 2, 6), ("AncientWall", 6, 12),
-	("AncientWallBroken", 4, 10), ("AncientAltar", 6, 12), ("AncientStele", 4, 10), ("AncientRubble", 2, 4),
-	("AncientRubbleLarge", 4, 8),
+ruin_hits = 2 * [x for x in props if x["Name"] == "Rock"][0]["HitsToBreak"]
+
+for name, count, plates in [
+	("AncientPillar", 12, 3), ("AncientPillarBroken", 8, 0), ("AncientPillarStump", 4, 0), ("AncientPillarFallen", 8, 0),
+	("AncientLintel", 8, 1), ("AncientGate", 20, 4), ("AncientStairs", 4, 0), ("AncientWall", 12, 0),
+	("AncientWallBroken", 8, 0), ("AncientAltar", 12, 3), ("AncientStele", 8, 1), ("AncientRubble", 4, 0),
+	("AncientRubbleLarge", 8, 0),
 ]:
-	props.append({
+	ruin = {
 		"Name": name,
 		"Meshes": ["/Game/Props/AncientRuin/" + name],
 		"ItemFrom": "Rock",
@@ -604,13 +606,16 @@ for name, count, hits in [
 		"ScaleMax": 1,
 		"ProjectToTerrainPower": 0,
 		"IsBig": True,
-		"Drops": "StoneSurface",
+		"Drops": "BuildingMaterial",
 		"Count": count,
-		"HitsToBreak": hits,
+		"HitsToBreak": ruin_hits,
 		"HighDetailShadow": True,
 		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
 		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C",
-	})
+	}
+	if plates:
+		ruin["Salvage"] = {"Name": "CopperPlate", "Count": plates}
+	props.append(ruin)
 
 for name, item in [
 	("AncientCrackFern", "Fern"), ("AncientCrackWeed", "Bush"), ("AncientCrackSapling", "Bush"),
@@ -1199,6 +1204,8 @@ for prop in props:
 			temp_prop["BreakEffect"] = prop["BreakEffect"]
 		if "HitsToBreak" in prop:
 			temp_prop["HitsToBreak"] = prop["HitsToBreak"]
+		if "Salvage" in prop:
+			temp_prop["Salvage"] = prop["Salvage"]
 		if "RangeMul" in prop:
 			temp_prop["RangeMul"] = prop["RangeMul"]
 		if "Floating" in prop:
