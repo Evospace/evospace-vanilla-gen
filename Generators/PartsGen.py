@@ -206,6 +206,7 @@ for material in materials:
 			"Input": one_item(m_name+"Plate", 1),
 			"Output": one_item(m_name+"Wire", 2),
 			"Ticks" : 40,
+			"Tier": material_tier,
 			"Animation": wire_animation,
 			"Colors": [material["Color"]],
 		})
@@ -214,6 +215,7 @@ for material in materials:
 			"Input": one_item(m_name+"Plate", 1),
 			"Output": one_item(m_name+"Wire", 1),
 			"Ticks" : 80,
+			"Tier": material_tier,
 		})
 
 	if "Abstract" in material["Items"]:
