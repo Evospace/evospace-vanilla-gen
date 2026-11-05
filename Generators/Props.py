@@ -581,7 +581,6 @@ for name, item in [
 		"IsBig": False,
 		"Drops": "Organics",
 		"Count": 1,
-		"NoCollision": True,
 	})
 
 for prop in props:
