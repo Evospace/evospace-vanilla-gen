@@ -10,8 +10,8 @@ objects_array = [{
 }]
 
 floppies = [
-	{"Name": "FloppyWireMonitor", "Label": "WIRE MONITOR", "Source": "Floppies/monitor.asm"},
-	{"Name": "FloppySnake", "Label": "SNAKE", "Source": "Floppies/snake.asm"},
+	{"Name": "FloppyWireMonitor", "Label": "WIRE MONITOR", "Source": "Floppies/monitor.c"},
+	{"Name": "FloppySnake", "Label": "SNAKE", "Source": "Floppies/snake.c"},
 	{"Name": "FloppyFieldLog", "Label": "FIELD LOG", "Source": "Floppies/log.asm", "Sealed": True},
 ]
 
