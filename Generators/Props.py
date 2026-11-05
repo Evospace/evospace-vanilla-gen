@@ -174,6 +174,7 @@ props = [
 		"Count": 20,
 		"AdditiveElevation": 0,
 		"HitsToBreak": 8,
+		"HitYield": 3,
 		"HighDetailShadow": True,
 		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
 		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C",
@@ -504,6 +505,7 @@ props.append({
 	"Drops": "RubyOre",
 	"Count": 3,
 	"HitsToBreak": 3,
+	"HitYield": 3,
 	"RangeMul": 3,
 	"IsBig": True,
 	"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
@@ -521,13 +523,13 @@ props.append({
 	"Drops": "RubyOre",
 	"Count": 2,
 	"HitsToBreak": 2,
+	"HitYield": 3,
 	"RangeMul": 2,
 	"IsBig": True,
 	"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
 	"BreakEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
 })
 
-# Oil deposit spawns like ore, yields RawOil for pumpjacks
 props.append({
 	"Name": "OilCluster",
 	"ScaleMin": 2,
@@ -547,8 +549,6 @@ props.append({
 	"Image": "T_TerrainCluster",
 })
 
-# Bog thickets. The pack meshes sit outside /Game/Props and are modelled at natural size, so they
-# carry their own paths and a scale near one instead of the stretch the older grass meshes need.
 props.append({
 	"Name": "Bush",
 	"Meshes": [
@@ -569,8 +569,6 @@ props.append({
 	"Image": "T_Shrub",
 })
 
-# Bog hummocks. The pack's moss meshes are metre-high mounds rather than ground cover, so they are
-# scattered as single objects and left near their own size.
 props.append({
 	"Name": "Moss",
 	"Meshes": [
@@ -840,11 +838,9 @@ proplists = [
 		"Name": "PineForestProps",
 		"Array": [
 			{
-				# Canopy: pine-dominant, an occasional conifer breaks up the identical silhouettes
 				"Props": ["Pine", "Pine", "Pine", "Conifer"],
 				"Chance": 0.0096
 			},{
-				# Understory: young growth / brush filling the clearings between trunks
 				"Props": ["Shrub", "BigBush"],
 				"Chance": 0.012
 			},{
@@ -854,14 +850,12 @@ proplists = [
 				"Props": ["SmallRock"],
 				"Chance": 0.02
 			},{
-				# Classic boreal forest-floor fern undergrowth (grows in patches)
 				"Props": ["Fern"],
 				"Chance": 0.08
 			},{
 				"Props": ["DryGrass"],
 				"Chance": 0.245
 			},{
-				# Greener tufts among the needle litter
 				"Props": ["LongGrass"],
 				"Chance": 0.14
 			},{
@@ -997,10 +991,6 @@ proplists = [
 			}
 		]
 	},{
-		# Clay sub-biome cover. The clay itself now sits only in the carved basins
-		# (see ClayLowlandLayering); the swells are boggy grass. Reeds (Rogoz) are
-		# kept sparse so they read as the odd wet patch instead of carpeting the
-		# whole biome, which looked wrong on the clay flats.
 		"Name": "ClayProps",
 		"Array": [
 			{
@@ -1018,9 +1008,6 @@ proplists = [
 			}
 		]
 	},{
-		# High stone mountains: rounded boulders and a little hardy vegetation in
-		# the pockets. Sparse, but enough that bare stone slopes no longer feel
-		# empty. Greener/softer than the dark-stone peaks.
 		"Name": "MountainProps",
 		"Array": [
 			{
@@ -1038,9 +1025,6 @@ proplists = [
 			}
 		]
 	},{
-		# Dark-stone peaks: a deliberately different, barren-jagged look. Sharp
-		# CanyonRock spires dominate, dark volcanic rubble scattered between, and
-		# almost no vegetation — reads as harsher / higher than the stone slopes.
 		"Name": "MountainDarkProps",
 		"Array": [
 			{
@@ -1096,7 +1080,6 @@ for ore in ore_types:
 	ore_props.append(ore["Name"]+"Cluster")
 ore_props.append("OilCluster")
 
-# Distance bands for surface ore deposits (blocks). Kept in sync with OreGenerator.cpp constants.
 ORE_R_START = 200
 ORE_R_LATE = 300
 
@@ -1129,8 +1112,6 @@ ore_prop_tiers = [
 
 objects_array = []
 
-# Small, dense, decorative foliage is streamed around the player (UGrassStreamingSubsystem)
-# instead of being instanced per-column. Tag by name; everything else stays column-instanced.
 streamed_prop_names = {
 	"Dandaleon", "Fern", "LongGrass", "YellowGrass", "DryGrass",
 	"TallGrass", "SeaGrass", "SeaPlant", "SnowyGrass",
@@ -1143,8 +1124,6 @@ for prop in props:
 		prop["Streamed"] = True
 		prop["NoCollision"] = True
 
-# A bush or a boulder keeps its silhouette long after grass has stopped reading, so it fades out
-# further than the grass range it is authored against.
 range_mul_by_name = {
 	"Shrub": 2.5, "BigBush": 2.5,
 	"SmallRock": 2.5, "SmallVolcanicRock": 2.5, "SnowyRock": 2.5, "CanyonRock": 2.5,
@@ -1180,7 +1159,6 @@ for prop in props:
 			})
 
 	for variation in range(0, prop["Variations"]):
-		# Non-minable props (e.g. OilCluster) still need Result for map icons and USourceData::Item in OreGenerator
 		minable = (
 			{"Minable": False, "Result": prop["Drops"], "Count": prop["Count"]}
 			if prop.get("Minable") is False
@@ -1204,6 +1182,8 @@ for prop in props:
 			temp_prop["BreakEffect"] = prop["BreakEffect"]
 		if "HitsToBreak" in prop:
 			temp_prop["HitsToBreak"] = prop["HitsToBreak"]
+		if "HitYield" in prop:
+			temp_prop["HitYield"] = prop["HitYield"]
 		if "Salvage" in prop:
 			temp_prop["Salvage"] = prop["Salvage"]
 		if "RangeMul" in prop:
@@ -1277,7 +1257,6 @@ PROP_CLUSTER_SETTINGS = {
 	"CanyonRock": SPARSE_CLUSTER,
 }
 
-# PropsGenerator name -> legacy StaticPropList name (Biomes.py references generator by name).
 PROPS_GENERATOR_SOURCES = [
 	("PrairieDryProps", "PrairieDryPropList"),
 	("PrairieProps", "PrairiePropList"),
@@ -1337,10 +1316,6 @@ def is_cluster_layer(prop_names):
 		return False
 	return any(p in CLUSTER_PROPS for p in prop_names)
 
-# Every layer rolls its own placement. Without a seed of its own each layer of a generator draws the
-# same numbers for the same cell, so cluster layers put their centers on top of each other and dense
-# scatter layers swallow the sparse ones. Keyed by list name, so a layer keeps its world when an
-# unrelated one is added.
 def layer_seed_offset(list_name):
 	return zlib.crc32(list_name.encode("utf-8")) & 0x03FFFFFF
 
