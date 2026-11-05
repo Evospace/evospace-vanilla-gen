@@ -137,6 +137,14 @@ recipes_smelter.append({
 
 
 recipes_hand.append({
+	"Name":"Portal",
+	"Input": one_item("BuildingMaterial", 10),
+	"Output": one_item("Portal"),
+	"Ticks" : 20,
+	"Tier": 0
+})
+
+recipes_hand.append({
 	"Name":"CircuitBoard",
 	"Input": one_item("Log"),
 	"Output": one_item("CircuitBoard"),
