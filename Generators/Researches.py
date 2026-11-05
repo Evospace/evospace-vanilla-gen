@@ -153,7 +153,7 @@ append_levels({
 	"Name": "MineralsScan",
 	"Label": ["MineralsScan", "researches"],
 	"RequiredResearch": [],
-	"Unlocks": [["Hand" + r_dict, tier_material[0] + "Furnace"],["Hand" + r_dict, "Dirt"],["Hand" + r_dict, "CopperSpawner"],["Hand" + r_dict, "BuildingMaterial"]],
+	"Unlocks": [["Hand" + r_dict, tier_material[0] + "Furnace"],["Hand" + r_dict, "Dirt"],["Hand" + r_dict, "CopperSpawner"],["Hand" + r_dict, "BuildingMaterial"],["Hand" + r_dict, "Portal"]],
 	"MainResearch": True,
 })
 append_levels({
