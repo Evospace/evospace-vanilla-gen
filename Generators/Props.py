@@ -463,6 +463,16 @@ props = [
 	}
 ]
 
+deposit_models = {
+	"Ruby": {
+		"Meshes": ["/Game/Props/RubyCluster/SM_RubyDeposit"],
+		"Satellites": ["RubyShard" + variation_helper[v] for v in range(5)],
+		"SatelliteCount": 36,
+		"Rubble": ["RubyRubble" + variation_helper[v] for v in range(4)],
+		"RubbleCount": 56,
+	},
+}
+
 for ore in ore_types:
 	props.append({
 		"Name": ore["Name"] + "Cluster",
@@ -480,7 +490,42 @@ for ore in ore_types:
 		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
 		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C",
 		"Image": "T_TerrainCluster",
+		**deposit_models.get(ore["Name"], {}),
 	})
+
+props.append({
+	"Name": "RubyShard",
+	"Meshes": ["/Game/Props/RubyCluster/SM_RubyShard" + str(v + 1) for v in range(5)],
+	"Variations": 5,
+	"ItemFrom": "RubyCluster",
+	"ScaleMin": 0.8,
+	"ScaleMax": 1.25,
+	"ProjectToTerrainPower": 0.6,
+	"Drops": "RubyOre",
+	"Count": 3,
+	"HitsToBreak": 3,
+	"RangeMul": 3,
+	"IsBig": True,
+	"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+	"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C",
+})
+
+props.append({
+	"Name": "RubyRubble",
+	"Meshes": ["/Game/Props/RubyCluster/SM_RubyRubble" + str(v + 1) for v in range(4)],
+	"Variations": 4,
+	"ItemFrom": "RubyCluster",
+	"ScaleMin": 1.0,
+	"ScaleMax": 1.6,
+	"ProjectToTerrainPower": 0.8,
+	"Drops": "RubyOre",
+	"Count": 2,
+	"HitsToBreak": 2,
+	"RangeMul": 2,
+	"IsBig": True,
+	"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+	"BreakEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+})
 
 # Oil deposit spawns like ore, yields RawOil for pumpjacks
 props.append({
@@ -1172,6 +1217,12 @@ for prop in props:
 			temp_prop["NoCollision"] = prop["NoCollision"]
 		if "VehicleBreakSpeed" in prop:
 			temp_prop["VehicleBreakSpeed"] = prop["VehicleBreakSpeed"]
+		if "Satellites" in prop:
+			temp_prop["Satellites"] = prop["Satellites"]
+			temp_prop["SatelliteCount"] = prop["SatelliteCount"]
+		if "Rubble" in prop:
+			temp_prop["Rubble"] = prop["Rubble"]
+			temp_prop["RubbleCount"] = prop["RubbleCount"]
 		objects_array.append(temp_prop)
 
 DENSITY_MUL = 0.6
