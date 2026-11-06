@@ -44,6 +44,7 @@ generator_files = [
 	"Researches.py",
 	"Milestones.py",
 	"Spawn.py",
+	"Speaker.py",
 	"Weather.py",
 ]
 

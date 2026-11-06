@@ -460,7 +460,7 @@ for machine in machines:
 				"Ticks" : 20
 			})
 
-		if machine["Name"] == "LogicDisplay" or machine["Name"] == "LogicController" or machine["Name"] == "LogicSensor" or machine["Name"] == "LogicTransceiver":
+		if machine["Name"] == "LogicDisplay" or machine["Name"] == "LogicController" or machine["Name"] == "LogicSensor" or machine["Name"] == "LogicTransceiver" or machine["Name"] == "Speaker":
 			append_recipe({
 				"Name": block_name,
 				"Input":{
