@@ -101,7 +101,6 @@ ach = [
         "Name": "NeutroniumPortal",
         "Steam": True,
         "Label": machine_label("Neutronium", "Portal"),
-        "Description": FirstItemAcq
     },
     {
         "Name": "CompositeFusionReactor",

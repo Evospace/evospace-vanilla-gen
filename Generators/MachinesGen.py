@@ -63,7 +63,6 @@ FOUNDATION_MACHINES = {
 	"SmallSolarPanel": FOUNDATION,
 	"WindTurbine": FOUNDATION_HEAVY,
 	"RailStation": FOUNDATION,
-	"Portal": FOUNDATION_HEAVY,
 	"ItemRack": FOUNDATION,
 	"Chest": FOUNDATION,
 	"DeepStorage": FOUNDATION,
@@ -1081,21 +1080,6 @@ for machine in machines:
 				"Ticks" : 300
 			})
 			
-		if machine["Name"] == "Portal":
-			append_recipe({
-				"Name": tier_material[tier] + machine["Name"],
-				"Input": items([
-					["UltimateCatalyst", 10],
-					[plate(), 40],
-					["ModularFrame", 20],
-					[wire(), 100],
-					[circuit(), 25],
-					["BuildingMaterial", 256]
-				]),
-				"Output": one_item(tier_material[tier] + machine["Name"]),
-				"Ticks" : 300
-			})
-
 		if machine["Name"] == "SteelRail":
 			append_recipe({
 				"Name": block_name,

@@ -74,14 +74,14 @@ milestones = [
 			["KineticHeater", "HeatTransferring"],
 			["FluidFurnace", "HeatTransferring"],
 		],
-		"Exits": [["ElectronicsLaboratory", "Transistor"], ["EngineeringLaboratory", "Steel"]],
+		"Exits": [["ElectronicsLaboratory", "Transistor"], ["EngineeringLaboratory", "CopperPortal"]],
 		"Experiments": 0,
 		"Experiment": [],
 	},
 	{
 		"Name": "Steel",
 		"Label": "SteelProduction",
-		"Position": [1, 1],
+		"Position": [1, 2],
 		"Laboratory": "EngineeringLaboratory",
 		"Tree": [
 			["SteelProduction", ""],
@@ -130,7 +130,7 @@ milestones = [
 		"Name": "Steam",
 		"Label": "SteamEngine",
 		"Title": "SteamPower",
-		"Position": [2, 1],
+		"Position": [2, 2],
 		"Laboratory": "EngineeringLaboratory",
 		"Tree": [
 			["Boiler", ""],
@@ -157,7 +157,7 @@ milestones = [
 		"Label": "Generator",
 		"Title": "Electricity",
 		"Image": "T_LightBulb",
-		"Position": [2, 2],
+		"Position": [2, 3],
 		"Laboratory": "EngineeringLaboratory",
 		"Tree": [
 			["BasicCoil", ""],
@@ -173,7 +173,7 @@ milestones = [
 			["Flashlight", "Spotlight"],
 			["SteelLoader", "ElectricEngine"],
 		],
-		"Exits": [["AdvancedSmelting", "Aluminium"]],
+		"Exits": [["AdvancedSmelting", "SteelPortal"]],
 		"Experiments": 25,
 		"Experiment": [["SteelBoiler", 1], ["SteelSteamEngine", 1]],
 	},
@@ -182,7 +182,7 @@ milestones = [
 		"Label": "Processor",
 		"Title": "Microelectronics",
 		"Image": "T_Microelectronics",
-		"Position": [0, 1],
+		"Position": [0, 2],
 		"Laboratory": "ElectronicsLaboratory",
 		"Tree": [
 			["Resistor", ""],
@@ -209,7 +209,7 @@ milestones = [
 	{
 		"Name": "SatelliteAntenna",
 		"Label": "SatelliteAntenna",
-		"Position": [0, 2],
+		"Position": [0, 4],
 		"Build": "SatelliteAntenna",
 		"Tree": [],
 		"Exits": [["", "Silicon"]],
@@ -218,7 +218,7 @@ milestones = [
 	{
 		"Name": "Aluminium",
 		"Label": "AluminiumProduction",
-		"Position": [1, 2],
+		"Position": [1, 4],
 		"Laboratory": "EngineeringLaboratory",
 		"Tree": [
 			["AluminiumReduction", ""],
@@ -254,14 +254,14 @@ milestones = [
 			["AluminiumMixer", 3, ["Furnace", "FluidFurnace", "ElectricFurnace", "AdvancedSmelting", "SteelProduction", "Oven"]],
 			["AluminiumElectricFurnace", 3, ["KineticHeater", "Boiler", "SteamEngine"]],
 		],
-		"Exits": [["AluminiumProduction", "StainlessSteel"], ["ChemicalLaboratory", "Chemistry"]],
+		"Exits": [["AluminiumProduction", "AluminiumPortal"], ["ChemicalLaboratory", "Chemistry"]],
 		"Experiments": 30,
 		"Experiment": [["SteelElectrolyzer", 1], ["SteelSeparator", 1]],
 	},
 	{
 		"Name": "Chemistry",
 		"Label": "ChemicalBath",
-		"Position": [3, 2],
+		"Position": [3, 4],
 		"Laboratory": "ChemicalLaboratory",
 		"Tree": [
 			["ChemicalBath", ""],
@@ -283,7 +283,7 @@ milestones = [
 	{
 		"Name": "Silicon",
 		"Label": "QuantumCircuit",
-		"Position": [0, 3],
+		"Position": [0, 6],
 		"Laboratory": "ElectronicsLaboratory",
 		"Tree": [
 			["SiliconWafer", ""],
@@ -312,7 +312,7 @@ milestones = [
 	{
 		"Name": "StainlessSteel",
 		"Label": "StainlessSteelProduction",
-		"Position": [1, 3],
+		"Position": [1, 6],
 		"Laboratory": "EngineeringLaboratory",
 		"Tree": [
 			["AdvancedAlloys", ""],
@@ -336,14 +336,14 @@ milestones = [
 			["StainlessSteelProduction", 4, ["MetalBlocks", "Lamp", "SingleTypeStorage", "Destroyer", "Sign", "AdvancedSign", "Chest", "Container"]],
 			["StainlessSteelAssembler", 4, ["ElectricFurnace", "SteelProduction", "FluidFurnace", "AdvancedSmelting", "Furnace", "Oven"]],
 		],
-		"Exits": [["IndustrialSmelting", "Titanium"], ["StainlessSteelProduction", "Oil"]],
+		"Exits": [["IndustrialSmelting", "StainlessSteelPortal"], ["StainlessSteelProduction", "Oil"]],
 		"Experiments": 100,
 		"Experiment": [["AluminiumElectricEngine", 1], ["AluminiumPipe", 4], ["AluminiumFoil", 6]],
 	},
 	{
 		"Name": "Oil",
 		"Label": "FuelChemistry",
-		"Position": [2, 3],
+		"Position": [2, 6],
 		"Laboratory": "ChemicalLaboratory",
 		"Tree": [
 			["PyrolysisUnit", ""],
@@ -369,7 +369,7 @@ milestones = [
 	{
 		"Name": "QuantumBrain",
 		"Label": "QuantumBrain",
-		"Position": [0, 5],
+		"Position": [0, 8],
 		"Laboratory": "ElectronicsLaboratory",
 		"Tree": [
 			["BrainMatrix", ""],
@@ -389,7 +389,7 @@ milestones = [
 	{
 		"Name": "Titanium",
 		"Label": "TitaniumProduction",
-		"Position": [1, 4],
+		"Position": [1, 8],
 		"Laboratory": "EngineeringLaboratory",
 		"CostMul": 2,
 		"Tree": [
@@ -413,14 +413,14 @@ milestones = [
 			["TitaniumConveyor", 5, ["AutomaticFarm", "Pumpjack", "AutomaticMining"]],
 			["TitaniumAssembler", 5, ["MetalBlocks", "Lamp", "SingleTypeStorage", "Destroyer", "Sign", "AdvancedSign", "Chest", "Container", "DeepStorage"]],
 		],
-		"Exits": [["TitaniumProduction", "Composite"], ["FastSifting", "Nuclear"]],
+		"Exits": [["TitaniumProduction", "TitaniumPortal"], ["FastSifting", "Nuclear"]],
 		"Experiments": 125,
 		"Experiment": [["ModularFrame", 1], ["AdvancedCoil", 4], ["SiliconMonocrystal", 3]],
 	},
 	{
 		"Name": "Nuclear",
 		"Label": "FissionReactor",
-		"Position": [2, 4],
+		"Position": [2, 8],
 		"Laboratory": "ChemicalLaboratory",
 		"CostMul": 2,
 		"CostMulOf": {name: 4 for name in ["UraniumCell", "FissionReactor", "ControlCell", "ReflectorCell", "ReactionThrottling", "AdvancedReflection", "AdvancedReflection2"]},
@@ -451,7 +451,7 @@ milestones = [
 		"Name": "Breeder",
 		"Label": "ThoriumReaction",
 		"Title": "Breeder",
-		"Position": [2, 5],
+		"Position": [2, 9],
 		"Laboratory": "ChemicalLaboratory",
 		"CostMul": 2,
 		"CostMulOf": {name: 4 for name in ["ThoriumReaction", "PlutoniumReaction", "PlutoniumReaction2"]},
@@ -468,7 +468,7 @@ milestones = [
 	{
 		"Name": "Composite",
 		"Label": "CompositePlate",
-		"Position": [1, 5],
+		"Position": [1, 10],
 		"Laboratory": "EngineeringLaboratory",
 		"Tree": [
 			["CarbonFiber", ""],
@@ -491,14 +491,14 @@ milestones = [
 			["CompositeSteamEngine", 6, ["PowerGeneration", "Flywheel", "IndustrialGenerator", "CombustionEngine", "ElectricEngine", "WindTurbine", "Generator"]],
 			["PlatinumReflector", 6, ["Diode", "DistributedComputing", "BatteryBox", "SmallSolarPanel", "SolarPanel"]],
 		],
-		"Exits": [["PlatinumReflector", "Fusion"]],
+		"Exits": [["PlatinumReflector", "CompositePortal"]],
 		"Experiments": 150,
 		"Experiment": [["PowerCoil", 4], ["TantalumWire", 4], ["PlatinumWire", 8]],
 	},
 	{
 		"Name": "Fusion",
 		"Label": "FusionReaction",
-		"Position": [1, 6],
+		"Position": [1, 12],
 		"Laboratory": "EngineeringLaboratory",
 		"Tree": [
 			["FusionReactor", ""],
@@ -509,7 +509,6 @@ milestones = [
 			["NeutroniumProduction2", "UltimateCatalyst"],
 			["UltimateCatalyst", "NeutroniumProduction"],
 			["FuelChemistry4", "UltimateCatalyst"],
-			["Portal", "UltimateCatalyst"],
 			["InventoryUpgrade6", "NeutroniumChest"],
 		],
 		"Versions": [
@@ -525,14 +524,14 @@ milestones = [
 			["NeutroniumSteamEngine", 7, ["PowerGeneration", "Flywheel", "IndustrialGenerator", "CombustionEngine", "ElectricEngine", "WindTurbine", "Generator"]],
 			["NeutroniumSteamTurbine", 7, ["Diode", "BatteryBox", "SmallSolarPanel", "SolarPanel"]],
 		],
-		"Exits": [["Portal", "Infinite"]],
+		"Exits": [["UltimateCatalyst", "NeutroniumPortal"]],
 		"Experiments": 200,
 		"Experiment": [["QuantumBrain", 1], ["PlatinumReflector", 8], ["CompositePipe", 3]],
 	},
 	{
 		"Name": "Infinite",
 		"Label": "DrillingRigProductivity8",
-		"Position": [1, 7],
+		"Position": [1, 14],
 		"Tree": [
 			["DrillingRigProductivity8", ""],
 			["PumpjackProductivity8", "DrillingRigProductivity8"],
@@ -543,6 +542,26 @@ milestones = [
 		"Experiment": [],
 	},
 ]
+
+portal_cards = [
+	("CopperPortal", 1, [1, 1], [0, 1], "Steel"),
+	("SteelPortal", 2, [2, 4], [2], "Aluminium"),
+	("AluminiumPortal", 3, [1, 5], [3], "StainlessSteel"),
+	("StainlessSteelPortal", 4, [1, 7], [4], "Titanium"),
+	("TitaniumPortal", 5, [1, 9], [5], "Composite"),
+	("CompositePortal", 6, [1, 11], [6], "Fusion"),
+	("NeutroniumPortal", 7, [1, 13], [7, 8], "Infinite"),
+]
+milestones += [{
+	"Name": name,
+	"Label": "PortalTier" + str(tier),
+	"Position": position,
+	"Build": "Portal",
+	"Stages": stages,
+	"Tree": [],
+	"Exits": [["", target]],
+	"Experiments": 1,
+} for name, tier, position, stages, target in portal_cards]
 
 cell_columns = 7
 tree_rows = 6
@@ -755,12 +774,14 @@ for m in milestones:
 			raise Exception(f"Milestones: {m['Name']} is built as {m['Build']}, which has no item or no stages")
 		if m["Experiments"] != 1:
 			raise Exception(f"Milestones: {m['Name']} is passed by one build, not {m['Experiments']}")
+		recipes = stages["Recipes"]
+		chosen = [recipes[k] for k in m["Stages"]] if "Stages" in m else recipes
 		bill = {}
-		for stage in stages["Recipes"]:
+		for stage in chosen:
 			for need in stage["Input"]["Items"]:
 				bill[need["Name"]] = bill.get(need["Name"], 0) + need["Count"]
 		m["Experiment"] = [[name, count] for name, count in bill.items()]
-		m["Stage"] = stages["Recipes"][-1]["Name"]
+		m["Stage"] = chosen[-1]["Name"]
 	for name, up in m["Tree"]:
 		if name not in research_by_name:
 			raise Exception(f"Milestones: {m['Name']} names an unknown research {name}")

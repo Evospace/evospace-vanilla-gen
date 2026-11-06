@@ -908,12 +908,6 @@ materials = [
 		"Tier": 7,
 		"Meshes": ["/Game/Models/CellCrate"],
 	},{
-		"Name": "MothershipPing",
-		"Category": "Resource",
-		"Label": "Mothership Ping",
-		"StackSize": 32,
-		"Items": ["Exact"],
-	},{
 		"Name": "AntimatterTrap",
 		"Category": "Parts",
 		"Label": "Antimatter Trap",

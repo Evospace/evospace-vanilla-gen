@@ -1657,16 +1657,6 @@ append_levels({
 	"Levels": [3,3],
 	"MainResearch": True,
 })
-append_levels({
-	 "Class": research_recipe,
-	 "Name": "Portal",
-	 "Label": ["Portal", "machines"],
-	 "RequiredResearch": ["UltimateCatalyst", "QuantumBrain"],
-	 "Unlocks": [["Hand" + r_dict, "%Material%Portal"] ],
-	 "Levels": [7,7],
-	 "MainResearch": True,
-	 "CostMul": 2
- })
 for tier in range(8):
 	append_levels({
 		"Class": "StaticResearchMilestone",

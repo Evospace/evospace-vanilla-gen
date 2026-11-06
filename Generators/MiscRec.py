@@ -53,7 +53,6 @@ recipes_fusion_reactor = []
 
 recipes_industrial_boiler = []
 
-recipes_portal = []
 
 recipes_hand = []
 
@@ -2171,13 +2170,6 @@ append_recipe_hand({
 	"Tier": 5,
 })
 
-recipes_portal.append({
-	"Name":"Ping",
-	"Input": no_items(),
-	"Output": one_item("MothershipPing"),
-	"Ticks" : 1000
-})
-
 append_recipe_hand({
 	"Name": "BuildingMaterial",
 	"Input": one_item("RockOrSoil"),
@@ -2339,11 +2331,6 @@ objects_array.append({ "Class": r_dict,
 objects_array.append({ "Class": r_dict,
 	"Name": "IndustrialChemReactor" + r_dict,
 	"Recipes": recipes_industrial_chemreactor,
-})
-
-objects_array.append({ "Class": r_dict,
-	"Name": "Portal" + r_dict,
-	"Recipes": recipes_portal
 })
 
 objects_array.append({ "Class": r_dict,
