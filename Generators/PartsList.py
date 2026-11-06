@@ -104,6 +104,10 @@ tools = [
 			"Screwdriver"
 		]
 	},{
+		"Name": "PaintTool",
+		"Label": "Paint Tool",
+		"ItemLogic": "PaintToolItemLogic",
+	},{
 		"Name": "ConstructionTool",
 		"Label": "Blueprint Tool",
 		"ItemLogic": "/Game/Equipped/ConstructionToolBP.ConstructionToolBP_C",

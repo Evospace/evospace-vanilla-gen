@@ -1,6 +1,5 @@
 from Common import *
 
-paint_colors = ("PaintYellow",)
 paint_metals = ("Copper", "Steel", "Aluminium", "StainlessSteel", "Titanium", "Composite", "Neutronium")
 paint_tiers = ("Stone", "Copper", "Steel", "Aluminium", "StainlessSteel", "Titanium", "Composite", "Neutronium")
 tier_materials = ("/Game/Materials/Stone", "/Game/Materials/Copper", "/Game/Materials/Steel", "/Game/Materials/Aluminium", "/Game/Materials/StainlessSteel", "/Game/Materials/Titanium", "/Game/Materials/Composite", "/Game/Materials/Neutronium")
@@ -267,13 +266,6 @@ covers = [
 
 objects_array = []
 
-for mat in paint_colors + paint_tiers:
-	covers.append({
-		"Name": "Cover" + mat,
-		"Mesh": "/Game/Shared/Covers/SM_Cover_Simple",
-        "Materials": [mat]
-	})
-     
 battery_pieces = {
     "Single": ["Body", "Frame", "Copper", "Insulator"],
     "Top": ["Body", "Frame", "Copper", "Insulator"],
@@ -392,7 +384,8 @@ for mat, num in zip(paint_metals, range(1,7+1)):
 		"Name": mat+"SolarPanelBase",
 		"Mesh": "/Game/Blocks/SolarPanel/SM_SolarPanel_Base",
         "Materials": ["/Game/Materials/PaintDarkGray", tier_materials[num], "/Game/Materials/PaintYellow", "/Game/Materials/Accessor"],
-        "NoCollision": True
+        "NoCollision": True,
+        "Paintable": True
 	})
     covers.append({
 		"Name": mat+"SolarPanelCell",
@@ -405,7 +398,8 @@ for mat, num in zip(paint_metals, range(1,7+1)):
 		"Name": mat+"SmallSolarPanelCell",
 		"Mesh": "/Game/Blocks/SmallSolarPanel/SM_SmallSolarPanel",
         "Materials": ["/Game/Materials/PaintYellow", "/Game/Materials/solar", tier_materials[num], "/Game/Materials/Accessor", "/Game/Materials/Rubber2"],
-        "NoCollision": True
+        "NoCollision": True,
+        "Paintable": True
 	})
     covers.append({
 		"Name": mat+"WindTurbineMast",
@@ -457,6 +451,9 @@ for cover in covers:
 
     if "NoCollision" in cover:
         staticCover["NoCollision"] = cover["NoCollision"]
+
+    if "Paintable" in cover:
+        staticCover["Paintable"] = cover["Paintable"]
 
     if "MergedShadow" in cover:
         staticCover["MergedShadow"] = cover["MergedShadow"]
