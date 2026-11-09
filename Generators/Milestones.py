@@ -2,7 +2,7 @@ from Common import *
 from Materials import *
 from MachinesList import machines
 
-tier_cost_mul = {1: 0.88, 2: 0.44, 3: 0.32, 4: 1.32, 5: 0.35, 6: 0.52, 7: 0.27, 8: 0.63}
+tier_cost_mul = {1: 0.88, 2: 0.44, 3: 0.32, 4: 1.32, 5: 0.35, 6: 0.52, 7: 0.21, 8: 0.63}
 
 experiment_ticks = 600
 
@@ -508,7 +508,7 @@ milestones = [
 			["NeutroniumSteamTurbine", 7, ["Diode", "BatteryBox", "SmallSolarPanel", "SolarPanel"]],
 		],
 		"Exits": [["UltimateCatalyst", "NeutroniumPortal"]],
-		"Experiments": 55,
+		"Experiments": 20,
 		"Experiment": [["QuantumBrain", 1], ["PlatinumReflector", 8], ["CompositePipe", 3]],
 	},
 	{
