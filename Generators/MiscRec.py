@@ -549,7 +549,8 @@ recipes_hand.append({
 	"Input": items([
 		["QuantumCore", 6],
 		["Processor", 3],
-		["Resistor", 6]
+		["Resistor", 6],
+		["Capacitor", 12]
 	]),
 	"Output": one_item("QuantumCircuit"),
 	"Ticks" : 200,
@@ -562,7 +563,7 @@ recipes_assembler.append({
 		["QuantumCore", 4],
 		["Processor", 2],
 		["Resistor", 6],
-		["Transistor", 6]
+		["Capacitor", 8]
 	]),
 	"Output": one_item("QuantumCircuit"),
 	"Ticks" : 200,
@@ -2426,10 +2427,10 @@ objects_array.append({ "Class": r_dict,
 		[["BasicFrame", 90]],
 		[["Capacitor", 1200], ["Processor", 60]],
 		[["AdvancedCoil", 100], ["BasicCoil", 600], ["QuantumCore", 200], ["PolyethyleneSheet", 400]],
-		[["PowerCoil", 80], ["TitaniumBatteryBox", 100], ["Nitrogen", 150000]],
-		[["PlatinumReflector", 1200], ["CompositePlate", 1200], ["QuantumBrain", 192]],
-		[["NeutroniumPlate", 250], ["AntimatterTrap", 6]],
-		[["ReinforcedFrame", 2250], ["TitaniumPlate", 3000], ["NeutroniumPlate", 120]],
+		[["PowerCoil", 10], ["TitaniumBatteryBox", 12], ["Nitrogen", 18000]],
+		[["PlatinumReflector", 230], ["CompositePlate", 230], ["QuantumBrain", 36]],
+		[["NeutroniumPlate", 70], ["AntimatterTrap", 2]],
+		[["ReinforcedFrame", 1400], ["TitaniumPlate", 1900], ["NeutroniumPlate", 75]],
 	])],
 })
 

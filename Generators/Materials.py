@@ -675,7 +675,7 @@ materials = [
 		"Items": ["Fluid"],
 		"Tier": 0,
 		"Burnable": {
-			"BurnTime": 1440
+			"BurnTime": 825
 		},
 		"Tier": 4
 	},{

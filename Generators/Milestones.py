@@ -2,7 +2,7 @@ from Common import *
 from Materials import *
 from MachinesList import machines
 
-tier_cost_mul = {1: 0.88, 2: 0.44, 3: 0.32, 4: 1.32, 5: 1.81, 6: 2.67}
+tier_cost_mul = {1: 0.88, 2: 0.44, 3: 0.32, 4: 1.32, 5: 0.35, 6: 0.52, 7: 0.27, 8: 0.63}
 
 experiment_ticks = 600
 
@@ -383,7 +383,7 @@ milestones = [
 			["DecisionResonator4", "DecisionResonator3"],
 		],
 		"Exits": [],
-		"Experiments": 100,
+		"Experiments": 12,
 		"Experiment": [["QuantumProcessor", 2], ["QuantumCircuit", 5]],
 	},
 	{
@@ -414,7 +414,7 @@ milestones = [
 			["TitaniumAssembler", 5, ["MetalBlocks", "Lamp", "SingleTypeStorage", "Destroyer", "Sign", "AdvancedSign", "Chest", "Container", "DeepStorage"]],
 		],
 		"Exits": [["TitaniumProduction", "TitaniumPortal"], ["FastSifting", "Nuclear"]],
-		"Experiments": 125,
+		"Experiments": 15,
 		"Experiment": [["ModularFrame", 1], ["AdvancedCoil", 4], ["SiliconMonocrystal", 3]],
 	},
 	{
@@ -444,7 +444,7 @@ milestones = [
 			["TitaniumKineticAccumulator", 5, ["ElectricFurnace", "SteelProduction", "AdvancedSmelting", "FluidFurnace", "Furnace", "Oven", "IndustrialSmelting"]],
 		],
 		"Exits": [["AdvancedReflection", "Breeder"]],
-		"Experiments": 125,
+		"Experiments": 15,
 		"Experiment": [["QuantumCircuit", 1], ["TitaniumPipe", 5], ["Cell", 9]],
 	},
 	{
@@ -462,7 +462,7 @@ milestones = [
 			["Riteg", "PlutoniumReaction2"],
 		],
 		"Exits": [],
-		"Experiments": 50,
+		"Experiments": 6,
 		"Experiment": [["UraniumCell", 1], ["ReflectorCell", 1], ["ControlCell", 1]],
 	},
 	{
@@ -492,7 +492,7 @@ milestones = [
 			["PlatinumReflector", 6, ["Diode", "DistributedComputing", "BatteryBox", "SmallSolarPanel", "SolarPanel"]],
 		],
 		"Exits": [["PlatinumReflector", "CompositePortal"]],
-		"Experiments": 150,
+		"Experiments": 30,
 		"Experiment": [["PowerCoil", 4], ["TantalumWire", 4], ["PlatinumWire", 8]],
 	},
 	{
@@ -525,7 +525,7 @@ milestones = [
 			["NeutroniumSteamTurbine", 7, ["Diode", "BatteryBox", "SmallSolarPanel", "SolarPanel"]],
 		],
 		"Exits": [["UltimateCatalyst", "NeutroniumPortal"]],
-		"Experiments": 200,
+		"Experiments": 55,
 		"Experiment": [["QuantumBrain", 1], ["PlatinumReflector", 8], ["CompositePipe", 3]],
 	},
 	{
