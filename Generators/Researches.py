@@ -4,7 +4,6 @@ import copy
 from NuclearResearches import *
 from EquipmentResearches import *
 from PartsResearchHelper import *
-from MachinesList import machines
 
 researches = []
 replaced_levels = {}
@@ -326,17 +325,16 @@ append_levels({
 	"CostExact": 100,
 	"MainResearch": True,
 })
-for laboratory, required, tier in (("ElectronicsLaboratory", "Constructor", 1), ("EngineeringLaboratory", "Oven", 1), ("ChemicalLaboratory", "IndustrialChemReactor", 2)):
-	append_levels({
-		"Class": research_recipe,
-		"Name": laboratory,
-		"Label": next(m["Label"] for m in machines if m["Name"] == laboratory),
-		"RequiredResearch": [required],
-		"Unlocks": [["Hand" + r_dict, "%Material%" + laboratory]],
-		"Levels": [tier, tier],
-		"CostMul": 2.5,
-		"MainResearch": True,
-	})
+append_levels({
+	"Class": research_recipe,
+	"Name": "ResearchLaboratory",
+	"Label": ["ResearchLaboratory", "parts"],
+	"RequiredResearch": ["Oven"],
+	"Unlocks": [["Hand" + r_dict, "%Material%ResearchLaboratory"]],
+	"Levels": [1, 1],
+	"CostMul": 2.5,
+	"MainResearch": True,
+})
 append_levels({
 	"Class": research_recipe,
 	"Name": "ElectricFurnace",

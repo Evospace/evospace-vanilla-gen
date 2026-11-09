@@ -10,20 +10,6 @@ INDUSTRIAL_BOILER_PER_TICK = BOILER_PER_TICK * 20 * 8
 CRAFTING_LOGIC_EXPORTS = ["Working", "Progress", "InputInventory", "OutputInventory"]
 CRAFTING_LOGIC_IMPORTS = ["Working"]
 
-laboratory = {
-	"Energy": {"consumption": 40, "consumption_item": "Electricity"},
-	"Positions": [[0, 0, 0]] + [[x, y, z] for z in range(4) for x in range(0, -3, -1) for y in range(-2, 3) if [x, y, z] != [0, 0, 0]],
-	"BlockLogic": "ResearchLaboratoryBlockLogic",
-	"Actor": block_actor("ResearchLaboratory"),
-	"Image": "ResearchLaboratory",
-	"NoRecipes": True,
-	"NoDescriptionText": True,
-	"Description": ["ElectricInput"],
-}
-
-def laboratory_label(field):
-	return ["machines_label_format", "common", field, ["ResearchLaboratory", "parts"]]
-
 machines = [
 	{
 		"Name": "Macerator",
@@ -932,29 +918,18 @@ machines = [
 		"NoDescriptionText": True,
 		"Description": ["ElectricInput"],
 	},{
-		"Name": "ElectronicsLaboratory",
+		"Name": "ResearchLaboratory",
 		"Category": "Research",
-		"Tint": "#4CB848",
-		"Label": laboratory_label(["Circuit", "parts"]),
+		"Energy": {"consumption": 40, "consumption_item": "Electricity"},
 		"StartTier": 1,
 		"EndTier": 1,
-		**laboratory,
-	},{
-		"Name": "EngineeringLaboratory",
-		"Category": "Research",
-		"Tint": "#D8483A",
-		"Label": laboratory_label(["Engineering", "parts"]),
-		"StartTier": 1,
-		"EndTier": 1,
-		**laboratory,
-	},{
-		"Name": "ChemicalLaboratory",
-		"Category": "Research",
-		"Tint": "#3C78E0",
-		"Label": laboratory_label(["Chemical", "category"]),
-		"StartTier": 2,
-		"EndTier": 2,
-		**laboratory,
+		"Positions": [[0, 0, 0]] + [[x, y, z] for z in range(4) for x in range(0, -3, -1) for y in range(-2, 3) if [x, y, z] != [0, 0, 0]],
+		"BlockLogic": "ResearchLaboratoryBlockLogic",
+		"Actor": block_actor("ResearchLaboratory"),
+		"NoRecipes": True,
+		"LabelSection": "parts",
+		"NoDescriptionText": True,
+		"Description": ["ElectricInput"],
 	},{
 		"Name": "Diode",
 		"Category": "Network",

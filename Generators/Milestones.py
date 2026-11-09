@@ -25,7 +25,7 @@ milestones = [
 			["Furnace", "PowerGeneration"],
 			["Destroyer", "Furnace"],
 			["Oven", "Furnace"],
-			["EngineeringLaboratory", "Oven"],
+			["ResearchLaboratory", "Oven"],
 			["DistributedComputing", "PowerGeneration"],
 			["CopperWire", "PowerGeneration"],
 			["PowerTransmission", "CopperWire"],
@@ -37,7 +37,6 @@ milestones = [
 			["CopperLamp", "Triod"],
 			["GlassBlock", "Circuit"],
 			["Constructor", "Circuit"],
-			["ElectronicsLaboratory", "Constructor"],
 			["AutomaticHammer", "Metalwork"],
 			["Automatization", "AutomaticHammer"],
 			["Conveyor", "Automatization"],
@@ -74,7 +73,7 @@ milestones = [
 			["KineticHeater", "HeatTransferring"],
 			["FluidFurnace", "HeatTransferring"],
 		],
-		"Exits": [["ElectronicsLaboratory", "Transistor"], ["EngineeringLaboratory", "CopperPortal"]],
+		"Exits": [["Constructor", "Transistor"], ["ResearchLaboratory", "CopperPortal"]],
 		"Experiments": 0,
 		"Experiment": [],
 	},
@@ -82,7 +81,6 @@ milestones = [
 		"Name": "Steel",
 		"Label": "SteelProduction",
 		"Position": [1, 2],
-		"Laboratory": "EngineeringLaboratory",
 		"Tree": [
 			["SteelProduction", ""],
 			["SteelAutomaticHammer", "SteelProduction"],
@@ -131,7 +129,6 @@ milestones = [
 		"Label": "SteamEngine",
 		"Title": "SteamPower",
 		"Position": [2, 2],
-		"Laboratory": "EngineeringLaboratory",
 		"Tree": [
 			["Boiler", ""],
 			["SteamEngine", "Boiler"],
@@ -158,7 +155,6 @@ milestones = [
 		"Title": "Electricity",
 		"Image": "T_LightBulb",
 		"Position": [2, 3],
-		"Laboratory": "EngineeringLaboratory",
 		"Tree": [
 			["BasicCoil", ""],
 			["ElectricEngine", "BasicCoil"],
@@ -183,7 +179,6 @@ milestones = [
 		"Title": "Microelectronics",
 		"Image": "T_Microelectronics",
 		"Position": [0, 2],
-		"Laboratory": "ElectronicsLaboratory",
 		"Tree": [
 			["Resistor", ""],
 			["Resistor2", "Resistor"],
@@ -219,12 +214,10 @@ milestones = [
 		"Name": "Aluminium",
 		"Label": "AluminiumProduction",
 		"Position": [1, 4],
-		"Laboratory": "EngineeringLaboratory",
 		"Tree": [
 			["AluminiumReduction", ""],
 			["AluminiumProduction", "AluminiumReduction"],
 			["ReinforcedFrame", "AluminiumProduction"],
-			["ChemicalLaboratory", "AluminiumProduction"],
 			["Boat", "AluminiumElectricEngine"],
 			["OffroadVehicle", "Boat"],
 			["Jetpack", "Boat"],
@@ -254,7 +247,7 @@ milestones = [
 			["AluminiumMixer", 3, ["Furnace", "FluidFurnace", "ElectricFurnace", "AdvancedSmelting", "SteelProduction", "Oven"]],
 			["AluminiumElectricFurnace", 3, ["KineticHeater", "Boiler", "SteamEngine"]],
 		],
-		"Exits": [["AluminiumProduction", "AluminiumPortal"], ["ChemicalLaboratory", "Chemistry"]],
+		"Exits": [["AluminiumProduction", "AluminiumPortal"], ["ReinforcedFrame", "Chemistry"]],
 		"Experiments": 30,
 		"Experiment": [["SteelElectrolyzer", 1], ["SteelSeparator", 1]],
 	},
@@ -262,7 +255,6 @@ milestones = [
 		"Name": "Chemistry",
 		"Label": "ChemicalBath",
 		"Position": [3, 4],
-		"Laboratory": "ChemicalLaboratory",
 		"Tree": [
 			["ChemicalBath", ""],
 			["Catalyst", "ChemicalBath"],
@@ -284,7 +276,6 @@ milestones = [
 		"Name": "Silicon",
 		"Label": "QuantumCircuit",
 		"Position": [0, 6],
-		"Laboratory": "ElectronicsLaboratory",
 		"Tree": [
 			["SiliconWafer", ""],
 			["Processor2", "SiliconWafer"],
@@ -313,7 +304,6 @@ milestones = [
 		"Name": "StainlessSteel",
 		"Label": "StainlessSteelProduction",
 		"Position": [1, 6],
-		"Laboratory": "EngineeringLaboratory",
 		"Tree": [
 			["AdvancedAlloys", ""],
 			["StainlessSteelProduction", "AdvancedAlloys"],
@@ -344,7 +334,6 @@ milestones = [
 		"Name": "Oil",
 		"Label": "FuelChemistry",
 		"Position": [2, 6],
-		"Laboratory": "ChemicalLaboratory",
 		"Tree": [
 			["PyrolysisUnit", ""],
 			["PreciseTemperaturePyrolysis", "PyrolysisUnit"],
@@ -370,7 +359,6 @@ milestones = [
 		"Name": "QuantumBrain",
 		"Label": "QuantumBrain",
 		"Position": [0, 8],
-		"Laboratory": "ElectronicsLaboratory",
 		"Tree": [
 			["BrainMatrix", ""],
 			["QuantumBrain", "BrainMatrix"],
@@ -390,7 +378,6 @@ milestones = [
 		"Name": "Titanium",
 		"Label": "TitaniumProduction",
 		"Position": [1, 8],
-		"Laboratory": "EngineeringLaboratory",
 		"CostMul": 2,
 		"Tree": [
 			["NitricAcid", ""],
@@ -421,7 +408,6 @@ milestones = [
 		"Name": "Nuclear",
 		"Label": "FissionReactor",
 		"Position": [2, 8],
-		"Laboratory": "ChemicalLaboratory",
 		"CostMul": 2,
 		"CostMulOf": {name: 4 for name in ["UraniumCell", "FissionReactor", "ControlCell", "ReflectorCell", "ReactionThrottling", "AdvancedReflection", "AdvancedReflection2"]},
 		"Tree": [
@@ -452,7 +438,6 @@ milestones = [
 		"Label": "ThoriumReaction",
 		"Title": "Breeder",
 		"Position": [2, 9],
-		"Laboratory": "ChemicalLaboratory",
 		"CostMul": 2,
 		"CostMulOf": {name: 4 for name in ["ThoriumReaction", "PlutoniumReaction", "PlutoniumReaction2"]},
 		"Tree": [
@@ -469,7 +454,6 @@ milestones = [
 		"Name": "Composite",
 		"Label": "CompositePlate",
 		"Position": [1, 10],
-		"Laboratory": "EngineeringLaboratory",
 		"Tree": [
 			["CarbonFiber", ""],
 			["CarbonFiberSheet", "CarbonFiber"],
@@ -499,7 +483,6 @@ milestones = [
 		"Name": "Fusion",
 		"Label": "FusionReaction",
 		"Position": [1, 12],
-		"Laboratory": "EngineeringLaboratory",
 		"Tree": [
 			["FusionReactor", ""],
 			["Rocket", "FusionReactor"],
@@ -738,7 +721,7 @@ research_by_name = {r["Name"]: r for r in research_objects}
 item_names = {o["Name"] for data in get_generated_files().values() for o in objects_of(data) if o.get("Class", "").startswith("StaticItem")}
 milestone_by_name = {m["Name"]: m for m in milestones}
 stage_dicts = {o["Name"]: o for data in get_generated_files().values() for o in objects_of(data) if o.get("Class") == r_dict and o.get("Recipes")}
-laboratory_tier ={machine["Name"]: machine["StartTier"] for machine in machines if machine.get("BlockLogic") == "ResearchLaboratoryBlockLogic"}
+laboratory = next(machine for machine in machines if machine.get("BlockLogic") == "ResearchLaboratoryBlockLogic")
 
 def version_card(series, tier):
 	for version in research_by_name[series].get("Versions", []):
@@ -796,8 +779,6 @@ for m in milestones:
 			raise Exception(f"Milestones: CostMulOf of {m['Name']} names {name}, which is not in the milestone")
 	if m["Label"] not in research_by_name:
 		raise Exception(f"Milestones: {m['Name']} takes its label from an unknown research {m['Label']}")
-	if m["Experiments"] and not built and m.get("Laboratory") not in laboratory_tier:
-		raise Exception(f"Milestones: {m['Name']} runs its experiment in an unknown laboratory {m.get('Laboratory')}")
 
 	for item, count in m["Experiment"]:
 		if item not in item_names:
@@ -1034,7 +1015,7 @@ for m in milestones:
 		"Exits": m["Exits"],
 		"Experiments": m["Experiments"],
 		"Experiment": m["Experiment"],
-		"Recipe": [m["Build"] + "Stage" + r_dict, m["Stage"]] if built else [m["Laboratory"] + r_dict, m["Name"] + "Experiment"] if m["Experiments"] else [],
+		"Recipe": [m["Build"] + "Stage" + r_dict, m["Stage"]] if built else [laboratory["Name"] + r_dict, m["Name"] + "Experiment"] if m["Experiments"] else [],
 	})
 	if "Image" in m:
 		objects[-1]["Image"] = m["Image"]
@@ -1046,13 +1027,13 @@ write_file("Generated/Researches/milestones.json", {"Objects": objects})
 
 write_file("Generated/Recipes/laboratory.json", {"Objects": [{
 	"Class": r_dict,
-	"Name": laboratory + r_dict,
+	"Name": laboratory["Name"] + r_dict,
 	"StartTier": 0,
-	"UsedIn": [{"Item": tier_material[tier] + laboratory, "Tier": tier}],
+	"UsedIn": [{"Item": tier_material[laboratory["StartTier"]] + laboratory["Name"], "Tier": laboratory["StartTier"]}],
 	"Recipes": [{
 		"Name": m["Name"] + "Experiment",
 		"Input": items(m["Experiment"]),
 		"Output": no_items(),
 		"Ticks": experiment_ticks,
-	} for m in milestones if m.get("Laboratory") == laboratory],
-} for laboratory, tier in laboratory_tier.items()]})
+	} for m in milestones if m["Experiments"] and "Build" not in m],
+}]})
