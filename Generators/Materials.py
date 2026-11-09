@@ -662,7 +662,7 @@ materials = [
 		"Items": ["Fluid"],
 		"Tier": 0,
 		"Burnable": {
-			"BurnTime": 300 * 10
+			"BurnTime": 150 * 10
 		}
 	},{
 		"Name": "MineralWater",
