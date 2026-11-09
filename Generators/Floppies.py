@@ -6,7 +6,7 @@ objects_array = [{
 	"Label": ["Floppy", "parts"],
 	"Image": "T_Floppy",
 	"StackSize": 1,
-	"Category": "Network",
+	"Category": "Logic",
 }]
 
 floppies = [

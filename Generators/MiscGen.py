@@ -95,7 +95,7 @@ simple_single = [
             "LedColorG",
             "LedColorB",
         ],
-        "Category": "Network",
+        "Category": "Logic",
 	},{
         "Name": "LandingPad",
         "BlockLogic": "LandingPadBlockLogic",
@@ -572,7 +572,7 @@ objects_array.append({
 	"DescriptionParts": [["Portal", "description"]],
 	"ItemLogic": "BuildingSingleBlockItemLogic",
 	"Block": "Portal",
-	"Category": "Stone",
+	"Category": "Research",
 	"Tier": 0,
 })
 objects_array.append({
@@ -618,7 +618,7 @@ objects_array.append({
 	"Label": ["SatelliteAntenna", "parts"],
 	"ItemLogic": "BuildingSingleBlockItemLogic",
 	"Block": "SatelliteAntenna",
-	"Category": "Network",
+	"Category": "Logic",
 	"Tier": 3,
 })
 objects_array.append({

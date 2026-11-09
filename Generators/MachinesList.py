@@ -27,6 +27,7 @@ def laboratory_label(field):
 machines = [
 	{
 		"Name": "Macerator",
+		"Category": "Refining",
 		"Actor": "/Script/Evospace.MaceratorActor",
 		"Energy": {"consumption": 20, "consumption_item": "Kinetic"},
 		"StartTier": 1,
@@ -45,6 +46,7 @@ machines = [
 	#}
 	,{
 		"Name": "Fermenter",
+		"Category": "Refining",
 		"Energy": {"consumption": 20, "consumption_item": "Electricity"},
 		"StartTier": 3,
 		"EndTier": 7,
@@ -56,6 +58,7 @@ machines = [
 		"Description": ["ElectricInput", "PowerInput"],
 	},{
 		"Name": "Separator",
+		"Category": "Refining",
 		"Energy": {"consumption": 80, "consumption_item": "Kinetic"},
 		"StartTier": 2,
 		"EndTier": 7,
@@ -65,11 +68,13 @@ machines = [
 		"Description": ["KineticInput", "PowerInput"],
 	},{
 		"Name": "Spawner",
+		"Category": "Decoration",
 		"StartTier": 1,
 		"EndTier": 1,
 		"BlockLogic": "BedBlockLogic",
 	},{
 		"Name": "AutomaticHammer",
+		"Category": "Production",
 		"Actor": "/Script/Evospace.AutomaticHammerActor",
 		"Energy": {"consumption": 30, "consumption_item": "Kinetic"},
 		"Positions": [[0,0,0],[0,0,1]],
@@ -81,6 +86,7 @@ machines = [
 		"Description": ["KineticInput", "PowerInput"],
 	},{
 		"Name": "Boiler",
+		"Category": "Generation",
 		"Actor": "/Script/Evospace.BoilerActor",
 		"Energy": {"consumption": BOILER_PER_TICK, "consumption_item": "Heat", "production": BOILER_PER_TICK, "production_item": "Steam"},
 		"StartTier": 2,
@@ -98,6 +104,7 @@ machines = [
 		},
 	},{
 		"Name": "Pipe",
+		"Category": "Network",
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "ConductorBlockLogic",
@@ -107,9 +114,9 @@ machines = [
 		"PathFinding": True,
         "NoActorRenderable": True,
         "Selector": "Blocks/AllSidesPipe/BP_AllSidesPipe.BP_AllSidesPipe_C",
-        "Category": "Network",
 	},{
 		"Name": "HeatPipe",
+		"Category": "Network",
 		"StartTier": 1,
 		"EndTier": 1,
 		"BlockLogic": "HeatContainerBlockLogic",
@@ -119,9 +126,9 @@ machines = [
 		"PathFinding": True,
         "NoActorRenderable": True,
         "Selector": "Blocks/AllSidesPipe/BP_AllSidesPipe.BP_AllSidesPipe_C",
-        "Category": "Network",
 	},{
 		"Name": "Shaft",
+		"Category": "Network",
 		"StartTier": 2,
 		"EndTier": 2,
 		"BlockLogic": "KineticConductorBlockLogic",
@@ -133,9 +140,9 @@ machines = [
 		"PathFinding": True,
         "NoActorRenderable": True,
         "Selector": "Blocks/AllSidesPipe/BP_AllSidesPipe.BP_AllSidesPipe_C",
-        "Category": "Network",
 	},{
 		"Name": "KineticAccumulator",
+		"Category": "Generation",
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic": "KineticAccumulatorBlockLogic",
@@ -150,19 +157,21 @@ machines = [
 			{"Cover": "KineticAccumulatorFrame", "Offset": [-0.5, 0.5, 0.5]},
 			{"Cover": "KineticAccumulatorRotor", "Offset": [-0.5, 0.5, 0.5]},
 		],
-        "Category": "Network",
 	},{
 		"Name": "Sign",
+		"Category": "Decoration",
 		"StartTier": 0,
 		"EndTier": 7,
 		"BlockLogic": "SignBlockLogic",
 	},{
 		"Name": "AdvancedSign",
+		"Category": "Decoration",
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic": "SignBlockLogic",
 	},{
 		"Name": "CopperConnector",
+		"Category": "Network",
 		"StartTier": 0,
 		"EndTier": 0,
 		"BlockLogic": "ConductorBlockLogic",
@@ -173,16 +182,17 @@ machines = [
         "ExactName": True,
         "NoActorRenderable": True,
         "Selector": "Blocks/AllSidesPipe/BP_AllSidesPipe.BP_AllSidesPipe_C",
-        "Category": "Network",
         "ReplaceTag": "Cable",
 	},{
 		"Name": "Chest",
+		"Category": "Logistics",
 		"StartTier": 0,
 		"EndTier": 7,
         "Description": ["ItemInput", "ItemStorage"],
 		"LogicExports": ["Storage"],
 	},{
 		"Name": "ItemRack",
+		"Category": "Logistics",
 		"Positions": [[0,0,0],[-1,0,0],[0,0,1],[-1,0,1]],
 		"StartTier": 1,
 		"EndTier": 7,
@@ -191,6 +201,7 @@ machines = [
         "ReplaceTag": "ItemRack",
 	},{
 		"Name": "Vent",
+		"Category": "Network",
 		"StartTier": 1,
 		"EndTier": 1,
 		"CommonTextKeys":[
@@ -201,6 +212,7 @@ machines = [
 		"LogicImports": ["Working"],
 	},{
 		"Name": "ElectricalSwitch",
+		"Category": "Network",
 		"StartTier": 2,
 		"EndTier": 2,
 		"BlockLogic": "ElectricitySwitchBlockLogic",
@@ -208,6 +220,7 @@ machines = [
 		"LogicImports": ["Working"],
 	},{
 		"Name": "OreWasher",
+		"Category": "Refining",
 		"Energy": {"consumption": 20, "consumption_item": "Kinetic"},
 		"Positions": [[0,0,0],[0,1,0],[-1,0,0],[-1,1,0],[-2,0,0],[-2,1,0],[0,0,1],[0,1,1],[-1,0,1],[-1,1,1],[-2,0,1],[-2,1,1]],
 		"StartTier": 2,
@@ -218,6 +231,7 @@ machines = [
 		"Description": ["KineticInput", "PowerInput"],
 	},{
 		"Name": "Conveyor",
+		"Category": "Logistics",
 		"StartTier": 1,
 		"EndTier": 7,
 		"CommonTextKeys":[
@@ -231,6 +245,7 @@ machines = [
 		"LogicImports": ["Working"],
 	},{
 		"Name": "Splitter",
+		"Category": "Logistics",
 		"StartTier": 1,
 		"EndTier": 7,
 		"Description": ["Splitter"],
@@ -238,6 +253,7 @@ machines = [
 		"LogicImports": ["Working"],
 	},{
 		"Name": "Sorter",
+		"Category": "Logistics",
 		"StartTier": 2,
 		"EndTier": 7,
 		"Description": ["Splitter", "Sorter"],
@@ -245,6 +261,7 @@ machines = [
 		"LogicImports": ["Working"],
 	},{
 		"Name": "Container",
+		"Category": "Logistics",
 		"StartTier": 1,
 		"EndTier": 7,
 		"BlockLogic": "FluidContainerBlockLogic",
@@ -254,6 +271,7 @@ machines = [
 		"Description": ["FluidConductor", "FluidStorage"],
 	},{
 		"Name": "StirlingEngine",
+		"Category": "Generation",
 		"Actor": "/Script/Evospace.StirlingEngineActor",
 		"Energy": {"consumption": 50, "consumption_item": "Heat", "production": 50, "production_item": "Kinetic"},
 		"StartTier": 1,
@@ -264,6 +282,7 @@ machines = [
 		"Description": ["HeatInput", "KineticOutput","PowerOutput"],
 	},{
 		"Name": "SteamEngine",
+		"Category": "Generation",
 		"Actor": "/Script/Evospace.SteamEngineActor",
 		"Energy": {"consumption": BOILER_PER_TICK, "consumption_item": "Steam", "production": BOILER_PER_TICK, "production_item": "Kinetic"},
 		"StartTier": 2,
@@ -274,6 +293,7 @@ machines = [
 		"Description": ["FluidInput", "KineticOutput", "PowerOutput"],
 	},{
 		"Name": "CombustionEngine",
+		"Category": "Generation",
 		"Energy": {"production": INDUSTRIAL_BOILER_PER_TICK // 2, "production_item": "Kinetic"},
 		"BlockLogic": "AutoCrafter",
 		"LogicExports": CRAFTING_LOGIC_EXPORTS,
@@ -284,6 +304,7 @@ machines = [
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,2,0],[-1,2,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,2,1],[-1,2,1]],
 	},{
 		"Name": "FractionatingColumn",
+		"Category": "Refining",
 		"Energy": {"consumption": 200, "consumption_item": "Electricity"},
 		"StartTier": 4,
 		"EndTier": 7,
@@ -303,6 +324,7 @@ machines = [
         ]
 	},{
 		"Name": "PyrolysisUnit",
+		"Category": "Refining",
 		"Actor": "/Script/Evospace.PyrolysisUnitActor",
 		"Energy": {"consumption": 50, "consumption_item": "Heat"},
 		"Positions": [[0,0,0],[0,0,1],[0,1,0],[0,2,0]],
@@ -314,6 +336,7 @@ machines = [
 		"Description": ["HeatInput", "PowerInput"],
 	},{
 		"Name": "Generator",
+		"Category": "Generation",
 		"Actor": "/Script/Evospace.GeneratorActor",
 		"Energy": {"consumption": BOILER_PER_TICK * 5 * 2, "consumption_item": "Kinetic", "production": BOILER_PER_TICK * 5 * 2, "production_item": "Electricity"},
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
@@ -325,6 +348,7 @@ machines = [
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
 	},{
 		"Name": "IndustrialGenerator",
+		"Category": "Generation",
 		"Energy": {"consumption": INDUSTRIAL_BOILER_PER_TICK, "consumption_item": "Kinetic", "production": INDUSTRIAL_BOILER_PER_TICK, "production_item": "Electricity"},
 		"Positions": [
             [0, 0, 0], [0, 2, 0], [1, 2, 0], [-1, 2, 0], [0, 3, 0], [1, 3, 0], [-1, 3, 0],
@@ -344,6 +368,7 @@ machines = [
 		 
 	},{
 		"Name": "CompactGenerator",
+		"Category": "Generation",
 		"Energy": {"consumption": 50, "consumption_item": "Kinetic", "production": 50, "production_item": "Electricity"},
 		"StartTier": 1,
 		"EndTier": 7,
@@ -353,6 +378,7 @@ machines = [
 		"Description": ["KineticInput", "ElectricOutput", "PowerOutput"],
 	},{
 		"Name": "ElectricEngine",
+		"Category": "Generation",
 		"Energy": {"consumption": 150, "consumption_item": "Electricity", "production": 150, "production_item": "Kinetic"},
 		"StartTier": 2,
 		"EndTier": 7,
@@ -364,18 +390,21 @@ machines = [
         "DefaultRotation": [-1, 0, 0, 0]
 	},{
 		"Name": "Loader",
+		"Category": "Logistics",
 		"StartTier": 1,
 		"EndTier": 7,
 		"Selector": "Blocks/Arrow/BP_Arrow.BP_Arrow_C",
 		"LogicImports": ["Working", "SetFilter"],
 	},{
 		"Name": "RobotArm",
+		"Category": "Logistics",
 		"StartTier": 1,
 		"EndTier": 7,
 		"Selector": "Blocks/Arrow/BP_Arrow.BP_Arrow_C",
 		"LogicImports": ["Working", "SetFilter"],
 	},{
 		"Name": "Pump",
+		"Category": "Network",
 		"StartTier": 1,
 		"EndTier": 7,
 		"CustomData":{
@@ -386,6 +415,7 @@ machines = [
 		"LogicImports": ["Working"],
 	},{
 		"Name": "WaterWell",
+		"Category": "Extraction",
 		"ExactName": True,
 		"StartTier": 1,
 		"EndTier": 1,
@@ -396,6 +426,7 @@ machines = [
 		"LogicImports": ["Working"],
 	},{
 		"Name": "Smelter",
+		"Category": "Refining",
 		"Energy": {"consumption": 50, "consumption_item": "Heat"},
 		"StartTier": 0,
 		"EndTier": 2,
@@ -408,6 +439,7 @@ machines = [
 		}
 	},{
 		"Name": "SteamTurbine",
+		"Category": "Generation",
 		"Energy": {"consumption": BOILER_PER_TICK * 5 * 2, "consumption_item": "Steam", "production": BOILER_PER_TICK * 5 * 2, "production_item": "Kinetic"},
 		"Positions": [[0,0,0],[-1,0,0],[-2,0,0],[0,-1,0],[-1,-1,0],[-2,-1,0],[0,0,1],[-1,0,1],[-2,0,1],[0,-1,1],[-1,-1,1],[-2,-1,1]],
 		"StartTier": 3,
@@ -418,6 +450,7 @@ machines = [
 		"Description": ["FluidInput", "KineticOutput","PowerOutput"],
 	},{
 		"Name": "IndustrialSteamTurbine",
+		"Category": "Generation",
 		"Energy": {"consumption": INDUSTRIAL_BOILER_PER_TICK, "consumption_item": "Steam", "production": INDUSTRIAL_BOILER_PER_TICK, "production_item": "Kinetic"},
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],   [-3,0,0], [-4,0,0], [-5,0,0],
@@ -440,6 +473,7 @@ machines = [
 		"Description": ["FluidInput", "KineticOutput", "PowerOutput"],
 	},{
 		"Name": "Riteg",
+		"Category": "Generation",
 		"Energy": {"production": 400, "production_item": "Heat"},
 		"Positions": [
 		    [0,0,0],[-1,0,0],[1,0,0],
@@ -458,6 +492,7 @@ machines = [
 		"Description": ["HeatOutput", "PowerOutput"],
 	},{
 		"Name": "DroneStation",
+		"Category": "Logistics",
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,0,2],[-1,0,2],[0,1,2],[-1,1,2]],
 		"StartTier": 3,
 		"EndTier": 3,
@@ -465,6 +500,7 @@ machines = [
 		"Description": ["ElectricInput", "PowerInput"],
 	},{
 		"Name": "SteelRail",
+		"Category": "Logistics",
 		"ExactName": True,
 		"Positions": [[0,0,0]],
 		"StartTier": 1,
@@ -478,9 +514,9 @@ machines = [
 		],
 		"ItemLogic": "SteelRailItemLogic",
 		"Description": [],
-		"Category": "Network",
 	},{
 		"Name": "RailStation",
+		"Category": "Logistics",
 		"ExactName": True,
 		"Positions": [[0,0,0],[1,0,0],[2,0,0],[3,0,0],
                       [0,0,1],[1,0,1],[2,0,1],[3,0,1]],
@@ -490,27 +526,27 @@ machines = [
 		"LogicImports": ["Working"],
 		"LogicExports": ["Storage", "TimePassed", "Fuel", "CargoFull", "CargoEmpty", "Inactivity"],
 		"Description": [],
-		"Category": "Network",
 	},{
 		"Name": "RailSignal",
+		"Category": "Logistics",
 		"ExactName": True,
 		"NoBlock": True,
 		"StartTier": 1,
 		"EndTier": 1,
 		"ItemLogic": "RailSignalItemLogic",
 		"Description": [],
-		"Category": "Network",
 	},{
 		"Name": "RailChainSignal",
+		"Category": "Logistics",
 		"ExactName": True,
 		"NoBlock": True,
 		"StartTier": 1,
 		"EndTier": 1,
 		"ItemLogic": "RailSignalItemLogic",
 		"Description": [],
-		"Category": "Network",
 	},{
 		"Name": "ArcSmelter",
+		"Category": "Refining",
 		"Energy": {"consumption": 400, "consumption_item": "Electricity"},
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1],[0,0,2],[-1,0,2],[0,1,2],[-1,1,2]],
 		"StartTier": 2,
@@ -521,6 +557,7 @@ machines = [
 		"Description": ["ElectricInput", "PowerInput"],
 	},{
 		"Name": "ChemicalBath",
+		"Category": "Refining",
 		"Energy": {"consumption": 100, "consumption_item": "Kinetic"},
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
@@ -531,6 +568,7 @@ machines = [
 		"Description": ["KineticInput", "PowerInput"],
 	},{
 		"Name": "Sifter",
+		"Category": "Refining",
 		"Energy": {"consumption": 400, "consumption_item": "Kinetic"},
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
@@ -541,6 +579,7 @@ machines = [
 		"Description": ["KineticInput", "PowerInput"],
 	},{
 		"Name": "IndustrialChemReactor",
+		"Category": "Refining",
 		"Energy": {"consumption": 100, "consumption_item": "Electricity"},
 		"Positions": [[0,0,0],[-1,0,0],[0,1,0],[-1,1,0],[0,0,1],[-1,0,1],[0,1,1],[-1,1,1]],
 		"StartTier": 3,
@@ -551,6 +590,7 @@ machines = [
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "Furnace",
+		"Category": "Refining",
 		"Actor": "/Script/Evospace.FurnaceActor",
 		"Energy": {"production": 50, "production_item": "Heat"},
 		"StartTier": 0,
@@ -561,6 +601,7 @@ machines = [
 		"Description": ["HeatOutput", "PowerOutput"],
 	},{
 		"Name": "Oven",
+		"Category": "Refining",
 		"Actor": "/Script/Evospace.OvenActor",
 		"Energy": {"consumption": 100, "consumption_item": "Heat"},
 		"Positions": [
@@ -584,6 +625,7 @@ machines = [
 		"Description": ["SpeedBonus", "HeatInput", "PowerInput"],
 	},{
 		"Name": "BlastFurnace",
+		"Category": "Refining",
 		"Actor": "/Script/Evospace.BlastFurnaceActor",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],
@@ -610,6 +652,7 @@ machines = [
 		"Description": ["SpeedBonus"],
 	},{
 		"Name": "FluidFurnace",
+		"Category": "Refining",
 		"Energy": {"production": 200, "production_item": "Heat"},
 		"StartTier": 1,
 		"EndTier": 7,
@@ -619,6 +662,7 @@ machines = [
 		"Description": ["FluidInput", "HeatOutput", "PowerOutput"],
 	},{
 		"Name": "ElectricFurnace",
+		"Category": "Refining",
 		"Energy": {"consumption": 250, "consumption_item": "Electricity", "production": 250, "production_item": "Heat"},
 		"StartTier": 2,
 		"EndTier": 7,
@@ -628,6 +672,7 @@ machines = [
 		"Description": ["ElectricInput", "HeatOutput", "PowerOutput"],
 	},{
 		"Name": "BatteryBox",
+		"Category": "Generation",
 		"StartTier": 3,
 		"EndTier": 7,
         "BlockLogic": "ElectricityContainerBlockLogic",
@@ -638,6 +683,7 @@ machines = [
 	},
 	{
 		"Name": "DrillingRig",
+		"Category": "Extraction",
 		"Actor": "/Script/Evospace.DrillingRigActor",
 		"Energy": {"consumption": 96, "consumption_item": "Kinetic", "scaling": "linear"},
         "BlockLogic": "DrillingRig",
@@ -668,6 +714,7 @@ machines = [
 		"LogicImports": ["Working"],
 	},{
 		"Name": "Assembler",
+		"Category": "Production",
 		"Actor": "/Script/Evospace.AssemblerActor",
 		"Energy": {"consumption": 160, "consumption_item": "Electricity"},
 		"StartTier": 3,
@@ -687,6 +734,7 @@ machines = [
 		"Description": ["ElectricInput", "PowerInput"],
 	},{
 		"Name": "Constructor",
+		"Category": "Production",
 		"Actor": "/Script/Evospace.ConstructorActor",
 		"Energy": {"consumption": 40, "consumption_item": "Electricity"},
 		"StartTier": 1,
@@ -704,6 +752,7 @@ machines = [
 		"Description": ["ElectricInput", "PowerInput"],
 	},{
 		"Name": "Destroyer",
+		"Category": "Logistics",
 		"Positions": [
 			[0,0,0],[0,1,0],[0,2,0],
             [1,0,0],[1,1,0],[1,2,0],
@@ -719,12 +768,14 @@ machines = [
 		"Description": ["FluidInput"],
 	},{
 		"Name": "Lamp",
+		"Category": "Decoration",
 		"StartTier": 2,
 		"EndTier": 7,
 		"BlockLogic": "LampBlockLogic",
 		"LogicImports": ["Working", "SpotlightColorR", "SpotlightColorG", "SpotlightColorB"],
 	},{
 		"Name": "CopperLamp",
+		"Category": "Decoration",
 		"ExactName": True,
 		"Label": ["machines_label_format", "common", ["Copper", "common"], ["Lamp", "machines"]],
 		"DescriptionName": "Lamp",
@@ -736,36 +787,43 @@ machines = [
 		"LogicImports": ["Working"],
 	},{
 		"Name": "AdminElectricGenerator",
+		"Category": "Generation",
 		"StartTier": 7,
 		"EndTier": 7,
 		"Description": ["ElectricOutput"],
 	},{
 		"Name": "AdminItemGenerator",
+		"Category": "Logistics",
 		"StartTier": 7,
 		"EndTier": 7,
 		"Description": ["ItemOutput"],
 	},{
 		"Name": "AdminKineticGenerator",
+		"Category": "Generation",
 		"StartTier": 7,
 		"EndTier": 7,
 		"Description": ["KineticOutput"],
 	},{
 		"Name": "AdminHeatGenerator",
+		"Category": "Generation",
 		"StartTier": 7,
 		"EndTier": 7,
 		"Description": ["HeatOutput"],
 	},{
 		"Name": "AdminFluidGenerator",
+		"Category": "Network",
 		"StartTier": 7,
 		"EndTier": 7,
 		"Description": ["FluidOutput"],
 	},{
 		"Name": "AdminExterminator",
+		"Category": "Logistics",
 		"StartTier": 7,
 		"EndTier": 7,
 		"Description": ["KineticInput", "HeatInput", "FluidInput", "ItemInput", "KineticInput"],
 	},{
 		"Name": "Electrolyzer",
+		"Category": "Refining",
 		"Energy": {"consumption": 80, "consumption_item": "Electricity"},
 		"StartTier": 2,
 		"EndTier": 7,
@@ -775,6 +833,7 @@ machines = [
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "Mixer",
+		"Category": "Refining",
 		"Energy": {"consumption": 15, "consumption_item": "Kinetic"},
 		"StartTier": 2,
 		"EndTier": 7,
@@ -785,6 +844,7 @@ machines = [
 		"Description": ["KineticInput", "PowerInput"],
 	},{
 		"Name": "AutomaticFarm",
+		"Category": "Extraction",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],[-3,0,0],
 			[0,1,0],[-1,1,0],[-2,1,0],[-3,1,0],
@@ -809,6 +869,7 @@ machines = [
 		"Description": ["FluidInput"],
 	},{
 		"Name": "AtmosphericCondenser",
+		"Category": "Extraction",
 		"Positions": [
 			[0,0,0],[-1,0,0],[-2,0,0],
 			[0,-1,0],[-1,-1,0],[-2,-1,0],
@@ -826,12 +887,14 @@ machines = [
 		"Description": ["FluidOutput"],
 	},{
 		"Name": "Monitor",
+		"Category": "Logic",
 		"StartTier": 4,
 		"EndTier": 4,
 		"BlockLogic": "MonitorBlockLogic",
 		"Actor": "Blocks/Monitor/BP_Monitor.BP_Monitor_C",
 	},{
 		"Name": "BigMonitor",
+		"Category": "Logic",
 		"StartTier": 5,
 		"EndTier": 5,
 		"Image": "Monitor",
@@ -840,6 +903,7 @@ machines = [
 		"Actor": "Blocks/BigMonitor/BP_BigMonitor.BP_BigMonitor_C",
 	},{
 		"Name": "HugeMonitor",
+		"Category": "Logic",
 		"StartTier": 6,
 		"EndTier": 6,
 		"Image": "Monitor",
@@ -848,6 +912,7 @@ machines = [
 		"Actor": "Blocks/HugeMonitor/BP_HugeMonitor.BP_HugeMonitor_C",
 	},{
 		"Name": "Computer",
+		"Category": "Logic",
 		"Energy": {"consumption": 20, "consumption_item": "Electricity"},
 		"StartTier": 1,
 		"EndTier": 6,
@@ -855,6 +920,7 @@ machines = [
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "Radio",
+		"Category": "Logic",
 		"Energy": {"consumption": 20, "consumption_item": "Electricity"},
 		"StartTier": 1,
 		"EndTier": 1,
@@ -867,6 +933,7 @@ machines = [
 		"Description": ["ElectricInput"],
 	},{
 		"Name": "ElectronicsLaboratory",
+		"Category": "Research",
 		"Tint": "#4CB848",
 		"Label": laboratory_label(["Circuit", "parts"]),
 		"StartTier": 1,
@@ -874,6 +941,7 @@ machines = [
 		**laboratory,
 	},{
 		"Name": "EngineeringLaboratory",
+		"Category": "Research",
 		"Tint": "#D8483A",
 		"Label": laboratory_label(["Engineering", "parts"]),
 		"StartTier": 1,
@@ -881,6 +949,7 @@ machines = [
 		**laboratory,
 	},{
 		"Name": "ChemicalLaboratory",
+		"Category": "Research",
 		"Tint": "#3C78E0",
 		"Label": laboratory_label(["Chemical", "category"]),
 		"StartTier": 2,
@@ -888,6 +957,7 @@ machines = [
 		**laboratory,
 	},{
 		"Name": "Diode",
+		"Category": "Network",
 		"StartTier": 2,
 		"EndTier": 7,
 		"Description": ["ElectricInput", "ElectricOutput"],
@@ -916,6 +986,7 @@ machines = [
 	#},
 	{
 		"Name": "FissionReactor",
+		"Category": "Generation",
 		"Actor": "/Script/Evospace.FissionReactorActor",
 		"Energy": {"production": INDUSTRIAL_BOILER_PER_TICK, "production_item": "Heat"},
 		"Positions": [
@@ -957,6 +1028,7 @@ machines = [
 		"Description": ["HeatOutput", "PowerOutput"],
 	},{
 		"Name": "FusionReactor",
+		"Category": "Generation",
 		"Energy": {"consumption": INDUSTRIAL_BOILER_PER_TICK * 2, "consumption_item": "Electricity"},
         "Description": ["PowerInput"],
         "BlockLogic":"SelectCrafter",
@@ -991,6 +1063,7 @@ machines = [
 		],
 	},{
 		"Name": "IndustrialBoiler",
+		"Category": "Generation",
 		"Energy": {"consumption": INDUSTRIAL_BOILER_PER_TICK, "consumption_item": "Heat", "production": INDUSTRIAL_BOILER_PER_TICK, "production_item": "Steam"},
 		"StartTier": 5,
 		"EndTier": 7,
@@ -1018,6 +1091,7 @@ machines = [
 	},
 	{
 		"Name": "SolarPanel",
+		"Category": "Generation",
 		"Energy": {"production": 500, "production_item": "Electricity"},
 		"Positions": [
 			[0,0,0],[-1,0,0],[1,0,0],
@@ -1047,6 +1121,7 @@ machines = [
 	},
 	{
 		"Name": "SmallSolarPanel",
+		"Category": "Generation",
 		"Energy": {"production": 50, "production_item": "Electricity"},
 		"Positions": [
 			[0,0,0],
@@ -1067,6 +1142,7 @@ machines = [
 	},
 	{
 		"Name": "WindTurbine",
+		"Category": "Generation",
 		"Energy": {"production": 300, "production_item": "Electricity"},
 		"Positions": [
 			[0,0,0],[0,0,1],[0,0,2],[0,0,3],[0,0,4],
@@ -1089,6 +1165,7 @@ machines = [
 	},
 	{
 		"Name": "Pumpjack",
+		"Category": "Extraction",
 		"Actor": "/Script/Evospace.PumpjackActor",
 		"Energy": {"consumption": 60, "consumption_item": "Kinetic", "scaling": "linear"},
         "BlockLogic":"Pumpjack",
@@ -1118,6 +1195,7 @@ machines = [
 		"LogicImports": ["Working"],
 	},{
 		"Name": "IndustrialSmelter",
+		"Category": "Refining",
 		"Energy": {"consumption": 1000, "consumption_item": "Heat"},
 		"StartTier": 4,
 		"EndTier": 7,
@@ -1140,11 +1218,13 @@ machines = [
 		"Description": ["HeatInput", "PowerInput"],
 	},{
 		"Name": "CreativeController",
+		"Category": "Logic",
 		"StartTier": 7,
 		"EndTier": 7,
 		"Description": ["DataInput", "DataOutput"],
 	},{
 		"Name": "TeslaTower",
+		"Category": "Network",
 		"Energy": {"consumption": 1000, "consumption_item": "Electricity"},
 		"StartTier": 4,
 		"EndTier": 4,
@@ -1160,6 +1240,7 @@ machines = [
 		]
 	},{
         "Name": "KineticHeater",
+        "Category": "Generation",
         "Energy": {"consumption": 20, "consumption_item": "Kinetic", "production": 20, "production_item": "Heat"},
         "StartTier": 1,
         "EndTier": 7,
@@ -1169,6 +1250,7 @@ machines = [
 		"LogicImports": CRAFTING_LOGIC_IMPORTS,
     },{
 		"Name": "LogicInterface",
+		"Category": "Logic",
 		"ExactName": True,
 		"TieredImage": True,
 		"StartTier": 2,
@@ -1177,6 +1259,7 @@ machines = [
 		"Description": []
 	},{
 		"Name": "LogicSensor",
+		"Category": "Logic",
 		"ExactName": True,
 		"TieredImage": True,
 		"StartTier": 2,
@@ -1185,6 +1268,7 @@ machines = [
 		"Description": []
 	},{
 		"Name": "LogicWire",
+		"Category": "Logic",
 		"ExactName": True,
 		"TieredImage": True,
 		"StartTier": 2,
@@ -1196,23 +1280,23 @@ machines = [
 		"PathFinding": True,
         "NoActorRenderable": True,
         "Selector": "Blocks/AllSidesPipe/BP_AllSidesPipe.BP_AllSidesPipe_C",
-        "Category": "Network",
 	},{
 		"Name": "Button",
+		"Category": "Logic",
 		"StartTier": 2,
 		"EndTier": 2,
 		"Description": ["DataOutput"],
 		"LogicExports": ["Pressed"],
-		"Category": "Network",
 	},{
 		"Name": "ToggleButton",
+		"Category": "Logic",
 		"StartTier": 2,
 		"EndTier": 2,
 		"Description": ["DataOutput"],
 		"LogicExports": ["Pressed"],
-		"Category": "Network",
 	},{
 		"Name": "LogicTransceiver",
+		"Category": "Logic",
 		"ExactName": True,
 		"TieredImage": True,
 		"StartTier": 2,
@@ -1220,9 +1304,9 @@ machines = [
 		"Description": ["DataInput", "DataOutput"],
 		"Image": "LogicInterface",
 		"Actor": "Blocks/LogicTransceiver/BP_LogicTransceiver.BP_LogicTransceiver_C",
-		"Category": "Network",
 	},{
 		"Name": "Speaker",
+		"Category": "Logic",
 		"ExactName": True,
 		"TieredImage": True,
 		"StartTier": 2,
@@ -1233,9 +1317,9 @@ machines = [
 		"NoDescriptionText": True,
 		"Image": "LogicInterface",
 		"Actor": "Blocks/LogicTransceiver/BP_LogicTransceiver.BP_LogicTransceiver_C",
-		"Category": "Network",
 	},{
 		"Name": "Terminal",
+		"Category": "Logic",
 		"ExactName": True,
 		"TieredImage": True,
 		"StartTier": 2,
@@ -1246,17 +1330,17 @@ machines = [
 		"NoDescriptionText": True,
 		"Image": "LogicInterface",
 		"Actor": "Blocks/LogicTransceiver/BP_LogicTransceiver.BP_LogicTransceiver_C",
-		"Category": "Network",
 	},{
 		"Name": "PressurePlate",
+		"Category": "Logic",
 		"StartTier": 2,
 		"EndTier": 2,
 		"Description": ["DataOutput"],
 		"LogicExports": ["Pressed"],
 		"RotationLocks": [0,0,1],
-		"Category": "Network",
 	},{
 		"Name": "DeepStorage",
+		"Category": "Logistics",
 		"Energy": {"consumption": 25, "consumption_item": "Electricity"},
 		"StartTier": 4,
 		"EndTier": 7,

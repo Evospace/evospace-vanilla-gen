@@ -217,7 +217,7 @@ for machine in machines:
 			"DescriptionParts": [] if "NoDescriptionText" in machine else [[machine.get("DescriptionName", machine["Name"]), "description"]],
 			"ItemLogic": building_single_logic if "ItemLogic" not in machine else machine["ItemLogic"],
 			"Tier": tier,
-			"Category": machine["Category"] if "Category" in machine else tier_material[tier],
+			"Category": machine["Category"],
 		}
 
 		arm_speed_d = [300/2,450/2,600/2,900/2,1200/2,1800/2,3600/2]

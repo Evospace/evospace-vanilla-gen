@@ -9,6 +9,7 @@ sys.path.insert(0, generators_path)
 
 from Common import get_generated_files, flush_generated_files
 from ValidateTiers import validate_generated
+from ItemTiers import complete_item_tiers
 
 print(our_path)
 
@@ -53,6 +54,9 @@ for filename in generator_files:
 	print(full_path + " is runned")
 	run_generator(full_path)
 	print("Done")
+
+derived_count, untiered = complete_item_tiers(get_generated_files())
+print(f"ItemTiers: {derived_count} derived, {len(untiered)} without tier")
 
 dictionary_count, recipe_count, clamped_count, warnings = validate_generated(
 	get_generated_files(),
