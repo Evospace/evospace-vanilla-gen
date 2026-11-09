@@ -8,6 +8,9 @@ from MachinesList import machines
 
 researches = []
 replaced_levels = {}
+legacy_levels = {}
+legacy_level_bases = {"AutomaticHammer": "BasicMachines", "Macerator": "BasicMachines", "Conveyor": "Automatization", "Splitter": "Automatization"}
+legacy_lamps = ["CopperLamp", "Lamp", "AluminiumLamp", "StainlessSteelLamp", "TitaniumLamp", "CompositeLamp", "NeutroniumLamp"]
 bonus_slots = 11
 last_tier = 7
 
@@ -35,6 +38,11 @@ def infinite_tail(research, cost):
 	research["MaxLevel"] = len(research["Complexities"])
 	researches.append(tail)
 	return tail
+
+def replace_level(research_base, this_level, old_name, replacement):
+	replaced_levels[old_name] = replacement
+	legacy_name = legacy_level_bases.get(research_base["Name"], research_base["Name"]) + str(this_level)
+	legacy_levels.setdefault(legacy_name, []).append(replacement[-1])
 
 item_labels = {}
 
@@ -89,7 +97,7 @@ def append_levels(research_base):
 				tail = infinite_tail(research, cost)
 			owner = tail if i > last_tier else research
 			owner["Complexities"].append(cost)
-			replaced_levels[old_name] = [owner["Name"]]
+			replace_level(research_base, this_level, old_name, [owner["Name"]])
 			continue
 
 		if i == 1:
@@ -99,7 +107,7 @@ def append_levels(research_base):
 			if inventory:
 				research["BonusSlots"] = research.get("BonusSlots", bonus_slots) + bonus_slots
 			research["Complexity"] += cost
-			replaced_levels[old_name] = [research["Name"]]
+			replace_level(research_base, this_level, old_name, [research["Name"]])
 			continue
 
 		if inventory:
@@ -135,7 +143,7 @@ def append_levels(research_base):
 		if decorations:
 			version["Decorations"] = decorations
 		research.setdefault("Versions", []).append(version)
-		replaced_levels[old_name] = [research["Name"], card]
+		replace_level(research_base, this_level, old_name, [research["Name"], card])
 		previous_card = card
 
 def replace_level_requirements():
@@ -2141,3 +2149,11 @@ data = {
 }
 
 write_file("Generated/Researches/basic.json", data)
+
+legacy_levels.update({"Lamp" + (str(level) if level else ""): [lamp] for level, lamp in enumerate(legacy_lamps)})
+unknown_legacy = sorted({name for names in legacy_levels.values() for name in names} - {research["Name"] for research in researches})
+if unknown_legacy:
+	raise Exception(f"Researches: 0.22 levels lead to unknown researches {unknown_legacy}")
+write_file("Generated/Researches/legacy.json", {
+	"Objects": [{"Class": "StaticLegacyLevels", "Name": "Levels022", "Levels": dict(sorted(legacy_levels.items()))}]
+})
