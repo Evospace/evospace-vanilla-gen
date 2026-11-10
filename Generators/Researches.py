@@ -786,22 +786,23 @@ append_levels({
 	"MainResearch": True,
 	"CostMul": 2.0,
 })
-append_levels({
-	"Class": research_recipe,
-	"Name": "LogicDevices",
-	"Label": ["LogicDevices", "researches"],
-	"RequiredResearch": ["LogicNetworking"],
-	"Levels": [1, 1],
-	"Unlocks": [
-		["Hand" + r_dict, "Led"],
-		["Hand" + r_dict, "SteelButton"],
-		["Hand" + r_dict, "SteelToggleButton"],
-		["Hand" + r_dict, "SteelPressurePlate"],
-		["Hand" + r_dict, "LogicTransceiver"],
-		["Hand" + r_dict, "Speaker"],
-	],
-	"CostMul": 2.0,
-})
+for name, label, required in [
+	("Led", ["Led", "misc"], "LogicNetworking"),
+	("SteelButton", ["machines_label_format", "common", ["Steel", "common"], ["Button", "machines"]], "LogicNetworking"),
+	("SteelToggleButton", ["machines_label_format", "common", ["Steel", "common"], ["ToggleButton", "machines"]], "SteelButton"),
+	("SteelPressurePlate", ["machines_label_format", "common", ["Steel", "common"], ["PressurePlate", "machines"]], "SteelToggleButton"),
+	("LogicTransceiver", ["LogicTransceiver", "machines"], "LogicNetworking"),
+	("Speaker", ["Speaker", "machines"], "Led"),
+]:
+	append_levels({
+		"Class": research_recipe,
+		"Name": name,
+		"Label": label,
+		"RequiredResearch": [required],
+		"Levels": [1, 1],
+		"Unlocks": [["Hand" + r_dict, name]],
+		"CostMul": 2.0,
+	})
 append_levels({
 	"Class": research_recipe,
 	"Name": "Circuit2",

@@ -1277,7 +1277,6 @@ machines = [
 		"StartTier": 2,
 		"EndTier": 2,
 		"Description": ["DataInput", "DataOutput"],
-		"Image": "LogicInterface",
 		"Actor": "Blocks/LogicTransceiver/BP_LogicTransceiver.BP_LogicTransceiver_C",
 	},{
 		"Name": "Speaker",
@@ -1290,7 +1289,6 @@ machines = [
 		"LogicImports": ["Working"],
 		"Description": ["DataInput"],
 		"NoDescriptionText": True,
-		"Image": "LogicInterface",
 		"Actor": "Blocks/LogicTransceiver/BP_LogicTransceiver.BP_LogicTransceiver_C",
 	},{
 		"Name": "Terminal",
