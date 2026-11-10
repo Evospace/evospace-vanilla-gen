@@ -239,6 +239,9 @@ for machine in machines:
 		if machine["Name"] == "ItemRack":
 			item["DescriptionParts"].append(["item_rack", "common", 2048*(level+1)])
 
+		if machine["Name"] == "DroneStation":
+			item["DescriptionParts"].append(["drone_zone", "common", 2 * 48 + 2])
+
 		if machine["Name"] == "DeepStorage":
 			item["DescriptionParts"].append(["item_rack", "common", 8192 * 2 * 4**level])
 
