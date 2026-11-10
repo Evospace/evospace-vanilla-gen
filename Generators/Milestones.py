@@ -327,8 +327,8 @@ milestones = [
 			["StainlessSteelAssembler", 4, ["ElectricFurnace", "SteelProduction", "FluidFurnace", "AdvancedSmelting", "Furnace", "Oven"]],
 		],
 		"Exits": [["IndustrialSmelting", "StainlessSteelPortal"], ["StainlessSteelProduction", "Oil"]],
-		"Experiments": 100,
-		"Experiment": [["AluminiumElectricEngine", 1], ["AluminiumPipe", 4], ["AluminiumFoil", 6]],
+		"Experiments": 50,
+		"Experiment": [["ReinforcedFrame", 1], ["AluminiumPipe", 8], ["AluminiumFoil", 12]],
 	},
 	{
 		"Name": "Oil",
