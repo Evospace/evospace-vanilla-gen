@@ -377,7 +377,7 @@ def capacitor_animation(variant):
     return {
         "Mesh": f"/Game/Blocks/Assembler/Capacitor/SK_CapacitorMechanism{variant}.SK_CapacitorMechanism{variant}",
         "Sequence": "/Game/Blocks/Assembler/Capacitor/A_CapacitorProduction_Loop.A_CapacitorProduction_Loop",
-        "Manipulators": ["pick_x", "pick_y", "pick_z", "lid_y", "lid_z"],
+        "Manipulators": ["elevator_0", "elevator_1", "elevator_2", "gate", "spindle", "press", "shuttle", "dogs", "knife"],
     }
 
 recipes_assembler.append({
