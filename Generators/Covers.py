@@ -213,6 +213,16 @@ covers = [
         "Name": "RailNode",
         "Mesh": "/Game/Blocks/RailNode/SM_RailNode",
     },{
+        "Name": "PowerPole",
+        "Mesh": "/Game/Blocks/PowerLine/SM_PowerPole",
+    },{
+        "Name": "PowerTower",
+        "Mesh": "/Game/Blocks/PowerLine/SM_PowerTower",
+    },{
+        "Name": "PowerWire",
+        "Mesh": "/Game/Blocks/PowerLine/SM_PowerWire",
+        "NoCollision": True,
+    },{
         "Name": "FoundationTop",
         "Mesh": "/Game/Shared/Stands/SM_Stand_Top",
     },{

@@ -320,7 +320,7 @@ append_levels({
 	"Name": "PowerTransmission",
 	"Label": ["PowerTransmission", "researches"],
 	"RequiredResearch": ["PowerGeneration"],
-	"Unlocks": [["Hand" + r_dict, "CopperConnector"]],
+	"Unlocks": [["Hand" + r_dict, "CopperConnector"], ["Hand" + r_dict, "PowerPole"]],
 	"Levels": [0, 0],
 	"CostExact": 100,
 	"MainResearch": True,
@@ -1481,6 +1481,7 @@ append_levels({
 	"RequiredResearch": ["AluminiumProduction"],
 	"Levels": [3,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%BatteryBox"] ],
+	"UnlockFirst": [["Hand" + r_dict, "PowerTower"]],
 	"MainResearch": True,
 	"CostMuls": [5, 1, 1, 1, 1],
 })
