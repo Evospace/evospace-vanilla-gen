@@ -464,14 +464,17 @@ props = [
 	}
 ]
 
+deposit_kits = ["Ruby", "Cinnabar", "Malachite"]
+
 deposit_models = {
-	"Ruby": {
-		"Meshes": ["/Game/Props/RubyCluster/SM_RubyDeposit"],
-		"Satellites": ["RubyShard" + variation_helper[v] for v in range(5)],
+	ore: {
+		"Meshes": ["/Game/Props/" + ore + "Cluster/SM_" + ore + "Deposit"],
+		"Satellites": [ore + "Shard" + variation_helper[v] for v in range(5)],
 		"SatelliteCount": 36,
-		"Rubble": ["RubyRubble" + variation_helper[v] for v in range(4)],
+		"Rubble": [ore + "Rubble" + variation_helper[v] for v in range(4)],
 		"RubbleCount": 56,
-	},
+	}
+	for ore in deposit_kits
 }
 
 for ore in ore_types:
@@ -494,41 +497,42 @@ for ore in ore_types:
 		**deposit_models.get(ore["Name"], {}),
 	})
 
-props.append({
-	"Name": "RubyShard",
-	"Meshes": ["/Game/Props/RubyCluster/SM_RubyShard" + str(v + 1) for v in range(5)],
-	"Variations": 5,
-	"ItemFrom": "RubyCluster",
-	"ScaleMin": 0.8,
-	"ScaleMax": 1.25,
-	"ProjectToTerrainPower": 0.6,
-	"Drops": "RubyOre",
-	"Count": 3,
-	"HitsToBreak": 3,
-	"HitYield": 3,
-	"RangeMul": 3,
-	"IsBig": True,
-	"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
-	"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C",
-})
-
-props.append({
-	"Name": "RubyRubble",
-	"Meshes": ["/Game/Props/RubyCluster/SM_RubyRubble" + str(v + 1) for v in range(4)],
-	"Variations": 4,
-	"ItemFrom": "RubyCluster",
-	"ScaleMin": 1.0,
-	"ScaleMax": 1.6,
-	"ProjectToTerrainPower": 0.8,
-	"Drops": "RubyOre",
-	"Count": 2,
-	"HitsToBreak": 2,
-	"HitYield": 3,
-	"RangeMul": 2,
-	"IsBig": True,
-	"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
-	"BreakEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
-})
+ore_drops = {ore["Name"]: ore["Drops"] for ore in ore_types}
+for ore in deposit_kits:
+	props.append({
+		"Name": ore + "Shard",
+		"Meshes": ["/Game/Props/" + ore + "Cluster/SM_" + ore + "Shard" + str(v + 1) for v in range(5)],
+		"Variations": 5,
+		"ItemFrom": ore + "Cluster",
+		"ScaleMin": 0.8,
+		"ScaleMax": 1.25,
+		"ProjectToTerrainPower": 0.6,
+		"Drops": ore_drops[ore],
+		"Count": 3,
+		"HitsToBreak": 3,
+		"HitYield": 3,
+		"RangeMul": 3,
+		"IsBig": True,
+		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C",
+	})
+	props.append({
+		"Name": ore + "Rubble",
+		"Meshes": ["/Game/Props/" + ore + "Cluster/SM_" + ore + "Rubble" + str(v + 1) for v in range(4)],
+		"Variations": 4,
+		"ItemFrom": ore + "Cluster",
+		"ScaleMin": 1.0,
+		"ScaleMax": 1.6,
+		"ProjectToTerrainPower": 0.8,
+		"Drops": ore_drops[ore],
+		"Count": 2,
+		"HitsToBreak": 2,
+		"HitYield": 3,
+		"RangeMul": 2,
+		"IsBig": True,
+		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+		"BreakEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+	})
 
 props.append({
 	"Name": "OilCluster",
