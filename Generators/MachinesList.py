@@ -483,6 +483,7 @@ machines = [
 		"StartTier": 3,
 		"EndTier": 3,
 		"BlockLogic":"DroneStationBlockLogic",
+		"Energy": {"consumption": 40, "consumption_item": "Electricity"},
 		"Description": ["ElectricInput", "PowerInput"],
 	},{
 		"Name": "SteelRail",
