@@ -3,6 +3,7 @@ from Common import *
 designables = [
 	{
 		"Name": "Stairs",
+		"Tier": 1,
 		"Category": "Decoration",
 		"Label": ["Stairs", "misc"],
 		"Selector": "Blocks/Stairs/BP_Stairs.BP_Stairs_C",
@@ -16,6 +17,7 @@ designables = [
 		]
 	},{
 		"Name": "Corner",
+		"Tier": 1,
 		"Category": "Decoration",
 		"Label": ["Corner", "misc"],
 		"Selector": "Blocks/Corner/BP_Corner.BP_Corner_C",
@@ -25,6 +27,7 @@ designables = [
 		]
 	},{
 		"Name": "Beam",
+		"Tier": 1,
 		"Category": "Decoration",
 		"Label": ["Beam", "misc"],
 		"Selector": "Blocks/Beam/BP_Beam.BP_Beam_C",
@@ -34,6 +37,7 @@ designables = [
 		]
 	},{
 		"Name": "Scaffold",
+		"Tier": 1,
 		"Category": "Decoration",
 		"Label": ["Scaffold", "misc"],
 		"Selector": "Blocks/Scaffold/BP_Scaffold.BP_Scaffold_C",
@@ -43,6 +47,7 @@ designables = [
 		]
 	},{
 		"Name": "Column",
+		"Tier": 2,
 		"Category": "Decoration",
 		"Label": ["Column", "misc"],
 		"Selector": "Blocks/Column/BP_Column.BP_Column_C",
@@ -55,6 +60,7 @@ designables = [
 		]
 	},{
 		"Name": "Floor",
+		"Tier": 2,
 		"Category": "Decoration",
 		"Label": ["Floor", "misc"],
 		"Selector": "Blocks/Floor/BP_Floor.BP_Floor_C",
@@ -66,6 +72,7 @@ designables = [
 	},
 	{
 		"Name": "Chair",
+		"Tier": 3,
 		"Category": "Decoration",
 		"Label": ["Chair", "misc"],
 		"Selector": "Blocks/Chair/BP_Chair.BP_Chair_C",
@@ -75,6 +82,7 @@ designables = [
 	},
 	{
 		"Name": "Table",
+		"Tier": 3,
 		"Category": "Decoration",
 		"Label": ["Table", "misc"],
 		"Selector": "Blocks/Table/BP_Table.BP_Table_C",
@@ -88,7 +96,7 @@ designables = [
 		"Category": "Decoration",
 		"Selector": "Blocks/Fence/BP_Fence.BP_Fence_C",
 		"Label": ["Fence", "misc"],
-		"Tier": 0,
+		"Tier": 2,
 		"BlockLogic": "DesignableFenceBlockLogic",
 		"Covers": [
 			"FenceHalf",

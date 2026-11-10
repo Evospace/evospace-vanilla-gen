@@ -44,7 +44,7 @@ def append_metal_macerator_recipe(material_name, part_suffix, input_count, dust_
 def generate_part(name, material_dict, tier_override=None):
 	part = named_part(name)
 	material = material_dict["Name"]
-	tier = material_dict["Tier"] if "Tier" in material_dict else 0
+	tier = item_tier(material_dict)
 	if tier_override is not None:
 		tier = tier_override
 	if "Composed" in part:
@@ -230,7 +230,7 @@ for material in materials:
 
 
 		if "Tier" in material:
-			item["Tier"] = material["Tier"]
+			item["Tier"] = item_tier(material)
 		
 		if "Unit" in material:
 			item["Unit"] = material["Unit"]
@@ -255,7 +255,7 @@ for material in materials:
 		}
 
 		if "Tier" in material:
-			item["Tier"] = material["Tier"]
+			item["Tier"] = item_tier(material)
 
 		if "CustomData" in material:
 			item["CustomData"] = material["CustomData"]
@@ -331,7 +331,7 @@ for material in materials:
 		}
 
 		if "Tier" in material:
-			item["Tier"] = material["Tier"]
+			item["Tier"] = item_tier(material)
 		
 		if "Category" in material:
 			item["Category"] = material["Category"]
@@ -376,7 +376,7 @@ for material in materials:
 		}
 		
 		if "Tier" in material:
-			item["Tier"] = material["Tier"]
+			item["Tier"] = metal_block_level(material)
 
 		if "Category" in material:
 			item["Category"] = material["Category"]
@@ -407,7 +407,7 @@ for material in materials:
 		}
 
 		if "Tier" in material:
-			item["Tier"] = material["Tier"]
+			item["Tier"] = item_tier(material)
 		
 		if "Category" in material:
 			item["Category"] = material["Category"]
@@ -463,7 +463,7 @@ for material in materials:
 		}
 
 		if "Tier" in material:
-			item["Tier"] = material["Tier"]
+			item["Tier"] = item_tier(material)
 		
 		if "Category" in material:
 			item["Category"] = material["Category"]
@@ -520,7 +520,7 @@ for material in materials:
 		}
 
 		if "Tier" in material:
-			item["Tier"] = material["Tier"]
+			item["Tier"] = item_tier(material)
 		
 		if "Category" in material:
 			item["Category"] = material["Category"]

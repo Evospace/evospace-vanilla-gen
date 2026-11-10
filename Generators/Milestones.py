@@ -6,6 +6,17 @@ tier_cost_mul = {1: 0.88, 2: 0.44, 3: 0.32, 4: 1.32, 5: 0.35, 6: 0.52, 7: 0.21, 
 
 experiment_ticks = 600
 
+mass_packs = [
+	[["CopperWire", 8], ["CopperPlate", 4]],
+	[["CopperWire", 8], ["SteelPlate", 4]],
+	[["CopperWire", 10], ["BasicFrame", 1], ["AluminiumPlate", 1]],
+	[["CopperWire", 20], ["BasicFrame", 1], ["AluminiumPlate", 2], ["Processor", 1]],
+	[["CopperWire", 20], ["BasicFrame", 1], ["AluminiumPlate", 2], ["Processor", 2]],
+	[["CopperWire", 20], ["ReinforcedFrame", 1], ["Processor", 2]],
+	[["CopperWire", 40], ["ReinforcedFrame", 1], ["Processor", 3]],
+]
+pipe_packs = [[["AluminiumPipe" if item == "AluminiumPlate" else item, count] for item, count in pack] for pack in mass_packs]
+
 milestones = [
 	{
 		"Name": "Start",
@@ -64,7 +75,6 @@ milestones = [
 			["FluidTransfer", "Splitter"],
 			["Pump", "FluidTransfer"],
 			["AutomaticFarm", "Pump"],
-			["DrillingRigProductivity", "AutomaticFarm"],
 			["AtmosphericCondenser", "Pump"],
 			["DecorativePaint", "Pump"],
 			["Valve", "FluidTransfer"],
@@ -73,7 +83,7 @@ milestones = [
 			["KineticHeater", "HeatTransferring"],
 			["FluidFurnace", "HeatTransferring"],
 		],
-		"Exits": [["Constructor", "Transistor"], ["ResearchLaboratory", "CopperPortal"]],
+		"Exits": [["Constructor", "Transistor"], ["ResearchLaboratory", "CopperPortal"], ["AutomaticFarm", "DrillingRigProductivity"]],
 		"Experiments": 0,
 		"Experiment": [],
 	},
@@ -348,7 +358,6 @@ milestones = [
 			["FractionatingColumn", "FuelChemistry"],
 			["CombustionEngine", "FuelChemistry"],
 			["Pumpjack", "PyrolysisUnit"],
-			["PumpjackProductivity", "Pumpjack"],
 			["DecorativePlastic", "PyrolysisUnit"],
 		],
 		"Versions": [
@@ -356,9 +365,9 @@ milestones = [
 			["FuelChemistry2", 4, ["KineticHeater", "Boiler", "SteamTurbine", "SteamEngine"]],
 			["CombustionEngine", 4, ["PowerGeneration", "Flywheel", "ElectricEngine", "WindTurbine", "Generator"]],
 		],
-		"Exits": [],
+		"Exits": [["Pumpjack", "PumpjackProductivity"]],
 		"Experiments": 100,
-		"Experiment": [["StainlessSteelContainer", 4], ["StainlessSteelPipe", 4]],
+		"Experiment": [["BasicFrame", 2], ["AluminiumPipe", 6], ["StainlessSteelPipe", 2]],
 	},
 	{
 		"Name": "QuantumBrain",
@@ -482,7 +491,7 @@ milestones = [
 		],
 		"Exits": [["PlatinumReflector", "CompositePortal"]],
 		"Experiments": 30,
-		"Experiment": [["PowerCoil", 4], ["TantalumWire", 4], ["PlatinumWire", 8]],
+		"Experiment": [["PowerCoil", 4], ["ReinforcedFrame", 2], ["PlatinumWire", 2]],
 	},
 	{
 		"Name": "Fusion",
@@ -514,7 +523,7 @@ milestones = [
 		],
 		"Exits": [["UltimateCatalyst", "NeutroniumPortal"]],
 		"Experiments": 20,
-		"Experiment": [["QuantumBrain", 1], ["PlatinumReflector", 8], ["CompositePipe", 3]],
+		"Experiment": [["QuantumBrain", 1], ["PowerCoil", 1], ["PlatinumReflector", 2]],
 	},
 	{
 		"Name": "Infinite",
@@ -550,6 +559,21 @@ milestones += [{
 	"Exits": [["", target]],
 	"Experiments": 1,
 } for name, tier, position, stages, target in portal_cards]
+
+productivity_cards = [
+	("DrillingRigProductivity", [2, 0], [[120, pack] for pack in mass_packs]),
+	("PumpjackProductivity", [3, 6], [[30, pipe_packs[3]]] * 4 + [[120, pack] for pack in pipe_packs[4:]]),
+]
+milestones += [{
+	"Name": name,
+	"Label": name,
+	"Position": position,
+	"Tree": [[name, ""]],
+	"Exits": [],
+	"Experiments": 0,
+	"Experiment": [],
+	"Levels": levels,
+} for name, position, levels in productivity_cards]
 
 cell_columns = 7
 tree_rows = 6
@@ -785,13 +809,20 @@ for m in milestones:
 	if m["Label"] not in research_by_name:
 		raise Exception(f"Milestones: {m['Name']} takes its label from an unknown research {m['Label']}")
 
-	for item, count in m["Experiment"]:
+	levels = m.get("Levels", [])
+	for item, count in m["Experiment"] + [entry for _, pack in levels for entry in pack]:
 		if item not in item_names:
 			raise Exception(f"Milestones: experiment of {m['Name']} names an unknown item {item}")
 		if not isinstance(count, int) or count < 1:
 			raise Exception(f"Milestones: experiment of {m['Name']} takes {count} of {item}, a pack holds whole items")
 	if (m["Experiments"] > 0) != bool(m["Experiment"]):
 		raise Exception(f"Milestones: {m['Name']} has {m['Experiments']} experiments of {m['Experiment']}")
+	if levels:
+		head = research_by_name[m["Head"]]
+		if m["Experiments"] or built or not head.get("Infinite") or head.get("MaxLevel") != len(levels):
+			raise Exception(f"Milestones: {m['Name']} has {len(levels)} levels, its head {m['Head']} takes {head.get('MaxLevel')} and nothing else pays for it")
+		if any(not isinstance(count, int) or count < 1 or not pack for count, pack in levels):
+			raise Exception(f"Milestones: a level of {m['Name']} takes no experiments or an empty pack")
 
 unplaced = [r["Name"] for r in research_objects if r["Class"] == "StaticResearchTechnology" and r["Name"] not in owner]
 if unplaced:
@@ -1024,6 +1055,12 @@ for m in milestones:
 	})
 	if "Image" in m:
 		objects[-1]["Image"] = m["Image"]
+	if "Levels" in m:
+		objects[-1]["Levels"] = [{
+			"Experiments": count,
+			"Experiment": pack,
+			"Recipe": [laboratory["Name"] + r_dict, m["Name"] + "Experiment" + str(level + 1)],
+		} for level, (count, pack) in enumerate(m["Levels"])]
 	if built:
 		objects[-1]["Build"] = m["Build"]
 		del objects[-1]["Head"]
@@ -1040,5 +1077,10 @@ write_file("Generated/Recipes/laboratory.json", {"Objects": [{
 		"Input": items(m["Experiment"]),
 		"Output": no_items(),
 		"Ticks": experiment_ticks,
-	} for m in milestones if m["Experiments"] and "Build" not in m],
+	} for m in milestones if m["Experiments"] and "Build" not in m] + [{
+		"Name": m["Name"] + "Experiment" + str(level + 1),
+		"Input": items(pack),
+		"Output": no_items(),
+		"Ticks": experiment_ticks,
+	} for m in milestones for level, (count, pack) in enumerate(m.get("Levels", []))],
 }]})

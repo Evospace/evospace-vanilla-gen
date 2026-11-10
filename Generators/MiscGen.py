@@ -26,49 +26,62 @@ wooden_misc = [
 simple_single = [
 	{
 		"Name": "CeramicRoof",
+		"Tier": 1,
 		"Cost": 3,
 	},{
 		"Name": "ConcreteRamp",
+		"Tier": 2,
 		"Cost": 3,
 	},{
 		"Name": "ConcreteRamp2",
+		"Tier": 2,
 		"Cost": 3,
 		"Label": ["TwoWorldsFormat", "common", ["ConcreteRamp", "misc"], ["II", "common"]],
 	},{
 		"Name": "ConcreteRamp3",
+		"Tier": 2,
 		"Cost": 3,
 		"Label": ["TwoWorldsFormat", "common", ["ConcreteRamp", "misc"], ["III", "common"]],
 	},{
 		"Name": "ConcreteBeam",
+		"Tier": 2,
 		"Cost": 3,
 	},{
 		"Name": "ConcreteBeam2",
+		"Tier": 2,
 		"Cost": 3,
 		"Label": ["TwoWorldsFormat", "common", ["ConcreteBeam", "misc"], ["II", "common"]],
 	},{
 		"Name": "CopperChair",
+		"Tier": 3,
 		"Cost": 3,
 	},{
 		"Name": "FireCup",
+		"Tier": 1,
 		"Cost": 3,
 	},{
 		"Name": "PlasticWindow",
+		"Tier": 4,
 		"Cost": 3,
 		"Positions": [[0,0,0], [0,0,1]]
 	},{
 		"Name": "RoadCone",
+		"Tier": 2,
 		"Cost": 3,
 	},{
 		"Name": "WarningBarrier",
+		"Tier": 2,
 		"Cost": 3,
 	},{
 		"Name": "SlidingDoor",
+		"Tier": 2,
 		"Cost": 8,
 		"Positions": [[0,0,0], [-1,0,0], [0,0,1], [-1,0,1]],
 		"BlockLogic": "DoorBlockLogic",
 		"LogicImports": ["DoorOpen"],
 	},{
 		"Name": "LiftDoor",
+		"Tier": 2,
 		"Cost": 8,
 		"Positions": [[0,0,0], [-1,0,0], [0,0,1], [-1,0,1]],
 		"BlockLogic": "DoorBlockLogic",
@@ -596,7 +609,7 @@ objects_array.append({
 	"ItemLogic": "BuildingSingleBlockItemLogic",
 	"Block": "RocketPad",
 	"Category": "Vehicles",
-	"Tier": 6,
+	"Tier": 7,
 })
 objects_array.append({
 	"Class": "StaticBlock",

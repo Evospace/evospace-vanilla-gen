@@ -48,6 +48,9 @@ def named_material(name):
 def metal_block_level(material):
 	return material["Tier"] + 1 if "Tier" in material else material["BlockLevel"]
 
+def item_tier(material):
+	return material["ItemTier"] if "ItemTier" in material else material.get("Tier", 0)
+
 tiered_parts_list_no_dust = ["Plate", "Block", "Parts", "SolarCell", "Alternator"]
 tiered_parts_list = tiered_parts_list_no_dust + ["Dust"]
 
@@ -98,12 +101,14 @@ materials = [
 		"Tier": 2,
 	},{
 		"Name": "AdvancedCoil",
+		"ItemTier": 4,
 		"Label": "Advanced Coil",
 		"Items": ["Exact"],
 		"Category": "Parts",
 		"Tier": 3,
 	},{
 		"Name": "PowerCoil",
+		"ItemTier": 5,
 		"Label": "Power Coil",
 		"Items": ["Exact"],
 		"Category": "Parts",
@@ -134,6 +139,7 @@ materials = [
 		"Category": "Parts",
 	},{
 		"Name": "Copper",
+		"ItemTier": 1,
 		"Label": "Copper",
 		"Items": tiered_parts_list + ["Wire"],
 		"Smelting": ["Smelter", "ArcFurnace"],
@@ -193,6 +199,7 @@ materials = [
 		"Category": "Parts",
 	},{
 		"Name": "Resistor",
+		"ItemTier": 3,
 		"Label": "Resistor",
 		"Items": ["Exact"],
 		"Meshes":["/Game/Models/ResistorCrate"],
@@ -201,6 +208,7 @@ materials = [
 		"Category": "Parts",
 	},{
 		"Name": "Transistor",
+		"ItemTier": 3,
 		"Label": "Transistor",
 		"Items": ["Exact"],
 		"Meshes":["/Game/Models/TransistorCrate"],
@@ -208,12 +216,14 @@ materials = [
 		"Category": "Parts",
 	},{
 		"Name": "Steel",
+		"ItemTier": 2,
 		"Label": "Steel",
 		"Smelting": ["ArcFurnace"],
 		"Items": tiered_parts_list,
 		"Tier": 1,
 	},{
 		"Name": "Aluminium",
+		"ItemTier": 3,
 		"Label": "Aluminium",
 		"Items": tiered_parts_list + ["Foil"],
 		"Smelting": ["ArcFurnace"],
@@ -225,23 +235,27 @@ materials = [
 		"BlockLevel": 3,
 	},{
 		"Name": "StainlessSteel",
+		"ItemTier": 4,
 		"Label": "Stainless Steel",
 		"Smelting": ["ArcFurnace"],
 		"Items": tiered_parts_list,
 		"Tier": 3,
 	},{
 		"Name": "Titanium",
+		"ItemTier": 5,
 		"Label": "Titanium",
 		"Smelting": ["InductionFurnace"],
 		"Items": tiered_parts_list,
 		"Tier": 4,
 	},{
 		"Name": "TitaniumTetrachloride",
+		"ItemTier": 5,
 		"Label": "Titanium Tetrachloride",
 		"Items": ["Fluid"],
 		"Tier": 4,
 	},{
 		"Name": "TitaniumSponge",
+		"ItemTier": 5,
 		"Category": "Chemical",
 		"Label": "Titanium Sponge",
 		"Smelting": [],
@@ -256,11 +270,13 @@ materials = [
 		"Tier": 4,
 	},{
 		"Name": "PreparedTitaniumOxide",
+		"ItemTier": 5,
 		"Label": "Prepared Titanium Oxide",
 		"Items": ["Dust"],
 		"Tier": 4,
 	},{
 		"Name": "HotNeutroniumPlate",
+		"ItemTier": 7,
 		"Category": "Plate",
 		"Label": "Hot Neutronium Plate",
 		"Smelting": [],
@@ -416,6 +432,7 @@ materials = [
 		"Tier": 2,
 	},{
 		"Name": "NitroBriquette",
+		"ItemTier": 5,
 		"Category": "Organic",
 		"Label": "NitroBriquette",
 		"Items": ["Exact"],
@@ -453,11 +470,13 @@ materials = [
 		},
 	},{
 		"Name": "SulfuricAcid",
+		"ItemTier": 3,
 		"Label": "Sulfuric Acid",
 		"Items": ["Fluid"],
 		"Tier": 4
 	},{
 		"Name": "NitricAcid",
+		"ItemTier": 5,
 		"Label": "Nitric Acid",
 		"Items": ["Fluid"],
 		"Tier": 4,
@@ -618,12 +637,14 @@ materials = [
 		],
 	},{
 		"Name": "SiliconMonocrystal",
+		"ItemTier": 4,
 		"Category": "Parts",
 		"Label": "Silicon Monocrystal",
 		"Items": ["Exact"],
 		"Tier": 3
 	},{
 		"Name": "DopedSiliconMonocrystal",
+		"ItemTier": 5,
 		"Category": "Parts",
 		"Label": "Doped Silicon Monocrystal",
 		"Items": ["Exact"],
@@ -707,6 +728,7 @@ materials = [
 		"Tier": 5
 	},{
 		"Name": "Superfuel",
+		"ItemTier": 5,
 		"Label": "Superfuel",
 		"Items": ["Fluid"],
 		"Tier": 1,
@@ -716,6 +738,7 @@ materials = [
 		"Tier": 6
 	},{
 		"Name": "RocketFuel",
+		"ItemTier": 6,
 		"Label": "Rocket Fuel",
 		"Items": ["Fluid"],
 		"Tier": 1,
@@ -725,11 +748,13 @@ materials = [
 		"Tier": 4
 	},{
 		"Name": "HydrocarbonBlend",
+		"ItemTier": 6,
 		"Label": "Rocket Fuel Hydrocarbon Blend",
 		"Items": ["Gas"],
 		"Tier": 4,
 	},{
 		"Name": "OxidizerBlend",
+		"ItemTier": 6,
 		"Label": "Rocket Fuel Oxidizer Mix",
 		"Items": ["Gas"],
 		"Tier": 4,
@@ -745,6 +770,7 @@ materials = [
 	},
 	{
 		"Name": "Battery",
+		"ItemTier": 4,
 		"Category": "Parts",
 		"Label": "Battery Cell",
 		"Items": ["Exact"],
@@ -798,6 +824,7 @@ materials = [
 		"Tier": 1,
 	},{
 		"Name": "AdvancedCircuit",
+		"ItemTier": 3,
 		"Label": "Advanced Circuit",
 		"StackSize": 32,
 		"Items": ["Exact"],
@@ -825,6 +852,7 @@ materials = [
 		"Tier": 4,
 	},{
 		"Name": "QuantumProcessor",
+		"ItemTier": 4,
 		"Label": "Quantum Processor",
 		"StackSize": 32,
 		"Items": ["Exact"],
@@ -851,6 +879,7 @@ materials = [
 		"Tier": 4,
 	},{
 		"Name": "DecisionResonator",
+		"ItemTier": 4,
 		"Label": "Decision Resonator",
 		"StackSize": 32,
 		"Items": ["Exact"],
@@ -885,6 +914,7 @@ materials = [
 		"Meshes": ["/Game/Models/CellCrate"],
 	},{
 		"Name": "SynthesisCell",
+		"ItemTier": 7,
 		"Label": "Synthesis Cell",
 		"StackSize": 32,
 		"Items": ["Exact"],
@@ -929,6 +959,7 @@ materials = [
 		"Tier": 7,
 	},{
 		"Name": "TrapElectrode",
+		"ItemTier": 7,
 		"Category": "Parts",
 		"Label": "Trap Electrode",
 		"Items": ["Exact"],
@@ -971,11 +1002,13 @@ materials = [
 		"Items": ["Fluid"]
 	},{
 		"Name": "CarbonPrecursor",
+		"ItemTier": 6,
 		"Label": "Carbon Precursor",
 		"Items": ["Fluid"],
 		"Tier": 5,
 	},{
 		"Name": "CarbonFiber",
+		"ItemTier": 6,
 		"Category": "Parts",
 		"Label": "Carbon Fiber",
 		"StackSize": 32,
@@ -990,12 +1023,14 @@ materials = [
 		"Items": ["Exact"],
 	},{
 		"Name": "Composite",
+		"ItemTier": 6,
 		"Label": "Composite",
 		"Smelting": ["InductionFurnace"],
 		"Items": tiered_parts_list_no_dust,
 		"Tier": 5,
 	},{
 		"Name": "Neutronium",
+		"ItemTier": 7,
 		"Label": "Neutronium",
 		"Smelting": ["InductionFurnace"],
 		"Items": tiered_parts_list_no_dust,
