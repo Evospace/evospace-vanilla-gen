@@ -42,7 +42,7 @@ for ore_type in ore_types:
 					[processing["Macerator"], 1],
 					[processing["Macerator"], 1, True],
 				]),
-				"Ticks" : 132,
+				"Ticks" : 160,
 				"Productivity": 25,
 				"Tier": material_tier,
 			})
