@@ -43,7 +43,7 @@ generator_files = [
 	"Props.py",
 	"Radio.py",
 	"Researches.py",
-	"Milestones.py",
+	"Experiments.py",
 	"Spawn.py",
 	"Speaker.py",
 	"Weather.py",

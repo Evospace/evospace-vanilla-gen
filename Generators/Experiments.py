@@ -17,7 +17,7 @@ mass_packs = [
 ]
 pipe_packs = [[["AluminiumPipe" if item == "AluminiumPlate" else item, count] for item, count in pack] for pack in mass_packs]
 
-milestones = [
+experiments = [
 	{
 		"Name": "Start",
 		"Label": "MineralsScan",
@@ -84,8 +84,8 @@ milestones = [
 			["FluidFurnace", "HeatTransferring"],
 		],
 		"Exits": [["Constructor", "Transistor"], ["ResearchLaboratory", "CopperPortal"], ["AutomaticFarm", "DrillingRigProductivity"]],
-		"Experiments": 0,
-		"Experiment": [],
+		"Runs": 0,
+		"Pack": [],
 	},
 	{
 		"Name": "Steel",
@@ -136,8 +136,8 @@ milestones = [
 		],
 		"Rows": 7,
 		"Exits": [["SteelProduction", "Steam"]],
-		"Experiments": 25,
-		"Experiment": [["Triod", 1], ["CopperPipe", 2], ["CopperConveyor", 1]],
+		"Runs": 25,
+		"Pack": [["Triod", 1], ["CopperPipe", 2], ["CopperConveyor", 1]],
 	},
 	{
 		"Name": "Steam",
@@ -161,8 +161,8 @@ milestones = [
 			["SteelAtmosphericCondenser", "SteelPump"],
 		],
 		"Exits": [["SteelCompactGenerator", "Electricity"]],
-		"Experiments": 25,
-		"Experiment": [["CopperPump", 1], ["SteelPipe", 3]],
+		"Runs": 25,
+		"Pack": [["CopperPump", 1], ["SteelPipe", 3]],
 	},
 	{
 		"Name": "Electricity",
@@ -185,8 +185,8 @@ milestones = [
 			["SteelLoader", "ElectricEngine"],
 		],
 		"Exits": [["AdvancedSmelting", "SteelPortal"]],
-		"Experiments": 25,
-		"Experiment": [["SteelBoiler", 1], ["SteelSteamEngine", 1]],
+		"Runs": 25,
+		"Pack": [["SteelBoiler", 1], ["SteelSteamEngine", 1]],
 	},
 	{
 		"Name": "Transistor",
@@ -213,8 +213,8 @@ milestones = [
 			["Transistor", 3, ["Diode", "DistributedComputing"]],
 		],
 		"Exits": [["SatelliteAntenna", "SatelliteAntenna"]],
-		"Experiments": 25,
-		"Experiment": [["Circuit", 4], ["CopperWire", 4]],
+		"Runs": 25,
+		"Pack": [["Circuit", 4], ["CopperWire", 4]],
 	},
 	{
 		"Name": "SatelliteAntenna",
@@ -223,7 +223,7 @@ milestones = [
 		"Build": "SatelliteAntenna",
 		"Tree": [],
 		"Exits": [["", "Silicon"]],
-		"Experiments": 1,
+		"Runs": 1,
 	},
 	{
 		"Name": "Aluminium",
@@ -263,8 +263,8 @@ milestones = [
 			["AluminiumElectricFurnace", 3, ["KineticHeater", "Boiler", "SteamEngine"]],
 		],
 		"Exits": [["AluminiumProduction", "AluminiumPortal"], ["ReinforcedFrame", "Chemistry"]],
-		"Experiments": 30,
-		"Experiment": [["SteelElectrolyzer", 1], ["SteelSeparator", 1]],
+		"Runs": 30,
+		"Pack": [["SteelElectrolyzer", 1], ["SteelSeparator", 1]],
 	},
 	{
 		"Name": "Chemistry",
@@ -284,8 +284,8 @@ milestones = [
 			["IndustrialChemReactor", "Catalyst"],
 		],
 		"Exits": [],
-		"Experiments": 25,
-		"Experiment": [["Cell", 1], ["SteelPump", 1]],
+		"Runs": 25,
+		"Pack": [["Cell", 1], ["SteelPump", 1]],
 	},
 	{
 		"Name": "Silicon",
@@ -312,8 +312,8 @@ milestones = [
 			["SiliconWafer", 4, ["Diode", "DistributedComputing", "BatteryBox", "SmallSolarPanel", "SolarPanel"]],
 		],
 		"Exits": [["QuantumProcessor", "QuantumBrain"]],
-		"Experiments": 50,
-		"Experiment": [["Processor", 1], ["AdvancedCircuit", 2]],
+		"Runs": 50,
+		"Pack": [["Processor", 1], ["AdvancedCircuit", 2]],
 	},
 	{
 		"Name": "StainlessSteel",
@@ -342,8 +342,8 @@ milestones = [
 			["StainlessSteelAssembler", 4, ["ElectricFurnace", "SteelProduction", "FluidFurnace", "AdvancedSmelting", "Furnace", "Oven"]],
 		],
 		"Exits": [["IndustrialSmelting", "StainlessSteelPortal"], ["StainlessSteelProduction", "Oil"]],
-		"Experiments": 50,
-		"Experiment": [["ReinforcedFrame", 1], ["AluminiumPipe", 8], ["AluminiumFoil", 12]],
+		"Runs": 50,
+		"Pack": [["ReinforcedFrame", 1], ["AluminiumPipe", 8], ["AluminiumFoil", 12]],
 	},
 	{
 		"Name": "Oil",
@@ -366,8 +366,8 @@ milestones = [
 			["CombustionEngine", 4, ["PowerGeneration", "Flywheel", "ElectricEngine", "WindTurbine", "Generator"]],
 		],
 		"Exits": [["Pumpjack", "PumpjackProductivity"]],
-		"Experiments": 100,
-		"Experiment": [["BasicFrame", 2], ["AluminiumPipe", 6], ["StainlessSteelPipe", 2]],
+		"Runs": 100,
+		"Pack": [["BasicFrame", 2], ["AluminiumPipe", 6], ["StainlessSteelPipe", 2]],
 	},
 	{
 		"Name": "QuantumBrain",
@@ -385,8 +385,8 @@ milestones = [
 			["DecisionResonator4", "DecisionResonator3"],
 		],
 		"Exits": [],
-		"Experiments": 12,
-		"Experiment": [["QuantumProcessor", 2], ["QuantumCircuit", 5]],
+		"Runs": 12,
+		"Pack": [["QuantumProcessor", 2], ["QuantumCircuit", 5]],
 	},
 	{
 		"Name": "Titanium",
@@ -415,8 +415,8 @@ milestones = [
 			["TitaniumAssembler", 5, ["MetalBlocks", "Lamp", "SingleTypeStorage", "Destroyer", "Sign", "AdvancedSign", "Chest", "Container", "DeepStorage"]],
 		],
 		"Exits": [["TitaniumProduction", "TitaniumPortal"], ["FastSifting", "Nuclear"]],
-		"Experiments": 15,
-		"Experiment": [["ModularFrame", 1], ["AdvancedCoil", 4], ["SiliconMonocrystal", 3]],
+		"Runs": 15,
+		"Pack": [["ModularFrame", 1], ["AdvancedCoil", 4], ["SiliconMonocrystal", 3]],
 	},
 	{
 		"Name": "Nuclear",
@@ -444,8 +444,8 @@ milestones = [
 			["TitaniumKineticAccumulator", 5, ["ElectricFurnace", "SteelProduction", "AdvancedSmelting", "FluidFurnace", "Furnace", "Oven", "IndustrialSmelting"]],
 		],
 		"Exits": [["AdvancedReflection", "Breeder"]],
-		"Experiments": 15,
-		"Experiment": [["QuantumCircuit", 1], ["TitaniumPipe", 5], ["Cell", 9]],
+		"Runs": 15,
+		"Pack": [["QuantumCircuit", 1], ["TitaniumPipe", 5], ["Cell", 9]],
 	},
 	{
 		"Name": "Breeder",
@@ -461,8 +461,8 @@ milestones = [
 			["Riteg", "PlutoniumReaction2"],
 		],
 		"Exits": [],
-		"Experiments": 6,
-		"Experiment": [["UraniumCell", 1], ["ReflectorCell", 1], ["ControlCell", 1]],
+		"Runs": 6,
+		"Pack": [["UraniumCell", 1], ["ReflectorCell", 1], ["ControlCell", 1]],
 	},
 	{
 		"Name": "Composite",
@@ -490,8 +490,8 @@ milestones = [
 			["PlatinumReflector", 6, ["Diode", "DistributedComputing", "BatteryBox", "SmallSolarPanel", "SolarPanel"]],
 		],
 		"Exits": [["PlatinumReflector", "CompositePortal"]],
-		"Experiments": 30,
-		"Experiment": [["PowerCoil", 4], ["ReinforcedFrame", 2], ["PlatinumWire", 2]],
+		"Runs": 30,
+		"Pack": [["PowerCoil", 4], ["ReinforcedFrame", 2], ["PlatinumWire", 2]],
 	},
 	{
 		"Name": "Fusion",
@@ -522,8 +522,8 @@ milestones = [
 			["NeutroniumSteamTurbine", 7, ["Diode", "BatteryBox", "SmallSolarPanel", "SolarPanel"]],
 		],
 		"Exits": [["UltimateCatalyst", "NeutroniumPortal"]],
-		"Experiments": 20,
-		"Experiment": [["QuantumBrain", 1], ["PowerCoil", 1], ["PlatinumReflector", 2]],
+		"Runs": 20,
+		"Pack": [["QuantumBrain", 1], ["PowerCoil", 1], ["PlatinumReflector", 2]],
 	},
 	{
 		"Name": "Infinite",
@@ -535,8 +535,8 @@ milestones = [
 			["InventoryUpgrade7", "DrillingRigProductivity8"],
 		],
 		"Exits": [],
-		"Experiments": 0,
-		"Experiment": [],
+		"Runs": 0,
+		"Pack": [],
 	},
 ]
 
@@ -549,7 +549,7 @@ portal_cards = [
 	("CompositePortal", 6, [1, 11], [6], "Fusion"),
 	("NeutroniumPortal", 7, [1, 13], [7, 8], "Infinite"),
 ]
-milestones += [{
+experiments += [{
 	"Name": name,
 	"Label": "PortalTier" + str(tier),
 	"Position": position,
@@ -557,21 +557,21 @@ milestones += [{
 	"Stages": stages,
 	"Tree": [],
 	"Exits": [["", target]],
-	"Experiments": 1,
+	"Runs": 1,
 } for name, tier, position, stages, target in portal_cards]
 
 productivity_cards = [
 	("DrillingRigProductivity", [2, 0], [[120, pack] for pack in mass_packs]),
 	("PumpjackProductivity", [3, 6], [[30, pipe_packs[3]]] * 4 + [[120, pack] for pack in pipe_packs[4:]]),
 ]
-milestones += [{
+experiments += [{
 	"Name": name,
 	"Label": name,
 	"Position": position,
 	"Tree": [[name, ""]],
 	"Exits": [],
-	"Experiments": 0,
-	"Experiment": [],
+	"Runs": 0,
+	"Pack": [],
 	"Levels": levels,
 } for name, position, levels in productivity_cards]
 
@@ -594,7 +594,7 @@ def sign(value):
 	return (value > 0) - (value < 0)
 
 def direction(a, b):
-	pa, pb = milestone_by_name[a]["Position"], milestone_by_name[b]["Position"]
+	pa, pb = experiment_by_name[a]["Position"], experiment_by_name[b]["Position"]
 	return (sign(pb[0] - pa[0]), sign(pb[1] - pa[1]))
 
 def axis(d):
@@ -740,7 +740,7 @@ def layout(m, columns, rows, head_cell, exit_dirs, entry):
 						queue.append(nxt)
 			long_links.append(name)
 		if best is None:
-			raise Exception(f"Milestones: no room for {name} in {m['Name']}")
+			raise Exception(f"Experiments: no room for {name} in {m['Name']}")
 		put(name, best[1])
 
 	return pos, long_links
@@ -748,7 +748,7 @@ def layout(m, columns, rows, head_cell, exit_dirs, entry):
 research_objects = objects_of(get_generated_files()["Generated/Researches/basic.json"])
 research_by_name = {r["Name"]: r for r in research_objects}
 item_names = {o["Name"] for data in get_generated_files().values() for o in objects_of(data) if o.get("Class", "").startswith("StaticItem")}
-milestone_by_name = {m["Name"]: m for m in milestones}
+experiment_by_name = {m["Name"]: m for m in experiments}
 stage_dicts = {o["Name"]: o for data in get_generated_files().values() for o in objects_of(data) if o.get("Class") == r_dict and o.get("Recipes")}
 laboratory = next(machine for machine in machines if machine.get("BlockLogic") == "ResearchLaboratoryBlockLogic")
 
@@ -756,9 +756,9 @@ def version_card(series, tier):
 	for version in research_by_name[series].get("Versions", []):
 		if research_by_name[version["Technology"]]["Levels"][0] == tier:
 			return version["Technology"]
-	raise Exception(f"Milestones: {series} has no version of tier {tier}")
+	raise Exception(f"Experiments: {series} has no version of tier {tier}")
 
-for m in milestones:
+for m in experiments:
 	for group in m.get("Versions", []):
 		up, tier, series = group[:3]
 		cards = [card for _, _, card in sorted((research_by_name[card]["Complexity"], i, card) for i, card in enumerate(version_card(s, tier) for s in series))]
@@ -768,88 +768,88 @@ for m in milestones:
 
 owner = {}
 positions = {}
-for m in milestones:
+for m in experiments:
 	position = tuple(m["Position"])
 	if position in positions:
-		raise Exception(f"Milestones: {m['Name']} and {positions[position]} share the cell {position}")
+		raise Exception(f"Experiments: {m['Name']} and {positions[position]} share the cell {position}")
 	positions[position] = m["Name"]
 
 	built = "Build" in m
 	heads = [name for name, up in m["Tree"] if not up]
 	if len(heads) != (0 if built else 1):
-		raise Exception(f"Milestones: {m['Name']} needs {'no head, it is built' if built else 'exactly one head'}, has {heads}")
+		raise Exception(f"Experiments: {m['Name']} needs {'no head, it is built' if built else 'exactly one head'}, has {heads}")
 	m["Head"] = heads[0] if heads else ""
 	m["Researches"] = [name for name, _ in m["Tree"]]
 	if built:
 		stages = stage_dicts.get(m["Build"] + "Stage" + r_dict)
 		if m["Build"] not in item_names or not stages:
-			raise Exception(f"Milestones: {m['Name']} is built as {m['Build']}, which has no item or no stages")
-		if m["Experiments"] != 1:
-			raise Exception(f"Milestones: {m['Name']} is passed by one build, not {m['Experiments']}")
+			raise Exception(f"Experiments: {m['Name']} is built as {m['Build']}, which has no item or no stages")
+		if m["Runs"] != 1:
+			raise Exception(f"Experiments: {m['Name']} is passed by one build, not {m['Runs']}")
 		recipes = stages["Recipes"]
 		chosen = [recipes[k] for k in m["Stages"]] if "Stages" in m else recipes
 		bill = {}
 		for stage in chosen:
 			for need in stage["Input"]["Items"]:
 				bill[need["Name"]] = bill.get(need["Name"], 0) + need["Count"]
-		m["Experiment"] = [[name, count] for name, count in bill.items()]
+		m["Pack"] = [[name, count] for name, count in bill.items()]
 		m["Stage"] = chosen[-1]["Name"]
 	for name, up in m["Tree"]:
 		if name not in research_by_name:
-			raise Exception(f"Milestones: {m['Name']} names an unknown research {name}")
+			raise Exception(f"Experiments: {m['Name']} names an unknown research {name}")
 		if up and up not in m["Researches"]:
-			raise Exception(f"Milestones: {name} in {m['Name']} hangs on {up}, which is not in the milestone")
+			raise Exception(f"Experiments: {name} in {m['Name']} hangs on {up}, which is not in the experiment")
 		if name in owner:
-			raise Exception(f"Milestones: {name} is in both {owner[name]} and {m['Name']}")
+			raise Exception(f"Experiments: {name} is in both {owner[name]} and {m['Name']}")
 		owner[name] = m["Name"]
 		research_by_name[name]["Complexity"] *= m.get("CostMulOf", {}).get(name, m.get("CostMul", 1))
 	for name in m.get("CostMulOf", {}):
 		if name not in m["Researches"]:
-			raise Exception(f"Milestones: CostMulOf of {m['Name']} names {name}, which is not in the milestone")
+			raise Exception(f"Experiments: CostMulOf of {m['Name']} names {name}, which is not in the experiment")
 	if m["Label"] not in research_by_name:
-		raise Exception(f"Milestones: {m['Name']} takes its label from an unknown research {m['Label']}")
+		raise Exception(f"Experiments: {m['Name']} takes its label from an unknown research {m['Label']}")
 
 	levels = m.get("Levels", [])
-	for item, count in m["Experiment"] + [entry for _, pack in levels for entry in pack]:
+	for item, count in m["Pack"] + [entry for _, pack in levels for entry in pack]:
 		if item not in item_names:
-			raise Exception(f"Milestones: experiment of {m['Name']} names an unknown item {item}")
+			raise Exception(f"Experiments: experiment of {m['Name']} names an unknown item {item}")
 		if not isinstance(count, int) or count < 1:
-			raise Exception(f"Milestones: experiment of {m['Name']} takes {count} of {item}, a pack holds whole items")
-	if (m["Experiments"] > 0) != bool(m["Experiment"]):
-		raise Exception(f"Milestones: {m['Name']} has {m['Experiments']} experiments of {m['Experiment']}")
+			raise Exception(f"Experiments: experiment of {m['Name']} takes {count} of {item}, a pack holds whole items")
+	if (m["Runs"] > 0) != bool(m["Pack"]):
+		raise Exception(f"Experiments: {m['Name']} has {m['Runs']} experiments of {m['Pack']}")
 	if levels:
 		head = research_by_name[m["Head"]]
-		if m["Experiments"] or built or not head.get("Infinite") or head.get("MaxLevel") != len(levels):
-			raise Exception(f"Milestones: {m['Name']} has {len(levels)} levels, its head {m['Head']} takes {head.get('MaxLevel')} and nothing else pays for it")
+		if m["Runs"] or built or not head.get("Infinite") or head.get("MaxLevel") != len(levels):
+			raise Exception(f"Experiments: {m['Name']} has {len(levels)} levels, its head {m['Head']} takes {head.get('MaxLevel')} and nothing else pays for it")
 		if any(not isinstance(count, int) or count < 1 or not pack for count, pack in levels):
-			raise Exception(f"Milestones: a level of {m['Name']} takes no experiments or an empty pack")
+			raise Exception(f"Experiments: a level of {m['Name']} takes no experiments or an empty pack")
 
 unplaced = [r["Name"] for r in research_objects if r["Class"] == "StaticResearchTechnology" and r["Name"] not in owner]
 if unplaced:
-	raise Exception(f"Milestones: machine versions on no milestone: {unplaced}")
+	raise Exception(f"Experiments: machine versions on no experiment: {unplaced}")
 
-entries = {m["Name"]: [] for m in milestones}
-for m in milestones:
+entries = {m["Name"]: [] for m in experiments}
+for m in experiments:
 	for research, target in m["Exits"]:
 		if research not in m["Researches"] and (research or m["Tree"]):
-			raise Exception(f"Milestones: exit {research} of {m['Name']} is not one of its researches")
-		if target not in milestone_by_name:
-			raise Exception(f"Milestones: exit of {m['Name']} leads to an unknown milestone {target}")
+			raise Exception(f"Experiments: exit {research} of {m['Name']} is not one of its researches")
+		if target not in experiment_by_name:
+			raise Exception(f"Experiments: exit of {m['Name']} leads to an unknown experiment {target}")
 		entries[target].append((m["Name"], research))
 
-roots = [m["Name"] for m in milestones if not entries[m["Name"]]]
+roots = [m["Name"] for m in experiments if not entries[m["Name"]]]
 if len(roots) != 1:
-	raise Exception(f"Milestones: the map needs one root, has {roots}")
+	raise Exception(f"Experiments: the map needs one root, has {roots}")
 
 boxes = {}
 box_of = {}
 chunk_heads = set()
-for m in milestones:
+for m in experiments:
 	parent = {name: up for name, up in m["Tree"]}
 	chunks = {name: tuple(d) for name, d in m.get("Chunks", {}).items()}
 	for name in chunks:
 		if not parent.get(name):
-			raise Exception(f"Milestones: chunk {name} of {m['Name']} is not a research hanging in it")
+			raise Exception(f"Experiments: chunk {name} of {m['Name']} is not a research hanging in it")
 	chunk_heads.update(chunks)
 
 	def top(name):
@@ -859,17 +859,17 @@ for m in milestones:
 
 	key_of = lambda head: m["Name"] if head == m["Head"] else m["Name"] + ":" + head
 	for head in [m["Head"]] + list(chunks):
-		boxes[key_of(head)] = {"Milestone": m["Name"], "Head": head, "Exits": [], "Tree": [[name, "" if name == head else up] for name, up in m["Tree"] if top(name) == head]}
+		boxes[key_of(head)] = {"Experiment": m["Name"], "Head": head, "Exits": [], "Tree": [[name, "" if name == head else up] for name, up in m["Tree"] if top(name) == head]}
 	for name, _ in m["Tree"]:
 		box_of[name] = key_of(top(name))
 	for head, d in chunks.items():
 		boxes[key_of(head)]["Entry"] = (box_of[parent[head]], parent[head], d)
 		boxes[box_of[parent[head]]]["Exits"].append((parent[head], d))
 
-def exit_box(milestone, research):
-	return box_of[research] if research else milestone
+def exit_box(experiment, research):
+	return box_of[research] if research else experiment
 
-for m in milestones:
+for m in experiments:
 	for research, target in m["Exits"]:
 		boxes[exit_box(m["Name"], research)]["Exits"].append((research, direction(m["Name"], target)))
 	if entries[m["Name"]]:
@@ -879,7 +879,7 @@ for m in milestones:
 cell_of = {}
 origin_x = {}
 card_of = {}
-paths = {m["Name"]: [] for m in milestones}
+paths = {m["Name"]: [] for m in experiments}
 node_at = {}
 card_at = set()
 line_at = set()
@@ -914,8 +914,8 @@ while queue:
 		queue.append(key)
 		continue
 	done.append(key)
-	carded = key in milestone_by_name
-	rows = milestone_by_name[key].get("Rows", tree_rows) if carded else tree_rows
+	carded = key in experiment_by_name
+	rows = experiment_by_name[key].get("Rows", tree_rows) if carded else tree_rows
 	reach = card_step if carded else 0
 	exit_dirs = {}
 	for research, d in box["Exits"]:
@@ -933,7 +933,7 @@ while queue:
 	else:
 		e = (0, 1)
 		head_local = (cell_columns // 2, 0)
-		x0 = milestone_by_name[key]["Position"][0] * column_pitch
+		x0 = experiment_by_name[key]["Position"][0] * column_pitch
 	anchor_local = add(head_local, scale(e, -reach))
 	reserved = through([anchor_local, head_local]) + [(x, head_local[1]) for x in range(cell_columns) if (x - head_local[0]) * e[0] < 0]
 	if carded:
@@ -962,7 +962,7 @@ while queue:
 		if fits(set(nodes.values()), cards, line):
 			break
 	else:
-		raise Exception(f"Milestones: no room for {key}")
+		raise Exception(f"Experiments: no room for {key}")
 	long_links += [f"{key}:{n}" for n in missed]
 
 	cell_of.update(nodes)
@@ -970,7 +970,7 @@ while queue:
 	if carded:
 		card_of[key] = anchor
 	if points:
-		paths[box["Milestone"]].append(points)
+		paths[box["Experiment"]].append(points)
 	node_at.update({cell: key for cell in nodes.values()})
 	card_at.update(cards)
 	line_at.update(line)
@@ -979,10 +979,10 @@ while queue:
 			queue.append(next_key)
 
 if len(done) != len(boxes):
-	raise Exception(f"Milestones: not reachable from {roots[0]}: {[key for key in boxes if key not in done]}")
+	raise Exception(f"Experiments: not reachable from {roots[0]}: {[key for key in boxes if key not in done]}")
 
 crossing = []
-for m in milestones:
+for m in experiments:
 	for source, research in entries[m["Name"]][1:]:
 		e = axis(direction(source, m["Name"]))
 		exit_cell = exit_cell_of(source, research)
@@ -1000,25 +1000,25 @@ for m in milestones:
 
 lengths = sorted(((sum(abs(b[0] - a[0]) + abs(b[1] - a[1]) for a, b in zip(p, p[1:])), name) for name in paths for p in paths[name]), reverse=True)
 outside = [r["Name"] for r in research_objects if r["Name"] not in owner]
-diagonal = sum(1 for m in milestones for name, up in m["Tree"] if up and abs(cell_of[name][0] - cell_of[up][0]) == 1 and abs(cell_of[name][1] - cell_of[up][1]) == 1)
-print(f"Milestones: {len(milestones)} milestones, {sum(len(m['Researches']) for m in milestones)} researches on the grid, {len(outside)} outside, {diagonal} diagonal links, long links {long_links}")
-print(f"Milestones: lines into milestones {sum(n for n, _ in lengths)} cells, longest {lengths[:3]}, crossing {crossing}")
+diagonal = sum(1 for m in experiments for name, up in m["Tree"] if up and abs(cell_of[name][0] - cell_of[up][0]) == 1 and abs(cell_of[name][1] - cell_of[up][1]) == 1)
+print(f"Experiments: {len(experiments)} experiments, {sum(len(m['Researches']) for m in experiments)} researches on the grid, {len(outside)} outside, {diagonal} diagonal links, long links {long_links}")
+print(f"Experiments: lines into experiments {sum(n for n, _ in lengths)} cells, longest {lengths[:3]}, crossing {crossing}")
 
-own_lines = sum(1 for m in milestones for name, up in m["Tree"] if up in (research_by_name[name].get("RequiredResearch") or []))
-for m in milestones:
+own_lines = sum(1 for m in experiments for name, up in m["Tree"] if up in (research_by_name[name].get("RequiredResearch") or []))
+for m in experiments:
 	for name, up in m["Tree"]:
 		research_by_name[name]["RequiredResearch"] = [up] if up else []
-print(f"Milestones: a research opens by its line, {own_lines} of {sum(len(m['Tree']) - 1 for m in milestones)} lines are its own requirement")
+print(f"Experiments: a research opens by its line, {own_lines} of {sum(len(m['Tree']) - 1 for m in experiments)} lines are its own requirement")
 
-milestone_tier = {}
-for name in (key for key in done if key in milestone_by_name):
-	m = milestone_by_name[name]
+experiment_tier = {}
+for name in (key for key in done if key in experiment_by_name):
+	m = experiment_by_name[name]
 	own = sorted(research_by_name[r]["Tier"] for r in m["Researches"])
-	milestone_tier[name] = max(own[len(own) // 2:len(own) // 2 + 1] + [milestone_tier.get(source, 0) for source, _ in entries[name]])
+	experiment_tier[name] = max(own[len(own) // 2:len(own) // 2 + 1] + [experiment_tier.get(source, 0) for source, _ in entries[name]])
 
 def price(m, name, floor):
 	research = research_by_name[name]
-	tier = milestone_tier[m["Name"]]
+	tier = experiment_tier[m["Name"]]
 	cost = max(floor, research["Complexity"])
 	research["Tier"] = tier
 	research["Complexity"] = cost
@@ -1026,22 +1026,22 @@ def price(m, name, floor):
 		if up == name:
 			price(m, child, cost)
 
-for m in milestones:
+for m in experiments:
 	if m["Head"]:
 		price(m, m["Head"], 0)
 	for name in m["Researches"]:
-		research_by_name[name]["Complexity"] = round(research_by_name[name]["Complexity"] * tier_cost_mul.get(milestone_tier[m["Name"]], 1))
-print(f"Milestones: tiers {milestone_tier}")
+		research_by_name[name]["Complexity"] = round(research_by_name[name]["Complexity"] * tier_cost_mul.get(experiment_tier[m["Name"]], 1))
+print(f"Experiments: tiers {experiment_tier}")
 
 objects = []
-for m in milestones:
+for m in experiments:
 	built = "Build" in m
 	objects.append({
-		"Class": "StaticMilestone",
+		"Class": "StaticExperiment",
 		"Name": m["Name"],
 		"Label": [m["Title"], "researches"] if "Title" in m else research_by_name[m["Label"]]["Label"],
 		"Icon": m["Label"],
-		"Tier": milestone_tier[m["Name"]],
+		"Tier": experiment_tier[m["Name"]],
 		"Position": m["Position"],
 		"Head": m["Head"],
 		"Researches": m["Researches"],
@@ -1049,23 +1049,23 @@ for m in milestones:
 		"Card": list(card_of[m["Name"]]),
 		"Paths": [[list(p) for p in points] for points in paths[m["Name"]]],
 		"Exits": m["Exits"],
-		"Experiments": m["Experiments"],
-		"Experiment": m["Experiment"],
-		"Recipe": [m["Build"] + "Stage" + r_dict, m["Stage"]] if built else [laboratory["Name"] + r_dict, m["Name"] + "Experiment"] if m["Experiments"] else [],
+		"Runs": m["Runs"],
+		"Pack": m["Pack"],
+		"Recipe": [m["Build"] + "Stage" + r_dict, m["Stage"]] if built else [laboratory["Name"] + r_dict, m["Name"] + "Experiment"] if m["Runs"] else [],
 	})
 	if "Image" in m:
 		objects[-1]["Image"] = m["Image"]
 	if "Levels" in m:
 		objects[-1]["Levels"] = [{
-			"Experiments": count,
-			"Experiment": pack,
+			"Runs": count,
+			"Pack": pack,
 			"Recipe": [laboratory["Name"] + r_dict, m["Name"] + "Experiment" + str(level + 1)],
 		} for level, (count, pack) in enumerate(m["Levels"])]
 	if built:
 		objects[-1]["Build"] = m["Build"]
 		del objects[-1]["Head"]
 
-write_file("Generated/Researches/milestones.json", {"Objects": objects})
+write_file("Generated/Researches/experiments.json", {"Objects": objects})
 
 write_file("Generated/Recipes/laboratory.json", {"Objects": [{
 	"Class": r_dict,
@@ -1074,13 +1074,13 @@ write_file("Generated/Recipes/laboratory.json", {"Objects": [{
 	"UsedIn": [{"Item": tier_material[laboratory["StartTier"]] + laboratory["Name"], "Tier": laboratory["StartTier"]}],
 	"Recipes": [{
 		"Name": m["Name"] + "Experiment",
-		"Input": items(m["Experiment"]),
+		"Input": items(m["Pack"]),
 		"Output": no_items(),
 		"Ticks": experiment_ticks,
-	} for m in milestones if m["Experiments"] and "Build" not in m] + [{
+	} for m in experiments if m["Runs"] and "Build" not in m] + [{
 		"Name": m["Name"] + "Experiment" + str(level + 1),
 		"Input": items(pack),
 		"Output": no_items(),
 		"Ticks": experiment_ticks,
-	} for m in milestones for level, (count, pack) in enumerate(m.get("Levels", []))],
+	} for m in experiments for level, (count, pack) in enumerate(m.get("Levels", []))],
 }]})
