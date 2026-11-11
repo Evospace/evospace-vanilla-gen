@@ -1398,6 +1398,7 @@ recipes_mixer.append({
 	"Output": one_item("PreparedTitaniumOxideDust"),
 	"Ticks" : 200,
 	"Scaled": False,
+	"Tier": 5,
 })
 
 recipes_sep.append({
@@ -1776,7 +1777,8 @@ recipes_industrial_chemreactor.append({
 	]),
 	"Output": one_item("TitaniumTetrachloride", 1000),
 	"Ticks" : 200,
-	"Colors": [[0.8,0.8,0,0.3],[.3,0,0.3]]
+	"Colors": [[0.8,0.8,0,0.3],[.3,0,0.3]],
+	"Tier": 5,
 })
 
 recipes_industrial_chemreactor.append({
@@ -1786,7 +1788,8 @@ recipes_industrial_chemreactor.append({
 		["AluminiumDust", 1],
 	]),
 	"Output": one_item("TitaniumSponge"),
-	"Ticks" : 200
+	"Ticks" : 200,
+	"Tier": 5,
 })
 
 oil_crack.append({
