@@ -184,7 +184,7 @@ machines = [
 		"Description": ["ElectricConductor"],
 		"ExactName": True,
 		"NoActorRenderable": True,
-		"CoverParts": [{"Cover": "PowerPole", "Offset": [0,0,-0.5]}],
+		"CoverParts": [{"Cover": "PowerPole", "Offset": [0,0,-0.5]}, {"Cover": "PowerPoleHead", "Offset": [0,0,-0.5]}],
 	},{
 		"Name": "PowerTower",
 		"Category": "Network",
@@ -198,7 +198,7 @@ machines = [
 		"Description": ["ElectricConductor"],
 		"ExactName": True,
 		"NoActorRenderable": True,
-		"CoverParts": [{"Cover": "PowerTower", "Offset": [0.5,0.5,-0.5]}],
+		"CoverParts": [{"Cover": "PowerTower", "Offset": [0.5,0.5,-0.5]}, {"Cover": "PowerTowerHead", "Offset": [0.5,0.5,-0.5]}],
 	},{
 		"Name": "Chest",
 		"Category": "Logistics",

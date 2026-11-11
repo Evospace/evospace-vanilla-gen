@@ -216,8 +216,14 @@ covers = [
         "Name": "PowerPole",
         "Mesh": "/Game/Blocks/PowerLine/SM_PowerPole",
     },{
+        "Name": "PowerPoleHead",
+        "Mesh": "/Game/Blocks/PowerLine/SM_PowerPoleHead",
+    },{
         "Name": "PowerTower",
         "Mesh": "/Game/Blocks/PowerLine/SM_PowerTower",
+    },{
+        "Name": "PowerTowerHead",
+        "Mesh": "/Game/Blocks/PowerLine/SM_PowerTowerHead",
     },{
         "Name": "PowerWire",
         "Mesh": "/Game/Blocks/PowerLine/SM_PowerWire",
