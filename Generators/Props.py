@@ -126,6 +126,7 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"SurfaceHeightMin": 0,
 		"IsBig": True,
+		"GuardsGround": True,
 		"Drops": "Log",
 		"Count": 25,
 		"HitsToBreak": 10,
@@ -145,6 +146,7 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"SurfaceHeightMin": 0,
 		"IsBig": True,
+		"GuardsGround": True,
 		"Drops": "Log",
 		"Count": 8,
 		"HitsToBreak": 5,
@@ -188,6 +190,7 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"SurfaceHeightMin": 0,
 		"IsBig": True,
+		"GuardsGround": True,
 		"Drops": "Log",
 		"Count": 20,
 		"HitsToBreak": 8,
@@ -202,6 +205,7 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"SurfaceHeightMin": 0,
 		"IsBig": True,
+		"GuardsGround": True,
 		"Drops": "Log",
 		"Count": 20,
 		"HitsToBreak": 8,
@@ -216,6 +220,7 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"SurfaceHeightMin": 0,
 		"IsBig": True,
+		"GuardsGround": True,
 		"Drops": "Log",
 		"Count": 20,
 		"HitsToBreak": 8,
@@ -230,6 +235,7 @@ props = [
 		"ProjectToTerrainPower": 0,
 		"SurfaceHeightMin": 0,
 		"IsBig": True,
+		"GuardsGround": True,
 		"Drops": "Log",
 		"Count": 10,
 		"HitsToBreak": 4,
@@ -513,6 +519,7 @@ for ore in deposit_kits:
 		"HitYield": 3,
 		"RangeMul": 3,
 		"IsBig": True,
+		"GuardsGround": True,
 		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
 		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C",
 	})
@@ -530,6 +537,7 @@ for ore in deposit_kits:
 		"HitYield": 3,
 		"RangeMul": 2,
 		"IsBig": True,
+		"GuardsGround": True,
 		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
 		"BreakEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
 	})
@@ -1220,6 +1228,8 @@ for prop in props:
 			temp_prop["Streamed"] = prop["Streamed"]
 		if "NoCollision" in prop:
 			temp_prop["NoCollision"] = prop["NoCollision"]
+		if "GuardsGround" in prop:
+			temp_prop["GuardsGround"] = prop["GuardsGround"]
 		if "VehicleBreakSpeed" in prop:
 			temp_prop["VehicleBreakSpeed"] = prop["VehicleBreakSpeed"]
 		if "Satellites" in prop:
