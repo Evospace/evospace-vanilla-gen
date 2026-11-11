@@ -641,6 +641,8 @@ objects_array.append({
 	"BlockLogic": "SatelliteAntennaBlockLogic",
 	"Actor": block_actor("SatelliteAntenna"),
 	"Tier": 3,
+	"EnergyConsumptionPerTick": 100,
+	"EnergyConsumptionItem": "Electricity",
 	"Positions": [[0, 0, 0]] + [[x, y, z] for z in range(7) for x in range(1, -5, -1) for y in range(-2, 4) if [x, y, z] != [0, 0, 0]],
 	"Minable": {
 		"Result": "SatelliteAntenna",
