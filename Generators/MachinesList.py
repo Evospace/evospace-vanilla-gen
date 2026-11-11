@@ -174,8 +174,8 @@ machines = [
 	},{
 		"Name": "PowerPole",
 		"Category": "Network",
-		"StartTier": 1,
-		"EndTier": 1,
+		"StartTier": 2,
+		"EndTier": 2,
 		"BlockLogic": "PowerPoleBlockLogic",
 		"Positions": [[0,0,z] for z in range(4)],
 		"RotationLocks": [0,0,1],

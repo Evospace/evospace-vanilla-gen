@@ -320,7 +320,7 @@ append_levels({
 	"Name": "PowerTransmission",
 	"Label": ["PowerTransmission", "researches"],
 	"RequiredResearch": ["PowerGeneration"],
-	"Unlocks": [["Hand" + r_dict, "CopperConnector"], ["Hand" + r_dict, "PowerPole"]],
+	"Unlocks": [["Hand" + r_dict, "CopperConnector"]],
 	"Levels": [0, 0],
 	"CostExact": 100,
 	"MainResearch": True,
@@ -349,6 +349,14 @@ append_levels({
 	"Label": ["ElectricalSwitch", "machines"],
 	"RequiredResearch": ["CopperWire","SteelProduction"],
 	"Unlocks": [["Hand" + r_dict, tier_material[2] + "ElectricalSwitch"]],
+	"Levels": [2,2],
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "PowerPole",
+	"Label": ["PowerPole", "machines"],
+	"RequiredResearch": ["ElectricalSwitch"],
+	"Unlocks": [["Hand" + r_dict, "PowerPole"]],
 	"Levels": [2,2],
 })
 append_levels({
@@ -1481,9 +1489,16 @@ append_levels({
 	"RequiredResearch": ["AluminiumProduction"],
 	"Levels": [3,7],
 	"Unlocks": [["Hand" + r_dict, "%Material%BatteryBox"] ],
-	"UnlockFirst": [["Hand" + r_dict, "PowerTower"]],
 	"MainResearch": True,
 	"CostMuls": [5, 1, 1, 1, 1],
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "PowerTower",
+	"Label": ["PowerTower", "machines"],
+	"RequiredResearch": ["BatteryBox"],
+	"Unlocks": [["Hand" + r_dict, "PowerTower"]],
+	"Levels": [3,3],
 })
 append_levels({
 	"Class": research_recipe,
