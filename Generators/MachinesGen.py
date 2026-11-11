@@ -214,7 +214,7 @@ for machine in machines:
 		item = { "Class": "StaticItem",
 			"Name": block_name,
 			"Image": ("T_" + image) if "ExactName" in machine and "TieredImage" not in machine else tier_image,
-			"StackSize": 32,
+			"StackSize": machine.get("StackSize", 32),
 			"Label": labelParts,
 			"DescriptionParts": [] if "NoDescriptionText" in machine else [[machine.get("DescriptionName", machine["Name"]), "description"]],
 			"ItemLogic": building_single_logic if "ItemLogic" not in machine else machine["ItemLogic"],

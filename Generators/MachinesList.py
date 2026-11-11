@@ -93,6 +93,7 @@ machines = [
 		"Category": "Network",
 		"StartTier": 1,
 		"EndTier": 7,
+		"StackSize": 128,
 		"BlockLogic": "ConductorBlockLogic",
 		"RotationLocks": [1,1,1],
 		"LogicExports": ["Storage", "Capacity", "Fill"],
@@ -105,6 +106,7 @@ machines = [
 		"Category": "Network",
 		"StartTier": 1,
 		"EndTier": 1,
+		"StackSize": 128,
 		"BlockLogic": "HeatContainerBlockLogic",
 		"RotationLocks": [1,1,1],
 		"LogicExports": ["Storage", "Capacity", "Fill"],
@@ -248,6 +250,7 @@ machines = [
 		"Category": "Logistics",
 		"StartTier": 1,
 		"EndTier": 7,
+		"StackSize": 128,
 		"CommonTextKeys":[
 			"Conveyor",
 			"Transporter"
