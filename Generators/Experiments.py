@@ -530,12 +530,11 @@ experiments = [
 	},
 	{
 		"Name": "Infinite",
-		"Label": "DrillingRigProductivity8",
+		"Label": "InventoryUpgrade7",
 		"Position": [1, 14],
+		"Tier": 8,
 		"Tree": [
-			["DrillingRigProductivity8", ""],
-			["PumpjackProductivity8", "DrillingRigProductivity8"],
-			["InventoryUpgrade7", "DrillingRigProductivity8"],
+			["InventoryUpgrade7", ""],
 		],
 		"Exits": [],
 		"Runs": 0,
@@ -563,19 +562,23 @@ experiments += [{
 	"Runs": 1,
 } for name, tier, position, stages, target in portal_cards]
 
+modifier_by_name = {o["Name"]: o for o in get_generated_files()["Generated/Mixed/modifiers.json"]["Objects"]}
+productivity_bonus = 5
 productivity_cards = [
 	("DrillingRigProductivity", [2, 0], [[120, pack] for pack in mass_packs]),
 	("PumpjackProductivity", [3, 6], [[30, pipe_packs[3]]] * 4 + [[120, pack] for pack in pipe_packs[4:]]),
 ]
 experiments += [{
 	"Name": name,
-	"Label": name,
+	"Modifier": name,
+	"BonusValue": productivity_bonus,
 	"Position": position,
-	"Tree": [[name, ""]],
+	"Tree": [],
 	"Exits": [],
 	"Runs": 0,
 	"Pack": [],
 	"Levels": levels,
+	"Step": levels[-1][0],
 } for name, position, levels in productivity_cards]
 
 cell_columns = 7
@@ -801,9 +804,10 @@ for m in experiments:
 	positions[position] = m["Name"]
 
 	built = "Build" in m
+	leveled = "Levels" in m
 	heads = [name for name, up in m["Tree"] if not up]
-	if len(heads) != (0 if built else 1):
-		raise Exception(f"Experiments: {m['Name']} needs {'no head, it is built' if built else 'exactly one head'}, has {heads}")
+	if len(heads) != (0 if built or leveled else 1):
+		raise Exception(f"Experiments: {m['Name']} needs {'no head, it is built' if built else 'no head, it is leveled' if leveled else 'exactly one head'}, has {heads}")
 	m["Head"] = heads[0] if heads else ""
 	m["Researches"] = [name for name, _ in m["Tree"]]
 	if built:
@@ -832,7 +836,7 @@ for m in experiments:
 	for name in m.get("CostMulOf", {}):
 		if name not in m["Researches"]:
 			raise Exception(f"Experiments: CostMulOf of {m['Name']} names {name}, which is not in the experiment")
-	if m["Label"] not in research_by_name:
+	if not leveled and m["Label"] not in research_by_name:
 		raise Exception(f"Experiments: {m['Name']} takes its label from an unknown research {m['Label']}")
 
 	levels = m.get("Levels", [])
@@ -843,11 +847,10 @@ for m in experiments:
 			raise Exception(f"Experiments: experiment of {m['Name']} takes {count} of {item}, a pack holds whole items")
 	if (m["Runs"] > 0) != bool(m["Pack"]):
 		raise Exception(f"Experiments: {m['Name']} has {m['Runs']} experiments of {m['Pack']}")
-	if levels:
-		head = research_by_name[m["Head"]]
-		if m["Runs"] or built or not head.get("Infinite") or head.get("MaxLevel") != len(levels):
-			raise Exception(f"Experiments: {m['Name']} has {len(levels)} levels, its head {m['Head']} takes {head.get('MaxLevel')} and nothing else pays for it")
-		if any(not isinstance(count, int) or count < 1 or not pack for count, pack in levels):
+	if leveled:
+		if m["Runs"] or built or m["Tree"] or m.get("Modifier") not in modifier_by_name or m.get("BonusValue", 0) < 1 or m.get("Step", 0) < 1:
+			raise Exception(f"Experiments: leveled {m['Name']} needs a modifier, a bonus per level and a step of runs past its levels, and no runs, stages or researches of its own")
+		if not levels or any(not isinstance(count, int) or count < 1 or not pack for count, pack in levels):
 			raise Exception(f"Experiments: a level of {m['Name']} takes no experiments or an empty pack")
 
 unplaced = [r["Name"] for r in research_objects if r["Class"] == "StaticResearchTechnology" and r["Name"] not in owner]
@@ -1039,7 +1042,7 @@ experiment_tier = {}
 for name in (key for key in done if key in experiment_by_name):
 	m = experiment_by_name[name]
 	own = sorted(research_by_name[r]["Tier"] for r in m["Researches"])
-	experiment_tier[name] = max(own[len(own) // 2:len(own) // 2 + 1] + [experiment_tier.get(source, 0) for source, _ in entries[name]])
+	experiment_tier[name] = max(own[len(own) // 2:len(own) // 2 + 1] + [m.get("Tier", 0)] + [experiment_tier.get(source, 0) for source, _ in entries[name]])
 
 def price(m, name, floor):
 	research = research_by_name[name]
@@ -1064,8 +1067,7 @@ for m in experiments:
 	objects.append({
 		"Class": "StaticExperiment",
 		"Name": m["Name"],
-		"Label": [m["Title"], "researches"] if "Title" in m else research_by_name[m["Label"]]["Label"],
-		"Icon": m["Label"],
+		"Label": modifier_by_name[m["Modifier"]]["Label"] if "Modifier" in m else [m["Title"], "researches"] if "Title" in m else research_by_name[m["Label"]]["Label"],
 		"Tier": experiment_tier[m["Name"]],
 		"Position": m["Position"],
 		"Head": m["Head"],
@@ -1078,14 +1080,24 @@ for m in experiments:
 		"Pack": m["Pack"],
 		"Recipe": [m["Build"] + "Stage" + r_dict, m["Stage"]] if built else [laboratory["Name"] + r_dict, m["Name"] + "Experiment"] if m["Runs"] else [],
 	})
+	if "Label" in m:
+		objects[-1]["Icon"] = m["Label"]
 	if "Image" in m:
 		objects[-1]["Image"] = m["Image"]
 	if "Levels" in m:
-		objects[-1]["Levels"] = [{
-			"Runs": count,
-			"Pack": pack,
-			"Recipe": [laboratory["Name"] + r_dict, m["Name"] + "Experiment" + str(level + 1)],
-		} for level, (count, pack) in enumerate(m["Levels"])]
+		modifier = modifier_by_name[m["Modifier"]]
+		objects[-1].update({
+			"Image": modifier["Image"],
+			"Modifier": m["Modifier"],
+			"BonusValue": m["BonusValue"],
+			"Step": m["Step"],
+			"Levels": [{
+				"Runs": count,
+				"Pack": pack,
+				"Recipe": [laboratory["Name"] + r_dict, m["Name"] + "Experiment" + str(level + 1)],
+			} for level, (count, pack) in enumerate(m["Levels"])],
+		})
+		del objects[-1]["Head"]
 	if built:
 		objects[-1]["Build"] = m["Build"]
 		del objects[-1]["Head"]

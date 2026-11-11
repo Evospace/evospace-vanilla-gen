@@ -11,7 +11,6 @@ legacy_levels = {}
 legacy_level_bases = {"AutomaticHammer": "BasicMachines", "Macerator": "BasicMachines", "Conveyor": "Automatization", "Splitter": "Automatization"}
 legacy_lamps = ["CopperLamp", "Lamp", "AluminiumLamp", "StainlessSteelLamp", "TitaniumLamp", "CompositeLamp", "NeutroniumLamp"]
 bonus_slots = 11
-last_tier = 7
 
 def level_cost(research_base, i, this_level):
 	cost_mul = research_base.get("CostMul", 1)
@@ -23,20 +22,6 @@ def level_cost(research_base, i, this_level):
 
 def level_unlocks(research_base, i):
 	return [[j[0], j[1].replace("%Material%", tier_material[i])] for j in research_base.get("Unlocks", [])]
-
-def infinite_tail(research, cost):
-	tail = {key: value for key, value in research.items() if key not in ("Complexities", "RequiredResearch")}
-	tail.update({
-		"Name": research["Name"] + str(last_tier + 1),
-		"RequiredResearch": [research["Name"]],
-		"Levels": [last_tier + 1, last_tier + 1],
-		"Tier": last_tier + 1,
-		"Complexity": cost,
-		"Complexities": [],
-	})
-	research["MaxLevel"] = len(research["Complexities"])
-	researches.append(tail)
-	return tail
 
 def replace_level(research_base, this_level, old_name, replacement):
 	replaced_levels[old_name] = replacement
@@ -61,7 +46,7 @@ def append_levels(research_base):
 		mini, maxi = research_base["Levels"][0], research_base["Levels"][1] + 1
 
 	research = copy.deepcopy(research_base)
-	for key in ("RequiredResearchArr", "MainResearchArr", "DecorationsArr", "UnlockFirst", "CostMul", "CostMuls", "CostExact", "CostGrowth"):
+	for key in ("RequiredResearchArr", "MainResearchArr", "DecorationsArr", "UnlockFirst", "CostMul", "CostMuls", "CostExact"):
 		research.pop(key, None)
 	research.setdefault("RequiredResearch", [])
 	research["RequiredResearch"].extend(research_base.get("RequiredResearchArr", [[]])[0])
@@ -76,12 +61,8 @@ def append_levels(research_base):
 		"Tier": mini,
 		"Complexity": level_cost(research_base, mini, 0),
 	})
-	if research_base.get("Infinite"):
-		research["Complexities"] = [research["Complexity"]]
-		research["CostGrowth"] = research_base.get("CostGrowth", 2)
 	researches.append(research)
 
-	tail = None
 	previous_card = research["Name"]
 	for i in range(mini + 1, maxi):
 		this_level = i - mini
@@ -90,14 +71,6 @@ def append_levels(research_base):
 		unlocks = level_unlocks(research_base, i)
 		decorations = list(research_base["DecorationsArr"][this_level]) if "DecorationsArr" in research_base else []
 		inventory = research_base["Class"] == "StaticResearchBonusInventory"
-
-		if research_base.get("Infinite"):
-			if i > last_tier and tail is None:
-				tail = infinite_tail(research, cost)
-			owner = tail if i > last_tier else research
-			owner["Complexities"].append(cost)
-			replace_level(research_base, this_level, old_name, [owner["Name"]])
-			continue
 
 		if i == 1:
 			research.setdefault("Unlocks", []).extend(unlocks)
@@ -631,30 +604,6 @@ append_levels({
 	"Unlocks": [["Hand" + r_dict, "%Material%DrillingRig"] ],
 	"CostMuls":[0.1, 0.75, 2.0, 3.0, 4.0, 5.0, 6.0],
 	"MainResearch": True
-})
-append_levels({
-	"Class": "StaticResearchModifier",
-	"Name": "DrillingRigProductivity",
-	"Label": ["DrillingRigProductivity", "modifiers"],
-	"RequiredResearch": ["AutomaticMining1"],
-	"Modifier": "DrillingRigProductivity",
-	"Image": "T_DrillingRigProductivity",
-	"BonusValue": 5,
-	"Levels": [1, 8],
-	"CostMul": 11,
-	"Infinite": True,
-})
-append_levels({
-	"Class": "StaticResearchModifier",
-	"Name": "PumpjackProductivity",
-	"Label": ["PumpjackProductivity", "modifiers"],
-	"RequiredResearch": ["Pumpjack"],
-	"Modifier": "PumpjackProductivity",
-	"Image": "T_PumpjackProductivity",
-	"BonusValue": 5,
-	"Levels": [1, 8],
-	"CostMul": 11,
-	"Infinite": True,
 })
 append_levels({
 	"Class": research_recipe,
