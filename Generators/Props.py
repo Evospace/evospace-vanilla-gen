@@ -464,7 +464,7 @@ props = [
 	}
 ]
 
-deposit_kits = ["Ruby", "Cinnabar", "Malachite", "Thorianite", "Magnetite", "Pyroplatite", "Chalcopyrite", "Pyrite"]
+deposit_kits = ["Ruby", "Cinnabar", "Malachite", "Thorianite", "Magnetite", "Pyroplatite", "Chalcopyrite", "Pyrite", "Coal"]
 
 deposit_models = {
 	ore: {
