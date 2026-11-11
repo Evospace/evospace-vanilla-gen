@@ -237,7 +237,7 @@ experiments = [
 			["OffroadVehicle", "Boat"],
 			["Jetpack", "Boat"],
 			["Sifter", "AluminiumSeparator"],
-			["ReinforcedConcrete", "ReinforcedFrame"],
+			["ReinforcedConcrete", "AluminiumProduction"],
 			["ReinforcedConcreteTiles", "ReinforcedConcrete"],
 			["ReinforcedConcreteSmallTiles", "ReinforcedConcreteTiles"],
 			["ReinforcedConcreteBricks", "ReinforcedConcreteTiles"],
@@ -340,6 +340,9 @@ experiments = [
 			["StainlessSteelConveyor", 4, ["AutomaticFarm", "AutomaticMining"]],
 			["StainlessSteelProduction", 4, ["MetalBlocks", "Lamp", "SingleTypeStorage", "Destroyer", "Sign", "AdvancedSign", "Chest", "Container"]],
 			["StainlessSteelAssembler", 4, ["ElectricFurnace", "SteelProduction", "FluidFurnace", "AdvancedSmelting", "Furnace", "Oven"]],
+			["StainlessSteelSeparator", 4, ["Pump", "AtmosphericCondenser", "Electrolyzer"]],
+			["StainlessSteelElectricFurnace", 4, ["KineticHeater", "Boiler", "SteamTurbine", "SteamEngine"]],
+			["StainlessSteelProduction", 4, ["PowerGeneration", "Flywheel", "ElectricEngine", "WindTurbine", "Generator"]],
 		],
 		"Exits": [["IndustrialSmelting", "StainlessSteelPortal"], ["StainlessSteelProduction", "Oil"]],
 		"Runs": 50,
@@ -361,9 +364,7 @@ experiments = [
 			["DecorativePlastic", "PyrolysisUnit"],
 		],
 		"Versions": [
-			["PyrolysisUnit", 4, ["Pump", "AtmosphericCondenser", "IndustrialChemReactor", "Fermentation", "Electrolyzer", "ChemicalBath"]],
-			["FuelChemistry2", 4, ["KineticHeater", "Boiler", "SteamTurbine", "SteamEngine"]],
-			["CombustionEngine", 4, ["PowerGeneration", "Flywheel", "ElectricEngine", "WindTurbine", "Generator"]],
+			["PyrolysisUnit", 4, ["IndustrialChemReactor", "Fermentation", "ChemicalBath"]],
 		],
 		"Exits": [["Pumpjack", "PumpjackProductivity"]],
 		"Runs": 100,
@@ -481,7 +482,7 @@ experiments = [
 			["CompositeMixer", 6, ["Sifter", "Separator", "OreWasher"]],
 			["CompositeMacerator", 6, ["Automatization", "Conveyor", "Splitter", "Loader", "Sorter"]],
 			["CompositeLoader", 6, ["AutomaticFarm", "Pumpjack", "AutomaticMining"]],
-			["CompositeOreWasher", 6, ["MetalBlocks", "Lamp", "SingleTypeStorage", "Destroyer", "Sign", "AdvancedSign", "Chest", "Container", "DeepStorage"]],
+			["CompositeOreWasher", 6, ["MetalBlocks", "Lamp", "SingleTypeStorage", "Destroyer", "Sign", "AdvancedSign", "Chest", "Container", "DeepStorage"], [0, 1]],
 			["CompositeAutomaticHammer", 6, ["Pump", "AtmosphericCondenser", "FractionatingColumn", "IndustrialChemReactor", "Fermentation", "PyrolysisUnit", "Electrolyzer", "ChemicalBath"], [0, 1]],
 			["CompositePyrolysisUnit", 6, ["ElectricFurnace", "SteelProduction", "AdvancedSmelting", "FluidFurnace", "Furnace", "Oven", "IndustrialSmelting"]],
 			["CompositeChemicalBath", 6, ["KineticHeater", "Boiler", "SteamTurbine", "SteamEngine"], [0, 1]],
@@ -675,6 +676,16 @@ def layout(m, columns, rows, head_cell, exit_dirs, entry):
 	middle = (rows - 1) / 2
 	distance = lambda a, b: abs(a[0] - b[0]) + abs(a[1] - b[1])
 
+	def corridor(exit_name):
+		d = axis((sign(sum(v[0] for v in exit_dirs[exit_name])), sign(sum(v[1] for v in exit_dirs[exit_name]))))
+		for d in [d] if d != (0, 0) else sorted({axis(v) for v in exit_dirs[exit_name]}):
+			cell = (pos[exit_name][0] + d[0], pos[exit_name][1] + d[1]) if exit_name in pos else (-1, -1)
+			while inside(cell):
+				reserved.add(cell)
+				cell = (cell[0] + d[0], cell[1] + d[1])
+
+	if head in exit_dirs:
+		corridor(head)
 	for exit_name in sorted(exit_dirs, key=lambda e: -len(path_to(e))):
 		path = path_to(exit_name)
 		last = None
@@ -699,51 +710,64 @@ def layout(m, columns, rows, head_cell, exit_dirs, entry):
 				break
 			put(b, best[1])
 			last = best[2]
-		d = axis((sign(sum(v[0] for v in exit_dirs[exit_name])), sign(sum(v[1] for v in exit_dirs[exit_name]))))
-		for d in [d] if d != (0, 0) else sorted({axis(v) for v in exit_dirs[exit_name]}):
-			cell = (pos[exit_name][0] + d[0], pos[exit_name][1] + d[1]) if exit_name in pos else (-1, -1)
-			while inside(cell):
-				reserved.add(cell)
-				cell = (cell[0] + d[0], cell[1] + d[1])
+		corridor(exit_name)
 
 	order = [head]
 	for name in order:
 		order.extend(sorted(children[name], key=lambda c: -size[c]))
 
-	long_links = []
-	for name in order:
-		up = parent[name]
-		if name in pos or up not in pos:
-			continue
-		at = pos[up]
-		best = None
+	todo = [name for name in order if name not in pos]
+	links = {frozenset((pos[name], pos[parent[name]])) for name in pos if parent[name]}
+	waiting = {name: sum(1 for c in children[name] if c not in pos) for name in children}
+
+	def candidates(name):
+		at = pos[parent[name]]
+		found = []
 		for group, bonus in ((steps, 100), (diagonals, 0)):
 			for s in group:
-				cell = (at[0] + s[0], at[1] + s[1])
-				if not free(cell):
+				cell = add(at, s)
+				if not free(cell) or (bonus == 0 and frozenset(((at[0], cell[1]), (cell[0], at[1]))) in links):
 					continue
 				outward = distance(cell, head_cell) - distance(at, head_cell)
-				score = bonus + (2 * room(cell) if size[name] > 1 else -room(cell)) + 1.5 * outward - 0.5 * abs(cell[0] - centre)
-				if best is None or score > best[0]:
-					best = (score, cell)
-		if best is None:
-			queue, seen = [at], {at}
-			while queue and best is None:
-				cell = queue.pop(0)
-				for s in steps:
-					nxt = (cell[0] + s[0], cell[1] + s[1])
-					if inside(nxt) and nxt not in seen:
-						seen.add(nxt)
-						if free(nxt):
-							best = (0, nxt)
-							break
-						queue.append(nxt)
-			long_links.append(name)
-		if best is None:
-			raise Exception(f"Experiments: no room for {name} in {m['Name']}")
-		put(name, best[1])
+				found.append((bonus + (2 * room(cell) if size[name] > 1 else -room(cell)) + 1.5 * outward - 0.5 * abs(cell[0] - centre), cell))
+		return [cell for _, cell in sorted(found, key=lambda f: -f[0])]
 
-	return pos, long_links
+	around = lambda cell: [add(cell, s) for s in steps + diagonals]
+
+	def starved(cell):
+		for near_cell in [cell] + around(cell):
+			name = taken.get(near_cell)
+			if waiting.get(name) and sum(1 for c in around(near_cell) if free(c)) < waiting[name]:
+				return True
+		return False
+
+	rank = {name: k for k, name in enumerate(order)}
+	budget = [200000]
+	def place(left):
+		if not left:
+			return True
+		_, _, name, cells = min((len(cells), rank[name], name, cells) for name in left if parent[name] in pos for cells in [candidates(name)])
+		up = parent[name]
+		left.discard(name)
+		for cell in cells:
+			budget[0] -= 1
+			if budget[0] < 0:
+				break
+			put(name, cell)
+			link = frozenset((cell, pos[up]))
+			links.add(link)
+			waiting[up] -= 1
+			if not starved(cell) and place(left):
+				return True
+			waiting[up] += 1
+			links.discard(link)
+			del pos[name], taken[cell]
+		left.add(name)
+		return False
+
+	if not place(set(todo)):
+		raise Exception(f"Experiments: {m['Name']} has no layout where every card stands next to its parent: {len(todo)} cards for {sum(1 for x in range(columns) for y in range(rows) if free((x, y)))} free cells, {'search ran out' if budget[0] < 0 else 'every order tried'}")
+	return pos
 
 research_objects = objects_of(get_generated_files()["Generated/Researches/basic.json"])
 research_by_name = {r["Name"]: r for r in research_objects}
@@ -762,7 +786,7 @@ for m in experiments:
 	for group in m.get("Versions", []):
 		up, tier, series = group[:3]
 		cards = [card for _, _, card in sorted((research_by_name[card]["Complexity"], i, card) for i, card in enumerate(version_card(s, tier) for s in series))]
-		m["Tree"] += [[card, cards[k - 1 - (k - 1) % 2] if k else up] for k, card in enumerate(cards)]
+		m["Tree"] += [[card, cards[k - 1] if k else up] for k, card in enumerate(cards)]
 		if len(group) > 3:
 			m.setdefault("Chunks", {})[cards[0]] = group[3]
 
@@ -883,7 +907,6 @@ paths = {m["Name"]: [] for m in experiments}
 node_at = {}
 card_at = set()
 line_at = set()
-long_links = []
 
 def fits(nodes, cards, line):
 	for cell in nodes:
@@ -939,13 +962,13 @@ while queue:
 	if carded:
 		back = add(anchor_local, (e[0], 1)) if e[0] and any(axis(d) == (-e[0], 0) for _, d in box["Exits"]) else None
 		reserved += [cell for cell in (add(anchor_local, (dx, dy)) for dx in (-1, 0, 1) for dy in (-1, 0, 1)) if cell != back]
-	local_layout = lambda extra: layout({"Name": key, "Tree": box["Tree"], "Head": box["Head"]}, cell_columns, rows, head_local, exit_dirs, reserved + extra) if box["Tree"] else ({}, [])
-	local, missed = local_layout([])
+	local_layout = lambda extra: layout({"Name": key, "Tree": box["Tree"], "Head": box["Head"]}, cell_columns, rows, head_local, exit_dirs, reserved + extra) if box["Tree"] else {}
+	local = local_layout([])
 	above = [(head_local[0], y) for y in range(head_local[1])] if entry and e[0] and not carded else []
 
 	for k in range(1000):
 		if k == 1 and above:
-			local, missed = local_layout(above)
+			local = local_layout(above)
 		if not entry:
 			anchor = (x0 + head_local[0], k)
 			points = []
@@ -959,11 +982,11 @@ while queue:
 		nodes = {name: add(head, (cell[0] - head_local[0], cell[1] - head_local[1])) for name, cell in local.items()}
 		cards = [anchor] if carded else []
 		line = through(points) + (through([anchor, head]) if box["Tree"] else [])
-		if fits(set(nodes.values()), cards, line):
+		sides = [through([nodes[research], (gap + d[0], nodes[research][1])]) for research, d in ((research, axis(d)) for research, d in box["Exits"]) if d[0] and research in nodes for gap in [x0 + cell_columns + gap_columns // 2 if d[0] > 0 else x0 - gap_columns // 2 - 1]]
+		if fits(set(nodes.values()), cards, line) and not any(cell in node_at or cell in card_at or cell in line_at for side in sides for cell in side):
 			break
 	else:
 		raise Exception(f"Experiments: no room for {key}")
-	long_links += [f"{key}:{n}" for n in missed]
 
 	cell_of.update(nodes)
 	origin_x[key] = x0
@@ -1001,7 +1024,7 @@ for m in experiments:
 lengths = sorted(((sum(abs(b[0] - a[0]) + abs(b[1] - a[1]) for a, b in zip(p, p[1:])), name) for name in paths for p in paths[name]), reverse=True)
 outside = [r["Name"] for r in research_objects if r["Name"] not in owner]
 diagonal = sum(1 for m in experiments for name, up in m["Tree"] if up and abs(cell_of[name][0] - cell_of[up][0]) == 1 and abs(cell_of[name][1] - cell_of[up][1]) == 1)
-print(f"Experiments: {len(experiments)} experiments, {sum(len(m['Researches']) for m in experiments)} researches on the grid, {len(outside)} outside, {diagonal} diagonal links, long links {long_links}")
+print(f"Experiments: {len(experiments)} experiments, {sum(len(m['Researches']) for m in experiments)} researches on the grid, {len(outside)} outside, {diagonal} diagonal links")
 print(f"Experiments: lines into experiments {sum(n for n, _ in lengths)} cells, longest {lengths[:3]}, crossing {crossing}")
 
 own_lines = sum(1 for m in experiments for name, up in m["Tree"] if up in (research_by_name[name].get("RequiredResearch") or []))
