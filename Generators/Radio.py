@@ -43,7 +43,7 @@ interference = {
 	"Aurora": {"Flutter": 0.8},
 	"Drift": {"Drift": 1.5},
 	"Lightning": {"Sound": noise("lightning"), "Level": 0.9, "Absorb": 0.2, "Once": True},
-	"Ionosonde": {"Sound": noise("ionosonde"), "Level": 0.7, "Once": True, "Sweep": 400},
+	"Ionosonde": {"Sound": noise("ionosonde"), "Level": 0.3, "Once": True, "Sweep": 400},
 }
 
 def place(name, band=None, every=None, lasts=None, **overrides):
