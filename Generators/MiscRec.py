@@ -1338,6 +1338,18 @@ recipes_mixer.append({
 })
 
 recipes_mixer.append({
+	"Name": "SulfurConcrete",
+	"Input": items([
+		["RockOrGravel"],
+		["SandSurface"],
+		["Sulfur", 2]
+	]),
+	"Output": one_item("BuildingMaterial", 20),
+	"Ticks" : 60,
+	"Tier": 2,
+})
+
+recipes_mixer.append({
 	"Name": "BuildingMaterial3",
 	"Input": items([
 		["RockOrGravel"],

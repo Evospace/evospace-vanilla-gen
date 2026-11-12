@@ -97,20 +97,17 @@ for ore_type in ore_types:
 			})	
 
 		# ChemicalBath
-		if "ChemicalBath" in processing:
+		for bath in processing.get("ChemicalBath", []):
 			recipes_chemical_bath.append({
-				"Name": ore_type["Name"] + "ImpureOreGravel",
+				"Name": bath["Name"],
 				"Input": items([
-					[ore_type["Name"] + "OreImpureGravel", ore_type["ExpensiveChemicalBath"] if "ExpensiveChemicalBath" in ore_type else 1 ],
-					[processing["ChemicalBath"][0], 500 if "ExpensiveChemicalBath" in ore_type else 250 ]
+					[ore_type["Name"] + "OreImpureGravel", bath["Gravel"]],
+					bath["Fluid"],
 				]),
-				"Output": items([
-					[processing["ChemicalBath"][1]],
-					[processing["ChemicalBath"][2], ore_type["ExpensiveChemicalBath"] if "ExpensiveChemicalBath" in ore_type else 1 ]
-				]),
+				"Output": items(bath["Output"]),
 				"Ticks" : 200,
 				"Tier": 3,
-			})	
+			})
 
 		# Sifter
 		if "Sifter" in processing:

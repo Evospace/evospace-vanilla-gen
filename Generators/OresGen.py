@@ -9,7 +9,7 @@ ore_types = [
 		"Name": "Chalcopyrite",
 		"Processing":{
 			"OreWasher": "PyriteDust",
-			"ChemicalBath": ["Mercury", "GoldDust", "ChalcopyriteOreGravel"],
+			"ChemicalBath": [{"Name": "ChalcopyriteImpureOreGravel", "Gravel": 1, "Fluid": ["Mercury", 250], "Output": [["GoldDust", 1], ["ChalcopyriteOreGravel", 1]]}],
 			"Separator": ["ChalcopyriteDust", "PyriteDust"],
 			"Macerator": "ChalcopyriteOreDust",
 			"Furnace": "CopperPlate",
@@ -24,7 +24,7 @@ ore_types = [
 		"Name": "Pyrite",
 		"Processing":{
 			"OreWasher": "IronDust",
-			"ChemicalBath": ["SulfuricAcid", "TantalumSludge", "SiliconOxide"],
+			"ChemicalBath": [{"Name": "PyriteImpureOreGravel", "Gravel": 8, "Fluid": ["SulfuricAcid", 500], "Output": [["TantalumSludge", 1], ["SiliconOxide", 8]]}],
 			"Separator": ["PyriteDust", "Sulfur"],
 			"Macerator": "PyriteOreDust",
 			"Furnace": "IronPlate",
@@ -34,13 +34,15 @@ ore_types = [
 		"ItemColor": "#c6c6c6",
 		"Drops": "PyriteOre",
 		"Tier": 2,
-		"ExpensiveChemicalBath": 8,
 	},{
 		# https://en.wikipedia.org/wiki/List_of_copper_ores
 		"Name": "Malachite",
 		"Processing":{
 			"OreWasher": "MalachiteDust",
-			"ChemicalBath": ["NitricAcid", "CopperDust", "SiliconOxide"],
+			"ChemicalBath": [
+				{"Name": "MalachiteImpureOreGravel", "Gravel": 1, "Fluid": ["NitricAcid", 250], "Output": [["CopperDust", 1], ["SiliconOxide", 1]]},
+				{"Name": "MalachiteLeaching", "Gravel": 1, "Fluid": ["SulfuricAcid", 400], "Output": [["CopperDust", 3], ["SiliconOxide", 1]]},
+			],
 			"Separator": ["MalachiteDust", "IronDust"],
 			"Macerator": "MalachiteOreDust",
 			"Furnace": "CopperPlate",
@@ -57,7 +59,7 @@ ore_types = [
 		"Name": "Magnetite",
 		"Processing":{
 			"OreWasher": "IronDust",
-			"ChemicalBath": ["Mercury", "GoldDust", "MagnetiteOreGravel"],
+			"ChemicalBath": [{"Name": "MagnetiteImpureOreGravel", "Gravel": 1, "Fluid": ["Mercury", 250], "Output": [["GoldDust", 1], ["MagnetiteOreGravel", 1]]}],
 			"Separator": ["MagnetiteDust", "GoldDust"],
 			"Macerator": "MagnetiteOreDust",
 			"Furnace": "IronPlate",
@@ -72,7 +74,7 @@ ore_types = [
 		"Name": "Bauxite",
 		"Processing":{
 			"OreWasher": "BauxiteDust",
-			"ChemicalBath": ["NitricAcid", "TitaniumOxideDust", "SiliconOxide"],
+			"ChemicalBath": [{"Name": "BauxiteImpureOreGravel", "Gravel": 1, "Fluid": ["NitricAcid", 250], "Output": [["TitaniumOxideDust", 1], ["SiliconOxide", 1]]}],
 			"Separator": ["BauxiteDust", "SiliconOxide"],
 			"Macerator": "BauxiteOreDust",
 			"Furnace": "BauxiteDust",
@@ -87,7 +89,7 @@ ore_types = [
 		"Processing":{
 			"OreWasher": "ChromiumDust",
 			"Sifter": ["RubyOreDust", "MicaFlakes", "RubyCrystal"],
-			"ChemicalBath": ["SulfuricAcid", "ChromiumDust", "SiliconOxide"],
+			"ChemicalBath": [{"Name": "RubyImpureOreGravel", "Gravel": 1, "Fluid": ["SulfuricAcid", 250], "Output": [["ChromiumDust", 1], ["SiliconOxide", 1]]}],
 			"Separator": ["RubyDust", "ChromiumDust"],
 			"Macerator": "RubyOreDust",
 			"Furnace": "RubyDust",
@@ -111,23 +113,21 @@ ore_types = [
 		"Color": "#423228",
 		"Processing":{
 			"OreWasher": "Sulfur",
-			"ChemicalBath": ["NitricAcid", "RareEarthSludge", "SiliconOxide"],
+			"ChemicalBath": [{"Name": "CinnabarImpureOreGravel", "Gravel": 16, "Fluid": ["NitricAcid", 500], "Output": [["RareEarthSludge", 1], ["SiliconOxide", 16]]}],
 			"Separator": ["CinnabarDust", "Sulfur"],
 			"Macerator": "CinnabarOreDust",
 			"Furnace": "Sulfur",
 		},
-		"ExpensiveChemicalBath": 16,
 	},{
 		"Name": "Thorianite",
 		"Processing":{
 			"OreWasher": "UraniumDust",
 			"Separator": ["ThoriumDust", "UraniumDust"],
-			"ChemicalBath": ["SulfuricAcid", "RareEarthSludge", "SiliconOxide"],
+			"ChemicalBath": [{"Name": "ThorianiteImpureOreGravel", "Gravel": 8, "Fluid": ["SulfuricAcid", 500], "Output": [["RareEarthSludge", 1], ["SiliconOxide", 8]]}],
 			"Sifter": ["ThoriumDust", "UraniumDust", "ThorianiteCrystal"],
 			"Furnace": "ThoriumDust",
 			"Macerator": "ThorianiteOreDust",
 		},
-		"ExpensiveChemicalBath": 8,
 		"Crystal": True,
 		"CrystalIcoGen": True,
 		"Color": "#324228",
