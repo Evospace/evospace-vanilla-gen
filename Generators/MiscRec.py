@@ -393,6 +393,18 @@ recipes_assembler.append({
 })
 
 recipes_assembler.append({
+    "Name": "Capacitor21",
+    "Input": items([
+        ["PlatinumFoil", 2],
+        ["MicaFlakes", 1]
+    ]),
+    "Output": one_item("Capacitor", 5),
+    "Ticks": 60,
+    "Tier": 2,
+    "Animation": capacitor_animation("Mica"),
+})
+
+recipes_assembler.append({
     "Name": "Capacitor3",
     "Input": items([
         ["TantalumFoil", 2],
