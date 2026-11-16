@@ -1702,11 +1702,12 @@ recipes_electrolyzer.append({
 	"Input": one_item("RubyDust", 8),
 	"Output": items([
 		["AluminiumOxideDust", 4],
-		["ChromiumDust", 1],
+		["ChromiumDust", 1, True],
 		["Oxygen", 3000],
 	]),
 	"Ticks": 200,
 	"Tier":2,
+	"Productivity": 25,
 })
 
 recipes_electrolyzer.append({

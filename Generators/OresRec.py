@@ -79,7 +79,7 @@ for ore_type in ore_types:
 			"Output": items(washer_out),
 			"Ticks" : 200,
 			"Tier": material_tier,
-			"Productivity": 25
+			"Productivity": ore_type.get("WasherProductivity", 25)
 		})
 			
 		# Industrial Separator
@@ -92,9 +92,9 @@ for ore_type in ore_types:
 					[processing["Separator"][1], 1, True],
 				]),
 				"Ticks" : 60,
-				"Productivity": 14,
+				"Productivity": ore_type.get("SeparatorProductivity", 14),
 				"Tier": material_tier,
-			})	
+			})
 
 		# ChemicalBath
 		for bath in processing.get("ChemicalBath", []):
@@ -115,7 +115,7 @@ for ore_type in ore_types:
 			sf = ore_type["Processing"]["Sifter"]
 			recipes_sifter.append({
 				"Name": ore_type["Name"] + "OreImpureGravel",
-				"Input": one_item(ore_type["Name"] + "OreImpureGravel", 5),
+				"Input": one_item(ore_type["Name"] + "OreImpureGravel", ore_type.get("SifterGravel", 5)),
 				"Output": items([
 					[sf[0], 4],
 					[sf[1], 1],
