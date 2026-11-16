@@ -102,7 +102,7 @@ recipes_fusion_reactor.append({
 	"Name":"HotNeutroniumPlate1",
 	"Input": items([
 		["SynthesisCell", 50],
-		["EmptyAntimatterTrap", 1],
+		["AntimatterTrap", 1],
 	]),
 	"Output": items([
 		["HotNeutroniumPlate", 25],
@@ -116,7 +116,7 @@ recipes_fusion_reactor.append({
 	"Name":"HotNeutroniumPlate2",
 	"Input": items([
 		["SynthesisCell", 25],
-		["EmptyAntimatterTrap", 1],
+		["AntimatterTrap", 1],
 		["UltimateCatalyst", 1, 0],
 	]),
 	"Output": items([
@@ -906,14 +906,6 @@ recipes_assembler.append({
 	"Output": one_item("EmptyAntimatterTrap"),
 	"Ticks" : 400,
 	"Tier": 6,
-})
-
-recipes_assembler.append({
-	"Name":"SteelTarget",
-	"Input": one_item("SteelPlate", 100),
-	"Output": one_item("SteelTarget"),
-	"Ticks" : 200,
-	"Tier": 7,
 })
 
 recipes_assembler.append({
@@ -2375,7 +2367,7 @@ objects_array.append({ "Class": r_dict,
 		([["TitaniumPlate", 60], ["QuantumCircuit", 8]], 720),
 		([["ReinforcedFrame", 20]], 720),
 		([["CompositePlate", 30]], 960),
-		([["RocketFuel", 75000]], 640),
+		([["RocketFuel", 75000], ["CopperWire", 1500], ["AluminiumPlate", 400], ["Processor", 100]], 640),
 	])],
 })
 
@@ -2415,28 +2407,19 @@ objects_array.append({ "Class": r_dict,
 		"Name": "AntimatterTrap",
 		"Input": one_item("EmptyAntimatterTrap"),
 		"Output": one_item("AntimatterTrap"),
-		"Ticks": 3600,
+		"Ticks": 2000,
+		"OrbitalFlux": 20000,
 		"EnergyProductionPercent": 0,
-		"Surfaces": ["Orbit"],
-	},{
-		"Name": "HydrogenAnnihilation",
+	}] + [{
+		"Name": plate + "Annihilation",
 		"Input": items([
 			["AntimatterTrap", 1],
-			["Hydrogen", 5000],
-		]),
-		"Output": one_item("EmptyAntimatterTrap"),
-		"Ticks": 2500,
-		"EnergyProductionPercent": 100,
-	},{
-		"Name": "SteelTargetAnnihilation",
-		"Input": items([
-			["AntimatterTrap", 1],
-			["SteelTarget", 20],
+			[plate + "Plate", 2000],
 		]),
 		"Output": one_item("EmptyAntimatterTrap"),
 		"Ticks": 2500,
 		"EnergyProductionPercent": 1000,
-	}],
+	} for plate in ["Copper", "Steel", "Aluminium"]],
 })
 
 objects_array.append({ "Class": r_dict,

@@ -14,6 +14,8 @@ objects_array = [
 		"OvercastInsolation01": 0.15,
 		"RadiusMeters": 600000.0,
 		"OrbitAltitudeMeters": 100000.0,
+		"SatelliteLifetime": 144000,
+		"SatelliteFlux": 1,
 		"OrbitLook": {
 			"Seed": 7347,
 			"Ocean": True,

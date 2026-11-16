@@ -952,12 +952,6 @@ materials = [
 		"Items": ["Exact"],
 		"Tier": 6,
 	},{
-		"Name": "SteelTarget",
-		"Category": "Parts",
-		"Label": "Steel Target",
-		"Items": ["Exact"],
-		"Tier": 7,
-	},{
 		"Name": "TrapElectrode",
 		"ItemTier": 7,
 		"Category": "Parts",

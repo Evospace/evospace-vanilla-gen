@@ -482,12 +482,6 @@ images.append({
 		"MulMask": "T_Material" + "Copper",
 	})
 
-images.append({
-		"Base": "T_" + "Plate",
-		"NewName": "T_" + "SteelTarget",
-		"MulMask": "T_Material" + "Steel",
-		"AddMask": "T_RedCircle" + additive_ico,
-	})
 
 images.append({
 		"Base": "T_" + "HeatPipe",
