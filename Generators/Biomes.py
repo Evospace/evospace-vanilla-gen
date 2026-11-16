@@ -57,6 +57,76 @@ global_family.append({
 		"Childs": configurable_mega_family_childs,
         "ChildFrequency": mega_boime_size,
 	})
+climate_niches = [
+	{"Temperature": 0.06, "Humidity": 0.28, "Weight": -0.006, "Leaves": ["SnowBiome"]},
+	{"Temperature": 0.06, "Humidity": 0.72, "Weight": -0.006, "Leaves": ["SnowForestBiome"]},
+	{"Temperature": 0.28, "Humidity": 0.18, "Leaves": ["TundraBiome"]},
+	{"Temperature": 0.28, "Humidity": 0.5, "Leaves": ["ForestTundraBiome"]},
+	{"Temperature": 0.28, "Humidity": 0.8, "Leaves": ["PineForestBiome"]},
+	{"Temperature": 0.5, "Humidity": 0.1, "Leaves": ["PrairieDryPlainsBiome", "PrairiePlainsBiome"]},
+	{"Temperature": 0.5, "Humidity": 0.3, "Leaves": ["ForestSteppeBiome"]},
+	{"Temperature": 0.5, "Humidity": 0.5, "Weight": 0.006, "Leaves": ["PlainsBiome"]},
+	{"Temperature": 0.5, "Humidity": 0.7, "Leaves": ["ForestBiome"]},
+	{"Temperature": 0.5, "Humidity": 0.9, "Leaves": ["BogBiome", "BogForestBiome"]},
+	{"Temperature": 0.72, "Humidity": 0.1, "Leaves": ["SemiDesertBiome"]},
+	{"Temperature": 0.72, "Humidity": 0.3, "Leaves": ["SavannaBiome"]},
+	{"Temperature": 0.72, "Humidity": 0.5, "Leaves": ["RedPlainsBiome", "WhitePlainsBiome", "YellowPlainsBiome"]},
+	{"Temperature": 0.72, "Humidity": 0.7, "Leaves": ["BushlandBiome"]},
+	{"Temperature": 0.72, "Humidity": 0.9, "Leaves": ["PeatBiome", "ClayBiome"]},
+	{"Temperature": 0.92, "Humidity": 0.15, "Leaves": ["DesertBiome"]},
+	{"Temperature": 0.92, "Humidity": 0.48, "Leaves": ["WoodlandBiome"]},
+	{"Temperature": 0.92, "Humidity": 0.7, "Leaves": ["FertileForestBiome"]},
+	{"Temperature": 0.92, "Humidity": 0.9, "Leaves": ["DipteroBiome"]},
+]
+climate_sea = {
+	"Cold": "GravelSeaBiome", "ColdBelow": 0.18,
+	"Shallow": "SeaGrassBiome", "ShallowAbove": -6,
+	"Deep": "EmptySeaBiome", "DeepBelow": -25,
+	"Open": "SeaBiome",
+}
+climate_mountains = {
+	"Snow": "MountainsSnowBiome", "SnowBelow": 0.22,
+	"Dry": "MountainsLayeredBiome", "DryBelow": 0.35,
+	"Wet": "MountainsDarkStoneBiome", "WetAbove": 0.7,
+	"Rock": "MountainsStoneBiome",
+}
+climate_volcanic = {
+	"Core": "VolcanoBiome", "Rim": "BrokenLandBiome",
+	"Frequency": 0.0011, "Share": 0.07, "CoreShare": 0.35, "MinHeight": 3,
+}
+climate_childs = []
+for leaf in [l for n in climate_niches for l in n["Leaves"]] + [v for g in (climate_sea, climate_mountains, climate_volcanic) for v in g.values() if isinstance(v, str)]:
+	if leaf not in climate_childs:
+		climate_childs.append(leaf)
+
+global_family.append({
+		"Name":"GlobalBiomeMegaFamilyClimate",
+		"Class":"GlobalBiomeFamilyClimate",
+		"Childs": climate_childs,
+        "ChildFrequency": mega_boime_size,
+		"Climate": {
+			"TemperatureFrequency": 0.0005,
+			"HumidityFrequency": 0.0007,
+			"TemperatureSpread": 1.15,
+			"HumiditySpread": 1.1,
+			"WarpFrequency": 0.0025,
+			"WarpAmp": 90,
+			"JitterFrequency": 0.05,
+			"JitterAmp": 0.03,
+			"VariantFrequency": 0.005,
+			"LapseRate": 0.0045,
+			"LapseStart": 18,
+			"CoastWet": 0.22,
+			"CoastBand": 0.12,
+			"InlandDry": 0.12,
+			"InlandStart": 0.15,
+			"InlandBand": 0.3,
+		},
+		"Niches": climate_niches,
+		"Sea": climate_sea,
+		"Mountains": climate_mountains,
+		"Volcanic": climate_volcanic,
+	})
 global_family.append({
 		"Name":"GlobalBiomeMegaFamilyMoon",
 		"Class":"GlobalBiomeFamilyMoon",
@@ -383,6 +453,16 @@ generators.extend([
 		"Blocks": ["DesertSandSurface" + static_surface, "SandstoneSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
 		"Starts": [0, 3, 6, 9, 12, 16, 19, 23, 30]
 	},
+	{
+		"Class": "LowlandLayeringGenerator",
+		"Name": "SemiDesertLayering",
+		"Blocks": ["DryGrassSurface" + static_surface, "DirtSurface" + static_surface, "SandstoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Starts": [0, 2, 5, 9, 12, 16, 19, 23, 30],
+		"LowBlocks": ["DesertSandSurface" + static_surface, "SandstoneSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"LowStarts": [0, 3, 6, 9, 12, 16, 19, 23, 30],
+		"Height": "SemiDesertPatchHeight",
+		"Below": 0.0,
+	},
 	
 	# hills / mountains
 	{
@@ -510,6 +590,7 @@ add_height("MountainsHeight",    [{"Frequency": 0.006, "FractalOctaves": 5, "Fra
 add_height("ClayBasinHeight",    [{"NoiseType": "Cellular", "Frequency": 0.0035, "FractalOctaves": 1,
                                    "CellularReturnType": "Distance2Cave", "CellularDistanceFunction": "Natural",
                                    "CellularJitter": 0.55, "Min": 0, "Max": -7, "Power": 5, "SeedOffset": 4201}])
+add_height("SemiDesertPatchHeight", [{"Frequency": 0.03, "FractalOctaves": 2, "Min": -1, "Max": 1, "SeedOffset": 5303}])
 
 # noises + height generators load first (single-pass-safe ordering)
 generators = height_noises + height_gens + generators
@@ -522,6 +603,7 @@ generators.extend([
 	{"Class": "WorldGeneratorPlains", "Name": "WorldGeneratorPlains", "GlobalBiome": "GlobalBiomeMegaFamily3", "UnderworldBlock": "GraniteSurface", **world_sources},
 	{"Class": "WorldGeneratorMoon", "Name": "WorldGeneratorMoon", "GlobalBiome": "GlobalBiomeMegaFamilyMoon", "UnderworldBlock": "GraniteSurface", **dry_sources},
 	{"Class": "WorldGeneratorConfigurable", "Name": "WorldGeneratorConfigurable", "GlobalBiome": "GlobalBiomeMegaFamilyConfigurable", "UnderworldBlock": "GraniteSurface", **world_sources},
+	{"Class": "WorldGeneratorClimate", "Name": "WorldGeneratorClimate", "GlobalBiome": "GlobalBiomeMegaFamilyClimate", "UnderworldBlock": "GraniteSurface", **world_sources},
 	{"Class": "FlatWorldGenerator", "Name": "FlatWorldGenerator", "Layers": [{"Block": "ReinforcedConcrete", "Height": 3}], "Biome": "WastelandBiomeFamily", **world_sources},
 	{"Class": "WorldGeneratorOrbit", "Name": "WorldGeneratorOrbit", "PlatformBlock": "Concrete", "Biome": "WastelandBiomeFamily", **dry_sources},
 ])
@@ -553,15 +635,11 @@ biomes.extend([
 		"Class":"Biome",
 		"Name":"PineForestBiome",
 		"Layering":"JustGrassLayeringPine",
-		"Props":"PineForestProps",
-		"Color":[184/255.0, 255/255.0, 133/255.0]
-	},{
+		"Props":"PineForestProps"	},{
 		"Class":"Biome",
 		"Name":"ForestBiome",
 		"Layering":"GrassLayering",
-		"Props":"ForestProps",
-		"Color":[184/255.0, 255/255.0, 133/255.0]
-	},
+		"Props":"ForestProps"	},
 	
 	# snow
 	{
@@ -588,9 +666,7 @@ biomes.extend([
 		"Class":"Biome",
 		"Name":"DipteroBiome",
 		"Layering":"DipteroLayering",
-		"Props":"DipteroProps",
-		"Color":[204/255.0, 255/255.0, 153/255.0]
-	},{
+		"Props":"DipteroProps"	},{
 		"Class":"Biome",
 		"Name":"BrokenLandBiome",
 		"DrillSource":"BasaltSurface",
@@ -642,15 +718,11 @@ biomes.extend([
 		"Class":"Biome",
 		"Name":"HillsBiome",
 		"Layering":"HillsLayering",
-		"Props":"HillsProps",
-		"Color":[184/255.0, 255/255.0, 133/255.0]
-	},{
+		"Props":"HillsProps"	},{
 		"Class":"Biome",
 		"Name":"HillsForestBiome",
 		"Layering":"HillsLayering",
-		"Props":"HillsForestProps",
-		"Color":[184/255.0, 255/255.0, 133/255.0]
-	},{
+		"Props":"HillsForestProps"	},{
 		"Class":"Biome",
 		"Name":"MountainsStoneBiome",
 		"Layering":"MountainStoneLayering",
@@ -680,9 +752,7 @@ biomes.extend([
 		"Name":"BogBiome",
 		"Layering":"BogGrassLayeringGrass",
 		"Props":"BogProps",
-		"WaterMurkiness": 1.0,
-		"Color":[204/255.0, 255/255.0, 153/255.0]
-	},{
+		"WaterMurkiness": 1.0	},{
 		"Class":"Biome",
 		"Name":"PeatBiome",
 		"Layering":"PeatLayering",
@@ -696,9 +766,7 @@ biomes.extend([
 		"Class":"Biome",
 		"Name":"BogForestBiome",
 		"Layering":"BogGrassLayeringGrass",
-		"Props":"BogForestProps",
-		"Color":[204/255.0, 255/255.0, 153/255.0]
-	},{
+		"Props":"BogForestProps"	},{
 		"Class":"Biome",
 		"Name":"PineForestBiome",
 		"Layering":"JustGrassLayeringPine",
@@ -707,21 +775,15 @@ biomes.extend([
 		"Class":"Biome",
 		"Name":"ForestBiome",
 		"Layering":"GrassLayering",
-		"Props":"ForestProps",
-		"Color":[204/255.0, 255/255.0, 153/255.0]
-	},{
+		"Props":"ForestProps"	},{
 		"Class":"Biome",
 		"Name":"BushlandBiome",
 		"Layering":"GrassLayering",
-		"Props":"BushlandProps",
-		"Color":[204/255.0, 255/255.0, 153/255.0]
-	},{
+		"Props":"BushlandProps"	},{
 		"Class":"Biome",
 		"Name":"FertileForestBiome",
 		"Layering":"GrassLayering",
-		"Props":"FertileForestProps",
-		"Color":[204/255.0, 255/255.0, 153/255.0]
-	},
+		"Props":"FertileForestProps"	},
 	
 	# plains
 	{
@@ -755,19 +817,51 @@ biomes.extend([
 		"Props":"SandlandProps"
 	},
 
+	# climate transitions
+	{
+		"Class":"Biome",
+		"Name":"TundraBiome",
+		"Layering":"DryGrassLayering",
+		"Props":"TundraProps"
+	},{
+		"Class":"Biome",
+		"Name":"ForestTundraBiome",
+		"Layering":"JustGrassLayeringPine",
+		"Props":"ForestTundraProps"
+	},{
+		"Class":"Biome",
+		"Name":"ForestSteppeBiome",
+		"Layering":"GrassLayering",
+		"Props":"ForestSteppeProps"
+	},{
+		"Class":"Biome",
+		"Name":"SemiDesertBiome",
+		"DrillSource":"SandSurface",
+		"Layering":"SemiDesertLayering",
+		"Props":"SemiDesertProps"
+	},{
+		"Class":"Biome",
+		"Name":"SavannaBiome",
+		"Layering":"DryGrassLayering",
+		"Props":"SavannaProps"
+	},{
+		"Class":"Biome",
+		"Name":"WoodlandBiome",
+		"Layering":"GrassLayering",
+		"Props":"WoodlandProps"
+	},
+
 	# moon
 	{
 		"Class":"Biome",
 		"Name":"MoonHighlandBiome",
-		"Layering":"MoonHighlandLayering",
-		"Color":[0.62, 0.62, 0.64]
+		"Layering":"MoonHighlandLayering"
 	},
 	{
 		"Class":"Biome",
 		"Name":"MoonMareBiome",
 		"DrillSource":"BasaltSurface",
-		"Layering":"MoonMareLayering",
-		"Color":[0.32, 0.32, 0.34]
+		"Layering":"MoonMareLayering"
 	},
 
 	
@@ -812,6 +906,12 @@ biome_height = {
 	"YellowPlainsBiome":     "PlainHeight",
 	"DesertBiome":           "SandHeight",
 	"RiverBiome":            "PlainHeight",
+	"TundraBiome":           "PrairieHeight",
+	"ForestTundraBiome":     "PineForestHeight",
+	"ForestSteppeBiome":     "ForestHeight",
+	"SemiDesertBiome":       "SandHeight",
+	"SavannaBiome":          "PrairieHeight",
+	"WoodlandBiome":         "ForestHeight",
 }
 for b in biomes:
 	h = biome_height.get(b["Name"])
@@ -827,10 +927,97 @@ for f in families + [g for g in global_family if "WeatherLooks" in g]:
 # Snow-capped mountains share the mountain family height/props, but their
 # precipitation bands are snow (same as SnowBiomeFamily), not plain fog.
 looks_by_biome["MountainsSnowBiome"] = ["Clear", "SlightlyCloudy", "Overcast", "Snowfall", "Blizzard"]
+looks_by_biome["TundraBiome"] = ["Clear", "SlightlyCloudy", "Overcast", "Snowfall", "Blizzard"]
+looks_by_biome["ForestTundraBiome"] = ["SlightlyCloudy", "LightLowFog", "Overcast", "Snowfall", "Blizzard"]
+looks_by_biome["ForestSteppeBiome"] = ["Clear", "SlightlyCloudy", "Overcast", "LightRain", "Rain"]
+looks_by_biome["SemiDesertBiome"] = ["Clear", "SlightlyCloudy", "PartlyCloudy", "DustHaze", "SandStorm"]
+looks_by_biome["SavannaBiome"] = ["Clear", "SlightlyCloudy", "PartlyCloudy", "Rain", "Storm"]
+looks_by_biome["WoodlandBiome"] = ["Clear", "SlightlyCloudy", "PartlyCloudy", "LightRain", "Rain"]
+looks_by_biome["DipteroBiome"] = ["SlightlyCloudy", "PartlyCloudy", "Overcast", "Rain", "Storm"]
 
 default_looks = ["Clear", "SlightlyCloudy", "Overcast", "LightRain", "Rain"]
 for b in biomes:
 	b["WeatherLooks"] = looks_by_biome.get(b["Name"], default_looks)
+
+def map_mix(a, b, t):
+	return [round(a[i] + (b[i] - a[i]) * t, 3) for i in range(3)]
+
+def map_scale(a, k):
+	return [round(v * k, 3) for v in a]
+
+map_sea = [0.329, 0.918, 0.969]
+map_snow = [1.843, 1.958, 2.0]
+map_prairie = [0.219, 0.091, 0.026]
+map_pine = [0.433, 0.5, 0.154]
+map_plain = [0.272, 0.672, 0.469]
+map_desert = [2.0, 0.576, 0.0]
+map_forest = [0.212, 0.536, 0.126]
+map_swamp = [0.029, 0.099, 0.045]
+map_volcano = [0.281, 0.125, 0.235]
+map_fertile = [0.649, 1.0, 0.052]
+map_hills = [1.057, 1.104, 0.772]
+map_mountains = [2.723, 2.942, 3.0]
+
+map_colors = {
+	"SeaBiomeFamily": map_sea,
+	"SnowBiomeFamily": map_snow,
+	"PrairieBiomeFamily": map_prairie,
+	"PineForestBiomeFamily": map_pine,
+	"PlainBiomeFamily": map_plain,
+	"SandBiomeFamily": map_desert,
+	"ForestBiomeFamily": map_forest,
+	"SwampBiomeFamily": map_swamp,
+	"VolcanicBiomeFamily": map_volcano,
+	"FertileForestBiomeFamily": map_fertile,
+	"HillsBiomeFamily": map_hills,
+	"MountainsBiomeFamily": map_mountains,
+	"WastelandBiomeFamily": [1.0, 0.0, 1.0],
+
+	"SeaBiome": map_sea,
+	"SeaGrassBiome": map_mix(map_sea, map_plain, 0.25),
+	"EmptySeaBiome": map_scale(map_sea, 0.75),
+	"GravelSeaBiome": map_mix(map_sea, [0.5, 0.5, 0.5], 0.4),
+	"SeaPlantBiome": map_mix(map_sea, map_plain, 0.15),
+	"SnowBiome": map_snow,
+	"SnowGrassBiome": map_mix(map_snow, map_pine, 0.3),
+	"SnowForestBiome": map_mix(map_snow, map_pine, 0.5),
+	"TundraBiome": map_mix(map_snow, map_prairie, 0.6),
+	"ForestTundraBiome": map_mix(map_snow, map_pine, 0.7),
+	"PineForestBiome": map_pine,
+	"PrairieDryPlainsBiome": map_prairie,
+	"PrairieDryHillsBiome": map_scale(map_prairie, 1.2),
+	"PrairiePlainsBiome": map_mix(map_prairie, map_plain, 0.25),
+	"ForestSteppeBiome": map_mix(map_prairie, map_forest, 0.5),
+	"PlainsBiome": map_plain,
+	"RedPlainsBiome": map_mix(map_plain, [0.8, 0.25, 0.2], 0.5),
+	"WhitePlainsBiome": map_mix(map_plain, [1.0, 1.0, 1.0], 0.5),
+	"YellowPlainsBiome": map_mix(map_plain, [1.0, 0.9, 0.1], 0.5),
+	"ForestBiome": map_forest,
+	"BushlandBiome": map_mix(map_forest, map_plain, 0.5),
+	"BogBiome": map_swamp,
+	"BogForestBiome": map_scale(map_swamp, 1.5),
+	"PeatBiome": [0.06, 0.05, 0.03],
+	"ClayBiome": [0.14, 0.08, 0.05],
+	"DesertBiome": map_desert,
+	"SemiDesertBiome": map_mix(map_desert, map_prairie, 0.4),
+	"SavannaBiome": map_mix(map_desert, map_plain, 0.45),
+	"WoodlandBiome": map_mix(map_fertile, map_prairie, 0.5),
+	"FertileForestBiome": map_fertile,
+	"DipteroBiome": map_scale(map_fertile, 0.65),
+	"VolcanoBiome": map_volcano,
+	"BrokenLandBiome": map_scale(map_volcano, 1.5),
+	"HillsBiome": map_hills,
+	"HillsForestBiome": map_mix(map_hills, map_forest, 0.5),
+	"MountainsStoneBiome": map_mountains,
+	"MountainsDarkStoneBiome": map_scale(map_mountains, 0.45),
+	"MountainsLayeredBiome": [2.4, 1.8, 1.5],
+	"MountainsSnowBiome": map_scale(map_mountains, 1.1),
+	"MoonHighlandBiome": [0.62, 0.62, 0.64],
+	"MoonMareBiome": [0.32, 0.32, 0.34],
+	"RiverBiome": map_plain,
+}
+for entry in biomes + families:
+	entry["Color"] = map_colors[entry["Name"]]
 
 data = {
 	"Objects": generators

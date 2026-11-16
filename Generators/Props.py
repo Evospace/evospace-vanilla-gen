@@ -1096,6 +1096,138 @@ proplists = [
 				"Chance": 0.3
 			}
 		]
+	},
+	{
+		"Name": "TundraProps",
+		"Array": [
+			{
+				"Props": ["SnowyRock"],
+				"Chance": 0.006
+			},{
+				"Props": ["SmallRock"],
+				"Chance": 0.02
+			},{
+				"Props": ["Shrub"],
+				"Chance": 0.01
+			},{
+				"Props": ["SnowyGrass"],
+				"Chance": 0.3
+			},{
+				"Props": ["DryGrass"],
+				"Chance": 0.3
+			}
+		]
+	},
+	{
+		"Name": "ForestTundraProps",
+		"Array": [
+			{
+				"Props": ["SnowyPine", "Pine", "Pine"],
+				"Chance": 0.004
+			},{
+				"Props": ["Shrub", "BigBush"],
+				"Chance": 0.012
+			},{
+				"Props": ["SmallRock"],
+				"Chance": 0.015
+			},{
+				"Props": ["Fern"],
+				"Chance": 0.03
+			},{
+				"Props": ["SnowyGrass"],
+				"Chance": 0.15
+			},{
+				"Props": ["DryGrass"],
+				"Chance": 0.3
+			}
+		]
+	},
+	{
+		"Name": "ForestSteppeProps",
+		"Array": [
+			{
+				"Props": ["Broadleaf", "Broadleaf", "Conifer", "BigBush"],
+				"Chance": 0.0025
+			},{
+				"Props": ["Shrub", "BigBush"],
+				"Chance": 0.02
+			},{
+				"Props": ["SmallRock"],
+				"Chance": 0.008
+			},{
+				"Props": ["DryGrass"],
+				"Chance": 0.3
+			},{
+				"Props": ["LongGrass"],
+				"Chance": 0.4
+			},{
+				"Props": ["YellowGrass"],
+				"Chance": 0.1
+			}
+		]
+	},
+	{
+		"Name": "SemiDesertProps",
+		"Array": [
+			{
+				"Props": ["CanyonRock"],
+				"Chance": 0.006
+			},{
+				"Props": ["Cactus"],
+				"Chance": 0.004
+			},{
+				"Props": ["Shrub"],
+				"Chance": 0.012
+			},{
+				"Props": ["DryGrass"],
+				"Chance": 0.22
+			}
+		]
+	},
+	{
+		"Name": "SavannaProps",
+		"Array": [
+			{
+				"Props": ["Broadleaf", "Palm"],
+				"Chance": 0.0015
+			},{
+				"Props": ["Shrub", "BigBush"],
+				"Chance": 0.012
+			},{
+				"Props": ["SmallRock"],
+				"Chance": 0.006
+			},{
+				"Props": ["DryGrass"],
+				"Chance": 0.4
+			},{
+				"Props": ["YellowGrass"],
+				"Chance": 0.25
+			}
+		]
+	},
+	{
+		"Name": "WoodlandProps",
+		"Array": [
+			{
+				"Props": ["Broadleaf", "Palm", "Conifer"],
+				"Chance": 0.003
+			},{
+				"Props": ["Shrub", "BigBush"],
+				"Chance": 0.02
+			},{
+				"Props": ["SmallRock"],
+				"Chance": 0.006
+			},{
+				"Props": ["LongGrass"],
+				"Chance": 0.45
+			},{
+				"Props": ["DryGrass"],
+				"Chance": 0.2
+			},{
+				"Props": ["YellowFlower"],
+				"Chance": 0.03
+			}
+		]
 	}
 ]
 
@@ -1314,6 +1446,12 @@ PROPS_GENERATOR_SOURCES = [
 	("HillsProps", "GrasslandProps"),
 	("HillsForestProps", "BushlandProps"),
 	("MountainSnowProps", "SnowProps"),
+	("TundraProps", "TundraProps"),
+	("ForestTundraProps", "ForestTundraProps"),
+	("ForestSteppeProps", "ForestSteppeProps"),
+	("SemiDesertProps", "SemiDesertProps"),
+	("SavannaProps", "SavannaProps"),
+	("WoodlandProps", "WoodlandProps"),
 ]
 
 def expand_prop_variations(prop_names):
