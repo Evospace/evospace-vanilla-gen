@@ -186,7 +186,7 @@ append_levels({
 	"Name": "Roadwork",
 	"Label": ["Roadwork", "researches"],
 	"RequiredResearch": ["Concrete", "SteelProduction"],
-	"Decorations": ["RoadCone", "WarningBarrier"],
+	"Decorations": ["RoadCone", "WarningBarrier", "WarningSign"],
 	"Levels": [2,2],
 })
 append_levels({

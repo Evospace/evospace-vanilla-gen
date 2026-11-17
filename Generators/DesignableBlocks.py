@@ -132,6 +132,26 @@ for name, (sx, sy, sz), meshes in ruins:
 		"Positions": cells,
 	})
 
+warning_signs = ["Danger", "Voltage", "Radiation", "Toxic", "Flammable", "Hot", "Explosive", "Magnet", "Laser",
+	"Gears", "Train", "Cold", "RobotArm", "OverheadLoad", "GasCylinder"]
+
+for sign in warning_signs:
+	design_covers.append({
+		"Class": "StaticCover",
+		"Name": "WarningSign" + sign,
+		"Mesh": "/Game/Blocks/WarningSign/SM_WarningSign" + sign,
+	})
+
+designables.append({
+	"Name": "WarningSign",
+	"Tier": 2,
+	"Label": ["WarningSign", "misc"],
+	"BlockLogic": "DesignPieceBlockLogic",
+	"Covers": ["WarningSign" + sign for sign in warning_signs],
+	"PreviewRotation": [0, 0, 180],
+	"PreviewZoom": 2.6,
+})
+
 cover_sets = []
 items = []
 blocks = []
@@ -181,6 +201,10 @@ for d in designables:
 		block["Actor"] = d["Actor"]
 	if "Positions" in d:
 		block["Positions"] = d["Positions"]
+	if "PreviewRotation" in d:
+		block["PreviewRotation"] = d["PreviewRotation"]
+	if "PreviewZoom" in d:
+		block["PreviewZoom"] = d["PreviewZoom"]
 
 	blocks.append(block)
 
