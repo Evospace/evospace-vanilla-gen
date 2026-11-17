@@ -662,6 +662,38 @@ for prop in props:
 def named_prop(name):
 	return [x for x in props if x["Name"] == name][0]
 
+big_bush_variants = {
+	"BigBushLush": {"ScaleMin": 2.2, "ScaleMax": 3.6},
+	"BigBushDark": {"ScaleMin": 1.8, "ScaleMax": 3.2},
+	"BigBushDry": {"ScaleMin": 1.0, "ScaleMax": 2.0},
+	"BigBushRust": {"ScaleMin": 1.2, "ScaleMax": 2.2},
+}
+for name, scale in big_bush_variants.items():
+	props.append({
+		**named_prop("BigBush"),
+		**scale,
+		"Name": name,
+		"ItemFrom": "BigBush",
+		"Meshes": ["/Game/Props/BigBush/BigBush"],
+		"Variations": 1,
+		"Materials": [
+			"/Game/Props/BigBush/Bark_Branch_Mat",
+			"/Game/Props/BigBush/MI_" + name + "_Branch",
+			"/Game/Props/BigBush/MI_" + name + "_Leaf",
+			"/Game/Props/BigBush/MI_" + name + "_Billboard",
+		],
+	})
+BIG_BUSHES = ["BigBush", *big_bush_variants]
+BUSH_GROVE_CLUSTER = {
+	"MinRadius": 2,
+	"MaxRadius": 6,
+	"MinCount": 5,
+	"MaxCount": 12,
+	"CenterSpacing": 24,
+	"Jitter": 1.5,
+	"DensityThreshold": 0.55,
+}
+
 proplists = [
 	{ 
 		"Name": "PrairieDryPropList",
@@ -673,7 +705,7 @@ proplists = [
 				"Props": ["DryGrass"],
 				"Chance": 0.5
 			},{
-				"Props": ["Broadleaf", "Broadleaf", "Conifer", "BigBush"],
+				"Props": ["Broadleaf", "Broadleaf", "Conifer", "BigBushDry"],
 				"Chance": 0.0001
 			}
 		]
@@ -690,8 +722,12 @@ proplists = [
 				"Props": ["YellowGrass"],
 				"Chance": 0.35
 			},{
-				"Props": ["Broadleaf", "Broadleaf", "Conifer", "BigBush"],
+				"Props": ["Broadleaf", "Broadleaf", "Conifer", "BigBushDry"],
 				"Chance": 0.0004
+			},{
+				"Props": ["BigBushDry"],
+				"Chance": 0.0015,
+				"Mode": "Scatter"
 			}
 		]
 	},
@@ -699,7 +735,7 @@ proplists = [
 		"Name": "DipteroPropList",
 		"Array": [
 			{
-				"Props": ["Broadleaf", "Broadleaf", "Conifer", "Shrub", "BigBush"],
+				"Props": ["Broadleaf", "Broadleaf", "Conifer", "Shrub", "BigBushLush"],
 				"Chance": 0.01
 			},{
 				"Props": ["SmallRock"],
@@ -736,7 +772,7 @@ proplists = [
 		"Name": "BushlandProps",
 		"Array": [
 			{
-				"Props": ["Shrub", "BigBush"],
+				"Props": ["Shrub", "BigBush", "BigBushLush", "BigBushRust"],
 				"Chance": 0.05
 			},{
 				"Props": ["LongGrass"],
@@ -806,6 +842,10 @@ proplists = [
 				"Props": ["Broadleaf", "Broadleaf", "Conifer", "Shrub", "BigBush"],
 				"Chance": 0.007
 			},{
+				"Props": ["BigBushRust", "BigBushLush"],
+				"Chance": 0.002,
+				"Mode": "Scatter"
+			},{
 				"Props": ["SmallRock"],
 				"Chance": 0.01
 			},{
@@ -830,7 +870,7 @@ proplists = [
 				"Props": ["Broadleaf"],
 				"Chance": 0.004116
 			},{
-				"Props": ["Conifer", "Shrub", "BigBush"],
+				"Props": ["Conifer", "Shrub", "BigBushLush"],
 				"Chance": 0.0056
 			},{
 				"Props": ["SmallRock"],
@@ -865,7 +905,7 @@ proplists = [
 				"Props": ["Pine", "Pine", "Pine", "Conifer"],
 				"Chance": 0.0096
 			},{
-				"Props": ["Shrub", "BigBush"],
+				"Props": ["BigBushDark"],
 				"Chance": 0.012
 			},{
 				"Props": ["Rock"],
@@ -987,7 +1027,7 @@ proplists = [
 				"Props": ["BroadleafSmall"],
 				"Chance": 0.009
 			},{
-				"Props": ["Conifer", "BigBush"],
+				"Props": ["Conifer", "BigBushDark"],
 				"Chance": 0.0045
 			},{
 				"Props": ["Shroom"],
@@ -1125,7 +1165,7 @@ proplists = [
 				"Props": ["SnowyPine", "Pine", "Pine"],
 				"Chance": 0.004
 			},{
-				"Props": ["Shrub", "BigBush"],
+				"Props": ["Shrub", "BigBushDark"],
 				"Chance": 0.012
 			},{
 				"Props": ["SmallRock"],
@@ -1149,8 +1189,9 @@ proplists = [
 				"Props": ["Broadleaf", "Broadleaf", "Conifer", "BigBush"],
 				"Chance": 0.0025
 			},{
-				"Props": ["Shrub", "BigBush"],
-				"Chance": 0.02
+				"Props": ["BigBushDry", "BigBushDry", "BigBush", "BigBushRust", "Shrub"],
+				"Chance": 0.02,
+				"Cluster": BUSH_GROVE_CLUSTER
 			},{
 				"Props": ["SmallRock"],
 				"Chance": 0.008
@@ -1176,8 +1217,9 @@ proplists = [
 				"Props": ["Cactus"],
 				"Chance": 0.004
 			},{
-				"Props": ["Shrub"],
-				"Chance": 0.012
+				"Props": ["Shrub", "BigBushDry"],
+				"Chance": 0.008,
+				"Mode": "Scatter"
 			},{
 				"Props": ["DryGrass"],
 				"Chance": 0.22
@@ -1191,8 +1233,9 @@ proplists = [
 				"Props": ["Broadleaf", "Palm"],
 				"Chance": 0.0015
 			},{
-				"Props": ["Shrub", "BigBush"],
-				"Chance": 0.012
+				"Props": ["BigBushDry", "BigBushDry", "Shrub"],
+				"Chance": 0.006,
+				"Mode": "Scatter"
 			},{
 				"Props": ["SmallRock"],
 				"Chance": 0.006
@@ -1212,7 +1255,7 @@ proplists = [
 				"Props": ["Broadleaf", "Palm", "Conifer"],
 				"Chance": 0.003
 			},{
-				"Props": ["Shrub", "BigBush"],
+				"Props": ["Shrub", "BigBushLush", "BigBushDry"],
 				"Chance": 0.02
 			},{
 				"Props": ["SmallRock"],
@@ -1281,7 +1324,7 @@ for prop in props:
 		prop["NoCollision"] = True
 
 range_mul_by_name = {
-	"Shrub": 2.5, "BigBush": 2.5,
+	"Shrub": 2.5, **{name: 2.5 for name in BIG_BUSHES},
 	"SmallRock": 2.5, "SmallVolcanicRock": 2.5, "SnowyRock": 2.5, "CanyonRock": 2.5,
 	"Rogoz": 2.5,
 }
@@ -1292,7 +1335,7 @@ for prop in props:
 	prop["RangeMul"] = round(prop["RangeMul"] * mul, 2)
 
 vehicle_break_speed_by_name = {
-	"Shrub": 200, "BigBush": 200, "Bush": 200, "Cactus": 200,
+	"Shrub": 200, **{name: 200 for name in BIG_BUSHES}, "Bush": 200, "Cactus": 200,
 	"BroadleafSmall": 500, "Palm": 500,
 	"Broadleaf": 900, "Pine": 900, "SnowyPine": 900, "Conifer": 900,
 }
@@ -1364,6 +1407,8 @@ for prop in props:
 			temp_prop["GuardsGround"] = prop["GuardsGround"]
 		if "VehicleBreakSpeed" in prop:
 			temp_prop["VehicleBreakSpeed"] = prop["VehicleBreakSpeed"]
+		if "Materials" in prop:
+			temp_prop["Materials"] = prop["Materials"]
 		if "Satellites" in prop:
 			temp_prop["Satellites"] = prop["Satellites"]
 			temp_prop["SatelliteCount"] = prop["SatelliteCount"]
@@ -1377,7 +1422,7 @@ DENSITY_MUL = 0.6
 TREE_PROPS = {"Broadleaf", "Conifer", "Pine", "SnowyPine", "Palm"}
 
 CLUSTER_PROPS = {
-	"Shrub", "BigBush", "Bush", "Moss", "Fern", "Cactus",
+	"Shrub", *BIG_BUSHES, "Bush", "Moss", "Fern", "Cactus",
 	"Rock", "SmallRock", "VolcanicRock", "SmallVolcanicRock", "SnowyRock", "CanyonRock",
 }
 
@@ -1496,11 +1541,12 @@ def layers_from_legacy_proplist(generator_name, legacy_plist):
 		chance = entry["Chance"]
 		list_name = f"{generator_name}_L{index}_{prop_names[0]}"
 		emit_static_proplist(list_name, prop_names)
-		if is_cluster_layer(prop_names):
+		mode = entry.get("Mode", "Cluster" if is_cluster_layer(prop_names) else "Scatter")
+		if mode == "Cluster":
 			layers.append({
 				"Mode": "Cluster",
 				"PropList": list_name,
-				"Cluster": cluster_settings_for(prop_names),
+				"Cluster": entry.get("Cluster", cluster_settings_for(prop_names)),
 				"SeedOffset": layer_seed_offset(list_name),
 			})
 		else:
