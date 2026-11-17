@@ -596,6 +596,30 @@ for machine in machines:
 				"Ticks" : 40
 			})
 
+		if machine["Name"] == "CopperWallLamp":
+			append_recipe({
+				"Name": block_name,
+				"Input": items([
+					[plate(), 2],
+					["Triod"],
+					["CopperWire", 2]
+				]),
+				"Output": one_item(block_name),
+				"Ticks" : 40
+			})
+
+		if machine["Name"] in ("SteelWallLamp", "StainlessSteelWallLamp"):
+			append_recipe({
+				"Name": block_name,
+				"Input": items([
+					[plate(), 2],
+					["Glass"],
+					wire_count(2)
+				]),
+				"Output": one_item(block_name),
+				"Ticks" : 40
+			})
+
 		if machine["Name"] == "Lamp":
 			append_recipe({
 				"Name": block_name,

@@ -1835,6 +1835,33 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "CopperWallLamp",
+	"Label": ["machines_label_format", "common", ["Copper", "common"], ["WallLamp", "machines"]],
+	"RequiredResearch": ["CopperLamp"],
+	"Levels": [1,1],
+	"Unlocks": [["Hand" + r_dict, "CopperWallLamp"]],
+	"CostMul": 0.1,
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "SteelWallLamp",
+	"Label": ["machines_label_format", "common", ["Steel", "common"], ["WallLamp", "machines"]],
+	"RequiredResearch": ["Spotlight"],
+	"Levels": [2,2],
+	"Unlocks": [["Hand" + r_dict, "SteelWallLamp"]],
+	"CostMul": 0.1,
+})
+append_levels({
+	"Class": research_recipe,
+	"Name": "StainlessSteelWallLamp",
+	"Label": ["machines_label_format", "common", ["StainlessSteel", "common"], ["WallLamp", "machines"]],
+	"RequiredResearch": ["AdvancedNightVision"],
+	"Levels": [4,4],
+	"Unlocks": [["Hand" + r_dict, "StainlessSteelWallLamp"]],
+	"CostMul": 0.1,
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "Flashlight",
 	"Label": ["Flashlight", "misc"],
 	"RequiredResearch": ["Lamp"],
