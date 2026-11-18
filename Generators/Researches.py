@@ -738,6 +738,7 @@ append_levels({
 	"Levels": [1, 1],
 	"Unlocks": [
 		["Hand" + r_dict, "LogicWire"],
+		["Hand" + r_dict, "LogicSensor"],
 		["Hand" + r_dict, "LogicInterface"],
 	],
 	"MainResearch": True,
