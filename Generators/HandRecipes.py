@@ -396,6 +396,47 @@ recipes_hand.append({
 })
 
 recipes_hand.append({
+	"Name": "Crawler",
+	"Input":{
+		"Items":[
+			{
+				"Name": "StainlessSteelPlate",
+				"Count": 80
+			},
+			{
+				"Name": "StainlessSteelParts",
+				"Count": 60
+			},
+			{
+				"Name": "StainlessSteelPipe",
+				"Count": 20
+			},
+			{
+				"Name": "StainlessSteelElectricEngine",
+				"Count": 6
+			},
+			{
+				"Name": "ModularFrame",
+				"Count": 12
+			},
+			{
+				"Name": "Processor",
+				"Count": 10
+			}
+		]
+	},
+	"Output":{
+		"Items":[
+			{
+				"Name": "Crawler",
+				"Count": 1
+			}
+		]
+	},
+	"Ticks" : 900
+})
+
+recipes_hand.append({
 	"Name": "Boat",
 	"Input":{
 		"Items":[

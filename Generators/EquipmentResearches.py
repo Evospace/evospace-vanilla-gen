@@ -119,6 +119,17 @@ def append_equipment(xy, append_levels, researches):
 	})
 	append_levels({
 		"Class": research_recipe,
+		"Name": "Crawler",
+		"Label": ["Crawler", "parts"],
+		"RequiredResearch": ["OffroadVehicle", "ModularFrame"],
+		"Unlocks": [["Hand" + r_dict, "Crawler"]],
+
+
+		"Levels": [4,4],
+		"CostMul": 3,
+	})
+	append_levels({
+		"Class": research_recipe,
 		"Name": "AntigravityUnit",
 		"Label": ["AntigravityUnit", "misc"],
 		"RequiredResearch": ["AdvancedJetpack", "QuantumProcessor", "Catalyst"],

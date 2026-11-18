@@ -329,6 +329,7 @@ experiments = [
 			["IndustrialSmelting", "StainlessSteelProduction"],
 			["IndustrialSteelProduction", "IndustrialSmelting"],
 			["ModularFrame", "StainlessSteelProduction"],
+			["Crawler", "ModularFrame"],
 			["Monitor", "ModularFrame"],
 			["AdvancedNightVision", "Monitor"],
 			["StainlessSteelWallLamp", "AdvancedNightVision"],

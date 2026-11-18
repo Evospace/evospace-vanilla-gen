@@ -166,6 +166,12 @@ tools = [
 		"ItemLogic": "/Game/Equipped/BoatItemBP.BoatItemBP_C",
 		"Image": "T_Boat",
 		"Category": "Vehicles",
+	},{
+		"Name": "Crawler",
+		"Label": "Crawler",
+		"ItemLogic": "/Game/Equipped/CrawlerItemBP.CrawlerItemBP_C",
+		"Image": "T_Crawler",
+		"Category": "Vehicles",
 	}
 	#{
 	#	"Name": "BuildTool",
