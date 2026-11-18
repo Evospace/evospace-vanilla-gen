@@ -639,10 +639,11 @@ for name, count, plates in [
 		ruin["Design"] = ruin_designs[name]
 	props.append(ruin)
 
-for name, item in [
+ancient_overgrowth = [
 	("AncientCrackFern", "Fern"), ("AncientCrackWeed", "Bush"), ("AncientCrackSapling", "Bush"),
 	("AncientVineHanging", "Bush"), ("AncientVineDrape", "Bush"), ("AncientVineCreeper", "Bush"), ("AncientVinePillar", "Bush"),
-]:
+]
+for name, item in ancient_overgrowth:
 	props.append({
 		"Name": name,
 		"Meshes": ["/Game/Props/AncientOvergrowth/" + name],
@@ -1336,8 +1337,13 @@ for prop in props:
 
 vehicle_break_speed_by_name = {
 	"Shrub": 200, **{name: 200 for name in BIG_BUSHES}, "Bush": 200, "Cactus": 200,
-	"BroadleafSmall": 500, "Palm": 500,
-	"Broadleaf": 900, "Pine": 900, "SnowyPine": 900, "Conifer": 900,
+	**{name: 200 for name, _ in ancient_overgrowth}, "Lily": 200, "LilyFlower": 200,
+	"BroadleafSmall": 500, "Palm": 500, "FloatingIce": 500,
+	"Pine": 900, "SnowyPine": 900, "Conifer": 900, **{ore + "Rubble": 900 for ore in deposit_kits},
+	"Broadleaf": 1200,
+	"CanyonRock": 1400, "AncientRubble": 1400, **{ore + "Shard": 1400 for ore in deposit_kits},
+	"Rock": 1700, "SnowyRock": 1700, "AncientRubbleLarge": 1700,
+	"VolcanicRock": 2000,
 }
 for prop in props:
 	if prop["Name"] in vehicle_break_speed_by_name:
