@@ -1002,9 +1002,9 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "NitricAcid",
 	"Label": ["NitricAcid", "parts"],
-	"RequiredResearch": ["IndustrialChemReactor1"],
-	"Levels": [5,5],
-	"Unlocks": [[ic_reactor_r_dict, "NitricAcid"]],
+	"RequiredResearch": ["IndustrialChemReactor"],
+	"Levels": [3,3],
+	"Unlocks": [[ic_reactor_r_dict, "NitricAcid"], ["ChemicalBath" + r_dict, "MalachiteImpureOreGravel"]],
 	"CostMul": 0.2,
 	"MainResearch": True,
 })
@@ -1013,7 +1013,7 @@ append_levels({
 	"Name": "NitroBriquette",
 	"Label": ["NitroBriquette", "parts"],
 	"RequiredResearch": ["NitricAcid"],
-	"Levels": [4,4],
+	"Levels": [3,3],
 	"Unlocks": [[ic_reactor_r_dict, "NitroBriquette"]],
 })
 append_levels({
@@ -1042,6 +1042,7 @@ append_levels({
 	"Levels": [4,4],
 	"Unlocks": [
 		["ChemicalBath" + r_dict, "RareEarthSludge"],
+		["ChemicalBath" + r_dict, "CinnabarImpureOreGravel"],
 		["Hand" + r_dict, "YttriumWire"],
 		[assembler_r_dict, "YttriumWire2"],
 	],
@@ -1482,8 +1483,8 @@ append_levels({
 	"Class": research_recipe,
 	"Name": "KrollProcess",
 	"Label": ["KrollProcess", "researches"],
-	"RequiredResearch": ["IndustrialSmelting", "NitricAcid"],
-	"Unlocks": [["IndustrialSmelter"+r_dict,"SpongeToPlate"],["IndustrialChemReactor" + r_dict, "TitaniumSponge"],["IndustrialChemReactor" + r_dict, "TitaniumTetrachloride"],["Mixer" + r_dict, "PreparedTitaniumOxideCraft"]],
+	"RequiredResearch": ["IndustrialSmelting"],
+	"Unlocks": [["IndustrialSmelter"+r_dict,"SpongeToPlate"],["IndustrialChemReactor" + r_dict, "TitaniumSponge"],["IndustrialChemReactor" + r_dict, "TitaniumTetrachloride"],["Mixer" + r_dict, "PreparedTitaniumOxideCraft"],["ChemicalBath" + r_dict, "BauxiteImpureOreGravel"]],
 	"Levels": [5,5],
 	"MainResearch": True,
 	"CostMul": 0.5,
