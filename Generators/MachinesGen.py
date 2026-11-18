@@ -77,6 +77,7 @@ FOUNDATION_MACHINES = {
 	"CopperConnector": FOUNDATION_PIPE,
 	"PowerPole": FOUNDATION,
 	"PowerTower": FOUNDATION_HEAVY,
+	"PowerPylon": FOUNDATION_HEAVY,
 	"LogicWire": FOUNDATION_PIPE,
 }
 
@@ -1385,6 +1386,20 @@ for machine in machines:
 				]),
 				"Output": one_item(machine["Name"]),
 				"Ticks" : 20
+			})
+
+		if machine["Name"] == "PowerPylon":
+			append_recipe({
+				"Name": machine["Name"],
+				"Input": items([
+					["BuildingMaterial", 64],
+					[part(), 32],
+					[plate(), 16],
+					["AdvancedCoil", 16],
+					wire_count(32)
+				]),
+				"Output": one_item(machine["Name"]),
+				"Ticks" : 40
 			})
 
 		if machine["Name"] == "ElectricEngine":

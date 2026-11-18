@@ -225,8 +225,18 @@ covers = [
         "Name": "PowerTowerHead",
         "Mesh": "/Game/Blocks/PowerLine/SM_PowerTowerHead",
     },{
+        "Name": "PowerPylon",
+        "Mesh": "/Game/Blocks/PowerLine/SM_PowerPylon",
+    },{
+        "Name": "PowerPylonHead",
+        "Mesh": "/Game/Blocks/PowerLine/SM_PowerPylonHead",
+    },{
         "Name": "PowerWire",
         "Mesh": "/Game/Blocks/PowerLine/SM_PowerWire",
+        "NoCollision": True,
+    },{
+        "Name": "PowerPylonWire",
+        "Mesh": "/Game/Blocks/PowerLine/SM_PowerPylonWire",
         "NoCollision": True,
     },{
         "Name": "FoundationTop",

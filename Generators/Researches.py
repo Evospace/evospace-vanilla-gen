@@ -1451,6 +1451,14 @@ append_levels({
 })
 append_levels({
 	"Class": research_recipe,
+	"Name": "PowerPylon",
+	"Label": ["PowerPylon", "machines"],
+	"RequiredResearch": ["AdvancedCoil"],
+	"Unlocks": [["Hand" + r_dict, "PowerPylon"]],
+	"Levels": [4,4],
+})
+append_levels({
+	"Class": research_recipe,
 	"Name": "CarbonFiber",
 	"Label": ["CarbonFiber", "parts"],
 	"RequiredResearch": ["PyrolysisUnit", "IndustrialChemReactor1"],

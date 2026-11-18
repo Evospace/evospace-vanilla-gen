@@ -336,6 +336,7 @@ experiments = [
 			["AdvancedCoil", "ModularFrame"],
 			["AdvancedJetpack", "AdvancedCoil"],
 			["AdvancedSteampack", "AdvancedJetpack"],
+			["PowerPylon", "AdvancedCoil"],
 			["InventoryUpgrade4", "StainlessSteelChest"],
 		],
 		"Rows": 6,
