@@ -390,13 +390,13 @@ for mat, num in zip(paint_metals, range(1,7+1)):
     covers.append({
 		"Name": mat+"Conveyor",
 		"Mesh": "/Game/Blocks/Conveyor/SM_Conveyor_End",
-        "Materials": ["/Game/Blocks/Conveyor/M_Conveyor_RubberTier", tier_materials[num]],
+        "Materials": ["/Game/Blocks/Conveyor/MI_Conveyor_Rubber_"+mat, tier_materials[num]],
         "MergedShadow": True
 	})
     covers.append({
 		"Name": mat+"ConveyorSide",
 		"Mesh": "/Game/Blocks/Conveyor/SM_Conveyor_Side",
-        "Materials": ["/Game/Blocks/Conveyor/M_Conveyor_RubberTier", tier_materials[num]],
+        "Materials": ["/Game/Blocks/Conveyor/MI_Conveyor_Rubber_"+mat, tier_materials[num]],
         "MergedShadow": True
 	})
     covers.append({
