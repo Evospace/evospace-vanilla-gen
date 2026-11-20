@@ -769,7 +769,20 @@ proplists = [
 				"Chance": 0.01
 			}
 		]
-	},{ 
+	},{
+		"Name": "SnowFieldProps",
+		"Array": [
+			{
+				"Props": ["SnowyRock"],
+				"Chance": 0.01,
+				"Cluster": {"MinRadius": 1, "MaxRadius": 4, "MinCount": 4, "MaxCount": 10, "CenterSpacing": 34,
+				            "Jitter": 1.5, "DensityThreshold": 0.8, "CellFrequency": 0.005}
+			},{
+				"Props": ["SnowyGrass"],
+				"Chance": 0.05
+			}
+		]
+	},{
 		"Name": "BushlandProps",
 		"Array": [
 			{
@@ -1131,7 +1144,38 @@ proplists = [
 				"Chance": 0.2
 			},{
 				"Props": ["SnowyPine"],
-				"Chance": 0.005
+				"Chance": 0.006
+			},{
+				"Props": ["SnowyRock"],
+				"Chance": 0.01,
+				"Cluster": {"MinRadius": 1, "MaxRadius": 4, "MinCount": 3, "MaxCount": 6, "CenterSpacing": 40,
+				            "Jitter": 1.5, "DensityThreshold": 0.8, "CellFrequency": 0.005}
+			},{
+				"Props": ["FloatingIce"],
+				"Chance": 0.3
+			}
+		]
+	},
+	{
+		"Name": "SnowGroveProps",
+		"Array": [
+			{
+				"Props": ["SnowyGrass"],
+				"Chance": 0.12
+			},{
+				"Props": ["SnowyPine"],
+				"Chance": 0.006,
+				"Mode": "Cluster",
+				"Cluster": {"MinRadius": 2, "MaxRadius": 11, "MinCount": 4, "MaxCount": 10, "CenterSpacing": 26,
+				            "Jitter": 2.5, "DensityThreshold": 0.5, "CellFrequency": 0.012}
+			},{
+				"Props": ["SnowyPine"],
+				"Chance": 0.0012
+			},{
+				"Props": ["SnowyRock"],
+				"Chance": 0.01,
+				"Cluster": {"MinRadius": 1, "MaxRadius": 4, "MinCount": 3, "MaxCount": 6, "CenterSpacing": 40,
+				            "Jitter": 1.5, "DensityThreshold": 0.8, "CellFrequency": 0.005}
 			},{
 				"Props": ["FloatingIce"],
 				"Chance": 0.3
@@ -1491,9 +1535,10 @@ PROPS_GENERATOR_SOURCES = [
 	("EmptySeaProps", "EmptySeaProps"),
 	("VolcanicProps", "VolcanicProps"),
 	("SandlandProps", "DesertProps"),
-	("SnowProps", "SnowProps"),
+	("SnowProps", "SnowFieldProps"),
 	("SnowGrassGenerator", "SnowGrassProps"),
 	("SnowForestGenerator", "SnowForestProps"),
+	("SnowGroveGenerator", "SnowGroveProps"),
 	("HillsProps", "GrasslandProps"),
 	("HillsForestProps", "BushlandProps"),
 	("MountainSnowProps", "SnowProps"),

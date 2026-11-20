@@ -59,7 +59,7 @@ global_family.append({
 	})
 climate_niches = [
 	{"Temperature": 0.06, "Humidity": 0.28, "Weight": -0.006, "Leaves": ["SnowBiome"]},
-	{"Temperature": 0.06, "Humidity": 0.72, "Weight": -0.006, "Leaves": ["SnowForestBiome"]},
+	{"Temperature": 0.06, "Humidity": 0.72, "Weight": -0.006, "Leaves": ["SnowForestBiome", "SnowGroveBiome"]},
 	{"Temperature": 0.28, "Humidity": 0.18, "Leaves": ["TundraBiome"]},
 	{"Temperature": 0.28, "Humidity": 0.5, "Leaves": ["ForestTundraBiome"]},
 	{"Temperature": 0.28, "Humidity": 0.8, "Leaves": ["PineForestBiome"]},
@@ -563,10 +563,11 @@ add_height("ForestHeight",       [{"Frequency": 0.009, "FractalOctaves": 2, "Fra
 # Gently rolling, morainic relief: a broad swell plus low hummocks under the canopy
 add_height("PineForestHeight",   [{"Frequency": 0.006, "FractalOctaves": 3, "FractalGain": 0.35, "Min": -3, "Max": 6},
                                   {"Frequency": 0.022, "FractalOctaves": 2, "FractalGain": 0.35, "Min": 0,  "Max": 1.5}])
-# Snowfields are rock under snow: a broad swell, ridged outcrops through it, and loose stony detail
-add_height("SnowHeight",         [{"Frequency": 0.004, "FractalOctaves": 3, "Min": -4, "Max": 8},
-                                  {"Frequency": 0.012, "FractalOctaves": 4, "FractalType": "Ridged", "Min": -2, "Max": 12, "Power": 2},
-                                  {"Frequency": 0.050, "FractalOctaves": 2, "Min": -3, "Max": 4}])
+add_height("SnowHeight",         [{"Frequency": 0.0035, "FractalOctaves": 3, "FractalGain": 0.4, "Min": -3, "Max": 7},
+                                  {"Frequency": 0.011, "FractalOctaves": 2, "FractalGain": 0.35, "Min": 0, "Max": 2},
+                                  {"Frequency": 0.008, "FractalOctaves": 2, "FractalGain": 0.35, "Min": 0, "Max": 10, "Power": 8, "SeedOffset": 6113}])
+add_height("SnowForestHeight",   [{"Frequency": 0.005, "FractalOctaves": 3, "FractalGain": 0.4, "Min": -3, "Max": 6},
+                                  {"Frequency": 0.02, "FractalOctaves": 2, "FractalGain": 0.35, "Min": 0, "Max": 1.2}])
 add_height("SandHeight",         [{"NoiseType": "Cellular", "FractalOctaves": 2, "Frequency": 0.040, "CellularReturnType": "Distance",
                                   "CellularDistanceFunction": "Natural", "CellularJitter": 0.75, "Min": -2, "Max": 2}])
 # Flat wetland base plus rare circular lake basins carved by a sparse cellular field.
@@ -663,6 +664,12 @@ biomes.extend([
 		"Name":"SnowForestBiome",
 		"Layering":"SnowLayering",
 		"Props": "SnowForestGenerator"
+	},
+	{
+		"Class":"Biome",
+		"Name":"SnowGroveBiome",
+		"Layering":"SnowLayering",
+		"Props": "SnowGroveGenerator"
 	},
 	
 	# jungle
@@ -887,8 +894,9 @@ biome_height = {
 	"PineForestBiome":       "PineForestHeight",
 	"ForestBiome":           "ForestHeight",
 	"SnowBiome":             "SnowHeight",
-	"SnowGrassBiome":        "SnowHeight",
-	"SnowForestBiome":       "SnowHeight",
+	"SnowGrassBiome":        "SnowForestHeight",
+	"SnowForestBiome":       "SnowForestHeight",
+	"SnowGroveBiome":        "SnowForestHeight",
 	"DipteroBiome":          "ForestHeight",
 	"BrokenLandBiome":       "VolcanicHeight",
 	"VolcanoBiome":          "VolcanicHeight",
@@ -932,6 +940,7 @@ for f in families + [g for g in global_family if "WeatherLooks" in g]:
 # precipitation bands are snow (same as SnowBiomeFamily), not plain fog.
 looks_by_biome["MountainsSnowBiome"] = ["Clear", "SlightlyCloudy", "Overcast", "Snowfall", "Blizzard"]
 looks_by_biome["TundraBiome"] = ["Clear", "SlightlyCloudy", "Overcast", "Snowfall", "Blizzard"]
+looks_by_biome["SnowGroveBiome"] = ["Clear", "SlightlyCloudy", "Overcast", "Snowfall", "Blizzard"]
 looks_by_biome["ForestTundraBiome"] = ["SlightlyCloudy", "LightLowFog", "Overcast", "Snowfall", "Blizzard"]
 looks_by_biome["ForestSteppeBiome"] = ["Clear", "SlightlyCloudy", "Overcast", "LightRain", "Rain"]
 looks_by_biome["SemiDesertBiome"] = ["Clear", "SlightlyCloudy", "PartlyCloudy", "DustHaze", "SandStorm"]
@@ -985,6 +994,7 @@ map_colors = {
 	"SnowBiome": map_snow,
 	"SnowGrassBiome": map_mix(map_snow, map_pine, 0.3),
 	"SnowForestBiome": map_mix(map_snow, map_pine, 0.5),
+	"SnowGroveBiome": map_mix(map_snow, map_pine, 0.4),
 	"TundraBiome": map_mix(map_snow, map_prairie, 0.6),
 	"ForestTundraBiome": map_mix(map_snow, map_pine, 0.7),
 	"PineForestBiome": map_pine,
