@@ -542,6 +542,8 @@ def add_height(name, layers):
 			entry["CellularJitter"] = l["CellularJitter"]
 		if "FractalType" in l:
 			entry["FractalType"] = l["FractalType"]
+		if "FractalGain" in l:
+			entry["FractalGain"] = l["FractalGain"]
 		if "Power" in l:
 			entry["Power"] = l["Power"]
 		height_noises.append(entry)
@@ -553,14 +555,14 @@ def add_height(name, layers):
 	})
 
 # climate-scale relief; amplitudes are detail added on top of the global backbone
-add_height("PlainHeight",        [{"Frequency": 0.012, "FractalOctaves": 2, "Min": 0,  "Max": 4}])
-add_height("PrairieHeight",      [{"Frequency": 0.010, "FractalOctaves": 2, "Min": 0,  "Max": 4}])
-add_height("PrairieHillsHeight", [{"Frequency": 0.013, "FractalOctaves": 2, "Min": 2,  "Max": 4}])
-add_height("ForestHeight",       [{"Frequency": 0.009, "FractalOctaves": 2, "Min": 0,  "Max": 4},
-                                  {"Frequency": 0.030, "FractalOctaves": 2, "Min": 0,  "Max": 4}])
+add_height("PlainHeight",        [{"Frequency": 0.012, "FractalOctaves": 2, "FractalGain": 0.35, "Min": 0,  "Max": 4}])
+add_height("PrairieHeight",      [{"Frequency": 0.010, "FractalOctaves": 2, "FractalGain": 0.35, "Min": 0,  "Max": 4}])
+add_height("PrairieHillsHeight", [{"Frequency": 0.013, "FractalOctaves": 2, "FractalGain": 0.35, "Min": 2,  "Max": 4}])
+add_height("ForestHeight",       [{"Frequency": 0.009, "FractalOctaves": 2, "FractalGain": 0.35, "Min": 0,  "Max": 4},
+                                  {"Frequency": 0.030, "FractalOctaves": 2, "FractalGain": 0.35, "Min": 0,  "Max": 1.5}])
 # Gently rolling, morainic relief: a broad swell plus low hummocks under the canopy
-add_height("PineForestHeight",   [{"Frequency": 0.006, "FractalOctaves": 3, "Min": -3, "Max": 6},
-                                  {"Frequency": 0.022, "FractalOctaves": 2, "Min": 0,  "Max": 3}])
+add_height("PineForestHeight",   [{"Frequency": 0.006, "FractalOctaves": 3, "FractalGain": 0.35, "Min": -3, "Max": 6},
+                                  {"Frequency": 0.022, "FractalOctaves": 2, "FractalGain": 0.35, "Min": 0,  "Max": 1.5}])
 # Snowfields are rock under snow: a broad swell, ridged outcrops through it, and loose stony detail
 add_height("SnowHeight",         [{"Frequency": 0.004, "FractalOctaves": 3, "Min": -4, "Max": 8},
                                   {"Frequency": 0.012, "FractalOctaves": 4, "FractalType": "Ridged", "Min": -2, "Max": 12, "Power": 2},
@@ -574,7 +576,7 @@ add_height("SwampHeight",        [{"Frequency": 0.020, "FractalOctaves": 2, "Min
                                    "CellularJitter": 0.55, "Min": 0, "Max": -7, "Power": 5, "SeedOffset": 4201}])
 add_height("VolcanicHeight",     [{"Frequency": 0.01, "FractalOctaves": 5, "Min": -4,  "Max": 4},
                                   {"Frequency": 0.05, "FractalOctaves": 2, "Min": 1,  "Max": 10, "Power": 10}])
-add_height("FertileForestHeight",[{"Frequency": 0.009, "FractalOctaves": 2, "Min": 0,  "Max": 4}])
+add_height("FertileForestHeight",[{"Frequency": 0.009, "FractalOctaves": 2, "FractalGain": 0.35, "Min": 0,  "Max": 4}])
 
 # Moderate rolling hills (gameplay_mountains_plan: foothill relief, rounded silhouettes).
 add_height("HillsHeight",        [{"Frequency": 0.010, "FractalOctaves": 4, "Min": -8,  "Max": 12},
@@ -603,7 +605,9 @@ generators.extend([
 	{"Class": "WorldGeneratorPlains", "Name": "WorldGeneratorPlains", "GlobalBiome": "GlobalBiomeMegaFamily3", "UnderworldBlock": "GraniteSurface", **world_sources},
 	{"Class": "WorldGeneratorMoon", "Name": "WorldGeneratorMoon", "GlobalBiome": "GlobalBiomeMegaFamilyMoon", "UnderworldBlock": "GraniteSurface", **dry_sources},
 	{"Class": "WorldGeneratorConfigurable", "Name": "WorldGeneratorConfigurable", "GlobalBiome": "GlobalBiomeMegaFamilyConfigurable", "UnderworldBlock": "GraniteSurface", **world_sources},
-	{"Class": "WorldGeneratorClimate", "Name": "WorldGeneratorClimate", "GlobalBiome": "GlobalBiomeMegaFamilyClimate", "UnderworldBlock": "GraniteSurface", **world_sources},
+	{"Class": "WorldGeneratorClimate", "Name": "WorldGeneratorClimate", "GlobalBiome": "GlobalBiomeMegaFamilyClimate", "UnderworldBlock": "GraniteSurface", **world_sources,
+	 "Erosion": {"Strength": 2.0, "CellBlocks": 40, "Octaves": 2, "Gain": 0.5, "Lacunarity": 2.0, "SlopeStart": 0.08, "SlopeFull": 0.3,
+	             "ShoreHeight": 1.0, "ShoreBlend": 3.0, "Branching": 1.0}},
 	{"Class": "FlatWorldGenerator", "Name": "FlatWorldGenerator", "Layers": [{"Block": "ReinforcedConcrete", "Height": 3}], "Biome": "WastelandBiomeFamily", **world_sources},
 	{"Class": "WorldGeneratorOrbit", "Name": "WorldGeneratorOrbit", "PlatformBlock": "Concrete", "Biome": "WastelandBiomeFamily", **dry_sources},
 ])
