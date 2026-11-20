@@ -81,7 +81,7 @@ climate_niches = [
 climate_sea = {
 	"Cold": "GravelSeaBiome", "ColdBelow": 0.18,
 	"Shallow": "SeaGrassBiome", "ShallowAbove": -6,
-	"Deep": "EmptySeaBiome", "DeepBelow": -25,
+	"Deep": "EmptySeaBiome", "DeepBelow": -16,
 	"Open": "SeaBiome",
 }
 climate_mountains = {
@@ -89,13 +89,23 @@ climate_mountains = {
 	"Dry": "MountainsLayeredBiome", "DryBelow": 0.35,
 	"Wet": "MountainsDarkStoneBiome", "WetAbove": 0.7,
 	"Rock": "MountainsStoneBiome",
+	"Height": "ClimateMountainHeight",
+	"Erosion": {"Strength": 26.0, "CellBlocks": 128, "Octaves": 3, "Gain": 0.5, "Lacunarity": 2.0, "SlopeStart": 0.02, "SlopeFull": 0.25,
+	            "ShoreHeight": 1.0, "ShoreBlend": 3.0, "Branching": 1.0, "Relief": 60.0, "SharpRidges": True},
 }
 climate_volcanic = {
 	"Core": "VolcanoBiome", "Rim": "BrokenLandBiome",
 	"Frequency": 0.0011, "Share": 0.07, "CoreShare": 0.35, "MinHeight": 3,
 }
 climate_childs = []
-for leaf in [l for n in climate_niches for l in n["Leaves"]] + [v for g in (climate_sea, climate_mountains, climate_volcanic) for v in g.values() if isinstance(v, str)]:
+climate_shelves = [
+	{"Name": "Lowland",    "Uplift": 0.40, "Blocks": 0},
+	{"Name": "LowTerrace", "Uplift": 0.56, "Blocks": 14},
+	{"Name": "Terrace",    "Uplift": 0.64, "Blocks": 18},
+	{"Name": "Upland",     "Uplift": 0.86, "Blocks": 38},
+	{"Name": "Highland",   "Uplift": 1.00, "Blocks": 48},
+]
+for leaf in [l for n in climate_niches for l in n["Leaves"]] + [v for g in (climate_sea, climate_mountains, climate_volcanic) for k, v in g.items() if isinstance(v, str) and k != "Height"]:
 	if leaf not in climate_childs:
 		climate_childs.append(leaf)
 
@@ -122,6 +132,7 @@ global_family.append({
 			"InlandStart": 0.15,
 			"InlandBand": 0.3,
 		},
+		"Shelves": climate_shelves,
 		"Niches": climate_niches,
 		"Sea": climate_sea,
 		"Mountains": climate_mountains,
@@ -593,6 +604,7 @@ add_height("MountainsHeight",    [{"Frequency": 0.006, "FractalOctaves": 5, "Fra
 add_height("ClayBasinHeight",    [{"NoiseType": "Cellular", "Frequency": 0.0035, "FractalOctaves": 1,
                                    "CellularReturnType": "Distance2Cave", "CellularDistanceFunction": "Natural",
                                    "CellularJitter": 0.55, "Min": 0, "Max": -7, "Power": 5, "SeedOffset": 4201}])
+add_height("ClimateMountainHeight", [{"Frequency": 0.011, "FractalOctaves": 3, "FractalType": "Ridged", "Min": 0, "Max": 4, "Power": 2, "SeedOffset": 7301}])
 add_height("SemiDesertPatchHeight", [{"Frequency": 0.03, "FractalOctaves": 2, "Min": -1, "Max": 1, "SeedOffset": 5303}])
 
 # noises + height generators load first (single-pass-safe ordering)
