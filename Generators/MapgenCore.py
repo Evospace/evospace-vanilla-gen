@@ -1,138 +1,8 @@
 from Common import *
+from MapgenList import mapgen_objects, triplanar_material
+from TransitionColors import transition_colors
 
 objects_array = []
-
-mapgen_objects = [
-	{
-		"Name": "Sand",
-		"Color": "#fbeebf",
-		"Side": "#928c76",
-		"Drops": "Sand",
-		"Hardness": 1,
-		"BreakEffect": "/Game/EffectActors/SandBreakEffect.SandBreakEffect_C"
-	},{
-		"Name": "Sandstone",
-		"Color": "#fbeebf",
-		"Side": "#928c76",
-		"Drops": "Sand",
-		"Hardness": 1,
-		"BreakEffect": "/Game/EffectActors/SandBreakEffect.SandBreakEffect_C"
-	},{
-		"Name": "Stone",
-		"Color": "#928c76",
-		"Side": "#928c76",
-		"Drops": "Stone",
-		"Hardness": 2
-	},{
-		"Name": "DesertSand",
-		"Color": "#a9884a",
-		"Side": "#a9884a",
-		"Drops": "Sand",
-		"Hardness": 1,
-		"BreakEffect": "/Game/EffectActors/SandBreakEffect.SandBreakEffect_C"
-	},{
-		"Name": "Grass",
-		"Color": "#525c27",
-		"Side": "#55321d",
-		"Drops": "Dirt",
-		"Hardness": 1,
-		"BreakEffect": "/Game/EffectActors/DirtBreakEffect.DirtBreakEffect_C"
-	},{
-		"Name": "Lava",
-		"Color": "#686868",
-		"Side": "#414141",
-		"Drops": "Basalt",
-		"Hardness": 5
-	},{
-		"Name": "Basalt",
-		"Color": "#696969",
-		"Side": "#414141",
-		"Drops": "Basalt",
-		"Hardness": 2
-	},{
-		"Name": "Bog",
-		"Color": "#24120a",
-		"Side": "#2c2215",
-		"Drops": "Dirt",
-		"Hardness": 1,
-		"BreakEffect": "/Game/EffectActors/DirtBreakEffect.DirtBreakEffect_C"
-	},{
-		"Name": "PineForest",
-		"Color": "#574226",
-		"Side": "#574226",
-		"Drops": "Dirt",
-		"Hardness": 1,
-		"BreakEffect": "/Game/EffectActors/DirtBreakEffect.DirtBreakEffect_C"
-	},{
-		"Name": "Dirt",
-		"Color": "#866640",
-		"Side": "#866640",
-		"Drops": "Dirt",
-		"Hardness": 1,
-		"BreakEffect": "/Game/EffectActors/DirtBreakEffect.DirtBreakEffect_C"
-	},{
-		"Name": "Gravel",
-		"Color": "#e9ddb1",
-		"Side": "#e9ddb1",
-		"Drops": "Gravel",
-		"Hardness": 1
-	},{
-		"Name": "DryGrass",
-		"Color": "#55321d",
-		"Side": "#866641",
-		"Drops": "Dirt",
-		"Hardness": 1,
-		"BreakEffect": "/Game/EffectActors/DirtBreakEffect.DirtBreakEffect_C"
-	},{
-		"Name": "Clay",
-		"Color": "#6f452e",
-		"Side": "#6f452e",
-		"Drops": "Sand",
-		"Hardness": 1.0,
-		"BreakEffect": "/Game/EffectActors/ClayBreakEffect.ClayBreakEffect_C"
-	},{
-		"Name": "Limestone",
-		"Color": "#a19c87",
-		"Side": "#a19c87",
-		"Drops": "Gravel",
-		"Hardness": 1.5
-	},{
-		"Name": "RedStone",
-		"Color": "#5b3823",
-		"Side": "#5b3823",
-		"Drops": "RedStone",
-		"Hardness": 2
-	},{
-		"Name": "DarkStone",
-		"Color": "#5a4550",
-		"Side": "#4a3840",
-		"Drops": "DarkStone",
-		"Hardness": 2
-	},{
-		"Name": "Snow",
-		"Color": "#fdfcfe",
-		"Side": "#856540",
-		"Drops": "Snow",
-		"Hardness": 1,
-		"BreakEffect": "/Game/EffectActors/SnowBreakEffect.SnowBreakEffect_C"
-	},{
-		"Name": "Granite",
-		"Color": "#6f6a55",
-		"Side": "#6f6a55",
-		"Drops": "Granite",
-		"Hardness": 4,
-		"Unbreakable": True
-	},{
-		"Name": "Peat",
-		"Color": "#554024",
-		"Side": "#554424",
-		"Drops": "Peat",
-		# Drop the material StaticItem (fuel/tooltip from PartsGen), not PeatSurface
-		"MineResult": "Peat",
-		"Hardness": 1,
-		"BreakEffect": "/Game/EffectActors/PeatBreakEffect.PeatBreakEffect_C"
-	},
-]
 
 pickaxe_recipes = []
 
@@ -153,7 +23,7 @@ for object in mapgen_objects:
 for object in mapgen_objects:
 	objects_array.append({ "Class": "TesselatorMarching",
 		"Name": object["Name"] + "Surface" + tesselator,
-		"Material": "/Game/Materials/Triplanar/" + object["Name"] + "Material"
+		"Material": triplanar_material(object["Name"])
 	})
 
 for object in mapgen_objects:
@@ -163,8 +33,8 @@ for object in mapgen_objects:
 		"Name": object["Name"] + "Surface" + static_surface,
 		"Tesselator": object["Name"] + "Surface" + tesselator,
 		"Item" : object["Name"] + "Surface",
-		"ColorSide": object["Side"],
-		"ColorTop": object["Color"],
+		"ColorTop": transition_colors[object["Name"]][0],
+		"ColorSide": transition_colors[object["Name"]][1],
 		"Minable": {"Minable": False} if "Unbreakable" in object else {"Result": mine_drop},
 		"Surface": True
 	}

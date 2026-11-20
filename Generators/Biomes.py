@@ -456,7 +456,7 @@ generators.extend([
 	{
 		"Class": "LowlandLayeringGenerator",
 		"Name": "SemiDesertLayering",
-		"Blocks": ["DryGrassSurface" + static_surface, "DirtSurface" + static_surface, "SandstoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
+		"Blocks": ["SandyDryGrassSurface" + static_surface, "DirtSurface" + static_surface, "SandstoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
 		"Starts": [0, 2, 5, 9, 12, 16, 19, 23, 30],
 		"LowBlocks": ["DesertSandSurface" + static_surface, "SandstoneSurface" + static_surface, "StoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "RedStoneSurface" + static_surface, "StoneSurface" + static_surface, "DarkStoneSurface" + static_surface],
 		"LowStarts": [0, 3, 6, 9, 12, 16, 19, 23, 30],

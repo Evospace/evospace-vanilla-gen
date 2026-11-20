@@ -55,6 +55,7 @@ objects_array = [
 				"DarkStoneMaterial": "L_DarkStone",
 				"DesertSandMaterial": "L_DesertSand",
 				"DryGrassMaterial": "L_DryGrass",
+				"SandyDryGrassMaterial": "L_DesertSand",
 				"GrassMaterial": "L_Grass",
 				"GravelMaterial": "L_Gravel",
 				"PeatMaterial": "L_Peat",
