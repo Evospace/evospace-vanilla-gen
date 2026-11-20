@@ -99,12 +99,25 @@ climate_volcanic = {
 }
 climate_childs = []
 climate_shelves = [
-	{"Name": "Lowland",    "Uplift": 0.40, "Blocks": 0},
-	{"Name": "LowTerrace", "Uplift": 0.56, "Blocks": 14},
-	{"Name": "Terrace",    "Uplift": 0.64, "Blocks": 18},
-	{"Name": "Upland",     "Uplift": 0.86, "Blocks": 38},
-	{"Name": "Highland",   "Uplift": 1.00, "Blocks": 48},
+	{"Name": "Lowland",    "Uplift": 0.40, "Blocks": 0,  "Height": "ShelfLowlandHeight"},
+	{"Name": "LowTerrace", "Uplift": 0.54, "Blocks": 14, "Height": "ShelfTerraceHeight"},
+	{"Name": "Terrace",    "Uplift": 0.62, "Blocks": 18, "Height": "ShelfTerraceHeight"},
+	{"Name": "Upland",     "Uplift": 0.72, "Blocks": 38, "Height": "ShelfUplandHeight"},
+	{"Name": "Highland",   "Uplift": 0.80, "Blocks": 48, "Height": "ShelfHighlandHeight"},
 ]
+climate_leaf_relief = {
+	"DesertBiome": "SandHeight",
+	"SemiDesertBiome": "SandHeight",
+	"BogBiome": "SwampHeight",
+	"BogForestBiome": "SwampHeight",
+	"PeatBiome": "SwampHeight",
+	"ClayBiome": "SwampHeight",
+	"SnowBiome": "SnowHeight",
+	"SnowForestBiome": "SnowForestHeight",
+	"SnowGroveBiome": "SnowForestHeight",
+	"VolcanoBiome": "VolcanicHeight",
+	"BrokenLandBiome": "VolcanicHeight",
+}
 for leaf in [l for n in climate_niches for l in n["Leaves"]] + [v for g in (climate_sea, climate_mountains, climate_volcanic) for k, v in g.items() if isinstance(v, str) and k != "Height"]:
 	if leaf not in climate_childs:
 		climate_childs.append(leaf)
@@ -133,6 +146,7 @@ global_family.append({
 			"InlandBand": 0.3,
 		},
 		"Shelves": climate_shelves,
+		"LeafRelief": climate_leaf_relief,
 		"Niches": climate_niches,
 		"Sea": climate_sea,
 		"Mountains": climate_mountains,
@@ -604,6 +618,13 @@ add_height("MountainsHeight",    [{"Frequency": 0.006, "FractalOctaves": 5, "Fra
 add_height("ClayBasinHeight",    [{"NoiseType": "Cellular", "Frequency": 0.0035, "FractalOctaves": 1,
                                    "CellularReturnType": "Distance2Cave", "CellularDistanceFunction": "Natural",
                                    "CellularJitter": 0.55, "Min": 0, "Max": -7, "Power": 5, "SeedOffset": 4201}])
+add_height("ShelfLowlandHeight",  [{"Frequency": 0.005, "FractalOctaves": 2, "FractalGain": 0.4, "Min": -1, "Max": 2, "SeedOffset": 7401}])
+add_height("ShelfTerraceHeight",  [{"Frequency": 0.009, "FractalOctaves": 2, "FractalGain": 0.35, "Min": 0, "Max": 4, "SeedOffset": 7411},
+                                   {"Frequency": 0.030, "FractalOctaves": 2, "FractalGain": 0.35, "Min": 0, "Max": 1.5, "SeedOffset": 7412}])
+add_height("ShelfUplandHeight",   [{"Frequency": 0.008, "FractalOctaves": 3, "Min": -3, "Max": 8, "SeedOffset": 7421},
+                                   {"Frequency": 0.022, "FractalOctaves": 2, "Min": 0, "Max": 3, "SeedOffset": 7422}])
+add_height("ShelfHighlandHeight", [{"Frequency": 0.007, "FractalOctaves": 4, "Min": -4, "Max": 10, "SeedOffset": 7431},
+                                   {"Frequency": 0.020, "FractalOctaves": 3, "FractalType": "Ridged", "Min": 0, "Max": 4, "SeedOffset": 7432}])
 add_height("ClimateMountainHeight", [{"Frequency": 0.011, "FractalOctaves": 3, "FractalType": "Ridged", "Min": 0, "Max": 4, "Power": 2, "SeedOffset": 7301}])
 add_height("SemiDesertPatchHeight", [{"Frequency": 0.03, "FractalOctaves": 2, "Min": -1, "Max": 1, "SeedOffset": 5303}])
 
