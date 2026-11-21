@@ -1572,19 +1572,19 @@ for prop in props:
 		continue
 	prop["RangeMul"] = round(prop["RangeMul"] * mul, 2)
 
-vehicle_break_speed_by_name = {
-	"Shrub": 200, **{name: 200 for name in BIG_BUSHES}, "Bush": 200, "Cactus": 200, "SeaCoral": 200,
-	**{name: 200 for name, _ in ancient_overgrowth}, "Lily": 200, "LilyFlower": 200,
-	"BroadleafSmall": 500, "Palm": 500, "FloatingIce": 500,
-	"Pine": 900, "SnowyPine": 900, "Conifer": 900, **{ore + "Rubble": 900 for ore in deposit_kits},
-	"Broadleaf": 1200,
-	"CanyonRock": 1400, "AncientRubble": 1400, **{ore + "Shard": 1400 for ore in deposit_kits},
-	"Rock": 1700, "SnowyRock": 1700, "SeaRock": 1700, "AncientRubbleLarge": 1700,
-	"VolcanicRock": 2000,
+strength_by_name = {
+	"Shrub": 1, **{name: 1 for name in BIG_BUSHES}, "Bush": 1, "Cactus": 1, "SeaCoral": 1,
+	**{name: 1 for name, _ in ancient_overgrowth}, "Lily": 1, "LilyFlower": 1,
+	"BroadleafSmall": 20, "Palm": 20, "FloatingIce": 20,
+	"Pine": 60, "SnowyPine": 60, "Conifer": 60, **{ore + "Rubble": 60 for ore in deposit_kits},
+	"Broadleaf": 110,
+	"CanyonRock": 150, "AncientRubble": 150, **{ore + "Shard": 150 for ore in deposit_kits},
+	"Rock": 220, "SnowyRock": 220, "SeaRock": 220, "AncientRubbleLarge": 220,
+	"VolcanicRock": 300,
 }
 for prop in props:
-	if prop["Name"] in vehicle_break_speed_by_name:
-		prop["VehicleBreakSpeed"] = vehicle_break_speed_by_name[prop["Name"]]
+	if prop["Name"] in strength_by_name:
+		prop["Strength"] = strength_by_name[prop["Name"]]
 
 for prop in props:
 	image = "T_" + prop["Name"] if "Image" not in prop else prop["Image"]
@@ -1649,8 +1649,8 @@ for prop in props:
 			temp_prop["NoCollision"] = prop["NoCollision"]
 		if "GuardsGround" in prop:
 			temp_prop["GuardsGround"] = prop["GuardsGround"]
-		if "VehicleBreakSpeed" in prop:
-			temp_prop["VehicleBreakSpeed"] = prop["VehicleBreakSpeed"]
+		if "Strength" in prop:
+			temp_prop["Strength"] = prop["Strength"]
 		if "Materials" in prop:
 			temp_prop["Materials"] = prop["Materials"]
 		if "Satellites" in prop:
