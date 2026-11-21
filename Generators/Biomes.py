@@ -100,10 +100,10 @@ climate_volcanic = {
 climate_childs = []
 climate_shelves = [
 	{"Name": "Lowland",    "Uplift": 0.40, "Blocks": 0,  "Height": "ShelfLowlandHeight"},
-	{"Name": "LowTerrace", "Uplift": 0.54, "Blocks": 14, "Height": "ShelfTerraceHeight"},
-	{"Name": "Terrace",    "Uplift": 0.62, "Blocks": 18, "Height": "ShelfTerraceHeight"},
-	{"Name": "Upland",     "Uplift": 0.72, "Blocks": 38, "Height": "ShelfUplandHeight"},
-	{"Name": "Highland",   "Uplift": 0.80, "Blocks": 48, "Height": "ShelfHighlandHeight"},
+	{"Name": "LowTerrace", "Uplift": 0.54, "Blocks": 12, "Height": "ShelfTerraceHeight"},
+	{"Name": "Terrace",    "Uplift": 0.62, "Blocks": 16, "Height": "ShelfTerraceHeight"},
+	{"Name": "Upland",     "Uplift": 0.74, "Blocks": 34, "Height": "ShelfUplandHeight"},
+	{"Name": "Highland",   "Uplift": 0.83, "Blocks": 48, "Height": "ShelfHighlandHeight"},
 ]
 climate_leaf_relief = {
 	"DesertBiome": "SandHeight",
