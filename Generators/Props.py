@@ -7,6 +7,17 @@ variation_helper = [
 	"", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22"
 ]
 
+def sea_floor_variants(indices):
+	return {
+		"Names": ["SeaPlant" + variation_helper[i] for i in indices],
+		"Meshes": ["/Game/Props/SeaPlant/SeaPlant" + variation_helper[i] for i in indices],
+	}
+
+def variation_name(prop, variation):
+	if "Names" in prop:
+		return prop["Names"][variation]
+	return prop["Name"] + variation_helper[variation]
+
 props = [
 	{
 		"Name": "Cactus",
@@ -74,9 +85,9 @@ props = [
 	},
 	{
 		"Name": "SeaPlant",
-		"ScaleMin": 2,
-		"ScaleMax": 4,
-		"Variations": 22,
+		**sea_floor_variants([7, 8, 9, 10, 11]),
+		"ScaleMin": 1.2,
+		"ScaleMax": 2.4,
 		"ProjectToTerrainPower": 0,
 		"Drops": "Organics",
 		"Count": 10,
@@ -88,9 +99,46 @@ props = [
 		"HighDetailShadow": True
 	},
 	{
+		"Name": "SeaCoral",
+		**sea_floor_variants([0, 1, 2, 3, 4, 5, 6, 12, 13, 14, 15, 16]),
+		"ItemFrom": "SeaPlant",
+		"ScaleMin": 1.1,
+		"ScaleMax": 2.2,
+		"ProjectToTerrainPower": 0.4,
+		"Drops": "Organics",
+		"Count": 10,
+		"HitsToBreak": 2,
+		"IsBig": False,
+		"RangeMul": 1,
+		"AdditiveElevation": 0,
+		"SurfaceHeightMax": 0,
+		"TopHeightMax": -1.5,
+		"HighDetailShadow": True
+	},
+	{
+		"Name": "SeaRock",
+		**sea_floor_variants([17, 18, 19, 20, 21]),
+		"ItemFrom": "Rock",
+		"ScaleMin": 0.5,
+		"ScaleMax": 1.2,
+		"ProjectToTerrainPower": 0.6,
+		"Drops": "StoneSurface",
+		"Count": 20,
+		"HitsToBreak": 8,
+		"HitYield": 3,
+		"IsBig": True,
+		"RangeMul": 1,
+		"AdditiveElevation": 0,
+		"SurfaceHeightMax": 0,
+		"TopHeightMax": -1.5,
+		"HighDetailShadow": True,
+		"DamageEffect": "/Game/EffectActors/RockDamageEffect.RockDamageEffect_C",
+		"BreakEffect": "/Game/EffectActors/RockBreakEffect.RockBreakEffect_C",
+	},
+	{
 		"Name": "SeaGrass",
-		"ScaleMin": 2,
-		"ScaleMax": 4,
+		"ScaleMin": 1,
+		"ScaleMax": 2.2,
 		"Variations": 5,
 		"ProjectToTerrainPower": 0,
 		"Drops": "Organics",
@@ -695,6 +743,90 @@ BUSH_GROVE_CLUSTER = {
 	"DensityThreshold": 0.55,
 }
 
+SEA_REEF_CLUSTER = {
+	"MinRadius": 0,
+	"MaxRadius": 5,
+	"MinCount": 5,
+	"MaxCount": 12,
+	"CenterSpacing": 22,
+	"Jitter": 1.5,
+	"DensityThreshold": 0.5,
+	"CellFrequency": 0.01,
+}
+SEA_ALGAE_CLUSTER = {
+	"MinRadius": 1,
+	"MaxRadius": 7,
+	"MinCount": 3,
+	"MaxCount": 8,
+	"CenterSpacing": 20,
+	"Jitter": 2,
+	"DensityThreshold": 0.5,
+}
+SEA_LONE_ROCK_CLUSTER = {
+	"MinRadius": 0,
+	"MaxRadius": 4,
+	"MinCount": 1,
+	"MaxCount": 3,
+	"CenterSpacing": 48,
+	"Jitter": 2,
+	"DensityThreshold": 0.6,
+}
+SEA_MEADOW_CLUSTER = {
+	"MinRadius": 0,
+	"MaxRadius": 6,
+	"MinCount": 8,
+	"MaxCount": 18,
+	"CenterSpacing": 18,
+	"Jitter": 2,
+	"DensityThreshold": 0.5,
+}
+SEA_OUTCROP_CLUSTER = {
+	"MinRadius": 0,
+	"MaxRadius": 6,
+	"MinCount": 2,
+	"MaxCount": 5,
+	"CenterSpacing": 36,
+	"Jitter": 2,
+	"DensityThreshold": 0.55,
+}
+SEA_SPONGE_CLUSTER = {
+	"MinRadius": 0,
+	"MaxRadius": 3,
+	"MinCount": 2,
+	"MaxCount": 5,
+	"CenterSpacing": 40,
+	"Jitter": 1.5,
+	"DensityThreshold": 0.65,
+}
+SEA_PEBBLE_CLUSTER = {
+	"MinRadius": 0,
+	"MaxRadius": 6,
+	"MinCount": 3,
+	"MaxCount": 9,
+	"CenterSpacing": 14,
+	"Jitter": 1.5,
+	"DensityThreshold": 0.45,
+}
+SEA_BOULDER_FIELD_CLUSTER = {
+	"MinRadius": 1,
+	"MaxRadius": 8,
+	"MinCount": 3,
+	"MaxCount": 8,
+	"CenterSpacing": 20,
+	"Jitter": 2,
+	"DensityThreshold": 0.35,
+	"CellFrequency": 0.012,
+}
+SEA_KELP_BED_CLUSTER = {
+	"MinRadius": 0,
+	"MaxRadius": 5,
+	"MinCount": 3,
+	"MaxCount": 7,
+	"CenterSpacing": 24,
+	"Jitter": 2,
+	"DensityThreshold": 0.55,
+}
+
 proplists = [
 	{ 
 		"Name": "PrairieDryPropList",
@@ -973,8 +1105,24 @@ proplists = [
 				"Props": ["SmallRock"],
 				"Chance": 0.01
 			},{
+				"Props": ["SeaCoral"],
+				"Chance": 0.008,
+				"Mode": "Cluster",
+				"Cluster": SEA_REEF_CLUSTER
+			},{
 				"Props": ["SeaPlant"],
-				"Chance": 0.07
+				"Chance": 0.007,
+				"Mode": "Cluster",
+				"Cluster": SEA_ALGAE_CLUSTER
+			},{
+				"Props": ["SeaPlant"],
+				"Chance": 0.008,
+				"Mode": "Scatter"
+			},{
+				"Props": ["SeaRock"],
+				"Chance": 0.0004,
+				"Mode": "Cluster",
+				"Cluster": SEA_LONE_ROCK_CLUSTER
 			}
 		]
 	},{	
@@ -985,7 +1133,17 @@ proplists = [
 				"Chance": 0.01
 			},{
 				"Props": ["SeaGrass"],
-				"Chance": 0.15
+				"Chance": 0.02,
+				"Mode": "Cluster",
+				"Cluster": SEA_MEADOW_CLUSTER
+			},{
+				"Props": ["SeaGrass"],
+				"Chance": 0.01,
+				"Mode": "Scatter"
+			},{
+				"Props": ["SeaPlant"],
+				"Chance": 0.006,
+				"Mode": "Scatter"
 			}
 		]
 	},{	
@@ -994,6 +1152,40 @@ proplists = [
 			{
 				"Props": ["SmallRock"],
 				"Chance": 0.05
+			},{
+				"Props": ["SeaRock"],
+				"Chance": 0.0012,
+				"Mode": "Cluster",
+				"Cluster": SEA_OUTCROP_CLUSTER
+			},{
+				"Props": ["SeaCoral"],
+				"Chance": 0.001,
+				"Mode": "Cluster",
+				"Cluster": SEA_SPONGE_CLUSTER
+			},{
+				"Props": ["SeaPlant"],
+				"Chance": 0.006,
+				"Mode": "Scatter"
+			}
+		]
+	},{	
+		"Name": "GravelSeaProps",
+		"Array": [
+			{
+				"Props": ["SmallRock"],
+				"Chance": 0.03,
+				"Mode": "Cluster",
+				"Cluster": SEA_PEBBLE_CLUSTER
+			},{
+				"Props": ["SeaRock"],
+				"Chance": 0.008,
+				"Mode": "Cluster",
+				"Cluster": SEA_BOULDER_FIELD_CLUSTER
+			},{
+				"Props": ["SeaPlant"],
+				"Chance": 0.006,
+				"Mode": "Cluster",
+				"Cluster": SEA_KELP_BED_CLUSTER
 			}
 		]
 	},{	
@@ -1372,7 +1564,7 @@ for prop in props:
 range_mul_by_name = {
 	"Shrub": 2.5, **{name: 2.5 for name in BIG_BUSHES},
 	"SmallRock": 2.5, "SmallVolcanicRock": 2.5, "SnowyRock": 2.5, "CanyonRock": 2.5,
-	"Rogoz": 2.5,
+	"Rogoz": 2.5, "SeaRock": 2.5,
 }
 for prop in props:
 	mul = range_mul_by_name.get(prop["Name"])
@@ -1381,13 +1573,13 @@ for prop in props:
 	prop["RangeMul"] = round(prop["RangeMul"] * mul, 2)
 
 vehicle_break_speed_by_name = {
-	"Shrub": 200, **{name: 200 for name in BIG_BUSHES}, "Bush": 200, "Cactus": 200,
+	"Shrub": 200, **{name: 200 for name in BIG_BUSHES}, "Bush": 200, "Cactus": 200, "SeaCoral": 200,
 	**{name: 200 for name, _ in ancient_overgrowth}, "Lily": 200, "LilyFlower": 200,
 	"BroadleafSmall": 500, "Palm": 500, "FloatingIce": 500,
 	"Pine": 900, "SnowyPine": 900, "Conifer": 900, **{ore + "Rubble": 900 for ore in deposit_kits},
 	"Broadleaf": 1200,
 	"CanyonRock": 1400, "AncientRubble": 1400, **{ore + "Shard": 1400 for ore in deposit_kits},
-	"Rock": 1700, "SnowyRock": 1700, "AncientRubbleLarge": 1700,
+	"Rock": 1700, "SnowyRock": 1700, "SeaRock": 1700, "AncientRubbleLarge": 1700,
 	"VolcanicRock": 2000,
 }
 for prop in props:
@@ -1398,9 +1590,10 @@ for prop in props:
 	image = "T_" + prop["Name"] if "Image" not in prop else prop["Image"]
 
 	if "ItemFrom" not in prop:
-		for variation in range(0, prop["Variations"]):
+		item_names = [prop["Name"]] if "Names" in prop else [variation_name(prop, v) for v in range(prop["Variations"])]
+		for item_name in item_names:
 			objects_array.append({ "Class": "StaticItem",
-				"Name": prop["Name"] + variation_helper[variation],
+				"Name": item_name,
 				"StackSize": 32,
 				"Image": image,
 				"Category": "Terrain",
@@ -1415,7 +1608,7 @@ for prop in props:
 			else {"Result": prop["Drops"], "Count": prop["Count"]}
 		)
 		temp_prop = { "Class": "StaticProp",
-			"Name": prop["Name"] + variation_helper[variation],
+			"Name": variation_name(prop, variation),
 			"Mesh": prop["Meshes"][variation] if "Meshes" in prop
 				else "/Game/Props/" + prop["Name"] + "/" + prop["Name"] + variation_helper[variation],
 			"ScaleMin": prop["ScaleMin"],
@@ -1534,6 +1727,7 @@ PROPS_GENERATOR_SOURCES = [
 	("SeaPlantProps", "SeaPlantProps"),
 	("SeaGrassProps", "SeaGrassProps"),
 	("EmptySeaProps", "EmptySeaProps"),
+	("GravelSeaProps", "GravelSeaProps"),
 	("VolcanicProps", "VolcanicProps"),
 	("SandlandProps", "DesertProps"),
 	("SnowProps", "SnowFieldProps"),
@@ -1554,8 +1748,9 @@ PROPS_GENERATOR_SOURCES = [
 def expand_prop_variations(prop_names):
 	result = []
 	for prop_name in prop_names:
-		for variation in range(named_prop(prop_name)["Variations"]):
-			result.append(prop_name + variation_helper[variation])
+		prop = named_prop(prop_name)
+		for variation in range(prop["Variations"]):
+			result.append(variation_name(prop, variation))
 	return result
 
 def emit_static_proplist(list_name, prop_names):

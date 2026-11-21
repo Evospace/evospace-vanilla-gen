@@ -748,7 +748,8 @@ biomes.extend([
 	},{
 		"Class":"Biome",
 		"Name":"GravelSeaBiome",
-		"Layering":"SeaBottomLayeringGravel"
+		"Layering":"SeaBottomLayeringGravel",
+		"Props":"GravelSeaProps"
 	},{
 		"Class":"Biome",
 		"Name":"SeaPlantBiome",
