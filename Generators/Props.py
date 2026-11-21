@@ -1350,6 +1350,7 @@ ore_prop_tiers = [
 		"MinDist": ORE_R_LATE,
 		"Weight": 1,
 		"FarWeight": 4,
+		"Rare": True,
 		"Props": ["ThorianiteCluster", "PyroplatiteCluster"],
 	},
 ]
