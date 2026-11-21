@@ -28,7 +28,8 @@ props = [
 		"IsBig": False,
 		"Drops": "Organics",
 		"Count": 30,
-		"AdditiveElevation": 0
+		"AdditiveElevation": 0,
+		"BreakEffect": "/Game/EffectActors/CactusBreakEffect.CactusBreakEffect_C"
 	},
 	{
 		"Name":"Dandaleon",
