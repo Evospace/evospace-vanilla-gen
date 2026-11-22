@@ -1517,36 +1517,17 @@ for ore in ore_types:
 	ore_props.append(ore["Name"]+"Cluster")
 ore_props.append("OilCluster")
 
-ORE_R_START = 200
-ORE_R_LATE = 300
+starter_ore_props = ["ChalcopyriteCluster", "CoalCluster", "PyriteCluster"]
+rare_ore_props = ["ThorianiteCluster", "PyroplatiteCluster"]
 
-ore_prop_tiers = [
-	{
-		"MinDist": 0,
-		"Weight": 1,
-		"FarWeight": 1,
-		"Props": ["ChalcopyriteCluster", "CoalCluster", "PyriteCluster"],
-	},
-	{
-		"MinDist": ORE_R_START,
-		"Weight": 1,
-		"FarWeight": 2,
-		"Props": ["MagnetiteCluster", "MalachiteCluster", "OilCluster", "CinnabarCluster"],
-	},
-	{
-		"MinDist": ORE_R_START,
-		"Weight": 1,
-		"FarWeight": 3,
-		"Props": ["BauxiteCluster", "RubyCluster"],
-	},
-	{
-		"MinDist": ORE_R_LATE,
-		"Weight": 1,
-		"FarWeight": 4,
-		"Rare": True,
-		"Props": ["ThorianiteCluster", "PyroplatiteCluster"],
-	},
-]
+ore_prop_records = []
+for name in starter_ore_props + ["MagnetiteCluster", "MalachiteCluster", "OilCluster", "CinnabarCluster", "BauxiteCluster", "RubyCluster"] + rare_ore_props:
+	record = {"Props": [name], "Weight": 1}
+	if name in starter_ore_props:
+		record["Starter"] = True
+	if name in rare_ore_props:
+		record["Rare"] = True
+	ore_prop_records.append(record)
 
 objects_array = []
 
@@ -1820,7 +1801,7 @@ for generator_name, legacy_name in PROPS_GENERATOR_SOURCES:
 objects_array.append({
     "Class": "StaticPropList",
 	"Name": "OreProps",
-	"Array": ore_prop_tiers,
+	"Array": ore_prop_records,
 })
 	
 data = {
