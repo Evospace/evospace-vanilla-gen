@@ -175,6 +175,8 @@ materials = [
 		"Category": "Chemical",
 		"Label": "Ammonium Chloride",
 		"Items": ["Exact"],
+		"Meshes": ["/Game/Models/DustCrate"],
+		"Materials": ["", "/Game/Materials/AmmoniumChloride"],
 		"Tier": 5,
 	},{
 		"Name": "Iron",
@@ -485,6 +487,8 @@ materials = [
 		"Category": "Chemical",
 		"Label": "Ash",
 		"Items": ["Exact"],
+		"Meshes": ["/Game/Models/DustCrate"],
+		"Materials": ["", "/Game/Materials/AshDust"],
 		"Tier": 0
 	},{
 		"Name": "Hydrogen",
@@ -806,12 +810,16 @@ materials = [
 		"Category": "Chemical",
 		"Label": "Salt",
 		"Items": ["Exact"],
+		"Meshes": ["/Game/Models/DustCrate"],
+		"Materials": ["", "/Game/Materials/Salt"],
 		"Tier": 4
 	},{
 		"Name": "MicaFlakes",
 		"Category": "Chemical",
 		"Label": "Mica Flakes",
 		"Items": ["Exact"],
+		"Meshes": ["/Game/Models/DustCrate"],
+		"Materials": ["", "/Game/Materials/MicaFlakes"],
 		"Tier": 4
 	},{
 		"Name": "Circuit",
