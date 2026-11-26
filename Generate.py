@@ -27,7 +27,6 @@ generator_files = [
 	"CoverItemsGen.py",
 	"Covers.py",
 	"DesignableBlocks.py",
-	"Floppies.py",
 	"HandRecipes.py",
 	"LogicImport.py",
 	"LogicExport.py",
